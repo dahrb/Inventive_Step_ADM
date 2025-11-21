@@ -672,7 +672,6 @@ def adf():
     ]
     return adf
 
-
 def cases():
     """
     Returns predefined cases for testing
