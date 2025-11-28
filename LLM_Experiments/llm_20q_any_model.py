@@ -30,6 +30,7 @@ MODELS = {
 # Global config placeholder (set in main)
 CURRENT_CONFIG = None
 SECRET_OBJECT = "Dog" 
+LOG_FILE = "game_log.md"
 
 # 1. Define the Shared Schema
 class GameResponse(BaseModel):
