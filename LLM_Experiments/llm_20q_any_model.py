@@ -3,7 +3,9 @@ import json
 import time
 import subprocess
 import sys
+import os
 import re
+from datetime import datetime
 from openai import OpenAI
 from pydantic import BaseModel, Field
 from tenacity import retry, wait_random_exponential, stop_after_attempt
@@ -37,8 +39,45 @@ class GameResponse(BaseModel):
     reasoning: str = Field(..., description="Step-by-step thinking process about the secret object.")
     answer: str = Field(..., description="The final answer: 'Yes' or 'No'.")
 
+# --- LOGGING FUNCTION ---
+def log_to_markdown(turn_num, question, raw_content, hidden_reasoning, final_answer, model_id):
+    """
+    Appends a formatted log entry to the markdown file.
+    """
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    
+    # Create the file with a header if it doesn't exist
+    if not os.path.exists(LOG_FILE):
+        with open(LOG_FILE, "w", encoding="utf-8") as f:
+            f.write(f"# Game Log - {datetime.now().strftime('%Y-%m-%d')}\n\n")
+
+    # We use explicit string formatting for the inner code blocks to avoid 
+    # breaking the Python script string parsing.
+    log_entry = (
+        f"## Turn {turn_num} - {timestamp}\n"
+        f"**Model:** `{model_id}`  \n"
+        f"**Question:** **\"{question}\"**\n\n"
+        f"### 🧠 Reasoning Process\n"
+        f"<details>\n"
+        f"<summary>Click to expand raw thought process</summary>\n\n"
+        f"```text\n"
+        f"{hidden_reasoning if hidden_reasoning else 'No hidden reasoning tokens found.'}\n"
+        f"```\n"
+        f"</details>\n\n"
+        f"### 🤖 Raw JSON Output\n"
+        f"```json\n"
+        f"{raw_content}\n"
+        f"```\n\n"
+        f"### ✅ Final Decision\n"
+        f"**Answer:** `{final_answer.upper()}`\n\n"
+        f"---\n"
+    )
+    
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(log_entry)
+        
 @retry(wait=wait_random_exponential(multiplier=1, max=10), stop=stop_after_attempt(3))
-def consult_llm(question, history, client):
+def consult_llm(question, history, client, turn_num):
     """
     Unified function that switches logic based on CURRENT_CONFIG['mode'].
     """
@@ -162,6 +201,9 @@ def consult_llm(question, history, client):
         if "yes" in final_answer: final_answer = "yes"
         elif "no" in final_answer: final_answer = "no"
         
+        # --- LOG TO FILE ---
+        log_to_markdown(turn_num, question, raw_content, reasoning, final_answer, model_id)
+        
         return final_answer, reasoning
         
     except Exception as e:
@@ -194,7 +236,13 @@ def main():
     # Initialize Client
     client = OpenAI(base_url=API_BASE, api_key="EMPTY")
     
-    print(f"Starting Game... (Model: {CURRENT_CONFIG['id']}, Secret: {SECRET_OBJECT})")
+    # Initialize Log File with new session header
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"\n\n# 🎮 NEW SESSION: {CURRENT_CONFIG['id']} (Secret: {SECRET_OBJECT})\n")
+        f.write("="*50 + "\n")
+
+    print(f"Starting Game... (Model: {CURRENT_CONFIG['id']})")
+    print(f"Logging to: {os.path.abspath(LOG_FILE)}\n")
     
     # --- GAME LOOP ---
     # Update path to your actual game script
@@ -210,6 +258,7 @@ def main():
     )
 
     history = []
+    turn_count = 1
     
     while True:
         output_line = process.stdout.readline()
@@ -221,7 +270,7 @@ def main():
             
             if line.startswith("QUESTION:") or line.startswith("GUESS:"):
                 q_text = line.split(":", 1)[1].strip()
-                ans, reas = consult_llm(q_text, history, client)
+                ans, reas = consult_llm(q_text, history, client,turn_count)
                 
                 if ans == "ERROR": break
                 
@@ -233,7 +282,10 @@ def main():
                 
                 history.append({"role": "user", "content": q_text})
                 history.append({"role": "assistant", "content": json.dumps({"reasoning": reas, "answer": ans})})
-                time.sleep(1)
+                
+                turn_count += 1
+                
+                time.sleep(0.5)
                 
     print("\nProcess Finished.")
 
