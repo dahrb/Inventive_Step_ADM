@@ -9,6 +9,7 @@ from datetime import datetime
 from openai import OpenAI
 from pydantic import BaseModel, Field
 from tenacity import retry, wait_random_exponential, stop_after_attempt
+import random
 
 # --- CONFIGURATION MAP ---
 # Define your models and their specific "mode" here.
@@ -32,7 +33,8 @@ MODELS = {
 # Global config placeholder (set in main)
 CURRENT_CONFIG = None
 SECRET_OBJECT = "Dog" 
-LOG_FILE = "game_log.md"
+ID = random.randint(0,99999)
+LOG_FILE = f"game_log_{ID}.md"
 
 # 1. Define the Shared Schema
 class GameResponse(BaseModel):
@@ -40,6 +42,7 @@ class GameResponse(BaseModel):
     answer: str = Field(..., description="The final answer: 'Yes' or 'No'.")
 
 # --- LOGGING FUNCTION ---
+# ...existing code...
 def log_to_markdown(turn_num, question, raw_content, hidden_reasoning, final_answer, model_id):
     """
     Appends a formatted log entry to the markdown file.
@@ -51,31 +54,58 @@ def log_to_markdown(turn_num, question, raw_content, hidden_reasoning, final_ans
         with open(LOG_FILE, "w", encoding="utf-8") as f:
             f.write(f"# Game Log - {datetime.now().strftime('%Y-%m-%d')}\n\n")
 
-    # We use explicit string formatting for the inner code blocks to avoid 
-    # breaking the Python script string parsing.
+    # Extract 'reasoning' from raw_content JSON (keep hidden_reasoning/raw as expandable)
+    extracted_reasoning = None
+    try:
+        if isinstance(raw_content, str):
+            parsed = json.loads(raw_content)
+            if isinstance(parsed, dict):
+                extracted_reasoning = parsed.get("reasoning")
+    except Exception:
+        extracted_reasoning = None
+
+    # hidden_text holds the original/hidden reasoning (may come from vLLM hidden field or parsing)
+    hidden_text = hidden_reasoning if hidden_reasoning else (raw_content if raw_content else "No hidden reasoning available.")
+
+    # Fallback for extracted reasoning if not present
+    if not extracted_reasoning:
+        extracted_reasoning = hidden_text if hidden_text else "No reasoning found."
+
+    # Color the answer: green for Yes, red for No (use inline HTML so markdown renders it)
+    try:
+        ans_norm = final_answer.strip().lower() if isinstance(final_answer, str) else str(final_answer).strip().lower()
+    except Exception:
+        ans_norm = str(final_answer).strip().lower()
+
+    if ans_norm == "yes":
+        colored_answer = f'<span style="color:green;font-weight:bold">{final_answer.upper()}</span>'
+    elif ans_norm == "no":
+        colored_answer = f'<span style="color:red;font-weight:bold">{final_answer.upper()}</span>'
+    else:
+        colored_answer = f'`{str(final_answer).upper()}`'
+
+    # Build markdown entry: show extracted reasoning, and keep raw/hidden reasoning inside a collapsible <details>
     log_entry = (
-        f"## Turn {turn_num} - {timestamp}\n"
-        f"**Model:** `{model_id}`  \n"
-        f"**Question:** **\"{question}\"**\n\n"
-        f"### 🧠 Reasoning Process\n"
-        f"<details>\n"
-        f"<summary>Click to expand raw thought process</summary>\n\n"
+        f"## Step {turn_num} - {timestamp}\n"
+        f"## **Question:** **\"{question}\"**\n\n"
+        f"### Reasoning (extracted)\n"
         f"```text\n"
-        f"{hidden_reasoning if hidden_reasoning else 'No hidden reasoning tokens found.'}\n"
-        f"```\n"
-        f"</details>\n\n"
-        f"### 🤖 Raw JSON Output\n"
-        f"```json\n"
-        f"{raw_content}\n"
+        f"{extracted_reasoning}\n"
         f"```\n\n"
-        f"### ✅ Final Decision\n"
-        f"**Answer:** `{final_answer.upper()}`\n\n"
+        f"<details>\n"
+        f"<summary>Show hidden/raw reasoning</summary>\n\n"
+        f"```text\n"
+        f"{hidden_text}\n"
+        f"```\n\n"
+        f"</details>\n\n"
+        f"### Decision\n"
+        f"**Answer:** {colored_answer}\n\n"
         f"---\n"
     )
     
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(log_entry)
-        
+
 @retry(wait=wait_random_exponential(multiplier=1, max=10), stop=stop_after_attempt(3))
 def consult_llm(question, history, client, turn_num):
     """
@@ -238,7 +268,7 @@ def main():
     
     # Initialize Log File with new session header
     with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(f"\n\n# 🎮 NEW SESSION: {CURRENT_CONFIG['id']} (Secret: {SECRET_OBJECT})\n")
+        f.write(f"\n\n# NEW SESSION: {CURRENT_CONFIG['id']} (Secret: {SECRET_OBJECT})\n")
         f.write("="*50 + "\n")
 
     print(f"Starting Game... (Model: {CURRENT_CONFIG['id']})")
