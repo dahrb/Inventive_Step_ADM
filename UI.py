@@ -6,9 +6,7 @@ import os
 import sys
 import shlex
 from MainClasses import *
-import WildAnimals
 import inventive_step_ADM
-import academic_research_ADM
 
 
 class CLI:
@@ -538,6 +536,12 @@ class CLI:
                 print(f"{i}. {statement}")
         except Exception as e:
             print(f"Error evaluating case: {e}")
+        
+        # Visualize domain after outcome has been reached
+        try:
+            self.visualize_domain()
+        except Exception as e:
+            print(f"Error generating visualization after outcome: {e}")
     
     def visualize_domain(self):
         """Visualize the domain as a graph"""

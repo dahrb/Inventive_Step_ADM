@@ -4,9 +4,7 @@ To Do -
 - prompt engineering i.e. EPO
 - check formatting of markdown
 - ensure conclusions are also printed
-- 
 """
-
 
 import argparse
 import json
@@ -25,7 +23,7 @@ import re
 import shutil
 
 # Globals
-ID = 4
+ID = 5
 LOG_FILE = f"./adm_log_{ID}.md"
 
 # Model configurations (same style as llm_20q_any_model)
@@ -223,7 +221,8 @@ def consult_llm(question, history, client, turn_num):
             history_text += "\n"
 
         system_instruction = (
-            f"You are answering questions about a new invention called an Umbrella Lamp being submitted for a patent to the European Patent Office\n"
+            f"You are answering questions about a new invention called an Umbrella Lamp being submitted for a patent to the European Patent Office.\
+            Answer no to the questions about a skilled person \n"
             f"{history_text}"
             f"CURRENT QUESTION: {question}\n\n"
             f"INSTRUCTIONS:\n- Output valid JSON with keys 'reasoning' and 'answer'"
