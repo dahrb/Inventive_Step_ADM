@@ -1836,6 +1836,7 @@ class DependentBLF(Node):
             bool: True if dependency is satisfied, False otherwise
         """
         return all(dep_node in case for dep_node in self.dependency_node)
+
 class SubADM(ADF):
     """
     A specialized ADF class for sub-ADMs that automatically resolves {item} placeholders

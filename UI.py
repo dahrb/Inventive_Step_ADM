@@ -13,104 +13,14 @@ import academic_research_ADM
 
 class CLI:
     def __init__(self):
-        self.adf = None
         self.case = []
-        self.cases = {}
+        self.adf = inventive_step_ADM.adf()
+        self.cases = inventive_step_ADM.cases()
         self.caseName = None
         
     def main_menu(self):
         """Main menu with options"""
-        while True:
-            print("\n" + "="*50)
-            print("ADM TOOL - Main Menu")
-            print("="*50)
-            print("1. Load existing domain")
-            print("2. Exit")
-            print("-"*50)
-            
-            #HARDCODED FOR NOW
-            choice = input("Enter your choice (1-2): ").strip()
-            
-            if choice == "1":
-                self.load_existing_domain()
-            elif choice == "2":
-                print("Goodbye!")
-                sys.exit(0)
-            else:
-                print("Invalid choice. Please try again.")
-            
-            break
-    
-    def load_existing_domain(self):
-        """Load one of the predefined domains"""
-        print("\n" + "="*50)
-        print("Load Existing Domain")
-        print("="*50)
-        print("1. Academic Research Project")
-        print("2. Inventive Step")
-        print("3. Back to main menu")
-        print("-"*50)
-        
-        #HARDCODED FOR NOW
-        choice = input("Enter your choice (1-3): ").strip()
-        
-        if choice == "1":
-            self.load_academic_research_domain()
-        elif choice == "2":
-            self.load_inventive_step_domain()
-        elif choice == "3":
-            return
-        else:
-            print("Invalid choice. Please try again.")
-            self.load_existing_domain()
-    
-    def load_academic_research_domain(self):
-        """Load the Academic Research Project domain"""
-        try:
-            self.adf = academic_research_ADM.adf()
-            self.cases = academic_research_ADM.cases()
-            print("Academic Research Project domain loaded successfully!")
-            self.domain_menu()
-        except Exception as e:
-            print(f"Error loading Academic Research Project domain: {e}")
-    
-    def load_inventive_step_domain(self):
-        """Load the Inventive Step domain"""
-        try:
-            # Fix: Call the function to get the ADF instance
-            self.adf = inventive_step_ADM.adf()
-            self.cases = inventive_step_ADM.cases()
-            print("Inventive Step domain loaded successfully!")
-            self.domain_menu()
-        except Exception as e:
-            print(f"Error loading Inventive Step domain: {e}")
-    
-    def domain_menu(self):
-        """Domain operations menu"""
-        while True:
-            print("\n" + "="*50)
-            print(f"Domain: {self.adf.name}")
-            print("="*50)
-            print("1. Query domain")
-            print("2. Visualize domain")
-            print("3. Minimal structure view")
-            print("4. Back to main menu")
-            print("-"*50)
-            
-            #HARDCODED FOR NOW
-            choice = input("Enter your choice (1-4): ").strip()
-            
-            if choice == "1":
-                self.query_domain()
-                return
-            elif choice == "2":
-                self.visualize_domain()
-            elif choice == "3":
-                self.visualize_domain_minimal()
-            elif choice == "4":
-                return
-            else:
-                print("Invalid choice. Please try again.")
+        self.query_domain()
     
     def query_domain(self):
         """Query the domain by answering questions"""
@@ -650,6 +560,12 @@ class CLI:
                     filename = f"{self.caseName}.png"
                     G.write_png(filename)
                     print(f"Visualization saved as {filename}")
+                    try:
+                        abs_path = os.path.abspath(filename)
+                        print(f"ADM_VISUALIZATION:{abs_path}")
+                        sys.stdout.flush()
+                    except Exception:
+                        pass
                     
                 except Exception as e:
                     print(f"Error generating visualization: {e}")
@@ -659,6 +575,12 @@ class CLI:
                         filename = f"{self.caseName}.png"
                         G.write_png(filename)
                         print(f"Basic visualization saved as {filename}")
+                        try:
+                            abs_path = os.path.abspath(filename)
+                            print(f"ADM_VISUALIZATION:{abs_path}")
+                            sys.stdout.flush()
+                        except Exception:
+                            pass
                     except Exception as e2:
                         print(f"Error with fallback visualization: {e2}")
             else:
@@ -670,6 +592,12 @@ class CLI:
                     graph = self.adf.visualiseNetworkWithSubADMs()
                     graph.write_png(filename)
                     print(f"Graph saved as: {filename}")
+                    try:
+                        abs_path = os.path.abspath(filename)
+                        print(f"ADM_VISUALIZATION:{abs_path}")
+                        sys.stdout.flush()
+                    except Exception:
+                        pass
                 except Exception as e:
                     print(f"Error with sub-ADM visualization: {e}")
                     # Fallback to regular visualization
@@ -677,6 +605,12 @@ class CLI:
                         graph = self.adf.visualiseNetwork()
                         graph.write_png(filename)
                         print(f"Basic visualization saved as: {filename}")
+                        try:
+                            abs_path = os.path.abspath(filename)
+                            print(f"ADM_VISUALIZATION:{abs_path}")
+                            sys.stdout.flush()
+                        except Exception:
+                            pass
                     except Exception as e2:
                         print(f"Error with fallback visualization: {e2}")
                         return
@@ -713,6 +647,12 @@ class CLI:
                     # Save the visualization
                     G.write_png(filename)
                     print(f"Minimal structure view saved as {filename}")
+                    try:
+                        abs_path = os.path.abspath(filename)
+                        print(f"ADM_VISUALIZATION:{abs_path}")
+                        sys.stdout.flush()
+                    except Exception:
+                        pass
                     
                 except Exception as e:
                     print(f"Error generating minimal visualization: {e}")
@@ -725,6 +665,12 @@ class CLI:
                     graph = self.adf.visualiseNetworkMinimal()
                     graph.write_png(filename)
                     print(f"Minimal structure view saved as: {filename}")
+                    try:
+                        abs_path = os.path.abspath(filename)
+                        print(f"ADM_VISUALIZATION:{abs_path}")
+                        sys.stdout.flush()
+                    except Exception:
+                        pass
                 except Exception as e:
                     print(f"Error with minimal visualization: {e}")
                     return
@@ -745,9 +691,6 @@ class CLI:
 
 def main():
     """Main function"""
-    print("Welcome to ADM Tool - Command Line Interface")
-    print("This tool helps you work with Argumentation Decision Frameworks")
-    
     cli = CLI()
     
     try:

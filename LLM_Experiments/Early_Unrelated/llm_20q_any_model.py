@@ -276,7 +276,7 @@ def main():
     
     # --- GAME LOOP ---
     # Update path to your actual game script
-    game_script_path = '/users/sgdbareh/scratch/ADM_JURIX/LLM_Experiments/20_questions.py'
+    game_script_path = '/users/sgdbareh/scratch/ADM_JURIX/LLM_Experiments/Early_Unrelated/20_questions.py'
 
     process = subprocess.Popen(
         ['python', game_script_path],
@@ -292,7 +292,8 @@ def main():
     
     while True:
         output_line = process.stdout.readline()
-        if output_line == '' and process.poll() is not None: break
+        if output_line == '' and process.poll() is not None: 
+            break
             
         if output_line:
             line = output_line.strip()
