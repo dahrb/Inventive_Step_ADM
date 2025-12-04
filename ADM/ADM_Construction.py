@@ -1,5 +1,14 @@
+"""
+Creates the classes used to instantiate the Inventive Step ADM and core traversal functionalities
+
+Last Updated: 04.12.25
+
+Status: In Progress
+"""
+
 from pythonds import Stack
 import pydot
+import re
 
 class ADM:
     """
@@ -136,7 +145,7 @@ class ADM:
         if question_order_name not in self.questionOrder:
             self.questionOrder.append(question_order_name)
 
-    def addSubADMBLF(self, name, sub_adf_creator, function, dependency_node=None, rejection_condition=False):
+    def addSubADMBLF(self, name, sub_adf_creator, function, gating_node=None, rejection_condition=False):
         """
         Adds a BLF that depends on evaluating a sub-ADM for each item i.e. the linking node between the main ADM and the Sub-ADM
         
@@ -153,7 +162,7 @@ class ADM:
         """
         
         #creates a node that handles sub-ADM evaluation
-        node = SubADMBLF(name, sub_adf_creator, function, dependency_node, rejection_condition)
+        node = SubADMBLF(name, sub_adf_creator, function, gating_node, rejection_condition)
         self.nodes[name] = node
         
         #add to question order
@@ -702,8 +711,39 @@ class ADM:
         if name not in self.questionOrder:
             self.questionOrder.append(name)
 
-    def setFact(self,current_question,answer):
+    def setFact(self, fact_name, answer):
+        """
+        Sets a facts in the ADM which can be referenced in question text 
         
+        Parameters
+        ----------
+        fact_name : str
+            the name of the fact
+        answer : any
+            the corresponding fact
+        """
+        if not hasattr(self, 'facts'):
+            self.facts = {}
+        
+        if fact_name not in self.facts:
+            self.facts[fact_name] = answer
+        
+    def getFact(self, fact_name):
+        """
+        Gets a fact for a BLF
+        
+        Parameters
+        ----------
+        fact_name : str
+            the name of the fact
+            
+        Returns:
+            the value of the fact, or None if not found
+        """
+        if hasattr(self, 'facts') and fact_name in self.facts:
+            return self.facts[fact_name]
+        else:
+            return NameError('Fact specified has no value asigned')    
     
     def resolveQuestionTemplate(self, question_text):
         """
@@ -717,48 +757,25 @@ class ADM:
         Returns:
             str: the resolved question text with placeholders replaced
         """
-        if not hasattr(self, 'getFact'):
-            return question_text
         
         # Look for template variables like {VARIABLE_NAME}
-        import re
         template_pattern = r'\{([^}]+)\}'
         
-        def replace_template(match):
+        resolved_text = re.sub(template_pattern, self.replace_template, question_text)
+        
+        return resolved_text
+    
+    def replace_template(self, match):
             variable_name = match.group(1)
             
             # Try to get the fact from the INFORMATION category first
-            value = self.getFact('INFORMATION', variable_name)
+            value = self.getFact(variable_name)
             if value:
                 return str(value)
             
-            # If not found in INFORMATION, try to find it as a direct fact
-            # This would handle cases where the fact name is the same as the variable
-            if hasattr(self, 'facts') and variable_name in self.facts:
-                # Check if it's a direct fact (not nested under INFORMATION)
-                if isinstance(self.facts[variable_name], dict):
-                    # It's a nested fact structure, try to get a default value
-                    if 'value' in self.facts[variable_name]:
-                        return str(self.facts[variable_name]['value'])
-                    elif 'name' in self.facts[variable_name]:
-                        return str(self.facts[variable_name]['name'])
-                else:
-                    # It's a direct value
-                    return str(self.facts[variable_name])
-            
-            # If still not found, try to get it from any other fact categories
-            if hasattr(self, 'facts'):
-                for category in self.facts:
-                    if category != 'INFORMATION':  # Skip INFORMATION since we already checked
-                        if variable_name in self.facts[category]:
-                            value = self.facts[category][variable_name]
-                            if value:
-                                return str(value)
-            
-            return f"[{variable_name}]"  # Show placeholder if not found
+            # Show placeholder if not found
+            return f"[{variable_name}]"  
         
-        resolved_text = re.sub(template_pattern, replace_template, question_text)
-        return resolved_text
 class SubADM(ADM):
     """
     A specialized ADF class for sub-ADMs that automatically resolves {item} placeholders

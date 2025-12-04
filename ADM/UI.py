@@ -1,12 +1,15 @@
 """
 ADM Command Line Interface
+
+Last Updated: 04.12.25
+
+Status: Not Really Updated
 """
 
 import os
 import sys
 import shlex
-from ADM_JURIX.ADM.ADM_Construction import *
-import ADM_JURIX.ADM.inventive_step_ADM as inventive_step_ADM
+import inventive_step_ADM
 
 
 class CLI:
@@ -140,15 +143,13 @@ class CLI:
                 else:
                     return question_order, nodes
         
-        #chec if it is an information question           
+        #check if it is an information question           
         elif current_question in self.adf.information_questions:
             # This is an information question
             question_text = self.adf.information_questions[current_question]
             answer = input(f"{question_text}: ").strip()
             
-            # Store the answer as a fact without adding to case
-            if hasattr(self.adf, 'setFact'):
-                self.adf.setFact('INFORMATION', current_question, answer)
+            self.adf.setFact(current_question, answer)
             
             # Remove from question order and continue
             question_order.pop(0)
@@ -157,45 +158,19 @@ class CLI:
             question_order.pop(0)
             return self.questiongen(question_order, nodes)
         
-  
     def questionHelper(self, current_node, current_question):
         """
         Helper method to handle individual questions
         """
+        #yhis is a question instantiator
         if current_node is None:
-            # This is a question instantiator
             instantiator = self.adf.question_instantiators[current_question]
             
-            # Note: Dependencies are already checked in questiongen, so we can proceed directly
+            #note: dependencies are already checked in questiongen, so we can proceed directly
             
-            # Resolve any template variables in the question using inherited facts
+            #resolve any template variables in the question using facts
             question_text = instantiator['question']
-            resolved_question = self.resolve_question_template(question_text)
-            
-            # If there's a dependency, try to get inherited facts from the dependency node
-            if instantiator.get('dependency_node'):
-                dependency_node_name = instantiator['dependency_node']
-                if hasattr(self.adf, 'getInheritedFacts'):
-                    # Handle both single string and list of dependencies
-                    if isinstance(dependency_node_name, str):
-                        dependency_nodes = [dependency_node_name]
-                    else:
-                        dependency_nodes = dependency_node_name
-                    
-                    # Collect facts from all dependency nodes
-                    inherited_facts = {}
-                    for dep_node in dependency_nodes:
-                        if isinstance(dep_node, str):
-                            dep_facts = self.adf.getInheritedFacts(dep_node, self.case)
-                            if isinstance(dep_facts, dict):
-                                inherited_facts.update(dep_facts)
-                    
-                    if inherited_facts:
-                        # Replace any placeholders in the question with inherited facts
-                        for fact_name, value in inherited_facts.items():
-                            placeholder = "{" + fact_name + "}"
-                            if placeholder in resolved_question:
-                                resolved_question = resolved_question.replace(placeholder, str(value))
+            resolved_question = self.resolve_question_template(question_text)          
             
             print(f"\n{resolved_question}")
             # Show available answers
@@ -238,13 +213,13 @@ class CLI:
                 else:
                     pass
                 
-                # Ask factual ascription questions if configured
+                #ask factual ascription questions if configured
                 if instantiator.get('factual_ascription') and blf_name in instantiator['factual_ascription']:
                     factual_questions = instantiator['factual_ascription'][blf_name]
                     for fact_name, question in factual_questions.items():
                         answer = input(f"{question}: ").strip()
                         if answer:
-                            self.adf.setFact(blf_name, fact_name, answer)
+                            self.adf.setFact(fact_name, answer)
             
             return 'Done'
         else:

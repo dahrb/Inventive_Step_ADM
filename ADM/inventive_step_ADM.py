@@ -2,7 +2,7 @@
 Inventive Step ADM 
 """
 
-from ADM_JURIX.ADM.ADM_Construction import *
+from ADM_Construction import ADM,SubADM
 
 #Sub-ADM 1 
 def create_sub_adm_1(item_name, key_facts=None):
@@ -179,7 +179,7 @@ def create_sub_adm_2(item_name, key_facts=None):
     },
     None,
     "modify_adapt",
-    dependency_node="ObjectiveTechnicalProblemFormulation")
+    gating_node="ObjectiveTechnicalProblemFormulation")
 
     #The fact the sub-adm is running means there are distinguishing features so to more easily resolve this we just auto add it to eval later
     # Check if NonTechnicalContribution is in the main ad case, if so add it to sub_adf case
@@ -258,7 +258,7 @@ def adf():
         },None,
         question_order_name="field_questions_4",
         #TEST
-        dependency_node= 'Contested'
+        gating_node= 'Contested'
     )
 
     #F1
@@ -318,7 +318,7 @@ def adf():
         "No": ''
     }, None,
     question_order_name="cpa_min_mod",
-    dependency_node='SkilledPerson'
+    gating_node='SkilledPerson'
     )
     #F22
     adf.addGatedBLF("CombinationAttempt", 
@@ -334,7 +334,7 @@ def adf():
         "They are from an unrelated field": ""
     }, None,
     question_order_name="combined_docs",
-    dependency_node=['ClosestPriorArt','CombinationAttempt']
+    gating_node=['ClosestPriorArt','CombinationAttempt']
     )
     #F23
     adf.addGatedBLF("CombinationMotive", 
@@ -436,7 +436,7 @@ def adf():
         return missing_items
 
     #F28
-    adf.addSubADMBLF("ReliableTechnicalEffect", create_sub_adm_1, collect_features, dependency_node=['SkilledPerson','ClosestPriorArtDocuments'])
+    adf.addSubADMBLF("ReliableTechnicalEffect", create_sub_adm_1, collect_features, gating_node=['SkilledPerson','ClosestPriorArtDocuments'])
 
     #F25
     adf.addEvaluationBLF("DistinguishingFeatures", "ReliableTechnicalEffect", "DistinguishingFeatures", ['there are distinguishing features','there are no distinguishing features'])
@@ -463,7 +463,7 @@ def adf():
     },
     None,
     "synergy_question",
-    dependency_node= "ReliableTechnicalEffect")    
+    gating_node= "ReliableTechnicalEffect")    
 
     #F45
     adf.addGatedBLF("FunctionalInteraction",["ReliableTechnicalEffect","Synergy"],
@@ -570,7 +570,7 @@ def adf():
         return objective_problems
 
     
-    adf.addSubADMBLF("OTPObvious", create_sub_adm_2, collect_obj, dependency_node=["CandidateOTP",'SkilledPerson','RelevantPriorArt','ClosestPriorArtDocuments'], rejection_condition=True)
+    adf.addSubADMBLF("OTPObvious", create_sub_adm_2, collect_obj, gating_node=["CandidateOTP",'SkilledPerson','RelevantPriorArt','ClosestPriorArtDocuments'], rejection_condition=True)
 
     #F47 
     adf.addEvaluationBLF("ObjectiveTechnicalProblem", "OTPObvious", "ObjectiveTechnicalProblemFormulation", ['there is a valid objective technical problem','there is not a valid objective technical problem'])

@@ -7,8 +7,8 @@ import unittest
 import os
 from ADM_JURIX.ADM.ADM_Construction import *
 from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1, create_sub_adm_2, adf
-import UI
-from UI import CLI
+import ADM_JURIX.ADM.UI as UI
+from ADM_JURIX.ADM.UI import CLI
 import builtins
 import sys
 import io
