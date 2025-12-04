@@ -5,8 +5,8 @@ ADM Command Line Interface
 import os
 import sys
 import shlex
-from MainClasses import *
-import inventive_step_ADM
+from ADM_JURIX.ADM.ADM_Construction import *
+import ADM_JURIX.ADM.inventive_step_ADM as inventive_step_ADM
 
 
 class CLI:
@@ -139,7 +139,8 @@ class CLI:
                     return self.questiongen(question_order, nodes)
                 else:
                     return question_order, nodes
-                    
+        
+        #chec if it is an information question           
         elif current_question in self.adf.information_questions:
             # This is an information question
             question_text = self.adf.information_questions[current_question]

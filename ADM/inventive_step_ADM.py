@@ -2,7 +2,7 @@
 Inventive Step ADM 
 """
 
-from MainClasses import *
+from ADM_JURIX.ADM.ADM_Construction import *
 
 #Sub-ADM 1 
 def create_sub_adm_1(item_name, key_facts=None):
@@ -44,36 +44,36 @@ def create_sub_adm_1(item_name, key_facts=None):
     sub_adf.addNodes("NumOrComp",["NumericalData","ComputerSimulation"],["The feature involves numercial data","The feature involves a computer simulation","The feature does not involve a computer simulation or numerical data"])
 
     #F37 - Q23
-    sub_adf.addDependentBLF("IntendedTechnicalUse","NumOrComp",
+    sub_adf.addGatedBLF("IntendedTechnicalUse","NumOrComp",
                             'Is there an intended use of the data resulting from the feature?',
                             None)
     #F38 - Q24
-    sub_adf.addDependentBLF("TechUseSpecified","IntendedTechnicalUse",
+    sub_adf.addGatedBLF("TechUseSpecified","IntendedTechnicalUse",
                             'Is the potential technical effect of the numerical data either explicitly or implicitly specified in the claim?',
                             None)
 
     #F39 - Q26
-    sub_adf.addDependentBLF("SpecificPurpose","MathematicalMethod",
+    sub_adf.addGatedBLF("SpecificPurpose","MathematicalMethod",
                             'Does the technical contribution have a specific technical purpose i.e. produces a technical effect serving a technical purpose. Not merely a `generic\' purpose i.e. "controlling a technical system".',
                             None)
 
     #F40 - Q27
-    sub_adf.addDependentBLF("FunctionallyLimited","MathematicalMethod",
+    sub_adf.addGatedBLF("FunctionallyLimited","MathematicalMethod",
                     'Is the claim functionally limited to the technical purpose stated either explicitly or implicitly?',
                     None)
 
     #F56 - Q28
-    sub_adf.addDependentBLF("UnexpectedEffect","FeatureTechnicalContribution",
+    sub_adf.addGatedBLF("UnexpectedEffect","FeatureTechnicalContribution",
                             'Is the technical effect unexpected or surprising?',
                             None)
 
     #F57 - Q29
-    sub_adf.addDependentBLF("PreciseTerms",["FeatureTechnicalContribution","UnexpectedEffect"],
+    sub_adf.addGatedBLF("PreciseTerms",["FeatureTechnicalContribution","UnexpectedEffect"],
                             'Is this unexpected effect described in precise, measurable terms?',
                             None)
 
     #F58 - Q30
-    sub_adf.addDependentBLF("OneWayStreet",["FeatureTechnicalContribution","UnexpectedEffect"],
+    sub_adf.addGatedBLF("OneWayStreet",["FeatureTechnicalContribution","UnexpectedEffect"],
                             'Is the unexpected effect a result of a lack of alternatives creating a \'one-way street\' situation? i.e. for the skilled person to achieve the technical effect in question from the closest prior art, they would not have to choose from a range of possibilities, because there is only one-way to do x thing, and that would result in unexpected property y.',
                             None)
 
@@ -91,11 +91,11 @@ def create_sub_adm_1(item_name, key_facts=None):
 
     sub_adf.addNodes("NonReproducible",["reject Reproducible","accept"],["the technical effect is reproducible","the technical effect is not reproducible",""])
     #F44 - Q32
-    sub_adf.addDependentBLF("ClaimContainsEffect","NonReproducible",
+    sub_adf.addGatedBLF("ClaimContainsEffect","NonReproducible",
                             'Does the claim contain the non-reproducible effect i.e. if the claim says the invention achieve effect E, but this is not reproducible.',
                             None)
 
-    sub_adf.addDependentBLF("SufficiencyOfDisclosureRaised","ClaimContainsEffect",
+    sub_adf.addGatedBLF("SufficiencyOfDisclosureRaised","ClaimContainsEffect",
                             'Is there an issue with sufficiency of disclosure regarding this feature?',
                             None)
 
@@ -160,12 +160,12 @@ def create_sub_adm_2(item_name, key_facts=None):
     sub_adf.addNodes("ScopeOfClaim",question='Are the technical effects achieved across the whole scope of the claim, and is this claim limited in such a way that substantially all embodiments encompassed by the claim show these effects?')
 
     #F51
-    sub_adf.addDependentBLF("WrittenFormulation","BasicFormulation", 
+    sub_adf.addGatedBLF("WrittenFormulation","BasicFormulation", 
                             'Can we construct a written formulation of the objective technical problem?',
                             None)
 
     #F52
-    sub_adf.addDependentBLF("Hindsight","BasicFormulation", 
+    sub_adf.addGatedBLF("Hindsight","BasicFormulation", 
                             'Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed?',
                             None)
 
@@ -203,7 +203,7 @@ def adf():
     """
     Creates and returns an ADF for the Inventive Step domain
     """
-    adf = ADF("Inventive Step")
+    adf = ADM("Inventive Step")
 
     # Add information questions before the logic questions
     adf.addInformationQuestion("INVENTION_TITLE", "\n\nWhat is the title of your invention?")
@@ -262,7 +262,7 @@ def adf():
     )
 
     #F1
-    adf.addDependentBLF("SkilledIn", 
+    adf.addGatedBLF("SkilledIn", 
                         "RelevantPriorArt",  
                         "\n\nIs the practitioner skilled in the relevant technical field of the prior art?\n\nRelevant Prior Art: {REL_PRIOR_ART}\n\n",
                         None)
@@ -271,12 +271,12 @@ def adf():
     adf.addNodes("Average", question="\nDoes the practitioner possess average knowledge and ability for that field?\n\n")
 
     #F3
-    adf.addDependentBLF("Aware", 
+    adf.addGatedBLF("Aware", 
                         "CommonKnowledge",  
                         "\n\nIs the practitioner presumed to be aware of the common general knowledge in the field?\n\nCommon General Knowledge: {CGK}\n\n",
                         None)
     #F4
-    adf.addDependentBLF("Access", 
+    adf.addGatedBLF("Access", 
                         "CommonKnowledge", 
                         "\n\nDoes the practitioner have access to all documents comprising the state of the art?\n\nCommon General Knowledge: {CGK}\n\n",
                         None)
@@ -309,7 +309,7 @@ def adf():
     },
     question_order_name="SingleReference"
     )
-    #
+    
     #F20/F21
     adf.addQuestionInstantiator(
     "\n\nDoes the closest prior art document require minimal modifications to the invention as assessed from the perspective of the skilled person? \n\n The skilled person: {SkilledPerson}",
@@ -321,7 +321,7 @@ def adf():
     dependency_node='SkilledPerson'
     )
     #F22
-    adf.addDependentBLF("CombinationAttempt", 
+    adf.addGatedBLF("CombinationAttempt", 
                         "ClosestPriorArt", 
                         "\n\nIs there a reason to combine other documents with the CPA to attempt to demonstrate obviousness?\n\nClosest Prior: {CPA}\n\n",
                         None)
@@ -337,12 +337,12 @@ def adf():
     dependency_node=['ClosestPriorArt','CombinationAttempt']
     )
     #F23
-    adf.addDependentBLF("CombinationMotive", 
+    adf.addGatedBLF("CombinationMotive", 
                         ["ClosestPriorArt",'SkilledPerson','CombinationAttempt'], 
                         "\n\nWould the skilled person have a clear and direct motive to combine these specific documents?\n\n The skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n",
                         None)
 
-    adf.addDependentBLF("BasisToAssociate", 
+    adf.addGatedBLF("BasisToAssociate", 
                         ["ClosestPriorArt",'SkilledPerson','CombinationAttempt'],
                         "\n\nIs there a reasonable basis for the skilled person to associate these specific documents with one another?\n\n The skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n",
                         None)
@@ -466,7 +466,7 @@ def adf():
     dependency_node= "ReliableTechnicalEffect")    
 
     #F45
-    adf.addDependentBLF("FunctionalInteraction",["ReliableTechnicalEffect","Synergy"],
+    adf.addGatedBLF("FunctionalInteraction",["ReliableTechnicalEffect","Synergy"],
                         "Is the synergistic combination achieved through a functional interaction between features?",
                         None)
 
@@ -577,17 +577,17 @@ def adf():
 
 
     #F59
-    adf.addDependentBLF("DisadvantageousMod",'ClosestPriorArtDocuments',
+    adf.addGatedBLF("DisadvantageousMod",'ClosestPriorArtDocuments',
                         "Does the invention involve a disadvantageous modification of the prior art?",
                         None)
 
     #F60
-    adf.addDependentBLF("Foreseeable",['SkilledPerson','DisadvantageousMod'],
+    adf.addGatedBLF("Foreseeable",['SkilledPerson','DisadvantageousMod'],
                         "Was this disadvantageous modification of the prior art foreseeable to the skilled person?",
                         None)
 
     #F61
-    adf.addDependentBLF("UnexpectedAdvantage",['SkilledPerson','DisadvantageousMod'],
+    adf.addGatedBLF("UnexpectedAdvantage",['SkilledPerson','DisadvantageousMod'],
                         "Did the disadvantageous modification result in an unexpected technical advantage?",
                         None)
 
@@ -595,37 +595,37 @@ def adf():
     adf.addNodes("BioTech",question="Is the subject matter of the invention biotech?")
 
     #F64
-    adf.addDependentBLF("Antibody",'BioTech',
+    adf.addGatedBLF("Antibody",'BioTech',
                         "Does the subject matter concern antibodies?",
                         None)
 
     #F67
-    adf.addDependentBLF("PredictableResults",'BioTech',
+    adf.addGatedBLF("PredictableResults",'BioTech',
                         "Were the results obtained clearly predictable?",
                         None)
 
     #F68
-    adf.addDependentBLF("ReasonableSuccess",'BioTech',
+    adf.addGatedBLF("ReasonableSuccess",'BioTech',
                         "Was there a ‘reasonable’ expectation of success in obtaining the results?",
                         None)
 
     #F65
-    adf.addDependentBLF("KnownTechnique",['RelevantPriorArt','Antibody'],
+    adf.addGatedBLF("KnownTechnique",['RelevantPriorArt','Antibody'],
                         "Were the antibodies arrived at exclusively by applying techniques known in the art?",
                         None)
 
     #F66
-    adf.addDependentBLF("OvercomeTechDifficulty",'Antibody',
+    adf.addGatedBLF("OvercomeTechDifficulty",'Antibody',
                         "Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?",
                         None)
 
     #F69
-    adf.addDependentBLF("GapFilled",['RelevantPriorArt','SkilledPerson'],
+    adf.addGatedBLF("GapFilled",['RelevantPriorArt','SkilledPerson'],
                         "Does the invention merely fill an obvious gap in an incomplete prior art document which would naturally occur to the skilled person?",
                         None)
 
     #F70
-    adf.addDependentBLF("WellKnownEquivalent",'RelevantPriorArt',
+    adf.addGatedBLF("WellKnownEquivalent",'RelevantPriorArt',
                         "Does the invention differ from the prior art in regard to substituting one well-known equivalent for another (e.g., a hydraulic for an electric motor)?",
                         None)
 
@@ -640,12 +640,12 @@ def adf():
 
     
     #F75
-    adf.addDependentBLF("ObviousCombination",'KnownDevice',
+    adf.addGatedBLF("ObviousCombination",'KnownDevice',
                         "Is the invention a simple juxtaposition of the known devices, with each performing their normal, expected function?",
                         None)
 
     #F74
-    adf.addDependentBLF("AnalogousSubstitution",'KnownDevice',
+    adf.addGatedBLF("AnalogousSubstitution",'KnownDevice',
                         "Does the invention rely within a known device, simply substituting in a recently developed material suitable for that use?",
                         None)
     
@@ -656,7 +656,7 @@ def adf():
     adf.addNodes("NormalDesignProcedure",question="Does the invention consist in choosing parameters from a limited range of possibilities arrived at through routine design procedures?")
 
     #F78
-    adf.addDependentBLF("SimpleExtrapolation",'RelevantPriorArt',
+    adf.addGatedBLF("SimpleExtrapolation",'RelevantPriorArt',
                         "Is the invention a result of a simple, straightforward extrapolation from the known art?",
                         None)
 
