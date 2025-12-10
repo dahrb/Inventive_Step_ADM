@@ -4,6 +4,9 @@ Creates the classes used to instantiate the Inventive Step ADM and core traversa
 Last Updated: 04.12.25
 
 Status: In Progress
+        - Main ADM - DONE
+        - SUB-ADM - Delete commented code- if so add_nodes is redundant
+        - SubADMBLF - In Progress
 """
 
 from pythonds import Stack
@@ -766,20 +769,33 @@ class ADM:
         return resolved_text
     
     def replace_template(self, match):
-            variable_name = match.group(1)
+        """
+        Facting finding helper function for resolving a question template with a fact variable
+        
+        Parameters
+        -----------
+        match: str
+            the match from the regex operation looking for a variable to replace
             
-            # Try to get the fact from the INFORMATION category first
-            value = self.getFact(variable_name)
-            if value:
-                return str(value)
-            
-            # Show placeholder if not found
-            return f"[{variable_name}]"  
+        Returns:
+        -----------
+        variable_name: str
+            the fact itself
+
+        """
+        variable_name = match.group(1)
+        
+        # Try to get the fact from the INFORMATION category first
+        value = self.getFact(variable_name)
+        if value:
+            return str(value)
+        
+        # Show placeholder if not found
+        return f"[{variable_name}]"  
         
 class SubADM(ADM):
     """
-    A specialized ADF class for sub-ADMs that automatically resolves {item} placeholders
-    with the actual item name being evaluated.
+    A specialized ADF class for sub-ADMs
     
     This class inherits everything from ADF but overrides addNodes to automatically
     replace {item} placeholders in questions with the item_name.
@@ -792,7 +808,7 @@ class SubADM(ADM):
         name : str
             the name of the sub-ADM
         item_name : str
-            the name of the item being evaluated (e.g., "d", "e", etc.)
+            the name of the item being evaluated 
         """
         super().__init__(name)
         self.item_name = item_name
@@ -812,10 +828,10 @@ class SubADM(ADM):
         question : str
             the question to determine whether a node is absent or present
         """
-        # Resolve {item} placeholder in question if present
-        if question and '{item}' in question:
-            resolved_question = question.replace('{item}', self.item_name)
-            question = resolved_question
+        # # Resolve {item} placeholder in question if present
+        # if question and '{item}' in question:
+        #     resolved_question = question.replace('{item}', self.item_name)
+        #     question = resolved_question
         
         # Call the parent class method
         super().addNodes(name, acceptance, statement, question)
