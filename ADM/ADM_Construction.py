@@ -12,6 +12,9 @@ Status: In Progress
 from pythonds import Stack
 import pydot
 import re
+import logging
+
+logger = logging.getLogger(__name__)
 
 class ADM:
     """
@@ -73,6 +76,8 @@ class ADM:
         name : str
             the name of the ADM
         """
+        
+        logger.info('ADM created')
       
         self.name = name
         #dictionary of nodes --> 'name': 'node object
@@ -86,7 +91,9 @@ class ADM:
         self.questionOrder = []
         self.question_instantiators = {}
         
-    def addNodes(self, name, acceptance = None, statement=None, question=None):
+        self.case = []
+        
+    def addNodes(self, name, acceptance = None, statement=None, question=None,root=False):
         """
         adds nodes to ADM
         
@@ -106,6 +113,9 @@ class ADM:
         node = Node(name, acceptance, statement, question)
         
         self.nodes[name] = node
+        
+        if root:
+            self.root_node = node
             
         #creates children nodes for new node
         if node.children != None:
@@ -113,7 +123,7 @@ class ADM:
                 if childName not in self.nodes:
                     node = Node(childName)
                     self.nodes[childName] = node
-
+        
     def addQuestionInstantiator(self, question, blf_mapping, factual_ascription=None, question_order_name=None, gating_node=None):
         """
         Adds a question that can instantiate BLFs without creating an additional node in the model for the question i.e. this is used
@@ -244,173 +254,252 @@ class ADM:
                 pass
 
         return True
-              
+
+    def check_early_stop(self, evaluated_nodes):
+        """
+        Determines if the Root Node is decidable using the unified logic engine.
+        Now simply calls evaluateNode with mode='3vl'.
+        """
+        if not hasattr(self, 'root_node'):
+            return False
+        
+        self.evaluated_nodes = set(evaluated_nodes)
+        
+        logger.debug(f"{self.evaluated_nodes}")
+        
+        try:
+            # use 3vl mode
+            result = self.evaluateNode(self.root_node, mode='3vl')
+            
+            logger.debug(f'result = {result}')
+            
+            if result is not None:
+                status = "ACCEPTED" if result else "REJECTED"
+                print(f"[Early Stop] {self.root_node.name} is {status}.")
+                return True
+            return False
+            
+        finally:
+            #cleanup
+            if hasattr(self, 'temp_evaluated_nodes'):
+                del self.temp_evaluated_nodes
+                
     def evaluateTree(self, case):
         """
-        evaluates the ADF for a given case
-        
-        Parameters
-        ----------
-        case : list
-            the list of factors forming the case 
-        
+        Evaluates the ADF for a given case.
+        Returns a list of tuples: [(depth, statement), (depth, statement)...]
         """
-        #keep track of print statements
+        # --- PHASE 1: CALCULATION ---
         self.statements = []
-        #list of non-leaf nodes which have been evaluated
         self.node_done = []
         self.case = case
-
-        #generates the non-leaf nodes
+        
         self.nonLeafGen()
-        #while there are nonLeaf nodes which have not been evaluated, evaluate a node in this list in ascending order  
+        
         while self.nonLeaf != {}:
-
-            #create a copy to avoid "dictionary changed size during iteration" error
-            for name,node in zip(list(self.nonLeaf.keys()), list(self.nonLeaf.values())):
-
-                #special handling for EvaluationBLF nodes - handle them first
+            current_batch = list(zip(list(self.nonLeaf.keys()), list(self.nonLeaf.values())))
+            
+            for name, node in current_batch:
                 if hasattr(node, 'evaluateResults'):
-                    #adds to list of evaluated nodes
-                    self.node_done.append(name) 
-                    
-                    #evaluate it and add appropriate statement
-                    result = node.evaluateResults(self)
-                    
-                    if result:
-                        #EvaluationBLF was accepted
-                        if name not in self.case:
-                            self.case.append(name)
-                        if hasattr(node, 'statement') and node.statement:
-                            self.statements.append(node.statement[0])
-                    else:
-                        # EvaluationBLF was rejected
-                        if hasattr(node, 'statement') and node.statement:
-                            self.statements.append(node.statement[1])
-                        else:
-                            raise IndexError
-                    
-                    # Remove from nonLeaf and continue
+                    self.node_done.append(name)
+                    if node.evaluateResults(self):
+                        if name not in self.case: self.case.append(name)
                     self.nonLeaf.pop(name)
                 
                 elif self.checkNonLeaf(node):
-                    #adds to list of evaluated nodes
-                    self.node_done.append(name) 
-                    
-                    #checks candidate node's acceptance conditions
-                    
-                    #if they are satisfied
-                    if self.evaluateNode(node):
-
-                        #adds factor to case if present (only if not already there)
-                        if name not in self.case:
-                            self.case.append(name)
-                        else:
-                            pass
-                                
-                        #deletes node from nonLeaf nodes
-                        self.nonLeaf.pop(name)
-                        self.statements.append(node.statement[self.counter])
-                        self.reject = False
-                        break
-
-                    #if not satisfied                     
-                    else:
-                        #deletes node from nonLeaf nodes but doesn't add to case
-                        self.nonLeaf.pop(name)
-                        
-                        #the last statement is always the rejection statement         
-                        if self.reject: 
-                            self.statements.append(node.statement[self.counter])
-                        else:
-                            self.statements.append(node.statement[-1])
-                        self.reject = False
-                        break
-                
-        #clean up any duplicates
+                    self.node_done.append(name)
+                    if self.evaluateNode(node, mode='standard'):
+                        if name not in self.case: self.case.append(name)
+                    self.nonLeaf.pop(name)
+        
         self.case = list(set(self.case))
+
+        # --- PHASE 2: HIERARCHICAL EXPLANATION ---
+        if hasattr(self, 'root_node'):
+            self.statements = self._generate_comprehensive_trace()
         
         return self.statements
-                                  
-    def evaluateNode(self, node):
+
+    def _generate_comprehensive_trace(self):
         """
-        evaluates a node in respect to its acceptance conditions
-        
-        will always return a boolean value
-        
-        Parameters
-        ----------
-        node : class
-            the node class to be evaluated
-        
+        Generates a Top-Down Hierarchical Trace.
+        Returns: List of (depth, statement) tuples.
+        Prevents duplicates by tracking visited nodes.
         """
+        statements_with_depth = []
+        visited_nodes = set() # Track visited nodes to prevent duplication
+        
+        def traverse(node, depth):
+            # 1. Cycle/Duplicate Prevention
+            # If we have already explained this node, don't explain it again.
+            if node.name in visited_nodes:
+                return
+            
+            # 2. Evaluate Status (3VL)
+            status = self.evaluateNode(node, mode='3vl')
+            
+            # If status is Unknown (None), we skip this branch
+            if status is None:
+                return
+
+            # Mark as visited immediately so future branches skip it
+            visited_nodes.add(node.name)
+
+            # 3. Collect Statement (Pre-Order: Parent First)
+            stmt = self._get_statement_for_node(node, status)
+            if stmt:
+                statements_with_depth.append((depth, stmt))
+            
+            # 4. Visit Children
+            # Only traverse deeper if the current node is determined
+            if node.children:
+                for child_name in node.children:
+                    if child_name in self.nodes:
+                        traverse(self.nodes[child_name], depth + 1)
+
+        if hasattr(self, 'root_node'):
+            traverse(self.root_node, 0)
+            
+        return statements_with_depth
+    
+    def _get_statement_for_node(self, node, outcome):
+        """Helper to find the specific statement text based on logic."""
+        if not hasattr(node, 'statement') or not node.statement:
+            return None
+
+        trigger_idx = -1
+        
+        if node.acceptance:
+            for i, condition in enumerate(node.acceptance):
+                self.reject = False
+                val = self.postfixEvaluation(condition, mode='3vl')
+                
+                if val is True:
+                    rule_result = False if self.reject else True
+                    if rule_result == outcome:
+                        trigger_idx = i
+                        break
+        
+        if trigger_idx != -1 and trigger_idx < len(node.statement):
+            return node.statement[trigger_idx]
+        
+        if outcome is True:
+            return node.statement[0]
+        else:
+            return node.statement[-1]
+    def evaluateNode(self, node, mode='standard'):
+        """
+        Evaluates a node's acceptance conditions.
+        
+        Modes:
+        - 'standard': Returns True/False
+        - '3vl': Returns True/False/None
+        """
+            
+        #3VL leaf nodes eval
+        if mode == '3vl' and not node.children:
+            if node.name in self.case:
+                return True
+            #check context stored by check_early_stop
+            elif hasattr(self, 'evaluated_nodes') and node.name in self.evaluated_nodes:
+                return False
+            else:
+                return None # Unknown
         
         #counter to index the statements to be shown to the user
         self.counter = -1
         
-        #checks each acceptance condition seperately
         for i in node.acceptance:
+            
             self.reject = False
-            self.counter+=1
+            self.counter += 1
             
+            #evaluate using the shared engine
+            eval = self.postfixEvaluation(i, mode=mode)
             
-            eval = self.postfixEvaluation(i)
+            #STANDARD MODE
+            if mode == 'standard':
+                #if this is a reject condition and it's true, return False immediately
+                if self.reject and eval is True:
+                    self.reject = True
+                    return False
+                
+                #if this is an accept condition and it's true, return True immediately
+                if not self.reject and eval is True:
+                    return True
+                
+                if eval == 'accept': 
+                    return True
             
-            # If this is a reject condition and it's true, return False immediately
-            if self.reject and eval is True:
-                self.reject = True
-                return False
-            
-            # If this is an accept condition and it's true, return True immediately
-            if not self.reject and eval is True:
-                return True
+            # --- 3VL MODE (Corrected) ---
+            elif mode == '3vl':
+                if eval is True:
+                    # The condition logic was met. 
+                    # Check if it was a REJECT rule or an ACCEPT rule.
+                    if self.reject:
+                        return False # Definitive Reject
+                    else:
+                        return True  # Definitive Accept
+                
+                elif eval is False:
+                    # Condition not met.
+                    # In an ordered list, this means we fall through to the next rule.
+                    continue
+                
+                else: # val is None
+                    # We don't know if this rule triggers.
+                    # Because rules are ordered, we can't safely skip to the next one.
+                    return None
 
-            if eval == 'accept':
-                return True
-    
         return False
     
-    def postfixEvaluation(self,acceptance):
+    def postfixEvaluation(self, acceptance, mode='standard'):
         """
-        evaluates the given acceptance condition in postfix notation
-        
-        Parameters
-        ----------
-        acceptance : str
-            a string with the names of nodes in postfix notation with logical operators            
-        
+        Evaluates a postfix string. Handles both Boolean and 3-Valued Logic.
         """
         #initialises stack of operands
         operandStack = Stack()
+        
         #list of tokens from acceptance conditions
         tokenList = acceptance.split()
         
         #checks each token's acceptance conditions
         for token in tokenList:
+            
             if token == 'accept':
                 #auto-accept condition - push True as a fallback
                 operandStack.push(True)
+                continue
             
             elif token == 'reject':
                 #pop the operand (which should be a node name)
                 operand = operandStack.pop()
-
-                # Check if the node name is in the case
-                if operand in self.case:
-                    # Node is in case, so we should reject the parent node
+                
+                #in 3VL, operand is already T/F/None from the stack
+                val = operand
+                
+                if mode == 'standard':
+                    if isinstance(operand, str):
+                        # check if the node name is in the case
+                        val = operand in self.case
+                
+                if val is True:
                     self.reject = True
                     operandStack.push(True)
-                else:
-                    # Node is not in case, so we should not reject the parent node
-                    self.reject = False
+                elif val is False:
+                    if mode == 'standard': 
+                        self.reject = False
                     operandStack.push(False)
+                else:
+                    # 3VL Unknown
+                    operandStack.push(None)
             
             elif token == 'not':
                 #pop the node name
                 operand1 = operandStack.pop()
                 
                 #check condition validity
-                result = self.checkCondition(token,operand1)
+                result = self.checkCondition(token, operand1, mode=mode)
                 operandStack.push(result)
                 
             elif token == 'and' or token == 'or':
@@ -419,12 +508,17 @@ class ADM:
                 operand1 = operandStack.pop()
                 
                 #check condition validity
-                result = self.checkCondition(token,operand1,operand2)
+                result = self.checkCondition(token, operand1, operand2, mode=mode)
                 operandStack.push(result)    
             
             else:
-                #this is a node name - push the node name itself, not a boolean
-                operandStack.push(token)
+                if mode == 'standard':
+                    #this is a node name - push the node name itself, not a boolean
+                    operandStack.push(token)
+                else:
+                    #3VL: must resolve recursion immediately to put Value on stack to ensure checkCondition receives T/F/None, not strings
+                    val = self.evaluateNode(self.nodes[token], mode='3vl')
+                    operandStack.push(val)
         
         #check if we have anything on the stack before popping
         if operandStack.isEmpty():
@@ -432,17 +526,17 @@ class ADM:
         else:
             final_result = operandStack.pop()
         
-        #convert the final result to a boolean
-        if isinstance(final_result, str):
-            #if it's a node name, check if it's in the case
-            return final_result in self.case
+        #convert the final result
+        if mode == 'standard':
+            if isinstance(final_result, str):
+                return final_result in self.case
+            return final_result
         else:
-            # If it's already a boolean, return it as is
             return final_result
 
-    def checkCondition(self, operator, op1, op2 = None):
+    def checkCondition(self, operator, op1, op2 = None, mode='standard'):
         """
-        checks the logical condition and returns a boolean
+        checks the logical condition and returns a boolean (or None)
         
         Parameters
         ----------
@@ -453,40 +547,40 @@ class ADM:
         op2 : str, optional
             the second operand
         """
+        #in 3VL mode, v1 and v2 are already True/False/None from the stack
+        v1 = op1
+        v2 = op2
+        
+        if mode == 'standard':
+            if isinstance(op1, str):
+                v1 = op1 in self.case
+            
+            if op2 is not None and isinstance(op2, str):
+                v2 = op2 in self.case
         
         #evals disjunctive condition
         if operator == "or":
-            if op1 in self.case or op2 in self.case or op1 == True or op2 == True:
+            if v1 is True or v2 is True:
                 return True
-            else:
-                return False
+            if v1 is None or v2 is None: # 3VL check
+                return None
+            return False
         
          #evals conjunctive condition
         elif operator == "and":
-            if op1 == True or op1 in self.case:
-                if op2 in self.case or op2 == True:
-                    return True 
-                else: 
-                    return False
-                
-            elif op2 == True or op2 in self.case:
-                if op1 in self.case or op1 == True:
-                    return True
-                else:
-                    return False   
-            else:
+            if v1 is False or v2 is False: # False dominates
                 return False
+            if v1 is None or v2 is None: # 3VL check
+                return None
+            return True
         
         #evals negative condition
         elif operator == "not":
-            if op1 == True:
-                return False
-            if op1 == False:
-                return True
-            elif op1 not in self.case:
-                return True
-            else:
-                return False
+            if v1 is None: # 3VL check
+                return None
+            return not v1
+            
+        return False
     
     def addGatedBLF(self, name, gated_node, question_template):
         """
@@ -832,7 +926,7 @@ class ADM:
         if hasattr(self, 'facts') and fact_name in self.facts:
             return self.facts[fact_name]
         else:
-            return NameError('Fact specified has no value asigned')    
+            return NameError('Fact specified has no value assigned')    
     
     def resolveQuestionTemplate(self, question_text):
         """
@@ -1061,6 +1155,8 @@ class Node:
         #returns the post fix expression as a string  
         return " ".join(postfixList)
 
+    def __str__(self):
+        return self.name
 
 #SEE IF NEEDED
 class SubADMBLF(Node):

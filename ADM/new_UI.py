@@ -25,6 +25,8 @@ class CLI():
         self.case = []
         self.adm = adm
         self.caseName = None
+        #track which nodes have been evaluated so far
+        self.evaluated_blfs = set()
 
     def query_domain(self):
         """Query the domain by answering questions"""
@@ -51,13 +53,25 @@ class CLI():
         self.show_outcome()
         
         print(f"Case: {self.case}")
+        
+        #add to launch next ADM more easily
+        #return True if 
 
     def questiongen(self, question_order, nodes):
         """
         Generates questions based on the question order and current nodes
         """
         
-        #to ensure the question gen procedure stops 
+        #early stop check
+        if self.evaluated_blfs:
+            self.adm.case = self.case
+            logger.debug("arrived at self.evaluated questions")
+            logger.debug(f'{self.adm.case}')
+            if self.adm.check_early_stop(self.evaluated_blfs):
+                # return empty list to stop recursion
+                return [], nodes
+        
+        # to ensure the question gen procedure stops 
         if not question_order:
             return question_order, nodes
         
@@ -83,15 +97,19 @@ class CLI():
             instantiator = self.adm.question_instantiators[current_question]
             if not self.gates_satisfied(instantiator, self.case):
                 logger.debug(f"Skipping {current_question} - gates cannot be satisfied")
+                self._mark_blfs_as_evaluated(instantiator)
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
             
             #process the question instantiator
             x = self.questionHelper(None, current_question)
+
             if x:
+                self._mark_blfs_as_evaluated(instantiator)
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
             else:
+                self._mark_blfs_as_evaluated(instantiator)
                 # Any other return value means there's an issue, skip permanently
                 logger.debug(f"Skipping {current_question} - processing failed")
                 question_order.pop(0)
@@ -116,6 +134,9 @@ class CLI():
             
             #process blf
             x = self.questionHelper(current_node, current_question)
+            
+            #mark as evaluated
+            self.evaluated_blfs.add(current_question)
             if x:
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
@@ -123,9 +144,22 @@ class CLI():
                 return question_order, nodes
         
         else:
+            self.evaluated_blfs.add(current_question)
             question_order.pop(0)
             return self.questiongen(question_order, nodes)
-            
+    
+    def _mark_blfs_as_evaluated(self, instantiator):
+        """
+        Helper to extract ALL possible BLFs from a question instantiator 
+        and add them to the evaluated set.
+        """
+        mapping = instantiator.get('blf_mapping', {})
+        for outcome in mapping.values():
+            if isinstance(outcome, list):
+                self.evaluated_blfs.update(outcome)
+            elif isinstance(outcome, str) and outcome:
+                self.evaluated_blfs.add(outcome)
+           
     def gates_satisfied(self, candidate, case):
         """
         Checks and attempts to satisfy all gates for a node or instantiator.
@@ -298,27 +332,6 @@ class CLI():
                     self.case.append(current_question)
                 return True
 
-    def show_outcome(self):
-        """Show the evaluation outcome"""
-        
-        print("\n" + "="*50)
-        print(f"Case Outcome: {self.caseName}")
-        print("="*50)
-        
-        try:
-            #check if statements are already available from previous evaluation
-            if hasattr(self.adm, 'statements') and self.adm.statements:
-                statements = self.adm.statements
-            else:
-                #only evaluate if statements are not available
-                statements = self.adm.evaluateTree(self.case)
-            
-            print("Evaluation Results:")
-            for i, statement in enumerate(statements, 1):
-                print(f"{i}. {statement}")
-        
-        except Exception as e:
-            print(f"Error evaluating case: {e}")
 
     def resolve_question_template(self, question_text):
         """
@@ -327,6 +340,40 @@ class CLI():
         # Use the adm's template resolution method
         return self.adm.resolveQuestionTemplate(question_text)
 
+    def show_outcome(self):
+        """Show the evaluation outcome"""
+        
+        print("\n" + "="*50)
+        print(f"Case Outcome: {self.caseName}")
+        print("="*50)
+        
+        try:
+            # 1. Set Context
+            if hasattr(self, 'evaluated_blfs'):
+                self.adm.temp_evaluated_nodes = set(self.evaluated_blfs)
+            
+            # 2. Get Hierarchical Trace
+            # Returns list of (depth, statement)
+            trace = self.adm.evaluateTree(self.case)
+            
+            if not trace:
+                print("No determined factors found.")
+            else:
+                print("Reasoning Pathway:")
+                for depth, statement in trace:
+                    # Indent based on depth (2 spaces per level)
+                    indent = "  " * depth
+                    bullet = "└─ " if depth > 0 else ""
+                    print(f"{indent}{bullet}{statement}")
+                    
+        except Exception as e:
+            print(f"Error generating outcome: {e}")
+            import traceback
+            traceback.print_exc()
+        finally:
+            if hasattr(self.adm, 'temp_evaluated_nodes'):
+                del self.adm.temp_evaluated_nodes
+                 
     #REBUILD?
     def visualize_domain(self):
         """Visualize the domain as a graph"""
@@ -416,7 +463,7 @@ def main():
 
     # THE TOGGLE: If user flags --debug, switch level to DEBUG
     if args.debug:
-        logger.setLevel(logging.DEBUG)
+        logging.getLogger().setLevel(logging.DEBUG)        
         print("--- DEBUG MODE ENABLED ---")
         
     cli = CLI(adm=adm_initial())

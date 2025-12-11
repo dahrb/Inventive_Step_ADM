@@ -11,7 +11,7 @@ def adm_initial():
     This ADM performs the ...
 
     Returns:
-        _type_: _description_
+        
     """
     
     adm = ADM("Inventive Step: Preconditions")
@@ -160,8 +160,8 @@ def adm_initial():
     #AF8
     adm.addNodes("ClosestPriorArtDocuments", ['CombinationDocuments','ClosestPriorArt'], ['the closest prior art consists of a combination of documents','the closest prior art consists of a document of a single reference','no set of closest prior documents could be determined'])
     
-    #NEW AFS!!!!
-    adm.addNodes("Valid",['CommonKnowledge and SkilledPerson and ClosestPriorArtDocuments'],['the conceptual components of the invention have been established, we may now assess inventive step','the conceptual components of the invention could not be established, the process will now terminate'])
+    #NEW AF!!!!
+    adm.addNodes("Valid",['CommonKnowledge and SkilledPerson and ClosestPriorArtDocuments and RelevantPriorArt'],['the conceptual components of the invention have been established, we may now assess inventive step','the conceptual components of the invention could not be established, the process will now terminate'],root=True)
     
     
     # Set question order to ask information questions first
@@ -172,8 +172,19 @@ def adm_initial():
     return adm
 
 def adm_main():
-    pass
     
+    """ 
+    This ADM performs the ...
+
+    Returns:
+        _type_: _description_
+    """
+    
+    adm = ADM("Inventive Step: Main")
+    
+    adm.questionOrder = []
+    
+    return adm 
 
 
 
