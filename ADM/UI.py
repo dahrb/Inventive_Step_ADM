@@ -1,5 +1,5 @@
 """
-ADM Command Line Interface
+ADM Command Line Interface - OLD
 
 Last Updated: 04.12.25
 
@@ -15,7 +15,7 @@ import inventive_step_ADM
 class CLI:
     def __init__(self):
         self.case = []
-        self.adf = inventive_step_ADM.adf()
+        self.adf = inventive_step_ADM.adm()
         self.cases = inventive_step_ADM.cases()
         self.caseName = None
         
@@ -60,7 +60,7 @@ class CLI:
             print("No question order specified")
 
         self.show_outcome()
-
+#added
     def questiongen(self, question_order, nodes):
         """
         Generates questions based on the question order and current nodes
@@ -157,7 +157,7 @@ class CLI:
         else:
             question_order.pop(0)
             return self.questiongen(question_order, nodes)
-        
+#added        
     def questionHelper(self, current_node, current_question):
         """
         Helper method to handle individual questions
@@ -486,13 +486,14 @@ class CLI:
             print(f"⚠️  Dependency {dependency_node_name} has no acceptance conditions for {current_question}")
             return False
 
+#added
     def resolve_question_template(self, question_text):
         """
         Resolves template variables in question text using collected facts
         """
         # Use the ADF's template resolution method
         return self.adf.resolveQuestionTemplate(question_text)
-
+#added
     def show_outcome(self):
         """Show the evaluation outcome"""
         print("\n" + "="*50)

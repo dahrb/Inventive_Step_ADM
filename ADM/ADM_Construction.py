@@ -295,7 +295,7 @@ class ADM:
                 
                 elif self.checkNonLeaf(node):
                     #adds to list of evaluated nodes
-                    self.nodeDone.append(name) 
+                    self.node_done.append(name) 
                     
                     #checks candidate node's acceptance conditions
                     
@@ -387,7 +387,6 @@ class ADM:
         
         #checks each token's acceptance conditions
         for token in tokenList:
-            print(token)
             if token == 'accept':
                 #auto-accept condition - push True as a fallback
                 operandStack.push(True)
@@ -489,7 +488,7 @@ class ADM:
             else:
                 return False
     
-    def addGatedBLF(self, name, gated_node, question_template, statements):
+    def addGatedBLF(self, name, gated_node, question_template):
         """
         Adds a BLF that depends on another node
         
@@ -506,166 +505,253 @@ class ADM:
         """
         
         #create a node that tracks dependencies
-        node = GatedBLF(name, gated_node, question_template, statements)
+        node = GatedBLF(name, gated_node, question_template)
         self.nodes[name] = node
         
         # Add to question order
         if name not in self.questionOrder:
             self.questionOrder.append(name)
-
-    def visualiseNetwork(self,case=None):    
+            
+    def visualiseNetwork(self, filename=None, case=None, view=True):
         """
-        allows the ADF to be visualised as a graph
-        
-        can be for the domain with or without a case
-        
-        if there is a case it will highlight the nodes green which have been
-        accepted and red the ones which have been rejected        
+        Generates a simplified hierarchical visualization of the ADM.
+        Treats all nodes uniformly based on parent/child relationships.
         
         Parameters
         ----------
+        filename : str, optional
+            Output filename (e.g. 'model.png'). If None, defaults to self.name + .png
         case : list, optional
-            the list of factors constituting the case
+            A list of accepted factors. If provided, the graph will be colored.
+        view : bool
+            If True, opens the generated image automatically.
         """
         
-        #initialises the graph
-        G = pydot.Dot('{}'.format(self.name), graph_type='graph')
+        # 1. Initialize Directed Graph (Digraph is essential for hierarchy)
+        # rankdir='TB' ensures Top-to-Bottom flow
+        graph = pydot.Dot(self.name, graph_type='digraph', rankdir='TB')
         
-        # Set graph direction to top-to-bottom for better hierarchical layout
-        G.set_rankdir('TB')
+        # Global styles for cleaner look
+        graph.set_node_defaults(style="filled", fontname="Arial")
+        graph.set_edge_defaults(color="#333333", arrowhead="vee")
 
-        if case != None:
-            # Temporarily set the case for evaluation
-            original_case = getattr(self, 'case', None)
-            self.case = case
+        # 2. Determine Node Colors (if case is provided)
+        # Green = Accepted (in case list)
+        # Red = Rejected (not in case list)
+        # White = Default/No case provided
+        node_colors = {}
+        if case is not None:
+            for node_name in self.nodes:
+                if node_name in case:
+                    node_colors[node_name] = "#90EE90"  # Light Green
+                else:
+                    node_colors[node_name] = "#FFB6C1"  # Light Red
+        else:
+            for node_name in self.nodes:
+                node_colors[node_name] = "white"
+
+        # 3. Create Nodes and Edges
+        for name, node in self.nodes.items():
             
-            # First, evaluate all nodes to build up self.vis (attacking nodes list)
-            self.evaluateTree(case)
+            # -- Shape Logic --
+            # Abstract Factors (Have children) -> Ellipse
+            # Base Level Factors (No children) -> Box
+            if node.children: 
+                shape = "ellipse"
+            else: 
+                shape = "box"
+
+            # Create the node
+            pydot_node = pydot.Node(
+                name, 
+                label=name.replace("_", "\n"), # Wrap text for readability
+                shape=shape,
+                fillcolor=node_colors.get(name, "white"),
+                color="black"
+            )
+            graph.add_node(pydot_node)
+
+            # -- Edge Logic --
+            # Draw standard directed edges from Parent to Child
+            if node.children:
+                for child in node.children:
+                    # Simply connect Parent -> Child
+                    edge = pydot.Edge(name, child)
+                    graph.add_edge(edge)
+
+        # 4. Save and View Output
+        out_name = filename if filename else f"{self.name}_hierarchy.png"
+        
+        try:
+            graph.write_png(out_name)
+            print(f"Graph generated successfully: {out_name}")
             
-            #checks each node
-            for i in self.nodes.values():
-                
-                #checks if node is already in the graph
-                if i not in G.get_node_list():
+            if view:
+                import os
+                import platform
+                if platform.system() == 'Darwin':       # macOS
+                    os.system(f'open "{out_name}"')
+                elif platform.system() == 'Windows':    # Windows
+                    os.startfile(out_name)
+                else:                                   # Linux
+                    os.system(f'xdg-open "{out_name}"')
                     
-                    #checks if the node was accepted in the case
-                    if i.name in case:
-                        a = pydot.Node(i.name,label=i.name,color='green')
-                    else:
-                        a = pydot.Node(i.name,label=i.name,color='red')
-                                        
-                    G.add_node(a)
-                
-                #creates edges between a node and its children
-                if i.children != None and i.children != []:
+        except Exception as e:
+            print(f"Could not generate graph. Ensure Graphviz is installed.\nError: {e}")
 
-                    for j in i.children:
+    # def visualiseNetwork(self,case=None):    
+    #     """
+    #     allows the ADM to be visualised as a graph
+        
+    #     can be for the domain with or without a case
+        
+    #     if there is a case it will highlight the nodes green which have been
+    #     accepted and red the ones which have been rejected        
+        
+    #     Parameters
+    #     ----------
+    #     case : list, optional
+    #         the list of factors constituting the case
+    #     """
+        
+    #     #initialises the graph
+    #     G = pydot.Dot('{}'.format(self.name), graph_type='graph')
+        
+    #     # Set graph direction to top-to-bottom for better hierarchical layout
+    #     G.set_rankdir('TB')
+
+    #     if case != None:
+    #         # Temporarily set the case for evaluation
+    #         original_case = getattr(self, 'case', None)
+    #         self.case = case
+            
+    #         # First, evaluate all nodes to build up self.vis (attacking nodes list)
+    #         self.evaluateTree(case)
+            
+    #         #checks each node
+    #         for i in self.nodes.values():
+                
+    #             #checks if node is already in the graph
+    #             if i not in G.get_node_list():
+                    
+    #                 #checks if the node was accepted in the case
+    #                 if i.name in case:
+    #                     a = pydot.Node(i.name,label=i.name,color='green')
+    #                 else:
+    #                     a = pydot.Node(i.name,label=i.name,color='red')
+                                        
+    #                 G.add_node(a)
+                
+    #             #creates edges between a node and its children
+    #             if i.children != None and i.children != []:
+
+    #                 for j in i.children:
                         
                                                 
-                        if j not in G.get_node_list():
+    #                     if j not in G.get_node_list():
                             
-                            if j in case:
-                                a = pydot.Node(j,label=j,color='green')
-                            else:
-                                a = pydot.Node(j,label=j,color='red')
+    #                         if j in case:
+    #                             a = pydot.Node(j,label=j,color='green')
+    #                         else:
+    #                             a = pydot.Node(j,label=j,color='red')
                             
-                            G.add_node(a)
+    #                         G.add_node(a)
                         
-                        #self.vis is a list which tracks whether a node is an attacking or defending node
-                        if j in self.vis:
-                            if j in case:
-                                my_edge = pydot.Edge(i.name, j, color='green',label='-')
-                            else:
-                                my_edge = pydot.Edge(i.name, j, color='red',label='-')
-                        else:
-                            if j in case:
-                                my_edge = pydot.Edge(i.name, j, color='green',label='+')
-                            else:
-                                my_edge = pydot.Edge(i.name, j, color='red',label='+')
+    #                     #self.vis is a list which tracks whether a node is an attacking or defending node
+    #                     if j in self.vis:
+    #                         if j in case:
+    #                             my_edge = pydot.Edge(i.name, j, color='green',label='-')
+    #                         else:
+    #                             my_edge = pydot.Edge(i.name, j, color='red',label='-')
+    #                     else:
+    #                         if j in case:
+    #                             my_edge = pydot.Edge(i.name, j, color='green',label='+')
+    #                         else:
+    #                             my_edge = pydot.Edge(i.name, j, color='red',label='+')
 
-                        G.add_edge(my_edge)
+    #                     G.add_edge(my_edge)
             
-            # Restore original case if it existed
-            if original_case is not None:
-                self.case = original_case
-            else:
-                delattr(self, 'case')
+    #         # Restore original case if it existed
+    #         if original_case is not None:
+    #             self.case = original_case
+    #         else:
+    #             delattr(self, 'case')
             
-            # Add dependency relationships for DependentBLF and SubADMBLF nodes
-            for node_name, node in self.nodes.items():
-                if hasattr(node, 'dependency_node') and node.dependency_node:
-                    # Handle both single string and list of dependencies
-                    if isinstance(node.dependency_node, str):
-                        dependency_nodes = [node.dependency_node]
-                    else:
-                        dependency_nodes = node.dependency_node
+    #         # Add dependency relationships for DependentBLF and SubADMBLF nodes
+    #         for node_name, node in self.nodes.items():
+    #             if hasattr(node, 'dependency_node') and node.dependency_node:
+    #                 # Handle both single string and list of dependencies
+    #                 if isinstance(node.dependency_node, str):
+    #                     dependency_nodes = [node.dependency_node]
+    #                 else:
+    #                     dependency_nodes = node.dependency_node
                     
-                    # Create a dotted black line from dependent node to each dependency node
-                    for dep_node in dependency_nodes:
-                        dependency_edge = pydot.Edge(node_name, dep_node, 
-                                               color='black', style='dotted')
-                        G.add_edge(dependency_edge)
+    #                 # Create a dotted black line from dependent node to each dependency node
+    #                 for dep_node in dependency_nodes:
+    #                     dependency_edge = pydot.Edge(node_name, dep_node, 
+    #                                            color='black', style='dotted')
+    #                     G.add_edge(dependency_edge)
             
             
-            # Assign ranks to ensure proper hierarchical layout
-            self._assign_node_ranks(G)
+    #         # Assign ranks to ensure proper hierarchical layout
+    #         self._assign_node_ranks(G)
         
-        else:
+    #     else:
             
-            #creates self.vis if not already created
-            self.evaluateTree([])
+    #         #creates self.vis if not already created
+    #         self.evaluateTree([])
             
-            #checks each node
-            for i in self.nodes.values():
+    #         #checks each node
+    #         for i in self.nodes.values():
                 
-                #checks if node is already in the graph
-                if i not in G.get_node_list():
+    #             #checks if node is already in the graph
+    #             if i not in G.get_node_list():
                     
-                    a = pydot.Node(i.name,label=i.name,color='black')
+    #                 a = pydot.Node(i.name,label=i.name,color='black')
 
-                    G.add_node(a)
+    #                 G.add_node(a)
                 
-                #creates edges between a node and its children
-                if i.children != None and i.children != []:
+    #             #creates edges between a node and its children
+    #             if i.children != None and i.children != []:
 
-                    for j in i.children:
+    #                 for j in i.children:
                         
-                        if j not in G.get_node_list():
+    #                     if j not in G.get_node_list():
                             
-                            a = pydot.Node(j,label=j,color='black')
+    #                         a = pydot.Node(j,label=j,color='black')
                            
-                            G.add_node(a)
+    #                         G.add_node(a)
                         
-                        #self.vis is a list which tracks whether a node is an attacking or defending node
-                        if j in self.vis:
-                            my_edge = pydot.Edge(i.name, j, color='black',label='-')
-                        else:
-                            my_edge = pydot.Edge(i.name, j, color='black',label='+')
+    #                     #self.vis is a list which tracks whether a node is an attacking or defending node
+    #                     if j in self.vis:
+    #                         my_edge = pydot.Edge(i.name, j, color='black',label='-')
+    #                     else:
+    #                         my_edge = pydot.Edge(i.name, j, color='black',label='+')
 
-                        G.add_edge(my_edge)
+    #                     G.add_edge(my_edge)
             
-            # Add dependency relationships for DependentBLF and SubADMBLF nodes (without case)
-            for node_name, node in self.nodes.items():
-                if hasattr(node, 'dependency_node') and node.dependency_node:
-                    # Handle both single string and list of dependencies
-                    if isinstance(node.dependency_node, str):
-                        dependency_nodes = [node.dependency_node]
-                    else:
-                        dependency_nodes = node.dependency_node
+    #         # Add dependency relationships for DependentBLF and SubADMBLF nodes (without case)
+    #         for node_name, node in self.nodes.items():
+    #             if hasattr(node, 'dependency_node') and node.dependency_node:
+    #                 # Handle both single string and list of dependencies
+    #                 if isinstance(node.dependency_node, str):
+    #                     dependency_nodes = [node.dependency_node]
+    #                 else:
+    #                     dependency_nodes = node.dependency_node
                     
-                    # Create a dotted black line from dependent node to each dependency node
-                    for dep_node in dependency_nodes:
-                        dependency_edge = pydot.Edge(node_name, dep_node, 
-                                               color='black', style='dotted')
-                        G.add_edge(dependency_edge)
+    #                 # Create a dotted black line from dependent node to each dependency node
+    #                 for dep_node in dependency_nodes:
+    #                     dependency_edge = pydot.Edge(node_name, dep_node, 
+    #                                            color='black', style='dotted')
+    #                     G.add_edge(dependency_edge)
             
             
-            # Assign ranks to ensure proper hierarchical layout
-            self._assign_node_ranks(G)
+    #         # Assign ranks to ensure proper hierarchical layout
+    #         self._assign_node_ranks(G)
         
-        # Legend removed - was causing too many issues
+    #     # Legend removed - was causing too many issues
         
-        return G
+    #     return G
  
 
         """
@@ -793,48 +879,48 @@ class ADM:
         # Show placeholder if not found
         return f"[{variable_name}]"  
         
-class SubADM(ADM):
-    """
-    A specialized ADF class for sub-ADMs
+# class SubADM(ADM):
+#     """
+#     A specialized ADF class for sub-ADMs
     
-    This class inherits everything from ADF but overrides addNodes to automatically
-    replace {item} placeholders in questions with the item_name.
-    """
+#     This class inherits everything from ADF but overrides addNodes to automatically
+#     replace {item} placeholders in questions with the item_name.
+#     """
     
-    def __init__(self, name, item_name):
-        """
-        Parameters
-        ----------
-        name : str
-            the name of the sub-ADM
-        item_name : str
-            the name of the item being evaluated 
-        """
-        super().__init__(name)
-        self.item_name = item_name
+#     def __init__(self, name, item_name):
+#         """
+#         Parameters
+#         ----------
+#         name : str
+#             the name of the sub-ADM
+#         item_name : str
+#             the name of the item being evaluated 
+#         """
+#         super().__init__(name)
+#         self.item_name = item_name
     
-    def addNodes(self, name, acceptance=None, statement=None, question=None):
-        """
-        Override addNodes to automatically resolve {item} placeholders in questions
+#     def addNodes(self, name, acceptance=None, statement=None, question=None):
+#         """
+#         Override addNodes to automatically resolve {item} placeholders in questions
         
-        Parameters
-        ----------
-        name : str
-            the name of the node
-        acceptance : list
-            a list of the acceptance conditions each of which should be a string
-        statement : list
-            a list of the statements which will be shown if a condition is accepted or rejected
-        question : str
-            the question to determine whether a node is absent or present
-        """
-        # # Resolve {item} placeholder in question if present
-        # if question and '{item}' in question:
-        #     resolved_question = question.replace('{item}', self.item_name)
-        #     question = resolved_question
+#         Parameters
+#         ----------
+#         name : str
+#             the name of the node
+#         acceptance : list
+#             a list of the acceptance conditions each of which should be a string
+#         statement : list
+#             a list of the statements which will be shown if a condition is accepted or rejected
+#         question : str
+#             the question to determine whether a node is absent or present
+#         """
+#         # # Resolve {item} placeholder in question if present
+#         # if question and '{item}' in question:
+#         #     resolved_question = question.replace('{item}', self.item_name)
+#         #     question = resolved_question
         
-        # Call the parent class method
-        super().addNodes(name, acceptance, statement, question)
+#         # Call the parent class method
+#         super().addNodes(name, acceptance, statement, question)
 
 class Node:
     """
@@ -975,6 +1061,8 @@ class Node:
         #returns the post fix expression as a string  
         return " ".join(postfixList)
 
+
+#SEE IF NEEDED
 class SubADMBLF(Node):
     """
     A BLF that depends on evaluating a sub-ADM for each item from another BLF
@@ -991,7 +1079,7 @@ class SubADMBLF(Node):
         the names of the nodes this BLF depends on
     """
     
-    def __init__(self, name, sub_adf_creator, function, dependency_node=None, rejection_condition=False):
+    def __init__(self, name, sub_adm_creator, function, dependency_node=None, rejection_condition=False):
         """
         Parameters
         ----------
@@ -1008,9 +1096,9 @@ class SubADMBLF(Node):
         # Initialize as a regular Node - no statements needed since sub-ADM handles them
         super().__init__(name, None, [f"{name} evaluation completed"], None)
         
-        self.sub_adf_creator = sub_adf_creator
+        self.sub_adm_creator = sub_adm_creator
         self.function = function
-        self.sub_adf_results = {}
+        self.sub_adm_results = {}
         
         # Handle both single string and list of dependencies
         if dependency_node is None:
@@ -1289,111 +1377,46 @@ class SubADMBLF(Node):
 
 class GatedBLF(Node):
     """
-    A BLF that depends on another node and inherits its factual ascriptions
+    A BLF that is only asked if another BLF has been satisfied
     
     Attributes
     ----------
     name : str
         the name of the BLF
-    dependency_node : str
+    gated_node : str
         the name of the node this BLF depends on
     question_template : str
         the question template that can reference inherited factual ascriptions
-    statements : list
-        the statements to show if the BLF is accepted or rejected
     factual_ascription : dict
         additional factual ascriptions for this BLF
     """
     
-    def __init__(self, name, dependency_node, question_template, statements, factual_ascription=None):
+    def __init__(self, name, gated_node, question_template):
         """
         Parameters
         ----------
         name : str
             the name of the BLF
-        dependency_node : str
+        gated_node : str
             the name of the node this BLF depends on
         question_template : str
             the question template that can reference inherited factual ascriptions
-        statements : list
-            the statements to show if the BLF is accepted or rejected
-        factual_ascription : dict, optional
-            additional factual ascriptions for this BLF
         """
         
         # Initialize as a regular Node but with special dependency handling
-        super().__init__(name, None, statements, question_template)
+        super().__init__(name, None, None, question_template)
         
          # Handle both single string and list
-        if isinstance(dependency_node, str):
-            self.dependency_node = [dependency_node]
+        if isinstance(gated_node, str):
+            self.gated_node = [gated_node]
         else:
-            self.dependency_node = dependency_node
-
-        self.factual_ascription = factual_ascription or {}
+            self.gated_node = gated_node
         
-        # Override the question to be dynamic
         self.question_template = question_template
-        self.question = question_template  # Will be resolved dynamically
-    
-    #CHANGE
-    def resolveQuestion(self, adf, case=None):
-        """
-        Resolves the question template by replacing placeholders with inherited facts
-        
-        Parameters
-        ----------
-        adf : ADF
-            the ADF instance to get facts from
-        case : list, optional
-            the current case to get facts from
-        """
-        question_text = self.question_template
-        
-        # First, resolve any template variables using the ADF's template resolution
-        question_text = adf.resolveQuestionTemplate(question_text)
-        
-        # Then, get inherited facts from the dependency nodes and replace any remaining placeholders
-        # For multiple dependencies, we need to combine facts from all dependency nodes
-        inherited = {}
-        
-        # Handle both single string and list of dependencies
-        if isinstance(self.dependency_node, str):
-            dependency_nodes = [self.dependency_node]
-        else:
-            dependency_nodes = self.dependency_node
-        
-        # Collect facts from all dependency nodes
-        for dep_node in dependency_nodes:
-            if isinstance(dep_node, str):  # Safety check
-                dep_inherited = adf.getInheritedFacts(dep_node, case)
-                if isinstance(dep_inherited, dict):
-                    inherited.update(dep_inherited)
-        
-        # Safety check: ensure inherited is a dictionary
-        if not isinstance(inherited, dict):
-            inherited = {}
-        
-        # Replace placeholders in the question template
-        # This is now generic - any placeholder like {ICE_CREAM_flavour} will be replaced
-        for key, value in inherited.items():
-            placeholder = "{" + key + "}"
-            if placeholder in question_text:
-                question_text = question_text.replace(placeholder, str(value))
-        
-        # Clean up any remaining unresolved placeholders and format the question nicely
-        import re
-        # Remove any remaining {placeholder} patterns
-        question_text = re.sub(r'\{[^}]+\}', '', question_text)
-        # Clean up extra commas and spaces
-        question_text = question_text.replace('  ', ' ').strip()
-        question_text = question_text.rstrip(',').strip()
-        
-        return question_text
 
-    def checkDependency(self, adf, case):
+    def check_gated(self, case):
         """
-        Checks if the dependency nodes are satisfied
+        Checks if the gated nodes are satisfied
         
         Parameters
         ----------
@@ -1402,11 +1425,10 @@ class GatedBLF(Node):
         case : list
             the current case
             
-        Returns
         Returns:
-            bool: True if dependency is satisfied, False otherwise
+            bool: True if gated is satisfied, False otherwise
         """
-        return all(dep_node in case for dep_node in self.dependency_node)
+        return all(dep_node in case for dep_node in self.gated_node)
 
 class EvaluationBLF(Node):
     """
