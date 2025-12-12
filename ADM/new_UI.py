@@ -332,7 +332,6 @@ class CLI():
                     self.case.append(current_question)
                 return True
 
-
     def resolve_question_template(self, question_text):
         """
         Resolves template variables in question text using collected facts
@@ -348,112 +347,69 @@ class CLI():
         print("="*50)
         
         try:
-            # 1. Set Context
-            if hasattr(self, 'evaluated_blfs'):
-                self.adm.temp_evaluated_nodes = set(self.evaluated_blfs)
             
-            # 2. Get Hierarchical Trace
-            # Returns list of (depth, statement)
-            trace = self.adm.evaluateTree(self.case)
+            self.adm.temp_evaluated_nodes = set(self.evaluated_blfs)
             
-            if not trace:
-                print("No determined factors found.")
+            #returns the statements from the evaluated tree in a hierarchical structure
+            reasoning = self.adm.evaluateTree(self.case)
+            
+            if not reasoning:
+                print("No reasoning could be found.")
             else:
-                print("Reasoning Pathway:")
-                for depth, statement in trace:
-                    # Indent based on depth (2 spaces per level)
+                print("Reasoning:")
+                for depth, statement in reasoning:
+                    #indent based on depth (2 spaces per level)
                     indent = "  " * depth
                     bullet = "└─ " if depth > 0 else ""
                     print(f"{indent}{bullet}{statement}")
                     
         except Exception as e:
             print(f"Error generating outcome: {e}")
-            import traceback
-            traceback.print_exc()
         finally:
+            #cleanup
             if hasattr(self.adm, 'temp_evaluated_nodes'):
                 del self.adm.temp_evaluated_nodes
                  
-    #REBUILD?
     def visualize_domain(self):
-        """Visualize the domain as a graph"""
+        """
+        Visualize the domain as a graph.
+        Single source of truth: Calculates the filename and delegates to ADM.
+        """
         print("\n" + "="*50)
         print("Visualize Domain")
         print("="*50)
         
         try:
-            # Determine filename based on whether we have a case
-            if self.caseName and self.case:
-                filename = f"{self.caseName}.png"
-                # Visualize with case data to show accepted/rejected nodes in color
-                # Visualize the network
-                print("\nGenerating visualization...")
-                try:
-                    # Use the comprehensive visualization that includes sub-ADMs
-                    G = self.adm.visualiseNetworkWithSubADMs(self.case)
-                    
-                    # Save the visualization
-                    filename = f"{self.caseName}.png"
-                    G.write_png(filename)
-                    print(f"Visualization saved as {filename}")
-                    try:
-                        abs_path = os.path.abspath(filename)
-                        print(f"ADM_VISUALIZATION:{abs_path}")
-                        sys.stdout.flush()
-                    except Exception:
-                        pass
-                    
-                except Exception as e:
-                    print(f"Error generating visualization: {e}")
-                    # Fallback to regular visualization
-                    try:
-                        G = self.adm.visualiseNetwork(self.case)
-                        filename = f"{self.caseName}.png"
-                        G.write_png(filename)
-                        print(f"Basic visualization saved as {filename}")
-                        try:
-                            abs_path = os.path.abspath(filename)
-                            print(f"ADM_VISUALIZATION:{abs_path}")
-                            sys.stdout.flush()
-                        except Exception:
-                            pass
-                    except Exception as e2:
-                        print(f"Error with fallback visualization: {e2}")
+            # 1. Determine Filename
+            # Use case name if available, otherwise ADM name
+            base_name = self.caseName if self.caseName else self.adm.name
+            
+            # Ensure we don't double-stack extensions (e.g., case.png.png)
+            if not base_name.lower().endswith('.png'):
+                filename = f"{base_name}.png"
             else:
-                filename = f"{self.adm.name}.png"
-                # Visualize domain without case data, but still include sub-ADMs
-                print(f"Visualizing domain: {self.adm.name}")
-                try:
-                    # Use the comprehensive visualization that includes sub-ADMs even without case data
-                    graph = self.adm.visualiseNetworkWithSubADMs()
-                    graph.write_png(filename)
-                    print(f"Graph saved as: {filename}")
-                    try:
-                        abs_path = os.path.abspath(filename)
-                        print(f"ADM_VISUALIZATION:{abs_path}")
-                        sys.stdout.flush()
-                    except Exception:
-                        pass
-                except Exception as e:
-                    print(f"Error with sub-ADM visualization: {e}")
-                    # Fallback to regular visualization
-                    try:
-                        graph = self.adm.visualiseNetwork()
-                        graph.write_png(filename)
-                        print(f"Basic visualization saved as: {filename}")
-                        try:
-                            abs_path = os.path.abspath(filename)
-                            print(f"ADM_VISUALIZATION:{abs_path}")
-                            sys.stdout.flush()
-                        except Exception:
-                            pass
-                    except Exception as e2:
-                        print(f"Error with fallback visualization: {e2}")
-                        return
+                filename = base_name
+
+            # 2. Determine Data Context
+            # Only color the graph if we actually have case data
+            case_data = self.case if (self.caseName and self.case) else None
+
+            print(f"Generating graph: {filename}")
+
+            # 3. Generate & Save (One call only)
+            self.adm.visualiseNetwork(filename=filename, case=case_data)
+            
+            # 4. Emit Path (for your environment integration)
+            try:
+                abs_path = os.path.abspath(filename)
+                print(f"ADM_VISUALIZATION:{abs_path}")
+                sys.stdout.flush()
+            except Exception:
+                pass
                 
         except Exception as e:
             print(f"Error creating visualization: {e}")
-
+            
 def main():
     """Main function"""
     
@@ -469,8 +425,8 @@ def main():
     cli = CLI(adm=adm_initial())
     
     try:
-        cli.query_domain()
-        #cli.visualize_domain()
+        #cli.query_domain()
+        cli.visualize_domain()
     except KeyboardInterrupt:
         print("\n\nProgram interrupted by user. Goodbye!")
         sys.exit(0)

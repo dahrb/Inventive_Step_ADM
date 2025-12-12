@@ -257,8 +257,12 @@ class ADM:
 
     def check_early_stop(self, evaluated_nodes):
         """
-        Determines if the Root Node is decidable using the unified logic engine.
-        Now simply calls evaluateNode with mode='3vl'.
+        determines if the ADM can be fully evaluated earlier than all blfs being asked
+        
+        Parameters
+        ----------
+        node : class
+            the node class to be evaluated
         """
         if not hasattr(self, 'root_node'):
             return False
@@ -268,9 +272,9 @@ class ADM:
         logger.debug(f"{self.evaluated_nodes}")
         
         try:
-            # use 3vl mode
-            result = self.evaluateNode(self.root_node, mode='3vl')
-            
+            #use 3vl mode - can return T/F/Unknown - Unknown is for unevaluated blfs
+            result,_ = self.evaluateNode(self.root_node, mode='3vl')
+
             logger.debug(f'result = {result}')
             
             if result is not None:
@@ -289,7 +293,7 @@ class ADM:
         Evaluates the ADF for a given case.
         Returns a list of tuples: [(depth, statement), (depth, statement)...]
         """
-        # --- PHASE 1: CALCULATION ---
+        #ADM eval
         self.statements = []
         self.node_done = []
         self.case = case
@@ -300,93 +304,86 @@ class ADM:
             current_batch = list(zip(list(self.nonLeaf.keys()), list(self.nonLeaf.values())))
             
             for name, node in current_batch:
+                
+                #only for Evaluate nodes 
                 if hasattr(node, 'evaluateResults'):
                     self.node_done.append(name)
                     if node.evaluateResults(self):
                         if name not in self.case: self.case.append(name)
                     self.nonLeaf.pop(name)
                 
+                #other nodes
                 elif self.checkNonLeaf(node):
                     self.node_done.append(name)
-                    if self.evaluateNode(node, mode='standard'):
+                    val,_ = self.evaluateNode(node)
+                    if val:
                         if name not in self.case: self.case.append(name)
                     self.nonLeaf.pop(name)
         
         self.case = list(set(self.case))
 
-        # --- PHASE 2: HIERARCHICAL EXPLANATION ---
-        if hasattr(self, 'root_node'):
-            self.statements = self._generate_comprehensive_trace()
+        #hierarchical explanation
+        self.statements = self._generate_explanation()
         
         return self.statements
 
-    def _generate_comprehensive_trace(self):
+    def _generate_explanation(self):
         """
         Generates a Top-Down Hierarchical Trace.
         Returns: List of (depth, statement) tuples.
         Prevents duplicates by tracking visited nodes.
         """
         statements_with_depth = []
-        visited_nodes = set() # Track visited nodes to prevent duplication
+        
+        #track visited nodes to prevent duplication
+        visited_nodes = set() 
         
         def traverse(node, depth):
-            # 1. Cycle/Duplicate Prevention
-            # If we have already explained this node, don't explain it again.
+            #prevent dupes
             if node.name in visited_nodes:
                 return
             
-            # 2. Evaluate Status (3VL)
-            status = self.evaluateNode(node, mode='3vl')
+            #evaluate the node using 3vl
+            status, index = self.evaluateNode(node, mode='3vl')
             
-            # If status is Unknown (None), we skip this branch
+            #logger.debug(f'{node.name}, {status}, {index}')
+            #if status is Unknown then skip
             if status is None:
                 return
 
-            # Mark as visited immediately so future branches skip it
+            #mark as visited
             visited_nodes.add(node.name)
+            
+            #statement ascription
+            stmt = None
+            if node.statement:
+                if status is True:
+                    if index < len(node.statement):
+                        stmt = node.statement[index]
+                
+                elif status is False:
+                    if self.reject:
+                        stmt = node.statement[index]
+                    else:
+                        stmt = node.statement[-1]
+                    
+                else:
+                    stmt = None
 
-            # 3. Collect Statement (Pre-Order: Parent First)
-            stmt = self._get_statement_for_node(node, status)
             if stmt:
                 statements_with_depth.append((depth, stmt))
             
-            # 4. Visit Children
-            # Only traverse deeper if the current node is determined
+            #visit children only if the current node is determined T/F
             if node.children:
                 for child_name in node.children:
                     if child_name in self.nodes:
                         traverse(self.nodes[child_name], depth + 1)
 
-        if hasattr(self, 'root_node'):
-            traverse(self.root_node, 0)
+        #start depth at 0
+        traverse(self.root_node, 0)
             
         return statements_with_depth
-    
-    def _get_statement_for_node(self, node, outcome):
-        """Helper to find the specific statement text based on logic."""
-        if not hasattr(node, 'statement') or not node.statement:
-            return None
-
-        trigger_idx = -1
         
-        if node.acceptance:
-            for i, condition in enumerate(node.acceptance):
-                self.reject = False
-                val = self.postfixEvaluation(condition, mode='3vl')
-                
-                if val is True:
-                    rule_result = False if self.reject else True
-                    if rule_result == outcome:
-                        trigger_idx = i
-                        break
-        
-        if trigger_idx != -1 and trigger_idx < len(node.statement):
-            return node.statement[trigger_idx]
-        
-        if outcome is True:
-            return node.statement[0]
-        else:
-            return node.statement[-1]
     def evaluateNode(self, node, mode='standard'):
         """
         Evaluates a node's acceptance conditions.
@@ -394,64 +391,59 @@ class ADM:
         Modes:
         - 'standard': Returns True/False
         - '3vl': Returns True/False/None
-        """
-            
+        """   
+
+        
         #3VL leaf nodes eval
         if mode == '3vl' and not node.children:
             if node.name in self.case:
-                return True
+                return True, 0
             #check context stored by check_early_stop
             elif hasattr(self, 'evaluated_nodes') and node.name in self.evaluated_nodes:
-                return False
+                return False, -1
             else:
-                return None # Unknown
+                return None, -1 # Unknown
         
         #counter to index the statements to be shown to the user
-        self.counter = -1
-        
+        counter = -1
         for i in node.acceptance:
             
             self.reject = False
-            self.counter += 1
+            counter += 1
             
             #evaluate using the shared engine
             eval = self.postfixEvaluation(i, mode=mode)
             
-            #STANDARD MODE
+            #STANDARD
             if mode == 'standard':
-                #if this is a reject condition and it's true, return False immediately
+                #handle reject conditions
                 if self.reject and eval is True:
                     self.reject = True
-                    return False
+                    return False, counter
                 
-                #if this is an accept condition and it's true, return True immediately
                 if not self.reject and eval is True:
-                    return True
+                    return True, counter
                 
                 if eval == 'accept': 
-                    return True
+                    return True, counter
             
-            # --- 3VL MODE (Corrected) ---
+            # 3VL MODE
             elif mode == '3vl':
                 if eval is True:
-                    # The condition logic was met. 
-                    # Check if it was a REJECT rule or an ACCEPT rule.
+                    #check if reject condition
                     if self.reject:
-                        return False # Definitive Reject
+                        return False, counter 
                     else:
-                        return True  # Definitive Accept
+                        return True, counter 
                 
                 elif eval is False:
-                    # Condition not met.
-                    # In an ordered list, this means we fall through to the next rule.
+                    #continue to next acceptance condition
                     continue
                 
                 else: # val is None
-                    # We don't know if this rule triggers.
-                    # Because rules are ordered, we can't safely skip to the next one.
-                    return None
+                    return None, -1
 
-        return False
+        return False, counter
     
     def postfixEvaluation(self, acceptance, mode='standard'):
         """
@@ -517,7 +509,7 @@ class ADM:
                     operandStack.push(token)
                 else:
                     #3VL: must resolve recursion immediately to put Value on stack to ensure checkCondition receives T/F/None, not strings
-                    val = self.evaluateNode(self.nodes[token], mode='3vl')
+                    val, _ = self.evaluateNode(self.nodes[token], mode='3vl')
                     operandStack.push(val)
         
         #check if we have anything on the stack before popping
@@ -606,33 +598,18 @@ class ADM:
         if name not in self.questionOrder:
             self.questionOrder.append(name)
             
-    def visualiseNetwork(self, filename=None, case=None, view=True):
+    def visualiseNetwork(self, filename=None, case=None):
         """
-        Generates a simplified hierarchical visualization of the ADM.
-        Treats all nodes uniformly based on parent/child relationships.
-        
-        Parameters
-        ----------
-        filename : str, optional
-            Output filename (e.g. 'model.png'). If None, defaults to self.name + .png
-        case : list, optional
-            A list of accepted factors. If provided, the graph will be colored.
-        view : bool
-            If True, opens the generated image automatically.
+        Generates and saves the ADM graph. 
+        Does NOT return the graph object to prevent double-saving.
         """
         
-        # 1. Initialize Directed Graph (Digraph is essential for hierarchy)
-        # rankdir='TB' ensures Top-to-Bottom flow
+        # 1. Initialize Graph
         graph = pydot.Dot(self.name, graph_type='digraph', rankdir='TB')
-        
-        # Global styles for cleaner look
         graph.set_node_defaults(style="filled", fontname="Arial")
         graph.set_edge_defaults(color="#333333", arrowhead="vee")
 
-        # 2. Determine Node Colors (if case is provided)
-        # Green = Accepted (in case list)
-        # Red = Rejected (not in case list)
-        # White = Default/No case provided
+        # 2. Determine Colors
         node_colors = {}
         if case is not None:
             for node_name in self.nodes:
@@ -644,235 +621,52 @@ class ADM:
             for node_name in self.nodes:
                 node_colors[node_name] = "white"
 
-        # 3. Create Nodes and Edges
+        # 3. Create Nodes
+        issue_nodes = []
+        if hasattr(self, 'root_node') and self.root_node.children:
+            issue_nodes = self.root_node.children
+
         for name, node in self.nodes.items():
+            # Shape Logic
+            shape = "box"
+            peripheries = "1"
             
-            # -- Shape Logic --
-            # Abstract Factors (Have children) -> Ellipse
-            # Base Level Factors (No children) -> Box
-            if node.children: 
+            if hasattr(self, 'root_node') and name == self.root_node.name:
+                shape = "doubleoctagon"
+            elif name in issue_nodes:
+                shape = "ellipse"
+                peripheries = '2'
+            elif node.children: 
                 shape = "ellipse"
             else: 
                 shape = "box"
 
-            # Create the node
+            # Create Node
             pydot_node = pydot.Node(
                 name, 
-                label=name.replace("_", "\n"), # Wrap text for readability
+                label=name.replace("_", "\n"), 
                 shape=shape,
+                peripheries=peripheries,
                 fillcolor=node_colors.get(name, "white"),
                 color="black"
             )
             graph.add_node(pydot_node)
 
-            # -- Edge Logic --
-            # Draw standard directed edges from Parent to Child
+            # Create Edges
             if node.children:
                 for child in node.children:
-                    # Simply connect Parent -> Child
-                    edge = pydot.Edge(name, child)
-                    graph.add_edge(edge)
+                    graph.add_edge(pydot.Edge(name, child))
 
-        # 4. Save and View Output
+        # 4. Save Output (Single Write)
+        # Use provided filename, or default to internal name
         out_name = filename if filename else f"{self.name}_hierarchy.png"
         
         try:
             graph.write_png(out_name)
-            print(f"Graph generated successfully: {out_name}")
-            
-            if view:
-                import os
-                import platform
-                if platform.system() == 'Darwin':       # macOS
-                    os.system(f'open "{out_name}"')
-                elif platform.system() == 'Windows':    # Windows
-                    os.startfile(out_name)
-                else:                                   # Linux
-                    os.system(f'xdg-open "{out_name}"')
-                    
+            print(f"Graph saved successfully: {out_name}")
         except Exception as e:
-            print(f"Could not generate graph. Ensure Graphviz is installed.\nError: {e}")
-
-    # def visualiseNetwork(self,case=None):    
-    #     """
-    #     allows the ADM to be visualised as a graph
-        
-    #     can be for the domain with or without a case
-        
-    #     if there is a case it will highlight the nodes green which have been
-    #     accepted and red the ones which have been rejected        
-        
-    #     Parameters
-    #     ----------
-    #     case : list, optional
-    #         the list of factors constituting the case
-    #     """
-        
-    #     #initialises the graph
-    #     G = pydot.Dot('{}'.format(self.name), graph_type='graph')
-        
-    #     # Set graph direction to top-to-bottom for better hierarchical layout
-    #     G.set_rankdir('TB')
-
-    #     if case != None:
-    #         # Temporarily set the case for evaluation
-    #         original_case = getattr(self, 'case', None)
-    #         self.case = case
+            print(f"Graphviz Error: {e}")
             
-    #         # First, evaluate all nodes to build up self.vis (attacking nodes list)
-    #         self.evaluateTree(case)
-            
-    #         #checks each node
-    #         for i in self.nodes.values():
-                
-    #             #checks if node is already in the graph
-    #             if i not in G.get_node_list():
-                    
-    #                 #checks if the node was accepted in the case
-    #                 if i.name in case:
-    #                     a = pydot.Node(i.name,label=i.name,color='green')
-    #                 else:
-    #                     a = pydot.Node(i.name,label=i.name,color='red')
-                                        
-    #                 G.add_node(a)
-                
-    #             #creates edges between a node and its children
-    #             if i.children != None and i.children != []:
-
-    #                 for j in i.children:
-                        
-                                                
-    #                     if j not in G.get_node_list():
-                            
-    #                         if j in case:
-    #                             a = pydot.Node(j,label=j,color='green')
-    #                         else:
-    #                             a = pydot.Node(j,label=j,color='red')
-                            
-    #                         G.add_node(a)
-                        
-    #                     #self.vis is a list which tracks whether a node is an attacking or defending node
-    #                     if j in self.vis:
-    #                         if j in case:
-    #                             my_edge = pydot.Edge(i.name, j, color='green',label='-')
-    #                         else:
-    #                             my_edge = pydot.Edge(i.name, j, color='red',label='-')
-    #                     else:
-    #                         if j in case:
-    #                             my_edge = pydot.Edge(i.name, j, color='green',label='+')
-    #                         else:
-    #                             my_edge = pydot.Edge(i.name, j, color='red',label='+')
-
-    #                     G.add_edge(my_edge)
-            
-    #         # Restore original case if it existed
-    #         if original_case is not None:
-    #             self.case = original_case
-    #         else:
-    #             delattr(self, 'case')
-            
-    #         # Add dependency relationships for DependentBLF and SubADMBLF nodes
-    #         for node_name, node in self.nodes.items():
-    #             if hasattr(node, 'dependency_node') and node.dependency_node:
-    #                 # Handle both single string and list of dependencies
-    #                 if isinstance(node.dependency_node, str):
-    #                     dependency_nodes = [node.dependency_node]
-    #                 else:
-    #                     dependency_nodes = node.dependency_node
-                    
-    #                 # Create a dotted black line from dependent node to each dependency node
-    #                 for dep_node in dependency_nodes:
-    #                     dependency_edge = pydot.Edge(node_name, dep_node, 
-    #                                            color='black', style='dotted')
-    #                     G.add_edge(dependency_edge)
-            
-            
-    #         # Assign ranks to ensure proper hierarchical layout
-    #         self._assign_node_ranks(G)
-        
-    #     else:
-            
-    #         #creates self.vis if not already created
-    #         self.evaluateTree([])
-            
-    #         #checks each node
-    #         for i in self.nodes.values():
-                
-    #             #checks if node is already in the graph
-    #             if i not in G.get_node_list():
-                    
-    #                 a = pydot.Node(i.name,label=i.name,color='black')
-
-    #                 G.add_node(a)
-                
-    #             #creates edges between a node and its children
-    #             if i.children != None and i.children != []:
-
-    #                 for j in i.children:
-                        
-    #                     if j not in G.get_node_list():
-                            
-    #                         a = pydot.Node(j,label=j,color='black')
-                           
-    #                         G.add_node(a)
-                        
-    #                     #self.vis is a list which tracks whether a node is an attacking or defending node
-    #                     if j in self.vis:
-    #                         my_edge = pydot.Edge(i.name, j, color='black',label='-')
-    #                     else:
-    #                         my_edge = pydot.Edge(i.name, j, color='black',label='+')
-
-    #                     G.add_edge(my_edge)
-            
-    #         # Add dependency relationships for DependentBLF and SubADMBLF nodes (without case)
-    #         for node_name, node in self.nodes.items():
-    #             if hasattr(node, 'dependency_node') and node.dependency_node:
-    #                 # Handle both single string and list of dependencies
-    #                 if isinstance(node.dependency_node, str):
-    #                     dependency_nodes = [node.dependency_node]
-    #                 else:
-    #                     dependency_nodes = node.dependency_node
-                    
-    #                 # Create a dotted black line from dependent node to each dependency node
-    #                 for dep_node in dependency_nodes:
-    #                     dependency_edge = pydot.Edge(node_name, dep_node, 
-    #                                            color='black', style='dotted')
-    #                     G.add_edge(dependency_edge)
-            
-            
-    #         # Assign ranks to ensure proper hierarchical layout
-    #         self._assign_node_ranks(G)
-        
-    #     # Legend removed - was causing too many issues
-        
-    #     return G
- 
-
-        """
-        Assign ranks to nodes to ensure proper hierarchical layout
-        DependentBLF nodes are positioned at the same level as other BLFs (bottom level)
-        """
-        # Create subgraphs for different ranks
-        rank_0 = pydot.Subgraph(rank='same')
-        rank_1 = pydot.Subgraph(rank='same')
-        
-        # Rank 0: Abstract factors (nodes with children) - top level
-        # Rank 1: Base level factors (BLFs) and DependentBLFs - bottom level
-        
-        for node_name, node in self.nodes.items():
-            if node.children and node.children != []:
-                # Abstract factors go to rank 0 (top level)
-                rank_0.add_node(pydot.Node(node_name))
-            else:
-                # Base level factors and DependentBLFs go to rank 1 (bottom level)
-                rank_1.add_node(pydot.Node(node_name))
-        
-        # Add subgraphs to the main graph
-        if rank_0.get_node_list():
-            G.add_subgraph(rank_0)
-        if rank_1.get_node_list():
-            G.add_subgraph(rank_1)
-
     def addInformationQuestion(self, name, question):
         """
         Adds a simple information question that collects a string answer without creating a BLF
