@@ -600,16 +600,18 @@ class ADM:
             
     def visualiseNetwork(self, filename=None, case=None):
         """
-        Generates and saves the ADM graph. 
-        Does NOT return the graph object to prevent double-saving.
+        Generates a hierarchical visualization of the ADM.
+        Adds '+' (Support) or '-' (Attack) labels to edges based on logic.
         """
         
-        # 1. Initialize Graph
+        # 1. Initialize Directed Graph
         graph = pydot.Dot(self.name, graph_type='digraph', rankdir='TB')
+        
+        # Global styles
         graph.set_node_defaults(style="filled", fontname="Arial")
-        graph.set_edge_defaults(color="#333333", arrowhead="vee")
+        graph.set_edge_defaults(color="#333333", arrowhead="vee", fontsize="12")
 
-        # 2. Determine Colors
+        # 2. Determine Node Colors
         node_colors = {}
         if case is not None:
             for node_name in self.nodes:
@@ -621,21 +623,23 @@ class ADM:
             for node_name in self.nodes:
                 node_colors[node_name] = "white"
 
-        # 3. Create Nodes
+        # 3. Create Nodes and Edges
         issue_nodes = []
         if hasattr(self, 'root_node') and self.root_node.children:
             issue_nodes = self.root_node.children
 
         for name, node in self.nodes.items():
-            # Shape Logic
+            
+            # -- Shape Logic --
             shape = "box"
             peripheries = "1"
             
             if hasattr(self, 'root_node') and name == self.root_node.name:
                 shape = "doubleoctagon"
-            elif name in issue_nodes:
-                shape = "ellipse"
                 peripheries = '2'
+            elif name in issue_nodes:
+                shape = "ellipse" 
+                peripheries = "2"
             elif node.children: 
                 shape = "ellipse"
             else: 
@@ -652,21 +656,130 @@ class ADM:
             )
             graph.add_node(pydot_node)
 
-            # Create Edges
+            # -- Edge Logic with +/- Labels --
             if node.children:
                 for child in node.children:
-                    graph.add_edge(pydot.Edge(name, child))
+                    
+                    # Default to Supporting (+)
+                    edge_label = "+"
+                    
+                    # Scan parent's acceptance conditions to see how the child is used
+                    if node.acceptance:
+                        for condition in node.acceptance:
+                            tokens = condition.split()
+                            if child in tokens:
+                                # If the child contributes to a 'reject' or 'not' condition, it is Attacking (-)
+                                if 'reject' in tokens or 'not' in tokens:
+                                    edge_label = "-"
+                                    break
+                    
+                    # Create Edge
+                    edge = pydot.Edge(name, child, label=edge_label)
+                    graph.add_edge(edge)
 
-        # 4. Save Output (Single Write)
-        # Use provided filename, or default to internal name
+        # 4. Save Output
         out_name = filename if filename else f"{self.name}_hierarchy.png"
         
         try:
             graph.write_png(out_name)
-            print(f"Graph saved successfully: {out_name}")
+            print(f"Graph generated successfully: {out_name}")
+                    
+        except Exception as e:
+            print(f"Could not generate graph. Ensure Graphviz is installed.\nError: {e}")
+            
+    def visualiseMinimalist(self, filename=None):
+        """
+        Generates a publication-quality minimalist visualization (dots only).
+        Constrained to a Portrait layout (Height > Width), scaling down if needed.
+        """
+        
+        # 1. Initialize Graph
+        graph = pydot.Dot(self.name, graph_type='digraph', rankdir='TB')
+        
+        # Global Styles for "Publication Quality"
+        graph.set_graph_defaults(
+            dpi="300",              
+            bgcolor="white",
+            splines="line",       
+            nodesep="0.4",          
+            ranksep="0.8",
+            
+            # --- PORTRAIT CONSTRAINTS ---
+            # "8,12" defines a bounding box of 8x12 inches.
+            # Graphviz will scale the graph DOWN to fit this box if necessary,
+            # maintaining the aspect ratio.
+            size="8,12",
+            ratio="fill"  # Forces the graph to fill the dimensions (optional, usually 'auto' is safer to avoid distortion, but 'fill' enforces the rect)
+        )
+        
+        # If 'fill' distorts too much, change ratio to "auto" 
+        # and rely on 'size' to handle the boundaries.
+        
+        graph.set_node_defaults(
+            label="",               
+            shape="circle",         
+            style="filled",
+            fixedsize="true",       
+            width="0.3",            
+            penwidth="0"            
+        )
+        
+        graph.set_edge_defaults(
+            color="#555555",        
+            penwidth="0.8",         
+            arrowsize="0.6"         
+        )
+
+        # 2. Identify Node Types
+        issue_nodes = []
+        if hasattr(self, 'root_node') and self.root_node.children:
+            issue_nodes = self.root_node.children
+
+        # 3. Create Nodes
+        for name, node in self.nodes.items():
+            
+            # Determine Color
+            color = "#DDDDDD" 
+            
+            if hasattr(self, 'root_node') and name == self.root_node.name:
+                color = "#000000"       # Root: Black
+                width = "0.5"           
+                
+            elif name in issue_nodes:
+                color = "#D55E00"       # Issues: Dark Orange
+                width = "0.4"
+                
+            elif node.children: 
+                color = "#0072B2"       # Abstract: Steel Blue
+                width = "0.3"
+                
+            else: 
+                color = "#999999"       # Leaf: Medium Grey
+                width = "0.2"           
+
+            # Create Node
+            pydot_node = pydot.Node(
+                name, 
+                fillcolor=color,
+                width=width
+            )
+            graph.add_node(pydot_node)
+
+            # Create Edges
+            if node.children:
+                for child in node.children:
+                    edge = pydot.Edge(name, child)
+                    graph.add_edge(edge)
+
+        # 4. Save Output
+        out_name = filename if filename else f"{self.name}_minimalist.png"
+        
+        try:
+            graph.write_png(out_name)
+            print(f"Minimalist graph saved: {out_name}")
         except Exception as e:
             print(f"Graphviz Error: {e}")
-            
+                    
     def addInformationQuestion(self, name, question):
         """
         Adds a simple information question that collects a string answer without creating a BLF

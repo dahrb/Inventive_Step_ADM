@@ -370,7 +370,7 @@ class CLI():
             if hasattr(self.adm, 'temp_evaluated_nodes'):
                 del self.adm.temp_evaluated_nodes
                  
-    def visualize_domain(self):
+    def visualize_domain(self,minimal=False):
         """
         Visualize the domain as a graph.
         Single source of truth: Calculates the filename and delegates to ADM.
@@ -392,12 +392,17 @@ class CLI():
 
             # 2. Determine Data Context
             # Only color the graph if we actually have case data
-            case_data = self.case if (self.caseName and self.case) else None
+            case_data = self.adm.case
+            print(case_data)
 
             print(f"Generating graph: {filename}")
 
-            # 3. Generate & Save (One call only)
-            self.adm.visualiseNetwork(filename=filename, case=case_data)
+            if minimal:
+                # Minimalist Viz (Always useful for checking structure)
+                self.adm.visualiseMinimalist(filename=f"{base_name}_structure.png")
+            else:
+                # 3. Generate & Save (One call only)
+                self.adm.visualiseNetwork(filename=filename, case=case_data)
             
             # 4. Emit Path (for your environment integration)
             try:
@@ -425,8 +430,8 @@ def main():
     cli = CLI(adm=adm_initial())
     
     try:
-        #cli.query_domain()
-        cli.visualize_domain()
+        cli.query_domain()
+        cli.visualize_domain(minimal=False)
     except KeyboardInterrupt:
         print("\n\nProgram interrupted by user. Goodbye!")
         sys.exit(0)
