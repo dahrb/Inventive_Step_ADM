@@ -6,9 +6,9 @@ Clean unit tests for both sub-ADM and main ADM evaluation with expected final ca
 import unittest
 import os
 from ADM_JURIX.ADM.ADM_Construction import *
-from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1, create_sub_adm_2, adf
-import ADM_JURIX.ADM.UI as UI
-from ADM_JURIX.ADM.UI import CLI
+from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1, create_sub_adm_2, adf
+import ADM_JURIX.ADM.old.UI as UI
+from ADM_JURIX.ADM.old.UI import CLI
 import builtins
 import sys
 import io
@@ -428,7 +428,7 @@ class TestSubADMEvaluation(unittest.TestCase):
     
     def test_question_instantiator_basic(self):
         """Test: QuestionInstantiator basic functionality"""
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         
         # Create a sub-ADM and test question instantiator
         sub_adf = create_sub_adm_1("question_instantiator_test")
@@ -448,7 +448,7 @@ class TestSubADMEvaluation(unittest.TestCase):
     
     def test_question_instantiator_blf_mapping(self):
         """Test: QuestionInstantiator BLF mapping functionality"""
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         
         # Create a sub-ADM
         sub_adf = create_sub_adm_1("mapping_test")
@@ -483,7 +483,7 @@ class TestSubADMEvaluation(unittest.TestCase):
     
     def test_dependent_blf_factual_ascription(self):
         """Test: DependentBLF factual ascription inheritance"""
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         
         # Create a sub-ADM
         sub_adf = create_sub_adm_1("ascription_test")
@@ -501,7 +501,7 @@ class TestSubADMEvaluation(unittest.TestCase):
     
     def test_question_instantiator_dependency(self):
         """Test: QuestionInstantiator with dependency node"""
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         
         # Create a sub-ADM
         sub_adf = create_sub_adm_1("qi_dependency_test")
@@ -2094,7 +2094,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_with_sub_adm_case_data(self):
         """Test CLI with sub-ADM case data and expected outcomes"""
         # Set up CLI with sub-ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         self.cli.adf = create_sub_adm_1("test_feature")
         self.cli.caseName = "test_sub_adm_case"
         self.cli.case = []
@@ -2128,7 +2128,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_with_main_adm_case_data(self):
         """Test CLI with main ADM case data and expected outcomes"""
         # Set up CLI with main ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import adf
+        from ADM_JURIX.ADM.old.inventive_step_ADM import adf
         self.cli.adf = adf()
         self.cli.caseName = "test_main_adm_case"
         self.cli.case = []
@@ -2155,7 +2155,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_query_domain_with_case_evaluation(self):
         """Test CLI query domain with full case evaluation workflow"""
         # Set up CLI with sub-ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         self.cli.adf = create_sub_adm_1("test_feature")
         self.cli.caseName = "test_query_case"
         self.cli.case = []
@@ -2186,7 +2186,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_show_outcome_with_actual_evaluation(self):
         """Test CLI show_outcome with actual ADF evaluation"""
         # Set up CLI with sub-ADM and case data
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         self.cli.adf = create_sub_adm_1("test_feature")
         self.cli.caseName = "test_outcome_case"
         self.cli.case = ["DistinguishingFeatures", "IndependentContribution"]
@@ -2205,7 +2205,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_complex_workflow_sub_adm(self):
         """Test complete CLI workflow with complex sub-ADM case"""
         # Set up CLI with sub-ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         self.cli.adf = create_sub_adm_1("complex_feature")
         self.cli.caseName = "complex_sub_adm_case"
         self.cli.case = []
@@ -2249,7 +2249,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_complex_workflow_main_adm(self):
         """Test complete CLI workflow with complex main ADM case"""
         # Set up CLI with main ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import adf
+        from ADM_JURIX.ADM.old.inventive_step_ADM import adf
         self.cli.adf = adf()
         self.cli.caseName = "complex_main_adm_case"
         self.cli.case = []
@@ -2294,7 +2294,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_rejection_case_sub_adm(self):
         """Test CLI with sub-ADM rejection case"""
         # Set up CLI with sub-ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         self.cli.adf = create_sub_adm_1("rejection_feature")
         self.cli.caseName = "rejection_case"
         self.cli.case = []
@@ -2326,7 +2326,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_edge_case_no_blfs(self):
         """Test CLI with edge case - no BLFs"""
         # Set up CLI with sub-ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         self.cli.adf = create_sub_adm_1("edge_feature")
         self.cli.caseName = "edge_case"
         self.cli.case = []
@@ -2353,7 +2353,7 @@ class TestCLIUI(unittest.TestCase):
     def test_cli_case_persistence(self):
         """Test CLI case persistence across operations"""
         # Set up CLI with sub-ADM
-        from ADM_JURIX.ADM.inventive_step_ADM import create_sub_adm_1
+        from ADM_JURIX.ADM.old.inventive_step_ADM import create_sub_adm_1
         self.cli.adf = create_sub_adm_1("persistence_feature")
         self.cli.caseName = "persistence_case"
         self.cli.case = []

@@ -9,7 +9,7 @@ Status: Not Really Updated
 import os
 import sys
 import shlex
-import inventive_step_ADM
+import ADM_JURIX.ADM.old.inventive_step_ADM as inventive_step_ADM
 
 
 class CLI:

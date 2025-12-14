@@ -348,7 +348,9 @@ class CLI():
         
         try:
             
-            self.adm.temp_evaluated_nodes = set(self.evaluated_blfs)
+            self.adm.evaluated_nodes = set(self.evaluated_blfs)
+            
+            logger.debug(self.adm.evaluated_nodes)
             
             #returns the statements from the evaluated tree in a hierarchical structure
             reasoning = self.adm.evaluateTree(self.case)
@@ -368,7 +370,7 @@ class CLI():
         finally:
             #cleanup
             if hasattr(self.adm, 'temp_evaluated_nodes'):
-                del self.adm.temp_evaluated_nodes
+                del self.adm.evaluated_nodes
                  
     def visualize_domain(self,minimal=False):
         """
