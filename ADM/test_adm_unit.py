@@ -1235,13 +1235,13 @@ class TestMainADMEvaluation(unittest.TestCase):
         """Test: Verify that new BLFs have correct statements"""
         # Test InventionUnexpectedEffect statements
         invention_unexpected_effect = self.main_adf.nodes["InventionUnexpectedEffect"]
-        self.assertIsInstance(invention_unexpected_effect, EvaluationBLF)
+        self.assertIsInstance(invention_unexpected_effect, EvaluationNode)
         self.assertEqual(invention_unexpected_effect.statement, 
                         ['there is an unexpected effect within the invention', 'there is not an unexpected effect within the invention'])
         
         # Test ObjectiveTechnicalProblem statements
         objective_technical_problem = self.main_adf.nodes["ObjectiveTechnicalProblem"]
-        self.assertIsInstance(objective_technical_problem, EvaluationBLF)
+        self.assertIsInstance(objective_technical_problem, EvaluationNode)
         self.assertEqual(objective_technical_problem.statement, 
                         ['there is a valid objective technical problem', 'there is not a valid objective technical problem'])
 

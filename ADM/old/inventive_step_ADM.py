@@ -363,304 +363,306 @@ def adf():
     # adf.addNodes("CombinationDocuments", ['CombinationAttempt and SameFieldCPA and CombinationMotive and BasisToAssociate','CombinationAttempt and SimilarFieldCPA and CombinationMotive and BasisToAssociate'], ['the combination of documents relevant to the closest prior art come from the same field','the combination of documents relevant to the closest prior art come from a similar field','no combination of documents relevant to the closest prior art'])
     # #AF8
     # adf.addNodes("ClosestPriorArtDocuments", ['CombinationDocuments','ClosestPriorArt'], ['the closest prior art consists of a combination of documents','the closest prior art consists of a document of a single reference','no set of closest prior documents could be determined'])
-    #AF9
-    adf.addNodes("Combination",['ReliableTechnicalEffect and FunctionalInteraction and Synergy'],['There is a synergy between all the technical effects', 'There is no synergy between all the technical effects'])
-    #AF10    
-    adf.addNodes("PartialProblems",['reject Combination','ReliableTechnicalEffect'],['There are not an aggregate of technical effects', 'There are an aggregate of technical effects', ""])
-    #AF11
-    adf.addNodes("CandidateOTP",['Combination','PartialProblems'],['There is a single objective technical problem','There are multiple partial problems which form the objective technical problem'])    
+    # #AF9
+    # adf.addNodes("Combination",['ReliableTechnicalEffect and FunctionalInteraction and Synergy'],['There is a synergy between all the technical effects', 'There is no synergy between all the technical effects'])
+    # #AF10    
+    # adf.addNodes("PartialProblems",['reject Combination','ReliableTechnicalEffect'],['There are not an aggregate of technical effects', 'There are an aggregate of technical effects', ""])
+    # #AF11
+    # adf.addNodes("CandidateOTP",['Combination','PartialProblems'],['There is a single objective technical problem','There are multiple partial problems which form the objective technical problem'])    
     
-    #AF12
-    adf.addNodes('SecondaryIndicator',['PredictableDisadvantage','BioTechObvious','AntibodyObvious','KnownMeasures','ObviousCombination','ObviousSelection'],['there is a secondary indicator - the invention contains a predictable disadvantage','there is a secondary indicator - the invention concerns an obvious use of biotechnology','there is a secondary indicator - the invention concerns an obvious use of antibodies','there is a secondary indicator - the invention contains known measures and consequently is obvious','there is a secondary indicator - the invention contains an obvious combination and consequently is obvious','there is a secondary indicator - the invention contains an obvious selection and consequently is obvious','there is no secondary indicator'])
+    # #AF12
+    # adf.addNodes('SecondaryIndicator',['PredictableDisadvantage','BioTechObvious','AntibodyObvious','KnownMeasures','ObviousCombination','ObviousSelection'],['there is a secondary indicator - the invention contains a predictable disadvantage','there is a secondary indicator - the invention concerns an obvious use of biotechnology','there is a secondary indicator - the invention concerns an obvious use of antibodies','there is a secondary indicator - the invention contains known measures and consequently is obvious','there is a secondary indicator - the invention contains an obvious combination and consequently is obvious','there is a secondary indicator - the invention contains an obvious selection and consequently is obvious','there is no secondary indicator'])
 
-    #AF13
+    # #AF13
 
-    adf.addNodes('PredictableDisadvantage',['reject UnexpectedAdvantage','DisadvantageousMod and Foreseeable'],['there is an unexpected advantage','there is a disadvantageous modification of the prior art and it is foreseeable to the skilled person','there is no predictable disadvantage'])
+    # adf.addNodes('PredictableDisadvantage',['reject UnexpectedAdvantage','DisadvantageousMod and Foreseeable'],['there is an unexpected advantage','there is a disadvantageous modification of the prior art and it is foreseeable to the skilled person','there is no predictable disadvantage'])
 
-    #AF14
-    adf.addNodes('BioTechObvious',['reject InventionUnexpectedEffect','BioTech and PredictableResults','BioTech and ReasonableSuccess'],['there is not an obvious biotech invention','there is an obvious biotech invention and the results are predictable','there is an obvious biotech invention and there is a reasonable expectation of success','there is not an obvious biotech invention'])
+    # #AF14
+    # adf.addNodes('BioTechObvious',['reject InventionUnexpectedEffect','BioTech and PredictableResults','BioTech and ReasonableSuccess'],['there is not an obvious biotech invention','there is an obvious biotech invention and the results are predictable','there is an obvious biotech invention and there is a reasonable expectation of success','there is not an obvious biotech invention'])
 
-    #AF15
-    adf.addNodes('AntibodyObvious',['reject OvercomeTechDifficulty','SubjectMatterAntibody and KnownTechnique'],['there is not an obvious antibody invention','there is an obvious antibody invention and the antibodies are arrived at exclusively by applying techniques known in the art','there is not an obvious antibody invention'])
+    # #AF15
+    # adf.addNodes('AntibodyObvious',['reject OvercomeTechDifficulty','SubjectMatterAntibody and KnownTechnique'],['there is not an obvious antibody invention','there is an obvious antibody invention and the antibodies are arrived at exclusively by applying techniques known in the art','there is not an obvious antibody invention'])
 
-    #AF16
-    adf.addNodes('SubjectMatterAntibody',['BioTech and Antibody'],['the subject matter concerns antibodies','the subject matter does not concern antibodies'])
+    # #AF16
+    # adf.addNodes('SubjectMatterAntibody',['BioTech and Antibody'],['the subject matter concerns antibodies','the subject matter does not concern antibodies'])
 
-    #AF17
-    adf.addNodes('KnownMeasures',['GapFilled','WellKnownEquivalent','KnownUsage'],['there is a known measure - completing missing but obvious details in prior art','there is a known measure - use of a well-known equivalent','there is a known measure involving known properties, an analogous use or analogous substitution ','there is not a known measure'])
+    # #AF17
+    # adf.addNodes('KnownMeasures',['GapFilled','WellKnownEquivalent','KnownUsage'],['there is a known measure - completing missing but obvious details in prior art','there is a known measure - use of a well-known equivalent','there is a known measure involving known properties, an analogous use or analogous substitution ','there is not a known measure'])
 
-    #AF18
-    adf.addNodes('KnownUsage',['KnownProperties','AnalogousUse','KnownDevice and AnalogousSubstitution'],['there is a known usage - use of known properties','there is a known usage - use of an analogous use','there is a known usage - use of a known device and an analogous substitution','there is not a known usage'])
+    # #AF18
+    # adf.addNodes('KnownUsage',['KnownProperties','AnalogousUse','KnownDevice and AnalogousSubstitution'],['there is a known usage - use of known properties','there is a known usage - use of an analogous use','there is a known usage - use of a known device and an analogous substitution','there is not a known usage'])
 
-    #AF19
-    adf.addNodes('ObviousSelection',['ChooseEqualAlternatives','NormalDesignProcedure','SimpleExtrapolation','ChemicalSelection'],['there is an obvious selection - the invention results from a choice between equally likely alternatives','there is an obvious selection - the invention consists in choosing parameters from a limited range of possibilities arrived at through routine design procedures','there is an obvious selection - the invention is a result of a simple, straightforward extrapolation from the known art','there is an obvious selection - the invention just consists in selecting a specific chemical compound or composition from a broad field','there is not an obvious selection'])
+    # #AF19
+    # adf.addNodes('ObviousSelection',['ChooseEqualAlternatives','NormalDesignProcedure','SimpleExtrapolation','ChemicalSelection'],['there is an obvious selection - the invention results from a choice between equally likely alternatives','there is an obvious selection - the invention consists in choosing parameters from a limited range of possibilities arrived at through routine design procedures','there is an obvious selection - the invention is a result of a simple, straightforward extrapolation from the known art','there is an obvious selection - the invention just consists in selecting a specific chemical compound or composition from a broad field','there is not an obvious selection'])
 
-    #ISSUES
+    # #ISSUES
  
-    #I3
-    adf.addNodes('Novelty',['DistinguishingFeatures'],['The invention has novelty','The invention has no novelty'])
+    # #I3
+    # adf.addNodes('Novelty',['DistinguishingFeatures'],['The invention has novelty','The invention has no novelty'])
 
-    #I2
-    adf.addNodes('Obvious',['OTPObvious','SecondaryIndicator'],['the invention is obvious','the invention is obvious due to a secondary indicator','the invention is not obvious'])
+    # #I2
+    # adf.addNodes('Obvious',['OTPObvious','SecondaryIndicator'],['the invention is obvious','the invention is obvious due to a secondary indicator','the invention is not obvious'])
 
-    #I1 - ROOT NODE 
-    adf.addNodes('InvStep',['reject SufficiencyOfDisclosure','reject Obvious','TechnicalContribution and ReliableTechnicalEffect and Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'])
+    # #I1 - ROOT NODE 
+    # adf.addNodes('InvStep',['reject SufficiencyOfDisclosure','reject Obvious','TechnicalContribution and ReliableTechnicalEffect and Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'])
 
-    #Sub-ADM 1 algorithm
-    def collect_features(ui_instance, key_facts=None):
-        """Function to collect prior art items from user input"""
-        # Use key facts to populate placeholders in questions
-        cpa_info = ""
-        invention_info = ""
+    # #Sub-ADM 1 algorithm
+    # def collect_features(ui_instance, key_facts=None):
+    #     """Function to collect prior art items from user input"""
+    #     # Use key facts to populate placeholders in questions
+    #     cpa_info = ""
+    #     invention_info = ""
         
-        if key_facts:
-            # Get CPA information from key facts
-            if 'CPA' in key_facts:
-                cpa_info = f"\n\nClosest Prior Art: {key_facts['CPA']}"
-            elif 'INFORMATION' in key_facts and 'CPA' in key_facts['INFORMATION']:
-                cpa_info = f"\n\nClosest Prior Art: {key_facts['INFORMATION']['CPA']}"
+    #     if key_facts:
+    #         # Get CPA information from key facts
+    #         if 'CPA' in key_facts:
+    #             cpa_info = f"\n\nClosest Prior Art: {key_facts['CPA']}"
+    #         elif 'INFORMATION' in key_facts and 'CPA' in key_facts['INFORMATION']:
+    #             cpa_info = f"\n\nClosest Prior Art: {key_facts['INFORMATION']['CPA']}"
             
-            # Get invention information from key facts
-            if 'INVENTION_TITLE' in key_facts:
-                invention_info = f"\n\nInvention: {key_facts['INVENTION_TITLE']}"
-            elif 'INFORMATION' in key_facts and 'INVENTION_TITLE' in key_facts['INFORMATION']:
-                invention_info = f"\n\nInvention: {key_facts['INFORMATION']['INVENTION_TITLE']}"
+    #         # Get invention information from key facts
+    #         if 'INVENTION_TITLE' in key_facts:
+    #             invention_info = f"\n\nInvention: {key_facts['INVENTION_TITLE']}"
+    #         elif 'INFORMATION' in key_facts and 'INVENTION_TITLE' in key_facts['INFORMATION']:
+    #             invention_info = f"\n\nInvention: {key_facts['INFORMATION']['INVENTION_TITLE']}"
         
-        available_items = input(f"What features does the closest prior art have?{cpa_info}\n\n(comma-separated list): ").strip()
-        needed_items = input(f"What features does the invention have?{invention_info}\n\n(comma-separated list): ").strip()
-        available_list = [item.strip() for item in available_items.split(',') if item.strip()]
-        needed_list = [item.strip() for item in needed_items.split(',') if item.strip()]
+    #     available_items = input(f"What features does the closest prior art have?{cpa_info}\n\n(comma-separated list): ").strip()
+    #     needed_items = input(f"What features does the invention have?{invention_info}\n\n(comma-separated list): ").strip()
+    #     available_list = [item.strip() for item in available_items.split(',') if item.strip()]
+    #     needed_list = [item.strip() for item in needed_items.split(',') if item.strip()]
         
-        missing_items = [item for item in needed_list if item not in available_list]
-        return missing_items
+    #     missing_items = [item for item in needed_list if item not in available_list]
+    #     return missing_items
 
-    #F28
-    adf.addSubADMBLF("ReliableTechnicalEffect", create_sub_adm_1, collect_features, gating_node=['SkilledPerson','ClosestPriorArtDocuments'])
+    # #F28
+    # adf.addSubADMBLF("ReliableTechnicalEffect", create_sub_adm_1, collect_features, gating_node=['SkilledPerson','ClosestPriorArtDocuments'])
 
-    #F25
-    adf.addEvaluationBLF("DistinguishingFeatures", "ReliableTechnicalEffect", "DistinguishingFeatures", ['there are distinguishing features','there are no distinguishing features'])
+    # #F25
+    # adf.addEvaluationBLF("DistinguishingFeatures", "ReliableTechnicalEffect", "DistinguishingFeatures", ['there are distinguishing features','there are no distinguishing features'])
 
-    #F26
-    adf.addEvaluationBLF("NonTechnicalContribution", "ReliableTechnicalEffect", "FeatureTechnicalContribution", ['there is a non-technical contribution','there is no non-technical contribution'], rejection_condition=True)
+    # #F26
+    # adf.addEvaluationBLF("NonTechnicalContribution", "ReliableTechnicalEffect", "FeatureTechnicalContribution", ['there is a non-technical contribution','there is no non-technical contribution'], rejection_condition=True)
 
-    #F27
-    adf.addEvaluationBLF("TechnicalContribution", "ReliableTechnicalEffect", "FeatureTechnicalContribution", ['the features contain a technical contribution','The features do not contain a technical contribution'])
+    # #F27
+    # adf.addEvaluationBLF("TechnicalContribution", "ReliableTechnicalEffect", "FeatureTechnicalContribution", ['the features contain a technical contribution','The features do not contain a technical contribution'])
 
-    #F29
-    adf.addEvaluationBLF("SufficiencyOfDisclosure", "ReliableTechnicalEffect", "SufficiencyOfDisclosureIssue", ['there is an issue with sufficiency of disclosure','there is no issue with sufficiency of disclosure'])
+    # #F29
+    # adf.addEvaluationBLF("SufficiencyOfDisclosure", "ReliableTechnicalEffect", "SufficiencyOfDisclosureIssue", ['there is an issue with sufficiency of disclosure','there is no issue with sufficiency of disclosure'])
 
-    #F62
-    adf.addEvaluationBLF("InventionUnexpectedEffect", "ReliableTechnicalEffect", "UnexpectedEffect", ['there is an unexpected effect within the invention','there is not an unexpected effect within the invention'])
-    #Next BLFs
-    #F46
-    adf.addQuestionInstantiator(
-    "How do the invention's features create the technical effect?",
-    {
-        "As a synergistic combination (effect is greater than the sum of parts).": "Synergy",
-        "As a simple aggregation of independent effects.": "",
-        "Neither":""
-    },
-    None,
-    "synergy_question",
-    gating_node= "ReliableTechnicalEffect")    
+    # #F62
+    # adf.addEvaluationBLF("InventionUnexpectedEffect", "ReliableTechnicalEffect", "UnexpectedEffect", ['there is an unexpected effect within the invention','there is not an unexpected effect within the invention'])
+    
+    
+    # #Next BLFs
+    # #F46
+    # adf.addQuestionInstantiator(
+    # "How do the invention's features create the technical effect?",
+    # {
+    #     "As a synergistic combination (effect is greater than the sum of parts).": "Synergy",
+    #     "As a simple aggregation of independent effects.": "",
+    #     "Neither":""
+    # },
+    # None,
+    # "synergy_question",
+    # gating_node= "ReliableTechnicalEffect")    
 
-    #F45
-    adf.addGatedBLF("FunctionalInteraction",["ReliableTechnicalEffect","Synergy"],
-                        "Is the synergistic combination achieved through a functional interaction between features?",
-                        None)
+    # #F45
+    # adf.addGatedBLF("FunctionalInteraction",["ReliableTechnicalEffect","Synergy"],
+    #                     "Is the synergistic combination achieved through a functional interaction between features?",
+    #                     None)
 
     # Add Sub-ADM 2 algorithm
-    def collect_obj(ui_instance, key_facts=None):
-        """Function to collect objective technical problems from user input based on sub-ADM results"""
-        # Get the ADF instance
-        current_case = ui_instance.case if hasattr(ui_instance, 'case') else []
+    # def collect_obj(ui_instance, key_facts=None):
+    #     """Function to collect objective technical problems from user input based on sub-ADM results"""
+    #     # Get the ADF instance
+    #     current_case = ui_instance.case if hasattr(ui_instance, 'case') else []
 
-        # Get sub-ADM results from ReliableTechnicalEffect
-        sub_adm_results = ui_instance.adf.getFact("ReliableTechnicalEffect", "results")
-        if not sub_adm_results:
-            print("No sub-ADM results found. Cannot determine technical contributions.")
-            return []
+    #     # Get sub-ADM results from ReliableTechnicalEffect
+    #     sub_adm_results = ui_instance.adf.getFact("ReliableTechnicalEffect", "results")
+    #     if not sub_adm_results:
+    #         print("No sub-ADM results found. Cannot determine technical contributions.")
+    #         return []
     
-        # Get the distinguished features list using _get_source_items
-        distinguished_features_list = []
-        try:
-            distinguished_features_list = ui_instance.adf.getFact("ReliableTechnicalEffect", "items") or []
+    #     # Get the distinguished features list using _get_source_items
+    #     distinguished_features_list = []
+    #     try:
+    #         distinguished_features_list = ui_instance.adf.getFact("ReliableTechnicalEffect", "items") or []
 
-        except Exception as e:
-            print(f"Warning: Could not retrieve distinguished features list: {e}")
-            distinguished_features_list = []
+    #     except Exception as e:
+    #         print(f"Warning: Could not retrieve distinguished features list: {e}")
+    #         distinguished_features_list = []
         
-        # Extract technical and non-technical contributions from sub-ADM results
-        technical_contributions = []
-        non_technical_contributions = []
+    #     # Extract technical and non-technical contributions from sub-ADM results
+    #     technical_contributions = []
+    #     non_technical_contributions = []
         
-        for i, case in enumerate(sub_adm_results):
-            if isinstance(case, list):
-                # Check if FeatureTechnicalContribution is in this case (technical contribution)
-                if "FeatureTechnicalContribution" in case:
-                    # Get the corresponding distinguished feature from the list
-                    if i < len(distinguished_features_list):
-                        feature_name = distinguished_features_list[i]
-                        technical_contributions.append(f"Case {i+1}: {feature_name}")
-                    else:
-                        technical_contributions.append(f"Case {i+1}: DistinguishingFeatures")
+    #     for i, case in enumerate(sub_adm_results):
+    #         if isinstance(case, list):
+    #             # Check if FeatureTechnicalContribution is in this case (technical contribution)
+    #             if "FeatureTechnicalContribution" in case:
+    #                 # Get the corresponding distinguished feature from the list
+    #                 if i < len(distinguished_features_list):
+    #                     feature_name = distinguished_features_list[i]
+    #                     technical_contributions.append(f"Case {i+1}: {feature_name}")
+    #                 else:
+    #                     technical_contributions.append(f"Case {i+1}: DistinguishingFeatures")
                 
-                # Check if FeatureTechnicalContribution is not in this case (non-technical contribution)
-                if "FeatureTechnicalContribution" not in case:
-                    # Get the corresponding distinguished feature from the list
-                    if i < len(distinguished_features_list):
-                        feature_name = distinguished_features_list[i]
-                        non_technical_contributions.append(f"Case {i+1}: {feature_name}")
-                    else:
-                        non_technical_contributions.append(f"Case {i+1}: NormalTechnicalContribution")
+    #             # Check if FeatureTechnicalContribution is not in this case (non-technical contribution)
+    #             if "FeatureTechnicalContribution" not in case:
+    #                 # Get the corresponding distinguished feature from the list
+    #                 if i < len(distinguished_features_list):
+    #                     feature_name = distinguished_features_list[i]
+    #                     non_technical_contributions.append(f"Case {i+1}: {feature_name}")
+    #                 else:
+    #                     non_technical_contributions.append(f"Case {i+1}: NormalTechnicalContribution")
         
-        # Present the features to the user
-        print("\n" + "="*60)
-        print("OBJECTIVE TECHNICAL PROBLEM COLLECTION")
-        print("="*60)
+    #     # Present the features to the user
+    #     print("\n" + "="*60)
+    #     print("OBJECTIVE TECHNICAL PROBLEM COLLECTION")
+    #     print("="*60)
         
-        if technical_contributions:
-            print(f"\nTechnical Contributions:")
-            for contrib in technical_contributions:
-                print(f"  • {contrib}")
-        else:
-            print(f"\nTechnical Contributions: None found")
+    #     if technical_contributions:
+    #         print(f"\nTechnical Contributions:")
+    #         for contrib in technical_contributions:
+    #             print(f"  • {contrib}")
+    #     else:
+    #         print(f"\nTechnical Contributions: None found")
             
-        if non_technical_contributions:
-            print(f"\nNon-Technical Contributions:")
-            for contrib in non_technical_contributions:
-                print(f"  • {contrib}")
-        else:
-            print(f"\nNon-Technical Contributions: None found")
+    #     if non_technical_contributions:
+    #         print(f"\nNon-Technical Contributions:")
+    #         for contrib in non_technical_contributions:
+    #             print(f"  • {contrib}")
+    #     else:
+    #         print(f"\nNon-Technical Contributions: None found")
         
-        print("\n" + "="*60)
+    #     print("\n" + "="*60)
         
-        # Check conditions and collect problems
-        objective_problems = []
+    #     # Check conditions and collect problems
+    #     objective_problems = []
         
-        if "Combination" in current_case:
-            print("\nCombination detected in case - creating 1 objective technical problem:")
-            problem_desc = input("Please provide a short description of the objective technical problem: ").strip()
-            if problem_desc:
-                objective_problems.append(problem_desc)
-                print(f"✓ Added problem: {problem_desc}")
+    #     if "Combination" in current_case:
+    #         print("\nCombination detected in case - creating 1 objective technical problem:")
+    #         problem_desc = input("Please provide a short description of the objective technical problem: ").strip()
+    #         if problem_desc:
+    #             objective_problems.append(problem_desc)
+    #             print(f"✓ Added problem: {problem_desc}")
         
-        if "PartialProblems" in current_case:
-            print("\nPartialProblems detected in case - creating multiple problems:")
-            print("Enter problems one by one. Type 'done' when finished.")
+    #     if "PartialProblems" in current_case:
+    #         print("\nPartialProblems detected in case - creating multiple problems:")
+    #         print("Enter problems one by one. Type 'done' when finished.")
             
-            problem_count = 0
-            while True:
-                problem_desc = input(f"Problem {problem_count + 1} description (or 'done' to finish): ").strip()
-                if problem_desc.lower() == 'done':
-                    break
-                if problem_desc:
-                    objective_problems.append(problem_desc)
-                    problem_count += 1
-                    print(f"✓ Added problem {problem_count}: {problem_desc}")
+    #         problem_count = 0
+    #         while True:
+    #             problem_desc = input(f"Problem {problem_count + 1} description (or 'done' to finish): ").strip()
+    #             if problem_desc.lower() == 'done':
+    #                 break
+    #             if problem_desc:
+    #                 objective_problems.append(problem_desc)
+    #                 problem_count += 1
+    #                 print(f"✓ Added problem {problem_count}: {problem_desc}")
         
-        # Store the problems as facts in the ADF
-        if objective_problems:
-            ui_instance.adf.setFact("ObjectiveTechnicalProblem", "objective_technical_problems", objective_problems)
-            print(f"\n✓ Stored {len(objective_problems)} objective technical problem(s)")
-        else:
-            print("\nNo objective technical problems created")
+    #     # Store the problems as facts in the ADF
+    #     if objective_problems:
+    #         ui_instance.adf.setFact("ObjectiveTechnicalProblem", "objective_technical_problems", objective_problems)
+    #         print(f"\n✓ Stored {len(objective_problems)} objective technical problem(s)")
+    #     else:
+    #         print("\nNo objective technical problems created")
         
-        return objective_problems
+    #     return objective_problems
 
     
-    adf.addSubADMBLF("OTPObvious", create_sub_adm_2, collect_obj, gating_node=["CandidateOTP",'SkilledPerson','RelevantPriorArt','ClosestPriorArtDocuments'], rejection_condition=True)
+    # adf.addSubADMBLF("OTPObvious", create_sub_adm_2, collect_obj, gating_node=["CandidateOTP",'SkilledPerson','RelevantPriorArt','ClosestPriorArtDocuments'], rejection_condition=True)
 
-    #F47 
-    adf.addEvaluationBLF("ObjectiveTechnicalProblem", "OTPObvious", "ObjectiveTechnicalProblemFormulation", ['there is a valid objective technical problem','there is not a valid objective technical problem'])
+    # #F47 
+    # adf.addEvaluationBLF("ObjectiveTechnicalProblem", "OTPObvious", "ObjectiveTechnicalProblemFormulation", ['there is a valid objective technical problem','there is not a valid objective technical problem'])
 
 
-    #F59
-    adf.addGatedBLF("DisadvantageousMod",'ClosestPriorArtDocuments',
-                        "Does the invention involve a disadvantageous modification of the prior art?",
-                        None)
+    # #F59
+    # adf.addGatedBLF("DisadvantageousMod",'ClosestPriorArtDocuments',
+    #                     "Does the invention involve a disadvantageous modification of the prior art?",
+    #                     None)
 
-    #F60
-    adf.addGatedBLF("Foreseeable",['SkilledPerson','DisadvantageousMod'],
-                        "Was this disadvantageous modification of the prior art foreseeable to the skilled person?",
-                        None)
+    # #F60
+    # adf.addGatedBLF("Foreseeable",['SkilledPerson','DisadvantageousMod'],
+    #                     "Was this disadvantageous modification of the prior art foreseeable to the skilled person?",
+    #                     None)
 
-    #F61
-    adf.addGatedBLF("UnexpectedAdvantage",['SkilledPerson','DisadvantageousMod'],
-                        "Did the disadvantageous modification result in an unexpected technical advantage?",
-                        None)
+    # #F61
+    # adf.addGatedBLF("UnexpectedAdvantage",['SkilledPerson','DisadvantageousMod'],
+    #                     "Did the disadvantageous modification result in an unexpected technical advantage?",
+    #                     None)
 
-    #F63
-    adf.addNodes("BioTech",question="Is the subject matter of the invention biotech?")
+    # #F63
+    # adf.addNodes("BioTech",question="Is the subject matter of the invention biotech?")
 
-    #F64
-    adf.addGatedBLF("Antibody",'BioTech',
-                        "Does the subject matter concern antibodies?",
-                        None)
+    # #F64
+    # adf.addGatedBLF("Antibody",'BioTech',
+    #                     "Does the subject matter concern antibodies?",
+    #                     None)
 
-    #F67
-    adf.addGatedBLF("PredictableResults",'BioTech',
-                        "Were the results obtained clearly predictable?",
-                        None)
+    # #F67
+    # adf.addGatedBLF("PredictableResults",'BioTech',
+    #                     "Were the results obtained clearly predictable?",
+    #                     None)
 
-    #F68
-    adf.addGatedBLF("ReasonableSuccess",'BioTech',
-                        "Was there a ‘reasonable’ expectation of success in obtaining the results?",
-                        None)
+    # #F68
+    # adf.addGatedBLF("ReasonableSuccess",'BioTech',
+    #                     "Was there a ‘reasonable’ expectation of success in obtaining the results?",
+    #                     None)
 
-    #F65
-    adf.addGatedBLF("KnownTechnique",['RelevantPriorArt','Antibody'],
-                        "Were the antibodies arrived at exclusively by applying techniques known in the art?",
-                        None)
+    # #F65
+    # adf.addGatedBLF("KnownTechnique",['RelevantPriorArt','Antibody'],
+    #                     "Were the antibodies arrived at exclusively by applying techniques known in the art?",
+    #                     None)
 
-    #F66
-    adf.addGatedBLF("OvercomeTechDifficulty",'Antibody',
-                        "Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?",
-                        None)
+    # #F66
+    # adf.addGatedBLF("OvercomeTechDifficulty",'Antibody',
+    #                     "Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?",
+    #                     None)
 
-    #F69
-    adf.addGatedBLF("GapFilled",['RelevantPriorArt','SkilledPerson'],
-                        "Does the invention merely fill an obvious gap in an incomplete prior art document which would naturally occur to the skilled person?",
-                        None)
+    # #F69
+    # adf.addGatedBLF("GapFilled",['RelevantPriorArt','SkilledPerson'],
+    #                     "Does the invention merely fill an obvious gap in an incomplete prior art document which would naturally occur to the skilled person?",
+    #                     None)
 
-    #F70
-    adf.addGatedBLF("WellKnownEquivalent",'RelevantPriorArt',
-                        "Does the invention differ from the prior art in regard to substituting one well-known equivalent for another (e.g., a hydraulic for an electric motor)?",
-                        None)
+    # #F70
+    # adf.addGatedBLF("WellKnownEquivalent",'RelevantPriorArt',
+    #                     "Does the invention differ from the prior art in regard to substituting one well-known equivalent for another (e.g., a hydraulic for an electric motor)?",
+    #                     None)
 
-    #F71
-    adf.addNodes("KnownProperties",question="Is the invention merely the new use of known properties of a well-known material i.e. A washing composition containing as detergent, a known compound having the known property of lowering the surface tension of water.")
+    # #F71
+    # adf.addNodes("KnownProperties",question="Is the invention merely the new use of known properties of a well-known material i.e. A washing composition containing as detergent, a known compound having the known property of lowering the surface tension of water.")
 
-    #F72
-    adf.addNodes("AnalogousUse",question="Does the invention just apply a known technique in a closely analogous situation?")
+    # #F72
+    # adf.addNodes("AnalogousUse",question="Does the invention just apply a known technique in a closely analogous situation?")
 
-    #F73
-    adf.addNodes("KnownDevice",question="Does the invention rely on known devices?")
+    # #F73
+    # adf.addNodes("KnownDevice",question="Does the invention rely on known devices?")
 
     
-    #F75
-    adf.addGatedBLF("ObviousCombination",'KnownDevice',
-                        "Is the invention a simple juxtaposition of the known devices, with each performing their normal, expected function?",
-                        None)
+    # #F75
+    # adf.addGatedBLF("ObviousCombination",'KnownDevice',
+    #                     "Is the invention a simple juxtaposition of the known devices, with each performing their normal, expected function?",
+    #                     None)
 
-    #F74
-    adf.addGatedBLF("AnalogousSubstitution",'KnownDevice',
-                        "Does the invention rely within a known device, simply substituting in a recently developed material suitable for that use?",
-                        None)
+    # #F74
+    # adf.addGatedBLF("AnalogousSubstitution",'KnownDevice',
+    #                     "Does the invention rely within a known device, simply substituting in a recently developed material suitable for that use?",
+    #                     None)
     
-    #F76
-    adf.addNodes("ChooseEqualAlternatives",question="Does the invention result from a choice between equally likely alternatives?")
+    # #F76
+    # adf.addNodes("ChooseEqualAlternatives",question="Does the invention result from a choice between equally likely alternatives?")
     
-    #F77
-    adf.addNodes("NormalDesignProcedure",question="Does the invention consist in choosing parameters from a limited range of possibilities arrived at through routine design procedures?")
+    # #F77
+    # adf.addNodes("NormalDesignProcedure",question="Does the invention consist in choosing parameters from a limited range of possibilities arrived at through routine design procedures?")
 
-    #F78
-    adf.addGatedBLF("SimpleExtrapolation",'RelevantPriorArt',
-                        "Is the invention a result of a simple, straightforward extrapolation from the known art?",
-                        None)
+    # #F78
+    # adf.addGatedBLF("SimpleExtrapolation",'RelevantPriorArt',
+    #                     "Is the invention a result of a simple, straightforward extrapolation from the known art?",
+    #                     None)
 
-    #F79
-    adf.addNodes("ChemicalSelection",question="Does the invention just consist in selecting a specific chemical compound or composition from a broad field?")
+    # #F79
+    # adf.addNodes("ChemicalSelection",question="Does the invention just consist in selecting a specific chemical compound or composition from a broad field?")
 
     
     # Set question order to ask information questions first

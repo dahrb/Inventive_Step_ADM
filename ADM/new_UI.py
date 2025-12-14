@@ -11,6 +11,7 @@ import os
 import argparse
 from new_inventive_step_ADM import adm_initial, adm_main
 import logging
+from ADM_Construction import *
 
 logger = logging.getLogger("ADM_CLI_Tool")
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -35,12 +36,16 @@ class CLI():
         if not self.caseName: 
             self.caseName = input("[QUESTION] Enter case name: ").strip()
             if self.caseName == '':
-                print("No case name provided.")
+                print("No case name provided.\n")
 
         #get a copy of nodes and question order
         nodes = self.adm.nodes.copy()
         question_order = self.adm.questionOrder.copy() if self.adm.questionOrder else []
+        
+        self.ask_questions(nodes,question_order)
+        
 
+    def ask_questions(self, nodes,question_order):
         #only proceeds if question order specified
         if question_order != []:
             while question_order:
@@ -52,10 +57,10 @@ class CLI():
         #process and display outcome
         self.show_outcome()
         
-        print(f"Case: {self.case}")
+        #print(f"Case: {self.case}\n")
         
         #add to launch next ADM more easily
-        #return True if 
+        return True if self.adm.root_node in self.adm.case else False
 
     def questiongen(self, question_order, nodes):
         """
@@ -83,7 +88,7 @@ class CLI():
             
             #this is an information question
             question_text = self.adm.information_questions[current_question]
-            answer = input(f"{question_text}: ").strip()
+            answer = input(f"[QUESTION] {question_text}: \n").strip()
             
             self.adm.setFact(current_question, answer)
             
@@ -110,12 +115,11 @@ class CLI():
                 return self.questiongen(question_order, nodes)
             else:
                 self._mark_blfs_as_evaluated(instantiator)
-                # Any other return value means there's an issue, skip permanently
                 logger.debug(f"Skipping {current_question} - processing failed")
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
         
-        # Check if this is a regular node
+        #check if this is a regular node
         elif current_question in self.adm.nodes:
             current_node = self.adm.nodes[current_question]
             
@@ -124,30 +128,67 @@ class CLI():
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
             
-            # # Check if this is a SubADMBLF
-            # elif hasattr(current_node, 'evaluateSubADMs'):
-            #     return self.handleSubADMBLF(current_question, current_node, question_order, nodes)
+            #check if this is a SubADMNode
+            elif isinstance(current_node, SubADMNode):
+                logger.debug(f"recognised sub-adm node, {current_node}")
+
+                sub_adm_result = current_node.evaluateSubADMs(ui_instance=self)
+                
+                if sub_adm_result:
+                    #sub-ADM evaluation was successful, add to case
+                    if current_question not in self.case:
+                        self.case.append(current_question)
+                    else:
+                        pass
+                    
+                #mark as evaluated
+                self.evaluated_blfs.add(current_question)
+
+                #remove from question order and continue
+                question_order.pop(0)
+                
+                return self.questiongen(question_order, nodes)
             
-            # # Check if this is an EvaluationBLF
-            # elif hasattr(current_node, 'evaluateResults'):
-            #     return self.handleEvaluationBLF(current_question, current_node, question_order, nodes)
-            
-            #process blf
-            x = self.questionHelper(current_node, current_question)
-            
-            #mark as evaluated
-            self.evaluated_blfs.add(current_question)
-            if x:
+            #check if this is an EvaluationBLF
+            elif isinstance(current_node, EvaluationNode):
+                logger.debug(f"recognised evaluation node, {current_node}")
+                    
+                evaluation_result = current_node.evaluateResults(self.adm)
+        
+                if evaluation_result:
+                    #evaluation was successful, add to case
+                    if current_question not in self.case:
+                        self.case.append(current_question)
+                    else:
+                        pass
+                else:
+                    #evaluation failed, don't add to case
+                    pass
+                
+                #mark as evaluated
+                self.evaluated_blfs.add(current_question)
+
+                #remove from question order and continue
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
-            else:
-                return question_order, nodes
+                    
+            else: 
+                #process blf
+                self.questionHelper(current_node, current_question)
+                
+                #mark as evaluated
+                self.evaluated_blfs.add(current_question)
+
+                question_order.pop(0)
+                return self.questiongen(question_order, nodes)
+                # else:
+                #     return question_order, nodes
         
         else:
             self.evaluated_blfs.add(current_question)
             question_order.pop(0)
-            return self.questiongen(question_order, nodes)
-    
+            return self.questiongen(question_order, nodes)        
+            
     def _mark_blfs_as_evaluated(self, instantiator):
         """
         Helper to extract ALL possible BLFs from a question instantiator 
@@ -264,7 +305,7 @@ class CLI():
             question_text = instantiator['question']
             resolved_question = self.resolve_question_template(question_text)          
             
-            print(f"\n{resolved_question}")
+            print(f"[QUESTION] \n{resolved_question}\n")
             
             #show available answers
             answers = list(instantiator['blf_mapping'].keys())
@@ -303,11 +344,11 @@ class CLI():
                 if instantiator.get('factual_ascription') and blf_name in instantiator['factual_ascription']:
                     factual_questions = instantiator['factual_ascription'][blf_name]
                     for fact_name, question in factual_questions.items():
-                        answer = input(f"{question}: ").strip()
+                        answer = input(f"[QUESTION] {question}: \n").strip()
                         if answer:
                             self.adm.setFact(fact_name, answer)
             
-            return True
+            return
         
         #regular nodes
         else:
@@ -317,20 +358,20 @@ class CLI():
                             
                 #ask the question with retry loop
                 while True:
-                    answer = input(f"{question_text}\nAnswer (y/n): ").strip().lower()
+                    answer = input(f"[QUESTION] {question_text}\nAnswer (y/n): ").strip().lower()
                     
                     if answer in ['y', 'yes']:
                         if current_question not in self.case:
                             self.case.append(current_question)
-                        return True
+                        return 
                     elif answer in ['n', 'no']:
-                        return True
+                        return
                     else:
                         print("Invalid answer, please answer y/n")
             else:
                 if current_question not in self.case:
                     self.case.append(current_question)
-                return True
+                return 
 
     def resolve_question_template(self, question_text):
         """
@@ -344,6 +385,7 @@ class CLI():
         
         print("\n" + "="*50)
         print(f"Case Outcome: {self.caseName}")
+        print(f"Accepted factors: {self.case}")
         print("="*50)
         
         try:
@@ -430,6 +472,8 @@ def main():
         print("--- DEBUG MODE ENABLED ---")
         
     cli = CLI(adm=adm_initial())
+    
+    logger.debug(f'cli: {cli}')
     
     try:
         cli.query_domain()
