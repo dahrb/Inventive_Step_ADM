@@ -6,12 +6,14 @@ Last Updated: 15.12.2025
 Status: Testing 
 
 Test Coverage: 83%
+    -- add viz sub-adm test
 """
 
 from pythonds import Stack
 import pydot
 import re
 import logging
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -499,86 +501,6 @@ class ADM:
                 # because we can't Accept anyway.
                 logger.debug(f"  -> FINAL: FALSE (No possible acceptance path)")
                 return False, -1
-        
-    # def evaluateNode(self, node, mode='standard'):
-    #     """
-    #     Evaluates a node's acceptance conditions.
-        
-    #     Modes:
-    #     - 'standard': Returns True/False
-    #     - '3vl': Returns True/False/None
-    #     """   
-
-    #     logger.debug(node.children)
-    #     logger.debug(f'CASE: {self.case}')
-    #     logger.debug(f'EVAL NODES: {self.evaluated_nodes}')
-
-    #     #3VL leaf nodes eval
-    #     if mode == '3vl' and not node.children:
-    #         if node.name in self.case:
-    #             return True, 0
-    #         #check context stored by check_early_stop
-    #         elif node.name in self.evaluated_nodes:
-    #             return False, -1
-    #         else:
-    #             return None, -1 # Unknown
-        
-    #     #counter to index the statements to be shown to the user
-    #     counter = -1
-    #     reject_unknown = False
-    
-    #     for i in node.acceptance:
-            
-    #         logger.debug(f'ACCEPTANCE {i}')
-            
-    #         self.reject = False
-    #         counter += 1
-            
-    #         #evaluate using the shared engine
-    #         eval = self.postfixEvaluation(i, mode=mode)
-            
-    #         logger.debug(f'acceptcond {node.name} = {i} == {eval}')
-            
-    #         #STANDARD
-    #         if mode == 'standard':
-    #             #handle reject conditions
-    #             if self.reject and eval is True:
-    #                 return False, counter
-                
-    #             if not self.reject and eval is True:
-    #                 return True, counter
-                
-    #             if eval == 'accept': 
-    #                 return True, counter
-            
-    #         # 3VL MODE
-    #         elif mode == '3vl':
-    #             if eval is True:
-    #                 #check if reject condition
-    #                 if self.reject:
-    #                     return False, counter 
-    #                 else:
-    #                     #if we have a true acceptance condition and a preceding reject condition
-    #                     #which has been unevaluated then we must return Unonwn - None
-    #                     if reject_unknown:
-    #                         #return unknown
-    #                         return None, -1
-                        
-    #                     else:
-    #                         return True, counter 
-                
-    #             elif eval is False:
-    #                 #continue to next acceptance condition
-    #                 continue
-                
-    #             else: # val is None
-    #                 if self.reject:
-    #                     reject_unknown = True
-    #                     continue
-    #                 else:
-    #                     return None, -1
-
-    #     return False, counter
     
     def postfixEvaluation(self, acceptance, mode='standard'):
         """
@@ -742,9 +664,15 @@ class ADM:
             if hasattr(self, 'root_node') and name == self.root_node.name:
                 shape = "doubleoctagon"
                 peripheries = '2'
+            elif type(node).__name__ == 'SubADMNode':
+                shape = "component" 
+            elif type(node).__name__ == 'EvaluationNode':
+                shape = "box"
+                peripheries = "2"
             elif name in issue_nodes:
                 shape = "ellipse" 
                 peripheries = "2"
+             
             elif node.children: 
                 shape = "ellipse"
             else: 
@@ -884,6 +812,45 @@ class ADM:
             print(f"Minimalist graph saved: {out_name}")
         except Exception as e:
             print(f"Graphviz Error: {e}")
+    
+    def visualiseSubADMs(self, output_dir="sub_adm_viz"):
+        """
+        Iterates through all evaluated Sub-ADMs and generates visualization graphs for them.
+        
+        Parameters
+        ----------
+        output_dir : str
+            Directory to save the images (default: "sub_adm_viz")
+        """
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        print(f"\n--- Visualising Sub-ADMs to '{output_dir}/' ---")
+
+        for node_name, node in self.nodes.items():
+            # Check if this is a SubADMNode by looking for the stored instances fact
+            # The key format defined in SubADMNode is: f'{self.name}_sub_adm_instances'
+            fact_key = f"{node_name}_sub_adm_instances"
+            
+            if hasattr(self, 'facts') and fact_key in self.facts:
+                sub_instances = self.facts[fact_key]
+                
+                print(f"Found Sub-ADM results for node: {node_name}")
+                
+                for item_name, sub_adm_obj in sub_instances.items():
+                    # Sanitize filenames
+                    safe_node = node_name.replace(" ", "_")
+                    safe_item = str(item_name).replace(" ", "_").replace("/", "-")
+                    filename = os.path.join(output_dir, f"{safe_node}_{safe_item}.png")
+                    
+                    # Generate the graph using the sub-ADM's own visualization method
+                    # We pass its specific 'case' so the nodes are colored correctly (Green/Red)
+                    try:
+                        sub_adm_obj.visualiseNetwork(filename=filename, case=sub_adm_obj.case)
+                        # Optional: Also generate minimalist version
+                        # sub_adm_obj.visualiseMinimalist(filename=filename.replace(".png", "_min.png"))
+                    except Exception as e:
+                        print(f"  Error visualizing {safe_item}: {e}")
                     
     def addInformationQuestion(self, name, question):
         """
@@ -1513,7 +1480,6 @@ class EvaluationNode(Node):
                 else:
                     print(f"Item {i+1}: Invalid case format - {item_case}")
                 
-            print(found_in_items)
             if found_in_items:
                 if self.rejection_condition:
                     print(f"{self.target_node} IN sub-ADM cases")

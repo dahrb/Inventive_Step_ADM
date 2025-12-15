@@ -206,7 +206,7 @@ def sub_adm_1(item_name):
     sub_adm.addNodes("TechnicalAdaptation",question='Is the feature a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.')
 
     #bridge node to make things easier
-    sub_adm.addNodes("NumOrComp",["NumericalData","ComputerSimulation"],["The feature involves numercial data","The feature involves a computer simulation","The feature does not involve a computer simulation or numerical data"])
+    sub_adm.addNodes("NumOrComp",["NumericalData","ComputerSimulation"],["The feature involves numerical data","The feature involves a computer simulation","The feature does not involve a computer simulation or numerical data"])
 
     #F37 - Q23
     sub_adm.addGatedBLF("IntendedTechnicalUse","NumOrComp",
@@ -238,15 +238,16 @@ def sub_adm_1(item_name):
     sub_adm.addQuestionInstantiator(
     "Are the technical effects credible and/or reproducible?",
     {
-        "Credible": "Credible",
-        "Reproducible": "Reproducible",
+        "Credible": ["Credible","NonReproducible"],
+        "Reproducible": "",
         "Both": ["Credible","Reproducible"],
-        "Neither": ""
+        "Neither": "NonReproducible"
     },
     None,
     "cred_repro_questions")
 
-    sub_adm.addNodes("NonReproducible",["reject Reproducible","accept"],["the technical effect is reproducible","the technical effect is not reproducible",""])
+   # removed
+   # sub_adm.addNodes("NonReproducible",["reject Reproducible","accept"],["the technical effect is reproducible","the technical effect is not reproducible",""])
    
     #F44 - Q32
     sub_adm.addGatedBLF("ClaimContainsEffect","NonReproducible",
@@ -259,15 +260,16 @@ def sub_adm_1(item_name):
     sub_adm.addNodes("AppliedInField",["SpecificPurpose and FunctionallyLimited"],["the technical contribution is applied in the field","the technical contribution is not applied in the field"])
     sub_adm.addNodes("MathematicalContribution",["MathematicalMethod and AppliedInField","MathematicalMethod and TechnicalAdaptation"],["the technical contribution is a mathematical contribution applied in the field","the technical contribution is a mathematical contribution with a specific technical adaptation","the technical contribution is not a mathematical contribution"])
     sub_adm.addNodes("ComputationalContribution",["ComputerSimulation and TechnicalAdaptation","ComputerSimulation and IntendedTechnicalUse","NumericalData and IntendedTechnicalUse","NumericalData and TechUseSpecified"],["the technical contribution is a computational contribution with a specific technical adaptation","the technical contribution is a computational contribution with an intended technical use","the technical contribution is a numerical method with an intended technical use","the technical contribution is a numerical method with a specified technical use","there is no computational or numerical technical contribution"])
-    sub_adm.addNodes("ExcludedField",["ComputerSimulation","NumericalData","MathematicalMethod","OtherExclusions"],["Computer simulations are typically excluded from being inventive","Numerical data is typically excluded from being inventive","Mathematical methods are typically excluded from being inventive","The feature is part of another excluded field","The feature is not part of an excluded field"])
+    #UPDATED
+    sub_adm.addNodes("ExcludedField",["NumOrComp","MathematicalMethod","OtherExclusions"],["Computer simulations are typically excluded from being inventive","Numerical data is typically excluded from being inventive","Mathematical methods are typically excluded from being inventive","The feature is part of another excluded field","The feature is not part of an excluded field"])
     sub_adm.addNodes("NormalTechnicalContribution",["reject CircumventTechProblem","reject ExcludedField","IndependentContribution","CombinationContribution"],["The feature is not a technical contribution as it circumvents a technical problem","The feature is not a normal technical contribution as it is part of an excluded field","The feature is an independent technical contribution","The feature is a technical contribution in combination with other features","the feature is not a technical contribution"])
     sub_adm.addNodes("FeatureTechnicalContribution",["NormalTechnicalContribution","ComputationalContribution","MathematicalContribution"],["there is a technical contribution","there is a technical computational or numerical contribution","there is a technical mathematical contribution","there is no technical contribution"])
     sub_adm.addNodes("BonusEffect",["FeatureTechnicalContribution and UnexpectedEffect and OneWayStreet"],["there is a bonus effect","there is no bonus effect"])
-    sub_adm.addNodes("SufficiencyOfDisclosureIssue",["reject Reproducible","ClaimContainsEffect and SufficiencyOfDisclosureRaised"],["there is no issue with sufficiency of disclosure regarding this feature","there is an issue of sufficiency of disclosure as the claim states an effect which is not reproducible","no sufficiency of disclosure issue raised"])
+    sub_adm.addNodes("SufficiencyOfDisclosureIssue",["ClaimContainsEffect and NonReproducible and SufficiencyOfDisclosureRaised"],["there is no issue with sufficiency of disclosure regarding this feature","there is an issue of sufficiency of disclosure as the claim states an effect which is not reproducible","no sufficiency of disclosure issue raised"])
     sub_adm.addNodes("ImpreciseUnexpectedEffect",["reject PreciseTerms","UnexpectedEffect"],["the unexpected effect is clearly and precisely described","the unexpected effect is not clearly and precisely described","there is no unexpected effect"])
     
     #root node
-    sub_adm.addNodes("FeatureReliableTechnicalEffect",["reject SufficiencyOfDisclosureIssue","reject BonusEffect","reject ImpreciseUnexpectedEffect", "FeatureTechnicalContribution and Credible and Reproducible"],["An issue with sufficiency of disclosure precludes us relying on this feature","The feature is a bonus effect which precludes us relying on this feature","The feature is a unexpected effect which is not clearly described precluding us relying on this feature","The feature is a credible, reproducible and reliable technical contribution","The feature is not a reliable technical contribution due to a lack of credibility/reproducibility or a technical contribution"],root=True)
+    sub_adm.addNodes("FeatureReliableTechnicalEffect",["reject SufficiencyOfDisclosureIssue","reject BonusEffect","reject ImpreciseUnexpectedEffect", "reject NonReproducible", "FeatureTechnicalContribution and Credible"],["An issue with sufficiency of disclosure is present so cannot be a reliable technical contribution","The feature is a bonus effect which precludes us relying on this feature","The feature is an unexpected effect so cannot be a reliable technical contribution", "The feature is non-reproducible so cannot be a reliable technical contribution","The feature is a credible, reproducible and reliable technical contribution","The feature is not a reliable technical contribution due to a lack of credibility/reproducibility or a technical contribution"],root=True)
     
     #The fact the sub-adm is running means there are distinguishing features so to more easily resolve this we just auto add it to eval later
     sub_adm.case = ["DistinguishingFeatures"]
@@ -383,7 +385,6 @@ def adm_main():
     {
         "As a synergistic combination (effect is greater than the sum of parts).": "Synergy",
         "As a simple aggregation of independent effects.": "",
-        "Neither":""
     },
     None,
     "synergy_question",
@@ -498,7 +499,7 @@ def adm_main():
     adm.addSubADMNode("OTPObvious", sub_adm=sub_adm_2, function=collect_obj, rejection_condition=True, check_node=['NonTechnicalContribution'])
 
     #F47 
-    adm.addEvaluationNode("ObjectiveTechnicalProblem", "OTPObvious", "ObjectiveTechnicalProblemFormulation", ['there is a valid objective technical problem','there is not a valid objective technical problem'])
+    adm.addEvaluationNode("ValidOTP", "OTPObvious", "ObjectiveTechnicalProblemFormulation", ['there is a valid objective technical problem','there is not a valid objective technical problem'])
 
     #F59
     adm.addNodes("DisadvantageousMod",question="Does the invention involve a disadvantageous modification of the prior art?")
@@ -573,8 +574,12 @@ def adm_main():
     adm.addNodes("Combination",['ReliableTechnicalEffect and FunctionalInteraction and Synergy'],['There is a synergy between all the technical effects', 'There is no synergy between all the technical effects'])
     #AF10    
     adm.addNodes("PartialProblems",['reject Combination','ReliableTechnicalEffect'],['There are not an aggregate of technical effects', 'There are an aggregate of technical effects', ""])
-    #AF11
-    adm.addNodes("CandidateOTP",['Combination','PartialProblems'],['There is a single objective technical problem','There are multiple partial problems which form the objective technical problem'])    
+    
+    #NEW -
+    adm.addNodes('Contribution',['TechnicalContribution and NonTechnicalContribution','TechnicalContribution'],['There are both technical and non-technical contribution/s', 'There are technical contribution/s','There are no technical contributions'])
+    
+    #AF11 - updated
+    adm.addNodes("CandidateOTP",['Combination and Contribution','PartialProblems and Contribution'],['There is a single objective technical problem','There are multiple partial problems which form the objective technical problem'])    
     
     #AF12
     adm.addNodes('SecondaryIndicator',['PredictableDisadvantage','BioTechObvious','AntibodyObvious','KnownMeasures','ObviousCombination','ObviousSelection'],['there is a secondary indicator - the invention contains a predictable disadvantage','there is a secondary indicator - the invention concerns an obvious use of biotechnology','there is a secondary indicator - the invention concerns an obvious use of antibodies','there is a secondary indicator - the invention contains known measures and consequently is obvious','there is a secondary indicator - the invention contains an obvious combination and consequently is obvious','there is a secondary indicator - the invention contains an obvious selection and consequently is obvious','there is no secondary indicator'])
@@ -602,6 +607,9 @@ def adm_main():
 
     #ISSUES
  
+    #NEW
+    adm.addNodes('ObjectiveTechnicalProblem',['CandidateOTP and ValidOTP'],['there is a well-defined objective technical problem','there is no well-defined objective technical problem '])
+    
     #I3
     adm.addNodes('Novelty',['DistinguishingFeatures'],['The invention has novelty','The invention has no novelty'])
 
@@ -609,11 +617,11 @@ def adm_main():
     adm.addNodes('Obvious',['OTPObvious','SecondaryIndicator'],['the invention is obvious','the invention is obvious due to a secondary indicator','the invention is not obvious'])
 
     #I1 - ROOT NODE 
-    adm.addNodes('InvStep',['reject SufficiencyOfDisclosure','reject Obvious','TechnicalContribution and ReliableTechnicalEffect and Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'],root=True)
+    adm.addNodes('InvStep',['reject SufficiencyOfDisclosure','reject Obvious','Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'],root=True)
 
     # Set question order to ask information questions first
     adm.questionOrder = ['ReliableTechnicalEffect','DistinguishingFeatures','NonTechnicalContribution','TechnicalContribution','SufficiencyOfDisclosure',"InventionUnexpectedEffect",
-    "synergy_question","FunctionalInteraction","OTPObvious","ObjectiveTechnicalProblem", "DisadvantageousMod","Foreseeable","UnexpectedAdvantage","BioTech","Antibody","PredictableResults","ReasonableSuccess","KnownTechnique","OvercomeTechDifficulty","GapFilled","WellKnownEquivalent","KnownProperties","AnalogousUse","KnownDevice","ObviousCombination","AnalogousSubstitution","ChooseEqualAlternatives","NormalDesignProcedure","SimpleExtrapolation","ChemicalSelection"
+    "synergy_question","FunctionalInteraction","OTPObvious","ValidOTP", "DisadvantageousMod","Foreseeable","UnexpectedAdvantage","BioTech","Antibody","PredictableResults","ReasonableSuccess","KnownTechnique","OvercomeTechDifficulty","GapFilled","WellKnownEquivalent","KnownProperties","AnalogousUse","KnownDevice","ObviousCombination","AnalogousSubstitution","ChooseEqualAlternatives","NormalDesignProcedure","SimpleExtrapolation","ChemicalSelection"
     ]
     
     return adm 

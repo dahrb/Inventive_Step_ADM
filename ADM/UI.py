@@ -9,7 +9,7 @@ To Do:
 import sys
 import os
 import argparse
-from ADM_JURIX.ADM.inventive_step_ADM import adm_initial, adm_main
+from inventive_step_ADM import adm_initial, adm_main
 import logging
 from ADM_Construction import *
 
@@ -416,9 +416,9 @@ class CLI():
             if hasattr(self.adm, 'temp_evaluated_nodes'):
                 del self.adm.evaluated_nodes
                  
-    def visualize_domain(self,minimal=False):
+    def visualize_domain(self, minimal=False):
         """
-        Visualize the domain as a graph.
+        Visualize the domain as a graph, including any evaluated Sub-ADMs.
         Single source of truth: Calculates the filename and delegates to ADM.
         """
         print("\n" + "="*50)
@@ -430,16 +430,17 @@ class CLI():
             # Use case name if available, otherwise ADM name
             base_name = self.caseName if self.caseName else self.adm.name
             
-            # Ensure we don't double-stack extensions (e.g., case.png.png)
+            # Ensure we don't double-stack extensions
             if not base_name.lower().endswith('.png'):
                 filename = f"{base_name}.png"
             else:
                 filename = base_name
+                base_name = filename[:-4] # strip extension for folder creation
 
             # 2. Determine Data Context
             # Only color the graph if we actually have case data
             case_data = self.adm.case
-            print(case_data)
+            print(f"Case Data: {case_data}")
 
             print(f"Generating graph: {filename}")
 
@@ -447,10 +448,43 @@ class CLI():
                 # Minimalist Viz (Always useful for checking structure)
                 self.adm.visualiseMinimalist(filename=f"{base_name}_structure.png")
             else:
-                # 3. Generate & Save (One call only)
+                # 3. Generate Main ADM (One call only)
                 self.adm.visualiseNetwork(filename=filename, case=case_data)
+                
+                # 4. Generate Sub-ADMs (Iterate through facts to find stored instances)
+                # This looks for keys ending in '_sub_adm_instances' which SubADMNode creates.
+                if hasattr(self.adm, 'facts'):
+                    sub_dir = f"{base_name}_sub_adms"
+                    dir_created = False
+                    
+                    for fact_key, fact_val in self.adm.facts.items():
+                        # Check if this fact is a dictionary of sub-ADM instances
+                        if fact_key.endswith('_sub_adm_instances') and isinstance(fact_val, dict):
+                            
+                            # Create directory only if we actually have sub-ADMs to show
+                            if not dir_created:
+                                if not os.path.exists(sub_dir):
+                                    os.makedirs(sub_dir)
+                                print(f"\n--- Visualising Sub-ADMs to '{sub_dir}/' ---")
+                                dir_created = True
+                            
+                            # Extract node name from key (e.g., 'NodeName_sub_adm_instances')
+                            node_name = fact_key.replace('_sub_adm_instances', '')
+                            print(f"Processing Sub-ADMs for: {node_name}")
+                            
+                            for item_name, sub_adm_inst in fact_val.items():
+                                # Create safe filename
+                                safe_item = str(item_name).replace(" ", "_").replace("/", "-").replace("\\", "-")
+                                sub_filename = os.path.join(sub_dir, f"{node_name}_{safe_item}.png")
+                                
+                                try:
+                                    # Visualize the specific sub-ADM instance using its own case data
+                                    sub_adm_inst.visualiseNetwork(filename=sub_filename, case=sub_adm_inst.case)
+                                    # print(f"  Generated: {sub_filename}")
+                                except Exception as e:
+                                    print(f"  Error visualizing sub-ADM item '{item_name}': {e}")
             
-            # 4. Emit Path (for your environment integration)
+            # 5. Emit Path (for your environment integration)
             try:
                 abs_path = os.path.abspath(filename)
                 print(f"ADM_VISUALIZATION:{abs_path}")
@@ -460,6 +494,9 @@ class CLI():
                 
         except Exception as e:
             print(f"Error creating visualization: {e}")
+            # Optional: print full traceback if you need deep debugging
+            # import traceback
+            # traceback.print_exc()
             
 def main():
     """Main function"""
