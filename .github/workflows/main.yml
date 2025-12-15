@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.9]
+        python-version: ["3.11"]
 
     steps:
     - uses: actions/checkout@v4
@@ -31,27 +31,9 @@ jobs:
         uv venv
         uv pip install -r requirements.txt
     
-    - name: Run unit tests with detailed output
+    - name: Run all unit tests
       run: |
-        uv run python test_adm_unit.py all
-      continue-on-error: false
-    
-    - name: Run sub-ADM tests only
-      run: |
-        uv run python test_adm_unit.py sub
-      continue-on-error: false
-    
-    - name: Run main ADM tests only
-      run: |
-        uv run python test_adm_unit.py main
-      continue-on-error: false
-    
-    - name: Run CLI tests only
-      run: |
-        uv run python test_adm_unit.py cli
-      continue-on-error: false
-    
-    - name: Run dependency tests only
-      run: |
-        uv run python test_adm_unit.py dep
+        # This will discover and run test_ADM.py, test_UI.py, etc.
+        # -v provides detailed output similar to the previous setup
+        uv run python -m unittest discover -p "test_*.py" -v
       continue-on-error: false
