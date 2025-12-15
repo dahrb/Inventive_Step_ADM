@@ -27,13 +27,15 @@ jobs:
         version: "latest"
     
     - name: Create virtual environment and install dependencies
+      # We assume requirements.txt is in the ROOT of the repo
       run: |
         uv venv
         uv pip install -r requirements.txt
     
-    - name: Run all unit tests
+    - name: Run test_ADM.py
+      # Change directory to ADM so imports (from ADM_Construction) work correctly
+      working-directory: ./ADM
+      # Run only the specific test file you requested
       run: |
-        # This will discover and run test_ADM.py, test_UI.py, etc.
-        # -v provides detailed output similar to the previous setup
-        uv run python -m unittest discover -p "test_*.py" -v
+        uv run python -m unittest test_ADM.py -v
       continue-on-error: false
