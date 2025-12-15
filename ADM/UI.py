@@ -9,7 +9,7 @@ To Do:
 import sys
 import os
 import argparse
-from new_inventive_step_ADM import adm_initial, adm_main
+from ADM_JURIX.ADM.inventive_step_ADM import adm_initial, adm_main
 import logging
 from ADM_Construction import *
 
@@ -44,6 +44,8 @@ class CLI():
         
         self.ask_questions(nodes,question_order)
         
+        #evals root node - useful if you have multiple ordered adms 
+        return True if self.adm.root_node.name in self.adm.case else False
 
     def ask_questions(self, nodes,question_order):
         #only proceeds if question order specified
@@ -57,11 +59,6 @@ class CLI():
         #process and display outcome
         self.show_outcome()
         
-        #print(f"Case: {self.case}\n")
-        
-        #add to launch next ADM more easily
-        return True if self.adm.root_node in self.adm.case else False
-
     def questiongen(self, question_order, nodes):
         """
         Generates questions based on the question order and current nodes
@@ -70,11 +67,12 @@ class CLI():
         #early stop check
         if self.evaluated_blfs:
             self.adm.case = self.case
-            logger.debug("arrived at self.evaluated questions")
-            logger.debug(f'{self.adm.case}')
+            logger.debug(f'Case: {self.adm.case}')
             if self.adm.check_early_stop(self.evaluated_blfs):
                 # return empty list to stop recursion
                 return [], nodes
+            
+        logger.debug('EARLY STOP ENDS ==========')
         
         # to ensure the question gen procedure stops 
         if not question_order:
@@ -122,7 +120,6 @@ class CLI():
         #check if this is a regular node
         elif current_question in self.adm.nodes:
             current_node = self.adm.nodes[current_question]
-            
             if not self.gates_satisfied(current_node, self.case):
                 logger.debug(f"Skipping {current_question} - gates cannot be satisfied")
                 question_order.pop(0)
@@ -175,7 +172,7 @@ class CLI():
             else: 
                 #process blf
                 self.questionHelper(current_node, current_question)
-                
+
                 #mark as evaluated
                 self.evaluated_blfs.add(current_question)
 
@@ -183,7 +180,7 @@ class CLI():
                 return self.questiongen(question_order, nodes)
                 # else:
                 #     return question_order, nodes
-        
+            
         else:
             self.evaluated_blfs.add(current_question)
             question_order.pop(0)
@@ -221,6 +218,8 @@ class CLI():
                 gating_nodes = [gating_nodes]
         else:
             return True  # No dependencies
+        
+        logger.debug(f'{gating_nodes}, case: {case}')
 
         #try to satisfy all dependencies
         for dep in gating_nodes:
@@ -239,7 +238,7 @@ class CLI():
             try:
                 #ensure all child gates are evaluated (but don't require them to be satisfied)
                 if gating_node.children:
-                    logger.debug(f"{node} has children: {node.children}")
+                    logger.debug(f"{gating_node} has children: {gating_node.children}")
                     for child_name in gating_node.children:
                         if child_name not in self.case:
                             logger.debug(f"Evaluating child: {child_name}")
@@ -257,7 +256,11 @@ class CLI():
                 original_case = getattr(self.adm, 'case', None)
                 self.adm.case = self.case.copy()
                 
-                evaluation_result = self.adm.evaluateNode(gating_node)
+                logger.debug(self.adm.case)
+                
+                evaluation_result, _ = self.adm.evaluateNode(gating_node)
+
+                logger.debug(evaluation_result)
 
                 #restore the original case on the adm object after evaluation
                 if original_case is not None:
@@ -345,9 +348,8 @@ class CLI():
                     factual_questions = instantiator['factual_ascription'][blf_name]
                     for fact_name, question in factual_questions.items():
                         answer = input(f"[QUESTION] {question}: \n").strip()
-                        if answer:
-                            self.adm.setFact(fact_name, answer)
-            
+                        self.adm.setFact(fact_name, answer)
+
             return
         
         #regular nodes
@@ -383,19 +385,19 @@ class CLI():
     def show_outcome(self):
         """Show the evaluation outcome"""
         
-        print("\n" + "="*50)
-        print(f"Case Outcome: {self.caseName}")
-        print(f"Accepted factors: {self.case}")
-        print("="*50)
-        
         try:
             
             self.adm.evaluated_nodes = set(self.evaluated_blfs)
             
-            logger.debug(self.adm.evaluated_nodes)
+            logger.debug(f'eval nodes: {self.adm.evaluated_nodes}')
             
             #returns the statements from the evaluated tree in a hierarchical structure
             reasoning = self.adm.evaluateTree(self.case)
+            
+            print("\n" + "="*50)
+            print(f"Case Outcome: {self.caseName}")
+            print(f"Accepted factors: {self.case}")
+            print("="*50)
             
             if not reasoning:
                 print("No reasoning could be found.")
@@ -471,13 +473,25 @@ def main():
         logging.getLogger().setLevel(logging.DEBUG)        
         print("--- DEBUG MODE ENABLED ---")
         
-    cli = CLI(adm=adm_initial())
-    
-    logger.debug(f'cli: {cli}')
+    #cli = CLI(adm=adm_initial())
+    facts = {'INVENTION_TITLE': 'a', 'INVENTION_DESCRIPTION': 'b', 'INVENTION_TECHNICAL_FIELD': 'c', 'REL_PRIOR_ART': 'd', 'CGK': 'e', 'SkilledPerson': 'rr', 'CPA': 'tt'}        # if result:
+    cli_2 = CLI(adm=adm_main())
+    cli_2.adm.facts = facts
     
     try:
-        cli.query_domain()
-        cli.visualize_domain(minimal=False)
+        result = cli_2.query_domain()
+        
+        logger.debug(f'facts_final: {cli_2.adm.facts}')
+        
+        
+        #     cli_2 = CLI(adm=adm_main())
+        #     cli_2.adm.facts = cli.adm.facts
+            
+        #     _ = cli.query_domain()
+        
+        #     cli.visualize_domain(minimal=False)
+        cli_2.visualize_domain(minimal=False)
+
     except KeyboardInterrupt:
         print("\n\nProgram interrupted by user. Goodbye!")
         sys.exit(0)

@@ -6,10 +6,10 @@ import re
 
 # --- 1. IMPORT ADM ---
 try:
-    from new_inventive_step_ADM import adm_initial
+    from ADM_JURIX.ADM.inventive_step_ADM import adm_initial
 except ImportError:
     try:
-        from new_UI import adm_initial
+        from ADM_JURIX.ADM.UI import adm_initial
     except ImportError:
         print("CRITICAL ERROR: Could not import adm_initial.")
         sys.exit(1)

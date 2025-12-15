@@ -1,13 +1,11 @@
 """
 Creates the classes used to instantiate the Inventive Step ADM and core traversal functionalities
 
-Last Updated: 04.12.25
+Last Updated: 15.12.2025
 
-Status: In Progress
-        - Main ADM - DONE
-        - Add underscore for private methods
-        - SUB-ADM - Delete commented code- if so add_nodes is redundant
-        - SubADMBLF - In Progress
+Status: Testing 
+
+Test Coverage: 83%
 """
 
 from pythonds import Stack
@@ -91,9 +89,13 @@ class ADM:
         self.nonLeaf = {}
         self.questionOrder = []
         self.question_instantiators = {}
+        self.information_questions = {}
         
         self.case = []
-        
+    
+    def __str__(self):
+        return self.name
+     
     def addNodes(self, name, acceptance = None, statement=None, question=None,root=False):
         """
         adds nodes to ADM
@@ -159,7 +161,7 @@ class ADM:
         if question_order_name not in self.questionOrder:
             self.questionOrder.append(question_order_name)
 
-    def addSubADMNode(self, name, sub_adm, function, rejection_condition=False):
+    def addSubADMNode(self, name, sub_adm, function, rejection_condition=False, check_node = []):
         """
         Adds a node that depends on evaluating a sub-ADM for each item i.e. the linking node between the main ADM and the Sub-ADM
         
@@ -174,7 +176,7 @@ class ADM:
         """
         
         #creates a node that handles sub-ADM evaluation
-        node = SubADMNode(name, sub_adm, function, rejection_condition)
+        node = SubADMNode(name, sub_adm, function, rejection_condition, check_node)
         self.nodes[name] = node
         
         #add to question order
@@ -263,311 +265,415 @@ class ADM:
         node : class
             the node class to be evaluated
         """
+        logger.debug('EARLY STOP BEGINS ========')
         if not hasattr(self, 'root_node'):
             return False
         
         self.evaluated_nodes = set(evaluated_nodes)
-        
         logger.debug(f"{self.evaluated_nodes}")
         
+        #try to accept non-leaf nodes that can be accepted - accounts for complexities with reject conditions
+        self.nonLeafGen()
+        for name, node in self.nonLeaf.items():
+            # Evaluate node in 3vl mode
+            val, idx = self.evaluateNode(node, mode='3vl')
+            if val is True:
+                # Check for reject conditions in the acceptance logic
+                has_unknown_reject = False
+                if node.acceptance:
+                    # For each acceptance condition, check if it contains 'reject'
+                    for i, acc in enumerate(node.acceptance):
+                        if 'reject' in acc:
+                            # Evaluate this acceptance condition directly
+                            self.reject = False
+                            eval_result = self.postfixEvaluation(acc, mode='3vl')
+                            # If the result is None (unknown), we cannot accept early
+                            if eval_result is None:
+                                has_unknown_reject = True
+                                break
+                if not has_unknown_reject and name not in self.case:
+                    self.case.append(name)
         try:
             #use 3vl mode - can return T/F/Unknown - Unknown is for unevaluated blfs
             result,_ = self.evaluateNode(self.root_node, mode='3vl')
 
-            logger.debug(f'result = {result}')
+            logger.debug(f'result early stop = {result}')
             
             if result is not None:
                 status = "ACCEPTED" if result else "REJECTED"
                 print(f"[Early Stop] {self.root_node.name} is {status}.")
                 return True
             return False
-            
-        finally:
-            #cleanup
-            if hasattr(self, 'temp_evaluated_nodes'):
-                del self.temp_evaluated_nodes
+        
+        except:
+            raise ValueError('can\'t evaluate early stopping')
                 
     def evaluateTree(self, case):
         """
         Evaluates the adm for a given case.
-        Returns a list of tuples: [(depth, statement), (depth, statement)...]
         """
-        #ADM eval
         self.statements = []
         self.node_done = []
         self.case = case
         
         self.nonLeafGen()
         
-        while self.nonLeaf != {}:
-            current_batch = list(zip(list(self.nonLeaf.keys()), list(self.nonLeaf.values())))
+        non_leaf_nodes = self.nonLeaf.copy()
+        
+        while non_leaf_nodes != {}:
+            current_batch = list(zip(list(non_leaf_nodes.keys()), list(non_leaf_nodes.values())))
             
             for name, node in current_batch:
                 
-                #only for Evaluate nodes 
+                # 1. Evaluate Nodes (Special)
                 if hasattr(node, 'evaluateResults'):
                     self.node_done.append(name)
                     if node.evaluateResults(self):
                         if name not in self.case: self.case.append(name)
-                    self.nonLeaf.pop(name)
+                    non_leaf_nodes.pop(name)
                 
-                #other nodes
+                # 2. Standard Logic Nodes
                 elif self.checkNonLeaf(node):
                     self.node_done.append(name)
-                    val,_ = self.evaluateNode(node)
-                    if val:
-                        if name not in self.case: self.case.append(name)
-                    self.nonLeaf.pop(name)
+                    
+                    # --- GUARD: Check if acceptance logic exists ---
+                    if node.acceptance:
+                        val,_ = self.evaluateNode(node)
+                        if val:
+                            if name not in self.case: self.case.append(name)
+                    else:
+                        # No logic? Truth is "Is it in the case?"
+                        # (Usually these are leaves, but could be special nodes)
+                        pass 
+                    
+                    non_leaf_nodes.pop(name)
         
         self.case = list(set(self.case))
-
-        #hierarchical explanation
+        
+        logger.debug('GENERATE EXPLANATION')
         self.statements = self._generate_explanation()
+        
+        logger.debug(f'statements {self.statements}')
         
         return self.statements
 
     def _generate_explanation(self):
         """
-        Generates a Top-Down Hierarchical Trace.
-        Returns: List of (depth, statement) tuples.
-        Prevents duplicates by tracking visited nodes.
+        Generates explanation trace. 
+        Guards against calling evaluateNode on nodes with no logic.
         """
         statements_with_depth = []
-        
-        #track visited nodes to prevent duplication
         visited_nodes = set() 
         
         def traverse(node, depth):
-            #prevent dupes
             if node.name in visited_nodes:
                 return
             
-            #evaluate the node using 3vl
-            status, index = self.evaluateNode(node, mode='3vl')
+            # --- GUARD: Only call evaluateNode if acceptance logic exists ---
+            if not node.acceptance:
+                # Fallback: Status is determined by presence in Case
+                status = node.name in self.case
+                index = -1
+                logger.debug(f'REASONING GEN [No Logic] - {node.name}, {status}')
+            else:
+                # Normal Logic Evaluation
+                status, index = self.evaluateNode(node, mode='standard')
+                logger.debug(f'REASONING GEN - {node.name}, {status}, {index}')
             
-            #logger.debug(f'{node.name}, {status}, {index}')
-            #if status is Unknown then skip
+            # Treat None as False
             if status is None:
-                return
+                status = False
 
-            #mark as visited
             visited_nodes.add(node.name)
             
-            #statement ascription
+            # Statement Selection
             stmt = None
             if node.statement:
                 if status is True:
-                    if index < len(node.statement):
-                        stmt = node.statement[index]
-                
-                elif status is False:
-                    if self.reject:
+                    if index != -1 and index < len(node.statement):
                         stmt = node.statement[index]
                     else:
-                        stmt = node.statement[-1]
-                    
-                else:
-                    stmt = None
-
+                        # Default to first statement if index not applicable
+                        stmt = node.statement[0] if len(node.statement) > 0 else None
+                elif status is False:
+                    if self.reject and index != -1 and index < len(node.statement):
+                         stmt = node.statement[index]
+                    else:
+                         stmt = node.statement[-1] if len(node.statement) > 0 else None
+            
             if stmt:
                 statements_with_depth.append((depth, stmt))
             
-            #visit children only if the current node is determined T/F
             if node.children:
                 for child_name in node.children:
                     if child_name in self.nodes:
                         traverse(self.nodes[child_name], depth + 1)
 
-        #start depth at 0
-        traverse(self.root_node, 0)
+        if hasattr(self, 'root_node'):
+            traverse(self.nodes[self.root_node.name], 0)
             
         return statements_with_depth
-        
+    
     def evaluateNode(self, node, mode='standard'):
         """
-        Evaluates a node's acceptance conditions.
-        
-        Modes:
-        - 'standard': Returns True/False
-        - '3vl': Returns True/False/None
+        Evaluates a node's acceptance conditions with Asymmetric 3VL Safety.
         """   
+        logger.debug(f"--- EVAL NODE: {node.name} (Mode: {mode}) ---")
 
-        
-        #3VL leaf nodes eval
+        # --- 3VL LEAF HANDLING ---
         if mode == '3vl' and not node.children:
             if node.name in self.case:
+                logger.debug(f"  [Leaf] {node.name} is TRUE (Found in case)")
                 return True, 0
-            #check context stored by check_early_stop
             elif hasattr(self, 'evaluated_nodes') and node.name in self.evaluated_nodes:
+                logger.debug(f"  [Leaf] {node.name} is FALSE (Evaluated, not in case)")
                 return False, -1
             else:
-                return None, -1 # Unknown
-        
-        #counter to index the statements to be shown to the user
-        counter = -1
-        for i in node.acceptance:
-            
-            self.reject = False
-            counter += 1
-            
-            #evaluate using the shared engine
-            eval = self.postfixEvaluation(i, mode=mode)
-            
-            #STANDARD
-            if mode == 'standard':
-                #handle reject conditions
-                if self.reject and eval is True:
-                    self.reject = True
-                    return False, counter
-                
-                if not self.reject and eval is True:
-                    return True, counter
-                
-                if eval == 'accept': 
-                    return True, counter
-            
-            # 3VL MODE
-            elif mode == '3vl':
-                if eval is True:
-                    #check if reject condition
-                    if self.reject:
-                        return False, counter 
-                    else:
-                        return True, counter 
-                
-                elif eval is False:
-                    #continue to next acceptance condition
-                    continue
-                
-                else: # val is None
-                    return None, -1
+                logger.debug(f"  [Leaf] {node.name} is UNKNOWN (Not yet evaluated)")
+                return None, -1
 
-        return False, counter
+        # --- ASYMMETRIC EVALUATION ---
+        has_unknown_reject = False    # Tracks if we have an unchecked "Defeater"
+        has_unknown_positive = False  # Tracks if we have an unchecked "Enabler"
+        successful_accept_index = -1  # Stores the index of a valid positive path
+        
+        for index, condition in enumerate(node.acceptance):
+            
+            logger.debug(f"  [Iter {index}] Testing: '{condition}'")
+            self.reject = False
+            
+            # Evaluate the single condition
+            result = self.postfixEvaluation(condition, mode=mode)
+            
+            # --- 1. DEFINITIVE REJECTION (Hard Stop) ---
+            if result is True and self.reject:
+                logger.debug(f"  [Iter {index}] -> DECISION: REJECTED (Reject flag set on True condition)")
+                return False, index 
+            
+            # --- 2. POTENTIAL ACCEPTANCE (Defer Decision) ---
+            elif result is True and not self.reject:
+                logger.debug(f"  [Iter {index}] -> Positive Path Found (Deferring to check for Unknown Rejects)")
+                successful_accept_index = index
+                # We do NOT return True yet. We must ensure no 'reject' conditions were skipped as Unknown.
+                
+            # --- 3. CONDITION FALSE (Ignore) ---
+            elif result is False:
+                logger.debug(f"  [Iter {index}] -> Condition Failed")
+                continue
+                
+            # --- 4. UNKNOWN RESULT ---
+            elif result is None:
+                # Heuristic: Is this a "Reject" condition?
+                # In your DSL, reject conditions always contain the 'reject' token.
+                tokens = condition.split()
+                if 'reject' in tokens:
+                    logger.debug(f"  [Iter {index}] -> Unknown Reject Condition (Marking Safety Risk)")
+                    has_unknown_reject = True
+                else:
+                    logger.debug(f"  [Iter {index}] -> Unknown Positive Condition")
+                    has_unknown_positive = True
+
+        # --- FINAL DECISION LOGIC ---
+        
+        # Scenario A: We found a Valid Positive Path
+        if successful_accept_index != -1:
+            if has_unknown_reject:
+                # We want to accept, but a Reject Condition is Unknown.
+                # We CANNOT Accept safely.
+                logger.debug(f"  -> FINAL: UNKNOWN (Valid positive path exists, but blocked by Unknown Reject)")
+                return None, -1
+            else:
+                # We have a positive path and NO unknown reject risks.
+                logger.debug(f"  -> FINAL: ACCEPTED (Index {successful_accept_index})")
+                return True, successful_accept_index
+
+        # Scenario B: No Valid Positive Path found (All evaluated were False or Unknown)
+        else:
+            if has_unknown_positive:
+                # We might find a positive path later.
+                logger.debug(f"  -> FINAL: UNKNOWN (No positive path yet, but some are Unknown)")
+                return None, -1
+            else:
+                # All positive paths are definitely False.
+                # It doesn't matter if we have Unknown Rejects (has_unknown_reject), 
+                # because we can't Accept anyway.
+                logger.debug(f"  -> FINAL: FALSE (No possible acceptance path)")
+                return False, -1
+        
+    # def evaluateNode(self, node, mode='standard'):
+    #     """
+    #     Evaluates a node's acceptance conditions.
+        
+    #     Modes:
+    #     - 'standard': Returns True/False
+    #     - '3vl': Returns True/False/None
+    #     """   
+
+    #     logger.debug(node.children)
+    #     logger.debug(f'CASE: {self.case}')
+    #     logger.debug(f'EVAL NODES: {self.evaluated_nodes}')
+
+    #     #3VL leaf nodes eval
+    #     if mode == '3vl' and not node.children:
+    #         if node.name in self.case:
+    #             return True, 0
+    #         #check context stored by check_early_stop
+    #         elif node.name in self.evaluated_nodes:
+    #             return False, -1
+    #         else:
+    #             return None, -1 # Unknown
+        
+    #     #counter to index the statements to be shown to the user
+    #     counter = -1
+    #     reject_unknown = False
+    
+    #     for i in node.acceptance:
+            
+    #         logger.debug(f'ACCEPTANCE {i}')
+            
+    #         self.reject = False
+    #         counter += 1
+            
+    #         #evaluate using the shared engine
+    #         eval = self.postfixEvaluation(i, mode=mode)
+            
+    #         logger.debug(f'acceptcond {node.name} = {i} == {eval}')
+            
+    #         #STANDARD
+    #         if mode == 'standard':
+    #             #handle reject conditions
+    #             if self.reject and eval is True:
+    #                 return False, counter
+                
+    #             if not self.reject and eval is True:
+    #                 return True, counter
+                
+    #             if eval == 'accept': 
+    #                 return True, counter
+            
+    #         # 3VL MODE
+    #         elif mode == '3vl':
+    #             if eval is True:
+    #                 #check if reject condition
+    #                 if self.reject:
+    #                     return False, counter 
+    #                 else:
+    #                     #if we have a true acceptance condition and a preceding reject condition
+    #                     #which has been unevaluated then we must return Unonwn - None
+    #                     if reject_unknown:
+    #                         #return unknown
+    #                         return None, -1
+                        
+    #                     else:
+    #                         return True, counter 
+                
+    #             elif eval is False:
+    #                 #continue to next acceptance condition
+    #                 continue
+                
+    #             else: # val is None
+    #                 if self.reject:
+    #                     reject_unknown = True
+    #                     continue
+    #                 else:
+    #                     return None, -1
+
+    #     return False, counter
     
     def postfixEvaluation(self, acceptance, mode='standard'):
         """
-        Evaluates a postfix string. Handles both Boolean and 3-Valued Logic.
+        Evaluates a postfix string with stack tracing logs.
         """
-        #initialises stack of operands
+        # logger.debug(f"    [Postfix] Eval: '{acceptance}'") 
         operandStack = Stack()
-        
-        #list of tokens from acceptance conditions
         tokenList = acceptance.split()
         
-        #checks each token's acceptance conditions
         for token in tokenList:
             
             if token == 'accept':
-                #auto-accept condition - push True as a fallback
                 operandStack.push(True)
-                continue
             
             elif token == 'reject':
-                #pop the operand (which should be a node name)
-                operand = operandStack.pop()
-                
-                #in 3VL, operand is already T/F/None from the stack
-                val = operand
-                
-                if mode == 'standard':
-                    if isinstance(operand, str):
-                        # check if the node name is in the case
-                        val = operand in self.case
-                
+                val = operandStack.pop()
                 if val is True:
                     self.reject = True
-                    operandStack.push(True)
-                elif val is False:
-                    if mode == 'standard': 
-                        self.reject = False
-                    operandStack.push(False)
-                else:
-                    # 3VL Unknown
-                    operandStack.push(None)
-            
+                    # logger.debug(f"      [Op: Reject] Triggered! (Input was True)")
+                operandStack.push(val)
+                
             elif token == 'not':
-                #pop the node name
-                operand1 = operandStack.pop()
+                op1 = operandStack.pop()
+                res = self.checkCondition('not', op1, mode=mode)
+                operandStack.push(res)
                 
-                #check condition validity
-                result = self.checkCondition(token, operand1, mode=mode)
-                operandStack.push(result)
-                
-            elif token == 'and' or token == 'or':
-                #pop both node names
-                operand2 = operandStack.pop()
-                operand1 = operandStack.pop()
-                
-                #check condition validity
-                result = self.checkCondition(token, operand1, operand2, mode=mode)
-                operandStack.push(result)    
+            elif token in ['and', 'or']:
+                op2 = operandStack.pop()
+                op1 = operandStack.pop()
+                res = self.checkCondition(token, op1, op2, mode=mode)
+                operandStack.push(res)
             
             else:
-                if mode == 'standard':
-                    #this is a node name - push the node name itself, not a boolean
-                    operandStack.push(token)
-                else:
-                    #3VL: must resolve recursion immediately to put Value on stack to ensure checkCondition receives T/F/None, not strings
-                    val, _ = self.evaluateNode(self.nodes[token], mode='3vl')
-                    operandStack.push(val)
+                # Resolve Term
+                val, _ = self._resolve_term(token, mode)
+                operandStack.push(val)
         
-        #check if we have anything on the stack before popping
         if operandStack.isEmpty():
             return False
-        else:
-            final_result = operandStack.pop()
-        
-        #convert the final result
-        if mode == 'standard':
-            if isinstance(final_result, str):
-                return final_result in self.case
-            return final_result
-        else:
-            return final_result
-
-    def checkCondition(self, operator, op1, op2 = None, mode='standard'):
-        """
-        checks the logical condition and returns a boolean (or None)
-        
-        Parameters
-        ----------
-        operator : str
-            the logical operator such as or, and, not  
-        op1 : str
-            the first operand
-        op2 : str, optional
-            the second operand
-        """
-        #in 3VL mode, v1 and v2 are already True/False/None from the stack
-        v1 = op1
-        v2 = op2
-        
-        if mode == 'standard':
-            if isinstance(op1, str):
-                v1 = op1 in self.case
             
-            if op2 is not None and isinstance(op2, str):
-                v2 = op2 in self.case
-        
-        #evals disjunctive condition
+        final_res = operandStack.pop()
+        # logger.debug(f"    [Postfix] Returns: {final_res}")
+        return final_res
+
+    def _resolve_term(self, term, mode):
+        """
+        Helper to resolve a term to a value.
+        """
+        if term in self.nodes:
+            if mode == 'standard':
+                val = term in self.case
+                return val, 0
+            
+            elif mode == '3vl':
+                # 1. Definitely True
+                if term in self.case:
+                    return True, 0
+                
+                # 2. Definitely False (if using evaluated_nodes tracking)
+                if hasattr(self, 'evaluated_nodes') and term in self.evaluated_nodes:
+                    return False, -1
+                
+                # 3. Recursive Check
+                # logger.debug(f"    [Resolve] Recursing into {term}...")
+                val, idx = self.evaluateNode(self.nodes[term], mode='3vl')
+                # logger.debug(f"    [Resolve] {term} returned {val}")
+                return val, idx
+                
+        # Default (Term not found or external fact not in case)
+        return False, -1
+
+    def checkCondition(self, operator, v1, v2=None, mode='standard'):
+        """
+        Strict 3-Valued Logic (Kleene) Truth Table.
+        Inputs v1, v2 are guaranteed to be True, False, or None.
+        """
+        # --- OR Logic ---
         if operator == "or":
             if v1 is True or v2 is True:
                 return True
-            if v1 is None or v2 is None: # 3VL check
+            if v1 is None or v2 is None:
                 return None
             return False
         
-         #evals conjunctive condition
+        # --- AND Logic ---
         elif operator == "and":
-            if v1 is False or v2 is False: # False dominates
+            if v1 is False or v2 is False:
                 return False
-            if v1 is None or v2 is None: # 3VL check
+            if v1 is None or v2 is None:
                 return None
             return True
         
-        #evals negative condition
+        # --- NOT Logic ---
         elif operator == "not":
-            if v1 is None: # 3VL check
+            if v1 is None:
                 return None
             return not v1
             
@@ -829,10 +935,11 @@ class ADM:
         Returns:
             the value of the fact, or None if not found
         """
+        logger.debug(f'fact_name {fact_name} {type(fact_name)}')
         if hasattr(self, 'facts') and fact_name in self.facts:
             return self.facts[fact_name]
         else:
-            return NameError('Fact specified has no value assigned')    
+            raise NameError('Fact specified has no value assigned')    
     
     def resolveQuestionTemplate(self, question_text):
         """
@@ -1083,107 +1190,98 @@ class SubADMNode(Node):
         Returns:
             bool: True if BLF should be accepted, False otherwise
         """
+
         
-        try:
-            
-            self.main_adm = ui_instance.adm
-            
-            #get the list of items to evaluate
-            items = self._get_source_items()
-            
-            if not items:
-                print(f"\nNo items found to evaluate for {self.name}")
-                return False
-             
-            accepted_count = 0
-            rejected_count = 0
-            item_results = []
-            sub_adm_instances = {}  #store sub-ADM instances for later access to statements
-            
-            print(f"\n=== Evaluating {self.name} for {len(items)} item(s) ===")
-
-            #evaluate sub-ADM for each item using the existing UI infrastructure
-            for i, item in enumerate(items, 1):
-                print(f"\n--- Item {i}/{len(items)}: {item} ---")
-                try:
-                    
-                    #create a new sub-ADM instance with key facts as the same
-                    sub_adm = self.sub_adm(item)
-                    
-                    if len(self.check_node) > 0:
-                        
-                        for node in self.check_node:
-                            if node in self.main_adm.case:
-                                self.sub_adm.case.append(node)
-                            else:
-                                pass
-                        
-                    self.sub_adm.facts = self.main_adm.facts
-                    
-                    #set the item name in the sub-ADM
-                    if hasattr(sub_adm, 'setFact'):
-                        sub_adm.setFact('ITEM', 'name', item)
-                    else:
-                        raise KeyError('can\'t set sub-adm fact')
-                    
-                    # Use the existing UI infrastructure to evaluate the sub-ADM
-                    # This will handle all node types generically (DependentBLF, QuestionInstantiator, etc.)
-                    sub_result, sub_case, sub_adm = self._evaluateSubADMWithUI(sub_adm, item, ui_instance)
-                    
-                    # Store the sub-ADM instance for later access to statements
-                    sub_adm_instances[item] = sub_adm
-                    
-                    self.sub_adm_results[item] = sub_result
-                    #add the results to a list so we can eval other nodes which use the sub-adm
-                    item_results.append(sub_case)
-                    
-                    if sub_result:
-                        accepted_count += 1
-                        print(f"{item}: ACCEPTED")
-                    else:
-                        rejected_count += 1
-                        print(f"{item}: REJECTED")
-                   
-                except Exception as e:
-                    self.sub_adm_results[item] = 'ERROR'
-                    item_results.append(['ERROR'])
-                    print(f"{item}: ERROR - {e}")
-            
-            #display summary of Sub-ADMs
-            print(f"\nSub-ADM Summary ===")
-            print(f"Total items: {len(items)}")
-            print(f"Accepted: {accepted_count}")
-            print(f"Rejected: {rejected_count}")
-            
-            #store results in the main ADM for other BLFs to access
-            if hasattr(ui_instance.adm, 'setFact'):
-                ui_instance.adm.setFact(f'{self.name}_results', item_results)
-                ui_instance.adm.setFact(f'{self.name}_accepted_count', accepted_count)
-                ui_instance.adm.setFact(f'{self.name}_rejected_count', rejected_count)
-                ui_instance.adm.setFact(f'{self.name}_items', items) 
-                ui_instance.adm.setFact(f'{self.name}_sub_adm_instances', sub_adm_instances)
-            
-            # Determine final acceptance based on results
-            if self.rejection_condition:
-                if rejected_count == 0:
-                    print(f"\n{self.name} is ACCEPTED (no rejected item(s))")
-                    return True 
-                else:
-                    print(f"\n{self.name} is REJECTED (found {rejected_count} rejected item(s))")
-                    return False
-
-            else:
-                if accepted_count >= 1:
-                    print(f"\n{self.name} is ACCEPTED (found {accepted_count} accepted item(s))")
-                    return True
-                else:
-                    print(f"\n{self.name} is REJECTED (no accepted items found)")
-                    return False
-                    
-        except Exception as e:
-            print(f"\nError evaluating {self.name}: {e}")
+        self.main_adm = ui_instance.adm
+        
+        #get the list of items to evaluate
+        items = self._get_source_items()
+        
+        if not items:
+            print(f"\nNo items found to evaluate for {self.name}")
             return False
-    
+            
+        accepted_count = 0
+        rejected_count = 0
+        item_results = []
+        sub_adm_instances = {}  #store sub-ADM instances for later access to statements
+        
+        print(f"\n=== Evaluating {self.name} for {len(items)} item(s) ===")
+
+        #evaluate sub-ADM for each item using the existing UI infrastructure
+        for i, item in enumerate(items, 1):
+            print(f"\n--- Item {i}/{len(items)}: {item} ---")
+                
+            #create a new sub-ADM instance with key facts as the same
+            sub_adm = self.sub_adm(item)
+            
+            if len(self.check_node) > 0:
+                
+                for node in self.check_node:
+                    if node in self.main_adm.case:
+                        sub_adm.case.append(node)
+                    else:
+                        pass
+                
+            sub_adm.facts = self.main_adm.facts
+        
+            # Use the existing UI infrastructure to evaluate the sub-ADM
+            # This will handle all node types generically (DependentBLF, QuestionInstantiator, etc.)
+            sub_result, sub_case, sub_adm = self._evaluateSubADMWithUI(sub_adm, item, ui_instance)
+            
+            # Store the sub-ADM instance for later access to statements
+            sub_adm_instances[item] = sub_adm
+            
+            logger.debug('3')
+
+            
+            self.sub_adm_results[item] = sub_result
+            #add the results to a list so we can eval other nodes which use the sub-adm
+            item_results.append(sub_case)
+            
+            if sub_result:
+                accepted_count += 1
+                print(f"{item}: ACCEPTED")
+            else:
+                rejected_count += 1
+                print(f"{item}: REJECTED")
+            
+            # except Exception as e:
+            #     self.sub_adm_results[item] = 'ERROR'
+            #     item_results.append(['ERROR'])
+            #     print(f"{item}: ERROR - {e}")
+        
+        #display summary of Sub-ADMs
+        print(f"\nSub-ADM Summary ===")
+        print(f"Total items: {len(items)}")
+        print(f"Accepted: {accepted_count}")
+        print(f"Rejected: {rejected_count}")
+        
+        #store results in the main ADM for other BLFs to access
+        if hasattr(ui_instance.adm, 'setFact'):
+            ui_instance.adm.setFact(f'{self.name}_results', item_results)
+            ui_instance.adm.setFact(f'{self.name}_accepted_count', accepted_count)
+            ui_instance.adm.setFact(f'{self.name}_rejected_count', rejected_count)
+            ui_instance.adm.setFact(f'{self.name}_items', items) 
+            ui_instance.adm.setFact(f'{self.name}_sub_adm_instances', sub_adm_instances)
+        
+        # Determine final acceptance based on results
+        if self.rejection_condition:
+            if rejected_count == 0:
+                print(f"\n{self.name} is ACCEPTED (no rejected item(s))")
+                return True 
+            else:
+                print(f"\n{self.name} is REJECTED (found {rejected_count} rejected item(s))")
+                return False
+
+        else:
+            if accepted_count >= 1:
+                print(f"\n{self.name} is ACCEPTED (found {accepted_count} accepted item(s))")
+                return True
+            else:
+                print(f"\n{self.name} is REJECTED (no accepted items found)")
+                return False
+                
     def _get_source_items(self):
         """
         Gets the list of items to evaluate from the source
@@ -1228,8 +1326,7 @@ class SubADMNode(Node):
             
             # Create a temporary UI instance for this sub-ADM evaluation
             # This allows us to reuse all the existing question generation logic
-            temp_ui = type(ui_instance)()  # Create instance of same class
-            temp_ui.adm = sub_adm
+            temp_ui = type(ui_instance)(sub_adm)  # Create instance of same class
             temp_ui.case = sub_adm.case.copy()
             temp_ui.caseName = item
             
@@ -1242,14 +1339,17 @@ class SubADMNode(Node):
             print(f"Completed asking questions for {item}")
             
             # Get the final case after evaluation
-            final_case = temp_ui.case
+            final_case = temp_ui.adm.case
             
-            #print(f"Final case for {item}: {final_case}")
-            
+
             if hasattr(temp_ui.adm,'root_node'):
-                root_node = temp_ui.adm.root_node
+                root_node = temp_ui.adm.root_node.name
             else:
                 raise ValueError('no root node specified')
+            
+            # logger.debug(f"Final case for {item}: {final_case}: {type(final_case)}")
+            
+            # logger.debug(f'root: {root_node} : {type(root_node)}')
             
             #check if root node accepted
             if root_node in final_case:
@@ -1374,15 +1474,14 @@ class EvaluationNode(Node):
         """
         try:
             
-            item_results = adm.getFact(self.source_blf, 'results')
+            item_results = adm.getFact(f'{self.source_blf}_results')
             
             if not item_results:
                 print(f"Warning: No results found from {self.source_blf}")
                 return False
-            
+                        
             # Get the source items list for display
-            source_items = adm.getFact(self.source_blf, 'items') or []
-            
+            #source_items = adm.getFact('{self.source_blf}_items') or []
             logger.debug(f"EVALUATION: {self.name}")
             if self.rejection_condition:
                 logger.debug(f"Looking for '{self.target_node}' to not be in {self.source_blf} results")
@@ -1393,37 +1492,47 @@ class EvaluationNode(Node):
             found_in_items = []
                         
             for i, item_case in enumerate(item_results):
+                #logger.debug(f'i: {i}; item case: {item_case}')                    
+                
                 if isinstance(item_case, list):
-                    item_name = source_items[i] 
+                    #logger.debug(f'item name: {item_name}')                    
                     #if i < len(source_items) else f"Item {i+1}"
                     
                     if self.rejection_condition:
                         if self.target_node not in item_case:
-                            found_in_items.append(item_name)
-                            logger.debug(f"{item_name}: {self.target_node} NOT found in case {item_case}")   
+                            logger.debug(f"{self.target_node}: {self.target_node} NOT found in case {item_case}")   
                         else:
-                            logger.debug(f"{item_name}: {self.target_node} found in case {item_case}")
+                            found_in_items.append(self.target_node)
+                            logger.debug(f"{self.target_node}: {self.target_node} found in case {item_case}")
                     else:
                         if self.target_node in item_case:
-                            found_in_items.append(item_name)
-                            logger.debug(f"{item_name}: {self.target_node} found in case {item_case}")
+                            found_in_items.append(self.target_node)
+                            logger.debug(f"{self.target_node}: {self.target_node} found in case {item_case}")
                         else:
-                            logger.debug(f"{item_name}: {self.target_node} NOT found in case {item_case}")
+                            logger.debug(f"{self.target_node}: {self.target_node} NOT found in case {item_case}")
                 else:
                     print(f"Item {i+1}: Invalid case format - {item_case}")
-                        
+                
+            print(found_in_items)
             if found_in_items:
-                print(f"{self.name} is ACCEPTED")
                 if self.rejection_condition:
-                    print(f"{self.target_node} NOT IN: {', '.join(found_in_items)}")
+                    print(f"{self.target_node} IN sub-ADM cases")
+                    print(f"{self.name} is REJECTED")
+                    return False
                 else:
-                    print(f"{self.target_node}' IN: {', '.join(found_in_items)}")
-                return True
+                    print(f"{self.target_node}' IN sub-ADM cases")
+                    print(f"{self.name} is ACCEPTED")
+                    return True
             else:
-                print(f"{self.name} is REJECTED")
-                print(f"{self.target_node} not found in any sub-ADM cases")
-                return False
+                if self.rejection_condition:
+                    print(f"{self.target_node} not found in any sub-ADM cases")
+                    print(f"{self.name} is ACCEPTED")
+                    return True
+                else:
+                    print(f"{self.target_node} not found in any sub-ADM cases")
+                    print(f"{self.name} is REJECTED")
+                    return False
                 
         except Exception as e:
-            print(f"✗ Error evaluating {self.name}: {e}")
+            print(f"Error evaluating {self.name}: {e}")
             return False

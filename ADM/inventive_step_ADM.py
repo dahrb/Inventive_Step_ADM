@@ -6,6 +6,10 @@ Inventive Step ADM 2.0
 
 from ADM_Construction import ADM
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 def adm_initial():
     """ 
     This ADM performs the ...
@@ -198,7 +202,7 @@ def sub_adm_1(item_name):
     #F32 - Q21
     sub_adm.addNodes("CircumventTechProblem",question='Is the feature a technical implementation of a non-technical method i.e. game rules or a business method, and does it circumvent the technical problem rather than addressing it in an inherently technical way?')
 
-    #F41 - Q22 - ADD DEPENDENCY
+    #F41 - Q22
     sub_adm.addNodes("TechnicalAdaptation",question='Is the feature a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.')
 
     #bridge node to make things easier
@@ -263,7 +267,7 @@ def sub_adm_1(item_name):
     sub_adm.addNodes("ImpreciseUnexpectedEffect",["reject PreciseTerms","UnexpectedEffect"],["the unexpected effect is clearly and precisely described","the unexpected effect is not clearly and precisely described","there is no unexpected effect"])
     
     #root node
-    sub_adm.addNodes("FeatureReliableTechnicalEffect",["reject SufficiencyOfDisclosureIssue","reject BonusEffect","reject ImpreciseUnexpectedEffect", "FeatureTechnicalContribution and Credible and Reproducible"],["An issue with sufficiency of disclosure precludes us relying on this feature","The feature is a bonus effect which precludes us relying on this feature","The feature is a unexpected effect which is not clearly described precluding us relying on this feature","The feature is a credible, reproducible and reliable technical contribution","The feature is not a reliable technical contribution due to a lack of credibility or reproducibility"],root=True)
+    sub_adm.addNodes("FeatureReliableTechnicalEffect",["reject SufficiencyOfDisclosureIssue","reject BonusEffect","reject ImpreciseUnexpectedEffect", "FeatureTechnicalContribution and Credible and Reproducible"],["An issue with sufficiency of disclosure precludes us relying on this feature","The feature is a bonus effect which precludes us relying on this feature","The feature is a unexpected effect which is not clearly described precluding us relying on this feature","The feature is a credible, reproducible and reliable technical contribution","The feature is not a reliable technical contribution due to a lack of credibility/reproducibility or a technical contribution"],root=True)
     
     #The fact the sub-adm is running means there are distinguishing features so to more easily resolve this we just auto add it to eval later
     sub_adm.case = ["DistinguishingFeatures"]
@@ -313,7 +317,7 @@ def sub_adm_2(item_name):
                     ['The written formulation has been formed with hindsight', "The written formulation has been formed without hindsight", 'There is no written objective technical problem which has been formed without hindsight'])
 
     #AF30
-    sub_adm.addNodes("ConstrainedProblem", ['WellFormed and NonTechnicalContribution',], 
+    sub_adm.addNodes("ConstrainedProblem", ['WellFormed and NonTechnicalContribution'], 
                     ['There are non-technical contributions constraining the objective technical problem', 'There are no non-technical contributions constraining the objective technical problem'])    
 
     #AF29            
@@ -342,8 +346,8 @@ def adm_main():
     def collect_features(adm):
         """Function to collect prior art items from user input"""
         
-        a = adm.resolveQuestionTemplate("What features does the closest prior art have?{CPA}\n\n(comma-separated list): ")
-        b = adm.resolveQuestionTemplate("What features does the invention have?{INVENTION_TITLE}\n\n(comma-separated list): ")
+        a = adm.resolveQuestionTemplate("What features does the closest prior art have?\n Closest Prior Art: {CPA}\n\n(comma-separated list): ")
+        b = adm.resolveQuestionTemplate("What features does the invention have?\n Invention title: {INVENTION_TITLE}\n\n(comma-separated list): ")
        
         available_items = input(a).strip()
         needed_items = input(b).strip()
@@ -366,7 +370,7 @@ def adm_main():
 
     #F27
     adm.addEvaluationNode("TechnicalContribution", "ReliableTechnicalEffect", "FeatureTechnicalContribution", ['the features contain a technical contribution','The features do not contain a technical contribution'])
-
+    
     #F29
     adm.addEvaluationNode("SufficiencyOfDisclosure", "ReliableTechnicalEffect", "SufficiencyOfDisclosureIssue", ['there is an issue with sufficiency of disclosure','there is no issue with sufficiency of disclosure'])
 
@@ -402,7 +406,7 @@ def adm_main():
         if not sub_adm_results:
             print("No sub-ADM results found. Cannot determine technical contributions.")
             return []
-    
+
         #get the distinguished features list from ReliableTechnicalEffect
         distinguished_features_list = []
         try:
@@ -460,10 +464,14 @@ def adm_main():
         
         if "Combination" in current_case:
             print("\nCombination detected in case - creating 1 objective technical problem:")
-            problem_desc = input("Please provide a short description of the objective technical problem: ").strip()
-            if problem_desc:
-                objective_problems.append(problem_desc)
-                print(f"Added problem: {problem_desc}")
+            while True:
+                problem_desc = input("Please provide a short description of the objective technical problem: ").strip()
+                if problem_desc:
+                    objective_problems.append(problem_desc)
+                    print(f"Added problem: {problem_desc}")
+                    break
+                else:
+                    print("Input cannot be blank. Please provide a valid description.")
         
         if "PartialProblems" in current_case:
             print("\nPartialProblems detected in case - creating multiple problems:")
@@ -603,7 +611,10 @@ def adm_main():
     #I1 - ROOT NODE 
     adm.addNodes('InvStep',['reject SufficiencyOfDisclosure','reject Obvious','TechnicalContribution and ReliableTechnicalEffect and Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'],root=True)
 
-    adm.questionOrder = []
+    # Set question order to ask information questions first
+    adm.questionOrder = ['ReliableTechnicalEffect','DistinguishingFeatures','NonTechnicalContribution','TechnicalContribution','SufficiencyOfDisclosure',"InventionUnexpectedEffect",
+    "synergy_question","FunctionalInteraction","OTPObvious","ObjectiveTechnicalProblem", "DisadvantageousMod","Foreseeable","UnexpectedAdvantage","BioTech","Antibody","PredictableResults","ReasonableSuccess","KnownTechnique","OvercomeTechDifficulty","GapFilled","WellKnownEquivalent","KnownProperties","AnalogousUse","KnownDevice","ObviousCombination","AnalogousSubstitution","ChooseEqualAlternatives","NormalDesignProcedure","SimpleExtrapolation","ChemicalSelection"
+    ]
     
     return adm 
 
