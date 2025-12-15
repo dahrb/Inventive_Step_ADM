@@ -2,6 +2,14 @@
 Inventive Step ADM 2.0
 
 - changes the workings from 1.0 to be cleaner, easier to visualise and to understand 
+- logic changes made to ensure better functioning
+
+Last Updated: 15.12.2025
+
+Status: Testing
+
+Test Coverage: 49%
+
 """
 
 from ADM_Construction import ADM
@@ -579,7 +587,7 @@ def adm_main():
     adm.addNodes('Contribution',['TechnicalContribution and NonTechnicalContribution','TechnicalContribution'],['There are both technical and non-technical contribution/s', 'There are technical contribution/s','There are no technical contributions'])
     
     #AF11 - updated
-    adm.addNodes("CandidateOTP",['Combination and Contribution','PartialProblems and Contribution'],['There is a single objective technical problem','There are multiple partial problems which form the objective technical problem'])    
+    adm.addNodes("CandidateOTP",['Combination and Contribution','PartialProblems and Contribution'],['There is a single objective technical problem','There are multiple partial problems which form the objective technical problem','There are no objective technical problems'])    
     
     #AF12
     adm.addNodes('SecondaryIndicator',['PredictableDisadvantage','BioTechObvious','AntibodyObvious','KnownMeasures','ObviousCombination','ObviousSelection'],['there is a secondary indicator - the invention contains a predictable disadvantage','there is a secondary indicator - the invention concerns an obvious use of biotechnology','there is a secondary indicator - the invention concerns an obvious use of antibodies','there is a secondary indicator - the invention contains known measures and consequently is obvious','there is a secondary indicator - the invention contains an obvious combination and consequently is obvious','there is a secondary indicator - the invention contains an obvious selection and consequently is obvious','there is no secondary indicator'])

@@ -1,9 +1,11 @@
 """
-New CLI Experiment designed for interaction with LLMs
+Command line interface functionality for creating ADMs and can also interface with LLM
 
-To Do:
+Last Updated: 15.12.2025
 
-    - Delete block comments
+Status: Testing
+
+Test Coverage: 57%
 """
 
 import sys
@@ -416,28 +418,43 @@ class CLI():
             if hasattr(self.adm, 'temp_evaluated_nodes'):
                 del self.adm.evaluated_nodes
                  
-    def visualize_domain(self, minimal=False):
+    def visualize_domain(self, minimal=False, name=None):
         """
         Visualize the domain as a graph, including any evaluated Sub-ADMs.
         Single source of truth: Calculates the filename and delegates to ADM.
+        
+        Parameters
+        ----------
+        minimal : bool
+            If True, generates a minimalist structure graph.
+        name : str, optional
+            A prefix to add to the filename to distinguish graphs (e.g., "Initial", "Final").
         """
         print("\n" + "="*50)
         print("Visualize Domain")
         print("="*50)
         
         try:
-            # 1. Determine Filename
+            # 1. Determine Base Name
             # Use case name if available, otherwise ADM name
-            base_name = self.caseName if self.caseName else self.adm.name
+            raw_name = self.caseName if self.caseName else self.adm.name
             
+            # Apply prefix if provided
+            if name:
+                base_name = f"{name}_{raw_name}"
+            else:
+                base_name = raw_name
+            
+            # 2. Handle Extensions
             # Ensure we don't double-stack extensions
             if not base_name.lower().endswith('.png'):
                 filename = f"{base_name}.png"
             else:
                 filename = base_name
-                base_name = filename[:-4] # strip extension for folder creation
+                # Strip extension for folder creation later
+                base_name = filename[:-4] 
 
-            # 2. Determine Data Context
+            # 3. Determine Data Context
             # Only color the graph if we actually have case data
             case_data = self.adm.case
             print(f"Case Data: {case_data}")
@@ -448,10 +465,10 @@ class CLI():
                 # Minimalist Viz (Always useful for checking structure)
                 self.adm.visualiseMinimalist(filename=f"{base_name}_structure.png")
             else:
-                # 3. Generate Main ADM (One call only)
+                # 4. Generate Main ADM (One call only)
                 self.adm.visualiseNetwork(filename=filename, case=case_data)
                 
-                # 4. Generate Sub-ADMs (Iterate through facts to find stored instances)
+                # 5. Generate Sub-ADMs (Iterate through facts to find stored instances)
                 # This looks for keys ending in '_sub_adm_instances' which SubADMNode creates.
                 if hasattr(self.adm, 'facts'):
                     sub_dir = f"{base_name}_sub_adms"
@@ -480,11 +497,10 @@ class CLI():
                                 try:
                                     # Visualize the specific sub-ADM instance using its own case data
                                     sub_adm_inst.visualiseNetwork(filename=sub_filename, case=sub_adm_inst.case)
-                                    # print(f"  Generated: {sub_filename}")
                                 except Exception as e:
                                     print(f"  Error visualizing sub-ADM item '{item_name}': {e}")
             
-            # 5. Emit Path (for your environment integration)
+            # 6. Emit Path (for your environment integration)
             try:
                 abs_path = os.path.abspath(filename)
                 print(f"ADM_VISUALIZATION:{abs_path}")
@@ -494,9 +510,6 @@ class CLI():
                 
         except Exception as e:
             print(f"Error creating visualization: {e}")
-            # Optional: print full traceback if you need deep debugging
-            # import traceback
-            # traceback.print_exc()
             
 def main():
     """Main function"""
@@ -510,24 +523,21 @@ def main():
         logging.getLogger().setLevel(logging.DEBUG)        
         print("--- DEBUG MODE ENABLED ---")
         
-    #cli = CLI(adm=adm_initial())
-    facts = {'INVENTION_TITLE': 'a', 'INVENTION_DESCRIPTION': 'b', 'INVENTION_TECHNICAL_FIELD': 'c', 'REL_PRIOR_ART': 'd', 'CGK': 'e', 'SkilledPerson': 'rr', 'CPA': 'tt'}        # if result:
-    cli_2 = CLI(adm=adm_main())
-    cli_2.adm.facts = facts
-    
+    cli = CLI(adm=adm_initial())
+        
     try:
-        result = cli_2.query_domain()
+        result = cli.query_domain()
         
-        logger.debug(f'facts_final: {cli_2.adm.facts}')
-        
-        
-        #     cli_2 = CLI(adm=adm_main())
-        #     cli_2.adm.facts = cli.adm.facts
+        if result:   
+            logger.debug('Moving to main ADM')     
+            cli_2 = CLI(adm=adm_main())
+            cli_2.caseName = cli.caseName
+            cli_2.adm.facts = cli.adm.facts
             
-        #     _ = cli.query_domain()
+            _ = cli_2.query_domain()        
         
-        #     cli.visualize_domain(minimal=False)
-        cli_2.visualize_domain(minimal=False)
+        cli.visualize_domain(minimal=False,name="Initial")
+        cli_2.visualize_domain(minimal=False,name="Main")
 
     except KeyboardInterrupt:
         print("\n\nProgram interrupted by user. Goodbye!")
