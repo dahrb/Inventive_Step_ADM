@@ -1,170 +1,152 @@
 import os
+from vllm import LLM, SamplingParams
+from vllm.inputs import TokensPrompt
+from openai_harmony import load_harmony_encoding, HarmonyEncodingName, Conversation, Message, Role, DeveloperContent, ToolDescription
 import json
-import time
-import pickle
-from openai import OpenAI
-import re
-from tenacity import retry, wait_random_exponential, stop_after_attempt
-from termcolor import colored  
 
-# --- CONFIGURATION ---
-# Replace with your actual server URL from the SLURM log (e.g., http://gpu12:8000/v1)
-API_BASE = "http://gpu33.barkla2.liv.alces.network:8000/v1"
-API_KEY = "EMPTY"
+# --- 1. THE "GAME" (Your Dynamic Tool) ---
+# This represents your CMD line program or external API
+SECRET_WEATHER_STATE = {
+    "location": "Liverpool",
+    "condition": "Rainy",
+    "temperature": "Cold",
+    "wind": "High"
+}
 
-# Initialize Synchronous Client
-client = OpenAI(base_url=API_BASE, api_key=API_KEY)
-
-# --- 1. TOOL IMPLEMENTATION ---
-def execute_weather_tool(location, unit="celsius"):
+def check_weather_oracle(question_type):
     """
-    Simulates checking a weather API.
+    The 'Game' that answers specific questions about the hidden weather state.
     """
-    # Database of fake weather conditions
-    weather_db = {
-        "liverpool": "Rainy, 12 degrees, Wind: High",
-        "san francisco": "Foggy, 16 degrees, Wind: Moderate",
-        "london": "Cloudy, 15 degrees, Wind: Low",
-        "marengo": "Sunny, 25 degrees, Wind: None",
-    }
+    print(f"\n[GAME SYSTEM] Processing query: {question_type}...")
     
-    # Simple lookup logic
-    key = location.lower()
-    for city, weather in weather_db.items():
-        if city in key:
-            return json.dumps({"location": location, "weather": weather, "unit": unit})
-            
-    return json.dumps({"error": f"Location '{location}' not found."})
+    if question_type == "check_rain":
+        return "Yes, it is currently raining." if SECRET_WEATHER_STATE["condition"] == "Rainy" else "No rain."
+    elif question_type == "check_temp":
+        return f"The temperature feels {SECRET_WEATHER_STATE['temperature']}."
+    elif question_type == "check_wind":
+        return f"Wind speeds are {SECRET_WEATHER_STATE['wind']}."
+    elif question_type == "check_location":
+        return f"You are in {SECRET_WEATHER_STATE['location']}."
+    else:
+        return "Unknown sensor reading."
 
-@retry(wait=wait_random_exponential(multiplier=1, max=40), stop=stop_after_attempt(3))
-def chat_completion_request(messages, tools=None, tool_choice=None, model="gpt-oss-120b"):
-    try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=messages,
-            tools=tools,
-            temperature=0.0,
-            reasoning_effort='high',
-            tool_choice=tool_choice,
-        )
-        return response
-    except Exception as e:
-        print("Unable to generate ChatCompletion response")
-        print(f"Exception: {e}")
-        return e
-# --- 2. PROCESSING ---
-def process_question(q, index):
-    messages = [
-        {"role": "system", "content": "You are a weather helper. If any question doesn't concern a location for which the user wishes to know the weather then respond that the request is invalid. Call tools to answer the weather."},
-        {"role": "user", "content": q}
-    ]
-
-    try:
-        start_time = time.time()
-        
-        tools = [{
-                    "type": "function",
-                    "function": {
-                        "name": "get_weather",
-                        "description": "Get current weather",
-                        "parameters": {
-                            "type": "object",
-                            "properties": {
-                                "location": {"type": "string", "description":"location of the place we need the weather for "},
-                                "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]}
-                            },
-                            "required": ["location"]
-                        }
-                    }
-                }]
-                        
-        #generate initial tool call
-        chat_response = chat_completion_request(
-        messages, tools=tools, tool_choice={"type": "function", "function": {"name": "get_weather"}})
-        assistant_message = chat_response.choices[0].message
-        messages.append(assistant_message)
-        print(assistant_message)
-        
-        tool_calls = assistant_message.tool_calls
-
-        print(tool_calls)
-        # --- CHECK 1: Native Tool Call ---
-        if tool_calls:
-            tool_call_id = tool_calls[0].id
-            tool_function_name = tool_calls[0].function.name
-            tool_query_string = json.loads(tool_calls[0].function.arguments)
-    
-            # Step 3: Call the function and retrieve results. Append the results to the messages list.      
-            if tool_function_name == 'get_weather':
-                location = tool_query_string["location"]
-                
-                try:
-                    unit = tool_query_string['unit']
-                    tool_result = execute_weather_tool(location=location,unit=unit)
-
-                except:
-                    unit = 'celsius'
-                    tool_result = execute_weather_tool(location=location,unit=unit)
-                
-
-                messages.append({
-                    "role":"tool", 
-                    "tool_call_id":tool_call_id, 
-                    "name": tool_function_name, 
-                    "content":tool_result
-                })
-                
-                # Step 4: Invoke the chat completions API with the function response appended to the messages list
-                # Note that messages with role 'tool' must be a response to a preceding message with 'tool_calls'
-                
-                chat_response = chat_completion_request(
-                messages)
-                
-                assistant_message = chat_response.choices[0].message
-                messages.append(assistant_message)
-                
-                print(f"--- Result {index+1} ---")
-                print(f"Q: {q}")
-                print(f"Action: Called function(location:{location},unit:{unit})")
-                print(f"Result: {tool_result}")
-                print(f"Final Answer: {chat_response.choices[0].message.content}")
-                return chat_response
-        else:
-            return f"Error: function {tool_function_name} does not exist"              
-
-    except Exception as e:
-        print(f"\n[ERROR] {q}: {e}")
-        return None
-
-# --- 3. MAIN LOOP ---
+# --- 2. SETUP LLM & TOOLS ---
 def main():
-    print(f"Connecting to Server at {API_BASE}...", flush=True)
-    
-    questions = [
-        "What is the weather like in Liverpool?",
-        # "9.11 and 9.8, which is greater?",
-        # "Check weather for London",
-        #"What is the weather like in Los Angeles?"
+    # Define the tools the LLM can use to play the game
+    tools = [
+        ToolDescription(
+            name="consult_weather_sensor",
+            description="Check a specific weather sensor to gather clues.",
+            parameters={
+                "type": "object",
+                "properties": {
+                    "sensor_type": {
+                        "type": "string",
+                        "enum": ["check_rain", "check_temp", "check_wind", "check_location"],
+                        "description": "The specific sensor to query."
+                    }
+                },
+                "required": ["sensor_type"]
+            }
+        ),
+        ToolDescription(
+            name="submit_final_report",
+            description="Submit your final determination of the weather.",
+            parameters={
+                "type": "object",
+                "properties": {
+                    "conclusion": {"type": "string", "description": "The final weather report summary."}
+                },
+                "required": ["conclusion"]
+            }
+        )
     ]
 
-    print(f"Processing {len(questions)} questions sequentially...")
-    global_start = time.time()
-    
-    results = []
-    
-    # Simple Loop
-    for i, q in enumerate(questions):
-        res = process_question(q, i)
-        if res:
-            results.append(res)
-    
-    total_time = time.time() - global_start
-    print(f"\nTotal Execution Time: {total_time:.2f}s")
+    # Setup Harmony
+    encoding = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
+    dev_content = DeveloperContent.new().with_instructions("You are a Weather Detective. You cannot see outside. You must use your tools to query sensors one by one to build a complete picture of the weather. Once you are sure, submit your final report.").with_function_tools(tools)
 
-    # # Save responses
-    # with open("llm_oss_weather_sync_responses.pkl", "wb") as f:
-    #     pickle.dump(results, f)
-    # print("Saved responses to 'llm_oss_weather_sync_responses.pkl'.")
+    convo = Conversation.from_messages([
+        Message.from_role_and_content(Role.SYSTEM, dev_content),
+        Message.from_role_and_content(Role.USER, "Start the investigation. What is the weather right now?"),
+    ])
+
+    # Initialize vLLM (Offline Mode, kept alive)
+    llm = LLM(
+        model="openai/gpt-oss-120b", # Or your 20B model
+        tensor_parallel_size=2,      # Adjust for your A100 setup
+        distributed_executor_backend='mp',
+        quantization="mxfp4",
+        enforce_eager=True,
+        gpu_memory_utilization=0.90,
+        trust_remote_code=True
+    )
+
+    sampling = SamplingParams(temperature=0.0, max_tokens=256, stop_token_ids=encoding.stop_tokens_for_assistant_actions())
+
+    # --- 3. THE GAME LOOP ---
+    max_turns = 10
+    turn = 0
+    game_over = False
+
+    print(f"\n{'='*40}\nSTARTING GAME LOOP\n{'='*40}")
+
+    while turn < max_turns and not game_over:
+        turn += 1
+        print(f"\n--- TURN {turn} ---")
+
+        # A. GENERATE THOUGHT/ACTION
+        prefill_ids = encoding.render_conversation_for_completion(convo, Role.ASSISTANT)
+        outputs = llm.generate(prompts=TokensPrompt(prompt_token_ids=prefill_ids), sampling_params=sampling)
+        
+        gen_ids = outputs[0].outputs[0].token_ids
+        entries = encoding.parse_messages_from_completion_tokens(gen_ids, Role.ASSISTANT)
+
+        tool_call_found = None
+
+        for message in entries:
+            msg_dict = message.to_dict()
+            # Add thought/action to history
+            convo.messages.append(message)
+
+            if msg_dict.get("channel") == "analysis":
+                print(f"[Reasoning]: {msg_dict['content'][0]['text']}")
+            
+            elif msg_dict.get("channel") == "commentary":
+                content = msg_dict.get("content", [])
+                if content and content[0].get("type") == "function_call":
+                    tool_call = content[0]
+                    print(f"[Tool Call]: {tool_call['name']} ({tool_call['arguments']})")
+                    tool_call_found = tool_call
+
+        # B. EXECUTE TOOL (The "Offline" dynamic part)
+        if tool_call_found:
+            name = tool_call_found['name']
+            args = json.loads(tool_call_found['arguments'])
+
+            if name == "consult_weather_sensor":
+                # Call the local python function (Game Engine)
+                result = check_weather_oracle(args["sensor_type"])
+                print(f"[Tool Result]: {result}")
+                
+                # Feed result back to LLM
+                tool_msg = Message.from_tool_result(
+                    tool_name=name,
+                    tool_call_id=tool_call_found.get("call_id", "call_0"), 
+                    content=str(result)
+                )
+                convo.messages.append(tool_msg)
+
+            elif name == "submit_final_report":
+                print(f"\n[VICTORY]: Agent reported -> {args['conclusion']}")
+                game_over = True
+        else:
+            # If the model just talked without calling a tool, push it to continue
+            print("[System]: Model output text but no tool. Nudging...")
+            # (Optional: Add a user message forcing a tool use if it gets stuck)
+
+    if not game_over:
+        print("\n[GAME OVER]: Max turns reached.")
 
 if __name__ == "__main__":
     main()

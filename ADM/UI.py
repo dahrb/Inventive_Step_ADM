@@ -37,7 +37,7 @@ class CLI():
          
         #sets case name 
         if not self.caseName: 
-            self.caseName = input("[QUESTION] Enter case name: ").strip()
+            self.caseName = input("[Q] Enter case name: ").strip()
             if self.caseName == '':
                 print("No case name provided.\n")
 
@@ -89,7 +89,7 @@ class CLI():
             
             #this is an information question
             question_text = self.adm.information_questions[current_question]
-            answer = input(f"[QUESTION] {question_text}: \n").strip()
+            answer = input(f"{question_text}: \n").strip()
             
             self.adm.setFact(current_question, answer)
             
@@ -311,7 +311,7 @@ class CLI():
             question_text = instantiator['question']
             resolved_question = self.resolve_question_template(question_text)          
             
-            print(f"[QUESTION] \n{resolved_question}\n")
+            print(f"\n{resolved_question}\n")
             
             #show available answers
             answers = list(instantiator['blf_mapping'].keys())
@@ -350,7 +350,7 @@ class CLI():
                 if instantiator.get('factual_ascription') and blf_name in instantiator['factual_ascription']:
                     factual_questions = instantiator['factual_ascription'][blf_name]
                     for fact_name, question in factual_questions.items():
-                        answer = input(f"[QUESTION] {question}: \n").strip()
+                        answer = input(f"[Q] {question}: \n").strip()
                         self.adm.setFact(fact_name, answer)
 
             return
@@ -363,7 +363,7 @@ class CLI():
                             
                 #ask the question with retry loop
                 while True:
-                    answer = input(f"[QUESTION] {question_text}\nAnswer (y/n): ").strip().lower()
+                    answer = input(f"{question_text}\nAnswer (y/n): ").strip().lower()
                     
                     if answer in ['y', 'yes']:
                         if current_question not in self.case:
@@ -528,6 +528,16 @@ class CLI():
             "case": self.case,
             "evaluated_nodes": list(self.evaluated_blfs),
         }
+        # Store ADM facts if available
+        if hasattr(self.adm, "facts"):
+            # Try to make facts JSON serializable (skip unserializable objects)
+            def safe_fact(val):
+                try:
+                    json.dumps(val)
+                    return val
+                except Exception:
+                    return str(val)
+            case_data["facts"] = {k: safe_fact(v) for k, v in self.adm.facts.items()}
 
         # Get reasoning statements for main ADM
         try:

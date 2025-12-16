@@ -36,7 +36,7 @@ def adm_initial():
     
     #F13
     adm.addQuestionInstantiator(
-    "\n\nDoes the candidate relevant prior art have a similar purpose to the invention?",
+    "\n\n[Q1] Does the candidate relevant prior art have a similar purpose to the invention?",
     {
         "They have the same or a very similar purpose.": "SimilarPurpose",
         "They have a different purpose.": ""
@@ -45,7 +45,7 @@ def adm_initial():
 
     #F14
     adm.addQuestionInstantiator(
-    "\n\nAre there similar technical effects between the candidate relevant prior art and the invention?",
+    "\n\n[Q2] Are there similar technical effects between the candidate relevant prior art and the invention?",
     {
         "It produces a similar technical effect.": "SimilarEffect",
         "It produces a different technical effect.": ""
@@ -54,7 +54,7 @@ def adm_initial():
 
     #F15/F16
     adm.addQuestionInstantiator(
-    "\n\nWhat is the relationship between the candidate relevant prior art and the invention\'s technical field? \n\nInvention Technical Field: {INVENTION_TECHNICAL_FIELD} \n\n",
+    "\n\n[Q3] What is the relationship between the candidate relevant prior art and the invention\'s technical field? \n\nInvention Technical Field: {INVENTION_TECHNICAL_FIELD} \n\n",
     {
         "It is from the exact same technical field.": "SameField",
         "It is from a closely related or analogous technical field.": "SimilarField",
@@ -66,11 +66,11 @@ def adm_initial():
     adm.addInformationQuestion("CGK", "\n\nBriefly describe the common general knowledge")
 
     #F8
-    adm.addNodes("Contested", question="\n\nIs the assertion of what constitutes Common General Knowledge being contested? \n\n Common General Knowledge: {CGK} \n\n")
+    adm.addNodes("Contested", question="\n\n[Q4] Is the assertion of what constitutes Common General Knowledge being contested? \n\n Common General Knowledge: {CGK} \n\n")
     
         #F9/F10/F11
     adm.addQuestionInstantiator(
-        "\n\nWhat is the primary source of evidence cited for the CGK? \n\n Common General Knowledge: {CGK} \n\n",
+        "\n\n[Q5] What is the primary source of evidence cited for the CGK? \n\n Common General Knowledge: {CGK} \n\n",
         {
             "A standard textbook": "Textbook",
             "A broad technical survey": "TechnicalSurvey",
@@ -84,19 +84,19 @@ def adm_initial():
     )
     
     #F1
-    adm.addNodes("SkilledIn", question= "\n\nIs the practitioner skilled in the relevant technical field of the prior art?\n\nRelevant Prior Art: {REL_PRIOR_ART}\n\n")
+    adm.addNodes("SkilledIn", question= "\n\n[Q6] Is the practitioner skilled in the relevant technical field of the prior art?\n\nRelevant Prior Art: {REL_PRIOR_ART}\n\n")
 
     #F2    
-    adm.addNodes("Average", question="\nDoes the practitioner possess average knowledge and ability for that field?\n\n")
+    adm.addNodes("Average", question="\n[Q7] Does the practitioner possess average knowledge and ability for that field?\n\n")
 
     #F3
-    adm.addNodes("Aware",question="\n\nIs the practitioner presumed to be aware of the common general knowledge in the field?\n\nCommon General Knowledge: {CGK}\n\n")
+    adm.addNodes("Aware",question="\n\n[Q8] Is the practitioner presumed to be aware of the common general knowledge in the field?\n\nCommon General Knowledge: {CGK}\n\n")
     #F4
-    adm.addNodes("Access", question="\n\nDoes the practitioner have access to all documents comprising the state of the art?\n\nCommon General Knowledge: {CGK}\n\n")
+    adm.addNodes("Access", question="\n\n[Q9] Does the practitioner have access to all documents comprising the state of the art?\n\nCommon General Knowledge: {CGK}\n\n")
  
     #F5/F6/F7
     adm.addQuestionInstantiator(
-    "\n\nWhat is the nature of this practitioner?",
+    "\n\n[Q10] What is the nature of this practitioner?",
     {
         "An individual practitioner": "Individual",
         "A research team": "ResearchTeam",
@@ -112,7 +112,7 @@ def adm_initial():
 
     #F19
     adm.addQuestionInstantiator(
-    "\n\nIs the closest prior art document itself a single reference?",
+    "\n\n[Q11] Is the closest prior art document itself a single reference?",
     {
         "Yes": "SingleReference",
         "No": ''
@@ -125,7 +125,7 @@ def adm_initial():
     
     #F20/F21
     adm.addQuestionInstantiator(
-    "\n\nDoes the closest prior art document require minimal modifications to the invention as assessed from the perspective of the skilled person? \n\n The skilled person: {SkilledPerson}",
+    "\n\n[Q12] Does the closest prior art document require minimal modifications to the invention as assessed from the perspective of the skilled person? \n\n The skilled person: {SkilledPerson}",
     {
         "Yes": ["MinModifications","AssessedBy"],
         "No": ''
@@ -133,11 +133,11 @@ def adm_initial():
     question_order_name="cpa_min_mod")
     
     #F22
-    adm.addNodes("CombinationAttempt", question= "\n\nIs there a reason to combine other documents with the CPA to attempt to demonstrate obviousness?\n\nClosest Prior: {CPA}\n\n")
+    adm.addNodes("CombinationAttempt", question= "\n\n[Q13] Is there a reason to combine other documents with the CPA to attempt to demonstrate obviousness?\n\nClosest Prior: {CPA}\n\n")
     
     #F17/F18
     adm.addQuestionInstantiator(
-    "\n\nHow are the other documents to be combined related to the CPA's technical field \n\n Closest Prior Art: {CPA}\n\n",
+    "\n\n[Q14] How are the other documents to be combined related to the CPA's technical field \n\n Closest Prior Art: {CPA}\n\n",
     {
         "They are from the same technical field": "SameFieldCPA",
         "They are from a similar technical field": "SimilarFieldCPA",
@@ -149,11 +149,11 @@ def adm_initial():
     
     #F23
     adm.addGatedBLF("CombinationMotive", 'CombinationAttempt', 
-                        "\n\nWould the skilled person have a clear and direct motive to combine these specific documents?\n\n The skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n")
+                        "\n\n[Q15] Would the skilled person have a clear and direct motive to combine these specific documents?\n\n The skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n")
 
     adm.addGatedBLF("BasisToAssociate", 
                         'CombinationAttempt',
-                        "\n\nIs there a reasonable basis for the skilled person to associate these specific documents with one another?\n\n The skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n")
+                        "\n\n[Q16] Is there a reasonable basis for the skilled person to associate these specific documents with one another?\n\n The skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n")
     
     #AF5
     adm.addNodes("RelevantPriorArt", ['SameField','SimilarField','SimilarPurpose','SimilarEffect'], ['the relevant prior art is from the same field','the relevant prior art is from a similar field','the relevant prior art has a similar purpose','the relevant prior art has a similar effect','a relevant prior art cannot be established'])
@@ -189,14 +189,14 @@ def sub_adm_1(item_name):
 
     #blfs
     #F30 - Q17
-    sub_adm.addNodes("IndependentContribution",question='Does the feature make an independent technical contribution to the invention?')
+    sub_adm.addNodes("IndependentContribution",question='[Q17] Does the feature make an independent technical contribution to the invention?')
 
     #F31 - Q18
-    sub_adm.addNodes("CombinationContribution",question='Does the feature make a contribution in combination with other technical features to the invention?')
+    sub_adm.addNodes("CombinationContribution",question='[Q18] Does the feature make a contribution in combination with other technical features to the invention?')
 
     #F33/F34/F35/F36 - Q20
     sub_adm.addQuestionInstantiator(
-    "What is the primary nature of the distinguishing feature?",
+    "[Q19] What is the primary nature of the distinguishing feature?",
     {
         "A computer simulation.": "ComputerSimulation",
         "The processing of numerical data.": "NumericalData",
@@ -208,43 +208,43 @@ def sub_adm_1(item_name):
     "nature_feat")
 
     #F32 - Q21
-    sub_adm.addNodes("CircumventTechProblem",question='Is the feature a technical implementation of a non-technical method i.e. game rules or a business method, and does it circumvent the technical problem rather than addressing it in an inherently technical way?')
+    sub_adm.addNodes("CircumventTechProblem",question='[Q20] Is the feature a technical implementation of a non-technical method i.e. game rules or a business method, and does it circumvent the technical problem rather than addressing it in an inherently technical way?')
 
     #F41 - Q22
-    sub_adm.addNodes("TechnicalAdaptation",question='Is the feature a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.')
+    sub_adm.addNodes("TechnicalAdaptation",question='[Q21] Is the feature a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.')
 
     #bridge node to make things easier
     sub_adm.addNodes("NumOrComp",["NumericalData","ComputerSimulation"],["The feature involves numerical data","The feature involves a computer simulation","The feature does not involve a computer simulation or numerical data"])
 
     #F37 - Q23
     sub_adm.addGatedBLF("IntendedTechnicalUse","NumOrComp",
-                            'Is there an intended use of the data resulting from the feature?')
+                            '[Q22] Is there an intended use of the data resulting from the feature?')
     #F38 - Q24
     sub_adm.addGatedBLF("TechUseSpecified","IntendedTechnicalUse",
-                            'Is the potential technical effect of the numerical data either explicitly or implicitly specified in the claim?')
+                            '[Q23] Is the potential technical effect of the numerical data either explicitly or implicitly specified in the claim?')
 
     #F39 - Q26
     sub_adm.addGatedBLF("SpecificPurpose","MathematicalMethod",
-                            'Does the technical contribution have a specific technical purpose i.e. produces a technical effect serving a technical purpose. Not merely a `generic\' purpose i.e. "controlling a technical system".')
+                            '[Q24] Does the technical contribution have a specific technical purpose i.e. produces a technical effect serving a technical purpose. Not merely a `generic\' purpose i.e. "controlling a technical system".')
 
     #F40 - Q27
     sub_adm.addGatedBLF("FunctionallyLimited","MathematicalMethod",
-                    'Is the claim functionally limited to the technical purpose stated either explicitly or implicitly?')
+                    '[Q25] Is the claim functionally limited to the technical purpose stated either explicitly or implicitly?')
 
     #F56 - Q28
-    sub_adm.addNodes("UnexpectedEffect",question='Is the technical effect unexpected or surprising?')
+    sub_adm.addNodes("UnexpectedEffect",question='[Q26] Is the technical effect unexpected or surprising?')
 
     #F57 - Q29
     sub_adm.addGatedBLF("PreciseTerms","UnexpectedEffect",
-                            'Is this unexpected effect described in precise, measurable terms?')
+                            '[Q27] Is this unexpected effect described in precise, measurable terms?')
 
     #F58 - Q30
     sub_adm.addGatedBLF("OneWayStreet",["UnexpectedEffect"],
-                            'Is the unexpected effect a result of a lack of alternatives creating a \'one-way street\' situation? i.e. for the skilled person to achieve the technical effect in question from the closest prior art, they would not have to choose from a range of possibilities, because there is only one-way to do x thing, and that would result in unexpected property y.')
+                            '[Q28] Is the unexpected effect a result of a lack of alternatives creating a \'one-way street\' situation? i.e. for the skilled person to achieve the technical effect in question from the closest prior art, they would not have to choose from a range of possibilities, because there is only one-way to do x thing, and that would result in unexpected property y.')
 
     #F42,F43
     sub_adm.addQuestionInstantiator(
-    "Are the technical effects credible and/or reproducible?",
+    "[Q29] Are the technical effects credible and/or reproducible?",
     {
         "Credible": ["Credible","NonReproducible"],
         "Reproducible": "",
@@ -259,10 +259,10 @@ def sub_adm_1(item_name):
    
     #F44 - Q32
     sub_adm.addGatedBLF("ClaimContainsEffect","NonReproducible",
-                            'Does the claim contain the non-reproducible effect i.e. if the claim says the invention achieve effect E, but this is not reproducible.')
+                            '[Q30] Does the claim contain the non-reproducible effect i.e. if the claim says the invention achieve effect E, but this is not reproducible.')
 
     sub_adm.addGatedBLF("SufficiencyOfDisclosureRaised","ClaimContainsEffect",
-                            'Is there an issue with sufficiency of disclosure regarding this feature?')
+                            '[Q31] Is there an issue with sufficiency of disclosure regarding this feature?')
 
     #abstract factors
     sub_adm.addNodes("AppliedInField",["SpecificPurpose and FunctionallyLimited"],["the technical contribution is applied in the field","the technical contribution is not applied in the field"])
@@ -293,23 +293,23 @@ def sub_adm_2(item_name):
     
     #BLFs
     #F48
-    sub_adm.addNodes("Encompassed",question='Would the skilled person, consider the the technical effects identified to be encompassed by the technical teaching?')
+    sub_adm.addNodes("Encompassed",question='[Q34] Would the skilled person, consider the the technical effects identified to be encompassed by the technical teaching?')
 
     #F49
-    sub_adm.addNodes("Embodied",question='Would the skilled person, consider the the technical effects identified to be embodied by the same originally disclosed invention?')
+    sub_adm.addNodes("Embodied",question='[Q35] Would the skilled person, consider the the technical effects identified to be embodied by the same originally disclosed invention?')
 
     #F50
-    sub_adm.addNodes("ScopeOfClaim",question='Are the technical effects achieved across the whole scope of the claim, and is this claim limited in such a way that substantially all embodiments encompassed by the claim show these effects?')
+    sub_adm.addNodes("ScopeOfClaim",question='[Q36] Are the technical effects achieved across the whole scope of the claim, and is this claim limited in such a way that substantially all embodiments encompassed by the claim show these effects?')
 
     #F51
-    sub_adm.addNodes("WrittenFormulation",question='Can we construct a written formulation of the objective technical problem?')
+    sub_adm.addNodes("WrittenFormulation",question='[Q37] Can we construct a written formulation of the objective technical problem?')
 
     #F52
-    sub_adm.addNodes("Hindsight",question='Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed?')
+    sub_adm.addNodes("Hindsight",question='[Q38] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed?')
 
     #F53/F54
     sub_adm.addQuestionInstantiator(
-    "Would the skilled person have arrived at the proposed invention by adapting or modifying the closest prior art, not simply because they could, but because they the prior art would have provided motivation to do so in the expectation of some improvement or advantage?",
+    "[Q39] Would the skilled person have arrived at the proposed invention by adapting or modifying the closest prior art, not simply because they could, but because they the prior art would have provided motivation to do so in the expectation of some improvement or advantage?",
     {
         "Would have adapted from the prior art": "WouldAdapt",
         "Would have modified from the prior art": "WouldModify",
@@ -389,7 +389,7 @@ def adm_main():
     
     #F46
     adm.addQuestionInstantiator(
-    "How do the invention's features create the technical effect?",
+    "[Q32] How do the invention's features create the technical effect?",
     {
         "As a synergistic combination (effect is greater than the sum of parts).": "Synergy",
         "As a simple aggregation of independent effects.": "",
@@ -400,7 +400,7 @@ def adm_main():
 
     #F45
     adm.addGatedBLF("FunctionalInteraction","Synergy",
-                        "Is the synergistic combination achieved through a functional interaction between features?")
+                        "[Q33] Is the synergistic combination achieved through a functional interaction between features?")
 
     #Sub-ADM 2 instantiation - creates a list of items to instantiate sub-adms for
     def collect_obj(adm):
@@ -510,73 +510,73 @@ def adm_main():
     adm.addEvaluationNode("ValidOTP", "OTPObvious", "ObjectiveTechnicalProblemFormulation", ['there is a valid objective technical problem','there is not a valid objective technical problem'])
 
     #F59
-    adm.addNodes("DisadvantageousMod",question="Does the invention involve a disadvantageous modification of the prior art?")
+    adm.addNodes("DisadvantageousMod",question="[Q40] Does the invention involve a disadvantageous modification of the prior art?")
 
     #F60
     adm.addGatedBLF("Foreseeable",'DisadvantageousMod',
-                        "Was this disadvantageous modification of the prior art foreseeable to the skilled person?")
+                        "[Q41] Was this disadvantageous modification of the prior art foreseeable to the skilled person?")
 
     #F61
     adm.addGatedBLF("UnexpectedAdvantage",'DisadvantageousMod',
-                        "Did the disadvantageous modification result in an unexpected technical advantage?")
+                        "[Q42] Did the disadvantageous modification result in an unexpected technical advantage?")
 
     #F63
-    adm.addNodes("BioTech",question="Is the subject matter of the invention biotech?")
+    adm.addNodes("BioTech",question="[Q43] Is the subject matter of the invention biotech?")
 
     #F64
     adm.addGatedBLF("Antibody",'BioTech',
-                        "Does the subject matter concern antibodies?")
+                        "[Q44] Does the subject matter concern antibodies?")
 
     #F67
     adm.addGatedBLF("PredictableResults",'BioTech',
-                        "Were the results obtained clearly predictable?")
+                        "[Q45] Were the results obtained clearly predictable?")
 
     #F68
     adm.addGatedBLF("ReasonableSuccess",'BioTech',
-                        "Was there a 'reasonable' expectation of success in obtaining the results?")
+                        "[Q46] Was there a 'reasonable' expectation of success in obtaining the results?")
 
     #F65
     adm.addGatedBLF("KnownTechnique",'Antibody',
-                        "Were the antibodies arrived at exclusively by applying techniques known in the art?")
+                        "[Q47] Were the antibodies arrived at exclusively by applying techniques known in the art?")
 
     #F66
     adm.addGatedBLF("OvercomeTechDifficulty",'Antibody',
-                        "Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?")
+                        "[Q48] Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?")
 
     #F69
-    adm.addNodes("GapFilled", question= "Does the invention merely fill an obvious gap in an incomplete prior art document which would naturally occur to the skilled person?")
+    adm.addNodes("GapFilled", question= "[Q49] Does the invention merely fill an obvious gap in an incomplete prior art document which would naturally occur to the skilled person?")
 
     #F70
-    adm.addNodes("WellKnownEquivalent", question= "Does the invention differ from the prior art in regard to substituting one well-known equivalent for another (e.g., a hydraulic for an electric motor)?")
+    adm.addNodes("WellKnownEquivalent", question= "[Q50] Does the invention differ from the prior art in regard to substituting one well-known equivalent for another (e.g., a hydraulic for an electric motor)?")
 
     #F71
-    adm.addNodes("KnownProperties",question="Is the invention merely the new use of known properties of a well-known material i.e. A washing composition containing as detergent, a known compound having the known property of lowering the surface tension of water.")
+    adm.addNodes("KnownProperties",question="[Q51] Is the invention merely the new use of known properties of a well-known material i.e. A washing composition containing as detergent, a known compound having the known property of lowering the surface tension of water.")
 
     #F72
-    adm.addNodes("AnalogousUse",question="Does the invention just apply a known technique in a closely analogous situation?")
+    adm.addNodes("AnalogousUse",question="[Q52] Does the invention just apply a known technique in a closely analogous situation?")
 
     #F73
-    adm.addNodes("KnownDevice",question="Does the invention rely on known devices?")
+    adm.addNodes("KnownDevice",question="[Q53] Does the invention rely on known devices?")
     
     #F75
     adm.addGatedBLF("ObviousCombination",'KnownDevice',
-                        "Is the invention a simple juxtaposition of the known devices, with each performing their normal, expected function?")
+                        "[Q54] Is the invention a simple juxtaposition of the known devices, with each performing their normal, expected function?")
 
     #F74
     adm.addGatedBLF("AnalogousSubstitution",'KnownDevice',
-                        "Does the invention rely within a known device, simply substituting in a recently developed material suitable for that use?")
+                        "[Q55] Does the invention rely within a known device, simply substituting in a recently developed material suitable for that use?")
     
     #F76
-    adm.addNodes("ChooseEqualAlternatives",question="Does the invention result from a choice between equally likely alternatives?")
+    adm.addNodes("ChooseEqualAlternatives",question="[Q56] Does the invention result from a choice between equally likely alternatives?")
     
     #F77
-    adm.addNodes("NormalDesignProcedure",question="Does the invention consist in choosing parameters from a limited range of possibilities arrived at through routine design procedures?")
+    adm.addNodes("NormalDesignProcedure",question="[Q57] Does the invention consist in choosing parameters from a limited range of possibilities arrived at through routine design procedures?")
 
     #F78
-    adm.addNodes("SimpleExtrapolation", question="Is the invention a result of a simple, straightforward extrapolation from the known art?")
+    adm.addNodes("SimpleExtrapolation", question="[Q58] Is the invention a result of a simple, straightforward extrapolation from the known art?")
 
     #F79
-    adm.addNodes("ChemicalSelection",question="Does the invention just consist in selecting a specific chemical compound or composition from a broad field?") 
+    adm.addNodes("ChemicalSelection",question="[Q59] Does the invention just consist in selecting a specific chemical compound or composition from a broad field?") 
     
     #AF9
     adm.addNodes("Combination",['ReliableTechnicalEffect and FunctionalInteraction and Synergy'],['There is a synergy between all the technical effects', 'There is no synergy between all the technical effects'])
@@ -634,7 +634,90 @@ def adm_main():
     
     return adm 
 
+question_mapping = {
+    # --- Inventive Step: Preconditions (adm_initial) ---
+    "SimilarPurpose": 1,
+    "SimilarEffect": 2,
+    "SameField": 3,
+    "SimilarField": 3,
+    "Contested": 4,
+    "Textbook": 5,
+    "TechnicalSurvey": 5,
+    "PublicationNewField": 5,
+    "SinglePublication": 5,
+    "SkilledIn": 6,
+    "Average": 7,
+    "Aware": 8,
+    "Access": 9,
+    "Individual": 10,
+    "ResearchTeam": 10,
+    "ProductionTeam": 10,
+    "SingleReference": 11,
+    "MinModifications": 12,
+    "AssessedBy": 12,
+    "CombinationAttempt": 13,
+    "SameFieldCPA": 14,
+    "SimilarFieldCPA": 14,
+    "CombinationMotive": 15,
+    "BasisToAssociate": 16,
 
+    # --- Sub-ADM 1 (sub_adm_1) ---
+    "IndependentContribution": 17,
+    "CombinationContribution": 18,
+    "ComputerSimulation": 19,
+    "NumericalData": 19,
+    "MathematicalMethod": 19,
+    "OtherExclusions": 19,
+    "CircumventTechProblem": 20,
+    "TechnicalAdaptation": 21,
+    "IntendedTechnicalUse": 22,
+    "TechUseSpecified": 23,
+    "SpecificPurpose": 24,
+    "FunctionallyLimited": 25,
+    "UnexpectedEffect": 26,
+    "PreciseTerms": 27,
+    "OneWayStreet": 28,
+    "Credible": 29,
+    "Reproducible": 29,
+    "NonReproducible": 29,
+    "ClaimContainsEffect": 30,
+    "SufficiencyOfDisclosureRaised": 31,
+
+    # --- Inventive Step: Main (adm_main - continued) ---
+    "Synergy": 32,
+    "FunctionalInteraction": 33,
+
+    # --- Sub-ADM 2 (sub_adm_2) ---
+    "Encompassed": 34,
+    "Embodied": 35,
+    "ScopeOfClaim": 36,
+    "WrittenFormulation": 37,
+    "Hindsight": 38,
+    "WouldAdapt": 39,
+    "WouldModify": 39,
+
+    # --- Inventive Step: Main (adm_main - continued) ---
+    "DisadvantageousMod": 40,
+    "Foreseeable": 41,
+    "UnexpectedAdvantage": 42,
+    "BioTech": 43,
+    "Antibody": 44,
+    "PredictableResults": 45,
+    "ReasonableSuccess": 46,
+    "KnownTechnique": 47,
+    "OvercomeTechDifficulty": 48,
+    "GapFilled": 49,
+    "WellKnownEquivalent": 50,
+    "KnownProperties": 51,
+    "AnalogousUse": 52,
+    "KnownDevice": 53,
+    "ObviousCombination": 54,
+    "AnalogousSubstitution": 55,
+    "ChooseEqualAlternatives": 56,
+    "NormalDesignProcedure": 57,
+    "SimpleExtrapolation": 58,
+    "ChemicalSelection": 59
+}
 
 
 
