@@ -1,0 +1,15 @@
+TITLE: UNKNOWN
+
+TYPE: US patent
+
+DOCUMENT DESCRIPTION:
+
+In accordance with the analysis of the content of D5 in case T 1983/09 the Board considers that document D5 discloses a system for supplying power to an LED load (cf. column 5, line 51 and figure 8) e.g. traffic lights (cf. column 4, lines 33 and 34), the system comprising:
+
+a LED driver module (comparator and transistor T) operable to regulate a flow of a LED current ILED through the LED load as a function of a temperature-dependent feedback signal UREG (cf. figure 8 and column 7, lines 13 to 27); and
+
+a current controller module (Regulator) in electric communication with said LED driver module to communicate the temperature-dependent feedback signal UREG to said LED driver module.
+
+The current controller module is operable to generate a temperature-dependent feedback signal UREG in response to an operating temperature (signal input to the adder connected to the inverting input of the regulator) and the flow of the LED current through the LED load (signal at the non-inverting input of the regulator). The current controller module includes means for generating a temperature feedback signal as a function of a sensed operating temperature of the LED load (see column 4, lines 18 to 21 and column 7, lines 13 to 16 and figure 8: NTC and temperature regulation module) and means for generating a current feedback signal as a function of a sensed flow of the LED current ILED through the LED load (cf. column 2, lines 57 to 62). The current feedback signal is a current feedback voltage (output of the integrator is necessarily a voltage since it is applied to an input of an operational amplifier used as a regulator).
+
+The system further comprises means for mixing the temperature feedback signal and the current feedback voltage (see figure 8: adder at the input of the regulator and the regulator drawn as an operational amplifier) to yield a temperature and current-dependent feedback voltage UREG.

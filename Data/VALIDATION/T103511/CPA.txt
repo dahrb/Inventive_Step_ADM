@@ -1,0 +1,17 @@
+TITLE: Adaptive HARQ for fixed TTI using soft acknowledgement
+
+TYPE: Working Group Document
+
+DOCUMENT:
+
+We showed a physical layer structure and coding scheme that combines the advantages of the conventional fixed 
+and variable TTI proposals by allowing to use two parallel data streams for each TTI. The main benefits are: 
+• flexible mapping of required retransmission energy using MCS level and code rate adaptation, as 
+well as bit mapping, 
+• reduced interference, 
+• allows soft-combining of retransmissions at different MCS levels,
+• high frame fill efficiency, 
+• increased throughput, 
+• maintains simplicity of fixed TTI. 
+The concepts presented in this paper are suitable for incremental redundancy, but can also be adapted to Chase 
+combining. 

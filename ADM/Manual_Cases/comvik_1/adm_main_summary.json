@@ -1,0 +1,178 @@
+{
+  "case": [
+    "ReliableTechnicalEffect",
+    "DistinguishingFeatures",
+    "Novelty",
+    "TechnicalContribution",
+    "Contribution",
+    "Synergy",
+    "FunctionalInteraction",
+    "Combination",
+    "CandidateOTP",
+    "OTPObvious",
+    "Obvious",
+    "ValidOTP",
+    "ObjectiveTechnicalProblem"
+  ],
+  "evaluated_nodes": [
+    "Synergy",
+    "ReliableTechnicalEffect",
+    "SufficiencyOfDisclosure",
+    "DistinguishingFeatures",
+    "FunctionalInteraction",
+    "TechnicalContribution",
+    "OTPObvious",
+    "NonTechnicalContribution",
+    "InventionUnexpectedEffect"
+  ],
+  "facts": {
+    "INVENTION_TITLE": "Method of facilitating shopping on a mobile device",
+    "INVENTION_DESCRIPTION": "Method of facilitating shopping on a mobile device",
+    "INVENTION_TECHNICAL_FIELD": "distributed systems",
+    "REL_PRIOR_ART": "methods for facilitating online shopping",
+    "CGK": "mobile device connected to a server computer",
+    "SkilledPerson": "a software engineer",
+    "CPA": "a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device",
+    "ReliableTechnicalEffect_results": [
+      [
+        "DistinguishingFeatures"
+      ],
+      [
+        "DistinguishingFeatures"
+      ],
+      [
+        "Reproducible",
+        "DistinguishingFeatures",
+        "NumOrComp",
+        "ComputationalContribution",
+        "FeatureTechnicalContribution",
+        "FeatureReliableTechnicalEffect",
+        "ComputerSimulation",
+        "IndependentContribution",
+        "Credible",
+        "ExcludedField",
+        "TechnicalAdaptation"
+      ]
+    ],
+    "ReliableTechnicalEffect_accepted_count": 1,
+    "ReliableTechnicalEffect_rejected_count": 2,
+    "ReliableTechnicalEffect_items": [
+      "user selects 2+ products",
+      "An \"optimal shopping tour\" for purchasing the two or more products is provided to the user",
+      "optimal shopping tour is determined by the server by accessing a cache memory"
+    ],
+    "ReliableTechnicalEffect_sub_adm_instances": "{'user selects 2+ products': <ADM_Construction.ADM object at 0x7f8a46a94650>, 'An \"optimal shopping tour\" for purchasing the two or more products is provided to the user': <ADM_Construction.ADM object at 0x7f8a46a94d70>, 'optimal shopping tour is determined by the server by accessing a cache memory': <ADM_Construction.ADM object at 0x7f8a46a954f0>}",
+    "objective_technical_problems": [
+      "how to modify the method of D1 to implement in a technically efficient manner the non-technical business concept defined by ifferences of a non-technical nature"
+    ],
+    "OTPObvious_results": [
+      [
+        "ObjectiveTechnicalProblemFormulation",
+        "Encompassed",
+        "WellFormed",
+        "ScopeOfClaim",
+        "WouldAdapt",
+        "WouldHaveArrived",
+        "BasicFormulation",
+        "Embodied",
+        "WrittenFormulation"
+      ]
+    ],
+    "OTPObvious_accepted_count": 1,
+    "OTPObvious_rejected_count": 0,
+    "OTPObvious_items": [
+      "how to modify the method of D1 to implement in a technically efficient manner the non-technical business concept defined by ifferences of a non-technical nature"
+    ],
+    "OTPObvious_sub_adm_instances": "{'how to modify the method of D1 to implement in a technically efficient manner the non-technical business concept defined by ifferences of a non-technical nature': <ADM_Construction.ADM object at 0x7f8a46a96060>}"
+  },
+  "reasoning": [
+    {
+      "depth": 0,
+      "statement": "there is no inventive step due to obviousness"
+    },
+    {
+      "depth": 1,
+      "statement": "there is no issue with sufficiency of disclosure"
+    },
+    {
+      "depth": 1,
+      "statement": "the invention is obvious"
+    },
+    {
+      "depth": 2,
+      "statement": "there is no secondary indicator"
+    },
+    {
+      "depth": 3,
+      "statement": "there is no predictable disadvantage"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not an obvious biotech invention"
+    },
+    {
+      "depth": 4,
+      "statement": "there is not an unexpected effect within the invention"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not an obvious antibody invention"
+    },
+    {
+      "depth": 4,
+      "statement": "the subject matter does not concern antibodies"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not a known measure"
+    },
+    {
+      "depth": 4,
+      "statement": "there is not a known usage"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not an obvious selection"
+    },
+    {
+      "depth": 1,
+      "statement": "The invention has novelty"
+    },
+    {
+      "depth": 2,
+      "statement": "there are distinguishing features"
+    },
+    {
+      "depth": 1,
+      "statement": "there is a well-defined objective technical problem"
+    },
+    {
+      "depth": 2,
+      "statement": "There is a single objective technical problem"
+    },
+    {
+      "depth": 3,
+      "statement": "There is a synergy between all the technical effects"
+    },
+    {
+      "depth": 3,
+      "statement": "There are technical contribution/s"
+    },
+    {
+      "depth": 4,
+      "statement": "the features contain a technical contribution"
+    },
+    {
+      "depth": 4,
+      "statement": "there is no non-technical contribution"
+    },
+    {
+      "depth": 3,
+      "statement": "There are not an aggregate of technical effects"
+    },
+    {
+      "depth": 2,
+      "statement": "there is a valid objective technical problem"
+    }
+  ]
+}

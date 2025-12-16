@@ -1,0 +1,83 @@
+CLAIMS
+
+1. A method for implementing a second-chance game or an end of game
+drawing for players of a lottery game, comprising the steps of:
+
+providing tickets (110) for the lottery game, wherein the tickets
+(110) are each assigned a unique validation code (112);
+
+applying an algorithm to generate a unique, first encryption
+code (120) for each ticket validation code (112);
+
+storing the first encryption code (120) in a first record (130) ata
+lottery provider;
+
+distributing the tickets (110) for possession by players of the lot-
+tery game;
+
+conducting the lottery game;
+
+allowing players to submit the unique validation codes (112) for
+registration into a lottery provider's database;
+
+on the part of the lottery provider, applying the algorithm to the
+submitted validation codes (112) to create a second encryption code
+(135) for each submitted validation code (112);
+
+on the part of the lottery provider, comparing the second en-
+cryption code (135) with the record (130) of first encryption codes
+(120) to determine whether a match exists; and
+
+on the part of the lottery provider, if a match exists, registering
+the ticket (110) in a second record (155) by storing the second encryp-
+tion code (135) for the ticket (110), wherein the second record (155)
+comprises only those encryption codes (135) verified to be eligible for
+the second-chance or end of game drawing; and
+
+conducting the second-chance or end of game drawing with the
+tickets (110), whose encryption codes (135) are stored in the second
+record (155).
+
+2. The method according to claim 1, wherein said registering step com-
+prises recording identification information provided by the player, and
+wherein winners in the second-chance or end of game drawing are no-
+tified by the lottery provider based on the identification information so
+that the winners need not retain the lottery ticket (110) after said regis-
+tration step.
+
+3. The method according to claim 1, further comprising the step of reject-
+ing a submitted validation code (112) where there is no match be-
+tween the second encryption code (135) and the record (130) of first
+encryption codes (120).
+
+4. The method according to claim 1, wherein said step of allowing play-
+ers to submit the unique validation code (112) comprises providing a
+website accessible over the internet by which players may provide the
+unique validation code (112) from the ticket (110).
+
+5. The method according to claim 4, wherein the website locks out a
+player who submits three validation codes (112) that do not result in a
+match.
+
+6. The method according to claim 4, wherein for a predetermined period
+of time the website locks out a player who submits three validation
+codes (112) that do not result in a match.
+
+7. The method according to claim 1, wherein said comparing step further
+comprises determining whether a validation code (112) that results in
+a matching first and second encryption code (120, 135) has already
+been submitted.
+
+8. The method according to claim 1, wherein said providing step com-
+prises providing the validation code (112) on the ticket (110) and un-
+der a coating that is removable by a player.
+
+9. The method according to claim 1, wherein the algorithm is the MD5
+algorithm.
+
+10. The method according to claim 1, wherein the algorithm provides the
+same unique encryption code (120, 135) for each entry of a particular
+validation code (112).
+
+11. The method according to claim 1, where the validation code (112) is
+an alphanumeric code.

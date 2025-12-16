@@ -1,0 +1,40 @@
+TITLE: SOFTWARE PRODUCT AUTHENTICATION
+
+ABSTRACT: A system method for providing an authentication code across a network for use in authentication of documents, such as printed lottery tickets. The system includes document-printing terminals that create a first key and a second key, with the first key used to generate an authentication code for printing on the document, and the second key is sent to a central server and usable to verify that the first key created the authentication code. The central server can also provide ticket serial numbers for tickets being dispensed at the terminals and the first key can be combined with the serial number and other secondary data to create the authentication code.
+
+TYPE: US patent
+
+CLAIMS:
+1. A system for providing an authentication code across a network for use in a document, comprising:
+one or more terminals that each include a document printing device, each terminal including a first key and a second key wherein the first key is used to create an authentication code and the second key is usable to verify that the first key created an authentication code, and each terminal selectively using the first key to print an authentication code on a document and transmitting the second key to another computer device on the network;
+a server in communication with the network, the server receiving and storing one or more second keys transmitted from the one or more terminals.
+2. The system of claim 1, wherein the document is a lottery ticket.
+3. The system of claim 2, wherein the lottery ticket includes secondary data and the first key is used with the secondary data to create the authentication code.
+4. The system of claim 3, wherein the secondary data is a ticket serial number.
+5. The system of claim 1, wherein the first key and second key are based upon prime numbers.
+6. The system of claim 1, wherein the server further receives an authentication code for a document and verifies the authentication code based upon a stored second key.
+7. The system of claim 1, wherein the authentication code is a high density bar code.
+8. The system of claim 1, wherein the authentication code is a serial number.
+9. A method of providing an authentication code across a network for use in the verification of a document, comprising the steps of:
+generating a first key and a second key at a terminal that includes a document printing device;
+transmitting the second key from the terminal to a server on the network;
+storing the second key at the server;
+creating an authentication code at the terminal based upon the first key; and
+printing the authentication code on a document.
+10. The method of claim 9, further comprising the steps of:
+receiving an authentication code at the server;
+comparing the authentication code to one or more stored secondary keys to indicate if the authentication code is valid.
+11. The method of claim 10, wherein the step of comparing the authentication code compares the authentication code received with the second key received from a specific terminal.
+12. The method of claim 9, wherein step of printing is printing the authentication code on a lottery ticket.
+13. The method of claim 9, wherein the step of generating a first key and second key is generation a pair of keys based upon prime numbers.
+14. The method of claim 9, wherein the document includes secondary data and the step of creating an authentication code includes the step of combining the first key with the secondary data to create the authentication code.
+15. A computer device, comprising:
+a document printing device;
+a communication interface with a network; and
+a controller that generates a first key and a second key wherein the first key is used to create an authentication code and the second key is usable to verify that the first key created a authentication code, and the controller further selectively transmitting the second key to another computer device on the network,
+wherein the controller creates an authentication code from the first key and causes the document printing device to print the authentication code on a document.
+16. The device of claim 15, wherein the first key and second key are based upon prime numbers.
+17. The device of claim 16, wherein the document is a lottery ticket.
+18. The device of claim 17, wherein the lottery ticket includes secondary data and the controller combines the first key with the secondary data to create the authentication code.
+19. The device of claim 18, wherein the secondary data is a ticket serial number.
+20. The device of claim 15, wherein the printed authentication code is a serial number.

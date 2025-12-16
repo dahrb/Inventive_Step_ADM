@@ -1,0 +1,61 @@
+I. This is an appeal against the refusal of European patent application No. 07 841 130 for lack of inventive step (Article 56 EPC 1973).
+
+II. The applicant requested in writing that the decision under appeal be set aside and a patent be granted on the basis of claims 1 to 11 filed with letter dated 27 October 2009, as sole request.
+
+Oral proceedings were also requested.
+
+III. Claim 1 of this request reads as follows:
+
+"1. A method for implementing a second-chance game to or an end of game drawing for players of a lottery game, comprising the steps of:
+
+providing tickets for the lottery game, wherein the tickets are each assigned a unique validation code;
+
+applying an algorithm to generate a unique, first encryption code for each ticket validation code;
+
+storing the first encryption code in a record at a lottery provider;
+
+distributing the tickets for possession by players of the lottery game;
+
+allowing players to submit the unique validation codes for registration into a lottery provider's database;
+
+on the part of the lottery provider, applying the algorithm to the submitted validation codes to create a second encryption code for each submitted validation code;
+
+on the part of the lottery provider, comparing the second encryption code with the record of first encryption codes to determine whether a match exists; and
+
+on the part of the lottery provider, registering players for the second-chance game or for the end of game drawing when such players submit a validation code that results in a match."
+
+Claims 2 to 11 are dependent on claim 1.
+
+IV. The following documents are mentioned in this decision:
+
+D1 = US 2005/0262338 A
+
+D2 = US 2006/0059363 A
+
+D4 = "The UNIX Programming Environment", Prentice-Hall Inc., 1984, pp. 52-53
+
+V. The examining division essentially argued that:
+
+- Document D1 disclosed a lottery game in which tickets with a unique validation code were provided and distributed to the players of the lottery game. The problem to be solved by the application could be formulated as providing an alternative cryptographic access and authentication scheme to the scheme suggested in D1. Document D2 disclosed the generation and storage of hashes which were compared to hashed submitted information. The skilled person starting from D1 would incorporate the cryptographic access and authentication scheme of D2 in an obvious manner into D1 for the purpose of solving the problem. The remaining features of the method of claim 1 were rules and schemes of playing games and did not contribute in the assessment of inventive step.
+
+VI. The appellant argued in writing essentially as follows:
+
+- The present invention provided a secure validation and authentication system, wherein the players could enter instant lottery tickets, such as scratch-off tickets, into a subsequent game. According to one exemplary form of the present invention, lottery tickets were printed with a unique validation code. Once the validation codes were generated, the numbers were converted into encrypted validation codes. Along with a record of the encrypted validation codes, the tickets were transferred to a lottery provider who stored the record of the encrypted validation codes. Finally, the lottery provider distributed the lottery tickets. By encrypting the unique validation codes, it could be assured that there would be no record of these unique validation codes being accessible to unauthorized persons. Only the encrypted validation codes (first encryption codes) were transferred to the lottery provider. Thus a secure and easily manageable system for conducting a second-chance game or an end of game drawing based on instant-win lottery tickets was provided, since only the validation code from a ticket in the first game had to be entered to participate in the second-chance game. The system generated a second encryption code from the entered validation code and compared it to the first encryption code that was generated for that particular validation code. If the first and second encryption codes matched, then the player was automatically entered into the second-chance game or end of game drawing, and was eligible for winning the game without having to actually present the lottery ticket for redemption.
+
+- Document D1 was considered by the examining division to be the closest prior art. This document disclosed a rather complicated method for authenticating a ticket across a network, including a plurality of document-printing terminals. Document D2 related to a completely different field than the present invention and D1. D2 centered on the correct delivery of a computerized device to a specific end user. Thus, there was no reason why a skilled person would look into D2 to solve the problem of the invention. The flow of information from a lottery provider to ticket terminals and back to the lottery provider (as in D1), as well as the flow of information from the distributor of computerized devices to an end user (as in D2) were not compatible and a combination was certainly not obvious to the skilled person.
+
+VII. In a communication pursuant to Article 15(1) RPBA annexed to the summons to oral proceedings, the board informed the appellant of its provisional opinion that it shared his view that the combination of documents D1 and D2 did not lead to the invention, but that it nevertheless considered the invention to lack an inventive step having regard to a notorious lottery game and the disclosure of D4.
+
+VIII. In reply to the objections raised by the board the appellant argued essentially that:
+
+- Document D4 disclosed a broad teaching of the well-known UNIX system to store an encrypted record of passwords and, upon receipt of a password from a user, encrypting the received password and comparing such encryption to the record of stored encrypted passwords to determine validity of the received password. However, security of the validation record in the lottery industry was paramount and the flow of the validation numbers and validation records between the three involved entities: the lottery ticket manufacturer, the lottery provider, and the lottery player, were critical. The interplay between these entities was a relevant feature of the invention which had no relation to the UNIX system. Likewise, the relationship between the primary lottery game and the second-chance game or end of game drawing with respect to security had to be taken into account.
+
+- With the current method, the ticket manufacturer generated the initial validation codes and printed such codes on the tickets in plain text format. These validation codes were the means for authenticating tickets in the primary lottery game. A fraudster gaining access to the validation codes at the ticket manufacturer could potentially determine wherein and whereto winning tickets were distributed, and the particular plain-text code printed on the winning tickets. The ticket manufacturer thus had a strong interest for developing a second chance game that was both user-friendly and secure.
+
+- Even if a fraudster at the game provider with access to the game provider's server were somehow able to access individual tickets, the record of encrypted validation codes was essentially worthless to such fraudster in attempting to discern whether or not a ticket was a winning ticket. The record of encrypted validation codes was never linked back to a record of actual validation codes at the lottery ticket manufacturer. Thus, a fraudster having stolen a pack of tickets and having access to the record of encrypted validation codes could not use this information for trying to find out which of these tickets was a winning one. For this, he also would need to have access to the encryption algorithm. But even if the fraudster at the game provider were to gain access to the encryption algorithm, he would only be able to generate an encrypted validation code, and possibly compare this encrypted code to the record transmitted to the game provider. However, this would provide no useful information to the fraudster.
+
+- If one would draw parallels, such a fraudulent determination of important information would correspond to getting access to the record of encrypted passwords on the UNIX server side as well as to stealing the corresponding user passwords and/or even the encryption algorithm. Such a scenario would be fatal for the use of the UNIX system. More specifically, in the case of a UNIX system, if a fraudster got to know the password of the user, he could use this password for entering the UNIX files of said user. A fraudster would not even need to have access to the record of encrypted validation codes and/or the encryption algorithm. Stealing a user password and gaining access to the UNIX system therefore led to a completely different scenario. Thus, a skilled person would not resort to the method described in D4 when wanting to offer security to the provider and comfort to the player for a second chance game.
+
+- The flow of encrypted and plain-text validation codes between the parties served for purposes of the second chance game while ensuring security in the primary game. Thus, the method according to the invention kept up with the existing security standard for a primary game while at the same time using the already existing information, i.e. the individual validation code on the ticket, to provide for a unique method of enabling a secondary game. Accordingly, the ticket itself did not need to be altered compared to a ticket offering only one game. Only a record of encryption codes had to be established at the lottery provider as well as an algorithm, which calculated an encryption code based on the validation code transmitted by the player to the provider for the purpose of comparing the respective encrypted codes. The skilled person - even when being aware of the UNIX system according to D4 - would not come up with such a solution, which encompassed two different games having each their own security system, which however were linked via the same validation code on the ticket.
+
+IX. The oral proceedings were held on 5 November 2015. Neither the appellant nor his representatives were present on the date of the oral proceedings. In a telephone conversation held by the board's registrar the representative's secretary informed her that the representative that had signed the last submissions in appeal was on holiday and the representative that had filed the appeal was not yet in his office. Thus the oral proceedings were held in the absence of the appellant.

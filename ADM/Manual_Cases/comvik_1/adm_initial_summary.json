@@ -1,0 +1,90 @@
+{
+  "case": [
+    "SimilarPurpose",
+    "RelevantPriorArt",
+    "SimilarEffect",
+    "SimilarField",
+    "CommonKnowledge",
+    "SkilledIn",
+    "Average",
+    "Aware",
+    "Access",
+    "Individual",
+    "Person",
+    "SkilledPerson",
+    "SingleReference",
+    "MinModifications",
+    "AssessedBy",
+    "ClosestPriorArt",
+    "ClosestPriorArtDocuments",
+    "Valid"
+  ],
+  "evaluated_nodes": [
+    "ResearchTeam",
+    "PublicationNewField",
+    "SimilarPurpose",
+    "SameField",
+    "Individual",
+    "ProductionTeam",
+    "TechnicalSurvey",
+    "SinglePublication",
+    "Average",
+    "SimilarField",
+    "Textbook",
+    "SingleReference",
+    "SkilledIn",
+    "SimilarEffect",
+    "AssessedBy",
+    "Aware",
+    "Access",
+    "MinModifications",
+    "Contested"
+  ],
+  "facts": {
+    "INVENTION_TITLE": "Method of facilitating shopping on a mobile device",
+    "INVENTION_DESCRIPTION": "Method of facilitating shopping on a mobile device",
+    "INVENTION_TECHNICAL_FIELD": "distributed systems",
+    "REL_PRIOR_ART": "methods for facilitating online shopping",
+    "CGK": "mobile device connected to a server computer",
+    "SkilledPerson": "a software engineer",
+    "CPA": "a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device"
+  },
+  "reasoning": [
+    {
+      "depth": 0,
+      "statement": "the conceptual components of the invention have been established, we may now assess inventive step"
+    },
+    {
+      "depth": 1,
+      "statement": "common knowledge not disputed"
+    },
+    {
+      "depth": 2,
+      "statement": "no documentary evidence for common knowledge provided"
+    },
+    {
+      "depth": 1,
+      "statement": "there is a defined skilled person"
+    },
+    {
+      "depth": 2,
+      "statement": "the skilled practitioner is an individual"
+    },
+    {
+      "depth": 1,
+      "statement": "the closest prior art consists of a document of a single reference"
+    },
+    {
+      "depth": 2,
+      "statement": "no combination of documents relevant to the closest prior art"
+    },
+    {
+      "depth": 3,
+      "statement": "the closest prior art has been established"
+    },
+    {
+      "depth": 4,
+      "statement": "the relevant prior art has a similar effect"
+    }
+  ]
+}

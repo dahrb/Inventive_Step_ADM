@@ -4,9 +4,14 @@ import sys
 import webbrowser
 import glob
 import re
-from pythonds import Stack
+import threading
+import queue
+import time
+import builtins
+import logging
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-# --- 1. IMPORT ADM FACTORIES ---
+# --- 1. IMPORT ADM LOGIC ---
 try:
     from inventive_step_ADM import adm_initial, adm_main, sub_adm_1, sub_adm_2
 except ImportError:
@@ -16,9 +21,17 @@ except ImportError:
         print("CRITICAL ERROR: Could not import ADM factory functions.")
         sys.exit(1)
 
+# Import CLI for execution
+try:
+    from UI import CLI
+    CLI_AVAILABLE = True
+except ImportError:
+    CLI_AVAILABLE = False
+    print("Warning: 'UI.py' not found. CLI features disabled.")
+
 # --- 2. CONFIGURATION ---
 CASES_DIR = "./Eval_Cases"
-OUTPUT_FILE = "adm_case_manager.html"
+PORT = 8000
 
 SUB_ADM_CONFIG = {
     "ReliableTechnicalEffect": { "factory": sub_adm_1, "label": "Technical Effect" },
@@ -27,410 +40,528 @@ SUB_ADM_CONFIG = {
     "sub_adm_2": { "factory": sub_adm_2, "label": "Objective Problem" }
 }
 
-# --- 3. HTML TEMPLATE ---
+# --- 3. IO INTERCEPTION (THE BRIDGE) ---
+class IOBridge:
+    def __init__(self):
+        self.output_queue = queue.Queue()
+        self.input_queue = queue.Queue()
+        self.active = False
+        self.original_stdout = sys.stdout # Keep reference to real stdout
+
+    def write(self, text):
+        if not text: return
+        # FILTER: If it looks like a system log, print to TERMINAL ONLY
+        if text.startswith("[INFO]") or text.startswith("[DEBUG]") or text.startswith("> Scanning") or "Scanning case:" in text:
+            self.original_stdout.write(text + "\n")
+        else:
+            # Otherwise, send to WEB UI
+            self.output_queue.put(text)
+    
+    def flush(self): 
+        self.original_stdout.flush()
+
+    def get_output(self):
+        lines = []
+        while not self.output_queue.empty(): lines.append(self.output_queue.get())
+        return "".join(lines)
+
+    def send_input(self, text): self.input_queue.put(text)
+
+io_bridge = IOBridge()
+
+def web_input(prompt=""):
+    # Send the prompt to the UI before waiting
+    if prompt:
+        io_bridge.write(prompt)
+    return io_bridge.input_queue.get()
+
+# --- 4. HTML TEMPLATE ---
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ADM Case Manager</title>
-    
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
-        /* LAYOUT */
         body { margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; background-color: #f8fafc; height: 100vh; display: flex; overflow: hidden; }
         
-        /* LEFT PANEL: REPORT */
         #report-panel { 
             width: 450px; min-width: 350px; background: white; border-right: 1px solid #e2e8f0; 
-            overflow-y: auto; padding: 40px; box-shadow: 4px 0 15px rgba(0,0,0,0.02); z-index: 10; 
-            display: flex; flex-direction: column; 
+            overflow-y: auto; padding: 40px; z-index: 10; display: flex; flex-direction: column;
+            transition: all 0.3s ease; 
+            white-space: normal;
         }
-        #report-content { font-size: 14px; color: #334155; line-height: 1.6; flex-grow: 1; }
-        #report-content h1 { font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 10px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px; }
-        #report-content h2 { font-size: 16px; font-weight: 700; color: #475569; margin-top: 30px; margin-bottom: 10px; }
-        details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin: 10px 0; }
-        summary { cursor: pointer; font-weight: 600; color: #64748b; font-size: 12px; text-transform: uppercase; outline: none; }
-        code { background: #f1f5f9; padding: 2px 5px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 13px; color: #0f172a; }
-
-        /* RIGHT PANEL: GRAPH */
+        #report-panel.collapsed { width: 0 !important; min-width: 0 !important; padding: 0 !important; border: none; opacity: 0; overflow: hidden; }
+        #report-content { font-size: 14px; color: #334155; line-height: 1.6; flex-grow: 1; min-width: 300px; }
+        #report-content img { max-width: 100%; border-radius: 6px; border: 1px solid #e2e8f0; margin: 10px 0; }
+        
         #graph-panel { flex-grow: 1; position: relative; background: radial-gradient(circle at center, #ffffff 0%, #f8fafc 100%); display: flex; flex-direction: column; }
-
-        /* HEADER */
-        .top-bar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 25px; background: rgba(255,255,255,0.95); 
-            border-bottom: 1px solid #e2e8f0; backdrop-filter: blur(5px); z-index: 20;
-        }
-        .tabs { display: flex; gap: 10px; flex-wrap: wrap; }
         
-        /* CASE SELECTOR */
-        .case-selector { position: relative; display: inline-block; }
-        .case-btn {
-            padding: 8px 16px; background: #0f172a; color: white; border-radius: 6px;
-            font-size: 13px; font-weight: 600; cursor: pointer; border: none;
-            display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 5px rgba(15,23,42,0.2);
+        #wizard-panel { 
+            display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: #f1f5f9; z-index: 50; flex-direction: column;
         }
-        .case-btn:after { content: '▼'; font-size: 8px; opacity: 0.8; }
-        .case-content {
-            visibility: hidden; opacity: 0; position: absolute; top: 110%; right: 0;
-            background: white; min-width: 220px; border-radius: 8px;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2); border: 1px solid #e2e8f0;
-            z-index: 100; padding: 5px; transform: translateY(-5px); transition: all 0.2s;
+        .close-wiz-btn {
+            position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; 
+            border-radius: 50%; background: white; border: 1px solid #cbd5e1; 
+            color: #64748b; font-size: 24px; line-height: 40px; text-align: center;
+            cursor: pointer; z-index: 60; transition: all 0.2s;
         }
-        .case-selector:hover .case-content { visibility: visible; opacity: 1; transform: translateY(0); }
-        .case-item { padding: 10px 12px; font-size: 13px; color: #475569; font-weight: 500; border-radius: 6px; cursor: pointer; transition: all 0.1s; }
-        .case-item:hover { background: #f1f5f9; color: #0f172a; }
-
-        /* TABS & DROPDOWNS */
-        .tab-btn { padding: 8px 16px; border: 1px solid #e2e8f0; background: white; border-radius: 20px; font-size: 13px; font-weight: 600; color: #64748b; cursor: pointer; transition: all 0.2s; }
-        .tab-btn:hover { background: #f1f5f9; color: #0f172a; }
-        .tab-btn.active { background: white; color: #0f172a; border-color: #0f172a; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 15px; }
-        .drop-trigger { padding: 8px 16px; border: 1px solid #e2e8f0; background: white; border-radius: 20px; font-size: 13px; font-weight: 600; color: #64748b; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
-        .drop-trigger:after { content: '▼'; font-size: 9px; opacity: 0.6; }
-        .drop-trigger:hover { background: #f1f5f9; color: #0f172a; }
-        .dropdown.active .drop-trigger { background: white; color: #0f172a; border-color: #0f172a; }
+        .close-wiz-btn:hover { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
         
-        .dropdown-content {
-            visibility: hidden; opacity: 0; position: absolute; top: 100%; left: 0;
-            background: white; min-width: 200px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
-            border: 1px solid #e2e8f0; border-radius: 12px; z-index: 50; padding: 6px; margin-top: 8px;
-            transform: translateY(-10px); transition: all 0.2s ease, visibility 0s linear 0.2s;
+        #wiz-output {
+            flex-grow: 1; padding: 40px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;
+            scroll-behavior: smooth; padding-bottom: 20px;
         }
-        .dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateY(0); transition-delay: 0s; }
-        .dropdown-item { padding: 10px 14px; color: #475569; font-size: 13px; font-weight: 500; border-radius: 8px; cursor: pointer; }
-        .dropdown-item:hover { background-color: #f8fafc; color: #0f172a; }
-        .dropdown-item.selected { background-color: #f1f5f9; color: #0f172a; font-weight: 600; }
 
-        /* GRAPH */
+        .chat-bubble {
+            background: white; border-radius: 12px; padding: 20px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            max-width: 800px; margin: 0 auto; width: 100%;
+            animation: slideIn 0.3s ease-out; border-left: 4px solid #3b82f6;
+        }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .context-header {
+            font-size: 12px; font-weight: bold; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.5px;
+            margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px;
+        }
+
+        .reasoning-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; margin-top: 10px; }
+        .reasoning-header { font-weight: bold; color: #475569; margin-bottom: 8px; text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px; }
+        .reasoning-desc { font-style: italic; color: #64748b; margin-bottom: 10px; font-size: 14px; display: block; }
+        .reasoning-list { list-style: none; padding: 0; margin: 0; }
+        .reasoning-list li { padding-left: 20px; position: relative; margin-bottom: 6px; color: #334155; font-size: 14px; }
+        .reasoning-list li::before { content: "•"; position: absolute; left: 0; color: #cbd5e1; font-weight: bold; }
+        
+        .outcome-badge { 
+            display: inline-block; padding: 4px 12px; border-radius: 20px; 
+            font-weight: bold; font-size: 14px; margin-bottom: 10px; margin-right: 5px;
+        }
+        .outcome-rejected { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+        .outcome-accepted { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+        
+        .stage-divider { text-align: center; margin: 20px 0; }
+        .stage-divider span { background: #e2e8f0; color: #475569; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+
+        .interview-question { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+        .interview-answer { font-size: 15px; color: #475569; line-height: 1.5; }
+        
+        #wiz-input-container {
+            padding: 20px; background: white; border-top: 1px solid #e2e8f0;
+            display: flex; justify-content: center; align-items: center; min-height: 100px;
+            flex-shrink: 0; 
+        }
+
+        .yes-no-group { display: flex; gap: 20px; }
+        .yn-btn { width: 100px; padding: 12px; text-align: center; border-radius: 8px; cursor: pointer; font-weight: bold; transition: all 0.2s; border: 2px solid transparent; }
+        .yn-yes { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+        .yn-yes:hover { background: #166534; color: white; }
+        .yn-no { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+        .yn-no:hover { background: #991b1b; color: white; }
+
+        .btn-group { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 600px; }
+        .option-btn { background: white; border: 1px solid #e2e8f0; padding: 12px 16px; border-radius: 8px; cursor: pointer; display: flex; gap: 12px; align-items: center; transition: all 0.2s; }
+        .option-btn:hover { border-color: #3b82f6; background: #eff6ff; }
+        .option-number { background: #e2e8f0; color: #475569; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 12px; font-weight: bold; }
+
+        .text-input-group { display: flex; gap: 10px; width: 100%; max-width: 600px; }
+        .wizard-text-input { flex-grow: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; font-size: 15px; }
+        .wizard-text-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.1); }
+        .finish-btn { background: #1e293b; color: white; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: bold; border: none; margin-top: 10px; }
+        .finish-btn:hover { background: #334155; }
+
+        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; z-index: 20; }
+        .tabs { display: flex; gap: 10px; }
+        .btn { padding: 8px 16px; border: 1px solid #e2e8f0; background: white; border-radius: 20px; font-size: 13px; font-weight: 600; color: #64748b; cursor: pointer; transition: all 0.2s; }
+        .btn:hover { background: #f1f5f9; color: #0f172a; }
+        .btn.active { background: #0f172a; color: white; border-color: #0f172a; }
+        .btn.create { background: #16a34a; color: white; border-color: #15803d; }
+        
         #svg-wrapper { flex-grow: 1; overflow: hidden; position: relative; }
         svg { width: 100%; height: 100%; display: block; }
         g.node rect, g.node ellipse { stroke: #333; stroke-width: 1.5px; cursor: pointer; transition: all 0.2s; }
-        g.node:hover rect, g.node:hover ellipse { stroke: #3b82f6; stroke-width: 3px; }
-        g.node text { font-family: 'Arial'; font-size: 14px; pointer-events: none; }
-        g.edgePath path { stroke: #64748b; stroke-width: 1.5px; fill: none; }
-        g.edgeLabel rect { fill: #fff; opacity: 0.8; }
-        
-        /* TOOLTIP */
-        .tooltip { 
-            position: fixed; opacity: 0; pointer-events: none; background: white; border-radius: 8px; 
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15), 0 8px 10px -6px rgba(0,0,0,0.1); 
-            border: 1px solid #e2e8f0; width: 340px; transition: opacity 0.1s; 
-            z-index: 1000; transform: translate(-50%, -100%); margin-top: -15px; font-family: sans-serif; 
-        }
-        .tooltip-header { 
-            padding: 12px 16px; background: #f1f5f9; border-bottom: 1px solid #e2e8f0; 
-            font-weight: 700; color: #0f172a; display: flex; justify-content: space-between; align-items: center;
-            border-radius: 8px 8px 0 0; 
-        }
-        .tooltip-body { padding: 16px; font-size: 13px; color: #334155; line-height: 1.5; max-height: 400px; overflow-y: auto; }
-        .statement-text { font-style: italic; border-left: 3px solid #cbd5e1; padding-left: 8px; margin-bottom: 12px; }
-        .section-label { font-size: 10px; font-weight: 800; color: #94a3b8; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-        
-        /* Conditions List Styling */
-        .condition-list { list-style: none; padding: 0; margin: 0; }
-        .condition-item { 
-            padding: 6px 8px; margin-bottom: 4px; background: #f8fafc; border-radius: 4px; 
-            border: 1px solid #e2e8f0; font-family: 'Consolas', monospace; font-size: 11px; color: #475569;
-        }
-        /* Active (True) Condition Styling */
-        .condition-item.active {
-            background: #ecfdf5; border-color: #10b981; color: #065f46;
-            box-shadow: 0 0 8px rgba(16, 185, 129, 0.25); font-weight: 600;
-            position: relative; overflow: hidden;
-        }
-        .condition-item.active::before {
-            content: "✔"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
-            color: #10b981; font-size: 12px;
-        }
-
-        .legend { position: absolute; bottom: 30px; right: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; font-size: 12px; font-weight: 600; color: #475569; pointer-events: none; }
-        .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-        .dot { width: 12px; height: 12px; border: 1px solid #333; }
-        .view-label { position: absolute; top: 80px; right: 20px; background: rgba(255, 255, 255, 0.9); padding: 8px 16px; border-radius: 20px; border: 1px solid #e2e8f0; font-size: 12px; font-weight: 700; color: #94a3b8; pointer-events: none; }
+        .tooltip { position: fixed; opacity: 0; pointer-events: none; background: white; border-radius: 8px; box-shadow: 0 20px 25px rgba(0,0,0,0.15); width: 340px; z-index: 1000; font-family: sans-serif; }
+        .tooltip-header { padding: 12px 16px; background: #f1f5f9; font-weight: 700; color: #0f172a; display: flex; justify-content: space-between; border-radius: 8px 8px 0 0; }
+        .tooltip-body { padding: 16px; font-size: 13px; color: #334155; }
+        .condition-item { padding: 6px 8px; margin-bottom: 4px; background: #f8fafc; border: 1px solid #e2e8f0; font-family: monospace; }
+        .condition-item.active { background: #ecfdf5; border-color: #10b981; color: #065f46; font-weight: bold; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: white; min-width: 180px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-radius: 12px; z-index: 50; padding: 5px; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-item { padding: 8px 12px; cursor: pointer; font-size: 13px; color: #475569; }
+        .dropdown-item:hover { background: #f8fafc; color: #0f172a; }
+        .case-selector { position: relative; }
+        .case-list { display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #e2e8f0; border-radius: 8px; width: 200px; padding: 5px; z-index: 100; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .case-selector:hover .case-list { display: block; }
     </style>
 </head>
 <body>
-
-    <div id="report-panel"><div id="report-content">Select a case to begin.</div></div>
-
+    <div id="report-panel"><div id="report-content">Select a case...</div></div>
     <div id="graph-panel">
         <div class="top-bar">
+            <button class="btn" onclick="toggleReport()" title="Toggle Report Panel" style="margin-right:15px; padding: 8px 12px;">☰</button>
             <div class="tabs" id="tab-bar"></div>
-            <div class="case-selector">
-                <button class="case-btn" id="current-case-btn">Select Case</button>
-                <div class="case-content" id="case-list"></div>
+            <div style="display:flex; gap:10px;">
+                <button class="btn create" onclick="startNewCase()">+ New Case</button>
+                <div class="case-selector"><button class="btn" id="current-case-btn">Select Case ▼</button><div class="case-list" id="case-list"></div></div>
             </div>
         </div>
-
-        <div class="view-label" id="view-label">Main View</div>
         <div id="svg-wrapper"><svg><g/></svg></div>
-
-        <div class="legend">
-            <div class="legend-item"><div class="dot" style="background:#90EE90"></div> Accepted</div>
-            <div class="legend-item"><div class="dot" style="background:#FFB6C1"></div> Rejected</div>
-            <div style="height:1px; background:#e2e8f0; margin: 8px 0;"></div>
-            <div class="legend-item">Ellipse: Issue / Sub-Node</div>
-            <div class="legend-item">Rect: Leaf Factor</div>
-        </div>
-
+        <div id="wizard-panel"><div class="close-wiz-btn" onclick="quitWizard()">×</div><div id="wiz-output"></div><div id="wiz-input-container"></div></div>
         <div id="tooltip" class="tooltip"></div>
     </div>
-
     <script>
         const allCases = __ALL_CASES_JSON__;
+        let wizInterval = null;
+        const wizOutput = document.getElementById('wiz-output');
+        const wizInputContainer = document.getElementById('wiz-input-container');
+        const wizPanel = document.getElementById('wizard-panel');
+        let currentFeatureContext = ""; 
+
+        function toggleReport() { document.getElementById('report-panel').classList.toggle('collapsed'); }
+        function startNewCase() {
+            wizPanel.style.display = 'flex';
+            document.getElementById('svg-wrapper').style.display = 'none';
+            document.getElementById('report-panel').classList.add('collapsed');
+            wizOutput.innerHTML = '<div class="chat-bubble">Starting ADM Wizard...</div>';
+            currentFeatureContext = "";
+            fetch('/start_cli', { method: 'POST' });
+            if (wizInterval) clearInterval(wizInterval);
+            wizInterval = setInterval(pollWizard, 200);
+        }
+        function quitWizard() {
+             wizPanel.style.display = 'none';
+             document.getElementById('svg-wrapper').style.display = 'block';
+             if (wizInterval) clearInterval(wizInterval);
+             location.reload(); 
+        }
+
+        async function pollWizard() {
+            try {
+                const res = await fetch('/poll_output');
+                const text = await res.text();
+                if (text && text.trim().length > 0) processWizardText(text);
+            } catch (e) { console.error(e); }
+        }
         
-        var tooltip = d3.select("#tooltip");
-        var svg = d3.select("svg");
-        var inner = svg.select("g");
-        var zoom = d3.zoom().on("zoom", () => {
-            inner.attr("transform", d3.event.transform);
-            tooltip.style("opacity", 0).style("left", "-9999px");
-        });
+        function createBubble(htmlContent) {
+            if (!htmlContent) return;
+            const bubble = document.createElement('div');
+            bubble.className = 'chat-bubble';
+            bubble.innerHTML = htmlContent;
+            wizOutput.appendChild(bubble);
+            requestAnimationFrame(() => wizOutput.scrollTop = wizOutput.scrollHeight);
+        }
+
+        function processWizardText(text) {
+            const isFinished = text.includes("CASE COMPLETE") || text.includes("Goodbye");
+            const isYesNo = text.toLowerCase().includes("(y/n)");
+            const hasOptions = /(\\d+)\\.\\s+(.*)/.test(text);
+            const rawLines = text.split(/\\r?\\n/);
+            
+            let displayHtml = "";
+            let inReasoning = false;
+            let reasoningBuffer = { desc: "", items: [] };
+            let outcomeShown = false; 
+
+            // Strict Block list for System Noise
+            const IGNORE_PATTERNS = [
+                "===", "---", "[Early Stop]", 
+                "Completed asking questions", 
+                "Answer (y/n):", "ADM summary saved",
+                // Specific internal status logs we want to hide entirely
+                "Total items:", "Accepted:", "Rejected:", 
+                "is ACCEPTED", "is REJECTED", 
+                "IN sub-ADM cases", "found in any sub-ADM cases", 
+                "found 1 accepted item", "found 0 accepted item"
+            ];
+
+            const flushReasoning = () => {
+                if (!inReasoning) return;
+                let html = `<div class="reasoning-box"><div class="reasoning-header">Reasoning Trace</div>`;
+                
+                // Clean up description noise
+                let cleanDesc = reasoningBuffer.desc.replace(/Completed asking questions.*?$/i, "").trim();
+                if(cleanDesc && cleanDesc.length > 5) {
+                    html += `<div class="reasoning-desc">${cleanDesc}</div>`;
+                }
+                
+                if(reasoningBuffer.items.length > 0) {
+                    html += `<ul class="reasoning-list">`;
+                    reasoningBuffer.items.forEach(i => html += `<li>${i}</li>`);
+                    html += `</ul>`;
+                }
+                html += `</div>`;
+                displayHtml += html;
+                inReasoning = false;
+                reasoningBuffer = { desc: "", items: [] };
+            };
+
+            rawLines.forEach(line => {
+                line = line.trim();
+                if (!line) return;
+
+                // --- 1. CAPTURE FEATURE CONTEXT ---
+                if (line.includes("Evaluating sub-ADM for")) {
+                    const match = line.match(/Evaluating sub-ADM for\s+(.*?)(\.\.\.|\[|$)/);
+                    if (match) {
+                        currentFeatureContext = match[1].replace(/['"]/g, "").trim();
+                    }
+                    return; 
+                }
+
+                // --- 2. DETECT & CLEAN STATUS LINE (The Fix for Wrong Badge) ---
+                // Matches lines like: "The feature is... - b REJECTED (Reason...)"
+                const statusMatch = line.match(/^(.*?) - .*? (ACCEPTED|REJECTED) \(.*?\)$/);
+                if (statusMatch) {
+                    // It's the root reasoning line
+                    const cleanText = statusMatch[1].trim();
+                    const status = statusMatch[2]; // ACCEPTED or REJECTED
+                    
+                    if (!outcomeShown) {
+                        if (status === 'REJECTED') {
+                            displayHtml += `<div class="outcome-badge outcome-rejected">🛑 REJECTED</div>`;
+                        } else {
+                            displayHtml += `<div class="outcome-badge outcome-accepted">✅ ACCEPTED</div>`;
+                        }
+                        outcomeShown = true;
+                    }
+                    
+                    // Add the cleaned text to reasoning buffer if we are in reasoning mode
+                    // Or start reasoning mode if not started
+                    if (!inReasoning) inReasoning = true;
+                    reasoningBuffer.desc += cleanText + " ";
+                    
+                    return; // Skip standard processing for this line
+                }
+                
+                // --- 3. NOISE FILTER ---
+                if (IGNORE_PATTERNS.some(p => line.includes(p))) return;
+
+                // --- 4. DETECT QUESTION (Force Bubble Break) ---
+                const qMatch = line.match(/^\\[Q\\d*\\]\\s*(.*)/);
+                const isPlainQuestion = line.endsWith("?") && line.length < 150 && !inReasoning;
+                
+                if (qMatch || isPlainQuestion) {
+                    flushReasoning();
+                    if (displayHtml) { createBubble(displayHtml); displayHtml = ""; outcomeShown = false; }
+                    
+                    if (currentFeatureContext) {
+                        displayHtml += `<div class="context-header">Evaluating: ${currentFeatureContext}</div>`;
+                    }
+                    
+                    const qText = qMatch ? qMatch[1] : line;
+                    displayHtml += `<div class="interview-question">${qText}</div>`;
+                    return;
+                }
+
+                // --- STAGE TRANSITION ---
+                if (line.includes("Preconditions met") || line.includes("Proceeding to Main")) {
+                    flushReasoning();
+                    displayHtml += `<div class="stage-divider"><span>✔ INITIAL ADM PASSED — PROCEEDING TO MAIN</span></div>`;
+                    createBubble(displayHtml);
+                    displayHtml = "";
+                    currentFeatureContext = ""; 
+                    return; 
+                }
+
+                // --- FALLBACK OUTCOME (Explicit "Valid is REJECTED") ---
+                if (line.includes("Valid is REJECTED") && !outcomeShown) {
+                    displayHtml += `<div class="outcome-badge outcome-rejected">🛑 REJECTED</div>`;
+                    outcomeShown = true; 
+                    return;
+                }
+
+                if (line.includes("Case Outcome:")) {
+                    flushReasoning();
+                    displayHtml += `<h2>${line}</h2>`;
+                    return;
+                }
+
+                // --- REASONING BLOCK START ---
+                if (line.startsWith("Reasoning") || line.startsWith("Reasoning Trace")) {
+                    flushReasoning();
+                    inReasoning = true;
+                    outcomeShown = false; 
+                    return;
+                }
+
+                if (inReasoning) {
+                    if (line.startsWith("└─")) {
+                         reasoningBuffer.items.push(line.substring(2).trim());
+                    } else { 
+                         reasoningBuffer.desc += line + " ";
+                    }
+                } else {
+                    displayHtml += `<div class="interview-answer">${line}</div>`;
+                }
+            });
+            
+            flushReasoning();
+            createBubble(displayHtml);
+            wizInputContainer.innerHTML = '';
+
+            if (isFinished) {
+                const finishDiv = document.createElement('div');
+                finishDiv.className = 'chat-bubble';
+                finishDiv.style.textAlign = 'center';
+                finishDiv.innerHTML = `<h3>Case Closed</h3><p>The reasoning process is complete.</p><button class="finish-btn" onclick="quitWizard()">Return to Dashboard</button>`;
+                wizOutput.appendChild(finishDiv);
+                wizOutput.scrollTop = wizOutput.scrollHeight;
+                return;
+            }
+
+            if (isYesNo) {
+                wizInputContainer.innerHTML = `<div class="yes-no-group"><div class="yn-btn yn-yes" onclick="sendWizardAnswer('y')">Yes</div><div class="yn-btn yn-no" onclick="sendWizardAnswer('n')">No</div></div>`;
+            } else if (hasOptions) {
+                const matches = [...text.matchAll(/(\\d+)\\.\\s+(.*)/g)];
+                let btnHtml = '<div class="btn-group">';
+                matches.forEach(m => {
+                    btnHtml += `<div class="option-btn" onclick="sendWizardAnswer('${m[1]}')"><span class="option-number">${m[1]}</span><span>${m[2]}</span></div>`;
+                });
+                btnHtml += '</div>';
+                wizInputContainer.innerHTML = btnHtml;
+            } else {
+                wizInputContainer.innerHTML = `<div class="text-input-group"><input type="text" class="wizard-text-input" id="wiz-text-in" placeholder="Type answer..." autocomplete="off"><button class="btn active" onclick="submitWizardText()">Send</button></div>`;
+                setTimeout(() => {
+                    const inp = document.getElementById('wiz-text-in');
+                    if(inp) { inp.focus(); inp.onkeypress = (e) => { if(e.key==='Enter') submitWizardText(); }; }
+                }, 100);
+            }
+        }
+
+        async function sendWizardAnswer(val) {
+            createBubble(`<div style="text-align:right; font-weight:bold;">${val}</div>`);
+            wizInputContainer.innerHTML = '<div style="color:#94a3b8; font-style:italic;">Processing...</div>';
+            await fetch('/send_input', { method: 'POST', body: val });
+        }
+        async function submitWizardText() {
+            const inp = document.getElementById('wiz-text-in');
+            if(!inp) return;
+            const val = inp.value;
+            createBubble(`<div style="text-align:right;">${val}</div>`);
+            wizInputContainer.innerHTML = '<div style="color:#94a3b8; font-style:italic;">Processing...</div>';
+            await fetch('/send_input', { method: 'POST', body: val });
+        }
+
+        // --- GRAPH & D3 ---
+        var tooltip = d3.select("#tooltip"), svg = d3.select("svg"), inner = svg.select("g");
+        var zoom = d3.zoom().on("zoom", () => { inner.attr("transform", d3.event.transform); tooltip.style("opacity", 0).style("left", "-9999px"); });
         svg.call(zoom);
         var render = new dagreD3.render();
 
         function loadCase(caseName) {
+            wizPanel.style.display = 'none';
+            document.getElementById('svg-wrapper').style.display = 'block';
+            document.getElementById('report-panel').classList.remove('collapsed');
+            if(wizInterval) clearInterval(wizInterval);
+
             const caseData = allCases[caseName];
             if (!caseData) return;
-
-            document.getElementById('report-content').innerHTML = marked.parse(caseData.markdown);
+            let mdText = caseData.markdown || "";
+            if (mdText) mdText = mdText.replace(/!\[(.*?)\]\((?!http|\/)(.*?)\)/g, (match, alt, url) => `![${alt}](/Eval_Cases/${caseName}/${url})`);
+            
+            document.getElementById('report-content').innerHTML = marked.parse(mdText);
             const tabBar = document.getElementById("tab-bar");
-            tabBar.innerHTML = ""; 
+            tabBar.innerHTML = "";
             document.getElementById("current-case-btn").innerText = caseName;
 
-            caseData.config.forEach((item, index) => {
+            const orderedConfig = [];
+            const singleItems = caseData.config.filter(i => i.type === 'single');
+            const groupItems = caseData.config.filter(i => i.type === 'group');
+
+            singleItems.forEach(i => orderedConfig.push(i));
+            const techEff = groupItems.find(i => i.name === 'Technical Effect');
+            if(techEff) orderedConfig.push(techEff);
+            const objProb = groupItems.find(i => i.name === 'Objective Problem');
+            if(objProb) orderedConfig.push(objProb);
+            groupItems.forEach(i => {
+                if (i.name !== 'Technical Effect' && i.name !== 'Objective Problem') orderedConfig.push(i);
+            });
+
+            orderedConfig.forEach((item, index) => {
                 if (item.type === 'single') {
                     const btn = document.createElement("div");
-                    btn.className = "tab-btn";
-                    btn.innerText = item.name;
-                    btn.onclick = () => {
-                        clearActive();
-                        btn.classList.add("active");
-                        drawGraph(item.data, item.name);
-                    };
+                    btn.className = "btn"; btn.innerText = item.name;
+                    btn.onclick = () => { clearActive(); btn.classList.add("active"); drawGraph(item.data); };
                     if (index === 0) btn.click();
                     tabBar.appendChild(btn);
                 } else {
-                    const drop = document.createElement("div");
-                    drop.className = "dropdown";
-                    const trigger = document.createElement("div");
-                    trigger.className = "drop-trigger";
-                    trigger.innerText = item.name;
-                    const content = document.createElement("div");
-                    content.className = "dropdown-content";
-                    
+                    const drop = document.createElement("div"); drop.className = "dropdown";
+                    const btn = document.createElement("div"); btn.className = "btn"; btn.innerText = item.name + " ▼";
+                    drop.appendChild(btn);
+                    const content = document.createElement("div"); content.className = "dropdown-content";
                     item.options.forEach(opt => {
-                        const link = document.createElement("div");
-                        link.className = "dropdown-item";
-                        link.innerText = opt.name;
-                        link.onclick = (e) => {
-                            e.stopPropagation();
-                            clearActive();
-                            drop.classList.add("active");
-                            link.classList.add("selected");
-                            drawGraph(opt.data, `${item.name} > ${opt.name}`);
-                        };
+                        const link = document.createElement("div"); link.className = "dropdown-item"; link.innerText = opt.name;
+                        link.onclick = () => { clearActive(); btn.classList.add("active"); drawGraph(opt.data); };
                         content.appendChild(link);
                     });
-                    
-                    drop.appendChild(trigger);
-                    drop.appendChild(content);
-                    tabBar.appendChild(drop);
+                    drop.appendChild(content); tabBar.appendChild(drop);
                 }
             });
         }
-
-        function clearActive() {
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.dropdown').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.dropdown-item').forEach(el => el.classList.remove('selected'));
-        }
-
-        function drawGraph(graphData, label) {
-            document.getElementById('view-label').innerText = label;
+        function clearActive() { document.querySelectorAll('.btn').forEach(el => { if (!el.classList.contains('create')) el.classList.remove('active'); }); }
+        function drawGraph(graphData) {
             inner.selectAll("*").remove();
-
-            var g = new dagreD3.graphlib.Graph().setGraph({
-                rankdir: 'TB', nodesep: 60, ranksep: 80, marginx: 40, marginy: 40
-            });
-
-            graphData.nodes.forEach(n => {
-                g.setNode(n.id, {
-                    label: n.label, class: n.id, shape: n.shape,
-                    style: `fill: ${n.color}`, labelStyle: "fill: #000;", description: n
-                });
-            });
-
-            graphData.links.forEach(l => {
-                g.setEdge(l.source, l.target, {
-                    label: l.label, curve: d3.curveBasis,
-                    style: "stroke: #64748b; fill: none;", arrowheadStyle: "fill: #64748b"
-                });
-            });
-
+            var g = new dagreD3.graphlib.Graph().setGraph({ rankdir: 'TB', nodesep: 60, ranksep: 80, marginx: 40, marginy: 40 });
+            graphData.nodes.forEach(n => { g.setNode(n.id, { label: n.label, class: n.id, shape: n.shape, style: `fill: ${n.color}`, labelStyle: "font-weight: bold; fill: #000;", description: n }); });
+            graphData.links.forEach(l => { g.setEdge(l.source, l.target, { label: l.label, curve: d3.curveBasis, style: "stroke: #64748b; fill: none;", arrowheadStyle: "fill: #64748b" }); });
             render(inner, g);
-
             var wrapper = document.getElementById('svg-wrapper');
             var initialScale = 0.85;
             svg.call(zoom.transform, d3.zoomIdentity.translate((wrapper.clientWidth - g.graph().width * initialScale) / 2, 40).scale(initialScale));
-
             inner.selectAll("g.node").on("click", function(id) {
                 d3.event.stopPropagation();
                 var d = g.node(id).description;
                 var m = d3.mouse(document.body);
-                
                 let bCol = d.status==="ACCEPTED" ? "#166534" : "#991b1b";
                 let bBg = d.status==="ACCEPTED" ? "#dcfce7" : "#fee2e2";
-
-                // Generate Conditions List HTML
-                let conditionsHtml = "";
-                if (d.conditions && d.conditions.length > 0) {
-                    conditionsHtml = '<ul class="condition-list">';
-                    d.conditions.forEach((cond, idx) => {
-                        // Highlight if node is accepted AND this is the triggering condition
-                        let activeClass = (d.status === "ACCEPTED" && idx === d.active_index) ? " active" : "";
-                        conditionsHtml += `<li class="condition-item${activeClass}">${cond}</li>`;
-                    });
-                    conditionsHtml += '</ul>';
-                } else {
-                    conditionsHtml = '<div style="font-style:italic; color:#94a3b8; font-size:11px;">No specific conditions.</div>';
-                }
-
-                tooltip.html(`
-                    <div class="tooltip-header">
-                        <span>${d.label_raw}</span>
-                        <span style="background:${bBg}; color:${bCol}; padding:2px 6px; border-radius:4px; font-size:10px;">${d.status}</span>
-                    </div>
-                    <div class="tooltip-body">
-                        <div class="section-label">Statement</div>
-                        <div class="statement-text">${d.statement}</div>
-                        
-                        <div class="section-label">Acceptance Conditions</div>
-                        ${conditionsHtml}
-                    </div>
-                `);
+                let conditionsHtml = d.conditions.length > 0 ? d.conditions.map((c,i) => `<div class="condition-item${(d.status==="ACCEPTED"&&i===d.active_index)?" active":""}">${c}</div>`).join('') : "<i>No conditions.</i>";
+                tooltip.html(`<div class="tooltip-header"><span>${d.label_raw}</span><span style="background:${bBg}; color:${bCol}; padding:2px 6px; border-radius:4px; font-size:10px;">${d.status}</span></div><div class="tooltip-body"><div style="margin-bottom:10px;">${d.statement}</div><div style="font-weight:700; color:#94a3b8; font-size:10px; margin-bottom:5px;">CONDITIONS</div>${conditionsHtml}</div>`);
                 tooltip.style("left", m[0]+"px").style("top", m[1]+"px").style("opacity", 1);
             });
         }
-
         const caseList = document.getElementById("case-list");
-        const caseNames = Object.keys(allCases);
-        caseNames.forEach(name => {
-            const item = document.createElement("div");
-            item.className = "case-item";
-            item.innerText = name;
-            item.onclick = () => loadCase(name);
-            caseList.appendChild(item);
+        Object.keys(allCases).forEach(name => {
+            const div = document.createElement("div"); div.className = "dropdown-item"; div.innerText = name;
+            div.onclick = () => loadCase(name); caseList.appendChild(div);
         });
-
         d3.select("body").on("click", () => tooltip.style("opacity", 0).style("left", "-9999px"));
-
-        if (caseNames.length > 0) loadCase(caseNames[0]);
-
+        const keys = Object.keys(allCases);
+        if (keys.length > 0) loadCase(keys[0]);
     </script>
 </body>
 </html>
 """
 
-# --- 4. PYTHON LOGIC (FLAT EVALUATOR) ---
-
+# --- 5. DATA BUILDER (VIZ) ---
 def split_camel_case(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1\n\2', name)
     return re.sub('([a-z0-9])([A-Z])', r'\1\n\2', s1)
 
 def evaluate_condition_flat(condition_str, case_set):
-    """
-    Evaluates a postfix or infix-like condition string against the case set WITHOUT recursion.
-    It treats every token as a leaf.
-    Returns: Boolean result of condition
-    """
-    # Quick Check: If simple token (no spaces/ops), just check existence
-    if ' ' not in condition_str:
-        return condition_str in case_set
+    """Simple check if a condition string is satisfied by case_set."""
+    if ' ' not in condition_str: return condition_str in case_set
+    tokens = condition_str.replace('(', ' ').replace(')', ' ').split()
+    # Simplified boolean logic approximation for highlighting
+    # If any non-keyword token is missing, consider condition false
+    for t in tokens:
+        if t not in ['and', 'or', 'not', 'accept', 'reject'] and t not in case_set:
+            return False
+    return True
 
-    # Simple Postfix Evaluator that doesn't recurse
-    stack = Stack()
-    tokens = condition_str.split()
-    
-    for token in tokens:
-        if token == 'accept':
-            stack.push(True)
-        elif token == 'reject':
-            val = stack.pop()
-            if val is True: stack.push(False) # Reject creates False outcome if trigger is True
-            else: stack.push(True) # Wait, 'reject X' means if X is true, FAIL. If X is false, PASS? 
-            # In ADM logic: 'reject X' -> if X True, then FAIL node.
-            # Simplified: We treat 'reject' as NOT? Or special fail flag?
-            # Standard ADM: if reject token triggered, node is rejected.
-            # Let's try simple boolean mapping: reject X -> NOT X
-            pass
-        elif token == 'not':
-            val = stack.pop()
-            stack.push(not val)
-        elif token == 'and':
-            v2 = stack.pop()
-            v1 = stack.pop()
-            stack.push(v1 and v2)
-        elif token == 'or':
-            v2 = stack.pop()
-            v1 = stack.pop()
-            stack.push(v1 or v2)
-        else:
-            # It's a node name -> Check if in case
-            stack.push(token in case_set)
-            
-    if stack.isEmpty(): return False
-    return stack.pop()
-
-def get_active_index_flat(adm, node):
-    """
-    Finds which acceptance condition is True based purely on adm.case list.
-    """
-    if not node.acceptance:
-        return -1
-        
-    for i, condition in enumerate(node.acceptance):
-        # We need the postfix version which `node.acceptance` usually is
-        # But we need to handle the 'reject' logic carefully. 
-        # Standard ADM logic: 'reject A' -> if A is True, then Condition is FALSE (and node Rejected).
-        # Normal condition: 'A and B' -> if A & B True, Condition True (Node Accepted).
-        
-        # We try to evaluate the condition string using our flat evaluator
-        if evaluate_condition_flat(condition, adm.case):
-            # If the condition evaluates to True...
-            # Check for 'reject' keyword in the string itself
-            tokens = condition.split()
-            if 'reject' in tokens:
-                # If a reject condition evaluates to True, it means REJECTION happened.
-                # So this is the 'active' condition for Rejection? 
-                # But we only highlight active for Accepted nodes usually.
-                pass 
-            else:
-                return i
-    return -1
-
-def build_graph_data_from_json(adm_factory, json_path, item_name=None):
-    if not os.path.exists(json_path):
-        return None
-
+def build_graph_data(adm_factory, json_path, item_name=None):
+    if not os.path.exists(json_path): return None
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
+    case_set = set(data.get('case', [])) if isinstance(data, dict) else set()
     
-    if isinstance(data, dict):
-        case_set = set(data.get('case', []))
-    else:
-        case_set = set()
-
-    if item_name: adm = adm_factory(item_name)
-    else: adm = adm_factory()
-
+    adm = adm_factory(item_name) if item_name else adm_factory()
     adm.case = list(case_set)
 
     nodes = []
@@ -438,39 +569,24 @@ def build_graph_data_from_json(adm_factory, json_path, item_name=None):
     issue_nodes = getattr(adm.root_node, 'children', []) if hasattr(adm, 'root_node') else []
 
     for name, node in adm.nodes.items():
-        # VISUAL STATUS: PURELY DATA DRIVEN
-        if name in case_set:
-            color = "#90EE90"
-            status = "ACCEPTED"
-            stmt = node.statement[0] if node.statement else "Accepted"
-            
-            # HIGHLIGHT LOGIC: FLAT EVALUATION
-            # We only care to highlight which condition made it True
-            active_index = get_active_index_flat(adm, node)
-            
-        else:
-            color = "#FFB6C1"
-            status = "REJECTED"
-            stmt = node.statement[-1] if node.statement else "Rejected"
-            active_index = -1
-
-        # Use readable acceptance if available (postfix otherwise)
-        conditions = getattr(node, 'acceptanceOriginal', node.acceptance) or []
-
+        status = "ACCEPTED" if name in case_set else "REJECTED"
+        color = "#90EE90" if status == "ACCEPTED" else "#FFB6C1"
+        stmt = node.statement[0] if status == "ACCEPTED" and node.statement else (node.statement[-1] if node.statement else status)
+        
+        active_index = -1
+        if status == "ACCEPTED" and node.acceptance:
+            for i, cond in enumerate(node.acceptance):
+                if evaluate_condition_flat(cond, case_set):
+                    active_index = i; break
+        
         shape = "rect"
         if hasattr(adm, 'root_node') and name == adm.root_node.name: shape = "rect"
         elif name in issue_nodes or node.children: shape = "ellipse"
-        else: shape = "rect"
 
         nodes.append({
-            "id": name,
-            "label": split_camel_case(name),
-            "label_raw": name,
-            "color": color,
-            "shape": shape,
-            "status": status,
-            "statement": stmt,
-            "conditions": conditions,
+            "id": name, "label": split_camel_case(name), "label_raw": name,
+            "color": color, "shape": shape, "status": status, "statement": stmt,
+            "conditions": getattr(node, 'acceptanceOriginal', node.acceptance) or [],
             "active_index": active_index
         })
 
@@ -483,92 +599,148 @@ def build_graph_data_from_json(adm_factory, json_path, item_name=None):
                         if child in c.split() and ('reject' in c.split() or 'not' in c.split()):
                             edge_label = "-"
                 links.append({"source": name, "target": child, "label": edge_label})
-
     return {"nodes": nodes, "links": links}
 
-# --- 5. MANAGER LOGIC ---
-
-def scan_and_build():
-    all_cases_data = {}
-
-    if not os.path.exists(CASES_DIR):
-        print(f"Directory {CASES_DIR} not found. Creating empty one.")
-        os.makedirs(CASES_DIR)
-        return {}
-
+def scan_cases():
+    all_cases = {}
+    if not os.path.exists(CASES_DIR): os.makedirs(CASES_DIR)
+    
+    print("\n[INFO] Scanning for cases...")
     case_folders = [f for f in os.listdir(CASES_DIR) if os.path.isdir(os.path.join(CASES_DIR, f))]
     
     for case_name in case_folders:
-        print(f"Processing Case: {case_name}")
         case_path = os.path.join(CASES_DIR, case_name)
+        print(f"  > Scanning case: {case_name}")
         
-        md_path = os.path.join(case_path, "adm_log.md")
-        if not os.path.exists(md_path):
+        # --- ROBUST LOG FINDER ---
+        md_text = "# No Report Found"
+        # 1. Prioritize strict names
+        possible_logs = ["adm_log.md", "log.md", "ADM_LOG.md"]
+        found_log = None
+        
+        for pl in possible_logs:
+            p = os.path.join(case_path, pl)
+            if os.path.exists(p):
+                found_log = p
+                break
+        
+        # 2. Fallback to any markdown
+        if not found_log:
             md_files = glob.glob(os.path.join(case_path, "*.md"))
-            if md_files: md_path = md_files[0]
+            if md_files: found_log = md_files[0]
             
-        markdown_text = "# No Report Found"
-        if os.path.exists(md_path):
-            with open(md_path, 'r', encoding='utf-8') as f:
-                markdown_text = f.read().replace('`', '\\`')
+        if found_log:
+            print(f"    [DEBUG] Found report: {found_log}")
+            try:
+                with open(found_log, 'r', encoding='utf-8') as f: 
+                    md_text = f.read().replace('`', '\\`')
+            except Exception as e:
+                print(f"    [ERROR] Reading log: {e}")
+        else:
+            print("    [DEBUG] No markdown log found.")
 
+        # --- DATA CONFIG ---
         config = []
-
-        init_json = os.path.join(case_path, "adm_initial_summary.json")
-        if os.path.exists(init_json):
-            data = build_graph_data_from_json(adm_initial, init_json)
-            if data: config.append({"name": "Preconditions", "type": "single", "data": data})
-
-        main_json = os.path.join(case_path, "adm_main_summary.json")
-        if os.path.exists(main_json):
-            data = build_graph_data_from_json(adm_main, main_json)
-            if data: config.append({"name": "Inventive Step", "type": "single", "data": data})
-
-        sub_adm_groups = {}
-        sub_dirs = [d for d in os.listdir(case_path) if os.path.isdir(os.path.join(case_path, d))]
         
-        for sd in sub_dirs:
-            matched_mapping = None
-            for prefix, mapping in SUB_ADM_CONFIG.items():
-                if prefix in sd:
-                    matched_mapping = mapping
-                    break
+        init_data = build_graph_data(adm_initial, os.path.join(case_path, "adm_initial_summary.json"))
+        if init_data: config.append({"name": "Preconditions", "type": "single", "data": init_data})
+        
+        main_data = build_graph_data(adm_main, os.path.join(case_path, "adm_main_summary.json"))
+        if main_data: config.append({"name": "Inventive Step", "type": "single", "data": main_data})
+        
+        sub_groups = {}
+        for sd in [d for d in os.listdir(case_path) if os.path.isdir(os.path.join(case_path, d))]:
+            matched = None
+            for p, m in SUB_ADM_CONFIG.items():
+                if p in sd: matched = m; break
             
-            if matched_mapping:
-                group_label = matched_mapping['label']
-                factory = matched_mapping['factory']
-                
-                if group_label not in sub_adm_groups:
-                    sub_adm_groups[group_label] = []
-
-                json_files = glob.glob(os.path.join(case_path, sd, "*_summary.json"))
-                for jf in json_files:
-                    fname = os.path.basename(jf)
-                    item_name = fname.replace("_summary.json", "")
-                    data = build_graph_data_from_json(factory, jf, item_name)
-                    if data:
-                        sub_adm_groups[group_label].append({ "name": item_name, "data": data })
-
-        for label, options in sub_adm_groups.items():
-            if options:
-                config.append({ "name": label, "type": "group", "options": options })
-
-        all_cases_data[case_name] = { "markdown": markdown_text, "config": config }
-
-    return all_cases_data
-
-if __name__ == "__main__":
-    print("Scanning...")
-    data = scan_and_build()
+            if matched:
+                lbl = matched['label']
+                if lbl not in sub_groups: sub_groups[lbl] = []
+                for jf in glob.glob(os.path.join(case_path, sd, "*_summary.json")):
+                    item = os.path.basename(jf).replace("_summary.json", "")
+                    d = build_graph_data(matched['factory'], jf, item)
+                    if d: sub_groups[lbl].append({"name": item, "data": d})
+        
+        for lbl, opts in sub_groups.items():
+            config.append({"name": lbl, "type": "group", "options": opts})
+            
+        all_cases[case_name] = {"markdown": md_text, "config": config}
     
-    if not data:
-        print("No cases found in ./Eval_Cases")
-    else:
-        json_str = json.dumps(data)
-        html = HTML_TEMPLATE.replace("__ALL_CASES_JSON__", json_str)
+    return all_cases
+
+# --- 6. SERVER CLASS ---
+class RequestHandler(SimpleHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            data = scan_cases()
+            json_str = json.dumps(data)
+            html = HTML_TEMPLATE.replace("__ALL_CASES_JSON__", json_str)
+            self.wfile.write(html.encode('utf-8'))
+        elif self.path == '/poll_output':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            out = io_bridge.get_output()
+            self.wfile.write(out.encode('utf-8'))
+        else:
+            super().do_GET()
+
+    def do_POST(self):
+        if self.path == '/start_cli':
+            if not io_bridge.active:
+                io_bridge.active = True
+                t = threading.Thread(target=run_cli_session)
+                t.daemon = True
+                t.start()
+            self.send_response(200); self.end_headers()
+        elif self.path == '/send_input':
+            length = int(self.headers['Content-Length'])
+            val = self.rfile.read(length).decode('utf-8')
+            io_bridge.send_input(val)
+            self.send_response(200); self.end_headers()
+
+def run_cli_session():
+    original_stdout = sys.stdout
+    original_input = builtins.input
+    sys.stdout = io_bridge
+    builtins.input = web_input 
+    try:
+        print("\n=== STARTING NEW CASE ===\n")
+        cli = CLI(adm=adm_initial())
+        res = cli.query_domain()
+        cli.save_adm(name='initial')
+        if res:
+            print("\n>> Preconditions met. Proceeding to Main ADM...")
+            cli_2 = CLI(adm=adm_main())
+            cli_2.caseName = cli.caseName
+            cli_2.adm.facts = cli.adm.facts
+            _ = cli_2.query_domain()
+            cli_2.save_adm(name='main')
         
-        with open(OUTPUT_FILE, "w", encoding='utf-8') as f:
-            f.write(html)
-            
-        print(f"Done! Open: {OUTPUT_FILE}")
-        webbrowser.open(f"file://{os.path.abspath(OUTPUT_FILE)}")
+        case_dir = os.path.join(CASES_DIR, cli.caseName)
+        md_path = os.path.join(case_dir, "adm_log.md")
+        if not os.path.exists(md_path):
+            with open(md_path, 'w') as f: f.write(f"# Case: {cli.caseName}\n\n**Status:** Created via Web CLI.")
+        print("\n=== CASE COMPLETE ===\nReloading dashboard...")
+    except Exception as e: print(f"\nError: {e}")
+    finally:
+        sys.stdout = original_stdout
+        builtins.input = original_input
+        io_bridge.active = False
+
+# --- 7. MAIN ---
+if __name__ == "__main__":
+    if not os.path.exists(CASES_DIR): os.makedirs(CASES_DIR)
+    print(f"Starting server at http://localhost:{PORT}")
+    def open_browser():
+        time.sleep(1)
+        webbrowser.open(f"http://localhost:{PORT}")
+    t = threading.Thread(target=open_browser)
+    t.start()
+    server = HTTPServer(('localhost', PORT), RequestHandler)
+    try: server.serve_forever()
+    except KeyboardInterrupt: server.server_close()

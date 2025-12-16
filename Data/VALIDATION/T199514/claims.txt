@@ -1,0 +1,180 @@
+1 25.10.2013
+CLAIMS - MAIN REQUEST:
+
+1. À system (20) for supplying power to an LED load (10), the system (20)
+comprising:
+
+a LED driver module (30) operable to regulate a flow of a LED current (Пр)
+through the LED load (10) as a function of a temperature and current-dependent feedback
+signal (TDFS): and
+
+a current controller module (60) in electric communication with said LED
+driver module (30) to communicate the temperature and current-dependent feedback signal
+(TDFS) to said LED driver module (10),
+wherein said current controller module (60) is operable to generate the temperature and
+current-dependent feedback signal (TDFB) as a function of an operating temperature of the
+LED load (10) and the flow of the LED current (Irp) through the LED load (10), and
+wherein said current controller module (600) includes:
+
+means for generating a temperature feedback signal (Vrr) as a function of a
+sensed operating temperature of the LED load (10); wherein the temperature feedback signal
+is a temperature feedback voltage (Vrr) and said current controller module (600) includes:
+
+a first operational amplifier (U1) operable to generate the temperature
+feedback voltage (Vrr) as a function of the operating temperature of the LED load (10);
+
+means for generating a current feedback signal (Vcr) as a function of a sensed
+flow of the LED current (Irsp) through the LED load (10); wherein the current feedback
+signal is a current feedback voltage (Vcr) and said current controller module (60) includes:
+
+a second operational amplifier (U2) operable to generate the current feedback
+voltage (Vcr) as a function of the flow of the LED current (Пер) through the LED load (10);
+and
+
+means for mixing the temperature feedback signal (Vrr) and the current
+feedback signal (Vcr) to yield the temperature and current-dependent feedback signal
+(TDFB), wherein the temperature and current-dependent feedback signal (TDFB) is а
+feedback voltage generated as a mixture of the temperature feedback voltage (Vrr) and the
+
+current feedback voltage (Vcr).
+
+2. The system (20) of claim 1, further comprising:
+
+a LED temperature sensor module (40) operable to sense the operating
+temperature of the LED load (10) and to generate a temperature sensing signal (TSS)
+indicative of the operating temperature of the LED load (10) as sensed by said LED
+temperature sensor module (40),
+wherein said LED temperature sensor (40) is in electrical communication with said current
+controller module (60) to communicate the temperature-sensing signal (TSS) to said first
+operational amplifier (U1) whereby said first operational amplifier (U1) generates the
+temperature feedback voltage (Vrr) as a function of the operating temperature of the LED
+load (10).
+
+3. The system (20) of claim 2, wherein said temperature sensor module (40)
+includes:
+a temperature coefficient resistor (Rsrc) in thermal communication with the
+
+LED load (10) to thereby sense the operating temperature of the LED load.
+
+4. The system (20) of claim 1, further comprising:
+
+a LED current sensor module (50) operable to sense the flow of the LED
+current (Irsp) through the LED load (10) and to generate a current sensing signal (CSS)
+indicative of the flow of the LED current (Пр) through the LED load (10) as sensed by said
+LED current sensor module (50),
+wherein said LED current sensor module (50) is in electrical communication with said
+current controller module (60) to communicate the current sensing signal (CSS) to said
+second operational amplifier (U2) whereby said second operational amplifier (U2) generates
+the current feedback voltage (Vcr) as a function of the flow of the LED current (Irsp) through
+the LED load (10).
+
+5. The system (20) of claim 1, further comprising:
+
+a fault detector module (70) operable to generate a fault detection signal (FDS)
+in response to the LED load (10) operating as an open circuit; and
+
+a driver disable notifier (80) in electrical communication with said fault
+detector module (70) to receive a communication of the fault detection signal (FDS) from
+
+said fault detector module (70), said driver disable notifier (80) including a fusistor (F1)
+operable to blow open in response to a reception of the fault detection signal (FDS) by said
+driver disable notifier (80).
+
+6. The system (20) of claim 5, further comprising:
+a LED driver disabler module (90) operable to disable said LED driver module
+
+(30) in response to a blowing open of said fusistor (F1).
+
+7. The system (20) of claim 1, further comprising:
+means for generating a fault detection voltage (Мур) as a function of the LED
+load (10) operating as an open circuit; and
+a driver disable notifier (80) including
+a fusistor (F1), and
+means for blowing open said fusistor (F1) in response to a generation
+
+of the fault detection voltage (Мер).
+
+8. The system (20) of claim 7, further comprising:
+means for disabling said LED driver module (30) in response to a blowing
+
+open of said fusistor (F1).
+
+9. The system (20) of claim 1, further comprising:
+
+a fault detector module (70) operable to generate a fault detection signal (FDS)
+in response to the LED load (10) operating as a short circuit; and
+
+a driver disable notifier (80) in electrical communication with said fault
+detector module (70) to receive a communication the fault detection signal (FDS) by said
+fault detector module (70), said driver disable notifier (80) including a fusistor (F1) operable
+to blow open in response to a reception of the fault detection signal (FDS) by said driver
+disable notifier (80).
+
+10. The system (20) of claim 9, further comprising:
+a LED driver disabler module (90) operable to disable said LED driver module
+
+(30) in response to a blowing open of said fusistor (F1).
+
+11. The system (20) of claim 1, further comprising:
+means for generating a fault detection voltage (Vrp) as in response to the LED
+load (10) operating as a short open circuit; and
+a driver disable notifier (80) including
+а fusistor (F1), and
+means for blowing open in response to a generation of the fault
+
+detection voltage (Укр).
+
+12. The system (20) of claim 11, further comprising:
+means for disabling said LED driver module (30) in response to a blowing
+
+open of said fusistor (F1).
+
+13. The system (20) of claim 1, further comprising:
+
+a fusistor (F2) in electrical communication with said LED driver module (30),
+wherein said fusistor (F2) is operable to blow open in response to the LED load (10)
+operating as an open circuit, and
+wherein said LED driver module (30) is disabled in response to a blowing open of said
+fusistor (F2).
+
+14. The system (20) of claim 1, further comprising:
+
+a fusistor (F2) in electrical communication with said LED driver module (30),
+wherein said fusistor (F2) is operable to blow open in response to the LED load (10)
+operating as a short circuit, and
+wherein said LED driver module (30) is disabled in response to a blowing open of said
+fusistor (F2).
+
+15. A method for supplying power to an LED load (10), the method comprising:
+
+generating a current-sensing signal (CSS) indicative of a flow of a LED
+current (Irsp) through the LED load (10);
+
+generating a current feedback voltage (Vcr) based on said current-sensing
+signal (CSS);
+
+generating a temperature-sensing signal (TSS) indicative of an operational
+
+temperature of the LED load (10);
+
+generating a temperature feedback voltage (Vrr) based on said temperature-
+sensing signal (TSS);
+mixing the temperature feedback voltage (Vrr) and the current feedback
+voltage (Vcr) to yield a temperature and current-dependent feedback voltage (TDFB); and
+regulating the flow of the LED current (Пр) through the LED load (10) as a
+
+function of said temperature and current-dependent feedback voltage (TDFB).
+
+16. The method of claim 15, further comprising:
+monitoring the operating condition of the LED load (10); and
+ceasing the flow of the LED current (Irsp) through the LED load (10) in
+
+response to the LED load (10) operating as one of an open circuit or a short circuit.
+
+17. The method of claim 16, further comprising:
+
+blowing open a fusistor (F1, F2) in response to the LED load (10) operating as
+one of an open circuit or a short circuit; and
+
+ceasing the flow of the LED current (Irsp) through the LED load (10) in
+response to the fusistor (F1, F2) being blow open.

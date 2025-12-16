@@ -1,0 +1,40 @@
+TITLE: Dual media storage device
+
+ABSTRACT: A dual media storage device is provided. Two separate non-volatile mass storage devices, one having a faster access time and a lower capacity than the other, are combined into a single system. A storage controller can direct the flow of data into one device or the other, depending upon various conditions, which might include one mass storage device being unavailable or for certain caching schemes.
+
+TYPE: US patent
+
+CLAIMS:
+
+1. A data storage system comprising:
+a first non-volatile mass storage device that can be placed in an available state and an unavailable state and having a first range of logical addresses;
+a second non-volatile mass storage device having a faster access time and a lower capacity than the first non-volatile mass storage device and having a second range of logical addresses; and
+a storage controller that can access data within the second non-volatile mass storage device when the first non-volatile mass storage device is in the unavailable state and operable to access data within both the first and second non-volatile mass storage devices when the first non-volatile mass storage device is in the available state;
+wherein the first range of logical addresses and the second range of logical addresses are overlapping with each other.
+2. The data storage system of claim 1, wherein the unavailable state is activated when the data storage system enters a portable mode.
+3. The data storage system of claim 2, wherein the portable mode is determined with motion detection circuitry.
+4. The data storage system of claim 1, wherein a portion of the second range of logical addresses is non-overlapping with the first range of addresses, whereby the portion of the second range of addresses contains data that does not also reside on the first non-volatile mass storage device.
+5. The data storage system of claim 1, wherein the storage controller synchronizes the data contained in the second range of addresses on the second non-volatile mass storage device with the first range of addresses on the first non-volatile mass storage device after the first non-volatile mass storage device transitions out of the unavailable state to the available state.
+6. The data storage system of claim 1, wherein the second non-volatile mass storage device is capable of acting as a cache for the first non-volatile mass storage device when the first non-volatile mass storage device is in the available state.
+7. The data storage system of claim 1, wherein the first non-volatile mass storage device uses a magnetic hard disk to store data and the second non-volatile mass storage device uses a flash memory array to store data.
+8. A data storage system comprising:
+a first non-volatile mass storage device that has a first range of logical addresses;
+a second non-volatile mass storage device having a faster access time and a lower capacity than the first non-volatile mass storage device and having a second range of logical addresses, the first range of logical addresses and the second range of logical addresses overlapping with each other; and
+a storage controller that directs incoming data into either the first non-volatile mass storage device or the second non-volatile mass storage device;
+wherein after data has been directed into the second non-volatile mass storage device, the data is copied from the second non-volatile mass storage device into the first non-volatile mass storage device; and
+wherein the storage controller's choice of which non-volatile mass storage device to direct incoming data into is at least partially dependant upon the amount of data in the second non-volatile mass storage device that has not been copied into the first non-volatile storage device.
+9. The data storage system of claim 8, wherein the data is copied from the second non-volatile mass storage device into the first non-volatile mass storage device during periods of inactivity.
+10. The data storage system of claim 8, wherein:
+the second non-volatile mass storage device experiences periods of inaccessibility; and
+the storage controller directs data into the first non-volatile mass storage device when the second non-volatile mass storage device is in a period of inaccessibility.
+11. The data storage system of claim 10, wherein the periods of inaccessibility are caused, at least in part, by garbage collection operations.
+12. The data storage system of claim 10, wherein data in the second non-volatile mass storage device is stored in a cyclic buffer arrangement.
+13. The data storage system of claim 8, wherein the first non-volatile mass storage device uses a magnetic hard disk to store data and the second non-volatile mass storage device uses a flash memory array to store data.
+14. A data storage system comprising:
+a first non-volatile mass storage device that has a first range of logical addresses;
+a second non-volatile mass storage device having a faster access time and a lower capacity than the first storage device and having a second range of logical addresses, the first range of logical addresses and the second range of logical addresses overlapping with each other; and
+a storage controller that satisfies data requests with data that is stored in the second non-volatile mass storage device or, if the requested data is not present in the second non-volatile mass storage device, with data that is stored in the first non-volatile mass storage device.
+15. The data storage system of claim 14, wherein data is copied from the first non-volatile mass storage device to the second non-volatile mass storage device according to frequency with which the data is read.
+16. The data storage system of claim 14, wherein data is copied from the first non-volatile mass storage device to the second non-volatile mass storage device according to the nature of the data that is being read.
+17. The data storage system of claim 14, wherein data in the second non-volatile mass storage device is stored in a cyclic buffer arrangement.
+18. The data storage system of claim 14, wherein the first non-volatile mass storage device uses a magnetic hard disk to store data and the second non-volatile mass storage device uses a flash memory array to store data.

@@ -1,0 +1,63 @@
+MAIN REQUEST CLAIMS:
+
+1. A method in a wireless hand-held device of composing an e-mail message that
+will include a remote file attachment, comprising:
+receiving a user instruction to attach a file (410) to an e-mail message for at
+least one recipient;
+in response to receiving the user instruction, requesting a file browsing
+service on a file delivery server via a network to obtain a list of files in a directory;
+if file access credentials (418) are required to access the directory:
+prompting for file access credentials (418) needed to access the
+directory;
+furnishing the file access credentials (428) to the file browsing
+service;
+presenting the list of files using a user interface of the wireless hand-held
+device (422,424);
+receiving another user instruction to send the e-mail message (428), along
+with a file from the list of files to attach to the e-mail message (426); and
+sending, to a mail agent, a portion of the e-mail message and an attachment
+instruction identifying the file and the file access credentials (430), wherein the attachment
+instruction causes the mail agent to assemble a complete e-mail message comprising at least
+the portion of the e-mail message and the file identified in the attachment instruction retrieved
+
+using the file access credentials (430) and the file delivery server (436).
+
+2. The method of claim 1, wherein the attachment instruction further comprises a
+
+parameter specifying the MIME content type of the file (310).
+
+3. A wireless hand-held device configured to implement any one of claims 1 and 2.
+
+4. A mail system (100) operatively coupled to a wireless network (120) for use with a
+wireless hand-held device comprising:
+a file delivery server (234) operatively coupled to storage containing files;
+5 a mail server;
+a wireless hand-held device adapted to:
+receive a user instruction to attach a file (410) to an e-mail message
+for at least one recipient;
+in response to receiving the user instruction, request a file browsing
+10 service on the file delivery server via the network to obtain the a of the files in a directory;
+if file access credentials (418) are required to access the directory:
+prompt for file access credentials (418) needed to access the
+directory;
+furnish the file access credentials (428) to the file browsing
+15 service;
+present the list of files using a user interface of the wireless hand-
+held device (422,424);
+receive another user instruction to send the e-mail message (428),
+along with an identified file from the list of files to attach to the e-mail message; and
+20 a mail agent (232), said mail agent adapted to:
+responsive to an instruction received from the wireless hand-held
+device via said wireless network (120) to send the e-mail message containing
+the identified file as an attachment (410), request said file from said file
+delivery server (412) using the file access credentials provided in the
+25 instruction;
+
+receive the identified file from said file delivery server (426); and
+instruct the mail server to assemble an e-mail message including the
+identified file as an attachment (428).
+
+5. The system of claim 4, comprising:
+an enterprise hand-held services enhancement server (230), wherein the mail
+agent and the file delivery server (234) are included as components in the enterprise
+hand-held services enhancement server.
