@@ -14,6 +14,7 @@ import argparse
 from inventive_step_ADM import adm_initial, adm_main
 import logging
 from ADM_Construction import *
+import json
 
 logger = logging.getLogger("ADM_CLI_Tool")
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -418,9 +419,9 @@ class CLI():
             if hasattr(self.adm, 'temp_evaluated_nodes'):
                 del self.adm.evaluated_nodes
                  
-    def visualize_domain(self, minimal=False, name=None):
+    def visualize_domain(self, minimal=False, name=None, visualize_sub_adms=True):
         """
-        Visualize the domain as a graph, including any evaluated Sub-ADMs.
+        Visualize the domain as a graph, including optionally evaluated Sub-ADMs.
         Single source of truth: Calculates the filename and delegates to ADM.
         
         Parameters
@@ -429,6 +430,8 @@ class CLI():
             If True, generates a minimalist structure graph.
         name : str, optional
             A prefix to add to the filename to distinguish graphs (e.g., "Initial", "Final").
+        visualize_sub_adms : bool
+            If True (default), scans for and visualizes any sub-ADM instances stored in facts.
         """
         print("\n" + "="*50)
         print("Visualize Domain")
@@ -469,8 +472,8 @@ class CLI():
                 self.adm.visualiseNetwork(filename=filename, case=case_data)
                 
                 # 5. Generate Sub-ADMs (Iterate through facts to find stored instances)
-                # This looks for keys ending in '_sub_adm_instances' which SubADMNode creates.
-                if hasattr(self.adm, 'facts'):
+                # Only proceed if the toggle is True and facts exist
+                if visualize_sub_adms and hasattr(self.adm, 'facts'):
                     sub_dir = f"{base_name}_sub_adms"
                     dir_created = False
                     
@@ -510,8 +513,66 @@ class CLI():
                 
         except Exception as e:
             print(f"Error creating visualization: {e}")
-            
+
+    def save_adm(self, folder_base="./Eval_Cases", name=None):
+        """
+        Saves the case, reasoning statements, evaluated nodes, and any sub-ADM results to a sub-folder named after the case.
+        """
+        # Use case name or ADM name for folder
+        folder_name = self.caseName if self.caseName else self.adm.name
+        save_dir = os.path.join(folder_base, folder_name)
+        os.makedirs(save_dir, exist_ok=True)
+
+        # Gather main ADM data
+        case_data = {
+            "case": self.case,
+            "evaluated_nodes": list(self.evaluated_blfs),
+        }
+
+        # Get reasoning statements for main ADM
+        try:
+            self.adm.evaluated_nodes = set(self.evaluated_blfs)
+            reasoning = self.adm.evaluateTree(self.case)
+            case_data["reasoning"] = [
+                {"depth": depth, "statement": statement} for depth, statement in (reasoning or [])
+            ]
+        except Exception as e:
+            case_data["reasoning"] = [f"Error generating reasoning: {e}"]
+
+        # Save main ADM as JSON
+        json_path = os.path.join(save_dir, f"adm_{name}_summary.json")
+        with open(json_path, "w") as f:
+            json.dump(case_data, f, indent=2)
+        print(f"ADM summary saved to: {json_path}")
+
+        # --- Save sub-ADM results if present ---
+        if hasattr(self.adm, "facts"):
+            for fact_key, fact_val in self.adm.facts.items():
+                if fact_key.endswith('_sub_adm_instances') and isinstance(fact_val, dict):
+                    sub_dir = os.path.join(save_dir, f"{fact_key}")
+                    os.makedirs(sub_dir, exist_ok=True)
+                    for item_name, sub_adm_inst in fact_val.items():
+                        sub_case_data = {
+                            "case": getattr(sub_adm_inst, "case", []),
+                            "evaluated_nodes": list(getattr(sub_adm_inst, "case", [])),  # fallback if no evaluated_blfs
+                        }
+                        # Try to get reasoning for sub-ADM
+                        try:
+                            sub_reasoning = sub_adm_inst.evaluateTree(sub_case_data["case"])
+                            sub_case_data["reasoning"] = [
+                                {"depth": depth, "statement": statement} for depth, statement in (sub_reasoning or [])
+                            ]
+                        except Exception as e:
+                            sub_case_data["reasoning"] = [f"Error generating reasoning: {e}"]
+                        # Save sub-ADM as JSON
+                        safe_item = str(item_name).replace(" ", "_").replace("/", "-").replace("\\", "-")
+                        sub_json_path = os.path.join(sub_dir, f"{safe_item}_summary.json")
+                        with open(sub_json_path, "w") as f:
+                            json.dump(sub_case_data, f, indent=2)
+                        print(f"Sub-ADM summary saved to: {sub_json_path}")
+        
 def main():
+    
     """Main function"""
     
     parser = argparse.ArgumentParser()
@@ -527,6 +588,8 @@ def main():
         
     try:
         result = cli.query_domain()
+        cli.save_adm(name='initial')  # Save initial ADM
+
         
         if result:   
             logger.debug('Moving to main ADM')     
@@ -534,10 +597,12 @@ def main():
             cli_2.caseName = cli.caseName
             cli_2.adm.facts = cli.adm.facts
             
-            _ = cli_2.query_domain()        
+            _ = cli_2.query_domain()  
+            cli_2.save_adm(name='main')  # Save main ADM
+      
         
-        cli.visualize_domain(minimal=False,name="Initial")
-        cli_2.visualize_domain(minimal=False,name="Main")
+        #cli.visualize_domain(minimal=False,name="Initial",visualize_sub_adms=False)
+        #cli_2.visualize_domain(minimal=False,name="Main")
 
     except KeyboardInterrupt:
         print("\n\nProgram interrupted by user. Goodbye!")
