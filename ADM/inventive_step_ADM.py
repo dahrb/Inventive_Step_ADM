@@ -309,7 +309,7 @@ def sub_adm_2(item_name):
 
     #F53/F54
     sub_adm.addQuestionInstantiator(
-    "[Q39] Would the skilled person have arrived at the proposed invention by adapting or modifying the closest prior art, not simply because they could, but because they the prior art would have provided motivation to do so in the expectation of some improvement or advantage?",
+    "[Q39] Do you believe the skilled person would have arrived at the proposed invention by adapting or modifying the closest prior art, not simply because they could, but because they the prior art would have provided motivation to do so in the expectation of some improvement or advantage?\n\n The skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}",
     {
         "Would have adapted from the prior art": "WouldAdapt",
         "Would have modified from the prior art": "WouldModify",
@@ -484,12 +484,12 @@ def adm_main():
         
         if "PartialProblems" in current_case:
             print("\nPartialProblems detected in case - creating multiple problems:")
-            print("Enter problems one by one. Type 'done' when finished.")
+            print("Enter problems one by one. leave the line BLANK when finished by giving your answer as an empty string.")
             
             problem_count = 0
             while True:
-                problem_desc = input(f"Problem {problem_count + 1} description (or 'done' to finish): ").strip()
-                if problem_desc.lower().strip() == 'done':
+                problem_desc = input(f"Enter Partial Problem {problem_count + 1} description OR leave the line BLANK to finish by giving your answer as an empty string): ").strip()
+                if problem_desc.strip() == '' or problem_desc.strip() == 'BLANK':
                     break
                 if problem_desc:
                     objective_problems.append(problem_desc)

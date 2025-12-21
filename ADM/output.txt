@@ -1,0 +1,1390 @@
+here
+Found 5 cases in COMVIK set. Starting 3 runs...
+
+==================== STARTING RUN 1/3 ====================
+
+>>> STARTING BASELINE MODE: comvik_1 (Run 1)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1, which discloses a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device, is selected as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1)
+The user can select two or more products to purchase (instead of a single product only). 
+
+(2)
+An "optimal shopping tour" for purchasing the two or more products is provided to the user. 
+
+(3)
+The optimal shopping tour is determined by the server by accessing a cache memory in which optimal shopping tours determined for previous requests are stored. 
+
+--- FULL REASONING ---
+Claim 1:
+
+Method of facilitating shopping on a mobile device wherein:
+
+(a)
+the user selects two or more products to be purchased;
+
+(b)
+the mobile device transmits the selected products data and the device location to a server;
+
+(c)
+the server accesses a database of vendors to identify vendors offering at least one of the selected products;
+
+(d)
+the server determines, on the basis of the device location and the identified vendors, an optimal shopping tour for purchasing the selected products by accessing a cache memory in which optimal shopping tours determined for previous requests are stored; and
+
+(e)
+the server transmits the optimal shopping tour to the mobile device for displaying.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The features contributing to the technical character are identified at first glance as a distributed system comprising a mobile device connected to a server computer which has a cache memory and is connected to a database.
+
+Step (ii): Document D1, which discloses a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device, is selected as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1)
+The user can select two or more products to purchase (instead of a single product only). 
+
+(2)
+An "optimal shopping tour" for purchasing the two or more products is provided to the user. 
+
+(3)
+The optimal shopping tour is determined by the server by accessing a cache memory in which optimal shopping tours determined for previous requests are stored. 
+
+Differences (1) and (2) represent modifications of the underlying business concept, since they define producing an ordered list of shops to visit which sell these products. No technical purpose is served, and no technical effects can be identified from these differences. Hence, these features make no technical contribution over D1. On the other hand, difference (3) makes a technical contribution as it relates to the technical implementation of differences (1) and (2) and has the technical effect of enabling rapid determination of the optimal shopping tour by accessing previous requests which are stored in a cache memory.
+
+Step (iii)(c): The objective technical problem is to be formulated from the perspective of the skilled person as an expert in the technical field concerned (G‑VII, 3). This person is deemed not to have any expertise in business-related matters. In this case, the skilled person can be defined as an expert in information technology who gains knowledge of the business-related features (1) and (2) as part of the formulation of the technical problem to be solved, as would be the case in a realistic situation in the form of a requirement specification. The objective technical problem is thus formulated as how to modify the method of D1 to implement in a technically efficient manner the non-technical business concept defined by the differences (1) and (2), which is given as a constraint to be met.
+
+Obviousness: As regards requirement (1), it would have been a matter of routine for the skilled person to adapt the mobile device used in D1 so as to enable the user to select two or more products instead of a single one. It would also have been obvious to assign the task of determining the optimal shopping tour (arising from requirement (2)) to the server, by analogy with the server likewise determining the nearest vendor in D1. Since the objective technical problem further requires a technically efficient implementation, the skilled person would have looked for efficient technical implementations of the determination of a tour. A second document D2 discloses a travel planning system for determining travel trips, listing a set of places to visit, and addresses this technical problem: for this purpose, the system of D2 accesses a cache memory storing results of previous queries. The skilled person would thus have considered the teaching of D2 and adapted the server in D1 to access and use a cache memory as suggested in D2 so as to provide a technically efficient implementation of the determination of the optimal shopping tour, i.e. difference (3). Hence, no inventive step is involved within the meaning of Art. 52(1) and 56.
+
+Remarks: The example shows a typical application of the approach developed in T 641/00 (COMVIK). The analysis of technical effects is performed in detail at step (iii) to see if the differences from the closest prior art comprise features making a technical contribution. This analysis refines the initial finding of step (i) by identifying the feature of accessing the cache memory for results of previous requests in the step of determining the tour as a technical feature. Note that in this case step (i) would not need to be indicated explicitly in the reasoning. In step (iii)(c), the non-technical modifications of the business concept are given to the skilled person as a constraint to be met. Whether or not the new business concept is innovative is irrelevant here for the assessment of inventive step, which has to be based on the features of its technical implementation.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_2 (Run 1)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): As a suitable starting point, document D1, which discloses a method of order management in which a server computer receives location information from GPS terminals, is selected as the closest prior art.
+
+--- FULL REASONING ---
+Claim 1:
+
+A computer-implemented method for brokering offers and demands in the field of transporting freight, comprising the following steps:
+
+(a)
+receiving transportation offers/demands from users, including location and time data;
+
+(b)
+receiving current location information of the users from GPS terminals with which the users are equipped;
+
+(c)
+after receiving a new offer/demand request, verifying if there are previous offers/demands not yet satisfied that can respond to the new request;
+
+(d)
+if so, selecting the one for which the current locations of both users are closest; and
+
+(e)
+otherwise storing the new request.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The claimed method is based on the following business method:
+
+A method for brokering offers and demands in the field of freight transportation, comprising:
+
+– 
+receiving transportation offers/demands from users, including location and time data; 
+
+– 
+receiving information regarding the current location of the users; 
+
+– 
+after receiving a new offer/demand request, verifying if there are previous offers/demands not yet satisfied that can respond to the new request; 
+
+– 
+if so, selecting the one for which the current locations of both users are closest; and 
+
+– 
+otherwise storing the new request. 
+
+Such a business method is per se non-technical and excluded under Art. 52(2)(c) and (3). Brokering offers and demands is a typical business activity. Using the geographical location of users is the kind of criterion which a transportation broker could specify as part of a business method based on non-technical, business considerations only. This business method does not serve any technical purpose in the context of the invention and so does not contribute to its technical character.
+
+Therefore, only the features related to the technical implementation of this business method can be identified as the features contributing to the technical character of the invention:
+
+– 
+The business method steps are carried out by a computer. 
+
+– 
+The current location information is received from GPS terminals. 
+
+Step (ii): As a suitable starting point, document D1, which discloses a method of order management in which a server computer receives location information from GPS terminals, is selected as the closest prior art.
+
+Step (iii): The difference between the subject-matter of claim 1 and D1 is thus the computer implementation of the steps of the business method defined above.
+
+The technical effect of this difference is merely the automation of the business method underlying claim 1. The conclusion reached in step (i) still holds, since the only distinguishing feature making a technical contribution is the technical implementation of this business method.
+
+Step (iii)(c): The objective technical problem is formulated as how to adapt the method of D1 so as to implement the business method of brokering offers and demands according to the user's current location. The skilled person is considered to be a software project team and is given the knowledge of the business method in the form of a requirement specification.
+
+Obviousness: Adapting the method of D1 to execute the business method steps is straightforward and requires routine programming only. Therefore, no inventive step is involved within the meaning of Art. 52(1) and Art. 56.
+
+Remarks: In this example, it was clear from the initial analysis at step (i) that the claimed method was based on a method for brokering offers and demands, which as such is a business method. The features defining the business method were easily separable from the technical features of its computer implementation. This example therefore illustrates a line of argument in which it was possible in step (i) to determine all the features which contribute to the technical character of the invention and all those which do not. This line of argument pertains more to the field of computer-implemented business methods and might be less suitable in other fields.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_3 (Run 1)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1, which discloses a system for broadcasting video over an xDSL connection to the set-top boxes of subscribers, is selected as the closest prior art. The system comprises a database storing identifiers of subscribers' computers and, in association with them, an indication of the maximum data rate for the data connection to each subscriber's computer. The system further comprises means for transmitting the video to a subscriber's computer at the maximum data rate stored for said computer.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+Storing an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client. 
+
+(2) 
+Using said available data rate to determine the rate at which the data is transmitted to the remote client (instead of transmitting the data at the maximum data rate stored for said remote client as in D1). 
+
+--- FULL REASONING ---
+Claim 1:
+
+A system for the transmission of a broadcast media channel to a remote client over a data connection, said system including:
+
+(a)
+means for storing an identifier of the remote client and an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client;
+
+(b)
+means for determining a rate at which data is to be transmitted based on the indication of the available data rate of the data connection; and
+
+(c)
+means for transmitting data at the determined rate to said remote client.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): At first glance, all features appear to contribute to the technical character of the invention.
+
+Step (ii): Document D1, which discloses a system for broadcasting video over an xDSL connection to the set-top boxes of subscribers, is selected as the closest prior art. The system comprises a database storing identifiers of subscribers' computers and, in association with them, an indication of the maximum data rate for the data connection to each subscriber's computer. The system further comprises means for transmitting the video to a subscriber's computer at the maximum data rate stored for said computer.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+Storing an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client. 
+
+(2) 
+Using said available data rate to determine the rate at which the data is transmitted to the remote client (instead of transmitting the data at the maximum data rate stored for said remote client as in D1). 
+
+The purpose served by using an "available data rate" which is lower than a maximum data rate for the data connection to the remote client is not apparent from the claim. The relevant disclosure in the description is therefore taken into account. In the description, it is explained that a pricing model is provided which allows a customer to choose from several service levels, each service level corresponding to an available data-rate option having a different price. With a view to paying less, a user may select an available data rate lower than the maximum data rate possible with the connection. Hence, using an available data rate which is lower than the maximum data rate for the connection to the remote client addresses the aim of allowing a customer to choose a data-rate service level according to that pricing model. This is not a technical aim, but an aim of a financial, administrative or commercial nature, and so it falls under the exclusion of schemes, rules and methods for doing business in Art. 52(2)(c). It may thus be included in the formulation of the objective technical problem as a constraint to be met.
+
+The features of storing the available data rate and of using it to determine the rate at which the data is transmitted have the technical effect of implementing this non-technical aim.
+
+Step (iii)(c): The objective technical problem is therefore formulated as how to implement in the system of D1 a pricing model which allows the customer to choose a data-rate service level.
+
+Obviousness: Given the task of implementing this choice of data-rate service level in accordance with the pricing model, it would be obvious to the skilled person that the data rate purchased by a subscriber (i.e. the "available data rate" of claim 1), which can only be lower or equal to the maximum data rate of the data connection to the subscriber's computer (i.e. the "remote client" of claim 1), would have to be stored for each subscriber and used by the system to determine the rate at which data is to be transmitted to a subscriber. Therefore, no inventive step is involved within the meaning of Art. 52(1) and Art. 56.
+
+Remarks: This example illustrates a claim which involves a complex mix of technical and non-technical features. In step (i), all features appeared at first glance to contribute to the technical character of the invention. After comparison with D1, it was possible to carry out a detailed analysis of the technical character of the contribution made by the invention over D1 at step (iii). This detailed analysis revealed that the distinguishing features addressed a non-technical aim, which could thus be incorporated into the formulation of the objective technical problem (T 641/00).
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_4 (Run 1)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Claim 1:
+
+A computer-implemented method of determining areas in which there is an increased risk of condensation for a surface in a building comprising the steps of:
+
+(a)
+controlling an infrared (IR) camera to capture an image of the temperature distribution of the surface;
+
+(b)
+receiving mean values for the air temperature and the relative air humidity measured inside the building over the last 24 hours;
+
+(c)
+calculating, based on said mean air temperature and mean relative air humidity, a condensation temperature at which there is a risk of condensation on the surface;
+
+(d)
+comparing the temperature at each point on the image to said calculated condensation temperature;
+
+(e)
+identifying the image points having a temperature lower than the calculated condensation temperature as areas at increased risk of condensation on the surface; and
+
+(f)
+modifying the image by colouring the image points identified in step (e) in a particular colour to indicate the areas at increased risk of condensation to a user.
+
+--- FULL REASONING ---
+Claim 1:
+
+A computer-implemented method of determining areas in which there is an increased risk of condensation for a surface in a building comprising the steps of:
+
+(a)
+controlling an infrared (IR) camera to capture an image of the temperature distribution of the surface;
+
+(b)
+receiving mean values for the air temperature and the relative air humidity measured inside the building over the last 24 hours;
+
+(c)
+calculating, based on said mean air temperature and mean relative air humidity, a condensation temperature at which there is a risk of condensation on the surface;
+
+(d)
+comparing the temperature at each point on the image to said calculated condensation temperature;
+
+(e)
+identifying the image points having a temperature lower than the calculated condensation temperature as areas at increased risk of condensation on the surface; and
+
+(f)
+modifying the image by colouring the image points identified in step (e) in a particular colour to indicate the areas at increased risk of condensation to a user.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The control of an IR camera in step (a) clearly makes a technical contribution. The question is whether steps (b) to (f) also contribute to the technical character of the claimed subject-matter.
+
+Considered in isolation, steps (b) to (e) relate to algorithmic/mathematical steps and step (f) defines a presentation of information. However, the claim is not directed to a mental act, a mathematical method or presentation of information as such (which would be excluded from patentability under Art. 52(2)(a), (c), (d) and (3)), because the claimed subject-matter involves technical means such as a computer.
+
+It therefore has to be assessed whether the algorithmic and mathematical steps and the step related to presentation of information do, in the context of the invention, contribute to producing a technical effect and thereby contribute to the technical character of the invention.
+
+Since the above-mentioned algorithmic and mathematical steps (b) to (e) are used to predict the physical state (condensation) of an existing real object (surface) from measurements of physical properties (IR image, measured air temperature and relative air humidity over time), they contribute to a technical effect serving a technical purpose. This applies regardless of what use is made of the output information about the risk of condensation on the surface (see G‑II, 3.3, in particular subsection "Technical applications"). So steps (b) to (e) also contribute to the technical character of the invention.
+
+A decision on whether step (f) makes a technical contribution is deferred to step (iii) below.
+
+Step (ii): Document D1 discloses a method for monitoring a surface to determine the risk of condensation forming on it. The risk of condensation is determined based on the difference of the temperature reading obtained via an IR pyrometer for a single point on the surface and the condensation temperature calculated based on the actual ambient air temperature and the relative air humidity. The numerical value of the difference is then shown to a user as an indication of the likelihood of condensation at that point. This document is taken as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+an IR camera is used (instead of the IR pyrometer of D1, which only captures the temperature at a single point of the surface);
+
+(2) 
+mean values for air temperature and relative air humidity measured inside the building over the last 24 hours are received;
+
+(3) 
+the condensation temperature is calculated on the basis of the mean air temperature and mean relative air humidity and compared to the temperature at each point on the IR image of the surface;
+
+(4) 
+image points having a temperature lower than the calculated condensation temperature are identified as areas at increased risk of condensation on the surface;
+
+(5) 
+colours are used to indicate areas at increased risk of condensation.
+
+As mentioned above, distinguishing features (1)-(4) contribute to the technical character of the claimed subject-matter and must be taken into consideration when formulating the technical problem. These features produce the technical effect of a more precise and reliable prediction of the risk of condensation as a result of considering all surface areas (as opposed to a single point) and accounting for temperature variations during a day.
+
+Distinguishing feature (5) defines a particular way of presenting information to a user (Art. 52(2)(d)) which does not produce a technical effect since any effect of choosing to display data using colours rather than numerical values depends on subjective preferences of the user: some users may prefer the former and others the latter (see G‑II, 3.7). This feature therefore does not make a technical contribution. It cannot support inventive step and is not discussed further in the analysis since it has no bearing on the other distinguishing features.
+
+Step (iii)(c): The objective technical problem is therefore formulated as how to determine the risk of condensation on a surface in a more precise and reliable manner.
+
+Obviousness: The use of an IR camera for obtaining temperature readings on a surface can be considered a normal technical development in the field of thermography that does not require any inventive activity: IR cameras were well known at the effective date of the application. For the skilled person, using an IR camera to determine temperature distribution on the surface is a straightforward alternative to measuring the temperature at several points on the monitored surface using an IR pyrometer.
+
+However, D1 does not suggest considering a temperature distribution on a surface (as opposed to at a single point) or calculating mean values for air temperature and taking relative air humidity measured inside the building over the last 24 hours into consideration. Neither does it suggest taking into account different conditions which may realistically occur inside the building over time for predicting the risk of condensation.
+
+Assuming that no other prior art suggests the technical solution of the objective technical problem defined by distinguishing features (1)-(4), the subject-matter of claim 1 involves an inventive step.
+
+Remarks: This example illustrates the situation addressed in G‑VII, 5.4, second paragraph: features which, when taken in isolation, are non-technical but do, in the context of the claimed invention, contribute to producing a technical effect serving a technical purpose (features (b) to (e), which are algorithmic/mathematical steps). Since these features contribute to the technical character of the invention, they may support an inventive step.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_5 (Run 1)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1 discloses a method for the control of a thermal spray coating process by applying material to a workpiece using a spray jet, detecting deviations in the properties of the particles in said spray jet and adjusting process parameters automatically on the basis of the outcome of a neural network analysis. This document represents the closest prior art.
+
+Step (iii): The difference between the method of claim 1 and D1 concerns the use of a neuro-fuzzy controller combining a neural network and fuzzy logic rules as specified in the second part of step (d).
+
+--- FULL REASONING ---
+Claim 1:
+
+A method for coating a workpiece using a thermal spray coating process, the method comprising:
+
+(a)
+applying, using a spray jet, a material to the workpiece by thermal spray coating;
+
+(b)
+monitoring the thermal spray coating process in real time by detecting properties of particles in the spray jet and supplying the properties as actual values;
+
+(c)
+comparing the actual values with target values;
+
+and, in the event that the actual values deviate from the target values,
+
+(d)
+adjusting process parameters for the thermal spray coating process automatically by a controller on the basis of a neural network, said controller being a neuro-fuzzy controller which combines a neural-network and fuzzy logic rules and thereby maps statistical relationships between input variables and output variables of the neuro-fuzzy controller.
+
+Background: The invention relates to the control of an industrial process, namely thermal spray coating of a workpiece. The material used for the coating is injected with the help of a carrier gas into the high-temperature jet, where it is accelerated and/or molten. The properties of the resulting coatings are subject to great fluctuations, even with seemingly constant parameters of the coating operation. The spray jet is monitored visually with a CCD camera. The image picked up by the camera is sent to an image processing system, from which the properties of particles in the spray jet (e.g. velocity, temperature, size, etc) can be derived. A neuro-fuzzy controller is a mathematical algorithm which combines a neural network with fuzzy-logic rules.
+
+Application of the steps of the problem-solution approach outlined in COMVIK:
+
+Step (i): The method is directed at thermal spray coating, i.e. a specific technical process, comprising various concrete technical features, e.g. particles, workpiece, a spray coating device (implicit).
+
+Step (ii): Document D1 discloses a method for the control of a thermal spray coating process by applying material to a workpiece using a spray jet, detecting deviations in the properties of the particles in said spray jet and adjusting process parameters automatically on the basis of the outcome of a neural network analysis. This document represents the closest prior art.
+
+Step (iii): The difference between the method of claim 1 and D1 concerns the use of a neuro-fuzzy controller combining a neural network and fuzzy logic rules as specified in the second part of step (d).
+
+Computational models and algorithms related to artificial intelligence are, on their own, of an abstract mathematical nature (G‑II, 3.3.1). The feature of combining results of a neural network analysis and fuzzy logic defines a mathematical method when taken on its own. However, together with the feature of adjusting the process parameters, it contributes to the control of the coating process. Hence, the output of the mathematical method is directly used in the control of a specific technical process.
+
+Control of a specific technical process is a technical application (see G‑II, 3.3, subsection "Technical applications"). In conclusion, the distinguishing feature contributes to producing a technical effect serving a technical purpose and thereby contributes to the technical character of the invention. It is therefore taken into account in the assessment of inventive step.
+
+Step (iii)(c): The objective technical problem must be derived from technical effects that are based on objectively established facts and that are directly and causally related to the technical features of the claim.
+
+In this case, the mere fact that the parameters are calculated using a combination of results of a neural network analysis and fuzzy logic – without any details on specific adaptation to the thermal spray coating process – cannot credibly ensure any technical effect beyond a different adjustment of the process parameters. In particular, no evidence can be found to support any increase in the quality of coating properties or of the thermal spraying method that would result from the combination of features of claim 1. In the absence of such evidence, the objective technical problem is to provide an alternative solution to the problem of adjusting the process parameters which control the thermal spray coating process already solved in D1.
+
+Obviousness: Starting from the teaching of D1 and tasked with the above objective technical problem, the skilled person in the field of control engineering (G‑VII, 3) would look for an alternative solution to determine the control parameters of the process.
+
+A second prior-art document D2 discloses a combination of a neural network and fuzzy logic rules providing a neuro-fuzzy controller in the technical field of control engineering. From this prior art, it has become apparent that at the date of filing of the application, neuro-fuzzy controllers were well known and applied in the field of control engineering. The present solution is therefore considered to be an obvious alternative, rendering the subject-matter of claim 1 not inventive.
+
+Remarks: This example illustrates the case of a mathematical feature which is non-technical when taken in isolation but contributes to producing a technical effect serving a technical purpose in the context of the claim. The feature of using a combination of neural network results and fuzzy logic for adjusting process parameters for controlling thermal spraying contributes to the technical character of the invention and may therefore support inventive step.
+
+The availability of the general teaching of using neuro-fuzzy controllers in the field of control engineering resulted in the objection that the controller of claim 1 was an obvious alternative. This particular objection could have been avoided if the claim had recited further features of the fuzzy control method linked to some technical properties of the spray coating process. For example, if the desirable coating properties resulted from specific input and output variables of the neuro-fuzzy controller, how the controller is trained or how the output is used in the regulation of the process parameters, these features would have had to be recited in the claim. The description and figures as filed could have provided evidence that the desirable coating properties are indeed achieved. As currently claimed, the neuro-fuzzy controller is not adapted for the specific application of thermal spray coating. There is no evidence of any particular technical effect which is credibly achieved over the whole claimed scope other than that of providing different process parameters as input to the controller.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step (i): The claim is identified as a computer‑implemented business method for brokering freight offers and demands. The underlying business method (receiving offers/demands, receiving GPS locations, checking for unsatisfied requests, selecting the closest pair, otherwise storing the request) is non‑technical and therefore excluded from patentability under Art. 52(2)(c) and (3). Only the technical features – i.e. that the steps are performed by a computer and that GPS terminals provide the location data – can contribute to an inventive step.\n\nStep (ii): The closest prior art is document D1, which already discloses a server‑based order‑management system that receives location information from GPS terminals. D1 therefore contains the same technical features identified in step (i).\n\nStep (iii): The distinguishing feature of the claim over D1 is merely the implementation of the non‑technical business method on the computer. This adds no further technical effect beyond the automation of the business steps. The objective technical problem is formulated as “how to adapt D1 so as to implement the business method of brokering offers and demands based on users’ current locations.”\n\nObviousness assessment: A skilled person (a software development team) faced with the requirement specification of the business method would simply program the known D1 system to execute the additional logical steps. This adaptation is routine programming and does not involve any technical contribution beyond the automation already known. Consequently, the claimed subject‑matter would have been obvious to the skilled person.\n\nConclusion: The claim lacks an inventive step under Art. 56 EPC.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_2 (Run 1) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "1. Identify the closest prior art (D1) which discloses a method using an IR pyrometer to measure temperature at a single point and compare it with a condensation temperature calculated from current air temperature and humidity.\n2. Compare claim 1 with D1 and list distinguishing features: (1) use of an IR camera instead of a pyrometer, (2) use of mean air temperature and humidity over the last 24 h, (3) calculation of condensation temperature from these mean values and comparison with temperature at each pixel of the IR image, (4) identification of all image points below the condensation temperature, (5) colour‑coding of the identified areas.\n3. Assess technical contribution of each distinguishing feature. Features (1)–(4) involve technical means (IR camera, measurement of physical parameters, calculation of a physical condensation temperature and its comparison with measured surface temperatures) and therefore produce a technical effect – a more precise and reliable prediction of condensation risk over the whole surface. Feature (5) is merely a presentation of information and does not contribute to the technical character.\n4. Formulate the objective technical problem: to determine the risk of condensation on a surface in a more precise and reliable manner than D1.\n5. Determine whether the solution to this problem would have been obvious to the skilled person. Using an IR camera instead of a pyrometer is a routine development in thermography; however, D1 does not suggest (i) analysing the whole temperature distribution, (ii) using 24‑hour mean indoor temperature and humidity, or (iii) calculating a condensation temperature based on those mean values. No teaching in D1 or other cited prior art points to combining these steps to achieve the stated technical effect.\n6. Because the combination of features (1)–(4) is not directly or implicitly disclosed in the closest prior art and does not arise from routine optimisation, the skilled person would not arrive at the claimed solution in an obvious manner.\n7. Consequently, the claimed subject‑matter involves an inventive step under the problem‑solution approach of the EPO.\n\nConclusion: The invention satisfies the requirement of an inventive step.",
+  "answer": "Yes"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_4 (Run 1) Finished. Verdict: YES
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1: Identify the closest prior art. Document D1 discloses a system that stores for each subscriber the maximum data‑rate of the DSL connection and always transmits video at that maximum rate.\\n\\nStep 2: Determine the distinguishing features of claim 1 over D1. The claim adds: (i) storing an \"available data rate\" that is lower than the maximum possible rate, and (ii) using this available data rate to set the transmission rate.\\n\\nStep 3: Analyse the technical contribution of the distinguishing features. The description explains that the \"available data rate\" reflects a pricing model that lets a customer choose a service level (and thus a lower data‑rate) in order to pay less. This aim is commercial/administrative, not technical. The technical effect of the features is merely to implement that non‑technical business rule in the system.\\n\\nStep 4: Formulate the objective technical problem. Following the problem‑solution approach, the problem is framed as: \"How to adapt the D1 system so that it can honour a pricing model that allows a subscriber to select a lower data‑rate than the maximum possible for the connection.\" This formulation treats the commercial aim as a constraint rather than a technical contribution.\\n\\nStep 5: Assess obviousness. For a skilled person faced with the problem of implementing the pricing model, the solution – storing the chosen (available) data rate for each subscriber and using it to control the transmission rate – would be straightforward. The skilled person would simply replace the maximum‑rate value stored in D1 with the chosen available rate and use it for transmission. No teaching away or unexpected technical effect is identified.\\n\\nStep 6: Conclusion. Because the distinguishing features merely implement a non‑technical business requirement and would have been obvious to the skilled person, the claim lacks an inventive step under Art. 56 EPC.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_3 (Run 1) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1 – Identify the closest prior art.  Document D1 discloses a thermal‑spray coating method in which particle properties are measured in real time and process parameters are automatically adjusted by a controller that uses a neural‑network analysis.  This matches all features of claim 1 except for the type of controller used.\n\nStep 2 – Determine the distinguishing feature.  Claim 1 differs from D1 in that the controller is a *neuro‑fuzzy* controller, i.e. a combination of a neural network and fuzzy‑logic rules.\n\nStep 3 – Assess whether the distinguishing feature contributes to the technical character.  The neuro‑fuzzy controller is a mathematical algorithm, but its output is directly used to adjust process parameters of a concrete technical process (thermal spray coating).  Therefore the feature has technical effect and is taken into account in the inventive‑step analysis.\n\nStep 4 – Formulate the objective technical problem.  The patent provides no evidence that the neuro‑fuzzy controller yields a specific technical advantage (e.g., improved coating quality).  Consequently the only credible problem is to \"provide an alternative means for adjusting the process parameters of a thermal‑spray coating process\".\n\nStep 5 – Consider the obviousness of the solution.  Starting from D1, the skilled person would look for other known ways to implement the control function.  Document D2, which is part of the common general knowledge in control engineering, discloses neuro‑fuzzy controllers and their use for process control.  At the filing date, neuro‑fuzzy controllers were well‑known and routinely applied as alternatives to pure neural‑network controllers.\n\nStep 6 – Apply the problem‑solution approach.  The skilled person, faced with the problem of finding an alternative control method, would combine the teaching of D1 (real‑time monitoring and automatic adjustment) with the teaching of D2 (use of a neuro‑fuzzy controller).  This combination would be obvious and would not require any inventive contribution.\n\nConclusion – The subject‑matter of claim 1 lacks an inventive step because the only distinguishing feature (the neuro‑fuzzy controller) is an obvious alternative known from the prior art.\n",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_5 (Run 1) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1: Identify the closest prior art. Document D1 discloses a method where a user selects a single product, the server finds the nearest vendor and sends this information to the mobile device.\n\nStep 2: Determine the distinguishing features of claim 1 over D1. The claim adds (1) selection of two or more products, (2) provision of an \"optimal shopping tour\" covering those products, and (3) determination of that tour by the server using a cache memory that stores previously computed tours.\n\nStep 3: Assess which distinguishing features contribute technically. Features (1) and (2) relate only to the business concept of ordering multiple purchases and presenting a shopping route; they do not produce a technical effect. Feature (3) – the use of a cache memory to retrieve previously computed tours – is a technical implementation that yields the technical effect of faster tour determination.\n\nStep 4: Formulate the objective technical problem. The skilled person, an IT expert, must modify D1 to implement the non‑technical business idea of handling multiple products and generating a shopping tour in a technically efficient way. The problem is therefore framed as: \"How to adapt D1 so that the server can determine an optimal shopping tour efficiently.\"\n\nStep 5: Determine obviousness. \n- Adapting the user interface to allow selection of multiple products (feature 1) is routine for a skilled IT person. \n- Assigning the computation of a shopping tour to the server (feature 2) follows directly from D1’s server‑based nearest‑vendor calculation. \n- For an efficient implementation, the skilled person would look to known technical solutions for route optimisation. Document D2 teaches a travel‑planning system that stores results of previous route calculations in a cache to speed up processing. The skilled person would combine D1’s framework with D2’s caching technique to arrive at the claimed solution (feature 3).\n\nStep 6: Combine the teachings. The combination of D1 (basic shopping‑assistant method) with D2 (caching of previous route calculations) would be obvious to the skilled person seeking a technically efficient way to compute a shopping tour.\n\nStep 7: Conclusion. Because the only technical contribution (the cache‑based optimisation) is disclosed in D2 and its combination with D1 would be obvious, the claimed subject‑matter lacks an inventive step under Art. 56 EPC.\n\nTherefore, the invention does **not** satisfy the requirement of an inventive step.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_1 (Run 1) Finished. Verdict: NO
+
+==================== STARTING RUN 2/3 ====================
+
+>>> STARTING BASELINE MODE: comvik_1 (Run 2)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1, which discloses a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device, is selected as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1)
+The user can select two or more products to purchase (instead of a single product only). 
+
+(2)
+An "optimal shopping tour" for purchasing the two or more products is provided to the user. 
+
+(3)
+The optimal shopping tour is determined by the server by accessing a cache memory in which optimal shopping tours determined for previous requests are stored. 
+
+--- FULL REASONING ---
+Claim 1:
+
+Method of facilitating shopping on a mobile device wherein:
+
+(a)
+the user selects two or more products to be purchased;
+
+(b)
+the mobile device transmits the selected products data and the device location to a server;
+
+(c)
+the server accesses a database of vendors to identify vendors offering at least one of the selected products;
+
+(d)
+the server determines, on the basis of the device location and the identified vendors, an optimal shopping tour for purchasing the selected products by accessing a cache memory in which optimal shopping tours determined for previous requests are stored; and
+
+(e)
+the server transmits the optimal shopping tour to the mobile device for displaying.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The features contributing to the technical character are identified at first glance as a distributed system comprising a mobile device connected to a server computer which has a cache memory and is connected to a database.
+
+Step (ii): Document D1, which discloses a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device, is selected as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1)
+The user can select two or more products to purchase (instead of a single product only). 
+
+(2)
+An "optimal shopping tour" for purchasing the two or more products is provided to the user. 
+
+(3)
+The optimal shopping tour is determined by the server by accessing a cache memory in which optimal shopping tours determined for previous requests are stored. 
+
+Differences (1) and (2) represent modifications of the underlying business concept, since they define producing an ordered list of shops to visit which sell these products. No technical purpose is served, and no technical effects can be identified from these differences. Hence, these features make no technical contribution over D1. On the other hand, difference (3) makes a technical contribution as it relates to the technical implementation of differences (1) and (2) and has the technical effect of enabling rapid determination of the optimal shopping tour by accessing previous requests which are stored in a cache memory.
+
+Step (iii)(c): The objective technical problem is to be formulated from the perspective of the skilled person as an expert in the technical field concerned (G‑VII, 3). This person is deemed not to have any expertise in business-related matters. In this case, the skilled person can be defined as an expert in information technology who gains knowledge of the business-related features (1) and (2) as part of the formulation of the technical problem to be solved, as would be the case in a realistic situation in the form of a requirement specification. The objective technical problem is thus formulated as how to modify the method of D1 to implement in a technically efficient manner the non-technical business concept defined by the differences (1) and (2), which is given as a constraint to be met.
+
+Obviousness: As regards requirement (1), it would have been a matter of routine for the skilled person to adapt the mobile device used in D1 so as to enable the user to select two or more products instead of a single one. It would also have been obvious to assign the task of determining the optimal shopping tour (arising from requirement (2)) to the server, by analogy with the server likewise determining the nearest vendor in D1. Since the objective technical problem further requires a technically efficient implementation, the skilled person would have looked for efficient technical implementations of the determination of a tour. A second document D2 discloses a travel planning system for determining travel trips, listing a set of places to visit, and addresses this technical problem: for this purpose, the system of D2 accesses a cache memory storing results of previous queries. The skilled person would thus have considered the teaching of D2 and adapted the server in D1 to access and use a cache memory as suggested in D2 so as to provide a technically efficient implementation of the determination of the optimal shopping tour, i.e. difference (3). Hence, no inventive step is involved within the meaning of Art. 52(1) and 56.
+
+Remarks: The example shows a typical application of the approach developed in T 641/00 (COMVIK). The analysis of technical effects is performed in detail at step (iii) to see if the differences from the closest prior art comprise features making a technical contribution. This analysis refines the initial finding of step (i) by identifying the feature of accessing the cache memory for results of previous requests in the step of determining the tour as a technical feature. Note that in this case step (i) would not need to be indicated explicitly in the reasoning. In step (iii)(c), the non-technical modifications of the business concept are given to the skilled person as a constraint to be met. Whether or not the new business concept is innovative is irrelevant here for the assessment of inventive step, which has to be based on the features of its technical implementation.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_2 (Run 2)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): As a suitable starting point, document D1, which discloses a method of order management in which a server computer receives location information from GPS terminals, is selected as the closest prior art.
+
+--- FULL REASONING ---
+Claim 1:
+
+A computer-implemented method for brokering offers and demands in the field of transporting freight, comprising the following steps:
+
+(a)
+receiving transportation offers/demands from users, including location and time data;
+
+(b)
+receiving current location information of the users from GPS terminals with which the users are equipped;
+
+(c)
+after receiving a new offer/demand request, verifying if there are previous offers/demands not yet satisfied that can respond to the new request;
+
+(d)
+if so, selecting the one for which the current locations of both users are closest; and
+
+(e)
+otherwise storing the new request.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The claimed method is based on the following business method:
+
+A method for brokering offers and demands in the field of freight transportation, comprising:
+
+– 
+receiving transportation offers/demands from users, including location and time data; 
+
+– 
+receiving information regarding the current location of the users; 
+
+– 
+after receiving a new offer/demand request, verifying if there are previous offers/demands not yet satisfied that can respond to the new request; 
+
+– 
+if so, selecting the one for which the current locations of both users are closest; and 
+
+– 
+otherwise storing the new request. 
+
+Such a business method is per se non-technical and excluded under Art. 52(2)(c) and (3). Brokering offers and demands is a typical business activity. Using the geographical location of users is the kind of criterion which a transportation broker could specify as part of a business method based on non-technical, business considerations only. This business method does not serve any technical purpose in the context of the invention and so does not contribute to its technical character.
+
+Therefore, only the features related to the technical implementation of this business method can be identified as the features contributing to the technical character of the invention:
+
+– 
+The business method steps are carried out by a computer. 
+
+– 
+The current location information is received from GPS terminals. 
+
+Step (ii): As a suitable starting point, document D1, which discloses a method of order management in which a server computer receives location information from GPS terminals, is selected as the closest prior art.
+
+Step (iii): The difference between the subject-matter of claim 1 and D1 is thus the computer implementation of the steps of the business method defined above.
+
+The technical effect of this difference is merely the automation of the business method underlying claim 1. The conclusion reached in step (i) still holds, since the only distinguishing feature making a technical contribution is the technical implementation of this business method.
+
+Step (iii)(c): The objective technical problem is formulated as how to adapt the method of D1 so as to implement the business method of brokering offers and demands according to the user's current location. The skilled person is considered to be a software project team and is given the knowledge of the business method in the form of a requirement specification.
+
+Obviousness: Adapting the method of D1 to execute the business method steps is straightforward and requires routine programming only. Therefore, no inventive step is involved within the meaning of Art. 52(1) and Art. 56.
+
+Remarks: In this example, it was clear from the initial analysis at step (i) that the claimed method was based on a method for brokering offers and demands, which as such is a business method. The features defining the business method were easily separable from the technical features of its computer implementation. This example therefore illustrates a line of argument in which it was possible in step (i) to determine all the features which contribute to the technical character of the invention and all those which do not. This line of argument pertains more to the field of computer-implemented business methods and might be less suitable in other fields.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_3 (Run 2)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1, which discloses a system for broadcasting video over an xDSL connection to the set-top boxes of subscribers, is selected as the closest prior art. The system comprises a database storing identifiers of subscribers' computers and, in association with them, an indication of the maximum data rate for the data connection to each subscriber's computer. The system further comprises means for transmitting the video to a subscriber's computer at the maximum data rate stored for said computer.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+Storing an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client. 
+
+(2) 
+Using said available data rate to determine the rate at which the data is transmitted to the remote client (instead of transmitting the data at the maximum data rate stored for said remote client as in D1). 
+
+--- FULL REASONING ---
+Claim 1:
+
+A system for the transmission of a broadcast media channel to a remote client over a data connection, said system including:
+
+(a)
+means for storing an identifier of the remote client and an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client;
+
+(b)
+means for determining a rate at which data is to be transmitted based on the indication of the available data rate of the data connection; and
+
+(c)
+means for transmitting data at the determined rate to said remote client.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): At first glance, all features appear to contribute to the technical character of the invention.
+
+Step (ii): Document D1, which discloses a system for broadcasting video over an xDSL connection to the set-top boxes of subscribers, is selected as the closest prior art. The system comprises a database storing identifiers of subscribers' computers and, in association with them, an indication of the maximum data rate for the data connection to each subscriber's computer. The system further comprises means for transmitting the video to a subscriber's computer at the maximum data rate stored for said computer.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+Storing an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client. 
+
+(2) 
+Using said available data rate to determine the rate at which the data is transmitted to the remote client (instead of transmitting the data at the maximum data rate stored for said remote client as in D1). 
+
+The purpose served by using an "available data rate" which is lower than a maximum data rate for the data connection to the remote client is not apparent from the claim. The relevant disclosure in the description is therefore taken into account. In the description, it is explained that a pricing model is provided which allows a customer to choose from several service levels, each service level corresponding to an available data-rate option having a different price. With a view to paying less, a user may select an available data rate lower than the maximum data rate possible with the connection. Hence, using an available data rate which is lower than the maximum data rate for the connection to the remote client addresses the aim of allowing a customer to choose a data-rate service level according to that pricing model. This is not a technical aim, but an aim of a financial, administrative or commercial nature, and so it falls under the exclusion of schemes, rules and methods for doing business in Art. 52(2)(c). It may thus be included in the formulation of the objective technical problem as a constraint to be met.
+
+The features of storing the available data rate and of using it to determine the rate at which the data is transmitted have the technical effect of implementing this non-technical aim.
+
+Step (iii)(c): The objective technical problem is therefore formulated as how to implement in the system of D1 a pricing model which allows the customer to choose a data-rate service level.
+
+Obviousness: Given the task of implementing this choice of data-rate service level in accordance with the pricing model, it would be obvious to the skilled person that the data rate purchased by a subscriber (i.e. the "available data rate" of claim 1), which can only be lower or equal to the maximum data rate of the data connection to the subscriber's computer (i.e. the "remote client" of claim 1), would have to be stored for each subscriber and used by the system to determine the rate at which data is to be transmitted to a subscriber. Therefore, no inventive step is involved within the meaning of Art. 52(1) and Art. 56.
+
+Remarks: This example illustrates a claim which involves a complex mix of technical and non-technical features. In step (i), all features appeared at first glance to contribute to the technical character of the invention. After comparison with D1, it was possible to carry out a detailed analysis of the technical character of the contribution made by the invention over D1 at step (iii). This detailed analysis revealed that the distinguishing features addressed a non-technical aim, which could thus be incorporated into the formulation of the objective technical problem (T 641/00).
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_4 (Run 2)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Claim 1:
+
+A computer-implemented method of determining areas in which there is an increased risk of condensation for a surface in a building comprising the steps of:
+
+(a)
+controlling an infrared (IR) camera to capture an image of the temperature distribution of the surface;
+
+(b)
+receiving mean values for the air temperature and the relative air humidity measured inside the building over the last 24 hours;
+
+(c)
+calculating, based on said mean air temperature and mean relative air humidity, a condensation temperature at which there is a risk of condensation on the surface;
+
+(d)
+comparing the temperature at each point on the image to said calculated condensation temperature;
+
+(e)
+identifying the image points having a temperature lower than the calculated condensation temperature as areas at increased risk of condensation on the surface; and
+
+(f)
+modifying the image by colouring the image points identified in step (e) in a particular colour to indicate the areas at increased risk of condensation to a user.
+
+--- FULL REASONING ---
+Claim 1:
+
+A computer-implemented method of determining areas in which there is an increased risk of condensation for a surface in a building comprising the steps of:
+
+(a)
+controlling an infrared (IR) camera to capture an image of the temperature distribution of the surface;
+
+(b)
+receiving mean values for the air temperature and the relative air humidity measured inside the building over the last 24 hours;
+
+(c)
+calculating, based on said mean air temperature and mean relative air humidity, a condensation temperature at which there is a risk of condensation on the surface;
+
+(d)
+comparing the temperature at each point on the image to said calculated condensation temperature;
+
+(e)
+identifying the image points having a temperature lower than the calculated condensation temperature as areas at increased risk of condensation on the surface; and
+
+(f)
+modifying the image by colouring the image points identified in step (e) in a particular colour to indicate the areas at increased risk of condensation to a user.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The control of an IR camera in step (a) clearly makes a technical contribution. The question is whether steps (b) to (f) also contribute to the technical character of the claimed subject-matter.
+
+Considered in isolation, steps (b) to (e) relate to algorithmic/mathematical steps and step (f) defines a presentation of information. However, the claim is not directed to a mental act, a mathematical method or presentation of information as such (which would be excluded from patentability under Art. 52(2)(a), (c), (d) and (3)), because the claimed subject-matter involves technical means such as a computer.
+
+It therefore has to be assessed whether the algorithmic and mathematical steps and the step related to presentation of information do, in the context of the invention, contribute to producing a technical effect and thereby contribute to the technical character of the invention.
+
+Since the above-mentioned algorithmic and mathematical steps (b) to (e) are used to predict the physical state (condensation) of an existing real object (surface) from measurements of physical properties (IR image, measured air temperature and relative air humidity over time), they contribute to a technical effect serving a technical purpose. This applies regardless of what use is made of the output information about the risk of condensation on the surface (see G‑II, 3.3, in particular subsection "Technical applications"). So steps (b) to (e) also contribute to the technical character of the invention.
+
+A decision on whether step (f) makes a technical contribution is deferred to step (iii) below.
+
+Step (ii): Document D1 discloses a method for monitoring a surface to determine the risk of condensation forming on it. The risk of condensation is determined based on the difference of the temperature reading obtained via an IR pyrometer for a single point on the surface and the condensation temperature calculated based on the actual ambient air temperature and the relative air humidity. The numerical value of the difference is then shown to a user as an indication of the likelihood of condensation at that point. This document is taken as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+an IR camera is used (instead of the IR pyrometer of D1, which only captures the temperature at a single point of the surface);
+
+(2) 
+mean values for air temperature and relative air humidity measured inside the building over the last 24 hours are received;
+
+(3) 
+the condensation temperature is calculated on the basis of the mean air temperature and mean relative air humidity and compared to the temperature at each point on the IR image of the surface;
+
+(4) 
+image points having a temperature lower than the calculated condensation temperature are identified as areas at increased risk of condensation on the surface;
+
+(5) 
+colours are used to indicate areas at increased risk of condensation.
+
+As mentioned above, distinguishing features (1)-(4) contribute to the technical character of the claimed subject-matter and must be taken into consideration when formulating the technical problem. These features produce the technical effect of a more precise and reliable prediction of the risk of condensation as a result of considering all surface areas (as opposed to a single point) and accounting for temperature variations during a day.
+
+Distinguishing feature (5) defines a particular way of presenting information to a user (Art. 52(2)(d)) which does not produce a technical effect since any effect of choosing to display data using colours rather than numerical values depends on subjective preferences of the user: some users may prefer the former and others the latter (see G‑II, 3.7). This feature therefore does not make a technical contribution. It cannot support inventive step and is not discussed further in the analysis since it has no bearing on the other distinguishing features.
+
+Step (iii)(c): The objective technical problem is therefore formulated as how to determine the risk of condensation on a surface in a more precise and reliable manner.
+
+Obviousness: The use of an IR camera for obtaining temperature readings on a surface can be considered a normal technical development in the field of thermography that does not require any inventive activity: IR cameras were well known at the effective date of the application. For the skilled person, using an IR camera to determine temperature distribution on the surface is a straightforward alternative to measuring the temperature at several points on the monitored surface using an IR pyrometer.
+
+However, D1 does not suggest considering a temperature distribution on a surface (as opposed to at a single point) or calculating mean values for air temperature and taking relative air humidity measured inside the building over the last 24 hours into consideration. Neither does it suggest taking into account different conditions which may realistically occur inside the building over time for predicting the risk of condensation.
+
+Assuming that no other prior art suggests the technical solution of the objective technical problem defined by distinguishing features (1)-(4), the subject-matter of claim 1 involves an inventive step.
+
+Remarks: This example illustrates the situation addressed in G‑VII, 5.4, second paragraph: features which, when taken in isolation, are non-technical but do, in the context of the claimed invention, contribute to producing a technical effect serving a technical purpose (features (b) to (e), which are algorithmic/mathematical steps). Since these features contribute to the technical character of the invention, they may support an inventive step.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_5 (Run 2)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1 discloses a method for the control of a thermal spray coating process by applying material to a workpiece using a spray jet, detecting deviations in the properties of the particles in said spray jet and adjusting process parameters automatically on the basis of the outcome of a neural network analysis. This document represents the closest prior art.
+
+Step (iii): The difference between the method of claim 1 and D1 concerns the use of a neuro-fuzzy controller combining a neural network and fuzzy logic rules as specified in the second part of step (d).
+
+--- FULL REASONING ---
+Claim 1:
+
+A method for coating a workpiece using a thermal spray coating process, the method comprising:
+
+(a)
+applying, using a spray jet, a material to the workpiece by thermal spray coating;
+
+(b)
+monitoring the thermal spray coating process in real time by detecting properties of particles in the spray jet and supplying the properties as actual values;
+
+(c)
+comparing the actual values with target values;
+
+and, in the event that the actual values deviate from the target values,
+
+(d)
+adjusting process parameters for the thermal spray coating process automatically by a controller on the basis of a neural network, said controller being a neuro-fuzzy controller which combines a neural-network and fuzzy logic rules and thereby maps statistical relationships between input variables and output variables of the neuro-fuzzy controller.
+
+Background: The invention relates to the control of an industrial process, namely thermal spray coating of a workpiece. The material used for the coating is injected with the help of a carrier gas into the high-temperature jet, where it is accelerated and/or molten. The properties of the resulting coatings are subject to great fluctuations, even with seemingly constant parameters of the coating operation. The spray jet is monitored visually with a CCD camera. The image picked up by the camera is sent to an image processing system, from which the properties of particles in the spray jet (e.g. velocity, temperature, size, etc) can be derived. A neuro-fuzzy controller is a mathematical algorithm which combines a neural network with fuzzy-logic rules.
+
+Application of the steps of the problem-solution approach outlined in COMVIK:
+
+Step (i): The method is directed at thermal spray coating, i.e. a specific technical process, comprising various concrete technical features, e.g. particles, workpiece, a spray coating device (implicit).
+
+Step (ii): Document D1 discloses a method for the control of a thermal spray coating process by applying material to a workpiece using a spray jet, detecting deviations in the properties of the particles in said spray jet and adjusting process parameters automatically on the basis of the outcome of a neural network analysis. This document represents the closest prior art.
+
+Step (iii): The difference between the method of claim 1 and D1 concerns the use of a neuro-fuzzy controller combining a neural network and fuzzy logic rules as specified in the second part of step (d).
+
+Computational models and algorithms related to artificial intelligence are, on their own, of an abstract mathematical nature (G‑II, 3.3.1). The feature of combining results of a neural network analysis and fuzzy logic defines a mathematical method when taken on its own. However, together with the feature of adjusting the process parameters, it contributes to the control of the coating process. Hence, the output of the mathematical method is directly used in the control of a specific technical process.
+
+Control of a specific technical process is a technical application (see G‑II, 3.3, subsection "Technical applications"). In conclusion, the distinguishing feature contributes to producing a technical effect serving a technical purpose and thereby contributes to the technical character of the invention. It is therefore taken into account in the assessment of inventive step.
+
+Step (iii)(c): The objective technical problem must be derived from technical effects that are based on objectively established facts and that are directly and causally related to the technical features of the claim.
+
+In this case, the mere fact that the parameters are calculated using a combination of results of a neural network analysis and fuzzy logic – without any details on specific adaptation to the thermal spray coating process – cannot credibly ensure any technical effect beyond a different adjustment of the process parameters. In particular, no evidence can be found to support any increase in the quality of coating properties or of the thermal spraying method that would result from the combination of features of claim 1. In the absence of such evidence, the objective technical problem is to provide an alternative solution to the problem of adjusting the process parameters which control the thermal spray coating process already solved in D1.
+
+Obviousness: Starting from the teaching of D1 and tasked with the above objective technical problem, the skilled person in the field of control engineering (G‑VII, 3) would look for an alternative solution to determine the control parameters of the process.
+
+A second prior-art document D2 discloses a combination of a neural network and fuzzy logic rules providing a neuro-fuzzy controller in the technical field of control engineering. From this prior art, it has become apparent that at the date of filing of the application, neuro-fuzzy controllers were well known and applied in the field of control engineering. The present solution is therefore considered to be an obvious alternative, rendering the subject-matter of claim 1 not inventive.
+
+Remarks: This example illustrates the case of a mathematical feature which is non-technical when taken in isolation but contributes to producing a technical effect serving a technical purpose in the context of the claim. The feature of using a combination of neural network results and fuzzy logic for adjusting process parameters for controlling thermal spraying contributes to the technical character of the invention and may therefore support inventive step.
+
+The availability of the general teaching of using neuro-fuzzy controllers in the field of control engineering resulted in the objection that the controller of claim 1 was an obvious alternative. This particular objection could have been avoided if the claim had recited further features of the fuzzy control method linked to some technical properties of the spray coating process. For example, if the desirable coating properties resulted from specific input and output variables of the neuro-fuzzy controller, how the controller is trained or how the output is used in the regulation of the process parameters, these features would have had to be recited in the claim. The description and figures as filed could have provided evidence that the desirable coating properties are indeed achieved. As currently claimed, the neuro-fuzzy controller is not adapted for the specific application of thermal spray coating. There is no evidence of any particular technical effect which is credibly achieved over the whole claimed scope other than that of providing different process parameters as input to the controller.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1 – Identify the closest prior art: Document D1, which already discloses a server receiving GPS location data and performing order‑management functions, is selected as the starting point.\n\nStep 2 – Distinguish the claim from D1: The only features that are not disclosed in D1 are the business‑method steps (receiving offers/demands, checking for unsatisfied requests, selecting the geographically closest pair, otherwise storing the request). These steps are purely non‑technical, i.e. a method of brokering freight offers.\n\nStep 3 – Determine the technical contribution: According to the analysis, the claim’s technical contribution is limited to the fact that the business method is carried out by a computer and that the location data are obtained from GPS terminals. Both are generic technical means that do not solve a technical problem; they merely automate a known business process.\n\nStep 4 – Formulate the objective technical problem: \"How to adapt D1 so as to implement the known business method of brokering offers and demands based on users’ current GPS locations.\"\n\nStep 5 – Assess obviousness: A skilled person (a software development team) faced with the requirement specification of the business method would simply program the additional logical steps on top of D1’s existing infrastructure. This amounts to routine programming and does not involve any inventive technical teaching.\n\nStep 6 – Apply Art. 56 EPC: Because the distinguishing features provide no technical effect beyond the automation of a non‑technical business method, the claim lacks an inventive step.\n\nConclusion: The claimed invention does not meet the requirement of inventive step.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_2 (Run 2) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "1. Identify the closest prior art (D1) which discloses a method using an IR pyrometer to measure temperature at a single point and compare it with a condensation temperature calculated from the current air temperature and humidity.\n2. Compare claim 1 with D1 and list the distinguishing features: (1) use of an IR camera instead of a pyrometer, (2) use of mean air temperature and humidity over the last 24 h, (3) calculation of condensation temperature from these mean values and comparison with the temperature of each pixel of the IR image, (4) identification of all image points below the condensation temperature, (5) colour‑coding of the identified points.\n3. Assess technical contribution: features (1)–(4) involve technical means (IR camera, measurement of physical parameters, algorithmic processing that predicts a physical state – condensation) and therefore contribute to the technical character of the invention. Feature (5) is merely a presentation of information and does not add technical effect.\n4. Formulate the objective technical problem: to determine the risk of condensation on a surface more precisely and reliably than D1.\n5. Determine whether the distinguishing features would have been obvious to the skilled person:\n   - Using an IR camera to obtain a temperature distribution is a routine development in thermography and does not require inventive activity, but D1 does not suggest moving from a single‑point measurement to a full‑image analysis.\n   - Considering mean temperature and humidity over a 24‑hour period and using them to calculate a condensation temperature for each pixel is not disclosed or suggested by D1 or any other cited prior art.\n   - Consequently, the combination of features (1)–(4) provides a technical solution to the formulated problem that is not obvious.\n6. Since the distinguishing features that contribute to the technical effect are not obvious, the claimed subject‑matter involves an inventive step.\n\nConclusion: The invention satisfies the requirement of inventive step.",
+  "answer": "Yes"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_4 (Run 2) Finished. Verdict: YES
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1 – Identify the closest prior art. The closest document is D1, which discloses a system that stores for each subscriber the maximum possible data‑rate of the DSL connection and always transmits video at that maximum rate.\\n\\nStep 2 – Determine the distinguishing features. Compared with D1, claim 1 adds: (i) storing an \"available data rate\" that is lower than the maximum possible rate, and (ii) using this available rate to set the transmission rate.\\n\\nStep 3 – Analyse the technical contribution of the distinguishing features. The description explains that the \"available data rate\" reflects a pricing model that lets a customer choose a service level (and thus a lower data‑rate) in order to pay less. This aim is commercial/administrative rather than technical. The technical effect of the distinguishing features is merely to implement that non‑technical business rule in the system.\\n\\nStep 4 – Formulate the objective technical problem. The problem is phrased as: \"How to adapt the D1 system so that it can implement a pricing model that allows the customer to select a data‑rate service level.\" This formulation treats the commercial aim as a constraint, not as a technical problem.\\n\\nStep 5 – Assess obviousness. For a person skilled in the art, once the objective problem is to implement the pricing model, it would be obvious to store the chosen (available) data‑rate for each subscriber and to use it to control the transmission rate, because the system already stores a maximum rate and already controls transmission. The modification is routine and does not involve any technical teaching beyond what is already known.\\n\\nStep 6 – Conclusion. The distinguishing features do not provide a non‑obvious technical contribution; they merely translate a business rule into the existing technical framework. Consequently, the claim lacks an inventive step under Art. 56 EPC.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_3 (Run 2) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1: Identify the closest prior art. Document D1 discloses a method where a user selects a single product, the server finds the nearest vendor and sends this information to the mobile device.\\n\\nStep 2: Determine the distinguishing features of claim 1 over D1. The claim differs in three respects: (1) the user may select two or more products; (2) an \"optimal shopping tour\" covering all selected products is provided; (3) the optimal tour is determined by the server using a cache that stores tours from previous requests.\\n\\nStep 3: Assess the technical contribution of each distinguishing feature. Features (1) and (2) relate only to the business concept of ordering multiple products and presenting a shopping route; they do not produce a technical effect and therefore contribute no technical character. Feature (3) concerns the technical implementation – the use of a cache to retrieve previously computed tours – and does provide a technical effect (faster determination of the tour).\\n\\nStep 4: Formulate the objective technical problem. The skilled person, an IT expert, is tasked with implementing the business concept of (1) and (2) in a technically efficient way. The problem is therefore phrased as: \"How to modify D1 so that the server can determine an optimal shopping tour for multiple products in an efficient manner.\"\\n\\nStep 5: Determine whether the solution would have been obvious. Adapting D1 to allow selection of multiple products is routine. Assigning the computation of the tour to the server follows directly from D1’s existing server‑based nearest‑vendor calculation. For the efficient implementation, the skilled person can combine D1 with document D2, which teaches a travel‑planning system that stores previous route calculations in a cache. Using the teaching of D2 to add a cache to the server of D1 would be obvious to the skilled person seeking an efficient solution.\\n\\nStep 6: Apply the problem‑solution approach. The distinguishing feature that provides a technical contribution (the cache) is obvious in view of D2, and the remaining features are non‑technical business concepts. Consequently, the claimed subject‑matter lacks an inventive step under Art. 56 EPC.\\n\\nConclusion: The invention does not meet the requirement of an inventive step.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_1 (Run 2) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1 – Identify the closest prior art. Document D1 discloses a thermal‑spray coating method that monitors particle properties in real time and automatically adjusts process parameters by means of a neural‑network controller.\\n\\nStep 2 – Determine the distinguishing feature. The claim differs from D1 only in that the controller is a neuro‑fuzzy controller, i.e. a combination of a neural network and fuzzy‑logic rules.\\n\\nStep 3 – Assess technical character. Although a neuro‑fuzzy controller is a mathematical algorithm, its output is used directly to adjust the parameters of a concrete technical process (thermal spray coating). Consequently the feature contributes to the technical character of the invention and must be taken into account in the inventive‑step analysis.\\n\\nStep 4 – Formulate the objective technical problem. Because the patent provides no evidence that the neuro‑fuzzy controller yields a specific technical advantage (e.g., improved coating quality, reduced defects, higher efficiency), the only credible problem is to provide an alternative means for adjusting the process parameters that already solves the control problem disclosed in D1.\\n\\nStep 5 – Consider the knowledge of the skilled person. Document D2, which is part of the prior‑art, teaches neuro‑fuzzy controllers in the field of control engineering and was well‑known at the filing date. A skilled control‑engineer, faced with the problem of finding an alternative to the neural‑network controller of D1, would readily look to D2 and replace the neural network with the known neuro‑fuzzy controller.\\n\\nStep 6 – Evaluate obviousness. The combination of D1 (process monitoring and automatic adjustment by a neural network) with D2 (teaching that neuro‑fuzzy controllers are a standard alternative in control engineering) would lead directly to the claimed solution. No technical effect beyond “a different way of calculating the adjustment values” is demonstrated. Hence the claimed subject‑matter would have been obvious to the skilled person.\\n\\nConclusion – The claim does not involve an inventive step.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_5 (Run 2) Finished. Verdict: NO
+
+==================== STARTING RUN 3/3 ====================
+
+>>> STARTING BASELINE MODE: comvik_1 (Run 3)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1, which discloses a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device, is selected as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1)
+The user can select two or more products to purchase (instead of a single product only). 
+
+(2)
+An "optimal shopping tour" for purchasing the two or more products is provided to the user. 
+
+(3)
+The optimal shopping tour is determined by the server by accessing a cache memory in which optimal shopping tours determined for previous requests are stored. 
+
+--- FULL REASONING ---
+Claim 1:
+
+Method of facilitating shopping on a mobile device wherein:
+
+(a)
+the user selects two or more products to be purchased;
+
+(b)
+the mobile device transmits the selected products data and the device location to a server;
+
+(c)
+the server accesses a database of vendors to identify vendors offering at least one of the selected products;
+
+(d)
+the server determines, on the basis of the device location and the identified vendors, an optimal shopping tour for purchasing the selected products by accessing a cache memory in which optimal shopping tours determined for previous requests are stored; and
+
+(e)
+the server transmits the optimal shopping tour to the mobile device for displaying.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The features contributing to the technical character are identified at first glance as a distributed system comprising a mobile device connected to a server computer which has a cache memory and is connected to a database.
+
+Step (ii): Document D1, which discloses a method for facilitating shopping on a mobile device wherein the user selects a single product and the server determines from a database the vendor selling the selected product nearest to the user and transmits this information to the mobile device, is selected as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1)
+The user can select two or more products to purchase (instead of a single product only). 
+
+(2)
+An "optimal shopping tour" for purchasing the two or more products is provided to the user. 
+
+(3)
+The optimal shopping tour is determined by the server by accessing a cache memory in which optimal shopping tours determined for previous requests are stored. 
+
+Differences (1) and (2) represent modifications of the underlying business concept, since they define producing an ordered list of shops to visit which sell these products. No technical purpose is served, and no technical effects can be identified from these differences. Hence, these features make no technical contribution over D1. On the other hand, difference (3) makes a technical contribution as it relates to the technical implementation of differences (1) and (2) and has the technical effect of enabling rapid determination of the optimal shopping tour by accessing previous requests which are stored in a cache memory.
+
+Step (iii)(c): The objective technical problem is to be formulated from the perspective of the skilled person as an expert in the technical field concerned (G‑VII, 3). This person is deemed not to have any expertise in business-related matters. In this case, the skilled person can be defined as an expert in information technology who gains knowledge of the business-related features (1) and (2) as part of the formulation of the technical problem to be solved, as would be the case in a realistic situation in the form of a requirement specification. The objective technical problem is thus formulated as how to modify the method of D1 to implement in a technically efficient manner the non-technical business concept defined by the differences (1) and (2), which is given as a constraint to be met.
+
+Obviousness: As regards requirement (1), it would have been a matter of routine for the skilled person to adapt the mobile device used in D1 so as to enable the user to select two or more products instead of a single one. It would also have been obvious to assign the task of determining the optimal shopping tour (arising from requirement (2)) to the server, by analogy with the server likewise determining the nearest vendor in D1. Since the objective technical problem further requires a technically efficient implementation, the skilled person would have looked for efficient technical implementations of the determination of a tour. A second document D2 discloses a travel planning system for determining travel trips, listing a set of places to visit, and addresses this technical problem: for this purpose, the system of D2 accesses a cache memory storing results of previous queries. The skilled person would thus have considered the teaching of D2 and adapted the server in D1 to access and use a cache memory as suggested in D2 so as to provide a technically efficient implementation of the determination of the optimal shopping tour, i.e. difference (3). Hence, no inventive step is involved within the meaning of Art. 52(1) and 56.
+
+Remarks: The example shows a typical application of the approach developed in T 641/00 (COMVIK). The analysis of technical effects is performed in detail at step (iii) to see if the differences from the closest prior art comprise features making a technical contribution. This analysis refines the initial finding of step (i) by identifying the feature of accessing the cache memory for results of previous requests in the step of determining the tour as a technical feature. Note that in this case step (i) would not need to be indicated explicitly in the reasoning. In step (iii)(c), the non-technical modifications of the business concept are given to the skilled person as a constraint to be met. Whether or not the new business concept is innovative is irrelevant here for the assessment of inventive step, which has to be based on the features of its technical implementation.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_2 (Run 3)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): As a suitable starting point, document D1, which discloses a method of order management in which a server computer receives location information from GPS terminals, is selected as the closest prior art.
+
+--- FULL REASONING ---
+Claim 1:
+
+A computer-implemented method for brokering offers and demands in the field of transporting freight, comprising the following steps:
+
+(a)
+receiving transportation offers/demands from users, including location and time data;
+
+(b)
+receiving current location information of the users from GPS terminals with which the users are equipped;
+
+(c)
+after receiving a new offer/demand request, verifying if there are previous offers/demands not yet satisfied that can respond to the new request;
+
+(d)
+if so, selecting the one for which the current locations of both users are closest; and
+
+(e)
+otherwise storing the new request.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The claimed method is based on the following business method:
+
+A method for brokering offers and demands in the field of freight transportation, comprising:
+
+– 
+receiving transportation offers/demands from users, including location and time data; 
+
+– 
+receiving information regarding the current location of the users; 
+
+– 
+after receiving a new offer/demand request, verifying if there are previous offers/demands not yet satisfied that can respond to the new request; 
+
+– 
+if so, selecting the one for which the current locations of both users are closest; and 
+
+– 
+otherwise storing the new request. 
+
+Such a business method is per se non-technical and excluded under Art. 52(2)(c) and (3). Brokering offers and demands is a typical business activity. Using the geographical location of users is the kind of criterion which a transportation broker could specify as part of a business method based on non-technical, business considerations only. This business method does not serve any technical purpose in the context of the invention and so does not contribute to its technical character.
+
+Therefore, only the features related to the technical implementation of this business method can be identified as the features contributing to the technical character of the invention:
+
+– 
+The business method steps are carried out by a computer. 
+
+– 
+The current location information is received from GPS terminals. 
+
+Step (ii): As a suitable starting point, document D1, which discloses a method of order management in which a server computer receives location information from GPS terminals, is selected as the closest prior art.
+
+Step (iii): The difference between the subject-matter of claim 1 and D1 is thus the computer implementation of the steps of the business method defined above.
+
+The technical effect of this difference is merely the automation of the business method underlying claim 1. The conclusion reached in step (i) still holds, since the only distinguishing feature making a technical contribution is the technical implementation of this business method.
+
+Step (iii)(c): The objective technical problem is formulated as how to adapt the method of D1 so as to implement the business method of brokering offers and demands according to the user's current location. The skilled person is considered to be a software project team and is given the knowledge of the business method in the form of a requirement specification.
+
+Obviousness: Adapting the method of D1 to execute the business method steps is straightforward and requires routine programming only. Therefore, no inventive step is involved within the meaning of Art. 52(1) and Art. 56.
+
+Remarks: In this example, it was clear from the initial analysis at step (i) that the claimed method was based on a method for brokering offers and demands, which as such is a business method. The features defining the business method were easily separable from the technical features of its computer implementation. This example therefore illustrates a line of argument in which it was possible in step (i) to determine all the features which contribute to the technical character of the invention and all those which do not. This line of argument pertains more to the field of computer-implemented business methods and might be less suitable in other fields.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_3 (Run 3)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1, which discloses a system for broadcasting video over an xDSL connection to the set-top boxes of subscribers, is selected as the closest prior art. The system comprises a database storing identifiers of subscribers' computers and, in association with them, an indication of the maximum data rate for the data connection to each subscriber's computer. The system further comprises means for transmitting the video to a subscriber's computer at the maximum data rate stored for said computer.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+Storing an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client. 
+
+(2) 
+Using said available data rate to determine the rate at which the data is transmitted to the remote client (instead of transmitting the data at the maximum data rate stored for said remote client as in D1). 
+
+--- FULL REASONING ---
+Claim 1:
+
+A system for the transmission of a broadcast media channel to a remote client over a data connection, said system including:
+
+(a)
+means for storing an identifier of the remote client and an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client;
+
+(b)
+means for determining a rate at which data is to be transmitted based on the indication of the available data rate of the data connection; and
+
+(c)
+means for transmitting data at the determined rate to said remote client.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): At first glance, all features appear to contribute to the technical character of the invention.
+
+Step (ii): Document D1, which discloses a system for broadcasting video over an xDSL connection to the set-top boxes of subscribers, is selected as the closest prior art. The system comprises a database storing identifiers of subscribers' computers and, in association with them, an indication of the maximum data rate for the data connection to each subscriber's computer. The system further comprises means for transmitting the video to a subscriber's computer at the maximum data rate stored for said computer.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+Storing an indication of an available data rate of the data connection to the remote client, said available data rate being lower than the maximum data rate for the data connection to the remote client. 
+
+(2) 
+Using said available data rate to determine the rate at which the data is transmitted to the remote client (instead of transmitting the data at the maximum data rate stored for said remote client as in D1). 
+
+The purpose served by using an "available data rate" which is lower than a maximum data rate for the data connection to the remote client is not apparent from the claim. The relevant disclosure in the description is therefore taken into account. In the description, it is explained that a pricing model is provided which allows a customer to choose from several service levels, each service level corresponding to an available data-rate option having a different price. With a view to paying less, a user may select an available data rate lower than the maximum data rate possible with the connection. Hence, using an available data rate which is lower than the maximum data rate for the connection to the remote client addresses the aim of allowing a customer to choose a data-rate service level according to that pricing model. This is not a technical aim, but an aim of a financial, administrative or commercial nature, and so it falls under the exclusion of schemes, rules and methods for doing business in Art. 52(2)(c). It may thus be included in the formulation of the objective technical problem as a constraint to be met.
+
+The features of storing the available data rate and of using it to determine the rate at which the data is transmitted have the technical effect of implementing this non-technical aim.
+
+Step (iii)(c): The objective technical problem is therefore formulated as how to implement in the system of D1 a pricing model which allows the customer to choose a data-rate service level.
+
+Obviousness: Given the task of implementing this choice of data-rate service level in accordance with the pricing model, it would be obvious to the skilled person that the data rate purchased by a subscriber (i.e. the "available data rate" of claim 1), which can only be lower or equal to the maximum data rate of the data connection to the subscriber's computer (i.e. the "remote client" of claim 1), would have to be stored for each subscriber and used by the system to determine the rate at which data is to be transmitted to a subscriber. Therefore, no inventive step is involved within the meaning of Art. 52(1) and Art. 56.
+
+Remarks: This example illustrates a claim which involves a complex mix of technical and non-technical features. In step (i), all features appeared at first glance to contribute to the technical character of the invention. After comparison with D1, it was possible to carry out a detailed analysis of the technical character of the contribution made by the invention over D1 at step (iii). This detailed analysis revealed that the distinguishing features addressed a non-technical aim, which could thus be incorporated into the formulation of the objective technical problem (T 641/00).
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_4 (Run 3)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Claim 1:
+
+A computer-implemented method of determining areas in which there is an increased risk of condensation for a surface in a building comprising the steps of:
+
+(a)
+controlling an infrared (IR) camera to capture an image of the temperature distribution of the surface;
+
+(b)
+receiving mean values for the air temperature and the relative air humidity measured inside the building over the last 24 hours;
+
+(c)
+calculating, based on said mean air temperature and mean relative air humidity, a condensation temperature at which there is a risk of condensation on the surface;
+
+(d)
+comparing the temperature at each point on the image to said calculated condensation temperature;
+
+(e)
+identifying the image points having a temperature lower than the calculated condensation temperature as areas at increased risk of condensation on the surface; and
+
+(f)
+modifying the image by colouring the image points identified in step (e) in a particular colour to indicate the areas at increased risk of condensation to a user.
+
+--- FULL REASONING ---
+Claim 1:
+
+A computer-implemented method of determining areas in which there is an increased risk of condensation for a surface in a building comprising the steps of:
+
+(a)
+controlling an infrared (IR) camera to capture an image of the temperature distribution of the surface;
+
+(b)
+receiving mean values for the air temperature and the relative air humidity measured inside the building over the last 24 hours;
+
+(c)
+calculating, based on said mean air temperature and mean relative air humidity, a condensation temperature at which there is a risk of condensation on the surface;
+
+(d)
+comparing the temperature at each point on the image to said calculated condensation temperature;
+
+(e)
+identifying the image points having a temperature lower than the calculated condensation temperature as areas at increased risk of condensation on the surface; and
+
+(f)
+modifying the image by colouring the image points identified in step (e) in a particular colour to indicate the areas at increased risk of condensation to a user.
+
+Application of the steps of the problem-solution approach outlined in G‑VII, 5.4:
+
+Step (i): The control of an IR camera in step (a) clearly makes a technical contribution. The question is whether steps (b) to (f) also contribute to the technical character of the claimed subject-matter.
+
+Considered in isolation, steps (b) to (e) relate to algorithmic/mathematical steps and step (f) defines a presentation of information. However, the claim is not directed to a mental act, a mathematical method or presentation of information as such (which would be excluded from patentability under Art. 52(2)(a), (c), (d) and (3)), because the claimed subject-matter involves technical means such as a computer.
+
+It therefore has to be assessed whether the algorithmic and mathematical steps and the step related to presentation of information do, in the context of the invention, contribute to producing a technical effect and thereby contribute to the technical character of the invention.
+
+Since the above-mentioned algorithmic and mathematical steps (b) to (e) are used to predict the physical state (condensation) of an existing real object (surface) from measurements of physical properties (IR image, measured air temperature and relative air humidity over time), they contribute to a technical effect serving a technical purpose. This applies regardless of what use is made of the output information about the risk of condensation on the surface (see G‑II, 3.3, in particular subsection "Technical applications"). So steps (b) to (e) also contribute to the technical character of the invention.
+
+A decision on whether step (f) makes a technical contribution is deferred to step (iii) below.
+
+Step (ii): Document D1 discloses a method for monitoring a surface to determine the risk of condensation forming on it. The risk of condensation is determined based on the difference of the temperature reading obtained via an IR pyrometer for a single point on the surface and the condensation temperature calculated based on the actual ambient air temperature and the relative air humidity. The numerical value of the difference is then shown to a user as an indication of the likelihood of condensation at that point. This document is taken as the closest prior art.
+
+Step (iii): The differences between the subject-matter of claim 1 and D1 are:
+
+(1) 
+an IR camera is used (instead of the IR pyrometer of D1, which only captures the temperature at a single point of the surface);
+
+(2) 
+mean values for air temperature and relative air humidity measured inside the building over the last 24 hours are received;
+
+(3) 
+the condensation temperature is calculated on the basis of the mean air temperature and mean relative air humidity and compared to the temperature at each point on the IR image of the surface;
+
+(4) 
+image points having a temperature lower than the calculated condensation temperature are identified as areas at increased risk of condensation on the surface;
+
+(5) 
+colours are used to indicate areas at increased risk of condensation.
+
+As mentioned above, distinguishing features (1)-(4) contribute to the technical character of the claimed subject-matter and must be taken into consideration when formulating the technical problem. These features produce the technical effect of a more precise and reliable prediction of the risk of condensation as a result of considering all surface areas (as opposed to a single point) and accounting for temperature variations during a day.
+
+Distinguishing feature (5) defines a particular way of presenting information to a user (Art. 52(2)(d)) which does not produce a technical effect since any effect of choosing to display data using colours rather than numerical values depends on subjective preferences of the user: some users may prefer the former and others the latter (see G‑II, 3.7). This feature therefore does not make a technical contribution. It cannot support inventive step and is not discussed further in the analysis since it has no bearing on the other distinguishing features.
+
+Step (iii)(c): The objective technical problem is therefore formulated as how to determine the risk of condensation on a surface in a more precise and reliable manner.
+
+Obviousness: The use of an IR camera for obtaining temperature readings on a surface can be considered a normal technical development in the field of thermography that does not require any inventive activity: IR cameras were well known at the effective date of the application. For the skilled person, using an IR camera to determine temperature distribution on the surface is a straightforward alternative to measuring the temperature at several points on the monitored surface using an IR pyrometer.
+
+However, D1 does not suggest considering a temperature distribution on a surface (as opposed to at a single point) or calculating mean values for air temperature and taking relative air humidity measured inside the building over the last 24 hours into consideration. Neither does it suggest taking into account different conditions which may realistically occur inside the building over time for predicting the risk of condensation.
+
+Assuming that no other prior art suggests the technical solution of the objective technical problem defined by distinguishing features (1)-(4), the subject-matter of claim 1 involves an inventive step.
+
+Remarks: This example illustrates the situation addressed in G‑VII, 5.4, second paragraph: features which, when taken in isolation, are non-technical but do, in the context of the claimed invention, contribute to producing a technical effect serving a technical purpose (features (b) to (e), which are algorithmic/mathematical steps). Since these features contribute to the technical character of the invention, they may support an inventive step.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+>>> STARTING BASELINE MODE: comvik_5 (Run 3)
+
+-------------------- LLM PROMPT (Turn 1 | Mode: BASELINE) --------------------
+[USER]: You are assessing Inventive Step for the European Patent Office (EPO).
+Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.
+Determine whether the patent fulfils the inventive step criteria or not.=== CASE DATA ===
+--- CLOSEST PRIOR ART ---
+Step (ii): Document D1 discloses a method for the control of a thermal spray coating process by applying material to a workpiece using a spray jet, detecting deviations in the properties of the particles in said spray jet and adjusting process parameters automatically on the basis of the outcome of a neural network analysis. This document represents the closest prior art.
+
+Step (iii): The difference between the method of claim 1 and D1 concerns the use of a neuro-fuzzy controller combining a neural network and fuzzy logic rules as specified in the second part of step (d).
+
+--- FULL REASONING ---
+Claim 1:
+
+A method for coating a workpiece using a thermal spray coating process, the method comprising:
+
+(a)
+applying, using a spray jet, a material to the workpiece by thermal spray coating;
+
+(b)
+monitoring the thermal spray coating process in real time by detecting properties of particles in the spray jet and supplying the properties as actual values;
+
+(c)
+comparing the actual values with target values;
+
+and, in the event that the actual values deviate from the target values,
+
+(d)
+adjusting process parameters for the thermal spray coating process automatically by a controller on the basis of a neural network, said controller being a neuro-fuzzy controller which combines a neural-network and fuzzy logic rules and thereby maps statistical relationships between input variables and output variables of the neuro-fuzzy controller.
+
+Background: The invention relates to the control of an industrial process, namely thermal spray coating of a workpiece. The material used for the coating is injected with the help of a carrier gas into the high-temperature jet, where it is accelerated and/or molten. The properties of the resulting coatings are subject to great fluctuations, even with seemingly constant parameters of the coating operation. The spray jet is monitored visually with a CCD camera. The image picked up by the camera is sent to an image processing system, from which the properties of particles in the spray jet (e.g. velocity, temperature, size, etc) can be derived. A neuro-fuzzy controller is a mathematical algorithm which combines a neural network with fuzzy-logic rules.
+
+Application of the steps of the problem-solution approach outlined in COMVIK:
+
+Step (i): The method is directed at thermal spray coating, i.e. a specific technical process, comprising various concrete technical features, e.g. particles, workpiece, a spray coating device (implicit).
+
+Step (ii): Document D1 discloses a method for the control of a thermal spray coating process by applying material to a workpiece using a spray jet, detecting deviations in the properties of the particles in said spray jet and adjusting process parameters automatically on the basis of the outcome of a neural network analysis. This document represents the closest prior art.
+
+Step (iii): The difference between the method of claim 1 and D1 concerns the use of a neuro-fuzzy controller combining a neural network and fuzzy logic rules as specified in the second part of step (d).
+
+Computational models and algorithms related to artificial intelligence are, on their own, of an abstract mathematical nature (G‑II, 3.3.1). The feature of combining results of a neural network analysis and fuzzy logic defines a mathematical method when taken on its own. However, together with the feature of adjusting the process parameters, it contributes to the control of the coating process. Hence, the output of the mathematical method is directly used in the control of a specific technical process.
+
+Control of a specific technical process is a technical application (see G‑II, 3.3, subsection "Technical applications"). In conclusion, the distinguishing feature contributes to producing a technical effect serving a technical purpose and thereby contributes to the technical character of the invention. It is therefore taken into account in the assessment of inventive step.
+
+Step (iii)(c): The objective technical problem must be derived from technical effects that are based on objectively established facts and that are directly and causally related to the technical features of the claim.
+
+In this case, the mere fact that the parameters are calculated using a combination of results of a neural network analysis and fuzzy logic – without any details on specific adaptation to the thermal spray coating process – cannot credibly ensure any technical effect beyond a different adjustment of the process parameters. In particular, no evidence can be found to support any increase in the quality of coating properties or of the thermal spraying method that would result from the combination of features of claim 1. In the absence of such evidence, the objective technical problem is to provide an alternative solution to the problem of adjusting the process parameters which control the thermal spray coating process already solved in D1.
+
+Obviousness: Starting from the teaching of D1 and tasked with the above objective technical problem, the skilled person in the field of control engineering (G‑VII, 3) would look for an alternative solution to determine the control parameters of the process.
+
+A second prior-art document D2 discloses a combination of a neural network and fuzzy logic rules providing a neuro-fuzzy controller in the technical field of control engineering. From this prior art, it has become apparent that at the date of filing of the application, neuro-fuzzy controllers were well known and applied in the field of control engineering. The present solution is therefore considered to be an obvious alternative, rendering the subject-matter of claim 1 not inventive.
+
+Remarks: This example illustrates the case of a mathematical feature which is non-technical when taken in isolation but contributes to producing a technical effect serving a technical purpose in the context of the claim. The feature of using a combination of neural network results and fuzzy logic for adjusting process parameters for controlling thermal spraying contributes to the technical character of the invention and may therefore support inventive step.
+
+The availability of the general teaching of using neuro-fuzzy controllers in the field of control engineering resulted in the objection that the controller of claim 1 was an obvious alternative. This particular objection could have been avoided if the claim had recited further features of the fuzzy control method linked to some technical properties of the spray coating process. For example, if the desirable coating properties resulted from specific input and output variables of the neuro-fuzzy controller, how the controller is trained or how the output is used in the regulation of the process parameters, these features would have had to be recited in the claim. The description and figures as filed could have provided evidence that the desirable coating properties are indeed achieved. As currently claimed, the neuro-fuzzy controller is not adapted for the specific application of thermal spray coating. There is no evidence of any particular technical effect which is credibly achieved over the whole claimed scope other than that of providing different process parameters as input to the controller.
+=== END CASE DATA ===
+
+INSTRUCTIONS:
+1. Provide a step-by-step reasoning trace.
+2. Conclude with a final 'Yes' or 'No' answer.
+3. Output valid JSON with keys 'reasoning' and 'answer'.
+
+HISTORY:
+
+
+CURRENT QUESTION: Based on the provided case data, does the claimed invention satisfy the requirement of an Inventive Step?
+Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer.
+------------------------------------------------------------
+
+
+[LLM RESPONSE]:
+{
+  "reasoning": "1. Identify the closest prior art (D1) which discloses a method using an IR pyrometer to measure temperature at a single point and compare it with a condensation temperature calculated from current air temperature and humidity.\n2. Compare claim 1 with D1 and list distinguishing features: (1) use of an IR camera instead of a pyrometer, (2) use of mean air temperature and humidity over the last 24 h, (3) calculation of condensation temperature from these mean values and comparison with temperature at each pixel of the IR image, (4) identification of all image points below the condensation temperature, (5) colour‑coding of the identified areas.\n3. Assess technical contribution of each distinguishing feature. Features (1)–(4) involve technical means (IR camera, measurement of physical parameters, algorithmic processing that predicts a physical state – condensation) and therefore contribute to the technical character of the invention. Feature (5) is merely a presentation of information and does not add technical effect.\n4. Formulate the objective technical problem: to determine the risk of condensation on a surface more precisely and reliably than D1.\n5. Determine whether the solution to this problem would have been obvious to the skilled person. Using an IR camera to obtain a temperature distribution is a routine development in thermography and would be obvious. However, D1 does not suggest (i) analysing the whole temperature distribution, (ii) using 24‑hour mean indoor temperature and humidity, or (iii) calculating a condensation temperature from those mean values. No teaching in D1 or other cited prior art points to combining these steps to achieve the stated technical effect.\n6. Because the combination of features (1)–(4) yields a technical effect (more accurate, reliable prediction of condensation) that is not disclosed or suggested by the prior art, the claimed subject‑matter involves an inventive step under the problem‑solution approach.\n7. Consequently, the invention satisfies the requirement of inventive step.",
+  "answer": "Yes"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_4 (Run 3) Finished. Verdict: YES
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1 – Identify the closest prior art. The closest document is D1, which discloses a system that stores for each subscriber the maximum possible data‑rate of the DSL connection and always transmits video at that maximum rate.\\n\\nStep 2 – Determine the distinguishing features. Compared with D1, claim 1 adds: (i) storing an \"available data rate\" that is lower than the maximum possible rate, and (ii) using this available data rate to set the transmission rate.\\n\\nStep 3 – Analyse the technical contribution of the distinguishing features. The description explains that the \"available data rate\" reflects a commercial pricing model that lets a customer choose a lower‑priced service level. This aim is non‑technical (financial/administrative). The technical effect of the added features is merely the implementation of that non‑technical business rule – i.e. the system now limits the transmission rate according to the chosen service level.\\n\\nStep 4 – Formulate the objective technical problem. The problem is phrased as: \"How to adapt the D1 system so that it can enforce a pricing‑model‑driven choice of data‑rate service level for each subscriber.\" This formulation treats the commercial aim as a constraint rather than a technical contribution.\\n\\nStep 5 – Assess obviousness. For a person skilled in the art, once the problem is defined as implementing a chosen service‑level data rate, the solution is straightforward: store the chosen (available) rate for each subscriber (which must be ≤ the maximum physical rate) and use it to control the transmission speed. This solution would be obvious to the skilled person, as it directly follows from the teaching of D1 combined with the known business requirement.\\n\\nStep 6 – Conclusion. Because the distinguishing features only serve to implement a non‑technical business model and the solution would have been obvious to the skilled person, the claim lacks an inventive step under Art. 56 EPC.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_3 (Run 3) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step (i): The claim is identified as a computer‑implemented business method for brokering freight offers and demands. The underlying business method (receiving offers/demands, checking for unsatisfied ones, selecting the geographically closest pair, otherwise storing the request) is non‑technical and therefore excluded from patentability under Art. 52(2)(c) and (3). The only features that can contribute to a technical character are the technical means used to carry out the business steps – i.e. a computer system that receives GPS location data from terminals.\n\nStep (ii): Document D1 is selected as the closest prior art. D1 discloses a server‑based order‑management system that also receives location information from GPS terminals. Thus D1 already contains the technical means (computer, server, GPS data acquisition) that are present in the claim.\n\nStep (iii): The distinguishing features of claim 1 over D1 are merely the implementation of the specific business logic (the brokering rules based on current locations). No additional technical teaching, architecture or effect is disclosed; the difference is limited to the software‑level algorithm that automates the business method.\n\nTechnical effect of the distinguishing features: The effect is limited to the automation of a non‑technical business process. According to the problem‑solution approach, the objective technical problem is formulated as ‘how to adapt D1 so that it can execute the business‑method steps of brokering offers and demands based on users’ current locations.’\n\nObviousness assessment: A skilled person – defined as a software development team familiar with D1 – would be able to implement the required business logic by routine programming, using the existing GPS‑data handling already disclosed in D1. No teaching or suggestion in the prior art is required beyond ordinary programming skills. Consequently, the solution is obvious and does not involve an inventive step as required by Art. 56 EPC.\n\nConclusion: The claimed subject‑matter lacks an inventive step because the only contribution over D1 is the non‑technical business method, which is merely automated by known computer means. Therefore the invention does not meet the inventive‑step requirement.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_2 (Run 3) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step (i): The claim relates to a technical system – a mobile device communicating with a server that has a cache and accesses a vendor database. These features provide the technical character.\n\nStep (ii): The closest prior art is D1, which already teaches a method where a user selects a single product, the server finds the nearest vendor and sends this information to the mobile device.\n\nStep (iii) – Differences:\n1. Selection of two or more products instead of one.\n2. Provision of an \"optimal shopping tour\" covering the selected products.\n3. Determination of the tour by the server using a cache that stores previously computed tours.\n\nTechnical contribution:\n- Differences (1) and (2) are purely business‑related (changing the shopping concept) and do not produce any technical effect; they therefore contribute no technical subject‑matter.\n- Difference (3) is technical because it concerns the way the server implements the tour calculation – using a cache to retrieve previously computed results, which yields a faster, more efficient computation.\n\nFormulation of the objective technical problem: Provide a technically efficient implementation of the business idea of handling multiple products and generating an optimal shopping tour.\n\nObviousness assessment:\n- Modifying D1 so that the user can select multiple products is routine for a skilled IT professional.\n- Assigning the computation of the optimal tour to the server follows directly from D1’s teaching that the server determines the nearest vendor.\n- For an efficient implementation, the skilled person would look to known techniques for speeding up route‑planning calculations. Document D2 discloses a travel‑planning system that stores previous route results in a cache and retrieves them to avoid recomputation. The skilled person would combine D1’s overall architecture with D2’s caching technique to arrive at the claimed solution.\n- Because the only technical feature over D1 is the use of a cache, and this feature is directly taught by D2, the combination would have been obvious to the skilled person.\n\nConclusion: The claimed subject‑matter does not involve an inventive step under Art. 56 EPC.\n\nAnswer: No",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_1 (Run 3) Finished. Verdict: NO
+
+[LLM RESPONSE]:
+{
+  "reasoning": "Step 1 – Identify the technical field and the closest prior art. The invention relates to a thermal spray coating process. Document D1 discloses a method that already performs (a)‑(c) and adjusts the process parameters automatically on the basis of a neural‑network analysis. Hence D1 is the closest prior art.\n\nStep 2 – Determine the distinguishing feature. Compared with D1, claim 1 further specifies that the controller is a *neuro‑fuzzy controller* that combines a neural network with fuzzy‑logic rules (step (d) second part).\n\nStep 3 – Assess whether the distinguishing feature contributes to the technical character. The combination of a neural network and fuzzy‑logic rules is a mathematical method (G‑II, 3.3.1). However, because its output is directly used to adjust the parameters of a concrete technical process (thermal spray coating), it is technically applied and therefore taken into account in the inventive‑step analysis.\n\nStep 4 – Formulate the objective technical problem. The case data states that no evidence is provided that the neuro‑fuzzy controller yields a specific technical advantage (e.g., improved coating quality). Consequently, the only credible problem is to provide an *alternative* way of adjusting the process parameters for the thermal spray coating process.\n\nStep 5 – Determine obviousness. Starting from D1, the skilled person would look for other known means to achieve the same function. Document D2 teaches neuro‑fuzzy controllers in the field of control engineering and was known at the filing date. The skilled person, being a control‑engineering expert, would readily combine the teaching of D1 (process monitoring and automatic adjustment) with the teaching of D2 (use of a neuro‑fuzzy controller) to arrive at the claimed solution. No further technical teaching or specific adaptation to the spray‑coating process is required.\n\nStep 6 – Conclusion on inventive step. Because the only distinguishing feature is a known control‑engineering solution that would have been obvious to a skilled person seeking an alternative to D1, the claimed subject‑matter lacks an inventive step.\n\nTherefore, the invention does **not** satisfy the requirement of an inventive step.",
+  "answer": "No"
+}
+------------------------------------------------------------
+
+Baseline Session for comvik_5 (Run 3) Finished. Verdict: NO
+
+>>> Experiment Completed. Results saved to results_comvik_baseline_config2.json

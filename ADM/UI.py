@@ -89,7 +89,7 @@ class CLI():
             
             #this is an information question
             question_text = self.adm.information_questions[current_question]
-            answer = input(f"{question_text}: \n").strip()
+            answer = input(f"[Q] {question_text}: \n").strip()
             
             self.adm.setFact(current_question, answer)
             
@@ -600,6 +600,15 @@ def main():
         result = cli.query_domain()
         cli.save_adm(name='initial')  # Save initial ADM
 
+        # result = True
+        # cli.caseName = 'TEST'
+    #     cli.adm.facts = {"INVENTION_TITLE": "The title of the invention is not specified in the provided case data.",
+    # "INVENTION_DESCRIPTION": "The invention is a method for facilitating shopping on a mobile device in which the user selects two or more products, the device transmits the selected products and its location to a server, the server accesses a vendor database to identify vendors offering the products, determines an optimal shopping tour for purchasing the products by consulting a cache that stores previously computed optimal tours, and then sends this optimal shopping tour back to the mobile device for display.",
+    # "INVENTION_TECHNICAL_FIELD": "The invention belongs to the technical field of information technology, in particular to mobile commerce systems that use a mobile device and a server (with a database and cache memory) to determine and provide an optimal shopping tour for purchasing multiple products.",
+    # "REL_PRIOR_ART": "The relevant prior art consists of:",
+    # "CGK": "Common general knowledge includes that mobile devices can send product and location data to a server, that a server can query a vendor database, that cache memory is routinely used to store and reuse results of previous queries for faster processing, and that route\u2011optimization techniques (e.g., for travel planning) are well\u2011known to IT specialists.",
+    # "SkilledPerson": "The practitioner is an individual information\u2011technology expert \u2013 a person with ordinary skill in the art of mobile\u2011device communication, server\u2011side processing, database access, cache\u2011memory usage and route\u2011optimization techniques. This individual is presumed to have average knowledge and ability in the field, to be familiar with the common general knowledge listed, and to have access to the relevant prior\u2011art documents.",
+    # "CPA": "Document D1 \u2013 a single prior\u2011art reference that teaches a mobile\u2011shopping method where the user selects a single product, the mobile device sends the product and its location to a server, the server queries a vendor database to find the nearest vendor offering that product, and the server returns this nearest\u2011vendor information to the mobile device."}
         
         if result:   
             logger.debug('Moving to main ADM')     

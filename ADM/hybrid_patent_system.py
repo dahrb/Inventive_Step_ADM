@@ -33,10 +33,11 @@ class ADM_INTERFACE(BaseModel):
     answer: str = Field(..., description="The final answer: 'Yes' or 'No'.")
 
 
-# --- LOGGING UTILS (Synchronous is acceptable for small file ops) ---
-def log_to_markdown(turn_num, question, raw_content, hidden_reasoning, final_answer, model_id, file_path="log.md"):
+# --- LOGGING UTILS ---
+def log_to_markdown(turn_num, question, raw_content, hidden_reasoning, final_answer, model_id, file_path="log.md", metadata=None):
     """
     Append a standardized entry to the case log file.
+    Includes Experiment Metadata in the header if creating a new file.
     """
     timestamp = datetime.now().strftime("%H:%M:%S")
     log_dir = os.path.dirname(file_path)
@@ -45,7 +46,13 @@ def log_to_markdown(turn_num, question, raw_content, hidden_reasoning, final_ans
 
     if not os.path.exists(file_path):
         with open(file_path, "w", encoding="utf-8") as f:
-            f.write(f"---\ntitle: ADM Session Log\ndate: {datetime.now().strftime('%Y-%m-%d')}\n---\n\n")
+            f.write(f"---\n")
+            f.write(f"title: ADM Session Log\n")
+            f.write(f"date: {datetime.now().strftime('%Y-%m-%d')}\n")
+            if metadata:
+                for k, v in metadata.items():
+                    f.write(f"{k}: {v}\n")
+            f.write(f"---\n\n")
 
     entry_type = "Interaction"
     type_badge = "🗣️"
@@ -113,26 +120,40 @@ def clean_combined_text(text: str) -> str:
     return "\n".join(out_lines).strip()
 
 # --- ASYNC LLM INTERACTION ---
-async def consult_llm(question, history, client, turn_num, log_file, context_text=""):
+async def consult_llm(question, history, client, turn_num, log_file, context_text="", generation_mode="tool", metadata=None):
     model_id = CURRENT_CONFIG["id"]
     mode = CURRENT_CONFIG["mode"]
     
-    system_instruction = (
-        f"You are conducting an Inventive Step Assessment for the European Patent Office.\n"
-        f"Use the provided CASE DATA strictly. Do not use outside knowledge, but you can use your own judgment.\n"
-        f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
-        f"INSTRUCTIONS:\n"
-        f"1. Answer questions based ONLY on the text above or your own interpretation of them.\n"
-        f"2. Output valid JSON with keys 'reasoning' and 'answer'."
-    )
-
+        # --- PROMPT STRATEGY ---
+    if generation_mode == "baseline":
+        system_instruction = (
+            f"You are assessing Inventive Step for the European Patent Office (EPO).\n"
+            f"Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.\n"
+            f"Determine whether the patent fulfils the inventive step criteria or not."
+            f"You are trying to objectively assess whether inventive step is present, when answering the question think carefully and use your own judegment.\n "
+            f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
+            f"INSTRUCTIONS:\n"
+            f"1. Provide a step-by-step reasoning trace.\n"
+            f"2. Conclude with a final 'Yes' or 'No' answer.\n"
+            f"3. Output valid JSON with keys 'reasoning' and 'answer'."
+        )
+    else:
+        system_instruction = (
+            f"You are assessing Inventive Step for the European Patent Office (EPO).\n"
+            f"Use the provided CASE DATA strictly. Do not use outside knowledge but you can use your own interpretations of the given facts to reason.\n"
+            f"You will be asked questions from a argumentation tool designed for inventive step to help you reason to a conclusion on whether inventive step is present. \n"
+            f"You are trying to objectively assess whether inventive step is present, when answering the question think carefully and use your own judegment.\n "
+            f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
+            f"INSTRUCTIONS:\n"
+            f"1. Answer questions based ONLY on the text above.\n"
+            f"2. Output valid JSON with keys 'reasoning' and 'answer'."
+        )
+        
     messages = []
     if mode == "squash":
-        # Squash history
         hist_text = "HISTORY:\n" + "\n".join([f"{h['role'].upper()}: {h['content']}" for h in history[-10:]])
         messages = [{"role": "user", "content": f"{system_instruction}\n\n{hist_text}\n\nCURRENT QUESTION: {question}"}]
     else:
-        # Chat mode
         messages = [{"role": "system", "content": system_instruction}]
         for h in history[-10:]:
             content = h['content']
@@ -142,10 +163,18 @@ async def consult_llm(question, history, client, turn_num, log_file, context_tex
             messages.append({"role": h['role'], "content": content})
         messages.append({"role": "user", "content": f"Output JSON {{reasoning, answer}}. Question: {question}"})
 
+    # --- DEBUG: PRINT FULL PROMPT ---
+    print(f"\n{'-'*20} LLM PROMPT (Turn {turn_num} | Mode: {generation_mode.upper()}) {'-'*20}")
+    for m in messages:
+        role = m['role'].upper()
+        content = m['content']
+        print(f"[{role}]: {content}")
+    print(f"{'-'*60}\n")
+
     req_params = {
         "model": model_id,
         "messages": messages,
-        "max_tokens": 4096,
+        "max_tokens": 8096,
         "extra_body": {"guided_json": ADM_INTERFACE.model_json_schema()},
         "temperature": 0.1
     }
@@ -154,10 +183,12 @@ async def consult_llm(question, history, client, turn_num, log_file, context_tex
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            print(f"DEBUG: Asking LLM (Attempt {attempt+1})")
             response = await client.chat.completions.create(**req_params)
             raw_content = response.choices[0].message.content.strip()
             
+            # --- DEBUG: PRINT LLM RESPONSE ---
+            print(f"\n[LLM RESPONSE]:\n{raw_content}\n{'-'*60}\n")
+
             reasoning, final_answer = "No reasoning", ""
             try:
                 parsed = json.loads(raw_content)
@@ -168,31 +199,29 @@ async def consult_llm(question, history, client, turn_num, log_file, context_tex
                 reasoning = raw_content
                 final_answer = raw_content
 
-            log_to_markdown(turn_num, question, raw_content, reasoning, final_answer, model_id, file_path=log_file)
+            log_to_markdown(turn_num, question, raw_content, reasoning, final_answer, model_id, file_path=log_file, metadata=metadata)
             return final_answer, reasoning
             
         except Exception as e:
             print(f"[LLM ERROR]: {e}")
             if attempt < max_retries - 1:
-                await asyncio.sleep(2 ** attempt)  # Exponential backoff
+                await asyncio.sleep(2 ** attempt)
             else:
                 return "ERROR", "API Call Failed"
 
 # --- EXECUTION MODES ---
 
-async def run_tool_session(client, case_name, context_text):
+async def run_tool_session(client, case_name, context_text, run_id, metadata):
     """
     Mode 1: Tool-Assisted (Async).
-    Runs the ADM CLI subprocess asynchronously.
     """
-    print(f"\n>>> STARTING TOOL MODE: {case_name}")
+    print(f"\n>>> STARTING TOOL MODE: {case_name} (Run {run_id})")
     
     case_dir = os.path.join(BASE_CASE_DIR, case_name)
     os.makedirs(case_dir, exist_ok=True)
-    log_file = os.path.join(case_dir, "log_tool.md")
+    log_file = os.path.join(case_dir, f"log_tool_run{run_id}.md")
     if os.path.exists(log_file): os.remove(log_file)
 
-    # Start Async Subprocess
     process = await asyncio.create_subprocess_exec(
         sys.executable, '-u', ADM_SCRIPT_PATH,
         stdin=asyncio.subprocess.PIPE,
@@ -206,14 +235,16 @@ async def run_tool_session(client, case_name, context_text):
     final_verdict = "UNKNOWN"
 
     while True:
-        # Read with timeout to detect "waiting for input" state
         try:
             chunk = await asyncio.wait_for(process.stdout.read(4096), timeout=0.25)
-            if not chunk:
-                break # EOF
-            buffer.append(chunk.decode('utf-8', errors='replace'))
+            if not chunk: break
+            decoded_chunk = chunk.decode('utf-8', errors='replace')
+            buffer.append(decoded_chunk)
+            
+            if decoded_chunk.strip():
+                print(f"[STDOUT from UI.py]: {decoded_chunk.strip()}")
+                
         except asyncio.TimeoutError:
-            # Timeout means no new data; check buffer for prompts
             pass
 
         combined = "".join(buffer)
@@ -225,29 +256,41 @@ async def run_tool_session(client, case_name, context_text):
         if process.returncode is not None and not clean:
             break
 
-        # Auto-handle Case Name
+        # --- DETECT PROMPT LOGIC ---
+        # 1. Check for specific [Q] tag (used by UI.py inputs)
+        # 2. Check for standard endings (?, :) or specific phrases
+        is_prompt = False
+        
+        if re.search(r"\[Q\d*\]", clean):
+            is_prompt = True
+        elif any(l.strip().startswith(p) for l in clean.splitlines() for p in ("QUESTION:", "GUESS:")):
+            is_prompt = True
+        elif "enter your choice" in clean.lower():
+            is_prompt = True
+        elif clean.strip().endswith("?") or clean.strip().endswith(":"):
+            is_prompt = True
+
+        # --- AUTO HANDLE CASE NAME ---
         if "[Q] Enter case name" in clean:
+            print(f"[STDIN to UI.py]: {case_name}")
             process.stdin.write((case_name + "\n").encode('utf-8'))
             await process.stdin.drain()
             buffer = []
             continue
 
-        # Detect Prompt
-        lines = clean.splitlines()
-        is_prompt = any(l.strip().startswith(p) for l in lines for p in ("QUESTION:", "GUESS:"))
-        if "enter your choice" in clean.lower() or (lines and (lines[-1].strip().endswith("?") or lines[-1].strip().endswith(":"))):
-            is_prompt = True
-
         if is_prompt:
-            # Extract question
-            q_text = lines[-1].split(":", 1)[1].strip() if ":" in lines[-1] else clean
+            # FIX: Send the FULL clean buffer to LLM.
+            # Splitting by ':' was causing empty strings for inputs like "Answer (y/n):"
+            q_text = clean
             
-            ans, reas = await consult_llm(q_text, history, client, turn, log_file, context_text)
+            # Use 'tool' mode prompt
+            ans, reas = await consult_llm(q_text, history, client, turn, log_file, context_text, generation_mode="tool", metadata=metadata)
             
             if ans == "ERROR": 
                 process.terminate()
                 break
             
+            print(f"[STDIN to UI.py]: {ans}")
             process.stdin.write((str(ans) + "\n").encode('utf-8'))
             await process.stdin.drain()
 
@@ -255,36 +298,39 @@ async def run_tool_session(client, case_name, context_text):
             history.append({"role": "assistant", "content": json.dumps({"reasoning": reas, "answer": ans})})
             turn += 1
             buffer = []
-            await asyncio.sleep(0.1) # Brief yield
+            await asyncio.sleep(0.1) 
 
-    # Final Verdict Logic
+    # Final Verdict
     final_combined = "".join(buffer).strip()
+    if final_combined:
+        print(f"[STDOUT Final]: {final_combined}")
+
     summary_question = (
         "Based on the session interaction above, what was the final outcome?\n"
         "State a single final decision on whether an inventive step is present: 'Yes' or 'No'."
     )
     context_for_final = f"SESSION OUTPUT:\n{final_combined}\n\n{summary_question}"
     
-    final_ans, final_reas = await consult_llm(context_for_final, history, client, turn, log_file, context_text)
+    final_ans, final_reas = await consult_llm(context_for_final, history, client, turn, log_file, context_text, generation_mode="tool", metadata=metadata)
     
     if final_ans != "ERROR":
         final_verdict = final_ans.upper()
-        # Log final decision separately
-        log_to_markdown(turn, "FINAL VERDICT", json.dumps({"reasoning": final_reas, "answer": final_ans}), final_reas, final_ans, CURRENT_CONFIG.get('id'), file_path=log_file)
+        try:
+            log_to_markdown(turn, "FINAL VERDICT", json.dumps({"reasoning": final_reas, "answer": final_ans}), final_reas, final_ans, CURRENT_CONFIG.get('id'), file_path=log_file, metadata=metadata)
+        except: pass
 
-    print(f"Tool Session for {case_name} Finished. Verdict: {final_verdict}")
+    print(f"Tool Session for {case_name} (Run {run_id}) Finished. Verdict: {final_verdict}")
     return final_verdict
 
-async def run_baseline_session(client, case_name, context_text):
+async def run_baseline_session(client, case_name, context_text, run_id, metadata):
     """
     Mode 2: Baseline (Async).
-    Direct LLM query.
     """
-    print(f"\n>>> STARTING BASELINE MODE: {case_name}")
+    print(f"\n>>> STARTING BASELINE MODE: {case_name} (Run {run_id})")
     
     case_dir = os.path.join(BASE_CASE_DIR, case_name)
     os.makedirs(case_dir, exist_ok=True)
-    log_file = os.path.join(case_dir, "log_baseline.md")
+    log_file = os.path.join(case_dir, f"log_baseline_run{run_id}.md")
     if os.path.exists(log_file): os.remove(log_file)
 
     prompt = (
@@ -292,9 +338,9 @@ async def run_baseline_session(client, case_name, context_text):
         "Provide a detailed reasoning trace followed by a final 'Yes' or 'No' answer."
     )
 
-    ans, reas = await consult_llm(prompt, [], client, 1, log_file, context_text)
+    ans, reas = await consult_llm(prompt, [], client, 1, log_file, context_text, generation_mode="baseline", metadata=metadata)
     
-    print(f"Baseline Session for {case_name} Finished. Verdict: {ans.upper()}")
+    print(f"Baseline Session for {case_name} (Run {run_id}) Finished. Verdict: {ans.upper()}")
     return ans.upper()
 
 # --- DATA LOADER ---
@@ -331,40 +377,57 @@ def load_context(base_path, case_name, dataset, config):
     return "\n\n".join(parts)
 
 # --- BATCH RUNNER ---
-async def run_experiment_batch(data_path, dataset, experiment_config, mode, client):
+async def run_experiment_batch(data_path, dataset, experiment_config, mode, num_runs, client):
     if not os.path.exists(data_path):
         print(f"Error: Data path {data_path} does not exist.")
         return
 
     cases = sorted([d for d in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, d))])
-    print(f"Found {len(cases)} cases in {dataset.upper()} set. Starting concurrent execution...")
+    print(f"Found {len(cases)} cases in {dataset.upper()} set. Starting {num_runs} runs...")
 
-    # Create tasks for all cases
-    tasks = []
-    case_names = []
-    
-    for case in cases:
-        context = load_context(data_path, case, dataset, experiment_config)
-        if not context:
-            print(f"Skipping {case} (Missing context)")
-            continue
-            
-        case_names.append(case)
-        if mode == 'tool':
-            tasks.append(run_tool_session(client, case, context))
-        else:
-            tasks.append(run_baseline_session(client, case, context))
+    # Consolidated Results: { "run_1": {case: verdict}, "run_2": ... }
+    all_runs_results = {}
 
-    # Run all concurrently
-    results = await asyncio.gather(*tasks)
-    
-    # Collate Results
-    final_results = dict(zip(case_names, results))
-    
-    # Save Results JSON
+    for i in range(1, num_runs + 1):
+        print(f"\n{'='*20} STARTING RUN {i}/{num_runs} {'='*20}")
+        
+        tasks = []
+        case_list_for_run = []
+        
+        metadata = {
+            "dataset": dataset,
+            "mode": mode,
+            "config": experiment_config,
+            "run_id": i,
+            "model": CURRENT_CONFIG["id"]
+        }
+
+        for case in cases:
+            context = load_context(data_path, case, dataset, experiment_config)
+            if not context:
+                print(f"Skipping {case} (Missing context)")
+                continue
+                
+            case_list_for_run.append(case)
+            if mode == 'tool':
+                tasks.append(run_tool_session(client, case, context, i, metadata))
+            else:
+                tasks.append(run_baseline_session(client, case, context, i, metadata))
+
+        # Run all cases for this iteration concurrently
+        results = await asyncio.gather(*tasks)
+        
+        # Store results for this run
+        run_key = f"run_{i}"
+        all_runs_results[run_key] = dict(zip(case_list_for_run, results))
+        
+        # Brief pause between batch runs to be safe
+        await asyncio.sleep(2)
+
+    # Save Consolidated Results JSON
     json_filename = f"results_{dataset}_{mode}_config{experiment_config}.json"
     with open(json_filename, 'w') as f:
-        json.dump(final_results, f, indent=4)
+        json.dump(all_runs_results, f, indent=4)
     print(f"\n>>> Experiment Completed. Results saved to {json_filename}")
 
 # --- MAIN ---
@@ -376,6 +439,7 @@ async def async_main():
     parser.add_argument('--data_path', type=str, default="/users/sgdbareh/scratch/ADM_JURIX/Data/VALIDATION")
     parser.add_argument('--exp_config', type=int, required=True)
     parser.add_argument('--mode', type=str, default='tool', choices=['tool', 'baseline'])
+    parser.add_argument('--runs', type=int, default=1, help="Number of times to repeat the experiment.")
 
     args = parser.parse_args()
     
@@ -390,7 +454,7 @@ async def async_main():
         print("Error: LLM API unreachable.")
         return
 
-    await run_experiment_batch(args.data_path, args.dataset, args.exp_config, args.mode, client)
+    await run_experiment_batch(args.data_path, args.dataset, args.exp_config, args.mode, args.runs, client)
 
 if __name__ == "__main__":
     asyncio.run(async_main())
