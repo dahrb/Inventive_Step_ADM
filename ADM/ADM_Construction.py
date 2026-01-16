@@ -1289,7 +1289,7 @@ class SubADMNode(Node):
             list: the final case after evaluation
         """
         try:
-            print(f"  Evaluating sub-ADM for {item}...")
+            print(f"Evaluating sub-ADM for {item}. Please answer the following questions ONLY in relation to this formulation of objective technical problem; do not use conclusions from other objective technical problems to inform your answers.")
             
             # Create a temporary UI instance for this sub-ADM evaluation
             # This allows us to reuse all the existing question generation logic
@@ -1482,21 +1482,21 @@ class EvaluationNode(Node):
                 
             if found_in_items:
                 if self.rejection_condition:
-                    print(f"{self.target_node} IN sub-ADM cases")
-                    print(f"{self.name} is REJECTED")
+                    logger.debug(f"{self.target_node} IN sub-ADM cases")
+                    logger.debug(f"{self.name} is REJECTED")
                     return False
                 else:
-                    print(f"{self.target_node}' IN sub-ADM cases")
-                    print(f"{self.name} is ACCEPTED")
+                    logger.debug(f"{self.target_node}' IN sub-ADM cases")
+                    logger.debug(f"{self.name} is ACCEPTED")
                     return True
             else:
                 if self.rejection_condition:
-                    print(f"{self.target_node} not found in any sub-ADM cases")
-                    print(f"{self.name} is ACCEPTED")
+                    logger.debug(f"{self.target_node} not found in any sub-ADM cases")
+                    logger.debug(f"{self.name} is ACCEPTED")
                     return True
                 else:
-                    print(f"{self.target_node} not found in any sub-ADM cases")
-                    print(f"{self.name} is REJECTED")
+                    logger.debug(f"{self.target_node} not found in any sub-ADM cases")
+                    logger.debug(f"{self.name} is REJECTED")
                     return False
                 
         except Exception as e:

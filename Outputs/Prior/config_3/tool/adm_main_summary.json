@@ -1,0 +1,220 @@
+{
+  "case": [
+    "ReliableTechnicalEffect",
+    "DistinguishingFeatures",
+    "Novelty",
+    "TechnicalContribution",
+    "Contribution",
+    "PartialProblems",
+    "CandidateOTP",
+    "ValidOTP",
+    "ObjectiveTechnicalProblem",
+    "KnownDevice",
+    "InvStep"
+  ],
+  "evaluated_nodes": [
+    "OTPObvious",
+    "ReliableTechnicalEffect",
+    "DisadvantageousMod",
+    "BioTech",
+    "ChooseEqualAlternatives",
+    "KnownDevice",
+    "SufficiencyOfDisclosure",
+    "ValidOTP",
+    "AnalogousSubstitution",
+    "SimpleExtrapolation",
+    "NonTechnicalContribution",
+    "InventionUnexpectedEffect",
+    "GapFilled",
+    "KnownProperties",
+    "DistinguishingFeatures",
+    "ObviousCombination",
+    "NormalDesignProcedure",
+    "WellKnownEquivalent",
+    "AnalogousUse",
+    "Synergy",
+    "TechnicalContribution",
+    "ChemicalSelection"
+  ],
+  "facts": {
+    "INVENTION_TITLE": "The title of the invention is not explicitly provided in the case data.",
+    "INVENTION_DESCRIPTION": "The invention is a catheter\u2011like medical device (or system) for treating or diagnosing tissue inside the body. It features an elongate tubular shaft with proximal and distal sections separated by a flexible member of known stiffness. A first electromagnetic coil and a first electrically passive element (e.g., a material that affects the coil\u2019s electrical properties) are placed at different locations along the shaft. When the distal tip contacts tissue, the flexible member deforms, causing relative movement between the coil and the passive element. This movement alters the coil\u2019s electrical characteristic, producing a signal that indicates both the amount of deformation and the contact force. In the system embodiment, an electronic control unit excites the coil and measures the change to determine a specific force magnitude.",
+    "INVENTION_TECHNICAL_FIELD": "The invention relates to medical devices, in particular catheter\u2011 or probe\u2011type devices for the treatment or diagnosis of tissue inside the body, featuring a flexible shaft and electromagnetic sensing elements for measuring deformation and contact force.",
+    "REL_PRIOR_ART": "The relevant prior art consists of:",
+    "CGK": "Common general knowledge includes that catheter\u2011type medical devices have flexible tubular shafts, that contact force or pressure at the distal tip can be measured by magnetic/electromagnetic means, that a coil can be excited and its electrical characteristics (e.g., inductance) change when a nearby magnetic or passive element moves relative to it, and that an electronic control unit can drive the coil and process the resulting signal to infer deformation of a flexible member and tip force.",
+    "SkilledPerson": "The skilled person is an individual practitioner \u2013 a biomedical/medical\u2011device engineer with normal knowledge and ability in the design of catheter\u2011type devices. This person is familiar with flexible tubular shafts, the use of electromagnetic or magnetic sensing (coils, passive magnetic elements, inductance changes), control electronics that can excite coils and process signals, and the common general knowledge of measuring tip deformation and contact force. The practitioner has access to the relevant prior\u2011art publications (D2, D4, D6, and the high\u2011sensitivity pressure\u2011sensing probe) and can combine these teachings to solve technical problems in the field.",
+    "CPA": "The candidate for the closest prior art is the US patent titled \"High\u2011sensitivity pressure\u2011sensing probe\". It discloses a medical probe comprising: (i) an insertion tube having a longitudinal axis and a distal end; (ii) a distal tip mounted at the distal end of the tube, configured to contact body tissue; (iii) a joint that couples the distal tip to the distal end of the insertion tube; and (iv) a joint sensor, located within the probe, that senses the position of the distal tip relative to the insertion tube. The joint sensor includes first and second sub\u2011assemblies placed on opposite sides of the joint, each sub\u2011assembly comprising one or more magnetic transducers (preferably coils). One sub\u2011assembly can be driven by an electrical current to generate a magnetic field, while the other sub\u2011assembly detects signals induced by that field. By processing these signals the system can determine axial displacement and angular deflection of the distal tip, which can be used to infer the pressure exerted on the tissue. Additional features disclosed include a resilient joint that deforms under pressure, a processor that excites the coils and processes the received signals, optional position sensors for external reference, and an electrode on the distal tip for delivering ablative energy. The claims describe various embodiments of coil arrangements, the method of generating and detecting magnetic fields, and the use of the measured tip position to control tissue treatment.",
+    "ReliableTechnicalEffect_results": [
+      [
+        "NormalTechnicalContribution",
+        "DistinguishingFeatures",
+        "CombinationContribution",
+        "FeatureReliableTechnicalEffect",
+        "Reproducible",
+        "FeatureTechnicalContribution",
+        "Credible"
+      ],
+      [
+        "NormalTechnicalContribution",
+        "DistinguishingFeatures",
+        "CombinationContribution",
+        "FeatureReliableTechnicalEffect",
+        "Reproducible",
+        "FeatureTechnicalContribution",
+        "IndependentContribution",
+        "Credible"
+      ],
+      [
+        "NormalTechnicalContribution",
+        "DistinguishingFeatures",
+        "CombinationContribution",
+        "FeatureReliableTechnicalEffect",
+        "Reproducible",
+        "FeatureTechnicalContribution",
+        "IndependentContribution",
+        "Credible"
+      ],
+      [
+        "NormalTechnicalContribution",
+        "DistinguishingFeatures",
+        "CombinationContribution",
+        "FeatureReliableTechnicalEffect",
+        "Reproducible",
+        "FeatureTechnicalContribution",
+        "IndependentContribution",
+        "Credible"
+      ]
+    ],
+    "ReliableTechnicalEffect_accepted_count": 4,
+    "ReliableTechnicalEffect_rejected_count": 0,
+    "ReliableTechnicalEffect_items": [
+      "insertion tube with distal tip and joint coupling",
+      "one coil driven to generate magnetic field",
+      "first electrically passive element comprising a material affecting the coil's electrical characteristic",
+      "relative movement between coil and passive element in response to tissue contact and flexible member deformation causing a change in coil's electrical characteristic indicative of deformation and contact force"
+    ],
+    "ReliableTechnicalEffect_sub_adm_instances": "{'insertion tube with distal tip and joint coupling': <ADM_Construction.ADM object at 0x7f0eb7a8af00>, 'one coil driven to generate magnetic field': <ADM_Construction.ADM object at 0x7f0eb7a8b530>, \"first electrically passive element comprising a material affecting the coil's electrical characteristic\": <ADM_Construction.ADM object at 0x7f0eb7a8bce0>, \"relative movement between coil and passive element in response to tissue contact and flexible member deformation causing a change in coil's electrical characteristic indicative of deformation and contact force\": <ADM_Construction.ADM object at 0x7f0eb7aa44a0>}",
+    "objective_technical_problems": [
+      "To provide a medical device that can reliably determine the deformation of a flexible member and the contact force between the distal tip and tissue by using a coil that generates a magnetic field and a passive element whose relative movement changes the coil's electrical characteristic, thereby improving measurement accuracy and reducing tissue injury.",
+      "To provide a system comprising the medical device and an electronic control unit that excites the coil and measures the change in its electrical characteristic, thereby enabling determination of a specific contact force magnitude."
+    ],
+    "OTPObvious_results": [
+      [
+        "Encompassed",
+        "ScopeOfClaim",
+        "Embodied",
+        "Hindsight",
+        "WrittenFormulation",
+        "BasicFormulation"
+      ],
+      [
+        "Encompassed",
+        "ScopeOfClaim",
+        "WouldHaveArrived",
+        "Embodied",
+        "ObjectiveTechnicalProblemFormulation",
+        "WouldModify",
+        "WrittenFormulation",
+        "WellFormed",
+        "BasicFormulation"
+      ]
+    ],
+    "OTPObvious_accepted_count": 1,
+    "OTPObvious_rejected_count": 1,
+    "OTPObvious_items": [
+      "To provide a medical device that can reliably determine the deformation of a flexible member and the contact force between the distal tip and tissue by using a coil that generates a magnetic field and a passive element whose relative movement changes the coil's electrical characteristic, thereby improving measurement accuracy and reducing tissue injury.",
+      "To provide a system comprising the medical device and an electronic control unit that excites the coil and measures the change in its electrical characteristic, thereby enabling determination of a specific contact force magnitude."
+    ],
+    "OTPObvious_sub_adm_instances": "{\"To provide a medical device that can reliably determine the deformation of a flexible member and the contact force between the distal tip and tissue by using a coil that generates a magnetic field and a passive element whose relative movement changes the coil's electrical characteristic, thereby improving measurement accuracy and reducing tissue injury.\": <ADM_Construction.ADM object at 0x7f0eb7a266f0>, 'To provide a system comprising the medical device and an electronic control unit that excites the coil and measures the change in its electrical characteristic, thereby enabling determination of a specific contact force magnitude.': <ADM_Construction.ADM object at 0x7f0eb7a8b5c0>}"
+  },
+  "reasoning": [
+    {
+      "depth": 0,
+      "statement": "there is an inventive step present"
+    },
+    {
+      "depth": 1,
+      "statement": "there is no issue with sufficiency of disclosure"
+    },
+    {
+      "depth": 1,
+      "statement": "the invention is not obvious"
+    },
+    {
+      "depth": 2,
+      "statement": "there is no secondary indicator"
+    },
+    {
+      "depth": 3,
+      "statement": "there is no predictable disadvantage"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not an obvious biotech invention"
+    },
+    {
+      "depth": 4,
+      "statement": "there is not an unexpected effect within the invention"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not an obvious antibody invention"
+    },
+    {
+      "depth": 4,
+      "statement": "the subject matter does not concern antibodies"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not a known measure"
+    },
+    {
+      "depth": 4,
+      "statement": "there is not a known usage"
+    },
+    {
+      "depth": 3,
+      "statement": "there is not an obvious selection"
+    },
+    {
+      "depth": 1,
+      "statement": "The invention has novelty"
+    },
+    {
+      "depth": 2,
+      "statement": "there are distinguishing features"
+    },
+    {
+      "depth": 1,
+      "statement": "there is a well-defined objective technical problem"
+    },
+    {
+      "depth": 2,
+      "statement": "There are multiple partial problems which form the objective technical problem"
+    },
+    {
+      "depth": 3,
+      "statement": "There is no synergy between all the technical effects"
+    },
+    {
+      "depth": 3,
+      "statement": "There are technical contribution/s"
+    },
+    {
+      "depth": 4,
+      "statement": "the features contain a technical contribution"
+    },
+    {
+      "depth": 4,
+      "statement": "there is no non-technical contribution"
+    },
+    {
+      "depth": 3,
+      "statement": "There are an aggregate of technical effects"
+    },
+    {
+      "depth": 2,
+      "statement": "there is a valid objective technical problem"
+    }
+  ]
+}

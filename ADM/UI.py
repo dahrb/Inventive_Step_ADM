@@ -321,14 +321,14 @@ class CLI():
             #get user choice
             while True:
                 try:
-                    choice = int(input("Choose an answer (enter number): ")) - 1
+                    choice = int(input("Enter the number of the answer you wish to choose (enter number): ")) - 1
                     if 0 <= choice < len(answers):
                         selected_answer = answers[choice]
                         break
                     else:
-                        print("Invalid choice. Please try again.")
+                        print("Invalid choice. Please try again, ensure your response is a number.")
                 except ValueError:
-                    print("Invalid input. Please enter a number.")
+                    print("Invalid input. Please ensure you only give a number.")
             
             #instantiate the corresponding BLF(s)
             blf_names = instantiator['blf_mapping'][selected_answer]
@@ -363,7 +363,7 @@ class CLI():
                             
                 #ask the question with retry loop
                 while True:
-                    answer = input(f"{question_text}\nAnswer (y/n): ").strip().lower()
+                    answer = input(f"{question_text}\nAnswer 'yes' or 'no' only (y/n): ").strip().lower()
                     
                     if answer in ['y', 'yes']:
                         if current_question not in self.case:
@@ -514,13 +514,18 @@ class CLI():
         except Exception as e:
             print(f"Error creating visualization: {e}")
 
-    def save_adm(self, folder_base="./Eval_Cases", name=None):
+    def save_adm(self, folder_base="../Outputs/Eval_Cases", name=None, run_id=None, config=None, mode=None):
         """
-        Saves the case, reasoning statements, evaluated nodes, and any sub-ADM results to a sub-folder named after the case.
+        Saves the case, reasoning statements, evaluated nodes, and any sub-ADM results to a structured sub-folder:
+        {case}/{run_id}/config_{config}/{mode}/adm_{name}_summary.json
         """
         # Use case name or ADM name for folder
         folder_name = self.caseName if self.caseName else self.adm.name
-        save_dir = os.path.join(folder_base, folder_name)
+        # Compose directory structure
+        run_part = f"run_{run_id}" if run_id is not None else "run_X"
+        config_part = f"config_{config}" if config is not None else "config_X"
+        mode_part = mode if mode is not None else "mode"
+        save_dir = os.path.join(folder_base, folder_name, run_part, config_part, mode_part)
         os.makedirs(save_dir, exist_ok=True)
 
         # Gather main ADM data
@@ -575,7 +580,11 @@ class CLI():
                         except Exception as e:
                             sub_case_data["reasoning"] = [f"Error generating reasoning: {e}"]
                         # Save sub-ADM as JSON
-                        safe_item = str(item_name).replace(" ", "_").replace("/", "-").replace("\\", "-")
+                        # Use first 5 words of item_name for filename
+                        words = str(item_name).split()
+                        safe_item = "_".join(words[:5]) if words else "subadm"
+                        # Sanitize filename
+                        safe_item = safe_item.replace("/", "-").replace("\\", "-")
                         sub_json_path = os.path.join(sub_dir, f"{safe_item}_summary.json")
                         with open(sub_json_path, "w") as f:
                             json.dump(sub_case_data, f, indent=2)
@@ -585,41 +594,47 @@ def main():
     
     """Main function"""
     
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
+    parser.add_argument('--run_id', type=int, default=None, help='Run number for experiment (for folder structure)')
+    parser.add_argument('--config', type=int, default=None, help='Experiment config number (for folder structure)')
+    parser.add_argument('--mode', type=str, default=None, help='Mode (tool/baseline) for folder structure')
+    parser.add_argument('--folder_base', type=str, default="./Eval_Cases", help='Base folder for saving ADM outputs')
     args = parser.parse_args()
 
     # THE TOGGLE: If user flags --debug, switch level to DEBUG
     if args.debug:
         logging.getLogger().setLevel(logging.DEBUG)        
         print("--- DEBUG MODE ENABLED ---")
-        
+
     cli = CLI(adm=adm_initial())
-        
+
     try:
         result = cli.query_domain()
-        cli.save_adm(name='initial')  # Save initial ADM
+        cli.save_adm(
+            folder_base=args.folder_base,
+            name='initial',
+            run_id=args.run_id,
+            config=args.config,
+            mode=args.mode
+        )  # Save initial ADM
 
-        # result = True
-        # cli.caseName = 'TEST'
-    #     cli.adm.facts = {"INVENTION_TITLE": "The title of the invention is not specified in the provided case data.",
-    # "INVENTION_DESCRIPTION": "The invention is a method for facilitating shopping on a mobile device in which the user selects two or more products, the device transmits the selected products and its location to a server, the server accesses a vendor database to identify vendors offering the products, determines an optimal shopping tour for purchasing the products by consulting a cache that stores previously computed optimal tours, and then sends this optimal shopping tour back to the mobile device for display.",
-    # "INVENTION_TECHNICAL_FIELD": "The invention belongs to the technical field of information technology, in particular to mobile commerce systems that use a mobile device and a server (with a database and cache memory) to determine and provide an optimal shopping tour for purchasing multiple products.",
-    # "REL_PRIOR_ART": "The relevant prior art consists of:",
-    # "CGK": "Common general knowledge includes that mobile devices can send product and location data to a server, that a server can query a vendor database, that cache memory is routinely used to store and reuse results of previous queries for faster processing, and that route\u2011optimization techniques (e.g., for travel planning) are well\u2011known to IT specialists.",
-    # "SkilledPerson": "The practitioner is an individual information\u2011technology expert \u2013 a person with ordinary skill in the art of mobile\u2011device communication, server\u2011side processing, database access, cache\u2011memory usage and route\u2011optimization techniques. This individual is presumed to have average knowledge and ability in the field, to be familiar with the common general knowledge listed, and to have access to the relevant prior\u2011art documents.",
-    # "CPA": "Document D1 \u2013 a single prior\u2011art reference that teaches a mobile\u2011shopping method where the user selects a single product, the mobile device sends the product and its location to a server, the server queries a vendor database to find the nearest vendor offering that product, and the server returns this nearest\u2011vendor information to the mobile device."}
-        
-        if result:   
-            logger.debug('Moving to main ADM')     
+        if result:
+            logger.debug('Moving to main ADM')
             cli_2 = CLI(adm=adm_main())
             cli_2.caseName = cli.caseName
             cli_2.adm.facts = cli.adm.facts
-            
-            _ = cli_2.query_domain()  
-            cli_2.save_adm(name='main')  # Save main ADM
-      
-        
+
+            _ = cli_2.query_domain()
+            cli_2.save_adm(
+                folder_base=args.folder_base,
+                name='main',
+                run_id=args.run_id,
+                config=args.config,
+                mode=args.mode
+            )  # Save main ADM
+
         #cli.visualize_domain(minimal=False,name="Initial",visualize_sub_adms=False)
         #cli_2.visualize_domain(minimal=False,name="Main")
 

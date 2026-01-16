@@ -1,21 +1,16 @@
-Claim 1:
+The differences between the subject-matter of claim 1 and D1 are:
 
-A computer-implemented method of determining areas in which there is an increased risk of condensation for a surface in a building comprising the steps of:
+(1) 
+an IR camera is used (instead of the IR pyrometer of D1, which only captures the temperature at a single point of the surface);
 
-(a)
-controlling an infrared (IR) camera to capture an image of the temperature distribution of the surface;
+(2) 
+mean values for air temperature and relative air humidity measured inside the building over the last 24 hours are received;
 
-(b)
-receiving mean values for the air temperature and the relative air humidity measured inside the building over the last 24 hours;
+(3) 
+the condensation temperature is calculated on the basis of the mean air temperature and mean relative air humidity and compared to the temperature at each point on the IR image of the surface;
 
-(c)
-calculating, based on said mean air temperature and mean relative air humidity, a condensation temperature at which there is a risk of condensation on the surface;
+(4) 
+image points having a temperature lower than the calculated condensation temperature are identified as areas at increased risk of condensation on the surface;
 
-(d)
-comparing the temperature at each point on the image to said calculated condensation temperature;
-
-(e)
-identifying the image points having a temperature lower than the calculated condensation temperature as areas at increased risk of condensation on the surface; and
-
-(f)
-modifying the image by colouring the image points identified in step (e) in a particular colour to indicate the areas at increased risk of condensation to a user.
+(5) 
+colours are used to indicate areas at increased risk of condensation.
