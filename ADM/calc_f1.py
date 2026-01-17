@@ -41,7 +41,7 @@ def compute_avg_setup_time(results_filepath, runs=None, outputs_base=None):
       folders under each matching case.
     """
     if outputs_base is None:
-        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Eval_Cases'
+        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Prior/Test_Cases'
 
     fname = os.path.basename(results_filepath)
     root, _ext = os.path.splitext(fname)
@@ -216,7 +216,7 @@ def process_results_file(results_filepath):
 
 
 if __name__ == '__main__':
-    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/results_*.json'
+    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Prior/results_*.json'
     result_files = sorted(glob.glob(results_pattern))
     if not result_files:
         print('No results_*.json files found under Outputs/')

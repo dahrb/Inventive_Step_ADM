@@ -1232,7 +1232,7 @@ class SubADMNode(Node):
             ui_instance.adm.setFact(f'{self.name}_items', items) 
             ui_instance.adm.setFact(f'{self.name}_sub_adm_instances', sub_adm_instances)
         
-        # Determine final acceptance based on results
+        #determine final acceptance based on results
         if self.rejection_condition:
             if rejected_count == 0:
                 print(f"\n{self.name} is ACCEPTED (no rejected item(s))")
