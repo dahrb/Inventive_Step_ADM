@@ -416,92 +416,277 @@ class ADM:
             
         return statements_with_depth
     
+    # def evaluateNode(self, node, mode='standard'):
+    #     """
+    #     Evaluates a node's acceptance conditions with Asymmetric 3VL Safety.
+    #     """   
+    #     logger.debug(f"--- EVAL NODE: {node.name} (Mode: {mode}) ---")
+
+    #     # --- 3VL LEAF HANDLING ---
+    #     if mode == '3vl' and not node.children:
+    #         if node.name in self.case:
+    #             logger.debug(f"  [Leaf] {node.name} is TRUE (Found in case)")
+    #             return True, 0
+    #         elif hasattr(self, 'evaluated_nodes') and node.name in self.evaluated_nodes:
+    #             logger.debug(f"  [Leaf] {node.name} is FALSE (Evaluated, not in case)")
+    #             return False, -1
+    #         else:
+    #             logger.debug(f"  [Leaf] {node.name} is UNKNOWN (Not yet evaluated)")
+    #             return None, -1
+
+    #     # --- ASYMMETRIC EVALUATION ---
+    #     has_unknown_reject = False    # Tracks if we have an unchecked "Defeater"
+    #     has_unknown_positive = False  # Tracks if we have an unchecked "Enabler"
+    #     successful_accept_index = -1  # Stores the index of a valid positive path
+    #     definitive_reject_index = -1  # Stores index of a definite reject path (found True && reject)
+        
+    #     for index, condition in enumerate(node.acceptance):
+            
+    #         logger.debug(f"  [Iter {index}] Testing: '{condition}'")
+    #         self.reject = False
+            
+    #         # Evaluate the single condition
+    #         result = self.postfixEvaluation(condition, mode=mode)
+            
+    #         print('accept = ',condition)
+    #         print('result = ', result)
+            
+    #         # --- 1. DEFINITIVE REJECTION (record, but do not decide yet) ---
+    #         if result is True and self.reject:
+    #             logger.debug(f"  [Iter {index}] -> DEFINITIVE REJECT PATH (Reject flag set on True condition) — recorded")
+    #             definitive_reject_index = index
+    #             # Do not return immediately: there may be Unknown positive paths that require deferring decision
+    #             continue
+
+    #         # --- 2. POTENTIAL ACCEPTANCE (Defer Decision) ---
+    #         elif result is True and not self.reject:
+    #             logger.debug(f"  [Iter {index}] -> Positive Path Found (Deferring to check for Unknown Rejects)")
+    #             successful_accept_index = index
+    #             # We do NOT return True yet. We must ensure no 'reject' conditions were skipped as Unknown.
+    #             continue
+
+    #         # --- 3. CONDITION FALSE (Ignore) ---
+    #         elif result is False:
+    #             logger.debug(f"  [Iter {index}] -> Condition Failed")
+    #             continue
+
+    #         # --- 4. UNKNOWN RESULT ---
+    #         elif result is None:
+    #             # Heuristic: Is this a "Reject" condition?
+    #             tokens = condition.split()
+    #             if 'reject' in tokens:
+    #                 logger.debug(f"  [Iter {index}] -> Unknown Reject Condition (Marking Safety Risk)")
+    #                 has_unknown_reject = True
+    #             else:
+    #                 logger.debug(f"  [Iter {index}] -> Unknown Positive Condition")
+    #                 has_unknown_positive = True
+                    
+    #     print('reject ind: ',definitive_reject_index)
+    #     print('positive ind: ',successful_accept_index)
+            
+
+    #     # --- FINAL DECISION LOGIC ---
+
+    #     # Scenario A: We found a Valid Positive Path
+    #     if successful_accept_index != -1:
+    #         if has_unknown_reject:
+    #             logger.debug(f"  -> FINAL: UNKNOWN (Valid positive path exists, but blocked by Unknown Reject)")
+    #             return None, -1
+    #         else:
+    #             logger.debug(f"  -> FINAL: ACCEPTED (Index {successful_accept_index})")
+    #             return True, successful_accept_index
+
+    #     # Scenario B: No valid positive path found
+    #     # If a definitive reject path was found, honour it only if there are no unknown positive paths
+    #     if definitive_reject_index != -1:
+    #         if has_unknown_positive:
+    #             logger.debug(f"  -> FINAL: UNKNOWN (Definitive reject exists but some positive paths are Unknown)")
+    #             return None, -1
+    #         else:
+    #             logger.debug(f"  -> FINAL: FALSE (Definitive reject path found at index {definitive_reject_index})")
+    #             return False, definitive_reject_index
+
+    #     # Scenario C: No definitive reject and no positive path
+    #     if has_unknown_positive:
+    #         logger.debug(f"  -> FINAL: UNKNOWN (No positive path yet, but some are Unknown)")
+    #         return None, -1
+    #     else:
+    #         logger.debug(f"  -> FINAL: FALSE (No possible acceptance path)")
+    #         return False, -1
+    
+    # def evaluateNode(self, node, mode='standard'):
+    #     """
+    #     Evaluates a node's acceptance conditions with Asymmetric 3VL Safety.
+    #     """   
+    #     logger.debug(f"--- EVAL NODE: {node.name} (Mode: {mode}) ---")
+
+    #     #3VL BLF handling 
+    #     if mode == '3vl' and not node.children:
+    #         if node.name in self.case:
+    #             logger.debug(f"{node.name} is TRUE (BLF in case)")
+    #             return True, 0
+    #         elif hasattr(self, 'evaluated_nodes') and node.name in self.evaluated_nodes:
+    #             logger.debug(f"{node.name} is FALSE (BLF not in case)")
+    #             return False, -1
+    #         else:
+    #             logger.debug(f"{node.name} is UNKNOWN (BLF not evaluated)")
+    #             return None, -1
+
+    #     #Full 3vl evaluation
+    #     has_unknown_reject = False    # Tracks if we have an unchecked "Defeater"
+    #     has_unknown_positive = False  # Tracks if we have an unchecked "Enabler"
+    #     successful_accept_index = -1  # Stores the index of a valid positive path
+        
+    #     #['DocumentaryEvidence','reject Contested','accept'],
+        
+    #     for index, condition in enumerate(node.acceptance):
+            
+    #         logger.debug(f"  [Iter {index}] Testing: '{condition}'")
+            
+    #         #resets reject condition
+    #         self.reject = False
+            
+    #         #evaluates the condition with postfix
+    #         result = self.postfixEvaluation(condition, mode=mode)
+            
+    #         #1. Node has been accepted and is a reject condition
+    #         # - in this case we can 
+    #         if result is True and self.reject:
+    #             logger.debug(f"Rejected due to {condition}")
+    #             return False, index 
+            
+    #         #2. Node has been accepted and there is NO reject in the condition
+    #         # - don't return True yet though because 
+    #         elif result is True and not self.reject:
+    #             logger.debug(f"Potential for accept due to {condition}")
+    #             #successful_accept_index = index
+    #             return True, index 
+
+    #             # We do NOT return True yet. We must ensure no 'reject' conditions were skipped as Unknown.
+                
+    #         # --- 3. CONDITION FALSE (Ignore) ---
+    #         elif result is False:
+    #             logger.debug(f"Condition rejected due to {condition}")
+    #             continue
+                
+    #         # --- 4. UNKNOWN RESULT ---
+    #         elif result is None:
+     
+    #             if self.reject:
+    #                 logger.debug(f"Unknown reject condition due to {condition}")
+    #                 has_unknown_reject = True
+    #             else:
+    #                 logger.debug(f"Unknown positive condition due to {condition}")
+    #                 has_unknown_positive = True
+
+        
+    #     #Final Decision section
+                
+    #     # Scenario A: We found a Valid Positive Path
+    #     if successful_accept_index != -1:
+    #         if has_unknown_reject:
+    #             # We want to accept, but a Reject Condition is Unknown.
+    #             # We CANNOT Accept safely.
+    #             logger.debug(f"  -> FINAL: UNKNOWN (Valid positive path exists, but blocked by Unknown Reject)")
+    #             return None, -1
+    #         else:
+    #             # We have a positive path and NO unknown reject risks.
+    #             logger.debug(f"  -> FINAL: ACCEPTED (Index {successful_accept_index})")
+    #             return True, successful_accept_index
+
+    #     # Scenario B: No Valid Positive Path found (All evaluated were False or Unknown)
+    #     else:
+    #         if has_unknown_positive:
+    #             # We might find a positive path later.
+    #             logger.debug(f"  -> FINAL: UNKNOWN (No positive path yet, but some are Unknown)")
+    #             return None, -1
+    #         else:
+    #             # All positive paths are definitely False.
+    #             # It doesn't matter if we have Unknown Rejects (has_unknown_reject), 
+    #             # because we can't Accept anyway.
+    #             logger.debug(f"  -> FINAL: FALSE (No possible acceptance path)")
+    #             return False, -1
+    
     def evaluateNode(self, node, mode='standard'):
         """
         Evaluates a node's acceptance conditions with Asymmetric 3VL Safety.
+        
+        Logic:
+        1. Iterate through conditions.
+        2. If a condition is TRUE:
+           - If it triggers REJECT: Return FALSE immediately (Short-circuit).
+           - If it triggers ACCEPT: Return TRUE immediately (Short-circuit).
+        3. If a condition is UNKNOWN:
+           - Differentiate between Unknown Positive (Enabler) and Unknown Negative (Defeater).
+           - Continue searching for a definitive True.
+        4. End of Loop:
+           - If no True condition found:
+             - If we had Unknown Enablers (Positive): Return UNKNOWN.
+             - If we only had Unknown Defeaters (Reject) but all Enablers were False: Return FALSE.
+               (Rationale: Even if the defeater doesn't fire, there is no Enabler to accept the node).
         """   
         logger.debug(f"--- EVAL NODE: {node.name} (Mode: {mode}) ---")
 
-        # --- 3VL LEAF HANDLING ---
+        #3VL Leaf handling
         if mode == '3vl' and not node.children:
             if node.name in self.case:
-                logger.debug(f"  [Leaf] {node.name} is TRUE (Found in case)")
+                logger.debug(f"{node.name} is TRUE (BLF in case)")
                 return True, 0
             elif hasattr(self, 'evaluated_nodes') and node.name in self.evaluated_nodes:
-                logger.debug(f"  [Leaf] {node.name} is FALSE (Evaluated, not in case)")
+                logger.debug(f"{node.name} is FALSE (BLF not in case)")
                 return False, -1
             else:
-                logger.debug(f"  [Leaf] {node.name} is UNKNOWN (Not yet evaluated)")
+                logger.debug(f"{node.name} is UNKNOWN (BLF not evaluated)")
                 return None, -1
 
-        # --- ASYMMETRIC EVALUATION ---
-        has_unknown_reject = False    # Tracks if we have an unchecked "Defeater"
-        has_unknown_positive = False  # Tracks if we have an unchecked "Enabler"
-        successful_accept_index = -1  # Stores the index of a valid positive path
+        has_unknown = False 
         
+        #check conditions
         for index, condition in enumerate(node.acceptance):
             
             logger.debug(f"  [Iter {index}] Testing: '{condition}'")
+            
+            #reset reject flag
             self.reject = False
             
-            # Evaluate the single condition
+            #eval condition
             result = self.postfixEvaluation(condition, mode=mode)
-            
-            # --- 1. DEFINITIVE REJECTION (Hard Stop) ---
-            if result is True and self.reject:
-                logger.debug(f"  [Iter {index}] -> DECISION: REJECTED (Reject flag set on True condition)")
-                return False, index 
-            
-            # --- 2. POTENTIAL ACCEPTANCE (Defer Decision) ---
-            elif result is True and not self.reject:
-                logger.debug(f"  [Iter {index}] -> Positive Path Found (Deferring to check for Unknown Rejects)")
-                successful_accept_index = index
-                # We do NOT return True yet. We must ensure no 'reject' conditions were skipped as Unknown.
+
+            if result is True:
                 
-            # --- 3. CONDITION FALSE (Ignore) ---
-            elif result is False:
-                logger.debug(f"  [Iter {index}] -> Condition Failed")
-                continue
+                if has_unknown and self.reject:
+                    return False, index
                 
-            # --- 4. UNKNOWN RESULT ---
-            elif result is None:
-                # Heuristic: Is this a "Reject" condition?
-                # In your DSL, reject conditions always contain the 'reject' token.
-                tokens = condition.split()
-                if 'reject' in tokens:
-                    logger.debug(f"  [Iter {index}] -> Unknown Reject Condition (Marking Safety Risk)")
-                    has_unknown_reject = True
+                elif has_unknown and not self.reject:
+                    return None, -1                
+                
+                if self.reject:
+                    logger.debug(f"Rejected due to {condition}")
+                    return False, index 
+                
                 else:
-                    logger.debug(f"  [Iter {index}] -> Unknown Positive Condition")
-                    has_unknown_positive = True
-
-        # --- FINAL DECISION LOGIC ---
+                    logger.debug(f"Accepted due to {condition}")
+                    
+                    return True, index 
+            
+            elif result is False:
+                
+                continue 
+                
+            elif result is None:
+                logger.debug(f"Unknown result for condition: {condition}")
+                
+                #We check if this condition contains 'reject'?
+                #if YES: it is a defeater and if we have no valid pathway to accept i.e. all other conditions are reject then we can never accept this node.
+                #if NO: we can safely return as unknown since we need to evaluate that node before going any further.
+                if 'reject' in condition:
+                    has_unknown = True
+                else:
+                    return None, -1
         
-        # Scenario A: We found a Valid Positive Path
-        if successful_accept_index != -1:
-            if has_unknown_reject:
-                # We want to accept, but a Reject Condition is Unknown.
-                # We CANNOT Accept safely.
-                logger.debug(f"  -> FINAL: UNKNOWN (Valid positive path exists, but blocked by Unknown Reject)")
-                return None, -1
-            else:
-                # We have a positive path and NO unknown reject risks.
-                logger.debug(f"  -> FINAL: ACCEPTED (Index {successful_accept_index})")
-                return True, successful_accept_index
+        return False, -1
 
-        # Scenario B: No Valid Positive Path found (All evaluated were False or Unknown)
-        else:
-            if has_unknown_positive:
-                # We might find a positive path later.
-                logger.debug(f"  -> FINAL: UNKNOWN (No positive path yet, but some are Unknown)")
-                return None, -1
-            else:
-                # All positive paths are definitely False.
-                # It doesn't matter if we have Unknown Rejects (has_unknown_reject), 
-                # because we can't Accept anyway.
-                logger.debug(f"  -> FINAL: FALSE (No possible acceptance path)")
-                return False, -1
-    
+            
     def postfixEvaluation(self, acceptance, mode='standard'):
         """
         Evaluates a postfix string with stack tracing logs.
@@ -564,12 +749,10 @@ class ADM:
                     return False, -1
                 
                 # 3. Recursive Check
-                # logger.debug(f"    [Resolve] Recursing into {term}...")
                 val, idx = self.evaluateNode(self.nodes[term], mode='3vl')
-                # logger.debug(f"    [Resolve] {term} returned {val}")
                 return val, idx
                 
-        # Default (Term not found or external fact not in case)
+        #default (Term not found or external fact not in case)
         return False, -1
 
     def checkCondition(self, operator, v1, v2=None, mode='standard'):
@@ -1441,10 +1624,9 @@ class EvaluationNode(Node):
         """
         try:
             
-            item_results = adm.getFact(f'{self.source_blf}_results')
-            
-            if not item_results:
-                print(f"Warning: No results found from {self.source_blf}")
+            try:
+                item_results = adm.getFact(f'{self.source_blf}_results')
+            except:
                 return False
                         
             # Get the source items list for display

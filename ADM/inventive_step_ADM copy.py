@@ -1,14 +1,5 @@
 """
-Inventive Step ADM 2.0
-
-- changes the workings from 1.0 to be cleaner, easier to visualise and to understand 
-- logic changes made to ensure better functioning
-
-Last Updated: 15.12.2025
-
-Status: Testing
-
-Test Coverage: 49%
+exact copy of Inv Step ADM but with the reminder text
 
 """
 
@@ -54,7 +45,7 @@ def adm_initial():
 
     #F15/F16
     adm.addQuestionInstantiator(
-    "[Q3] What is the relationship between the candidate/s for the relevant prior art and the invention\'s technical field?",
+    "[Q3] What is the relationship between the candidate/s for the relevant prior art and the invention\'s technical field?\n\nInvention Technical Field: {INVENTION_TECHNICAL_FIELD}",
     {
         "It is from the exact same technical field.": "SameField",
         "It is from a closely related or analogous technical field.": "SimilarField",
@@ -66,11 +57,11 @@ def adm_initial():
     adm.addInformationQuestion("CGK", "Please briefly describe the common general knowledge")
 
     #F8
-    adm.addNodes("Contested", question="[Q4] Is there an explicit reason to contest what constitutes the Common General Knowledge?")
+    adm.addNodes("Contested", question="[Q4] Is there an explicit reason to contest what constitutes the Common General Knowledge?\n\nCommon General Knowledge: {CGK}")
     
-    #F9/F10/F11
+        #F9/F10/F11
     adm.addQuestionInstantiator(
-        "[Q5] What is the primary source of evidence cited for the CGK?",
+        "[Q5] What is the primary source of evidence cited for the CGK?\n\nCommon General Knowledge: {CGK}",
         {
             "A standard textbook": "Textbook",
             "A broad technical survey": "TechnicalSurvey",
@@ -84,11 +75,12 @@ def adm_initial():
     )
     
     #F1
-    adm.addNodes("SkilledIn", question= "These next few questions are to help establish who the 'person skilled in the art' is. This is a hypothetical person. \n\n[Q6] Is the skilled person skilled in the relevant technical field of the prior art?")
+    adm.addNodes("SkilledIn", question= "These next few questions are to help establish who the 'person skilled in the art' is. This is a hypothetical person. \n\n[Q6] Is the skilled person skilled in the relevant technical field of the prior art?\n\nRelevant Prior Art: {REL_PRIOR_ART}")
+
     #F2    
-    adm.addNodes("Average", question="[Q7] Would the skilled person possess average knowledge and ability for that field?")
+    adm.addNodes("Average", question="[Q7] Would the skilled person possess average knowledge and ability for that field?\n\nInvention Technical Field: {INVENTION_TECHNICAL_FIELD}")
     #F3
-    adm.addNodes("Aware",question="[Q8] Is there reason to believe the skilled person is aware of the common general knowledge in the field?")
+    adm.addNodes("Aware",question="[Q8] Is there reason to believe the skilled person is aware of the common general knowledge in the field?\n\nCommon General Knowledge: {CGK}")
     #F4
     adm.addNodes("Access", question="[Q9] Would the skilled person have reasonable access to all the documents comprising the state of the art i.e. there are no clear barriers to access?")
  
@@ -123,7 +115,7 @@ def adm_initial():
     
     #F20/F21
     adm.addQuestionInstantiator(
-    "[Q12] Does the candidate closest prior art document constitute the most promising starting point for a development leading to the invention. Generally this corresponds to a similar use and requires the minimum of structural and functional modifications to arrive at the claimed invention, as assessed from the perspective of the skilled person? This is required for the document to be considered the closest prior art.",
+    "[Q12] Does the candidate closest prior art document require minimal modifications to the invention as assessed from the perspective of the skilled person? This is required for the document to be considered the closest prior art.\n\nThe skilled person: {SkilledPerson}",
     {
         "Yes": ["MinModifications","AssessedBy"],
         "No": ''
@@ -135,7 +127,7 @@ def adm_initial():
     
     #F17/F18
     adm.addQuestionInstantiator(
-    "[Q14] How are the other documents to be combined related to the closest prior art's technical field",
+    "[Q14] How are the other documents to be combined related to the closest prior art's technical field\n\nClosest Prior Art: {CPA}\n\n",
     {
         "They are from the same technical field": "SameFieldCPA",
         "They are from a similar technical field": "SimilarFieldCPA",
@@ -147,11 +139,11 @@ def adm_initial():
     
     #F23
     adm.addGatedBLF("CombinationMotive", 'CombinationAttempt', 
-                        "[Q15] Would the skilled person have a clear and direct motive to combine these specific documents?\n\nThe skilled person: {SkilledPerson}")
+                        "[Q15] Would the skilled person have a clear and direct motive to combine these specific documents?\n\nThe skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n")
 
     adm.addGatedBLF("BasisToAssociate", 
                         'CombinationAttempt',
-                        "[Q16] Is there a reasonable basis for the skilled person to associate these specific documents with one another?")
+                        "[Q16] Is there a reasonable basis for the skilled person to associate these specific documents with one another?\n\nThe skilled person: {SkilledPerson}\n\nClosest Prior: {CPA}\n\n")
     
     #AF5
     adm.addNodes("RelevantPriorArt", ['SameField','SimilarField','SimilarPurpose','SimilarEffect'], ['the relevant prior art is from the same field','the relevant prior art is from a similar field','the relevant prior art has a similar purpose','the relevant prior art has a similar effect','a relevant prior art cannot be established'])
@@ -199,7 +191,7 @@ def sub_adm_1(item_name):
         "A computer simulation.": "ComputerSimulation",
         "The processing of numerical data.": "NumericalData",
         "A mathematical method or algorithm.": "MathematicalMethod",
-        "Other excluded fields":"OtherExclusions",
+        "Other excluded field":"OtherExclusions",
         "None of the above":""
     },
     None,
@@ -219,7 +211,7 @@ def sub_adm_1(item_name):
                             f'[Q22] Is there an intended use of the data resulting from the feature under consideration?\n\nFeature: {sub_adm.name}')
     #F38 - Q24
     sub_adm.addGatedBLF("TechUseSpecified","IntendedTechnicalUse",
-                            f'[Q23] Is there a potential technical effect of the data either explicitly or implicitly specified in the claim?\n\nFeature: {sub_adm.name}')
+                            f'[Q23] Is there a potential technical effect of the data either explicitly or implicitly specified in the claim?')
 
     #F39 - Q26
     sub_adm.addGatedBLF("SpecificPurpose","MathematicalMethod",
@@ -291,23 +283,23 @@ def sub_adm_2(item_name):
     
     #BLFs
     #F48
-    sub_adm.addNodes("Encompassed",question=f'[Q34] Would the skilled person, consider the technical effects identified in the candidate objective technical problem to be encompassed and embodied by the technical teaching of the patent application i.e. is the objective technical problem reflected in the original application?\n\nProblem name: {sub_adm.name}')
+    sub_adm.addNodes("Encompassed",question=f'[Q34] Would the skilled person, consider the technical effects identified in the candidate objective technical problem to be encompassed and embodied by the technical teaching of the patent application i.e. is the objective technical problem reflected in the original application?\n\nThe skilled person: {{SkilledPerson}}\n\nItem name: {sub_adm.name}')
 
     #F49
-    #sub_adm.addNodes("Embodied",question=f'[Q35] Would the skilled person, consider the technical effects identified to be embodied by the same originally disclosed invention?\n\nItem name: {sub_adm.name}')
+    sub_adm.addNodes("Embodied",question=f'[Q35] Would the skilled person, consider the technical effects identified to be embodied by the same originally disclosed invention?\n\nThe skilled person: {{SkilledPerson}}\n\nItem name: {sub_adm.name}')
 
     #F50
-    sub_adm.addNodes("ScopeOfClaim",question=f'[Q36] The technical effects used for formulating the objective technical problem must be derivable from the application, when considered in light of the closest prior art. Are the technical effects currently identified, achieved across the entire scope of the claims taken as a whole, and are the claims limited in such a way that all embodiments which could be encompassed by the claim would show these effects? i.e. we are confident that the asserted technical effects were achieved by the claimed method across the whole scope of the claims. If the Independent Claim (Claim 1) is too broad and lacks these features, don\'t just answer no, assess whether the effect is achieved across the scope of the dependent claim with those features.')
+    sub_adm.addNodes("ScopeOfClaim",question=f'[Q36] Are the technical effects achieved across the whole scope of the claims, and are the claims limited in such a way that substantially all embodiments encompassed by the claim show these effects?\n\nItem name: {sub_adm.name}')
 
     #F51
     sub_adm.addNodes("WrittenFormulation",question=f'[Q37] Can we construct a written formulation of the objective technical problem?\n\nItem name: {sub_adm.name}')
 
-    #F52 #                     "question": "[Q38] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the objective technical problem?\n\nProblem name: Provide a dedicated proxy port (physical or virtual) on the first storage system for receiving data access commands directed to the second storage system, thereby separating proxy traffic from regular traffic and facilitating efficient forwarding within the storage cluster.\nAnswer 'yes' or 'no' only (y/n):",
-    sub_adm.addNodes("Hindsight",question=f'[Q38] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the objective technical problem?\n\nProblem name: {sub_adm.name}')
+    #F52
+    sub_adm.addNodes("Hindsight",question=f'[Q38] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. could we have only come up with the objetcive technical problem in hindsight?\n\nThe skilled person: {{SkilledPerson}}\n\nItem name: {sub_adm.name}')
 
     #F53/F54
     sub_adm.addQuestionInstantiator(
-    f"[Q39] Do you believe the skilled person would have arrived at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art would have provided motivation to do so in the expectation of some improvement or advantage?\n\nProblem name: {sub_adm.name}",
+    f"[Q39] Do you believe the skilled person would have arrived at the proposed invention by adapting or modifying the closest prior art because the prior art would have provided motivation to do so in the expectation of some improvement or advantage?\n\nThe skilled person: {{SkilledPerson}}\n\nClosest Prior: {{CPA}}\n\nItem name: {sub_adm.name}",
     {
         "Would have adapted from the prior art": "WouldAdapt",
         "Would have modified from the prior art": "WouldModify",
@@ -317,7 +309,7 @@ def sub_adm_2(item_name):
     "modify_adapt")
     
     #AF32
-    sub_adm.addNodes("BasicFormulation", ['Encompassed and ScopeOfClaim'], 
+    sub_adm.addNodes("BasicFormulation", ['Encompassed and Embodied and ScopeOfClaim'], 
                     ['We have a valid basic formulation of the objective technical problem', 'We do not have a valid basic formulation of the objective technical problem'])
     
     #AF31
@@ -358,7 +350,7 @@ def adm_main():
     def collect_features(adm):
         """Function to collect prior art items from user input"""
         
-        differences = adm.resolveQuestionTemplate("[Q] What differences between the invention and the closest prior art can be determined? List the features in the invention which are different (maximum of 5 features as a comma-separated list): ")
+        differences = adm.resolveQuestionTemplate("[Q] What differences between the invention and the closest prior art can be determined? List the features in the invention which are different (maximum of 5 features 5)\nClosest Prior Art: {CPA}\n\n(comma-separated list): ")
         #b = adm.resolveQuestionTemplate("[Q] What features does the invention have (combine into these into a max of 5, if the feature is the same as one in the closest prior art then phrase it the same way)?\nInvention title: {INVENTION_TITLE}\n\n(comma-separated list): ")
        
         available_items = input(differences).strip()
@@ -366,15 +358,6 @@ def adm_main():
         
         available_list = [item.strip() for item in available_items.split(',') if item.strip()]
         #needed_list = [item.strip() for item in needed_items.split(',') if item.strip()]
-        
-        counter = 0
-        
-        while len(available_list) > 5:
-            available_items = input("[Q] Too many features listed, please condense them into 5. Ensure you don't use any sub-lists i.e. feature X has 1,2,3 as commas are interpreted as individual items!").strip()
-            available_list = [item.strip() for item in available_items.split(',') if item.strip()]
-            counter += 1
-            if counter > 3:
-                return available_list
         
         #missing_items = [item for item in needed_list if item not in available_list]
         
@@ -400,7 +383,7 @@ def adm_main():
     
     #F46
     adm.addQuestionInstantiator(
-    "[Q32] How do the invention's technical features create the technical effect? Note: selecting an aggregation of independent effects implies the existence of >1 partial objective technical problems. This is rare and applies only if the features are completely functionally independent. If in doubt, choose 'synergistic' though you may choose 'aggregate features' if it can be justified well.",
+    "[Q32] How do the invention's technical features create the technical effect?",
     {
         "As a synergistic combination (effect is greater than the sum of parts).": "Synergy",
         "As a simple aggregation of independent effects.": "",
@@ -462,12 +445,9 @@ def adm_main():
         
         # Present the features to the user
         print("\n" + "="*60)
-        print("OBJECTIVE TECHNICAL PROBLEM FEATURE CONTRIBUTIONS")
+        print("OBJECTIVE TECHNICAL PROBLEM CONTRIBUTIONS")
         print("="*60)
-        print("Objective Technical Problem Definition: The Objective Technical Problem (OTP) establishes the technical problem to be solved by studying the application (or the patent), the closest prior art and the differences (also called \"the distinguishing features\" of the claimed invention) in terms of features (either structural or functional) between the claimed invention and the closest prior art, identifying the technical effect resulting from the distinguishing features and then formulating the technical problem.\n i.e. the technical problem means the aim and task of modifying or adapting the closest prior art to achieve the technical effects that the invention offers over the closest prior art.")
-        print("The objective technical problem must be formulated in such a way that it does not contain pointers to the technical solution.")
-        print("="*60)
-
+        
         if technical_contributions:
             print(f"\nTechnical Contributions:")
             for contrib in technical_contributions:
@@ -486,70 +466,33 @@ def adm_main():
         objective_problems = []
         
         if "Combination" in current_case:
-            logger.debug("\nCombination detected in case - creating 1 objective technical problem:")
-            
-            hindsight = False
-            
+            print("\nCombination detected in case - creating 1 objective technical problem:")
             while True:
-                
                 problem_desc = input("[Q] Please provide a short description of the objective technical problem: ").strip()
-                
                 if problem_desc:
-                    
                     objective_problems.append(problem_desc)
                     print(f"Added problem: {problem_desc}")
-                    
-                    if hindsight is True:
-                        break
-                    
-                    #check for hindsight when formulating the objective technical problem
-                    hindsight_check = input(f'[Q380] To ensure the objective technical problem has not been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the objective technical problem? For example, if the objective technical problem includes the solution then it should be reformulated without hindsight. Think carefully.\n\n Objective Problem: {problem_desc}\n\nAnswer \'yes\' or \'no\' only (y/n):')
-            
-                    if hindsight_check.lower() == 'y' or hindsight_check.lower() == 'yes':
-                        print('[Q] Please reformulate the objective technical problem without hindsight, and based on the technical effects, not on the solution if possible. If you do not believe it is possible then proceed to enter the same problem again.')                            
-                        hindsight = True
-                        objective_problems = []
-                    else:
-                        break
-                
+                    break
                 else:
                     print("Input cannot be blank. Please provide a valid description.")
-            
         
         if "PartialProblems" in current_case:
-            logger.debug("\nPartialProblems detected in case - creating multiple problems:")
-            print("In this instance the objective technical problem should be regarded as a set of several partial problems which are independently solved by different sets of distinguishing features. This is because there is not a synergistic relationship between the distinguishing features. Enter your formulation of the partial problems one by one. Do not create a separate problem for every single feature. Group the features into the minimum number of problems possible (ideally 2, max 3). Also, ensure that each problem has a unique identifier at the beginning.")
-            hindsight = False
+            print("\nPartialProblems detected in case - creating multiple problems:")
+            print("Enter problems one by one (max. 5).")
             
+            problem_count = 0
             while True:
-                
-                objective_problems = []
-                problem_count = 0
-                
-                while True:
-                    #enforce the problem count limit to ensure it proceeds
-                    if problem_count >= 5:
-                        break
-                    problem_desc = input(f"[Q] Enter Partial Problem {problem_count + 1} description (leave the line BLANK to finish by giving your answer as an empty string): ").strip()
-                    if problem_desc.strip() == '' or problem_desc.strip() == 'BLANK':
-                        break
-                    if problem_desc:
-                        objective_problems.append(problem_desc)
-                        problem_count += 1
-                        print(f"Added problem {problem_count}: {problem_desc}")
-                
-                if hindsight is True:
+                #enforce the problem count limit to ensure it proceeds
+                if problem_count > 5:
                     break
-                    
-                #check for hindsight when formulating the partial problems
-                hindsight_check = input(f'[Q380] Have any one of the partial problems been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the partial problems? or example, if any of the partial problems include the solution then they should be reformulated without hindsight. Think carefully.\n\n Objective Problems: {objective_problems}\n\n Answer yes or no only (y/n):')
-                if hindsight_check.lower() == 'y' or hindsight_check.lower() == 'yes':
-                    print('[Q] Please reformulate the partial problems without hindsight and based on the technical effects, not on the solution if possible. If you do not believe it is possible then proceed to enter the same problem again.')                            
-                    hindsight = True
-                else:
+                problem_desc = input(f"[Q] Enter Partial Problem {problem_count + 1} description (leave the line BLANK to finish by giving your answer as an empty string): ").strip()
+                if problem_desc.strip() == '' or problem_desc.strip() == 'BLANK':
                     break
-            
-                
+                if problem_desc:
+                    objective_problems.append(problem_desc)
+                    problem_count += 1
+                    print(f"Added problem {problem_count}: {problem_desc}")
+        
         # Store the problems as facts in the adm
         if objective_problems:
             adm.setFact("objective_technical_problems", objective_problems)
@@ -564,7 +507,7 @@ def adm_main():
     adm.addEvaluationNode("ValidOTP", "OTPNotObvious", "ObjectiveTechnicalProblemFormulation", ['there is at least 1 valid objective technical problem','there is no valid objective technical problem'])
 
     #F59
-    adm.addNodes("DisadvantageousMod",question="[Q40] Does the invention involve a disadvantageous modification of the prior art?")
+    adm.addNodes("DisadvantageousMod",question="[Q40] Does the invention involve a disadvantageous modification of the prior art?\n\nRelevant Prior Art: {REL_PRIOR_ART}")
 
     #F60
     adm.addGatedBLF("Foreseeable",'DisadvantageousMod',
@@ -575,11 +518,11 @@ def adm_main():
                         "[Q42] Did the disadvantageous modification result in an unexpected technical advantage?")
 
     #F63
-    adm.addNodes("BioTech",question="[Q43] Is the subject matter of the invention biotech?")
+    adm.addNodes("BioTech",question="[Q43] Is the subject matter of the invention biotech?\n\nInvention description: {INVENTION_DESCRIPTION}")
 
     #F64
     adm.addGatedBLF("Antibody",'BioTech',
-                        "[Q44] Does the subject matter concern antibodies?")
+                        "[Q44] Does the subject matter concern antibodies?\n\nInvention description: {INVENTION_DESCRIPTION}")
 
     #F67
     adm.addGatedBLF("PredictableResults",'BioTech',
@@ -598,10 +541,10 @@ def adm_main():
                         "[Q48] Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?")
 
     #F69
-    adm.addNodes("GapFilled", question= "[Q49] Does the invention merely fill an obvious gap in an incomplete prior art document which would naturally occur to the skilled person?\n\nThe skilled person: {SkilledPerson}")
+    adm.addNodes("GapFilled", question= "[Q49] Does the invention merely fill an obvious gap in an incomplete prior art document which would naturally occur to the skilled person?\n\nRelevant Prior Art: {REL_PRIOR_ART}\n\nThe skilled person: {SkilledPerson}")
 
     #F70
-    adm.addNodes("WellKnownEquivalent", question= "[Q50] Does the invention differ from the prior art in regard to substituting one well-known equivalent for another (e.g., a hydraulic for an electric motor)?")
+    adm.addNodes("WellKnownEquivalent", question= "[Q50] Does the invention differ from the prior art in regard to substituting one well-known equivalent for another (e.g., a hydraulic for an electric motor)?\n\nRelevant Prior Art: {REL_PRIOR_ART}")
 
     #F71
     adm.addNodes("KnownProperties",question="[Q51] Is the invention merely the new use of known properties of a well-known material i.e. A washing composition containing as detergent, a known compound having the known property of lowering the surface tension of water.")
@@ -679,7 +622,7 @@ def adm_main():
     adm.addNodes('Obvious',['reject OTPNotObvious','SecondaryIndicator','accept'],['the invention is not obvious','the invention is obvious due to a secondary indicator','the invention is obvious'])
 
     #I1 - ROOT NODE 
-    adm.addNodes('InvStep',['reject Obvious','reject SufficiencyOfDisclosure', 'Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'],root=True)
+    adm.addNodes('InvStep',['reject SufficiencyOfDisclosure','reject Obvious','Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'],root=True)
 
     # Set question order to ask information questions first
     adm.questionOrder = ['ReliableTechnicalEffect','DistinguishingFeatures','NonTechnicalContribution','TechnicalContribution','SufficiencyOfDisclosure',"InventionUnexpectedEffect",

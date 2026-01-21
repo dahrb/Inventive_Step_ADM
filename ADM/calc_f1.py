@@ -8,10 +8,14 @@ import os
 import glob
 from datetime import datetime
 import re
+import pandas as pd
 
 # Hard-coded ground truth for the comvik example
 comvik = ['NO', 'NO', 'NO', 'YES', 'NO']
 validation = ['NO','YES','YES','YES','NO','NO','NO','YES','YES','NO']
+test_data = pd.read_pickle('Data/Inv_Step_Filtered_Test_Data.pkl')
+outcome_map = {'Reversed': 'YES', 'Affirmed': 'NO'}
+test = test_data['Outcome'].astype(str).map(lambda v: outcome_map.get(v.strip(), v.strip())).tolist()
     
 def _find_elapsed_in_obj(obj):
     """Recursively search obj (dict/list) for 'elapsed_seconds' values and return list."""
@@ -41,7 +45,7 @@ def compute_avg_setup_time(results_filepath, runs=None, outputs_base=None):
       folders under each matching case.
     """
     if outputs_base is None:
-        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Prior/Test_Cases'
+        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Valid_Cases'
 
     fname = os.path.basename(results_filepath)
     root, _ext = os.path.splitext(fname)
@@ -60,7 +64,7 @@ def compute_avg_setup_time(results_filepath, runs=None, outputs_base=None):
                 config_dir = f"config_{m.group(2)}"
             else:
                 config_dir = cfg
-
+                
     # Choose which case folders to scan
     lower_fname = results_filepath.lower()
     if 'comvik' in lower_fname:
@@ -75,6 +79,7 @@ def compute_avg_setup_time(results_filepath, runs=None, outputs_base=None):
             case_dirs = [specific]
 
     files = []
+    
     for case_dir in case_dirs:
         if runs:
             for run_id in runs:
@@ -104,9 +109,11 @@ def compute_avg_setup_time(results_filepath, runs=None, outputs_base=None):
                 j = json.load(fh)
         except Exception:
             continue
-
+        
         # Prefer explicit elapsed_seconds
         elapsed_vals = _find_elapsed_in_obj(j)
+        
+       
         if elapsed_vals:
             try:
                 durations.append(float(elapsed_vals[0]))
@@ -154,7 +161,7 @@ def process_results_file(results_filepath):
 
     f1_scores = []
     acc_scores = []
-
+    
     print("File:", os.path.basename(results_filepath))
     print(f"{'Run ID':<10} | {'Accuracy':<10} | {'F1 Score':<10}")
     print("-" * 48)
@@ -168,6 +175,8 @@ def process_results_file(results_filepath):
             gt = comvik
         else:
             gt = validation
+            #gt = test
+
 
         if len(y_pred) != len(gt):
             f1 = float('nan')
@@ -216,7 +225,8 @@ def process_results_file(results_filepath):
 
 
 if __name__ == '__main__':
-    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Prior/results_*.json'
+
+    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Valid_Cases/results_*.json' #Valid_Cases
     result_files = sorted(glob.glob(results_pattern))
     if not result_files:
         print('No results_*.json files found under Outputs/')

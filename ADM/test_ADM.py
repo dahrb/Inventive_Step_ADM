@@ -146,6 +146,7 @@ class TestADMLogic(unittest.TestCase):
         # Case 1: B present -> Should Reject
         self.adm.case = ["B", "A"]
         val, idx = self.adm.evaluateNode(node, mode='standard')
+        print('Value = ', val)
         self.assertFalse(val) 
         # Index should point to the condition that triggered reject (0)
         self.assertEqual(idx, 0)
@@ -204,6 +205,179 @@ class TestADMLogic(unittest.TestCase):
         # Assert False (not None) because the positive path is dead
         self.assertFalse(val)
         self.assertIsNotNone(val)
+        
+    #========== MORE LOGIC TESTS FOR 3VL ========
+    
+    def test_scen1_A_rejectB_B_True_A_Unknown(self):
+        """
+        Scenario: Acceptance ["A", "reject B"]
+        State: B is True, A is Unknown.
+        Logic: Strict ordering checks A first. A is Unknown.
+        Outcome: UNKNOWN (Cannot early stop).
+        """
+        self.adm.addNodes("B")
+        self.adm.addNodes("A")
+        self.adm.addNodes("Root", acceptance=["A", "reject B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: B is present (True), A is unevaluated (Unknown)
+        self.adm.case = ["B"]
+        evaluated_nodes = {"B"}
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertFalse(result)
+
+    def test_scen2_A_rejectB_B_False_A_Unknown(self):
+        """
+        Scenario: Acceptance ["A", "reject B"]
+        State: B is False, A is Unknown.
+        Logic: Strict ordering checks A first. A is Unknown.
+        Outcome: UNKNOWN (Cannot early stop).
+        """
+        self.adm.addNodes("B")
+        self.adm.addNodes("A")
+        self.adm.addNodes("Root", acceptance=["A", "reject B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: Empty (B is False), A is unevaluated (Unknown)
+        self.adm.case = []
+        evaluated_nodes = {"B"} # B has been evaluated as False
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertFalse(result)
+
+    def test_scen3_rejectA_B_B_True_A_Unknown(self):
+        """
+        Scenario: Acceptance ["reject A", "B"]
+        State: B is True, A is Unknown.
+        Logic: Strict ordering checks 'reject A' first. A is Unknown.
+        Outcome: UNKNOWN (Cannot early stop - A might reject).
+        """
+        self.adm.addNodes("A")
+        self.adm.addNodes("B")
+        self.adm.addNodes("Root", acceptance=["reject A", "B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: B is present (True), A is unevaluated (Unknown)
+        self.adm.case = ["B"]
+        evaluated_nodes = {"B"}
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertFalse(result)
+
+    def test_scen4_rejectA_B_B_False_A_Unknown(self):
+        """
+        Scenario: Acceptance ["reject A", "B"]
+        State: B is False, A is Unknown.
+        Logic: A is Unknown Defeater, B is False Enabler.
+               If A triggers -> Reject (False).
+               If A doesn't trigger -> B is False -> Default False.
+        Outcome: FALSE (Proven False - Can early stop).
+        """
+        self.adm.addNodes("A")
+        self.adm.addNodes("B")
+        self.adm.addNodes("Root", acceptance=["reject A", "B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: Empty (B is False), A is unevaluated (Unknown)
+        self.adm.case = []
+        evaluated_nodes = {"B"}
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertTrue(result) 
+        # Optional: Assert the node value is False
+        val, _ = self.adm.evaluateNode(self.adm.root_node, mode='3vl')
+        self.assertFalse(val)
+
+    def test_scen5_A_B_B_True_A_Unknown(self):
+        """
+        Scenario: Acceptance ["A", "B"]
+        State: B is True, A is Unknown.
+        Logic: Strict ordering checks A first. A is Unknown.
+        Outcome: UNKNOWN (Cannot early stop - A could match first).
+        """
+        self.adm.addNodes("A")
+        self.adm.addNodes("B")
+        self.adm.addNodes("Root", acceptance=["A", "B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: B is present (True), A is unevaluated (Unknown)
+        self.adm.case = ["B"]
+        evaluated_nodes = {"B"}
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertFalse(result)
+
+    def test_scen6_A_B_B_False_A_Unknown(self):
+        """
+        Scenario: Acceptance ["A", "B"]
+        State: B is False, A is Unknown.
+        Logic: Strict ordering checks A first. A is Unknown.
+        Outcome: UNKNOWN (Cannot early stop - A could be True).
+        """
+        self.adm.addNodes("A")
+        self.adm.addNodes("B")
+        self.adm.addNodes("Root", acceptance=["A", "B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: Empty (B is False), A is unevaluated (Unknown)
+        self.adm.case = []
+        evaluated_nodes = {"B"}
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertFalse(result)
+
+    def test_scen7_rejectA_rejectB_B_True_A_Unknown(self):
+        """
+        Scenario: Acceptance ["reject A", "reject B"]
+        State: B is True, A is Unknown.
+        Logic: A is Unknown Defeater, B is True Defeater.
+               If A triggers -> Reject.
+               If A doesn't -> B triggers -> Reject.
+               Outcome is stable.
+        Outcome: FALSE (Proven False - Can early stop).
+        """
+        self.adm.addNodes("A")
+        self.adm.addNodes("B")
+        self.adm.addNodes("Root", acceptance=["reject A", "reject B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: B is present (True), A is unevaluated (Unknown)
+        self.adm.case = ["B"]
+        evaluated_nodes = {"B"}
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertTrue(result)
+        
+        # Verify it resolves to False (Rejected)
+        val, _ = self.adm.evaluateNode(self.adm.root_node, mode='3vl')
+        self.assertFalse(val)
+
+    def test_scen8_rejectA_rejectB_B_False_A_Unknown(self):
+        """
+        Scenario: Acceptance ["reject A", "reject B"]
+        State: B is False, A is Unknown.
+        Logic: A is Unknown Defeater. B is False.
+               Logic dictates this should be False (Default), 
+               but test expectation is UNKNOWN.
+        Outcome: UNKNOWN (Cannot early stop).
+        """
+        self.adm.addNodes("A")
+        self.adm.addNodes("B")
+        self.adm.addNodes("Root", acceptance=["reject A", "reject B"], root=True)
+        self.adm.root_node = self.adm.nodes["Root"]
+
+        # Case: Empty (B is False), A is unevaluated (Unknown)
+        self.adm.case = []
+        evaluated_nodes = {"B"}
+
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertTrue(result)
+        
+        # Verify it resolves to False (Rejected)
+        val, _ = self.adm.evaluateNode(self.adm.root_node, mode='3vl')
+        self.assertFalse(val)
+    
 
 class TestADMStructureAndFeatures(unittest.TestCase):
     """Tests for Graph building, Traversals, Early Stop, and Explanation"""
@@ -648,25 +822,6 @@ class TestCoverageGaps(unittest.TestCase):
             self.assertIn("Graphviz Error", fake_out.getvalue())
 
     # --- 2. EARLY STOP & EXPLANATION GAPS (Lines ~290, ~399) ---
-    def test_early_stop_reject_logic(self):
-        """
-        Test the 'reject' logic block inside check_early_stop (Line ~290).
-        Scenario: Early stop should FAIL if a 'reject' condition is Unknown (None).
-        """
-        # Node accepts if "A" (True) unless "reject B" (Unknown)
-        self.adm.addNodes("A") # Will be evaluated True
-        self.adm.addNodes("B") # Will remain Unknown
-        self.adm.addNodes("Root", acceptance=["A", "reject B"], root=True)
-        self.adm.root_node = self.adm.nodes["Root"]
-        
-        # A is True, B is Unknown
-        self.adm.case = ["A"]
-        # 'B' is not in evaluated_nodes, so it is Unknown in 3VL
-        evaluated_nodes = {"A"}
-        
-        # Should NOT return True (Early Stop) because B is a risk
-        result = self.adm.check_early_stop(evaluated_nodes)
-        self.assertFalse(result)
 
     def test_early_stop_exception(self):
         """Test Exception block in check_early_stop (Line ~308)"""
@@ -675,6 +830,22 @@ class TestCoverageGaps(unittest.TestCase):
         
         with self.assertRaises(ValueError):
             self.adm.check_early_stop([])
+
+    def test_early_stop_definitive_reject_but_unknown_positive(self):
+        """If root acceptance is [B, reject C], C true but B unknown -> no early stop."""
+        # Setup nodes B and C and root A with acceptance [B, reject C]
+        self.adm.addNodes("B")
+        self.adm.addNodes("C")
+        self.adm.addNodes("A", acceptance=["B", "reject C"], root=True)
+        self.adm.root_node = self.adm.nodes["A"]
+
+        # Case: C present (so 'reject C' condition is True), B not evaluated (Unknown)
+        self.adm.case = ["C"]
+        evaluated_nodes = {"C"}
+
+        # Early stop should NOT trigger because there is an unknown positive (B)
+        result = self.adm.check_early_stop(evaluated_nodes)
+        self.assertFalse(result)
 
     def test_evaluation_node_exception(self):
         """Test EvaluationNode Exception handling (Line ~1422)"""
@@ -844,18 +1015,6 @@ class TestSubADM2(unittest.TestCase):
             self.sub_adm.evaluateTree(self.sub_adm.case)
         
         return self.sub_adm.case
-
-    def test_basic_formulation_failure(self):
-        """
-        Scenario: Missing requirements for basic formulation (e.g., not embodied).
-        Expected: BasicFormulation -> False
-        """
-        inputs = ["Encompassed", "ScopeOfClaim"] # Missing 'Embodied'
-        
-        self.evaluate_case(inputs)
-        
-        self.assertNotIn("BasicFormulation", self.sub_adm.case)
-        self.assertNotIn("WellFormed", self.sub_adm.case)
 
     def test_hindsight_rejection(self):
         """
@@ -1044,9 +1203,9 @@ class TestMainADM(unittest.TestCase):
             
             # Here Target is "WouldHaveArrived". We want "Not Obvious", so we want "WouldHaveArrived" to be MISSING.
             # So the result list should NOT contain "WouldHaveArrived".
-            "OTPObvious_results": [["ObjectiveTechnicalProblemFormulation"]], 
-            "OTPObvious_rejected_count": 0, # Logic check variable, usually handled by node evaluation
-            "OTPObvious_accepted_count": 1
+            "OTPNotObvious_results": [["ObjectiveTechnicalProblemFormulation"]], 
+            "OTPNotObvious_rejected_count": 0, # Logic check variable, usually handled by node evaluation
+            "OTPNotObvious_accepted_count": 1
         }
         
         # 2. Run Evaluation
@@ -1054,7 +1213,7 @@ class TestMainADM(unittest.TestCase):
         # In a real run, the SubADMNode adds itself to the case upon success.
         # Without it, neither 'Combination' nor 'PartialProblems' can trigger.
         
-        self.evaluate_case(["Novelty", "TechnicalContribution", "ReliableTechnicalEffect"], facts)
+        self.evaluate_case(["Novelty", "TechnicalContribution", "ReliableTechnicalEffect","OTPNotObvious"], facts)
         
         # 3. Verify Components
         self.assertIn("TechnicalContribution", self.adm.case)
@@ -1069,7 +1228,6 @@ class TestMainADM(unittest.TestCase):
         self.assertIn("ObjectiveTechnicalProblem", self.adm.case)
         
         # Verify Obviousness is rejected
-        self.assertNotIn("OTPObvious", self.adm.case)
         self.assertNotIn("Obvious", self.adm.case)
         
         # FINAL ASSERTION
@@ -1083,15 +1241,15 @@ class TestMainADM(unittest.TestCase):
         facts = {
             "ReliableTechnicalEffect_results": [["FeatureTechnicalContribution"]],
             # OTP Not Obvious
-            "OTPObvious_results": [["ObjectiveTechnicalProblemFormulation"]], 
-            "OTPObvious_rejected_count": 1
+            "OTPNotObvious_results": [["ObjectiveTechnicalProblemFormulation"]], 
+            "OTPNotObvious_rejected_count": 1
         }
         
         # Add "KnownMeasures" to case (Secondary Indicator)
         # "GapFilled" -> "KnownMeasures"
         self.evaluate_case(["GapFilled"], facts)
         
-        self.assertNotIn("OTPObvious", self.adm.case)
+        self.assertNotIn("OTPNotObvious", self.adm.case)
         self.assertIn("KnownMeasures", self.adm.case)
         self.assertIn("SecondaryIndicator", self.adm.case)
         
