@@ -16,6 +16,10 @@ validation = ['NO','YES','YES','YES','NO','NO','NO','YES','YES','NO']
 test_data = pd.read_pickle('Data/Inv_Step_Filtered_Test_Data.pkl')
 outcome_map = {'Reversed': 'YES', 'Affirmed': 'NO'}
 test = test_data['Outcome'].astype(str).map(lambda v: outcome_map.get(v.strip(), v.strip())).tolist()
+train_data = pd.read_pickle('Data/train_data_Inv_Step.pkl')
+outcome_map = {'Reversed': 'YES', 'Affirmed': 'NO'}
+train = train_data['Outcome'].astype(str).map(lambda v: outcome_map.get(v.strip(), v.strip())).tolist()
+
     
 def _find_elapsed_in_obj(obj):
     """Recursively search obj (dict/list) for 'elapsed_seconds' values and return list."""
@@ -44,8 +48,9 @@ def compute_avg_setup_time(results_filepath, runs=None, outputs_base=None):
     - If `runs` is provided (list like ['run_1']), limits search to those run
       folders under each matching case.
     """
+    #CHANGE
     if outputs_base is None:
-        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Valid_Cases'
+        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Train_Cases_Pred'
 
     fname = os.path.basename(results_filepath)
     root, _ext = os.path.splitext(fname)
@@ -165,7 +170,7 @@ def process_results_file(results_filepath):
     print("File:", os.path.basename(results_filepath))
     print(f"{'Run ID':<10} | {'Accuracy':<10} | {'F1 Score':<10}")
     print("-" * 48)
-
+    
     for run_id, preds_dict in predictions_data.items():
         sorted_keys = sorted(preds_dict.keys())
         y_pred = [preds_dict[key] for key in sorted_keys]
@@ -174,8 +179,9 @@ def process_results_file(results_filepath):
         if 'comvik' in fname:
             gt = comvik
         else:
-            gt = validation
+            #gt = validation
             #gt = test
+            gt = train
 
 
         if len(y_pred) != len(gt):
@@ -226,7 +232,7 @@ def process_results_file(results_filepath):
 
 if __name__ == '__main__':
 
-    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Valid_Cases/results_*.json' #Valid_Cases
+    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Train_Cases_Pred/results_*.json' #Valid_Cases
     result_files = sorted(glob.glob(results_pattern))
     if not result_files:
         print('No results_*.json files found under Outputs/')

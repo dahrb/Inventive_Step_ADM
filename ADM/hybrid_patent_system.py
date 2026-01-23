@@ -29,7 +29,8 @@ logger = logging.getLogger("Hybrid_System")
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 #sets concurrency
-REQUEST_SEMAPHORE = asyncio.Semaphore(20)
+REQUEST_SEMAPHORE = asyncio.Semaphore(40)
+print('Request Semaphore: ', REQUEST_SEMAPHORE._value)
 
 #folder paths (will be initialised from CLI args in async_main)
 BASE_CASE_DIR = "../Outputs/Valid_Cases"
@@ -41,7 +42,7 @@ RAW_DATA = None
 MODELS = {
     "gpt": {"id": "gpt-oss-120b"},
     "llama": {"id": "Llama-3.3-70B-Instruct"},
-    "qwen": {"id": "Qwen3-Next-80B-A3B-Thinking"},
+    "gpt_small": {"id": "gpt-oss-20b"},
 }
 
 #initialised defaults
@@ -163,7 +164,7 @@ async def consult_llm(system_prompt, history, client, turn_num, log_file, questi
             async with REQUEST_SEMAPHORE:
                 #per-call timeout to avoid hangs
                 try:
-                    resp = await asyncio.wait_for(client.chat.completions.create(**base_req), timeout=60)
+                    resp = await asyncio.wait_for(client.chat.completions.create(**base_req), timeout=120)
                 except asyncio.TimeoutError as te:
                     logger.warning(f"LLM call timeout (attempt {attempt}/{max_retries}): {te}")
                     raise
@@ -384,44 +385,44 @@ async def run_tool_session(client, case_name, context_text, run_id, metadata, tr
                 break
             buffer = []
             continue
+        
+                #this mode gives access to the decision and real reasons to allow generation of training data for critic system
+        if train_data:
+            reasons = str(RAW_DATA.loc[RAW_DATA['Reference'] == case_name, 'Decision Reasons'].iloc[0])
+            decision = str(RAW_DATA.loc[RAW_DATA['Reference'] == case_name, 'Order'].iloc[0])
+            
+            system_instruction = ("You are helping annotate legal factors to help in assessing Inventive Step for the European Patent Office (EPO). These cases are appeals against the examaining boards original decision.\n"
+                                    "Only use the data provided. Try to avoid using outside knowledge, except for common knowledge where you may use yor own judgement, if you believe this would have been known prior to the common knowledge cut-off date given.\n"
+                                    "However, you can make reasonable assumptions not explicitly contained within the data.\n"
+                                    "You will be given access to the patent claims, closest prior art document/s, the reasons for decision and the outcome of the case.\n"
+                                    "Remember with the outcome that if a decision is 'Affirmed' then inventive step is not present; if it 'Reversed' then it is present.\n"
+                                    "Be as faithful to the actual reasoning as possible, we want to map the decision as closely as possible."
+                                    f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
+                                    f"=== REASONS FOR DECICISION ===\n{reasons}\n=== END REASONS FOR DECIISION ===\n\n"
+                                    f"=== DECISION ===\n{decision}\n=== END DECISION ===\n\n"
+                                    f"INSTRUCTIONS:\n"
+                                    f"1. Answer questions based ONLY on the text above.\n"
+                                    f"2. Output valid JSON with keys 'reasoning' and 'answer'."
+            )
+            
+        else:
+            system_instruction = (
+            f"You are objectively assessing Inventive Step for the European Patent Office (EPO). These cases are appeals against the examaining boards original decision.\n"
+            f"Use the data provided. Try to avoid using outside knowledge, except for common knowledge where you may use yor own judgement, if you believe this would have been known prior to the common knowledge cut-off date given.\n"
+            f"However, you can make reasonable assumptions not explicitly contained within the data.\n"
+            f"Do not just do as the data tells you directly, i.e. if the data says party X has appealed because they believe invention I has inventive step, do not just assume they are correct.\n"
+            f"Your job is to critically analysis the information given to you to come to an informed, reasoned judgment.\n"
+            f"You will be asked questions generated from an argumentation tool designed for inventive step to help you reason to a conclusion on whether inventive step is present.\n"
+            f"Do not try and answer the questions to guarantee a certain outcome because you believe that is the correct one, just answer them as objectively as possible."
+            f"You are trying to objectively assess whether inventive step is present, when answering each question think carefully and use your own critical analysis and discretion.\n "
+            f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
+            f"INSTRUCTIONS:\n"
+            f"1. Answer questions based ONLY on the text above.\n"
+            f"2. Output valid JSON with keys 'reasoning' and 'answer'."
+            )
 
         if is_prompt:
-            
-            #this mode gives access to the decision and real reasons to allow generation of training data for critic system
-            if train_data:
-                reasons = str(RAW_DATA.loc[RAW_DATA['Reference'] == case_name, 'Decision Reasons'].iloc[0])
-                decision = str(RAW_DATA.loc[RAW_DATA['Reference'] == case_name, 'Order'].iloc[0])
-                
-                system_instruction = ("You are helping annotate legal factors to help in assessing Inventive Step for the European Patent Office (EPO). These cases are appeals against the examaining boards original decision.\n"
-                                      "Only use the data provided. Try to avoid using outside knowledge, except for common knowledge where you may use yor own judgement, if you believe this would have been known prior to the common knowledge cut-off date given.\n"
-                                      "However, you can make reasonable assumptions not explicitly contained within the data.\n"
-                                      "You will be given access to the patent claims, closest prior art document/s, the reasons for decision and the outcome of the case.\n"
-                                      "Remember with the outcome that if a decision is 'Affirmed' then inventive step is not present; if it 'Reversed' then it is present.\n"
-                                      "Be as faithful to the actual reasoning as possible, we want to map the decision as closely as possible."
-                                     f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
-                                     f"=== REASONS FOR DECICISION ===\n{reasons}\n=== END REASONS FOR DECIISION ===\n\n"
-                                     f"=== DECISION ===\n{decision}\n=== END DECISION ===\n\n"
-                                     f"INSTRUCTIONS:\n"
-                                     f"1. Answer questions based ONLY on the text above.\n"
-                                     f"2. Output valid JSON with keys 'reasoning' and 'answer'."
-                )
-                
-            else:
-                system_instruction = (
-                f"You are objectively assessing Inventive Step for the European Patent Office (EPO). These cases are appeals against the examaining boards original decision.\n"
-                f"Use the data provided. Try to avoid using outside knowledge, except for common knowledge where you may use yor own judgement, if you believe this would have been known prior to the common knowledge cut-off date given.\n"
-                f"However, you can make reasonable assumptions not explicitly contained within the data.\n"
-                f"Do not just do as the data tells you directly, i.e. if the data says party X has appealed because they believe invention I has inventive step, do not just assume they are correct.\n"
-                f"Your job is to critically analysis the information given to you to come to an informed, reasoned judgment.\n"
-                f"You will be asked questions generated from an argumentation tool designed for inventive step to help you reason to a conclusion on whether inventive step is present.\n"
-                f"Do not try and answer the questions to guarantee a certain outcome because you believe that is the correct one, just answer them as objectively as possible."
-                f"You are trying to objectively assess whether inventive step is present, when answering each question think carefully and use your own critical analysis and discretion.\n "
-                f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
-                f"INSTRUCTIONS:\n"
-                f"1. Answer questions based ONLY on the text above.\n"
-                f"2. Output valid JSON with keys 'reasoning' and 'answer'."
-                )
-            
+                        
             q_text = clean
             
             #consult the LLM
@@ -469,14 +470,14 @@ async def run_tool_session(client, case_name, context_text, run_id, metadata, tr
         
         if train_data:            
             summary_question = (
-                "Based on the session interaction above and the real outcome of the case you have been given. Are the outcomes the same and does the resaoning make sense from the real decision's reasoning? i.e. if the case was affirmed or dismissed then inventive step was likely not present but if the outcome was reversed then it must be present. State whether this os true with 'Yes' or 'No'\n"
+                "Based on the session interaction above and the real outcome of the case you have been given. Are the outcomes the same and does the resaoning make sense from the real decision's reasoning? i.e. if the case was affirmed or dismissed then inventive step was likely not present but if the outcome was reversed then it must be present. State whether the outcome here does match the real outcome true with 'Yes' or 'No'\n"
                 )
         
             context_for_final = f"SESSION OUTPUT:\n{final_combined}\n\n{summary_question}"
             
             logger.debug(context_for_final)
             
-            final_ans, final_reas = await consult_llm(context_for_final, history, client, turn, log_file, question=context_for_final, generation_mode="baseline", metadata=metadata, train_data=True)
+            final_ans, final_reas = await consult_llm(system_instruction, history, client, turn, log_file, question=context_for_final, generation_mode="tool", metadata=metadata, train_data=True)
         
         else:
             summary_question = (
@@ -646,7 +647,7 @@ async def run_ensemble_session(client, case_name, context_text, run_id, metadata
                     }
                     try:
                         async with REQUEST_SEMAPHORE:
-                            cresp = await asyncio.wait_for(client.chat.completions.create(**base_req), timeout=60)
+                            cresp = await asyncio.wait_for(client.chat.completions.create(**base_req), timeout=120)
                         raw = cresp.choices[0].message.content.strip()
                     
                     except Exception as e:
@@ -687,7 +688,7 @@ async def run_ensemble_session(client, case_name, context_text, run_id, metadata
                         "extra_body": {"guided_json": ADM_INTERFACE.model_json_schema()},
                     }
                     async with REQUEST_SEMAPHORE:
-                        vresp = await asyncio.wait_for(client.chat.completions.create(**vreq), timeout=45)
+                        vresp = await asyncio.wait_for(client.chat.completions.create(**vreq), timeout=60)
                     vraw = vresp.choices[0].message.content.strip()
                     try:
                         vparsed = json.loads(vraw)
@@ -926,11 +927,11 @@ async def run_experiment_batch(data_path, dataset, experiment_config, mode, num_
         #brief pause between batch runs to be safe
         await asyncio.sleep(1)
 
-    #save Consolidated Results JSON
-    json_filename = f"{BASE_CASE_DIR}/results_{dataset}_{mode}_config{experiment_config}.json"
-    with open(json_filename, 'w') as f:
-        json.dump(all_runs_results, f, indent=4)
-    print(f"\nExperiment Completed. Results saved to {json_filename}")
+        #save Consolidated Results JSON
+        json_filename = f"{BASE_CASE_DIR}/results_{dataset}_{mode}_config{experiment_config}.json"
+        with open(json_filename, 'w') as f:
+            json.dump(all_runs_results, f, indent=4)
+        print(f"\nExperiment Completed. Results saved to {json_filename}")
 
 async def async_main():
     """
@@ -938,7 +939,7 @@ async def async_main():
     """
     #track cli args
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str, default="gpt", choices=["gpt", "llama", "qwen"]) 
+    parser.add_argument("--model", type=str, default="gpt", choices=["gpt", "llama", "gpt_small"]) 
     parser.add_argument('--gpu', type=str, default='gpu31')
     parser.add_argument('--dataset', type=str, choices=['comvik', 'main'], required=True)
     parser.add_argument('--data_path', type=str, default="../Data/VALIDATION")

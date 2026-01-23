@@ -66,22 +66,22 @@ def adm_initial():
     adm.addInformationQuestion("CGK", "Please briefly describe the common general knowledge")
 
     #F8
-    adm.addNodes("Contested", question="[Q4] Is there an explicit reason to contest what constitutes the Common General Knowledge?")
+    #adm.addNodes("Contested", question="[Q4] Is there an explicit reason to contest what constitutes the Common General Knowledge?")
     
     #F9/F10/F11
-    adm.addQuestionInstantiator(
-        "[Q5] What is the primary source of evidence cited for the CGK?",
-        {
-            "A standard textbook": "Textbook",
-            "A broad technical survey": "TechnicalSurvey",
-            "A single publication in a very new or rapidly evolving field.":"PublicationNewField",
-            "A single publication in an established field.": "SinglePublication",
-            "No documentary evidence is provided.": '' ,
-            "Other":''
-        },None,
-        question_order_name="field_questions_4",
-        gating_node= 'Contested'
-    )
+    # adm.addQuestionInstantiator(
+    #     "[Q5] What is the primary source of evidence cited for the CGK?",
+    #     {
+    #         "A standard textbook": "Textbook",
+    #         "A broad technical survey": "TechnicalSurvey",
+    #         "A single publication in a very new or rapidly evolving field.":"PublicationNewField",
+    #         "A single publication in an established field.": "SinglePublication",
+    #         "No documentary evidence is provided.": '' ,
+    #         "Other":''
+    #     },None,
+    #     question_order_name="field_questions_4",
+    #     gating_node= 'Contested'
+    # )
     
     #F1
     adm.addNodes("SkilledIn", question= "These next few questions are to help establish who the 'person skilled in the art' is. This is a hypothetical person. \n\n[Q6] Is the skilled person skilled in the relevant technical field of the prior art?")
@@ -110,7 +110,7 @@ def adm_initial():
 
     #F19
     adm.addQuestionInstantiator(
-    "[Q11] Is the closest prior art document itself a single reference? (Note: we can combine with other prior art documents in a subsequent question, we must choose 1 to be the closest)",
+    "[Q11] Is the closest prior art document itself a single reference? (Note: we can combine with other prior art documents in a subsequent question, so we must choose 1 to be the closest if there are multiple documents)",
     {
         "Yes": "SingleReference",
         "No": ''
@@ -156,9 +156,9 @@ def adm_initial():
     #AF5
     adm.addNodes("RelevantPriorArt", ['SameField','SimilarField','SimilarPurpose','SimilarEffect'], ['the relevant prior art is from the same field','the relevant prior art is from a similar field','the relevant prior art has a similar purpose','the relevant prior art has a similar effect','a relevant prior art cannot be established'])
     #AF4
-    adm.addNodes("DocumentaryEvidence", ['reject SinglePublication','Textbook','TechnicalSurvey','PublicationNewField'], ['a single publication is not documentary evidence','a textbook is the documentary evidence','a technical survey is the documentary evidence','a publication in a new or emerging field is the documentary evidence', 'no documentary evidence for common knowledge provided'])
+    #adm.addNodes("DocumentaryEvidence", ['reject SinglePublication','Textbook','TechnicalSurvey','PublicationNewField'], ['a single publication is not documentary evidence','a textbook is the documentary evidence','a technical survey is the documentary evidence','a publication in a new or emerging field is the documentary evidence', 'no documentary evidence for common knowledge provided'])
     #AF3
-    adm.addNodes("CommonKnowledge", ['DocumentaryEvidence','reject Contested','accept'], ['common knowledge evidenced', 'no common knowledge established', 'common knowledge not disputed'])
+    #adm.addNodes("CommonKnowledge", ['DocumentaryEvidence','reject Contested','accept'], ['common knowledge evidenced', 'no common knowledge established', 'common knowledge not disputed'])
     #AF1
     adm.addNodes("Person", ['Individual','ResearchTeam','ProductionTeam'], ['the skilled practitioner is an individual','the skilled practitioner is a research team','the skilled practitioner is a production team','the skilled practitioner does not fall within a vaild category'])
     #AF2
@@ -171,11 +171,11 @@ def adm_initial():
     adm.addNodes("ClosestPriorArtDocuments", ['CombinationDocuments','ClosestPriorArt'], ['the closest prior art consists of a combination of documents','the closest prior art consists of a document of a single reference','no set of closest prior documents could be determined'])
     
     #NEW AF!!!!
-    adm.addNodes("Valid",['CommonKnowledge and SkilledPerson and ClosestPriorArtDocuments'],['the conceptual components of the invention have been established, we may now assess inventive step','the conceptual components of the invention could not be established, the process will now terminate'],root=True)
+    adm.addNodes("Valid",['SkilledPerson and ClosestPriorArtDocuments'],['the conceptual components of the invention have been established, we may now assess inventive step','the conceptual components of the invention could not be established, the process will now terminate'],root=True)
     
     # Set question order to ask information questions first
     adm.questionOrder = ["INVENTION_TITLE", "INVENTION_DESCRIPTION", "INVENTION_TECHNICAL_FIELD", "REL_PRIOR_ART", "field_questions",
-    "field_questions_2","field_questions_3",'CGK',"Contested",'field_questions_4','SkilledIn','Average','Aware','Access','skilled_person',
+    "field_questions_2","field_questions_3",'CGK','SkilledIn','Average','Aware','Access','skilled_person',
     'SingleReference','cpa_min_mod',"CombinationAttempt",'combined_docs','CombinationMotive','BasisToAssociate']
     
     return adm
@@ -297,8 +297,8 @@ def sub_adm_2(item_name):
     #sub_adm.addNodes("Embodied",question=f'[Q35] Would the skilled person, consider the technical effects identified to be embodied by the same originally disclosed invention?\n\nItem name: {sub_adm.name}')
 
     #F50
-    sub_adm.addNodes("ScopeOfClaim",question=f'[Q36] The technical effects used for formulating the objective technical problem must be derivable from the application, when considered in light of the closest prior art. Are the technical effects currently identified, achieved across the entire scope of the claims taken as a whole, and are the claims limited in such a way that all embodiments which could be encompassed by the claim would show these effects? i.e. we are confident that the asserted technical effects were achieved by the claimed method across the whole scope of the claims. If the Independent Claim (Claim 1) is too broad and lacks these features, don\'t just answer no, assess whether the effect is achieved across the scope of the dependent claim with those features.')
-
+    sub_adm.addNodes("ScopeOfClaim",question=f'[Q36] Are the technical effects currently identified, achieved across the claims, and are the claims limited in such a way that all inventions which could be encompassed by the claims (taken as a whole so both independent and dependent) would show these effects? The technical effects used for formulating the objective technical problem have to be derivable from the application as filed when considered in the light of the closest prior art and the general common knowledge. All embodiments of the invention which are encompassed by the claims provided must demonstrate these effects. This does not mean all claims must exhibit this effect, only the inventions covered by them must. If there is at least 1 claim (dependent or independent) in which the technical effect can be achieved then answer Yes.')
+    
     #F51
     sub_adm.addNodes("WrittenFormulation",question=f'[Q37] Can we construct a written formulation of the objective technical problem?\n\nItem name: {sub_adm.name}')
 
@@ -307,7 +307,7 @@ def sub_adm_2(item_name):
 
     #F53/F54
     sub_adm.addQuestionInstantiator(
-    f"[Q39] Do you believe the skilled person would have arrived at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art would have provided motivation to do so in the expectation of some improvement or advantage?\n\nProblem name: {sub_adm.name}",
+    f"[Q39] Do you believe the skilled person would have arrived, not merely could have arrived, at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art would have provided a clear motivation to do so in the expectation of some improvement or advantage? Make clear why they would have been motivated if you answer yes.\n\nProblem name: {sub_adm.name}",
     {
         "Would have adapted from the prior art": "WouldAdapt",
         "Would have modified from the prior art": "WouldModify",
@@ -400,7 +400,7 @@ def adm_main():
     
     #F46
     adm.addQuestionInstantiator(
-    "[Q32] How do the invention's technical features create the technical effect? Note: selecting an aggregation of independent effects implies the existence of >1 partial objective technical problems. This is rare and applies only if the features are completely functionally independent. If in doubt, choose 'synergistic' though you may choose 'aggregate features' if it can be justified well.",
+    "[Q32] How do the invention's technical features create the technical effect? Note: selecting an aggregation of independent effects implies the existence of >1 partial objective technical problems. This only applies only if the features are completely functionally independent.",
     {
         "As a synergistic combination (effect is greater than the sum of parts).": "Synergy",
         "As a simple aggregation of independent effects.": "",
@@ -676,11 +676,10 @@ def adm_main():
     adm.addNodes('Novelty',['DistinguishingFeatures'],['The invention has novelty','The invention has no novelty'])
 
     #I2 - now default accept 
-    adm.addNodes('Obvious',['reject OTPNotObvious','SecondaryIndicator','accept'],['the invention is not obvious','the invention is obvious due to a secondary indicator','the invention is obvious'])
+    adm.addNodes('Obvious',['reject OTPNotObvious', 'accept'],['the invention is not obvious','the invention is obvious'])
 
     #I1 - ROOT NODE 
-    adm.addNodes('InvStep',['reject Obvious','reject SufficiencyOfDisclosure', 'Novelty and ObjectiveTechnicalProblem'],['there is no inventive step due to sufficiency of disclosure','there is no inventive step due to obviousness','there is an inventive step present','there is no inventive step present'],root=True)
-
+    adm.addNodes('InvStep',['reject Obvious', 'reject SecondaryIndicator', 'reject SufficiencyOfDisclosure', 'Novelty and ObjectiveTechnicalProblem'],[ 'there is no inventive step due to obviousness', 'there is no inventive step due to a secondary indicator', 'there is no inventive step due to sufficiency of disclosure', 'there is an inventive step present', 'there is no inventive step present'],root=True)
     # Set question order to ask information questions first
     adm.questionOrder = ['ReliableTechnicalEffect','DistinguishingFeatures','NonTechnicalContribution','TechnicalContribution','SufficiencyOfDisclosure',"InventionUnexpectedEffect",
     "synergy_question","FunctionalInteraction","OTPNotObvious","ValidOTP", "DisadvantageousMod","Foreseeable","UnexpectedAdvantage","BioTech","Antibody","PredictableResults","ReasonableSuccess","KnownTechnique","OvercomeTechDifficulty","GapFilled","WellKnownEquivalent","KnownProperties","AnalogousUse","KnownDevice","ObviousCombination","AnalogousSubstitution","ChooseEqualAlternatives","NormalDesignProcedure","SimpleExtrapolation","ChemicalSelection"
