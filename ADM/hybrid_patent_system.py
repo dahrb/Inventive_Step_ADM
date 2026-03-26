@@ -41,7 +41,7 @@ RAW_DATA = None
 #model configurations
 MODELS = {
     "gpt": {"id": "gpt-oss-120b"},
-    "llama": {"id": "Llama-3.3-70B-Instruct"},
+    "llama": {"id": "Llama-3.3-70B-Instruct-FP8"},
     "gpt_small": {"id": "gpt-oss-20b"},
 }
 

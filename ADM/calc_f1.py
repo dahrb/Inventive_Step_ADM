@@ -13,12 +13,24 @@ import pandas as pd
 # Hard-coded ground truth for the comvik example
 comvik = ['NO', 'NO', 'NO', 'YES', 'NO']
 validation = ['NO','YES','YES','YES','NO','NO','NO','YES','YES','NO']
-test_data = pd.read_pickle('Data/Inv_Step_Filtered_Test_Data.pkl')
+test_data = pd.read_pickle('Data/test_data_Inv_Step.pkl')
 outcome_map = {'Reversed': 'YES', 'Affirmed': 'NO'}
 test = test_data['Outcome'].astype(str).map(lambda v: outcome_map.get(v.strip(), v.strip())).tolist()
+test_ref_to_gt = dict(
+    zip(
+        test_data['Reference'].astype(str).str.strip().tolist(),
+        [str(v).strip().upper() for v in test],
+    )
+)
 train_data = pd.read_pickle('Data/train_data_Inv_Step.pkl')
 outcome_map = {'Reversed': 'YES', 'Affirmed': 'NO'}
 train = train_data['Outcome'].astype(str).map(lambda v: outcome_map.get(v.strip(), v.strip())).tolist()
+train_ref_to_gt = dict(
+    zip(
+        train_data['Reference'].astype(str).str.strip().tolist(),
+        [str(v).strip().upper() for v in train],
+    )
+)
 
     
 def _find_elapsed_in_obj(obj):
@@ -50,7 +62,7 @@ def compute_avg_setup_time(results_filepath, runs=None, outputs_base=None):
     """
     #CHANGE
     if outputs_base is None:
-        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Train_Cases_Pred'
+        outputs_base = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/LLAMA_ADM_NEW'
 
     fname = os.path.basename(results_filepath)
     root, _ext = os.path.splitext(fname)
@@ -172,25 +184,42 @@ def process_results_file(results_filepath):
     print("-" * 48)
     
     for run_id, preds_dict in predictions_data.items():
-        sorted_keys = sorted(preds_dict.keys())
-        y_pred = [preds_dict[key] for key in sorted_keys]
         # choose ground truth based on results filename
         fname = os.path.basename(results_filepath).lower()
         if 'comvik' in fname:
-            gt = comvik
+            sorted_keys = sorted(preds_dict.keys())
+            y_pred = [str(preds_dict[key]).strip().upper() for key in sorted_keys]
+            y_pred = ['NO' if v in {'UNKNOWN', 'ERROR'} else v for v in y_pred]
+            gt = [str(v).strip().upper() for v in comvik]
+            n = min(len(y_pred), len(gt))
+            y_pred_eval = y_pred[:n]
+            y_true_eval = gt[:n]
         else:
-            #gt = validation
-            #gt = test
-            gt = train
+            if 'test' in fname:
+                ref_to_gt = test_ref_to_gt
+            else:
+                ref_to_gt = train_ref_to_gt
 
+            y_true_eval = []
+            y_pred_eval = []
+            for ref, pred in preds_dict.items():
+                ref_key = str(ref).strip()
+                if ref_key not in ref_to_gt:
+                    continue
+                pred_norm = str(pred).strip().upper()
+                pred_norm = 'NO' if pred_norm in {'UNKNOWN', 'ERROR'} else pred_norm
+                gt_norm = ref_to_gt[ref_key]
+                if pred_norm in {'YES', 'NO'} and gt_norm in {'YES', 'NO'}:
+                    y_pred_eval.append(pred_norm)
+                    y_true_eval.append(gt_norm)
 
-        if len(y_pred) != len(gt):
+        if len(y_pred_eval) == 0:
             f1 = float('nan')
             acc = float('nan')
         else:
             try:
-                f1 = f1_score(gt, y_pred, pos_label='YES')
-                acc = accuracy_score(gt, y_pred)
+                f1 = f1_score(y_true_eval, y_pred_eval, pos_label='YES')
+                acc = accuracy_score(y_true_eval, y_pred_eval)
             except Exception:
                 f1 = float('nan')
                 acc = float('nan')
@@ -232,7 +261,7 @@ def process_results_file(results_filepath):
 
 if __name__ == '__main__':
 
-    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/Train_Cases_Pred/results_*.json' #Valid_Cases
+    results_pattern = '/users/sgdbareh/scratch/ADM_JURIX/Outputs/LLAMA_ADM_NEW/results_*.json' #Valid_Cases
     result_files = sorted(glob.glob(results_pattern))
     if not result_files:
         print('No results_*.json files found under Outputs/')

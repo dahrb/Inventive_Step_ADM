@@ -336,19 +336,21 @@ class ADM:
                 
                 # 2. Standard Logic Nodes
                 elif self.checkNonLeaf(node):
+
                     self.node_done.append(name)
                     
                     # --- GUARD: Check if acceptance logic exists ---
                     if node.acceptance:
+
                         val,_ = self.evaluateNode(node)
+
                         if val:
                             if name not in self.case: self.case.append(name)
                     else:
-                        # No logic? Truth is "Is it in the case?"
-                        # (Usually these are leaves, but could be special nodes)
                         pass 
                     
                     non_leaf_nodes.pop(name)
+                
         
         self.case = list(set(self.case))
         
@@ -643,7 +645,7 @@ class ADM:
         
         #check conditions
         for index, condition in enumerate(node.acceptance):
-            
+
             logger.debug(f"  [Iter {index}] Testing: '{condition}'")
             
             #reset reject flag
@@ -786,7 +788,7 @@ class ADM:
     
     def addGatedBLF(self, name, gated_node, question_template):
         """
-        Adds a BLF that depends on another node
+        Adds a BLF that will only be asked if a previous BLF is accepted
         
         Parameters
         ----------
@@ -1361,7 +1363,9 @@ class SubADMNode(Node):
         #evaluate sub-ADM for each item using the existing UI infrastructure
         for i, item in enumerate(items, 1):
             print(f"\n--- Item {i}/{len(items)}: {item} ---")
-                
+            
+            #logger.debug(self.sub_adm)
+
             #create a new sub-ADM instance with key facts as the same
             sub_adm = self.sub_adm(item)
             
@@ -1372,8 +1376,11 @@ class SubADMNode(Node):
                         sub_adm.case.append(node)
                     else:
                         pass
-                
-            sub_adm.facts = self.main_adm.facts
+            
+            try:
+                sub_adm.facts = self.main_adm.facts
+            except:
+                sub_adm.facts = {}
         
             # Use the existing UI infrastructure to evaluate the sub-ADM
             # This will handle all node types generically (DependentBLF, QuestionInstantiator, etc.)
@@ -1382,7 +1389,7 @@ class SubADMNode(Node):
             # Store the sub-ADM instance for later access to statements
             sub_adm_instances[item] = sub_adm
             
-            logger.debug('3')
+            #logger.debug('3')
 
             
             self.sub_adm_results[item] = sub_result

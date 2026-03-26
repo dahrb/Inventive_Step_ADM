@@ -1,12 +1,19 @@
 import pandas as pd
+import asyncio
+from openai import AsyncOpenAI
+import subprocess
+import time
 
+import subprocess
+import time
 
-RAW_DATA = pd.read_pickle("Data/train_data_Inv_Step.pkl")
-
-case_name = 'T083412'
-
-reasons = str(RAW_DATA.loc[RAW_DATA['Reference'] == case_name, 'Decision Reasons'].iloc[0])
-decision = str(RAW_DATA.loc[RAW_DATA['Reference'] == case_name, 'Order'].iloc[0])
-
-print(reasons)
-print(decision)
+while True:
+    try:
+        choice = int(input("Enter the number of the answer you wish to choose (only enter the chosen number): ")) - 1
+        if 0 <= choice < len(answers):
+            selected_answer = answers[choice]
+            break
+        else:
+            print("Invalid choice. Please try again, ensure your response is a number.")
+    except ValueError:
+        print("Invalid input. Please ensure you only give a number.")

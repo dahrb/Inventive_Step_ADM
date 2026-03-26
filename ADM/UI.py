@@ -67,8 +67,12 @@ class CLI():
         Generates questions based on the question order and current nodes
         """
         
-        #early stop check
-        if self.evaluated_blfs:
+        # to ensure the question gen procedure stops 
+        if not question_order:
+            return question_order, nodes
+        
+        #early stop check - but only if there are more questions remaining
+        if self.evaluated_blfs and len(question_order) > 1:
             self.adm.case = self.case
             logger.debug(f'Case: {self.adm.case}')
             if self.adm.check_early_stop(self.evaluated_blfs):
@@ -76,10 +80,6 @@ class CLI():
                 return [], nodes
             
         logger.debug('EARLY STOP ENDS ==========')
-        
-        # to ensure the question gen procedure stops 
-        if not question_order:
-            return question_order, nodes
         
         #question under consideration
         current_question = question_order[0]
@@ -321,7 +321,7 @@ class CLI():
             #get user choice
             while True:
                 try:
-                    choice = int(input("Enter the number of the answer you wish to choose (enter number): ")) - 1
+                    choice = int(input("Enter the number of the answer you wish to choose (only enter the chosen number): ")) - 1
                     if 0 <= choice < len(answers):
                         selected_answer = answers[choice]
                         break
@@ -389,14 +389,13 @@ class CLI():
         """Show the evaluation outcome"""
         
         try:
-            
             self.adm.evaluated_nodes = set(self.evaluated_blfs)
-            
+
             logger.debug(f'eval nodes: {self.adm.evaluated_nodes}')
-            
+             
             #returns the statements from the evaluated tree in a hierarchical structure
             reasoning = self.adm.evaluateTree(self.case)
-            
+
             print("\n" + "="*50)
             print(f"Case Outcome: {self.caseName}")
             print(f"Accepted factors: {self.case}")
@@ -514,82 +513,99 @@ class CLI():
         except Exception as e:
             print(f"Error creating visualization: {e}")
 
-    def save_adm(self, folder_base="../Outputs/Eval_Cases", name=None, run_id=None, config=None, mode=None):
+
+    def save_adm(self, folder_base="../Outputs/Eval_Cases", name=None, run_id=None, config=None, mode=None,adm_config=None,adm_initial=None):
         """
-        Saves the case, reasoning statements, evaluated nodes, and any sub-ADM results to a structured sub-folder:
-        {case}/{run_id}/config_{config}/{mode}/adm_{name}_summary.json
+        Saves the case, reasoning statements, evaluated nodes, and any sub-ADM results to a central adm_summary.json file:
+        {case}/{run_id}/config_{config}/{mode}/adm_summary.json
+        Each ADM/sub-ADM is appended as a dict entry in a list.
         """
-        # Use case name or ADM name for folder
+        
         folder_name = self.caseName if self.caseName else self.adm.name
-        # Compose directory structure
         run_part = f"run_{run_id}" if run_id is not None else "run_X"
         config_part = f"config_{config}" if config is not None else "config_X"
         mode_part = mode if mode is not None else "mode"
-        save_dir = os.path.join(folder_base, folder_name, run_part, config_part, mode_part)
+        adm_config_part = str(adm_config) if adm_config is not None else "adm_config"
+        adm_initial_part = str(adm_initial) if adm_initial is not None else "adm_initial"
+        
+        save_dir = os.path.join(folder_base, folder_name, run_part, config_part, mode_part, adm_config_part, adm_initial_part)
         os.makedirs(save_dir, exist_ok=True)
 
-        # Gather main ADM data
-        case_data = {
+        # Prepare main ADM summary
+        adm_entry = {
+            "adm_type": "main",
+            "name": name if name else self.adm.name,
             "case": self.case,
             "evaluated_nodes": list(self.evaluated_blfs),
+            "facts": {},
+            "reasoning": [],
         }
         # Store ADM facts if available
         if hasattr(self.adm, "facts"):
-            # Try to make facts JSON serializable (skip unserializable objects)
             def safe_fact(val):
                 try:
                     json.dumps(val)
                     return val
                 except Exception:
                     return str(val)
-            case_data["facts"] = {k: safe_fact(v) for k, v in self.adm.facts.items()}
+            adm_entry["facts"] = {k: safe_fact(v) for k, v in self.adm.facts.items()}
 
         # Get reasoning statements for main ADM
         try:
             self.adm.evaluated_nodes = set(self.evaluated_blfs)
             reasoning = self.adm.evaluateTree(self.case)
-            case_data["reasoning"] = [
+            adm_entry["reasoning"] = [
                 {"depth": depth, "statement": statement} for depth, statement in (reasoning or [])
             ]
         except Exception as e:
-            case_data["reasoning"] = [f"Error generating reasoning: {e}"]
+            adm_entry["reasoning"] = [f"Error generating reasoning: {e}"]
 
-        # Save main ADM as JSON
-        json_path = os.path.join(save_dir, f"adm_{name}_summary.json")
-        with open(json_path, "w") as f:
-            json.dump(case_data, f, indent=2)
-        print(f"ADM summary saved to: {json_path}")
-
-        # --- Save sub-ADM results if present ---
+        # Prepare sub-ADM summaries
+        sub_adm_entries = []
         if hasattr(self.adm, "facts"):
             for fact_key, fact_val in self.adm.facts.items():
                 if fact_key.endswith('_sub_adm_instances') and isinstance(fact_val, dict):
-                    sub_dir = os.path.join(save_dir, f"{fact_key}")
-                    os.makedirs(sub_dir, exist_ok=True)
+                    counter = 0
                     for item_name, sub_adm_inst in fact_val.items():
-                        sub_case_data = {
+                        counter += 1
+                        sub_entry = {
+                            "adm_type": "sub_adm",
+                            "parent_fact": fact_key,
+                            "item_name": str(item_name),
+                            "id": int(counter),
                             "case": getattr(sub_adm_inst, "case", []),
-                            "evaluated_nodes": list(getattr(sub_adm_inst, "case", [])),  # fallback if no evaluated_blfs
+                            "evaluated_nodes": list(getattr(sub_adm_inst, "case", [])),
+                            "reasoning": [],
                         }
-                        # Try to get reasoning for sub-ADM
                         try:
-                            sub_reasoning = sub_adm_inst.evaluateTree(sub_case_data["case"])
-                            sub_case_data["reasoning"] = [
+                            sub_reasoning = sub_adm_inst.evaluateTree(sub_entry["case"])
+                            sub_entry["reasoning"] = [
                                 {"depth": depth, "statement": statement} for depth, statement in (sub_reasoning or [])
                             ]
                         except Exception as e:
-                            sub_case_data["reasoning"] = [f"Error generating reasoning: {e}"]
-                        # Save sub-ADM as JSON
-                        # Use first 5 words of item_name for filename
-                        words = str(item_name).split()
-                        safe_item = "_".join(words[:5]) if words else "subadm"
-                        # Sanitize filename
-                        safe_item = safe_item.replace("/", "-").replace("\\", "-")
-                        sub_json_path = os.path.join(sub_dir, f"{safe_item}_summary.json")
-                        with open(sub_json_path, "w") as f:
-                            json.dump(sub_case_data, f, indent=2)
-                        print(f"Sub-ADM summary saved to: {sub_json_path}")
-        
+                            sub_entry["reasoning"] = [f"Error generating reasoning: {e}"]
+                        sub_adm_entries.append(sub_entry)
+
+        # Central summary file
+        summary_path = os.path.join(save_dir, "adm_summary.json")
+        # Load existing summary if present
+        adm_summaries = []
+        if os.path.exists(summary_path):
+            try:
+                with open(summary_path, "r") as f:
+                    adm_summaries = json.load(f)
+            except Exception:
+                adm_summaries = []
+
+        # Append new entries
+        adm_summaries.append(adm_entry)
+        adm_summaries.extend(sub_adm_entries)
+
+        # Save back to central summary file
+        with open(summary_path, "w") as f:
+            json.dump(adm_summaries, f, indent=2)
+        print(f"ADM and sub-ADM summaries appended to: {summary_path}")
+
 def main():
     
     """Main function"""
@@ -601,30 +617,78 @@ def main():
     parser.add_argument('--config', type=int, default=None, help='Experiment config number (for folder structure)')
     parser.add_argument('--mode', type=str, default=None, help='Mode (tool/baseline) for folder structure')
     parser.add_argument('--folder_base', type=str, default="./Eval_Cases", help='Base folder for saving ADM outputs')
+    parser.add_argument('--adm_config',type=str,choices=['both','none','sub_adm_1','sub_adm_2'],default='both') #finish with options
+    parser.add_argument('--adm_initial', action='store_true', help='Uses the initial_adm') #finish with options
+
     args = parser.parse_args()
 
-    # THE TOGGLE: If user flags --debug, switch level to DEBUG
+    #switch to debug mode
     if args.debug:
         logging.getLogger().setLevel(logging.DEBUG)        
         print("--- DEBUG MODE ENABLED ---")
+        
+    match args.adm_config:
+        case "both":
+            sub_adm_1 = True
+            sub_adm_2 = True
+        case "none":
+            sub_adm_1 = False
+            sub_adm_2 = False
+        case "sub_adm_1":
+            sub_adm_1 = True
+            sub_adm_2 = False
+        case "sub_adm_2":
+            sub_adm_1 = False
+            sub_adm_2 = True
 
-    cli = CLI(adm=adm_initial())
+    
+    if args.adm_initial:
+        cli = CLI(adm=adm_initial())
 
-    try:
-        result = cli.query_domain()
-        cli.save_adm(
-            folder_base=args.folder_base,
-            name='initial',
-            run_id=args.run_id,
-            config=args.config,
-            mode=args.mode
-        )  # Save initial ADM
+        try:
+            result = cli.query_domain()
+            cli.save_adm(
+                folder_base=args.folder_base,
+                name='initial',
+                run_id=args.run_id,
+                config=args.config,
+                mode=args.mode,
+                adm_config=args.adm_config,
+                adm_initial=args.adm_initial
+            )  # Save initial ADM
 
-        if result:
-            logger.debug('Moving to main ADM')
-            cli_2 = CLI(adm=adm_main())
-            cli_2.caseName = cli.caseName
-            cli_2.adm.facts = cli.adm.facts
+            if result:
+                logger.debug('Moving to main ADM')
+                cli_2 = CLI(adm=adm_main(sub_adm_1_flag=sub_adm_1, sub_adm_2_flag=sub_adm_2))
+                cli_2.caseName = cli.caseName
+                cli_2.adm.facts = cli.adm.facts
+
+                _ = cli_2.query_domain()
+                cli_2.save_adm(
+                    folder_base=args.folder_base,
+                    name='main',
+                    run_id=args.run_id,
+                    config=args.config,
+                    mode=args.mode,
+                    adm_config=args.adm_config,
+                    adm_initial=args.adm_initial
+                )  # Save main ADM
+
+        #cli.visualize_domain(minimal=False,name="Initial",visualize_sub_adms=False)
+        #cli_2.visualize_domain(minimal=False,name="Main")
+
+        except KeyboardInterrupt:
+            print("\n\nProgram interrupted by user. Goodbye!")
+            sys.exit(0)
+        except Exception as e:
+            print(f"\nUnexpected error: {e}")
+            sys.exit(1)
+            
+    else:
+        try:
+            cli_2 = CLI(adm=adm_main(sub_adm_1_flag=sub_adm_1, sub_adm_2_flag=sub_adm_2))
+            #cli_2.caseName = cli.caseName
+            #cli_2.adm.facts = cli.adm.facts
 
             _ = cli_2.query_domain()
             cli_2.save_adm(
@@ -632,18 +696,18 @@ def main():
                 name='main',
                 run_id=args.run_id,
                 config=args.config,
-                mode=args.mode
+                mode=args.mode,
+                adm_config=args.adm_config,
+                adm_initial=args.adm_initial
             )  # Save main ADM
-
-        #cli.visualize_domain(minimal=False,name="Initial",visualize_sub_adms=False)
-        #cli_2.visualize_domain(minimal=False,name="Main")
-
-    except KeyboardInterrupt:
-        print("\n\nProgram interrupted by user. Goodbye!")
-        sys.exit(0)
-    except Exception as e:
-        print(f"\nUnexpected error: {e}")
-        sys.exit(1)
+        
+        except KeyboardInterrupt:
+            print("\n\nProgram interrupted by user. Goodbye!")
+            sys.exit(0)
+        except Exception as e:
+            print(f"\nUnexpected error: {e}")
+            sys.exit(1)
+        
 
 if __name__ == "__main__":
     main()  
