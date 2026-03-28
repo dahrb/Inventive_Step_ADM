@@ -1,0 +1,232 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+KONINKLIJKE PHILIPS ELECTRONICS N.V. 29 May 2015
+
+02 790 580.1-2224 PH 932-01EP JOE/kho
+Hamburg, 29 May 2015
+Our ref.: PH 932-01EP JOE/kho
+Applicant: PHILIPS INTELL.PROPERTY&STANDARDS
+
+Application No.: 02 790 580.1
+
+Main request
+
+1. A touch-screen image scrolling system, comprising:
+
+an electronic image display screen (40);
+
+a microprocessor (42) coupled to said display screen (40) to dis-
+play information thereon and to receive interactive signals therefrom;
+
+timer means (43) associated with said microprocessor (42) to pro-
+vide timing capacity therefore;
+
+a source of scroll format data capable of display on said display
+screen (40);
+
+finger touch program instructions associated with said micropro-
+cessor (42) for sensing the speed and direction of a finger touch contact
+with said display screen (40);
+
+characterized in that
+
+said finger touch program instructions associated with said micro-
+processor (42) are also designed for sensing the time duration of a station-
+ary finger touch contact from initial touch until either motion or separation
+from said display screen (40) is detected; and in that said touch-screen im-
+age scrolling system further comprises:
+
+scrolling motion program instructions associated with said micro-
+processor (42) responsive to said duration of said finger touch contact such
+that, when said duration is greater than a first given preset minimum time
+and less than a second preset minimum time and is followed by motion
+
+along the surface of said display screen (40) and then by separation of said
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+finger touch from said display screen (40), a scroll format display on said
+display screen (40) is caused to begin to scroll in said sensed direction and
+at said sensed initial speed;
+
+time decay program instructions associated with said microproces-
+sor (42) for reducing the rate of scrolling displacement on said display
+screen (40) at a predetermined rate until motion is terminated;
+
+stopping motion program instructions associated with said micro-
+processor (42) for terminating scrolling displacement of the image on said
+display screen (40) upon first occurrence of any signal in the group of sig-
+nals comprising:
+
+(a) a substantially stationary finger touch on the display
+
+screen (40) enduring for a period longer than a preset minimum
+
+time, and
+
+(b) an end-of-scroll signal received from said scroll format da-
+
+ta source,
+
+wherein said scrolling motion program instructions further com-
+prise instructions responsive to said duration of said stationary finger touch
+contact such that, when said duration from initial touch until detection of ei-
+ther motion or separation from said display screen (40) is less than said se-
+cond given preset minimum time and if no motion occurs before separation
+
+of said finger from said display screen, an item touched is selected.
+
+2. The touch-screen image scrolling system of claim 1, wherein said
+scrolling motion program instructions further comprise instructions to move
+said display in correspondence with movement of the finger touch, in re-
+sponse to movement following a touch having a stationary duration greater
+than said first preset given minimum time and less than said second given
+
+preset minimum time.
+
+3. The touch-screen image scrolling system of claim 1, wherein said
+scrolling motion program instructions further comprise instructions to move
+a touch-selected item relative to the stationary display in correspondence
+
+with movement of said finger touch, in response to motion following a touch
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+having a stationary duration greater than said second given preset mini-
+
+mum time.
+
+4. The touch-screen image scrolling system of one of the preceding
+claims, wherein said scrolling motion program instructions further comprise
+instructions to slow the movement of said display to a rate corresponding to
+the motion of the finger at the moment that the contact is broken, in re-
+sponse to movement of the finger at a slower rate than the then-current
+rate of movement of the display following a touch having a stationary dura-
+tion greater than said first preset given minimum time and less than said
+
+second given preset minimum time.
+
+5. The touch-screen image scrolling system of one of the preceding
+claims, wherein said stopping motion program instructions also upon first
+occurrence of
+(c) a substantially stationary finger touch on the display
+screen (40) enduring for a period shorter than or equal to said pre-
+set minimum time
+provide for terminating scrolling displacement of the image on said display
+
+screen (40).
+
+6. The touch-screen image scrolling system of claim 1, wherein said
+group of signals for terminating scrolling displacement of the image on said
+display screen (40) further comprises
+
+(a) a signal indicating that the rate of scrolling displacement
+on said display screen (40) has decayed to a value below a predetermined
+
+given value.
+
+7. The touch-screen image scrolling system of claim 1, wherein said
+microprocessor (42), and said timer means (43) together comprise a pro-
+
+cessing unit of a conventional computer.
+
+--- PAGE 4 ---
+20
+
+25
+
+30
+
+8. The touch-screen image scrolling system of claim 7, wherein said
+source of scroll format data capable of display on said display screen (40)
+
+comprises part of the memory of said conventional computer.
+
+9. A method of controlling a scroll-like display of data on an electronic
+display screen (40), said method comprising the steps of:
+
+sensing (100c) the speed and direction of motion of said finger
+touch contact with said display screen (40);
+
+sensing (100b) the duration of a stationary finger touch contact
+time from initial touch until either motion or separation from an electronic
+display screen (40) having scrollable data displayed thereon is detected;
+
+if the sensed duration of finger touch contact time is greater than a
+first given preset minimum time and less than a second preset minimum
+time and is followed by motion along the surface of the display screen (40)
+and then by separation of said finger touch from said display screen (40),
+initiating (104) scrolling motion of said scrollable data on said display
+screen (40) in said sensed direction and at said sensed speed;
+
+slowing (106) the speed of said scrolling motion from the initiated
+speed thereof, at a predetermined rate; and
+
+terminating said scrolling motion when one of the conditions com-
+prising the following group of conditions is sensed:
+
+(a) a substantially stationary finger touch having a finite durati
+
+on is sensed;
+
+(b) an end-of-scroll signal is sensed,
+wherein said method comprises the further step (100) of selecting an item
+touched if the sensed stationary duration of the finger touch contact time
+from initial touch until detection of either motion or separation from said
+display screen (40) is less than said second given preset minimum time
+and if no motion occurs before separation of said finger from said display
+screen (40).
+10. The method of controlling the scroll-like display of data on an elec-
+tronic display screen in accordance with claim 9, wherein said group of
+
+conditions to be sensed for terminating said scrolling motion further com-
+
+--- PAGE 5 ---
+20
+
+25
+
+prises: the speed of said scrolling motion on said screen slows to a value
+
+below a predetermined given value.
+
+11 The method of controlling the scroll-like display of data on an elec-
+tronic display screen in accordance with claim 9, wherein said method
+comprises the further step of sensing a finger touch on said screen having
+a duration greater than said first given preset minimum time and less than
+said second given preset minimum time and then moving said display in
+
+correspondence with movement of the finger touch.
+
+12. The method of controlling the scroll-like display of data on an elec-
+tronic display screen in accordance with claim 9, wherein said method
+comprises the further step (103) of sensing a stationary finger touch on said
+screen having a duration greater than said second preset given minimum
+time and then moving a touch-selected item relative to the stationary dis-
+
+play in correspondence with movement of the finger touch.
+
+13. The method of controlling the scroll-like display of data on an elec-
+tronic display screen in accordance with any of claims 9 to 12, wherein said
+method comprises the further step of sensing movement of the finger at a
+slower rate than the then-current rate of movement of the display following
+sensing a touch having a stationary duration greater than said first preset
+given minimum time and less than said second given preset minimum time
+and then slowing the movement of said display to a rate corresponding to
+
+the motion of the finger at the moment that the contact is broken.

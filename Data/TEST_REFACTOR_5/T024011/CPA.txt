@@ -1,0 +1,63 @@
+TITLE:
+Coin sensing apparatus and method
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A coin discrimination apparatus and method is provided in which an oscillating electromagnetic field is generated on a single sensing core. The oscillating electromagnetic field is composed on one or more frequency components. The electromagnetic field interacts with a coin, and these interactions are monitored and used to classify the coin according to its physical properties. All frequency components of the magnetic field are phase-locked to a common reference frequency. The phase relationships between the various frequencies are fixed, and the interaction of each frequency component with the coin can be accurately determined without the need for complicated electrical filters or special geometric shaping of the sensing core. In one embodiment, a sensor having a core, preferably ferrite, which is curved, such as in a U-shape or in the shape of a section of a torus, and defining a gap, is provided with a wire winding for excitation and/or detection. The sensor can be used for simultaneously obtaining data relating to two or more parameters of a coin or other object, such as size and conductivity of the object. Two or more frequencies can be used to sense core and/or cladding properties.
+
+CLAIMS:
+1. A method usable for discriminating among coins, comprising the steps of:
+providing at least a first sensor having a first magnetic core which is non-linear over at least a portion thereof, said first core defining a first gap to define magnetic flux lines in the vicinity of said first gap;
+coupling said sensor in an oscillator circuit;
+detecting the change in the inductance of said sensor as said coins move past said first gap for deriving sizes of said coins; and
+detecting the change in Q of the inductance of said sensor as said coins move past said first gap for deriving conductivity of said coins.
+2. A method as claimed in claim 1, further comprising the steps of:
+providing a first periodic reference signal;
+providing a first periodic waveform to induce a magnetic flux on said first magnetic core; and
+wherein said first periodic waveform is phase-locked to said reference signal.
+3. A method, as claimed in claim 2, further comprising providing at least a first coil coupled to said first magnetic core and wherein said step of providing a first periodic waveform comprises applying a first periodic waveform to said coil.
+4. A method, as claimed in claim 3, further comprising providing a second coil coupled to said first magnetic core and applying a second periodic waveform to said second coil, said second periodic waveform having a frequency different from said first periodic waveform.
+5. Apparatus usable for discriminating among coins and other discrete objects, comprising:
+a sensor having a first integral magnetic core, said first core having first and second substantially opposed end faces defining a first gap, to define magnetic flux lines in the vicinity of said first gap;
+at least a first conductive coil coupled to said first core;
+first circuitry which initiates at least a first action in response to discrimination of an object using said sensor;
+at least a first communications link coupling said sensor to said first circuitry to provide an output signal from said sensor to said first circuitry, said output signal usable by said first circuitry to obtain indications of both conductivity and diameter;
+wherein a DC current is applied to said first coil.
+6. In a coin counting device that receives a plurality of coins in a first location, said plurality of coins defining a plurality of coin diameters, wherein said device moves coins past a discriminator region for determining the denomination of the coins, calculates the total value of said plurality of coins and outputs an indication of said value, a sensor for measuring coin parameters in said discriminator region, the sensor comprising:
+a ferrite core substantially in the shape of a section of a torus having first and second faces said ferrite core defining a gap, said gap being smaller than about one-half the diameter of the largest of said plurality of coins, said core positioned so that a coin conveyed by said counting device will move through the vicinity of said gap;
+at least a first coil of conductive material wound about a first portion of said core, defining an inductor;
+an oscillator coupled to said first coil configured to provide current defining at least a first frequency wherein, when a coin is conveyed past said gap, the signal in said coil undergoes at least a first change in inductance and a change in the quality factor of said inductor;
+a processor configured to identify the denomination of said coin by comparing said change in inductance and change in quality factor to stored data indicative of chance in inductance
+and quality factor values for a plurality of coins of different denomination.
+7. A sensor, as claimed in claim 6, further comprising plates, coupled to said faces, said plates having edges which are spaced apart, defining said gap.
+8. A method for measuring an electrical parameter, usable for discriminating among coins, comprising the steps of:
+providing at least a first sensor having a magnetic core and at least a first coil adjacent at least a portion of said magnetic core, said core at least partially defining a first gap
+providing a first periodic signal to said coil;
+wherein magnetic flux lines are formed in response to said providing a first periodic signal to said coil;
+providing a periodic reference signal wherein said first periodic signal is phase-locked to said periodic reference signal;
+transporting a coin past a region adjacent said first gap; and
+measuring an electrical parameter of said sensor during said step of transporting.
+9. A method, as claimed in claim 8, further comprising deriving conductivity of at least a portion of said coin based on said electrical parameter of said sensor measured during said step of transporting.
+10. A method, as claimed in claim 8, further comprising calculating a measure of the size of said coin based on said electrical parameter of said sensor measured during said step of transporting.
+11. Apparatus usable for discriminating among coins, comprising:
+a first sensor having a first magnetic core which is non-linear over at least a portion thereof, said first core defining a first gap to define magnetic flux lines in the vicinity of said first gap;
+means for coupling said sensor in an oscillator circuit;
+means for detecting the change in the inductance of said sensor as said coins move past said first gap for deriving sizes of said coins; and
+means for detecting the change in Q of the inductance of said sensor as said coins move past said first gap for deriving conductivity of said coins.
+12. Apparatus, as claimed in claim 11, wherein said first magnetic core is generally in the shape of a torus.
+13. Apparatus as claimed in claim 11, further comprising a conveyance mechanism which conveys objects to said magnetic flux lines in the vicinity of said gap.
+14. Apparatus, as claimed in claim 11, further comprising a conveyance mechanism which conveys coins past said sensor such that face planes defined by said coins are substantially parallel to said end plates and said coins are substantially adjacent said end plates.
+15. Apparatus, as claimed in claim 11, further comprising:
+at least a first conductive coil coupled to said first core.
+16. Apparatus, as claimed in claim 15, further comprising means for providing current defining at least a first frequency to said first coil.
+17. Apparatus, as claimed in claim 16, further comprising means coupled to said first core and third circuitry for providing current defining a second frequency to said second coil, said second frequency being different from said first frequency.
+18. Apparatus, as claimed in claim 15, further comprising a second magnetic core which is non-linear over at least a portion thereof, said second core defining a second gap to define magnetic flux lines in the vicinity of said second gap.
+19. Apparatus, as claimed in claim 18, further comprising at least a second conductive coil coupled to said second core wherein said second circuitry provides current defining at least a second frequency, different from said first frequency, to said second coil.
+20. Apparatus, as claimed in claim 11, wherein said magnetic core substantially defines at least a section of a torroid.
+21. Apparatus as claimed in claim 20, wherein said torroid is a torus.
+22. Apparatus, as claimed in claim 20, wherein said gap is located between opposed ends of said section of said torus.
+23. Apparatus, as claimed in claim 20, wherein said gap is located between first and second plates coupled to said torroid.
+24. Apparatus, as claimed in claim 11, wherein said core comprises a ferrite material.
+25. Apparatus, as claimed in claim 13, wherein the materials for said first core is different from the materials for said second core.

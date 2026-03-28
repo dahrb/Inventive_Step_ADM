@@ -5,12 +5,13 @@ Last Updated: 15.12.2025
 
 Status: Testing
 
-Test Coverage: 57%
+Test Coverage: 75%
 """
 
 import sys
 import os
 import argparse
+#CHANGE
 from inventive_step_ADM import adm_initial, adm_main
 import logging
 from ADM_Construction import *
@@ -708,6 +709,5 @@ def main():
             print(f"\nUnexpected error: {e}")
             sys.exit(1)
         
-
 if __name__ == "__main__":
     main()  

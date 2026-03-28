@@ -34,7 +34,7 @@ jobs:
     
     - name: Run test_ADM.py
       # Change directory to ADM so imports (from ADM_Construction) work correctly
-      working-directory: ./ADM
+      working-directory: ./Tests
       # Run only the specific test file you requested
       run: |
         uv run python -m unittest test_ADM.py -v

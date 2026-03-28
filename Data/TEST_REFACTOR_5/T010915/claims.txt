@@ -1,0 +1,102 @@
+--- PAGE 1 ---
+M&C PX204415EP
+
+Main Request 9/12/14
+
+12
+
+CLAIMS:
+
+1. A method of coding image data, the method comprising:
+
+converting (602) a block of image data into transform coefficients; and
+
+quantizing (604) the transform coefficients such that all, some or none of the
+transform coefficients become zero;
+
+the method being characterised in that it comprises the further steps of:
+
+constructing (606) a single entity (706) from the quantized transform coefficients,
+wherein the constructing comprises:
+
+mapping all the quantized transform coefficients (702) into a one-dimensional list
+(704) of quantized transform coefficients in any fixed order; and
+
+generating the single entity (706) to indicate all quantized transform coefficients in
+the one-dimensional list (704) that are non-zero, the single entity being a bit vector and
+each bit of the bit vector representing a corresponding quantised transform coefficient in
+the one-dimensional list;
+
+coding (608) the bit vector using an arithmetic coder; and
+
+coding (610, 804) values of the non-zero quantized transform coefficients in any
+
+fixed order.
+
+2. A method as claimed in claim 1, wherein coding (608) the bit vector uses an
+
+adaptive arithmetic coder.
+
+3. A method as claimed in clatm 1, wherein coding (608) the bit vector uses a semi-
+
+adaptive arithmetic coder.
+
+4, A method as claimed in claim 1, wherein coding (608) the bit vector uses a non-
+
+adaptive arithmetic coder.
+
+5. A method as claimed in claim 2, 3 or 4, wherein each quantized transform
+
+coefficient is coded according to its own context, based on the transform coefficient.
+
+6. An apparatus for coding image data, the apparatus comprising:
+
+32729782-1-ASUCKLIN
+
+--- PAGE 2 ---
+M&C PX204415EP
+
+Main Request 9/12/14
+
+13
+
+means for converting (602) a block of image data into transform coefficients;
+
+means for quantizing (604) the transform coefficients such that all, some, or none
+of the transform coefficients become zero;
+
+means for constructing (606) a single entity (706) from the quantized transform
+coefficients by:
+
+mapping all the quantized transform coefficients (702) into a one-dimensional list
+(704) of quantized transform coefficients in any fixed order; and
+
+generating the single entity (706) to indicate all quantized transform coefficients in
+the one-dimensional list (704) that are non-zero, the single entity being a bit vector and
+each bit of the bit vector representing a corresponding quantised transform coefficient in
+the one-dimensional list;
+
+means for coding (608) the bit vector using an arithmetic coder; and
+
+means for coding (610, 804) values of the non-zero quantised transform
+
+coefficients in any fixed order.
+
+7. An apparatus as claimed in claim 6, and adapted to code the bit vector using an
+
+adaptive arithmetic coder.
+
+8. An appatatus as claimed in claim 6, and adapted to code the bit vector using a
+
+semi-adaptive arithmetic coder.
+
+9. An apparatus as claimed in claim 6, and adapted to code the bit vector using a non-
+
+adaptive arithmetic coder (710).
+10. A computet-readable medium that stores instructions for controlling the operation of
+
+a computer device to perform data coding according to a method as defined in any one of
+
+claims 1 to 5.
+
+32729782-1-ASUCKLIN

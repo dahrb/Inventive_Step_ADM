@@ -1,0 +1,470 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS:
+1. A computer-implemented method of discovering relationships between
+items, comprising the steps of:
+receiving item selections detected from observed behavior of each of a plurality of
+users;
+generating a log (114) for each user, each log containing identifiers for the item
+selections detected from observed behavior of the respective user;
+receiving a query (1402) including at least one query item identifier;
+scoring each user log (114), the scoring being responsive to a degree of
+occurrence of the or each query item identifier in the respective user log so
+as to generate a score for each log that represents the relevance of the user
+log to the received query;
+identifying (1404) a subset of user logs based on the scores generated for each
+user log; and
+identifying at least one result item from the subset of user logs; characterized in
+that:
+a result item comprises an item which is determined to be over-represented in the
+subset of user logs relative to the entire set of user logs in that it occurs
+more frequently in the subset of user logs than expected based on the
+
+occurrence of the item in the entire set of user logs.
+
+377779; JCP: JCP 62
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+2. The computer-implemented method of claim 1, further comprising using a
+log-likelihood ratio to determine whether an item is over-represented in the subset of user
+
+logs relative to the entire set of user logs.
+
+3. The computer-implemented method of claim 1, wherein each item is a
+video track and wherein receiving item selections comprises receiving a selection of
+
+tracks for playback.
+
+4. The computer-implemented method of claim 1, wherein each item is a
+music track and wherein receiving item selections comprises receiving a selection of
+
+tracks for playback.
+
+5. The computer-implemented method of claim 4, further comprising:
+generating a track list (401) containing an identifier for the or each identified
+
+result item.
+6. The computer-implemented method of claim 5, further comprising:
+deleting from the track list (401) at least one identifier corresponding to a music
+
+track already selected by a user.
+
+7. The computer-implemented method of claim 5, further comprising:
+
+playing the or each music track specified by the generated track list (401).
+
+377779; JCP; JCP - 63 -
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+8. The computer-implemented method of claim 4, further comprising:
+
+receiving a format schedule specifying music track categories for time periods;
+and
+
+generating a track list conforming to the format schedule and containing an
+
+identifier for the or each identified result item.
+
+9. The computer-implemented method of claim 4, wherein scoring each user
+log comprises determining the degree of occurrence in the respective user log of at least
+
+one music track identified by the or each query item identifier.
+
+10. The computer-implemented method of claim 4, wherein scoring each user
+log comprises determining the degree of occurrence in the respective user log of at least
+
+one music track associated with an artist identified by the or each query item identifier.
+
+11. The computer-implemented method of claim 1, wherein receiving item
+
+selections comprises receiving input provided by a user via a web page (106).
+
+12. | The computer-implemented method of claim 1, wherein receiving item
+
+selections comprises receiving input specifying an item purchased by a user.
+
+13. The computer-implemented method of claim 1, further comprising:
+monitoring user behavior with respect to items identified in the user log of the
+
+respective user; and
+
+377779; JCP; ICP - 64
+
+--- PAGE 4 ---
+MAIN REQUEST
+
+adjusting the user log responsive to the monitored user behavior.
+
+14. The computer-implemented method of claim 13, wherein monitoring user
+behavior comprises at least one selected from the group consisting of:
+
+detecting user input requesting that a selected item be repeated;
+
+detecting user input requesting that a selected item be skipped;
+
+detecting user input specifying a volume change; and
+
+detecting user input specifying that a selected item be muted.
+
+15. The computer-implemented method of claim 1, wherein receiving item
+selections comprises receiving input provided by a user via an application (103, 105) for
+
+playing tracks.
+
+16. The computer-implemented method of claim 1, wherein receiving a query
+comprises receiving a user log containing identifiers for item selections of the respective
+
+user.
+
+17. The computer-implemented method of claim 1, wherein receiving a query
+comprises receiving a first search term, the method further comprising:
+generating a second search term containing an identifier for the or each identified
+
+result item.
+
+377779, JCP, JCP . 65 .
+
+--- PAGE 5 ---
+- MAIN REQUEST
+
+18. The computer-implemented method of claim 17, further comprising at
+least one of:
+
+providing the second search term as an input for a search engine; and
+
+adding the second search term to a searchable portion of a document associated
+
+with the first search term.
+
+19. | The computer-implemented method of claim 1, further comprising:
+
+periodically uploading each generated log.
+
+20. | The computer-implemented method of claim 1, further comprising:
+
+outputting an advertisement relating to the or each identified result item.
+
+21. | The computer-implemented method of claim 20, wherein outputting an
+advertisement comprises displaying at least one selected from the group consisting of:
+
+a web page;
+
+a banner;
+
+a portion of a web page; and
+
+an animation.
+
+22. | The computer-implemented method of claim 1, further comprising:
+
+outputting a notification relating to the or each identified result item.
+
+377779; ICP, JCP - 66 -
+
+--- PAGE 6 ---
+MAIN REQUEST
+
+23. | The computer-implemented method of claim 22, wherein outputting a
+notification comprises one of displaying a web page or sending a communication to a
+
+user.
+
+24. |The computer-implemented method of claim 2, wherein a log likelihood
+ratio for an item is determined by:
+determining a total number of user logs N (1502);
+determining a number of user logs Nj in the subset of user logs;
+determining a number of user logs N2 not in the subset of user logs;
+determining a number of user logs kj; of the N; user logs that include the item;
+determining a number of user logs ki2 of the N2 user logs that include the item;
+determining a number of user logs kz; = N; - ki, of the N, user logs that do not
+include the item;
+determining a number of user logs kz2 = N2 - k)2 of the N2 user logs that do not
+include the item;
+
+os . . : ay
+determining the log likelihood ratio as EF log
+j
+
+k, k
+where: 7, =H; =D
+i i
+25. | The computer-implemented method of claim 1, wherein scoring each user
+
+log further comprises:
+
+using a weighting comprising one or more of the following weighting factors:
+
+377779, JCP, JCP
+
+- 67 -
+
+--- PAGE 7 ---
+MAIN REQUEST
+
+a weighting factor determined using a number of occurrences of the item
+in the respective user log;
+
+a weighting factor determined using a number of occurrences of the item
+in all user logs; and
+
+a normalizing weighting factor.
+
+26. | The computer-implemented method of claim 25, wherein the normalizing
+
+weighting factor is —_! , where S, is a weight based on the number of
+SW,
+
+occurrences of the item in all user logs and W,, is a weight based on the number of
+
+y
+
+occurrences of the item in the respective user log.
+27. | The computer-implemented method of claim 1, further comprising:
+deleting from the or each identified result item any result items already selected
+
+by a user associated with the query.
+
+28. | The computer-implemented method of claim 1, further comprising:
+
+ranking the or each identified result item.
+
+29. | The computer implemented method of claim 1, wherein scoring each user
+
+log further comprises:
+
+377779, ICP; JCP . 68 .
+
+--- PAGE 8 ---
+MAIN REQUEST
+
+using a weighting factor for the or each query item identifier, the weighting factor
+comprising the logarithm of the total number of user logs divided by the
+
+number of user logs containing the respective query item identifier.
+
+30. A-system for discovering relationships among items, comprising:
+
+a user interface (103, 105) configured to receive item selections detected from
+observed behavior of each of a plurality of users;
+
+at least one log database (114), coupled to the user interface, configured to store a
+log for each user, each log containing identifiers for the item selections
+detected from observed behavior of the respective user;
+
+a query input device configured to receive a query (1402) including at least one
+query item identifier; and
+
+a recommendation engine (107), coupled to the log database (114) and to the
+query input device, configured to score each user log, the score being
+responsive to a degree of occurrence of the or each query item identifier in
+the respective user log so as to generate a score for each log that represents
+the relevance of the user log to the received query, to identify (1404) a
+subset of user logs based on the scores generated for each use log; and to
+identify at least one result item from the subset of user logs; characterized
+in that
+
+a result item comprises an item which is determined to be over-represented in the
+
+subset of user logs relative to the entire set of user logs in that it occurs
+
+377779; ICP; ICP - 69 -
+
+--- PAGE 9 ---
+MAIN REQUEST
+
+more frequently in the subset of user logs than expected based on the
+
+occurrence of the item in the entire set of user logs.
+
+31. | The system of claim 30, wherein the recommendation engine is further
+configured to use a log-likelihood ratio to determine whether an item is over-represented
+
+in the subset of user logs relative to the entire set of user logs.
+
+32. The system of claim 30, wherein each item is a video track and wherein
+the user interface is configured to receive item selections comprising a selection of tracks
+
+for playback.
+
+33. The system of claim 30, wherein each item is a music track and wherein
+
+the user interface is configured to receive item selections comprising a selection of tracks
+
+for playback.
+
+34. | The system of claim 33, wherein the user interface comprises an online
+jukebox.
+
+35. | The system of claim 34, wherein the online jukebox is configured to
+
+monitor user behavior with respect to items identified in the user log of the respective
+
+user and to adjust the user log responsive to the monitored user behavior.
+
+377779; JCP; ICP -70-
+
+--- PAGE 10 ---
+MAIN REQUEST
+
+36. The system of claim 35, wherein the online jukebox is configured to
+
+monitor user behavior by detecting at least one selected from the group consisting of:
+
+user input requesting that a selected item be repeated;
+user input requesting that a selected item be skipped;
+user input specifying a volume change; and
+
+user input specifying that a selected item be muted.
+
+37. The system of claim 36, further comprising:
+a track list generator, coupled to the recommendation engine, configured to
+generate a track list containing an identifier for the or each identified result
+
+item.
+
+38. The system of claim 37, further comprising:
+a music player, coupled to the track list generator, configured to play the or each
+
+music track specified by the generated track list.
+
+39. The system of claim 37, further comprising:
+
+a format scheduler, configured to receive a format schedule specifying music
+track categories for time periods; and
+
+a track list generator, coupled to the recommendation engine and to the format
+scheduler, configured to generate a track list conforming to the format
+schedule and containing an identifier for the or each determined result
+
+item.
+
+377779; JCP; JCP -7l1-
+
+--- PAGE 11 ---
+MAIN REQUEST
+
+40. The system of claim 30, wherein the query input device is configured to
+receive a query comprising a user log containing identifiers for item selections of the
+
+respective user.
+
+41. |The system of claim 30, wherein the query input device is configured to
+receive a query comprising a first search term, the system further comprising:
+a search term generator, coupled to the recommendation engine, configured to
+generate a second search term containing an identifier for the or each
+identified result item, to provide the second search term as an input for a
+search engine, and to add the second search term to a searchable portion of
+
+a document associated with the first search term.
+
+42. The system of claim 30, further comprising:
+an advertisement output device, coupled to the recommendation engine,
+configured to output an advertisement relating to the or each identified
+
+result item.
+
+43. The system of claim 42, wherein the advertisement output device is
+configured to output at least one selected from the group consisting of:
+
+a web page;
+
+a banner;
+
+a portion of a web page; and
+
+377779; JCP; JCP . 72 .
+
+--- PAGE 12 ---
+MAIN REQUEST
+
+an animation.
+
+44. The system of claim 30, further comprising:
+a notification output, coupled to the recommendation engine, configured to output
+
+a notification relating to the or each identified result item.
+
+45. | The system of claim 44, wherein the notification output device is
+configured to output at least one selected from the group consisting of:
+
+a web page;
+
+a banner;
+
+a portion of a web page; and
+
+an animation.
+
+46. The system of claim 44, wherein the notification output device is
+
+configured to send a communication to a user.
+
+47, The system of claim 30, wherein the recommendation engine (107) is
+further configured, when scoring each user log, to:
+use a weighting comprising one or more of the following weighting factors:
+a weighting factor determined using a number of occurrences of the item
+in the user log;
+a weighting factor determined using a number of occurrences of the item
+
+in all user logs; and
+
+377779; ICP; ICP
+-73-
+
+--- PAGE 13 ---
+MAIN REQUEST
+
+a normalizing weighting factor.
+
+48. The system of claim 31 wherein the recommendation engine is configured
+to use a log-likelihood ratio to determine whether an item is over-represented by:
+
+determining a total number of user logs N (1502);
+
+determining a number of user logs N, in the subset of user logs;
+
+determining a number of user logs N2 not in the subset of user logs;
+
+determining a number of user logs k); of the N, user logs that include the item;
+
+determining a number of user logs kj2 of the N2 user logs that include the item;
+
+determining a number of user logs kp; = N; - ki; of the N, user logs that do not
+
+include the item;
+determining a number of user logs k22 = N2 - ki2 of the N2 user logs that do not
+
+include the item;
+
+. ry
+determining the log likelihood ratio as }°k, log—
+
+id
+
+k. k,,
+where: 7, =a = Dy
+49. The system of claim 30 wherein the recommendation engine (107) is
+
+further configured, when scoring each user log, to use a weighting factor for the or each
+query item identifier, the weighting factor comprising the logarithm of the total number
+of user logs divided by the number of user logs containing the respective query item
+
+identifier.
+
+377779, JCP; JCP
+-74-
+
+--- PAGE 14 ---
+MAIN REQUEST
+
+50. A computer-readable medium comprising computer-readable code which,
+when executed by a computer processing, performs the method of any one of claims 1 to
+
+29.
+
+377779; ICP, JCP -75-

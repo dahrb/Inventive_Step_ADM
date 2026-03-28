@@ -1,0 +1,55 @@
+TITLE:
+System and method for automatically manipulating electronic calendar invitations
+
+TYPE:
+US patent
+
+ABSTRACT:
+A computer implemented method and system for filtering electronic invitations based on inherent characteristics of the electronic invitation. In embodiments of the present invention, an electronic calendar invitation filtering system receives an invitation, examines the header information such as a sender's name or subject, determines if a rule has been established for invitations with the characteristics of the incoming invitation, and if there has been a rule set up, implements an action. In another embodiment, when electronic invitation with a particular subject or sender is received, the invitation will be automatically accepted or rejected. Additionally, in another embodiment, when an electronic invitation is received from a particular sender, the invitation will be delegated to another user. Furthermore, in another embodiment, when an electronic invitation from a particular sender is received, the system will schedule the meeting in a calendar. Moreover, if there is a double booking, priority can be given to particular invitations, based on attributes previously mentioned, and the system will give notice to the sender of the previously accepted invitation that the invitation is now declined.
+
+CLAIMS:
+What is claimed is:
+1. An electronic invitation management process comprising:
+presenting a graphical user interface for indicating an electronic invitation management objective with respect to an electronic invitation;
+generating an electronic invitation rule to achieve said electronic invitation management objective;
+accessing an electronic invitation associated with a calendar application; and
+performing actions associated with said electronic invitation rule in response to said electronic invitation.
+2. An electronic invitation management process as described in claim 1 wherein said electronic invitation management objective is the automatic acceptance of any electronic invitations from designated senders.
+3. An electronic invitation management process as described in claim 2 wherein said electronic invitation rule comprises software code instructions for causing a computer system to automatically send a reply to said electronic invitation.
+4. An electronic invitation management process as described in claim 2 wherein said electronic invitation rule comprises software code instructions for causing a computer system to automatically update an electronic calendar database after accepting an electronic invitation.
+5. An electronic invitation management process as described in claim 1 wherein said electronic invitation management objective is the automatic delegation of any electronic invitation to another user if acceptance of said electronic invitation would result in a double booking.
+6. An electronic invitation management process as described in claim 1 wherein said electronic invitation management objective is the automatic acceptance of any electronic invitations having particular subject headings.
+7. An electronic invitation management process as described in claim 1 wherein said electronic invitation management objective is the automatic rejection of any electronic invitation if acceptance would cause a double booking in said calendar application.
+8. An electronic invitation management process as described in claim 7 further comprising accessing said calendar application to check for alternate meeting times if a double booking resulted.
+9. A computer implemented electronic invitation processing system comprising:
+a rules engine for automatically applying a rule for governing management of an electronic invitation;
+a rules database coupled to said rules engine, said rules database for storing information defining said rule; and
+an electronic invitation application for accessing said electronic invitation destined for a user and for applying said rules engine to said electronic invitation wherein said electronic invitation application comprises an electronic calendar for scheduling said electronic invitations.
+10. A computer implemented electronic invitation processing system as described in claim 9 wherein a rule-based action performed by said rules engine is the automatic acceptance of an electronic invitation that is sent from a particular user.
+11. A computer implemented electronic invitation processing system as described in claim 10 wherein said rule-based action performed by said rules engine further comprises automatically sending a response to the sender of said electronic invitation.
+12. A computer implemented electronic invitation processing system as described in claim 9 wherein a rule-based action is to automatically update said electronic calendar after sending a response to said electronic invitation.
+13. A computer implemented electronic invitation processing system as described in claim 9 wherein a rule-based action is to automatically reject an electronic invitation if acceptance of said electronic invitation would result in a double booking.
+14. A computer implemented electronic invitation processing system as described in claim 9 wherein a rule-based action is to automatically delegate said electronic invitation to another user.
+15. A method for processing electronic calendar invitations comprising:
+a) accessing an electronic calendar invitation received over a computer network and associated with a calendar application;
+b) automatically identifying a predetermined rule that is applicable to said electronic calendar invitation, wherein said predetermined rule is part of a rules database comprising a plurality of rule definitions;
+c) automatically performing an action based on said predetermined rule; and
+d) repeating steps a)-c) for a plurality of electronic calendar invitations.
+16. A method as described in claim 15 wherein said c) comprises automatically accepting said electronic calendar invitation, wherein said automatically accepting comprises updating a calendar database associated with said calendar application.
+17. A method as described in claim 15 wherein said c) comprises automatically rejecting said electronic calendar invitation.
+18. A method as described in claim 15 wherein said c) comprises:
+automatically accepting said electronic calendar invitation; and
+automatically canceling attendance of any previously accepted meetings that conflict with said electronic calendar invitation.
+19. A method as described in claim 15 wherein said c) comprises automatically delegating acceptance of said electronic calendar invitation to another user.
+20. A method as described in claim 15 wherein said c) comprises:
+automatically accepting said electronic calendar invitation; and
+automatically rescheduling any previously accepted meetings that conflict with said electronic calendar invitation.
+21. A method as described in claim 15 wherein said b) comprises automatically examining a sender field of said electronic calendar invitation to identify said predetermined rule.
+22. A method as described in claim 15 wherein said b) comprises automatically examining a recipients field of said electronic calendar invitation to identify said predetermined rule.
+23. A method as described in claim 15 wherein said b) comprises automatically examining a subject matter field of said electronic calendar invitation to identify said predetermined rule.
+24. A method as described in claim 15 wherein said b) comprises automatically examining information relating to a meeting time of said electronic calendar invitation to identify said predetermined rule.
+25. A method as described in claim 15 wherein said b) comprises automatically examining information relating to a meeting location of said electronic calendar invitation to identify said predetermined rule.
+26. A method as described in claim 15 further comprising using a graphical user interface to define said predetermined rule, wherein said predetermined rule is user defined and user modifiable.
+27. A method as described in claim 15 wherein a rule definition for a given rule comprises:
+a classification of electronic calendar invitations that are covered by said given rule; and
+an action to be taken.

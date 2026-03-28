@@ -1,0 +1,202 @@
+--- PAGE 1 ---
+274623v1
+
+12
+
+Main Request
+
+Claims
+
+1. A method of checking a new calendar entry in a calendar application (54) of a
+handheld electronic device (4), said calendar application (54) having a plurality of
+existing calendar entries, said calendar application (54) having a calendar cache
+associated therewith, said calendar cache including a first subset of said existing
+calendar entries falling within a first date range, the method comprising steps of:
+
+receiving information relating to said new calendar entry, said information
+including at least one of a date, a start time and an end time of said new calendar
+entry;
+
+determining whether said date falls within said first date range of said calendar
+cache;
+
+if said date falls within said first date range: (i) examining said calendar cache
+and determining whether said new calendar entry directly conflicts with one of said
+existing calendar entries in said first subset of said existing calendar entries using said
+information, and (ii) providing a conflict notification (60) if said new calendar entry
+directly conflicts with one of said existing calendar entries in said first subset of said
+existing calendar entries; and
+
+oo if said date falls outside of said first date range: (i) updating said calendar
+
+cache to create an updated calendar cache by replacing said first subset of said
+existing calendar entries with a second subset of said existing calendar entries falling
+within a second date range, said second date range covering a predetermined time
+period including said date, (ii) examining said updated calendar cache and
+determining whether said new calendar entry directly conflicts with one of said
+existing calendar entries in said second subset of said existing calendar entries using
+said information, and (iii) providing a conflict notification (60) if said new calendar
+entry directly conflicts with one of said existing calendar entries in said second subset
+
+of said existing calendar entries.
+
+2. The method according to claim 1, wherein said information includes said date,
+said start time and said end time, wherein said step of examining said calendar cache
+
+includes determining whether said new calendar entry is adjacent to one of said
+
+--- PAGE 2 ---
+274623v1
+
+Main Request
+
+existing calendar entries in said first subset, wherein said step of providing a conflict
+notification (60) if said new calendar entry directly conflicts with one of said existing
+calendar entries in said first subset includes providing an adjacency notification (65) if
+said new calendar entry is adjacent to one of said existing calendar entries in said first
+subset, wherein said step of examining said updated calendar cache includes
+determining whether said new calendar entry is adjacent to one of said existing
+calendar entries in said second subset, and wherein said step of providing a conflict
+notification (60) if said new calendar entry directly conflicts with one of said existing
+calendar entries in said second subset includes providing an adjacency notification
+(65) if said new calendar entry is adjacent to one of said existing calendar entries in
+
+said second subset.
+
+3. The method according to claim 1, wherein said information includes said date,
+
+said start time and said end time.
+
+4. The method according to claim 1, wherein said new calendar entry is based on
+
+a received meeting invitation.
+
+5. The method according to claim 1, wherein said new calendar entry is based on
+
+anew appointment or meeting input by a user.
+
+6. The method according to claim 1, wherein said new calendar entry is one of a
+series of recurring new calendar entries, the method including repeating the steps of
+claim 1 for a predetermined number of said recurring new calendar entries, in each
+case one of said predetermined number of said recurring new calendar entries being
+
+treated as said new calendar entry.
+
+7. The method according to claim 2, wherein said new calendar entry is one of a
+series of recurring new calendar entries, the method including repeating the steps of
+claim 2 for a predetermined number of said recurring new calendar entries, in each
+case one of said predetermined number of said recurring new calendar entries being
+
+treated as said new calendar entry.
+
+--- PAGE 3 ---
+274623v1
+
+14
+
+Main Request
+
+8. The method according to claim 1, wherein said predetermined time period is a
+
+predetermined time period before and after said date.
+
+9. A handheld electronic device (4) having a calendar application (54),
+comprising: ,
+
+a display (12);
+
+a processor (20); and
+
+a memory (44) operable to store a plurality of existing calendar entries of said
+calendar application (54), said calendar application (54) having a calendar cache
+associated therewith, said calendar cache operable to include a first subset of said
+existing calendar entries falling within a first date range, said memory (44) being
+operable to store one or more routines executable by said processor (20), said one or
+more routines being adapted to:
+
+(a) receive information relating to a new calendar entry, said information
+including at least one of a date, a start time and an end time of said new calendar
+entry;
+
+(b) determine whether said date falls within said first date range of said
+calendar cache;
+
+(c) if said date falls within said first date range: (i) examine said calendar cache
+and determine whether said new calendar entry directly conflicts with one of said
+existing calendar entries in said first subset of said existing calendar entries using said
+information, and (ii) provide a conflict notification on said display (12) if said new
+calendar entry directly conflicts with one of said existing calendar entries in said first
+subset of said existing calendar entries; and
+
+(d) if said date falls outside of said first date range: (i) update said calendar
+cache to create an updated calendar cache by replacing said first subset of said
+existing calendar entries with a second subset of said existing calendar entries falling
+within a second date range, said second date range covering a predetermined time
+period including said date, (ii) examine said updated calendar cache and determine
+whether said new calendar entry directly conflicts with one of said existing calendar
+entries in said second subset of said existing calendar entries using said information,
+
+and (iii) provide a conflict notification on said display (12) if said new calendar entry
+
+--- PAGE 4 ---
+15
+
+Main Request
+
+directly conflicts with one of said existing calendar entries in said second subset of
+
+said existing calendar entries.
+
+10. The electronic device (4) according to claim 9, wherein said information
+includes said date, said start time and said end time, wherein said one or more
+routines are further adapted to:
+
+(i) if said date falls within said first date range, determine whether said new
+calendar entry is adjacent to one of said existing calendar entries in said first subset and
+provide an adjacency notification on said display (12) if said new calendar entry is
+adjacent to one of said existing calendar entries in said first subset, and
+
+(ii) if said date falls outside of said first date range, determine whether said
+new calendar entry is adjacent to one of said existing calendar entries in said second
+subset and provide an adjacency notification on said display (12) if said new calendar
+
+entry is adjacent to one of said existing calendar entries in said second subset.
+
+11. The electronic device (4) according to claim 9, wherein said information
+
+includes said date, said start time and said end time.
+
+12. The electronic device (4) according to claim 9, wherein said new calendar
+
+entry is based on a meeting invitation received by said electronic device (4).
+
+13. The electronic device (4) according to claim 9, wherein said new calendar
+
+entry is based on a new appointment or meeting input into said electronic device (4).
+
+14, The electronic device (4) according to claim 9, wherein said new calendar
+entry is one of a series of recurring new calendar entries, said one or more routines
+being further adapted to repeat (a) through (d) of claim 9 for a predetermined number
+of said recurring new calendar entries, in each case one of said predetermined number
+
+of said recurring new calendar entries being treated as said new calendar entry.
+
+15. | The electronic device (4) according to claim 10, wherein said new calendar
+
+entry is one of a series of recurring new calendar entries, said one or more routines
+274623v1
+
+--- PAGE 5 ---
+274623v1
+
+Main Request
+
+being further adapted to repeat (a) through (d) of claim 9 and (i) and (ii) of claim 10
+for a predetermined number of said recurring new calendar entries, in each case one
+of said predetermined number of said recurring new calendar entries being treated as
+
+said new calendar entry.
+
+16. The electronic device (4) according to claim 9, wherein said predetermined
+
+time period is a predetermined time period before and after said date.
