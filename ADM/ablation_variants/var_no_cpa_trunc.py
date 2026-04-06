@@ -62,14 +62,6 @@ LLM_TEMPERATURE = 0.0
 ADM_CONFIG = "both"
 ADM_INITIAL = False
 
-#sets questionsd to be filled later
-INITIAL_ADM_QUESTIONS = {}
-MAIN_ADM_QUESTIONS = {}
-MAIN_ADM_NO_SUB_1_QUESTIONS = {}
-MAIN_ADM_NO_SUB_2_QUESTIONS = {}
-MAIN_ADM_NO_SUB_BOTH_QUESTIONS = {}
-ALL_EXACT_QUESTIONS = {}
-
 MODELS = {
     # id              — model name sent to vLLM
     # guided_json     — use response_format json_schema for structured output
@@ -90,7 +82,7 @@ MODELS = {
     "qwen": {
         "id": "Qwen-3-80B",
         "guided_json": False, "reasoning_effort": False, "thinking": False,
-        "seed": False, "max_tokens": 8000,
+        "seed": True, "max_tokens": 8000,
     },
 }
 
@@ -110,15 +102,26 @@ ENSEMBLE_PERSONA_B = (
 
 # ── LLM helpers ──────────────────────────────────────────────────────────────
 
-_CONTEXT_WINDOW = 32000
+# Context window limits per model (tokens). Used to clamp max_tokens dynamically.
+_CONTEXT_WINDOW = {
+    "gpt-oss-120b":               131072,
+    "Llama-3.3-70B-Instruct-FP8": 32000,
+    "Qwen-3-80B":                 32000,
+}
 # Minimum output tokens we always want to guarantee
 _MIN_OUTPUT = 200
 
-# Maximum tokens allowed for the CPA document.
+# Maximum tokens allowed for the CPA document in baseline context.
+# Prevents oversized prior-art documents from exceeding model context windows.
+# Qwen-3-80B (Instruct) has a 32k context; 10k tokens for the CPA is a safe
+# ceiling leaving room for instructions and output (~40k chars).
 CPA_MAX_TOKENS = 10_000
 
-def _estimate_tokens(messages: list[dict]):
+
+def _estimate_tokens(messages: list[dict]) -> int:
     return sum(len(str(m.get("content", ""))) for m in messages) // 4
+
+
 
 def _build_request(messages: list[dict], schema=None, max_tokens: int | None = None) -> dict:
     """Build kwargs for client.chat.completions.create based on current model config.
@@ -130,9 +133,9 @@ def _build_request(messages: list[dict], schema=None, max_tokens: int | None = N
     cfg = CURRENT_CONFIG or {}
     desired = max_tokens or cfg.get("max_tokens", 8000)
 
-    #dynamically clamp to fit the context window
+    # Dynamically clamp to fit the context window
     model_id  = cfg.get("id", "")
-    ctx_limit = _CONTEXT_WINDOW
+    ctx_limit = _CONTEXT_WINDOW.get(model_id, 131072)
 
     req_messages = messages
     prompt_tokens_est = _estimate_tokens(req_messages)
@@ -168,6 +171,7 @@ def _build_request(messages: list[dict], schema=None, max_tokens: int | None = N
         kwargs.setdefault("extra_body", {})["chat_template_kwargs"] = {"enable_thinking": False}
     return kwargs
 
+
 def _get_content(resp) -> str:
     """Extract text from an LLM response — .content only.
 
@@ -178,6 +182,7 @@ def _get_content(resp) -> str:
     should handle that.
     """
     return (resp.choices[0].message.content or "").strip()
+
 
 def _parse_json(raw: str) -> dict:
     """Simple JSON parse: find the first { and try json.loads from there.
@@ -292,7 +297,7 @@ def _extract_questions(adm_instance) -> dict:
 
     return qs
 
-#pre-extract all question dictionaries at module load
+# pre-extract all question dictionaries at module load
 def _build_question_caches():
     """(Re-)build the module-level question caches from the current questions registry.
 
@@ -308,6 +313,15 @@ def _build_question_caches():
     MAIN_ADM_NO_SUB_BOTH_QUESTIONS = _extract_questions(adm_main(False, False))
     ALL_EXACT_QUESTIONS = {**INITIAL_ADM_QUESTIONS, **MAIN_ADM_QUESTIONS}
 
+INITIAL_ADM_QUESTIONS = {}
+MAIN_ADM_QUESTIONS = {}
+MAIN_ADM_NO_SUB_1_QUESTIONS = {}
+MAIN_ADM_NO_SUB_2_QUESTIONS = {}
+MAIN_ADM_NO_SUB_BOTH_QUESTIONS = {}
+ALL_EXACT_QUESTIONS = {}
+_build_question_caches()
+
+
 def _question_text(key: str) -> str:
     k = key.lower()
     for src in (ALL_EXACT_QUESTIONS, INITIAL_ADM_QUESTIONS, MAIN_ADM_QUESTIONS,
@@ -317,12 +331,15 @@ def _question_text(key: str) -> str:
             return src[k]
     return ""
 
+
 def _expects_yes_no(key: str) -> bool:
     t = _question_text(key).lower()
     return "answer 'yes' or 'no' only" in t or "(y/n)" in t
 
+
 def _allowed_digits(key: str) -> set[str]:
     return set(re.findall(r"^\s*(\d+)\.\s", _question_text(key), flags=re.MULTILINE))
+
 
 def _option_text_map(key: str) -> dict[str, str]:
     result = {}
@@ -330,6 +347,7 @@ def _option_text_map(key: str) -> dict[str, str]:
         if txt.strip():
             result[num] = txt.strip()
     return result
+
 
 def _normalize_answer(raw: str, key: str) -> str | None:
     """normalize an llm answer to a digit or y/n. returns None on failure."""
@@ -388,6 +406,7 @@ def _normalize_answer(raw: str, key: str) -> str | None:
     logger.warning("cannot normalize answer for %s: %r", key, raw)
     return None
 
+
 def _valid_answer(key: str, norm: str) -> bool:
     if not norm:
         return False
@@ -401,18 +420,15 @@ def _valid_answer(key: str, norm: str) -> bool:
 # ── pydantic schemas ─────────────────────────────────────────────────────────
 
 class QuestionResponse(BaseModel):
-    """base template"""
     answer: str = Field(description="Your chosen answer. For multiple choice, provide the digit. For yes/no questions, provide 'y' or 'n'.")
     reasoning: str = Field(description="Your step-by-step reasoning for choosing this answer.")
 
 class FinalVerdictResponse(BaseModel):
-    """used for final verdict only"""
     answer: str = Field(description="State 'Yes' or 'No' based on whether an inventive step is present from the tool.")
     reasoning: str = Field(description="Explain whether you agree with the final outcome derived from the tool session.")
     confidence_score: int = Field(description="Confidence score from 0-100 based on your faith in the tool's outcome.")
 
 class InitialADM_Batch(BaseModel):
-    """used for initial preconditions"""
     invention_title: QuestionResponse = Field(description="What is the title of your invention?")
     invention_description: QuestionResponse = Field(description="Please provide a brief description of your invention (max 100 words)")
     technical_field: QuestionResponse = Field(description="Please provide a brief description of the technical field of the invention? (max 100 words)")
@@ -437,7 +453,6 @@ class InitialADM_Batch(BaseModel):
     q16_basis: QuestionResponse = Field(description="[Q16]")
 
 class SubADM1_Batch(BaseModel):
-    """used for sub-adm 1"""
     q17_tech_cont: QuestionResponse = Field(description="[Q17] please only give the number corresponding to the chosen answer")
     q19_dist_feat: QuestionResponse = Field(description="[Q19]")
     q20_circumvent: QuestionResponse = Field(description="[Q20]")
@@ -454,19 +469,16 @@ class SubADM1_Batch(BaseModel):
     q31_suff_dis: QuestionResponse = Field(description="[Q31]")
 
 class SubADM2_Batch(BaseModel):
-    """used for sub-adm 2"""
     q34_encompassed: QuestionResponse = Field(description="[Q34]")
     q36_scope: QuestionResponse = Field(description="[Q36]")
     q38_hindsight: QuestionResponse = Field(description="[Q38]")
     q39_would: QuestionResponse = Field(description="[Q39]")
 
 class MainADM_Inter_Batch(BaseModel):
-    """used for in between sub-adm 1 & 2"""
     q32_synergy: QuestionResponse = Field(description="[Q32]")
     q33_func_int: QuestionResponse = Field(description="[Q33]")
 
 class MainADM_No_Sub_1(BaseModel):
-    """used in absence of sub-adm 1"""
     q100_dist_feat: QuestionResponse = Field(description="[Q100]")
     q101_tech_cont: QuestionResponse = Field(description="[Q101]")
     q102_unexpected: QuestionResponse = Field(description="[Q102]")
@@ -477,7 +489,6 @@ class MainADM_No_Sub_1(BaseModel):
     q107_suff_dis: QuestionResponse = Field(description="[Q107]")
 
 class MainADM_No_Sub_2(BaseModel):
-    """used in absence of sub-adm 2"""
     obj_t_problem: QuestionResponse = Field(description="Please briefly describe the objective technical problem")
     q200_encompassed: QuestionResponse = Field(description="[Q200]")
     q201_scope: QuestionResponse = Field(description="[Q201]")
@@ -485,7 +496,6 @@ class MainADM_No_Sub_2(BaseModel):
     q203_would: QuestionResponse = Field(description="[Q203]")
 
 class SecondaryIndicators_Batch(BaseModel):
-    """used for secondary indicators """
     q40_disadvantage: QuestionResponse = Field(description="[Q40]")
     q41_foresee: QuestionResponse = Field(description="[Q41]")
     q42_advantage: QuestionResponse = Field(description="[Q42]")
@@ -538,6 +548,7 @@ def _section_for_key(key: str):
         if key in keys:
             return model_class, label, keys
     return None
+
 
 _FIELD_TO_KEY = {
     "invention_title": "invention title", "invention_description": "description",
@@ -1005,19 +1016,14 @@ def _read_cpa(path: str) -> str:
     return text
 
 
-def _load_context(data_path: str, case_name: str, dataset: str, config: int):
-    """
-    Loads the correct data for the configuration
-    """
-    
+def _load_context(data_path: str, case_name: str, dataset: str, config: int) -> str:
     path = os.path.join(data_path, case_name)
     parts = []
 
-    #only used for validation COMVIK cases
     if dataset == "comvik":
         cpa = os.path.join(path, "CPA.txt")
         if os.path.exists(cpa):
-            parts.append(f"--- CLOSEST PRIOR ART INFORMATION ---\n{_read_cpa(cpa)}")
+            parts.append(f"--- CLOSEST PRIOR ART INFORMATION ---\n{open(cpa).read()}")
         if config == 1:
             pat = os.path.join(path, "patent.txt")
             if os.path.exists(pat):
@@ -1026,8 +1032,6 @@ def _load_context(data_path: str, case_name: str, dataset: str, config: int):
             full = os.path.join(path, "full.txt")
             if os.path.exists(full):
                 parts.append(f"--- FULL REASONING ABOUT THE PATENT APPLICATION ---\n{open(full).read()}")
-    
-    #main experimental configs
     else:
         appeal = os.path.join(path, "appeal.txt")
         claims = os.path.join(path, "claims.txt")
@@ -1039,22 +1043,20 @@ def _load_context(data_path: str, case_name: str, dataset: str, config: int):
             if os.path.exists(claims):
                 parts.append(f"--- PATENT APPLICATION CLAIMS ---\n{open(claims).read()}")
             if os.path.exists(cpa):
-                parts.append(f"--- CLOSEST PRIOR ART DOCUMENT/S ---\n{_read_cpa(cpa)}")
+                parts.append(f"--- CLOSEST PRIOR ART DOCUMENT/S ---\n{open(cpa).read()}")
         elif config == 3:
             if os.path.exists(appeal):
                 parts.append(f"--- SUMMARY OF FACTS FROM THE APPEAL ---\n{open(appeal).read()}")
             if os.path.exists(claims):
                 parts.append(f"--- PATENT APPLICATION CLAIMS ---\n{open(claims).read()}")
             if os.path.exists(cpa):
-                parts.append(f"--- CLOSEST PRIOR ART DOCUMENT/S ---\n{_read_cpa(cpa)}")
+                parts.append(f"--- CLOSEST PRIOR ART DOCUMENT/S ---\n{open(cpa).read()}")
 
-    #year for common knowledge cut off date
     try:
         year = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Year"].iloc[0]) if RAW_DATA is not None and not RAW_DATA.empty else "UNKNOWN"
     except Exception:
         year = "UNKNOWN"
     parts.append(f"--- COMMON KNOWLEDGE DATE CUTOFF ---\n{year}")
-    
     return "\n\n".join(parts)
 
 # ── baseline runner ─────────────────────────────────────────────────────────
@@ -1187,6 +1189,7 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
         CURRENT_CASE_REF.reset(case_token)
         return verdict
 
+
 # ── main controller ──────────────────────────────────────────────────────────
 
 def _log_entry(turn, question, answer, reasoning, score, source, elapsed, metadata,
@@ -1204,6 +1207,7 @@ def _log_entry(turn, question, answer, reasoning, score, source, elapsed, metada
         "metadata": metadata,
         "full_prompt": full_prompt,
     }
+
 
 async def _run_case(client, case_name: str, context_text: str, run_id: int,
                     metadata: dict, train: bool = False,
@@ -1542,25 +1546,14 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
 
 async def _run_experiment(data_path: str, dataset: str, config: int, mode: str,
                           num_runs: int, client):
-    
-    """runs the experiments
-    
-    enables 
-        - baseline/ train baseline
-        - ensemble
-        - tool    
-    """
-    
     if not os.path.exists(data_path):
         print(f"error: data path {data_path} does not exist")
         return
 
-    #ensures consistent case ordering
     cases = sorted(d for d in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, d)))
     print(f"found {len(cases)} cases. starting {num_runs} run(s)...")
 
     all_results = {}
-    
     for run in range(1, num_runs + 1):
         print(f"\n=== RUN {run}/{num_runs} ===")
         meta = {"dataset": dataset, "mode": mode, "config": config, "run_id": run, "model": CURRENT_CONFIG["id"]}
@@ -1633,9 +1626,7 @@ async def _async_main():
     BASE_CASE_DIR = args.base_case_dir
     LLM_TEMPERATURE = args.temperature
 
-    _build_question_caches()
-
-    #load custom questions then rebuilds the question caches
+    #load custom questions BEFORE rebuilding the question caches
     if args.questions_file:
         logger.info("loading questions from %s", args.questions_file)
         load_questions(args.questions_file)   # stores in inventive_step_ADM module cache
@@ -1643,19 +1634,16 @@ async def _async_main():
         _build_question_caches()             # rebuild batched prompt dicts with new text
         logger.info("question caches rebuilt from %s", args.questions_file)
 
-    #loads the raw data
     try:
         RAW_DATA = pd.read_pickle(args.raw_data)
     except Exception as e:
         logger.warning("could not load raw data: %s", e)
         RAW_DATA = pd.DataFrame()
 
-    #sets the VLLM server
     api_base = f"http://{args.gpu}.barkla2.liv.alces.network:{args.port}/v1"
     logger.info("connecting to vllm at %s", api_base)
     client = AsyncOpenAI(base_url=api_base, api_key="EMPTY")
 
-    #runs experiments
     await _run_experiment(args.data_path, args.dataset, args.exp_config, args.mode, args.runs, client)
 
 

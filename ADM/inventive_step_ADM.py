@@ -1,7 +1,7 @@
 """
 Inventive Step ADM 
 
-Last Updated: 28.03.26
+Last Updated: 06.04.26
 
 Status: Small changes left
 
@@ -13,11 +13,10 @@ v_2: changes the workings from 1.0 to be cleaner, easier to visualise and to und
 v_3: more substantial changes and different variations created for more robust testing i.e. ablation parts
 v_4: implemented tests and validated ADM correctness
 v_5: extracted all question text to questions.json for prompt ablation
+v_6: implemented features for switching questions dependent on .json
 
 To Do:
-- ensure factor comments show correct numbers
 - remove redundant questions
-- go over new question loading stuff
 """
 
 import json
