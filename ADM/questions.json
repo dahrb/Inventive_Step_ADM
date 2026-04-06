@@ -1,0 +1,391 @@
+{
+  "_comment": "All question prompts for the Inventive Step ADM. Edit question text here to run prompt ablation experiments. Pass a path to this file (or a modified copy) via --questions_file in batched_hybrid_system.py, or via the questions parameter in adm_initial() / adm_main() / sub_adm_1() / sub_adm_2().",
+
+  "INFO_INVENTION_TITLE": {
+    "type": "info",
+    "text": "What is the title of your invention?"
+  },
+  "INFO_INVENTION_DESCRIPTION": {
+    "type": "info",
+    "text": "Please provide a brief description of your invention (max 100 words)"
+  },
+  "INFO_INVENTION_TECHNICAL_FIELD": {
+    "type": "info",
+    "text": "Please provide a brief description of the technical field of the invention? (max 100 words)"
+  },
+  "INFO_REL_PRIOR_ART": {
+    "type": "info",
+    "text": "Please briefly describe the relevant prior art (max 100 words)"
+  },
+  "INFO_CGK": {
+    "type": "info",
+    "text": "Please briefly describe the common general knowledge"
+  },
+  "INFO_OBJ_T_PROBLEM": {
+    "type": "info",
+    "text": "Objective Technical Problem Definition: The Objective Technical Problem (OTP) establishes the technical problem to be solved by studying the application (or the patent), the closest prior art and the differences (also called \"the distinguishing features\" of the claimed invention) in terms of features (either structural or functional) between the claimed invention and the closest prior art, identifying the technical effect resulting from the distinguishing features and then formulating the technical problem.\n i.e. the technical problem means the aim and task of modifying or adapting the closest prior art to achieve the technical effects that the invention offers over the closest prior art. The objective technical problem must be formulated in such a way that it does not contain pointers to the technical solution. \n\n[Q] Following this please formulate the objective technical problem/s."
+  },
+
+  "Q1": {
+    "type": "multi_choice",
+    "text": "[Q1] Is there a candidate/s which you have been given access to for the relevant prior art which has a similar purpose to the invention?",
+    "options": {
+      "1": "They have the same or a very similar purpose.",
+      "2": "They have a different purpose."
+    }
+  },
+  "Q2": {
+    "type": "multi_choice",
+    "text": "[Q2] Are there similar technical effects between the candidate/s for the relevant prior art, from the prior question, and the invention?",
+    "options": {
+      "1": "It produces a similar technical effect.",
+      "2": "It produces a different technical effect."
+    }
+  },
+  "Q3": {
+    "type": "multi_choice",
+    "text": "[Q3] What is the relationship between the candidate/s for the relevant prior art and the invention's technical field?",
+    "options": {
+      "1": "It is from the exact same technical field.",
+      "2": "It is from a closely related or analogous technical field.",
+      "3": "It is from an unrelated technical field."
+    }
+  },
+  "Q4": {
+    "type": "yes_no",
+    "text": "[Q4] Is there a reason we might want to contest what constitutes the Common General Knowledge in this instance? Only respond yes if there is a specific reason to challenge this otherwise we can assume the validity of the Common General Knowledge."
+  },
+  "Q5": {
+    "type": "multi_choice",
+    "text": "[Q5] As we are contesting the common general knowledge, we must now evaluate what primary sources of evidence could be provided or cited or assumed for the Common General Knowledge?",
+    "options": {
+      "1": "A standard textbook",
+      "2": "A broad technical survey",
+      "3": "A single publication in a very new or rapidly evolving field.",
+      "4": "A single publication in an established field.",
+      "5": "No documentary evidence is provided.",
+      "6": "Other"
+    }
+  },
+  "Q6": {
+    "type": "yes_no",
+    "text": "These next few questions are to help establish who the 'person skilled in the art' is. This is a hypothetical person. \n\n[Q6] Is the skilled person skilled in the relevant technical field of the prior art?"
+  },
+  "Q7": {
+    "type": "yes_no",
+    "text": "[Q7] Would the skilled person possess at least average knowledge and ability for that field?"
+  },
+  "Q8": {
+    "type": "yes_no",
+    "text": "[Q8] Is there reason to believe the skilled person is aware of the common general knowledge in the field?"
+  },
+  "Q9": {
+    "type": "yes_no",
+    "text": "[Q9] Would the skilled person have reasonable access to all the documents comprising the state of the art i.e. there are no clear barriers to access?"
+  },
+  "Q10": {
+    "type": "multi_choice",
+    "text": "[Q10] Which of the following, if any, characterise the the skilled person/s?",
+    "options": {
+      "1": "An individual practitioner",
+      "2": "A research team",
+      "3": "A production or manufacturing team",
+      "4": "Other"
+    }
+  },
+  "Q11": {
+    "type": "multi_choice",
+    "text": "[Q11] Do we have a candidate for a singular closest prior art document? (Note: we can combine with other prior art documents in a subsequent question, so you can choose 1 to be the closest if there are multiple documents)",
+    "options": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "Q12": {
+    "type": "multi_choice",
+    "text": "[Q12] Does the candidate closest prior art document constitute a promising starting point for a development leading to the invention. Generally this corresponds to a similar use and the fulfilment of a minimal set of structural and functional modifications to arrive at the claimed invention, as assessed from the perspective of the skilled person. This is required for the document to be considered the closest prior art.",
+    "options": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "Q13": {
+    "type": "yes_no",
+    "text": "[Q13] Is there a reason to combine other documents with the closest prior art in order to attempt to demonstrate obviousness?"
+  },
+  "Q14": {
+    "type": "multi_choice",
+    "text": "[Q14] How are the other documents to be combined related to the closest prior art's technical field",
+    "options": {
+      "1": "They are from the same technical field",
+      "2": "They are from a similar technical field",
+      "3": "They are from an unrelated field"
+    }
+  },
+  "Q15": {
+    "type": "yes_no",
+    "text": "[Q15] Would the skilled person have a clear and direct motive to combine these specific documents?"
+  },
+  "Q16": {
+    "type": "yes_no",
+    "text": "[Q16] Is there a reasonable basis for the skilled person to associate these specific documents with one another?"
+  },
+
+  "Q17": {
+    "type": "multi_choice",
+    "text": "[Q17] Does the feature under consideration make a technical contribution? This means it must have a technical effect.\n\nFeature: {feature_name}",
+    "options": {
+      "1": "It produces an independent technical contribution.",
+      "2": "It produces a contribution in combination with other technical features to the invention?",
+      "3": "It does not produce a technical contribution."
+    }
+  },
+  "Q19": {
+    "type": "multi_choice",
+    "text": "[Q19] What is the primary nature of the distinguishing feature under consideration?\n\nFeature: {feature_name}",
+    "options": {
+      "1": "A computer simulation",
+      "2": "The processing of numerical data",
+      "3": "A mathematical method or algorithm",
+      "4": "Other excluded fields",
+      "5": "None of the above"
+    }
+  },
+  "Q20": {
+    "type": "yes_no",
+    "text": "[Q20] Is the feature under consideration a technical implementation of a non-technical method i.e. game rules or a business method, and does it circumvent the technical problem rather than addressing it in an inherently technical way?\n\nFeature: {feature_name}"
+  },
+  "Q21": {
+    "type": "yes_no",
+    "text": "[Q21] Is the feature under consideration a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.\n\nFeature: {feature_name}"
+  },
+  "Q22": {
+    "type": "yes_no",
+    "text": "[Q22] Is there an intended use of the data resulting from the feature under consideration?\n\nFeature: {feature_name}"
+  },
+  "Q23": {
+    "type": "yes_no",
+    "text": "[Q23] Is there a potential technical effect of the data either explicitly or implicitly specified in the claim?\n\nFeature: {feature_name}"
+  },
+  "Q24": {
+    "type": "yes_no",
+    "text": "[Q24] Does the technical contribution of the feature under consideration have a specific technical purpose i.e. produces a technical effect serving a technical purpose. Not merely a `generic' purpose i.e. \"controlling a technical system\".\n\nFeature: {feature_name}"
+  },
+  "Q25": {
+    "type": "yes_no",
+    "text": "[Q25] Is the claim functionally limited to the technical purpose stated either explicitly or implicitly?\n\nFeature: {feature_name}"
+  },
+  "Q26": {
+    "type": "yes_no",
+    "text": "[Q26] Is the technical effect of the feature under consideration unexpected or surprising?\n\nFeature: {feature_name}"
+  },
+  "Q27": {
+    "type": "yes_no",
+    "text": "[Q27] Is this unexpected effect described in precise, measurable terms?\n\nFeature: {feature_name}"
+  },
+  "Q28": {
+    "type": "yes_no",
+    "text": "[Q28] Is the unexpected effect a result of a lack of alternatives creating a 'one-way street' situation? i.e. for the skilled person to achieve the technical effect in question from the closest prior art, they would not have to choose from a range of possibilities, because there is only one-way to do x thing, and that would result in unexpected property y.\n\nFeature: {feature_name}"
+  },
+  "Q29": {
+    "type": "multi_choice",
+    "text": "[Q29] Are the technical effects of the feature under consideration credible and/or reproducible?\n\nFeature: {feature_name}",
+    "options": {
+      "1": "Credible",
+      "2": "Reproducible",
+      "3": "Both",
+      "4": "Neither"
+    }
+  },
+  "Q30": {
+    "type": "yes_no",
+    "text": "[Q30] Do the claims contain the non-reproducible effect from the feature under consideration i.e. if the claim says the invention achieve effect E, and this is not reproducible.\n\nFeature: {feature_name}"
+  },
+  "Q31": {
+    "type": "yes_no",
+    "text": "[Q31] Is there an issue with sufficiency of disclosure regarding the feature under consideration i.e. an issue arises where there is not a \"A detailed description of at least one way of carrying out the invention must be given.\"?\n\nFeature: {feature_name}"
+  },
+
+  "Q32": {
+    "type": "multi_choice",
+    "text": "[Q32] How do the invention's technical features create the technical effect? Note: selecting an aggregation of independent effects implies the existence of partial objective technical problems. Use this if you believe the features are completely functionally independent from another, otherwise select the synergy option.",
+    "options": {
+      "1": "As a synergistic combination (effect is greater than the sum of parts).",
+      "2": "As a simple aggregation of independent effects."
+    }
+  },
+  "Q33": {
+    "type": "yes_no",
+    "text": "[Q33] Is the synergistic combination achieved through a functional interaction between the technical features?"
+  },
+
+  "Q34": {
+    "type": "yes_no",
+    "text": "[Q34] Would the skilled person, consider the technical effects identified in the candidate objective technical problem to be encompassed and embodied by the technical teaching of the patent application i.e. is the objective technical problem reflected in the original application?\n\nProblem name: {feature_name}"
+  },
+  "Q36": {
+    "type": "yes_no",
+    "text": "[Q36] Are the technical effects currently identified, achieved across the claims, and are the claims limited in such a way that all inventions which could be encompassed by the claims (taken as a whole so both independent and dependent) would show these effects? The technical effects used for formulating the objective technical problem have to be derivable from the application as filed when considered in the light of the closest prior art and the general common knowledge. All embodiments of the invention which are encompassed by the claims provided must demonstrate these effects. This does not mean all claims must exhibit this effect, only the inventions covered by them must. If there is at least 1 claim (dependent or independent) in which the technical effect can be achieved then answer Yes.\n\nProblem name: {feature_name}"
+  },
+  "Q38": {
+    "type": "yes_no",
+    "text": "[Q38] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the objective technical problem?\n\nProblem name: {feature_name}"
+  },
+  "Q39": {
+    "type": "multi_choice",
+    "text": "[Q39] Do you believe the skilled person would have arrived, not merely could have arrived, at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art would have provided a clear motivation to do so in the expectation of some improvement or advantage? Make clear why they would have been motivated if you answer yes.\n\nProblem name: {feature_name}",
+    "options": {
+      "1": "Would have adapted from the prior art",
+      "2": "Would have modified from the prior art",
+      "3": "Neither"
+    }
+  },
+
+  "Q40": {
+    "type": "yes_no",
+    "text": "[Q40] Does the invention involve a disadvantageous modification of the prior art?"
+  },
+  "Q41": {
+    "type": "yes_no",
+    "text": "[Q41] Was this disadvantageous modification of the prior art foreseeable to the skilled person? i.e. could the skilled person have clearly predicted these disadvantages."
+  },
+  "Q42": {
+    "type": "yes_no",
+    "text": "[Q42] Was the disadvantageous modification compensated for by an unexpected technical advantage?"
+  },
+  "Q43": {
+    "type": "yes_no",
+    "text": "[Q43] Is the subject matter of the invention biotech?"
+  },
+  "Q44": {
+    "type": "yes_no",
+    "text": "[Q44] Does the subject matter concern antibodies?"
+  },
+  "Q45": {
+    "type": "yes_no",
+    "text": "[Q45] Were the results obtained as part of the invention clearly predictable?"
+  },
+  "Q46": {
+    "type": "yes_no",
+    "text": "[Q46] Was there a 'reasonable' expectation of success in obtaining the aforementioned results?"
+  },
+  "Q47": {
+    "type": "yes_no",
+    "text": "[Q47] Were the antibodies arrived at exclusively by applying techniques already known in the prior art or that would be common general knowledge?"
+  },
+  "Q48": {
+    "type": "yes_no",
+    "text": "[Q48] Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?"
+  },
+  "Q49": {
+    "type": "yes_no",
+    "text": "[Q49] Does the invention merely fill an obvious gap in an incomplete prior art document and at least one of the posssible ways of \"filling the gap\" would naturally occur to the skilled person? For example: The invention relates to a building structure made from aluminium. A prior-art document discloses the same structure and says that it is of light-weight material but does not mention the use of aluminium."
+  },
+  "Q50": {
+    "type": "yes_no",
+    "text": "[Q50] Does the invention differ from the prior art solely in regard to substituting one well-known equivalent for another? For example: The invention relates to a pump which differs from a known pump solely in that its motive power is provided by a hydraulic motor instead of an electric motor."
+  },
+  "Q51": {
+    "type": "yes_no",
+    "text": "[Q51] Is the invention merely the new use of known properties of a well-known material i.e. A washing composition containing as detergent, a known compound having the known property of lowering the surface tension of water."
+  },
+  "Q52": {
+    "type": "yes_no",
+    "text": "[Q52] Does the invention just apply a known technique in a closely analogous situation? For example: Example: The invention consists in the application of a pulse control technique to the electric motor driving the auxiliary mechanisms of an industrial truck, such as a fork-lift truck, the use of this technique to control the electric propulsion motor of the truck being already known."
+  },
+  "Q53": {
+    "type": "yes_no",
+    "text": "[Q53] Does the invention rely on known devices?"
+  },
+  "Q54": {
+    "type": "yes_no",
+    "text": "[Q54] Is the invention a simple juxtaposition of the known devices, with each performing their normal, expected function?"
+  },
+  "Q55": {
+    "type": "yes_no",
+    "text": "[Q55] Does the invention rely within a known device, simply substituting in a recently developed material suitable for that use?"
+  },
+  "Q56": {
+    "type": "yes_no",
+    "text": "[Q56] Does the invention result from a choice between equally likely alternatives?"
+  },
+  "Q57": {
+    "type": "yes_no",
+    "text": "[Q57] Does the invention consist in choosing parameters from a limited range of possibilities arrived at through routine design procedures?"
+  },
+  "Q58": {
+    "type": "yes_no",
+    "text": "[Q58] Is the invention a result of a simple, straightforward extrapolation from the known art?"
+  },
+  "Q59": {
+    "type": "yes_no",
+    "text": "[Q59] Does the invention just consist in selecting a specific chemical compound or composition from a broad field?"
+  },
+
+  "Q100": {
+    "type": "yes_no",
+    "text": "[Q100] Are there features which differ between the invention and the closest prior art?"
+  },
+  "Q101": {
+    "type": "multi_choice",
+    "text": "[Q101] Does at least one of the features of the invention have a technical contribution, and is this contribution credible and reproducible? This means it must have a technical effect.",
+    "options": {
+      "1": "Features only have a technical contribution",
+      "2": "Features have both technical and non-technical contributions",
+      "3": "Features only have non-technical contributions",
+      "4": "None of the above"
+    }
+  },
+  "Q102": {
+    "type": "yes_no",
+    "text": "[Q102] Is the technical effect of any of the features unexpected or surprising?"
+  },
+  "Q103": {
+    "type": "yes_no",
+    "text": "[Q103] Is this unexpected effect described in precise, measurable terms?"
+  },
+  "Q104": {
+    "type": "yes_no",
+    "text": "[Q104] Is the unexpected effect a result of a lack of alternatives creating a 'one-way street' situation? i.e. for the skilled person to achieve the technical effect in question from the closest prior art, they would not have to choose from a range of possibilities, because there is only one-way to do x thing, and that would result in unexpected property y."
+  },
+  "Q105": {
+    "type": "multi_choice",
+    "text": "[Q105] Are the technical effects of the features credible and/or reproducible?",
+    "options": {
+      "1": "Credible",
+      "2": "Reproducible",
+      "3": "Both",
+      "4": "Neither"
+    }
+  },
+  "Q106": {
+    "type": "yes_no",
+    "text": "[Q106] Do the claims contain non-reproducible effects from the features i.e. if the claim says the invention achieve effect E, and this is not reproducible."
+  },
+  "Q107": {
+    "type": "yes_no",
+    "text": "[Q107] Is there an issue with sufficiency of disclosure i.e. an issue arises where there is not a \"A detailed description of at least one way of carrying out the invention must be given.\"?"
+  },
+
+  "Q200": {
+    "type": "yes_no",
+    "text": "[Q200] Would the skilled person, consider the technical effects identified in the objective technical problem to be encompassed and embodied by the technical teaching of the patent application i.e. is the objective technical problem reflected in the original application?"
+  },
+  "Q201": {
+    "type": "yes_no",
+    "text": "[Q201] Are the technical effects currently identified, achieved across the claims, and are the claims limited in such a way that all inventions which could be encompassed by the claims (taken as a whole so both independent and dependent) would show these effects? The technical effects used for formulating the objective technical problem have to be derivable from the application as filed when considered in the light of the closest prior art and the general common knowledge. All embodiments of the invention which are encompassed by the claims provided must demonstrate these effects. This does not mean all claims must exhibit this effect, only the inventions covered by them must. If there is at least 1 claim (dependent or independent) in which the technical effect can be achieved then answer Yes."
+  },
+  "Q202": {
+    "type": "yes_no",
+    "text": "[Q202] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the objective technical problem?"
+  },
+  "Q203": {
+    "type": "multi_choice",
+    "text": "[Q203] Do you believe the skilled person would have arrived, not merely could have arrived, at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art would have provided a clear motivation to do so in the expectation of some improvement or advantage? Make clear why they would have been motivated if you answer yes.",
+    "options": {
+      "1": "Would have adapted from the prior art",
+      "2": "Would have modified from the prior art",
+      "3": "Neither"
+    }
+  }
+}

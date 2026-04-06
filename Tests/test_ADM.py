@@ -13,12 +13,16 @@ v_2: expanded tests with llms
 v_3: final tests for final_adm configurations including ablation variants
 """
 
+import sys
+import os
+# Ensure ADM/ is on the path regardless of where the test is run from
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "ADM"))
+
 import unittest
 from unittest.mock import MagicMock, patch
 import io
 import logging
 from contextlib import redirect_stdout
-import os
 import json
 import tempfile
 

@@ -10,7 +10,7 @@ Test Coverage: Manual Tests
 Version History:
 v_1: initial version
 v_2: added batching
-v_3: added baseline + ensemble approaches
+v_3: added baseline + ensemble approach
 
 To Do:
 - check ensemble works
@@ -34,7 +34,7 @@ from datetime import datetime
 import pandas as pd
 from openai import AsyncOpenAI
 from pydantic import BaseModel, Field
-from inventive_step_ADM import adm_initial, adm_main
+from inventive_step_ADM import adm_initial, adm_main, load_questions, set_questions
 
 # ── logging ──────────────────────────────────────────────────────────────────
 
@@ -80,6 +80,11 @@ MODELS = {
     },
     "qwen": {
         "id": "Qwen-3-80B",
+        "guided_json": False, "reasoning_effort": False,
+        "seed": False, "max_tokens": 8000,
+    },
+    "qwen35": {
+        "id": "mconcat/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-FP8-Dynamic",
         "guided_json": False, "reasoning_effort": True,
         "seed": False, "max_tokens": 8000,
     },
@@ -103,14 +108,84 @@ ENSEMBLE_PERSONA_B = (
 
 # ── LLM helpers ──────────────────────────────────────────────────────────────
 
+# Context window limits per model (tokens). Used to clamp max_tokens dynamically.
+_CONTEXT_WINDOW = {
+    "gpt-oss-120b":               131072,
+    "Llama-3.3-70B-Instruct-FP8": 32000,
+    "Qwen-3-80B":                 32000,
+    "mconcat/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-FP8-Dynamic": 131072,
+}
+# Minimum output tokens we always want to guarantee
+_MIN_OUTPUT = 200
+# Qwen thinking models need a much larger completion budget before any final
+# answer appears in .content.
+_QWEN_MIN_COMPLETION = 4000
+_QWEN_TARGET_PROMPT = 4000
+
+
+def _estimate_tokens(messages: list[dict]) -> int:
+    return sum(len(str(m.get("content", ""))) for m in messages) // 4
+
+
+def _trim_messages_for_qwen(messages: list[dict], ctx_limit: int) -> list[dict]:
+    """Trim old conversation turns for Qwen so completion budget stays usable.
+
+    Qwen-3-80B often spends thousands of tokens in reasoning before emitting a
+    final answer. If prompt history grows too large, responses return with empty
+    `.content`. We keep recency by dropping oldest non-system turns first.
+    """
+    if not messages or len(messages) <= 3:
+        return messages
+
+    trimmed = list(messages)
+    # Keep at least: [system] + 2 recent turns + current user question
+    min_len = 4
+
+    def available_tokens(msgs: list[dict]) -> int:
+        return max(0, ctx_limit - _estimate_tokens(msgs) - 64)
+
+    # 1) Ensure enough completion room for Qwen thinking + final answer.
+    while len(trimmed) > min_len and available_tokens(trimmed) < _QWEN_MIN_COMPLETION:
+        trimmed.pop(1)
+
+    # 2) Also cap prompt size to a practical target.
+    while len(trimmed) > min_len and _estimate_tokens(trimmed) > _QWEN_TARGET_PROMPT:
+        trimmed.pop(1)
+
+    return trimmed
+
+
 def _build_request(messages: list[dict], schema=None, max_tokens: int | None = None) -> dict:
-    """Build kwargs for client.chat.completions.create based on current model config."""
+    """Build kwargs for client.chat.completions.create based on current model config.
+
+    For models with tight context windows (e.g. Qwen-3-80B at 8 000 tokens) the
+    requested max_tokens is clamped so that input_tokens + max_tokens never
+    exceeds the window.  Token count is estimated at 4 chars per token.
+    """
     cfg = CURRENT_CONFIG or {}
+    desired = max_tokens or cfg.get("max_tokens", 8000)
+
+    # Dynamically clamp to fit the context window
+    model_id  = cfg.get("id", "")
+    ctx_limit = _CONTEXT_WINDOW.get(model_id, 131072)
+
+    req_messages = messages
+    if model_id in ("Qwen-3-80B", "mconcat/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-FP8-Dynamic"):
+        before = _estimate_tokens(req_messages)
+        req_messages = _trim_messages_for_qwen(req_messages, ctx_limit)
+        after = _estimate_tokens(req_messages)
+        if after < before:
+            logger.info("qwen context trimmed: %d -> %d est tokens", before, after)
+
+    prompt_tokens_est = _estimate_tokens(req_messages)
+    available = max(_MIN_OUTPUT, ctx_limit - prompt_tokens_est - 64)  # 64-token safety margin
+    capped = min(desired, available)
+
     kwargs: dict = {
-        "model": cfg.get("id", ""),
-        "messages": messages,
+        "model": model_id,
+        "messages": req_messages,
         "temperature": LLM_TEMPERATURE,
-        "max_tokens": max_tokens or cfg.get("max_tokens", 8000),
+        "max_tokens": capped,
         "top_p": 1,
     }
     if cfg.get("seed"):
@@ -123,18 +198,16 @@ def _build_request(messages: list[dict], schema=None, max_tokens: int | None = N
 
 
 def _get_content(resp) -> str:
-    """Extract text from an LLM response — content first, then reasoning_content fallback.
+    """Extract text from an LLM response — .content only.
 
-    This mirrors what the old hybrid_patent_system did: just read .content,
-    and store reasoning_content as metadata.  For thinking models that put
-    the structured answer in reasoning_content, we fall back to it.
+    For thinking models (e.g. Qwen-3-80B) the structured answer is always
+    in .content once the model finishes its chain-of-thought.  We do NOT
+    fall back to reasoning_content: an empty .content means the model hit
+    its token limit mid-thinking and never emitted a final answer — the
+    caller's retry logic should handle that, rather than accidentally sending
+    raw chain-of-thought text (thousands of chars) to UI.py stdin.
     """
-    content = (resp.choices[0].message.content or "").strip()
-    if content:
-        return content
-    # thinking-model fallback: answer may be in reasoning_content
-    rc = getattr(resp.choices[0].message, "reasoning_content", None) or ""
-    return rc.strip()
+    return (resp.choices[0].message.content or "").strip()
 
 
 def _parse_json(raw: str) -> dict:
@@ -251,12 +324,28 @@ def _extract_questions(adm_instance) -> dict:
     return qs
 
 # pre-extract all question dictionaries at module load
-INITIAL_ADM_QUESTIONS = _extract_questions(adm_initial())
-MAIN_ADM_QUESTIONS = _extract_questions(adm_main(True, True))
-MAIN_ADM_NO_SUB_1_QUESTIONS = _extract_questions(adm_main(False, True))
-MAIN_ADM_NO_SUB_2_QUESTIONS = _extract_questions(adm_main(True, False))
-MAIN_ADM_NO_SUB_BOTH_QUESTIONS = _extract_questions(adm_main(False, False))
-ALL_EXACT_QUESTIONS = {**INITIAL_ADM_QUESTIONS, **MAIN_ADM_QUESTIONS}
+def _build_question_caches():
+    """(Re-)build the module-level question caches from the current questions registry.
+
+    Called once at import time, and again after --questions_file is loaded so
+    that batched prompts pick up the new question text.
+    """
+    global INITIAL_ADM_QUESTIONS, MAIN_ADM_QUESTIONS, MAIN_ADM_NO_SUB_1_QUESTIONS
+    global MAIN_ADM_NO_SUB_2_QUESTIONS, MAIN_ADM_NO_SUB_BOTH_QUESTIONS, ALL_EXACT_QUESTIONS
+    INITIAL_ADM_QUESTIONS         = _extract_questions(adm_initial())
+    MAIN_ADM_QUESTIONS            = _extract_questions(adm_main(True, True))
+    MAIN_ADM_NO_SUB_1_QUESTIONS   = _extract_questions(adm_main(False, True))
+    MAIN_ADM_NO_SUB_2_QUESTIONS   = _extract_questions(adm_main(True, False))
+    MAIN_ADM_NO_SUB_BOTH_QUESTIONS = _extract_questions(adm_main(False, False))
+    ALL_EXACT_QUESTIONS = {**INITIAL_ADM_QUESTIONS, **MAIN_ADM_QUESTIONS}
+
+INITIAL_ADM_QUESTIONS = {}
+MAIN_ADM_QUESTIONS = {}
+MAIN_ADM_NO_SUB_1_QUESTIONS = {}
+MAIN_ADM_NO_SUB_2_QUESTIONS = {}
+MAIN_ADM_NO_SUB_BOTH_QUESTIONS = {}
+ALL_EXACT_QUESTIONS = {}
+_build_question_caches()
 
 
 def _question_text(key: str) -> str:
@@ -296,6 +385,20 @@ def _normalize_answer(raw: str, key: str) -> str | None:
         return "y"
     if low in ("n", "no"):
         return "n"
+
+    # JSON rescue: if the raw string looks like a JSON object (possibly malformed),
+    # try to extract "answer" field via regex before doing anything else.
+    # This handles cases where _parse_json fails on malformed JSON (e.g. trailing '"').
+    if "{" in cleaned:
+        m = re.search(r'"answer"\s*:\s*"([^"]*)"', cleaned, re.IGNORECASE)
+        if m:
+            json_ans = m.group(1).strip().lower().replace("**", "")
+            if json_ans in ("y", "yes"):
+                return "y"
+            if json_ans in ("n", "no"):
+                return "n"
+            if json_ans in allowed if allowed else re.fullmatch(r"\d+", json_ans):
+                return json_ans
 
     nums = re.findall(r"\d+", cleaned)
     if nums:
@@ -788,7 +891,13 @@ async def _call_dynamic(client, sys_prompt: str, history: list[dict],
 
             # simple parse like old code
             parsed = _parse_json(raw)
-            answer = str(parsed.get("answer", raw)).strip()
+            if parsed and parsed.get("answer") is not None:
+                answer = str(parsed.get("answer")).strip()
+            else:
+                # _parse_json failed (e.g. malformed JSON with stray quotes);
+                # fall back to regex extraction of "answer" field
+                m = re.search(r'"answer"\s*:\s*"([^"]*)"', raw, re.IGNORECASE)
+                answer = m.group(1).strip() if m else raw
             reasoning = parsed.get("reasoning", raw) if parsed else raw
             return answer, reasoning, messages
 
@@ -834,10 +943,15 @@ async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
     messages = [{"role": "system", "content": sp}] + adm_context
     messages.append({"role": "user", "content": question})
 
-    # trim if too large
+    # Trim context if too large.
+    # Qwen3 burns ~13-14k tokens on internal thinking before emitting any output,
+    # so with a 32k window and max_tokens=8000, we can only afford ~10k prompt tokens.
+    # Other models get the generous 20k threshold.
+    trim_threshold = 4000 if cfg.get("id", "") == "Qwen-3-80B" else 20000
     total_chars = sum(len(str(m.get("content", ""))) for m in messages)
-    if total_chars // 4 > 20000:
-        logger.warning("final verdict context too large, trimming")
+    if total_chars // 4 > trim_threshold:
+        logger.warning("final verdict context too large (%d est tokens, threshold %d), trimming",
+                       total_chars // 4, trim_threshold)
         kept = [messages[0]]
         for m in messages[1:-1]:
             c = str(m.get("content", ""))
@@ -1477,6 +1591,11 @@ async def _async_main():
     parser.add_argument("--base_case_dir", type=str, default="../Outputs/Valid_Cases")
     parser.add_argument("--adm_config", type=str, choices=["both", "none", "sub_adm_1", "sub_adm_2"], default="both")
     parser.add_argument("--adm_initial", action="store_true")
+    parser.add_argument(
+        "--questions_file", type=str, default=None,
+        help="Path to a questions JSON file (default: ADM/questions.json). "
+             "Use a modified copy for prompt ablation experiments.",
+    )
     args = parser.parse_args()
 
     if args.debug:
@@ -1489,6 +1608,14 @@ async def _async_main():
     CURRENT_CONFIG = MODELS.get(args.model, MODELS["gpt"]).copy()
     BASE_CASE_DIR = args.base_case_dir
     LLM_TEMPERATURE = args.temperature
+
+    #load custom questions BEFORE rebuilding the question caches
+    if args.questions_file:
+        logger.info("loading questions from %s", args.questions_file)
+        load_questions(args.questions_file)   # stores in inventive_step_ADM module cache
+        set_questions(load_questions())       # no-op if already loaded; ensures consistency
+        _build_question_caches()             # rebuild batched prompt dicts with new text
+        logger.info("question caches rebuilt from %s", args.questions_file)
 
     try:
         RAW_DATA = pd.read_pickle(args.raw_data)
