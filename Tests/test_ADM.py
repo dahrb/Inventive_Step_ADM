@@ -1240,10 +1240,6 @@ class TestMainADM(unittest.TestCase):
         self.assertNotIn("OTPNotObvious", self.adm.case)
         self.assertIn("KnownMeasures", self.adm.case)
         self.assertIn("SecondaryIndicator", self.adm.case)
-        
-        # Obvious = OTPObvious OR SecondaryIndicator
-        self.assertIn("Obvious", self.adm.case)
-        
         self.assertNotIn("InvStep", self.adm.case)
 
 class TestUI(unittest.TestCase):

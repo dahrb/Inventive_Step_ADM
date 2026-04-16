@@ -11,7 +11,6 @@ Test Coverage: 75%
 import sys
 import os
 import argparse
-#CHANGE
 from inventive_step_ADM import adm_initial, adm_main
 import logging
 from ADM_Construction import *

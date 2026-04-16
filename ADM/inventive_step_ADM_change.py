@@ -696,14 +696,11 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
             
             return objective_problems
 
-        adm.addSubADMNode("OTPNotObvious", sub_adm=lambda name: sub_adm_2(name, questions), function=collect_obj, rejection_condition=False, check_node=['NonTechnicalContribution'])
+        adm.addSubADMNode("OTPSolved", sub_adm=lambda name: sub_adm_2(name, questions), function=collect_obj, rejection_condition=False, check_node=['NonTechnicalContribution'])
 
         #F47 
-        adm.addEvaluationNode("ValidOTP", "OTPNotObvious", "ObjectiveTechnicalProblemFormulation", ['there is at least 1 valid objective technical problem','there is no valid objective technical problem'])
+        adm.addEvaluationNode("ValidOTP", "OTPSolved", "ObjectiveTechnicalProblemFormulation", ['there is at least 1 valid objective technical problem','there is no valid objective technical problem'])
         
-        #F99
-        #adm.addNodes("AgreeOTP",question="[Q99] Based on a holistic perspective across all of the objective technical problems considered in the previous results, do you agree with the conclusion from the tool as a whole that the objective technical problem/s would, or would not, have been obvious to a person skilled in the art in light of the closest prior art and common general knowledge? Do not simply copy the results from the sub-adms but use your own judgement to arrive at this conclusion, answer yes if you agree with the prior conclusion and no if you do not.")
-    
     else:
         
         adm.addInformationQuestion('OBJ_T_PROBLEM', question=_q(questions, "INFO_OBJ_T_PROBLEM", "Objective Technical Problem Definition: The Objective Technical Problem (OTP) establishes the technical problem to be solved by studying the application (or the patent), the closest prior art and the differences (also called \"the distinguishing features\" of the claimed invention) in terms of features (either structural or functional) between the claimed invention and the closest prior art, identifying the technical effect resulting from the distinguishing features and then formulating the technical problem.\n i.e. the technical problem means the aim and task of modifying or adapting the closest prior art to achieve the technical effects that the invention offers over the closest prior art. The objective technical problem must be formulated in such a way that it does not contain pointers to the technical solution. \n\n[Q] Following this please formulate the objective technical problem/s."))
@@ -737,7 +734,7 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
         adm.addNodes("WouldHaveArrived", ['WouldModify and  ValidOTP', 'WouldAdapt and ValidOTP'],
                         ['The skilled person would have arrived at the proposed invention by modifying the closest prior art', 'The skilled person would have arrived at the proposed invention by adapting the closest prior art','There is no reason to believe the skilled person would have arrived at the proposed invention'])
         
-        adm.addNodes("OTPNotObvious", ['reject WouldHaveArrived', 'ValidOTP'],
+        adm.addNodes("OTPSolved", ['reject WouldHaveArrived', 'ValidOTP'],
                     ['The objective technical problem has been solved in an obvious way', 'There is evidence to show that the objective technical problem has been solved in a non-obvious way','The objective technical problem is not well-formed'])
     
         #F99
@@ -849,26 +846,35 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
     adm.addNodes('ObviousSelection',['ChooseEqualAlternatives','NormalDesignProcedure','SimpleExtrapolation','ChemicalSelection'],['there is an obvious selection - the invention results from a choice between equally likely alternatives','there is an obvious selection - the invention consists in choosing parameters from a limited range of possibilities arrived at through routine design procedures','there is an obvious selection - the invention is a result of a simple, straightforward extrapolation from the known art','there is an obvious selection - the invention just consists in selecting a specific chemical compound or composition from a broad field','there is not an obvious selection'])
 
     #ISSUES
- 
-    #NEW
-    adm.addNodes('ObjectiveTechnicalProblem',['CandidateOTP and ValidOTP'],['there is a well-defined objective technical problem','there is no well-defined objective technical problem '])
-    
+
+    #NEW — OTP is well-formed (candidate exists and is validly formulated)
+    adm.addNodes('ObjectiveTechnicalProblem',['CandidateOTP and ValidOTP'],
+                 ['there is a well-defined objective technical problem',
+                  'there is no well-defined objective technical problem'])
+
+    #NEW — OTP is well-formed AND was solved non-obviously by the invention
+    adm.addNodes('NonObviousOTP',['ObjectiveTechnicalProblem and OTPSolved'],
+                 ['the objective technical problem is well-defined and was solved in a non-obvious way',
+                  'there is no non-obvious solution to a well-defined objective technical problem'])
+
     #I3
     adm.addNodes('Novelty',['DistinguishingFeatures'],['The invention has novelty','The invention has no novelty'])
 
-    #I2
-    adm.addNodes('NonObviousOTP',['ObjectiveTechnicalProblem and OTPNotObvious'],['there is a non-obvious objective technical problem','there is no non-obvious objective technical problem'])
+    #I2 — invention is novel AND the OTP was solved non-obviously
+    adm.addNodes('InventiveCandidate',['Novelty and NonObviousOTP','NonObviousOTP'],
+                 ['the invention is novel and the objective technical problem was solved in a non-obvious way',
+                  'the invention either lacks novelty or the objective technical problem was not solved in a non-obvious way'])
 
     #I1 - ROOT NODE
-    adm.addNodes('InvStep',['reject SecondaryIndicator', 'reject SufficiencyOfDisclosure', 'Novelty and NonObviousOTP'],
-                 ['there is no inventive step — a secondary indicator of obviousness is present',
-                  'there is no inventive step — there is a sufficiency of disclosure issue',
+    adm.addNodes('InvStep',['reject SecondaryIndicator', 'reject SufficiencyOfDisclosure', 'InventiveCandidate'],
+                 ['there is no inventive step due to a secondary indicator of obviousness',
+                  'there is no inventive step due to sufficiency of disclosure',
                   'there is an inventive step present',
                   'there is no inventive step present'],root=True)
     
     if sub_adm_1_flag and sub_adm_2_flag:  
         adm.questionOrder = ['ReliableTechnicalEffect','DistinguishingFeatures','NonTechnicalContribution','TechnicalContribution','SufficiencyOfDisclosure',"UnexpectedEffect",
-        "synergy_question","FunctionalInteraction","OTPNotObvious","ValidOTP", "DisadvantageousMod","Foreseeable",
+        "synergy_question","FunctionalInteraction","OTPSolved","ValidOTP", "DisadvantageousMod","Foreseeable",
         "UnexpectedAdvantage","BioTech","Antibody","PredictableResults","ReasonableSuccess","KnownTechnique",
         "OvercomeTechDifficulty","GapFilled","WellKnownEquivalent","KnownProperties","AnalogousUse",
         "KnownDevice","ObviousCombination","AnalogousSubstitution","ChooseEqualAlternatives",
@@ -884,7 +890,7 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
     
     elif sub_adm_2_flag:
         adm.questionOrder = ["DistinguishingFeatures","technical_contribution","UnexpectedEffect","PreciseTerms","OneWayStreet","cred_questions","ClaimContainsEffect","SufficiencyOfDisclosureRaised",
-        "synergy_question","FunctionalInteraction","OTPNotObvious","ValidOTP", "DisadvantageousMod","Foreseeable",
+        "synergy_question","FunctionalInteraction","OTPSolved","ValidOTP", "DisadvantageousMod","Foreseeable",
         "UnexpectedAdvantage","BioTech","Antibody","PredictableResults","ReasonableSuccess","KnownTechnique",
         "OvercomeTechDifficulty","GapFilled","WellKnownEquivalent","KnownProperties","AnalogousUse",
         "KnownDevice","ObviousCombination","AnalogousSubstitution","ChooseEqualAlternatives",

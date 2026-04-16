@@ -53,7 +53,7 @@ for _h in logging.getLogger().handlers:
 
 # ── globals ──────────────────────────────────────────────────────────────────
 
-REQUEST_SEMAPHORE = asyncio.Semaphore(20)
+REQUEST_SEMAPHORE = asyncio.Semaphore(5)
 BASE_CASE_DIR = "../Outputs/Valid_Cases"
 ADM_SCRIPT_PATH = "../ADM/UI.py"
 RAW_DATA = None
@@ -61,6 +61,7 @@ CURRENT_CONFIG = None
 LLM_TEMPERATURE = 0.0
 ADM_CONFIG = "both"
 ADM_INITIAL = False
+N_HISTORY = 1
 
 #sets questionsd to be filled later
 INITIAL_ADM_QUESTIONS = {}
@@ -80,17 +81,19 @@ MODELS = {
     "gpt": {
         "id": "gpt-oss-120b",
         "guided_json": True, "reasoning_effort": True, "thinking": True,
-        "seed": True, "max_tokens": 8000,
+        "seed": True, "max_tokens": 4000, "context_limit": 32000,
     },
     "llama": {
         "id": "Llama-3.3-70B-Instruct-FP8",
         "guided_json": True, "reasoning_effort": False, "thinking": False,
-        "seed": True, "max_tokens": 1200,
+        "seed": True, "max_tokens": 2000, "context_limit": 32000,
     },
+    
+    #seed true but don't think it actually works for qwen
     "qwen": {
         "id": "Qwen-3-80B",
         "guided_json": False, "reasoning_effort": False, "thinking": False,
-        "seed": False, "max_tokens": 8000,
+        "seed": True, "max_tokens": 2000, "context_limit": 32000,
     },
 }
 
@@ -110,50 +113,32 @@ ENSEMBLE_PERSONA_B = (
 
 # ── LLM helpers ──────────────────────────────────────────────────────────────
 
-_CONTEXT_WINDOW = 32000
-# Minimum output tokens we always want to guarantee
-_MIN_OUTPUT = 200
-
 # Maximum tokens allowed for the CPA document.
 CPA_MAX_TOKENS = 10_000
 
-def _estimate_tokens(messages: list[dict]):
-    return sum(len(str(m.get("content", ""))) for m in messages) // 4
-
-def _build_request(messages: list[dict], schema=None, max_tokens: int | None = None) -> dict:
+def _build_request(messages: list[dict], schema=None):
     """Build kwargs for client.chat.completions.create based on current model config.
-
-    For models with tight context windows (e.g. Qwen-3-80B at 8 000 tokens) the
-    requested max_tokens is clamped so that input_tokens + max_tokens never
-    exceeds the window.  Token count is estimated at 4 chars per token.
     """
     cfg = CURRENT_CONFIG or {}
-    desired = max_tokens or cfg.get("max_tokens", 8000)
-
-    #dynamically clamp to fit the context window
     model_id  = cfg.get("id", "")
-    ctx_limit = _CONTEXT_WINDOW
-
     req_messages = messages
-    prompt_tokens_est = _estimate_tokens(req_messages)
-    available = max(_MIN_OUTPUT, ctx_limit - prompt_tokens_est - 64)  # 64-token safety margin
-    capped = min(desired, available)
 
     kwargs: dict = {
         "model": model_id,
         "messages": req_messages,
         "temperature": LLM_TEMPERATURE,
-        "max_tokens": capped,
         "top_p": 1,
+        "max_tokens": cfg.get("max_tokens", 2000),
     }
+    
     if cfg.get("seed"):
         kwargs["seed"] = 42
+        
     if cfg.get("reasoning_effort"):
         kwargs["reasoning_effort"] = "medium"
+        
     if schema is not None and cfg.get("guided_json"):
-        # Use vLLM's structured-output via response_format (strict JSON schema).
-        # This is the correct API; extra_body guided_json is a legacy alias that
-        # some model versions ignore, leading to free-form schema invention.
+        #use vllm formatted schema 
         kwargs["response_format"] = {
             "type": "json_schema",
             "json_schema": {
@@ -162,8 +147,8 @@ def _build_request(messages: list[dict], schema=None, max_tokens: int | None = N
                 "schema": schema,
             },
         }
-    # Disable thinking mode explicitly for Instruct models (Llama, Qwen-3-80B).
-    # Only GPT has thinking=True and must not receive this flag.
+        
+    #disable thinking for llama and qwen
     if not cfg.get("thinking"):
         kwargs.setdefault("extra_body", {})["chat_template_kwargs"] = {"enable_thinking": False}
     return kwargs
@@ -182,7 +167,7 @@ def _get_content(resp) -> str:
 def _parse_json(raw: str) -> dict:
     """Simple JSON parse: find the first { and try json.loads from there.
 
-    Like the old code: json.loads -> .get("answer"). No brace completion,
+    json.loads -> .get("answer"). No brace completion,
     no multi-stage extraction. If it fails, return empty dict.
     """
     if not raw:
@@ -190,7 +175,7 @@ def _parse_json(raw: str) -> dict:
     start = raw.find("{")
     if start == -1:
         return {}
-    # find the matching closing brace
+    #find the matching closing brace
     depth, in_str, esc = 0, False, False
     for i in range(start, len(raw)):
         c = raw[i]
@@ -214,7 +199,7 @@ def _parse_json(raw: str) -> dict:
                     return json.loads(raw[start:i + 1])
                 except json.JSONDecodeError:
                     return {}
-    # unbalanced — try anyway
+    #unbalanced — try anyway
     try:
         return json.loads(raw[start:])
     except json.JSONDecodeError:
@@ -587,12 +572,10 @@ def _system_prompt(context: str, case_name: str, train: bool = False) -> str:
         f"=== CASE DATA ===\n{context}\n=== END CASE DATA ===\n\n"
     )
 
-    if train and RAW_DATA is not None and not RAW_DATA.empty:
-        try:
-            reasons = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Decision Reasons"].iloc[0])
-            decision = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Order"].iloc[0])
-        except Exception:
-            reasons, decision = "", ""
+    if train:
+        reasons = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Decision Reasons"].iloc[0])
+        decision = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Order"].iloc[0])
+       
         base += (
             f"=== REASONS FOR DECISION ===\n{reasons}\n=== END REASONS FOR DECISION ===\n\n"
             f"=== DECISION ===\n{decision}\n=== END DECISION ===\n\n"
@@ -604,6 +587,7 @@ def _system_prompt(context: str, case_name: str, train: bool = False) -> str:
             "5. Follow the reasoning from the 'reasons for decision' as closely as possible when ascribing factors.\n"
             "6. You MUST try and follow the actual decision of the case as closely as possible.\n"
         )
+        
     else:
         base += (
             "INSTRUCTIONS:\n"
@@ -612,20 +596,24 @@ def _system_prompt(context: str, case_name: str, train: bool = False) -> str:
             "3. Use the data provided. Do not refer to case law, patents or other specific inventions you have not been provided with.\n"
             "4. You may make reasonable assumptions about the skilled person or common general knowledge.\n"
             "5. Do not follow any conclusions in the case data blindly — critically assess all information.\n"
-            "6. Ensure you remember that these questions are here to guide your reasoning, think about"
+            "6. Ensure you remember that these questions are here to guide your reasoning, think about the case holistically as well when answering them."
         )
     return base
 
-
-def _last_2_qa(qa_log: list[dict]) -> list[dict]:
+def _last_n_qa(qa_log: list[dict], n: int):
+    """extracts the last n q/a pairs from the log."""
     msgs = []
-    for entry in qa_log[-2:]:
+    for entry in qa_log[-n:]:
         msgs.append({"role": "user", "content": entry["question"]})
         msgs.append({"role": "assistant", "content": json.dumps({
             "answer": entry["answer"],
             "reasoning": entry.get("reasoning", ""),
         })})
     return msgs
+
+def _last_1_qa(qa_log: list[dict]):
+    """extracts the last 1 q/a pair from the log."""
+    return _last_n_qa(qa_log, 1)
 
 # ── LLM calls ────────────────────────────────────────────────────────────────
 # Simple approach (like old code):
@@ -635,7 +623,7 @@ MAX_RETRIES = 5
 BASE_BACKOFF = 2
 ENSEMBLE_TEMP = 0.7  # temperature for the two opinion calls
 
-
+#FIX LATER
 async def _get_ensemble_opinions(
         client, sys_prompt: str, history: list[dict],
         model_class, section_label: str, keys: list[str],
@@ -659,7 +647,8 @@ async def _get_ensemble_opinions(
         req.pop("seed", None)  # diversity — no fixed seed
 
         try:
-            resp = await client.chat.completions.create(**req)
+            async with REQUEST_SEMAPHORE:
+                resp = await client.chat.completions.create(**req)
             raw = _get_content(resp)
             # parse with pydantic, fall back to plain json
             answers = {}
@@ -689,11 +678,11 @@ async def _get_ensemble_opinions(
     )
     return [opinion_a, opinion_b]
 
-
+#UP TO HERE WITH LOOKING OVER
 async def _call_batch(client, sys_prompt: str, history: list[dict],
                       model_class, section_label: str, keys: list[str],
                       feature_name: str = None,
-                      ensemble: bool = False) -> tuple[dict, list]:
+                      ensemble: bool = False):
     """Call LLM once with a batched structured schema.
 
     Returns (results, messages) where results is
@@ -705,7 +694,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     ensemble: if True, fires two parallel persona-batch calls first and injects
     their full per-question answers into the main batch prompt.
     """
-    # pick question dictionary
+    #pick question dictionary
     if "No Sub-ADM 1" in section_label and "No Sub-ADM 2" not in section_label:
         qdict = MAIN_ADM_NO_SUB_1_QUESTIONS
     elif "No Sub-ADM 2" in section_label and "No Sub-ADM 1" not in section_label:
@@ -715,7 +704,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     else:
         qdict = ALL_EXACT_QUESTIONS
 
-    # build question text
+    #build question text
     q_text = "QUESTIONS TO ANSWER:\n"
     for k in keys:
         qt = qdict.get(k.lower(), f"Question {k} not found.")
@@ -730,7 +719,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
         kind = "objective technical problem" if is_sub2 else "feature"
         ctx = f"\n[CONTEXT: Evaluating {kind}: {feature_name}]"
 
-    # schema: guided_json or prompt-embedded
+    #schema: guided_json or prompt-embedded
     cfg = CURRENT_CONFIG or {}
     schema = model_class.model_json_schema()
     if not cfg.get("guided_json"):
@@ -746,9 +735,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
         task_suffix = "\nTASK: Fill out the structured JSON schema completely."
         guided_schema = schema
 
-    # append ensemble opinions if provided
-    # Each opinion contains a full batch of answers (one per question key),
-    # formatted so the main batch call can see what each persona answered.
+    #FIX ENSEMBLE
     opinions_block = ""
     if ensemble:
         logger.info("generating ensemble opinions for '%s'", section_label)
@@ -780,11 +767,12 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     messages = [{"role": "system", "content": sys_prompt}] + history
     messages.append({"role": "user", "content": f"{q_text}{ctx}{opinions_block}{task_suffix}"})
 
-    # call with retries
+    #call with retries
     for attempt in range(MAX_RETRIES):
         try:
             req = _build_request(messages, schema=guided_schema)
-            resp = await client.chat.completions.create(**req)
+            async with REQUEST_SEMAPHORE:
+                resp = await client.chat.completions.create(**req)
             raw = _get_content(resp)
             if not raw:
                 raise ValueError("empty response")
@@ -796,7 +784,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
                 return {}, messages
             await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
 
-    # parse: try pydantic, fall back to plain json.loads
+    #parse: try pydantic, fall back to plain json.loads
     results = {}
     try:
         json_start = raw.find("{")
@@ -816,12 +804,11 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     logger.info("batch '%s' returned %d/%d answers", section_label, len(results), len(keys))
     return results, messages
 
-
 async def _call_dynamic(client, sys_prompt: str, history: list[dict],
-                        question_text: str) -> tuple[str, str, list]:
+                        question_text: str):
     """Call LLM with a single question. Returns (answer, reasoning, messages).
 
-    Like the old consult_llm: json.loads → .get("answer"). If parsing fails,
+    json.loads → .get("answer"). If parsing fails,
     raw text is the answer.  The third return value is the full messages list
     sent to the LLM (system prompt + history + question) for logging.
     """
@@ -847,18 +834,18 @@ async def _call_dynamic(client, sys_prompt: str, history: list[dict],
     for attempt in range(MAX_RETRIES):
         try:
             req = _build_request(messages, schema=guided_schema)
-            resp = await client.chat.completions.create(**req)
+            async with REQUEST_SEMAPHORE:
+                resp = await client.chat.completions.create(**req)
             raw = _get_content(resp)
             if not raw:
                 raise ValueError("empty response")
 
-            # simple parse like old code
             parsed = _parse_json(raw)
             if parsed and parsed.get("answer") is not None:
                 answer = str(parsed.get("answer")).strip()
             else:
-                # _parse_json failed (e.g. malformed JSON with stray quotes);
-                # fall back to regex extraction of "answer" field
+                #_parse_json failed (e.g. malformed JSON with stray quotes);
+                #fall back to regex extraction of "answer" field
                 m = re.search(r'"answer"\s*:\s*"([^"]*)"', raw, re.IGNORECASE)
                 answer = m.group(1).strip() if m else raw
             reasoning = parsed.get("reasoning", raw) if parsed else raw
@@ -870,9 +857,8 @@ async def _call_dynamic(client, sys_prompt: str, history: list[dict],
                 raise
             await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
 
-
 async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
-                              case_name: str, train: bool) -> tuple[str, str, int, list]:
+                              case_name: str, train: bool):
     """Get the final inventive step verdict. Returns (answer, reasoning, confidence_score, messages)."""
     if train:
         question = (
@@ -906,25 +892,34 @@ async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
     messages = [{"role": "system", "content": sp}] + adm_context
     messages.append({"role": "user", "content": question})
 
-    # Trim context if too large. Qwen-3-80B (Instruct, 32k context) gets a
-    # tighter threshold than 128k models to stay safely within its window.
-    trim_threshold = 8000 if cfg.get("id", "") == "Qwen-3-80B" else 20000
+    # Trim context if too large, for all models.
+    # Use 75% of the model's context_limit as the threshold, leaving headroom
+    # for the verdict response itself. Priority: keep system prompt, then any
+    # messages containing high-value ADM summary content, then the final
+    # question. Individual Q&A turns are dropped when trimming is needed.
+    context_limit = cfg.get("context_limit", 32000)
+    trim_threshold = int(context_limit * 0.75)
     total_chars = sum(len(str(m.get("content", ""))) for m in messages)
     if total_chars // 4 > trim_threshold:
         logger.warning("final verdict context too large (%d est tokens, threshold %d), trimming",
                        total_chars // 4, trim_threshold)
+        # messages[0]  = system prompt (always kept)
+        # messages[-1] = final verdict question (always kept)
+        # middle messages: keep only those carrying ADM summary output
+        _KEEP_MARKERS = ("Final ADM Output", "Sub-ADM Conclusion", "Case Outcome:", "[Early Stop]")
         kept = [messages[0]]
         for m in messages[1:-1]:
             c = str(m.get("content", ""))
-            if "Final ADM Output" in c or "Sub-ADM Conclusion" in c:
+            if any(marker in c for marker in _KEEP_MARKERS):
                 kept.append(m)
-        kept.extend(messages[-3:])
+        kept.append(messages[-1])
         messages = kept
 
     for attempt in range(MAX_RETRIES):
         try:
             req = _build_request(messages, schema=guided_schema)
-            resp = await client.chat.completions.create(**req)
+            async with REQUEST_SEMAPHORE:
+                resp = await client.chat.completions.create(**req)
             raw = _get_content(resp)
             if not raw:
                 raise ValueError("empty response")
@@ -1067,125 +1062,121 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
     Saves a one-entry log.json in {BASE_CASE_DIR}/{case}/{run_N}/config_X/baseline/.
     If train=True, injects Decision Reasons + Order as a system message (oracle guidance).
     """
-    async with REQUEST_SEMAPHORE:
-        case_token = CURRENT_CASE_REF.set(case_name)
-        t_start = time.time()
-        config_num = metadata.get("config", "X")
+    case_token = CURRENT_CASE_REF.set(case_name)
+    t_start = time.time()
+    config_num = metadata.get("config", "X")
 
-        log_dir = os.path.join(BASE_CASE_DIR, case_name, f"run_{run_id}",
-                               f"config_{config_num}", "baseline")
-        os.makedirs(log_dir, exist_ok=True)
-        log_path = os.path.join(log_dir, "log.json")
-        if os.path.exists(log_path):
-            os.remove(log_path)
+    log_dir = os.path.join(BASE_CASE_DIR, case_name, f"run_{run_id}",
+                           f"config_{config_num}", "baseline")
+    os.makedirs(log_dir, exist_ok=True)
+    log_path = os.path.join(log_dir, "log.json")
+    if os.path.exists(log_path):
+        os.remove(log_path)
 
-        cfg = CURRENT_CONFIG or {}
-        schema = FinalVerdictResponse.model_json_schema()
+    cfg = CURRENT_CONFIG or {}
+    schema = FinalVerdictResponse.model_json_schema()
 
-        if cfg.get("guided_json"):
-            fmt_instruction = "\n\nIMPORTANT: Return a single valid JSON object matching the schema."
-            guided_schema = schema
-        else:
-            fmt_instruction = (
-                "\n\nIMPORTANT: Return ONLY a single JSON object — no prose, no markdown fences:\n"
-                + '{"answer": "Yes or No", "reasoning": "...", "confidence_score": <0-100>}'
-            )
-            guided_schema = None
+    if cfg.get("guided_json"):
+        fmt_instruction = "\n\nIMPORTANT: Return a single valid JSON object matching the schema."
+        guided_schema = schema
+    else:
+        fmt_instruction = (
+            "\n\nIMPORTANT: Return ONLY a single JSON object — no prose, no markdown fences:\n"
+            + '{"answer": "Yes or No", "reasoning": "...", "confidence_score": <0-100>}'
+        )
+        guided_schema = None
 
-        # ── build oracle context if in train mode ──────────────────────────
-        reasons, decision = "", ""
-        if train and RAW_DATA is not None and not RAW_DATA.empty:
-            try:
-                reasons = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Decision Reasons"].iloc[0])
-                decision = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Order"].iloc[0])
-            except Exception:
-                reasons, decision = "", ""
+    # ── build oracle context if in train mode ──────────────────────────
+    reasons, decision = "", ""
+    if train and RAW_DATA is not None and not RAW_DATA.empty:
+        try:
+            reasons = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Decision Reasons"].iloc[0])
+            decision = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Order"].iloc[0])
+        except Exception:
+            reasons, decision = "", ""
 
-        if train:
-            sys_content = (
-                "You are objectively assessing Inventive Step for the European Patent Office (EPO). "
-                "These cases are appeals against the examining boards' original decisions.\n"
-                "Use the data provided. Do not rely on outside knowledge, but you may make reasonable "
-                "assumptions about common general knowledge prior to the cut-off date given.\n\n"
-                f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
-                f"=== REASONS FOR DECISION ===\n{reasons}\n=== END REASONS FOR DECISION ===\n\n"
-                f"=== DECISION ===\n{decision}\n=== END DECISION ===\n\n"
-                "INSTRUCTIONS:\n"
-                "1. Provide a step-by-step reasoning trace with explicit reference to the case data as to why you gave your answer.\n"
-                "2. Conclude with a final 'Yes' (inventive step present) or 'No' answer.\n"
-                "3. Provide a confidence score 0-100.\n"
-                "4. Follow the reasoning from the 'reasons for decision' as closely as possible.\n"
-                "5. You MUST try and follow the actual decision of the case as closely as possible."
-                + fmt_instruction
-            )
-            prompt = "Determine whether the patent fulfils the inventive step criteria." + fmt_instruction
-            messages = [
-                {"role": "system", "content": sys_content},
-                {"role": "user",   "content": prompt},
-            ]
-        else:
-            prompt = (
-                "You are objectively assessing Inventive Step for the European Patent Office (EPO). "
-                "These cases are appeals against the examining board's original decision.\n"
-                "Use the data provided. Do not rely on outside knowledge, but you may make reasonable "
-                "assumptions about common general knowledge prior to the cut-off date given.\n"
-                "Do not simply accept the conclusions of either party — critically analyse the evidence.\n"
-                "Determine whether the patent fulfils the inventive step criteria.\n\n"
-                f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
-                "INSTRUCTIONS:\n"
-                "1. Provide a step-by-step reasoning trace with explicit reference to the case data.\n"
-                "2. Conclude with a final 'Yes' (inventive step present) or 'No' answer.\n"
-                "3. Provide a confidence score 0-100."
-                + fmt_instruction
-            )
-            messages = [{"role": "user", "content": prompt}]
+    if train:
+        prompt = (
+            "You are objectively assessing Inventive Step for the European Patent Office (EPO). "
+            "These cases are appeals against the examining boards' original decisions.\n"
+            "Use the data provided. Do not rely on outside knowledge, but you may make reasonable "
+            "assumptions about common general knowledge prior to the cut-off date given.\n\n"
+            f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
+            f"=== REASONS FOR DECISION ===\n{reasons}\n=== END REASONS FOR DECISION ===\n\n"
+            f"=== DECISION ===\n{decision}\n=== END DECISION ===\n\n"
+            "INSTRUCTIONS:\n"
+            "1. Provide a step-by-step reasoning trace with explicit reference to the case data as to why you gave your answer.\n"
+            "2. Conclude with a final 'Yes' (inventive step present) or 'No' answer.\n"
+            "3. Provide a confidence score 0-100.\n"
+            "4. Follow the reasoning from the 'reasons for decision' as closely as possible.\n"
+            "5. You MUST try and follow the actual decision of the case as closely as possible."
+            + fmt_instruction
+        )
 
-        req = _build_request(messages, schema=guided_schema)
-        req.pop("seed", None)  # reproducibility optional for baseline
+    else:
+        prompt = (
+            "You are objectively assessing Inventive Step for the European Patent Office (EPO). "
+            "These cases are appeals against the examining board's original decision.\n"
+            "Use the data provided. Do not rely on outside knowledge, but you may make reasonable "
+            "assumptions about common general knowledge prior to the cut-off date given.\n"
+            "Do not simply accept the conclusions of either party — critically analyse the evidence.\n"
+            "Determine whether the patent fulfils the inventive step criteria.\n\n"
+            f"=== CASE DATA ===\n{context_text}\n=== END CASE DATA ===\n\n"
+            "INSTRUCTIONS:\n"
+            "1. Provide a step-by-step reasoning trace with explicit reference to the case data.\n"
+            "2. Conclude with a final 'Yes' (inventive step present) or 'No' answer.\n"
+            "3. Provide a confidence score 0-100."
+            + fmt_instruction
+        )
 
-        verdict = "ERROR"
-        reasoning = ""
-        confidence = 50
-        raw = ""
+    messages = [{"role": "user", "content": prompt}]
 
-        for attempt in range(MAX_RETRIES):
-            try:
+    req = _build_request(messages, schema=guided_schema)
+
+    verdict = "ERROR"
+    reasoning = ""
+    confidence = 50
+    raw = ""
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            async with REQUEST_SEMAPHORE:
                 resp = await client.chat.completions.create(**req)
-                raw = _get_content(resp)
-                if not raw:
-                    raise ValueError("empty response")
+            raw = _get_content(resp)
+            if not raw:
+                raise ValueError("empty response")
 
-                parsed = _parse_json(raw)
-                answer = str(parsed.get("answer", "")).strip()
-                reasoning = str(parsed.get("reasoning", raw))
-                confidence = int(parsed.get("confidence_score", 50))
+            parsed = _parse_json(raw)
+            answer = str(parsed.get("answer", "")).strip()
+            reasoning = str(parsed.get("reasoning", raw))
+            confidence = int(parsed.get("confidence_score", 50))
 
-                if re.search(r"\b(yes|no)\b", answer, re.IGNORECASE):
-                    verdict = answer.capitalize()
-                    break
-                # last-resort regex scan of raw text
-                am = re.search(r"\b(Yes|No)\b", raw, re.IGNORECASE)
-                if am:
-                    verdict = am.group(1).capitalize()
-                    reasoning = reasoning or raw
-                    break
-                raise ValueError(f"no yes/no in baseline response: {answer[:80]}")
+            if re.search(r"\b(yes|no)\b", answer, re.IGNORECASE):
+                verdict = answer.capitalize()
+                break
+            # last-resort regex scan of raw text
+            am = re.search(r"\b(Yes|No)\b", raw, re.IGNORECASE)
+            if am:
+                verdict = am.group(1).capitalize()
+                reasoning = reasoning or raw
+                break
+            raise ValueError(f"no yes/no in baseline response: {answer[:80]}")
 
-            except Exception as e:
-                logger.warning("baseline attempt %d failed: %s", attempt + 1, e)
-                if attempt == MAX_RETRIES - 1:
-                    logger.error("baseline failed for %s", case_name)
-                    break
-                await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
+        except Exception as e:
+            logger.warning("baseline attempt %d failed: %s", attempt + 1, e)
+            if attempt == MAX_RETRIES - 1:
+                logger.error("baseline failed for %s", case_name)
+                break
+            await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
 
-        elapsed = time.time() - t_start
-        turn_log = [_log_entry(1, prompt, verdict, reasoning, confidence, "baseline", elapsed, metadata, full_prompt=messages)]
-        with open(log_path, "w") as f:
-            json.dump(turn_log, f, indent=4)
+    elapsed = time.time() - t_start
+    turn_log = [_log_entry(1, prompt, verdict, reasoning, confidence, "baseline", elapsed, metadata, full_prompt=messages)]
+    with open(log_path, "w") as f:
+        json.dump(turn_log, f, indent=4)
 
-        print(f"Baseline {case_name} (run {run_id}) done. Verdict: {verdict}. Time: {elapsed:.2f}s")
-        CURRENT_CASE_REF.reset(case_token)
-        return verdict
+    print(f"Baseline {case_name} (run {run_id}) done. Verdict: {verdict}. Time: {elapsed:.2f}s")
+    CURRENT_CASE_REF.reset(case_token)
+    return verdict
 
 # ── main controller ──────────────────────────────────────────────────────────
 
@@ -1218,330 +1209,331 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
       3. For each question: use cache if valid, otherwise call dynamic ONCE.
          Dynamic fallback is always single-opinion regardless of ensemble flag.
     """
-    async with REQUEST_SEMAPHORE:
-        case_token = CURRENT_CASE_REF.set(case_name)
-        t_start = time.time()
-        config_num = metadata.get("config", "X")
-        mode = metadata.get("mode", "tool")
+    case_token = CURRENT_CASE_REF.set(case_name)
+    t_start = time.time()
+    config_num = metadata.get("config", "X")
+    mode = metadata.get("mode", "tool")
 
-        log_subdir = "train" if train else ("ensemble" if ensemble else "tool")
-        log_dir = os.path.join(BASE_CASE_DIR, case_name, f"run_{run_id}",
-                               f"config_{config_num}", log_subdir,
-                               str(ADM_CONFIG), str(ADM_INITIAL))
-        os.makedirs(log_dir, exist_ok=True)
-        log_path = os.path.join(log_dir, "log.json")
-        if os.path.exists(log_path):
-            os.remove(log_path)
+    log_subdir = "train" if train else ("ensemble" if ensemble else "tool")
+    log_dir = os.path.join(BASE_CASE_DIR, case_name, f"run_{run_id}",
+                           f"config_{config_num}", log_subdir,
+                           str(ADM_CONFIG), str(ADM_INITIAL))
+    os.makedirs(log_dir, exist_ok=True)
+    log_path = os.path.join(log_dir, "log.json")
+    if os.path.exists(log_path):
+        os.remove(log_path)
 
-        # state
-        answers_cache: dict = {}          # cache_key → {"answer": ..., "reasoning": ...}
-        fetched_sections: set = set()     # batch IDs already fetched (no re-fetching)
-        batch_prompt_cache: dict = {}     # batch_id → full messages list sent to LLM
-        qa_log: list[dict] = []
-        turn_logs: list[dict] = []
-        full_output = ""
-        buffer: list[str] = []
-        full_responses_log: dict = {}
-        last_sent = ""
-        last_type = ""
-        pending_conclusion = ""
-        last_conclusion = ""
+    # state
+    answers_cache: dict = {}          # cache_key → {"answer": ..., "reasoning": ...}
+    fetched_sections: set = set()     # batch IDs already fetched (no re-fetching)
+    batch_prompt_cache: dict = {}     # batch_id → full messages list sent to LLM
+    qa_log: list[dict] = []
+    turn_logs: list[dict] = []
+    full_output = ""
+    buffer: list[str] = []
+    full_responses_log: dict = {}
+    last_sent = ""
+    last_type = ""
+    pending_conclusion = ""
+    last_conclusion = ""
 
-        sys_prompt = _system_prompt(context_text, case_name, train)
+    sys_prompt = _system_prompt(context_text, case_name, train)
 
-        # spawn ui.py
-        proc_args = [
-            sys.executable, "-u", ADM_SCRIPT_PATH,
-            "--run_id", str(run_id),
-            "--config", str(config_num),
-            "--mode", str(mode),
-            "--folder_base", str(BASE_CASE_DIR),
-            "--adm_config", str(ADM_CONFIG),
-        ]
-        if ADM_INITIAL:
-            proc_args.append("--adm_initial")
+    # spawn ui.py
+    proc_args = [
+        sys.executable, "-u", ADM_SCRIPT_PATH,
+        "--run_id", str(run_id),
+        "--config", str(config_num),
+        "--mode", str(mode),
+        "--folder_base", str(BASE_CASE_DIR),
+        "--adm_config", str(ADM_CONFIG),
+    ]
+    if ADM_INITIAL:
+        proc_args.append("--adm_initial")
 
-        proc = await asyncio.create_subprocess_exec(
-            *proc_args,
-            stdin=asyncio.subprocess.PIPE,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.STDOUT,
-        )
+    proc = await asyncio.create_subprocess_exec(
+        *proc_args,
+        stdin=asyncio.subprocess.PIPE,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.STDOUT,
+    )
 
-        async def _send(text: str):
-            nonlocal last_sent, last_type
-            try:
-                proc.stdin.write(f"{text}\n".encode("utf-8"))
-                await proc.stdin.drain()
-                last_sent = text
-                last_type = "number" if re.fullmatch(r"\d+", text) else ("yesno" if text in {"y", "n"} else "text")
-            except (ConnectionResetError, BrokenPipeError):
-                raise StopIteration("stdin closed")
-
+    async def _send(text: str):
+        nonlocal last_sent, last_type
         try:
-            while True:
-                timed_out = False
-                try:
-                    chunk = await asyncio.wait_for(proc.stdout.read(4096), timeout=0.25)
-                    if not chunk:
-                        break
-                    decoded = chunk.decode("utf-8", errors="replace")
-                    buffer.append(decoded)
-                    full_output += decoded
-                    if decoded.strip():
-                        print(f"[UI.py] {decoded.strip()}")
-                except asyncio.TimeoutError:
-                    timed_out = True
+            proc.stdin.write(f"{text}\n".encode("utf-8"))
+            await proc.stdin.drain()
+            last_sent = text
+            last_type = "number" if re.fullmatch(r"\d+", text) else ("yesno" if text in {"y", "n"} else "text")
+        except (ConnectionResetError, BrokenPipeError):
+            raise StopIteration("stdin closed")
 
-                combined = "".join(buffer)
-                clean = _strip_decorators(combined)
-
-                # capture adm outcomes
-                case_outcome = _extract_case_outcome(full_output)
-                if case_outcome:
-                    full_responses_log["Final_ADM_Output"] = case_outcome
-                sub_conclusion = _extract_sub_adm_conclusion(clean)
-                if sub_conclusion and sub_conclusion != last_conclusion:
-                    full_responses_log.setdefault("Sub_ADM_Conclusions", []).append(sub_conclusion)
-                    pending_conclusion = sub_conclusion
-                    last_conclusion = sub_conclusion
-
-                if not clean and proc.returncode is None:
-                    continue
-                if proc.returncode is not None and not clean:
-                    break
-                if not timed_out:
-                    continue
-
-                # ── classify the prompt ──────────────────────────────────
-
-                needed_key = None
-                go_dynamic = False
-                lower_clean = clean.lower()
-
-                # invalid input — resend
-                if "invalid input" in lower_clean:
-                    expects_num = "enter the number" in lower_clean or "only give a number" in lower_clean
-                    expects_yn = "(y/n)" in lower_clean or "yes' or 'no'" in lower_clean
-                    can_resend = (
-                        (expects_num and last_type == "number" and re.fullmatch(r"\d+", last_sent)) or
-                        (expects_yn and last_type == "yesno" and last_sent in {"y", "n"}) or
-                        (not expects_num and not expects_yn and last_sent)
-                    )
-                    if can_resend:
-                        logger.warning("ui rejected input; resending: %s", last_sent)
-                        await _send(last_sent)
-                    buffer = []
-                    continue
-
-                # auto-fill case name
-                if "enter case name" in lower_clean:
-                    logger.info("auto-filling case name: %s", case_name)
-                    await _send(case_name)
-                    buffer = []
-                    continue
-
-                # [Qxx] tag
-                q_match = re.search(r"\[(Q\d+)\]", clean)
-                if q_match:
-                    q_num = q_match.group(1)
-                    if q_num == "Q380":
-                        go_dynamic = True
-                    else:
-                        needed_key = q_num
-
-                # information questions
-                if not needed_key and not go_dynamic:
-                    if "title of your invention" in lower_clean:
-                        needed_key = "invention title"
-                    elif "describe the candidate for the closest prior art" in lower_clean:
-                        needed_key = "closest prior art description"
-                    elif "description of your invention" in lower_clean or "brief description of your invention" in lower_clean:
-                        needed_key = "description"
-                    elif "technical field of the invention" in lower_clean:
-                        needed_key = "technical field"
-                    elif "describe the relevant prior art" in lower_clean or "briefly describe the relevant prior art" in lower_clean:
-                        needed_key = "prior art"
-                    elif "describe the common general knowledge" in lower_clean or "briefly describe the common general knowledge" in lower_clean:
-                        needed_key = "common general knowledge"
-                    elif "describe the objective technical problem" in lower_clean or "briefly describe the objective technical problem" in lower_clean:
-                        needed_key = "obj_t_problem"
-                    elif "[q]" in lower_clean or "enter your choice" in lower_clean or "enter the number" in lower_clean or "list the features" in lower_clean:
-                        go_dynamic = True
-
-                if not needed_key and not go_dynamic:
-                    if clean.strip().endswith(":") or clean.strip().endswith("?") or "(y/n)" in lower_clean:
-                        go_dynamic = True
-                    else:
-                        continue
-
-                history = _last_2_qa(qa_log)
-
-                # ── dynamic route (unknown / special questions) ──────────
-
-                if go_dynamic:
-                    logger.info("dynamic mode for: %s", clean[:80])
-                    prompt = clean
-                    if pending_conclusion and pending_conclusion not in clean:
-                        prompt = f"{pending_conclusion}\n\n{clean}"
-
-                    answer, reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, prompt)
-                    qa_log.append({"question": clean, "answer": answer, "reasoning": reasoning})
-                    turn_logs.append(_log_entry(len(turn_logs) + 1, prompt, answer, reasoning, 0, "dynamic", 0, metadata, full_prompt=dyn_msgs))
-                    pending_conclusion = ""
-                    logger.info("  → dynamic: %s", answer)
-                    await _send(answer)
-                    buffer = []
-                    continue
-
-                # ── batch route ──────────────────────────────────────────
-
-                section = _section_for_key(needed_key)
-                if section is None:
-                    # unknown key — dynamic
-                    answer, reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, clean)
-                    qa_log.append({"question": clean, "answer": answer, "reasoning": reasoning})
-                    turn_logs.append(_log_entry(len(turn_logs) + 1, clean, answer, reasoning, 0, "dynamic", 0, metadata, full_prompt=dyn_msgs))
-                    await _send(answer)
-                    buffer = []
-                    continue
-
-                model_class, section_label, section_keys = section
-
-                # sub-adm: include item name in cache key
-                item_name = None
-                if needed_key in _SUB1_KEYS or needed_key in _SUB2_KEYS:
-                    item_name = _detect_item_name(clean) or "UNKNOWN"
-
-                cache_suffix = f"__{item_name[:100]}" if item_name else ""
-                batch_id = f"{section_label}{cache_suffix}"
-
-                # fetch batch ONCE per section+item
-                if batch_id not in fetched_sections:
-                    fetched_sections.add(batch_id)
-                    logger.info("batch fetch '%s' (triggered by %s)", section_label, needed_key)
-
-                    batch_results, batch_msgs = await _call_batch(
-                        client, sys_prompt, history, model_class,
-                        section_label, section_keys,
-                        feature_name=item_name, ensemble=ensemble,
-                    )
-                    # store batch prompt so it can be attached to each answer logged from this batch
-                    batch_prompt_cache[batch_id] = batch_msgs
-                    for answer_key, val in batch_results.items():
-                        ck = f"{answer_key}{cache_suffix}" if item_name and answer_key in (_SUB1_KEYS + _SUB2_KEYS) else answer_key
-                        answers_cache[ck] = val
-
-                # look up cache
-                cache_key = f"{needed_key}{cache_suffix}"
-                cached = answers_cache.get(cache_key)
-                answer_to_send = None
-                reasoning = ""
-
-                if cached:
-                    raw_ans = str(cached.get("answer", "")).strip().replace("**", "")
-                    reasoning = cached.get("reasoning", "")
-                    if needed_key.startswith("Q"):
-                        norm = _normalize_answer(raw_ans, needed_key)
-                        if norm and _valid_answer(needed_key, norm):
-                            answer_to_send = norm
-                    elif raw_ans:
-                        answer_to_send = raw_ans
-
-                # cache miss or bad → single dynamic call
-                answer_full_prompt = batch_prompt_cache.get(batch_id)
-                if answer_to_send is None:
-                    logger.info("cache miss for %s → dynamic", needed_key)
-                    prompt = clean
-                    if pending_conclusion and pending_conclusion not in clean:
-                        prompt = f"{pending_conclusion}\n\n{clean}"
-                    dyn_answer, dyn_reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, prompt)
-                    if needed_key.startswith("Q"):
-                        norm = _normalize_answer(dyn_answer, needed_key)
-                        answer_to_send = norm if norm and _valid_answer(needed_key, norm) else dyn_answer
-                    else:
-                        answer_to_send = dyn_answer
-                    reasoning = dyn_reasoning
-                    answer_full_prompt = dyn_msgs
-
-                # log and send
-                logged_q = clean
-                if pending_conclusion and pending_conclusion not in clean:
-                    logged_q = f"{pending_conclusion}\n\n{clean}"
-                pending_conclusion = ""
-
-                qa_log.append({"question": clean, "answer": answer_to_send, "reasoning": reasoning})
-                turn_logs.append(_log_entry(len(turn_logs) + 1, logged_q, answer_to_send, reasoning, 0, "batch", 0, metadata, full_prompt=answer_full_prompt))
-
-                logger.info("  → %s: %s", needed_key, answer_to_send)
-                await _send(answer_to_send)
-                buffer = []
-
-        except StopIteration:
-            pass
-        except Exception as e:
-            logger.error("controller exception: %s", e)
-            traceback.print_exc()
-        finally:
-            if proc.returncode is None:
-                proc.terminate()
-            logger.info("ui.py process finished")
-
-            # ensure final adm output captured
-            if not full_responses_log.get("Final_ADM_Output"):
-                outcome = _extract_case_outcome(full_output)
-                full_responses_log["Final_ADM_Output"] = outcome or full_output[-4000:].strip()
-
-            # ── final verdict ────────────────────────────────────────
-
-            verdict_msgs = []
-            fao = str(full_responses_log.get("Final_ADM_Output", "")).strip()
-            if fao:
-                verdict_msgs.append({"role": "user", "content": f"Final ADM Output Summary:\n{fao}"})
-                verdict_msgs.append({"role": "assistant", "content": "Final ADM outcome captured."})
-
-            subs = full_responses_log.get("Sub_ADM_Conclusions", [])
-            if subs:
-                packed = "\n\n---\n\n".join(str(b).strip()[:1200] for b in subs[-4:] if str(b).strip())
-                if packed:
-                    verdict_msgs.append({"role": "user", "content": f"Sub-ADM Conclusion Summaries:\n{packed}"})
-                    verdict_msgs.append({"role": "assistant", "content": "Sub-ADM conclusions noted."})
-
-            verdict_msgs.extend(_last_2_qa(qa_log))
-
-            history_text = "\n\n".join(
-                f"[{m.get('role', '?').upper()}]\n{m.get('content', '')}"
-                for m in verdict_msgs if isinstance(m, dict)
-            )
-            verdict_question_log = f"FINAL VERDICT\n\n=== ADM CONTEXT ===\n{history_text or '[No context]'}"
-
-            final_verdict = "ERROR"
+    try:
+        while True:
+            timed_out = False
             try:
-                answer, reasoning, confidence, verdict_full_msgs = await _call_final_verdict(
-                    client, sys_prompt, verdict_msgs, case_name, train,
+                chunk = await asyncio.wait_for(proc.stdout.read(4096), timeout=0.25)
+                if not chunk:
+                    break
+                decoded = chunk.decode("utf-8", errors="replace")
+                buffer.append(decoded)
+                full_output += decoded
+                if decoded.strip():
+                    print(f"[UI.py] {decoded.strip()}")
+            except asyncio.TimeoutError:
+                timed_out = True
+
+            combined = "".join(buffer)
+            clean = _strip_decorators(combined)
+
+            # capture adm outcomes
+            case_outcome = _extract_case_outcome(full_output)
+            if case_outcome:
+                full_responses_log["Final_ADM_Output"] = case_outcome
+            
+            sub_conclusion = _extract_sub_adm_conclusion(clean)
+            if sub_conclusion and sub_conclusion != last_conclusion:
+                full_responses_log.setdefault("Sub_ADM_Conclusions", []).append(sub_conclusion)
+                pending_conclusion = sub_conclusion
+                last_conclusion = sub_conclusion
+
+            if not clean and proc.returncode is None:
+                continue
+            if proc.returncode is not None and not clean:
+                break
+            if not timed_out:
+                continue
+
+            # ── classify the prompt ──────────────────────────────────
+
+            needed_key = None
+            go_dynamic = False
+            lower_clean = clean.lower()
+
+            # invalid input — resend
+            if "invalid input" in lower_clean:
+                expects_num = "enter the number" in lower_clean or "only give a number" in lower_clean
+                expects_yn = "(y/n)" in lower_clean or "yes' or 'no'" in lower_clean
+                can_resend = (
+                    (expects_num and last_type == "number" and re.fullmatch(r"\d+", last_sent)) or
+                    (expects_yn and last_type == "yesno" and last_sent in {"y", "n"}) or
+                    (not expects_num and not expects_yn and last_sent)
                 )
-                turn_logs.append(_log_entry(
-                    len(turn_logs) + 1, verdict_question_log,
-                    answer, reasoning, confidence, "final_verdict", 0, metadata,
-                    full_prompt=verdict_full_msgs,
-                ))
-                final_verdict = answer
-            except Exception as e:
-                logger.error("final verdict failed: %s", e)
+                if can_resend:
+                    logger.warning("ui rejected input; resending: %s", last_sent)
+                    await _send(last_sent)
+                buffer = []
+                continue
 
-            elapsed_total = time.time() - t_start
-            print(f"Case {case_name} (run {run_id}) done. Verdict: {final_verdict}. Time: {elapsed_total:.2f}s")
+            # auto-fill case name
+            if "enter case name" in lower_clean:
+                logger.info("auto-filling case name: %s", case_name)
+                await _send(case_name)
+                buffer = []
+                continue
 
-            with open(log_path, "w") as f:
-                json.dump(turn_logs, f, indent=4)
-            logger.info("saved log to %s", log_path)
-            CURRENT_CASE_REF.reset(case_token)
-            return final_verdict
+            # [Qxx] tag
+            q_match = re.search(r"\[(Q\d+)\]", clean)
+            if q_match:
+                q_num = q_match.group(1)
+                if q_num == "Q380":
+                    go_dynamic = True
+                else:
+                    needed_key = q_num
+
+            # information questions
+            if not needed_key and not go_dynamic:
+                if "title of your invention" in lower_clean:
+                    needed_key = "invention title"
+                elif "describe the candidate for the closest prior art" in lower_clean:
+                    needed_key = "closest prior art description"
+                elif "description of your invention" in lower_clean or "brief description of your invention" in lower_clean:
+                    needed_key = "description"
+                elif "technical field of the invention" in lower_clean:
+                    needed_key = "technical field"
+                elif "describe the relevant prior art" in lower_clean or "briefly describe the relevant prior art" in lower_clean:
+                    needed_key = "prior art"
+                elif "describe the common general knowledge" in lower_clean or "briefly describe the common general knowledge" in lower_clean:
+                    needed_key = "common general knowledge"
+                elif "describe the objective technical problem" in lower_clean or "briefly describe the objective technical problem" in lower_clean:
+                    needed_key = "obj_t_problem"
+                elif "[q]" in lower_clean or "enter your choice" in lower_clean or "enter the number" in lower_clean or "list the features" in lower_clean:
+                    go_dynamic = True
+
+            if not needed_key and not go_dynamic:
+                if clean.strip().endswith(":") or clean.strip().endswith("?") or "(y/n)" in lower_clean:
+                    go_dynamic = True
+                else:
+                    continue
+
+            history = _last_n_qa(qa_log, N_HISTORY)
+
+            # ── dynamic route (unknown / special questions) ──────────
+
+            if go_dynamic:
+                logger.info("dynamic mode for: %s", clean[:80])
+                prompt = clean
+                if pending_conclusion and pending_conclusion not in clean:
+                    prompt = f"{pending_conclusion}\n\n{clean}"
+
+                answer, reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, prompt)
+                qa_log.append({"question": clean, "answer": answer, "reasoning": reasoning})
+                turn_logs.append(_log_entry(len(turn_logs) + 1, prompt, answer, reasoning, 0, "dynamic", 0, metadata, full_prompt=dyn_msgs))
+                pending_conclusion = ""
+                logger.info("  → dynamic: %s", answer)
+                await _send(answer)
+                buffer = []
+                continue
+
+            # ── batch route ──────────────────────────────────────────
+
+            section = _section_for_key(needed_key)
+            if section is None:
+                # unknown key — dynamic
+                answer, reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, clean)
+                qa_log.append({"question": clean, "answer": answer, "reasoning": reasoning})
+                turn_logs.append(_log_entry(len(turn_logs) + 1, clean, answer, reasoning, 0, "dynamic", 0, metadata, full_prompt=dyn_msgs))
+                await _send(answer)
+                buffer = []
+                continue
+
+            model_class, section_label, section_keys = section
+
+            # sub-adm: include item name in cache key
+            item_name = None
+            if needed_key in _SUB1_KEYS or needed_key in _SUB2_KEYS:
+                item_name = _detect_item_name(clean) or "UNKNOWN"
+
+            cache_suffix = f"__{item_name[:100]}" if item_name else ""
+            batch_id = f"{section_label}{cache_suffix}"
+
+            # fetch batch ONCE per section+item
+            if batch_id not in fetched_sections:
+                fetched_sections.add(batch_id)
+                logger.info("batch fetch '%s' (triggered by %s)", section_label, needed_key)
+
+                batch_results, batch_msgs = await _call_batch(
+                    client, sys_prompt, history, model_class,
+                    section_label, section_keys,
+                    feature_name=item_name, ensemble=ensemble,
+                )
+                # store batch prompt so it can be attached to each answer logged from this batch
+                batch_prompt_cache[batch_id] = batch_msgs
+                for answer_key, val in batch_results.items():
+                    ck = f"{answer_key}{cache_suffix}" if item_name and answer_key in (_SUB1_KEYS + _SUB2_KEYS) else answer_key
+                    answers_cache[ck] = val
+
+            # look up cache
+            cache_key = f"{needed_key}{cache_suffix}"
+            cached = answers_cache.get(cache_key)
+            answer_to_send = None
+            reasoning = ""
+
+            if cached:
+                raw_ans = str(cached.get("answer", "")).strip().replace("**", "")
+                reasoning = cached.get("reasoning", "")
+                if needed_key.startswith("Q"):
+                    norm = _normalize_answer(raw_ans, needed_key)
+                    if norm and _valid_answer(needed_key, norm):
+                        answer_to_send = norm
+                elif raw_ans:
+                    answer_to_send = raw_ans
+
+            # cache miss or bad → single dynamic call
+            answer_full_prompt = batch_prompt_cache.get(batch_id)
+            if answer_to_send is None:
+                logger.info("cache miss for %s → dynamic", needed_key)
+                prompt = clean
+                if pending_conclusion and pending_conclusion not in clean:
+                    prompt = f"{pending_conclusion}\n\n{clean}"
+                dyn_answer, dyn_reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, prompt)
+                if needed_key.startswith("Q"):
+                    norm = _normalize_answer(dyn_answer, needed_key)
+                    answer_to_send = norm if norm and _valid_answer(needed_key, norm) else dyn_answer
+                else:
+                    answer_to_send = dyn_answer
+                reasoning = dyn_reasoning
+                answer_full_prompt = dyn_msgs
+
+            # log and send
+            logged_q = clean
+            if pending_conclusion and pending_conclusion not in clean:
+                logged_q = f"{pending_conclusion}\n\n{clean}"
+            pending_conclusion = ""
+
+            qa_log.append({"question": clean, "answer": answer_to_send, "reasoning": reasoning})
+            turn_logs.append(_log_entry(len(turn_logs) + 1, logged_q, answer_to_send, reasoning, 0, "batch", 0, metadata, full_prompt=answer_full_prompt))
+
+            logger.info("  → %s: %s", needed_key, answer_to_send)
+            await _send(answer_to_send)
+            buffer = []
+
+    except StopIteration:
+        pass
+    except Exception as e:
+        logger.error("controller exception: %s", e)
+        traceback.print_exc()
+    finally:
+        if proc.returncode is None:
+            proc.terminate()
+        logger.info("ui.py process finished")
+
+        # ensure final adm output captured
+        if not full_responses_log.get("Final_ADM_Output"):
+            outcome = _extract_case_outcome(full_output)
+            full_responses_log["Final_ADM_Output"] = outcome or full_output[-4000:].strip()
+
+        # ── final verdict ────────────────────────────────────────
+
+        verdict_msgs = []
+        fao = str(full_responses_log.get("Final_ADM_Output", "")).strip()
+        if fao:
+            verdict_msgs.append({"role": "user", "content": f"Final ADM Output Summary:\n{fao}"})
+            verdict_msgs.append({"role": "assistant", "content": "Final ADM outcome captured."})
+
+        subs = full_responses_log.get("Sub_ADM_Conclusions", [])
+        if subs:
+            packed = "\n\n---\n\n".join(str(b).strip()[:1200] for b in subs[-4:] if str(b).strip())
+            if packed:
+                verdict_msgs.append({"role": "user", "content": f"Sub-ADM Conclusion Summaries:\n{packed}"})
+                verdict_msgs.append({"role": "assistant", "content": "Sub-ADM conclusions noted."})
+
+        verdict_msgs.extend(_last_1_qa(qa_log))
+
+        history_text = "\n\n".join(
+            f"[{m.get('role', '?').upper()}]\n{m.get('content', '')}"
+            for m in verdict_msgs if isinstance(m, dict)
+        )
+        verdict_question_log = f"FINAL VERDICT\n\n=== ADM CONTEXT ===\n{history_text or '[No context]'}"
+
+        final_verdict = "ERROR"
+        try:
+            answer, reasoning, confidence, verdict_full_msgs = await _call_final_verdict(
+                client, sys_prompt, verdict_msgs, case_name, train,
+            )
+            turn_logs.append(_log_entry(
+                len(turn_logs) + 1, verdict_question_log,
+                answer, reasoning, confidence, "final_verdict", 0, metadata,
+                full_prompt=verdict_full_msgs,
+            ))
+            final_verdict = answer
+        except Exception as e:
+            logger.error("final verdict failed: %s", e)
+
+        elapsed_total = time.time() - t_start
+        print(f"Case {case_name} (run {run_id}) done. Verdict: {final_verdict}. Time: {elapsed_total:.2f}s")
+
+        with open(log_path, "w") as f:
+            json.dump(turn_logs, f, indent=4)
+        logger.info("saved log to %s", log_path)
+        CURRENT_CASE_REF.reset(case_token)
+
+    return final_verdict
 
 # ── experiment runner ────────────────────────────────────────────────────────
 
 async def _run_experiment(data_path: str, dataset: str, config: int, mode: str,
-                          num_runs: int, client):
+                          num_runs: int, client, run_start: int = 1):
     
     """runs the experiments
     
@@ -1557,11 +1549,11 @@ async def _run_experiment(data_path: str, dataset: str, config: int, mode: str,
 
     #ensures consistent case ordering
     cases = sorted(d for d in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, d)))
-    print(f"found {len(cases)} cases. starting {num_runs} run(s)...")
+    print(f"found {len(cases)} cases. starting {num_runs} run(s) from run_{run_start}...")
 
     all_results = {}
     
-    for run in range(1, num_runs + 1):
+    for run in range(run_start, run_start + num_runs):
         print(f"\n=== RUN {run}/{num_runs} ===")
         meta = {"dataset": dataset, "mode": mode, "config": config, "run_id": run, "model": CURRENT_CONFIG["id"]}
         tasks = []
@@ -1609,6 +1601,8 @@ async def _async_main():
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--mode", type=str, default="tool", choices=["tool", "baseline", "train_baseline", "ensemble", "train"])
     parser.add_argument("--runs", type=int, default=1)
+    parser.add_argument("--run_start", type=int, default=1,
+                        help="Run number to start from (default: 1). Use e.g. 2 to resume from run_2.")
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--raw_data", type=str, default="../Data/Inv_Step_Sampled_Valid.pkl")
     parser.add_argument("--base_case_dir", type=str, default="../Outputs/Valid_Cases")
@@ -1619,6 +1613,10 @@ async def _async_main():
         help="Path to a questions JSON file (default: ADM/questions.json). "
              "Use a modified copy for prompt ablation experiments.",
     )
+    parser.add_argument(
+        "--n_history", type=int, default=1,
+        help="Number of previous q/a pairs to include as conversation history (default: 1).",
+    )
     args = parser.parse_args()
 
     if args.debug:
@@ -1626,9 +1624,10 @@ async def _async_main():
         print("--- debug mode ---")
 
     #set global vars
-    global ADM_CONFIG, ADM_INITIAL, CURRENT_CONFIG, BASE_CASE_DIR, RAW_DATA, LLM_TEMPERATURE
+    global ADM_CONFIG, ADM_INITIAL, CURRENT_CONFIG, BASE_CASE_DIR, RAW_DATA, LLM_TEMPERATURE, N_HISTORY
     ADM_CONFIG = args.adm_config
     ADM_INITIAL = bool(args.adm_initial)
+    N_HISTORY = args.n_history
     CURRENT_CONFIG = MODELS.get(args.model, MODELS["gpt"]).copy()
     BASE_CASE_DIR = args.base_case_dir
     LLM_TEMPERATURE = args.temperature
@@ -1656,7 +1655,7 @@ async def _async_main():
     client = AsyncOpenAI(base_url=api_base, api_key="EMPTY")
 
     #runs experiments
-    await _run_experiment(args.data_path, args.dataset, args.exp_config, args.mode, args.runs, client)
+    await _run_experiment(args.data_path, args.dataset, args.exp_config, args.mode, args.runs, client, run_start=args.run_start)
 
 
 if __name__ == "__main__":
