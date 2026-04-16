@@ -1,22 +1,16 @@
 """
 Batched Hybrid ADM System with LLMs driving the reasoning
 
-Last Updated: 06.04.26
+Last Updated: 16.04.26
 
-Status: In Progress
+Status: Done
 
 Test Coverage: Manual Tests
 
 Version History:
 v_1: initial version
 v_2: added batching
-v_3: added baseline + ensemble approach
-
-To Do:
-- check ensemble works
-- check baseline works 
-- verify all 3 llms work properly over train set on each mode
-- manual check
+v_3: added baseline
 """
 
 import argparse
@@ -96,20 +90,6 @@ MODELS = {
         "seed": True, "max_tokens": 2000, "context_limit": 32000,
     },
 }
-
-# ── ensemble personas────────────────────────
-
-ENSEMBLE_PERSONA_A = (
-    "You are a sceptical patent examiner who tends to find that the skilled person "
-    "WOULD have arrived at the claimed invention without inventive effort. "
-    "You look hard for combinations in the prior art and downplay unexpected effects."
-)
-
-ENSEMBLE_PERSONA_B = (
-    "You are a pro-patentee advocate who looks for genuine technical contributions and "
-    "unexpected advantages that the skilled person would NOT have foreseen. "
-    "You give the benefit of the doubt to the applicant where the evidence allows."
-)
 
 # ── LLM helpers ──────────────────────────────────────────────────────────────
 
@@ -621,68 +601,64 @@ def _last_1_qa(qa_log: list[dict]):
 
 MAX_RETRIES = 5
 BASE_BACKOFF = 2
-ENSEMBLE_TEMP = 0.7  # temperature for the two opinion calls
 
-#FIX LATER
-async def _get_ensemble_opinions(
-        client, sys_prompt: str, history: list[dict],
-        model_class, section_label: str, keys: list[str],
-        q_text: str, ctx: str, guided_schema, task_suffix: str) -> list[dict]:
-    """Fire two parallel full-batch calls — one per persona — and return their opinions.
+def _resolve_guided_json(schema: dict, guided_text: str, unguided_text: str) -> tuple:
+    """Return (guided_schema, instruction) based on the current config's guided_json flag.
 
-    Each call gets the same batch schema (model_class / all keys) as the main batch
-    call, but with the persona injected as a prefix to the system prompt and
-    ENSEMBLE_TEMP for diversity.  Returns a list of two dicts:
-      [{"persona": ..., "answers": {answer_key: {"answer": ..., "reasoning": ...}}}, ...]
-    Failures are swallowed so the main batch call degrades gracefully.
+    If guided_json is True:  returns (schema, guided_text)
+    If guided_json is False: returns (None,   unguided_text)
     """
-    async def _one_opinion(persona_label: str, persona_text: str) -> dict:
-        persona_sys = f"{persona_text}\n\n{sys_prompt}"
-        messages = ([{"role": "system", "content": persona_sys}]
-                    + history
-                    + [{"role": "user", "content": f"{q_text}{ctx}{task_suffix}"}])
+    if (CURRENT_CONFIG or {}).get("guided_json"):
+        return schema, guided_text
+    return None, unguided_text
 
-        req = _build_request(messages, schema=guided_schema)
-        req["temperature"] = ENSEMBLE_TEMP
-        req.pop("seed", None)  # diversity — no fixed seed
+async def _llm_call_with_retry(client, messages: list[dict], guided_schema, label: str) -> str:
+    """Execute one LLM request with exponential-backoff retries.
 
+    Returns the raw response string.  Raises the last exception if all
+    MAX_RETRIES attempts fail.
+    """
+    for attempt in range(MAX_RETRIES):
         try:
+            req = _build_request(messages, schema=guided_schema)
             async with REQUEST_SEMAPHORE:
                 resp = await client.chat.completions.create(**req)
             raw = _get_content(resp)
-            # parse with pydantic, fall back to plain json
-            answers = {}
-            try:
-                json_start = raw.find("{")
-                parsed = model_class.model_validate_json(raw if json_start <= 0 else raw[json_start:])
-                for field_name, field_val in parsed.model_dump().items():
-                    answer_key = _FIELD_TO_KEY.get(field_name)
-                    if answer_key:
-                        answers[answer_key] = field_val
-            except Exception:
-                data = _parse_json(raw)
-                if data:
-                    for field_name, field_val in data.items():
-                        answer_key = _FIELD_TO_KEY.get(field_name)
-                        if answer_key and isinstance(field_val, dict):
-                            answers[answer_key] = field_val
-            logger.info("ensemble opinion '%s' parsed %d answers", persona_label, len(answers))
-            return {"persona": persona_label, "answers": answers}
+            if not raw:
+                raise ValueError("empty response")
+            return raw
         except Exception as e:
-            logger.warning("ensemble opinion '%s' failed: %s", persona_label, e)
-            return {"persona": persona_label, "answers": {}}
+            logger.warning("%s attempt %d failed: %s", label, attempt + 1, e)
+            if attempt == MAX_RETRIES - 1:
+                raise
+            await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
 
-    opinion_a, opinion_b = await asyncio.gather(
-        _one_opinion("Persona A (sceptical examiner)", ENSEMBLE_PERSONA_A),
-        _one_opinion("Persona B (pro-patentee advocate)", ENSEMBLE_PERSONA_B),
-    )
-    return [opinion_a, opinion_b]
+def _parse_yes_no_verdict(raw: str) -> tuple[str, str, int]:
+    """Parse a yes/no verdict from a raw LLM response string.
 
-#UP TO HERE WITH LOOKING OVER
+    Returns (answer, reasoning, confidence).  Raises ValueError if no
+    yes/no can be found either in the parsed JSON answer field or in the
+    raw text via regex fallback.
+    """
+    parsed = _parse_json(raw)
+    answer = str(parsed.get("answer", "")).strip()
+    reasoning = str(parsed.get("reasoning", raw))
+    confidence = int(parsed.get("confidence_score", 50))
+
+    if re.search(r"\b(yes|no)\b", answer, re.IGNORECASE):
+        return answer, reasoning, confidence
+
+    # regex recovery from raw text
+    am = re.search(r"\b(Yes|No)\b", raw, re.IGNORECASE)
+    if am:
+        return am.group(1).capitalize(), reasoning, confidence
+
+    raise ValueError(f"no yes/no found in verdict: {answer[:100]}")
+
+
 async def _call_batch(client, sys_prompt: str, history: list[dict],
                       model_class, section_label: str, keys: list[str],
-                      feature_name: str = None,
-                      ensemble: bool = False):
+                      feature_name: str = None):
     """Call LLM once with a batched structured schema.
 
     Returns (results, messages) where results is
@@ -690,9 +666,6 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     successfully, and messages is the full prompt list sent to the LLM.
     Missing/broken answers are simply absent — the caller falls back to
     dynamic for those when the question is actually asked.
-
-    ensemble: if True, fires two parallel persona-batch calls first and injects
-    their full per-question answers into the main batch prompt.
     """
     #pick question dictionary
     if "No Sub-ADM 1" in section_label and "No Sub-ADM 2" not in section_label:
@@ -720,69 +693,31 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
         ctx = f"\n[CONTEXT: Evaluating {kind}: {feature_name}]"
 
     #schema: guided_json or prompt-embedded
-    cfg = CURRENT_CONFIG or {}
     schema = model_class.model_json_schema()
-    if not cfg.get("guided_json"):
-        schema_str = json.dumps(schema, indent=2)
-        q_text += (
+    schema_str = json.dumps(schema, indent=2)
+    guided_schema, task_suffix = _resolve_guided_json(
+        schema,
+        guided_text="\nTASK: Fill out the structured JSON schema completely.",
+        unguided_text=(
             f"\n\nTASK: Fill out the structured JSON schema completely.\n"
             f"Return ONLY a single valid JSON object matching this schema (no prose, no markdown fences):\n"
             f"```json\n{schema_str}\n```"
-        )
+        ),
+    )
+    if not guided_schema:
+        # unguided: schema already appended to q_text via task_suffix above
+        q_text += task_suffix
         task_suffix = ""
-        guided_schema = None
-    else:
-        task_suffix = "\nTASK: Fill out the structured JSON schema completely."
-        guided_schema = schema
-
-    #FIX ENSEMBLE
-    opinions_block = ""
-    if ensemble:
-        logger.info("generating ensemble opinions for '%s'", section_label)
-        opinions = await _get_ensemble_opinions(
-            client, sys_prompt, history,
-            model_class, section_label, keys,
-            q_text, ctx, guided_schema, task_suffix,
-        )
-        opinions_block = "\n\n=== ADDITIONAL EXPERT OPINIONS ===\n"
-        for op in opinions:
-            persona = op.get("persona", "Opinion")
-            answers = op.get("answers", {})
-            opinions_block += f"\n[{persona}]\n"
-            for k in keys:
-                ans_val = answers.get(k, {})
-                ans_text = ans_val.get("answer", "(no answer)") if isinstance(ans_val, dict) else str(ans_val)
-                reas_text = ans_val.get("reasoning", "") if isinstance(ans_val, dict) else ""
-                opinions_block += f"  {k}: {ans_text}"
-                if reas_text:
-                    # truncate reasoning to keep context size manageable
-                    opinions_block += f" — {reas_text[:200]}"
-                opinions_block += "\n"
-        opinions_block += (
-            "\n=== END OPINIONS ===\n"
-            "Consider the above opinions carefully but use your own independent judgment "
-            "when filling the schema below.\n"
-        )
 
     messages = [{"role": "system", "content": sys_prompt}] + history
-    messages.append({"role": "user", "content": f"{q_text}{ctx}{opinions_block}{task_suffix}"})
+    messages.append({"role": "user", "content": f"{q_text}{ctx}{task_suffix}"})
 
     #call with retries
-    for attempt in range(MAX_RETRIES):
-        try:
-            req = _build_request(messages, schema=guided_schema)
-            async with REQUEST_SEMAPHORE:
-                resp = await client.chat.completions.create(**req)
-            raw = _get_content(resp)
-            if not raw:
-                raise ValueError("empty response")
-            break
-        except Exception as e:
-            logger.warning("batch %s attempt %d failed: %s", section_label, attempt + 1, e)
-            if attempt == MAX_RETRIES - 1:
-                logger.error("batch %s failed after %d attempts", section_label, MAX_RETRIES)
-                return {}, messages
-            await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
+    try:
+        raw = await _llm_call_with_retry(client, messages, guided_schema, f"batch {section_label}")
+    except Exception:
+        logger.error("batch %s failed after %d attempts", section_label, MAX_RETRIES)
+        return {}, messages
 
     #parse: try pydantic, fall back to plain json.loads
     results = {}
@@ -812,50 +747,34 @@ async def _call_dynamic(client, sys_prompt: str, history: list[dict],
     raw text is the answer.  The third return value is the full messages list
     sent to the LLM (system prompt + history + question) for logging.
     """
-    cfg = CURRENT_CONFIG or {}
     schema = QuestionResponse.model_json_schema()
-
-    if cfg.get("guided_json"):
-        instruction = (
+    guided_schema, instruction = _resolve_guided_json(
+        schema,
+        guided_text=(
             "\n\nIMPORTANT OUTPUT FORMAT: Return exactly one JSON object: "
             '{"answer": "...", "reasoning": "..."}.'
-        )
-        guided_schema = schema
-    else:
-        instruction = (
+        ),
+        unguided_text=(
             "\n\nIMPORTANT OUTPUT FORMAT: Return ONLY a single JSON object — no prose, no markdown fences:\n"
             '{"answer": "<your answer>", "reasoning": "<your step-by-step reasoning>"}'
-        )
-        guided_schema = None
+        ),
+    )
 
     messages = [{"role": "system", "content": sys_prompt}] + history
     messages.append({"role": "user", "content": question_text + instruction})
 
-    for attempt in range(MAX_RETRIES):
-        try:
-            req = _build_request(messages, schema=guided_schema)
-            async with REQUEST_SEMAPHORE:
-                resp = await client.chat.completions.create(**req)
-            raw = _get_content(resp)
-            if not raw:
-                raise ValueError("empty response")
+    raw = await _llm_call_with_retry(client, messages, guided_schema, "dynamic")
 
-            parsed = _parse_json(raw)
-            if parsed and parsed.get("answer") is not None:
-                answer = str(parsed.get("answer")).strip()
-            else:
-                #_parse_json failed (e.g. malformed JSON with stray quotes);
-                #fall back to regex extraction of "answer" field
-                m = re.search(r'"answer"\s*:\s*"([^"]*)"', raw, re.IGNORECASE)
-                answer = m.group(1).strip() if m else raw
-            reasoning = parsed.get("reasoning", raw) if parsed else raw
-            return answer, reasoning, messages
-
-        except Exception as e:
-            logger.warning("dynamic attempt %d failed: %s", attempt + 1, e)
-            if attempt == MAX_RETRIES - 1:
-                raise
-            await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
+    parsed = _parse_json(raw)
+    if parsed and parsed.get("answer") is not None:
+        answer = str(parsed.get("answer")).strip()
+    else:
+        #_parse_json failed (e.g. malformed JSON with stray quotes);
+        #fall back to regex extraction of "answer" field
+        m = re.search(r'"answer"\s*:\s*"([^"]*)"', raw, re.IGNORECASE)
+        answer = m.group(1).strip() if m else raw
+    reasoning = parsed.get("reasoning", raw) if parsed else raw
+    return answer, reasoning, messages
 
 async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
                               case_name: str, train: bool):
@@ -875,19 +794,16 @@ async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
             "Provide a confidence score 0-100."
         )
 
-    cfg = CURRENT_CONFIG or {}
     schema = FinalVerdictResponse.model_json_schema()
-
-    if cfg.get("guided_json"):
-        sp = sys_prompt + "\n\nIMPORTANT: Your response MUST be a single valid JSON object."
-        guided_schema = schema
-    else:
-        sp = (
-            sys_prompt
-            + "\n\nIMPORTANT: Return ONLY a single JSON object — no prose, no markdown fences:\n"
+    guided_schema, sp_suffix = _resolve_guided_json(
+        schema,
+        guided_text="\n\nIMPORTANT: Your response MUST be a single valid JSON object.",
+        unguided_text=(
+            "\n\nIMPORTANT: Return ONLY a single JSON object — no prose, no markdown fences:\n"
             + '{"answer": "Yes or No", "reasoning": "...", "confidence_score": <0-100>}'
-        )
-        guided_schema = None
+        ),
+    )
+    sp = sys_prompt + sp_suffix
 
     messages = [{"role": "system", "content": sp}] + adm_context
     messages.append({"role": "user", "content": question})
@@ -897,12 +813,14 @@ async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
     # for the verdict response itself. Priority: keep system prompt, then any
     # messages containing high-value ADM summary content, then the final
     # question. Individual Q&A turns are dropped when trimming is needed.
+    cfg = CURRENT_CONFIG or {}
     context_limit = cfg.get("context_limit", 32000)
     trim_threshold = int(context_limit * 0.75)
     total_chars = sum(len(str(m.get("content", ""))) for m in messages)
     if total_chars // 4 > trim_threshold:
         logger.warning("final verdict context too large (%d est tokens, threshold %d), trimming",
                        total_chars // 4, trim_threshold)
+
         # messages[0]  = system prompt (always kept)
         # messages[-1] = final verdict question (always kept)
         # middle messages: keep only those carrying ADM summary output
@@ -917,29 +835,9 @@ async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
 
     for attempt in range(MAX_RETRIES):
         try:
-            req = _build_request(messages, schema=guided_schema)
-            async with REQUEST_SEMAPHORE:
-                resp = await client.chat.completions.create(**req)
-            raw = _get_content(resp)
-            if not raw:
-                raise ValueError("empty response")
-
-            parsed = _parse_json(raw)
-            answer = str(parsed.get("answer", "")).strip()
-            reasoning = str(parsed.get("reasoning", raw))
-            confidence = int(parsed.get("confidence_score", 50))
-
-            # must find yes/no
-            if re.search(r"\b(yes|no)\b", answer, re.IGNORECASE):
-                return answer, reasoning, confidence, messages
-
-            # regex recovery from raw
-            am = re.search(r"\b(Yes|No)\b", raw, re.IGNORECASE)
-            if am:
-                return am.group(1).capitalize(), reasoning, confidence, messages
-
-            raise ValueError(f"no yes/no found in verdict: {answer[:100]}")
-
+            raw = await _llm_call_with_retry(client, messages, guided_schema, "final verdict")
+            answer, reasoning, confidence = _parse_yes_no_verdict(raw)
+            return answer, reasoning, confidence, messages
         except Exception as e:
             logger.warning("final verdict attempt %d failed: %s", attempt + 1, e)
             if attempt == MAX_RETRIES - 1:
@@ -953,31 +851,46 @@ def _strip_decorators(text: str) -> str:
     out = [l for l in lines if not (len(l.strip()) >= 3 and l.strip()[0] in "=-_~*" and len(set(l.strip())) == 1)]
     return "\n".join(out).strip()
 
+def _extract_text_segment(
+    text: str,
+    start_markers: list[str],
+    end_markers: list[str],
+    find_last: bool = False,
+) -> str:
+    """Locate the first (or last) start marker in *text*, then clip at the
+    nearest end marker.  Returns the extracted slice, stripped of whitespace.
 
-def _extract_case_outcome(full_output: str) -> str:
-    marker = "Case Outcome:"
-    idx = full_output.rfind(marker)
-    if idx == -1:
-        return ""
-    tail = full_output[idx:]
-    ends = ["ADM and sub-ADM summaries appended to:", "\n[Q]", "\nINFO: ADM created"]
-    positions = [p for m in ends if (p := tail.find(m)) != -1]
-    end = min(positions) if positions else len(tail)
-    return tail[:end].strip()
-
-
-def _extract_sub_adm_conclusion(text: str) -> str:
-    starts = [text.find("[Early Stop]"), text.find("Case Outcome:"), text.find("Sub-ADM Summary ===")]
-    valid = [i for i in starts if i != -1]
+    Args:
+        start_markers: List of strings to search for as the start boundary.
+                       The earliest (or latest, if find_last=True) hit is used.
+        end_markers:   List of strings that terminate the segment.
+        find_last:     If True, use the *last* occurrence of any start marker
+                       instead of the first.
+    """
+    positions = [text.rfind(m) if find_last else text.find(m) for m in start_markers]
+    valid = [p for p in positions if p != -1]
     if not valid:
         return ""
-    s = min(valid)
-    tail = text[s:]
-    ends = ["\n[Q", "\nINFO: ADM created", "\n--- Item", "\n=== Evaluating"]
-    positions = [p for m in ends if (p := tail.find(m)) != -1]
-    end = min(positions) if positions else len(tail)
+    start = max(valid) if find_last else min(valid)
+    tail = text[start:]
+    end_positions = [p for m in end_markers if (p := tail.find(m)) != -1]
+    end = min(end_positions) if end_positions else len(tail)
     return tail[:end].strip()
 
+def _extract_case_outcome(full_output: str) -> str:
+    return _extract_text_segment(
+        full_output,
+        start_markers=["Case Outcome:"],
+        end_markers=["ADM and sub-ADM summaries appended to:", "\n[Q]", "\nINFO: ADM created"],
+        find_last=True,
+    )
+
+def _extract_sub_adm_conclusion(text: str) -> str:
+    return _extract_text_segment(
+        text,
+        start_markers=["[Early Stop]", "Case Outcome:", "Sub-ADM Summary ==="],
+        end_markers=["\n[Q", "\nINFO: ADM created", "\n--- Item", "\n=== Evaluating"],
+    )
 
 def _detect_item_name(text: str) -> str | None:
     fm = re.search(r"Feature:\s*(.+?)(?:\n|$)", text)
@@ -998,7 +911,6 @@ def _read_cpa(path: str) -> str:
         text = text[:max_chars]
         logger.warning("CPA truncated to %d tokens for %s", CPA_MAX_TOKENS, path)
     return text
-
 
 def _load_context(data_path: str, case_name: str, dataset: str, config: int):
     """
@@ -1057,10 +969,8 @@ def _load_context(data_path: str, case_name: str, dataset: str, config: int):
 async def _run_baseline_case(client, case_name: str, context_text: str, run_id: int,
                               metadata: dict, train: bool = False) -> str:
     """Single-shot baseline: one prompt → yes/no verdict, no UI.py subprocess.
-
-    Mirrors the old run_baseline_session from hybrid_patent_system.py.
     Saves a one-entry log.json in {BASE_CASE_DIR}/{case}/{run_N}/config_X/baseline/.
-    If train=True, injects Decision Reasons + Order as a system message (oracle guidance).
+    If train=True, injects Decision Reasons + Order as a system message.
     """
     case_token = CURRENT_CASE_REF.set(case_name)
     t_start = time.time()
@@ -1073,18 +983,15 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
     if os.path.exists(log_path):
         os.remove(log_path)
 
-    cfg = CURRENT_CONFIG or {}
     schema = FinalVerdictResponse.model_json_schema()
-
-    if cfg.get("guided_json"):
-        fmt_instruction = "\n\nIMPORTANT: Return a single valid JSON object matching the schema."
-        guided_schema = schema
-    else:
-        fmt_instruction = (
+    guided_schema, fmt_instruction = _resolve_guided_json(
+        schema,
+        guided_text="\n\nIMPORTANT: Return a single valid JSON object matching the schema.",
+        unguided_text=(
             "\n\nIMPORTANT: Return ONLY a single JSON object — no prose, no markdown fences:\n"
             + '{"answer": "Yes or No", "reasoning": "...", "confidence_score": <0-100>}'
-        )
-        guided_schema = None
+        ),
+    )
 
     # ── build oracle context if in train mode ──────────────────────────
     reasons, decision = "", ""
@@ -1131,37 +1038,16 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
 
     messages = [{"role": "user", "content": prompt}]
 
-    req = _build_request(messages, schema=guided_schema)
-
     verdict = "ERROR"
     reasoning = ""
     confidence = 50
-    raw = ""
 
     for attempt in range(MAX_RETRIES):
         try:
-            async with REQUEST_SEMAPHORE:
-                resp = await client.chat.completions.create(**req)
-            raw = _get_content(resp)
-            if not raw:
-                raise ValueError("empty response")
-
-            parsed = _parse_json(raw)
-            answer = str(parsed.get("answer", "")).strip()
-            reasoning = str(parsed.get("reasoning", raw))
-            confidence = int(parsed.get("confidence_score", 50))
-
-            if re.search(r"\b(yes|no)\b", answer, re.IGNORECASE):
-                verdict = answer.capitalize()
-                break
-            # last-resort regex scan of raw text
-            am = re.search(r"\b(Yes|No)\b", raw, re.IGNORECASE)
-            if am:
-                verdict = am.group(1).capitalize()
-                reasoning = reasoning or raw
-                break
-            raise ValueError(f"no yes/no in baseline response: {answer[:80]}")
-
+            raw = await _llm_call_with_retry(client, messages, guided_schema, f"baseline {case_name}")
+            verdict, reasoning, confidence = _parse_yes_no_verdict(raw)
+            verdict = verdict.capitalize()
+            break
         except Exception as e:
             logger.warning("baseline attempt %d failed: %s", attempt + 1, e)
             if attempt == MAX_RETRIES - 1:
@@ -1197,24 +1083,21 @@ def _log_entry(turn, question, answer, reasoning, score, source, elapsed, metada
     }
 
 async def _run_case(client, case_name: str, context_text: str, run_id: int,
-                    metadata: dict, train: bool = False,
-                    ensemble: bool = False) -> str:
+                    metadata: dict, train: bool = False) -> str:
     """Drive ui.py for one case, returning the final verdict string.
 
     Flow:
       1. First question in a batch section triggers ONE batch call.
-         In ensemble mode, two extra persona opinions are generated first
-         (parallel dynamic calls) and passed into the batch prompt.
       2. Cache whatever answers parse successfully.
-      3. For each question: use cache if valid, otherwise call dynamic ONCE.
-         Dynamic fallback is always single-opinion regardless of ensemble flag.
+      3. For each question: use cache if valid, otherwise call dynamic for it.
     """
+    
     case_token = CURRENT_CASE_REF.set(case_name)
     t_start = time.time()
     config_num = metadata.get("config", "X")
     mode = metadata.get("mode", "tool")
 
-    log_subdir = "train" if train else ("ensemble" if ensemble else "tool")
+    log_subdir = "train" if train else "tool"
     log_dir = os.path.join(BASE_CASE_DIR, case_name, f"run_{run_id}",
                            f"config_{config_num}", log_subdir,
                            str(ADM_CONFIG), str(ADM_INITIAL))
@@ -1305,7 +1188,8 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
                 continue
 
             # ── classify the prompt ──────────────────────────────────
-
+            #this is so we can provide the appropriate json schemas or auto answers such as case name
+            
             needed_key = None
             go_dynamic = False
             lower_clean = clean.lower()
@@ -1415,7 +1299,7 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
                 batch_results, batch_msgs = await _call_batch(
                     client, sys_prompt, history, model_class,
                     section_label, section_keys,
-                    feature_name=item_name, ensemble=ensemble,
+                    feature_name=item_name,
                 )
                 # store batch prompt so it can be attached to each answer logged from this batch
                 batch_prompt_cache[batch_id] = batch_msgs
@@ -1539,7 +1423,6 @@ async def _run_experiment(data_path: str, dataset: str, config: int, mode: str,
     
     enables 
         - baseline/ train baseline
-        - ensemble
         - tool    
     """
     
@@ -1569,8 +1452,6 @@ async def _run_experiment(data_path: str, dataset: str, config: int, mode: str,
                 tasks.append(_run_baseline_case(client, case, ctx, run, meta, train=False))
             elif mode == "train_baseline":
                 tasks.append(_run_baseline_case(client, case, ctx, run, meta, train=True))
-            elif mode == "ensemble":
-                tasks.append(_run_case(client, case, ctx, run, meta, ensemble=True))
             else:
                 tasks.append(_run_case(client, case, ctx, run, meta, train=(mode == "train")))
 
@@ -1599,7 +1480,7 @@ async def _async_main():
     parser.add_argument("--data_path", type=str, default="../Data/VALIDATION")
     parser.add_argument("--exp_config", type=int, required=True)
     parser.add_argument("--temperature", type=float, default=0.0)
-    parser.add_argument("--mode", type=str, default="tool", choices=["tool", "baseline", "train_baseline", "ensemble", "train"])
+    parser.add_argument("--mode", type=str, default="tool", choices=["tool", "baseline", "train_baseline", "train"])
     parser.add_argument("--runs", type=int, default=1)
     parser.add_argument("--run_start", type=int, default=1,
                         help="Run number to start from (default: 1). Use e.g. 2 to resume from run_2.")
@@ -1656,7 +1537,6 @@ async def _async_main():
 
     #runs experiments
     await _run_experiment(args.data_path, args.dataset, args.exp_config, args.mode, args.runs, client, run_start=args.run_start)
-
 
 if __name__ == "__main__":
     asyncio.run(_async_main())
