@@ -8,106 +8,104 @@ Status: Testing
 Test Coverage: 75%
 """
 
-import sys
-import os
 import argparse
-from inventive_step_ADM import adm_initial, adm_main
-import logging
-from ADM_Construction import *
 import json
+import logging
+import os
+import sys
+
+from ADM_Construction import *
+from inventive_step_ADM import adm_initial, adm_main
 
 logger = logging.getLogger("ADM_CLI_Tool")
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
-class CLI():
-    """
-    """
-    def __init__(self,adm):
-        """
-        
-        """
+
+class CLI:
+    """ """
+
+    def __init__(self, adm):
+        """ """
         self.case = []
         self.adm = adm
         self.caseName = None
-        #track which nodes have been evaluated so far
+        # track which nodes have been evaluated so far
         self.evaluated_blfs = set()
 
     def query_domain(self):
         """Query the domain by answering questions"""
-         
-        #sets case name 
-        if not self.caseName: 
+
+        # sets case name
+        if not self.caseName:
             self.caseName = input("[Q] Enter case name: ").strip()
-            if self.caseName == '':
+            if self.caseName == "":
                 print("No case name provided.\n")
 
-        #get a copy of nodes and question order
+        # get a copy of nodes and question order
         nodes = self.adm.nodes.copy()
         question_order = self.adm.questionOrder.copy() if self.adm.questionOrder else []
-        
-        self.ask_questions(nodes,question_order)
-        
-        #evals root node - useful if you have multiple ordered adms 
+
+        self.ask_questions(nodes, question_order)
+
+        # evals root node - useful if you have multiple ordered adms
         return True if self.adm.root_node.name in self.adm.case else False
 
-    def ask_questions(self, nodes,question_order):
-        #only proceeds if question order specified
+    def ask_questions(self, nodes, question_order):
+        # only proceeds if question order specified
         if question_order != []:
             while question_order:
                 question_order, nodes = self.questiongen(question_order, nodes)
-        
+
         else:
             raise ValueError("No question order specified")
 
-        #process and display outcome
+        # process and display outcome
         self.show_outcome()
-        
+
     def questiongen(self, question_order, nodes):
         """
         Generates questions based on the question order and current nodes
         """
-        
-        # to ensure the question gen procedure stops 
+
+        # to ensure the question gen procedure stops
         if not question_order:
             return question_order, nodes
-        
-        #early stop check - but only if there are more questions remaining
+
+        # early stop check - but only if there are more questions remaining
         if self.evaluated_blfs and len(question_order) > 1:
             self.adm.case = self.case
-            logger.debug(f'Case: {self.adm.case}')
+            logger.debug(f"Case: {self.adm.case}")
             if self.adm.check_early_stop(self.evaluated_blfs):
                 # return empty list to stop recursion
                 return [], nodes
-            
-        logger.debug('EARLY STOP ENDS ==========')
-        
-        #question under consideration
+
+        logger.debug("EARLY STOP ENDS ==========")
+
+        # question under consideration
         current_question = question_order[0]
-        
-        #check if it is an information question           
+
+        # check if it is an information question
         if current_question in self.adm.information_questions:
-            
-            #this is an information question
+            # this is an information question
             question_text = self.adm.information_questions[current_question]
             answer = input(f"[Q] {question_text}: \n").strip()
-            
+
             self.adm.setFact(current_question, answer)
-            
-            #remove from question order and continue
+
+            # remove from question order and continue
             question_order.pop(0)
             return self.questiongen(question_order, nodes)
-       
-        #check if this is a question instantiator
+
+        # check if this is a question instantiator
         elif current_question in self.adm.question_instantiators:
-            
             instantiator = self.adm.question_instantiators[current_question]
             if not self.gates_satisfied(instantiator, self.case):
                 logger.debug(f"Skipping {current_question} - gates cannot be satisfied")
                 self._mark_blfs_as_evaluated(instantiator)
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
-            
-            #process the question instantiator
+
+            # process the question instantiator
             x = self.questionHelper(None, current_question)
 
             if x:
@@ -119,127 +117,127 @@ class CLI():
                 logger.debug(f"Skipping {current_question} - processing failed")
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
-        
-        #check if this is a regular node
+
+        # check if this is a regular node
         elif current_question in self.adm.nodes:
             current_node = self.adm.nodes[current_question]
             if not self.gates_satisfied(current_node, self.case):
                 logger.debug(f"Skipping {current_question} - gates cannot be satisfied")
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
-            
-            #check if this is a SubADMNode
+
+            # check if this is a SubADMNode
             elif isinstance(current_node, SubADMNode):
                 logger.debug(f"recognised sub-adm node, {current_node}")
 
                 sub_adm_result = current_node.evaluateSubADMs(ui_instance=self)
-                
+
                 if sub_adm_result:
-                    #sub-ADM evaluation was successful, add to case
+                    # sub-ADM evaluation was successful, add to case
                     if current_question not in self.case:
                         self.case.append(current_question)
                     else:
                         pass
-                    
-                #mark as evaluated
+
+                # mark as evaluated
                 self.evaluated_blfs.add(current_question)
 
-                #remove from question order and continue
+                # remove from question order and continue
                 question_order.pop(0)
-                
+
                 return self.questiongen(question_order, nodes)
-            
-            #check if this is an EvaluationBLF
+
+            # check if this is an EvaluationBLF
             elif isinstance(current_node, EvaluationNode):
                 logger.debug(f"recognised evaluation node, {current_node}")
-                    
+
                 evaluation_result = current_node.evaluateResults(self.adm)
-        
+
                 if evaluation_result:
-                    #evaluation was successful, add to case
+                    # evaluation was successful, add to case
                     if current_question not in self.case:
                         self.case.append(current_question)
                     else:
                         pass
                 else:
-                    #evaluation failed, don't add to case
+                    # evaluation failed, don't add to case
                     pass
-                
-                #mark as evaluated
+
+                # mark as evaluated
                 self.evaluated_blfs.add(current_question)
 
-                #remove from question order and continue
+                # remove from question order and continue
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
-                    
-            else: 
-                #process blf
+
+            else:
+                # process blf
                 self.questionHelper(current_node, current_question)
 
-                #mark as evaluated
+                # mark as evaluated
                 self.evaluated_blfs.add(current_question)
 
                 question_order.pop(0)
                 return self.questiongen(question_order, nodes)
                 # else:
                 #     return question_order, nodes
-            
+
         else:
             self.evaluated_blfs.add(current_question)
             question_order.pop(0)
-            return self.questiongen(question_order, nodes)        
-            
+            return self.questiongen(question_order, nodes)
+
     def _mark_blfs_as_evaluated(self, instantiator):
         """
-        Helper to extract ALL possible BLFs from a question instantiator 
+        Helper to extract ALL possible BLFs from a question instantiator
         and add them to the evaluated set.
         """
-        mapping = instantiator.get('blf_mapping', {})
+        mapping = instantiator.get("blf_mapping", {})
         for outcome in mapping.values():
             if isinstance(outcome, list):
                 self.evaluated_blfs.update(outcome)
             elif isinstance(outcome, str) and outcome:
                 self.evaluated_blfs.add(outcome)
-           
+
     def gates_satisfied(self, candidate, case):
         """
         Checks and attempts to satisfy all gates for a node or instantiator.
         Returns True if all are satisfied, False otherwise.
         """
-        #supports gated BLFs
+        # supports gated BLFs
         gating_nodes = []
-        if hasattr(candidate, 'check_gated'):
-            #it's a node with dependencies
+        if hasattr(candidate, "check_gated"):
+            # it's a node with dependencies
             if candidate.check_gated(case):
                 return True
-            gating_nodes = getattr(candidate, 'gated_node', [])
-        
-        #supports Q instantiators
-        elif isinstance(candidate, dict) and candidate.get('gating_node'):
-            gating_nodes = candidate['gating_node']
+            gating_nodes = getattr(candidate, "gated_node", [])
+
+        # supports Q instantiators
+        elif isinstance(candidate, dict) and candidate.get("gating_node"):
+            gating_nodes = candidate["gating_node"]
             if isinstance(gating_nodes, str):
                 gating_nodes = [gating_nodes]
         else:
             return True  # No dependencies
-        
-        logger.debug(f'{gating_nodes}, case: {case}')
 
-        #try to satisfy all dependencies
+        logger.debug(f"{gating_nodes}, case: {case}")
+
+        # try to satisfy all dependencies
         for dep in gating_nodes:
             if dep not in case:
                 if not self.evaluateGates(dep, None):
                     return False
         return True
-            
+
     def evaluateGates(self, node, current_question):
         """Helper method to evaluate a gate node and add it to case if satisfied"""
-        
+
         gating_node = self.adm.nodes[node]
-                
-        #check if gate node has acceptance conditions and can be evaluated
+
+        # check if gate node has acceptance conditions and can be evaluated
         if gating_node.acceptance:
             try:
-                #ensure all child gates are evaluated (but don't require them to be satisfied)
+                # ensure all child gates are evaluated (but don't require them to be satisfied)
                 if gating_node.children:
                     logger.debug(f"{gating_node} has children: {gating_node.children}")
                     for child_name in gating_node.children:
@@ -251,77 +249,84 @@ class CLI():
                                 self.evaluateGates(child_name, f"child of {node}")
                         else:
                             logger.debug(f"Child {child_name} has no acceptance conditions")
-                
-                #evaluate the gate node itself
+
+                # evaluate the gate node itself
                 logger.debug(f"Children evaluated, now evaluating {node}")
-                
-                #temporarily set the case on the adm object for evaluation
-                original_case = getattr(self.adm, 'case', None)
+
+                # temporarily set the case on the adm object for evaluation
+                original_case = getattr(self.adm, "case", None)
                 self.adm.case = self.case.copy()
-                
+
                 logger.debug(self.adm.case)
-                
+
                 evaluation_result, _ = self.adm.evaluateNode(gating_node)
 
                 logger.debug(evaluation_result)
 
-                #restore the original case on the adm object after evaluation
+                # restore the original case on the adm object after evaluation
                 if original_case is not None:
                     self.adm.case = original_case
                 else:
-                    delattr(self.adm, 'case')
-                
+                    delattr(self.adm, "case")
+
                 if evaluation_result:
-                    #gate node can be satisfied, add it to case
+                    # gate node can be satisfied, add it to case
                     if node not in self.case:
                         self.case.append(node)
-                    
+
                     logger.debug(f"Gate {node} now satisfied for {current_question}")
                     return True
                 else:
-                    #gate node cannot be satisfied
+                    # gate node cannot be satisfied
                     logger.debug(f"Gate {node} cannot be satisfied for {current_question}")
                     return False
-                    
+
             except Exception as e:
-                #restore the original case on the adm object in case of error
+                # restore the original case on the adm object in case of error
                 if original_case is not None:
                     self.adm.case = original_case
                 else:
-                    delattr(self.adm, 'case')
+                    delattr(self.adm, "case")
                 logger.debug(f"Error evaluating gate {node} for {current_question}: {e}")
                 return False
         else:
             # Gate node has no acceptance conditions, can't be evaluated
             logger.debug(f"Gate {node} has no acceptance conditions for {current_question}")
             return False
-    
+
     def questionHelper(self, current_node, current_question):
         """
         Helper method to handle individual questions
         """
-        
-        #this is a question instantiator
+
+        # this is a question instantiator
         if current_node is None:
             instantiator = self.adm.question_instantiators[current_question]
-            
-            #note: gates are already checked in questiongen, so we can proceed directly
-            
-            #resolve any template variables in the question using facts
-            question_text = instantiator['question']
-            resolved_question = self.resolve_question_template(question_text)          
-            
+
+            # note: gates are already checked in questiongen, so we can proceed directly
+
+            # resolve any template variables in the question using facts
+            question_text = instantiator["question"]
+            resolved_question = self.resolve_question_template(question_text)
+
             print(f"\n{resolved_question}\n")
-            
-            #show available answers
-            answers = list(instantiator['blf_mapping'].keys())
+
+            # show available answers
+            answers = list(instantiator["blf_mapping"].keys())
             for i, answer in enumerate(answers, 1):
                 print(f"{i}. {answer}")
-            
-            #get user choice
+
+            # get user choice
             while True:
                 try:
-                    choice = int(input("Enter the number of the answer you wish to choose (only enter the chosen number): ")) - 1
+                    choice = (
+                        int(
+                            input(
+                                "Enter the number of the answer you wish to choose (only enter the chosen number): "
+                            )
+                        )
+                        - 1
+                    )
                     if 0 <= choice < len(answers):
                         selected_answer = answers[choice]
                         break
@@ -329,54 +334,58 @@ class CLI():
                         print("Invalid choice. Please try again, ensure your response is a number.")
                 except ValueError:
                     print("Invalid input. Please ensure you only give a number.")
-            
-            #instantiate the corresponding BLF(s)
-            blf_names = instantiator['blf_mapping'][selected_answer]
+
+            # instantiate the corresponding BLF(s)
+            blf_names = instantiator["blf_mapping"][selected_answer]
             if isinstance(blf_names, str):
                 blf_names = [blf_names]
-            
+
             for blf_name in blf_names:
-                #skip empty string BLFs - they're just placeholders
+                # skip empty string BLFs - they're just placeholders
                 if blf_name == "":
                     continue
-                
-                #add blf to case
+
+                # add blf to case
                 if blf_name not in self.case:
                     self.case.append(blf_name)
                 else:
                     pass
-                
-                #ask factual ascription questions if configured
-                if instantiator.get('factual_ascription') and blf_name in instantiator['factual_ascription']:
-                    factual_questions = instantiator['factual_ascription'][blf_name]
+
+                # ask factual ascription questions if configured
+                if (
+                    instantiator.get("factual_ascription")
+                    and blf_name in instantiator["factual_ascription"]
+                ):
+                    factual_questions = instantiator["factual_ascription"][blf_name]
                     for fact_name, question in factual_questions.items():
                         answer = input(f"[Q] {question}: \n").strip()
                         self.adm.setFact(fact_name, answer)
 
             return
-        
-        #regular nodes
+
+        # regular nodes
         else:
-            
             if current_node.question:
                 question_text = self.resolve_question_template(current_node.question)
-                            
-                #ask the question with retry loop
+
+                # ask the question with retry loop
                 while True:
-                    answer = input(f"{question_text}\nAnswer 'yes' or 'no' only (y/n): ").strip().lower()
-                    
-                    if answer in ['y', 'yes']:
+                    answer = (
+                        input(f"{question_text}\nAnswer 'yes' or 'no' only (y/n): ").strip().lower()
+                    )
+
+                    if answer in ["y", "yes"]:
                         if current_question not in self.case:
                             self.case.append(current_question)
-                        return 
-                    elif answer in ['n', 'no']:
+                        return
+                    elif answer in ["n", "no"]:
                         return
                     else:
                         print("Invalid answer, please answer y/n")
             else:
                 if current_question not in self.case:
                     self.case.append(current_question)
-                return 
+                return
 
     def resolve_question_template(self, question_text):
         """
@@ -387,42 +396,42 @@ class CLI():
 
     def show_outcome(self):
         """Show the evaluation outcome"""
-        
+
         try:
             self.adm.evaluated_nodes = set(self.evaluated_blfs)
 
-            logger.debug(f'eval nodes: {self.adm.evaluated_nodes}')
-             
-            #returns the statements from the evaluated tree in a hierarchical structure
+            logger.debug(f"eval nodes: {self.adm.evaluated_nodes}")
+
+            # returns the statements from the evaluated tree in a hierarchical structure
             reasoning = self.adm.evaluateTree(self.case)
 
-            print("\n" + "="*50)
+            print("\n" + "=" * 50)
             print(f"Case Outcome: {self.caseName}")
             print(f"Accepted factors: {self.case}")
-            print("="*50)
-            
+            print("=" * 50)
+
             if not reasoning:
                 print("No reasoning could be found.")
             else:
                 print("Reasoning:")
                 for depth, statement in reasoning:
-                    #indent based on depth (2 spaces per level)
+                    # indent based on depth (2 spaces per level)
                     indent = "  " * depth
                     bullet = "└─ " if depth > 0 else ""
                     print(f"{indent}{bullet}{statement}")
-                    
+
         except Exception as e:
             print(f"Error generating outcome: {e}")
         finally:
-            #cleanup
-            if hasattr(self.adm, 'temp_evaluated_nodes'):
+            # cleanup
+            if hasattr(self.adm, "temp_evaluated_nodes"):
                 del self.adm.evaluated_nodes
-                 
+
     def visualize_domain(self, minimal=False, name=None, visualize_sub_adms=True):
         """
         Visualize the domain as a graph, including optionally evaluated Sub-ADMs.
         Single source of truth: Calculates the filename and delegates to ADM.
-        
+
         Parameters
         ----------
         minimal : bool
@@ -432,29 +441,29 @@ class CLI():
         visualize_sub_adms : bool
             If True (default), scans for and visualizes any sub-ADM instances stored in facts.
         """
-        print("\n" + "="*50)
+        print("\n" + "=" * 50)
         print("Visualize Domain")
-        print("="*50)
-        
+        print("=" * 50)
+
         try:
             # 1. Determine Base Name
             # Use case name if available, otherwise ADM name
             raw_name = self.caseName if self.caseName else self.adm.name
-            
+
             # Apply prefix if provided
             if name:
                 base_name = f"{name}_{raw_name}"
             else:
                 base_name = raw_name
-            
+
             # 2. Handle Extensions
             # Ensure we don't double-stack extensions
-            if not base_name.lower().endswith('.png'):
+            if not base_name.lower().endswith(".png"):
                 filename = f"{base_name}.png"
             else:
                 filename = base_name
                 # Strip extension for folder creation later
-                base_name = filename[:-4] 
+                base_name = filename[:-4]
 
             # 3. Determine Data Context
             # Only color the graph if we actually have case data
@@ -469,39 +478,45 @@ class CLI():
             else:
                 # 4. Generate Main ADM (One call only)
                 self.adm.visualiseNetwork(filename=filename, case=case_data)
-                
+
                 # 5. Generate Sub-ADMs (Iterate through facts to find stored instances)
                 # Only proceed if the toggle is True and facts exist
-                if visualize_sub_adms and hasattr(self.adm, 'facts'):
+                if visualize_sub_adms and hasattr(self.adm, "facts"):
                     sub_dir = f"{base_name}_sub_adms"
                     dir_created = False
-                    
+
                     for fact_key, fact_val in self.adm.facts.items():
                         # Check if this fact is a dictionary of sub-ADM instances
-                        if fact_key.endswith('_sub_adm_instances') and isinstance(fact_val, dict):
-                            
+                        if fact_key.endswith("_sub_adm_instances") and isinstance(fact_val, dict):
                             # Create directory only if we actually have sub-ADMs to show
                             if not dir_created:
                                 if not os.path.exists(sub_dir):
                                     os.makedirs(sub_dir)
                                 print(f"\n--- Visualising Sub-ADMs to '{sub_dir}/' ---")
                                 dir_created = True
-                            
+
                             # Extract node name from key (e.g., 'NodeName_sub_adm_instances')
-                            node_name = fact_key.replace('_sub_adm_instances', '')
+                            node_name = fact_key.replace("_sub_adm_instances", "")
                             print(f"Processing Sub-ADMs for: {node_name}")
-                            
+
                             for item_name, sub_adm_inst in fact_val.items():
                                 # Create safe filename
-                                safe_item = str(item_name).replace(" ", "_").replace("/", "-").replace("\\", "-")
+                                safe_item = (
+                                    str(item_name)
+                                    .replace(" ", "_")
+                                    .replace("/", "-")
+                                    .replace("\\", "-")
+                                )
                                 sub_filename = os.path.join(sub_dir, f"{node_name}_{safe_item}.png")
-                                
+
                                 try:
                                     # Visualize the specific sub-ADM instance using its own case data
-                                    sub_adm_inst.visualiseNetwork(filename=sub_filename, case=sub_adm_inst.case)
+                                    sub_adm_inst.visualiseNetwork(
+                                        filename=sub_filename, case=sub_adm_inst.case
+                                    )
                                 except Exception as e:
                                     print(f"  Error visualizing sub-ADM item '{item_name}': {e}")
-            
+
             # 6. Emit Path (for your environment integration)
             try:
                 abs_path = os.path.abspath(filename)
@@ -509,26 +524,42 @@ class CLI():
                 sys.stdout.flush()
             except Exception:
                 pass
-                
+
         except Exception as e:
             print(f"Error creating visualization: {e}")
 
-
-    def save_adm(self, folder_base="../Outputs/Eval_Cases", name=None, run_id=None, config=None, mode=None,adm_config=None,adm_initial=None):
+    def save_adm(
+        self,
+        folder_base="../Outputs/Eval_Cases",
+        name=None,
+        run_id=None,
+        config=None,
+        mode=None,
+        adm_config=None,
+        adm_initial=None,
+    ):
         """
         Saves the case, reasoning statements, evaluated nodes, and any sub-ADM results to a central adm_summary.json file:
         {case}/{run_id}/config_{config}/{mode}/adm_summary.json
         Each ADM/sub-ADM is appended as a dict entry in a list.
         """
-        
+
         folder_name = self.caseName if self.caseName else self.adm.name
         run_part = f"run_{run_id}" if run_id is not None else "run_X"
         config_part = f"config_{config}" if config is not None else "config_X"
         mode_part = mode if mode is not None else "mode"
         adm_config_part = str(adm_config) if adm_config is not None else "adm_config"
         adm_initial_part = str(adm_initial) if adm_initial is not None else "adm_initial"
-        
-        save_dir = os.path.join(folder_base, folder_name, run_part, config_part, mode_part, adm_config_part, adm_initial_part)
+
+        save_dir = os.path.join(
+            folder_base,
+            folder_name,
+            run_part,
+            config_part,
+            mode_part,
+            adm_config_part,
+            adm_initial_part,
+        )
         os.makedirs(save_dir, exist_ok=True)
 
         # Prepare main ADM summary
@@ -542,12 +573,14 @@ class CLI():
         }
         # Store ADM facts if available
         if hasattr(self.adm, "facts"):
+
             def safe_fact(val):
                 try:
                     json.dumps(val)
                     return val
                 except Exception:
                     return str(val)
+
             adm_entry["facts"] = {k: safe_fact(v) for k, v in self.adm.facts.items()}
 
         # Get reasoning statements for main ADM
@@ -564,7 +597,7 @@ class CLI():
         sub_adm_entries = []
         if hasattr(self.adm, "facts"):
             for fact_key, fact_val in self.adm.facts.items():
-                if fact_key.endswith('_sub_adm_instances') and isinstance(fact_val, dict):
+                if fact_key.endswith("_sub_adm_instances") and isinstance(fact_val, dict):
                     counter = 0
                     for item_name, sub_adm_inst in fact_val.items():
                         counter += 1
@@ -580,7 +613,8 @@ class CLI():
                         try:
                             sub_reasoning = sub_adm_inst.evaluateTree(sub_entry["case"])
                             sub_entry["reasoning"] = [
-                                {"depth": depth, "statement": statement} for depth, statement in (sub_reasoning or [])
+                                {"depth": depth, "statement": statement}
+                                for depth, statement in (sub_reasoning or [])
                             ]
                         except Exception as e:
                             sub_entry["reasoning"] = [f"Error generating reasoning: {e}"]
@@ -606,27 +640,38 @@ class CLI():
             json.dump(adm_summaries, f, indent=2)
         print(f"ADM and sub-ADM summaries appended to: {summary_path}")
 
+
 def main():
-    
     """Main function"""
-    
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--debug', action='store_true', help='Enable debug mode')
-    parser.add_argument('--run_id', type=int, default=None, help='Run number for experiment (for folder structure)')
-    parser.add_argument('--config', type=int, default=None, help='Experiment config number (for folder structure)')
-    parser.add_argument('--mode', type=str, default=None, help='Mode (tool/baseline) for folder structure')
-    parser.add_argument('--folder_base', type=str, default="./Eval_Cases", help='Base folder for saving ADM outputs')
-    parser.add_argument('--adm_config',type=str,choices=['both','none','sub_adm_1','sub_adm_2'],default='both') #finish with options
-    parser.add_argument('--adm_initial', action='store_true', help='Uses the initial_adm') #finish with options
+    parser.add_argument("--debug", action="store_true", help="Enable debug mode")
+    parser.add_argument(
+        "--run_id", type=int, default=None, help="Run number for experiment (for folder structure)"
+    )
+    parser.add_argument(
+        "--config", type=int, default=None, help="Experiment config number (for folder structure)"
+    )
+    parser.add_argument(
+        "--mode", type=str, default=None, help="Mode (tool/baseline) for folder structure"
+    )
+    parser.add_argument(
+        "--folder_base", type=str, default="./Eval_Cases", help="Base folder for saving ADM outputs"
+    )
+    parser.add_argument(
+        "--adm_config", type=str, choices=["both", "none", "sub_adm_1", "sub_adm_2"], default="both"
+    )  # finish with options
+    parser.add_argument(
+        "--adm_initial", action="store_true", help="Uses the initial_adm"
+    )  # finish with options
 
     args = parser.parse_args()
 
-    #switch to debug mode
+    # switch to debug mode
     if args.debug:
-        logging.getLogger().setLevel(logging.DEBUG)        
+        logging.getLogger().setLevel(logging.DEBUG)
         print("--- DEBUG MODE ENABLED ---")
-        
+
     match args.adm_config:
         case "both":
             sub_adm_1 = True
@@ -641,7 +686,6 @@ def main():
             sub_adm_1 = False
             sub_adm_2 = True
 
-    
     if args.adm_initial:
         cli = CLI(adm=adm_initial())
 
@@ -649,16 +693,16 @@ def main():
             result = cli.query_domain()
             cli.save_adm(
                 folder_base=args.folder_base,
-                name='initial',
+                name="initial",
                 run_id=args.run_id,
                 config=args.config,
                 mode=args.mode,
                 adm_config=args.adm_config,
-                adm_initial=args.adm_initial
+                adm_initial=args.adm_initial,
             )  # Save initial ADM
 
             if result:
-                logger.debug('Moving to main ADM')
+                logger.debug("Moving to main ADM")
                 cli_2 = CLI(adm=adm_main(sub_adm_1_flag=sub_adm_1, sub_adm_2_flag=sub_adm_2))
                 cli_2.caseName = cli.caseName
                 cli_2.adm.facts = cli.adm.facts
@@ -666,16 +710,16 @@ def main():
                 _ = cli_2.query_domain()
                 cli_2.save_adm(
                     folder_base=args.folder_base,
-                    name='main',
+                    name="main",
                     run_id=args.run_id,
                     config=args.config,
                     mode=args.mode,
                     adm_config=args.adm_config,
-                    adm_initial=args.adm_initial
+                    adm_initial=args.adm_initial,
                 )  # Save main ADM
 
-        #cli.visualize_domain(minimal=False,name="Initial",visualize_sub_adms=False)
-        #cli_2.visualize_domain(minimal=False,name="Main")
+        # cli.visualize_domain(minimal=False,name="Initial",visualize_sub_adms=False)
+        # cli_2.visualize_domain(minimal=False,name="Main")
 
         except KeyboardInterrupt:
             print("\n\nProgram interrupted by user. Goodbye!")
@@ -683,30 +727,31 @@ def main():
         except Exception as e:
             print(f"\nUnexpected error: {e}")
             sys.exit(1)
-            
+
     else:
         try:
             cli_2 = CLI(adm=adm_main(sub_adm_1_flag=sub_adm_1, sub_adm_2_flag=sub_adm_2))
-            #cli_2.caseName = cli.caseName
-            #cli_2.adm.facts = cli.adm.facts
+            # cli_2.caseName = cli.caseName
+            # cli_2.adm.facts = cli.adm.facts
 
             _ = cli_2.query_domain()
             cli_2.save_adm(
                 folder_base=args.folder_base,
-                name='main',
+                name="main",
                 run_id=args.run_id,
                 config=args.config,
                 mode=args.mode,
                 adm_config=args.adm_config,
-                adm_initial=args.adm_initial
+                adm_initial=args.adm_initial,
             )  # Save main ADM
-        
+
         except KeyboardInterrupt:
             print("\n\nProgram interrupted by user. Goodbye!")
             sys.exit(0)
         except Exception as e:
             print(f"\nUnexpected error: {e}")
             sys.exit(1)
-        
+
+
 if __name__ == "__main__":
-    main()  
+    main()

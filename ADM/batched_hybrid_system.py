@@ -26,9 +26,9 @@ import traceback
 from datetime import datetime
 
 import pandas as pd
+from inventive_step_ADM import adm_initial, adm_main, load_questions, set_questions
 from openai import AsyncOpenAI
 from pydantic import BaseModel, Field
-from inventive_step_ADM import adm_initial, adm_main, load_questions, set_questions
 
 # ── logging ──────────────────────────────────────────────────────────────────
 
@@ -36,10 +36,12 @@ logger = logging.getLogger("Hybrid_ADM_System")
 
 CURRENT_CASE_REF = contextvars.ContextVar("current_case_ref", default="NO_CASE")
 
+
 class _CaseFilter(logging.Filter):
     def filter(self, record):
         record.case_ref = CURRENT_CASE_REF.get()
         return True
+
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s [%(case_ref)s]: %(message)s")
 for _h in logging.getLogger().handlers:
@@ -48,6 +50,7 @@ for _h in logging.getLogger().handlers:
 # ── globals ──────────────────────────────────────────────────────────────────
 
 REQUEST_SEMAPHORE = asyncio.Semaphore(5)
+LLM_TIMEOUT_SECONDS = 1800
 BASE_CASE_DIR = "../Outputs/Valid_Cases"
 ADM_SCRIPT_PATH = "../ADM/UI.py"
 RAW_DATA = None
@@ -56,8 +59,9 @@ LLM_TEMPERATURE = 0.0
 ADM_CONFIG = "both"
 ADM_INITIAL = False
 N_HISTORY = 1
+HISTORY_MODE = "raw"  # raw | last_n
 
-#sets questionsd to be filled later
+# sets questionsd to be filled later
 INITIAL_ADM_QUESTIONS = {}
 MAIN_ADM_QUESTIONS = {}
 MAIN_ADM_NO_SUB_1_QUESTIONS = {}
@@ -74,20 +78,31 @@ MODELS = {
     # max_tokens      — safe max_tokens for calls
     "gpt": {
         "id": "gpt-oss-120b",
-        "guided_json": True, "reasoning_effort": True, "thinking": True,
-        "seed": True, "max_tokens": 4000, "context_limit": 32000,
+        "guided_json": True,
+        "reasoning_effort": True,
+        "thinking": True,
+        "seed": True,
+        "max_tokens": 8000,
+        "context_limit": 32000,
     },
     "llama": {
         "id": "Llama-3.3-70B-Instruct-FP8",
-        "guided_json": True, "reasoning_effort": False, "thinking": False,
-        "seed": True, "max_tokens": 2000, "context_limit": 32000,
+        "guided_json": True,
+        "reasoning_effort": False,
+        "thinking": False,
+        "seed": True,
+        "max_tokens": 4000,
+        "context_limit": 32000,
     },
-    
-    #seed true but don't think it actually works for qwen
+    # seed true but don't think it actually works for qwen
     "qwen": {
         "id": "Qwen-3-80B",
-        "guided_json": False, "reasoning_effort": False, "thinking": False,
-        "seed": True, "max_tokens": 2000, "context_limit": 32000,
+        "guided_json": False,
+        "reasoning_effort": False,
+        "thinking": False,
+        "seed": True,
+        "max_tokens": 4000,
+        "context_limit": 32000,
     },
 }
 
@@ -96,29 +111,33 @@ MODELS = {
 # Maximum tokens allowed for the CPA document.
 CPA_MAX_TOKENS = 10_000
 
+
+def _estimate_tokens(messages: list[dict]) -> int:
+    """Rough token estimate: 4 chars per token."""
+    return sum(len(str(m.get("content", ""))) for m in messages) // 4
+
+
 def _build_request(messages: list[dict], schema=None):
-    """Build kwargs for client.chat.completions.create based on current model config.
-    """
+    """Build kwargs for client.chat.completions.create based on current model config."""
     cfg = CURRENT_CONFIG or {}
-    model_id  = cfg.get("id", "")
-    req_messages = messages
+    model_id = cfg.get("id", "")
 
     kwargs: dict = {
         "model": model_id,
-        "messages": req_messages,
+        "messages": messages,
         "temperature": LLM_TEMPERATURE,
         "top_p": 1,
         "max_tokens": cfg.get("max_tokens", 2000),
     }
-    
+
     if cfg.get("seed"):
         kwargs["seed"] = 42
-        
+
     if cfg.get("reasoning_effort"):
         kwargs["reasoning_effort"] = "medium"
-        
+
     if schema is not None and cfg.get("guided_json"):
-        #use vllm formatted schema 
+        # use vllm formatted schema
         kwargs["response_format"] = {
             "type": "json_schema",
             "json_schema": {
@@ -127,11 +146,12 @@ def _build_request(messages: list[dict], schema=None):
                 "schema": schema,
             },
         }
-        
-    #disable thinking for llama and qwen
+
+    # disable thinking for llama and qwen
     if not cfg.get("thinking"):
         kwargs.setdefault("extra_body", {})["chat_template_kwargs"] = {"enable_thinking": False}
     return kwargs
+
 
 def _get_content(resp) -> str:
     """Extract text from an LLM response — .content only.
@@ -144,6 +164,7 @@ def _get_content(resp) -> str:
     """
     return (resp.choices[0].message.content or "").strip()
 
+
 def _parse_json(raw: str) -> dict:
     """Simple JSON parse: find the first { and try json.loads from there.
 
@@ -155,7 +176,7 @@ def _parse_json(raw: str) -> dict:
     start = raw.find("{")
     if start == -1:
         return {}
-    #find the matching closing brace
+    # find the matching closing brace
     depth, in_str, esc = 0, False, False
     for i in range(start, len(raw)):
         c = raw[i]
@@ -176,16 +197,18 @@ def _parse_json(raw: str) -> dict:
             depth -= 1
             if depth == 0:
                 try:
-                    return json.loads(raw[start:i + 1])
+                    return json.loads(raw[start : i + 1])
                 except json.JSONDecodeError:
                     return {}
-    #unbalanced — try anyway
+    # unbalanced — try anyway
     try:
         return json.loads(raw[start:])
     except json.JSONDecodeError:
         return {}
 
+
 # ── question introspection ───────────────────────────────────────────────────
+
 
 def _extract_questions(adm_instance) -> dict:
     """build {lowercase_key: formatted_question_text} from an adm instance."""
@@ -203,16 +226,24 @@ def _extract_questions(adm_instance) -> dict:
         for k, qt in adm_instance.information_questions.items():
             qs[info_map.get(k, k.lower())] = f"[Q] {qt}:"
 
-    qs["closest prior art description"] = "[Q] Please describe the candidate for the closest prior art:"
+    qs["closest prior art description"] = (
+        "[Q] Please describe the candidate for the closest prior art:"
+    )
 
     if not hasattr(adm_instance, "questionOrder"):
         return qs
 
     for item_name in adm_instance.questionOrder:
-        if hasattr(adm_instance, "information_questions") and item_name in adm_instance.information_questions:
+        if (
+            hasattr(adm_instance, "information_questions")
+            and item_name in adm_instance.information_questions
+        ):
             continue
 
-        if hasattr(adm_instance, "question_instantiators") and item_name in adm_instance.question_instantiators:
+        if (
+            hasattr(adm_instance, "question_instantiators")
+            and item_name in adm_instance.question_instantiators
+        ):
             inst = adm_instance.question_instantiators[item_name]
             q_text = inst.get("question", "")
             m = re.search(r"\[(Q\d+)\]", q_text)
@@ -229,7 +260,9 @@ def _extract_questions(adm_instance) -> dict:
             if hasattr(node, "sub_adm") and callable(node.sub_adm):
                 try:
                     sample = node.sub_adm("sample_item")
-                    if hasattr(sample, "question_instantiators") and isinstance(sample.question_instantiators, dict):
+                    if hasattr(sample, "question_instantiators") and isinstance(
+                        sample.question_instantiators, dict
+                    ):
                         for _qn, inst in sample.question_instantiators.items():
                             qt = inst.get("question", "")
                             m2 = re.search(r"\[(Q\d+)\]", qt)
@@ -257,7 +290,8 @@ def _extract_questions(adm_instance) -> dict:
 
     return qs
 
-#pre-extract all question dictionaries at module load
+
+# pre-extract all question dictionaries at module load
 def _build_question_caches():
     """(Re-)build the module-level question caches from the current questions registry.
 
@@ -266,28 +300,37 @@ def _build_question_caches():
     """
     global INITIAL_ADM_QUESTIONS, MAIN_ADM_QUESTIONS, MAIN_ADM_NO_SUB_1_QUESTIONS
     global MAIN_ADM_NO_SUB_2_QUESTIONS, MAIN_ADM_NO_SUB_BOTH_QUESTIONS, ALL_EXACT_QUESTIONS
-    INITIAL_ADM_QUESTIONS         = _extract_questions(adm_initial())
-    MAIN_ADM_QUESTIONS            = _extract_questions(adm_main(True, True))
-    MAIN_ADM_NO_SUB_1_QUESTIONS   = _extract_questions(adm_main(False, True))
-    MAIN_ADM_NO_SUB_2_QUESTIONS   = _extract_questions(adm_main(True, False))
+    INITIAL_ADM_QUESTIONS = _extract_questions(adm_initial())
+    MAIN_ADM_QUESTIONS = _extract_questions(adm_main(True, True))
+    MAIN_ADM_NO_SUB_1_QUESTIONS = _extract_questions(adm_main(False, True))
+    MAIN_ADM_NO_SUB_2_QUESTIONS = _extract_questions(adm_main(True, False))
     MAIN_ADM_NO_SUB_BOTH_QUESTIONS = _extract_questions(adm_main(False, False))
     ALL_EXACT_QUESTIONS = {**INITIAL_ADM_QUESTIONS, **MAIN_ADM_QUESTIONS}
 
+
 def _question_text(key: str) -> str:
     k = key.lower()
-    for src in (ALL_EXACT_QUESTIONS, INITIAL_ADM_QUESTIONS, MAIN_ADM_QUESTIONS,
-                MAIN_ADM_NO_SUB_1_QUESTIONS, MAIN_ADM_NO_SUB_2_QUESTIONS,
-                MAIN_ADM_NO_SUB_BOTH_QUESTIONS):
+    for src in (
+        ALL_EXACT_QUESTIONS,
+        INITIAL_ADM_QUESTIONS,
+        MAIN_ADM_QUESTIONS,
+        MAIN_ADM_NO_SUB_1_QUESTIONS,
+        MAIN_ADM_NO_SUB_2_QUESTIONS,
+        MAIN_ADM_NO_SUB_BOTH_QUESTIONS,
+    ):
         if k in src:
             return src[k]
     return ""
+
 
 def _expects_yes_no(key: str) -> bool:
     t = _question_text(key).lower()
     return "answer 'yes' or 'no' only" in t or "(y/n)" in t
 
+
 def _allowed_digits(key: str) -> set[str]:
     return set(re.findall(r"^\s*(\d+)\.\s", _question_text(key), flags=re.MULTILINE))
+
 
 def _option_text_map(key: str) -> dict[str, str]:
     result = {}
@@ -295,6 +338,7 @@ def _option_text_map(key: str) -> dict[str, str]:
         if txt.strip():
             result[num] = txt.strip()
     return result
+
 
 def _normalize_answer(raw: str, key: str) -> str | None:
     """normalize an llm answer to a digit or y/n. returns None on failure."""
@@ -353,6 +397,7 @@ def _normalize_answer(raw: str, key: str) -> str | None:
     logger.warning("cannot normalize answer for %s: %r", key, raw)
     return None
 
+
 def _valid_answer(key: str, norm: str) -> bool:
     if not norm:
         return False
@@ -363,26 +408,49 @@ def _valid_answer(key: str, norm: str) -> bool:
         return norm in allowed
     return bool(re.fullmatch(r"\d+", norm))
 
+
 # ── pydantic schemas ─────────────────────────────────────────────────────────
+
 
 class QuestionResponse(BaseModel):
     """base template"""
-    answer: str = Field(description="Your chosen answer. For multiple choice, provide the digit. For yes/no questions, provide 'y' or 'n'.")
+
+    answer: str = Field(
+        description="Your chosen answer. For multiple choice, provide the digit. For yes/no questions, provide 'y' or 'n'."
+    )
     reasoning: str = Field(description="Your step-by-step reasoning for choosing this answer.")
+
 
 class FinalVerdictResponse(BaseModel):
     """used for final verdict only"""
-    answer: str = Field(description="State 'Yes' or 'No' based on whether an inventive step is present from the tool.")
-    reasoning: str = Field(description="Explain whether you agree with the final outcome derived from the tool session.")
-    confidence_score: int = Field(description="Confidence score from 0-100 based on your faith in the tool's outcome.")
+
+    answer: str = Field(
+        description="State 'Yes' or 'No' based on whether an inventive step is present from the tool."
+    )
+    reasoning: str = Field(
+        description="Explain whether you agree with the final outcome derived from the tool session."
+    )
+    confidence_score: int = Field(
+        description="Confidence score from 0-100 based on your faith in the tool's outcome."
+    )
+
 
 class InitialADM_Batch(BaseModel):
-    """used for initial preconditions"""
+    """initial preconditions: context fields + Q1-Q16 + closest prior art"""
+
     invention_title: QuestionResponse = Field(description="What is the title of your invention?")
-    invention_description: QuestionResponse = Field(description="Please provide a brief description of your invention (max 100 words)")
-    technical_field: QuestionResponse = Field(description="Please provide a brief description of the technical field of the invention? (max 100 words)")
-    relevant_prior_art: QuestionResponse = Field(description="Please briefly describe the relevant prior art (max 100 words)")
-    common_general_knowledge: QuestionResponse = Field(description="Please briefly describe the common general knowledge")
+    invention_description: QuestionResponse = Field(
+        description="Please provide a brief description of your invention (max 100 words)"
+    )
+    technical_field: QuestionResponse = Field(
+        description="Please provide a brief description of the technical field of the invention? (max 100 words)"
+    )
+    relevant_prior_art: QuestionResponse = Field(
+        description="Please briefly describe the relevant prior art (max 100 words)"
+    )
+    common_general_knowledge: QuestionResponse = Field(
+        description="Please briefly describe the common general knowledge"
+    )
     q1_similar_purpose: QuestionResponse = Field(description="[Q1]")
     q2_similar_effects: QuestionResponse = Field(description="[Q2]")
     q3_same_field: QuestionResponse = Field(description="[Q3]")
@@ -393,7 +461,9 @@ class InitialADM_Batch(BaseModel):
     q8_aware: QuestionResponse = Field(description="[Q8]")
     q9_access: QuestionResponse = Field(description="[Q9]")
     q10_skilled_person: QuestionResponse = Field(description="[Q10]")
-    closest_prior_art_description: QuestionResponse = Field(description="Please describe the candidate for the closest prior art")
+    closest_prior_art_description: QuestionResponse = Field(
+        description="Please describe the candidate for the closest prior art"
+    )
     q11_cpa: QuestionResponse = Field(description="[Q11]")
     q12_minmod: QuestionResponse = Field(description="[Q12]")
     q13_combo_attempt: QuestionResponse = Field(description="[Q13]")
@@ -401,9 +471,13 @@ class InitialADM_Batch(BaseModel):
     q15_combo_motive: QuestionResponse = Field(description="[Q15]")
     q16_basis: QuestionResponse = Field(description="[Q16]")
 
+
 class SubADM1_Batch(BaseModel):
     """used for sub-adm 1"""
-    q17_tech_cont: QuestionResponse = Field(description="[Q17] please only give the number corresponding to the chosen answer")
+
+    q17_tech_cont: QuestionResponse = Field(
+        description="[Q17] please only give the number corresponding to the chosen answer"
+    )
     q19_dist_feat: QuestionResponse = Field(description="[Q19]")
     q20_circumvent: QuestionResponse = Field(description="[Q20]")
     q21_tech_adapt: QuestionResponse = Field(description="[Q21]")
@@ -418,20 +492,52 @@ class SubADM1_Batch(BaseModel):
     q30_claim_contains: QuestionResponse = Field(description="[Q30]")
     q31_suff_dis: QuestionResponse = Field(description="[Q31]")
 
+
+class SubADM1_Batch_A(BaseModel):
+    """used for sub-adm 1 technical-character questions, part A"""
+
+    q17_tech_cont: QuestionResponse = Field(
+        description="[Q17] please only give the number corresponding to the chosen answer"
+    )
+    q19_dist_feat: QuestionResponse = Field(description="[Q19]")
+    q20_circumvent: QuestionResponse = Field(description="[Q20]")
+    q21_tech_adapt: QuestionResponse = Field(description="[Q21]")
+    q22_intended: QuestionResponse = Field(description="[Q22]")
+    q23_tech_use: QuestionResponse = Field(description="[Q23]")
+
+
+class SubADM1_Batch_B(BaseModel):
+    """used for sub-adm 1 technical-character questions, part B"""
+
+    q24_specific_purpose: QuestionResponse = Field(description="[Q24]")
+    q25_func_limited: QuestionResponse = Field(description="[Q25]")
+    q26_unexpected: QuestionResponse = Field(description="[Q26]")
+    q27_precise: QuestionResponse = Field(description="[Q27]")
+    q28_one_way: QuestionResponse = Field(description="[Q28]")
+    q29_credible: QuestionResponse = Field(description="[Q29]")
+    q30_claim_contains: QuestionResponse = Field(description="[Q30]")
+    q31_suff_dis: QuestionResponse = Field(description="[Q31]")
+
+
 class SubADM2_Batch(BaseModel):
     """used for sub-adm 2"""
+
     q34_encompassed: QuestionResponse = Field(description="[Q34]")
     q36_scope: QuestionResponse = Field(description="[Q36]")
     q38_hindsight: QuestionResponse = Field(description="[Q38]")
     q39_would: QuestionResponse = Field(description="[Q39]")
 
+
 class MainADM_Inter_Batch(BaseModel):
     """used for in between sub-adm 1 & 2"""
+
     q32_synergy: QuestionResponse = Field(description="[Q32]")
     q33_func_int: QuestionResponse = Field(description="[Q33]")
 
+
 class MainADM_No_Sub_1(BaseModel):
     """used in absence of sub-adm 1"""
+
     q100_dist_feat: QuestionResponse = Field(description="[Q100]")
     q101_tech_cont: QuestionResponse = Field(description="[Q101]")
     q102_unexpected: QuestionResponse = Field(description="[Q102]")
@@ -441,16 +547,22 @@ class MainADM_No_Sub_1(BaseModel):
     q106_claimcontains: QuestionResponse = Field(description="[Q106]")
     q107_suff_dis: QuestionResponse = Field(description="[Q107]")
 
+
 class MainADM_No_Sub_2(BaseModel):
     """used in absence of sub-adm 2"""
-    obj_t_problem: QuestionResponse = Field(description="Please briefly describe the objective technical problem")
+
+    obj_t_problem: QuestionResponse = Field(
+        description="Please briefly describe the objective technical problem"
+    )
     q200_encompassed: QuestionResponse = Field(description="[Q200]")
     q201_scope: QuestionResponse = Field(description="[Q201]")
     q202_hindsight: QuestionResponse = Field(description="[Q202]")
     q203_would: QuestionResponse = Field(description="[Q203]")
 
+
 class SecondaryIndicators_Batch(BaseModel):
-    """used for secondary indicators """
+    """used for secondary indicators"""
+
     q40_disadvantage: QuestionResponse = Field(description="[Q40]")
     q41_foresee: QuestionResponse = Field(description="[Q41]")
     q42_advantage: QuestionResponse = Field(description="[Q42]")
@@ -472,15 +584,32 @@ class SecondaryIndicators_Batch(BaseModel):
     q58_simple_extra: QuestionResponse = Field(description="[Q58]")
     q59_chem_select: QuestionResponse = Field(description="[Q59]")
 
+
 # ── batch section routing ────────────────────────────────────────────────────
 
 _INITIAL_KEYS = (
-    ["invention title", "description", "technical field", "prior art",
-     "common general knowledge", "closest prior art description"]
+    ["invention title", "description", "technical field", "prior art", "common general knowledge"]
     + [f"Q{i}" for i in range(1, 17)]
+    + ["closest prior art description"]
 )
-_SUB1_KEYS = ["Q17", "Q19", "Q20", "Q21", "Q22", "Q23", "Q24", "Q25",
-              "Q26", "Q27", "Q28", "Q29", "Q30", "Q31"]
+_SUB1_KEYS = [
+    "Q17",
+    "Q19",
+    "Q20",
+    "Q21",
+    "Q22",
+    "Q23",
+    "Q24",
+    "Q25",
+    "Q26",
+    "Q27",
+    "Q28",
+    "Q29",
+    "Q30",
+    "Q31",
+]
+_SUB1_KEYS_A = ["Q17", "Q19", "Q20", "Q21", "Q22", "Q23"]
+_SUB1_KEYS_B = ["Q24", "Q25", "Q26", "Q27", "Q28", "Q29", "Q30", "Q31"]
 _INTER_KEYS = ["Q32", "Q33"]
 _SUB2_KEYS = ["Q34", "Q36", "Q38", "Q39"]
 _NO_SUB1_KEYS = [f"Q{i}" for i in range(100, 108)]
@@ -488,14 +617,16 @@ _NO_SUB2_KEYS = ["obj_t_problem"] + [f"Q{i}" for i in range(200, 204)]
 _SECONDARY_KEYS = [f"Q{i}" for i in range(40, 60)]
 
 _SECTIONS = [
-    (_INITIAL_KEYS,    InitialADM_Batch,          "Initial Preconditions"),
-    (_SUB1_KEYS,       SubADM1_Batch,             "Technical Character"),
-    (_INTER_KEYS,      MainADM_Inter_Batch,       "Synergy & Interaction"),
-    (_SUB2_KEYS,       SubADM2_Batch,             "Problem-Solution Approach"),
-    (_NO_SUB1_KEYS,    MainADM_No_Sub_1,          "Technical Factors (No Sub-ADM 1)"),
-    (_NO_SUB2_KEYS,    MainADM_No_Sub_2,          "Obviousness Factors (No Sub-ADM 2)"),
-    (_SECONDARY_KEYS,  SecondaryIndicators_Batch,  "Secondary Indicators"),
+    (_INITIAL_KEYS, InitialADM_Batch, "Initial Preconditions"),
+    (_SUB1_KEYS_A, SubADM1_Batch_A, "Technical Character A"),
+    (_SUB1_KEYS_B, SubADM1_Batch_B, "Technical Character B"),
+    (_INTER_KEYS, MainADM_Inter_Batch, "Synergy & Interaction"),
+    (_SUB2_KEYS, SubADM2_Batch, "Problem-Solution Approach"),
+    (_NO_SUB1_KEYS, MainADM_No_Sub_1, "Technical Factors (No Sub-ADM 1)"),
+    (_NO_SUB2_KEYS, MainADM_No_Sub_2, "Obviousness Factors (No Sub-ADM 2)"),
+    (_SECONDARY_KEYS, SecondaryIndicators_Batch, "Secondary Indicators"),
 ]
+
 
 def _section_for_key(key: str):
     """return (model_class, label, keys_list) or None."""
@@ -504,38 +635,87 @@ def _section_for_key(key: str):
             return model_class, label, keys
     return None
 
+
 _FIELD_TO_KEY = {
-    "invention_title": "invention title", "invention_description": "description",
-    "technical_field": "technical field", "relevant_prior_art": "prior art",
+    "invention_title": "invention title",
+    "invention_description": "description",
+    "technical_field": "technical field",
+    "relevant_prior_art": "prior art",
     "common_general_knowledge": "common general knowledge",
     "closest_prior_art_description": "closest prior art description",
-    "q1_similar_purpose": "Q1", "q2_similar_effects": "Q2", "q3_same_field": "Q3",
-    "q4_contested": "Q4", "q5_cgk_evidence": "Q5", "q6_skilled_in": "Q6",
-    "q7_average": "Q7", "q8_aware": "Q8", "q9_access": "Q9", "q10_skilled_person": "Q10",
-    "q11_cpa": "Q11", "q12_minmod": "Q12", "q13_combo_attempt": "Q13",
-    "q14_combined": "Q14", "q15_combo_motive": "Q15", "q16_basis": "Q16",
-    "q17_tech_cont": "Q17", "q19_dist_feat": "Q19", "q20_circumvent": "Q20",
-    "q21_tech_adapt": "Q21", "q22_intended": "Q22", "q23_tech_use": "Q23",
-    "q24_specific_purpose": "Q24", "q25_func_limited": "Q25", "q26_unexpected": "Q26",
-    "q27_precise": "Q27", "q28_one_way": "Q28", "q29_credible": "Q29",
-    "q30_claim_contains": "Q30", "q31_suff_dis": "Q31",
-    "q32_synergy": "Q32", "q33_func_int": "Q33",
-    "q34_encompassed": "Q34", "q36_scope": "Q36", "q38_hindsight": "Q38", "q39_would": "Q39",
-    "q100_dist_feat": "Q100", "q101_tech_cont": "Q101", "q102_unexpected": "Q102",
-    "q103_precise": "Q103", "q104_one_way": "Q104", "q105_credible": "Q105",
-    "q106_claimcontains": "Q106", "q107_suff_dis": "Q107",
-    "obj_t_problem": "obj_t_problem", "q200_encompassed": "Q200", "q201_scope": "Q201",
-    "q202_hindsight": "Q202", "q203_would": "Q203",
-    "q40_disadvantage": "Q40", "q41_foresee": "Q41",
-    "q42_advantage": "Q42", "q43_biotech": "Q43", "q44_antibody": "Q44",
-    "q45_pred_results": "Q45", "q46_reasonable": "Q46", "q47_known_tech": "Q47",
-    "q48_overcome": "Q48", "q49_gap_filled": "Q49", "q50_well_known": "Q50",
-    "q51_known_prop": "Q51", "q52_analog_use": "Q52", "q53_known_device": "Q53",
-    "q54_obvs_combo": "Q54", "q55_analog_sub": "Q55", "q56_equal_alt": "Q56",
-    "q57_normal_design": "Q57", "q58_simple_extra": "Q58", "q59_chem_select": "Q59",
+    "q1_similar_purpose": "Q1",
+    "q2_similar_effects": "Q2",
+    "q3_same_field": "Q3",
+    "q4_contested": "Q4",
+    "q5_cgk_evidence": "Q5",
+    "q6_skilled_in": "Q6",
+    "q7_average": "Q7",
+    "q8_aware": "Q8",
+    "q9_access": "Q9",
+    "q10_skilled_person": "Q10",
+    "q11_cpa": "Q11",
+    "q12_minmod": "Q12",
+    "q13_combo_attempt": "Q13",
+    "q14_combined": "Q14",
+    "q15_combo_motive": "Q15",
+    "q16_basis": "Q16",
+    "q17_tech_cont": "Q17",
+    "q19_dist_feat": "Q19",
+    "q20_circumvent": "Q20",
+    "q21_tech_adapt": "Q21",
+    "q22_intended": "Q22",
+    "q23_tech_use": "Q23",
+    "q24_specific_purpose": "Q24",
+    "q25_func_limited": "Q25",
+    "q26_unexpected": "Q26",
+    "q27_precise": "Q27",
+    "q28_one_way": "Q28",
+    "q29_credible": "Q29",
+    "q30_claim_contains": "Q30",
+    "q31_suff_dis": "Q31",
+    "q32_synergy": "Q32",
+    "q33_func_int": "Q33",
+    "q34_encompassed": "Q34",
+    "q36_scope": "Q36",
+    "q38_hindsight": "Q38",
+    "q39_would": "Q39",
+    "q100_dist_feat": "Q100",
+    "q101_tech_cont": "Q101",
+    "q102_unexpected": "Q102",
+    "q103_precise": "Q103",
+    "q104_one_way": "Q104",
+    "q105_credible": "Q105",
+    "q106_claimcontains": "Q106",
+    "q107_suff_dis": "Q107",
+    "obj_t_problem": "obj_t_problem",
+    "q200_encompassed": "Q200",
+    "q201_scope": "Q201",
+    "q202_hindsight": "Q202",
+    "q203_would": "Q203",
+    "q40_disadvantage": "Q40",
+    "q41_foresee": "Q41",
+    "q42_advantage": "Q42",
+    "q43_biotech": "Q43",
+    "q44_antibody": "Q44",
+    "q45_pred_results": "Q45",
+    "q46_reasonable": "Q46",
+    "q47_known_tech": "Q47",
+    "q48_overcome": "Q48",
+    "q49_gap_filled": "Q49",
+    "q50_well_known": "Q50",
+    "q51_known_prop": "Q51",
+    "q52_analog_use": "Q52",
+    "q53_known_device": "Q53",
+    "q54_obvs_combo": "Q54",
+    "q55_analog_sub": "Q55",
+    "q56_equal_alt": "Q56",
+    "q57_normal_design": "Q57",
+    "q58_simple_extra": "Q58",
+    "q59_chem_select": "Q59",
 }
 
 # ── prompts ──────────────────────────────────────────────────────────────────
+
 
 def _system_prompt(context: str, case_name: str, train: bool = False) -> str:
     base = (
@@ -545,55 +725,117 @@ def _system_prompt(context: str, case_name: str, train: bool = False) -> str:
         "to objectively assess the presence of inventive step within the invention.\n"
         "You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) "
         "designed for inventive step to help you reason to a conclusion on whether inventive step is present.\n"
-        "An ADM is a hierarchical tree-like model which ascribes legal facts to 'base level factors' which are "
-        "then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.\n"
-        "Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were "
-        "a legal ascriber mapping evidence to a reasoning framework.\n\n"
+        "An ADM is a hierarchical logic model which ascribes legal facts to 'base level factors' which are "
+        "then processed using sets of prioritised acceptance conditions linked to more abstract legal factors to determine a conclusion.\n"
+        "Each question you answer corresponds to a base-level factor (BLF). Answer each question on its own terms but ensure to look at the invention holistically before answering.\n\n"
         f"=== CASE DATA ===\n{context}\n=== END CASE DATA ===\n\n"
     )
 
     if train:
         reasons = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Decision Reasons"].iloc[0])
         decision = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Order"].iloc[0])
-       
+
         base += (
             f"=== REASONS FOR DECISION ===\n{reasons}\n=== END REASONS FOR DECISION ===\n\n"
             f"=== DECISION ===\n{decision}\n=== END DECISION ===\n\n"
             "INSTRUCTIONS:\n"
             "1. Provide a step-by-step reasoning trace with explicit reference to the case data as to why you gave your answer..\n"
             "2. Conclude with a final 'Yes' or 'No' answer, or the specific text requested.\n"
-            "3. Use the data provided. Do not refer to case law, patents or other specific inventions you have not been provided with.\n"
+            "3. Do not refer to case law, patents or other specific inventions directly that you have not been provided with.\n"
             "4. You may make reasonable assumptions about the skilled person or common general knowledge.\n"
             "5. Follow the reasoning from the 'reasons for decision' as closely as possible when ascribing factors.\n"
             "6. You MUST try and follow the actual decision of the case as closely as possible.\n"
         )
-        
+
     else:
         base += (
             "INSTRUCTIONS:\n"
             "1. Provide a step-by-step reasoning trace with explicit reference to the case data as to why you gave your answer.\n"
             "2. Conclude with a final 'Yes' or 'No' answer, or the specific text requested.\n"
-            "3. Use the data provided. Do not refer to case law, patents or other specific inventions you have not been provided with.\n"
+            "3. Do not refer to case law, patents or other specific inventions directly that you have not been provided with.\n"
             "4. You may make reasonable assumptions about the skilled person or common general knowledge.\n"
             "5. Do not follow any conclusions in the case data blindly — critically assess all information.\n"
             "6. Ensure you remember that these questions are here to guide your reasoning, think about the case holistically as well when answering them."
+            '7. Always think about these questions in regard to the "skilled" person we define in the first batch of questions.'
         )
     return base
 
+
 def _last_n_qa(qa_log: list[dict], n: int):
     """extracts the last n q/a pairs from the log."""
+    if n <= 0:
+        return []
     msgs = []
     for entry in qa_log[-n:]:
         msgs.append({"role": "user", "content": entry["question"]})
-        msgs.append({"role": "assistant", "content": json.dumps({
-            "answer": entry["answer"],
-            "reasoning": entry.get("reasoning", ""),
-        })})
+        msgs.append(
+            {
+                "role": "assistant",
+                "content": json.dumps(
+                    {
+                        "answer": entry["answer"],
+                        "reasoning": entry.get("reasoning", ""),
+                    }
+                ),
+            }
+        )
     return msgs
+
 
 def _last_1_qa(qa_log: list[dict]):
     """extracts the last 1 q/a pair from the log."""
     return _last_n_qa(qa_log, 1)
+
+
+# ── history builder ──────────────────────────────────────────────────────────
+
+# Q6–Q10 tags and follow-up skilled-person description prompts
+_SKILLED_PERSON_TAGS = {"[Q6]", "[Q7]", "[Q8]", "[Q9]", "[Q10]"}
+_SKILLED_PERSON_DESC_PHRASES = (
+    "describe the individual practitioner",
+    "describe the research team",
+    "describe the production or manufacturing team",
+)
+
+
+def _is_skilled_person_entry(entry: dict) -> bool:
+    q = entry.get("question", "")
+    q_lower = q.lower()
+    return any(tag in q for tag in _SKILLED_PERSON_TAGS) or any(
+        phrase in q_lower for phrase in _SKILLED_PERSON_DESC_PHRASES
+    )
+
+
+def _build_history(qa_log: list[dict]) -> list[dict]:
+    """Build history messages.
+
+    Always prepends the skilled-person anchor Q/A (Q6-Q10 + description),
+    then appends the last N_HISTORY turns (de-duplicating anything already
+    in the anchor).
+    """
+    anchor_entries = [e for e in qa_log if _is_skilled_person_entry(e)]
+    anchor_qs = {id(e) for e in anchor_entries}
+
+    anchor_msgs: list[dict] = []
+    for e in anchor_entries:
+        anchor_msgs.append({"role": "user", "content": e["question"]})
+        anchor_msgs.append(
+            {
+                "role": "assistant",
+                "content": json.dumps(
+                    {
+                        "answer": e["answer"],
+                        "reasoning": e.get("reasoning", ""),
+                    }
+                ),
+            }
+        )
+
+    non_anchor = [e for e in qa_log if id(e) not in anchor_qs]
+    recent_msgs = _last_n_qa(non_anchor, N_HISTORY)
+
+    return anchor_msgs + recent_msgs
+
 
 # ── LLM calls ────────────────────────────────────────────────────────────────
 # Simple approach (like old code):
@@ -601,6 +843,7 @@ def _last_1_qa(qa_log: list[dict]):
 
 MAX_RETRIES = 5
 BASE_BACKOFF = 2
+
 
 def _resolve_guided_json(schema: dict, guided_text: str, unguided_text: str) -> tuple:
     """Return (guided_schema, instruction) based on the current config's guided_json flag.
@@ -612,26 +855,42 @@ def _resolve_guided_json(schema: dict, guided_text: str, unguided_text: str) -> 
         return schema, guided_text
     return None, unguided_text
 
-async def _llm_call_with_retry(client, messages: list[dict], guided_schema, label: str) -> str:
+
+async def _llm_call_with_retry(
+    client, messages: list[dict], guided_schema, label: str
+) -> tuple[str, list[dict]]:
     """Execute one LLM request with exponential-backoff retries.
 
-    Returns the raw response string.  Raises the last exception if all
-    MAX_RETRIES attempts fail.
+    Returns (raw_response_string, sent_messages) where sent_messages is the
+    post-trim messages list actually sent to the LLM.  Raises the last
+    exception if all MAX_RETRIES attempts fail.
     """
     for attempt in range(MAX_RETRIES):
         try:
             req = _build_request(messages, schema=guided_schema)
+            sent_messages = req["messages"]
             async with REQUEST_SEMAPHORE:
-                resp = await client.chat.completions.create(**req)
+                resp = await asyncio.wait_for(
+                    client.chat.completions.create(**req),
+                    timeout=LLM_TIMEOUT_SECONDS,
+                )
             raw = _get_content(resp)
             if not raw:
                 raise ValueError("empty response")
-            return raw
+            return raw, sent_messages
+        except asyncio.TimeoutError as e:
+            logger.warning(
+                "%s attempt %d timed out after %ss", label, attempt + 1, LLM_TIMEOUT_SECONDS
+            )
+            if attempt == MAX_RETRIES - 1:
+                raise e
+            await asyncio.sleep(BASE_BACKOFF * (2**attempt))
         except Exception as e:
             logger.warning("%s attempt %d failed: %s", label, attempt + 1, e)
             if attempt == MAX_RETRIES - 1:
                 raise
-            await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
+            await asyncio.sleep(BASE_BACKOFF * (2**attempt))
+
 
 def _parse_yes_no_verdict(raw: str) -> tuple[str, str, int]:
     """Parse a yes/no verdict from a raw LLM response string.
@@ -656,9 +915,15 @@ def _parse_yes_no_verdict(raw: str) -> tuple[str, str, int]:
     raise ValueError(f"no yes/no found in verdict: {answer[:100]}")
 
 
-async def _call_batch(client, sys_prompt: str, history: list[dict],
-                      model_class, section_label: str, keys: list[str],
-                      feature_name: str = None):
+async def _call_batch(
+    client,
+    sys_prompt: str,
+    history: list[dict],
+    model_class,
+    section_label: str,
+    keys: list[str],
+    feature_name: str = None,
+):
     """Call LLM once with a batched structured schema.
 
     Returns (results, messages) where results is
@@ -667,7 +932,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     Missing/broken answers are simply absent — the caller falls back to
     dynamic for those when the question is actually asked.
     """
-    #pick question dictionary
+    # pick question dictionary
     if "No Sub-ADM 1" in section_label and "No Sub-ADM 2" not in section_label:
         qdict = MAIN_ADM_NO_SUB_1_QUESTIONS
     elif "No Sub-ADM 2" in section_label and "No Sub-ADM 1" not in section_label:
@@ -677,7 +942,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     else:
         qdict = ALL_EXACT_QUESTIONS
 
-    #build question text
+    # build question text
     q_text = "QUESTIONS TO ANSWER:\n"
     for k in keys:
         qt = qdict.get(k.lower(), f"Question {k} not found.")
@@ -692,7 +957,7 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
         kind = "objective technical problem" if is_sub2 else "feature"
         ctx = f"\n[CONTEXT: Evaluating {kind}: {feature_name}]"
 
-    #schema: guided_json or prompt-embedded
+    # schema: guided_json or prompt-embedded
     schema = model_class.model_json_schema()
     schema_str = json.dumps(schema, indent=2)
     guided_schema, task_suffix = _resolve_guided_json(
@@ -712,14 +977,16 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
     messages = [{"role": "system", "content": sys_prompt}] + history
     messages.append({"role": "user", "content": f"{q_text}{ctx}{task_suffix}"})
 
-    #call with retries
+    # call with retries
     try:
-        raw = await _llm_call_with_retry(client, messages, guided_schema, f"batch {section_label}")
+        raw, sent_messages = await _llm_call_with_retry(
+            client, messages, guided_schema, f"batch {section_label}"
+        )
     except Exception:
         logger.error("batch %s failed after %d attempts", section_label, MAX_RETRIES)
         return {}, messages
 
-    #parse: try pydantic, fall back to plain json.loads
+    # parse: try pydantic, fall back to plain json.loads
     results = {}
     try:
         json_start = raw.find("{")
@@ -737,10 +1004,10 @@ async def _call_batch(client, sys_prompt: str, history: list[dict],
                     results[answer_key] = field_val
 
     logger.info("batch '%s' returned %d/%d answers", section_label, len(results), len(keys))
-    return results, messages
+    return results, sent_messages
 
-async def _call_dynamic(client, sys_prompt: str, history: list[dict],
-                        question_text: str):
+
+async def _call_dynamic(client, sys_prompt: str, history: list[dict], question_text: str):
     """Call LLM with a single question. Returns (answer, reasoning, messages).
 
     json.loads → .get("answer"). If parsing fails,
@@ -763,34 +1030,36 @@ async def _call_dynamic(client, sys_prompt: str, history: list[dict],
     messages = [{"role": "system", "content": sys_prompt}] + history
     messages.append({"role": "user", "content": question_text + instruction})
 
-    raw = await _llm_call_with_retry(client, messages, guided_schema, "dynamic")
+    raw, sent_messages = await _llm_call_with_retry(client, messages, guided_schema, "dynamic")
 
     parsed = _parse_json(raw)
     if parsed and parsed.get("answer") is not None:
         answer = str(parsed.get("answer")).strip()
     else:
-        #_parse_json failed (e.g. malformed JSON with stray quotes);
-        #fall back to regex extraction of "answer" field
+        # _parse_json failed (e.g. malformed JSON with stray quotes);
+        # fall back to regex extraction of "answer" field
         m = re.search(r'"answer"\s*:\s*"([^"]*)"', raw, re.IGNORECASE)
         answer = m.group(1).strip() if m else raw
     reasoning = parsed.get("reasoning", raw) if parsed else raw
-    return answer, reasoning, messages
+    return answer, reasoning, sent_messages
 
-async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
-                              case_name: str, train: bool):
+
+async def _call_final_verdict(
+    client, sys_prompt: str, adm_context: list[dict], case_name: str, train: bool
+):
     """Get the final inventive step verdict. Returns (answer, reasoning, confidence_score, messages)."""
     if train:
         question = (
             "FINAL_VERDICT\n"
-            "Based on the session interaction above, what was the final outcome from the tool?\n"
-            "State 'Yes' or 'No' for inventive step. Explain whether you agree with the tool's outcome "
+            "Based on the above session output, what was the final outcome from the ADM tool?\n"
+            "State 'Yes' or 'No' for inventive step being present according to the tool's final outcome. Explain whether you agree with the tool's outcome "
             "by comparing to the real decision. Provide a confidence score 0-100."
         )
     else:
         question = (
             "FINAL_VERDICT\n"
-            "Based on the session interaction above, what was the final outcome?\n"
-            "State 'Yes' or 'No' for inventive step. Explain whether you agree with the tool's outcome. "
+            "Based on above session output, what was the final outcome from the ADM tool?\n"
+            "State 'Yes' or 'No' for inventive step being present according to the tool's final outcome. Explain whether you agree with the tool's outcome. "
             "Provide a confidence score 0-100."
         )
 
@@ -808,48 +1077,32 @@ async def _call_final_verdict(client, sys_prompt: str, adm_context: list[dict],
     messages = [{"role": "system", "content": sp}] + adm_context
     messages.append({"role": "user", "content": question})
 
-    # Trim context if too large, for all models.
-    # Use 75% of the model's context_limit as the threshold, leaving headroom
-    # for the verdict response itself. Priority: keep system prompt, then any
-    # messages containing high-value ADM summary content, then the final
-    # question. Individual Q&A turns are dropped when trimming is needed.
-    cfg = CURRENT_CONFIG or {}
-    context_limit = cfg.get("context_limit", 32000)
-    trim_threshold = int(context_limit * 0.75)
-    total_chars = sum(len(str(m.get("content", ""))) for m in messages)
-    if total_chars // 4 > trim_threshold:
-        logger.warning("final verdict context too large (%d est tokens, threshold %d), trimming",
-                       total_chars // 4, trim_threshold)
-
-        # messages[0]  = system prompt (always kept)
-        # messages[-1] = final verdict question (always kept)
-        # middle messages: keep only those carrying ADM summary output
-        _KEEP_MARKERS = ("Final ADM Output", "Sub-ADM Conclusion", "Case Outcome:", "[Early Stop]")
-        kept = [messages[0]]
-        for m in messages[1:-1]:
-            c = str(m.get("content", ""))
-            if any(marker in c for marker in _KEEP_MARKERS):
-                kept.append(m)
-        kept.append(messages[-1])
-        messages = kept
-
     for attempt in range(MAX_RETRIES):
         try:
-            raw = await _llm_call_with_retry(client, messages, guided_schema, "final verdict")
+            raw, sent_messages = await _llm_call_with_retry(
+                client, messages, guided_schema, "final verdict"
+            )
             answer, reasoning, confidence = _parse_yes_no_verdict(raw)
-            return answer, reasoning, confidence, messages
+            return answer, reasoning, confidence, sent_messages
         except Exception as e:
             logger.warning("final verdict attempt %d failed: %s", attempt + 1, e)
             if attempt == MAX_RETRIES - 1:
                 raise
-            await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
+            await asyncio.sleep(BASE_BACKOFF * (2**attempt))
+
 
 # ── ui text helpers ──────────────────────────────────────────────────────────
 
+
 def _strip_decorators(text: str) -> str:
     lines = text.splitlines()
-    out = [l for l in lines if not (len(l.strip()) >= 3 and l.strip()[0] in "=-_~*" and len(set(l.strip())) == 1)]
+    out = [
+        l
+        for l in lines
+        if not (len(l.strip()) >= 3 and l.strip()[0] in "=-_~*" and len(set(l.strip())) == 1)
+    ]
     return "\n".join(out).strip()
+
 
 def _extract_text_segment(
     text: str,
@@ -877,6 +1130,7 @@ def _extract_text_segment(
     end = min(end_positions) if end_positions else len(tail)
     return tail[:end].strip()
 
+
 def _extract_case_outcome(full_output: str) -> str:
     return _extract_text_segment(
         full_output,
@@ -885,12 +1139,14 @@ def _extract_case_outcome(full_output: str) -> str:
         find_last=True,
     )
 
+
 def _extract_sub_adm_conclusion(text: str) -> str:
     return _extract_text_segment(
         text,
         start_markers=["[Early Stop]", "Case Outcome:", "Sub-ADM Summary ==="],
         end_markers=["\n[Q", "\nINFO: ADM created", "\n--- Item", "\n=== Evaluating"],
     )
+
 
 def _detect_item_name(text: str) -> str | None:
     fm = re.search(r"Feature:\s*(.+?)(?:\n|$)", text)
@@ -901,7 +1157,9 @@ def _detect_item_name(text: str) -> str | None:
         return pm.group(1).strip()
     return None
 
+
 # ── data loading ─────────────────────────────────────────────────────────────
+
 
 def _read_cpa(path: str) -> str:
     """Read a CPA file and truncate to CPA_MAX_TOKENS if needed."""
@@ -912,15 +1170,16 @@ def _read_cpa(path: str) -> str:
         logger.warning("CPA truncated to %d tokens for %s", CPA_MAX_TOKENS, path)
     return text
 
+
 def _load_context(data_path: str, case_name: str, dataset: str, config: int):
     """
     Loads the correct data for the configuration
     """
-    
+
     path = os.path.join(data_path, case_name)
     parts = []
 
-    #only used for validation COMVIK cases
+    # only used for validation COMVIK cases
     if dataset == "comvik":
         cpa = os.path.join(path, "CPA.txt")
         if os.path.exists(cpa):
@@ -932,9 +1191,11 @@ def _load_context(data_path: str, case_name: str, dataset: str, config: int):
         elif config == 2:
             full = os.path.join(path, "full.txt")
             if os.path.exists(full):
-                parts.append(f"--- FULL REASONING ABOUT THE PATENT APPLICATION ---\n{open(full).read()}")
-    
-    #main experimental configs
+                parts.append(
+                    f"--- FULL REASONING ABOUT THE PATENT APPLICATION ---\n{open(full).read()}"
+                )
+
+    # main experimental configs
     else:
         appeal = os.path.join(path, "appeal.txt")
         claims = os.path.join(path, "claims.txt")
@@ -955,19 +1216,73 @@ def _load_context(data_path: str, case_name: str, dataset: str, config: int):
             if os.path.exists(cpa):
                 parts.append(f"--- CLOSEST PRIOR ART DOCUMENT/S ---\n{_read_cpa(cpa)}")
 
-    #year for common knowledge cut off date
+    # year for common knowledge cut off date
     try:
-        year = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Year"].iloc[0]) if RAW_DATA is not None and not RAW_DATA.empty else "UNKNOWN"
+        year = (
+            str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Year"].iloc[0])
+            if RAW_DATA is not None and not RAW_DATA.empty
+            else "UNKNOWN"
+        )
     except Exception:
         year = "UNKNOWN"
     parts.append(f"--- COMMON KNOWLEDGE DATE CUTOFF ---\n{year}")
-    
+
     return "\n\n".join(parts)
+
+
+# ── resume helpers ──────────────────────────────────────────────────────────
+
+
+def _case_log_path(case_name: str, run_id: int, config_num, mode: str, train: bool = False) -> str:
+    if mode in {"baseline", "train_baseline"}:
+        return os.path.join(
+            BASE_CASE_DIR,
+            case_name,
+            f"run_{run_id}",
+            f"config_{config_num}",
+            "baseline",
+            "log.json",
+        )
+
+    log_subdir = "train" if train else "tool"
+    return os.path.join(
+        BASE_CASE_DIR,
+        case_name,
+        f"run_{run_id}",
+        f"config_{config_num}",
+        log_subdir,
+        str(ADM_CONFIG),
+        str(ADM_INITIAL),
+        "log.json",
+    )
+
+
+def _read_existing_verdict(log_path: str) -> str | None:
+    if not os.path.exists(log_path):
+        return None
+    try:
+        with open(log_path) as f:
+            entries = json.load(f)
+        if not isinstance(entries, list):
+            return None
+        for entry in reversed(entries):
+            if str(entry.get("question", "")).strip() == "FINAL_VERDICT":
+                answer = str(entry.get("answer", "")).strip()
+                return answer.capitalize() if answer else "ERROR"
+        if entries:
+            answer = str(entries[-1].get("answer", "")).strip()
+            return answer.capitalize() if answer else "ERROR"
+    except Exception as e:
+        logger.warning("could not read existing log %s: %s", log_path, e)
+    return None
+
 
 # ── baseline runner ─────────────────────────────────────────────────────────
 
-async def _run_baseline_case(client, case_name: str, context_text: str, run_id: int,
-                              metadata: dict, train: bool = False) -> str:
+
+async def _run_baseline_case(
+    client, case_name: str, context_text: str, run_id: int, metadata: dict, train: bool = False
+) -> str:
     """Single-shot baseline: one prompt → yes/no verdict, no UI.py subprocess.
     Saves a one-entry log.json in {BASE_CASE_DIR}/{case}/{run_N}/config_X/baseline/.
     If train=True, injects Decision Reasons + Order as a system message.
@@ -976,12 +1291,15 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
     t_start = time.time()
     config_num = metadata.get("config", "X")
 
-    log_dir = os.path.join(BASE_CASE_DIR, case_name, f"run_{run_id}",
-                           f"config_{config_num}", "baseline")
+    log_path = _case_log_path(case_name, run_id, config_num, "baseline")
+    existing_verdict = _read_existing_verdict(log_path)
+    if existing_verdict is not None:
+        logger.info("skipping completed baseline log: %s", log_path)
+        CURRENT_CASE_REF.reset(case_token)
+        return existing_verdict
+
+    log_dir = os.path.dirname(log_path)
     os.makedirs(log_dir, exist_ok=True)
-    log_path = os.path.join(log_dir, "log.json")
-    if os.path.exists(log_path):
-        os.remove(log_path)
 
     schema = FinalVerdictResponse.model_json_schema()
     guided_schema, fmt_instruction = _resolve_guided_json(
@@ -997,7 +1315,9 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
     reasons, decision = "", ""
     if train and RAW_DATA is not None and not RAW_DATA.empty:
         try:
-            reasons = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Decision Reasons"].iloc[0])
+            reasons = str(
+                RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Decision Reasons"].iloc[0]
+            )
             decision = str(RAW_DATA.loc[RAW_DATA["Reference"] == case_name, "Order"].iloc[0])
         except Exception:
             reasons, decision = "", ""
@@ -1032,8 +1352,7 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
             "INSTRUCTIONS:\n"
             "1. Provide a step-by-step reasoning trace with explicit reference to the case data.\n"
             "2. Conclude with a final 'Yes' (inventive step present) or 'No' answer.\n"
-            "3. Provide a confidence score 0-100."
-            + fmt_instruction
+            "3. Provide a confidence score 0-100." + fmt_instruction
         )
 
     messages = [{"role": "user", "content": prompt}]
@@ -1042,9 +1361,12 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
     reasoning = ""
     confidence = 50
 
+    sent_messages = messages
     for attempt in range(MAX_RETRIES):
         try:
-            raw = await _llm_call_with_retry(client, messages, guided_schema, f"baseline {case_name}")
+            raw, sent_messages = await _llm_call_with_retry(
+                client, messages, guided_schema, f"baseline {case_name}"
+            )
             verdict, reasoning, confidence = _parse_yes_no_verdict(raw)
             verdict = verdict.capitalize()
             break
@@ -1053,10 +1375,22 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
             if attempt == MAX_RETRIES - 1:
                 logger.error("baseline failed for %s", case_name)
                 break
-            await asyncio.sleep(BASE_BACKOFF * (2 ** attempt))
+            await asyncio.sleep(BASE_BACKOFF * (2**attempt))
 
     elapsed = time.time() - t_start
-    turn_log = [_log_entry(1, prompt, verdict, reasoning, confidence, "baseline", elapsed, metadata, full_prompt=messages)]
+    turn_log = [
+        _log_entry(
+            1,
+            prompt,
+            verdict,
+            reasoning,
+            confidence,
+            "baseline",
+            elapsed,
+            metadata,
+            full_prompt=sent_messages,
+        )
+    ]
     with open(log_path, "w") as f:
         json.dump(turn_log, f, indent=4)
 
@@ -1064,10 +1398,21 @@ async def _run_baseline_case(client, case_name: str, context_text: str, run_id: 
     CURRENT_CASE_REF.reset(case_token)
     return verdict
 
+
 # ── main controller ──────────────────────────────────────────────────────────
 
-def _log_entry(turn, question, answer, reasoning, score, source, elapsed, metadata,
-               full_prompt: list | None = None):
+
+def _log_entry(
+    turn,
+    question,
+    answer,
+    reasoning,
+    score,
+    source,
+    elapsed,
+    metadata,
+    full_prompt: list | None = None,
+):
     return {
         "turn": turn,
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -1082,8 +1427,10 @@ def _log_entry(turn, question, answer, reasoning, score, source, elapsed, metada
         "full_prompt": full_prompt,
     }
 
-async def _run_case(client, case_name: str, context_text: str, run_id: int,
-                    metadata: dict, train: bool = False) -> str:
+
+async def _run_case(
+    client, case_name: str, context_text: str, run_id: int, metadata: dict, train: bool = False
+) -> str:
     """Drive ui.py for one case, returning the final verdict string.
 
     Flow:
@@ -1091,25 +1438,26 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
       2. Cache whatever answers parse successfully.
       3. For each question: use cache if valid, otherwise call dynamic for it.
     """
-    
+
     case_token = CURRENT_CASE_REF.set(case_name)
     t_start = time.time()
     config_num = metadata.get("config", "X")
     mode = metadata.get("mode", "tool")
 
-    log_subdir = "train" if train else "tool"
-    log_dir = os.path.join(BASE_CASE_DIR, case_name, f"run_{run_id}",
-                           f"config_{config_num}", log_subdir,
-                           str(ADM_CONFIG), str(ADM_INITIAL))
+    log_path = _case_log_path(case_name, run_id, config_num, mode, train=train)
+    existing_verdict = _read_existing_verdict(log_path)
+    if existing_verdict is not None:
+        logger.info("skipping completed tool log: %s", log_path)
+        CURRENT_CASE_REF.reset(case_token)
+        return existing_verdict
+
+    log_dir = os.path.dirname(log_path)
     os.makedirs(log_dir, exist_ok=True)
-    log_path = os.path.join(log_dir, "log.json")
-    if os.path.exists(log_path):
-        os.remove(log_path)
 
     # state
-    answers_cache: dict = {}          # cache_key → {"answer": ..., "reasoning": ...}
-    fetched_sections: set = set()     # batch IDs already fetched (no re-fetching)
-    batch_prompt_cache: dict = {}     # batch_id → full messages list sent to LLM
+    answers_cache: dict = {}  # cache_key → {"answer": ..., "reasoning": ...}
+    fetched_sections: set = set()  # batch IDs already fetched (no re-fetching)
+    batch_prompt_cache: dict = {}  # batch_id → full messages list sent to LLM
     qa_log: list[dict] = []
     turn_logs: list[dict] = []
     full_output = ""
@@ -1124,12 +1472,19 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
 
     # spawn ui.py
     proc_args = [
-        sys.executable, "-u", ADM_SCRIPT_PATH,
-        "--run_id", str(run_id),
-        "--config", str(config_num),
-        "--mode", str(mode),
-        "--folder_base", str(BASE_CASE_DIR),
-        "--adm_config", str(ADM_CONFIG),
+        sys.executable,
+        "-u",
+        ADM_SCRIPT_PATH,
+        "--run_id",
+        str(run_id),
+        "--config",
+        str(config_num),
+        "--mode",
+        str(mode),
+        "--folder_base",
+        str(BASE_CASE_DIR),
+        "--adm_config",
+        str(ADM_CONFIG),
     ]
     if ADM_INITIAL:
         proc_args.append("--adm_initial")
@@ -1147,7 +1502,11 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
             proc.stdin.write(f"{text}\n".encode("utf-8"))
             await proc.stdin.drain()
             last_sent = text
-            last_type = "number" if re.fullmatch(r"\d+", text) else ("yesno" if text in {"y", "n"} else "text")
+            last_type = (
+                "number"
+                if re.fullmatch(r"\d+", text)
+                else ("yesno" if text in {"y", "n"} else "text")
+            )
         except (ConnectionResetError, BrokenPipeError):
             raise StopIteration("stdin closed")
 
@@ -1173,7 +1532,7 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
             case_outcome = _extract_case_outcome(full_output)
             if case_outcome:
                 full_responses_log["Final_ADM_Output"] = case_outcome
-            
+
             sub_conclusion = _extract_sub_adm_conclusion(clean)
             if sub_conclusion and sub_conclusion != last_conclusion:
                 full_responses_log.setdefault("Sub_ADM_Conclusions", []).append(sub_conclusion)
@@ -1188,20 +1547,22 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
                 continue
 
             # ── classify the prompt ──────────────────────────────────
-            #this is so we can provide the appropriate json schemas or auto answers such as case name
-            
+            # this is so we can provide the appropriate json schemas or auto answers such as case name
+
             needed_key = None
             go_dynamic = False
             lower_clean = clean.lower()
 
             # invalid input — resend
             if "invalid input" in lower_clean:
-                expects_num = "enter the number" in lower_clean or "only give a number" in lower_clean
+                expects_num = (
+                    "enter the number" in lower_clean or "only give a number" in lower_clean
+                )
                 expects_yn = "(y/n)" in lower_clean or "yes' or 'no'" in lower_clean
                 can_resend = (
-                    (expects_num and last_type == "number" and re.fullmatch(r"\d+", last_sent)) or
-                    (expects_yn and last_type == "yesno" and last_sent in {"y", "n"}) or
-                    (not expects_num and not expects_yn and last_sent)
+                    (expects_num and last_type == "number" and re.fullmatch(r"\d+", last_sent))
+                    or (expects_yn and last_type == "yesno" and last_sent in {"y", "n"})
+                    or (not expects_num and not expects_yn and last_sent)
                 )
                 if can_resend:
                     logger.warning("ui rejected input; resending: %s", last_sent)
@@ -1231,26 +1592,47 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
                     needed_key = "invention title"
                 elif "describe the candidate for the closest prior art" in lower_clean:
                     needed_key = "closest prior art description"
-                elif "description of your invention" in lower_clean or "brief description of your invention" in lower_clean:
+                elif (
+                    "description of your invention" in lower_clean
+                    or "brief description of your invention" in lower_clean
+                ):
                     needed_key = "description"
                 elif "technical field of the invention" in lower_clean:
                     needed_key = "technical field"
-                elif "describe the relevant prior art" in lower_clean or "briefly describe the relevant prior art" in lower_clean:
+                elif (
+                    "describe the relevant prior art" in lower_clean
+                    or "briefly describe the relevant prior art" in lower_clean
+                ):
                     needed_key = "prior art"
-                elif "describe the common general knowledge" in lower_clean or "briefly describe the common general knowledge" in lower_clean:
+                elif (
+                    "describe the common general knowledge" in lower_clean
+                    or "briefly describe the common general knowledge" in lower_clean
+                ):
                     needed_key = "common general knowledge"
-                elif "describe the objective technical problem" in lower_clean or "briefly describe the objective technical problem" in lower_clean:
+                elif (
+                    "describe the objective technical problem" in lower_clean
+                    or "briefly describe the objective technical problem" in lower_clean
+                ):
                     needed_key = "obj_t_problem"
-                elif "[q]" in lower_clean or "enter your choice" in lower_clean or "enter the number" in lower_clean or "list the features" in lower_clean:
+                elif (
+                    "[q]" in lower_clean
+                    or "enter your choice" in lower_clean
+                    or "enter the number" in lower_clean
+                    or "list the features" in lower_clean
+                ):
                     go_dynamic = True
 
             if not needed_key and not go_dynamic:
-                if clean.strip().endswith(":") or clean.strip().endswith("?") or "(y/n)" in lower_clean:
+                if (
+                    clean.strip().endswith(":")
+                    or clean.strip().endswith("?")
+                    or "(y/n)" in lower_clean
+                ):
                     go_dynamic = True
                 else:
                     continue
 
-            history = _last_n_qa(qa_log, N_HISTORY)
+            history = _build_history(qa_log)
 
             # ── dynamic route (unknown / special questions) ──────────
 
@@ -1260,9 +1642,22 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
                 if pending_conclusion and pending_conclusion not in clean:
                     prompt = f"{pending_conclusion}\n\n{clean}"
 
-                answer, reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, prompt)
+                answer, reasoning, dyn_msgs = await _call_dynamic(
+                    client, sys_prompt, history, prompt
+                )
                 qa_log.append({"question": clean, "answer": answer, "reasoning": reasoning})
-                turn_logs.append(_log_entry(len(turn_logs) + 1, prompt, answer, reasoning, 0, "dynamic", 0, metadata, full_prompt=dyn_msgs))
+                dyn_log = _log_entry(
+                    len(turn_logs) + 1,
+                    prompt,
+                    answer,
+                    reasoning,
+                    0,
+                    "dynamic",
+                    0,
+                    metadata,
+                    full_prompt=dyn_msgs,
+                )
+                turn_logs.append(dyn_log)
                 pending_conclusion = ""
                 logger.info("  → dynamic: %s", answer)
                 await _send(answer)
@@ -1274,9 +1669,23 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
             section = _section_for_key(needed_key)
             if section is None:
                 # unknown key — dynamic
-                answer, reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, clean)
+                answer, reasoning, dyn_msgs = await _call_dynamic(
+                    client, sys_prompt, history, clean
+                )
                 qa_log.append({"question": clean, "answer": answer, "reasoning": reasoning})
-                turn_logs.append(_log_entry(len(turn_logs) + 1, clean, answer, reasoning, 0, "dynamic", 0, metadata, full_prompt=dyn_msgs))
+                turn_logs.append(
+                    _log_entry(
+                        len(turn_logs) + 1,
+                        clean,
+                        answer,
+                        reasoning,
+                        0,
+                        "dynamic",
+                        0,
+                        metadata,
+                        full_prompt=dyn_msgs,
+                    )
+                )
                 await _send(answer)
                 buffer = []
                 continue
@@ -1297,14 +1706,22 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
                 logger.info("batch fetch '%s' (triggered by %s)", section_label, needed_key)
 
                 batch_results, batch_msgs = await _call_batch(
-                    client, sys_prompt, history, model_class,
-                    section_label, section_keys,
+                    client,
+                    sys_prompt,
+                    history,
+                    model_class,
+                    section_label,
+                    section_keys,
                     feature_name=item_name,
                 )
                 # store batch prompt so it can be attached to each answer logged from this batch
                 batch_prompt_cache[batch_id] = batch_msgs
                 for answer_key, val in batch_results.items():
-                    ck = f"{answer_key}{cache_suffix}" if item_name and answer_key in (_SUB1_KEYS + _SUB2_KEYS) else answer_key
+                    ck = (
+                        f"{answer_key}{cache_suffix}"
+                        if item_name and answer_key in (_SUB1_KEYS + _SUB2_KEYS)
+                        else answer_key
+                    )
                     answers_cache[ck] = val
 
             # look up cache
@@ -1323,17 +1740,51 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
                 elif raw_ans:
                     answer_to_send = raw_ans
 
-            # cache miss or bad → single dynamic call
+            # cache miss or bad → dynamic call with retries until valid
             answer_full_prompt = batch_prompt_cache.get(batch_id)
             if answer_to_send is None:
                 logger.info("cache miss for %s → dynamic", needed_key)
                 prompt = clean
                 if pending_conclusion and pending_conclusion not in clean:
                     prompt = f"{pending_conclusion}\n\n{clean}"
-                dyn_answer, dyn_reasoning, dyn_msgs = await _call_dynamic(client, sys_prompt, history, prompt)
+                dyn_answer, dyn_reasoning, dyn_msgs = None, "", []
+                for _dyn_attempt in range(MAX_RETRIES):
+                    _prompt_attempt = prompt
+                    if _dyn_attempt > 0:
+                        allowed = _allowed_digits(needed_key)
+                        if allowed:
+                            _prompt_attempt = (
+                                prompt
+                                + f"\n\nIMPORTANT: You MUST reply with ONLY a single digit from {sorted(allowed)}. No other text."
+                            )
+                        elif _expects_yes_no(needed_key):
+                            _prompt_attempt = (
+                                prompt
+                                + "\n\nIMPORTANT: You MUST reply with ONLY 'y' or 'n'. No other text."
+                            )
+                        logger.warning("dynamic retry %d for %s", _dyn_attempt + 1, needed_key)
+                    dyn_answer, dyn_reasoning, dyn_msgs = await _call_dynamic(
+                        client, sys_prompt, history, _prompt_attempt
+                    )
+                    if needed_key.startswith("Q"):
+                        norm = _normalize_answer(dyn_answer, needed_key)
+                        if norm and _valid_answer(needed_key, norm):
+                            dyn_answer = norm
+                            break
+                    else:
+                        break
                 if needed_key.startswith("Q"):
                     norm = _normalize_answer(dyn_answer, needed_key)
-                    answer_to_send = norm if norm and _valid_answer(needed_key, norm) else dyn_answer
+                    if norm and _valid_answer(needed_key, norm):
+                        answer_to_send = norm
+                    else:
+                        logger.error(
+                            "dynamic failed to normalise %s after %d attempts, last raw: %r",
+                            needed_key,
+                            MAX_RETRIES,
+                            dyn_answer,
+                        )
+                        answer_to_send = dyn_answer
                 else:
                     answer_to_send = dyn_answer
                 reasoning = dyn_reasoning
@@ -1346,7 +1797,18 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
             pending_conclusion = ""
 
             qa_log.append({"question": clean, "answer": answer_to_send, "reasoning": reasoning})
-            turn_logs.append(_log_entry(len(turn_logs) + 1, logged_q, answer_to_send, reasoning, 0, "batch", 0, metadata, full_prompt=answer_full_prompt))
+            log_entry = _log_entry(
+                len(turn_logs) + 1,
+                logged_q,
+                answer_to_send,
+                reasoning,
+                0,
+                "batch",
+                0,
+                metadata,
+                full_prompt=answer_full_prompt,
+            )
+            turn_logs.append(log_entry)
 
             logger.info("  → %s: %s", needed_key, answer_to_send)
             await _send(answer_to_send)
@@ -1360,12 +1822,29 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
     finally:
         if proc.returncode is None:
             proc.terminate()
+            try:
+                await asyncio.wait_for(proc.wait(), timeout=15.0)
+            except asyncio.TimeoutError:
+                logger.warning("ui.py did not exit after SIGTERM; sending SIGKILL")
+                proc.kill()
+                await proc.wait()
+        elif proc.returncode is not None:
+            # ensure transport is fully reaped even if process already exited
+            try:
+                await asyncio.wait_for(proc.wait(), timeout=5.0)
+            except asyncio.TimeoutError:
+                pass
         logger.info("ui.py process finished")
 
-        # ensure final adm output captured
-        if not full_responses_log.get("Final_ADM_Output"):
-            outcome = _extract_case_outcome(full_output)
-            full_responses_log["Final_ADM_Output"] = outcome or full_output[-4000:].strip()
+        # Always re-extract from the COMPLETE output so we get the main
+        # ADM's final "Case Outcome: <caseName>" (printed last, after all
+        # sub-ADMs).  The in-loop capture may have stopped at a sub-ADM's
+        # outcome if the main ADM's output arrived in the final buffer.
+        final_outcome = _extract_case_outcome(full_output)
+        if final_outcome:
+            full_responses_log["Final_ADM_Output"] = final_outcome
+        elif not full_responses_log.get("Final_ADM_Output"):
+            full_responses_log["Final_ADM_Output"] = full_output[-4000:].strip()
 
         # ── final verdict ────────────────────────────────────────
 
@@ -1379,33 +1858,44 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
         if subs:
             packed = "\n\n---\n\n".join(str(b).strip()[:1200] for b in subs[-4:] if str(b).strip())
             if packed:
-                verdict_msgs.append({"role": "user", "content": f"Sub-ADM Conclusion Summaries:\n{packed}"})
+                verdict_msgs.append(
+                    {"role": "user", "content": f"Sub-ADM Conclusion Summaries:\n{packed}"}
+                )
                 verdict_msgs.append({"role": "assistant", "content": "Sub-ADM conclusions noted."})
 
         verdict_msgs.extend(_last_1_qa(qa_log))
 
-        history_text = "\n\n".join(
-            f"[{m.get('role', '?').upper()}]\n{m.get('content', '')}"
-            for m in verdict_msgs if isinstance(m, dict)
-        )
-        verdict_question_log = f"FINAL VERDICT\n\n=== ADM CONTEXT ===\n{history_text or '[No context]'}"
-
         final_verdict = "ERROR"
         try:
             answer, reasoning, confidence, verdict_full_msgs = await _call_final_verdict(
-                client, sys_prompt, verdict_msgs, case_name, train,
+                client,
+                sys_prompt,
+                verdict_msgs,
+                case_name,
+                train,
             )
-            turn_logs.append(_log_entry(
-                len(turn_logs) + 1, verdict_question_log,
-                answer, reasoning, confidence, "final_verdict", 0, metadata,
-                full_prompt=verdict_full_msgs,
-            ))
+            # Log only the verdict question text; full_prompt has the complete messages sent
+            turn_logs.append(
+                _log_entry(
+                    len(turn_logs) + 1,
+                    "FINAL_VERDICT",
+                    answer,
+                    reasoning,
+                    confidence,
+                    "final_verdict",
+                    0,
+                    metadata,
+                    full_prompt=verdict_full_msgs,
+                )
+            )
             final_verdict = answer
         except Exception as e:
             logger.error("final verdict failed: %s", e)
 
         elapsed_total = time.time() - t_start
-        print(f"Case {case_name} (run {run_id}) done. Verdict: {final_verdict}. Time: {elapsed_total:.2f}s")
+        print(
+            f"Case {case_name} (run {run_id}) done. Verdict: {final_verdict}. Time: {elapsed_total:.2f}s"
+        )
 
         with open(log_path, "w") as f:
             json.dump(turn_logs, f, indent=4)
@@ -1414,31 +1904,40 @@ async def _run_case(client, case_name: str, context_text: str, run_id: int,
 
     return final_verdict
 
+
 # ── experiment runner ────────────────────────────────────────────────────────
 
-async def _run_experiment(data_path: str, dataset: str, config: int, mode: str,
-                          num_runs: int, client, run_start: int = 1):
-    
+
+async def _run_experiment(
+    data_path: str, dataset: str, config: int, mode: str, num_runs: int, client, run_start: int = 1
+):
     """runs the experiments
-    
-    enables 
+
+    enables
         - baseline/ train baseline
-        - tool    
+        - tool
     """
-    
+
     if not os.path.exists(data_path):
         print(f"error: data path {data_path} does not exist")
         return
 
-    #ensures consistent case ordering
+    # ensures consistent case ordering
     cases = sorted(d for d in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, d)))
     print(f"found {len(cases)} cases. starting {num_runs} run(s) from run_{run_start}...")
+    print(f"request concurrency limit: {REQUEST_SEMAPHORE._value}  (REQUEST_SEMAPHORE)")
 
     all_results = {}
-    
+
     for run in range(run_start, run_start + num_runs):
         print(f"\n=== RUN {run}/{num_runs} ===")
-        meta = {"dataset": dataset, "mode": mode, "config": config, "run_id": run, "model": CURRENT_CONFIG["id"]}
+        meta = {
+            "dataset": dataset,
+            "mode": mode,
+            "config": config,
+            "run_id": run,
+            "model": CURRENT_CONFIG["id"],
+        }
         tasks = []
         case_names = []
 
@@ -1469,9 +1968,9 @@ async def _run_experiment(data_path: str, dataset: str, config: int, mode: str,
 
     print(f"\nall {num_runs} run(s) complete.")
 
+
 async def _async_main():
-    
-    #store arguments
+    # store arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, default="gpt", choices=list(MODELS.keys()))
     parser.add_argument("--gpu", type=str, default="gpu31")
@@ -1480,23 +1979,55 @@ async def _async_main():
     parser.add_argument("--data_path", type=str, default="../Data/VALIDATION")
     parser.add_argument("--exp_config", type=int, required=True)
     parser.add_argument("--temperature", type=float, default=0.0)
-    parser.add_argument("--mode", type=str, default="tool", choices=["tool", "baseline", "train_baseline", "train"])
+    parser.add_argument(
+        "--mode", type=str, default="tool", choices=["tool", "baseline", "train_baseline", "train"]
+    )
     parser.add_argument("--runs", type=int, default=1)
-    parser.add_argument("--run_start", type=int, default=1,
-                        help="Run number to start from (default: 1). Use e.g. 2 to resume from run_2.")
+    parser.add_argument(
+        "--run_start",
+        type=int,
+        default=1,
+        help="Run number to start from (default: 1). Use e.g. 2 to resume from run_2.",
+    )
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--raw_data", type=str, default="../Data/Inv_Step_Sampled_Valid.pkl")
     parser.add_argument("--base_case_dir", type=str, default="../Outputs/Valid_Cases")
-    parser.add_argument("--adm_config", type=str, choices=["both", "none", "sub_adm_1", "sub_adm_2"], default="both")
+    parser.add_argument(
+        "--adm_config", type=str, choices=["both", "none", "sub_adm_1", "sub_adm_2"], default="both"
+    )
     parser.add_argument("--adm_initial", action="store_true")
     parser.add_argument(
-        "--questions_file", type=str, default=None,
+        "--questions_file",
+        type=str,
+        default=None,
         help="Path to a questions JSON file (default: ADM/questions.json). "
-             "Use a modified copy for prompt ablation experiments.",
+        "Use a modified copy for prompt ablation experiments.",
     )
     parser.add_argument(
-        "--n_history", type=int, default=1,
+        "--n_history",
+        type=int,
+        default=1,
         help="Number of previous q/a pairs to include as conversation history (default: 1).",
+    )
+    parser.add_argument(
+        "--max_tokens",
+        type=int,
+        default=None,
+        help="Override the model's default max_tokens for every LLM call. "
+        "If not set, the model config default is used.",
+    )
+    parser.add_argument(
+        "--history_mode",
+        type=str,
+        default="raw",
+        choices=["raw"],
+        help="History mode: raw=skilled-person anchor + last N Q/A pairs.",
+    )
+    parser.add_argument(
+        "--llm_timeout_seconds",
+        type=int,
+        default=1800,
+        help="Timeout for one LLM request before retrying. Use 0 to disable.",
     )
     args = parser.parse_args()
 
@@ -1504,39 +2035,62 @@ async def _async_main():
         logging.getLogger().setLevel(logging.DEBUG)
         print("--- debug mode ---")
 
-    #set global vars
-    global ADM_CONFIG, ADM_INITIAL, CURRENT_CONFIG, BASE_CASE_DIR, RAW_DATA, LLM_TEMPERATURE, N_HISTORY
+    # set global vars
+    global \
+        ADM_CONFIG, \
+        ADM_INITIAL, \
+        CURRENT_CONFIG, \
+        BASE_CASE_DIR, \
+        RAW_DATA, \
+        LLM_TEMPERATURE, \
+        N_HISTORY, \
+        HISTORY_MODE, \
+        LLM_TIMEOUT_SECONDS
     ADM_CONFIG = args.adm_config
     ADM_INITIAL = bool(args.adm_initial)
     N_HISTORY = args.n_history
+    HISTORY_MODE = args.history_mode
+    LLM_TIMEOUT_SECONDS = None if args.llm_timeout_seconds <= 0 else args.llm_timeout_seconds
     CURRENT_CONFIG = MODELS.get(args.model, MODELS["gpt"]).copy()
+    if args.max_tokens is not None:
+        CURRENT_CONFIG["max_tokens"] = args.max_tokens
     BASE_CASE_DIR = args.base_case_dir
     LLM_TEMPERATURE = args.temperature
 
     _build_question_caches()
 
-    #load custom questions then rebuilds the question caches
+    # load custom questions then rebuilds the question caches
     if args.questions_file:
         logger.info("loading questions from %s", args.questions_file)
-        load_questions(args.questions_file)   # stores in inventive_step_ADM module cache
-        set_questions(load_questions())       # no-op if already loaded; ensures consistency
-        _build_question_caches()             # rebuild batched prompt dicts with new text
+        load_questions(args.questions_file)  # stores in inventive_step_ADM module cache
+        set_questions(load_questions())  # no-op if already loaded; ensures consistency
+        _build_question_caches()  # rebuild batched prompt dicts with new text
         logger.info("question caches rebuilt from %s", args.questions_file)
 
-    #loads the raw data
+    # loads the raw data
     try:
         RAW_DATA = pd.read_pickle(args.raw_data)
     except Exception as e:
         logger.warning("could not load raw data: %s", e)
         RAW_DATA = pd.DataFrame()
 
-    #sets the VLLM server
-    api_base = f"http://{args.gpu}.barkla2.liv.alces.network:{args.port}/v1"
+    # sets the VLLM server
+    gpu_host = args.gpu if ("." in args.gpu) else f"{args.gpu}.barkla2.liv.alces.network"
+    api_base = f"http://{gpu_host}:{args.port}/v1"
     logger.info("connecting to vllm at %s", api_base)
     client = AsyncOpenAI(base_url=api_base, api_key="EMPTY")
 
-    #runs experiments
-    await _run_experiment(args.data_path, args.dataset, args.exp_config, args.mode, args.runs, client, run_start=args.run_start)
+    # runs experiments
+    await _run_experiment(
+        args.data_path,
+        args.dataset,
+        args.exp_config,
+        args.mode,
+        args.runs,
+        client,
+        run_start=args.run_start,
+    )
+
 
 if __name__ == "__main__":
     asyncio.run(_async_main())

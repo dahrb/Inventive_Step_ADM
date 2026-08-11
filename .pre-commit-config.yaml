@@ -1,0 +1,34 @@
+# Pre-commit hooks for ADM-JURIX.
+# Install once:   uv run pre-commit install
+# Run manually:   uv run pre-commit run --all-files
+#
+# Notebooks are intentionally NOT stripped/reformatted — the Analysis notebooks
+# store their rendered results and figures on purpose.
+exclude: '^(ADM/old/|Outputs_old/|webapp/|\.venv|Data/|LLM_Models/|Outputs/)'
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\.ipynb$'
+      - id: end-of-file-fixer
+        exclude: '\.ipynb$'
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+        exclude: '\.ipynb$'
+      - id: check-case-conflict
+      - id: check-added-large-files
+        args: [--maxkb=40000]   # catches new >40 MB blobs; existing tesseract AppImage (34 MB) still flagged in review
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.10
+    hooks:
+      - id: ruff            # lint (import-sorting only for now; see [tool.ruff.lint] in pyproject)
+        args: [--fix]
+      - id: ruff-format     # style formatting for active .py

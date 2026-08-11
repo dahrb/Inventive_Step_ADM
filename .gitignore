@@ -20,3 +20,23 @@ Outputs/
 Outputs_old
 Eval_Cases/
 *.xml
+
+# ── Environments (uv) — never commit the venvs (symlinks to /mnt/data1) ────────
+.venv
+.venv_11_2
+.venv*/
+.ruff_cache/
+.pre-commit-cache/
+
+# ── Generated data artifacts / scratch run dirs ───────────────────────────────
+*.jsonl
+Data/sft_*.json
+Data/DIAGNOSTIC_CASES/
+Data/DIAG_*/
+Data/TRAIN_T*/
+QWEN_TRAIN_MODE/
+
+# ── Large binaries that must not enter git history ────────────────────────────
+*.AppImage
+*.tar.gz
+*.zip

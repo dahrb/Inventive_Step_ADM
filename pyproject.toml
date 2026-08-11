@@ -5,13 +5,70 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "dataset>=2.0.0",
     "flash-attn>=2.8.3",
     "ipywidgets>=8.1.8",
+    "matplotlib>=3.10.8",
+    "nvidia-cudnn-cu12>=9.10.2.21",
+    "nvidia-cusparselt-cu12>=0.7.1",
+    "nvidia-nccl-cu12>=2.27.5",
+    "nvidia-nvshmem-cu12>=3.4.5",
     "pandas>=2.3.3",
+    "peft>=0.19.1",
     "pydot>=4.0.1",
     "pythonds>=1.2.1",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "trl>=1.2.0",
     "vllm>=0.19.0",
 ]
 
 [[tool.uv.index]]
 url = "https://pypi.org/simple"
+
+# ── Environments ──────────────────────────────────────────────────────────────
+# uv is the ONLY environment manager for this repo. There are two environments:
+#
+#   .venv       PRIMARY (~90% of the code: ADM engine, training, Llama/Qwen serving).
+#               Managed by this pyproject.toml + uv.lock.  Recreate with:  uv sync
+#
+#   .venv_11_2  SECONDARY (GPT-OSS-120B vLLM server only — needs vLLM 0.11.2 / torch 2.9,
+#               which conflict with the primary's vLLM 0.19 / torch 2.10+cu128, so it
+#               cannot live in this pyproject). Pinned in requirements/vllm-0.11.2.txt.
+#               Recreate with:
+#                   uv venv .venv_11_2 --python 3.12
+#                   uv pip sync --python .venv_11_2 requirements/vllm-0.11.2.txt
+#
+# Fully-pinned snapshots of BOTH envs live in requirements/*.txt for exact/fast rebuilds.
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0",
+    "ruff>=0.9",
+]
+# Lightweight deps to run the ADM unit tests (Tests/test_ADM.py) without the heavy
+# vLLM/torch stack — used by CI on a CPU runner.
+test = [
+    "pythonds>=1.2.1",
+    "pydot>=4.0.1",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+    "ADM/old",
+    "Outputs_old",
+    "webapp",
+    ".venv",
+    ".venv_11_2",
+    "Data",
+    "LLM_Models",
+    "Outputs",
+    "*.ipynb",
+]
+
+[tool.ruff.lint]
+# Conservative baseline for the pre-rework snapshot: import-sorting only (safe autofix).
+# Expand (F, E, UP, B, …) during the repo rework once behaviour is covered by tests.
+select = ["I"]

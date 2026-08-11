@@ -22,9 +22,9 @@ Tests cover:
 Last Updated: 16.04.26
 """
 
-import sys
-import os
 import json
+import os
+import sys
 import unittest
 from unittest.mock import MagicMock, patch
 
@@ -40,48 +40,49 @@ sys.modules["pythonds"].Stack = MagicMock
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "ADM"))
 
+import logging
+
 import batched_hybrid_system as bhs
 from batched_hybrid_system import (
-    _parse_json,
-    _normalize_answer,
-    _valid_answer,
-    _expects_yes_no,
-    _allowed_digits,
-    _option_text_map,
-    _section_for_key,
-    _strip_decorators,
-    _extract_case_outcome,
-    _extract_sub_adm_conclusion,
-    _detect_item_name,
-    _log_entry,
-    _build_request,
-    _get_content,
-    _system_prompt,
-    _last_n_qa,
-    _last_1_qa,
-    _question_text,
     _FIELD_TO_KEY,
     _INITIAL_KEYS,
-    _SUB1_KEYS,
     _INTER_KEYS,
-    _SUB2_KEYS,
     _NO_SUB1_KEYS,
     _NO_SUB2_KEYS,
     _SECONDARY_KEYS,
     _SECTIONS,
+    _SUB1_KEYS,
+    _SUB2_KEYS,
     MODELS,
-    QuestionResponse,
     FinalVerdictResponse,
     InitialADM_Batch,
-    SubADM1_Batch,
-    SubADM2_Batch,
     MainADM_Inter_Batch,
     MainADM_No_Sub_1,
     MainADM_No_Sub_2,
+    QuestionResponse,
     SecondaryIndicators_Batch,
+    SubADM1_Batch,
+    SubADM2_Batch,
+    _allowed_digits,
+    _build_request,
+    _detect_item_name,
+    _expects_yes_no,
+    _extract_case_outcome,
+    _extract_sub_adm_conclusion,
+    _get_content,
+    _last_1_qa,
+    _last_n_qa,
+    _log_entry,
+    _normalize_answer,
+    _option_text_map,
+    _parse_json,
+    _question_text,
+    _section_for_key,
+    _strip_decorators,
+    _system_prompt,
+    _valid_answer,
 )
 
-import logging
 logging.disable(logging.CRITICAL)
 
 
@@ -98,6 +99,7 @@ def setUpModule():
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
+
 def _set_config(name: str):
     """Point CURRENT_CONFIG at one of the defined model configs."""
     bhs.CURRENT_CONFIG = MODELS[name]
@@ -111,8 +113,8 @@ def _clear_config():
 # _parse_json
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestParseJson(unittest.TestCase):
 
+class TestParseJson(unittest.TestCase):
     def test_clean_object(self):
         raw = '{"answer": "y", "reasoning": "because"}'
         self.assertEqual(_parse_json(raw), {"answer": "y", "reasoning": "because"})
@@ -168,6 +170,7 @@ class TestParseJson(unittest.TestCase):
 # ─────────────────────────────────────────────────────────────────────────────
 # _normalize_answer / _valid_answer / helpers
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 class TestNormalizeAnswer(unittest.TestCase):
     """Tests for _normalize_answer.
@@ -240,7 +243,6 @@ class TestNormalizeAnswer(unittest.TestCase):
 
 
 class TestValidAnswer(unittest.TestCase):
-
     def test_yn_valid_yes(self):
         self.assertTrue(_valid_answer("Q13", "y"))
 
@@ -275,7 +277,6 @@ class TestValidAnswer(unittest.TestCase):
 
 
 class TestExpectsYesNo(unittest.TestCase):
-
     def test_yes_no_question(self):
         # Q13 asks for y/n
         self.assertTrue(_expects_yes_no("Q13"))
@@ -289,7 +290,6 @@ class TestExpectsYesNo(unittest.TestCase):
 
 
 class TestAllowedDigits(unittest.TestCase):
-
     def test_multi_choice_returns_nonempty_set(self):
         digits = _allowed_digits("Q1")
         self.assertIsInstance(digits, set)
@@ -305,7 +305,6 @@ class TestAllowedDigits(unittest.TestCase):
 
 
 class TestOptionTextMap(unittest.TestCase):
-
     def test_multi_choice_has_entries(self):
         omap = _option_text_map("Q1")
         self.assertIsInstance(omap, dict)
@@ -324,8 +323,8 @@ class TestOptionTextMap(unittest.TestCase):
 # _section_for_key
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestSectionForKey(unittest.TestCase):
 
+class TestSectionForKey(unittest.TestCase):
     def test_initial_key_routed(self):
         result = _section_for_key("Q1")
         self.assertIsNotNone(result)
@@ -385,8 +384,8 @@ class TestSectionForKey(unittest.TestCase):
 # Text helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestStripDecorators(unittest.TestCase):
 
+class TestStripDecorators(unittest.TestCase):
     def test_removes_equals_line(self):
         text = "=====\nHello\n====="
         result = _strip_decorators(text)
@@ -430,7 +429,6 @@ class TestStripDecorators(unittest.TestCase):
 
 
 class TestExtractCaseOutcome(unittest.TestCase):
-
     def test_extracts_case_outcome(self):
         text = "Some text\nCase Outcome: GRANTED\nMore text"
         result = _extract_case_outcome(text)
@@ -456,7 +454,6 @@ class TestExtractCaseOutcome(unittest.TestCase):
 
 
 class TestExtractSubAdmConclusion(unittest.TestCase):
-
     def test_extracts_early_stop(self):
         text = "Preamble\n[Early Stop] No technical contribution found.\n\n[Q1] Next question"
         result = _extract_sub_adm_conclusion(text)
@@ -482,7 +479,6 @@ class TestExtractSubAdmConclusion(unittest.TestCase):
 
 
 class TestDetectItemName(unittest.TestCase):
-
     def test_detects_feature(self):
         text = "Feature: transparent conductive layer\nSome other text"
         self.assertEqual(_detect_item_name(text), "transparent conductive layer")
@@ -510,21 +506,36 @@ class TestDetectItemName(unittest.TestCase):
 # _log_entry
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestLogEntry(unittest.TestCase):
 
+class TestLogEntry(unittest.TestCase):
     def _make_entry(self, **kwargs):
         defaults = dict(
-            turn=1, question="Q?", answer="y", reasoning="because",
-            score=0, source="batch", elapsed=1.5,
-            metadata={"model": "gpt", "config": 3}
+            turn=1,
+            question="Q?",
+            answer="y",
+            reasoning="because",
+            score=0,
+            source="batch",
+            elapsed=1.5,
+            metadata={"model": "gpt", "config": 3},
         )
         defaults.update(kwargs)
         return _log_entry(**defaults)
 
     def test_keys_present(self):
         entry = self._make_entry()
-        for key in ("turn", "timestamp", "question", "answer", "reasoning",
-                    "score", "source", "elapsed_seconds", "model_id", "metadata"):
+        for key in (
+            "turn",
+            "timestamp",
+            "question",
+            "answer",
+            "reasoning",
+            "score",
+            "source",
+            "elapsed_seconds",
+            "model_id",
+            "metadata",
+        ):
             self.assertIn(key, entry)
 
     def test_turn_stored(self):
@@ -546,6 +557,7 @@ class TestLogEntry(unittest.TestCase):
 
     def test_timestamp_format(self):
         import re
+
         entry = self._make_entry()
         self.assertRegex(entry["timestamp"], r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}")
 
@@ -554,8 +566,8 @@ class TestLogEntry(unittest.TestCase):
 # _build_request
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestBuildRequest(unittest.TestCase):
 
+class TestBuildRequest(unittest.TestCase):
     def setUp(self):
         bhs.LLM_TEMPERATURE = 0.0
 
@@ -640,8 +652,8 @@ class TestBuildRequest(unittest.TestCase):
 # _get_content
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestGetContent(unittest.TestCase):
 
+class TestGetContent(unittest.TestCase):
     def _mock_resp(self, content: str):
         resp = MagicMock()
         resp.choices[0].message.content = content
@@ -668,8 +680,8 @@ class TestGetContent(unittest.TestCase):
 # _system_prompt
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestSystemPrompt(unittest.TestCase):
 
+class TestSystemPrompt(unittest.TestCase):
     def test_contains_context(self):
         prompt = _system_prompt("MY CONTEXT", "T001")
         self.assertIn("MY CONTEXT", prompt)
@@ -704,8 +716,8 @@ class TestSystemPrompt(unittest.TestCase):
 # _last_n_qa / _last_1_qa
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestLastNQA(unittest.TestCase):
 
+class TestLastNQA(unittest.TestCase):
     def _make_log(self, n=5):
         return [
             {"question": f"Q{i}?", "answer": str(i), "reasoning": f"reason{i}"}
@@ -756,8 +768,8 @@ class TestLastNQA(unittest.TestCase):
 # Question text / caches
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestQuestionText(unittest.TestCase):
 
+class TestQuestionText(unittest.TestCase):
     def test_q1_text_nonempty(self):
         self.assertTrue(len(_question_text("Q1")) > 0)
 
@@ -796,15 +808,21 @@ class TestQuestionText(unittest.TestCase):
 # Key-list constant integrity
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestKeyListIntegrity(unittest.TestCase):
 
+class TestKeyListIntegrity(unittest.TestCase):
     def test_no_duplicate_keys_across_sections(self):
         all_keys = (
-            _INITIAL_KEYS + _SUB1_KEYS + _INTER_KEYS +
-            _SUB2_KEYS + _NO_SUB1_KEYS + _NO_SUB2_KEYS + _SECONDARY_KEYS
+            _INITIAL_KEYS
+            + _SUB1_KEYS
+            + _INTER_KEYS
+            + _SUB2_KEYS
+            + _NO_SUB1_KEYS
+            + _NO_SUB2_KEYS
+            + _SECONDARY_KEYS
         )
-        self.assertEqual(len(all_keys), len(set(all_keys)),
-                         "Duplicate keys found across section key lists")
+        self.assertEqual(
+            len(all_keys), len(set(all_keys)), "Duplicate keys found across section key lists"
+        )
 
     def test_initial_keys_count(self):
         # 6 info keys + Q1–Q16 = 22
@@ -835,8 +853,15 @@ class TestKeyListIntegrity(unittest.TestCase):
         section_keys = set()
         for keys, _, _ in _SECTIONS:
             section_keys.update(keys)
-        for k in (_INITIAL_KEYS + _SUB1_KEYS + _INTER_KEYS +
-                  _SUB2_KEYS + _NO_SUB1_KEYS + _NO_SUB2_KEYS + _SECONDARY_KEYS):
+        for k in (
+            _INITIAL_KEYS
+            + _SUB1_KEYS
+            + _INTER_KEYS
+            + _SUB2_KEYS
+            + _NO_SUB1_KEYS
+            + _NO_SUB2_KEYS
+            + _SECONDARY_KEYS
+        ):
             self.assertIn(k, section_keys, msg=f"Key {k} missing from _SECTIONS")
 
 
@@ -844,22 +869,31 @@ class TestKeyListIntegrity(unittest.TestCase):
 # _FIELD_TO_KEY mapping completeness
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestFieldToKey(unittest.TestCase):
 
+class TestFieldToKey(unittest.TestCase):
     def test_all_values_are_strings(self):
         for field, key in _FIELD_TO_KEY.items():
             self.assertIsInstance(key, str, msg=f"Value for {field} is not str")
 
     def test_all_q_values_in_some_key_list(self):
         all_q_keys = set(
-            _INITIAL_KEYS + _SUB1_KEYS + _INTER_KEYS +
-            _SUB2_KEYS + _NO_SUB1_KEYS + _NO_SUB2_KEYS + _SECONDARY_KEYS
+            _INITIAL_KEYS
+            + _SUB1_KEYS
+            + _INTER_KEYS
+            + _SUB2_KEYS
+            + _NO_SUB1_KEYS
+            + _NO_SUB2_KEYS
+            + _SECONDARY_KEYS
         )
         for field, key in _FIELD_TO_KEY.items():
             if key.startswith("Q") or key in (
-                "invention title", "description", "technical field",
-                "prior art", "common general knowledge",
-                "closest prior art description", "obj_t_problem"
+                "invention title",
+                "description",
+                "technical field",
+                "prior art",
+                "common general knowledge",
+                "closest prior art description",
+                "obj_t_problem",
             ):
                 self.assertIn(key, all_q_keys, msg=f"Field {field} maps to unknown key {key}")
 
@@ -882,8 +916,8 @@ class TestFieldToKey(unittest.TestCase):
 # Pydantic schema round-trip
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestPydanticSchemas(unittest.TestCase):
 
+class TestPydanticSchemas(unittest.TestCase):
     def _qr(self, answer="y", reasoning="test"):
         return {"answer": answer, "reasoning": reasoning}
 
@@ -932,24 +966,39 @@ class TestPydanticSchemas(unittest.TestCase):
     def test_model_fields_match_field_to_key(self):
         """Every pydantic field in batch models should appear in _FIELD_TO_KEY."""
         batch_models = [
-            InitialADM_Batch, SubADM1_Batch, SubADM2_Batch,
-            MainADM_Inter_Batch, MainADM_No_Sub_1, MainADM_No_Sub_2,
+            InitialADM_Batch,
+            SubADM1_Batch,
+            SubADM2_Batch,
+            MainADM_Inter_Batch,
+            MainADM_No_Sub_1,
+            MainADM_No_Sub_2,
             SecondaryIndicators_Batch,
         ]
         for model in batch_models:
             for field_name in model.model_fields:
-                self.assertIn(field_name, _FIELD_TO_KEY,
-                              msg=f"Field '{field_name}' in {model.__name__} missing from _FIELD_TO_KEY")
+                self.assertIn(
+                    field_name,
+                    _FIELD_TO_KEY,
+                    msg=f"Field '{field_name}' in {model.__name__} missing from _FIELD_TO_KEY",
+                )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # MODELS config structure
 # ─────────────────────────────────────────────────────────────────────────────
 
-class TestModelsConfig(unittest.TestCase):
 
+class TestModelsConfig(unittest.TestCase):
     def test_all_models_have_required_keys(self):
-        required = {"id", "guided_json", "reasoning_effort", "thinking", "seed", "max_tokens", "context_limit"}
+        required = {
+            "id",
+            "guided_json",
+            "reasoning_effort",
+            "thinking",
+            "seed",
+            "max_tokens",
+            "context_limit",
+        }
         for name, cfg in MODELS.items():
             for key in required:
                 self.assertIn(key, cfg, msg=f"Model '{name}' missing key '{key}'")
