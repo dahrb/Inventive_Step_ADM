@@ -40,3 +40,12 @@ QWEN_TRAIN_MODE/
 *.AppImage
 *.tar.gz
 *.zip
+
+# ── All SLURM launch/run scripts live here, non-tracked (cluster-specific) ─────
+scripts/
+
+# ── Internal-only working report (not part of the published repo) ─────────────
+Analysis/report.md
+
+# ── Regenerable notebook HTML exports ─────────────────────────────────────────
+Analysis/*.html

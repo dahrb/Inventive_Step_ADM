@@ -22,24 +22,25 @@ OUT_BASE = Path("/users/sgdbareh/scratch/ADM_JURIX/Outputs/GPT_TRAIN_DEFAULT")
 
 EXPERIMENTS = [
     {
-        "exp_dir":    "tool_sub1_default",
+        "exp_dir": "tool_sub1_default",
         "results_fn": "results_main_tool_config3_sub_adm_1_True.json",
-        "config":     "3",
-        "mode":       "tool",
+        "config": "3",
+        "mode": "tool",
         "adm_config": "sub_adm_1",
-        "adm_initial":"True",
-        "runs":       [1, 2, 3],
+        "adm_initial": "True",
+        "runs": [1, 2, 3],
     },
     {
-        "exp_dir":    "tool_sub2_default",
+        "exp_dir": "tool_sub2_default",
         "results_fn": "results_main_tool_config3_sub_adm_2_True.json",
-        "config":     "3",
-        "mode":       "tool",
+        "config": "3",
+        "mode": "tool",
         "adm_config": "sub_adm_2",
-        "adm_initial":"True",
-        "runs":       [1, 2],          # run_3 still missing — will be run separately
+        "adm_initial": "True",
+        "runs": [1, 2],  # run_3 still missing — will be run separately
     },
 ]
+
 
 def read_verdict(log_path: Path) -> str | None:
     """Extract verdict from a per-case log.json.
@@ -62,12 +63,13 @@ def read_verdict(log_path: Path) -> str | None:
         print(f"  WARN: could not read {log_path}: {e}")
     return None
 
+
 def reconstruct(exp: dict):
-    exp_dir     = OUT_BASE / exp["exp_dir"]
-    results_fn  = exp_dir / exp["results_fn"]
-    adm_config  = exp["adm_config"]
+    exp_dir = OUT_BASE / exp["exp_dir"]
+    results_fn = exp_dir / exp["results_fn"]
+    adm_config = exp["adm_config"]
     adm_initial = exp["adm_initial"]
-    config      = exp["config"]
+    config = exp["config"]
 
     # Load existing results file if present (may already have some runs)
     if results_fn.exists():
@@ -76,10 +78,7 @@ def reconstruct(exp: dict):
     else:
         existing = {}
 
-    case_dirs = sorted(
-        d for d in exp_dir.iterdir()
-        if d.is_dir() and not d.name.startswith(".")
-    )
+    case_dirs = sorted(d for d in exp_dir.iterdir() if d.is_dir() and not d.name.startswith("."))
     print(f"{exp['exp_dir']}: found {len(case_dirs)} case directories")
 
     changed = False
@@ -94,8 +93,15 @@ def reconstruct(exp: dict):
         missing = 0
         for case_dir in case_dirs:
             # log path: <case>/<run_N>/config_<C>/tool/<adm_config>/<adm_initial>/log.json
-            log_path = (case_dir / f"run_{run_num}" / f"config_{config}"
-                        / "tool" / adm_config / adm_initial / "log.json")
+            log_path = (
+                case_dir
+                / f"run_{run_num}"
+                / f"config_{config}"
+                / "tool"
+                / adm_config
+                / adm_initial
+                / "log.json"
+            )
             if not log_path.exists():
                 missing += 1
                 continue
@@ -120,10 +126,11 @@ def reconstruct(exp: dict):
     else:
         print(f"  → no changes needed")
 
+
 if __name__ == "__main__":
     for exp in EXPERIMENTS:
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"Reconstructing: {exp['exp_dir']}")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
         reconstruct(exp)
     print("\nDone.")

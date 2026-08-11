@@ -18,6 +18,21 @@ from pythonds import Stack
 
 logger = logging.getLogger(__name__)
 
+# All generated figures (.png/.svg) are routed to the repo-level Figs/ directory.
+# Override with the FIGS_DIR environment variable if needed.
+FIGS_DIR = os.environ.get(
+    "FIGS_DIR",
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Figs"),
+)
+
+
+def _fig_path(filename: str) -> str:
+    """Route a bare filename into FIGS_DIR; leave explicit paths untouched."""
+    os.makedirs(FIGS_DIR, exist_ok=True)
+    if os.path.dirname(filename):
+        return filename
+    return os.path.join(FIGS_DIR, filename)
+
 
 class ADM:
     """
@@ -893,7 +908,7 @@ class ADM:
                     graph.add_edge(edge)
 
         # 4. Save Output
-        out_name = filename if filename else f"{self.name}_hierarchy.png"
+        out_name = _fig_path(filename if filename else f"{self.name}_hierarchy.png")
 
         try:
             graph.write_png(out_name)
@@ -972,7 +987,7 @@ class ADM:
                     graph.add_edge(edge)
 
         # 4. Save Output
-        out_name = filename if filename else f"{self.name}_minimalist.png"
+        out_name = _fig_path(filename if filename else f"{self.name}_minimalist.png")
 
         try:
             graph.write_png(out_name)
@@ -980,15 +995,17 @@ class ADM:
         except Exception as e:
             print(f"Graphviz Error: {e}")
 
-    def visualiseSubADMs(self, output_dir="sub_adm_viz"):
+    def visualiseSubADMs(self, output_dir=None):
         """
         Iterates through all evaluated Sub-ADMs and generates visualization graphs for them.
 
         Parameters
         ----------
         output_dir : str
-            Directory to save the images (default: "sub_adm_viz")
+            Directory to save the images (default: Figs/sub_adm_viz).
         """
+        if output_dir is None:
+            output_dir = os.path.join(FIGS_DIR, "sub_adm_viz")
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
