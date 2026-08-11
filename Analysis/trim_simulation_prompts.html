@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Trim Simulation — Prompt Comparison</title>
+<style>
+body { font-family: 'Segoe UI', Arial, sans-serif; margin: 20px; background: #fafafa; }
+h1 { color: #1565C0; }  h2 { color: #333; margin-top: 2em; }  h3 { color: #555; }
+.case-block { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin: 10px 0; background: white; }
+.turn-block { margin: 8px 0; padding: 10px; border-left: 4px solid #1565C0; background: #f8f9fa; }
+.msg { margin: 4px 0; padding: 6px 10px; border-radius: 4px; font-size: 13px; }
+.msg-system { background: #E3F2FD; border-left: 3px solid #1565C0; }
+.msg-user { background: #E8F5E9; border-left: 3px solid #4CAF50; }
+.msg-assistant { background: #FFF3E0; border-left: 3px solid #FF9800; }
+.msg-content { white-space: pre-wrap; word-break: break-word; max-height: 200px; overflow-y: auto; font-size: 12px; }
+.stats { font-weight: bold; color: #E53935; font-size: 13px; }
+.dropped { color: #E53935; font-weight: bold; }
+table { border-collapse: collapse; margin: 10px 0; font-size: 12px; }
+th, td { border: 1px solid #ccc; padding: 4px 8px; text-align: right; }
+th { background: #E3F2FD; }
+.config-header { background: #1565C0; color: white; padding: 8px 12px; border-radius: 4px; margin: 5px 0; }
+summary { cursor: pointer; font-weight: bold; padding: 5px; }
+</style></head><body>
+<h1>§21 Trim Simulation — What the LLM actually sees</h1>
+<p>Generated from pre-trim <code>full_prompt</code> logs. Trimming simulated with exact replica of
+<code>_trim_messages()</code> from <code>batched_hybrid_system.py</code>.</p>
+<p><b>context_limit=32000</b> | Trim levels: 0=off, 1=light(75%), 2=moderate(60%), 3=aggressive(4k cap)</p>
+
+<div class="case-block"><h2>Case: run_1</h2>
+<div class="turn-block"><h3>Turn 1 — Q: [Q] What differences between the invention and the closest prior art can be determined? List the features in the inventi</h3>
+<table><tr><th>Trim Level</th><th>Pre-trim msgs</th><th>Post-trim msgs</th><th>Pre-trim tok</th><th>Post-trim tok</th><th>Msgs dropped</th><th>Effectively stateless?</th></tr>
+<tr><td>trim0</td><td>2</td><td>2</td><td>4281</td><td>4281</td><td>0</td><td>✅ YES</td></tr>
+<tr><td>trim1</td><td>2</td><td>2</td><td>4281</td><td>4281</td><td>0</td><td>✅ YES</td></tr>
+<tr><td>trim2</td><td>2</td><td>2</td><td>4281</td><td>4281</td><td>0</td><td>✅ YES</td></tr>
+<tr><td>trim3</td><td>2</td><td>2</td><td>4281</td><td>4281</td><td>0</td><td>✅ YES</td></tr>
+<tr style="background:#E3F2FD"><td>TRUE STATELESS</td><td>2</td><td>2</td><td>4281</td><td>4281</td><td>n/a</td><td>✅ baseline</td></tr>
+</table>
+<details><summary>trim0: 2 msgs, 4281 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The present appeal lies from the decision of the examining division to refuse European patent application No. EP 01 951 910. II. The examining division found that the patent application did not meet the requirements of Articles 84, 83 and 56 EPC. The following documents were cited in the decision: D1: EP-A-860 197 D2: DE-A-44 22 661 D3: DE-A-42 08 355 D4: EP-A-706 815 D5: US-A-5 435 980 D6: EP-A- 208 036 III. In its communication under Article 15(1) of the Rules of Procedure of the Boards of Appeal (RPBA), the Board expressed its preliminary non-binding opinion that the requests on file appeared inter alia not to meet the requirements of Articles 84 and 56 EPC. IV. In reply to said communication, the applicant (appellant) submitted new requests and the following documents: D7: US-A-4 418 541 D8: US-A-4 553 924 D9: Integrated dry NOx/SOx emissions control system: advanced retractable injection lance SNCR test report, DOE contract Number DE-FC22-91 PC90550, 1997, Section 3. Claim 1 o
+... [TRUNCATED for display — full content 16769 chars / ~4192 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">[Q] What differences between the invention and the closest prior art can be determined? List the features in the invention which are different (maximum of 5 features as a comma-separated list):
+
+IMPORTANT OUTPUT FORMAT: Return ONLY a single JSON object — no prose, no markdown fences:
+{&quot;answer&quot;: &quot;&lt;your answer&gt;&quot;, &quot;reasoning&quot;: &quot;&lt;your step-by-step reasoning&gt;&quot;}</div></div>
+</details>
+<details><summary>trim3: 2 msgs, 4281 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The present appeal lies from the decision of the examining division to refuse European patent application No. EP 01 951 910. II. The examining division found that the patent application did not meet the requirements of Articles 84, 83 and 56 EPC. The following documents were cited in the decision: D1: EP-A-860 197 D2: DE-A-44 22 661 D3: DE-A-42 08 355 D4: EP-A-706 815 D5: US-A-5 435 980 D6: EP-A- 208 036 III. In its communication under Article 15(1) of the Rules of Procedure of the Boards of Appeal (RPBA), the Board expressed its preliminary non-binding opinion that the requests on file appeared inter alia not to meet the requirements of Articles 84 and 56 EPC. IV. In reply to said communication, the applicant (appellant) submitted new requests and the following documents: D7: US-A-4 418 541 D8: US-A-4 553 924 D9: Integrated dry NOx/SOx emissions control system: advanced retractable injection lance SNCR test report, DOE contract Number DE-FC22-91 PC90550, 1997, Section 3. Claim 1 o
+... [TRUNCATED for display — full content 16769 chars / ~4192 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">[Q] What differences between the invention and the closest prior art can be determined? List the features in the invention which are different (maximum of 5 features as a comma-separated list):
+
+IMPORTANT OUTPUT FORMAT: Return ONLY a single JSON object — no prose, no markdown fences:
+{&quot;answer&quot;: &quot;&lt;your answer&gt;&quot;, &quot;reasoning&quot;: &quot;&lt;your step-by-step reasoning&gt;&quot;}</div></div>
+</details>
+<details><summary style="color:#1565C0">TRUE STATELESS: 2 msgs, 4281 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The present appeal lies from the decision of the examining division to refuse European patent application No. EP 01 951 910. II. The examining division found that the patent application did not meet the requirements of Articles 84, 83 and 56 EPC. The following documents were cited in the decision: D1: EP-A-860 197 D2: DE-A-44 22 661 D3: DE-A-42 08 355 D4: EP-A-706 815 D5: US-A-5 435 980 D6: EP-A- 208 036 III. In its communication under Article 15(1) of the Rules of Procedure of the Boards of Appeal (RPBA), the Board expressed its preliminary non-binding opinion that the requests on file appeared inter alia not to meet the requirements of Articles 84 and 56 EPC. IV. In reply to said communication, the applicant (appellant) submitted new requests and the following documents: D7: US-A-4 418 541 D8: US-A-4 553 924 D9: Integrated dry NOx/SOx emissions control system: advanced retractable injection lance SNCR test report, DOE contract Number DE-FC22-91 PC90550, 1997, Section 3. Claim 1 o
+... [TRUNCATED for display — full content 16769 chars / ~4192 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">[Q] What differences between the invention and the closest prior art can be determined? List the features in the invention which are different (maximum of 5 features as a comma-separated list):
+
+IMPORTANT OUTPUT FORMAT: Return ONLY a single JSON object — no prose, no markdown fences:
+{&quot;answer&quot;: &quot;&lt;your answer&gt;&quot;, &quot;reasoning&quot;: &quot;&lt;your step-by-step reasoning&gt;&quot;}</div></div>
+</details>
+</div>
+<div class="turn-block"><h3>Turn 36 — Q: [Q22] Is there an intended use of the data resulting from the feature under consideration?
+
+Feature: systematically shif</h3>
+<table><tr><th>Trim Level</th><th>Pre-trim msgs</th><th>Post-trim msgs</th><th>Pre-trim tok</th><th>Post-trim tok</th><th>Msgs dropped</th><th>Effectively stateless?</th></tr>
+<tr><td>trim0</td><td>4</td><td>4</td><td>12349</td><td>12349</td><td>0</td><td>❌ no</td></tr>
+<tr><td>trim1</td><td>4</td><td>4</td><td>12349</td><td>12349</td><td>0</td><td>❌ no</td></tr>
+<tr><td>trim2</td><td>4</td><td>4</td><td>12349</td><td>12349</td><td>0</td><td>❌ no</td></tr>
+<tr><td>trim3</td><td>4</td><td>2</td><td>12349</td><td>12174</td><td class="dropped">2</td><td>✅ YES</td></tr>
+<tr style="background:#E3F2FD"><td>TRUE STATELESS</td><td>2</td><td>2</td><td>8971</td><td>8971</td><td>n/a</td><td>✅ baseline</td></tr>
+</table>
+<details><summary>trim0: 4 msgs, 12349 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The transfer of the European patent application no. 03078317.9 from Eastman Kodak Company (legal predecessor of the current applicant) to Intellectual Ventures Fund 83 LLC (current applicant) was requested with letter dated 21 March 2013. The registration of the transfer took effect on 21 March 2013, as confirmed by the communication of the EPO dated 2 April 2013. In the following no distinction is made between the current applicant/appellant and its predecessor. II. The applicant (appellant) appealed against the decision of the Examining Division to refuse European patent application no. 03078317.9. III. In the contested decision, the Examining Division came to the conclusion that the subject-matter of claim 1 of the request filed by fax on 26 November 2008 did not involve an inventive step with regard to the following document (Article 56 EPC): D3: EP-A2-0 800 147. The Examining Division identified also the following prior art which had been cited during examination: D1:  WO-A-99
+... [TRUNCATED for display — full content 41212 chars / ~10303 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">[Q29] Are the technical effects of the feature under consideration credible and/or reproducible?
+
+Feature: systematically shifting the color distribution of the exemplar color image
+
+1. Credible
+2. Reproducible
+3. Both
+4. Neither
+Enter the number of the answer you wish to choose (only enter the chosen number):</div></div>
+<div class="msg msg-assistant"><b>assistant</b><div class="msg-content">{&quot;answer&quot;: &quot;3&quot;, &quot;reasoning&quot;: &quot;Shifting the color distribution of a digital image is a well-established, credible, and reproducible technique in image processing and machine learning. It can be implemented using standard algorithms (e.g., adjusting RGB channel offsets or applying color transforms) and consistently produces predictable results across different systems and implementations.&quot;}</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">QUESTIONS TO ANSWER:
+
+--- Q17 ---
+[Q17] Does the feature under consideration make a technical contribution? This means it must have a technical effect.
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+1. It produces an independent technical contribution.
+2. It produces a contribution in combination with other technical features to the invention?
+3. It does not produce a technical contribution.
+
+Enter the number of the answer you wish to choose (only enter the chosen number):
+
+--- Q19 ---
+[Q19] What is the primary nature of the distinguishing feature under consideration?
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+1. A computer simulation
+2. The processing of numerical data
+3. A mathematical method or algorithm
+4. Other excluded fields
+5. None of the above
+
+Enter the number of the answer you wish to choose (only enter the chosen number):
+
+--- Q20 ---
+[Q20] Is the feature under consideration a technical implementation of a non-technical method i.e. game rules or a business method, and does it circumvent the technical problem rather than addressing it in an inherently technical way?
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q21 ---
+[Q21] Is the feature under consideration a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q22 ---
+[Q22] Is there an intended use of the data resulting from the feature under consideration?
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q23 ---
+[Q23] Is there a potential technical effect of the data either explicitly or implicitly spec
+... [TRUNCATED for display — full content 7485 chars / ~1871 tok]</div></div>
+</details>
+<details><summary>trim3: 2 msgs, 12174 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The transfer of the European patent application no. 03078317.9 from Eastman Kodak Company (legal predecessor of the current applicant) to Intellectual Ventures Fund 83 LLC (current applicant) was requested with letter dated 21 March 2013. The registration of the transfer took effect on 21 March 2013, as confirmed by the communication of the EPO dated 2 April 2013. In the following no distinction is made between the current applicant/appellant and its predecessor. II. The applicant (appellant) appealed against the decision of the Examining Division to refuse European patent application no. 03078317.9. III. In the contested decision, the Examining Division came to the conclusion that the subject-matter of claim 1 of the request filed by fax on 26 November 2008 did not involve an inventive step with regard to the following document (Article 56 EPC): D3: EP-A2-0 800 147. The Examining Division identified also the following prior art which had been cited during examination: D1:  WO-A-99
+... [TRUNCATED for display — full content 41212 chars / ~10303 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">QUESTIONS TO ANSWER:
+
+--- Q17 ---
+[Q17] Does the feature under consideration make a technical contribution? This means it must have a technical effect.
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+1. It produces an independent technical contribution.
+2. It produces a contribution in combination with other technical features to the invention?
+3. It does not produce a technical contribution.
+
+Enter the number of the answer you wish to choose (only enter the chosen number):
+
+--- Q19 ---
+[Q19] What is the primary nature of the distinguishing feature under consideration?
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+1. A computer simulation
+2. The processing of numerical data
+3. A mathematical method or algorithm
+4. Other excluded fields
+5. None of the above
+
+Enter the number of the answer you wish to choose (only enter the chosen number):
+
+--- Q20 ---
+[Q20] Is the feature under consideration a technical implementation of a non-technical method i.e. game rules or a business method, and does it circumvent the technical problem rather than addressing it in an inherently technical way?
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q21 ---
+[Q21] Is the feature under consideration a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q22 ---
+[Q22] Is there an intended use of the data resulting from the feature under consideration?
+
+Feature: systematically shifting the illuminant quality of the exemplar color image
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q23 ---
+[Q23] Is there a potential technical effect of the data either explicitly or implicitly spec
+... [TRUNCATED for display — full content 7485 chars / ~1871 tok]</div></div>
+</details>
+<details><summary style="color:#1565C0">TRUE STATELESS: 2 msgs, 8971 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The appeal lies from the decision of the examining division to refuse the European patent application No. 03 761 157.1. II. In the reasons given for the refusal, the examining division referred inter alia to the following state of the art: D2:    WO 98/13131 A1; D5:    US 4 191 182; and D9:    US 5 695 653. The examining division concluded that the subject-matter of the respective claims 1 according to the then pending requests was either not clear, not novel in view of D2 (figure 8), and/or not inventive in view of a combination of D9, taken as closest prior art, with D5. III. In its statement of grounds, the appellant (applicant) submitted that the examining division&#x27;s findings were erroneous because they were based on a wrong interpretation of the wording of the claims. With the statement of grounds it filed four amended claim requests. IV. The board summoned the appellant to oral proceedings, indicating its preliminary view regarding inter alia the interpretation and clarity of
+... [TRUNCATED for display — full content 28970 chars / ~7242 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">QUESTIONS TO ANSWER:
+
+--- Q17 ---
+[Q17] Does the feature under consideration make a technical contribution? This means it must have a technical effect.
+
+Feature: vortex motion induced by arrangement
+1. It produces an independent technical contribution.
+2. It produces a contribution in combination with other technical features to the invention?
+3. It does not produce a technical contribution.
+
+Enter the number of the answer you wish to choose (only enter the chosen number):
+
+--- Q19 ---
+[Q19] What is the primary nature of the distinguishing feature under consideration?
+
+Feature: vortex motion induced by arrangement
+1. A computer simulation
+2. The processing of numerical data
+3. A mathematical method or algorithm
+4. Other excluded fields
+5. None of the above
+
+Enter the number of the answer you wish to choose (only enter the chosen number):
+
+--- Q20 ---
+[Q20] Is the feature under consideration a technical implementation of a non-technical method i.e. game rules or a business method, and does it circumvent the technical problem rather than addressing it in an inherently technical way?
+
+Feature: vortex motion induced by arrangement
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q21 ---
+[Q21] Is the feature under consideration a specific technical adaptation which is specific for that implementation in that its design is motivated by technical considerations relating to the internal functioning of the computer system or network.
+
+Feature: vortex motion induced by arrangement
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q22 ---
+[Q22] Is there an intended use of the data resulting from the feature under consideration?
+
+Feature: vortex motion induced by arrangement
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q23 ---
+[Q23] Is there a potential technical effect of the data either explicitly or implicitly specified in the claim?
+
+Feature: vortex motion induced by arrangement
+
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):
+
+--- Q24 ---
+[Q24] Does the technical contribution of the feature under consideration hav
+... [TRUNCATED for display — full content 6915 chars / ~1728 tok]</div></div>
+</details>
+</div>
+<div class="turn-block"><h3>Turn 53 — Q: FINAL VERDICT
+
+=== ADM CONTEXT ===
+[USER]
+Final ADM Output Summary:
+Case Outcome: T263711
+Accepted factors: [&#x27;ReliableTe</h3>
+<table><tr><th>Trim Level</th><th>Pre-trim msgs</th><th>Post-trim msgs</th><th>Pre-trim tok</th><th>Post-trim tok</th><th>Msgs dropped</th><th>Effectively stateless?</th></tr>
+<tr><td>trim0</td><td>8</td><td>8</td><td>7384</td><td>7384</td><td>0</td><td>❌ no</td></tr>
+<tr><td>trim1</td><td>8</td><td>8</td><td>7384</td><td>7384</td><td>0</td><td>❌ no</td></tr>
+<tr><td>trim2</td><td>8</td><td>8</td><td>7384</td><td>7384</td><td>0</td><td>❌ no</td></tr>
+<tr><td>trim3</td><td>8</td><td>2</td><td>7384</td><td>5963</td><td class="dropped">6</td><td>✅ YES</td></tr>
+</table>
+<details><summary>trim0: 8 msgs, 7384 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The appeal was lodged by the applicant (hereinafter &quot;appellant&quot;) against the decision of the examining division to refuse European patent application No. 02 799 751. This application was filed as an international application and published as WO 03/054019 (hereafter the &quot;application&quot;) having the title &quot;Therapeutic anti-TIRC7 antibodies for use in immune related and other diseases&quot;. II. The examining division held inter alia that the subject-matter of claim 1 of the sole request before it lacked inventive step (Article 56 EPC) having regard to the disclosure of document D1 alone (the respective document is identified in section VI below). III. The appellant indicated with its notice of appeal that its main request corresponded to the request on which the impugned decision was based, and filed with its statement of grounds of appeal three auxiliary requests. Claim 1 of the main request reads: &quot;1. A monoclonal antibody or antigen binding molecule which is capable of binding to an antig
+... [TRUNCATED for display — full content 23648 chars / ~5912 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">Final ADM Output Summary:
+Case Outcome: T263711
+Accepted factors: [&#x27;ReliableTechnicalEffect&#x27;, &#x27;DistinguishingFeatures&#x27;, &#x27;Novelty&#x27;, &#x27;TechnicalContribution&#x27;, &#x27;Contribution&#x27;, &#x27;UnexpectedEffect&#x27;, &#x27;Synergy&#x27;, &#x27;FunctionalInteraction&#x27;, &#x27;Combination&#x27;, &#x27;CandidateOTP&#x27;, &#x27;OTPNotObvious&#x27;, &#x27;ValidOTP&#x27;, &#x27;ObjectiveTechnicalProblem&#x27;, &#x27;NonObviousOTP&#x27;, &#x27;BioTech&#x27;, &#x27;Antibody&#x27;, &#x27;SubjectMatterAntibody&#x27;, &#x27;KnownTechnique&#x27;, &#x27;SecondaryIndicator&#x27;, &#x27;AntibodyObvious&#x27;]
+==================================================
+Reasoning:
+there is no inventive step — a secondary indicator of obviousness is present
+  └─ there is a secondary indicator - the invention concerns an obvious use of antibodies
+    └─ there is no predictable disadvantage
+    └─ there is not an obvious biotech invention
+      └─ there is an unexpected effect within the invention
+    └─ there is an obvious antibody invention and the antibodies are arrived at exclusively by applying techniques known in the art
+      └─ the subject matter concerns antibodies
+    └─ there is not a known measure
+      └─ there is not a known usage
+    └─ there is not an obvious selection
+  └─ there is no issue with sufficiency of disclosure
+  └─ The invention has novelty
+    └─ there are distinguishing features
+  └─ there is a non-obvious objective technical problem
+    └─ there is a well-defined objective technical problem
+      └─ There is a single objective technical problem
+        └─ There is a synergy between all the technical effects
+        └─ There are technical contribution/s
+          └─ the features contain a technical contribution
+          └─ there is no non-technical contribution
+        └─ There are not an aggregate of technical effects
+      └─ there is at least 1 valid objective technical problem</div></div>
+<div class="msg msg-assistant"><b>assistant</b><div class="msg-content">Final ADM outcome captured.</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">Sub-ADM Conclusion Summaries:
+[Early Stop] InvStep is REJECTED.
+
+Case Outcome: T263711
+Accepted factors: [&#x27;ReliableTechnicalEffect&#x27;, &#x27;DistinguishingFeatures&#x27;, &#x27;Novelty&#x27;, &#x27;TechnicalContribution&#x27;, &#x27;Contribution&#x27;, &#x27;UnexpectedEffect&#x27;, &#x27;Synergy&#x27;, &#x27;FunctionalInteraction&#x27;, &#x27;Combination&#x27;, &#x27;CandidateOTP&#x27;, &#x27;OTPNotObvious&#x27;, &#x27;ValidOTP&#x27;, &#x27;ObjectiveTechnicalProblem&#x27;, &#x27;NonObviousOTP&#x27;, &#x27;BioTech&#x27;, &#x27;Antibody&#x27;, &#x27;SubjectMatterAntibody&#x27;, &#x27;KnownTechnique&#x27;, &#x27;SecondaryIndicator&#x27;, &#x27;AntibodyObvious&#x27;]
+
+---
+
+[Early Stop] InvStep is REJECTED.
+
+Case Outcome: T263711
+Accepted factors: [&#x27;ReliableTechnicalEffect&#x27;, &#x27;DistinguishingFeatures&#x27;, &#x27;Novelty&#x27;, &#x27;TechnicalContribution&#x27;, &#x27;Contribution&#x27;, &#x27;UnexpectedEffect&#x27;, &#x27;Synergy&#x27;, &#x27;FunctionalInteraction&#x27;, &#x27;Combination&#x27;, &#x27;CandidateOTP&#x27;, &#x27;OTPNotObvious&#x27;, &#x27;ValidOTP&#x27;, &#x27;ObjectiveTechnicalProblem&#x27;, &#x27;NonObviousOTP&#x27;, &#x27;BioTech&#x27;, &#x27;Antibody&#x27;, &#x27;SubjectMatterAntibody&#x27;, &#x27;KnownTechnique&#x27;, &#x27;SecondaryIndicator&#x27;, &#x27;AntibodyObvious&#x27;]
+Reasoning:
+
+---
+
+[Early Stop] InvStep is REJECTED.
+
+Case Outcome: T263711
+Accepted factors: [&#x27;ReliableTechnicalEffect&#x27;, &#x27;DistinguishingFeatures&#x27;, &#x27;Novelty&#x27;, &#x27;TechnicalContribution&#x27;, &#x27;Contribution&#x27;, &#x27;UnexpectedEffect&#x27;, &#x27;Synergy&#x27;, &#x27;FunctionalInteraction&#x27;, &#x27;Combination&#x27;, &#x27;CandidateOTP&#x27;, &#x27;OTPNotObvious&#x27;, &#x27;ValidOTP&#x27;, &#x27;ObjectiveTechnicalProblem&#x27;, &#x27;NonObviousOTP&#x27;, &#x27;BioTech&#x27;, &#x27;Antibody&#x27;, &#x27;SubjectMatterAntibody&#x27;, &#x27;KnownTechnique&#x27;, &#x27;SecondaryIndicator&#x27;, &#x27;AntibodyObvious&#x27;]
+Reasoning:
+there is no inventive step — a secondary indicator of obviousness is present
+  └─ there is a secondary indicator - the invention concerns an obvious use of antibodies
+    └─ there is no predictable disadvantage
+    └─ there is not an obvious biotech invention
+      └─ there is an unexpected effect within the invention
+    └─ there is an obvious antibody invention and the antibodies are arrived at exclusively by applying techniques known in the art
+      └─ the subject matter concerns antibodies
+    └─ there is not a known measure
+      └─ there is not a known usage
+    └─ there i
+... [TRUNCATED for display — full content 3360 chars / ~840 tok]</div></div>
+<div class="msg msg-assistant"><b>assistant</b><div class="msg-content">Sub-ADM conclusions noted.</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">[Q48] Does the application of the antibodies overcome technical difficulties in generating or manufacturing them?
+Answer &#x27;yes&#x27; or &#x27;no&#x27; only (y/n):</div></div>
+<div class="msg msg-assistant"><b>assistant</b><div class="msg-content">{&quot;answer&quot;: &quot;n&quot;, &quot;reasoning&quot;: &quot;The invention does not overcome any technical difficulty in generating or manufacturing the antibody. The monoclonal antibody neliximab was produced using standard techniques available at the time. There is no claim or evidence that the invention solves a problem related to yield, stability, expression, or purification of the antibody.&quot;}</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">FINAL_VERDICT
+Based on the session interaction above, what was the final outcome?
+State &#x27;Yes&#x27; or &#x27;No&#x27; for inventive step. Explain whether you agree with the tool&#x27;s outcome. Provide a confidence score 0-100.</div></div>
+</details>
+<details><summary>trim3: 2 msgs, 5963 tok</summary>
+<div class="msg msg-system"><b>system</b><div class="msg-content">You are helping to objectively assess Inventive Step for the European Patent Office (EPO). These cases are appeals against the examining boards&#x27; original decisions.
+Your job is to critically analyse the information given to you to come to an informed, reasoned judgment to objectively assess the presence of inventive step within the invention.
+You will be asked questions generated from an argumentation tool, called an ADM (ANGELIC DOMAIN MODEL) designed for inventive step to help you reason to a conclusion on whether inventive step is present.
+An ADM is a hierarchical tree-like model which ascribes legal facts to &#x27;base level factors&#x27; which are then processed using sets of prioritised acceptance conditions linked to more abstract factors to determine a conclusion.
+Each question you answer corresponds to a base-level factor (BLF). Try to answer each question as if you were a legal ascriber mapping evidence to a reasoning framework.
+
+=== CASE DATA ===
+--- SUMMARY OF FACTS FROM THE APPEAL ---
+ The appeal was lodged by the applicant (hereinafter &quot;appellant&quot;) against the decision of the examining division to refuse European patent application No. 02 799 751. This application was filed as an international application and published as WO 03/054019 (hereafter the &quot;application&quot;) having the title &quot;Therapeutic anti-TIRC7 antibodies for use in immune related and other diseases&quot;. II. The examining division held inter alia that the subject-matter of claim 1 of the sole request before it lacked inventive step (Article 56 EPC) having regard to the disclosure of document D1 alone (the respective document is identified in section VI below). III. The appellant indicated with its notice of appeal that its main request corresponded to the request on which the impugned decision was based, and filed with its statement of grounds of appeal three auxiliary requests. Claim 1 of the main request reads: &quot;1. A monoclonal antibody or antigen binding molecule which is capable of binding to an antig
+... [TRUNCATED for display — full content 23648 chars / ~5912 tok]</div></div>
+<div class="msg msg-user"><b>user</b><div class="msg-content">FINAL_VERDICT
+Based on the session interaction above, what was the final outcome?
+State &#x27;Yes&#x27; or &#x27;No&#x27; for inventive step. Explain whether you agree with the tool&#x27;s outcome. Provide a confidence score 0-100.</div></div>
+</details>
+</div>
+</div>
+<h2>Global Summary: Logged vs Actual Tokens</h2><table>
+<tr><th>Config</th><th>Cases</th><th>Turns</th><th>Mean logged tok</th><th>Mean actual tok</th><th>Reduction %</th><th>% stateless turns</th></tr>
+<tr><td>stateless_n0t0</td><td>1</td><td>4229</td><td>7176</td><td>7176</td><td>0.0%</td><td>97.8%</td></tr>
+<tr><td>hist0_trim0</td><td>1</td><td>4674</td><td>13624</td><td>13624</td><td>0.0%</td><td>2.0%</td></tr>
+<tr><td>hist0_trim1</td><td>1</td><td>4780</td><td>14936</td><td>13714</td><td>8.2%</td><td>2.0%</td></tr>
+<tr><td>hist0_trim2</td><td>1</td><td>4953</td><td>14933</td><td>12185</td><td>18.4%</td><td>1.9%</td></tr>
+<tr><td>hist0_trim3</td><td>1</td><td>4252</td><td>15354</td><td>7015</td><td>54.3%</td><td>95.0%</td></tr>
+<tr><td>hist1_trim0</td><td>1</td><td>4970</td><td>7502</td><td>7502</td><td>0.0%</td><td>1.9%</td></tr>
+<tr><td>hist1_trim1</td><td>1</td><td>4816</td><td>7446</td><td>7446</td><td>0.0%</td><td>2.0%</td></tr>
+<tr><td>hist1_trim2</td><td>1</td><td>4921</td><td>7488</td><td>7487</td><td>0.0%</td><td>1.9%</td></tr>
+<tr><td>hist1_trim3</td><td>1</td><td>4387</td><td>7446</td><td>7120</td><td>4.4%</td><td>95.9%</td></tr>
+<tr><td>hist2_trim0</td><td>1</td><td>4716</td><td>7679</td><td>7679</td><td>0.0%</td><td>2.0%</td></tr>
+<tr><td>hist2_trim1</td><td>1</td><td>4687</td><td>7719</td><td>7719</td><td>0.0%</td><td>2.0%</td></tr>
+<tr><td>hist2_trim2</td><td>1</td><td>4720</td><td>7744</td><td>7739</td><td>0.1%</td><td>2.0%</td></tr>
+<tr><td>hist2_trim3</td><td>1</td><td>4321</td><td>7668</td><td>7082</td><td>7.6%</td><td>95.6%</td></tr>
+</table></body></html>
