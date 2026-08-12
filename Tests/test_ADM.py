@@ -497,9 +497,11 @@ class TestADMStructureAndFeatures(unittest.TestCase):
         self.adm.visualiseNetwork(filename="test.png")
         self.assertTrue(mock_dot.called)
 
-        # Check basic graph properties were set
+        # Check basic graph properties were set. Bare filenames are routed into
+        # Figs/ (see ADM_Construction.FIGS_DIR), so assert on the basename.
         instance = mock_dot.return_value
-        instance.write_png.assert_called_with("test.png")
+        written = instance.write_png.call_args.args[0]
+        self.assertEqual(os.path.basename(written), "test.png")
 
     # --- ADD THESE METHODS TO TestADMStructureAndFeatures ---
 
@@ -2406,7 +2408,9 @@ class TestADMConstructionCoverage(unittest.TestCase):
         self.adm.addNodes("B")
         with redirect_stdout(io.StringIO()):
             self.adm.visualiseMinimalist(filename="test_min.png")
-        mock_graph.write_png.assert_called_with("test_min.png")
+        # Bare filenames are routed into Figs/ (see ADM_Construction.FIGS_DIR).
+        written = mock_graph.write_png.call_args.args[0]
+        self.assertEqual(os.path.basename(written), "test_min.png")
 
     @patch("pydot.Dot")
     def test_visualise_minimalist_write_error(self, mock_dot):
