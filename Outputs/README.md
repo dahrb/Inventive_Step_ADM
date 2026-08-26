@@ -1,68 +1,91 @@
 # Outputs/ — Experiment results (canonical archives)
 
-**This folder contains only `.tar.gz` archives — one per run-group.** Loose/extracted result
-directories are never kept here: the analysis notebooks read the archives directly, and keeping
-both caused confusion about which runs are current. If you re-run experiments, **compress the
-output and drop the `.tar.gz` here** (see below).
+**This folder contains only `.tar.gz` archives — one self-contained archive per
+(model, split, variant).** Loose/extracted result directories are never kept here: the analysis
+notebooks read the archives directly, and keeping both caused confusion about which runs are
+current. If you re-run experiments, **compress the output and drop the `.tar.gz` here** (see below).
+
+## Naming convention
+
+```
+<MODEL>_<SPLIT>_<VARIANT>.tar.gz        top-level folder inside == filename stem (== notebook prefix)
+```
+
+- **MODEL** — `GPT` · `LLAMA` · `QWEN`
+- **SPLIT** — `TRAIN` (95 cases) · `TEST` (879 held-out cases)
+- **VARIANT**
+  - TEST: `BASE` (`adm_initial=False`) · `INIT` (`adm_initial=True`) · `FT` (ADM-trace SFT weights) ·
+    `FTBASE` (plain-prompt SFT weights)
+  - TRAIN: `TOOL` (tool mode, `adm_initial=False`, all question sets) · `TOOL_INIT` (tool, `adm_initial=True`,
+    default questions) · `ORACLE` (train/oracle mode, `adm_initial=False`, all question sets) ·
+    `ORACLE_INIT` (oracle, `adm_initial=True`, default)
+
+Each archive is **self-contained** — every `(mode, config, run)` aggregate is complete inside its
+own tar. (The old split/patch archives `GPT_TEST_2`, `RECONSTRUCTED`, and the `_02_05`/`_03_05`
+date-suffixed tars were folded in and removed on 2026-08-13.) Inside each archive the tree is
+`<experiment>/results_*.json` (+ per-case `log.json`), where the experiment folder is
+`<mode>_<adm_config>_<questions>[_cfgN]`.
 
 ## Canonical archives
 
-Each archive holds a tree of `<experiment>/results_*.json` (+ per-case logs), where an
-experiment folder is `<mode>_<adm_config>_<questions>[_cfgN]`.
+### TRAIN set (95 cases) — always data-config 3 (full context)
+| Archive | Model | Mode | `adm_initial` | Question sets |
+|---------|-------|------|:---:|---|
+| `GPT_TRAIN_TOOL.tar.gz` | GPT | tool + baseline | False | default/lenient/strict |
+| `GPT_TRAIN_TOOL_INIT.tar.gz` | GPT | tool | True | default |
+| `GPT_TRAIN_ORACLE.tar.gz` | GPT | train (oracle) + train_baseline | False | default/lenient/strict |
+| `GPT_TRAIN_ORACLE_INIT.tar.gz` | GPT | train | True | default |
+| `LLAMA_TRAIN_TOOL.tar.gz` | Llama | tool + baseline | False | default/lenient/strict |
+| `LLAMA_TRAIN_TOOL_INIT.tar.gz` | Llama | tool | True | default |
+| `LLAMA_TRAIN_ORACLE.tar.gz` | Llama | train + train_baseline | False | default/lenient/strict |
+| `LLAMA_TRAIN_ORACLE_INIT.tar.gz` | Llama | train | True | default |
+| `QWEN_TRAIN_TOOL.tar.gz` | Qwen | tool + baseline | False | default/lenient/strict |
+| `QWEN_TRAIN_TOOL_INIT.tar.gz` | Qwen | tool | True | default |
+| `QWEN_TRAIN_ORACLE.tar.gz` | Qwen | train + train_baseline | False | default/lenient/strict |
+| `QWEN_TRAIN_ORACLE_INIT.tar.gz` | Qwen | train | True | default |
 
-### TRAIN set (95 cases)
-| Archive | Model | Mode | `adm_initial` |
-|---------|-------|------|:---:|
-| `GPT_TRAIN.tar.gz` | GPT | tool + baseline | False |
-| `GPT_TRAIN_MODE.tar.gz` | GPT | train (oracle) | False |
-| `GPT_TRAIN_DEFAULT.tar.gz` | GPT | tool | True |
-| `GPT_TRAIN_MODE_DEFAULT.tar.gz` | GPT | train | True |
-| `LLAMA_TRAIN.tar.gz` | Llama | tool + baseline | False |
-| `LLAMA_TRAIN_MODE.tar.gz` | Llama | train | False |
-| `LLAMA_TRAIN_02_05.tar.gz` | Llama | tool | True |
-| `LLAMA_TRAIN_MODE_02_05.tar.gz` | Llama | train | True |
-| `QWEN_TRAIN.tar.gz` | Qwen | tool + baseline | False |
-| `QWEN_TRAIN_MODE.tar.gz` | Qwen | train | False |
-| `QWEN_TRAIN_DEFAULT_02_05.tar.gz` | Qwen | tool | True |
-| `QWEN_TRAIN_MODE_DEFAULT_02_05.tar.gz` | Qwen | train | True |
+`tool`/`train` cover the 4 ADM configs (`both`/`none`/`sub_adm_1`/`sub_adm_2`); `_INIT`/`ORACLE` are
+1 run each, the rest 3 runs. (`GPT_TRAIN_TOOL_INIT` carries one empty `tool/none/default` init
+aggregate — a real gap in GPT's init grid, preserved as-is.)
 
-### TEST set (879 cases) — config 1/2/3 = appeal · claims+CPA · full
-| Archive | Variant | Notes |
-|---------|---------|-------|
-| `GPT_TEST.tar.gz` | GPT | baseline (cfg1-3) + tool (cfg1-3) |
-| `GPT_TEST_2.tar.gz` | GPT | supplementary GPT tool cfg3 run |
-| `LLAMA_TEST_02_05.tar.gz` | Llama | tool cfg1-3, baseline cfg3 |
-| `QWEN_TEST_02_05.tar.gz` | Qwen (base) | baseline + tool, cfg1-3 |
-| `QWEN_TEST_INIT_03_05.tar.gz` | Qwen-init | tool cfg1-3, `adm_initial=True` |
-| `QWEN_FINETUNED_TEST_03_05.tar.gz` | Qwen-FT | ADM-data fine-tune, baseline + tool |
-| `RECONSTRUCTED.tar.gz` | GPT / Qwen-init / Llama | runs rebuilt from per-case logs (supplement the above) |
+### TEST set (879 cases) — config 1/2/3 = appeal · claims+CPA · full, `adm_config=both`, default Qs, 3 runs
+| Archive | Variant | Model / weights | Coverage |
+|---------|---------|-----------------|----------|
+| `GPT_TEST_BASE.tar.gz` | GPT | gpt-oss-120b | baseline + tool, cfg1–3, 3 runs |
+| `LLAMA_TEST_BASE.tar.gz` | Llama | Llama-3.3-70B | baseline + tool, cfg1–3, 3 runs |
+| `QWEN_TEST_BASE.tar.gz` | Qwen | Qwen-3-80B (base) | baseline + tool, cfg1–3, 3 runs |
+| `QWEN_TEST_INIT.tar.gz` | Qwen-init | base, `adm_initial=True` | tool cfg1–3, 3 runs |
+| `QWEN_TEST_FT.tar.gz` | Qwen-FT | `qwen_adm_merged` (ADM SFT) | baseline + tool cfg1–3, 3 runs |
+| `QWEN_TEST_FTBASE.tar.gz` | Qwen-FT-baseline | `qwen_baseline_merged` (prompt SFT) | baseline + tool cfg1–3, 3 runs |
 
-The exact archive→variant mapping is encoded in the `ARCHIVES` / `TEST_ARCHIVES` catalogues in
-[`../Analysis/llm_results.ipynb`](../Analysis/llm_results.ipynb). If you add or rename an archive,
-update that catalogue.
+The exact archive→variant mapping is encoded in the `ARCHIVES` (TRAIN) / `TEST_ARCHIVES` (TEST)
+catalogues in [`../Analysis/llm_results.ipynb`](../Analysis/llm_results.ipynb) — the canonical
+analysis notebook. If you add or rename an archive, update that catalogue.
 
-## Pending runs (to be added)
+## Archive status (2026-08-17)
 
-Runs queued to close known gaps — drop the compressed archive here when complete and add a
-catalogue entry:
-- **`QWEN_BASELINE_FT_TEST*.tar.gz`** — prompt-data fine-tuned Qwen, full test grid (18 runs).
-- Llama `baseline` cfg1 & cfg2 (currently only cfg3).
-- GPT `tool` cfg3 (+1 run), Qwen-FT `tool` cfg3 (+2 runs).
+All **18 archives** are complete and verified. No pending runs. The canonical set:
+
+| Archives | Count |
+|----------|-------|
+| TRAIN (GPT/LLAMA/QWEN × TOOL/TOOL_INIT/ORACLE/ORACLE_INIT) | 12 |
+| TEST (GPT/LLAMA/QWEN_BASE/QWEN_INIT/QWEN_FT/QWEN_FTBASE) | 6 |
+| **Total** | **18** |
 
 ## How to compress a new run
 
-Runs are produced as a directory (e.g. `MY_RUN/tool_both_default/results_*.json`). Archive it
-with the run-group name as the top-level member (the notebooks filter tar members by this prefix):
+Runs are produced as a directory (e.g. `MY_RUN/tool_both_default/results_*.json`). Archive it with
+the run-group name as the top-level member (== filename stem == the prefix the notebooks filter on):
 
 ```bash
-tar czf Outputs/MY_RUN.tar.gz -C /path/to/run_parent MY_RUN
-rm -rf /path/to/run_parent/MY_RUN        # keep Outputs/ tar-only
+tar czf Outputs/GPT_TEST_BASE.tar.gz -C /path/to/run_parent GPT_TEST_BASE
+rm -rf /path/to/run_parent/GPT_TEST_BASE        # keep Outputs/ tar-only
 ```
 
-Then add a `dict(..., type='tar', path=.../'MY_RUN.tar.gz', prefix='MY_RUN')` entry to the
+To **merge new runs into an existing archive** (top-up), extract it, add/merge the new
+`results_*.json` (union the `run_*` keys) and per-case logs under the same top folder, then re-tar
+under the same name. Keep the filename stem == internal top folder == catalogue `prefix`.
+
+Then add/confirm a `dict(..., type='tar', path=.../'NAME.tar.gz', prefix='NAME')` entry in the
 notebook catalogue.
 
-## Backup
-
-A full snapshot of the pre-pruning Outputs (extracted dirs + logs included) is kept **outside the
-repo** at `/mnt/scratch/users/sgdbareh/Outputs_backup_<date>.tar.gz`.

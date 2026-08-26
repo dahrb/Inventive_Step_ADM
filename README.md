@@ -69,16 +69,7 @@ uv run pre-commit install    # enable hooks (notebooks are left intact)
 
 ## Headline findings (see `Analysis/` for full tables)
 
-- **Out-of-sample the ADM tool is only weakly better than chance** — best test-set tool F1 ≈
-  0.57 (GPT/Llama), MCC ≈ 0.06–0.15 vs a 0.51 majority baseline.
-- **Oracle mode is a ceiling, not a result** — injecting the decision reasoning lifts Qwen to
-  F1 0.91 (train), but that leaks the answer; treat it as an upper bound.
-- **Fine-tuning Qwen on ADM traces mainly helps single-shot baseline prompting** (+0.19–0.27 F1),
-  by fixing Qwen's severe No-bias.
-- **Tool errors are 80–82% false negatives**, concentrated in Sub-ADM 2
-  (`OTPNotObvious` / `CandidateOTP`).
-- **vLLM is non-deterministic even at `temp=0, seed=42`** (56% of cases flip on the first
-  identical prompt) — headline configs are run 3× and reported with variance.
+
 
 ## Conventions
 
