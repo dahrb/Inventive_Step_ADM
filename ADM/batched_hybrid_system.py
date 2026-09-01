@@ -904,6 +904,17 @@ def _parse_yes_no_verdict(raw: str) -> tuple[str, str, int]:
     reasoning = str(parsed.get("reasoning", raw))
     confidence = int(parsed.get("confidence_score", 50))
 
+    # Bare "y"/"n" in the answer field — the ADM-trace fine-tune (Qwen-FT) was
+    # trained on per-factor turns whose target is {"answer": "y"/"n", ...}, so at
+    # the verdict step it emits a bare letter. Mirror the factor parser
+    # (_extract_yes_no) and accept it, else these verdicts fail every retry and
+    # the case is dropped with no FINAL_VERDICT.
+    low = answer.strip().strip(".!\"'`* ").lower()
+    if low in ("y", "yes"):
+        return "Yes", reasoning, confidence
+    if low in ("n", "no"):
+        return "No", reasoning, confidence
+
     if re.search(r"\b(yes|no)\b", answer, re.IGNORECASE):
         return answer, reasoning, confidence
 
