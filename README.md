@@ -9,6 +9,18 @@ Qwen3-Next-80B, and a QLoRA-fine-tuned Qwen) over EPO Board-of-Appeal decisions.
 - **Datasets:** 95 TRAIN decisions (53 Yes / 42 No) · 879 held-out TEST decisions (448 / 431).
 - **ADM design:** see the two specs in [`Docs/`](Docs/).
 
+## The model at a glance
+
+![Compact map of the Inventive-Step ADM, its preconditions, and the two sub-ADMs](Analysis/adm_viz/00_compact_map.png)
+
+The full decision model: the **Preconditions** ADM gates the main **Inventive Step** ADM, which
+loops over each distinguishing feature and objective technical problem by instantiating
+**Sub-ADM 1** and **Sub-ADM 2** (dashed purple = instantiate/result loop). Nodes are coloured by
+role — issues, abstract factors, and base-level factors — and green/red edges denote
+supporting/negating conditions. Regenerate with the last cell of
+[`Analysis/ADM_viz.ipynb`](Analysis/ADM_viz.ipynb) (vector source:
+[`00_compact_map.svg`](Analysis/adm_viz/00_compact_map.svg)).
+
 ## Repository layout
 
 | Folder | Contents |
