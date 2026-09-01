@@ -232,13 +232,8 @@
     "text": "[Q38] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the objective technical problem?\n\nProblem name: {feature_name}"
   },
   "Q39": {
-    "type": "multi_choice",
-    "text": "[Q39] Do you believe the skilled person WOULD have arrived, not merely COULD have arrived, at the proposed invention by adapting the closest prior art, in light of the common general knowledge, because the prior art WOULD, (not merely could), have provided a clear motivation to do so in the expectation of some improvement or advantage?\n\nProblem name: {feature_name}",
-    "options": {
-      "1": "Would have adapted from the prior art",
-      "2": "Would have modified from the prior art",
-      "3": "Neither"
-    }
+    "type": "yes_no",
+    "text": "[Q39] Do you believe the skilled person WOULD have arrived, not merely COULD have arrived, at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art WOULD, (not merely could), have provided a clear motivation to do so in the expectation of some improvement or advantage?\n\nProblem name: {feature_name}"
   },
 
   "Q40": {
@@ -380,12 +375,7 @@
     "text": "[Q202] Has the objective technical problem been formulated in such a way as to refer to matters of which the skilled person would only have become aware by knowledge of the solution claimed i.e. is hindsight necessary to arrive at the objective technical problem?"
   },
   "Q203": {
-    "type": "multi_choice",
-    "text": "[Q203] Do you believe the skilled person WOULD have arrived, not merely COULD have arrived, at the proposed invention by adapting the closest prior art, in light of the common general knowledge, because the prior art WOULD, (not merely could), have provided a clear motivation to do so in the expectation of some improvement or advantage?",
-    "options": {
-      "1": "Would have adapted from the prior art",
-      "2": "Would have modified from the prior art",
-      "3": "Neither"
-    }
+    "type": "yes_no",
+    "text": "[Q203] Do you believe the skilled person WOULD have arrived, not merely COULD have arrived, at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art WOULD, (not merely could), have provided a clear motivation to do so in the expectation of some improvement or advantage?"
   }
 }

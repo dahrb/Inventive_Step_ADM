@@ -31,7 +31,8 @@ QWEN_TRAIN_MODE/
 *.zip
 
 # ── All SLURM launch/run scripts live here, non-tracked (cluster-specific) ─────
-scripts/
+scripts/servers
+scripts/slurm
 
 # ── Regenerable notebook HTML exports ─────────────────────────────────────────
 Analysis/*.html

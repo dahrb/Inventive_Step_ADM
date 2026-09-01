@@ -854,20 +854,14 @@ def sub_adm_2(item_name, questions: dict | None = None):
     )
 
     # F53/F54
-    sub_adm.addQuestionInstantiator(
-        _q(
+    sub_adm.addNodes(
+        "WouldModify",
+        question=_q(
             questions,
             "Q39",
             f"[Q39] Do you believe the skilled person would have arrived, not merely could have arrived, at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art would have provided a clear motivation to do so in the expectation of some improvement or advantage?  Even an implicit prompting or implicitly recognisable incentive is sufficient to show that the skilled person would have combined the elements from the prior art. Even if various steps need to be taken to solve the technical problem entirely, the invention will still be regarded as obvious if the technical problem leads the skilled person step by step to its solution and each individual step is obvious in the light of what has already been accomplished and what still remains to be solved \n\nProblem name: {n}",
             feature_name=n,
         ),
-        {
-            "Would have adapted from the prior art": "WouldAdapt",
-            "Would have modified from the prior art": "WouldModify",
-            "Neither": "",
-        },
-        None,
-        "modify_adapt",
     )
 
     # AF32
@@ -914,13 +908,9 @@ def sub_adm_2(item_name, questions: dict | None = None):
 
     sub_adm.addNodes(
         "WouldHaveArrived",
+        ["WouldModify and ObjectiveTechnicalProblemFormulation"],
         [
-            "WouldModify and  ObjectiveTechnicalProblemFormulation",
-            "WouldAdapt and ObjectiveTechnicalProblemFormulation",
-        ],
-        [
-            "The skilled person would have arrived at the proposed invention by modifying the closest prior art",
-            "The skilled person would have arrived at the proposed invention by adapting the closest prior art",
+            "The skilled person would have arrived at the proposed invention by modifying or adapting the closest prior art",
             "There is no reason to believe the skilled person would have arrived at the proposed invention",
         ],
     )
@@ -937,7 +927,7 @@ def sub_adm_2(item_name, questions: dict | None = None):
         root=True,
     )
 
-    sub_adm.questionOrder = ["Encompassed", "ScopeOfClaim", "Hindsight", "modify_adapt"]
+    sub_adm.questionOrder = ["Encompassed", "ScopeOfClaim", "Hindsight", "WouldModify"]
     return sub_adm
 
 
@@ -1445,19 +1435,13 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
             ),
         )
 
-        adm.addQuestionInstantiator(
-            _q(
+        adm.addNodes(
+            "WouldModify",
+            question=_q(
                 questions,
                 "Q203",
                 "[Q203] Do you believe the skilled person would have arrived, not merely could have arrived, at the proposed invention by adapting or modifying the closest prior art, in light of the common general knowledge, because the prior art would have provided a clear motivation to do so in the expectation of some improvement or advantage? Make clear why they would have been motivated if you answer yes.",
             ),
-            {
-                "Would have adapted from the prior art": "WouldAdapt",
-                "Would have modified from the prior art": "WouldModify",
-                "Neither": "",
-            },
-            None,
-            "modify_adapt",
         )
 
         adm.addNodes(
@@ -1498,10 +1482,9 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
 
         adm.addNodes(
             "WouldHaveArrived",
-            ["WouldModify and  ValidOTP", "WouldAdapt and ValidOTP"],
+            ["WouldModify and ValidOTP"],
             [
-                "The skilled person would have arrived at the proposed invention by modifying the closest prior art",
-                "The skilled person would have arrived at the proposed invention by adapting the closest prior art",
+                "The skilled person would have arrived at the proposed invention by modifying or adapting the closest prior art",
                 "There is no reason to believe the skilled person would have arrived at the proposed invention",
             ],
         )
@@ -1964,7 +1947,7 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
             "Encompassed",
             "ScopeOfClaim",
             "Hindsight",
-            "modify_adapt",
+            "WouldModify",
             "DisadvantageousMod",
             "Foreseeable",
             "UnexpectedAdvantage",
@@ -2039,7 +2022,7 @@ def adm_main(sub_adm_1_flag=True, sub_adm_2_flag=True, questions: dict | None = 
             "Encompassed",
             "ScopeOfClaim",
             "Hindsight",
-            "modify_adapt",
+            "WouldModify",
             "DisadvantageousMod",
             "Foreseeable",
             "UnexpectedAdvantage",
@@ -2116,7 +2099,6 @@ question_mapping = {
     "Encompassed": 34,
     "ScopeOfClaim": 36,
     "Hindsight": 38,
-    "WouldAdapt": 39,
     "WouldModify": 39,
     # ── main adm — secondary-indicator questions (Q40–Q59) ────────────────
     "DisadvantageousMod": 40,
@@ -2151,5 +2133,5 @@ question_mapping = {
     "cred_questions": 105,
     # ── ablation: no-sub_adm_2 flat questions (Q200–Q203) ─────────────────
     "OBJ_T_PROBLEM": 200,
-    "modify_adapt": 203,
+    "WouldModify": 203,
 }

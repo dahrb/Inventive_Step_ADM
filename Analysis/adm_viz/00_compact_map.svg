@@ -1278,48 +1278,53 @@
 <path fill="none" stroke="#27ae60" stroke-width="0.8" d="M40.85,-107.31C47.02,-113.27 57.11,-123.01 64.26,-129.92"/>
 <polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="67.57,-133.11 62.41,-131.26 66.47,-132.05 63.97,-129.64 63.97,-129.64 63.97,-129.64 66.47,-132.05 65.54,-128.02 67.57,-133.11"/>
 </g>
-</g></g><g transform="translate(985.97,58)"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+</g></g><g transform="translate(985.97,58)"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 93)">
 <title>G</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-112 322.63,-112 322.63,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-93 322.63,-93 322.63,4 -4,4"/>
 <g id="clust1" class="cluster">
 <title>cluster_c</title>
-<path fill="white" stroke="#b9770e" stroke-width="2.2" d="M12,-8C12,-8 306.63,-8 306.63,-8 312.63,-8 318.63,-14 318.63,-20 318.63,-20 318.63,-88 318.63,-88 318.63,-94 312.63,-100 306.63,-100 306.63,-100 12,-100 12,-100 6,-100 0,-94 0,-88 0,-88 0,-20 0,-20 0,-14 6,-8 12,-8"/>
-<text text-anchor="middle" x="159.31" y="-82.5" font-family="Arial" font-size="15.00" fill="#b9770e">Sub&#45;ADM 2 &#160;(per objective technical problem)</text>
+<path fill="white" stroke="#b9770e" stroke-width="2.2" d="M12,-8C12,-8 306.63,-8 306.63,-8 312.63,-8 318.63,-14 318.63,-20 318.63,-20 318.63,-69 318.63,-69 318.63,-75 312.63,-81 306.63,-81 306.63,-81 12,-81 12,-81 6,-81 0,-75 0,-69 0,-69 0,-20 0,-20 0,-14 6,-8 12,-8"/>
+<text text-anchor="middle" x="159.31" y="-63.5" font-family="Arial" font-size="15.00" fill="#b9770e">Sub&#45;ADM 2 &#160;(per objective technical problem)</text>
 </g>
 <!-- Encompassed -->
 <g id="node1" class="node">
 <title>Encompassed</title>
-<ellipse fill="#2ecc71" stroke="#555555" cx="268.01" cy="-31" rx="6.48" ry="6.48"/>
+<ellipse fill="#2ecc71" stroke="#555555" cx="268.01" cy="-22" rx="6.48" ry="6.48"/>
 </g>
 <!-- ScopeOfClaim -->
 <g id="node2" class="node">
 <title>ScopeOfClaim</title>
-<ellipse fill="#2ecc71" stroke="#555555" cx="268.01" cy="-50" rx="6.48" ry="6.48"/>
+<ellipse fill="#2ecc71" stroke="#555555" cx="268.01" cy="-41" rx="6.48" ry="6.48"/>
 </g>
 <!-- Hindsight -->
 <g id="node3" class="node">
 <title>Hindsight</title>
 <ellipse fill="#2ecc71" stroke="#555555" cx="233.05" cy="-22" rx="6.48" ry="6.48"/>
 </g>
-<!-- BasicFormulation -->
+<!-- WouldModify -->
 <g id="node4" class="node">
+<title>WouldModify</title>
+<ellipse fill="#2ecc71" stroke="#555555" cx="128.17" cy="-41" rx="6.48" ry="6.48"/>
+</g>
+<!-- BasicFormulation -->
+<g id="node5" class="node">
 <title>BasicFormulation</title>
 <ellipse fill="#3498db" stroke="#555555" cx="233.05" cy="-41" rx="6.48" ry="6.48"/>
 </g>
 <!-- BasicFormulation&#45;&gt;Encompassed -->
 <g id="edge1" class="edge">
 <title>BasicFormulation&#45;&gt;Encompassed</title>
-<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M239.8,-39.26C244.24,-37.91 250.53,-36 255.94,-34.36"/>
-<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="260.41,-33 256.28,-36.61 258.95,-33.45 255.62,-34.46 255.62,-34.46 255.62,-34.46 258.95,-33.45 254.97,-32.3 260.41,-33"/>
+<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M239.2,-38.03C243.97,-35.28 251.19,-31.12 257.08,-27.72"/>
+<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="261.16,-25.37 257.96,-29.82 259.84,-26.13 256.83,-27.87 256.83,-27.87 256.83,-27.87 259.84,-26.13 255.71,-25.92 261.16,-25.37"/>
 </g>
 <!-- BasicFormulation&#45;&gt;ScopeOfClaim -->
 <g id="edge2" class="edge">
 <title>BasicFormulation&#45;&gt;ScopeOfClaim</title>
-<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M239.8,-42.57C244.14,-43.75 250.26,-45.42 255.59,-46.88"/>
-<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="260.4,-48.19 254.98,-49.05 258.93,-47.79 255.58,-46.88 255.58,-46.88 255.58,-46.88 258.93,-47.79 256.17,-44.71 260.4,-48.19"/>
+<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M239.8,-41C244.14,-41 250.26,-41 255.59,-41"/>
+<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="260.36,-41 255.36,-43.25 258.84,-41 255.36,-41 255.36,-41 255.36,-41 258.84,-41 255.36,-38.75 260.36,-41"/>
 </g>
 <!-- WellFormed -->
-<g id="node5" class="node">
+<g id="node6" class="node">
 <title>WellFormed</title>
 <ellipse fill="#3498db" stroke="#555555" cx="198.09" cy="-22" rx="6.48" ry="6.48"/>
 </g>
@@ -1336,7 +1341,7 @@
 <polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="226.2,-37.63 220.75,-37.08 224.88,-36.87 221.87,-35.13 221.87,-35.13 221.87,-35.13 224.88,-36.87 223,-33.18 226.2,-37.63"/>
 </g>
 <!-- ConstrainedProblem -->
-<g id="node6" class="node">
+<g id="node7" class="node">
 <title>ConstrainedProblem</title>
 <ellipse fill="#3498db" stroke="#555555" cx="163.13" cy="-35" rx="6.48" ry="6.48"/>
 </g>
@@ -1347,7 +1352,7 @@
 <polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="190.85,-24.46 187.02,-28.39 189.43,-25.02 186.2,-26.3 186.2,-26.3 186.2,-26.3 189.43,-25.02 185.37,-24.21 190.85,-24.46"/>
 </g>
 <!-- NonTechnicalContribution -->
-<g id="node7" class="node">
+<g id="node8" class="node">
 <title>NonTechnicalContribution</title>
 <ellipse fill="#2ecc71" stroke="#555555" cx="198.09" cy="-41" rx="6.48" ry="6.48"/>
 </g>
@@ -1358,7 +1363,7 @@
 <polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="190.46,-39.79 185.14,-41.11 188.96,-39.52 185.54,-38.9 185.54,-38.9 185.54,-38.9 188.96,-39.52 185.94,-36.68 190.46,-39.79"/>
 </g>
 <!-- ObjectiveTechnicalProblemFormulation -->
-<g id="node8" class="node">
+<g id="node9" class="node">
 <title>ObjectiveTechnicalProblemFormulation</title>
 <ellipse fill="#e67e22" stroke="#555555" cx="128.17" cy="-22" rx="6.48" ry="6.48"/>
 </g>
@@ -1375,53 +1380,37 @@
 <polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="155.89,-32.54 150.41,-32.79 154.47,-31.98 151.24,-30.7 151.24,-30.7 151.24,-30.7 154.47,-31.98 152.06,-28.61 155.89,-32.54"/>
 </g>
 <!-- WouldHaveArrived -->
-<g id="node9" class="node">
-<title>WouldHaveArrived</title>
-<ellipse fill="#e67e22" stroke="#555555" cx="93.21" cy="-39" rx="6.48" ry="6.48"/>
-</g>
-<!-- WouldHaveArrived&#45;&gt;ObjectiveTechnicalProblemFormulation -->
-<g id="edge10" class="edge">
-<title>WouldHaveArrived&#45;&gt;ObjectiveTechnicalProblemFormulation</title>
-<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M99.36,-36.34C104.04,-33.93 111.06,-30.31 116.88,-27.31"/>
-<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="121.3,-25.03 117.89,-29.32 119.95,-25.73 116.86,-27.32 116.86,-27.32 116.86,-27.32 119.95,-25.73 115.83,-25.32 121.3,-25.03"/>
-</g>
-<!-- WouldModify -->
 <g id="node10" class="node">
-<title>WouldModify</title>
-<ellipse fill="#2ecc71" stroke="#555555" cx="128.17" cy="-41" rx="6.48" ry="6.48"/>
+<title>WouldHaveArrived</title>
+<ellipse fill="#e67e22" stroke="#555555" cx="93.21" cy="-35" rx="6.48" ry="6.48"/>
 </g>
 <!-- WouldHaveArrived&#45;&gt;WouldModify -->
 <g id="edge9" class="edge">
 <title>WouldHaveArrived&#45;&gt;WouldModify</title>
-<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M99.96,-39.35C104.3,-39.61 110.42,-39.98 115.75,-40.31"/>
-<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="120.53,-40.6 115.4,-42.54 119,-40.5 115.54,-40.29 115.54,-40.29 115.54,-40.29 119,-40.5 115.67,-38.05 120.53,-40.6"/>
+<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M99.96,-36.05C104.3,-36.84 110.42,-37.95 115.75,-38.92"/>
+<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="120.54,-39.79 115.22,-41.11 119.04,-39.52 115.62,-38.9 115.62,-38.9 115.62,-38.9 119.04,-39.52 116.02,-36.68 120.54,-39.79"/>
 </g>
-<!-- WouldAdapt -->
-<g id="node11" class="node">
-<title>WouldAdapt</title>
-<ellipse fill="#2ecc71" stroke="#555555" cx="128.17" cy="-60" rx="6.48" ry="6.48"/>
-</g>
-<!-- WouldHaveArrived&#45;&gt;WouldAdapt -->
-<g id="edge11" class="edge">
-<title>WouldHaveArrived&#45;&gt;WouldAdapt</title>
-<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M99.36,-42.28C104.13,-45.32 111.35,-49.92 117.24,-53.67"/>
-<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="121.35,-56.29 115.92,-55.5 120.06,-55.47 117.13,-53.6 117.13,-53.6 117.13,-53.6 120.06,-55.47 118.34,-51.7 121.35,-56.29"/>
+<!-- WouldHaveArrived&#45;&gt;ObjectiveTechnicalProblemFormulation -->
+<g id="edge10" class="edge">
+<title>WouldHaveArrived&#45;&gt;ObjectiveTechnicalProblemFormulation</title>
+<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M99.66,-32.85C104.17,-31.07 110.72,-28.49 116.3,-26.29"/>
+<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="120.93,-24.46 117.1,-28.39 119.51,-25.02 116.28,-26.3 116.28,-26.3 116.28,-26.3 119.51,-25.02 115.45,-24.21 120.93,-24.46"/>
 </g>
 <!-- ObjectiveProblemSolved -->
-<g id="node12" class="node">
+<g id="node11" class="node">
 <title>ObjectiveProblemSolved</title>
 <polygon fill="#222222" stroke="#000000" stroke-width="2" points="53.93,-41.8 43.13,-31 53.93,-20.2 64.73,-31 53.93,-41.8"/>
 </g>
 <!-- ObjectiveProblemSolved&#45;&gt;ObjectiveTechnicalProblemFormulation -->
-<g id="edge13" class="edge">
+<g id="edge12" class="edge">
 <title>ObjectiveProblemSolved&#45;&gt;ObjectiveTechnicalProblemFormulation</title>
-<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M64.68,-29.79C77.9,-28.14 101.5,-25.2 115.61,-23.44"/>
-<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="120.39,-22.85 115.7,-25.7 118.87,-23.03 115.42,-23.46 115.42,-23.46 115.42,-23.46 118.87,-23.03 115.15,-21.23 120.39,-22.85"/>
+<path fill="none" stroke="#27ae60" stroke-width="0.8" d="M64.68,-29.77C70.97,-28.98 79.34,-27.92 86.73,-27 96.58,-25.77 107.78,-24.39 115.89,-23.39"/>
+<polygon fill="#27ae60" stroke="#27ae60" stroke-width="0.8" points="120.45,-22.83 115.76,-25.67 118.93,-23.01 115.49,-23.44 115.49,-23.44 115.49,-23.44 118.93,-23.01 115.21,-21.21 120.45,-22.83"/>
 </g>
 <!-- ObjectiveProblemSolved&#45;&gt;WouldHaveArrived -->
-<g id="edge12" class="edge">
+<g id="edge11" class="edge">
 <title>ObjectiveProblemSolved&#45;&gt;WouldHaveArrived</title>
-<path fill="none" stroke="#c0392b" stroke-width="0.8" d="M63.96,-32.94C69.04,-34.03 75.43,-35.4 80.85,-36.56"/>
-<polygon fill="#c0392b" stroke="#c0392b" stroke-width="0.8" points="85.68,-37.6 80.31,-38.75 84.18,-37.28 80.79,-36.55 80.79,-36.55 80.79,-36.55 84.18,-37.28 81.26,-34.35 85.68,-37.6"/>
+<path fill="none" stroke="#c0392b" stroke-width="0.8" d="M64.73,-32.05C69.58,-32.57 75.48,-33.2 80.56,-33.75"/>
+<polygon fill="#c0392b" stroke="#c0392b" stroke-width="0.8" points="85.46,-34.28 80.25,-35.98 83.94,-34.11 80.49,-33.74 80.49,-33.74 80.49,-33.74 83.94,-34.11 80.73,-31.5 85.46,-34.28"/>
 </g>
-</g></g><path d="M 252.6 192.0 L 304.6 192.0" fill="none" stroke="#888888" stroke-width="2" marker-end="url(#ahg)"/><path d="M 573.3 139.8 C 559.3 117.8 599.3 117.8 586.3 139.8" fill="none" stroke="#8E44AD" stroke-width="1.6" marker-end="url(#ah)"/><path d="M 579.3 151.0 L 692.9 155.8" fill="none" stroke="#8E44AD" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#ah)"/><path d="M 692.9 155.8 C 692.9 183.4 579.3 183.4 579.3 151.0" fill="none" stroke="#8E44AD" stroke-width="1.0" stroke-dasharray="5,4" marker-end="url(#ah)"/><path d="M 410.9 147.8 C 396.9 125.8 436.9 125.8 423.9 147.8" fill="none" stroke="#8E44AD" stroke-width="1.6" marker-end="url(#ah)"/><path d="M 416.9 159.0 C 416.9 8.0 1043.9 8.0 1043.9 136.8" fill="none" stroke="#8E44AD" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#ah)"/><path d="M 1043.9 136.8 C 1043.9 22.0 416.9 22.0 416.9 159.0" fill="none" stroke="#8E44AD" stroke-width="1.0" stroke-dasharray="5,4" marker-end="url(#ah)"/><g transform="translate(654.5,304.0)"><rect x="1" y="1" width="624" height="245" rx="9" fill="white" stroke="#999999" stroke-width="1"/><text x="14" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#222222" text-anchor="start">Legend</text><text x="14" y="46" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#444444" text-anchor="start">Node type</text><text x="324" y="46" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#444444" text-anchor="start">Edge type</text><circle cx="28" cy="64" r="7" fill="#E67E22" stroke="#555555" stroke-width="1.0"/><text x="46" y="68" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">issue</text><circle cx="28" cy="89" r="7" fill="#3498DB" stroke="#555555" stroke-width="1.0"/><text x="46" y="93" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">abstract factor</text><circle cx="28" cy="114" r="7" fill="#2ECC71" stroke="#555555" stroke-width="1.0"/><text x="46" y="118" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">base-level factor</text><circle cx="28" cy="139" r="8" fill="none" stroke="#0E6655" stroke-width="2.6"/><circle cx="28" cy="139" r="4.3" fill="#2ECC71" stroke="none"/><text x="46" y="143" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">base-level factor (from Sub-ADM 1)</text><circle cx="28" cy="164" r="8" fill="none" stroke="#B9770E" stroke-width="2.6"/><circle cx="28" cy="164" r="4.3" fill="#2ECC71" stroke="none"/><text x="46" y="168" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">base-level factor (from Sub-ADM 2)</text><circle cx="28" cy="189" r="8" fill="none" stroke="#4A235A" stroke-width="2.6"/><circle cx="28" cy="189" r="4.3" fill="#8E44AD" stroke="none"/><text x="46" y="193" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">sub-ADM link (loop)</text><polygon points="28,206 36,214 28,222 20,214" fill="#222222" stroke="#000000" stroke-width="1"/><text x="46" y="218" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">root / determination</text><rect x="326" y="61" width="24" height="6" rx="1" fill="#27AE60"/><text x="356" y="68" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">supporting condition</text><rect x="326" y="86" width="24" height="6" rx="1" fill="#C0392B"/><text x="356" y="93" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">negated / reject condition</text><rect x="326" y="111" width="24" height="6" rx="1" fill="#8E44AD"/><text x="356" y="118" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">sub-ADM loop (instantiate / result)</text></g></svg>
+</g></g><path d="M 252.6 192.0 L 304.6 192.0" fill="none" stroke="#888888" stroke-width="2" marker-end="url(#ahg)"/><path d="M 573.3 139.8 C 559.3 117.8 599.3 117.8 586.3 139.8" fill="none" stroke="#8E44AD" stroke-width="1.6" marker-end="url(#ah)"/><path d="M 579.3 151.0 L 692.9 155.8" fill="none" stroke="#8E44AD" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#ah)"/><path d="M 692.9 155.8 C 692.9 183.4 579.3 183.4 579.3 151.0" fill="none" stroke="#8E44AD" stroke-width="1.0" stroke-dasharray="5,4" marker-end="url(#ah)"/><path d="M 410.9 147.8 C 396.9 125.8 436.9 125.8 423.9 147.8" fill="none" stroke="#8E44AD" stroke-width="1.6" marker-end="url(#ah)"/><path d="M 416.9 159.0 C 416.9 8.0 1043.9 8.0 1043.9 117.8" fill="none" stroke="#8E44AD" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#ah)"/><path d="M 1043.9 117.8 C 1043.9 22.0 416.9 22.0 416.9 159.0" fill="none" stroke="#8E44AD" stroke-width="1.0" stroke-dasharray="5,4" marker-end="url(#ah)"/><g transform="translate(654.5,304.0)"><rect x="1" y="1" width="624" height="245" rx="9" fill="white" stroke="#999999" stroke-width="1"/><text x="14" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#222222" text-anchor="start">Legend</text><text x="14" y="46" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#444444" text-anchor="start">Node type</text><text x="324" y="46" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#444444" text-anchor="start">Edge type</text><circle cx="28" cy="64" r="7" fill="#E67E22" stroke="#555555" stroke-width="1.0"/><text x="46" y="68" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">issue</text><circle cx="28" cy="89" r="7" fill="#3498DB" stroke="#555555" stroke-width="1.0"/><text x="46" y="93" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">abstract factor</text><circle cx="28" cy="114" r="7" fill="#2ECC71" stroke="#555555" stroke-width="1.0"/><text x="46" y="118" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">base-level factor</text><circle cx="28" cy="139" r="8" fill="none" stroke="#0E6655" stroke-width="2.6"/><circle cx="28" cy="139" r="4.3" fill="#2ECC71" stroke="none"/><text x="46" y="143" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">base-level factor (from Sub-ADM 1)</text><circle cx="28" cy="164" r="8" fill="none" stroke="#B9770E" stroke-width="2.6"/><circle cx="28" cy="164" r="4.3" fill="#2ECC71" stroke="none"/><text x="46" y="168" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">base-level factor (from Sub-ADM 2)</text><circle cx="28" cy="189" r="8" fill="none" stroke="#4A235A" stroke-width="2.6"/><circle cx="28" cy="189" r="4.3" fill="#8E44AD" stroke="none"/><text x="46" y="193" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">sub-ADM link (loop)</text><polygon points="28,206 36,214 28,222 20,214" fill="#222222" stroke="#000000" stroke-width="1"/><text x="46" y="218" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">root / determination</text><rect x="326" y="61" width="24" height="6" rx="1" fill="#27AE60"/><text x="356" y="68" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">supporting condition</text><rect x="326" y="86" width="24" height="6" rx="1" fill="#C0392B"/><text x="356" y="93" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">negated / reject condition</text><rect x="326" y="111" width="24" height="6" rx="1" fill="#8E44AD"/><text x="356" y="118" font-family="Arial, sans-serif" font-size="12" fill="#222222" text-anchor="start">sub-ADM loop (instantiate / result)</text></g></svg>
