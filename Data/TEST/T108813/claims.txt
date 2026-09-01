@@ -1,0 +1,153 @@
+--- PAGE 1 ---
+Application No. 05 780 538.4
+
+Applicant: Samsung Electronics Co., Ltd. et al.
+Our Ref.: EP49783UW063
+Date: July 13, 2018
+
+NEW CLAIMS for NEW MAIN REQUEST (marked-up)
+
+1. A method of estimating a motion of a panorama image containing 360° omni-
+directional view information_along an x-axis, the method comprising:
+
+padding a padding region connected to the left side of a basic reference frame to be
+used for motion estimation of the panorama image using a right border region of the basic
+reference frame, padding a padding region connected to the right side of the basic reference
+frame using a left border region thereof, and making a reference frame by using the padded
+basic reference frame as the reference frame;
+
+estimating a motion vector of a current data unit of the panorama image, using motion
+vectors of a plurality of previous data units adjacent to the current data unit;
+
+determining a_values of eachall pixels of a reference data unit indicated by the
+estimated motion vector from the reference frame by-obtainiag-a-(i) as the value of thea sub
+pixel when the sub-pixel belongs to the reference frame; and ebtaining-a-(ii) as the value of a
+eoerrespending-sub-another pixel! with an x coordinate determined by setting an x-coordinate
+of the sub-pixel to a value obtained by adding a distance on thear x-axis between a border of
+the basic reference frame adjacent to the sub-pixel and the sub-pixel to an x-coordinate of
+the opposite border of the basic reference frame when the sub-pixel is located outside the
+right border of the reference frame, and (iii) as the value of another pixel with an x coordinate
+determined by setting an x-coordinate of the pixel to a value obtained by subtracting athe
+
+distance on the x-axis between the border of the basic reference frame adjacent to the pixel
+and the pixel from the x-coordinate of the opposite border of the basic reference frame when
+
+the sub-pixel is located outside the left border of the reference frame; and
+
+determining a similarity between the current data unit and the reference data unit
+using a predetermined evaluation function,
+
+wherein the motion vectors of the plurality of previous data units are detected before
+the motion vector of the current data unit is estimated.
+
+2. The method of claim 1, further comprising: determining a reference data unit
+which is the most similar to the current data unit in a predetermined search range; and
+determining a motion vector representing the determined reference data unit.
+
+--- PAGE 2 ---
+3. An apparatus for estimating a motion of a panorama image containing 360°
+omni-directional view information_along an x-axis, the apparatus comprising:
+
+a memory for storing a reference frame and motion vectors of a plurality of previous
+data units adjacent to a current data unit of the panorama image, the reference frame being
+obtained by padding a padding region connected to the left side of a basic reference frame to
+be used for motion estimation of the panorama image using a right border region of the basic
+reference frame, padding a padding region connected to the right side of the basic reference
+frame using a left border region thereof, and making a reference frame by using the padded
+basic reference frame as the reference frame; and
+
+a motion estimating unit for estimating a motion vector of the current data unit using
+the motion vectors of the previous data units; determining a values of eachall pixels of the
+reference data unit indicated by the estimated motion vector from the reference frame by
+ebtaining-a-(i) as the value of the sub-pixel when thea sub-pixel indicated by the estimated
+motion vector belongs to the reference frame; obtaining aii) as the value of a-corresponding
+sub-another pixel with an x coordinate determined by setting an x-coordinate of the sub-pixel
+to a value obtained by adding a distance on an x-axis between a border adjacent the basic
+reference frame adjacent to the sub-pixel and the sub-pixel to an x-coordinate of the opposite
+border of the basic reference frame when the sub-pixel is located outside the right border of
+the reference frame, and (iii) as the value of another pixel with an x coordinate determined by
+setting an x-coordinate of the pixel to a value obtained by subtracting athe distance on the x-
+
+axis between the border of the basic reference frame adjacent to the pixel and the pixel from
+the x-coordinate of the opposite border of the basic reference frame when the sub-pixel is
+
+located outside the left border of the reference frame; and determining a similarity between
+the current data unit and the reference data unit using a predetermined evaluation function,
+
+wherein the motion vectors of the plurality of previous data units are detected before
+the motion vector of the current data unit is estimated.
+
+4, The apparatus of claim 3, wherein the motion estimating unit determines a
+reference data unit which is the most similar to the current data unit in a predetermined
+search range, and determines a motion vector representing the determined reference data
+
+unit.
+
+5. A method of compensating for a motion of a panorama image containing 360°
+omni-directional view information_along an x-axis, the method comprising: padding a padding
+region connected to the left side of a basic reference frame to be used for motion
+compensation for the panorama image using a right border region of the basic reference
+frame, padding a padding region connected to the right side of the basic reference frame
+
+-2-
+
+--- PAGE 3 ---
+using a left border region thereof, and making a reference frame by using the padded basic
+reference frame as the reference frame;
+
+receiving a motion vector of a current data unit of the panorama image;
+
+determining a values of eachall pixels of the reference data unit indicated by the
+estimated motion vector from the reference frame by-ebtaining-a-(i) as the value of thea sub
+pixel of a reference data unit indicated by the motion vector of the current data unit when the
+sub-pixel belongs to the reference frame; and obtaining-a_(ii) as the value of a-correspending
+sub-another pixel with an x coordinate determined by setting an x-coordinate of the sub-pixel
+to a value obtained by adding a distance on an x-axis between a border of the basic
+reference frame adjacent to the sub-pixel and the sub-pixel to an x-coordinate of the opposite
+border of the basic reference frame when the sub-pixel is located outside the right border of
+the reference frame, and (iii) as the value of another pixel with an x coordinate determined by
+setting an x-coordinate of the pixel to a value obtained by subtracting the distance on the x-
+axis between the border of the basic reference frame adjacent to the pixel and the pixel from
+
+the x-coordinate of the opposite border of the basic reference frame when the sub-pixel is
+located outside the left border of the reference frame; and reproducing the current data unit
+using the values of the pixels of the reference data unit,
+
+wherein the motion vectors of the plurality of previous data units are detected before
+
+the motion vector of the current data unit is estimated.
+
+6. An apparatus for compensating for a motion of a panorama image containing
+360° omni-directional view information_along an x-axis, the apparatus comprising: a memory
+for storing a reference frame obtained by padding a padding region connected to the left side
+of a basic reference frame to be used for motion compensation for the panorama image
+using a right border region, padding a padding region connected to the right side of the basic
+reference frame using a left border region, and making a reference frame by using the
+padded basic reference frame as the reference frame; and
+
+a motion compensating unit for receiving a motion vector of a current data unit of the
+panorama image; determining a values of eachall pixels of a reference data unit indicated by
+the received motion vector from the reference frame by-obtainiag—a(i) as the value of thea
+sub-pixel when the sub-pixel belongs to the reference frame; ebtainiag-a-(ii) as the value of a
+eerresponding -sub-another pixel with an x coordinate determined by setting an x coordinate
+of the sub-pixel to a value obtained by adding a distance on an x-axis between a border of
+the basic reference frame adjacent to the sub-pixel and the sub-pixel to an x-coordinate of
+the opposite border of the basic reference frame when the sub-pixel is located outside the
+right border of the reference frame, and (iii) as the value of another pixel with an x coordinate
+determined by setting an x-coordinate of the pixel to a value obtained by subtracting the
+
+-3-
+
+--- PAGE 4 ---
+distance on the x-axis between the border of the basic reference frame adjacent to the pixel
+and the pixel from the x-coordinate of the opposite border of the basic reference frame when
+the sub-pixel is located outside the left border of the reference frame; and reproducing the
+current data unit using the pixel values of the reference data unit,
+
+wherein the motion vectors of the plurality of previous data units are detected before
+
+the motion vector of the current data unit is estimated.
+
+7. A computer readable medium of instructions adapted to control a computer to
+
+perform a method of one of claims 1, 2 or 5.

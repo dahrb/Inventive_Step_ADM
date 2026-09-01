@@ -1,0 +1,151 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A printing system (1, 1-2) comprising:
+
+a plurality of printer apparatuses (20A, 20B, 20C)
+each having: printing means (28) performing printing
+based on print data (28); and
+
+a print data supplying apparatus (30) for supplying
+print data to the plurality of printer apparatuses,
+
+authentication information input means (24, 14) for
+inputting authentication information for authenticating
+print instruction authority of a user carrying out print
+instructions; and
+
+authentication means (211, 113) for authenticating
+the print instruction authority of a user based on
+authentication information inputted by the
+authentication information input means,
+
+a print attribute setting means (112) for performing
+setting of print attributes including setting of a
+security level for the print data in accordance with
+user instructions,
+
+a print data restricting means (311) for restricting
+the print data supplied to the printing means to within
+a range of the print instructing authority authenticated
+by the authentication means and characterised in that
+the print data supplying apparatus has a printer
+apparatus storage means(33) for storing a security level
+
+of each printing means of the plurality of printer
+
+apparatuses based on an installation environment of the
+printing means, and
+
+wherein the print data restricting means (311, 213)
+
+is further for determining whether to supply the print
+
+data to the printer apparatus based on the security
+
+39
+
+4422013v1
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+level for the print data and the security level of the
+
+printing means for each printer apparatus.
+
+2. The printing system according to claim 1,
+wherein the print data restricting means restricts
+the print data supplied to the printing means to print
+
+data further comprising security attributes
+
+Lf
+
+corresponding to security attributes for a time of day
+
+of the printing means.
+
+3. The printing system according to claim 1, further
+comprising:
+
+a portable information storage medium (40) carried
+by a user for storing user identification information
+for identifying the user,
+
+wherein the authentication information input means
+(24, 14) inputs authentication information for
+authenticating the print instruction authority of the
+user from the portable information storage medium of the
+
+user.
+
+4. A program executable on a computer for managing
+print data supplied to printing means (28) ina
+printing system comprising a plurality of printer
+apparatuses, the program comprising a print data
+restricting step of restricting the print data supplied
+to the printing means of each printer apparatus to print
+data having a security level corresponding to a security
+level of the printing means based on an installation
+environment of the printing means, and based on a
+security level for the print data, and a print data
+
+supplying step of supplying print data restricted in the
+
+40
+
+4422013v1
+
+--- PAGE 3 ---
+10
+
+15
+
+MAIN REQUEST
+
+print data restricting step to the printing means.
+
+5. The printing program according to claim 4,
+
+wherein the print data restricting step restricts
+the print data supplied to the printing means to print
+data further comprising a security level corresponding
+to the security level for a time of day of the printing
+
+means.
+
+6. The printing program according to claim 4,
+
+wherein the print data restricting step comprises a
+determination step for determining whether to provide the
+print data to the printing means based on the security
+level for the print data and the security level of the
+
+printing means.
+
+41
+
+4422013v1

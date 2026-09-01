@@ -1,0 +1,124 @@
+TITLE:
+Intelligent performance-based product recommendation system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Systems and methods of utilizing communications networks and multivariate analysis to predict or recommend optimal products from a predefined population of commercially available products are disclosed. The recommendations are based on intelligence contained in processing elements and subjective and/or objective product information received from consumers or input to the systems as part of their initial setup. The output of the systems comprise sets of products that they predict the consumer will prefer and/or perform well for the problem or concern identified by the consumer. The performance and preference predictions are a function of consumer problems and product responsiveness patterns. Objective product information is generally obtained with diagnostic instruments. Data measured with the diagnostic instruments may be communicated to the data processing portions of the invention via the Internet. The outputs of the data processing portion of the system may be presented to consumers via the Internet as well.
+
+CLAIMS:
+1. A method of formulating individualized product recommendations, comprising:
+receiving a first set of data from a consumer regarding a target substrate; and
+generating a set of individualized product recommendations for the consumer from a plurality of products within a product category, the generating comprising feeding the first set of data as inputs into an intelligent performance-based product recommendation engine, operating on the inputs with a data processing portion of the product recommendation engine, and producing a set of outputs from the data processing portion of the product recommendation engine, the outputs comprising the set of individualized product recommendations.
+2. The method of claim 1 wherein the receiving a first set of data step comprises receiving a concern about the substrate.
+3. The method of claim 2 further comprising receiving a severity of the concern.
+4. The method of claim 2 further comprising receiving an importance of the concern.
+5. The method of claim 1 further comprising receiving a second set of data from the consumer, the second set of data comprising historical product data, and wherein the first and second sets of data comprise the inputs into the product recommendation engine.
+6. The method of claim 5 wherein the receiving a second set of historical product data step comprises receiving performance data for products used by the consumer in the past.
+7. The method of claim 5 wherein the receiving the second set of historical product data step comprises receiving preference data for products used by the consumer in the past.
+8. The method of claim 1 further comprising receiving a third set of data from the consumer, the third set of data comprising personal profile information about the consumer, and wherein the first and third sets of data comprise the inputs into the product recommendation engine.
+9. The method of claim 1 wherein the operating on the inputs with a data processing portion of the product recommendation engine step comprises operating on the inputs with a neural network portion of the product recommendation engine.
+10. The method of claim 1 wherein the operating on the inputs with a data processing portion of the product recommendation engine step comprises operating on the inputs with a collaborative filter portion of the product recommendation engine.
+11. The method of claim 1 wherein the operating on the inputs with a data processing portion of the product recommendation engine step comprises operating on the inputs with a content-based filter portion of the product recommendation engine.
+12. The method of claim 1 wherein the operating on the inputs with a data processing portion of the product recommendation engine comprises operating on the inputs with a cascaded content-based filter and collaborative filter portion of the product recommendation engine.
+13. The method of claim 1 wherein the producing a set of outputs step comprises producing a first list of products and a scored predicted performance utility for each listed product.
+14. The method of claim 1 wherein the producing a set of outputs step comprises producing a first list of top-N products and a scored predicted performance utility for each listed product.
+15. The method of claim 1 wherein the producing a set of outputs step comprises producing a first list of products and a scored predicted preference utility for each listed product.
+16. The method of claim 1 wherein the producing a set of outputs step comprises producing a first list of top-N products and a scored predicted product preference utility for each listed product.
+17. The method of claim 1 wherein the producing a first of outputs step comprises producing a first list of products and a purchase price for each listed product.
+18. The method of claim 1 further comprising generating ancillary information output from the product recommendation engine inputs.
+19. The method of claim 18 wherein the generating ancillary information output step comprises generating information regarding effects of at least one of the products.
+20. The method of claim 18 wherein the generating ancillary information step comprises generating information regarding the condition of the target substrate relative to a designated population of consumers.
+21. The method of claim 1 further comprising:
+communicating the set of individualized product recommendations to the consumer.
+22. The method of claim 21 wherein the communicating step comprises generating an and delivering a web page containing the recommendations to the consumer.
+23. The method of claim 1 further comprising:
+receiving feedback from the consumer regarding use of a product to treat the target substrate.
+24. The method of claim 23 wherein the receiving feedback step comprises receiving feedback from the consumer regarding use of a previously recommended product.
+25. The method of claim 23 wherein the receiving feedback step comprises receiving preference data regarding the product.
+26. The method of claim 23 wherein the receiving feedback comprises receiving performance data regarding the product.
+27. The method of claim 23 further comprising:
+re-training the product recommendation engine based on the feedback.
+28. The method of claim 1 wherein the receiving a first set of data from a consumer step comprises receiving a first set of data about the consumer's skin, and the generating a set of individualized product recommendations for the consumer step comprises generating a set of individualized product recommendations from a plurality of skin-care products.
+29. The method of claim 1 further comprising receiving a payment from the consumer.
+30. A method for improving product recommendation quality, comprising:
+generating a plurality of individualized product recommendations for a given concern with an intelligent performance-based product recommendation engine;
+receiving feedback from a plurality of consumers on use of products to treat the concern; and
+re-training the product recommendation engine based on the feedback received.
+31. The method of claim 30 wherein the receiving feedback step comprises receiving product preference data.
+32. The method of claim 30 wherein the receiving feedback step comprises receiving product performance data.
+33. The method of claim 32 wherein the receiving product performance data step further comprises receiving target substrate condition data.
+34. The method of claim 32 wherein the receiving feedback step further comprises receiving subjective product performance data.
+35. The method of claim 32 wherein the receiving feedback step further comprises receiving objective product performance data.
+36. The method of claim 35 wherein the receiving objective product performance data step comprises receiving diagnostic data.
+37. The method of claim 30 wherein the re-training step comprises adjusting values of a plurality of product attributes in a neural network, the neural network comprising a portion of the product recommendation engine.
+38. The method of claim 30 wherein the re-training step comprises adjusting values of a plurality of connection weights in a neural network, the neural network comprising a portion of the product recommendation engine.
+39. The method of claim 30 wherein the re-training step comprises identifying relevant consumer segments based on the feedback and grouping the consumers into the segments.
+40. The method of claim 30 wherein the re-training step comprises revising a set of collaborative neighborhood configurations in a collaborative filter, the collaborative filter comprising a portion of the product recommendation engine.
+41. The method of claim 30 wherein the re-training step comprises adding a personal profile information filter to a set of collaborative neighborhood configurations in collaborative filter, the collaborative filter comprising a portion of the product recommendation engine.
+42. A system for generating individualized product recommendations, comprising:
+a database containing product information and consumer information; and
+an intelligent performance-based product recommendation engine in communication with the database,
+wherein the product recommendations are generated for a consumer by the product recommendation engine in response to a request received from the consumer, the product recommendation engine drawing on data contained in the request and the information in the database to generate the product recommendations.
+43. The system of claim 42 wherein the product recommendation engine comprises a content-based filter.
+44. The system of claim 42 wherein the product recommendation engine comprises a neural network.
+45. The system of claim 44 wherein the neural network contains a plurality of attributes for each of a plurality of products within a plurality of product categories.
+46. The system of claim 44 wherein the neural network receives as inputs a plurality of consumer characterization variables for the consumer and product performance data for a population of consumers.
+47. The system of claim 44 wherein the neural network receives as inputs a plurality of consumer characterization variables for the consumer and product preference data for a population of consumers.
+48. The system of claim 42 wherein the product recommendation engine comprises a collaborative filter, the collaborative filter defining a set of other consumers similar to the consumer associated with the request.
+49. The system of claim 42 wherein the product recommendation engine comprises a cascaded collaborative and content-based filter.
+50. The system of claim 42 further comprising a consumer interface communicably connected to the product recommendation engine.
+51. The system of claim 50 wherein the communicable connection comprises a computer network.
+52. The system of claim 50 wherein the communicable connection comprises a telecommunications network.
+53. The system of claim 50 wherein the communicable connection comprises the Internet.
+54. The system of claim 50 wherein the consumer interface comprises a personal computer.
+55. The system of claim 50 wherein the consumer interface comprises a diagnostic device.
+56. The system of claim 50 wherein the consumer interface comprises a camera.
+57. The system of claim 50 wherein the consumer interface comprises a kiosk.
+58. The system of claim 57 wherein the product recommendations are limited to products available for purchase in the vicinity of the kiosk.
+59. The system of claim 50 wherein the consumer interface is located at a professional service provider's office.
+60. The system of claim 50 wherein the consumer interface is located at the consumer's home.
+61. The system of claim 42 wherein the request comprises an identification of a target substrate and a particular consumer, the consumer information stored in the database comprising a characterizations record for the particular consumer.
+62. The system of claim 42 wherein the request is generated by the consumer.
+63. The system of claim 42 wherein the request is generated by a professional service provider.
+64. The system of claim 62 wherein the record further comprises an importance of the concern.
+65. The system of claim 62 wherein the record further comprises a severity of the concern.
+66. The system of claim 62 wherein the record further comprises product preference information.
+67. The system of claim 62 wherein the record further comprises historical product preference information.
+68. The system of claim 62 wherein the record further comprises historical product performance information.
+69. The system of claim 62 wherein the record further comprises personal profile information.
+70. The system of claim 42 wherein the product recommendations comprise a first list of products and a scored predicted performance utility for each listed product.
+71. The system of claim 42 wherein the product recommendations comprise a first list of top-N products and a scored predicted performance utility for each listed product.
+72. The system of claim 42 wherein the product recommendations comprise a first list of products and a scored predicted preference utility for each listed product.
+73. The system of claim 42 wherein the product recommendations comprise a first list of top-N products and a scored predicted product preference utility for each listed product.
+74. The system of claim 42 wherein the product recommendations comprise a first list of products and a purchase price for each listed product.
+75. The system of claim 42 further comprising generating ancillary information output with the product recommendation engine in response to the request.
+76. The system of claim 42 wherein a plurality of consumers provide ongoing feedback regarding the use of products, portions of the feedback being stored in the product information and consumer information databases.
+77. The system of claim 76 wherein the feedback comprises product performance data.
+78. The system of claim 76 wherein the feedback comprises product preference data.
+79. The system of claim 76 wherein the feedback comprises subjective feedback.
+80. The system of claim 76 wherein the feedback comprises objective feedback.
+81. The system of claim 76 wherein the product recommendation engine is periodically re-trained based on the feedback.
+82. The system of claim 81 wherein the re-training improves the quality of the product recommendations.
+83. The system of claim 81 wherein the product recommendation engine comprises a collaborative filter having a plurality of collaborative neighborhoods and the re-training comprises revising the collaborative neighborhoods based on performance response patterns of the consumers.
+84. The system of claim 42 further comprising a professional interface communicably connected to the product recommendation engine.
+85. The system of claim 84 wherein the communicable connection comprises the Internet.
+86. The system of claim 84 wherein the professional interface comprises a personal computer.
+87. The system of claim 84 wherein the professional interface comprises a diagnostic device.
+88. The system of claim 87 wherein the device comprises a camera.
+89. A method for generating product recommendations, comprising:
+operating an intelligent performance-based product recommendation system, the system gathering information from consumers, generating product recommendations for the consumers, and analyzing the information and product recommendations to obtain knowledge.
+90. The method of claim 89 further comprising delivering the product recommendations to the consumers in exchange for a payment.
+91. The method of claim 90 wherein the delivering step comprises delivering the product recommendations to the consumers in exchange for a subscription payment.
+92. The method of claim 89 further comprising delivering the knowledge to a third-party in exchange for a payment.
+93. The method of claim 92 wherein the delivering step comprises delivering the knowledge to a professional service provider.
+94. The method of claim 92 wherein the delivering step comprises delivering the knowledge to a medical professional.
+95. The method of claim 92 wherein the delivering step comprises delivering the knowledge to a product distribution chain entity.
+96. The method of claim 92 wherein the delivering step comprises delivering the knowledge to a product developer.
+97. The method of claim 92 wherein the delivering step comprises delivering the knowledge to a product marketer.
+98. The method of claim 89 further comprising mining the knowledge to obtain intelligence and delivering the intelligence to a third-party in exchange for a fee.
+99. The method of claim 89 further comprising identifying a product meeting predefined criteria of an acquiring entity based on the knowledge and notifying the acquiring entity about the identified product in exchange for a payment.
+100. The method of claim 89 further comprising receiving a payment from a selling entity whenever the consumers purchase a product within the product recommendations from the selling entity.
+101. The method of claim 89 wherein the gathering information step further comprises directing the consumers to a new product portion of the system in exchange for a fee.
+102. The method of claim 89 further comprising identifying conditions of the consumers warranting professional service provider treatment and referring the consumers with the identified conditions to a professional service provider in exchange for a fee.

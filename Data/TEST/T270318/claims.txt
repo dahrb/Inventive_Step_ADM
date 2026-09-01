@@ -1,0 +1,343 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+1/29
+
+Main request
+
+Claims
+
+1. Method for recognition and verification of authenticity of digital — and/or
+physical objects comprising the steps of codebook training, object enrollment, and
+object verification, the latter consisting in object recognition and object
+authentication,
+- the codebook training step comprising
+© providing (210) a training set of images x(1),...,x(T) consisting of T
+training images,
+° extracting (2, 6) for each image x(1),...,x(T) identification features (xi(1),
+...,;Xi(T)) and authentication features (x,(1),...,Xa(T)),
+© obtaining corresponding sets of identification and authentication
+centroids for said identification features (xi(1),...,xi(T)) and authentication
+features (Xa(1),...,Xa(T)),
+° registering (3, 7) said sets of centroids in an identification codebook (C))
+and an authentication codebook (C,),
+- the object enrollment step comprising
+° acquiring (1) an image x(m) of an object x to be protected,
+° extracting (2, 6) identification features xm) and authentication features
+Xa(m) from image x(m),
+© enrolling (4, 8) and storing (5, 9) said identification features xi(m) in an
+identification database (Dj) and said authentication features xa(m) in an
+authentication database (Da),
+° repeating said acquiring (1), extracting (2, 6), and enrolling steps (4, 5,
+8, 9) for each object to be protected,
+
+characterised by the fact that
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+2/29
+
+- the object verification step comprises
+
+° acquiring (10) an image y of an object under verification,
+
+° extracting (2, 6) identification features (y;)) and authentication features
+(ya) from image y,
+
+° identifying (11) object y by producing an estimate of the object index m’
+referring to the identification database (Dj) of enrolled identification
+features (xi(m’)) by matching the identification features (yi) extracted
+from the acquired image y with the identification features (xi(m’)) stored
+in the identification database (Dj),
+
+© authenticating (12) the object by comparing the authentication features
+(y'a(m')) of the acquired image y with the enrolled authentication features
+(xa(m’)) obtained from the authentication database (D,),
+
+° repeating said acquiring (10), extracting (2, 6), identifying (11), and
+authenticating steps (12) for each object to be recognized and
+authenticated,
+
+and by the fact that the method uses two types of features (xi(m), Xa(m)), of
+codebooks (Ci, Ca), and of databases (Di, Da) which are specifically designed for
+identification, respectively authentication, the identification database (Dj) and
+
+authentication database (Da) having different organizations.
+
+2. Method according to the preceding claim, characterised by the fact that
+the identification database (Dj) is designed as an inverted file with an identification
+feature (xi(m)) with a given index m containing the corresponding indices of objects
+possessing this feature, whilst the authentication database (Dz) is designed as a
+lookup table storing at index m the authentication features (xa(m)) of an object with
+
+an attributed index m.
+
+3. Method according to one of the preceding claims, characterised by the
+
+fact that
+
+--- PAGE 3 ---
+5
+
+10
+
+15
+
+20
+
+25
+
+3/29
+
+- obtaining corresponding sets of identification and authentication centroids during
+
+the codebook training step comprises
+
+Oo
+
+applying (212, 213, 214, 215) vector quantizers to said identification
+
+features (xi(1),...,xi(T)) and authentication features (xa(1),...,Xa(T)),
+
+- acquiring (1) an image x(m) of an object x during the object enrollment step
+
+comprises
+
+Oo
+
+acquiring (1) an image x(m) of a digital — or physical object x to be
+protected with the help of an acquisition device, in particular by use
+of a mobile phone equipped with a camera, directly from the physical
+
+object or from an electronic file,
+
+- the object verification step comprises
+
+Oo
+
+using said acquisition device for acquiring (10) an image y of an
+object under verification,
+
+using a fast matching procedure via an inverted file for matching the
+identification features (yi) extracted from the acquired image y with
+the identification features (xi(m’)) stored in the identification database
+(Di) during identifying (11) object y,
+
+aligning (402) the authentication features (ya(m’)) extracted from the
+acquired image y with the enrolled authentication features (xa(m’)) of
+the object estimate m’, resulting in aligned authentication features
+(y'a(m’)),
+
+authenticating (12) the object by comparing the aligned
+authentication features (y',(m')) of the acquired image y with the
+enrolled authentication features (x,(m’)) obtained from the
+authentication database (Da) using the estimate of the object index
+m,
+
+repeating said extracting (2, 6), identifying (11), aligning (402), and
+authenticating steps (12) for each object to be recognized and/or
+
+authenticated.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+4/29
+
+4. Method according to one of the preceding claims, characterised by the
+fact that the step of extracting (2) the identification features (yi) from image y
+comprises an optional step of global alignment (16) as well as the steps of key
+
+points extraction (17) and computation of descriptors (18).
+
+5. Method according to one of the preceding claims, characterised by the
+fact that the step of extracting (2, 6) the identification features (yi) from image y
+comprises determining descriptors (ya) at positions defined by a set of key points
+(yx) in an aligned image ya of image y and combining said key points (y,) and their
+descriptors (ya) into a compact form corresponding to said identification features
+
+(yi).
+
+6. Method according to the preceding claim, characterised by the fact that
+said descriptors are chosen from the group comprising an angle (22) between the
+gradient at a key point (20) and the nearest design element (23) in clock-wise
+order, distances between given key points (1301)-(1306) and/or their ratios,
+features extracted along a virtual connecting line between given key points, in
+particular ratios between the positions of crossing points, ratios between angles
+(1307, 1308) formed between the gradients and said connecting line between
+given key points, ratios of all angles and distances between all local descriptors,
+all preferably represented in quantized manner by encoding based on Gray
+
+labelling.
+
+7. Method according to one of the preceding claims, characterised by the
+fact that the identification features (xi(m), yi) are organized into a specific semantic
+hierarchical feature structure by sequential, Semantic, block-based, and/or
+
+distance-based combination of the identification features extracted from individual
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+5/29
+elements at several hierarchical levels (1901, 1902, 1903, 1801, 1802, 1803,
+
+1804, 1807, 1808).
+
+8. Method according to one of the preceding claims, characterised by the
+fact that extracting (2) the identification features (yi) from image y corresponding
+to an object under verification is performed based on hierarchical semantic
+organization, the identification features (yi) being extracted from the image y by
+use of at least one level of decoders (2001, 2003, 2005) producing a list of
+possible candidates L:i(y) matching best (2002, 2004, 20056) at each level
+representation according to each level of codebooks (Ci, Ciz, ..., Cit) in order to
+produce an estimate of the most likely index m’ of the object enrolled in the
+identification database (Dj) which probably corresponds to the object under
+
+verification.
+
+9. Method according to one of the preceding claims, characterised by the
+fact that the identification features xi(m) extracted from image x(m) during the
+enrollment step and the identification features (yi) extracted from an acquired
+image y are encoded by applying a normalization (1506), resizing (1507),
+transformation to some domain (1508), preferably by random projection transform
+(RPT) or another transform like DFT, DCT or DWT, and quantization (1510) such
+
+as to produce a binary index (1511) representing a feature or a set of features.
+
+10. Method according to one of the preceding claims, characterised by the
+fact that the identification features xi(m) extracted from image x(m) during the
+enrollment step and the identification features (yi) extracted from an acquired
+image y are encoded by applying multiple assignment by creating overlapping
+regions (2321, 2322, 2323) at the separation boundaries between neighboring
+centroids (c', c', c") and attributing features (x‘) belonging to these overlapping
+
+regions (2321, 2322, 2323) to all of the corresponding centroids (c', c', c") both in
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+6/29
+the encoding (2330) and decoding steps (2350), the overlapping regions being
+
+defined with the help of a reliability function R™=Q(((x‘)'(c" - c') - d'"/2)/sigma)
+corresponding to the probability of flipping a given feature x* from centroid c' to
+centroid c", where (x‘)'(c" - c') represents a projection of x* onto the line (c" - c’)
+and d'/2 corresponds to the half distance between two centroids with the Euclidian
+distance between two centroids c" and c' being defined as d" =||c" — c'l|, said
+reliability function R'™ being used as a weight at least for the features near the
+
+boundaries between the centroids of neighboring centroids (c’, c', c").
+
+11. Method according to one of the preceding claims, characterised by the
+fact that aligning (402) the authentication features (ya) extracted from the acquired
+image y with the enrolled authentication features (xa(m’)) of the object estimate m’,
+resulting in aligned authentication features (y's), is performed by partitioning the
+acquired image y and aligning each partition with a corresponding part of a
+template image corresponding to the object estimate m’ by use of a local
+
+projective transform based on local features of each partition.
+
+12. Method according to one of the preceding claims, characterised by the
+fact that the authentication features xa(m) extracted from image x(m) during the
+enrollment step (8) are encoded by partitioning said image x(m) into blocks x(m,b)
+and applying a transformation to some domain (1508), preferably by random
+projection transform (RPT) or another transform like DFT, DCT or DWT, to
+produce a feature vector xa(m,b) as well as a quantization (1510) such as to
+produce a quantized feature vector Xaq(m,b) which can be represented by an index
+
+(2602) stored in the authentication database (Da).
+
+13. Method according to one of the preceding claims, characterised by the
+fact that the aligned authentication features (y’a) extracted from an acquired
+
+image y are processed by partitioning said image y into blocks y(b) and applying a
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+a)
+
+transformation to some domain (1508), preferably by random projection transform
+(RPT) or another transform like DFT, DCT or DWT, such as to produce a feature
+vector y'ar(b) which can be matched with a corresponding template vector Xa,q(m’,b)
+obtained from the authentication database (Da) with the help of the estimate of the
+object index m', such as to allow a decision on the authenticity of the object under
+
+verification corresponding to the acquired image y.
+
+14. Method according to the preceding claims 12 and 13, characterised by the
+fact that the quantized feature vector xa (m,b) representing the authentication
+features (xa(m)) extracted from image x(m) is used to produce (2802, 2801) both a
+secure hash H(Xaq) and supplementary information needed for the errorless
+recovery of vector Xaq(m,b), a decoder (D) being adapted to observe these bits
+together with a noisy vector Yaq representing the authentication features (ya) and
+extracted from the acquired image y, allowing the decoder (D) to produce an
+estimate X’aq Of vector Xag, respectively an estimate H(xX'ag) of the hash H(Xaq) based
+on estimate x’ag, Such as to allow a decision on the authenticity of the object under
+
+verification by comparison of secure hash H(Xaq) and estimated hash H(X'aq).
+
+15. Computer program means stored in a computer readable medium adapted
+
+to implement the proposed method according to one of the preceding claims.
+
+16. Device equipped with computer program means according to the preceding
+claim, characterised by the fact that the device is chosen from the group
+comprising a mobile phone, in particular a smart phone equipped with a camera, a
+digital photo apparatus, a digital video camera, a barcode reader equipped with a
+
+camera, a scanning device.
+
+17. Use of a method according to one of the preceding claims 1 to 14 for an
+
+application chosen from the group comprising protection of digital media and/or of
+
+--- PAGE 8 ---
+8/29
+
+printed documents, recognition and/or authentication of digital — and/or physical
+objects, content and/or object identification and/or authentication, detection of local
+modification, object and/or content related management, tracking, tracing and/or
+monitoring, in particular product identification and tracking in commerce, protection
+of physical objects like packaging, digital — and physical documents, in particular
+text and identity documents, luxury goods like watches, and electronics,
+
+verification of banknotes.

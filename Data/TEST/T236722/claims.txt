@@ -1,0 +1,879 @@
+--- PAGE 1 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+CLAIMS (Main Request)
+
+[Claim 1]
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring transportation specifying information
+specifying transportation used by the travel object:
+
+a means for acquiring situation information indicating a
+situation in which the travel object uses the transportation;
+
+a means for storing passage time at each passage point,
+transportation specifying information and situation information, in
+an associated manner for each of a plurality of travel objects:
+
+a means for extracting, from the means, a plurality of
+combinations of passage time concerning a specific passage point
+and other information associated with the passage time; and
+
+a means for calculating, based on the extracted plurality of
+combinations, an estimate value of passage time at which a travel
+object passes through a specific passage point under a specific
+condition by conducting a regression analysis for obtaining a
+relationship between the passage time and said other information,
+
+or a calculation of a mean or variance of the passage time.
+
+--- PAGE 2 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+[Claim 2]
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring transportation specifying information
+specifying transportation used by the travel object:
+
+a means for acquiring situation information indicating a
+situation in which the travel object uses the transportation;
+
+a means for storing elapsed time calculated from passage
+time at each passage point while the travel object passes through
+two passage points, transportation specifying information and
+situation information, in an associated manner for each of a
+plurality of travel objects;
+
+a means for extracting, from the means, a plurality of
+combinations of elapsed time concerning two specific passage points
+and other information associated with the elapsed time; and
+
+a means for calculating, based on the extracted plurality of
+combinations, an estimate value of elapsed time while a travel object
+passes through two specific passage points under a specific condition
+by conducting a regression analysis for obtaining a relationship
+
+between the elapsed time and said other information, or a
+
+--- PAGE 3 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+calculation of a mean or variance of the elapsed time.
+
+[Claim 3]
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring transportation specifying information
+specifying transportation used by the travel object:
+
+a means for acquiring situation information indicating a
+situation in which the travel object uses the transportation;
+
+a means for specifying boarding completion time at which
+boarding of travel objects is actually completed for the
+transportation;
+
+a means for storing transportation specifying information,
+situation information and a result of comparison between boarding
+completion time and passage time at each passage point, in an
+associated manner for each of a plurality of travel objects;
+
+a means for extracting, from the means, a plurality of
+combinations of a result of comparison between passage time
+concerning a specific passage point and boarding completion time
+concerning specific transportation and other information associated
+
+with the result of comparison; and
+
+--- PAGE 4 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+a means for calculating, based on the extracted plurality of
+combinations, an estimate value of a result of comparison between
+boarding completion time under a specific condition and passage
+time concerning a specific passage point by conducting a regression
+analysis for obtaining a relationship between the results of
+comparison and said other information, or a calculation of a mean or
+
+variance of the results of comparison.
+
+[Claim 4]
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring transportation specifying information
+specifying transportation used by the travel object: and
+
+a travel process prediction apparatus predicting a travel
+process of a travel object under a specific condition,
+
+wherein the travel process prediction apparatus includes:
+
+a storage means for storing passage time specified at each
+passage point and the acquired transportation specifying
+information, in an associated manner for each of a plurality of travel
+objects;
+
+a means for accepting a plurality of pieces of transportation
+
+--- PAGE 5 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+specifying information specifying a plurality of pieces of
+transportation which is candidates to be used by an arbitrary travel
+object:
+
+a means for accepting a request for comparing passage time
+at which the travel object passes through a specific passage point
+when the travel object uses each of the plurality of pieces of
+transportation;
+
+a means for extracting, from the storage means, for each of
+the plurality of pieces of transportation specifying information, a
+plurality of pieces of passage time concerning the specific passage
+point, associated with transportation specifying information having
+a same content as the accepted transportation specifying
+information;
+
+a means for calculating, for each of the plurality of pieces of
+transportation specifying information, a mean or variance of the
+extracted passage time;
+
+a means for statistically testing a difference in the mean or
+variance of the passage time calculated for each of the plurality of
+pieces of transportation specifying information; and
+
+a means for outputting a test result obtained by the means
+
+for testing.
+
+[Claim 5]
+A travel process prediction system predicting a travel process
+
+of a travel object traveling with transportation repeatedly operated
+
+--- PAGE 6 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring situation information indicating a
+situation specified by a plurality of items when the travel object uses
+transportation; and
+
+a travel process prediction apparatus predicting a travel
+process of a travel object under a specific condition,
+
+wherein the travel process prediction apparatus includes:
+
+a storage means for storing the passage time specified at each
+passage point and the acquired situation information, in an
+associated manner for each of a plurality of travel objects;
+
+a means for accepting a plurality of pieces of situation
+information indicating a plurality of situations in which an arbitrary
+travel object uses transportation:
+
+a means for accepting a request for comparing passage time
+at which the travel object passes through a specific passage point
+when the travel object uses transportation in the plurality of
+situations;
+
+a means for extracting, from the storage means, a plurality of
+pieces of passage time concerning the specific passage point,
+associated with the situation information having a same content as
+the accepted situation information, for each of the plurality of pieces
+
+of situation information:
+
+--- PAGE 7 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+a means for calculating a mean or variance of the extracted
+passage time for each of the plurality of pieces of situation
+information;
+
+a means for statistically testing a difference in the mean or
+variance of the passage time calculated for each of the plurality of
+pieces of situation information; and
+
+a means for outputting a test result obtained by the means
+
+for testing.
+
+[Claim 6]
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring transportation specifying information
+specifying transportation used by the travel object: and
+
+a travel process prediction apparatus predicting a travel
+process of a travel object under a specific condition,
+
+wherein the travel process prediction apparatus includes:
+
+a storage means for storing elapsed time calculated from the
+passage time specified at each passage point while the travel object
+passes through two passage points and the acquired transportation
+
+specifying information, in an associated manner for each of a
+
+--- PAGE 8 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+plurality of travel objects;
+
+a means for accepting a plurality of pieces of transportation
+specifying information specifying a plurality of pieces of
+transportation which is candidates to be used by an arbitrary travel
+object:
+
+a means for accepting a request for comparing elapsed time
+while the travel object passes through two specific passage points
+when the travel object uses each of the plurality of pieces of
+transportation;
+
+a means for extracting, from the storage means, a plurality of
+pieces of elapsed time concerning the two specific passage points,
+associated with transportation specifying information having a same
+content as the accepted transportation specifying information, for
+each of the plurality of pieces of transportation specifying
+information;
+
+a means for calculating a mean or variance of the extracted
+elapsed time for each of the plurality of pieces of transportation
+specifying information;
+
+a means for statistically testing a difference in the mean or
+variance of the elapsed time calculated for each of the plurality of
+pieces of transportation specifying information; and
+
+a means for outputting a test result obtained by the means
+
+for testing.
+
+[Claim 7]
+
+--- PAGE 9 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring situation information indicating a
+situation specified by a plurality of items when the travel object uses
+the transportation; and
+
+a travel process prediction apparatus predicting a travel
+process of a travel object under a specific condition,
+
+wherein the travel process prediction apparatus includes:
+
+a storage means for storing elapsed time calculated from the
+passage time specified at each passage point while the travel object
+passes through two passage points and the acquired situation
+information, in an associated manner for each of a plurality of travel
+objects;
+
+a means for accepting a plurality of pieces of situation
+information indicating a plurality of situations in which an arbitrary
+travel object uses transportation:
+
+a means for accepting a request for comparing elapsed time
+while the travel object passes through two specific passage points
+when the travel object uses transportation in the plurality of
+situations;
+
+a means for extracting, from the storage means, a plurality of
+
+--- PAGE 10 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+10
+
+pieces of elapsed time concerning the two specific passage points,
+associated with situation information having a same content as the
+accepted situation information, for each of the plurality of pieces of
+situation information;
+
+a means for calculating a mean or variance of the extracted
+elapsed time for each of the plurality of pieces of situation
+information;
+
+a means for statistically testing a difference in the mean or
+variance of the elapsed time calculated for each of the plurality of
+pieces of situation information; and
+
+a means for outputting a test result obtained by the means
+
+for testing.
+
+[Claim 8]
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring transportation specifying information
+specifying transportation used by the travel object:
+
+a means for specifying boarding completion time at which
+boarding of travel objects is actually completed for the
+
+transportation; and
+
+--- PAGE 11 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+11
+
+a travel process prediction apparatus predicting a travel
+process of a travel object under a specific condition,
+
+wherein the travel process prediction apparatus includes:
+
+a storage means for storing the acquired transportation
+specifying information and a result of comparison between boarding
+completion time and passage time at each passage point, in an
+associated manner for each of the plurality of travel objects;
+
+a means for accepting a plurality of pieces of transportation
+specifying information specifying a plurality of pieces of
+transportation which is candidates to be used by an arbitrary travel
+object:
+
+a means for accepting a request for comparing the results of
+comparison between passage time at a specific passage point and
+boarding completion time for the plurality of pieces of
+transportation;
+
+a means for extracting, from the storage means, a plurality of
+results of comparison between boarding completion time and
+passage time at the specific passage point, associated with
+transportation specifying information having a same content as the
+accepted transportation specifying information, for each of the
+plurality of pieces of transportation specifying information:
+
+a means for calculating a mean or variance of the extracted
+results of comparison for each of the plurality of pieces of
+transportation specifying information:
+
+a means for statistically testing a difference in the mean or
+
+--- PAGE 12 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+12
+
+variance of the results of comparison calculated for each of the
+plurality of pieces of transportation specifying information; and
+a means for outputting a test result obtained by the means
+
+for testing.
+
+[Claim 9]
+
+A travel process prediction system predicting a travel process
+of a travel object traveling with transportation repeatedly operated
+at specific time, characterized by comprising:
+
+a means for specifying passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation;
+
+a means for acquiring situation information indicating a
+situation specified by a plurality of items when the travel object uses
+transportation;
+
+a means for specifying boarding completion time at which
+boarding of travel objects is actually completed for the
+transportation used by the travel object; and
+
+a travel process prediction apparatus predicting a travel
+process of a travel object under a specific condition,
+
+wherein the travel process prediction apparatus includes:
+
+a storage means for storing the acquired situation
+information and a result of comparison between boarding completion
+time and passage time at each passage point, in an associated
+
+manner for each of the plurality of travel objects;
+
+--- PAGE 13 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+13
+
+a means for accepting a plurality of pieces of situation
+information indicating a plurality of situations in which an arbitrary
+travel object uses transportation:
+
+a means for accepting a request for comparing the results of
+comparison between passage time at a specific passage point and
+boarding completion time for the transportation used by the travel
+object in the plurality of situations;
+
+a means for extracting, from the storage means, a plurality of
+results of comparison between boarding completion time and the
+passage time at the specific passage point, associated with situation
+information having a same content as the accepted situation
+information, for each of the plurality of pieces of situation
+information;
+
+a means for calculating a mean or variance of the extracted
+results of comparison for each of the plurality of pieces of situation
+information;
+
+a means for statistically testing a difference in the mean or
+variance of the results of comparison calculated for each of the
+plurality of pieces of situation information; and
+
+a means for outputting a test result obtained by the means
+
+for testing.
+
+[Claim 10]
+A computer program making a computer which stores
+
+passage time at which a travel object actually passes through each of
+
+--- PAGE 14 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+14
+
+a plurality of passage points at a departure/arrival facility of
+transportation operated repeatedly at specific time, transportation
+specifying information specifying transportation used by the travel
+object, and situation information indicating a situation in which the
+travel object uses the transportation, in an associated manner for
+each of the plurality of the travel objects, execute processing for
+predicting a travel process of a travel object traveling with
+transportation, characterized by making the computer execute
+processing including the steps of:
+
+extracting from a stored content a plurality of combinations
+of passage time concerning a specific passage point and other
+information associated with the passage time; and
+
+calculating, based on the extracted plurality of combinations,
+an estimate value of passage time at which a travel object passes
+through a specific passage point under a specific condition by
+conducting a regression analysis for obtaining a relationship
+between the passage time and said other information, or a
+
+calculation of a mean or variance of the passage time.
+
+[Claim 11]
+
+A computer program making a computer which stores
+elapsed time while a travel object passes through two passage points
+of a plurality of passage points at a departure/arrival facility of
+transportation operated repeatedly at specific time, transportation
+
+specifying information specifying transportation used by the travel
+
+--- PAGE 15 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+15
+
+object, and situation information indicating a situation in which the
+travel object uses the transportation, in an associated manner for
+each of the plurality of travel objects, execute processing for
+predicting a travel process of a travel object traveling with
+transportation, characterized by making the computer execute
+processing including the steps of:
+
+extracting from a stored content a plurality of combinations
+of elapsed time concerning two specific passage points and other
+information associated with the elapsed time; and
+
+calculating, based on the extracted plurality of combinations,
+an estimate value of elapsed time while a travel object passes
+through two specific passage points under a specific condition by
+conducting a regression analysis for obtaining a relationship
+between the elapsed time and said other information or a calculation
+
+of a mean or variance of the elapsed time.
+
+[Claim 12]
+
+A computer program making a computer which stores
+transportation specifying information specifying transportation
+operated repeatedly at specific time, situation information
+indicating a situation in which a travel object uses the
+transportation, and a result of comparison between passage time at
+which the travel object actually passes through each of a plurality of
+passage points at a departure/arrival facility of the transportation
+
+and boarding completion time at which boarding of travel objects is
+
+--- PAGE 16 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+16
+
+actually completed for the transportation, in an associated manner
+for each of the plurality of travel objects, execute processing for
+predicting a travel process of a travel object traveling with
+transportation, characterized by making the computer execute
+processing including the steps of:
+
+extracting from a stored content a plurality of combinations
+of a result of comparison between passage time concerning a specific
+passage point and boarding completion time concerning specific
+transportation, and other information associated with the result of
+comparison; and
+
+calculating, based on the extracted plurality of combinations,
+an estimate value of a result of comparison between passage time
+concerning a specific passage point and boarding completion time
+under a specific condition by conducting a regression analysis for
+obtaining a relationship between the results of comparison and said
+other information, or a calculation of a mean or variance of the
+
+results of comparison.
+
+[Claim 13]
+
+A computer program making a computer which stores
+passage time at which a travel object traveling with transportation
+repeatedly operated at specific time passes through each of a
+plurality of passage points provided at a departure/arrival facility of
+transportation and transportation specifying information specifying
+
+transportation which is used by the travel object and which is
+
+--- PAGE 17 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+17
+
+specified by a plurality of items, in an associated manner for each of
+the plurality of travel objects, execute, when a plurality of pieces of
+transportation specifying information specifying a plurality of pieces
+of transportation which is candidates to be used by an arbitrary
+travel object is accepted, processing for comparing a plurality of
+pieces of passage time at which travel object passes through a
+specific passage point when the travel object uses each of the
+plurality of pieces of transportation, characterized by making the
+computer execute processing including the steps of:
+
+extracting from a stored content a plurality of pieces of
+passage time which concerns the specific passage point and which is
+associated with transportation specifying information having a same
+content as the accepted transportation specifying information, for
+each of the plurality of pieces of transportation specifying
+information;
+
+calculating, for each of the plurality of pieces of
+transportation specifying information, a mean or variance of the
+extracted passage time; and
+
+statistically testing a difference in the mean or variance of
+the passage time calculated for each of the plurality of pieces of
+
+transportation specifying information.
+
+[Claim 14]
+A computer program making a computer which stores
+
+passage time at which a travel object traveling with transportation
+
+--- PAGE 18 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+18
+
+repeatedly operated at specific time actually passes through each of
+a plurality of passage points provided at a departure/arrival facility
+of transportation and situation information indicating a situation
+specified by a plurality of items at a time when the travel object uses
+transportation, in an associated manner for each of the plurality of
+travel objects, execute, when a plurality of pieces of situation
+information indicating a plurality of situations in which an arbitrary
+travel object uses transportation is accepted, processing for
+comparing a plurality of pieces of passage time at which the travel
+object passes through a specific passage point when the travel object
+uses transportation in the plurality of situations, characterized by
+making the computer execute processing including the steps of:
+
+extracting from a stored content a plurality of pieces of
+passage time which concerns the specific passage point and which is
+associated with situation information having a same content as the
+accepted situation information, for each of the plurality of pieces of
+situation information;
+
+calculating, for each of the plurality of pieces of situation
+information, a mean or variance of the extracted passage time; and
+
+statistically testing a difference in the mean or variance of
+the passage time calculated for each of the plurality of pieces of
+
+situation information.
+
+[Claim 15]
+
+A computer program making a computer which stores
+
+--- PAGE 19 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+19
+
+elapsed time while a travel object traveling with transportation
+repeatedly operated at specific time passes through two passage
+points of a plurality of passage points provided ata
+departure/arrival facility of transportation and transportation
+specifying information specifying transportation which is used by
+the travel object and which is specified by a plurality of items, in an
+associated manner for each of the plurality of travel objects, execute,
+when a plurality of pieces of transportation specifying information
+specifying a plurality of pieces of transportation which is candidates
+to be used by an arbitrary travel object is accepted, processing for
+comparing a plurality of pieces of elapsed time while the travel
+object passes through two specific passage points when the travel
+object uses each of the plurality of pieces of transportation,
+characterized by making the computer execute processing including
+the steps of:
+
+extracting from a stored content a plurality of pieces of
+elapsed time which concerns the two specific passage points and
+which is associated with transportation specifying information
+having a same content as the accepted transportation specifying
+information, for each of the plurality of pieces of transportation
+specifying information;
+
+calculating a mean or variance of the extracted elapsed time
+for each of the plurality of pieces of transportation specifying
+information; and
+
+statistically testing a difference in the mean or variance of
+
+--- PAGE 20 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+20
+
+the elapsed time calculated for each of the plurality of pieces of
+
+transportation specifying information.
+
+[Claim 16]
+
+A computer program making a computer which stores
+elapsed time while a travel object traveling with transportation
+repeatedly operated at specific time passes through two passage
+points of a plurality of passage points provided at a
+departure/arrival facility of transportation and situation
+information indicating a situation specified by a plurality of items at
+a time when the travel object uses transportation, in an associated
+manner for each of the plurality of travel objects, execute, when a
+plurality of pieces of situation information indicating a plurality of
+situations in which an arbitrary travel object uses transportation is
+accepted, processing for comparing a plurality of pieces of elapsed
+time while the travel object passes through two specific passage
+points when the travel object uses the transportation in the plurality
+of situations, characterized by making the computer execute
+processing including the steps of:
+
+extracting from a stored content a plurality of pieces of
+elapsed time which concerns the two specific passage points and
+which is associated with situation information having a same content
+as the accepted situation information, for each of the plurality of
+pieces of situation information;
+
+calculating a mean or variance of the extracted elapsed time
+
+--- PAGE 21 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+21
+
+for each of the plurality of pieces of situation information; and
+statistically testing a difference in the mean or variance of
+the elapsed time calculated for each of the plurality of pieces of
+
+situation information.
+
+[Claim 17]
+
+A computer program making a computer which stores
+transportation specifying information specifying transportation
+repeatedly operated at specific time by a plurality of items and
+results of comparison between passage time at which a travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of the transportation and boarding
+completion time at which boarding of travel objects is actually
+completed for the transportation, in an associated manner for each
+of the plurality of travel objects, execute, when a plurality of pieces of
+transportation specifying information specifying a plurality of pieces
+of transportation which is candidates to be used by an arbitrary
+travel object is accepted, processing for comparing results of
+comparison between passage time at a specific passage point and
+boarding completion time for the plurality of pieces of transportation,
+characterized by making the computer execute processing including
+the steps of:
+
+extracting from a stored content a plurality of results of
+comparison between passage time at the specific passage point and
+
+boarding completion time which are associated with transportation
+
+--- PAGE 22 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+22
+
+specifying information having a same content as the accepted
+transportation specifying information, for each of the plurality of
+pieces of transportation specifying information:
+
+calculating, for each of the plurality of pieces of
+transportation specifying information, a mean or variance of the
+extracted results of comparison; and
+
+statistically testing a difference in the mean or variance of
+the results of comparison calculated for each of the plurality of
+
+pieces of transportation specifying information.
+
+[Claim 18]
+
+A computer program making a computer which stores
+situation information indicating a situation specified by a plurality
+of items at a time when a travel object traveling with transportation
+repeatedly operated at specific time uses transportation and results
+of comparison between passage time at which the travel object
+actually passes through each of a plurality of passage points at a
+departure/arrival facility of transportation and boarding completion
+time at which boarding of travel objects is actually completed for the
+transportation used by the travel object, in an associated manner for
+each of the plurality of travel objects, execute, when a plurality of
+pieces of situation information indicating a plurality of situations in
+which an arbitrary travel object uses transportation is accepted,
+processing for comparing results of comparison between passage
+
+time at a specific passage point and boarding completion time at
+
+--- PAGE 23 ---
+AEC16001PWOEPT1
+Application No.: 18156229.9
+Main Request for Summons
+
+23
+
+which boarding is completed for transportation used by the travel
+object in the plurality of situations, characterized by making the
+computer execute processing including the steps of:
+
+extracting from a stored content a plurality of results of
+comparison between passage time at the specific passage point and
+boarding completion time which are associated with situation
+information having a same content as the accepted situation
+information, for each of the plurality of pieces of situation
+information;
+
+calculating, for each of the plurality of pieces of situation
+information, a mean or variance of the extracted results of
+comparison; and
+
+statistically testing a difference in the mean or variance of
+the results of comparison calculated for each of the plurality of
+
+pieces of situation information.

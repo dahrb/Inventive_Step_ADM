@@ -1,0 +1,167 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+17
+
+MAIN REQUEST CLAIMS (Page 1 of 3)
+
+1. An industrial automation manufacturing control system having a
+manufacturing execution system comprising:
+
+a computing cloud (108) comprising at least one data storage device (112) and
+at least one processing device (110), wherein the computing cloud is configured to
+provide shared services to a plurality of industrial automation systems;
+
+a client (102-106) configured for a process of both data and process
+segregation, the client configured to communicate with the computing cloud and
+selectively offload data from a local system (202) to the computing cloud based upon
+one or more specified criteria, the client also configured to offload processes from the
+local system to the computing cloud based upon the one or more specified criteria;
+and
+
+a service bus configured to redirect requests from at least one of the industrial
+automation systems for at least one of the shared services to the computing cloud, the
+service bus configured to cause the shared services of the computing cloud to appear
+as local services to the at least one industrial automation system;
+
+wherein at least one of the one or more specified criteria is based upon a
+determination of whether data or processes are required for at least one process for
+instruction and/or control of other devices in one or more of the industrial automation
+systems and, in response to determining that the data or processes are required for the
+at least one process for instruction and/or control of the other devices, the data or
+processes are not offloaded to the computing cloud; and
+
+wherein the at least one industrial automation system is configured to use the
+at least one shared service of the computing cloud and at least one service from the
+
+local system.
+
+2. The system of Claim 1, wherein the at least one process for instruction
+and/or control comprises programming that causes an automated system to perform a
+
+specific function for a specific amount of time.
+
+3. The system of Claim 1, wherein the client is configured to connect to a
+
+plurality of computing clouds.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+18
+
+MAIN REQUEST CLAIMS (Page 2 of 3)
+
+4. The system of Claim 1, wherein the computing cloud is configured to
+
+offer a plurality of services to the client upon demand.
+
+5. The system of Claim 1, wherein the communication between the
+
+computing cloud and the client is bidirectional.
+
+6. The system of Claim 1, wherein the client and the computing cloud are
+
+configured to communicate through a secure protocol.
+
+7. The system of Claim 1, wherein the computing cloud comprises a
+cloud computing apparatus, the cloud computing apparatus comprising:
+
+at least one network interface (610) configured to provide a service bus
+connection;
+
+the at least one data storage device, which is configured to provide shared
+storage space through the service bus connection; and
+
+the at least one processing device, which is configured to provide functional
+
+services through the at least one service bus connection.
+
+8. An industrial automation manufacturing control method comprising:
+
+operating a process of both data and process segregation within a
+manufacturing execution system by:
+
+determining which data among a group of data are to be stored in a local
+environment (200);
+
+determining which processes among a group of processes are to be performed
+in the local environment;
+
+sending data that are not to be stored in the local environment to a computing
+cloud (108), the computing cloud providing shared services to a plurality of industrial
+automation systems;
+
+delegating processes
+
+that are not to be performed in the local environment to the computing cloud;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+19
+
+Markedup MAIN REQUEST CLAIMS (Page 3 of 3)
+
+operating the local environment by using the data stored in the local
+environment and the data stored in the computing cloud and by using the processes
+performed in the local environment and the processes performed in the computing
+cloud; and
+
+redirecting requests from at least one of the industrial automation systems for
+at least one of the shared services to the computing cloud using a service bus, the
+service bus causing the shared services of the computing cloud to appear as local
+services to the at least one industrial automation system;
+
+wherein the determination of which data are stored locally and the
+determination of which processes are performed locally are based upon one or more
+specified criteria, at least one of the one or more specified criteria is based upon a
+determination of whether data or processes are required for at least one process for
+instruction and/or control of other devices in one or more of the industrial automation
+systems and, in response to determining that the data or processes are required for the
+at least one process for instruction and/or control of the other devices, the data or
+processes are not offloaded to the computing cloud; and
+
+wherein a client that operates in association with the local environment is
+
+configured to control at least one of the industrial automation systems.
+
+9. The method of Claim 8, wherein the at least one process for instruction
+and/or control comprises programming that causes an automated system to perform a
+specific function for a specific amount of time.
+
+10. The method of Claim 8 wherein the one or more specified criteria
+
+further include a determination of whether the data or processes are storage intensive.
+
+11. |The method of Claim 8 wherein the client and the computing cloud
+
+communicate through a secure protocol.
+
+12. The method of Claim 8 wherein the client is configured to connect to a
+
+plurality of computing clouds.

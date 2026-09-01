@@ -1,0 +1,126 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+1
+
+Claims
+
+A computer cluster arrangement for processing a computation task, comprising:
+
+a plurality of computation nodes (CN), each of which interfacing a communication
+infrastructure (IN), at least two of which being arranged to jointly compute at least a first
+part of said computation task;
+
+at least one booster (B) being arranged to compute at least a second part of said
+computation task, each booster (B) interfacing said communication infrastructure (IN);
+and
+
+a resource manager (RM) being arranged to assign at least one booster (B) to at least
+one of said plurality of computation nodes (CN) for computation of said second part of
+said computation task, the assignment being accomplished as a function of a
+predetermined assignment metric wherein the assignment is dynamically established
+during processing of the computation task,
+
+characterized in that at least one computation node is assignable to the at least one
+booster to provide a computation acceleration of the computation task second part being
+computed by the at least one booster.
+
+The computer cluster arrangement according to claim 1, wherein said predetermined
+assignment metric is formed according to at least one of a group of metric specification
+techniques, said group comprising: a temporal logic, an assignment matrix, an
+
+assignment table, a probability function and a cost function.
+
+The computer cluster arrangement according to one of the preceding claims, wherein
+said predetermined assignment metric is specified as a function of at least one of a
+group of assignment parameters, said group comprising: resource information, cost
+information, complexity information, scalability information, a computation log record,
+
+compiler information, priority information and a time stamp.
+
+The computer cluster arrangement according to one of the preceding claims, wherein
+said assignment of at least one booster (B) to one of said plurality of computation nodes
+(CN) triggers at least one of a group of signals, said group comprising: a remote
+
+procedure call, a parameter handover, a data transmission.
+
+The computer cluster arrangement according to one of the preceding claims, wherein
+each computation node (CN) and each booster (B) interface said communication
+infrastructure (IN) respectively via an interfacing unit (1U1; 1U2).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+10.
+
+11.
+
+The computer cluster arrangement according to claim 5, wherein said interfacing unit
+(1U1; |U2) comprises at least one of a group of components, said group comprising: a
+virtual interface, a stub, a socket, a network controller and a network device.
+
+The computer cluster arrangement according to one of the preceding claims, wherein
+said communication infrastructure (IN) comprises at least one of a group of components,
+said group comprising: a bus, a communication link, a switching unit, a router and a high
+
+speed network.
+
+The computer cluster arrangement according to one of the preceding claims, wherein
+each computation node (CN) comprises at least one of a group of components, said
+group comprising: a multi-core processor, a cluster, a computer, a workstation and a
+
+multi purpose processor.
+
+The computer cluster arrangement according to one of the preceding claims, wherein
+said at least one booster (B) comprises at least one of a group of components, said
+group comprising: a many-core processor, a scalar processor, a Co-processor, a
+
+graphical processing unit, a cluster of many-core processors and a monolithic processor.
+
+The computer cluster arrangement according to one of the preceding claims, wherein
+said resource manager (RM) is arranged to update said predetermined assignment
+metric during computation of at least a part of said computation task.
+
+A method for operating a computer cluster arrangement for processing a computation
+task, especially a computer cluster according to at least one of claims 1 to 10,
+comprising:
+
+computing (100) at least a first part of said computation task by at least two of said
+plurality of computation nodes (CN), each computation node (CN) interfacing a
+communication infrastructure (IN);
+
+computing (101) at least a second part of said computation task by at least one booster
+(B), each booster (B) interfacing said communication infrastructure (IN); and
+
+assigning (102) at least one booster (B) to one of said plurality of computation nodes
+(CN) by a resource manager (RM), for computation of said second part of said
+computation task, said assignment being accomplished as a function of a predetermined
+assignment metric wherein the assignment is dynamically established during processing
+of the computation task,
+
+--- PAGE 3 ---
+3
+
+characterized in that at least one computation node is assigned to the at least one
+booster to provide a computation acceleration of the computation task second part being
+computed by the at least one booster.

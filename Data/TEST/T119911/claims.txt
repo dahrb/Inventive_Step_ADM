@@ -1,0 +1,88 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request
+
+Claims
+
+1. A method for annotating a recording with a current location
+comprising:
+
+monitoring (204), while travelling, for different types of signal
+sources, including one or more secondary signal sources, that may be
+used to facilitate determining a current location;
+
+logging characteristics of the secondary signal sources;
+
+making a recording (206);
+
+determining (208) whether to determine a current location, or to
+defer current location determination for a later time;
+
+if current location determination is to be deferred, associating
+the current time with the recording and determining where the
+recording occurred at a later time;
+
+if current location determination is not to be deferred,
+determining if a primary signal source is available (210);
+
+if the primary signal source is available, determining a current
+location (212) based on the primary signal source and associating
+(214) the current location with the recording;
+
+if the primary signal source is not available, estimating a current
+location (216) based at least in part on the logged characteristics of the
+second signal sources and associating the estimated current location
+with the recording (218).
+
+2. The method of claim 1, wherein the current location has an
+associated margin of error determined with respect to the type of the
+
+signal source.
+
+J00046948EP 13
+PCT/US03/04643
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+3. The method of claim 1, wherein said different types of signal
+sources include signals from GPS, LORAN, cellular phone towers,
+802.11 hotspots, and Radio Data System (RDS) transmitters.
+
+4. The method of claim 1, comprising:
+determining a primary position determination device is not
+available.
+
+5. The method of claim 4, wherein the primary position
+determination device comprises a GPS receiver.
+
+6. The method of claim 1, further comprising:
+
+looking up one of the secondary signal sources on a coverage
+map to determine an origin of that signal source; and
+
+determining the current location based at least in part on the
+origin.
+
+t. An article of manufacture to facilitate annotating a recording
+with a current location, comprising:
+
+a machine-accessible medium having associated data, wherein
+the data, when accessed, results in a machine performing the method
+of any one of claims 1 to 6.
+
+J00046948EP 14
+PCT/US03/04643

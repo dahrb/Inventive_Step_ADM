@@ -1,0 +1,8 @@
+TITLE:
+Model-based resource selection for efficient virtual cluster deployment
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+Virtual clusters on Grids can greatly extend the current scale and efficiency of high-performance Grid computing through more flexible usage of distributed heterogeneous resources. However, the overhead due to installing virtual clusters often precludes their applicability only to long-running applications. This is especially problematic on heterogeneous Grid environments, since installation time of each virtual node can vary greatly, and the total installation time of a virtual cluster is bottlenecked by the slowest node. To achieve fast virtual cluster installation even on such heterogeneous Grid environments, we propose a model-based resource selection policy that automatically identifies a near-optimal node combination to assemble each virtual cluster. We divide the VM setup process into five logical steps and construct a performance model for each step. The model represents the execution time of each step as a linear combination of hardware and software parameters, including CPU frequency, disk I/O performance, and installed package size. To evaluate the proposed resource selection policy, we have extended our own virtual cluster installer, VPC, to select nodes in the increasing order of predicted installation time. Experimental results show that the model-based selection policy is indeed effective, especially when the package size differs depending on sites. The proposed policy has shown to reduce the installation time by up to 68% compared to the most naïve policy that selects nodes in a random order, 60% and 58% to the policies considering either CPU speed or disk I/O performance, respectively.

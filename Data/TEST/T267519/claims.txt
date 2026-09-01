@@ -1,0 +1,86 @@
+--- PAGE 1 ---
+Huawei Technologies, Co. Ltd.
+EP 14 737 430.0
+H12041 WOEP
+
+CLAIMS
+
+1. A method of bootstrapping from a remote image file comprising:
+loading, by a processor, an initial bootloader;
+employing the initial bootloader to download (503) a final bootloader from the remote
+image file via a network;
+employing the final bootloader to download (509) a kernel and root file system
+mounting data needed to allow the kernel to mount the image file as an Internet Small
+Computer System Interface, ISCSI, device from the remote image file without down-
+loading an entire initial root file system; and
+executing (513) the kernel to bootstrap the processor based on the root file system
+mounting data and completing booting from the image file by downloading only the
+
+portions of the image file needed to complete the bootstrapping process.
+
+2. The method of claim 1, wherein executing the kernel to bootstrap the processor com-
+prises:
+mounting, by the kernel, the remote image file via the network as a block device based
+on the root file system mounting data; and
+
+downloading a final root file system from the mounted remote image file.
+
+3, The method of claim 1 or 2, wherein employing the initial bootloader to download the
+final bootloader comprises querying a boot server to obtain an internet protocol, IP,
+address associated with a target server that comprises the remote image file, a file name
+of the remote image file, and a configuration indicating a location of the final bootloader
+
+in the remote image file.
+
+4, The method of any one of claims | to 3, wherein the root file system mounting data is
+
+downloaded from an initial ramdisk, initrd, file.
+
+5. The method of any one of claims 1 to 4, wherein all downloaded files are stored to a
+
+random access memory, RAM, and no downloaded files are stored to a hard disk.
+
+--- PAGE 2 ---
+10.
+
+A network element, NE, comprising:
+
+a transmitter (210);
+
+a receiver (210);
+
+amemory (232); and
+
+a processor (230) coupled to the transmitter, receiver, and memory, configured to cause
+
+the NE to:
+load an initial bootloader to memory;
+execute the initial bootloader to download a final bootloader from a remote
+image file via a network;
+execute the final bootloader to download a kernel and root file system mounting
+data needed to allow the kernel to mount the image file as an Internet Small
+Computer System Interface, ISCSI, device from the remote image file without
+downloading an entire initial root file system; and
+employ the kernel to complete a bootstrapping process based on the root file
+system mounting data and complete booting from the image file by downloading
+
+only the portions of the image file needed to complete the bootstrapping process.
+
+The NE of claim 6, wherein the root file system mounting data comprises only data
+
+needed to allow the kernel to mount the remote image file as a block device.
+
+The NE of claim 6 or 7, wherein executing the kernel comprises:
+mounting the remote image file as a block device based on the root file system mounting
+data; and
+
+downloading a root file system from the remote image file.
+
+The NE of any one of claims 6 to 8, wherein the processor is further configured to cause
+the NE to query a boot server to obtain an internet protocol, IP, address associated with
+a target server that comprises the remote image file, a file name of the remote image file,
+
+and a configuration indicating a location of the final bootloader in the remote image file.
+
+The NE of any one of claims 6 to 9, wherein the entire remote image file is not down-
+loaded.

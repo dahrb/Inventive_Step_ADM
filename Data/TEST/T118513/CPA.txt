@@ -1,0 +1,267 @@
+TITLE:
+Method of delivering information over a communication network
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A technique and apparatus for delivering information to the subscribers (terminals) on a communication network. The information is simultaneously displayed without interfering with the reception and/or display of subscriber's selected data or program.
+
+CLAIMS:
+1. A method of delivering information to subscribers on a communication network, wherein a plurality of data providers and a plurality of processing devices, each processing device uniquely associated with a subscriber, are connected to said network, comprising the steps of:
+receiving a sequence of INFO IDs by said plurality of processing devices, each INFO ID uniquely identifying information in a plurality of INFO sources connected to said network;
+reading a sequence of information from said plurality of INFO sources in accordance with said sequence of INFO IDs;
+selecting at least one data provider by each subscriber to display data that is received from said at least one data provider via said network; and
+continuously displaying said sequence of information simultaneously with said data received from said at least one data provider selected by said each subscriber on an associated processing device such that said sequence of information and said data requested by said each subscriber are simultaneously viewable, and wherein said data to be displayed on said associated processing device is selectable by said each subscriber, the display of said sequence of information is not controllable by said each subscriber and does not change in response to the selection of said data by said each subscriber.
+2. The method of claim 1, further comprising the step of selecting another data provider in response to an input from said each subscriber and wherein the step of continuously displaying displays said sequence of information simultaneously with data received from said other data provider.
+3. The method of claim 1, wherein the step of continuously displaying displays said sequence of information without interfering with the display of said data received from said at least one data provider selected by said each subscriber.
+4. The method of claim 1, further comprising the steps of:
+verifying the authorization of said each subscriber to determine if said each subscriber is authorized to connect to said network; and
+inhibiting said associated processing device from displaying said sequence of information if it is determined that said each subscriber is not authorized to connect to said network.
+5. The method of claim 4, further comprising the step of inhibiting said associated processing device from displaying said data received from said at least one data provider selected by said each subscriber if it is determined that said each subscriber is not authorized to connect to said network.
+6. The method of claim 1, further comprising the steps of:
+verifying the authorization of said each subscriber to determine if said each subscriber is authorized to connect to said network; and
+inhibiting said associated processing device from displaying said data received from said at least one data provider selected by said each subscriber if it is determined that said each subscriber is not authorized to connect to said network.
+7. The method of claim 1, wherein said sequence of information contains a sequence of advertisements.
+8. The method of claim 1, wherein said sequence of information contains a sequence of messages or announcements.
+9. The method of claim 1, wherein said sequence of information contains a sequence of news.
+10. The method of claim 1, wherein said sequence of information contains a sequence of updates.
+11. The method of claim 1, wherein said sequence of information contains a sequence of advertisements, messages or announcements, news and updates.
+12. The method of claim 1, wherein the information comprises texts.
+13. The method of claim 1, wherein the information comprises still pictures.
+14. The method of claim 1, wherein the information comprises moving pictures.
+15. The method of claim 1, wherein the information comprises a video component and an audio component.
+16. The method of claim 1, wherein the information is a combination of text, still pictures, moving pictures having video and audio components.
+17. The method of claim 5, wherein said network is a computer network and said plurality of processing devices are terminals.
+18. The method of claim 17, further comprising the steps of:
+assigning a unique subscriber ID and a password to said each subscriber on said communication network; and
+storing said subscriber ID and said password for said each subscriber in a database.
+19. The method of claim 18, further comprising the step of establishing a connection between each of said terminals and said computer network.
+20. The method of claim 19, wherein each terminal includes an input device and wherein the step of establishing the connection includes the steps of:
+entering a subscriber ID and a password on said input device by said each subscriber to initiate connection between a terminal associated with said each subscriber and said communication network;
+transmitting said subscriber ID and said password entered on said input device to said database for verification;
+determining whether said subscriber ID entered on said input device matches one of said subscriber IDs stored in said database to provide a verified subscriber ID;
+verifying said password entered on said input device matches said password associated with said verified subscriber ID if said verified subscriber ID is found; and
+connecting said terminal associated with said each subscriber to said computer network if it is determined that said password entered on said input device matches a password stored in said database which is associated with said verified subscriber ID.
+21. The method of claim 3, wherein said network is a computer network and said plurality of processing devices are terminals.
+22. The method of claim 21, wherein each of said plurality of data providers is a server on said computer network and further comprising the step of selecting data to be displayed from said at least one data provider by said each subscriber.
+23. The method of claim 22, wherein each of said terminals includes an input device and wherein the step of selecting data includes the step of:
+entering a request for said data from said at least one server connected to said computer network on said input device of a terminal associated with said each subscriber; and
+transmitting said request for said data to said at least one server from said terminal associated with said each subscriber.
+24. The method of claim 1, wherein said network is a computer network and wherein the step of receiving a sequence of information includes the steps of:
+receiving a sequence of addresses from a database connected to a network, each address indicating the location of the information in said plurality of INFO sources; and
+reading said sequence of information from said plurality of INFO sources in accordance with said sequence of addresses.
+25. The method of claim 5, further comprising the steps of:
+assigning an unique subscriber ID to each of said plurality of processing devices;
+generating a login time and a login date for said each subscriber if it is determined that said each subscriber is authorized to connect to said network; and
+storing said subscriber ID, said login time and said login date for said each subscriber in a database connected to said network if it is determined that said each subscriber is authorized to connect said network.
+26. The method of claim 25, wherein the step of generating login time and login date includes the steps of:
+receiving from a source connected to said network a virtual date and a virtual time; and
+generating said login time and said login date for said each subscriber as a function of said virtual time and said virtual date, respectively.
+27. The method of claim 25, further comprising the steps of:
+determining whether a processing device is no longer connected to said network;
+generating a logout time and a logout date for said each subscriber if it is determined that said processing device associated with said each subscriber is no longer connected to said network; and
+storing said logout time and said logout date for said each subscriber in said database if it is determined that said processing device associated with said each subscriber is no longer connected to said network.
+28. The method of claim 27, further comprising the steps of:
+generating a session duration for said each subscriber as a function of said login time, said login date, said logout date and said logout time; and
+storing said session duration for said each subscriber in said database.
+29. The method of claim 28, further comprising the steps of:
+generating a session usage record for said each subscriber containing said subscriber ID, said login time, said login date, said logout date, said logout time and said session duration; and
+storing said session usage record for said each subscriber in said database.
+30. A method of delivering information to subscribers on a communication network, wherein a plurality of data providers and a plurality of processing devices, each processing device uniquely associated with a subscriber, are connected to said network, comprising the steps of:
+assigning an unique INFO ID and an INFO duration to each information from a plurality of INFO sources connected to said network to provide a plurality of INFO IDs and a plurality of INFO durations;
+storing said plurality of INFO IDs and said plurality of INFO durations in a database connected to said network;
+receiving a sequence of information by said plurality of processing devices;
+selecting at least one data provider by each subscriber to display data that is received from said at least one data provider via said network; and
+continuously displaying said sequence of information simultaneously with said data received from said at least one data provider selected by said each subscriber on an associated processing device such that said sequence of information and said data requested by said each subscriber are simultaneously viewable, and wherein said data to be displayed on said associated processing device is selectable by said each subscriber, the display of said sequence of information is not controllable by said each subscriber and said each information in said sequence of information is displayed for said INFO duration assigned to said each information before displaying next information in said sequence of information.
+31. The method of claim 26, further comprising the steps of:
+determining whether a processing device is no longer connected to said network;
+generating a logout time and a logout date for said each subscriber as a function of said virtual date and said virtual time if it is determined that said processing device associated with said each subscriber is no longer connected to said network; and
+storing said logout date and said logout time for said each subscriber to said database if it is determined that said processing device associated with said each subscriber is no longer connected to said network.
+32. The method of claim 31, further comprising the steps of:
+generating a session duration for said each subscriber as a function of said login time, said login date, said logout date and said logout time; and
+storing said session duration for said each subscriber to said database.
+33. The method of claim 32, further comprising the steps of:
+generating a session usage record for said each subscriber containing said subscriber ID, said login time, said login date, said logout date, said logout time and said session duration; and
+storing said session usage record for said each subscriber in said database.
+34. The method of claim 27, further comprising the steps of:
+assigning an INFO duration to each information in said sequence of information to provide a plurality of INFO durations
+storing said plurality of INFO IDs and said plurality of INFO durations in said database; and
+wherein the step of continuously displaying displays said each information in said sequence of information for said INFO duration assigned to said each information before displaying next information in said sequence of information.
+35. The method of claim 34, further comprising the steps of:
+determining which information in said sequence of information was displayed on said associated processing device as a function of said login time, said login date, said logout date, said logout time and said plurality of INFO durations to provide a list of displayed information for said each subscriber; and
+storing said list of displayed information for said each subscriber in said database.
+36. The method of claim 35, wherein said list of displayed information for said each subscriber contains a list of INFO IDs corresponding to the displayed information.
+37. The method of claim 36, further comprising the steps of:
+determining date and time that each INFO ID in said list of displayed information was displayed on said associated processing device as a function of said login time, said login date, said logout time, said logout date and said plurality of INFO durations to provide a display date and a display time for said each INFO ID in said list of displayed information for said each subscriber; and
+storing said display date and said display time for said each INFO ID in said list of displayed information for said each subscriber in said database.
+38. The method of claim 37, further comprising the steps of:
+generating an INFO display record for each INFO ID in said list of displayed information for said each subscriber, said INFO display record containing an INFO ID and said subscriber ID of said each subscriber, and said display date, said display time and said INFO duration associated with said INFO ID; and
+storing said INFO display record in said database.
+39. The method of claim 31, further comprising the steps of:
+assigning an INFO duration to each information in said sequence of information to provide a plurality of INFO durations;
+storing said plurality of INFO IDs and said plurality of INFO durations in said database; and
+wherein the step of continuously displaying displays said each information in said sequence of information for said INFO duration assigned to said each information before displaying next information in said sequence of information.
+40. The method of claim 39, further comprising the steps of:
+determining which information in said sequence of information was display to said each subscriber as a function of said login time, said login date, said logout date, said logout time and said plurality of INFO durations to provide a list of display information for said each subscriber; and
+storing said list of display information for said each subscriber in said database.
+41. The method of claim 40, wherein said list of displayed information for said each subscriber contains a list of INFO IDs corresponding to the displayed information.
+42. The method of claim 41, further comprising the steps of:
+determining date and time that each INFO ID in said list of displayed information was displayed on said associated processing device as a function of said login time, said login date, said logout time, said logout date and said plurality of INFO durations to provide a display date and a display time for said each INFO ID in said list of displayed information for said each subscriber; and
+storing said display date and said display time for said each INFO ID in said list of displayed information for said each subscriber in said database.
+43. The method of claim 42, further comprising the steps of:
+generating an INFO display record for each INFO ID in said list of displayed information for said each subscriber, said INFO display record containing an INFO ID and said subscriber ID of said each subscriber, and said display date, said display time and said INFO duration associated with said INFO ID; and
+storing said INFO display record in said database.
+44. The method of claim 37, further comprising the steps of:
+assigning a location ID for said each subscriber in accordance with the locality of said associated processing device; and
+storing said location ID for said each subscriber in said database.
+45. The method of claim 44, wherein said location ID includes a zip code; wherein said associated processing device includes a storage device; and the method further comprising the steps of:
+generating an INFO display record for each INFO ID in said list of displayed information for said each subscriber, said INFO display record containing an INFO ID, said subscriber ID and said location ID of said each subscriber, and said display date, said display time and said INFO duration associated with said INFO ID;
+storing said INFO display record in said storage device of said associated processing device; and
+transmitting said INFO display record to said database.
+46. The method of claim 44, further comprising the steps of:
+generating an INFO display record for each INFO ID in said list of displayed information for said each subscriber, said INFO display record containing an INFO ID, said subscriber ID and said location ID of said each subscriber, and said display date, said display time and said INFO duration associated with said INFO ID; and
+storing said INFO display record in said database.
+47. The method of claim 42, further comprising the steps of:
+assigning a location ID for said each subscriber in accordance with the locality of said associated processing device; and
+storing said location ID for said each subscriber in said database.
+48. The method of claim 47, further comprising the steps of:
+generating an INFO display record for each INFO ID in said list of displayed information for said each subscriber, said INFO display record containing an INFO ID, said subscriber ID and said location ID of said each subscriber, and said display date, said display time and said INFO duration associated with said INFO ID; and
+storing said INFO display record in said database.
+49. The method of claim 47, wherein said location ID includes a zip code; wherein said associated processing device includes a storage device; and the method further comprising the steps of:
+generating an INFO display record for each INFO ID in said list of displayed information for said each subscriber, said INFO display record containing an INFO ID, said subscriber ID and said location ID of said each subscriber, and said display date, said display time and said INFO duration associated with said INFO ID;
+storing said INFO display record in said storage device of said associated processing device; and
+transmitting said INFO display record to said database.
+50. The method of claim 32, further comprising the steps of:
+assigning a location ID for said each subscriber in accordance with the locality of said associated processing device; and
+storing said location ID for said each subscriber in said database.
+51. The method of claim 50, wherein said location ID includes a zip code.
+52. The method of claim 50, further comprising the steps of:
+generating a session usage record for said each subscriber containing said subscriber ID, said login time, said login date, said logout date, said logout time, said session duration and said location ID; and
+storing said session usage record for said each subscriber in said database.
+53. The method of claim 28, further comprising the steps of:
+assigning a location ID for said each subscriber in accordance with the locality of said associated processing device; and
+storing said location ID for said each subscriber in said database.
+54. The method of claim 53, wherein said location ID includes a zip code.
+55. The method of claim 53, further comprising the steps of:
+generating a session usage record for said each subscriber containing said subscriber ID, said login time, said login date, said logout date, said logout time, said session duration and said location ID; and
+storing said session usage record for said each subscriber in said database.
+56. A method of delivering information to subscribers on a communication network, wherein a plurality of data providers and a plurality of processing devices, each processing device uniquely associated with a subscriber, are connected to said network, comprising the steps of:
+assigning an unique subscriber ID to each of said plurality of processing devices;
+verifying the authorization of said each subscriber to determine if said each subscriber is authorized to connect to said network;
+generating a login time and a login date for said each subscriber if it is determined that said each subscriber is authorized to connect to said network;
+storing said subscriber ID, said login time and said login date for said each subscriber in a database connected to said network if it is determined that said each subscriber is authorized to connect said network;
+receiving a sequence of information by said plurality of processing devices from a plurality of INFO sources connected to said network;
+selecting at least one data provider by each subscriber to display data that is received from said at least one data provider via said network;
+continuously displaying said sequence of information simultaneously with said data received from said at least one data provider selected by said each subscriber on an associated processing device if it is determined that said each subscriber is authorized to connect to said network, such that said sequence of information and said data requested by said each subscriber are simultaneously viewable, and wherein said data to be displayed on said associated processing device is selectable by said each subscriber and the display of said sequence of information is not controllable by said each subscriber;
+generating a ping signal every predetermined interval by said associated processing device if it is determined that said each subscriber is authorized to connect to said network;
+transmitting said ping signal to said database;
+updating said database to indicate expected time of next ping signal from said each subscriber;
+generating a logout time and a logout date for said each subscriber when said ping signal is not received from said associated processing device substantially within said expected time; and
+storing said logout time and said logout date for said each subscriber in said database.
+57. The method of claim 31, further comprising the steps of:
+generating a ping signal every predetermined interval by said associated processing device if it is determined that said each subscriber is authorized to connect to said network;
+transmitting said ping signal to said database;
+updating said database to indicate expected time of next ping signal from said each subscriber; and
+wherein the step of generating said logout time and said logout date generates said logout time and said logout date for said each subscriber when said ping signal is not received from said associated processing device substantially within said expected time.
+58. The method of claim 30, wherein the step of continuously displaying includes the steps of:
+determining date and time that each information in said sequence of information is displayed on said associated processing device to provide a display date and a display time, respectively; and
+storing said display date and said display time for said each information for said each subscriber in said database.
+59. The method of claim 58, further comprising the steps of:
+generating a plurality of INFO display records for said each subscriber, each INFO display record containing subscriber ID of said each subscriber, and said INFO ID, said display date, said display time and said INFO duration associated with said each information; and
+storing said plurality of INFO display records for said each subscriber in said database.
+60. The method of claim 58, further comprising the steps of:
+assigning a location ID for said each subscriber in accordance with the locality of said associated processing device; and
+storing said location ID for said each subscriber in said database.
+61. The method of claim 60, wherein said location ID includes a zip code; wherein said associated processing device includes a storage device; and the method further comprising the steps of:
+generating a plurality of INFO display records for said each subscriber, each INFO display record containing subscriber ID and location ID of said each subscriber, and said INFO ID, said display date, said display time and said INFO duration associated with said each information;
+storing said plurality of INFO display records for said each subscriber in said storage device of said associated processing device; and
+transmitting said plurality of INFO display records for said each subscriber to said database.
+62. The method of claim 60, further comprising the steps of:
+generating a plurality of INFO display records for said each subscriber, each INFO display record containing subscriber ID and location ID of said each subscriber, and said INFO ID, said display date, said display time and said INFO duration associated with said each information; and
+storing said plurality of INFO display records for said each subscriber in said database.
+63. The method of claim 3, wherein each of said plurality of processing devices includes a monitor having a first portion and a second portion, and an input device; and wherein the step of continuously displaying displays said sequence of information in said first portion of said monitor and displays said data received from said at least one data provider selected by each subscriber in said second portion of said monitor.
+64. The method of claim 63, further comprising the steps of:
+assigning an INFO duration to each information in said sequence of information to provide a plurality of INFO durations;
+storing said plurality of INFO IDs and said plurality of INFO durations in a database connected to said network; and
+wherein the step of continuously displaying displays said each information in said sequence of information for said INFO duration assigned to said each information before displaying next information in said sequence of information.
+65. The method of claim 64 wherein said first portion of said monitor is divided into a plurality of linked regions and a plurality of unlinked regions, each of said plurality of linked regions is linked to one of said plurality of data providers; and the method further comprising the step of selecting one of said plurality of linked regions by said each subscriber to receive additional information.
+66. The method of claim 65, wherein each of said plurality of data providers is uniquely identified by a data provider ID and further comprising the steps of:
+assigning an unique subscriber ID to said associated processing device;
+detecting which information in said sequence of information is being displayed on said first portion of said monitor associated with said associated processing device to provide a displayed INFO ID;
+determining date and time that information corresponding to said displayed INFO ID was displayed on said associated processing device to provide a display date and a display time, respectively;
+detecting which one of said plurality of linked regions was selected by said each subscriber during the display of information corresponding to said displayed INFO ID to provide a selected data provider ID; and
+storing said subscriber ID, said displayed INFO ID, said selected data provider ID, said display date and said display time for said each subscriber in said database if it is detected that said one of said plurality of linked regions was selected by said each subscriber.
+67. The method of claim 66, further comprising the steps of:
+assigning a location ID for said each subscriber in accordance with the locality of said associated processing device; and
+storing said location ID for said each subscriber in said database.
+68. The method of claim 67, wherein said location ID includes a zip code; wherein said associated processing device includes a storage device; and the method further comprising the steps of:
+generating a plurality of clicked event records for said each subscriber, each clicked event record for said each subscriber being associated with a single selected data provider ID and said each clicked event record contains said subscriber ID, said location ID and said single selected data provider ID, and said displayed INFO ID, said display date and said display time associated with said single selected data provider ID;
+storing said plurality of clicked event records for said each subscriber in said storage device of said associated processing device; and
+transmitting said plurality of clicked event records for said each subscriber to said database.
+69. The method of claim 67, further comprising the steps of:
+generating a plurality of clicked event records for said each subscriber, each clicked event record for said each subscriber being associated with a single selected data provider ID and said each clicked event record contains said subscriber ID, said location ID and said single selected data provider ID, and said displayed INFO ID, said display date and said display time associated with said single selected data provider ID; and
+storing said plurality of clicked event records for said each subscriber in said database.
+70. The method of claim 1, wherein each information in said sequence of information is a unsolicited request for data from one of said plurality of data providers.
+71. The method of claim 70, wherein said unsolicited request for data is limited to a subset of said plurality of data providers.
+72. The method of claim 71, wherein the step of selecting at least one data provider inhibits the selection of a data provider in said subset by said each subscriber.
+73. The method of claim 1, wherein each of said plurality of data providers is uniquely identified by a data provider ID and further comprising the steps of storing said subscriber ID and said data provider ID associated with at least one data provider selected by said each subscriber in a database connected to said network.
+74. The method of claim 73, further comprising the steps of:
+determining date and time said data received from said at least one data provider selected by said each subscriber was displayed on said associated processing device to provide a display date and a display time, respectively; and
+storing said display date and said display time in said database.
+75. The method of claim 74, further comprising the steps of:
+assigning a location ID for said each subscriber in accordance with the locality of said associated processing device; and
+storing said location ID for said each subscriber in said database.
+76. The method of claim 75, wherein said location ID includes a zip code; wherein said associated processing device includes a storage device; and wherein the method further comprising the steps of:
+generating a plurality of data display records for said each subscriber, each data display record for said each subscriber being associated with a single data provider ID stored in said database and said each data display record containing said subscriber ID, said location ID and said single data provider ID, and said display date and said display time associated with said single data provider ID;
+storing said plurality of data display records for said each subscriber in said storage device of said associated processing device; and
+transmitting said plurality of data display records for said each subscriber to said database.
+77. The method of claim 75, further comprising the steps of:
+generating a plurality of data display records for said each subscriber, each data display record for said each subscriber being associated with a single data provider ID stored in said database and said each data display record containing said subscriber ID, said location ID and said single data provider ID, and said display date and said display time associated with said single data provider ID; and
+storing said plurality of data display records for said each subscriber in said database.
+78. The method of claim 2, wherein said network is a cable television network; and wherein said plurality of processing devices are converter boxes.
+79. The method of claim 78, wherein said each of said plurality of data providers represents a broadcast channel on said cable television network.
+80. The method of claim 79, wherein each of said converter boxes includes a television receiving apparatus, wherein the step of selecting at least one data provider selects a broadcast channel to display a program that is received on said selected broadcast channel and wherein the step of continuously displaying displays said sequence of information simultaneously with said program received on said selected broadcast channel.
+81. The method of claim 80, wherein the step of selecting another data provider selects a next broadcast channel to display a program that is received on said next broadcast channel in response to said input from said each subscriber and wherein the step of continuously displaying displays said sequence of information simultaneously with said program received on said next broadcast channel.
+82. The method of claim 81, wherein the step of selecting another data provider includes operating a channel up button or a channel down button on a channel selector operable with said convertor box.
+83. The method of claim 66, wherein the step of selecting one of said plurality of linked regions includes the step of displaying said additional information in said second portion of said monitor.
+84. The method of claim 66, wherein the step of selecting one of said plurality of linked regions includes the steps of:
+displaying a request for additional data to said each subscriber in said second portion of said monitor;
+entering said additional data on said input device by said each subscriber; and
+storing said additional data in said database.
+85. A method of selectively delivering information to subscribers on a communication network, wherein a plurality of data providers and a plurality of processing devices, each processing device uniquely associated with a subscriber, are connected to said network, comprising the steps of:
+storing profile data in a database connected to said network for each subscriber;
+storing a plurality of information received from a plurality of INFO sources connected to said network in said database;
+selecting a sequence of information for said each subscriber from said plurality of information in accordance with said profile data of said each subscriber, each information in said sequence of information being uniquely identified by an INFO ID;
+receiving a sequence of INFO IDs for said each subscriber by a processing device associated with said each subscriber;
+reading a sequence of information from said plurality of INFO sources in accordance with said sequence of INFO IDs;
+selecting at least one data provider by said each subscriber to display data that is received from said at least one data provider via said network; and
+continuously displaying said sequence of information for said each subscriber simultaneously with said data received from said at least one data provider selected by said each subscriber on said associated processing device such that said sequence of information for said each subscriber and said data requested by said each subscriber a resimultaneously viewable, and wherein said data to be displayed on said associated processing device is selectable by said each subscriber, the display of said sequence of information for said each subscriber is not controllable by said each subscriber and does not change in response to the selection of said data by said each subscriber.
+86. The method of claim 85, further comprising the step of selecting another data provider in response to an input from said each subscriber and wherein the step of continuously displaying displays said sequence of information for said each subscriber simultaneously with data received from said other data provider.
+87. The method of claim 85, wherein the step of continuously displaying displays said sequence of information for said each subscriber without interfering with the display of said data received from said at least one data provider selected by said each subscriber.
+88. The method of claim 85, wherein each of said plurality of INFO sources includes an INFO database and wherein the step of storing a plurality of information includes the step of retrieving information from each database to generate said plurality of information.
+89. The method of claim 85, further comprising the steps of:
+verifying the authorization of said each subscriber to determine if said each subscriber is authorized to connect to said network; and
+inhibiting said associated processing device from displaying said sequence of information for said each subscriber if it is determined that said each subscriber is not authorized to connect to said network.
+90. The method of claim 89, further comprising the step of inhibiting said associated processing device from displaying said data received from said at least one data provider selected by said each subscriber if it is determined that said each subscriber is not authorized to connect to said network.
+91. The method of claim 85, further comprising the steps of:
+verifying the authorization of said each subscriber to determine if said each subscriber is authorized to connect to said network; and
+inhibiting said associated processing device from displaying said data received from said at least one data provider selected by said each subscriber if it is determined that said each subscriber is not authorized to connect to said network.
+92. The method of claim 85, wherein said sequence of information contains a sequence of advertisements.
+93. The method of claim 85, wherein said sequence of information contains a sequence of messages or announcements.
+94. The method of claim 85, wherein said sequence of information contains a sequence of news.
+95. The method of claim 85, wherein said sequence of information contains a sequence of updates.
+96. The method of claim 85, wherein said sequence of information contains a sequence of advertisements, messages or announcements, news and updates.
+97. The method of claim 85, wherein the information comprises texts.
+98. The method of claim 85, wherein the information comprises still pictures.
+99. The method of claim 85, wherein the information comprises moving pictures.
+100. The method of claim 85, wherein the information comprises a video and audio component.
+101. The method of claim 85, wherein the information is a combination of text, still pictures and moving pictures.
+102. The method of claim 90, wherein said network is a computer network and said plurality of processing devices are terminals.
+103. The method of claim 102, further comprising the steps of:
+assigning a unique subscriber ID and a password to said each subscriber on said communication network; and
+storing said subscriber ID and said password for said each subscriber in said database.
+104. The method of claim 103, further comprising the step of establishing a connection between each of said terminals and said computer network.
+105. The method of claim 104, wherein each terminal includes an input device and wherein the step of establishing the connection includes the steps of:
+entering a subscriber ID and a password on said input device by said each subscriber to initiate connection between a terminal associated with said each subscriber and said communication network;
+transmitting said subscriber ID and said

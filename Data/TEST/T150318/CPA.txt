@@ -1,0 +1,64 @@
+TITLE:
+Virtual faceted hard media imaging
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A tilt sensitive virtual marking implement is used to render an impression on an electronic presentation device. Further, a bearing measurement and/or a barrel rotation measurement of the virtual marking implement may be made with respect to the surface. The barrel rotation, tilt, and/or bearing are then used to vary geometry of an impression profile associated with a faceted physical marking implement as well as an intensity of the rendering. A user may actively vary the impression profile while he or she produces strokes of the virtual marking implement across the surface without changing the faceted physical marking implement selection or switching to a different virtual marking implement so that a corresponding impression profile mimics an impression of a facet on the faceted physical marking implement.
+
+CLAIMS:
+1. A method of determining a mark modeling a contact area between a faceted implement surface of an implement and a marking surface, the method comprising:
+receiving a marking event that specifies a tilt measurement of a tilt sensitive input device; and
+determining a geometry of the mark and an intensity distribution within the mark based on the tilt measurement, wherein the geometry of the mark and the intensity distribution within the mark are based on an orientation of one or more facets on the implement and variations in pressure between the faceted implement surface and the marking surface over the modeled contact area for the tilt measurement using a processor.
+2. The method of claim 1, wherein the marking event further specifies a bearing measurement of the tilt sensitive input device and at least one of the geometry of the mark and intensity distribution within the mark are further based on the bearing measurement.
+3. The method of claim 1, wherein the marking event further specifies a barrel rotation measurement of the tilt sensitive input device and at least one of the geometry of the mark and intensity distribution within the mark are further based on the barrel rotation measurement.
+4. The method of claim 1, further comprising:
+selecting a tip geometry corresponding to a physical marking implement with one or more facets, wherein at least one of the geometry of the mark and the intensity distribution of the mark are based on the selected tip geometry.
+5. The method of claim 1, further comprising:
+mapping the geometry of the mark to an impression bitmap with a bitmap size, wherein the bitmap size is a maximum bitmap size multiplied by a scale factor corresponding to the tilt measurement.
+6. The method of claim 1, wherein the implement surface is customizable by a user.
+7. The method of claim 1, wherein the implement surface is defined by a combination of user defined tip geometry properties.
+8. The method of claim 1, further comprising:
+presenting the mark via a presentation device.
+9. A system for determining a mark modeling a contact area between a faceted implement surface of an implement and a marking surface, the system comprising:
+a tilt sensitive input device configured to input a marking event that indicates a tilt measurement of the tilt sensitive input device; and
+a determining module configured to determine a geometry of the mark and an intensity distribution within the mark based on the tilt measurement, wherein the geometry of the mark and the intensity distribution within the mark are based on an orientation of one or more facets on the implement and variations in pressure between the faceted implement surface and the marking surface over the modeled contact area for the tilt measurement.
+10. The system of claim 9, further comprising:
+rendering circuitry configured to render the mark on the presentation device.
+11. The system of claim 9, wherein the marking event further specifies a bearing measurement of the tilt sensitive input device and at least one of the geometry of the mark and intensity distribution within the mark are further based on the bearing measurement.
+12. The system of claim 9, wherein the marking event further specifies a barrel rotation measurement of the tilt sensitive input device and at least one of the geometry of the mark and intensity distribution within the mark are further based on the barrel rotation measurement.
+13. The system of claim 9, wherein the tilt sensitive input device is further configured to select a tip geometry corresponding to a physical marking implement with one or more facets, wherein at least one of the geometry of the mark and the intensity distribution of the mark are based on the selected tip geometry.
+14. The system of claim 9, further comprising:
+a mapping module configured to map the geometry of the mark to an impression bitmap with a bitmap size, wherein the bitmap size is a maximum bitmap size multiplied by a scale factor corresponding to the tilt measurement.
+15. The system of claim 9, wherein the implement surface is customizable by a user.
+16. The system of claim 9, wherein the implement surface is defined by a combination of user defined tip geometry properties.
+17. The system of claim 9, further comprising:
+a presentation device configured to present the mark.
+18. A method of determining a mark modeling a contact area between a faceted implement surface of an implement and a marking surface, the method comprising:
+receiving a marking event that specifies a tilt measurement of a tilt sensitive input device; and
+finding the mark that corresponds to the tilt measurement and an orientation of one or more facets on the implement in a look-up table, wherein a geometry of the mark and an intensity distribution within the mark are based on variations in pressure between the faceted implement surface and the marking surface over the modeled contact area for the tilt measurement.
+19. The method of claim 18, wherein the marking event further specifies a bearing measurement of the tilt sensitive input device and the mark further corresponds to the bearing measurement in the look-up table.
+20. The method of claim 18, wherein the marking event further specifies a barrel rotation measurement of the tilt sensitive input device and the mark further corresponds to the barrel rotation measurement in the look-up table.
+21. The method of claim 18, further comprising:
+selecting a tip geometry corresponding to a physical marking implement with one or more facets, wherein the mark further corresponds to the selected tip geometry in the look-up table.
+22. The method of claim 18, further comprising:
+mapping the geometry of the mark to an impression bitmap with a bitmap size, wherein the bitmap size is a maximum bitmap size multiplied by a scale factor corresponding to the tilt measurement.
+23. The method of claim 18, wherein the implement surface is customizable by a user.
+24. The method of claim 18, wherein the implement surface is defined by a combination of user defined tip geometry properties.
+25. The method of claim 18, further comprising:
+presenting the mark on a presentation device.
+26. One or more computer-readable media storing computer-readable instructions for execution by a processor to perform a method of determining a mark modeling a contact area between a faceted implement surface of a implement and a marking surface comprising:
+receiving a marking event that specifies a tilt measurement of a tilt sensitive input device; and
+determining a geometry of the mark and an intensity distribution within the mark based on the tilt measurement, wherein the geometry of the mark and the intensity distribution within the mark are based on an orientation of one or more facets on the implement and variations in pressure between the faceted implement surface and the marking surface over the modeled contact area for the tilt measurement.
+27. The computer-readable media of claim 26, wherein the marking event further specifies a bearing measurement of the tilt sensitive input device and at least one of the geometry of the mark and intensity distribution within the mark are further based on the bearing measurement.
+28. The computer-readable media of claim 26, wherein the marking event further specifies a barrel rotation measurement of the tilt sensitive input device and at least one of the geometry of the mark and intensity distribution within the mark are further based on the barrel rotation measurement.
+29. The computer-readable media of claim 26, wherein the method further comprises:
+selecting a tip geometry corresponding to a physical marking implement with one or more facets, wherein at least one of the geometry of the mark and the intensity distribution of the mark are based on the selected tip geometry.
+30. One or more computer-readable media storing computer-readable instructions for execution by a processor to perform a method of finding a mark modeling a contact area between a faceted implement surface of an implement and a marking surface comprising:
+receiving a marking event that specifies a tilt measurement of a tilt sensitive input device; and
+finding the mark that corresponds to the tilt measurement and an orientation of one or more facets on the implement in a look-up table, wherein a geometry of the mark and an intensity distribution within the mark are based on variations in pressure between the faceted implement surface and the marking surface over the modeled contact area for the tilt measurement.
+31. The computer-readable media of claim 30, wherein the marking event further specifies a bearing measurement of the tilt sensitive input device and the mark further corresponds to the bearing measurement in the look-up table.
+32. The computer-readable media of claim 30, wherein the marking event further specifies a barrel rotation measurement of the tilt sensitive input device and the mark further corresponds to the barrel rotation measurement in the look-up table.
+33. The computer-readable media of claim 30, wherein the method further comprises:
+selecting a tip geometry corresponding to a physical marking implement with one or more facets, wherein the mark further corresponds to the selected tip geometry in the look-up table.

@@ -1,0 +1,62 @@
+TITLE:
+LCD panel controlled by two process elements
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A multifunction peripheral which can perform copying, printing, faxing and scanning. The MFP is made up of a hard output unit, essentially a copier, and a control unit, essentially a print server. User interface definitions for copying are embedded in the hard output unit. User interface definitions for printing, faxing and scanning are stored in the control unit. When the hard output unit resets, it loads the UI definitions from the control unit. The UI definitions in the control unit are stored as a file and are easily updated from a LAN.
+
+CLAIMS:
+1. A method of providing user interface displays for a multifunction peripheral system, the multifunction peripheral system comprising a hard output unit communicatively coupled to a control unit, the control unit having a network adapter coupled to a computer network for receiving print and fax jobs from computers on the computer network, the hard output unit for performing a first peripheral function originated locally and a second peripheral function originated from the computer network via the control unit, the hard output unit including a display and a processor, memory, user interface software for controlling the display, and first user interface definitions for the first peripheral function fixed in the memory of the hard output unit; the method comprising the steps of:
+storing second user interface definitions for the peripheral function in the control unit, wherein the control unit receives the second user interface definitions from a source other than the hard output unit;
+during an initialization process between the control unit and the hard output unit, downloading the second user interface definitions from the control unit to the hard output unit;
+storing the second user interface definitions for the second peripheral function in the hard output unit, whereby the first user interface definitions are unaffected;
+during use of the hard output unit, if a user desires to use the first peripheral function, then using the first user interface definitions for the first peripheral function stored in the hard output unit; and
+during use of the hard output unit, if a user desires to use the second peripheral function, then using the second user interface definitions for the second peripheral function stored in the hard output unit,
+wherein the hard output unit can perform the first peripheral function irrespective of whether the second user interface definition has bee stored in the hard output unit; and
+the first peripheral function comprisingly copying of documents using only the hard output unit;
+the second peripheral function comprising printing,
+when the multifunction peripheral processes a print job, the control unit rasterizes the print job and then transmits the rasterized print job to the hard output unit.
+2. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 1, wherein the hard output unit stores the second user interface definitions from the control unit in volatile memory.
+3. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 2, wherein the hard output unit stores the second user interface definitions from the control unit in RAM.
+4. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 1 further comprising the step of updating the second user interface definitions for the second peripheral function by loading third user interface definitions for the second peripheral function into the control unit and reinitializing the hard output unit.
+5. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 4 wherein the third user interface definitions are loaded to the control unit from a removable storage medium in the control unit.
+6. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 5 wherein the third user interface definitions are loaded to the control unit from the computer network.
+7. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 6 wherein the third user interface definitions are loaded in response to at least one command by a user at a workstation on the computer network.
+8. A method of loading a first user interface definition for a first peripheral function of a multifunction peripheral system coupled to a LAN, the LAN including a workstation and a file server, the multifunction peripheral system comprising a control unit and a hard output unit, the control unit comprising a server computer communicatively coupled to the hard output unit, the hard output unit comprising a device for generating hard output for the first peripheral function and a second peripheral function, the second peripheral function comprising job processing performed only by the hard output unit, the hard output unit including a relatively unchangeable second user interface definition for the second peripheral function, the method comprising the steps of:
+(a) logging on to the LAN from the workstation and activating user interface definition update software;
+(b) from the workstation, selecting a source of the first user interface definition, wherein the source is either on the workstation or the file server;
+(c) from the workstation, selecting the first user interface definition from the source;
+(d) loading the first user interface definition from the source to a long term memory in the control unit;
+(e) loading the first user interface definition from the long term memory in the control unit to a short term memory in the control unit;
+(f) enabling communication between the control unit and the hard output unit;
+(g) transmitting the first user interface definition from the short term memory in the control unit to a short term memory in the hard output unit, whereby the second user interface definition is unaffected;
+wherein the hard output unit can perform the second peripheral function irrespective of whether the first user interface definitions have been stored in the hard output unit; and
+the first peripheral function comprising copying of documents using only the hard output unit;
+the second peripheral function comprising printing;
+when the multifunction peripheral processes a print job, the control unit rasterizes the print job and then transmits the rasterized print job to the hard output unit.
+9. The method of loading a first user interface definition for a multifunction peripheral system as set forth in claim 8 further comprising the step of selecting plural multifunction peripheral systems to receive the first user interface definition, and loading the first user interface to the selected multifunction peripheral systems as set forth in steps (d) through (g) of claim 8.
+10. A multifunction peripheral system comprising:
+(a) a hard output unit comprising a paper tray, a non-fixed display, a user input device, a processor, a first memory for long term storage and a second rewritable memory for short term storage, a communications interface and first user interface software stored in the first memory for controlling the display and the user input device in accordance with user interface definitions, the hard output unit for providing first and second peripheral functions, wherein displays on the display panel are generated by the processor according to the user interface software, the first memory including a first user interface definition for the first peripheral function;
+(b) a control unit comprising a processor, a first rewritable memory for long term storage and a second rewritable memory for short term storage, a communications interface coupled to the communications interface of the hard output unit, a fax/modem, a network adapter for communicating with a computer network, and a second user interface definition stored in the first memory for the second peripheral function, wherein
+(i) without affecting the first user interface definition, the processor of the control unit can upload the second user interface definition to the hard output unit via the communications interface of the control unit for user interaction with the hard output unit through the display and user input device for the second peripheral functions;
+wherein the first and second user interface definitions include messages, input-fields and user input device mappings;
+the hard output unit can perform the second peripheral function irrespective of whether the first user interface definitions have been stored in the hard output unit;
+the first peripheral function comprises copying in documents using only the hard output unit;
+the second peripheral function comprises printing;
+when the multifunction peripheral processes a print job, the control unit rasterizes the print job and then transmits the rasterized print job to the hard output unit.
+11. The multifunction peripheral system as set forth in claim 10 wherein the hard output unit comprises a photocopier having a high speed electronic communications interface.
+12. The multifunction peripheral system as set forth in claim 10 wherein the control unit comprises a personal computer.
+13. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 1 further comprising the steps of:
+storing the third user interface definitions for a third peripheral function in the control unit, the third peripheral function including user selection of a job destination from the hard output unit and communication of the job to the job destination by the control unit;
+downloading the third user interface definitions for the third peripheral function from the control unit to the hard output unit;
+storing the third user interface definitions for the third peripheral function in the hard output unit;
+during use of the hard output unit, if a user desires to use the third peripheral function, then using the third user interface definitions for the third peripheral function stored in the hard output unit.
+14. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 1, wherein the user interface definitions comprise plural tables, wherein each table relates to a given function of the multifunction peripheral system.
+15. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 14, wherein the tables include icons, messages, input-fields, rectangles, and pictures.
+16. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 14, wherein the tables include button switch mapping and subroutine identification.
+17. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 1, wherein the step of using the second user interface definitions for the second peripheral function stored in the hard output unit comprises displaying display information from the second user interface definition for the second peripheral function on the display, displaying status information regarding a second peripheral job initiated by the user in accordance with the second user interface definitions.
+18. The method of providing user interface displays for a multifunction peripheral system as set forth in claim 1 wherein the first peripheral function is copying and the second peripheral function is printing.
+19. The method of loading a first user interface definition for a first function of a multifunction peripheral system coupled to a LAN as set forth in claim 8 wherein the first peripheral function is printing and the second peripheral function is copying.
+20. The multifunction peripheral system of claim 10 wherein the first peripheral function is copying and the second peripheral function is printing.

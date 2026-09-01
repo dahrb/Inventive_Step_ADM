@@ -1,0 +1,623 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+Main Request
+
+1. A battery monitor system comprising:
+
+- a plurality of cell sensor modules (110, 112, 114, 116; 118, 120, 122, 124)
+configured to monitor voltage and temperature measurement values related to an associated
+battery cell (103);
+
+- a battery sensor module (106; 108) configured to monitor one or more physical
+parameters related to an associated battery (102; 104); and
+
+- anetwork (126; 128) connecting said cell sensor modules (110, 112, 114, 116; 118,
+120, 122, 124) and battery sensor module (106; 108), said network (126; 128) configured to
+transmit information to and from said cell and battery sensor modules (110, 112, 114, 116;
+
+118, 120, 122, 124),
+
+characterized in that each of said plurality of cell sensor modules (110, 112, 114,
+116; 118, 120, 122, 124) is configured to operate in a low power consumption mode and
+comprises a controller (212) which is configured to compare voltage and temperature
+measurements with threshold values and store each excursion beyond an associated threshold
+
+value in a non-volatile memory (214).
+
+2. The battery monitor system of claim 1, wherein each cell sensor module (110, 112, 114,
+116; 118, 120, 122, 124) comprises a network interface (126; 128) which is powered on the
+cell sensor module side by the associated battery cell and on the network side by the
+
+associated battery.
+
+3. The battery monitor system of claim 1 or 2, wherein the low power consumption mode
+causes measurement of the voltage and the temperature less frequently than a normal power
+
+consumption mode.
+
+4. The battery monitor system of claim | or 2, wherein a battery sensor module (106; 108) is
+configured to sense the voltage, the temperature, or the current of a battery (102; 104) with
+
+which it is in electrical communication.
+
+17521314
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+5. The battery monitor system of one of the preceding claims, wherein the controller (212;
+312) is further configured to determine the time a sensed value exceeds an associated
+
+threshold value.
+
+6. The battery monitor system of one of the preceding claims, wherein the controller (212;
+
+312) is configured to reduce data and log events related to sensed values.
+
+7. The system of one of the preceding claims, wherein the cell sensor module controller
+(212; 312) and battery sensor module controller are configured to communicate sensed values
+and/or reduced data values from the cell sensor module (110, 112, 114, 116; 118, 120, 122,
+124) to the battery sensor module (106; 108).
+
+8. The system of claim 2, wherein the isolated power network (126; 128) includes a network
+interface (216; 316) at each cell sensor module (110, 112, 114, 116; 118, 120, 122, 124), the
+interface (216; 316) respectively including local and remote power connections for the cell
+
+sensor and network sides of the interface.
+9. The system of claim 8, wherein the network (126; 128) is a daisy-chained serial link.
+
+10. The system of claim 9, wherein each interface (216; 316) includes an opto-isolator
+
+configured to transmit data across the interface opto-electronically.
+
+11. The system of one of the preceding claims, further comprising an alarm interface (110)
+configured to communicate battery-related data between at least one battery sensor module
+
+(106; 108) and an external network.
+
+12. The system of one of the preceding claims, wherein the sensor module (106; 108) is
+configured to monitor a high-voltage battery array, in particular, a high voltage vehicle-based
+
+battery array.
+
+13. The system of one of the preceding claims, wherein the low power consumption mode
+
+comprises a hibernation mode.
+
+17521314
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+14. A method of monitoring a battery comprising the steps of:
+
+- sensing voltage and temperature measurement values in a plurality of cell sensor
+modules (110, 112, 114, 116; 118, 120, 122, 124);
+
+- sensing one or more battery related physical parameters in a battery sensor module
+(106; 108); and
+
+- communicating data related to the step of cell sensing to the battery sensor module
+(106; 108);characterized by the step of
+
+- recording each excursion of a voltage and temperature measurement value beyond
+an associated threshold value in a non-volatile memory (214) within each cell sensor module
+(110, 112, 114, 116; 118, 120, 122, 124), wherein the cell sensor modules (110, 112, 114,
+
+116; 118, 120, 122, 124) include a low power consumption operating mode.
+
+15. The method of clam 14 wherein the step of sensing cell related physical parameter
+comprises the step of: a cell sensor module (110, 112, 114, 116; 118, 120, 122, 124) sensing
+
+the voltage or the temperature of a battery cell to which it is attached.
+
+16. The method of claim 14 wherein the step of sensing battery related physical parameters
+comprises the step of: a battery sensor module (106; 108) senses the voltage, the current, or
+
+the temperature of a battery with which it is in electrical communication.
+
+17. The method of claim 14 further comprising determining the time a sensed cell value
+
+exceeds an associated threshold value.
+
+18. The method of claim 14 further comprising the step of:
+
+reducing data and logging events related to sensed values.
+
+19. The method of claim 18 further comprising the step of:
+communicating sensed values and/or reduced data from the cell sensor module (110,
+
+112, 114, 116; 118, 120, 122, 124) to the battery sensor module (106; 108).
+
+17521314
+
+--- PAGE 4 ---
+10
+
+15
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+20. The method of claim 19 further comprising the step of:
+
+reducing data communicated to the battery sensor module controller (312) from a cell
+sensor module (110, 112, 114, 116; 118, 120, 122, 124) by the battery sensor module
+controller (312).
+
+21. The method of claim 14 wherein the step of communicating comprises the step of:
+
+communicating along an isolated-power network (126; 128) that includes a network
+interface (216; 316) at each cell sensor module (110, 112, 114, 116; 118, 120, 122, 124), the
+interface (216; 316) respectively including local and remote power connections for the cell
+
+sensor and network sides of the interface (216; 316).
+
+22. The method of claim 21 wherein the step of communicating along an isolated-power
+
+network (126; 128) comprises the step of communicating along a daisy-chain serial link.
+
+23. The method of claim 22 wherein step of communicating along a daisy-chain serial link
+comprises the step of communicating through opto-isolators configured to transmit data
+
+across the interface (216; 316) opto-electronically.
+
+24. The method of claim 14 further comprising the step of:
+communicating battery-or cell-related information between at least one battery sensor
+
+module (106; 108) and an external network through an alarm interface (110).
+
+17521314
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+1“ Auxiliary Request
+
+1. A battery monitor system comprising:
+
+- a plurality of cell sensor modules (110, 112, 114, 116; 118, 120, 122, 124)
+configured to monitor voltage and temperature measurement values related to an associated
+battery cell (103);
+
+- a battery sensor module (106; 108) configured to monitor one or more physical
+parameters related to an associated battery (102; 104); and
+
+- anetwork (126; 128) connecting said cell sensor modules (110, 112, 114, 116; 118,
+120, 122, 124) and battery sensor module (106; 108), said network (126; 128) configured to
+transmit information to and from said cell and battery sensor modules (110, 112, 114, 116;
+
+118, 120, 122, 124),
+
+characterized in that each of said plurality of cell sensor modules (110, 112, 114,
+116; 118, 120, 122, 124) is configured to operate in a low power consumption mode and
+comprises a controller (212) which is configured to compare voltage and temperature
+measurements with threshold values and store each excursion beyond an associated threshold
+value in a non-volatile memory (214), wherein the low power consumption mode causes
+measurement of the voltage and the temperature less frequently than a normal power
+consumption mode.
+
+2. The battery monitor system of claim 1, wherein each cell sensor module (110, 112, 114,
+116; 118, 120, 122, 124) comprises a network interface (126; 128) which is powered on the
+cell sensor module side by the associated battery cell and on the network side by the
+
+associated battery.
+
+43. The battery monitor system of claim 1 or 2, wherein a battery sensor module (106; 108)
+
+is configured to sense the voltage, the temperature, or the current of a battery (102; 104) with
+
+which it is in electrical communication.
+
+17521314
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+34. The battery monitor system of one of the preceding claims, wherein the controller (212;
+312) is further configured to determine the time a sensed value exceeds an associated
+
+threshold value.
+
+65. The battery monitor system of one of the preceding claims, wherein the controller (212;
+
+312) is configured to reduce data and log events related to sensed values.
+
+76. The system of one of the preceding claims, wherein the cell sensor module controller
+(212; 312) and battery sensor module controller are configured to communicate sensed values
+and/or reduced data values from the cell sensor module (110, 112, 114, 116; 118, 120, 122,
+124) to the battery sensor module (106; 108).
+
+$7. The system of claim 2, wherein the isolated power network (126; 128) includes a
+network interface (216; 316) at each cell sensor module (110, 112, 114, 116; 118, 120, 122,
+124), the interface (216; 316) respectively including local and remote power connections for
+
+the cell sensor and network sides of the interface.
+98. The system of claim $7, wherein the network (126; 128) is a daisy-chained serial link.
+
+499. The system of claim 98, wherein each interface (216; 316) includes an opto-isolator
+
+configured to transmit data across the interface opto-electronically.
+
++1410. The system of one of the preceding claims, further comprising an alarm interface (110)
+configured to communicate battery-related data between at least one battery sensor module
+
+(106; 108) and an external network.
+
+4211. The system of one of the preceding claims, wherein the sensor module (106; 108) is
+configured to monitor a high-voltage battery array, in particular, a high voltage vehicle-based
+
+battery array.
+
+4312. The system of one of the preceding claims, wherein the low power consumption mode
+
+comprises a hibernation mode.
+
+17521314
+
+--- PAGE 7 ---
+10
+
+15
+
+| 20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
++413. A method of monitoring a battery comprising the steps of:
+
+- sensing voltage and temperature measurement values in a plurality of cell sensor
+modules (110, 112, 114, 116; 118, 120, 122, 124);
+
+- sensing one or more battery related physical parameters in a battery sensor module
+(106; 108); and
+
+- communicating data related to the step of cell sensing to the battery sensor module
+(106; 108);characterized by the step of
+
+- recording each excursion of a voltage and temperature measurement value beyond
+an associated threshold value in a non-volatile memory (214) within each cell sensor module
+(110, 112, 114, 116; 118, 120, 122, 124), wherein the cell sensor modules (110, 112, 114,
+116; 118, 120, 122, 124) inehide-operates in a low power consumption operating mode,
+
+wherein the low power consumption mode causes measurement of the voltage and the
+temperature less frequently than a normal power consumption mode.
+
+4514. The method of clam +413, wherein the step of sensing cell related physical parameter
+comprises the step of: a cell sensor module (110, 112, 114, 116; 118, 120, 122, 124) sensing
+
+the voltage or the temperature of a battery cell to which it is attached.
+
+4615. The method of claim +4-13, wherein the step of sensing battery related physical
+parameters comprises the step of: a battery sensor module (106; 108) senses the voltage, the
+
+current, or the temperature of a battery with which it is in electrical communication.
+
++7416. The method of claim +4-13, further comprising determining the time a sensed cell
+
+value exceeds an associated threshold value.
+
++817. The method of claim 4-13, further comprising the step of:
+
+reducing data and logging events related to sensed values.
+
+4918. The method of claim +8-17, further comprising the step of:
+communicating sensed values and/or reduced data from the cell sensor module (110,
+
+112, 114, 116; 118, 120, 122, 124) to the battery sensor module (106; 108).
+
+17521314
+
+--- PAGE 8 ---
+15
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+2919. The method of claim 49-18, further comprising the step of:
+
+reducing data communicated to the battery sensor module controller (312) from a cell
+sensor module (110, 112, 114, 116; 118, 120, 122, 124) by the battery sensor module
+controller (312).
+
+2420. The method of claim +413, wherein the step of communicating comprises the step of:
+
+communicating along an isolated-power network (126; 128) that includes a network
+interface (216; 316) at each cell sensor module (110, 112, 114, 116; 118, 120, 122, 124), the
+interface (216; 316) respectively including local and remote power connections for the cell
+
+sensor and network sides of the interface (216; 316).
+
+2221. The method of claim 2+-20, wherein the step of communicating along an isolated-
+power network (126; 128) comprises the step of communicating along a daisy-chain serial
+
+link.
+
+2322. The method of claim 22-21, wherein step of communicating along a daisy-chain serial
+link comprises the step of communicating through opto-isolators configured to transmit data
+
+across the interface (216; 316) opto-electronically.
+
+2423. The method of claim +413, further comprising the step of:
+communicating battery-or cell-related information between at least one battery sensor
+
+module (106; 108) and an external network through an alarm interface (110).
+
+17521314
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+2 Auxiliary Request
+
+1. A battery monitor system comprising:
+
+- a plurality of cell sensor modules (110, 112, 114, 116; 118, 120, 122, 124)
+configured to monitor voltage and temperature measurement values related to an associated
+battery cell (103);
+
+- a battery sensor module (106; 108) configured to monitor one or more physical
+parameters related to an associated battery (102; 104); and
+
+- anetwork (126; 128) connecting said cell sensor modules (110, 112, 114, 116; 118,
+120, 122, 124) and battery sensor module (106; 108), said network (126; 128) configured to
+transmit information to and from said cell and battery sensor modules (110, 112, 114, 116;
+
+118, 120, 122, 124),
+
+characterized in that each of said plurality of cell sensor modules (110, 112, 114,
+116; 118, 120, 122, 124) is configured to operate in a plurality of power modes which include
+a low power consumption mode and wherein each of the plurality of cell sensor modules
+(110, 112, 114, 116; 118, 120, 122, 124) are programmed to operate in the low power
+consumption mode and comprise a controller (212) which is configured to compare voltage
+and temperature measurements with threshold values and store each excursion beyond an
+
+associated threshold value in a non-volatile memory (214).
+
+2. The battery monitor system of claim 1, wherein each cell sensor module (110, 112, 114,
+116; 118, 120, 122, 124) comprises a network interface (126; 128) which is powered on the
+cell sensor module side by the associated battery cell and on the network side by the
+
+associated battery.
+
+3. The battery monitor system of claim 1 or 2, wherein the low power consumption mode
+causes measurement of the voltage and the temperature less frequently than a normal power
+
+consumption mode.
+
+4. The battery monitor system of claim | or 2, wherein a battery sensor module (106; 108) is
+configured to sense the voltage, the temperature, or the current of a battery (102; 104) with
+
+which it is in electrical communication.
+
+17521314
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+5. The battery monitor system of one of the preceding claims, wherein the controller (212;
+312) is further configured to determine the time a sensed value exceeds an associated
+
+threshold value.
+
+6. The battery monitor system of one of the preceding claims, wherein the controller (212;
+
+312) is configured to reduce data and log events related to sensed values.
+
+7. The system of one of the preceding claims, wherein the cell sensor module controller
+(212; 312) and battery sensor module controller are configured to communicate sensed values
+and/or reduced data values from the cell sensor module (110, 112, 114, 116; 118, 120, 122,
+124) to the battery sensor module (106; 108).
+
+8. The system of claim 2, wherein the isolated power network (126; 128) includes a network
+interface (216; 316) at each cell sensor module (110, 112, 114, 116; 118, 120, 122, 124), the
+interface (216; 316) respectively including local and remote power connections for the cell
+
+sensor and network sides of the interface.
+9. The system of claim 8, wherein the network (126; 128) is a daisy-chained serial link.
+
+10. The system of claim 9, wherein each interface (216; 316) includes an opto-isolator
+
+configured to transmit data across the interface opto-electronically.
+
+11. The system of one of the preceding claims, further comprising an alarm interface (110)
+configured to communicate battery-related data between at least one battery sensor module
+
+(106; 108) and an external network.
+
+12. The system of one of the preceding claims, wherein the sensor module (106; 108) is
+configured to monitor a high-voltage battery array, in particular, a high voltage vehicle-based
+
+battery array.
+
+13. The system of one of the preceding claims, wherein the low power consumption mode
+
+comprises a hibernation mode.
+
+17521314
+
+--- PAGE 11 ---
+10
+
+15
+
+20
+
+25
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+14. A method of monitoring a battery comprising the steps of:
+
+- sensing voltage and temperature measurement values in a plurality of cell sensor
+modules (110, 112, 114, 116; 118, 120, 122, 124);
+
+- sensing one or more battery related physical parameters in a battery sensor module
+(106; 108); and
+
+- communicating data related to the step of cell sensing to the battery sensor module
+(106; 108);characterized by the step of
+
+- recording each excursion of a voltage and temperature measurement value beyond
+an associated threshold value in a non-volatile memory (214) within each cell sensor module
+(110, 112, 114, 116; 118, 120, 122, 124), wherein the cell sensor modules (110, 112, 114,
+116; 118, 120, 122, 124) comprises a plurality of power modes which include a low power
+consumption operating mode and wherein each of the plurality of cell sensor modules (110,
+112, 114, 116; 118, 120, 122, 124) are programmed to operate in the low power consumption
+
+mode.
+
+15. The method of clam 14 wherein the step of sensing cell related physical parameter
+comprises the step of: a cell sensor module (110, 112, 114, 116; 118, 120, 122, 124) sensing
+
+the voltage or the temperature of a battery cell to which it is attached.
+
+16. The method of claim 14 wherein the step of sensing battery related physical parameters
+comprises the step of: a battery sensor module (106; 108) senses the voltage, the current, or
+
+the temperature of a battery with which it is in electrical communication.
+
+17. The method of claim 14 further comprising determining the time a sensed cell value
+
+exceeds an associated threshold value.
+
+18. The method of claim 14 further comprising the step of:
+
+reducing data and logging events related to sensed values.
+
+19. The method of claim 18 further comprising the step of:
+communicating sensed values and/or reduced data from the cell sensor module (110,
+
+112, 114, 116; 118, 120, 122, 124) to the battery sensor module (106; 108).
+
+17521314
+
+--- PAGE 12 ---
+10
+
+15
+
+EP 02 736 601.2
+MTI-1994.EP.0 / 68354.117593
+
+Claims
+
+20. The method of claim 19 further comprising the step of:
+
+reducing data communicated to the battery sensor module controller (312) from a cell
+sensor module (110, 112, 114, 116; 118, 120, 122, 124) by the battery sensor module
+controller (312).
+
+21. The method of claim 14 wherein the step of communicating comprises the step of:
+
+communicating along an isolated-power network (126; 128) that includes a network
+interface (216; 316) at each cell sensor module (110, 112, 114, 116; 118, 120, 122, 124), the
+interface (216; 316) respectively including local and remote power connections for the cell
+
+sensor and network sides of the interface (216; 316).
+
+22. The method of claim 21 wherein the step of communicating along an isolated-power
+
+network (126; 128) comprises the step of communicating along a daisy-chain serial link.
+
+23. The method of claim 22 wherein step of communicating along a daisy-chain serial link
+comprises the step of communicating through opto-isolators configured to transmit data
+
+across the interface (216; 316) opto-electronically.
+
+24. The method of claim 14 further comprising the step of:
+communicating battery-or cell-related information between at least one battery sensor
+
+module (106; 108) and an external network through an alarm interface (110).
+
+17521314

@@ -1,0 +1,136 @@
+Title: 
+Transaction verification system
+
+Abstract: A financial transaction verification system comprises a transaction-processing client, a transaction processing server under the control of a financial services provider, and a telecommunication client under the control of transaction initiator. The transaction processing client records data regarding the telecommunication client, and transmits the recorded data to the transaction processing server. The transaction processing server uses the received recorded data and the telecommunication client previously stored with the financial services provider to formulate a transaction authorization request to the telecommunication client. The transaction authorization request is transmitted from the transaction processing server to the telecommunication client. The telecommunication client is required to the entry of a correct authorization code as a precondition for further processing the transaction authorization request.
+
+Type: WIPO
+
+Claims: 
+1. A financial transaction verification system comprising: a transaction processing client; a transaction processing server under the control of a financial services provider; a programmable telecommunications client under the control of a transaction initiator; s i
+12 the transaction processing client, the transaction processing server and the 13 telecommunications client all being connected to or adapted for connection to a 14 telecommunications network;
+-o the transaction processing client being adapted, when in use a transaction is
+17 initiated and processed through the transaction processing client, to record:
+18
+19 data pertaining to a transaction initiated, in use, by the transaction initiator;
+■>e and
+22 data pertaining to a financial account of the transaction initiator with the
+23 financial services provider;
+24
+25 the transaction processing client being adapted to transmit the recorded data to the
+76 transaction processing server by way of the telecommunications network;
+2/ 8 the transaction processing server being adapted to make use of data pertaining to
+% the transaction initiator and the telecommunications client previously stored with the
+30 financial services provider to formulate a transaction authorisation request to the
+3? telecommunications client;
+32
+33 the transaction processing server being adapted to transmit the transaction
+24 authorisation request to the telecommunications client by way of the 2* telecommunications network;
+3? the telecommunications client being programmed to require the entry of an authorisation code into the telecommunications client as a precondition for the ι further processing of the transaction authorisation request; and
+3 the telecommunications client being programmed, further, to transmit a process 4 outcome message to either or both the transaction processing server and the 5 transaction processing client, which process outcome message: 6 7 if the incorrect authorisation code is entered, is constituted by a transaction 8 cancellation signal; and 9
+W if the correct authorisation code is entered, is constituted by a transaction ιι authorisation signal.
+13 2. A financial transaction verification system according to claim 1 in which the
+1/ telecommunications client is a mobile communication device that is personal to the
+15 transaction initiator, in which system: fc
+17 the transaction initiator data previously stored with the financial services provider
+18 includes unique mobile communication device data, which is data that is unique to ii: and stored in the mobile communication device;
+2 i the transaction processing server is adapted to transmit the previously stored 1 unique mobile communication device data to the mobile communication device together with the authorisation request;
+■>5 the mobile communication device is programmed, on receipt of the transmitted
+25 data, to compare the transmitted data to the equivalent unique mobile
+27 communication device data stored in the mobile communication device;
+23
+72 the telecommunications client is programmed, further, to transmit a process
+SO outcome message to either or both the transaction processing server and the
+31 transaction processing client, which process outcome message may, alternatively,
+Y> be constituted by a transaction cancellation signal or a transaction authorisation signal; the mobile communication device being programmed, further:
+3Jπ if the comparison between the transmitted data and the equivalent data stored in the mobile communication device fails, to transmit a process 1 outcome message constituted by a transaction cancellation signal; and 2 3 if the comparison is successful, to require the entry, into the mobile 4 communication device, of the authorisation code previously provided as a 5 precondition for the further processing of the transaction authorisation 6 request; and s if the incorrect authorisation code is entered, to transmit a process outcome 9 message constituted by a transaction cancellation signal; and
+10 iι if the correct authorisation code is entered to transmit a process outcome
+12 message constituted by a transaction authorisation signal.
+13
+14 3. A financial transaction verification system according to either of the preceding claims
+15 that is adapted:
+16
+17 to cancel the transaction in the event of the receipt, by the telecommunications
+18 client, of a transaction cancellation signal; and
+12
+20 to allow the transaction to proceed to finality in the event of the receipt, by the
+2i telecommunications client, of a transaction authorisation signal.
+22
+23 4. A transaction processing client for use with a system according to any one of the
+24 preceding claims. 25
+2δ 5. A transaction processing server for use with a system according to any one of the
+27 preceding claims.
+2.5
+29 6. A telecommunications server for use with a system according to any one of the
+30 preceding claims.
+21 7. A telecommunications client for use with a system according to any one of the preceding claims. 34 8. A method of verifying a financial transaction comprising the steps of: cy
+77 initiating a transaction at a transaction processing client; 1 recording, by means of the transaction processing client, data pertaining to the 2 transaction together with data pertaining to a financial account of the transaction 3 initiator with a financial services provider; /i 5 transmitting the data so recorded from the transaction processing client to a 6 transaction processing server under control of the financial services provider, by 7 way of a telecommunications network, 8 9 supplying, to the transaction processing server, data previously stored with the ιθ financial services provider and pertaining to a telecommunications client which is
+"> ! under the control of the transaction initiator;
+12
+13 transmitting an authorisation request pertaining to the initiated transaction to the telecommunications client;
+15 i requiring, on receipt of such a transaction authorisation request, the entry into the i r telecommunications client, of an authorisation code as a precondition for the further i processing of the transaction authorisation request;
+'3
+20 transmitting a process outcome message to either or both the transaction 2 < processing server and the transaction processing client, which process outcome 22 message:
+21 if the incorrect authorisation code is entered, is constituted by a transaction 25 cancellation signal; and- ' b z: if the correct authorisation code is entered, is constituted by a transaction
+28 authorisation signal.
+22
+2>j 9. A method of verifying a financial transaction according to claim 8 in which the
+3i telecommunications client is a mobile communication device personal to the
+32 transaction initiator and data unique to and stored in the mobile communication
+32 device is stored by the financial services provider as part of the communications data
+3~- pertaining to the transaction initiator, the method including the additional steps of:
+'V,
+35 transmitting the unique mobile communication device data from the transaction
+37 processing server to the mobile communication device together with the 8 authorisation request; 2 in the mobile communication device, comparing, on receipt of the transmitted data i and authorisation request, the transmitted unique mobile communication device ^ data to the equivalent mobile communication device data stored in the mobile δ communication device; and 6 / if the comparison between the transmitted data and the equivalent data 8 stored in the mobile communication device fails, transmitting a transaction 2 cancellation signal to either or both the transaction processing server and ιθ the transaction processing client; and
+11 '' 2 if the comparison is successful, requiring the entry of the authorisation code ? 3 previously provided into the mobile communication device as a precondition i< for the further processing of the transaction authorisation request; and
+13 if the incorrect authorisation code is entered, transmitting a transaction
+• 7 cancellation signal to either or both the transaction processing server and
+18 the transaction processing client; and
+19 2ϋ if the correct code is entered, transmitting a transaction authorisation signal 21 to either or both the transaction processing server and the transaction
+_;2 processing client.
+23 4 10. A method of verifying a financial transaction according to either of claims 8 or 9
+25 which includes the additional steps of:
+2/ canceling the transaction in the event of the receipt, by the telecommunications
+73 client, of a transaction cancellation signal; and
+73
+2b allowing the transaction to proceed to finality in the event of the receipt, by the
+31 telecommunications client, of a transaction authorisation signal.
+32
+35 11. A method of verifying a financial transaction according to claim 8 in which the
+34 transaction involves the use of a documentary negotiable instrument, the method comprising the steps of:
+36 initiating the transaction by a participating negotiable instrument issuer issuing the negotiable instrument manually; I 2 recording, by means of the transaction processing client, data pertaining to the 3 transaction including predetermined data pertaining to the negotiable instrument; 1 5 transmitting the data so recorded from the transaction processing client to the 6 transaction processing server by way of the telecommunications network,
+8 transmitting, to either or both the financial services provider and the transaction 9 processing server, a negotiable instrument issuer code unique to the negotiable ιθ instrument issuer, thereby to confirm, to the transaction processing server, the
+11 transmitted data pertaining to the transaction including the predetermined data
+12 pertaining to the negotiable instrument;
+14 recording, at the transaction processing server, the data so confirmed; and π
+13 comparing, when in use the negotiable instrument is presented for payment, the / "' data on the face of the documentary negotiable instrument with the data recorded 13 in the transaction processing server in respect of that negotiable instrument.
+} ->
+20 12. A method of operating a transaction processing server for use in a financial
+21 transaction verification method according to claim 11 , the method comprising the
+22 steps of: 23
+2-c receiving the entry of data pertaining to negotiable instruments from participating negotiable instrument issuers;
+_ (-. receiving, from each participating negotiable instrument issuer and in respect of the data pertaining to each such negotiable instrument, a unique negotiable instrument
+•><) issuer code; confirming the validity of each negotiable instrument issuer code so entered by comparing the negotiable instrument issuer code so entered with a negotiable instrument issuer code stored in the transaction processing server; and permitting a participating presentation point to gain access to the data stored in respect of a particular negotiable instrument when that negotiable instrument is presented for payment, thereby to allow comparison between the stored data and the data appearing on the face of the negotiable instrument.
+13. A method of verifying a financial transaction according to claim 8 in which the transaction involves the use of a communications enabled transaction terminal as the transaction processing client, the method including the steps of:
+3 with the use of the mobile communication device, formulating and encrypting, by 7 means of a first encryption key and data unique to the mobile communication 8 device, a transaction request to be transmitted to the transaction terminal and 0
+10 transmitting a transaction request directly to the transaction terminal with the use of -. the mobile communication device, using a method of communication for which the
+?2 transaction terminal is enabled;
+I J transmitting the transaction request from the transaction terminal to the transaction processing server;
+_ ,' at the transaction processing server:
+18 ι9 receiving the transaction request; 27,
+2i identifying the mobile communication device using the data unique to the
+2.2 mobile communication device;
+•}J retrieving the first encryption key, previously stored at the transaction processing server in respect of the mobile communication device;
+2/ decrypting the encrypted transaction request using the first encryption key; processing the transaction request and generating a process outcome message pertaining to the result of processing of the transaction request; generating a second encryption key, storing the second encryption key in the transaction processing server; transmitting the second encryption key to the transaction terminal; encrypting the process outcome message using the second encryption key; and ι 2 transmitting the encrypted process outcome message to the mobile 3 communication device; 4 s at the mobile communication device, extracting and storing the second encryption 6 key and transmitting the encrypted process outcome message to the transaction 7 terminal; and 6 9 at the transaction terminal, decrypting the encrypted process outcome message ic and applying the decrypted process outcome message to actuate the transaction
+11 terminal.
+12
+13 14. A method of verifying a financial transaction according to claim 3 in which the
+14 second encryption key that is stored at the transaction processing server and in the
+15 mobile communication device is used, in a following transaction processing cycle as
+16 the first encryption key.
+17
+18 15. A method of verifying a financial transaction according to claim 14 in which the
+13 second encryption key is generated, every time the transaction processing cycle is
+2V repeated, with the use of code hopping techniques.
+21
+22 16. A method of verifying a financial transaction according to any one of claims 13 to 15 in which, in the process of encrypting the transaction request to be transmitted to the 24 transaction processing server, the transaction request is encrypted with the use, in
+23 addition, of a code unique to the person requesting the transaction.

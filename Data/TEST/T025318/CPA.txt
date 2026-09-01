@@ -1,0 +1,69 @@
+TITLE:
+High definition zero mark for optical encoder
+
+TYPE:
+European patent
+
+ABSTRACT:
+An incremental position encoder makes use of a first and second track (34, 36) of non-identical non-complementary aperiodic patterns (47, 48) to generate a zero mark. A mask with the identical pattern (70) to the first track (34) and a mask with the complementary pattern (72) to the second track (36) correlate with the patterns (47, 48) on the first and second track (34, 36) when the encoder is in zero position. Light transmitted by the masks produce electrical signals that are compared to create the zero mark. An iterative approach improves the discrimination of an initially selected track pattern for its particular application based on developed criteria for good noise immunity and resolution. The size of the reference track (34, 36) with respect to the increment track (30) and the placement of each mask on the stator (42) and rotor (16) are optimized. A system for improving noise immunity by biasing the signal from each photodetector is also shown.
+
+CLAIMS:
+A position encoder comprising:
+   a stator mask (42) having a stator track with a stator pattern (70. 72) having a plurality of opaque and transparent frames corresponding to an optimised binary aperiodic pattern;
+   a rotor (16) having a rotor track (34, 36) with a rotor pattern (47, 48), the rotor (16) positioned with respect to the stator mask (42) so that the stator mask track is aligned with the rotor track during movement of the rotor, the rotor pattern (47, 48) being such that at a first position the rotor pattern matches the stator pattern (70, 72); and
+   a comparison means (20, 22) for detecting the degree to which the stator and rotor patterns (47, 48, 70, 72) match for producing a zero mark signal.
+The position encoder of claim 1 wherein the stator pattern (70) and rotor pattern (47) are identical.
+The position encoder of claim 1 wherein the stator pattern (72) and rotor pattern (48) are complementary.
+A position encoder zero mark detector comprising:
+   a stator mask (42) having an inner and outer stator track, the inner and outer stator track having a corresponding inner and outer stator pattern (72, 70) comprised of a plurality of frames where the inner and outer stator patterns are identical;
+   a rotor (16) having corresponding inner and outer rotor tracks (36, 34) with patterns (47, 48) and positioned to move past the stator mask (42) so that the inner and outer rotor tracks are aligned with the corresponding inner and outer stator tracks, and where one rotor pattern (48) is the complement of the stator pattern (72), and the other rotor pattern (47) is identical to the stator pattern (70);
+   a first alignment detection means (20, 22) for detecting the degree of transmissivity of the inner stator pattern (72) with the inner rotor pattern (48) to produce a first transmissivity signal (80);
+   a second alignment detection means (20, 22) for detecting the degree of transmissivity of the outer stator pattern (70) with the outer rotor pattern (47) to produce a second transmissivity signal (82); and
+   a comparison means (54) for comparing the first and second transmissivity signals to produce a zero position signal (84).
+A position encoder zero mark detector comprising:
+   a stator mask (42) having an inner and outer stator track, the inner and outer stator tracks having corresponding inner and outer stator patterns (72, 70) that are non-identical;
+   a rotor (16) having a corresponding inner and outer rotor track with corresponding inner and outer rotor patterns (48, 47) and positioned to move past the stator mask so that the inner and outer rotor tracks are aligned with the corresponding inner and outer stator tracks;
+   a first alignment detection means (20, 22) for detecting the degree of transmissivity of the inner stator pattern (72) with the inner rotor pattern (48) to produce a first transmissivity signal (80);
+   a second alignment detection means (20, 22) for detecting the degree of transmissivity of the outer stator pattern (70) with the outer rotor pattern (47) to produce a second transmissivity signal (82); and
+   a comparison means (54) for comparing the first and second transmissivity signals to produce a zero position signal.
+The position encoder zero mark detector of claim 5 wherein:
+   one rotor pattern (48) is complementary with its corresponding stator pattern (72) to form a minimally transmissive sensor (20, 22, 48, 72); and
+   the stator pattern (72) for the minimally transmissive sensor (20, 22, 48, 72) has been optimized first to increase its zero mark discrimination and second to increase its secondary maximum without decreasing its zero mark discrimination.
+The position encoder zero mark detector of claim 5 wherein:
+   one rotor pattern (47) is identical to its corresponding stator pattern (70) to form the maximally transmissive sensor (20, 22, 47, 70); and
+   the stator pattern (70) for the maximally transmissive sensor (20, 22, 47, 70) has been optimized first to increase its zero mark discrimination and second to decrease its secondary maximum without decreasing its zero mark discrimination.
+A method of producing a zero mark pattern for a position encoder comprising the steps of:
+a) generating a current operand pattern from an input operand pattern, the current operand pattern having a plurality of frames with a predetermined density and a first zero mark discrimination;
+b) identifying a next constant density neighbor pattern having a second zero mark discrimination better than the first zero mark discrimination;
+c) repeating step (b) with the current operand made equal to the next constant density neighbor and the first zero mark discrimination made equal to the second zero mark discrimination;
+d) repeating steps (b) and (c) until no next constant density neighbor with a second zero discrimination mark better than the first zero mark discrimination pattern is found; and
+e) adopting the current operand pattern as the zero mark pattern;
+The method of claim 8 wherein the input operand pattern has substantially equal transmissive and opaque areas.
+The method of claim 8 wherein the input operand pattern is formed from a pseudorandom sequence.
+A method of producing a zero mark pattern for a maximally transmissive sensor of a position encoder comprising the steps of:
+a) generating a current operand pattern from an input operand pattern, the current operand pattern having a first zero mark discrimination and a first secondary maximum;
+b) identifying a next variable density neighbor pattern having either a second zero mark discrimination better than the first zero mark discrimination, or having a second zero mark discrimination equal to the first zero mark discrimination and a second secondary maximum less than the first secondary maximum;
+c) repeating step (b) with the current operand made equal to the next variable density neighbor and the first zero mark discrimination and first secondary maximum made equal to those corresponding values of the next variable density neighbor;
+d) repeating steps (b) and (c) until no next variable density neighbor is found; and
+e) adopting the current operand pattern as the zero mark pattern.
+The method of claim 11 wherein the input operand pattern is produced by the method of claim 8.
+A method of producing a zero mark pattern for the minimally transmissive sensor of a position encoder comprising the steps of:
+a) generating a current operand pattern from an input operand pattern, the current operand pattern having a first zero mark discrimination and a first secondary maximum;
+b) identifying a next variable density neighbor pattern having either a second zero mark discrimination better than the first zero mark discrimination, or having a second zero mark discrimination equal to the first zero mark discrimination and a second secondary maximum greater than the first secondary maximum;
+c) repeating step (b) with the current operand made equal to the next variable density neighbor and the first zero mark discrimination and first secondary maximum made equal to those corresponding values of the next variable density neighbor;
+d) repeating steps (b) and (c) until no next variable density neighbor is found; and
+e) adopting the current operand pattern as the zero mark pattern.
+The method of claim 13 wherein the input operand pattern is produced by the method of claim 8.
+An incremental encoder having two zero mark sensors for detecting the transmissivity of a first and second zero mark pattern wherein the signal from the first sensor (20, 22, 47, 70) is at a primary maximum value at a first encoder position and the signal from the second sensor (20, 22, 48, 72) is at a primary minimum value at the first encoder position and wherein the signal from the first sensor is a secondary maximum value different from the primary maximum value at a second encoder position and the signal from the second sensor is at a secondary minimum value different from the primary minimum value at the second encoder position, comprising:
+   a comparison means (54) for combining the signals from the first and second sensor means for creating a zero mark signal;
+   a bias means (56, 58) for biasing the signal from one sensor to adjust the difference between the primary maximum and primary minimum at the first encoder position with respect to the difference between the secondary maximum and the secondary minimum at the second encoder position.
+The incremental encoder of claim 15 wherein the bias of the bias means (56, 58) is adjusted so as to make the difference between the primary maximum and primary minimum at the first encoder position less than or equal to the difference between the secondary maximum and the secondary minimum at the second encoder position.
+The incremental encoder of claim 15 including:
+   four quadrature increment sensors (20, 22, 44, 45);
+   a summing means (56) for summing the signals from the four quadrature increment sensors to produce a bias factor; and
+   wherein the bias of the bias means (56, 58) is a function of the bias factor.
+An incremental encoder comprising::
+   a first sensor (20, 22, 47, 48, 70, 72) detecting transmissivity through a zero mark pattern (47, 48, 70, 72) having a first frame size (40) and producing a zero mark reference:
+   a second sensor (20, 22, 44, 45) detecting an increment pattern (44, 45) defining a zero region and a non-zero region and having a second frame size (38) wherein the ratio of the first frame size to the second frame size is adjusted to maximize the transmissivity in the zero region and to minimize the transmissivity in the non-zero region; and
+   a logic means (62) for producing a zero mark signal from the logical AND of the zero mark reference signal and the increment signal.
+The incremental encoder of claim 18 where the ratio of the first frame size (40) to the second frame size (38) is 3 to 2.

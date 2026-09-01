@@ -1,0 +1,71 @@
+Title: Recording medium menu supporting method
+
+Abstract: The present invention relates to a method of enabling a menu of a high-density recording medium to be displayed on a digital television set. According to this method, a recording medium includes real-time data belonging to one or more titles and/or chapters, and menu data belonging to a plurality of menu pictures, each picture having data contents differentiating each included menu item distinctively from the other menu items. When transmitting data of a menu picture in which a selected menu item has been differentiated from others, an infra-coded picture and one or more predictive pictures belonging to data of the menu picture are transmitted sequentially and circularly to a connected digital television set. This repetitive transmission of same contents makes a menu be displayed in still picture on a digital television set.
+
+Type: 
+US Patent
+
+Claims: 
+
+What is claimed is:
+1. A recording medium, including:
+real-time data belonging to one or more titles and/or chapters; and
+menu data belonging to a plurality of menu pictures, each picture having data contents differentiating each included menu item distinctively from the other menu items.
+2. The recording medium set forth in
+claim 1
+, wherein all data of the menu pictures have been written in an area for video manager data which is for managing said one or more titles.
+3. The recording medium set forth in
+claim 1
+, wherein all data of the menu pictures have been written separately in an area for video manager data, which is for managing said one or more titles, and in each title.
+4. The recording medium set forth in
+claim 1
+, wherein the menu item includes one or more direction icons for switching menu page.
+5. The recording medium set forth in
+claim 1
+, wherein a null data pack has been appended to each menu picture data.
+6. The recording medium set forth in
+claim 1
+, wherein data of the menu picture are composed of an infra-coded picture and one or more predictive pictures.
+7. The recording method set forth in
+claim 1
+, wherein the menu item includes at least one icon whose image is a thumbnail picture of a scene included in the title or the chapter.
+8. A recording medium, including:
+real-time data belonging to one or more titles and/or chapters;
+menu data belonging to a plurality of menu pages; and
+OSD data for differentiating each menu item, included in one of the menu pages, distinctively from the other menu items in the same menu page.
+9. The recording medium set forth in
+claim 8
+, wherein all data of the menu pages have been written in an area for video manager data which is for managing said one or more titles.
+10. The recording medium set forth in
+claim 8
+, wherein all data of the menu pages have been written separately in an area for video manager data, which is for managing said one or more titles, and in each title.
+11. The recording medium set forth in
+claim 8
+, wherein the menu item includes one or more direction icons for switching menu page.
+12. The recording medium set forth in
+claim 8
+, wherein a null data pack has been appended to each menu page data.
+13. The recording medium set forth in
+claim 8
+, wherein data of the menu page are composed of an infra-coded picture and one or more predictive pictures.
+14. The recording method set forth in
+claim 8
+, wherein the menu item includes at least one icon whose image is a thumbnail picture of a scene included in the title or the chapter.
+15. A method for supporting menu of a recording medium, comprising the steps of:
+(a) checking menu management information of the recording medium when menu is requested;
+(b) searching for data of a menu page corresponding to the requested menu based on the menu management information, and reading the data;
+(c) transmitting the read data of the menu page to an external apparatus connected through a digital interface; and
+(d) generating OSD (On Screen Display) data for differentiating a selected menu item distinctively from others included in the transmitted menu page, and transmitting the OSD data through the digital interface.
+16. The method set forth in
+claim 15
+, wherein the OSD data and the data of menu page are transmitted through different channels of the digital interface.
+17. The method set forth in
+claim 15
+, wherein said step (c) repeatedly conducts sequential transmission of an infra-coded picture and one or more predictive pictures belonging to the menu page.
+18. A method for supporting menu of a recording medium, comprising the steps of:
+(a) checking menu management information of the recording medium when a menu item is selected in an outputted menu picture;
+(b) searching for data of a menu picture in which the selected menu item has been differentiated distinctively from other items, based on the menu management information, and reading the data; and
+(c) transmitting the read data of the menu picture to an external apparatus after modulation.
+19. The method set forth in
+claim 18
+, wherein said step (c) repeatedly conducts sequential transmission of an infra-coded picture and one or more predictive pictures belonging to the menu pict

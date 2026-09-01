@@ -1,0 +1,106 @@
+--- PAGE 1 ---
+CLAIMS:
+
+MAIN REQUEST
+
+1. A method (10000), comprising:
+at an electronic device (300) with a display (450) and a touch-sensitive surface (451),
+wherein the device includes one or more sensors (357) to detect intensity of contacts with the
+touch-sensitive surface:
+detecting, on the touch-sensitive surface, a gesture that includes an increase of
+intensity of a contact above a respective intensity threshold (10002); and
+in response to detecting the gesture (10008), triggering an event in accordance with
+the gesture:
+in accordance with a determination that the gesture includes a first number of
+contacts, generating a tactile output on the touch-sensitive surface (10010); and
+in accordance with a determination that the gesture includes a second number
+of contacts different from the first number, forgoing generating the tactile output on the
+touch-sensitive surface (10018) and performing an operation of reducing a size of an object
+displayed on the display in accordance with the gesture including the second number of
+contacts,
+wherein the first number of contacts is one contact (10012), and the second number of
+
+contacts is two contacts (10020).
+2. The method of claim | wherein the gesture is a finger-based gesture.
+
+3. The method of claim | or claim 2, wherein the tactile output acts as a confirmation
+
+that the intensity of the contact increased above the respective intensity threshold (10014).
+
+4. The method of claim 1 or claim 2, wherein:
+the tactile output is a predefined tactile output that is generated when the user
+performs one of a set of predefined single-contact user interface object interaction operations
+
+in the user interface (10016).
+
+5. The method of any of claims 1-4, wherein the respective intensity threshold is an
+activation threshold and the tactile output provides a confirmation to the user that the
+
+activation threshold has been met (10006).
+
+--- PAGE 2 ---
+6. The method of any of claims 1-5, wherein the touch sensitive surface and the display
+are provided as a touch screen, and wherein the gesture includes a finger press input detected
+
+on a control icon displayed on the display (10004).
+
+7. The method of any of claims 1-6, comprising:
+detecting a plurality of contacts on the touch-sensitive surface; and
+assigning one or more of the plurality of contacts, comprising less than all of the
+
+plurality of contacts, to the gesture in accordance with predefined gesture criteria (10022).
+
+8. The method of any preceding claim, wherein generating the tactile output on the
+touch-sensitive surface is foregone in accordance with a determination that the detected
+
+gesture is a finger-based pinch gesture comprising two contacts moving towards each other.
+
+9. A computer readable storage medium storing one or more programs, the one or more
+programs comprising instructions, which when executed by an electronic device (100) with a
+display (112), a touch-sensitive surface (112) and one or more sensors (165) to detect
+intensity of contacts with the touch-sensitive surface, cause the device to:
+detect, on the touch-sensitive surface, a gesture that includes an increase of intensity
+of a contact above a respective intensity threshold (10002); and
+in response to detecting the gesture (10008), triggering an event in accordance with
+the gesture:
+in accordance with a determination that the gesture includes a first number of
+contacts, generate (10010) a tactile output on the touch-sensitive surface; and
+in accordance with a determination that the gesture includes a second number
+of contacts different from the first number, forgo generating the tactile output on the touch-
+sensitive surface (10018) and perform an operation of reducing a size of an object displayed
+on the display in accordance with the gesture including the second number of contacts,
+wherein the first number of contacts is one contact (10012), and the second number of
+
+contacts is two contacts (10020).
+
+--- PAGE 3 ---
+10. The computer readable storage medium of claim 9 wherein the one or more programs
+further comprise instructions, which when executed by the electronic device, cause the
+
+electronic device to perform any of the methods of claims 2-8.
+
+11. An electronic device (3100), comprising:
+a display (450);
+a touch-sensitive surface (451);
+one or more sensors (357) to detect intensity of contacts with the touch-sensitive surface; and
+means for detecting, on the touch-sensitive surface, a gesture that includes an increase of
+intensity of a contact above a respective intensity threshold; and
+means responsive to detecting the gesture, including:
+
+means for triggering an event in accordance with the gesture;
+means for, in accordance with a determination that the gesture includes a first number of
+contacts, generating a tactile output on the touch-sensitive surface; and
+
+means for, in accordance with a determination that the gesture includes a second
+number of contacts different from the first number, forgoing generating the tactile output on
+the touch-sensitive surface and performing an operation of reducing a size of an object
+displayed on the display in accordance with the gesture including the second number of
+contacts,
+
+wherein the first number of contacts is one contact (10012), and the second number of
+
+contacts is two contacts (10020).
+
+12. The electronic device of claim 11 comprising one or more means for performing the
+
+methods of any of claims 2-8.

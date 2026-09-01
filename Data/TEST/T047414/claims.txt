@@ -1,0 +1,183 @@
+--- PAGE 1 ---
+15
+
+20
+
+Telefonaktiebolaget L M Ericsson (publ) -l- EPA-111 871
+08 867 678.8-2211 04.02.2014
+
+Main Request
+
+1. A method for distributing event delivery for a set of traffic processors in a
+telecommunication network, the method comprising the steps of:
+
+- obtaining a status for each active traffic processors (24) of the set of processors
+in the telecommunication network, the status comprising a current traffic load (25,
+306) of a traffic processor (24) and an event queue length (41, 308) associated to a
+traffic processor (24);
+
+- determining a traffic processor from the set of traffic processors with the lowest
+traffic load, the traffic load is determined for each traffic processor of the set of
+traffic processors based on a weighting factor, the event queue length of a traffic
+processor and the current traffic load;
+
+- sorting each traffic processor from the set of traffic processors from the traffic
+processor having the lowest traffic load to the traffic processor having the heaviest
+traffic load; .
+
+- selecting an event group manager, the event group manager is an event
+scheduler that manages the traffic processor of the set of traffic processors with the
+lowest traffic load;
+
+- retrieving a time slot table for each traffic processor of the set of traffic
+processors;
+
+- determining an allowable event queue length for each traffic processor of the
+set of traffic processors, the event queue length being a determined threshold for
+redistributing event delivery, wherein the allowable event queue length based on the
+current traffic load, an optimal traffic load and a maximum event queue length; and
+
+- re-distributing the events of a failed traffic processor among the sorted set of
+traffic processors starting with the traffic processor having the lowest traffic load until
+the allowable event queue length of the respective traffic processor is reached.
+
+2. The method of claim 1, wherein the step of obtaining includes a step of detecting
+a failure in at least one traffic processor in the set of traffic processors, the at least
+one traffic processor being permanently unavailable.
+
+3. The method of claim 2, wherein the step of sorting includes the steps of:
+
+- sorting each traffic processor from the set of traffic processors that remain from
+the failure; and
+
+- storing the results of the sorting in a database.
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+35
+
+Telefonaktiebolaget L M Ericsson (publ) -2- EPA-111 871
+08 867 678.8-2211 04.02.2014
+
+4. The method of claim 2, wherein the step of retrieving includes a step of retrieving
+a time slot table for the at least one traffic processor.
+
+5. The method of claim 1, wherein the event scheduler group manager is an event
+scheduler that manages the traffic processor of the set of traffic processors with the
+lowest traffic load.
+
+6. The method of claim 5, wherein the step of determining an allowable event
+queue length includes a step of storing the results of the determination in a database
+of the event group manager.
+
+7. The method of claim 1, wherein the step of obtaining includes a step of detecting
+that at least one traffic processor in the set of traffic processors is temporarily
+unavailable.
+
+8. The method of claim 7, wherein the step of sorting includes the steps of:
+
+- sorting each traffic processor from the set of traffic processors that remain from
+the unavailability of the at least one traffic processor; and
+
+- storing the results of the sorting in a database.
+
+9. The method of claim 7, wherein the step of retrieving includes a step of retrieving
+a time slot table for the at least one traffic processor.
+
+10. A communication node for managing event delivery in a telecommunication
+network, the communication node comprising:
+
+- an event scheduler group for distributing event delivery to a set of traffic
+processors;
+
+- wherein the event scheduler group comprises an event scheduler group
+manager for managing the communication node and the set of traffic processors,
+determining a traffic processor from the set of traffic processors with the lowest
+traffic load, the traffic load is determined for each traffic processor of the set of
+traffic processors based on a weighting factor, an event queue length of a traffic
+processors and a current traffic load, sorting each traffic processor from the set of
+traffic processors from the traffic processor having the lowest traffic load to the
+traffic processor having the heaviest traffic load, selecting an event group manager,
+retrieving a time slot table for each traffic processor of the set of traffic processors,
+determining an allowable event queue length for each traffic processor of the set of
+traffic processors, the event queue length being a determined threshold for
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Telefonaktiebolaget LM Ericsson (publ) -3- EPA-111 871
+08 867 678.8-2211 04.02.2014
+
+redistributing event delivery, wherein the allowable event queue length based on the
+Current traffic load, an optimal traffic load and a maximum event queue length and
+re-distributing the events of a failed traffic processor among the set of traffic
+processors starting with the traffic processor having the lowest traffic load until the
+allowable event queue length of the respective processor is reached.
+
+11. The communication node of claim 10, wherein the event scheduler group selects
+an event scheduler group manager, the event group manager is an event scheduler
+that manages the traffic processor of the set of traffic processors with the lowest
+traffic load.
+
+12. The communication node of claim 11, wherein the event scheduler group
+manager is selected based on the following:
+
+Mininside_group { 5 * Traffic Load + (1- 6) * the_length_of_eventQueue} , with 0< 6<1
+and where 6 is the weighting factor.
+
+13. The communication node of claim 10, wherein the event scheduler group
+manager determined the allowable event length for redistributing event delivery
+based on the following, where ZL, is the current traffic load, (Z,) the optimal/design
+traffic load:
+
+EventQueueLength = mex - tase sa) Ee *max EventQueueLength
+Where sign(L, -L,) = 1Sf Z.>L, °
+=-lifi.<kL,
+
+14. The communication node of claim 10, wherein the event scheduler group
+manager detects a failure in at least one traffic processor in the set of traffic
+processors, the at least one traffic processor being permanently unavailable.
+
+15. The communication node of claim 10, wherein the event scheduler group
+manager detecting that at least one traffic processor in the set of traffic processors is
+temporarily unavailable.
+
+16. The communication node of claim 10, wherein the event scheduler group
+manager adds a traffic processor to the a set of traffic processors, selects the event
+scheduler of the added traffic processor as event scheduler group manager, obtains a
+status for each active traffic processors of the set of processors in the
+telecommunication network, determines the average of event queue length for each
+
+--- PAGE 4 ---
+Telefonaktiebolaget L M Ericsson (publ) -4- EPA-111 871
+08 867 678.8-2211 04.02.2014
+
+traffic processor of the set of traffic processors, determines a traffic processor from
+the set of traffic processors with the lowest traffic load, the traffic load is determined
+for each traffic processor of the set of traffic processors based on a weighting factor,
+an event queue length of a traffic processors and a current traffic load, sorts each
+traffic processor from the set of traffic processors and re-distributing the event
+among each traffic processors of the set of traffic processors starting with the traffic
+processor having the lowest traffic load.
+
+17. The communication node of claim 10, wherein the event scheduler manages one
+or more traffic processors.
+
+18. The communication node of claim 10, wherein the communication node is a
+messaging system.
+
+19. The method of claim 1, wherein the set of traffic processors is.a set of
+messaging servers.

@@ -1,0 +1,59 @@
+Title: Customized map specification
+
+Abstract: A graphical user interface provides for the specification of customised maps on a computer system. A user can select a centre for a proposed map. An overview representation of the proposed map and a border around the proposed map is generated. Also generated is a detailed representation for an indicated part of the first representation. The user can change the part of the overview representation that is reproduced in the detailed representation in order to investigate the extent of the proposed map. In this manner, the user can investigate the exact extent of the proposed map in real time, as it is not necessary to calculate all the data for the complete map. The complete map can then be generated off-line following confirmation by the user of the parameters of the proposed map.
+
+Type: US Patent
+
+Claims: 
+
+A graphical user interface for customised map generation on a computer system, the graphical user interface being operable:
+to enable user selection of a centre for a proposed map;
+to generate, for display to the user, at least a first representation in a first scale giving an overview of the extent of the proposed map plus a border region around the proposed map, and a second representation in a second scale giving a detailed view of the content of a sample area of the first representation, the first representation including an indication of the location of the sample area; and
+in response to user input, to move the indication of the sample area within the first representation and to display within the second representation the detailed view of the moved sample area.
+The graphical user interface of claim 1, wherein the first scale is a smaller scale than that for the proposed map and the second scale is a larger scale than the first scale.
+The graphical user interface of claim 2, wherein the second scale is the same scale as the proposed map.
+The graphical user interface of any preceding claim wherein the proposed map is a 1:50,000-scale map.
+The graphical user interface of any preceding claim wherein the scale of the proposed map is selectable.
+The graphical user interface of any preceding claim, wherein the first representation includes reduced detail with respect to the proposed map and the second representation includes more detail than the first representation.
+The graphical user interface of claim 6, wherein the second representation includes the same level of detail as the proposed map.
+The graphical user interface of any preceding claim, wherein the boundary between the extent of the proposed map and the border region is displayed on the first representation.
+The graphical user interface of any preceding claim, wherein the boundary between the extent of the proposed map and the border region is displayable in the second representation, where the second representation covers an area of the first representation including the border region.
+The graphical user interface of preceding claim, wherein the border region is displayed in a contrasting manner to the area of proposed map on the first representation.
+The graphical user interface of claim 10, wherein the border region is shaded.
+The graphical user interface of any preceding claim, further operable to enable user selection of content for a presentation area for the proposed map.
+The graphical user interface of claim 12, wherein the user selection of content comprises one or more of: selecting a title for the presentation area; selecting an image for the presentation area; selecting a language for legends for the presentation area; selecting textural descriptors accompanying features in the body of the map.
+The graphical user interface of any preceding claim, further operable to enable user selection of one or more parameters of content types for the proposed map.
+The graphical user interface of claim 14, wherein the content types are defined by vector data for generation of the proposed map according to a data type.
+The graphical user interface of claim 14 or claim 15, further operable to generate the second representation to reflect the user selected parameters.
+The graphical user interface of any preceding claim, further operable to enable user confirmation of the order for the proposed map and to initiate sending of a message to a map generating server.
+The graphical user interface of claim 17, wherein the map generating server is a print server and the map is printed.
+The graphical user interface of claim 17 or claim 18, further operable to provide a link to a secure server for the input of payment information.
+A computer program comprising computer code for implementing the graphical user interface of any preceding claim.
+A computer system for customised map generation, the computer system implementing the graphical user interface of any preceding claim, the computer system being operable:
+to enable user selection of a centre for a proposed map via the user interface;
+to respond to user selection of a map centre to access data storage and to determine data for generating the proposed map;
+to display to the user via the user interface at least a first representation in a first scale giving an overview of the extent of the proposed map plus a border region around the proposed map, and a second representation in a second scale giving a detailed view of the content of a sample area of the first representation, the first representation including an indication of the location of the sample area;
+to respond to user input to move the indication of the sample area within the first representation and to display within the second representation the detailed view of the moved sample area, and
+to respond to user confirmation of an order for a proposed map to initiate the generation of the map.
+The computer system of claim 21, comprising a web server hosting a website, the web server being connected to a network for connection to at least one client computer via the network, the web server defining a user interface and responding to operations effected by the user at a client computer.
+The computer system of claim 22, further comprising a map generating server, the web server being operable to respond to user confirmation of the order for the proposed map by sending a message to the map generating server defining the parameters of a proposed map to be generated.
+The computer system of claim 23, wherein the map generating server is a print server and the map is printed.
+The computer system of claim 23 or claim 24, wherein the map generating server is remote from the web server.
+The computer system of any of claims 23 to 25, the computer system further comprising a secure server operable to process client payments, the secure server being operable to confirm completion of payment operations for authorising commencement of the generation of the proposed map by the map generating server.
+The computer system of any of claims 21 to 26, wherein user input and displaying to a user is effected on a client computer connected to the server computer via a network.
+The computer system of claim 27, wherein the network comprises the Internet.
+A method of generating a customised computer generated map, the method comprising:
+generating a graphical user interface according to any one of claims 1 to 16;
+responding to user selection of a centre for a proposed map to access data storage and to determine data for generating a proposed map,
+displaying to the user, using the graphical user interface, at least the first representation in a first scale giving an overview of the extent of the proposed map plus a border region around the proposed map, and the second representation in a second scale giving a detailed view of the content of a sample area of the first representation, the first representation including an indication of the location of the sample area,
+responding to user input to move the indication of the sample area within the first representation and to display within the second representation the detailed view of the moved sample area.
+The method of claim 29, further comprising responding to user confirmation of an order for a proposed map to initiate the generation of the map.
+The method of claim 30, wherein confirmation of the order comprises supplying payment information.
+The method of claim 31, wherein initiation of the generation of the map is effected on confirmation of payment for the order.
+The method of any of claims 29 to 32 performed on a web server implementing a website.
+The method of any of claims 29 to 33, comprising generating the proposed map on a map generating server remote from the web server.
+The method of claim 34, wherein generating the map comprises printing the map on a printer managed by a print server remote from the web server.
+The method of any of claims 29 to 35, wherein user input and displaying to a user is effected on a client computer connected to the server computer via a network.
+The method of claim 36, wherein the network comprises the Internet.
+A computer program comprising program code operable to perform the steps of the method of any of claims 29 to 37.
+The computer program of claim 20 or claim 38 on a carrier medium.

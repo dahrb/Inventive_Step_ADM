@@ -1,0 +1,88 @@
+TITLE:
+Multi-application IC card with delegation feature
+
+TYPE:
+US patent
+
+ABSTRACT:
+A multi-application IC card which processes two or more applications using an Application Abstract Machine architecture. The AAM architecture only allows one application to be executed at a time and allows for shared processing by performing a delegation function to a second application. A data space for each application is allocated when the application is selected to be executed. The data space includes a volatile and non-volatile region. The delegation function temporarily interrupts the execution of the first application, saves the temporary data of the first application, shares any data needed with the second application and the second application is executed until the delegated task is competed. The first application then retrieves the saved data and completes its execution. A delegator stack is used to keep track of the delegator's identity when multiple delegations occur. The AAM model allows for a high level of security while transferring data between applications.
+
+CLAIMS:
+1. An integrated circuit card comprising:
+a microprocessor; a volatile memory coupled to said microprocessor; a non-volatile memory coupled to said microprocessor; and a plurality of applications stored in said non-volatile memory, wherein upon execution of each said application, said microprocessor allocates for each said executing application an associated data memory space comprising at least a volatile memory segment for referencing temporary data and a non-volatile memory segment for referencing static data; and further comprising means for delegating the performance of a function from a first executing application to a second executing application.
+2. The integrated circuit card of claim 1, wherein said non-volatile memory segment is divided into at least two regions, including a public region and a dynamic region.
+3. The integrated circuit card of claim 2, wherein said public region is used to share data between said first and second applications.
+4. The integrated circuit card of claim 2, wherein said dynamic region is used to reference temporary data utilized during an application's execution.
+5. The integrated circuit card of claim 1, further comprising at least one register coupled to said microprocessor which is used to determine the starting locations of each of said segments.
+6. The integrated circuit card of claim 5, further comprising at least one register coupled to said microprocessor which is used to determine the top locations of each of said segments.
+7. The integrated circuit card of claim 6, further comprising at least one register coupled to said microprocessor which is used as a local dynamic pointer.
+8. The integrated circuit card system of claim 1, wherein each said application comprise a plurality of program instructions and wherein at least one of said program instructions when executed causes said memory referenced by said volatile memory segment to be accessed.
+9. The integrated circuit card of claim 1, wherein said volatile memory segment references RAM and said non-volatile memory segment references EEPROM.
+10. A method for processing a plurality of applications stored in a memory of an integrated circuit:
+selecting a first application for execution;
+allocating a data space for said first application including at least two memory segments comprising a volatile memory segment for referencing temporary data and a non-volatile memory segment for referencing static data;
+executing said first application, interrupting execution of said first application and saving data referenced by said volatile memory segment;
+executing a second application;
+utilizing said saved data from said volatile memory segment for execution of said first application; and
+completing said execution of said first application.
+11. The method of claim 10, wherein said first application's identity is stored in a data stack during said delegation step.
+12. The method of claim 11, wherein said data stack is accessed following said completion of said second application.
+13. The method of claim 12, further including the step of inquiring said first application's identity by accessing said delegator stack.
+14. The method of claim 10, wherein said non-volatile memory segment is divided into at least two regions, including a public region and a dynamic region.
+15. The method of claim 14, wherein said public region is used to share data between said first application and said second application.
+16. The method of claim 14, wherein data referenced by said dynamic region is utilized during the execution of said first application.
+17. The method of claim 10, further including the step of allocating a second data space including at least two memory segments for said second application.
+18. The method of claim 17, wherein said second data space's segments comprise a volatile memory segment for referencing temporary data and a non-volatile memory segment for referencing static data.
+19. The method of claim 18, wherein said second application's non-volatile segment is divided into at least two regions, including a public region and a dynamic region.
+20. The method of claim 19, wherein said second application's public region is used to share data between said first and second applications.
+21. The method of claim 19, wherein said data referenced by second application's dynamic region is utilized during said execution of said second application.
+22. The method of claim 10, further including the step of delegating use of said microprocessor from said second application to a third application stored on said IC card.
+23. The method of claim 22, wherein a third data space for said third application is allocated which includes a volatile memory segment for referencing temporary data and non-volatile memory segment for referencing static data, wherein said third application's volatile segment includes a public and dynamic portion.
+24. An apparatus for processing a plurality of applications stored in a memory of a single integrated circuit card comprising:
+means for allocating a data space comprising at least a non-volatile memory segment for referencing static data and a volatile memory segment for referencing temporary data; means for executing a first application; means for interrupting execution of said first application, means for saving data from at least a portion of said volatile memory segment; and means for executing a second application; means for retrieving said saved data; and means for completing said execution of said first application.
+25. The apparatus of claim 24, further including means for storing said first application's identity on a data stack.
+26. The apparatus of claim 25, further including means for inquiring of said first application's identity.
+27. The apparatus of claim 24, wherein said first application's non-volatile memory segment is divided into at least two regions, including a public region and a dynamic region.
+28. The apparatus of claim 27, wherein said public region references random access memory.
+29. The apparatus of claim 27, wherein said dynamic region references random access memory.
+30. The apparatus of claim 24, further including means for allocating a second data space including at least two segments for said second application.
+31. The apparatus of claim 30, wherein said second data space includes a volatile memory segment for referencing temporary data and a non-volatile memory segment for referencing static data.
+32. The apparatus of claim 31, wherein said second data space's non-volatile segment is divided into at least two regions, including a public region and a dynamic region.
+33. The apparatus of claim 32, wherein said public region references random access memory.
+34. The apparatus of claim 32, wherein said dynamic region references random access memory.
+35. The apparatus of claim 24, further including means for delegating operation of said IC card from said second application to a third application stored on said IC card.
+36. The apparatus of claim 35, wherein a third data space for said third application is allocated which includes a volatile memory segment for referencing temporary data and non-volatile memory segment for referencing temporary data, wherein said third application's volatile memory segment includes a public and dynamic portion.
+37. A system for processing a plurality of applications stored on an IC card comprising:
+a non-volatile memory coupled to a databus;
+a volatile memory coupled to said databus;
+a first and second application program stored in said non-volatile memory, wherein each application has an associated identifier;
+a data stack accessible by said databus for storing said applications' identifier if said application is interrupted during its execution;
+processor means for executing instructions from said application programs wherein said processor means allocates a data memory space for said application which is being executed and said data memory space is mapped to at least one address in said non-volatile memory and at least one address in said volatile memory; and
+wherein said processor means interrupts said first application at least once during its execution to execute said second application.
+38. The system of claim 37, wherein data memory space comprises at least a volatile memory segment for referencing temporary data stored in said volatile memory and a non-volatile memory segment for referencing static data stored in said non-volatile memory.
+39. The system of claim 37, further including means for storing said first application's identity on a data stack.
+40. The system of claim 39, further including means for inquiring of said first application's identity.
+41. The system of claim 38, wherein said first application's non-volatile memory segment is divided into at least two regions, including a public region and a dynamic region.
+42. The system of claim 41, wherein said public region references random access memory.
+43. The system of claim 4 1, wherein said dynamic region references random access memory.
+44. The system of claim 37, further including means for allocating a second data space including at least two segments for said second application.
+45. The system of claim 44, wherein said second data space comprises at least a volatile memory segment for referencing temporary data and a non-volatile memory segment for referencing static data.
+46. The system of claim 45, wherein said second data space's non-volatile segment is divided into at least two regions, including a public region and a dynamic region.
+47. The system of claim 46, wherein said public region references random access memory.
+48. The system of claim 46, wherein said dynamic region references random access memory.
+49. The system of claim 37, further including means for delegating use of said processor means from said second application to a third application stored on said IC card.
+50. The system of claim 49, wherein a third data space for said third application is allocated which includes a volatile memory segment for referencing temporary data and non-volatile memory segment for referencing temporary data, wherein said third application's volatile memory segment includes a public and dynamic portion.
+51. An integrated circuit card comprising:
+a plurality of applications and a microprocessor for controlling execution of said applications wherein execution of at least one first application is interrupted and execution is transferred to another second application, further comprising means for sharing data by said first and second applications and means for resuming execution of said first application at the appropriate location at least after completion of execution of said second application.
+52. The integrated circuit card of claim 51, further comprising means for allocating a data memory space comprises at least a volatile memory segment for referencing temporary data stored in said volatile memory and a non-volatile memory segment for referencing static data stored in said non-volatile memory.
+53. The integrated circuit card of claim 51, further including means for storing said first application's identity on a data stack.
+54. The integrated circuit card of claim 53 further including means for inquiring of said first application's identity.
+55. The integrated circuit card of claim 52, wherein said first application's non-volatile memory segment is divided into at least two regions, including a public region and a dynamic region.
+56. The integrated circuit card of claim 55, wherein said public region references random access memory.
+57. The integrated circuit card of claim 55, wherein said dynamic region references random access memory.
+58. The integrated circuit card of claim 52, further including means for allocating a second data space including at least two segments for said second application.
+59. The integrated circuit card of claim 58, wherein said second data space comprises at least a volatile memory segment for referencing temporary data and a non-volatile memory segment for referencing static data.
+60. The integrated circuit card of claim 58, wherein said second data space's non-volatile segment is divided into at least two regions, including a public region and a dynamic region.
+61. The integrated circuit card of claim 58, wherein said public region references random access memory.
+62. The integrated circuit card of claim 60, wherein said dynamic region references random access memory.
+63. The integrated circuit card of claim 51, further including means for delegating use of said processor means from said second application to a third application stored on said IC card.

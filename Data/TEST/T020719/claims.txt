@@ -1,0 +1,225 @@
+--- PAGE 1 ---
+1092656v1
+
+46
+
+Main request
+CLAIMS
+
+1. A method of disambiguating a character input into a handheld electronic
+device (4), the handheld electronic device including an input (8) for inputting characters into
+the device, an output (60) for outputting characters, and a processor (16) for electronically
+processing characters, including a memory (20) having a plurality of objects stored therein,
+the plurality of objects including a plurality of language objects (100), that may be
+constructed, identified or otherwise interpreted from one or more linguistic characters to
+generate text, and a plurality of frequency objects (104) for indicating the relative frequency
+within a relevant language of occurrence of the language objects, each of at least a portion of
+the language objects being associated with a frequency object, the input including a plurality
+of input members (28,34), each of at least a portion of the input members having a plurality
+of characters (48) assigned thereto, the method comprising:
+
+detecting an initial ambiguous input (204) including an actuation of at least one of the
+input members (28, 34) having a plurality of characters (48) assigned thereto;
+
+determining that a first language object corresponds with the initial ambiguous input;
+
+determining that a second language object corresponds with the initial ambiguous
+input;
+
+determining that a first frequency object is associated with the first language object
+and has a first frequency value;
+
+determining that a second frequency object is associated with the second language
+object and has a second frequency value;
+
+determining that the first frequency value is relatively greater than the second
+frequency value;
+
+outputting an initial output including an initial default output and an initial variant
+output, the first language object forming at least a portion of the initial default output and the
+second language object forming at least a portion of the initial variant output;
+
+detecting a delimiter input for identifying the end of a contiguous sequence of
+characters, that selects the second language object from at least a portion of the initial variant
+output;
+
+detecting a subsequent ambiguous input comprising the actuation of at least one input
+
+member having a plurality of linguistic elements assigned thereto that is entered after the
+
+--- PAGE 2 ---
+47
+
+initial ambiguous input and the delimiter input that selects the second language object, the
+subsequent ambiguous input being the same as the initial ambiguous input;
+
+determining that said first language object corresponds with the subsequent
+ambiguous input;
+
+determining that said second language object corresponds with the subsequent
+ambiguous input;
+
+determining that said first frequency object is associated with said first language
+object and has the first frequency value;
+
+determining that said second frequency object is associated with said second language
+object and has the second frequency value;
+
+outputting a subsequent output including a subsequent default output and a
+
+subsequent variant output, said first language object forming at least a portion of the
+subsequent default output and said second language object forming at least a portion of the
+subsequent variant output;
+
+detecting a delimiter input that selects the second language object from at least a
+portion of the subsequent variant output;
+
+determining that the subsequent ambiguous input was a first of any inputs to
+
+the handheld electronic device subsequent to the initial ambiguous input, that was the same
+as the initial ambiguous input; and
+
+assigning to the second language object a new frequency object having a frequency
+
+value greater than the frequency value of the first frequency object.
+
+2. The method of disambiguating an input (8) into a handheld electronic device
+(4) of Claim 1 wherein the language objects (100) include a plurality of word objects (108)
+with at least some of the word objects being associated with the corresponding frequency
+objects (104) and the frequency objects are segregated into a generic word list (88) and a
+frequency learning database (96), wherein at least some of the word objects and the
+associated frequency objects in the generic word list are inviolate, while the frequency
+objects in the frequency learning database may change with usage of the corresponding word
+object, wherein the assigning step assigns to a second word object as to the second language
+object a new frequency object in the frequency learning database having a frequency value
+
+greater than the frequency value of the first frequency object.
+
+1092656v1
+
+--- PAGE 3 ---
+48
+
+3. The method of disambiguating an input (8) into a handheld electronic device
+(4) of Claim 2 including the step of giving priority to the frequency object (104) in the
+frequency learning database (96) over the frequency object for the substantially identical
+
+word object (108) in the generic word list (88).
+
+4, The method of disambiguating an input (8) into a handheld electronic device
+(4) of Claim 2 wherein some of the word objects (108) can reside in both the generic word
+
+(88) list and the frequency learning database (96).
+
+5. A handheld electronic device (4) comprising:
+
+an input (8) for inputting characters into the device;
+
+an output (60) for outputting characters;
+
+and a processor (16) for electronically processing characters, including a memory (20)
+having a plurality of objects stored therein, with the plurality of objects including a plurality
+of language objects (100), that may be constructed, identified or otherwise interpreted from
+one or more linguistic characters to generate text and a plurality of frequency objects (104)
+for indicating the relative frequency of occurrence of the language objects, each of at least a
+portion of the language objects being associated with a frequency object;
+
+the input includes a plurality of input members (28,34), each of at least a portion of
+the input members having a plurality of characters (48) assigned thereto;
+
+the processor is adapted to detect an initial ambiguous input (204) including an
+actuation of at least one of the input members (28, 34) having a plurality of characters (48)
+assigned thereto;
+
+the processor is adapted to determine that a first language object corresponds with the
+initial ambiguous input;
+
+the processor is adapted to determine that a second language object corresponds with
+the initial ambiguous input;
+
+the processor is adapted to determine that a first frequency object is associated with
+the first language object and has a first frequency value;
+
+the processor is adapted to determine that a second frequency object is associated with
+the second language object and has a second frequency value;
+
+the processor is adapted to determine that the first frequency value is relatively greater
+
+than the second frequency value;
+
+1092656v1
+
+--- PAGE 4 ---
+49
+
+the processor is adapted to output an initial output including an initial default output
+and an initial variant output, the first language object forming at least a portion of the initial
+default output and the second language object forming at least a portion of the initial variant
+output;
+
+the processor is adapted to detect a delimiter input that selects the second language
+object from at least a portion of the initial variant output;
+
+the processor is adapted to detect a subsequent ambiguous input entered after the
+initial ambiguous input and the delimiter input that selects the second language object, the
+subsequent ambiguous input being the same as the initial ambiguous input;
+
+the processor is adapted to determine that said first language object corresponds with
+the subsequent ambiguous input;
+
+the processor is adapted to determine that said second language object corresponds
+with the subsequent ambiguous input;
+
+the processor is adapted to determine that said first frequency object is associated with
+said first language object and has the first frequency value;
+
+the processor is adapted to determine that said second frequency object is associated
+with said second language object and has the second frequency value;
+
+the processor is adapted to output a subsequent output including a subsequent
+
+default output and a subsequent variant output, said first language object forming at least a
+portion of the subsequent default output and said second language object forming at least a
+portion of the subsequent variant output;
+
+the processor is adapted to detect a delimiter input that selects the second language
+object from at least a portion of the subsequent variant output;
+characterized in that;
+
+the processor is adapted to determine that the subsequent ambiguous input was a first
+of any inputs to the handheld electronic device subsequent to the initial ambiguous input, that
+was the same as the initial ambiguous input; and
+
+the processor is adapted to assign to the second language object a new frequency
+
+object having a frequency value greater than the frequency value of the first frequency object.
+
+6. The handheld electronic device (4) of Claim 5 wherein the language objects
+(100) include a plurality of word objects (108) with at least some of the plurality of word
+objects associated with the corresponding associated frequency objects (104) and the
+
+frequency objects are segregated into a generic word list (88) and a frequency learning
+1092656v1
+
+--- PAGE 5 ---
+1092656v1
+
+50
+
+database (96), wherein at least some of the word objects and the associated frequency objects
+in the generic word list are inviolate, while the frequency objects in the frequency learning
+database may change with usage of the corresponding word object, wherein the processor
+apparatus assigns to a second word object as to the second language object a new frequency
+object in the frequency learning database having a frequency value greater than the
+
+frequency value of the first frequency object.
+
+7. The handheld electronic device (4) of Claim 6 wherein the processor apparatus
+gives priority to the frequency object (104) in the frequency learning database (96) over the
+
+frequency object for the substantially identical word object in the generic word list(88).
+
+8. The handheld electronic device (4) of Claim 7 wherein some of the word
+objects (108) can reside in both the generic word list (88) and the frequency learning database
+
+(96).

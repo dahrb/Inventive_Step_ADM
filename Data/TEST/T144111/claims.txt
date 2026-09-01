@@ -1,0 +1,141 @@
+--- PAGE 1 ---
+MAIN REQUEST
+CLAIMS:
+
+1. An application determining apparatus of an image forming apparatus (10),
+characterized by:
+
+a log recording unit (42) configured to record, in response to at least one
+of a use request for use of a predetermined function of the image forming
+apparatus from an application for use in the image forming apparatus and
+consumption of a memory of the image forming apparatus by the application,
+memory consumption of the application in each of a number of states of the
+application as log information; and
+
+a determining unit (334) configured to determine whether a maximum
+value of memory consumption of the application in each state of the application is
+
+less than or equal to a predetermined restriction.
+
+2. An application determining apparatus as claimed in claim 1, further
+characterised in that when two applications are activated in the image formation
+apparatus and transitions of said states of the two applications are performed at
+the same time, the determining unit (334) is arranged to determine whether a
+sum of maximum memory consumption in each of the states of the two
+
+application is less than or equal to the predetermined restriction.
+
+3. An application determining apparatus as claimed in claim 1 or 2, further
+characterized by:
+
+a responding unit configured to respond, if the application is activated for
+which application the determination by the determining unit (334) is to be made,
+to the use request for use of the predetermined function from the application in
+place of a function realizing unit configured to realize the predetermined function
+
+according to the use request.
+
+2984204-1-eor
+
+--- PAGE 2 ---
+4. An application determining apparatus as claimed in claim 3, further
+characterized by:
+
+a request destination control unit configured to monitor the use request
+and, if the application is activated for which application the determination by the
+determining unit is to be made, sends the use request not to the function
+
+realizing unit but to the responding unit.
+
+5. An application determining apparatus as claimed in any one of claims 1
+through 4, characterized in that the determining unit is arranged to determine
+whether said memory consumption by the application satisfies the said
+predetermined restriction by comparing said memory consumption by the
+application to a determination condition stored in a first file.
+
+6. An application determining apparatus as claimed in any one of claims 1
+through 5, further characterized by:
+an operating unit configured to produce an input to an operations screen
+
+of the application according to a definition stored in a second file.
+
+7. An application determining apparatus as claimed in claim 3 or claim 4,
+characterized in that the responding unit is adapted to respond to the use request
+according to a definition stored in a third file.
+
+8. An application determining method executable by a computer, the
+method characterized by:
+
+a log recording step of recording, in response to at least one of a use
+request for use of a predetermined function of an image forming apparatus from
+an application for use in the image forming apparatus and consumption of a
+memory of the image forming apparatus by the application, memory consumption
+of the application in each of a number of states of the application as log
+
+information; and
+
+(2984 204-1-sta0r
+
+--- PAGE 3 ---
+a determining step of determining whether a maximum value of memory
+consumption of the application in each state of the application is less than or
+
+equal to a predetermined restriction.
+
+9. An application determining method as claimed in claim 8, further
+characterised in that when two applications are activated in the image formation
+apparatus and transitions of said states of the two applications are performed at
+the same time, it is determined in the determining step whether a sum of
+maximum memory consumption in each of the states of the two applications is
+
+less than or equal to the predetermined restriction.
+
+10. An application determining method as claimed in claim 8 or 9, further
+characterized by:
+
+a responding step of responding, if the application is activated for which
+application the determination in the determining step is to be made, to the use
+request for use of the predetermined function from the application in place of a
+function realizing step for realizing the predetermined function according to the
+
+use request.
+
+11. An application determining method as claimed in claim 10, further
+characterized by:
+
+a request destination controlling step of monitoring the use request for use
+of the predetermined function from the application and, if the application is
+activated for which application the determination in the determining step is to be
+made, sending the use request not to the function realizing step but to the
+responding step.
+
+12. An application determining method as claimed in any one of claims 8
+
+through 11, characterized in that, in the determining step, whether memory
+
+consumption of the application satisfies the said predetermined restriction is
+
+2984204-1-emor
+
+--- PAGE 4 ---
+determined by comparing said memory consumption by the application to a
+
+determination condition stored in a first file.
+
+13. An application determining method as claimed in any one of claims 8
+through 12, further characterized by:
+an operating step of producing an input to an operations screen of the
+
+application according to a definition stored in a second file.
+
+14. An application determining method as claimed in claim 9 or claim 10,
+characterized in that, in the responding step, the use request is responded to
+
+according to a definition stored in a third file.
+
+15. A computer-readable recording medium storing an application
+determining program, the application determining program including computer-
+executable instructions for executing a method according to any one of claims 8
+to 14.
+
+2984204-1-ataor

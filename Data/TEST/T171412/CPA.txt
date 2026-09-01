@@ -1,0 +1,139 @@
+TITLE:
+Multimedia application using flashpix file format
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system, for use on a computer system, creates and publishes a set of images, each image in the set being stored in a FlashPix file which contains at least the image in multiple resolutions, viewing parameters for viewing the image, and information related to the image. The system includes displaying, on a computer-generated workbench, a plurality of images retrieved from FlashPix files, and correcting images displayed in the workbench. In the system, image correction comprises altering viewing parameters in FlashPix files corresponding to the displayed images. The system also composes displayed images by adding or deleting, from FlashPix files corresponding to the displayed images, information related to the displayed images, and publishes a set of images displayed on the workbench. The set of published images includes corrected and composed images.
+
+CLAIMS:
+1. A method, for use on a computer system, of creating and publishing a set of images, each image in the set being stored in a multi-resolution image file which contains at least the image in multiple resolutions, viewing parameters for viewing the image, and information related to the image, the method comprising the steps of:
+displaying, in a first portion of a user interface on a computer-generated workbench, a plurality of images retrieved from multi-resolution image files;
+correcting, in a workspace in a second portion of the user interface, images selected from the workbench, the correcting step comprising altering viewing parameters in multi-resolution image files corresponding to the selected images, and updating the selected images on the workbench to include corrections made in the workspace, the corrections made in the second portion of the user interface updating images displayed in the first portion of the user interface;
+composing, in the workspace, images selected from the workbench, the composing step comprising adding or deleting, from multi-resolution image files corresponding to the selected images, information related to the selected images; and
+publishing a set of images displayed on the workbench, the set of images comprising corrected and composed images.
+2. A method according to claim 1, further comprising, before the displaying step, the steps of:
+collecting a plurality of low resolution images from FlashPix files; and
+selecting, from the images collected in the collecting step, a plurality of the low resolution images for inclusion onto the workbench.
+3. A method according to claim 2, further comprising, between the collecting and selecting steps, the step of displaying the plurality of low resolution images in a computer-generated workspace;
+wherein the selecting step comprises selecting low resolution images displayed in the computer-generated workspace for inclusion into the set of images.
+4. A method according to claim 2, wherein in the collecting step, the images are collected from one or more of the following sources: a hardware device, stored files, an electronic album, the World Wide Web, and a database; and
+wherein the publishing step publishes, along with each image in the set, information relating to the source of each image.
+5. A method according to claim 4, wherein, in a case that the source is the World Wide Web, low resolution images are collected using Internet Imaging Protocol.
+6. A method according to claim 2, wherein a multi resolution image file for each image stores the image in four resolutions; and
+wherein the plurality of low resolution images collected in the collecting step comprise, for each image, a lowest resolution image stored in a multi resolution image file for the image.
+7. A method according to claim 2, wherein the collecting step comprises:
+searching for particular images based on designated search parameters; and
+retrieving low resolution images from multi resolution image files for images found in the searching step.
+8. A method according to claim 1, wherein the displaying step comprises displaying, along with the images on the workbench, information related to the images.
+9. A method according to claim 8, wherein the information related to the images comprises an icon which indicates that audio information is associated with an image.
+10. A method according to claim 1, wherein the correcting step comprises changing color parameters for the images.
+11. A method according to claim 1, wherein the correcting step comprises altering a magnification of the images.
+12. A method according to claim 1, wherein the composing step comprises adding or deleting, from a multi-resolution image file of a designated image, one or more of the following: a written caption, audio information, and additional information relating to creation and/or capture of the image.
+13. A method according to claim 12, wherein the multi-resolution image file of the designated image includes an extension list which stores the audio information.
+14. A method according to claim 1, wherein the publishing step is performed automatically in response to a predetermined condition, or manually in response to a user's input.
+15. A method according to claim 1, wherein the publishing step comprises publishing the set of images to one of the following destinations: a video screen, the World Wide Web, and an image forming device.
+16. A method according to claim 15, wherein the image forming device comprises a printer.
+17. A method according to claim 14, wherein the publishing step comprises:
+selecting types of information associated with each image in the set of images; and
+publishing, with the set of images, a selected type of information for each image in the set.
+18. A method according to claim 1, wherein the publishing step comprises, for a designated image in the set of images, retrieving an image from a multi-resolution image file which corresponds to the designated image based on a hardware device used to publish the image, and outputting the image as corrected and composed in the correcting and composing steps, respectively.
+19. A method according to claim 18, wherein in a case that the one or more sources in the collecting step comprises the World Wide Web, the publishing step comprises retrieving the image from the multi-resolution image file for the designated image using Internet Imaging Protocol.
+20. A method according to claim 1, wherein the publishing step comprises publishing thumbnail versions of the images displayed on the workbench.
+21. An apparatus for creating and publishing a set of images, each image in the set being stored in a multi-resolution image file which contains the image in multiple resolutions, viewing parameters for viewing the image, and information related to the image, the apparatus comprising:
+a user interface for inputting data and commands into the apparatus;
+a memory which stores executable process steps; and
+a processor, which executes process steps stored in the memory (1) to display, in a first portion of a user interface on a computer-generated workbench, images retrieved from multi-resolution image files, (2) to correct, in a workspace in the second portion of the user interface, images selected from the workbench, the correcting step comprising altering viewing parameters in multi-resolution image files corresponding to the selected images, and updating the selected images on the workbench to include corrections made in the workspace, the corrections made in the second portion of the user interface updating images displayed in the first portion of the user interface, (3) to compose, in the workspace, images selected from the workbench, the composing step comprising adding or deleting, from multi-resolution image files corresponding to the displayed images, information related to the displayed images, and (4) to publish a set of images displayed on the workbench, the set of images comprising corrected and composed images.
+22. A method according to claim 21, wherein, before displaying the plurality of images in the workbench, the processor executes process steps to collect a plurality of low resolution images from FlashPix files, and to select, from the collected images, a plurality of the low resolution images for inclusion onto the workbench.
+23. An apparatus according to claim 22, wherein, between collecting and selecting, the processor displays the plurality of low resolution images in a computer-generated workspace; and
+wherein the selecting performed by the processor (1) is in response to a command input from the user interface, and (2) comprises selecting displayed low resolution images for inclusion into the workbench.
+24. An apparatus according to claim 22, wherein FlashPix files corresponding to the plurality of low resolution images are collected from one or more of the following sources: a hardware device, stored files, an electronic album, the World Wide Web, and a database; and
+wherein the processor publishes, along with each image in the set of images, information relating to the source of each image.
+25. An apparatus according to claim 24, wherein, in a case that the source of an image is the World Wide Web, a low resolution image for the image is collected using Internet Imaging Protocol.
+26. An apparatus according to claim 22, wherein FlashPix files for each image store the image in four resolutions; and
+wherein the plurality of low resolution images collected by the processor comprise, for each image, a lowest resolution image stored in a FlashPix file for the image.
+27. An apparatus according to claim 22, wherein the processor collects the plurality of low resolution images by searching for particular images based on designated search parameters, and retrieving low resolution images from FlashPix files for found images.
+28. An apparatus according to claim 21, wherein the processor displays, along with the images on the workbench, information related to the images.
+29. An apparatus according to claim 28, wherein the information related to the images comprises an icon which indicates that audio information is associated with an image.
+30. An apparatus according to claim 21, wherein the processor corrects the images by changing color parameters for the images.
+31. An apparatus according to claim 21, wherein the processor corrects the images by altering a magnification of the images.
+32. An apparatus according to claim 21, wherein the processor composes displayed images by adding or deleting, from a FlashPix file of a designated image, one or more of the following: a written caption, audio information, and additional information relating to creation and/or capture of the image.
+33. An apparatus according to claim 32, wherein the FlashPix file of the designated image includes an extension list which stores the audio information.
+34. An apparatus according to claim 21, wherein the processor publishes the set of images either automatically in response to a predetermined condition, or manually in response to a command input via the user interface.
+35. An apparatus according to claim 21, wherein the processor publishes the set of images to one of the following destinations: a video screen, the World Wide Web, and an image forming device.
+36. An apparatus according to claim 35, wherein the image forming device comprises a printer.
+37. An apparatus according to claim 35, wherein the processor publishes the set of images by selecting types of information associated with each image in the set of images, and publishing, with the set of images, a selected type of information for each image in the set.
+38. An apparatus according to claim 21, wherein the publishing step comprises publishing thumbnail versions of the images displayed on the workbench.
+39. An apparatus according to claim 21, wherein, for a designated image in the set of images, the processor publishes the image by retrieving an image from a FlashPix file which corresponds to the designated image based on a hardware device used to publish the image, and outputs the image as corrected and composed by the processor.
+40. An apparatus according to claim 39, wherein in a case that the one or more sources is the World Wide Web, the processor publishes the designated image by retrieving the image from the FlashPix file for the designated image using Internet Imaging Protocol.
+41. Computer-executable process steps stored on a computer-readable medium, the process steps for use on a computer system to create and publish a set of images, each image in the set being stored in a multi-resolution image file which contains at least the image in multiple resolutions, viewing parameters for viewing the image, and information related to the image, the process steps comprising:
+code to display, in a first portion of a user interface on a computer-generated workbench, a plurality of images retrieved from multi-resolution image files;
+code to correct, in a workspace in a second portion of the user interface, images selected from the workbench, the code to correct comprising code to alter viewing parameters in multi-resolution image files corresponding to the selected images, and updating the selected images on the workbench to include corrections made in the workspace, the corrections made in the second portion of the user interface updating images displayed in the first portion of the user interface;
+code to compose, in the workspace, images selected from the workbench, the composing step comprising adding or deleting, from multi-resolution image files corresponding to the selected images, information related to the selected images; and
+code to publish a set of images displayed on the workbench, the set of images comprising corrected and composed images.
+42. Computer-executable process steps according to claim 41, further comprising:
+code to collect a plurality of low resolution images from FlashPix files; and
+code to select, from the images collected by the code to collect, a plurality of the low resolution images for inclusion onto the workbench.
+43. Computer-executable process steps according to claim 42, further comprising, between the code to collect and the code to select, code to display the plurality of low resolution images in a computer-generated workspace;
+wherein the code to select selects low resolution images displayed in the computer-generated workspace for inclusion into the set of images.
+44. Computer-executable process steps according to claim 42, wherein the code to collect collects the FlashPix images from one or more of the following sources: a hardware device, stored files, an electronic album, the World Wide Web, and a database; and
+wherein the code to publish publishes, along with each image in the set, information relating to the source of each image.
+45. Computer-executable process steps according to claim 44, wherein, in a case that the source is the World Wide Web, low resolution images are collected using Internet Imaging Protocol.
+46. Computer-executable process steps according to claim 42, wherein a FlashPix file for each image stores the image in four resolutions; and
+wherein the plurality of low resolution images collected by the code to collect comprise, for each image, a lowest resolution image stored in a FlashPix file for the image.
+47. Computer-executable process steps according to claim 42, wherein the code to collect comprises:
+code to search for particular images based on designated search parameters; and
+code to retrieve low resolution images from FlashPix files for images found in the searching step.
+48. Computer-executable process steps according to claim 41, wherein the code to display displays, along with the images on the workbench, information related to the images.
+49. Computer-executable process steps according to claim 48, wherein the information related to the images comprises an icon which indicates that audio information is associated with an image.
+50. Computer-executable process steps according to claim 41, wherein the code to correct changes color parameters for the images.
+51. Computer-executable process steps according to claim 41, wherein the code to correct comprises code to alter a magnification of the images.
+52. Computer-executable process steps according to claim 41, wherein the code to compose comprises code to add or delete, from a Flashpix file of a designated image, one or more of the following: a written caption, audio information, and additional information relating to creation and/or capture of the image.
+53. Computer-executable process steps according to claim 52, wherein the FlashPix file of the designated image includes an extension list which stores the audio information.
+54. Computer-executable process steps according to claim 41, wherein the code to publish is executed automatically in response to a predetermined condition, or manually in response to a user's input.
+55. Computer-executable process steps according to claim 41, wherein the code to publish publishes the set of images to one of the following destinations: a video screen, the World Wide Web, and an image forming device.
+56. Computer-executable process steps according to claim 55, wherein the image forming device comprises a printer.
+57. Computer-executable process steps according to claim 54, wherein the code to publish comprises:
+code to select types of information associated with each image in the set of images; and
+code to publish, with the set of images, a selected type of information for each image in the set.
+58. Computer-executable process steps according to claim 41, wherein the code to publish comprises, for a designated image in the set of images, code to retrieve an image from a FlashPix file corresponding to the designated image based on a hardware device used to publish the image, and code to output the image as corrected and composed by the code to correct and the code to compose, respectively.
+59. Computer-executable process steps according to claim 58, wherein, in a case that the one or more sources in the collecting step comprises the World Wide Web, the code to publish comprises code to retrieve the image from the FlashPix file for the designated image using Internet Imaging Protocol.
+60. Computer-executable process steps according to claim 41, wherein the code to publish publishes thumbnail versions of the images displayed on the workbench.
+61. A computer-readable medium which stores computer-executable process steps for use on a computer system, the process steps to create and to publish a set of images, each image in the set being stored in a multi-resolution image file which contains at least the image in multiple resolutions, viewing parameters for viewing the image, and information related to the image, the process steps comprising:
+a displaying step to display, in a first portion of a user interface on a computer-generated workbench, a plurality of images retrieved from multi-resolution image files;
+a correcting step to correct, in a workspace in a second portion of the user interface images selected from the workbench, the correcting step comprising altering viewing parameters in multi-resolution image files corresponding to the selected images, and updating the selected images on the workbench to include corrections made in the workspace, the corrections made in the second portion of the user interface updating images displayed in the first portion of the user interface;
+a composing step to compose, in the workspace, images selected from the workbench, the composing step comprising adding or deleting, from multi-resolution image files corresponding to the selected images, information related to the selected images; and
+a publishing step to publish a set of images displayed on the workbench, the set of images comprising corrected and composed images.
+62. A computer-readable medium according to claim 61, further comprising, before the displaying step:
+a collecting step to collect a plurality of low resolution images from FlashPix files; and
+a selecting step to select, from the images collected in the collecting step, a plurality of the low resolution images for inclusion onto the workbench.
+63. A computer-readable medium according to claim 62, further comprising, between the collecting and selecting steps, a displaying step to display the plurality of low resolution images in a computer-generated workspace;
+wherein the selecting step comprises selecting low resolution images displayed in the computer-generated workspace for inclusion into the set of images.
+64. A computer-readable medium according to claim 62, wherein in the collecting step, the FlashPix images are collected from one or more of the following sources: a hardware device, stored files, an electronic album, the World Wide Web, and a database; and
+wherein the publishing step publishes, along with each image in the set, information relating to the source of each image.
+65. A computer-readable medium according to claim 64, wherein, in a case that the source is the World Wide Web, low resolution images are collected using Internet Imaging Protocol.
+66. A computer-readable medium according to claim 62, wherein a FlashPix file for each image stores the image in four resolutions; and
+wherein the plurality of low resolution images collected in the collecting step comprise, for each image, a lowest resolution image stored in a FlashPix file for the image.
+67. A computer-readable medium according to claim 62, wherein the collecting step comprises:
+a searching step to search for particular images based on designated search parameters; and
+a retrieving step to retrieve low resolution images from FlashPix files for images found in the searching step.
+68. A computer-readable medium according to claim 61, wherein the displaying step comprises displaying, along with the images on the workbench, information related to the images.
+69. A computer-readable medium according to claim 68, wherein the information related to the images comprises an icon which indicates that audio information is associated with an image.
+70. A computer-readable medium according to claim 61, wherein the correcting step comprises changing color parameters for the images.
+71. A computer-readable medium according to claim 61, wherein the correcting step comprises altering a magnification of the images.
+72. A computer-readable medium according to claim 61, wherein the composing step comprises adding or deleting, from a FlashPix file of a designated image, one or more of the following: a written caption, audio information, and additional information relating to creation and/or capture of the image.
+73. A computer-readable medium according to claim 72, wherein the FlashPix file of the designated image includes an extension list which stores the audio information.
+74. A computer-readable medium according to claim 61, wherein the publishing step is performed automatically in response to a predetermined condition, or manually in response to a user's input.
+75. A computer-readable medium according to claim 61, wherein the publishing step comprises publishing the set of images to one of the following destinations: a video screen, the World Wide Web, and an image forming device.
+76. A computer-readable medium according to claim 75, wherein the image forming device comprises a printer.
+77. A computer-readable medium according to claim 74, wherein the publishing step comprises:
+selecting types of information associated with each image in the set of images; and
+publishing, with the set of images, a selected type of information for each image in the set.
+78. A computer-readable medium according to claim 61, wherein the publishing step comprises, for a designated image in the set of images, retrieving an image from a FlashPix file which corresponds to the designated image based on a hardware device used to publish the image, and outputting the image as corrected and composed in the correcting and composing steps, respectively.
+79. A computer-readable medium according to claim 78, wherein in a case that the one or more sources in the collecting step comprises the World Wide Web, the publishing step comprises retrieving the image from the FlashPix file for the designated image using Internet Imaging Protocol.
+80. A computer-readable medium according to claim 61, wherein the publishing step comprises publishing thumbnail versions of the images displayed on the workbench.
+81. The method according to claim 1, wherein the plurality of images are displayed in the first portion of the user interface in one resolution and in a different resolution in the second portion of the user interface.
+82. An apparatus according to claim 21, wherein the plurality of images are displayed in the first portion of the user interface in one resolution and in a different resolution in the second portion of the user interface.
+83. Computer-executable process steps according to claim 41, wherein the plurality of images are displayed in the first portion of the user interface in one resolution and in a different resolution in the second portion of the user interface.
+84. Computer-readable medium according to claim 61, wherein the plurality of images are displayed in the first portion of the user interface in one resolution and in a different resolution in the second portion of the user interface.

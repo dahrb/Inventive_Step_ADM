@@ -1,0 +1,72 @@
+TITLE:
+Medical monitoring and alert system for use with therapeutic devices
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An integrated medical monitoring and alert system for monitoring a medical therapy delivered to a patient and patient physiological parameters is disclosed. The medical monitoring system preferably includes a central monitoring system and one or more of a therapeutic device, a patient monitor, and an integrated alert system. The components are linked together through a bi-directional communications system which can comprise a wireless communications link to provide for mobile patients and communications to remote caregivers.
+
+CLAIMS:
+1. A medical therapy delivery system comprising:
+a bi-directional communications network for digital data, the communications network including a hardwired communications segment and a wireless communications segment;
+at least one therapeutic device including a communications port, the therapeutic device adapted to control the delivery of therapy to a patient, and the therapeutic device transmitting therapy status data and alert condition data;
+at least one central monitoring system;
+at least one patient monitor for receiving therapy status data, the patient monitor linked to the at least one therapeutic device through said bi-directional communications network and linked to said at least one central monitoring system through the wireless communications segment of the communications network; and
+a remote access device linked to the at least one central monitoring system through the wireless communications segment, the remote access device providing at least patient therapy status data and alert condition data to a remote caregiver.
+2. The medical therapy delivery system as defined in claim 1, wherein the therapeutic device comprises a fluid delivery system.
+3. The medical therapy delivery system as defined in claim 2, wherein the therapy status data includes at least one of an infusion rate, a volume to be infused, and a volume infused.
+4. The medical therapy delivery system as defined in claim 1, wherein the therapeutic device comprises a respiration delivery system.
+5. The medical therapy delivery system as defined in claim 4, wherein the therapy status data includes at least one of a breath rate set, a breath rate actual, and an airway pressure.
+6. The medical therapy delivery system as defined in claim 1, wherein the therapeutic device comprises a patient warming device.
+7. The medical therapy delivery system as defined in claim 6, wherein the therapy status data includes at least one of an expected temperature and an actual temperature of a patient.
+8. The medical therapy delivery system as defined in claim 1, wherein the therapeutic device is linked to the patient monitor through a hardwired serial link.
+9. The medical therapy delivery system as defined in claim 1, wherein the therapeutic device is linked to the patient monitor through the wireless segment.
+10. The medical therapy delivery system as defined in claim 1, wherein the therapeutic device is a hemodialysis machine.
+11. A medical monitor and alert system for alerting medical personnel to the status of a patient, the system comprising:
+a bi-directional communications network for digital data, the communications network comprising a hardwired communications segment and a wireless communications segment, wherein the hardwired communications segment and the wireless communications segment each employ bi-directional communications;
+at least one therapeutic device adapted to control the delivery of therapy to a patient;
+at least one patient monitor for monitoring the physiological condition of the patient and for monitoring a therapy delivered to the patient, the patient monitor including a network interface for receiving therapy status data and alert condition data from at least one therapeutic device and for communicating therapy status data, physiological data, and alert condition data through the communications network;
+at least one central monitoring system including a network interface for receiving the therapy status data and alert condition data from the at least one patient monitor and for communicating therapy status data, physiological data, and alert condition data through the communications network; and
+an alert system comprising at least one remote access device linked to the communications network through the wireless communications segment of the communications network, the remote access device providing patient therapy status data and alert condition data to a remote caregiver along with patient physiological data, wherein the central monitoring system is adapted to transmit an alert signal when an alert condition is detected, and the remote access device is adapted to transmit a response signal to the central monitoring system when the alert signal is received.
+12. The medical monitor and alert system as defined in claim 11, wherein the wireless bi-directional communications link employs frequency hopping spread spectrum RF communications in the ISM band.
+13. The medical monitor and alert system as defined in claim 11, wherein the hardwired segment of the communications network is coupled to the wireless segment through at least one antenna coupled to the hardwired segment.
+14. The medical monitor and alert system as defined in claim 11, wherein the hardwired communications link comprises a local area network.
+15. The medical monitor and alert system as defined in claim 11, wherein the hardwired segment of the communications network comprises an ethernet backbone.
+16. The medical monitor and alert system as defined in claim 11, wherein the communications network employs TCP/IP and UDP protocols to control communications between the therapeutic devices, the patient monitors, the central monitoring system, and the alert system.
+17. The medical monitor and alert system as defined in claim 11, wherein the central monitoring system controls at least one physiological monitoring parameter at the patient monitor and controls at least one therapy delivery parameter at the therapeutic device.
+18. A medical monitoring system comprising:
+a communications network for bi-directional communications, the communications network including a hardwired communications segment and a wireless communications segment, the hardwired communications segment being coupled to the wireless bi-directional communications link through at least one antenna;
+a plurality of therapeutic devices for controlling the delivery of therapy to patients;
+a plurality of patient monitors for monitoring physiological conditions of patients;
+a plurality of central monitoring systems for receiving therapy status and alert condition data from said therapeutic devices; and
+a plurality of remote access devices for providing patient physiological and therapy status data and alert condition data to remote caregivers;
+wherein each of the patient monitors, each of the central monitoring systems, and each of the remote access devices are identified by a unique identity code such that each of the plurality of patient monitors, the plurality of central monitoring systems and the remote access devices are adaptable to communicate with each of the remaining patient monitors, central monitoring systems, and remote access devices through the hardwired communications segment and the wireless communications segment.
+19. The medical monitoring system as defined in claim 18, wherein the patient monitor monitors at least one therapy delivered to a patient and at least one physiological parameter of the patient.
+20. The medical monitoring system as defined in claim 18, wherein each of the plurality of therapeutic devices are identified by a unique identity code such that each of the plurality of therapeutic devices is adaptable to communicate with each of the remaining patient monitors, central monitoring systems, and remote access devices through the communications network.
+21. The medical monitoring system as defined in claim 18, further comprising at least one auxiliary system coupled to the communications network, wherein the auxiliary system is adapted to receive patient data from the central monitoring systems through the communications network.
+22. The medical monitoring system as defined in claim 18, further comprising at least one electronic data entry device for entering caregiver, patient, medication, therapy, and device identification information.
+23. The medical monitoring system as defined in claim 22, wherein the data entry device is a barcode scanner.
+24. A method for monitoring a therapy delivered to an ambulatory or mobile patient, the method comprising the steps of:
+coupling to the patient, a therapeutic device adapted to control delivery of therapy to the patient and to transmit therapy status data;
+coupling the therapeutic device to at least one central monitoring system through a bi-directional communications network;
+coupling the central monitoring system to an alert system through the communications network;
+transmitting the therapy status data to the central monitoring system through the communications network;
+displaying the therapy status data at the central monitoring system;
+evaluating the therapy status data for an alert condition; and
+transmitting an alarm message to the alert system when the alarm condition is detected until a message received signal from the alert system is received by the central monitoring system.
+25. The method as defined in claim 24, further comprising the step of periodically reviewing a memory component of the remote access device to determine an amount of free memory.
+26. The method as defined in claim 24, further comprising the steps of determining when a message has been received at the remote access device and when a message has been opened at the remote access device.
+27. The method as defined in claim 24, further comprising the step of assigning a primary recipient for a message to a first remote access device in the alert system and a secondary recipient for a message to a second remote access device in the alert system.
+28. The method as defined in claim 24, further comprising the step of forwarding a message from a first remote access device in the alert system to a second remote access device when the first recipient cannot respond.
+29. A medical monitor and alert system comprising:
+a bi-directional communications network including a hardwired communications segment and a wireless communications segment;
+at least one therapeutic delivery device adapted to control the delivery of therapy to a patient and to transmit therapy status data through a hardwired serial link;
+at least one patient monitor adapted to receive physiological parameter data pertaining to at least one physiological parameter of a patient and to receive transmitted therapy status data from the therapeutic delivery device through the hardwired serial link, the patient monitor further adapted to transmit the therapy status data and physiological parameter through the wireless communications segment of the communications network;
+at least one central monitoring system adapted to receive the therapy status data and physiological parameter data from the patient monitor and to transmit the therapy status data, physiological parameter data and alert condition data to an alert system through the wireless communications segment of the communications network; and
+an alert system comprising at least one remote access device providing patient therapy status data and alert condition data to a remote caregiver along with the patient physiological parameter data, the remote access device adapted to receive the therapy status data, physiological parameter data, and alert condition data from the central monitoring system through the wireless communications segment of the communications network, and to transmit an acknowledge signal to the central monitoring system when the data has been received.
+30. The medical monitor and alert system as defined in claim 29, wherein the central monitoring system is linked to a second central monitoring system through a hardwired communications segment of the communications network.
+31. The medical monitor and alert system as defined in claim 29, wherein the remote access device comprises at least one of a pager, a telephone, a portable computer, or a PDA.
+32. The medical monitor and alert system as defined in claim 29, wherein the central monitoring system is further linked to a clinical information system through a hardwired communications segment of the communications network.
+33. The medical monitor and alert system as defined in claim 11, wherein at least one patient monitor is linked to at least one therapeutic device through a device interface.
+34. The medical monitor and alert system as defined in claim 11, wherein at least one patient monitor is linked to at least one therapeutic device through an RS-232 link.

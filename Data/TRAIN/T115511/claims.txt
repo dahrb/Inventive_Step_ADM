@@ -1,0 +1,210 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+09 16 5318.8
+
+19
+LG Electronics Inc. 25, Feb, 2035
+Our Ref.: L2226 EP/1 CLAIMS
+
+1. A method for allocating a management area on a write-once optical
+recording medium having two recording layers (Layer 0, Layer 1), each of the
+recording layers including an inner zone (Lead-in area, Lead-out area), a data area
+(35a, 35b) and an outer zone (Outer Zone 0, Outer Zone 1), wherein the inner and
+outer zones include defect management areas (DMAs) for storing defect
+
+management information of the recording medium when the recording medium is to
+
+_ be finalized, characterized in that the method comprises:
+
+allocating, to the data area (35a) within a first recording layer (Layer 0), a first
+inner spare area (ISAO) with a predetermined fixed size and a first outer spare area
+(OSAOQ) with a size that is not predetermined;
+
+allocating, to the data area (35b) within a second recording layer (Layer 1), a
+second inner spare area (ISA1) and a second outer spare area (OSA1) with sizes
+that are not predetermined; and
+
+allocating, to each of the first and second outer spare areas (OSAO, OSA‘), —
+an interim defect management area (IDMA) in a same size when a plurality of interim
+defect management areas are allocated, the interim defect management area (IDMA)
+being used for storing defect management information of the recording medium until
+
+the recording medium is finalized;; and
+
+allocating, to the inner zone (Lead-in area, Lead-out area), a temporary
+
+defect management area (TDMA) with a predetermined fixed size for storing defect
+management information of the recording medium until the recording medium is
+
+finalized,
+wherein each of the interim defect management areas (IDMA) has a non-
+predetermined size of between O and a predetermined maximum value, depending
+
+on the size of the outer spare areas (OSA0, OSA‘), and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+20
+
+wherein the interim defect management information (IDMA) is used for storing
+defect_management_information when the temporary defect_management_area
+(TDMA) becomes full.
+
+4.2. The method of claim 1, wherein the first and second outer spare areas
+
+(OSAO, OSA1) are allocated with a size of N*256 clusters where N is a non-negative
+
+integer.
+
+8.3. The method of claim 1, wherein the second inner spare area (ISA1) is
+
+allocated with a size of L*256 clusters where L is a non-negative integer < 64.
+
+6.4. An apparatus for allocating a management area on a write-once optical
+recording medium having two recording layers (Layer 0, Layer 1), each of the
+recording layers including an inner zone (Lead-in area, Lead-out area), a data area
+(35a, 35b) and an outer zone (Outer Zone 0, Outer Zone 1), wherein the inner and
+
+outer zones include defect management areas (DMAs) for storing defect
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+Zl
+
+management information of the recording medium when the recording medium is to
+be finalized, the apparatus comprising: a pickup (22) configured to write/read data
+to/from the recording medium; a servo unit (23) configured to control the pickup (22)
+to maintain a distance from the recording medium and track a relevant track on the
+recording medium; and a data processor (24) configured to process and supply input
+data to the pickup (22) for writing and process data read from the recording medium;
+characterized in that the apparatus further comprises
+
+a microcomputer (26) operatively coupled to above components —the pickup
+(22), the servo unit (23) and the data processor (24), and configured to contro! the
+components to allocate a first inner spare area (ISAQ) with a predetermined fixed size
+and a first outer spare area (OSAO) with a size that is not predetermined to the data
+area (35a) within a first recording layer (Layer 0), and a second inner spare area
+(ISA1) and a second outer spare area (OSA1) to the data area (35b) within a second
+recording layer (Layer 1); and coritrol the components to allocate, to each of the first
+and second outer spare areas (OSAO, OSA1), an interim defect management area
+(IDMA) in a same size when a plurality of interim defect management areas are
+allocated, the interim defect management area (IDMA) being used for storing defect
+management information of the recording medium until the recording medium is
+
+finalized,
+
+wherein the microcomputer (26) is configured to further control the
+components to allocate, to the inner zone (Lead-in area, Lead-out area), a temporary
+defect management area (TDMA) with a predetermined fixed size for storing defect
+management information of the recording medium until the recording medium is
+
+finalized
+
+wherein each of the interim defect management areas (IDMA) has a non-
+
+predetermined size of between 0 and a predetermined maximum value, depending
+
+--- PAGE 4 ---
+20
+
+25
+
+22
+
+on the size of the outer spare areas (OSAO, OSA1), and
+
+wherein the microcomputer (26) is configured to control the components to
+use the interim defect management information for storing defect_management
+information when the temporary defect management area (TDMA) becomes full.
+
+9-5. The apparatus of ene-of-claimsclaim 4-6-+e-8, wherein the microcomputer
+(26) is configured to control the components to allocate the first and second outer
+spare areas (OSAO, OSA1) with a size of N*256 clusters where N is a non-negative
+
+integer.
+
+40-6. The apparatus of ene—of claims—claim 4 or 56—-te—8, wherein the
+microcomputer (26) is configured to control the components to allocate, to the
+second recording layer (Layer 1), the second inner spare area (ISA1) with a size of
+
+L*256 clusters where L is a non-negative integer < 64.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+23
+
+44-7. A write-once optical recording medium having two recording layers
+(Layer 0, Layer 1), each of the recording layers including an inner zone (Lead-in area,
+|ead-out area), a data area (35a, 35b) and an outer zone (Outer Zone 0, Outer Zone
+1), the recording medium including defect management areas (DMAs) located in the
+inner and outer zones for storing defect management information of the recording
+medium when the recording medium is to be finalized: characterized in that the
+recording medium further comprises:
+
+a first inner spare area (ISAO) and a first outer spare area (OSAO) allocated in
+the data area (35a) within a first recording layer (Layer 0), the first inner spare area
+(ISAO) having a predetermined size, the first outer spare area having a non-
+predetermined size; and
+
+an interim defect management area (IDMA) allocated in a same size to each
+of the first and second outer spare areas (OSAO, OSA1) when a plurality of interim
+defect management areas are allocated, the interim defect management area (IDMA)
+being used for storing defect management information of the recording medium until
+
+the recording medium is finalized;; and
+
+a temporary defect management area (TDMA) allocated with a predetermined
+fixed _size_to the inner zone for storing defect_management information of the
+recording medium until the recording medium is finalized,
+
+wherein each of the interim defect management areas (IDMA) has a non-
+predetermined size of between 0 and a predetermined maximum value, depending
+on the size of the outer spare areas (OSAO, OSA1), and
+
+wherein the interim defect management information (IDMA) is being used for
+storing defect_ management information when the temporary defect_ management
+area (TDMA) becomes full.
+
+--- PAGE 6 ---
+10
+
+15
+
+44.8. The recording medium of claim 744, wherein the first and second outer
+
+spare areas (OSAO, OSA1) are allocated with a size of N*256 clusters where N is a
+
+non-negative integer.
+
+48-9. The recording medium of claim 744, wherein the second inner spare
+area (ISA1) is allocated with a size of L*256 clusters where L is a non-negative
+
+integer s 64.

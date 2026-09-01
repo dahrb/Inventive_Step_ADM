@@ -1,0 +1,114 @@
+--- PAGE 1 ---
+MAIN REQUEST
+16
+
+CLAIMS:
+1. An apparatus (101) comprising:
+
+an in-phase/quadrature-phase, I/Q, converter (104) adapted to receive an input signal
+(151) and convert the input signal to a digital in-phase, I, signal and a digital quadrature, Q,
+signal;
+
+at least one oversampling noise-shaping modulator (105a) comprising a first sigma-
+delta modulator (203, 301; 401) arranged to convert the digital I signal to a quantized I signal
+and a second sigma-delta modulator (206, 301; 401) arranged to convert the digital Q signal to
+
+a quantized Q signal, wherein the quantized I signal and the quantized Q signal are quantized
+
+with a desired number of quantized bits per sample;
+
+at least one digital-analog converter, DAC (105b; 204, 207; 306), adapted to convert the
+quantized I signal and the quantized Q signal to an analog I signal and an analog Q signal,
+
+respectively;
+
+at least one filter (106; 209, 210) adapted to reduce noise components of the analog I
+and Q signals by a predetermined level to form filtered I and Q signals; and
+
+an analog quadrature modulator (107; 212) adapted to transform the filtered I and Q
+signals and a local oscillator signal to a transmitted output signal (257), wherein the transmitted
+
+output signal is transmitted to a wireless receiver.
+
+2. The apparatus of claim 1, wherein the apparatus comprises a wireless microphone.
+
+3. The apparatus of claim 1, wherein each of the sigma-delta modulators comprises an N
+
+order sigma-delta modulator having an order greater than two.
+
+4. The apparatus of claim 1, wherein each of the sigma-delta modulators comprises a
+
+plurality of first order sigma-delta modulators.
+
+5. The apparatus of claim 1, wherein the at least one oversampling noise shaping
+
+modulator and the I/Q converter are included in a same electronic device.
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+17
+
+6. The apparatus of claim 1, wherein the at least one DAC, the at least one filter, and the
+
+analog quadrature modulator are included in a same electronic device (201).
+
+7. The apparatus of claim 6, wherein the same electronic device comprises a field-
+
+programmable gate array, FPGA.
+
+8. The apparatus of claim 1, wherein the analog quadrature modulator (212) comprises:
+
+a discrete phase splitter (803) adapted to filter an in-phase local oscillator signal and a
+
+quadrature-phase local oscillator signal from the local oscillator signal;
+
+a first discrete mixer (801) adapted to mix the filtered I signal with the in-phase local
+
+oscillator signal to form a first mixed signal;
+
+a second discrete mixer (802) adapted to mix the filtered Q signal with the quadrature-
+
+phase local oscillator signal to form a second mixed signal; and
+
+a discrete summer (804) adapted to sum the first mixed signal and the second mixed
+
+signal to form the transmitted output signal.
+
+9. The apparatus of claim 1, wherein the analog I signal comprises a differential signal, the
+differential signal having one of three differential states, said one of the differential states
+
+corresponding to a high impedance state.
+
+10. A method comprising:
+
+receiving an input signal (151) and converting the input signal to a digital in-phase, I,
+
+signal and a digital quadrature-phase, Q, signal;
+
+oversampling a digital in-phase (I) signal and a digital quadrature (Q) signal to obtain
+increased amplitude resolution and converting the digital I signal to a quantized I signal and the
+digital Q signal to a quantized Q signal, wherein the quantized I signal and the quantized Q
+
+signal are quantized to a desired number of quantized bits per sample;
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+18
+
+converting the quantized I signal and the quantized Q signal to an analog IJ signal and an
+
+analog Q signal, respectively;
+
+reducing noise components of the analog I and Q signals by a predetermined level to
+
+form filtered I and Q signals; and
+
+transforming the filtered I and Q signals and a local oscillator signal to a transmitted
+
+output signal, wherein the transmitted output signal (257) is transmitted to a wireless receiver.
+
+11. A computer-readable storage medium storing computer-executable instructions that,
+
+when executed, cause a processor to perform a method according to claim 10.

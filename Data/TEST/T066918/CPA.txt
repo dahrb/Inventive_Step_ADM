@@ -1,0 +1,62 @@
+TITLE:
+Method for dynamically transcoding data transmitted between computers
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A method for providing a network client with a data object residing on a network server, said method comprising:
+receiving a first request for a data object from a first network client;
+retrieving the requested data object from the network server;
+determining whether a selection criterion of a plurality of selection criteria is satisfied;
+selectively transcoding the data object according to a first selection criterion of the plurality of selection criteria and providing the transcoded data object to the first network client, if determined that the first selection criterion is satisfied; and
+providing the data object retrieved from the network server to the first network client, if no selection criterion of the plurality of selection criteria is satisfied.
+
+CLAIMS:
+A method for providing a network client with a data object residing on a network server, said method comprising:
+receiving a first request for a data object from a first network client;
+retrieving the requested data object from the network server;
+determining whether a selection criterion of a plurality of selection criteria is satisfied;
+selectively transcoding the data object according to a first selection criterion of the plurality of selection criteria and providing the transcoded data object to the first network client, if determined that the first selection criterion is satisfied; and
+providing the data object retrieved from the network server to the first network client, if no selection criterion of the plurality of selection criteria is satisfied.
+The method of claim 1, further comprising:
+storing the data object transcoded according to the first selection criterion in a cache as a first transcoded data object;
+responsive to a second request for the data object from a second network client, determining whether the first selection criterion is satisfied; and
+retrieving the first transcoded data object from the cache and providing the first transcoded data object to the second network client, if the first selection criterion is satisfied.
+The method of claim 2, further comprising:
+storing the data object retrieved from the network server in the cache;
+determining whether a second selection criterion of the plurality of selection criteria is satisfied if the first selection criterion is not satisfied, the first and second selection criteria being different; and
+retrieving the data object from the cache, selectively transcoding the data object according to the second selection criterion, and providing the transcoded data object to the second network client.
+The method of claim 3, further comprising storing the data object transcoded according to the second selection criterion in the cache as a second transcoded data object, wherein the data object retrieved from the network server, the first transcoded data object, and the second transcoded data object coexist in the cache as multiple representations of a same data object.
+The method of claim 1, further comprising:
+storing the data object retrieved from the network server in a cache;
+responsive to a second request for the data object from a second network client, retrieving the data object from the cache;
+determining whether a selection criterion of the plurality of selection criteria is satisfied; and
+selectively transcoding the data object retrieved from the cache according to a second selection criterion of the plurality of selection criteria and providing the transcoded data object to the second network client, if determined that the second selection criteria is satisfied.
+The method of claim 1, performed by a network proxy, the first selection criterion being based on an operational condition of the network proxy.
+The method of claim 6, the operational condition of the network proxy being selected from proximity of the proxy to the network client, system load, and available storage.
+The method of claim 1, the first selection criterion being based on specification of a user's language in preferences of a user of the first network client, selectively transcoding the data object comprising translating at least a portion of the data object into the specified language.
+The method of claim 1, the first selection criterion being based on a specification of a language for a physical location of the first network client, selectively transcoding the data object comprising translating at least a portion of the data object into the specified language.
+The method of claim 1, the first selection criterion being based on a specification to exclude a type of content in preferences of a user of the first network client, selectively transcoding the data object comprising removing the specified content from the data object.
+The method of claim 10, the type of content to exclude being selected from images, advertising, and offensive language.
+The method of claim 1, the first selection criterion being based on a specification to include a type of content in preferences of a user of the first network client, selectively transcoding the data object comprising adding the specified content to the data object.
+The method of claim 12, the type of content to include being advertising.
+The method of claim 1, the first selection criterion being based upon actions by a user or users previously provided data in the data object, selectively transcoding the data object comprising customizing content of the data object.
+The method of claim 14, the first selection criterion is based on results from a collaborative rating system, the results being either a manual rating assigned to said data by the user or users previously provided the data, or an automatic rating based on actions of the user or users previously provided the data.
+The method of claim 1, the first selection criterion being based on preferences specified by a content provider of the data object.
+The method of claim 16, wherein the first selection criterion is selected from whether the content provider preferences specify limits on a degree of content alteration, whether the content provider preferences specify a prioritization for downloading of different content types, whether the content provider preferences specify the types of users to whom the content should be provided, and whether the content provider preferences specify rules to customize the content based on user or client characteristics.
+The method of claim 1, further comprising storing at least one of the data object retrieved from the network server and the transcoded data object in a cache in accordance with a cache restriction preference specified by a content provider of the data object.
+The method of claim 1, further comprising:
+storing at least one of the data object retrieved from the network server and the transcoded data object in a cache; and
+updating or replacing content of the data object and/or transcoded stored in the cache in accordance with a frequency specified by a content provider of the data object.
+The method of claim 1, wherein the first criterion is satisfied if a specific word, phrase, or image appears in the data object.
+The method of claim 20, wherein the specific word, phrase, or image is selected from a trademark and a company logo.
+The method of claim 21, wherein selectively transcoding the data object includes verifying that the trademark or company logo is used as a source identifier rather than a generic product designation.
+The method of claim 21, wherein selectively transcoding the data object includes adding a Web link to each occurrence of the trademark or company logo.
+The method of claim 1, the first selection criterion being the presence of an Web link in the data object, selectively transcoding the data comprising automatically checking the validity of the Web link, and correcting or removing the link if invalid prior to providing the transcoded data object to the first network client.
+The method of claim 1, performed by a first network proxy, the method further comprising:
+responsive to a second request for a data object from a second network client, determining that a second selection criterion of the plurality of selection criteria is satisfied; and
+requesting, from a second network proxy, an indication of what transcoding has already been performed on content of the data object in accordance with the second selection criterion.
+The method of claim 1, performed by a network proxy, the first selection criterion being based on a priority attributed to a user of the first network client relative to other users of the network proxy.
+The method of claim 26, the network proxy having a cache for storing data objects, the method further comprising pre-fetching and/or preferentially caching of content depending upon the priority attributed the user.
+The method of claim 26, the network proxy prioritizing execution of said selectively transcoding the data object, depending upon the priority attributed the user.

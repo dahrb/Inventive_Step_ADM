@@ -1,0 +1,121 @@
+--- PAGE 1 ---
+Main Request
+
+CLAIMS
+
+1. A method comprising:
+
+storing a plurality of whitelisted locations, and associating one or more search types with
+each whitelisted location, wherein the one or more search types comprise a visual search type
+corresponding to one or more of a barcode scanning capability, a quick response code scanning
+capability, an image recognizer capability, and an optical character recognition capability;
+
+determining (180), by a mobile computing device (2), a geographic location of the mobile
+computing device;
+
+determining that the geographic location of the mobile computing device matches one of
+the whitelisted locations;
+
+obtaining (184) the one or more search types associated with the matched whitelisted
+location;
+
+responsive to obtaining the one or more search types, outputting (186), by the mobile
+computing device and for display, a graphical user interface (14) comprising at least an indication
+of the one or more search types associated with the matched whitelisted location;
+
+responsive to receiving user input selecting an indication of one of the search types,
+obtaining (190), by the mobile computing device, a search input, and transmitting the search
+input to a networked device via a network; and
+
+receiving one or more search results from the networked device and outputting the search
+
+results for display.
+
+2. The method of claim 1, wherein obtaining (184) the one or more search types associated
+with the matched whitelisted location comprises determining (202), by the mobile computing
+
+device (2), the one or more search types associated with the matched whitelisted location.
+
+3. The method of claim 2, wherein determining (202) the one or more search types associated
+with the matched whitelisted location comprises:
+
+comparing, by the mobile computing device, the geographic location to the set of
+whitelisted locations; and
+
+determining, by the mobile computing device and based at least in part on the
+
+comparison, the one or more search types associated with the matched whitelisted location.
+
+4. The method of any of claims 2 and 3, wherein determining the one or more search types
+associated with the matched whitelisted location comprises:
+
+determining, by the mobile computing device, that the geographic location of the mobile
+computing device is within a threshold distance from a whitelisted location associated with the
+
+one or more search types.
+
+39
+
+--- PAGE 2 ---
+Main Request
+
+5. The method of any of claims 2 to 4, wherein determining the one or more search types
+comprises determining, based on the geographic location and a type of the mobile computing
+
+device, the one or more search types.
+
+6. The method of any of claims 2 to 5, wherein determining the one or more search types
+comprises determining, based on the geographic location, a current time during which the
+geographic location was determined, and a scheduled event associated with the mobile
+
+computing device, the one or more search types.
+
+7. The method of any of claims 1 to 6, wherein obtaining the one or more search types
+associated with the geographic location comprises:
+transmitting (182), by the mobile computing device and via a network, the geographic
+location to a networked device; and
+receiving (184), from the networked device, the one or more search types associated with the
+
+geographic location.
+
+8. The method of any of claims 1 to 7, wherein obtaining, by the mobile computing device, a
+search input for one of the one or more search types indicated on the graphical user interface
+(14), comprises:
+
+receiving user input selecting one of the one or more search types associated with the
+geographic location, wherein the selected search type comprises a visual search type; and
+
+obtaining, by at least one optical sensor, one or more images, and wherein
+obtaining and outputting for display one or more search results associated with the
+search input comprises:
+
+transmitting, by the mobile computing device and via a network, the one or more images
+to a networked device;
+
+receiving, from the networked device and based on at least one of the one or more
+images, at least one search result, and
+
+outputting, by the mobile computing device and for display, the graphical user interface
+
+comprising an indication of the at least one search result.
+
+9. The method of any of claims 1 to 8, wherein the mobile computing device comprises one of a
+
+smartphone, a tablet computer, and a smartwatch.
+
+10. A mobile computing device comprising one or more processors configured to perform the
+
+method of any of claims 1 to 9.
+
+11. A computer-readable storage medium comprising instructions that, when executed, configure
+
+one or more processors of a computing device to perform the method of any of claims 1 to 9.
+
+40
+
+--- PAGE 3 ---
+Main Request
+
+12. A system comprising means arranged to perform the method of any of claims 1 to 9.
+
+4l

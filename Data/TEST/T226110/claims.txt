@@ -1,0 +1,249 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS:
+
+1. A method for searching the Internet in an instant messaging environment, the
+method comprising:
+
+recognizing (602,703) at least a portion of an instant message, from a first user to
+a second user and entered into an instant messaging application on a first client computer
+(410) of the first user, as a search query, wherein said recognizing comprises identifying a
+predetermined character string in the instant message as a search trigger;
+
+causing the search query to be displayed (502,603,607,702,706) to the first user
+inline in an instant messaging window on the first client computer and to the second user
+inline in a second instant messaging window on a second client computer (411) of the
+second user;
+
+causing (503,604,708) a web search based on the search query in response to
+identifying the search trigger in the instant message, the web search retrieving search
+results, by transmitting the search query to a search server, wherein the search server
+performs the web search based on the search query; and
+
+automatically causing at least one of the search results to be displayed
+(505,609,611,711,713) inline in the instant messaging window on the first client
+computer and inline in the second instant messaging window on the second client
+
+computer.
+
+2. The method of claim 1, in which said recognizing is performed at the first client
+
+computer and at the second client computer.
+
+3. The method of claim 1, comprising transmitting the instant message from the first
+client computer to the second client computer via an instant messaging server, wherein
+
+said recognizing is performed at the instant messaging server.
+
+4. The method according to claim 1 wherein the displayed search result includes an
+
+image.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+5. The method according to claim 1 wherein the displayed search result includes a
+hyperlink to a web page.
+6. The method according to claim 1 wherein causing the at least one of the search
+
+results to be displayed further comprises:
+selecting one of the search results retrieved in the web search that is most relevant
+
+to the search query, and displaying the selected search result.
+
+7. The method according to claim 1 wherein causing the at least one of the search
+results to be displayed further comprises:
+selecting a link to a sponsor web site from among the search results retrieved in
+
+the web search, and displaying the selected search result.
+
+8. A computer system that is configured to search the Internet in an instant
+messaging environment, the computer system comprising:
+
+a first instant messaging client (410) arranged to recognize an instant message as
+including a search query and display the search query inline in a first instant messaging
+window, wherein the first instant messaging client is arranged to recognize the instant
+message as including a search query by identifying a predetermined character string in the
+instant message as a search trigger;
+
+an instant messaging server (412) arranged to transmit the search query received
+from the first instant messaging client to a second instant messaging client (411) for
+display inline in a second instant messaging window on the second instant messaging
+client; and
+
+a search server (413) arranged to receive the search query, execute a search based
+on the search query, and retrieve search results, in response to the identification of the
+search trigger in the instant message;
+
+wherein the system is arranged to transmit at least one of the search results to the
+first instant messaging client for display inline in the first instant messaging window, and
+to the second instant messaging client for display inline in the second instant messaging
+
+window.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+9. The computer system according to claim 8 wherein the first instant messaging
+client is arranged to transmit the search query to the search server, and receive the at least
+
+one search result directly from the search server.
+
+10. | The computer system according to claim 8 wherein the second instant messaging
+client is arranged to transmit the search query to the search server, and receive the at least
+
+one search result directly from the search server.
+
+11. | The computer system according to claim 8 wherein the instant messaging server is
+arranged to select a sponsor web site from among the search results and transmit the
+
+selected search result to the first and second client computers.
+
+12. The computer system according to claim 8 wherein the at least one search result
+
+includes an image.
+
+13. The computer system according to claim 8 wherein the at least one search result
+includes a hyperlink.
+14. The computer system according to claim 8 wherein the instant messaging server is
+
+arranged to receive the search query from the first instant messaging client, transmit the
+search query to the search server, and deliver the at least one search result to the first and
+
+the second instant messaging clients.
+
+15. | An apparatus that is configured to search the Internet in an instant messaging
+environment, the apparatus comprising:
+
+an instant messaging server (412) arranged to:
+
+receive an instant message from a first instant messaging client (410) to a second
+instant messaging client (411), wherein the instant message includes a search query;
+
+recognize the instant message as including a search query by identifying a
+
+predetermined character string in the instant message as a search trigger;
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+transmit the search query received from the first instant messaging client to the
+second instant messaging client for display inline in a second instant messaging window
+on the second instant messaging client;
+
+cause a search based on the search query, in response to identifying the search
+trigger in the instant message, the search returning search results, by transmitting the
+search query to a search server for performing the search based on the search query; and
+
+transmit at least one of the search results to the first instant messaging client for
+display inline in a first instant messaging window on the first instant messaging client,
+and to the second instant messaging client for display inline in the second instant
+
+messaging window.
+
+16. | The apparatus according to claim 15 wherein the instant messaging server is
+arranged to select a sponsor web site from among the search results and transmit the
+
+selected search result to the first and second client computers.
+
+17. The apparatus according to claim 15 wherein the at least one search result
+
+includes an image.
+
+18. The apparatus according to claim 15 wherein the at least one search result
+
+includes a hyperlink.
+
+19. The apparatus according to claim 15 wherein the instant messaging server is
+arranged to receive the search query from the first instant messaging client, transmit the
+search query to the search server, and deliver the at least one search result to the first and
+
+the second instant messaging clients.
+
+20. | Acomputer program product for performing web searches in an instant messaging
+environment, the computer program product comprising:
+
+code for recognizing (602,703) that an instant message, from a first user to a
+second user and entered by the first user into a first instant messaging application on a
+
+first client computer (410) of the first user, includes a search query, wherein said
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+recognizing comprises identifying a predetermined character string in the instant message
+as a search trigger;
+
+code for displaying (502,603,607,702,706) the search query inline in a first instant
+messaging window on the first client computer, and inline in a second instant messaging
+window on a second client computer (411) of the second user;
+
+code for transmitting (503,604,708) the search query to a search server (413), in
+response to identifying the search trigger in the instant message, wherein the search server
+performs a search based on the search query and returns search results; and
+
+code for automatically displaying (505,609,61 1,711,713) one or more of the
+search results inline in the first instant messaging window on the first client computer and
+inline in the second instant messaging window on the second client computer; and
+
+a computer readable medium for storing the codes.
+
+21. The computer program product according to claim 20 wherein the code for
+transmitting the search query to the search server further comprises code on an instant
+messaging server that receives the search query and transmits the search query to the
+
+search server.
+
+22. The computer program product according to claim 20 wherein the code for
+transmitting the search query to the search server further comprises code on first client
+
+computer that transmits the search query to the search server.
+
+23. The computer program product according to claim 20 further comprising:
+code for selecting a sponsor web site from among the search results, wherein the
+code for displaying displays the sponsor web site inline in the first instant messaging
+
+window.
+
+319362; JCP; JCP

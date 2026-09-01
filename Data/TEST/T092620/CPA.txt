@@ -1,0 +1,47 @@
+TITLE:
+Social network for location sensing
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Systems and methods for social networking. Location-related data and other behavioral and exogenously generated characteristics are used to replace or supplement self-generated profiles in order to enhance the quality and trustworthiness of the matches made using the system and facilitate the inputting of profile information.
+
+CLAIMS:
+1-36. (canceled)
+37. A method comprising:
+receiving, at a server, information identifying a plurality of devices detected at a location, each device associated with a user;
+accessing, via the server, a user profile associated with each user associated with a detected device, each user profile comprising user information specific to each user;
+extracting, via the server, user information from each user profile associated with a user of a detected device; and
+creating, via the server, an entity profile for the location based on the extracted user information of each user associated with a detected device.
+38. The method of claim 37, wherein the entity profile is a dynamic profile that adjusts to the user information extracted from the user profiles associated with the users of the detected devices.
+39. The method of claim 37, further comprising:
+communicating entity profile information comprised within the entity profile to each detected device.
+40. The method of claim 39, wherein the entity profile information comprises positional information related to the location.
+41. The method of claim 39, wherein the entity profile information comprises information related to an activity occurring at the location.
+42. The method of claim 39, wherein the entity profile information comprises information related to past activities that occurred at the location.
+43. The method of claim 41, wherein the entity profile information further comprises user profile information related to users associated with detected devices currently at the location.
+44. The method of claim 42, wherein the entity profile information further comprises user profile information related to users associated with devices previously detected at the location.
+45. The method of claim 39, wherein the entity profile information comprises historical data related to the location, the historical data based on the extracted user information.
+46. The method of claim 45, wherein the entity profile information comprises frequency and patterns of visits to the location by each user associated with a detected device.
+47. The method of claim 46, wherein the entity profile information comprises activities each user engaged in while at the location.
+48. The method of claim 39, further comprising:
+determining, for each user associated with a detected device, a desirability of the location based on the entity profile information.
+49. The method of claim 48, further comprising:
+communicating the desirability of the location to each detected device.
+50. The method of claim 37, wherein the plurality of devices are detected by the server upon being within a proximity to the location.
+51. A system comprising:
+a database comprising stored user data;
+a social network server in communication with the user data in the database, the social network server programmed to perform a plurality of operations, comprising:
+receiving information identifying a plurality of devices detected at a location, each device associated with a user;
+accessing a user profile associated with each user associated with a detected device, each user profile comprising user information specific to each user;
+extracting user information from each user profile associated with a user of a detected device; and
+creating an entity profile for the location based on the extracted user information of each user associated with a detected device.
+52. The system of claim 51, wherein the entity profile is a dynamic profile that adjusts to the user information extracted from the user profiles associated with the users of the detected devices.
+53. The system of claim 51, wherein the social network server is programmed to perform further operations comprising:
+communicating entity profile information comprised within the entity profile to each detected device.
+54. The system of claim 53, wherein the social network server is programmed to perform further operations comprising:
+determining, for each user associated with a detected device, a desirability of the location based on the entity profile information.
+55. The system of claim 54, wherein the social network server is programmed to perform further operations comprising:
+communicating the desirability of the location to each detected device.
+56. The system of claim 51, wherein the plurality of devices are detected by the social networking server upon being within a proximity to the location.

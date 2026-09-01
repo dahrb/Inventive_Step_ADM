@@ -1,0 +1,51 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main request 1
+
+CLAIMS
+
+1. A fluid monitoring and control system (10) comprising a network of a plurality of
+modular components (12-16) respectively having different functions and a system-wide
+distributed memory storing distributed variables, wherein each modular component is
+adapted to perform its respective function without external guidance and wherein the
+plurality of modular components (12-16) include at least one fluid control module (14)
+comprising:
+
+means for measuring a distributed variable to be controlled, the distributed
+variable relating to the fluid control module (14) and being one of the distributed
+variables that the distributed memory stores;
+
+means for controlling the distributed variable; and
+
+means for broadcasting the value of said controlled distributed variable over the
+network;
+
+wherein the fluid monitoring and control system (10) is adapted to use a
+broadcast message to inform all said modular components (12-16) within the system of
+the current value of the distributed variable, said broadcast message comprising an
+address for the distributed variable within the system-wide distributed memory and a
+value for the distributed variable; and
+
+wherein the fluid monitoring and control system (10) is adapted to use a set-point
+request message to request a change in the value of the distributed variable, said set-
+point request message comprising an address for the distributed variable within the
+system-wide distributed memory and a value for the distributed variable.
+
+2. A fluid monitoring and control system (10) according to claim 1, wherein at least
+one of the plurality of modular components is adapted to control several items having
+
+the same function.
+
+3. A fluid monitoring and control system (10) according to claim 1 or claim 2,
+wherein the plurality of modular components further comprise an interface module (12)
+and a heater control module (16), all of the fluid control module (14), the interface
+module (12) and the heater control module (16) being connected to a bus (18).

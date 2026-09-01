@@ -1,0 +1,137 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-38-
+
+CLAIMS
+1. A subsystem (110) comprising a switching element (100) and a forwarding
+database memory (140),
+wherein the switching element comprises a switch fabric (210) and a plurality of
+input ports (205, 215, 225),
+wherein the switch fabric comprises:
+a search engine (370) coupled to the forwarding database memory (140) and
+a plurality of input ports, the search engine configured to schedule and perform
+accesses to the forwarding database memory (140) and to transfer forwarding
+decisions to the plurality of input ports; and
+a header processing unit (305) coupled to the search engine and having an
+arbitrated interface coupled to the plurality of input ports,
+wherein the header processing unit (305) is configured to receive a
+packet header from an input port of the plurality of input ports and to extract
+information from the packet header for constructing search keys for the
+search engine to access the forwarding database memory (140) based upon
+predetermined portions of the packet header, the predetermined portions of
+the packet header being selected based upon a class of a plurality of classes
+with which the packet header is associated,
+wherein a first search key is a Layer 2, “L2”, search key for
+retrieving an L2 entry from the forwarding database memory and a second
+search key is a Layer 3, “L3”, search key for retrieving an L3 entry from the
+forwarding database memory, and
+wherein the header processing unit is implemented as a pipeline
+whereby multiple packet headers are processed simultaneously by the
+header processing unit, each stage in the pipeline being configured to
+operate on a corresponding portion of the packet header to extract
+information from the packet header; and
+wherein the forwarding database memory (140) includes one or more associative
+content addressable memories, “CAMs”, (610, 620) coupled to a random access memory,
+“RAM” (630), the one or more CAMs having stored therein associative data and the RAM
+
+having stored therein associated data corresponding to the associative data.
+
+2. The subsystem of claim 1, wherein the header processing unit comprises
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-39-
+
+the following pipeline stages:
+
+an address accumulation unit, coupled to the plurality of input ports and the
+arbitrated interface, for accessing address information from the packet header;
+
+an encapsulation processing unit, coupled to the plurality of input ports and the
+arbitrated interface, for selecting a predetermined set of fields from the packet header to
+determine a type of encapsulation;
+
+a header class matching unit coupled to the plurality of input ports and the
+arbitrated interface, the header class matching including comparison logic to determine a
+
+header class based upon the type of encapsulation and a predetermined set of fields.
+
+3. The subsystem of claim 1, wherein the plurality of input ports may each request for
+
+a forwarding decision independently of the others.
+
+4, The subsystem of claim 1, further including a command execution unit configured
+to interface with a processor, the command execution unit further configured to access the
+
+forwarding database memory on behalf of the processor.
+
+5. The subsystem of claim 1, wherein the Layer 2 (L2) search key is of a first size and
+the Layer 3 (L3) search key is of a second size, the second size being greater than the first
+
+Size.
+
+6. The subsystem of claim |
+
+wherein the Layer 2 (L2) search key comprises one or more fields from a first
+portion of the packet header and has a first length and the Layer 3 (L3) search key
+comprises one or more fields from a second portion of the packet header and has a second
+
+length.
+
+7. The subsystem of claim 6, wherein the first length is smaller than the second
+
+length.
+
+8. The subsystem of claim 6, wherein the first portion of the packet header comprises
+a media access control (MAC) header, and wherein the second portion of the packet header
+
+comprises an Internet Protocol (IP) header.
+
+--- PAGE 3 ---
+10
+
+15
+
+-A0-
+
+9. The subsystem of claim 6, wherein an address for accessing the RAM includes an
+index provided by the one of more CAMs, and wherein the RAM contains both Layer 2
+(L2) and Layer 3 (L3) forwarding information.
+
+10. The subsystem of claim 6, wherein the pipeline logic includes:
+
+an encapsulation block configured to determine the type of header encapsulation
+that has been employed in a first packet header and to determine an indication of the start
+of an L3 header based upon the type of header encapsulation; and
+
+an L3 header class matching block coupled to the encapsulation block for receiving
+the indication of the start of an L3 header, the L3 header class matching block configured
+to determine a class of a plurality of L3 classes with which a second packet header is
+
+associated based upon one or more fields in the L2 header and the L3 header.
+
+11. | The subsystem of claim 1, wherein the search engine is configured to eliminate
+
+Layer 2 (L2) destination address (DA) matching whenever an L2 learning cycle is needed.
+
+12. |The subsystem of claim 1, wherein the first memory and the second memory are
+
+accessible in parallel.

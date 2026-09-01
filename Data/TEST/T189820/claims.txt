@@ -1,0 +1,181 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS
+
+1. A computer-implemented method of inferring, from a Distribution System server
+response, which fare classes are available, the method including the steps of:
+(1) a computer server recetving a request for a fare price for goods or services, together
+with parameters defining those goods or services,
+(1) configuring one or more processors to determine estimated prices from an
+incomplete historical price dataset by analysing patterns in that dataset, at any time with
+respect to step (1) above, wherein this step comprises:
+(a) obtaining historical price quotes from a computer data store;
+(b) grouping the historical price quotes by category;
+(c) deriving statistics for each group;
+(d) storing on a computer for each group a classifier including the derived
+statistics, and
+(e) identifying groups with stored classifiers to which the requested price
+corresponds;
+(11) configuring one or more processors to calculate estimates for the requested fare price
+for the goods or services that satisfy the parameters, and calculating estimates for the
+requested fare price for the goods or services that satisfy the parameters;
+(tv) sending the request to a Distribution System server for fare prices;
+(v) receiving from the Distribution System server the Distribution System server’s fare
+prices;
+(v1) comparing the calculated estimates for the requested fare price from step (itt) with
+the Distribution System server’s fare prices received in step (v) so as to infer a fare class
+availability of the Distribution System server, and
+(vit) the computer server providing the inferred fare class availability of the Distribution
+
+System server to a computing device.
+
+2. The method of Claim 1, wherein the parameters defining those goods or services
+include one or more of the following: activity type, airfare, hotel booking, train fare; date
+
+range; destination; origin; desired weather conditions; star ratings; keywords.
+
+3. The method of Claims 1 or 2, wherein determination of estimated prices 1s
+
+performed by inferring, deriving or predicting estimated prices.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4. The method of any previous Claim, wherein step (111) comprises: calculating a set
+of estimates for the requested price over a specified date range using statistics from the
+
+stored classifiers corresponding to the identified groups.
+
+5. The method of any of Claims 1 to 4, wherein the Distribution System server 1s a
+
+Global Distribution System server.
+
+6. The method of any of Claims 1 to 5, wherein an inferred fare class price is
+
+included with each inferred fare class availability.
+
+7. The method of any of Claims 1 to 6, wherein step (vi1) includes sending the
+
+inferred fare class availability to a server.
+
+8. The method of any of Claims 1 to 7, wherein step (11) includes using rules in
+
+order to analyse patterns in the dataset.
+
+9. The method of any of Claims 1 to 8, wherein step (11) includes a naive Bayes
+classifier machine learning approach which produces a probabilistic model of prices, and
+
+that model is used to predict unobserved prices.
+
+10. Method of any of Claims 1 to 9, wherein step (i1) includes building a statistical
+model from historical prices, identifying missing quote candidates, and pricing quote
+
+candidates based on the statistical model.
+
+11. The method of any of Claims 1 to 10, the method including the step of: including
+
+cached fare prices in the set of price estimates.
+
+12. The method of any of Claims 1 to 11, wherein the price includes an air fare price,
+or wherein the price includes a train fare price, or wherein the price includes a car hire
+
+price, or wherein the price includes a hotel price.
+
+13. An inferring server configured to infer from a Distribution System server which
+
+fare classes are available, the inferring server configured to:
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+(1) receive a request for a fare price for goods or services, together with parameters
+defining those goods or services,
+(tt) configure one or more processors to determine estimated prices from an incomplete
+historical price dataset by analysing patterns in that dataset, at any time with respect to
+(1) above, wherein the configuring comprises:
+(a) obtaining historical price quotes from a computer data store;
+(b) grouping the historical price quotes by category;
+(c) deriving statistics for each group;
+(d) storing on a computer for each group a classifier including the derived
+statistics, and
+(e) identifying groups with stored classifiers to which the requested price
+corresponds;
+(tt) configure one or more processors to calculate estimates for the requested fare price
+for the goods or services that satisfy the parameters, and calculate estimates for the
+requested fare price for the goods or services that satisfy the parameters;
+(tv) send the request to a Distribution System server for fare prices;
+(v) receive from the Distribution System server the Distribution System server’s fare
+prices;
+(v1) compare the calculated estimates for the requested fare price from (ii) with the
+Distribution System server’s fare prices received in (v) so as to infer a fare class
+availability of the Distribution System server, and
+(vit) provide the inferred fare class availability of the Distribution System server to a
+
+computing device.
+
+14. The inferring server of Claim 13, configured to perform the method of any of
+Claims 1 to 12.
+
+15. Computer program product embodied on a non-transient storage medium, the
+computer program product when running on a computer arranged to infer from a
+Distribution System server which fare classes are available, the computer program
+product when running on a computer arranged to:
+
+(1) receive a request for a fare price for goods or services, together with parameters
+
+defining those goods or services,
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+(tt) configure one or more processors to determine estimated prices from an incomplete
+historical price dataset by analysing patterns 1n that dataset, at any time with respect to (1)
+above, including
+(a) obtaining historical price quotes from a computer data store;
+(b) grouping the historical price quotes by category;
+(c) deriving statistics for each group;
+(d) storing on a computer for each group a classifier including the derived
+statistics, and
+(e) identifying groups with stored classifiers to which the requested price
+corresponds;
+(tt) configure one or more processors to calculate estimates for the requested fare price
+for the goods or services that satisfy the parameters, and calculate estimates for the
+requested fare price for the goods or services that satisfy the parameters;
+(tv) send the request to a Distribution System server for fare prices;
+(v) receive from the Distribution System server the Distribution System server’s fare
+prices;
+(v1) compare the calculated estimates for the requested fare price from (ii) with the
+Distribution System server’s fare prices received in (v) so as to infer a fare class
+availability of the Distribution System server, and
+(vit) provide the inferred fare class availability of the Distribution System server to a
+
+computing device.

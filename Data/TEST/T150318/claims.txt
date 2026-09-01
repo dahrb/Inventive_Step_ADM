@@ -1,0 +1,177 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS:
+
+1. An input method for an electronic device using a pen input device, the
+method comprising:
+
+determining contact information of a contact point between the pen input
+device and the electronic device; and
+
+varying expressive effects of a pen input, based on the contact information.
+
+2. The method of claim 1, further comprising receiving status information of
+the pen input device, and wherein the determining contact information comprises
+
+generating the contact information based on the received status information.
+
+3. The method of claim 1,
+
+further comprising detecting a contact point defined by an area of contact
+between the pen input device and the electronic device;
+
+wherein the determining contact information comprises generating the contact
+
+information of the contact point.
+
+4. The method of claim 3,
+
+further comprising calculating status information of the pen input device,
+based on the contact information; and
+
+wherein the varying the expressive effects of the pen input is based on the
+
+status information.
+
+5. The method of claim 2 or 4, wherein the status information includes tilt
+
+information of the pen input device.
+
+6. The method of claim any preceding claim, wherein the contact information
+
+includes at least one of a size of the contact point and a shape of the contact point.
+
+7. The method of claim 6, wherein the contact information includes both the
+size and shape of the contact point, the size increases as a function of the tilt of the pen
+
+input device, and the shape changes from generally circular at a generally upright
+17
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+position of the pen input device with respect to a surface of the electronic device to an
+oval shape as the tilt of the pen input device with respect to a touch surface of the
+
+electronic device increases.
+
+8. The method of claim 4, wherein the calculating the status information
+includes:
+
+comparing the contact information with at least one of reference size
+information and reference shape information; and
+
+calculating the status information, based on a result of the comparing.
+
+9. The method of claim 8, wherein the status information includes tilt
+
+information of the pen input device.
+
+10. The method of claim 3, wherein the generating the contact
+information includes:
+
+at the pen input device, generating the contact information by detecting the
+contact point; and
+
+at the electronic device, receiving the contact information from the pen input
+
+device.
+
+11. An electronic device for use with a pen input device, the electronic
+device comprising:
+
+means for determining contact information of a contact point between the pen
+input device and the electronic device; and
+
+means for varying expressive effects of a pen input, based on the contact
+
+information.
+
+12. The electronic device according to claim 11, comprising:
+
+a display unit configured to display the expressive effects of the pen input;
+
+a control unit configured to vary the expressive effects of the pen input by
+using status information of the pen input device and contact information of a contact
+
+point between the pen input device and the electronic device.
+
+13. The electronic device of claim 11 or 12, further comprising
+18
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+an input unit configured to receive an external input; and
+a communication unit configured to transmit and receive data to and from the
+
+pen input device.
+
+14. The apparatus of any one of claims 11 to 13, wherein the control unit
+is further configured to receive the status information of the pen input device, to
+generate the contact information of the contact point between the pen input device and
+the electronic device, based on the received status information, and to vary the
+
+expressive effects of the pen input, based on the contact information.
+
+15. The apparatus of claim 14, wherein the status information includes tilt
+information of the pen input device, wherein the control unit is further configured to
+generate the contact information, based on the tilt information, and wherein the contact
+
+information includes at least one of the size and shape of the contact point.
+
+16. The apparatus of claim 11 or 12, wherein the control unit is further
+configured to generate the contact information of the contact point between the pen
+input device and the electronic device by detecting the contact point, to calculate the
+status information of the pen input device, based on the contact information, and to
+
+vary the expressive effects of the pen input, based on the status information.
+
+17. The apparatus of claim 16, wherein the contact information includes
+at least one of a size and a shape of the contact point, wherein the control unit is further
+configured to compare the contact information with at least one of reference size
+information and reference shape information, and to calculate the status information,
+based on comparison results, and wherein the status information includes tilt
+
+information of the pen input device.
+
+18. A pen input device for use with an electronic device, the pen input
+device including a communication unit (210) configured to transmit, to an electronic
+device, status information comprising tilt information of the pen input device (200)
+
+and/or contact information generated in the pen input device (200).
+
+19. The pen input device of claim 18, further configured to generate the
+19
+
+--- PAGE 4 ---
+contact information by detecting the contact point, and wherein the communication unit
+
+(210) is configured tro transmit the contact information to the electronic device.
+
+20

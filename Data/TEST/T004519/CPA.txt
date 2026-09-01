@@ -1,0 +1,40 @@
+TITLE:
+System for controling medical instruments
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A medical equipment control system consists mainly of a plurality of centralized controllers each of which controls on a centralized basis a plurality of pieces of medical equipment installed in an operating room, and a mobile device capable of communicating with the plurality of centralized controllers. The mobile device is used to determine or record control data based on which the plurality of pieces of medical equipment is controlled. The recorded control data is transmitted to and recorded in the centralized controller in an operating room concerned. Thus, a medical equipment control system capable of controlling medical equipment at low cost on a centralized basis is realized.
+
+CLAIMS:
+1. A control system for controlling medical equipment comprising:
+a mobile device including: an operator panel that has an operating section used to determine the settings of a plurality of pieces of medical equipment; a first information processing circuit that produces data, which represents the settings of medical equipment, on the basis of the determination made through said operator panel; and a first communication interface that enables bi-directional communication so as to permit transmission of the setting data produced by said information processing circuit; and
+a controller including: a second communication interface via which said controller is connected to a plurality of pieces of medical equipment; a third communication interface that enables communication via said first communication interface; and a second information processing circuit that applies the setting data received via said third communication interface to said second communication interface.
+2. A control system according to claim 1, wherein said mobile device further includes a memory in which the setting data produced by said second information processing circuit is stored, reads the setting data from said memory, and transmits the setting data to said controller via said first communication interface.
+3. A control system according to claim 2, wherein said memory is freely detachable from said mobile device.
+4. A control system according to claim 3, wherein said controller has a loading portion in which said memory is loaded, reads the setting data from said memory loaded in the loading portion, and transmits the data to said plurality of pieces of medical equipment.
+5. A control system according to claim 2, wherein: said controller uses said second information processing circuit to produce data representing the settings of medical equipment, and transmits the setting data to said mobile device via said third communication interface; and said mobile device receives the setting data via said first communication interface and stores it in said memory.
+6. A control system according to claim 5, further comprising a remote control unit that transmits control data, based on which the data representing the settings of medical equipment is modified, to said controller, wherein said controller modifies the setting data on the basis of the received control data.
+7. A control system according to claim 6, wherein said remote control unit transmits control data by means of infrared light waves.
+8. A control system according to claim 5, wherein said first information processing circuit reads and edits the setting data stored in said memory.
+9. A control system according to claim 1, wherein said first communication interface is coupled to said third communication interface with a connector, which is freely detachably attached to said third communication interface, between them.
+10. A control system according to claim 1, wherein said first communication interface enables wireless communication via said third communication interface.
+11. A control system according to claim 10, wherein said first communication interface enables wireless communication by means of infrared light waves.
+12. A control system according to claim 10, wherein: said mobile device further includes a fourth communication interface conformable to a protocol different from said first communication interface is; and said controller further includes a fifth communication interface that enables communication via said fourth communication interface.
+13. A control system according to claim 10, further comprising a communication adaptor that is freely detachably attached to said mobile device; wherein said communication adaptor amplifies a wireless communication signal sent via said first communication interface, and applies the resultant signal to said third communication interface.
+14. A control system according to claim 1, wherein: said controller receives information of medical equipment via said second communication interface, transmits the equipment information to said mobile device via said third communication interface; and said mobile device displays the settings on a display on the basis of the setting data received via said first communication interface.
+15. A controller for controlling medical equipment, comprising:
+an information processing circuit for producing data that represents the settings of medical equipment;
+a first communication interface via which the setting data produced by said information processing circuit is transmitted to said medical equipment, and equipment information is received from said medical equipment;
+a memory in which the setting data produced by said information processing circuit or the equipment information received via said first communication interface is stored; and
+a second communication interface that enables communication with a mobile device having a storage device so as to permit transmission of the setting data or equipment information, which is stored in said memory, to said mobile device.
+16. A controller according to claim 1, wherein said mobile device further includes a display device, and displays the information of medical equipment, which is transmitted from said controller, on said display device.
+17. A controller according to claim 15, wherein: said information processing circuit judges whether data is transmitted via said second communication interface; and if said information processing circuit judges that data is transmitted, said information processing circuit terminates the action of said control system.
+18. A controller according to claim 15, wherein said second communication interface enables communication with a plurality of mobile devices.
+19. A controller according to claim 18, wherein said information processing circuit identifies a mobile device on the basis of identification information received from the mobile device via said second communication interface.
+20. A controller according to claim 19, wherein said information processing circuit controls a storage area in said memory on the basis of the identification information.
+21. A controller according to claim 19, wherein said second communication interface permits transmission of a program executable by said mobile device on the basis of the identification information.
+22. A controller according to claim 18, wherein: said information processing circuit judges whether data is transmitted to a plurality of mobile devices via said second communication interface; and if said information processing circuit judges that data is transmitted, said information processing circuit controls updating of said memory.
+23. A controller according to claim 15, further comprising a third communication interface connected on a network, wherein said information processing circuit controls said third communication interface on the basis of the equipment information received via said first communication interface.
+24. A controller according to claim 18, wherein said information processing circuit judges the priorities given to said plurality of mobile devices, and controls said third communication interface on the basis of the results of the judgement.

@@ -1,0 +1,174 @@
+--- PAGE 1 ---
+20
+
+25
+
+21
+
+Claims
+
+1. A system comprising a mobile communications device (1) running
+an application (2), a contactlessly readable tag (4) issued by a tag owner (6),
+and a tag management server (7), the system being configured for controlling a
+function of the mobile communications device (1) by means of the application
+(2) in dependence upon data read from the tag (4),
+
+the tag (4) comprising a storing means for storing tag-identifying data
+(5), the tag-identifiying data (5) being stored in the storing means of the tag (4)
+in a unalterable way,
+
+the mobile communications device (1) comprising a tag identifying
+means for contactlessly reading tag identifying data (5) from the tag (4), anda
+data request transmission means for sending a data request signal (19a, 25)
+with the tag identifying data (5) to the tag management server (7),
+
+characterized in that
+
+the tag (4) containing neither data which can be used to access to
+said tag management server (7), such data being only available to the
+application (2), nor any function data, and that
+
+the tag management server (7) comprises a database (8) storing one
+or more data records (15, 16, 17, 18) under control of said tag owner (6), each
+data record (15, 16, 17, 18) comprising one or more instructions and/or
+parameter data (15’) for controlling a desired function of the communication
+device (1),
+
+wherein
+
+the tag management server (7) is capable of receiving the tag
+identifying data (5) from the mobile communication device (1), and is arranged
+to select a record data (15) comprising appropriate functional instructions and/or
+parameter data (15’) depending on at least the received tag identifying data (5),
+
+--- PAGE 2 ---
+20
+
+25
+
+22
+
+and to transmit said functional instructions and/or parameter data (15’) to the
+application (2) for controlling said desired function of the mobile
+communications device (1),
+
+whereby the application (2) of the mobile communications device (1)
+is adapted to receive the selected data record (15) returned by the tag
+management server (7) and to execute the said appropriate functional
+instructions, and/or to process the said parameter data of the selected data
+record (15), thereby performing said desired function of the mobile
+communications device (1) in dependence on the functional instructions, and/or
+the parameter data (15’) of the selected data record (15).
+
+2. System according to claim 1, wherein the mobile communications
+device (1) comprises an instruction receiving means for receiving selected
+record data (15) from the tag management server (7) and for transmitting
+corresponding functional instructions and/or parameter data (15’) of the
+selected record data (15) to the application (2).
+
+3. System according to claim 1 or 2, wherein the tag-identifiying data
+(5) are stored in the storing means of the tag (4) in a non user-writable way.
+
+4. System according to any one of the claims 1 to 3, wherein an
+access address of the tag management server (7) is stored in the mobile
+communications device (1).
+
+5. System according to claim 4, wherein the access address of the
+tag management server (7) is stored in the mobile communications device (1) in
+encoded and/or encrypted form.
+
+6. System according to any one of the preceding claims, wherein the
+data request signal (19a, 25) comprises device-identifying data identifying the
+mobile communications device (1), or the type of the mobile communications
+device (1).
+
+--- PAGE 3 ---
+20
+
+25
+
+23
+
+7. System according to any one of the preceding claims, wherein the
+data request signal (19a, 25) comprises user parameters of a user of the mobile
+communication device (1), or of a type of the user of the mobile
+communications device (1).
+
+8. System according to any one of the preceding claims, wherein the
+mobile communications device (1) is configured for sending the data request
+signal (19a, 25) to the tag management server (7) automatically after reading
+tag identifying data (5) from the tag (4).
+
+9. System according to any one of the preceding claims, wherein the
+mobile communications device (1) is configured for checking whether the
+application or applications required to complete reading the tag-identifying data
+(5), sending the data request signal (19a, 25), receiving a selected data record
+(15) from the tag management server (7) and/or executing appropriate
+functional instructions or processing received parameter data of the received
+data record (15) are operably installed on the mobile communications device (1)
+and, if not, retrieving one or more missing applications from an application
+server (7).
+
+10. System according to any one of the preceding claims, wherein
+the mobile communications device (1) comprises a means for acquiring user-
+input data.
+
+11. System according to any one of the preceding claims, wherein
+the tag management server (7) comprises:
+
+a data request receiving means (20) adapted to receive a data
+request signal (19a, 25) with tag identifying data (5) from the mobile
+communications device (1),
+
+--- PAGE 4 ---
+20
+
+25
+
+24
+
+a data record identifying means (20) adapted to identify, on the basis
+of the received tag identifying data (5), a data record (15) associated with the
+received tag identifying data (5) in the database (8), and
+
+a data transmitting means (20) adapted to transmit the instructions
+and/or parameters (15’) of the identified data record (15) to the application (2) of
+the mobile communications device (1).
+
+12. A method for controlling a function of a mobile communications
+device (1) running an application (2) in a system according to any one of the
+claims 1 to 11, wherein
+
+tag-identifying data (5) are read from a contactlessly readable tag (4)
+issued by a tag owner (6) by the mobile communications device (1), the tag (4)
+containing neither data which can be used to access a tag management server
+(7), such data being only available to the application (2), nor any function data,
+a data request signal (19a, 25) with the tag identifying data (5) is generated and
+sent from the mobile communications device (1) to a tag management server
+(7) comprising a database (8) storing one or more data records (15, 16, 17, 18)
+under control of said tag owner (6), each data record (15, 16, 17, 18)
+comprising one or more instructions and/or parameter data (15’) for controlling a
+desired function of the communication device (1),
+
+record data (15) stored in the database (8) comprising appropriate
+functional instructions and/or parameter data (15’) is selected depending on at
+least the received tag identifying data (5), and transmitted to the application (2)
+by the tag management server (7) for controlling the function of the mobile
+communications device (1),
+
+whereby the application (2) of the mobile communications device (1)
+receives the selected data record (15) returned by the tag management server
+(7) as a data response signal (19b,25) and executes said appropriate functional
+instructions, and/or processes the said parameter data of the selected data
+record (15), thereby performing said desired function of the mobile
+
+--- PAGE 5 ---
+25
+
+communications device (1) in dependence on the functional instructions, and/or
+the parameter data (15’) of the selected data record (15).
+
+13. Method according to claim 12, wherein the access address of the
+tag management server (7) is determined by the mobile communications device
+(1), the data request signal (19a, 25) being sent to the determined access
+address.

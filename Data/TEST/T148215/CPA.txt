@@ -1,0 +1,43 @@
+TITLE:
+Mobile terminal having dual touch screen and method for displaying user interface thereof
+
+TYPE:
+European Patent
+
+ABSTRACT:
+Provided is a method of displaying a user interface of a portable terminal having a two-sided touch screen where a first touch sensor and a second touch sensor are formed to the front side and the backside of a display unit. The method includes displaying a user interface including at least one of a background screen and at least one or more contents in the display unit. The method also includes changing brightness of the user interface according to a detected state of the portable terminal based on a touch event.
+
+CLAIMS:
+A method of displaying a user interface of a portable terminal having a two-sided touch screen where a first touch sensor and a second touch sensor are formed on the front side and the backside of a display unit, the method comprising:
+displaying a user interface including at least one of a background screen and at least one contents on the display unit; and
+changing brightness of the user interface according to at least one of a touch and tilt event to the portable terminal.
+The method of claim 1, wherein changing brightness of the user interface comprises:
+determining whether a touch event is detected through the two-sided touch screen;
+determining whether the touch event is detected through the first touch sensor or through the second touch sensor in response to detection of the touch event; and
+changing and displaying the user interface according to the detected touch event.
+The method of claim 2, wherein changing brightness of the user interface further comprises:
+increasing brightness of the user interface to a predetermined brightness level in response to detection of the touch event through the first touch sensor; and
+decreasing brightness of the user interface to a predetermined brightness level in response to detection of the touch event through the second touch sensor.
+The method of claim 2 or 3, wherein changing brightness of the user interface further comprises:
+changing brightness of an area at which the touch event is detected.
+The method of claim 2 or 3, wherein changing brightness of the user interface further comprises:
+changing brightness of contents mapped to the area at which the touch event is detected.
+The method of claim 1, wherein changing brightness of the user interface comprises:
+checking a tilt angle according to a changing angle of the portable terminal; and
+changing brightness of the user interface into brightness corresponding to the checked tilt angle.
+The method of claim 1, wherein changing brightness of the user interface comprises:
+checking a tilt angle according to the state of the portable terminal; and
+decreasing brightness of the user interface to a predetermined brightness level in response to detection of the checked tilt angle that is a predetermined angle or more, and increasing brightness of the user interface to a predetermined brightness level in response to detection of the checked tilt angle that is less than the predetermined angle.
+The method of claim 1, wherein changing brightness of the user interface comprises:
+determining detection of a cover signal to cover either side of the display unit; and
+increasing brightness of the user interface to a predetermined brightness level in response to detection of the cover signal.
+A portable terminal for displaying a user interface, the terminal comprising:
+a touch screen comprising a display unit which consists of two sides and displays a user interface including a background screen and contents, the touch screen detecting a touch event through at least one of a first touch sensor formed to one side of the display unit and a second touch sensor formed to the other side of the display unit; and
+a controller which controls the display unit to change brightness of the user interface according to the touch event detected through the touch screen.
+The terminal of claim 9, wherein the controller controls to increase brightness of the user interface to a predetermined brightness level in response to detection of the touch event through the first touch sensor, and to decrease brightness of the user interface to a predetermined brightness level in response to detection of the touch event through the second touch sensor.
+The terminal of claim 9 or 10, wherein the controller controls the display unit to change brightness of an area where the touch event is detected.
+The terminal of claim 9 or 10, wherein the controller changes brightness of contents mapped to an area where the touch event is detected.
+The terminal of claim 9, further comprising a tilt angle detection unit which can detect a tilt angle of the portable terminal,
+wherein the controller controls the display unit to decrease brightness of the user interface to a predetermined brightness level if the tilt angle sensed through the tilt angle detection unit is a preset angle or more, and controls the display unit to increase brightness of the user interface to a preset level if the tilt angle is less than the preset angle.
+The terminal of claim 9, further comprising a cover signal sensing unit which can detect a cover signal that either side of the display unit is covered,
+wherein the controller controls the display unit to increase brightness of the user interface to a predetermined brightness level in response to detection of the cover signal through the cover signal sensing unit.

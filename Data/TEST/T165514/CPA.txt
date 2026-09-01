@@ -1,0 +1,57 @@
+TITLE:
+Interleaving of data types in a geographic database and methods for use thereof in a navigation application
+
+TYPE:
+European patent
+
+ABSTRACT:
+A geographic database for use with a navigation application program that provides navigation features to an end-user. The geographic database includes a plurality of data records of a first type and a plurality of data records of a second type. The plurality of records of the first type are organized into a plurality of parcels, each of which includes a plurality of data records of the first type and the plurality of records of the second type are organized into a plurality of parcels, each of which includes a plurality of data records of the second type. The parcels of data records of the first type are interleaved with the parcels of data records of the second type. This interleaving enables navigation functions that use these different types to access these different types more quickly and efficiently, thereby enhancing navigation system performance. Also disclosed is a method for forming a geographic database that includes a plurality of data records that represent geographic features and which can be used in a navigation system. The method includes the step of interleaving parcels containing pluralities of data records of a first type with parcels containing pluralities of data records of a second type.
+
+CLAIMS:
+A method of forming a geographic database for use in a navigation system, wherein the geographic database includes a plurality of data records that represent geographic features in a geographic region, the method comprising the steps of:
+providing intermediate format files of different types, including at least a intermediate format file of a first type and an intermediate format file of a second type, wherein each of the intermediate format files is comprised of a plurality of data records that represent geographic features in the geographic region;
+parcelizing at least the intermediate format file of the first type and the intermediate format file of the second type, wherein the parcelizing step forms a plurality of parcels of said intermediate format file of the first type and a plurality of parcels of said intermediate format file of said second type, wherein each parcel includes a plurality of data records of said respective type; and
+interleaving the parcels of said first type and the parcels of said second type.
+The method of Claim 1 wherein said geographic database is organized into a plurality of separate layers, wherein each layer includes a separate collection of data records based upon functional class.
+The method of Claim 2 wherein said of parcels of the first type and the parcels of said second type are interleaved together within one of said plurality of layers.
+The method of Claim 1 wherein the data records in the parcels of the first type include data records that represent aggregations of segments of roads and routing characteristics associated therewith, and
+further wherein the data records in the parcels of the second type represent segments of roads, and
+further wherein each of said data records in the parcels of the first type that represents an aggregation of segments of roads includes a reference to those data records in the parcels of the second type that represent the segments of roads that the data record in the parcel of the first type represents in aggregation.
+The method of Claim 1 wherein the plurality of data records in each of the parcels formed by said parcelizing step for each of the types represent geographic features that are encompassed within a separate one of a plurality of rectangular areas that together encompass the entire geographic region.
+The method of Claim 1 further comprising:
+forming a kd-tree to represent the parcelizing of one of the intermediate format files spatially.
+The method of Claim 6 further comprising:
+using the kd-tree when interleaving to define an order by which the parcels of the first type and the parcels of said second type are interleaved.
+The method of Claim 1 wherein the parcels of the first type include data records that each include a reference to at least one data record in the parcels of the second type, and wherein said step of interleaving further comprises:
+storing each of said parcels containing data records of said second type adjacent to those parcels containing data records of said first type that include data records that include references to the data records of said second type contained therein.
+The method of Claim 1 wherein said step of interleaving further comprises alternating single parcels of said first type and single parcels of said second type through an entire layer of the geographic database.
+The method of Claim 1 wherein the step of interleaving results in the interleaved parcels of said first type and parcels of second type being spatially organized.
+The method of Claim 1 further comprising the step of:
+providing instructions indicating a custom ordering pattern for interleaving the parcels of said first type and the parcels of said second type:
+and wherein the interleaving step further comprises:
+interleaving the parcels of said first type and the parcels of said second type according to the custom ordering pattern.
+The method of Claim 1 further comprising the step of:
+after interleaving the parcels of said first type and the parcels of said second type, forming a final format file with the parcels of said first type and the parcels of said second type concatenated together.
+A geographic database for use in a navigation system, comprising:
+a plurality of data records of a first type;
+a plurality of data records of a second type;
+wherein the plurality of records of the first type are organized into a plurality of parcels, wherein each parcel includes a plurality of data records of said first type;
+wherein the plurality of records of the second type are organized into a plurality of parcels, wherein each parcel includes a plurality of data records of said second type; and
+wherein said parcels of data records of said first type are interleaved with said parcels of data records of said second type.
+The invention of Claim 13 wherein said geographic database is stored on a computer readable medium.
+The invention of Claim 13 wherein said geographic database is organized into a plurality of separate layers, wherein each layer includes a separate collection of data records based upon functional class, and wherein the parcels of data records of said first type are interleaved with the parcels of data records of said second type within one of said plurality of layers.
+The invention of Claim 13 wherein the data records in the parcels of the first type include data records that represent aggregations of segments of roads and routing characteristics associated therewith, and
+further wherein the data records in the parcels of the second type represent segments of roads.
+The invention of Claim 16 wherein each of the data records in the parcels of said first type that represents an aggregation of segments of roads includes a reference to those data records in the parcels of said second type that represent the segments of roads that the data record in the parcel of the first type represents in aggregation.
+The invention of Claim 17 wherein said geographic database is organized into a plurality of separate layers, wherein each layer includes a separate collection of data records based upon functional class and
+wherein the parcels of data records of said first type are interleaved with the parcels of data records of said second type within one of said plurality of layers.
+The invention of Claim 13 wherein the parcels of data records of said first type and the parcels of data records of said second type are spatially organized.
+The invention of Claim 13 wherein each of at least one of said parcels of data records of said second type is adjacent to at least one of said parcels of data records of said first type and that represent the same geographic features.
+The invention of Claim 20 wherein the data records in the parcels of said first type include data records that represent aggregations of segments of roads and routing characteristics associated therewith, and
+further wherein the parcels of said second type include data records that contain abbreviated representations of segments of roads,
+and further wherein each of said data records in the parcels of said first type that represents an aggregation of segments of roads includes a reference to those data records in the parcels of the second type that represent the segments of roads that the data record in the parcel of the first type represents in aggregation.
+The invention of Claim 21 wherein each of the data records in the parcels of the second type that contain abbreviated representations of segments of roads includes a reference to a data record in a parcel of the first type that contains a non-abbreviated representation of the same segment of road.
+The invention of Claim 13 wherein the parcels that contain data records of said first type include data records that each include a reference to at least one data record contained in a parcel containing data records of the second type,
+and wherein each of the parcels containing data records of said second type is located adjacent to the parcels containing data records of said first type that include references thereto.
+The invention of Claim 13 wherein the data records in the parcels of the first type include data records that represent cartographic features and display characteristics associated therewith, and
+further wherein the data records in the parcels of the second type represent points of interest and characteristics associated therewith.

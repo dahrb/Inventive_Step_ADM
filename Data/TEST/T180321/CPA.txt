@@ -1,0 +1,66 @@
+Title: 
+Computer-Implemented Systems And Methods For Data Item Interface Processing
+
+Abstract: 
+Computer-implemented systems and methods are disclosed for displaying a number of data items within a graphical user interface. Data items retrieved from a data store (e.g., a database) may be assigned, based on a first predetermined criterion, to first level bins. A first level bin identifier is associated with each first level bin. One or more first level bin identifiers are displayed in a list within a graphical user interface. Upon user operation on a displayed first level bin identifier associated with a particular first level bin, data items contained in the particular first level bin are displayed in the list.
+
+Type: 
+US Patent
+
+Claims: 
+1. A computer-implemented method for displaying a number of data items within a graphical user interface, said method comprising:
+receiving data items from a database;
+assigning the data items, based on a first predetermined criterion, to multiple first level bins;
+wherein a first level bin identifier is associated with each first level bin;
+displaying one or more first level bin identifiers in a list within a graphical user interface;
+upon user operation on a displayed first level bin identifier associated with a particular first level bin, displaying, in the list, data items contained in the particular first level bin;
+wherein the steps of the method are performed by software instructions stored in one or more computer-readable media and executable by one or more processors.
+2. The method of claim 1, further comprising:
+establishing a hierarchy of bins, based on a second predetermined criterion;
+wherein the first level bins occupy the lowest level of the hierarchy;
+wherein each bin, other than the first level bins, contains one or more bins of a next lower level in the hierarchy;
+wherein a bin identifier is associated with each bin in the hierarchy;
+displaying one or more bin identifiers of a particular level of the hierarchy in the list within the graphical user interface;
+upon user operation on a displayed bin identifier associated with a particular bin, displaying, in the list, data items contained in the particular bin, bin identifiers associated with bins contained in the particular bin, or data items and bin identifiers associated with bins contained in the particular bin.
+3. The method of claim 2, wherein the first and second predetermined criteria are the same.
+4. The method of claim 2, wherein the hierarchy of bins comprises an ordering data structure that indicates which data item belongs to which bin.
+5. The method of claim 2, wherein background shades are used to indicate levels of bin identifiers displayed in the list.
+6. The method of claim 2, wherein a displayed bin identifier comprises a visual indication that indicates whether bin identifiers of a different level or data items can be displayed.
+7. The method of claim 2, wherein the second predetermined criterion is content of the data items.
+8. The method of claim 2, wherein a displayed bin identifier that is associated with a particular bin comprises a number to indicate how many bins of a next lower level in the hierarchy or how many data items are contained in the particular bin.
+9. The method of claim 2, wherein a displayed bin identifier that is associated with a particular bin comprises a label to indicate a range of bins of a next lower level or data items that are contained in the particular bin.
+10. The method of claim 1, wherein the first predetermined criterion is metadata of the data items.
+11. The method of claim 1, wherein a displayed first level bin identifier comprises a number to indicate how many data items are in a first level bin associated with the displayed first level bin identifier.
+12. The method of claim 1, wherein a displayed first level bin identifier comprises a bar chart to indicate how many data items are in a first level bin associated with the displayed first level bin identifier.
+13. The method of claim 1, wherein the user operation includes one or more of the following actions: a single click, a double-click, a mouse-over, a click-and-hold, a pinch-in or a pinch-out.
+14. The method of claim 1, wherein a displayed first level bin identifier comprises a label to indicate a range of data items in a first level bin associated with the displayed first level bin identifier.
+15. The method of claim 1, wherein a displayed bin identifier comprises a visual indication that indicates whether data items in a bin associated with the bin identifier can be displayed.
+16. A computer-implemented system for displaying a number of data items within a graphical user interface, said system comprising:
+one or more data processors;
+a computer-readable storage medium encoded with instructions for commanding the one or more data processors to execute steps including:
+receiving data items from a database;
+assigning the data items, based on a first predetermined criterion, to multiple first level bins;
+wherein a first level bin identifier is associated with each first level bin;
+displaying one or more first level bin identifiers in a list within a graphical user interface;
+upon user operation on a displayed first level bin identifier associated with a particular first level bin, displaying, in the list, data items contained in the particular first level bin.
+17. The system of claim 16, wherein the computer-readable storage medium is encoded with instructions for commanding the data processor to execute further steps comprising:
+establishing a hierarchy of bins, based on a second predetermined criterion;
+wherein the first level bins occupy the lowest level of the hierarchy;
+wherein each bin, other than the first level bins, contains one or more bins of a next lower level in the hierarchy;
+wherein a bin identifier is associated with each bin in the hierarchy;
+displaying one or more bin identifiers of a particular level of the hierarchy in the list within the graphical user interface;
+upon user operation on a displayed bin identifier associated with a particular bin, displaying, in the list, data items contained in the particular bin, bin identifiers associated with bins contained in the particular bin, or data items and bin identifiers associated with bins contained in the particular bin.
+18. The system of claim 17, wherein the hierarchy of bins comprises an ordering data structure that indicates which data item belongs to which bin.
+19. A non-transitory computer readable medium comprising programming instructions for displaying a number of data items within a graphical user interface, the programming instructions adapted to cause a processing system to execute steps comprising:
+receiving data items from a database;
+assigning the data items, based on a first predetermined criterion, to multiple first level bins;
+wherein a first level bin identifier is associated with each first level bin;
+displaying one or more first level bin identifiers in a list within a graphical user interface;
+upon user operation on a displayed first level bin identifier associated with a particular first level bin, displaying, in the list, data items contained in the particular first level bin.
+20. The medium of claim 19, wherein the programming instructions are adapted to cause a processing system to execute further steps comprising:
+establishing a hierarchy of bins, based on a second predetermined criterion;
+wherein the first level bins occupy the lowest level of the hierarchy;
+wherein each bin, other than the first level bins, contains one or more bins of a next lower level in the hierarchy;
+wherein a bin identifier is associated with each bin in the hierarchy;
+displaying one or more bin identifiers of a particular level of the hierarchy in the list within the graphical user interface;
+upon user operation on a displayed bin identifier associated with a particular bin, displaying, in the list, data items contained in the particular bin, bin identifiers associated with bins contained in the particular bin, or data items and bin identifiers associated with bins contained in the particular b

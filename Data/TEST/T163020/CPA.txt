@@ -1,0 +1,65 @@
+TITLE:
+Intra-prediction using intra-macroblock motion compensation
+
+TYPE:
+US Patent
+
+ABSTRACT:
+To encode an unencoded block of a frame, a search window is defined within the frame. Each pixel disposed within the search window and disposed in the unencoded portion of the frame that is assigned a value. A difference is computed between the unencoded block and each possible block within the search window. The block having the smallest difference, together with this difference are used to encode the unencoded block.
+
+CLAIMS:
+1. A method for encoding a first block of a video frame having an encoded portion and an unencoded portion, said first block being in the unencoded portion of the video frame, the method comprising:
+defining a search window;
+calculating differences between pixel values of said first block and corresponding pixel values of each block disposed in the search window, in accordance with a first difference criterion;
+selecting a block from the defined search window that has the smallest calculated difference;
+using the selected block from the search window to encode the first block;
+adding the first block to the encoded portion of the frame after the first block is encoded;
+removing the first block from the unencoded portion of the frame after the first block is encoded; and
+encoding a second block in the unencoded portion of the video frame using the encoded portion of the video frame to which the first block is added.
+2. The method of claim 1 wherein said search window is positioned entirely within the encoded portion of the video frame.
+3. The method of claim 1 further comprising assigning a value to each pixel within the search window that is not in the encoded portion of the frame, wherein each assigned pixel value is selected from one of zero and 128.
+4. The method of claim 1 wherein the first difference criterion is defined by a sum of differences of absolute values of corresponding pixels of two blocks with similar number of pixels.
+5. The method of claim 1 wherein the first difference criterion is defined by a sum of squared differences of values of corresponding pixels of two blocks with similar number of pixels.
+6. The method of claim 4 wherein the sum D is defined by
+wherein y(i, j) represents a luminance component of a pixel disposed at coordinates (i, j) of a first one of the two blocks and wherein u(i, j) and v(i, j) represent chrominance components of the pixel disposed at coordinates (i, j) of the first one of the two block, wherein y′(i, j) represents a luminance component of a pixel disposed at coordinates (i, j) of a second one of the two blocks and wherein u(i, j) and v(i, j) represent chrominance components of the pixel disposed at coordinates (i, j) of the second one of the two blocks, and wherein ay, au and av are constants coefficients.
+7. The method of claim 1 wherein the block in the unencoded portion of the frame includes one of 16×16 and 8×8 pixels.
+8. The method of claim 1 wherein the search window includes the entire frame.
+9. The method of claim 1 wherein the search window is set by a user.
+10. The method of claim 1 wherein at least one of the blocks in the search window is positioned away from the first block by a fraction of a pixel.
+11. The method of claim 10 further comprising: updating a subset of the pixels of the frame after the first block is encoded.
+12. The method of claim 1 wherein at least one of the blocks in the search window is positioned away from the first block by one-fourth of a pixel.
+13. The method of claim 12 further comprising:
+magnifying size of the at least one of the blocks by a factor of 4×4;
+determining pixel values of the magnified block by interpolating the pixel values of the at least one of the blocks.
+14. The method of claim 13 wherein said pixel values of the magnified block are interpolated in accordance with a filter length defined by a user.
+15. The method of claim 13 further comprising updating a region having 92×92 pixels after the first block is encoded, wherein the first block has 16×16 pixels and wherein a filter length is 8.
+16. The method of claim 1 wherein at least one of the blocks in the search window is positioned away from the first block by one-eight of a pixel.
+17. The method of claim 16 further comprising:
+magnifying size of the at least one of the blocks by a factor of 8×8; and
+determining pixel values of the magnified block by interpolating the pixel values of the at least one of the blocks.
+18. The method of claim 17 further comprising updating a region having 184×184 pixels after the first block is encoded, wherein the first block has 16×16 pixels and wherein a filter length is 8.
+19. The method of claim 17 wherein said pixel values of the magnified block are interpolated in accordance with a filter length defined by a user.
+20. The method of claim 1 wherein the frame is one I-frame, B-frame and P-frame.
+21. An apparatus for encoding a first block of a video frame having an encoded portion and an unencoded portion, said first block being in the unencoded portion of the video frame, the apparatus comprising:
+a module for defining a search window;
+a module for calculating differences between pixel values of said first block and corresponding pixel values of each block disposed in the search window, in accordance with a first difference criterion;
+a module for selecting a block from the defined search window that has the smallest calculated difference;
+a module for using the selected block from the search window to encode the first block;
+a module for adding the first block to the encoded portion of the frame after the first block is encoded;
+a module for removing the first block from the unencoded portion of the frame after the first block is encoded; and
+a module for encoding a second block in the unencoded portion of the video frame using the encoded portion of the video frame to which the first block is added.
+22. The apparatus of claim 21 wherein said selecting module selects a search window that is positioned entirely within the encoded portion of the video frame.
+23. The apparatus of claim 21 further comprising a module for assigning a value to each pixel within the search window that is not in the encoded portion of the frame, wherein said assigning module assigns each pixel value from one of zero and 128.
+24. The apparatus of claim 21 wherein the first difference criterion is defined by a sum of differences of absolute values of corresponding pixels of two blocks with similar number of pixels.
+25. The apparatus of claim 21 wherein the first difference criterion is defined by a sum of squared differences of values of corresponding pixels of two blocks with similar number of pixels.
+26. The apparatus of claim 24 wherein the sum D is defined by
+wherein y(i, j) represents a luminance component of a pixel disposed at coordinates (i, j) of a first one of the two blocks and wherein u(i, j) and v(i, j) represent chrominance components of the pixel disposed at coordinates (i, j) of the first one of the two block, wherein y′(i, j) represents a luminance component of a pixel disposed at coordinates (i, j) of a second one of the two blocks and wherein u(i, j) and v(i, j) represent chrominance components of the pixel disposed at coordinates (i, j) of the second one of the two blocks, and wherein ay, auand avare constants coefficients.
+27. A method for encoding a first block of a video frame having an encoded portion and an unencoded portion, said first block being in the unencoded portion of the video frame, the method comprising:
+defining a search window, wherein said search window is positioned partially within the encoded portion of the video frame and partially within the unencoded portion of the video frame;
+assigning a value to each pixel within the search window that is in the unencoded portion of the frame;
+calculating differences between pixel values of said first block and corresponding pixel values of each block disposed in the search window, in accordance with a first difference criterion;
+selecting a block from the defined search window that has the smallest calculated difference;
+using the selected block from the search window to encode the first block
+adding the first block to the encoded portion of the frame after the first block is encoded;
+removing the first block from the unencoded portion of the frame after the first block is encoded; and
+encoding a second block in the unencoded portion of the video frame using the encoded portion of the video frame to which the first block is added.

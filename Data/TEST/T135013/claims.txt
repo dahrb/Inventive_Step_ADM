@@ -1,0 +1,241 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+CLAIMS — MAIN REQUEST
+
+1. An XML printer system (300) configured to facilitate printing bar code labels,
+tags, tickets, cards or other media and encoding of RFID devices (62) associated with
+a media, based upon an extensible markup language (XML) input data stream, the
+XML printer system comprising:
+
+a computer system having:
+
+a memory subsystem;
+
+a communication interface;
+
+an XML processor (320) configured to receive an XML input data
+stream, the XML input data stream based on an existing Printer
+Control Language, PCL, format template that includes
+proprietary printer control language commands and variable
+fields, wherein the PCL format template is received and stored in
+the memory subsystem prior to printing of an actual barcode
+label, and comprises association data for matching variable
+fields in the existing format template with data subsequently
+received in the XML input data stream:
+
+a variable data integrator (328) configured to associate XML data in
+the XML input data stream with the variable fields defined by the
+existing format template, using the association data previously
+stored;
+
+a formatting engine (394) configured to format the associated XML
+input data according to a format governed by the existing format
+template; and
+
+a rendering engine configured to receive the associated and
+
+formatted XML data and generate a printable presentation (190)
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+of the bar code label, tag, ticket, card or other media and
+
+generate information for the RFID device (62).
+
+2. The system according to claim 1 wherein the formatting engine (328) is
+configured to execute computer program instructions scripted in a_ proprietary
+
+programming language.
+
+3. | The system according to claim 1 wherein the existing format template is further
+configured to govern formatting of data in accordance with a proprietary programming
+
+language.
+
+4. The system according to claim 1 wherein the existing format template is a Zebra
+
+Programming Language, ZPL, based format template.
+
+5. The system according to claim 1 wherein the XML processor (320) is an SAX
+
+processor (320).
+
+6. |The system according to claim 1 wherein the XML processor (320) generates
+
+one or more events based upon commands embedded in the existing format template.
+
+7. | The system according to claim 6 wherein the events are selected from the group
+consisting of a set printer speed event, set quantity of labels to print event, select
+media event, select ribbon to use event, choose paper event, use 300 dpi printer event,
+
+use 600 dpi printer event, and variable data event.
+
+8. The system according to claim 1 wherein the computer system reads data
+encoded in the RFID device (62).
+
+9. The system according to claim 1 further including a host computer operatively
+coupled to a network (43, 44).
+
+10. The system according to claim 8 wherein the data read from the RFID device (62)
+
+is transmitted to a host computer.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+11. The system according to claim 1 further including a printer operatively coupled to
+
+the computer system.
+
+12. The system according to claim 11 wherein the printer is controlled according to a
+
+ZPL-based printer control language.
+
+13. The system according to claim 11 wherein the printer is controlled according to a
+
+proprietary printer control language.
+
+14. The system according to claim 1 wherein the rendering engine (80) is further
+
+configured to process an in-stream foreign object.
+
+15. The system according to claim 14 wherein the in-stream foreign object is a
+
+barcode-type object.
+
+16. The system according to claim 14 wherein the in-stream foreign object is a RFID-
+
+type object.
+
+17. Amethod for printing bar code labels, tags, tickets, cards or other media and for
+encoding of RFID devices (62) associated with a media, based upon an extensible
+markup language (XML) input data stream, the method comprising:
+
+receiving and storing an existing printer control language, PCL, format template
+that includes proprietary printer control language commands and variable fields,
+wherein the existing PCL format template further comprises association data for
+associating variable fields in the existing format template with data subsequently
+received in the XML input data stream;
+
+receiving the XML input data stream, the XML input data stream based on the
+existing format template;
+
+associating XML data in the XML input data stream with the variable fields
+defined by the existing format templates, using the association data;
+
+formatting the associated XML input data according to a format governed by the
+existing format template; and
+
+generating a printable presentation (190) of the bar code label, tag, ticket, card or
+other media and generating encoding information for the RFID device (62) using the
+
+associated and formatted XML data.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+4
+
+18. The method according to claim 17 wherein said formatting step formats the XML
+data in accordance with program instructions scripted in a proprietary programming
+
+language.
+
+19. The method according to claim 17 wherein the existing format template is further
+configured to govern formatting of data in accordance with a proprietary programming
+
+language.
+
+20. The method according to claim 17 wherein the existing format template is a
+
+Zebra Programming Language, ZPL, based format template.
+
+21. The method according to claim 17 wherein the formatting step uses an SAX
+
+processor (320).
+
+22. The method according to claim 17 further comprising generating one or more
+
+events based upon commands embedded in the existing format template.
+
+23. The method according to claim 22 wherein the events are selected from the
+group consisting of a set printer speed event, set quantity of labels to print event, select
+media event, select ribbon to use event, choose paper event, use 300 dpi printer event,
+
+use 600 dpi printer event, and variable data event.
+
+24. The method according to claim 17 further comprising reading data encoded in the
+RFID device (62).
+
+26. The method system according to claim 18 further comprising connecting to a host
+
+computer.
+
+26. The method according to claim 25 further transmitting the data read from the
+
+RFID device (62) to a host computer.
+
+27. The method according to claim 17 further comprising printing the printable
+
+presentation (190) on a printer.
+
+28. The method according to claim 17 further comprising printing the printable
+
+presentation (190) on a printer using a ZPL-5 based printer control language.
+
+--- PAGE 5 ---
+10
+
+15
+
+29. The method according to claim 17 further comprising printing the printable
+
+presentation (190) on a printer using a proprietary printer control language.
+
+30. The method according to claim 17 wherein said generating steps process an in-
+
+stream foreign object.
+
+31. The method according to claim 30 wherein the in-stream foreign object is a
+
+barcode-type object.
+
+32. The method according to claim 30 wherein the in-stream foreign object is a RFID-
+
+type object.

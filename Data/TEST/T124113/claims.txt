@@ -1,0 +1,506 @@
+--- PAGE 1 ---
+CLAIMS:
+
+1. A data-processing apparatus (1, 10, 13), comprising:
+
+a data input unit
+
+(7-1, 7-2, 7-3, 7-4, 9-1, 9-2) for
+
+inputting data according to an operation of an operator;
+
+a biological information input unit (8) for inputting
+
+biological information of the operator;
+
+a biological information storage unit (4) for storing
+
+biological information of each of one or more operators
+
+beforehand in association with identification (41) of each of
+
+the one or more operators;
+
+a data storage unit (6) for storing registration data;
+
+a biological authentication unit (3); and
+
+a data processing unit (5);
+
+wherein the data-processing unit (5) issues (A3), on
+
+first authenticate request;
+
+login of the operator to the data-processing apparatus, a
+
+in response to the
+
+first authenticate request, the
+
+biological authentication unit (3) authenticates (A3) the
+
+operator by comparing (
+
+B5) first biological information
+
+obtained (Bl) by the biological information input unit (8)
+
+with the stored biological information,
+
+when authentication of the operator on the basis of the
+
+first biological information succeeds, the data-processing
+
+unit (5) registers (A5)
+
+the identification (41) stored in the
+
+biological information storage unit (4) in association with
+
+the first biological in
+
+formation,
+
+when the data-processing unit (5) receives (A6; Ad ..
+
+Al0), from the data input unit (7, 9),
+
+--- PAGE 2 ---
+into the data storage unit (6),
+
+from the data input unit, or
+
+second data that indicates
+
+first data that indicates an intention to register,
+
+input data that is input
+
+an intention to access
+
+the registration data stored in the data storage
+
+unit (6),
+
+obtained (C2) from the biological in
+
+the biological authentication unit
+
+(3) authenticates (A7; D3)
+
+the operator on the basis of second biological information
+
+formation input unit (8)
+
+by comparing (C4) the second biological information with the
+
+biological information stored in the
+
+storage unit (4) in association with
+
+biological information
+
+the registered
+
+identification of the operator currently using the apparatus,
+
+and
+
+when authentication of
+
+the second biological information
+
+succeeds (C6), the data-processing unit (5) performs (A8;
+
+D4-D8) data processing based on the
+
+first or the second data;
+
+and wherein the data-processing apparatus (1, 10, 13) further
+
+comprises:
+
+a display unit (12) for displaying the registration
+
+data;
+
+and
+
+a display control unit (11) for
+
+unit
+
+controlling the display
+
+(12) to display the registration data when receiving a
+
+display request (All) of the registration data from the data-
+
+processing unit (5),
+
+wherein the data-processing unit
+
+repeat
+
+tedly issue a second authentica
+
+second authenticate request,
+
+t (5) is adapted to
+
+te request,
+
+for each time the data-processing unit (5) issues the
+
+the biological authentication
+
+--- PAGE 3 ---
+unit (3) authenticates the operator by way of the second
+
+biological information, with the second biological
+
+information being obtained anew from the biological
+
+information input unit (8), and
+
+as long as the authentication based on the second
+
+biological information succeeds,
+
+the data-processing unit (5) transmits the display
+
+request and the registration data stored in the data
+
+storage unit (6) to the display control unit (11), and
+
+according to the display request, the display
+
+control unit (11) controls the display unit (12) to
+
+continue to display the registration data on the display
+
+unit (12).
+
+2. A data-processing apparatus (1, 10, 13) according to
+claim 1, wherein the display control unit (11) displays the
+
+registration data on the display unit (12), according to
+
+qualification information (44) indicating the qualification
+
+of an operator or operators capable of accessing the
+
+registration data.
+
+3. A data-processing apparatus (1, 10, 13) according to
+
+claim 2,
+
+wherein the registration data includes a plurality of
+
+fields,
+
+each of the plurality of fields is associated with the
+qualification information, and
+
+for each individual field in the plurality of fields,
+
+the display control unit (11) determines (D5, D6)
+
+whether to display the individual field on the display
+
+--- PAGE 4 ---
+unit
+
+in
+
+determined to display the individual
+
+4,
+
+any preceding claim,
+
+(12)
+
+formation
+
+the
+
+according to the qualit
+
+(44), and
+
+display unit (12)
+
+wherein,
+
+displays (
+
+The data processing apparatus
+
+when aut
+
+(1,
+
+field only when the display control unit
+
+10,
+
+D8)
+
+13)
+
+thentication of
+
+fication
+
+(11) has
+
+field.
+
+the individual
+
+according to
+
+the
+
+second biological information fails, the data-processing unit
+(5) controls the display control unit (11) to prevent the
+display unit (12) from continuing to display the registration
+data.
+5. A data-processing apparatus (1, 10, 13) according to any
+preceding claim, further comprising
+
+a Signature unit (14) for
+
+executing (E9 to Ell) public key infrastructure
+(PKI) signature, based on the authentication result when
+receiving (AS... Al2) a PKI signature request for a
+
+digital signature of the registration data and
+
+processing unit
+
+wherein the dat
+
+Signature request to the signature unit
+
+records
+
+unit (6) a
+
+registration data when receiving
+
+the signature unit
+
+6.
+
+preceding claim,
+
+(Al
+
+transmitt
+
+3)
+
+fter attaching the digit
+
+(5),
+
+the registration da
+
+(14).
+
+A data-processing apparatus
+
+La-processing unit
+
+(1,
+
+in which the biological
+
+ting the digital signature
+
+(5)
+
+tal signature to
+
+the digital signa
+
+10,
+
+in
+
+(14),
+
+13)
+
+issues the PKI
+
+and also
+
+the
+
+to the data-
+
+ta in the data storage
+
+CULrEe
+
+according
+
+from
+
+to any
+
+formation storage
+
+--- PAGE 5 ---
+unit (4) and the biological authentication unit (3) are
+implemented in an IC card.
+7. A data-processing method, comprising:
+
+issuing a first authenticate request on login of an
+operator;
+
+obtaining (Bl) first biological information in response
+to the first authenticate request;
+
+authenticating the the operator by comparing (B5) first
+biological information by comparing (B5) the first biological
+information with at least one of one or more pieces of
+
+biological
+
+with identii
+
+when authentication of
+
+biological
+
+in
+
+in
+
+forma
+
+fication
+
+formation succeeds,
+
+(41) of
+
+identification (41) associated with the
+information,
+receiving:
+first da
+into a data storage unit (6),
+data input unit (7, 9), or
+
+second data that indicates an
+
+registration data stored in
+
+) second biological
+
+first or second data;
+
+ting the operator on the basis of
+
+tion by comparing (C4
+
+tion associated with
+
+obtaining (C2
+receipt of the
+
+authentica
+biological informa
+biological informa
+biological informa
+
+the operator using the
+
+registering
+
+input data input
+
+the data storage unit
+
+in
+
+tion with the piece of
+
+tion each stored beforehand in association
+
+each operator;
+
+first
+
+(A5) the
+
+first biological
+
+ta that indicates an intention to register,
+
+from a
+
+intention to access
+
+(6),
+
+formation upon
+
+the second
+
+) the second
+
+the stored
+
+the registered
+
+--- PAGE 6 ---
+identification of the operator currently using the apparatus;
+
+and
+
+performing data processing based on the first or second
+
+data when authentication of the second biological information
+
+succeeds;
+
+further comprising the steps of:
+
+repeatedly issuing a second authenticate request, during
+
+operation by the operator;
+
+for each time the second authenticate request is issued,
+
+authenticating the operator on the basis of the second
+
+biological information, with the second biological
+
+information being obtained anew from the biological
+
+information input unit (8), and
+
+as long as the authentication based on the second
+
+biological information succeeds,
+
+transmitting the display request and registration
+data stored in the data storage unit (6) to a display
+
+control unit (11), and
+
+according to the display request, controlling a
+
+display unit (12) by the display control unit (11) to
+
+display the registration data.
+
+8. A program adapted to cause a computer to execute the
+
+data-processing method of claim 7.

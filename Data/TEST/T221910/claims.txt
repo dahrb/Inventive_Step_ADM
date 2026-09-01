@@ -1,0 +1,92 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+Main Request
+1
+
+CLAIMS:
+
+1, A client apparatus, such as a PDA or a printer, for displaying objects from an
+external device according to an object request order, the apparatus comprising:
+
+a data reception unit (110) that receives, from the external device, data including
+object information, comprising display position information of objects and an arrangement
+order, according to which the objects are intended to be displayed by the external device, the
+object information regarding a plurality of objects stored in the external device;
+
+an object arrangement unit (140) that determines the arrangement order of the
+plurality of the objects from the object information and generates an object request list to be
+sent by the client apparatus to the external device, in which the objects are arranged in said
+arrangement order, according to a result of the determination ;
+
+an object request unit (150) that transmits the object request list to the external device;
+and
+
+a display unit (170) that displays the objects received from the external device in the
+order of the transmitted object request list ,
+
+CHARACTERISED IN THAT
+
+the object arrangement unit (140) updates the generated object request list according
+to a display order of the objects in the object information which display order is determined
+by the object arrangement unit (140) from the display position information.
+
+2. The apparatus of claim 1, wherein the object information is composed of a
+markup language, and comprises further: object names, and storage path information of the
+
+objects.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+Main Request
+2
+
+3. The apparatus of any one of claims | and 2, wherein the object arrangement
+unit (140) updates the object request list so that an object, having a relatively small size
+among objects displayed in neighboring positions, is first requested according to a number of
+
+channels and a data receiving speed.
+
+4. A method of displaying objects from an external device on a client, such as a
+PDA or a printer, according to an object request order, the method comprising:
+
+receiving data including object information regarding a plurality of objects stored in
+the external device (S110);
+
+determining a display order of the plurality of the objects through the object
+information and generating an object request list, in which the objects are arranged in a
+specified order, according to a result of the determination (S120-S140);
+
+transmitting the object request list to the external device (S150); and
+
+displaying the objects transmitted from the external device in response to the
+transmitted object request list (S170)
+
+CHARACTERISED BY
+
+updating the generated object request list according to a display order of the objects in
+the object information, which display order corresponds with the display position information
+
+in the object information.
+
+5. The method of claim 4, wherein the object information is composed of a
+
+markup language, and comprises object names, and storage path information of the objects.
+
+--- PAGE 3 ---
+Main Request
+3
+
+6. The method of claim 4, wherein the generating updates the object request list
+so that an object, having a relatively small size among objects displayed in neighboring
+
+positions, is first requested according to a number of channels and a data receiving speed.

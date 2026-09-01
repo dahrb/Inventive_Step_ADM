@@ -1,0 +1,283 @@
+--- PAGE 1 ---
+gIUS & PARTNER
+
+18 VO TWALTE + RECHTSANWALTE
+SIEBERTSTR. 4
+
+31675 MUNCHEN
+
+08 15 6992.3 95, Apri 2012
+
+Deutsche Telekom AG et al.
+Our Ref.: P1976 EP
+
+CLAIMS (Main Request)
+
+1. A system for managing a communication service within communication networks using
+multiple access technologies, the communication service being used by a user equipment
+comprising at least one network interface, wherein the system comprises:
+
+at least a first and a second access node and one resource management function
+being adapted to monitor a network resource information of one or more access nodes,
+wherein the user equipment is connected with the first access node;
+
+characterized by further comprising
+
+a user profile management and authorisation authentication accounting function
+being adapted for storing information about a user profile and a connectivity parameter of the
+network interface of the user equipment,
+
+an application control function being adapted for providing a service requirement
+information,
+
+a resource and admission control function being adapted for receiving the service
+requirement information from the application control function, and for inquiring the network
+resource information from the resource management function;
+
+wherein the resource and admission control function is adapted to communicate
+with the user profile management and authorisation authentication accounting function in
+advance of connecting the user equipment to the second access node, to select an access node
+for the network connection of the user equipment from the first access node and the second
+access node based on the service requirement information and the network resource
+information, and to reserve a transport resource available for the user equipment on the
+
+selected access node.
+
+2. System according to claim 1, wherein the resource and admission control function is adapted
+to initiate a changeover of the access of the user equipment from the first access node to the
+second access node when the currently available transport resource has a lower value than a
+
+first predetermined resource value and/or said second access node provides more transport
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+10.
+
+19
+
+resource for connection of the communication service than the currently available transport
+
+resource.
+
+System according to any one preceding claims, wherein the resource and admission control
+function is adapted to restrict the traffic of a lower prioritised communication service when a
+transport resource of higher prioritised communication service is lower than a second
+
+predetermined resource value.
+
+System according to any one preceding claims, the resource and admission control function is
+adapted to trigger to adapt a service parameter according to the current transport resource
+and/or the user preference according to a predetermined business model described in service
+
+parameters.
+
+System according to any one preceding claims, the resource and admission control function is
+adapted to terminate a session connection of said communication service when a monitored
+
+resource value is below a third predetermined resource value.
+
+System according to claims 3 or 5, wherein the first, the second and the third predetermined
+
+resource value have the same value.
+
+System according to claim 2, wherein the first and the second network connections are based
+
+on the same access technology or on different access technologies.
+
+‘System according to any one preceding claims, wherein the user profile management and
+
+authorisation authentication accounting function is adapted to inquire the user equipment to
+
+reconfigure or change the current interface.
+
+System according to any one preceding claims, wherein the user profile management and
+authorisation authentication accounting function is adapted to contain information about
+
+which resource management function is responsible for the user equipment.
+
+System according to any one preceding claims, wherein the access resource and admission
+
+control function comprises a means for managing the network interface.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+11.
+
+12.
+
+14.
+
+15.
+
+20
+
+System according to any one preceding claims further comprises a network attachment
+subsystem based on the Network Attachment Subsystem, NASS, defined by the European
+Telecommunications Standard Telecommunications and Internet converged Services and
+
+Protocols for Advanced Networking.
+
+System according to claim 11, wherein the network attachment subsystem comprises a means
+
+for evaluating and controlling the network interface.
+
+. System according to any one preceding claims further comprises a resource and admission
+
+control subsystem based on the Resource and Admission Control Subsystem, RACS, defined
+by the European Telecommunications Standard, Telecommunications and Internet converged
+
+Services and Protocols for Advanced Networking.
+
+System according to claim 13, wherein the user equipment comprises a plurality of network
+interfaces and the resource and admission control subsystem comprises a means for selection
+
+of a network interface from the plurality of network interfaces for the communication service.
+
+A method for managing a communication service during a network or session connection
+within communication networks having at least a first and a second access node and using
+multiple access technologies, the communication service being used by a user equipment
+comprising at least one network interface, wherein the user equipment is connected with the
+first access node wherein the method comprises the step of:
+
+monitoring available network resources for the network or session connection
+being usable for said communication service by a resource management function;
+
+characterized by
+
+storing information about a user profile and a connectivity parameter of a network
+interface of a user equipment, by a user profile management and authorisation authentication
+accounting function;
+
+providing a service requirement information by an application control function;
+
+receiving the service requirement information from the application control
+function and inquiring the network resource information from the resource management
+
+function, by a resource and admission control function;
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+16.
+
+17.
+
+18.
+
+19.
+
+21
+
+communicating with the user profile management and authorisation authentication
+accounting function by the resource and admission control function in advance of connecting
+the user equipment to the second access node, selecting of an access node for the network
+connection of the user equipment from the first access node and the second access node
+based on the service requirement information and the network resource information, by the
+resource and admission control function, and reserving a transport resource available for
+
+the user equipment on the selected access node, by the resource management function.
+
+Method according to claim 15 further comprises steps of:
+
+initiating a changeover from the first access node to the second access node when
+the currently available transport resource has a lower value than a first predetermined
+resource value and/or said second access node provides more transport resource for
+connection of the communication service than the currently available transport resource;
+and/or
+
+restricting the traffic of a lower prioritised communication service when a
+transport resource of higher prioritised communication service is lower than a second
+predetermined resource value; and/or
+
+adapting a service parameter according to the current transport resource and/or the
+user preference according to a predetermined business model described in service parameters;
+and/or
+
+terminating a session connection of said communication service when a monitored
+
+resource value is below third predetermined resource value.
+
+Method according to claims 15 or 16, wherein a predetermined resource value is a minimal
+
+requirement for providing the communication service with a predefined quality.
+
+Method according to any one of claims 15-17, wherein the first, the second and the third
+
+predetermined resource value have the same value.
+
+Method according to any one of claims 15-18, wherein the first and the second network
+
+connections are based on the same access technology or on different access technologies.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+20.
+
+21.
+
+22.
+
+23.
+
+24.
+
+22
+
+Method according to any one of claims 15-19, wherein the method further comprises a step
+of inquiring the user equipment to reconfigure or change the current interface, by the user
+
+profile management and authorisation authentication accounting function.
+
+Method according to any one of claims 15-20, wherein the user profile management and
+authorisation authentication accounting function contains information about which resource
+
+management function is responsible for the user equipment.
+
+Method according to any one of claims 15-21, wherein the access resource and admission
+
+control function comprises a means for managing the network interface.
+
+Method according to any one of claims 15-22, wherein method further comprises a step of
+evaluating and controlling the network interface by a network attachment subsystem based on
+the European Telecommunications Standard, Telecommunications and Internet converged
+
+Services and Protocols for Advanced Networking.
+
+Method according to any one of claims 15-23, wherein the user equipment comprises a
+plurality of network interfaces, and wherein method further comprises a step of selecting of a
+network interface from plurality of network interfaces for the communication service by a
+resource and admission control subsystem based on the European Telecommunications
+Standard, Telecommunications and Internet converged Services and Protocols for Advanced
+
+Networking.

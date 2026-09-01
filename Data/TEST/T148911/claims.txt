@@ -1,0 +1,186 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+EP 07 869 086.4
+MTI-2510.EP.0 / 68354.118059
+
+1
+
+MAIN REQUEST
+
+1. An integrated circuit device having a low power mode and maintained
+
+external input and/or output configuration and data states, comprising:
+
+a plurality of logic circuits (132); and
+
+an input and/or output node (104; 204; 304) coupled to the plurality of logic
+circuits (132), wherein the plurality of logic circuits (132) control the configuration
+and data state of said input and/or output node (104; 204; 304) during normal power
+mode, the input and/or output node (104; 204; 304) comprises an input and/or output
+keeper cell (106; 206; 306) coupled to a configurable output driver (108; 208) and
+being controllable to drive an external output (112, 212, 312) and/or a configurable
+input receiver (110; 310) receiving an input signal from an external input (112, 212,
+312);
+
+wherein when the input and/or output keeper cell (106; 206; 306) receives an
+enter low power mode signal the input and/or output keeper cell (106; 206; 306) will
+latches in the input receiver and/or output driver data state and respective
+configuration of said configurable input receiver (110; 310) and/or output driver (108;
+208);
+
+wherein when the input and/or output keeper cell (106; 206; 306) receives a
+wake-up and restore from low power mode signal the input and/or output keeper cell
+(106; 206; 306) ceases to latch in and returns control of the input receiver and/or
+output driver data state and configuration of the input receiver (110; 310) and/or
+output driver (108; 208) to the plurality of logic circuits (132), and
+
+a low power mode register (134), which during low power mode remains
+operational while said plurality of logic circuits (132) are put into low power mode,
+wherein said low power mode register (134) controls the enter low power mode signal
+and the wake-up and restore from low power mode signal, said low power mode
+register (134) being coupled with said input and/or output keeper cell (106; 206; 306)
+and said plurality of logic circuits (132) and wherein the low power mode register
+(134) generates said wake-up and restore from low power mode signal only after
+internal logic levels of said plurality of logic circuits (132) controlling said
+configuration and data state of said input and/or output node (104; 204; 304) have
+
+been re-established to the state before the low power mode has been entered.
+
+--- PAGE 2 ---
+20
+
+25
+
+EP 07 869 086.4
+MTI-2510.EP.0 / 68354.118059
+
+2
+
+2. The integrated circuit device according to claim 1, wherein the integrated
+circuit device is configured to read the state of said input and/or output keeper cells (106;
+206; 306) by software or firmware after a low power mode is terminated to re-establish said
+internal logic levels before said wake-up and restore from low power mode signal is
+
+generated.
+
+3. The integrated circuit device according to claim 1, wherein the output
+driver (108; 208) is configurable as open collector, and/or active pull-up, and/or active pull-
+
+down, and/or tri-state.
+
+4. The integrated circuit device according to claim 1, wherein the input receiver
+(110; 310) is configurable for input impedance, and/or speed, and/or slew rate, and/or power
+
+consumption.
+
+5. The integrated circuit device according to claim 1, wherein the enter low
+power mode signal and the wake-up and restore from low power mode signal are one signal
+having a first logic level and a second logic level, respectively, whereby when the one signal
+is at the first logic level the enter low power mode signal is asserted and when the one signal
+
+is at the second logic level the wake-up and restore from low power mode signal is asserted.
+
+6. The integrated circuit device according to claim 5, wherein the first logic level
+is a logic “1” and the second logic level is a logic “0” or the first logic level is a logic “0” and
+
+the second logic level is a logic “1”.
+
+7. The integrated circuit device according to claim 1, wherein the external input
+and the external output (112; 212; 312) of an integrated circuit package is a single I/O
+
+connection.
+
+8. The integrated circuit device according to claim 1, wherein the integrated
+circuit device is selected from the group consisting of microprocessor, microcontroller,
+digital signal processor (DSP), programmable logic array (PLA), and application specific
+integrated circuit (ASIC).
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+EP 07 869 086.4
+MTI-2510.EP.0 / 68354.118059
+
+3
+
+9. The integrated circuit device according to claim 2, wherein the input and/or
+output node (104; 204; 304) and low power mode register (134) are powered from the same
+
+power source.
+
+10.‘ The integrated circuit device according to claim 2, wherein the input and/or
+output node (104; 204; 304) and low power mode register (134) are powered from one power
+
+source and the plurality of logic circuits (132) are powered from another power source.
+
+11. — The integrated circuit device according to claim 10, wherein the another power
+
+source is turned off when in the low power mode.
+
+12. A method of maintaining external input-output (I/O) configuration and data
+states during and when coming out of a low power mode in an integrated circuit device, said
+method comprising the steps of:
+
+when entering into a low power mode for logic circuits (132) of the integrated
+
+circuit device: transmitting a low power mode signal to keeper cells (106; 206; 306)
+
+whereupon each keeper cell (106; 206; 306) latches in a current I/O configuration and
+
+data logic level thereby controlling input-output (I/O) nodes (104) and causing the I/O
+
+nodes (104) to retain an input-output (I/O) configuration and data states of an
+
+associated configurable output driver (108; 208) and/or a configurable input receiver
+
+(110; 310) operable to transmit and/or receive signals to/from an external connection
+
+(112; 212; 312) of the integrated circuit device independent from a state of an
+
+associated logic circuit (132);
+
+maintaining the I/O configuration and the data states by the keeper cell (106;
+
+206; 306) during the low power mode;
+
+and when exiting said low power mode: restoring internal logic levels of the
+logic circuits (132) from the low power mode and only transmitting a wake-up and
+restore from low power mode signal to said keeper cells (106; 206; 306) after all
+internal logic levels of the logic circuits (132) have been re-established to the state
+before the low power mode has been entered, and upon receipt of said wake-up and
+restore from low power mode signal, the keeper cells (106; 206; 306) cease to latch in
+
+and return control of the I/O configuration and data states to the logic circuits (132).
+
+--- PAGE 4 ---
+EP 07 869 086.4
+MTI-2510.EP.0 / 68354.118059
+
+13. A method according to claim 12,
+
+wherein re-establishing the state of the internal logic levels comprises:
+
+reading the state of said input and/or output keeper cells (106; 206; 306) by
+software or firmware to re-establish internal logic levels of the logic circuits (132)
+
+before generating said wake-up and restore from low power mode signal.
+
+14. The method according to claim 13, wherein an enter low power mode
+command and a wake-up and restore from low power mode command are issued from a
+
+software program or from a firmware program.
+
+15. | The method according to claim 13, wherein the output driver (108; 208) is
+configurable as open collector, and/or active pull-up, and/or active pull-down, and/or tri-state
+and/or the input receiver (110; 310) is configurable for input impedance, and/or speed, and/or
+
+slew rate, and/or power consumption.

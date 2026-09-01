@@ -1,0 +1,57 @@
+Title: Digital media management apparatus and methods
+
+Abstract: Methods and apparatus for managing, finding and displaying objects such as digital images. Objects are tagged (“associated”) with descriptive textual and numeric data (“metadata”), and stored in a relational database from which they can be selected, sorted, and found. Tags can be defined by name, tag type, and associated attributes. Objects can be tagged by dropping a tag onto the object, or relating a database record for the tag to a database record for the object. Tagged objects can be searched for and displayed according to the degree to which their metadata matches the search criteria. Visual cues can indicate whether displayed objects match all, some but not all, or none of the search criteria. Database object distributions can be displayed as histograms or scatter plots, including timelines, calendars or maps. Object distributions can be used to search for objects or to limit search results for a previous search.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A method for graphically constructing a database query, comprising:
+receiving a collection of objects, wherein each object in the collection is associated with metadata that describes one or more attributes of the object;
+generating a visual representation of a distribution of objects in the collection as a function of at least a portion of the descriptive metadata associated with the objects; and
+receiving user input defining a selection in the visual representation of the distribution of objects to construct a database query.
+2. The method of claim 1, wherein the step of generating a visual representation of a distribution of objects comprises generating a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects.
+3. The method of claim 2, wherein the step of generating a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprises generating a timeline representing the distribution of objects as a function of temporal metadata associated with the objects.
+4. The method of claim 3, wherein the temporal metadata is a date or timestamp associated with each of the objects.
+5. The method of claim 2, wherein the step of generating a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprises generating a map showing the spatial distribution of the objects.
+6. The method of claim 2, wherein the step of generating a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprises generating a calendar showing the temporal distribution of the objects.
+7. The method of claim 1, wherein the step of generating a visual representation of a distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprises generating a scatter plot representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects.
+8. The method of claim 7, wherein the step of generating a scatter plot representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprises generating a map showing the spatial distribution of the objects.
+9. The method of claim 7, wherein the step of generating a scatter plot representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprises generating a calendar showing the temporal distribution of the objects.
+10. The method of claim 1, wherein the step of receiving user input defining a selection of the visual representation of the distribution of objects to construct a database query comprises receiving user input selecting a portion of the visual representation of the distribution of objects.
+11. The method of claim 1, wherein the step of receiving user input defining a selection of the visual representation of the distribution of objects to construct a database query comprises receiving user input limiting the display range of the visual representation of the distribution of objects.
+12. A method for displaying a collection of objects, comprising:
+using one or more search tags to query a database for objects having metadata that matches the metadata associated with the one or more search tags; and
+displaying a visual representation of a distribution of the objects responsive to the search tag query as a function of at least a portion of the metadata.
+13. The method of claim 12, wherein visual representation of the distribution of the objects responsive to the search tag query is a histogram.
+14. The method of claim 13, wherein the histogram is a timeline representing a temporal distribution of the objects responsive to the search tag query.
+15. The method of claim 13, wherein the histogram is a map showing the spatial distribution of the objects in the best match group and no match group.
+16. The method of claim 13, wherein the histogram is a calendar showing the temporal distribution of the objects in the best match group and no match group.
+17. The method of claim 12, wherein the visual representation of the distribution of the objects responsive to the search tag query is a scatter plot.
+18. The method of claim 16, wherein the scatter plot is a calendar representing the distribution of the objects responsive to the search tag query as a function of date.
+19. The method of claim 16, wherein the scatter plot is a map representing a spatial distribution of the objects responsive to the search tag query.
+20. A computer program product for graphically constructing a database query, the computer program product comprising instructions operable to cause a programmable processor to:
+receive a collection of objects, wherein each object in the collection is associated with metadata that describes one or more attributes of the object;
+generate a visual representation of a distribution of objects in the collection as a function of at least a portion of the descriptive metadata associated with the objects; and
+receive user input defining a selection in the visual representation of the distribution of objects to construct a database query.
+21. The computer program product of claim 20, wherein the instructions to generate a visual representation of a distribution of objects comprise instructions to generate a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects.
+22. The computer program product of claim 21, wherein the instructions to generate a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprise instructions to generate a timeline representing the distribution of objects as a function of temporal metadata associated with the objects.
+23. The computer program product of claim 22, wherein the temporal metadata is a date or timestamp associated with each of the objects.
+24. The computer program product of claim 21, wherein the instructions to generate a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprise instructions to generate a map showing the spatial distribution of the objects.
+25. The computer program product of claim 21, wherein the instructions to generate a histogram representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprise instructions to generate a calendar showing the temporal distribution of the objects.
+26. The computer program product of claim 20, wherein the instructions to generate a visual representation of a distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprise instructions to generate a scatter plot representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects.
+27. The computer program product of claim 26, wherein the instructions to generate a scatter plot representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprise instructions to generate a map showing the spatial distribution of the objects.
+28. The computer program product of claim 26, wherein the instructions to generate a scatter plot representing the distribution of objects as a function of at least a portion of the descriptive metadata associated with the objects comprise instructions to generate a calendar showing the temporal distribution of the objects.
+29. The computer program product of claim 20, wherein the instructions to receive user input defining a selection of the visual representation of the distribution of objects to construct a database query comprise instructions to receive user input selecting a portion of the visual representation of the distribution of objects.
+30. The computer program product of claim 20, wherein the instructions to receive user input defining a selection of the visual representation of the distribution of objects to construct a database query comprise instructions to receive user input limiting the display range of the visual representation of the distribution of objects.
+31. A computer program product for displaying a collection of objects, the computer program product comprising instructions operable to cause a programmable processor to:
+use one or more search tags to query a database for objects having metadata that matches the metadata associated with the one or more search tags; and
+display a visual representation of a distribution of the objects responsive to the search tag query as a function of at least a portion of the metadata.
+32. The computer program product of claim 31, wherein the visual representation of the distribution of the objects responsive to the search tag query is a histogram.
+33. The computer program product of claim 32, wherein the histogram is a timeline representing a temporal distribution of the objects responsive to the search tag query.
+34. The computer program product of claim 32, wherein the histogram is a map showing the spatial distribution of the objects in the best match group and no match group.
+35. The computer program product of claim 32, wherein the histogram is a calendar showing the temporal distribution of the objects in the best match group and no match group.
+36. The computer program product of claim 31, wherein the visual representation of the distribution of the objects responsive to the search tag query is a scatter plot.
+37. The computer program product of claim 36, wherein the scatter plot is a calendar resenting the distribution of the objects responsive to the search tag query as a function of date.
+38. The computer program product of claim 36, wherein the scatter plot is a map resenting a spatial distribution of the objects responsive to the s

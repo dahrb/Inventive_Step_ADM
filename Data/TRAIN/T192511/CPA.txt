@@ -1,0 +1,16 @@
+Title: 
+Efficient Modular Reduction Algorithm in 
+[x] and Its Application to “Left to Right” Modular Multiplication in 
+[x]
+
+Abstract: 
+This paper describes a new efficient method of modular reduction in 
+[x] suited for both software and hardware implementations. This method is particularly well adapted to smart card implementations of elliptic curve cryptography over GF(2p) using a polynomial representation. Many publications use the equivalent in 
+[x] of Montgomery’s modular multiplication over integers. We show here an equivalent in 
+[x] to the generalized Barrett’s modular reduction over integers. The attractive properties of the last method in 
+[x] allow nearly ideal implementations in hardware as well as in software with minimum additional resources as compared to what is available on usual processor architecture.
+
+An implementation minimizing the memory accesses is described for both Montgomery’s implementation and ours. This shows identical computing and memory access resources for both methods. The new method also avoids the need for the bulky normalization (denormalization) which is required by Montgomery’s method to obtain a correct result.
+
+Type: 
+Academic Paper

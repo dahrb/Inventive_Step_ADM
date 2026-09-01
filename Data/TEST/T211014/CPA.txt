@@ -1,0 +1,43 @@
+Title: Memory management method
+
+Abstract: In a digital data processing system having a memory component, a method for managing available memory resources using a translation lookaside buffer (“TLB”) adapted to support at least two page sizes, 2M and 2M+N, where M and N are both integers. Each time an active process is allocated a page of memory of size 2M, an attempt is made to construct a larger cluster of size 2M+N from currently-mapped pages. Clustering will be possible if and only if all 2N of the logical pages having logical page addresses of the form L[st]{x:x} are either currently-mapped or currently being mapped, where s and t are the same for all 2N of the logical pages but {x:x} can be any of the 2N possible different combinations and permutations of “0” and “1”. As a result of clustering, a single translator is used to map the entire cluster of 2N pages and (2N−1) translators are made available for mapping other pages. If the TLB is capable of supporting even larger page sizes, clustering can be attempted recursively.
+
+Type: US Patent
+
+Claims: 
+
+What I claim is:
+1. A method for managing a virtual memory system adapted to support at least two page sizes, 2M and 2M+N, where M and N are both integers, the method comprising:
+in response to a request to allocate a page of memory of size 2M, determining if it possible to cluster by 2N;
+if clustering is not possible, allocating a first page of memory size 2M; and
+if clustering is possible:
+allocating a staging page of memory of size 2M+N+1, said staging page comprising 2N+1 contiguous second pages of memory each of size 2M;
+assembling into respective ones of a contiguous subset of 2N of said second pages of said staging page the contents of at most 2N of said first pages, thereby forming a cluster of size 2M+N and leaving unused the remaining 2N second pages of said staging page; and
+deallocating from the staging page said 2N unused second pages.
+2. The method of claim 1 wherein clustering is possible if and only if all 2N of the first pages having logical page addresses of the form L[st]{x:x} are either currently-allocated or currently being allocated, where s and t are the same for all 2N of the first pages but {x:x} can be any of the 2N possible different combinations and permutations of “0” and “1”.
+3. The method of claim 1 wherein the step of assembling further comprises:
+upon the assembly of the contents of a selected one of said first pages into the respective one of said second pages of the staging page, deallocating said selected first page.
+4. A method for managing a virtual memory system adapted to support small pages and large pages, the large pages being twice the size of the small pages, the method comprising:
+in response to a request to allocate a first one of said small pages, determining if it possible to cluster said first small page with an allocated second one of said small pages;
+if clustering is not possible, allocating said first small page; and
+if clustering is possible:
+allocating a large page on a selected boundary in said memory; and
+assembling into said large page the contents of said first and second small pages.
+5. The method of claim 4 wherein clustering is possible if said first and second small pages are logically contiguous.
+6. A method for managing a virtual memory system adapted to support first and second page sizes, where the second page size is a first integer multiple N of the first page size, the method comprising:
+in response to a request to allocate a page of memory of said first size, determining if it possible to cluster by N;
+if clustering is not possible, allocating in said memory a first page of said first size; and
+if clustering is possible:
+allocating on a selected boundary in said memory a second page of said second size; and
+assembling into said second page the contents of up to N of said first pages.
+7. The method of claim 6 wherein clustering is possible if, among the allocated first pages, there are at least a minimum number of logically-contiguous pages.
+8. The method of claim 6 wherein N is an integer power of 2.
+9. A method for managing a virtual memory system adapted to support first and second page sizes, where the second page size is a first integer multiple N of the first page size, the method comprising:
+in response to a request to allocate a page of memory of said first size, determining if it possible to cluster by N;
+if clustering is not possible, allocating a page of memory of said first size; and
+if clustering is possible:
+allocating a staging page of memory of said second size, said staging page comprising 2N contiguous pages of memory each of said first size; and
+assembling into said staging page a cluster of N pages of memory each of said first size; and
+deallocating from the staging page the N unused pages of said first size.
+10. The method of claim 9 wherein clustering is possible if and only if there are at least a minimum number of logically-contiguous pages of said first size currently allocated in said memory.
+11. The method of claim 9 wherein N is an integer power of 2.

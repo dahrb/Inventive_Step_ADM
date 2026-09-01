@@ -1,0 +1,112 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. An image forming apparatus (100) comprising:
+
+a main controller (140) that controls overall operation of the image forming apparatus (100);
+
+a universal serial bus, USB, interface (130);
+
+a voltage change detector (120) to output a wake-up signal if a voltage change occurs on a
+VBUS line;
+
+a USB host controller (142) to perform data communication with a USB device connected
+through the USB interface;
+
+an image forming job performing unit (150) to perform an image forming job according to
+control by the main controller; and
+
+a voltage bus, VBUS, power supply (110) to supply power to the USB interface through the
+VBUS line,
+
+the apparatus characterized in that the main controller (140) is configured to manage turning on
+
+and off each component of the image forming apparatus (100) when the image forming apparatus
+(100) is in a power save mode.
+
+2. The image forming apparatus of claim 1, wherein the voltage change detector comprises:
+
+a resistor (R1) on the VBUS line; and
+
+a comparator (121) for outputting the wake-up signal if a voltage difference occurs between a
+first end and a second end of the resistor.
+
+3. The image forming apparatus of claim 2, wherein a voltage value of the first end of the
+resistor (R1) is input to a non-inverting input port of the comparator (121), and a voltage value of the
+second end of the resistor is input to an inverting input port of the comparator.
+
+4. The image forming apparatus of claim 2, wherein the resistor (R1) is implemented as a poly
+switch or a switching transistor.
+
+5. The image forming apparatus of claim 1, wherein the main controller (140) comprises:
+
+a general purpose input/output (GPIO) (141) to manage an input and output of a signal; and
+
+a power save mode manager (146) to manage a power supply when the image forming
+apparatus (100) is in the power save mode,
+
+wherein the power save mode manager turns off the USB host controller (142) when the image
+forming apparatus enters the power save mode, and turns on the USB host controller when a wake-
+up signal is received through the GPIO.
+
+6. The image forming apparatus of claim 5, wherein the power save mode manager (146) is a
+micro kernel operated when the image forming apparatus (100) is in the power save mode.
+
+7. The image forming apparatus of claim 1, wherein the USB host controller (142) is located in
+the main controller (140).
+
+8. The image forming apparatus of claim 7, further comprising:
+
+a USB hub (160) to perform data communication with the USB host controller (142), wherein
+the USB hub is located outside the main controller (140),
+
+wherein the main controller blocks power supplied to the USB hub when the image forming
+apparatus (100) enters the power save mode.
+
+9. The image forming apparatus of claim 1, wherein the USB host controller (142) is located
+outside the main controller (140), and the main controller blocks power supplied to the USB controller
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+when the image forming apparatus (100) enters the power save mode.
+
+10. A method of sensing connection of a universal serial bus (USB) device when an
+image forming apparatus (100) is in a power save mode, the method comprising:
+
+turning off a USB host controller (142) and an image forming job performing unit (150) of the
+image forming apparatus when the image forming apparatus enters the power save mode (S601);
+
+outputting a wake-up signal (S603Y) to a main controller (140) of the image forming apparatus
+when a USB device is connected to a USB port (130) of the image forming apparatus and a voltage
+change occurs on a voltage bus (VBUS) line that supplies power to the USB port;
+
+receiving (S605) the wake-up signal by the main controller; and
+
+turning on (S607) the USB host controller by the main controller when the wake-up signal is
+received,
+
+the method characterized in that the turning on and the turning off of the USB host controller
+comprises managing turning on and off each component of the image forming apparatus when the
+image forming apparatus is in a power save mode.
+
+11. The method of claim 10, wherein the outputting of the wake-up signal amplifies a
+voltage difference between first and second ends of a resistor (R1) on the VBUS line, and outputs the
+amplified voltage difference.
+
+12. The method of claim 11, wherein the resistor (R1) is implemented as a poly switch
+or a switching transistor.
+
+13. The method of claim 10, wherein the main controller (140) operates a micro kernel
+if the image forming apparatus (100) enters the power save mode,
+
+wherein the receiving (S605) of the wake-up signal comprises receiving the wake-up signal
+through a general purpose input/output (GPIO) (144) of the main controller; and
+
+wherein the turning on of the USB host controller (142) turns on the USB host controller when
+the micro kernel receives the wake-up signal from the GPIO.
+
+14. A non-transitory computer-readable recording medium having recorded thereon a
+program for executing the method of claim 10 in a computer.

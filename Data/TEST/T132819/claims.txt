@@ -1,0 +1,151 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. A method for detecting unauthorized signal usage in a content delivery
+network (10), the method comprising the steps of:
+
+acquiring at least two signal usage records for a receiver (16) of said content,
+
+each signal usage record having indicia of actual usage associated
+
+therewith;
+
+evaluating the respective indicia of actual usage for said at least two signal
+usage records against a set of predetermined indicia of usage that are associated with a use
+of a combination of signals not authorized for usage together on said receiver; and
+
+detecting unauthorized signal usage upon finding an indicia of usage in the set
+of predetermined indicia of usage consistent with said respective actual usage indicia for
+said at least two signal usage records,
+
+regardless of whether each instance of signal usage associated with the
+
+at least two actual signal usage records have been previously individually authorized for
+usage with said receiver (16),
+
+wherein said evaluating step and said detecting step are implemented by a
+software module,
+
+wherein, once unauthorized signal usage is detected, the usage of one or more
+features or signals is hindered by a component of said network (10), and
+
+wherein said evaluation step is operated after said acquisition step and the
+hindering step is operated after said evaluation step.
+
+2. The method according to claim 1, wherein said predetermined combination of
+indicia of usage includes use at said receiver of at least two signals each of which is only
+normally authorized for use in mutually distinct geographic locations.
+
+3. The method according to claim 1, wherein said predetermined combination of
+indicia of usage is associated with geographic blackout regions, wherein geographic
+locations in which usage is authorized for any one signal of said combination of signals by
+reference to its respective blackout region is exclusive from geographic locations in which
+usage is authorized for any one other of said geographic blackout regions associated with
+every other signal of said combination of signals.
+
+4. The method according to claim 1, further comprising the step of disabling said
+receiver upon detecting unauthorized signal usage at said receiver.
+
+5. The method according to claim 4, wherein at least one of the steps of acquiring at
+least two signal usage records, evaluating the respective indicia of actual usage of said at
+
+least two usage signal records, detecting unauthorized signal usage and disabling said
+
+--- PAGE 2 ---
+receiver is performed at a different time than in immediate succession to each other of the
+said steps.
+
+6. The method according to claim 5, wherein the steps of acquiring at least two signal
+usage records, evaluating the respective indicia of actual usage of said at least two usage
+records, detecting unauthorized signal usage and disabling said receiver are performed by
+said receiver.
+
+7. The method according to claim 5, wherein said content delivery network includes a
+conditional access system in communication with said receiver, and the steps of acquiring
+at least two signal usage records, evaluating the respective indicia of actual usage of said at
+least two signal usage records, detecting unauthorized signal usage and disabling said
+receiver are performed by said conditional access system.
+
+8. The method according to claim 5, wherein said content delivery network includes a
+conditional access system in communication with said receiver, and said receiver performs
+at least one of the steps of acquiring at least two signal usage records, evaluating the
+respective indicia of actual usage of said at least two signal usage records, detecting
+unauthorized signal usage and disabling said receiver, and the conditional access system
+performs a said step other than the said at least one of the steps.
+
+9. The method according to claim 5, wherein said receiver is associated with an
+interactive television system.
+
+10. The method according to claim 2, wherein the said steps of evaluating the re
+spective indicia of actual usage of said at least two signal usage records and detecting
+unauthorized signal usage are performed by at least one of said receiver, an advertising
+management system, a blackout control subsystem, a conditional access system, a
+multiplexer; and a parental control system, in each case being connected to said content
+delivery network.
+
+11. The method according to claim 1, wherein said predetermined combination of
+indicia of usage includes indicia of concurrent usage of two or more pay-perusage signals.
+
+12. The method according to claim 11, wherein said indicia of concurrent usage of two
+or more pay-per-usage signals include indicia of usage of said two or more pay-per-usage
+signals within a predetermined period of time.
+
+13. The method according to claim 11, wherein said indicia of concurrent usage of said
+two or more pay-per-usage signals include indicia of picture-in-picture presentation of at
+least two of said two or more pay-per-usage signals.
+
+14. The method according to claim 11, wherein said indicia of concurrent usage of said
+two or more pay-per-usage signals include indicia of recording of at least one of said two or
+more payper-usage signals while another of said two or more pay-per-usage signal is being
+
+used.
+
+--- PAGE 3 ---
+15. The method according to claim 11, wherein said indicia of concurrent usage of said
+two or more pay-per-usage signals include indicia of multi-channel presentation of said two
+or more pay-per-usage signals.
+
+16. The method according to claim 15, wherein said indicia of multi-channel
+presentation include presentation of said two or more pay-per-usage signals in an electronic
+program guide.
+
+17. The method according to claim .11, further comprising the step of disabling said
+receiver in said content delivery network upon detecting unauthorized signal usage at said
+receiver.
+
+18. The method according to claim 17, wherein at least one ofthe said steps of acquiring
+at least two signal usage records, evaluating the respective indicia of actual usage of said at
+least two signal usage records, detecting unauthorized signal usage, and disabling said
+receiver is performed at a different time than in immediate succession to each other of the
+said steps.
+
+19. The method according to claim 18, wherein said steps of acquiring at least two
+signal usage records, evaluating the respective indicia of actual usage of said at least two
+signal usage records, detecting unauthorized signal usage and disabling said receiver are
+performed by said receiver.
+
+20. The method according to claim 18, wherein said content delivery network includes
+a conditional access system in communication with said receiver, and said steps of acquiring
+at least two signal usage records, evaluating the respective indicia of actual usage of said at
+least two signal usage records, detecting said unauthorized signal usage and disabling said
+receiver are performed by said conditional access system.
+
+21. The method according to claim 18, wherein said content delivery network includes
+a conditional access system in communication with said receiver, and said receiver performs
+at least one of said steps of acquiring at least two signal usage records, evaluating the
+respective indicia of actual usage of said at least two signal usage records, detecting
+unauthorized signal usage and disabling said receiver, and the conditional access system
+performs a said step other than the said at least one of said steps.
+
+22. The method according to claim 18, wherein said receiver is associated with an
+interactive television system.
+
+23. The method according to claim 11, wherein the said step of evaluating the
+respective indicia of actual usage of said at least two signal usage records and detecting
+unauthorized signal usage are performed by at least one of said receiver, an advertising
+management system, a blackout control subsystem, a conditional access system, a
+multiplexer; and a parental control system, in each case being connected to said content
+
+delivery network.

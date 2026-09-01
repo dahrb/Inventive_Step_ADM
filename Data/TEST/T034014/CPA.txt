@@ -1,0 +1,56 @@
+TITLE:
+Threat identification
+
+TYPE:
+US patent
+
+ABSTRACT:
+A method, system, computer program product, and/or computer readable medium of instructions for identifying a malicious entity in a processing system, comprising determining an entity threat value for an entity, the entity threat value being indicative of a level of threat that the entity represents to the processing system, wherein the entity threat value is determined based on one or more characteristics of the entity; and compare the entity threat value to an entity threat threshold to identify if the entity is malicious. In another form, there is provided a method, system, computer program product, and/or computer readable medium of instructions for identifying a malicious entity in a processing system, comprising determining one or more input values indicative of an entity; and performing a fuzzy logic analysis in relation to the one or more input values to identify if the entity is malicious.
+
+CLAIMS:
+1. A method of identifying a malicious entity in a processing system, wherein the method comprises:
+determining an entity threat value for an entity, the entity threat value being indicative of a level of threat that the entity represents to the processing system, wherein the entity threat value is determined based on one or more characteristics of the entity; and
+comparing the entity threat value to an entity threat threshold to identify if the entity is malicious.
+2. The method according to claim 1, wherein each of the one or more characteristics of the entity is associated with a respective characteristic threat value, wherein the method comprises calculating the entity threat value using at least some of the characteristic threat values for the one or more characteristics of the entity.
+3. The method according to claim 2, wherein at least one of the one or more characteristics of the entity is associated with a characteristic threat value formula, wherein the method comprises calculating, using the characteristic threat value formula, the characteristic threat value.
+4. The method according to claim 3, wherein at least one characteristic threat value is temporally dependent, wherein the method comprises calculating the at least one characteristic threat value for the entity using the characteristic threat value formula and a temporal value.
+5. The method according to claim 3, wherein the at least one characteristic is a behaviour associated with the entity, wherein the method comprises calculating the at least one characteristic threat value for the entity using the characteristic threat value formula and a frequency of instances the behaviour has been performed.
+6. The method according to claim 2, wherein the one or more characteristics comprises at least one of one or more legitimate characteristics indicative of non-malicious activity and one or more illegitimate characteristics indicative of malicious activity, wherein the method comprises determining the entity threat value using characteristic threat values associated with the one or more legitimate characteristics and the one or more illegitimate characteristics of the entity.
+7. The method according to claim 6, wherein the step of determining the entity threat value for an entity comprises calculating a difference between the characteristic threat values for the one or more legitimate characteristics of the entity, and the characteristic threat values for the one or more illegitimate characteristics of the entity, wherein the difference is indicative of the entity threat value.
+8. The method according to claim 1, wherein the method comprises:
+determining one or more related entities to the entity, wherein each related entity has an associated entity threat value; and,
+calculating the entity threat value for the entity using the entity threat value for at least some of the one or more related entities.
+9. The method according to claim 8, wherein the method comprises:
+determining one or more related entities to the entity, wherein each related entity has an associated entity threat value; and,
+calculating a group threat value for the entity and one or more related entities using the entity threat value for at least some of the one or more related entities and the entity.
+10. The method according to claim 8, wherein the method comprises weighting the entity threat value for at least one related entity according to a relatedness of the at least one related entity relative to the entity.
+11. The method according to claim 1, wherein the method comprises weighting the entity threat value for the entity according to permissions of the entity.
+12. A system to identify a malicious entity in a processing system, wherein the system comprises a processing system configured to:
+determine an entity threat value for an entity, the entity threat value being indicative of a level of threat that the entity represents to the processing system, wherein the entity threat value is determined based on one or more characteristics of the entity; and
+compare the entity threat value to an entity threat threshold to identify if the entity is malicious.
+13. A computer program product comprising a computer readable medium having a computer program recorded therein or thereon, the computer program enabling identification of a malicious entity in a processing system, wherein the computer program product configures the processing system to:
+determine an entity threat value for an entity, the entity threat value being indicative of a level of threat that the entity represents to the processing system, wherein the entity threat value is determined based on one or more characteristics of the entity; and
+compare the entity threat value to an entity threat threshold to identify if the entity is malicious.
+14. A method for identifying a malicious entity in a processing system, wherein the method comprises:
+determining one or more input values indicative of an entity; and
+performing a fuzzy logic analysis in relation to the one or more input values to identify if the entity is malicious.
+15. The method according to claim 14, wherein the method comprises determining an action to perform in regard to whether the entity is determined to be malicious.
+16. The method according to claim 14, wherein the one or more input values can comprise at least one of:
+an entity threat value;
+a group threat value;
+a frequency of an event occurring;
+a number of related entities to the entity; and
+a number of child processes created by the entity.
+17. A system to identify a malicious entity in a processing system, wherein the system is configured to:
+determine one or more input values indicative of one or more characteristics of an entity; and
+perform a fuzzy logic analysis in relation to the one or more input values to identify if the entity is malicious.
+18. A system according to claim 17, wherein the system is configured to determine an action to perform in regard to whether the entity is determined to be malicious.
+19. The system according to claim 17, wherein the one or more input values can comprise at least one of:
+an entity threat value;
+a group threat value;
+a frequency of an event occurring;
+a number of related entities to the entity; and
+a number of child processes created by the entity.
+20. A computer program product comprising a computer readable medium having a computer program recorded therein or thereon, the computer program enabling identification of a malicious entity in a processing system, wherein the computer program product configures the processing system to:
+determine one or more input values indicative of one or more characteristics of an entity; and
+perform a fuzzy logic analysis in relation to the one or more input values to identify if the entity is malicious.

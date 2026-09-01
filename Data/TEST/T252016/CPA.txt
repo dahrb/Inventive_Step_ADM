@@ -1,0 +1,149 @@
+Title: Multiple volume exploration system and method
+
+Abstract: Method and system for multiple volume exploration is disclosed. A first 3D volume is rendered in a first region. One or representations are displayed in a second region, where each representation signifies a stack of 2D images. A first stack represents one or more 2D images of cross sections of a certain orientation from the first 3D volume. Each of the other stacks includes one or more 2D images of cross sections of the same orientation from a 3D volume related to the first 3D volume.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for manipulating 3D data, comprising:
+rendering a first 3D volume in a first region;
+displaying one or more representations in a second region, each representation signifying a stack of 2D images, wherein
+a first stack comprises one or more 2D images of cross sections of a certain orientation from the first 3D volume, and
+each of the other stacks comprises one or more 2D images of cross sections of the certain orientation from a 3D volume related to the first 3D volume.
+2. The method according to claim 1, wherein:
+a 2D image on top of the first stack corresponds to a cross section from the first volume at a certain location and with the certain orientation; and
+a 2D image on top of each of the other stacks corresponds to a cross section at the certain location of a 3D volume, related to the first 3D volume, and with the certain orientation.
+3. The method according to claim 2, wherein the first 3D volume in the 3D space is sliced by a plane having a certain orientation, yielding a cross section of the first volume.
+4. The method according to claim 3, wherein three planes are present in the 3D space and they are orthogonal to each other.
+5. The method according to claim 3, wherein a slicing plane is in one of an opaque appearance mode, a transparent appearance mode, and an invisible appearance mode.
+6. The method according to claim 5, wherein a plane in a transparent appearance mode is visualized using a color tone.
+7. The method according to claim 1, wherein each representation of a stack of 2D images can be un-stacked so that one or more 2D images from the stack are displayed in full view.
+8. The method according to claim 7, wherein the un-stacked 2D images are displayed in the first region.
+9. The method according to claim 7, wherein when the un-stacked 2D images are displayed in the first region, the 3D volume is rendered in the second region.
+10. The method according to claim 3, further comprising embedding a 3D control panel in the first region with respect to the plane, wherein the 3D control panel is provided for manipulating the first 3D volume and its associated 3D volumes.
+11. The method according to claim 10, wherein the embedded 3D control panel is configured along a border of the plane.
+12. The method according to claim 11, wherein the 3D control panel embedded in the first region with respect to the plane is rendered as a three dimensional cylinder.
+13. The method according to claim 10, wherein the 3D control panel comprises one or more buttons, each of which is associated with a function and/or an operation and can be pressed to activate its associated function and/or operation.
+14. The method according to claim 11, wherein the plane embedding the 3D control panel can be moved through moving the 3D control panel.
+15. The method according to claim 13, wherein positions of the one or more buttons on the 3D control panel are dynamically adjusted when the plane embedding the 3D control panel moves so that the one or more buttons remain visible.
+16. The method according to claim 13, wherein the one or more buttons include at least one of:
+at least one button configured to activate zooming/scaling control with respect to the 3D volume;
+at least one button configured to select a 3D volume to be visualized;
+a button configured to lock/unlock a 3D volume with the embedding plane that slices the 3D volume;
+at least one button configure to control volume play; and
+a button for activating a visual fusion control widget.
+17. The method according to claim 16, wherein a button for controlling volume play includes one of a play button, a fast forward button, and a fast backward button.
+18. The method according to claim 16, wherein a visual fusion control widget is displayed as a 2D planar object.
+19. The method according to claim 16, wherein a visual fusion control widget is displayed as a 3D object.
+20. The method according to claim 16, wherein the visual fusion control widget comprises:
+a plurality of weight factor handlers, each of which is associated with an underlying data set and is used to derive a weight to be assigned to the underlying data set in order to fuse with data set associated with other weight factor handlers; and
+a sliding bar on which each of the weight factor handler slides in order to determine a weight based on a relative position with respect to the sliding bar.
+21. The method according to claim 20, wherein the data set associated with a weight factor handler is a 3D volume.
+22. The method according to claim 20, wherein the data set associated with a weight factor handler is a 2D image.
+23. The method according to claim 21, wherein the data set associated with a weight factor handler comprises one or more features.
+24. The method according to claim 22, wherein the data set associated with a weight factor handler is a 2D image of a cross section of the 3D volume.
+25. The method according to claim 16, wherein each of the weight factor handlers is displayed using a different color and/or texture.
+26. The method according to claim 16, wherein each weight factor handler comprises a handle and a bar segment, the handle being used to slide on the sliding bar and the length of the bar segment is used to determine the weight.
+27. The method according to claim 26, wherein a numeric value representing the weight associated with the weight factor handler is displayed on the bar segment of the weight factor handler.
+28. The method according to claim 27, wherein a numeric value representing the weight associated with the weight factor handler is displayed on the handle of the weight factor handler.
+29. The method according to claim 27, wherein the numeric value representing the weight assigned is displayed nearby the handle of the weight factor handler.
+30. A method for providing a 3D control panel, comprising:
+generating a 3D construct;
+embedding the 3D construct with a 3D plane rendered in a 2D display region, wherein
+the 3D construct has one or more buttons rendered in the 2D display region in such a way that the one or more buttons are visible, and
+the 3D construct with the one or more buttons are provided for manipulating at least one 3D volume.
+31. The method according to claim 30, wherein:
+at least a portion of the 3D construct is a three dimensional cylinder; and
+each of the one or more buttons is associated with a function and/or operation and can be pressed to activate the associated function and/or operation.
+32. The method according to claim 30, wherein positions of the one or more buttons with respect to the 3D construct are dynamically adjustable when the plane moves so that the one or more buttons remain visible.
+33. The method according to claim 30, wherein the plane can be moved by moving the 3D construct.
+34. A method for manipulating 3D data, comprising:
+rendering a first 3D volume in a rendering space where there is at least one 3D plane, each of which has a certain orientation and intersects the 3D volume;
+embedding a 3D control panel in the rendering space with a 3D plane, wherein
+the 3D control panel comprises one or more buttons, each of which is associated with a function and/or an operation for manipulating the first 3D volume and one or more 3D volumes associated with the first 3D volume and can be pressed to activate its associated function and/or operation.
+35. The method according to claim 34, wherein at least a portion of the 3D control panel embedded with the plane is a three dimensional cylinder.
+36. The method according to claim 34, wherein the embedding plane and the 3D control panel can be moved simultaneously.
+37. The method according to claim 34, wherein positions of the one or more buttons with respect to the 3D control panel are dynamically adjusted when the embedding plane moves so that the button remains visible.
+38. The method according to claim 34, wherein the one or more buttons include at least one of:
+at least one button configured to activate zooming/scaling control with respect to the 3D volume;
+at least one button configured to select a 3D volume to be visualized;
+a button configured to lock/unlock a 3D volume with the embedding plane that slices the 3D volume;
+at least one button configure to control volume play; and
+a button for activating a visual fusion control widget.
+39. The method according to claim 38, wherein a volume play control button includes one of a play button, a fast forward button, and a fast backward button.
+40. The method according to claim 38, wherein the visual fusion control widget is displayed as one of a 2D planar object and a 3D object.
+41. The method according to claim 38, wherein the visual fusion control widget comprises:
+a plurality of weight factor handlers, each of which is associated with an underlying data set and is used to derive a weight to be assigned to the underlying data set in order to fuse with data set associated with other weight factor handlers; and
+a sliding bar on which each of the weight factor handler slides in order to determine a weight based on a relative position with respect to the sliding bar.
+42. The method according to claim 41, wherein the data set associated with each weight factor handler is one of a 3D volume, a 2D image, and one or more features thereof.
+43. The method according to claim 38, wherein each of the weight factor handlers is used to assign a weight to its associated data set.
+44. The method according to claim 38, wherein each weight factor handler is displayed using a different color and/or texture.
+45. The method according to claim 38, wherein each weight factor handler comprises a handle and a bar segment, the handle being used to slide on the sliding bar and the length of the bar segment is used to determine the weight.
+46. The method according to claim 45, wherein a numeric value representing the weight associated with the weight factor handler is displayed on the bar segment of the weight factor handler.
+47. The method according to claim 45, wherein a numeric value representing the weight associated with the weight factor handler is displayed on the handle of the weight factor handler.
+48. The method according to claim 45, wherein the numeric value representing the weight assigned is displayed nearby the handle of the weight factor handler.
+49. A 3D control panel, comprising:
+a 3D construct configured to be embedded with a 3D plane in a 2D rendering space; and
+one or more buttons distributed on the 3D construct, wherein
+the one or more buttons are positioned with respect to the 3D construct in a manner so that they are visible regardless of the orientation of the 3D construct.
+50. The 3D control panel according to claim 49, wherein at least a portion of the 3D construct is a three dimensional cylinder.
+51. The 3D control panel according to claim 49, wherein each of the buttons is associated with a function and/or an operation for manipulating data rendered in the 2D rendering space and can be pressed to activate its associated function and/or operation.
+52. The 3D control panel according to claim 49, wherein the 3D plane can be moved by moving the 3D construct.
+53. The 3D control panel according to claim 52, wherein positions of the one or more buttons with respect to the 3D construct are dynamically adjusted when the 3D plane moves so that the one or more buttons remain visible.
+54. A system for manipulating data, comprising:
+a 3D data rendering mechanism configured to render a first 3D volume; and
+a 2D image stack rendering mechanism configured to display one or more representations, each of the representations signifying a stack of 2D images, wherein
+each stack comprises one or more 2D images of cross sections with a certain orientation from the first 3D volume, and
+each of the other stacks comprises one or more 2D images of cross sections of the certain orientation from a 3D volume related to the first 3D volume.
+55. The system according to claim 54, wherein the 3D volume and the one or more representations are visualized in different display regions.
+56. The system according to claim 54, wherein the orientation of the cross sections is determined with respect to a 3D plane that intersects the first 3D volume.
+57. The system according to claim 54, further comprising a 2D cross section image rendering mechanism configured to display one or more 2D images of cross sections from one of the stacks in a specified display region.
+58. The system according to claim 57, wherein the 2D image rendering mechanism displays a 2D image in a sub-region of the specified display region with a size determined based on a location of the sub-region.
+59. The system according to claim 56, further comprising:
+a 3D control panel rendering mechanism capable of:
+embedding a 3D control panel with the 3D plane; and
+rendering one or more buttons on the 3D control panel in such a manner that the one or more buttons are visible regardless of the orientation of the 3D control panel, wherein
+the 3D control panel is for manipulating the first 3D volume and its associated 3D volumes.
+60. The system according to claim 59, wherein the one or more buttons include at least one of:
+at least one button configured to activate zooming/scaling control with respect to the first 3D volume;
+at least one button configured to select a 3D volume to be visualized;
+a button configured to lock/unlock a 3D volume with the embedding plane that slices the 3D volume;
+at least one button configure to control volume play; and
+a button for activating a visual fusion control widget.
+61. The system according to claim 59, wherein the 3D control panel rendering mechanism displays the 3D control panel along a border of the 3D plane.
+62. The system according to claim 61, wherein:
+at least a portion of the 3D control panel is rendered as a three dimensional cylinder; and
+each of the one or more buttons is associated with a function and/or operation and can be pressed to activate the associated function and/or operation.
+63. The system according to claim 61, wherein the 3D control panel rendering mechanism is further capable of dynamically adjusting positions of the one or more buttons with respect to the 3D control panel when the 3D plane moves so that the buttons remain visible.
+64. The system according to claim 59, further comprising a visual widget rendering mechanism configured to render the visual fusion control widget when the button for activating the visual fusion control widget is pressed.
+65. The system according to claim 59, further comprising a 3D control panel facilitator configure to effectuate a function and/or operation associated with each of the buttons when the button is activated.
+66. A system for data manipulation via a 3D control panel, comprising:
+a 3D data rendering mechanism configured to render a first 3D volume in a display area; and
+a 3D control panel rendering mechanism capable of:
+rendering a 3D control panel in the display area;
+rendering one or more buttons on the 3D control panel in such a way that the one or more buttons are visible, wherein
+the 3D control panel is used for manipulating the first 3D volume and its associated 3D volumes.
+67. The system according to claim 66, wherein the 3D control panel rendering mechanism embeds the 3D control panel with a 3D plane intersecting the first 3D volume.
+68. The system according to claim 67, wherein:
+the 3D control panel is rendered as a three dimensional cylinder along the border of the 3D plane; and
+each of the one or more buttons is associated with a function and/or operation for manipulating the first 3D volume and its associated 3D volumes and can be pressed to activate the associated function and/or operation.
+69. The system according to claim 68, wherein the 3D control panel rendering mechanism is further capable of dynamically adjusting positions of the one or more buttons with respect to the 3D control panel when the 3D plane moves so that the button remains visible.
+70. The system according to claim 69, wherein the 3D control plane can be moved by moving the 3D control panel.
+71. The system according to claim 66, further comprising a 3D control panel facilitator configure to effectuate a function and/or operation associated with each of the buttons when the button is activated.
+72. A visual control widget, comprising:
+a plurality of weight factor handlers; and
+a sliding bar, wherein
+each of the weight factor handler is capable of being slid on the sliding bar, and
+a value determined based on a position of each weight factor handler on the sliding bar is displayed on the visual control widget.
+73. The widget according to claim 72, wherein the visual control widget is rendered as a 2D planar object.
+74. The widget according to claim 72, wherein the visual control widget is rendered as a 3D object.
+75. The widget according to claim 72, wherein each of the weight factor handler is rendered using a color and/or texture.
+76. The widget according to claim 72, wherein the value is displayed on visual control widget is rendered using a texture.
+77. The widget according to claim 72, wherein a weight factor handler comprises:
+a handle; and
+a bar segment, wherein the handle is used to slide on the sliding bar and the length of the bar segment relates to the value associated with the weight factor handler.
+78. The widget according to claim 77, wherein the value associated with a weight factor handler is displayed at least one of:
+on the bar segment of the weight factor handler;
+on the handle of the weight factor handler; and
+near the handle of the weight factor handler.

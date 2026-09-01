@@ -1,0 +1,482 @@
+--- PAGE 1 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+CLAIMS - MAIN REQUEST
+
+1. A method in a first terminal (102) of providing a content gift to a second
+terminal (110), both terminals selectively communicating with a gift server
+
+(108) in a data network (104), the method comprising the steps of:
+
+transmitting (502) a catalog request by the first terminal to the gift server to
+obtain a catalog that identifies content files compatible with the hardware
+and software configuration of the second terminal, the catalog request
+including a terminal identifier of the second terminal used by the server to
+compile a list of compatible content files by searching a server database
+for configuration information and compatible content files;
+
+receiving (504) the catalog of compatible content files at the first terminal;
+
+incorporating, in a gift request, one or more identifiers that identify selected
+content gifts from the catalog of compatible content files by the first
+terminal; and
+
+transmitting (508) the gift request by the first terminal to the gift server
+requesting that the one or more selected content gifts be provided to the
+
+second terminal.
+
+2. The method of claim 1, further comprising including security information in the
+
+catalog request so that the catalog request can be authenticated.
+
+3. The method of claim 1, further comprising requesting that the first terminal
+
+(102) assume costs associated with the content gift.
+
+4. The method of claim 1, wherein the step of transmitting (502) the catalog
+request comprises transmitting the catalog request to the gift server using a
+
+wireless network connection.
+
+5. The method of claim 1, wherein the step of transmitting (502) the catalog
+request comprises transmitting the catalog request to the gift server using a
+
+wired network connection.
+
+6. The method of claim 1, wherein the selected content gift is not already owned by
+
+the second terminal.
+
+--- PAGE 2 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+7. The method of claim 1, further comprising receiving (322) a notification
+message that the content gift was not delivered to the second terminal because
+
+the content is already owned by the second terminal.
+
+8. The method of claim 1, wherein at least one of the first and second terminals is a
+
+wireless device.
+
+9. Apparatus for use in a first terminal (102) to provide a content gift to a second
+terminal (110), both terminals selectively communicating with a gift server
+
+(108) in a data network (104), the apparatus comprising:
+
+means (402) for transmitting a catalog request by the first terminal to the server
+to obtain a catalog that identifies content files compatible with the
+hardware and software configuration of the second terminal, comprising
+means for including a terminal identifier of the second terminal in the
+catalog request used by the server to compile a list of compatible content
+files by searching a server database for configuration information and
+compatible content files;
+
+means (404) for receiving the catalog of compatible content files at the first
+terminal;
+
+means (408) for incorporating, in a gift request, one or more identifiers that
+identify selected content gifts from the catalog of compatible content files
+by the first terminal; and
+
+means (406) for transmitting the gift request by the first terminal to the server
+requesting that the one or more selected content gifts be provided to the
+
+second terminal.
+
+10. The apparatus of claim 9, further comprising means for including security
+information in the catalog request so that the catalog request can be
+
+authenticated.
+
+11. The apparatus of claim 9, further comprising means for requesting that the first
+
+terminal assume costs associated with the content gift.
+
+--- PAGE 3 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+12. The apparatus of claim 9, wherein the means for transmitting the catalog
+request comprises means for transmitting the catalog request to the server
+
+using a wireless network connection.
+
+13. The apparatus of claim 9, wherein the means for transmitting the catalog
+request comprises means for transmitting the catalog request to the server
+
+using a wired network connection.
+
+14. The apparatus of claim 9, wherein the selected content gift is content that is not
+
+already owned by the second terminal.
+
+15. The apparatus of claim 9, further comprises means for receiving a notification
+message that the content gift was not delivered to the second terminal because
+
+the content is already owned by the second terminal.
+
+16. The apparatus of claim 9, wherein at least one of the first and second terminals
+
+is a wireless device.
+
+17. The apparatus of any of the preceding claims, wherein the means (402) for
+transmitting a catalog request and the means for including security information
+
+in the catalog request comprises a catalogue request transmitter.
+
+18. The apparatus of any of the preceding claims, wherein the means (404) for
+
+receiving the catalog comprises a catalog receiver.
+
+19. The apparatus of any of the preceding claims, wherein the means (408) for
+selecting a content gift from the catalog comprises selection logic that operates
+
+to select a content gift from the catalog.
+
+20. The apparatus of any of the preceding claims, wherein the means (406) for
+transmitting a gift request to the server and the means for receiving a
+
+notification message comprises a gift request transmitter.
+
+21. Acomputer-readable media comprising instructions, which when executed by a
+processor in a first terminal (102), operate to provide a content gift to a second
+
+terminal (110), both terminals selectively communicating with a gift server
+
+--- PAGE 4 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+(108) in a data network (404), the computer-readable media comprising
+
+instructions for:
+
+transmitting (502) a catalog request by the first terminal to the gift server to
+obtain a catalog that identifies content files compatible with the hardware
+and software configuration of the second terminal, the catalog request
+including a terminal identifier of the second terminal used by the server to
+compile a list of compatible content files by searching a server database
+for configuration information and compatible content files;
+
+receiving (504) the catalog of compatible content files at the first terminal;
+
+incorporating, in a gift request, one or more identifiers that identify selected
+content gifts from the catalog of compatible content files by the first
+terminal; and
+
+transmitting (508) the gift request by the first terminal to the gift server
+requesting that the one or more selected content gifts be provided to the
+
+second terminal.
+
+22. The computer-readable media of claim 21, further comprising instructions for
+including security information in the catalog request so that the catalog request
+
+can be authenticated.
+
+23. The computer-readable media of claim 21, further comprising instructions for
+
+requesting that the first terminal assume costs associated with the content gift.
+
+24. The computer-readable media of claim 21, wherein the instructions for
+transmitting the catalog request comprise instructions for transmitting the
+
+catalog request to the gift server using a wireless network connection.
+
+25. The computer-readable media of claim 21, wherein the instructions for
+transmitting the catalog request comprise instructions for transmitting the
+
+catalog request to the gift server using a wired network connection.
+
+26. The computer-readable media of claim 21, wherein the content gift is content
+
+that is not already owned by the second terminal.
+
+--- PAGE 5 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+27. The computer-readable media of claim 21, further comprising instructions for
+receiving a notification message that the content gift was not delivered to the
+
+second terminal because the content is already owned by the second terminal.
+
+28. The computer-readable media of claim 21, wherein at least one of the first and
+
+second terminals is a wireless device.
+
+29. A method in a gift server (408) of providing a content gift by a first terminal
+(102) to a second terminal (110), both terminals selectively communicating with
+the gift server (108) in a data network (104), the method comprising the steps
+of:
+
+providing content files (414) at the gift server;
+
+storing information about the hardware and software configurations of the
+second terminal in a database (112) at the gift server;
+
+receiving (302) a catalog request from the first terminal at the gift server for a
+catalog that identifies content files compatible with the hardware and
+software configuration of the second terminal, the catalog request
+including a terminal identifier of the second terminal used by the server to
+compile a list of compatible content files by searching the server database
+for configuration information and compatible content files;
+
+identifying by the gift server the compatible content files using the stored
+information about the hardware and software configuration of the second
+terminal in the database (306; 308);
+
+generating (308) the catalog of compatible content files using the terminal
+identifier of the second terminal included in the catalog request by
+identifying (303) targeted content that is compatible with the second
+terminal, and generating the catalog so that it identifies the targeted
+content;
+
+transmitting (310) the catalog of compatible content files to the first terminal;
+
+receiving (312) a gift request from the first terminal at the gift server requesting
+that one or more content gifts selected from the catalog be provided to the
+second terminal, the gift request including one or more identifiers that
+identify selected content gifts; and
+
+providing (324) the one or more selected content gifts to the second terminal.
+
+--- PAGE 6 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+30. The method of claim 29, wherein the step of receiving the catalog request
+
+further comprises authenticating (304) the catalog request.
+
+31. The method of claim 29, wherein the step of transmitting comprises
+transmitting the catalog to the first terminal using a communication channel
+that is selected from channels comprising wired and wireless communication
+
+channels.
+
+32. The method of claim 29, wherein the step of receiving a gift request comprises
+receiving the gift request from the first terminal requesting that the content gift
+selected from the catalog be provided to the second terminal, wherein the
+
+content gift is content that is not currently owned by the second terminal.
+
+33. The method of claim 29, further comprising:
+determining (320) that the content gift is already owned by the second terminal;
+and
+transmitting a notification message to the first terminal to indicate that the
+
+content gift was not provided to the second terminal.
+
+34. The method of claim 29, further comprising associating the costs of the content
+
+gift with the first terminal.
+
+35. The method of claim 29, wherein the step of providing the content gift
+comprises transmitting the content gift to the second terminal using a
+communication channel that is selected from channels comprising wired and
+
+wireless communication channels.
+
+36. The method of claim 29, wherein at least one of the first and second terminals is
+
+a wireless device.
+
+37. Apparatus in a gift server (108) for operating the server to provide a content gift
+by a first terminal (102) to a second terminal (410), both terminals selectively
+communicating with the gift server (108) in a data network (104), the apparatus
+
+comprising:
+
+means for providing content files (114) at the gift server;
+
+--- PAGE 7 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+means for storing information about the hardware and software configurations
+of the second terminal in a database (112) at the gift server;
+
+means (202) for receiving a catalog request from the first terminal at the gift
+server for a catalog that identifies content files compatible with the
+hardware and software configuration of the second terminal, the catalog
+request including a terminal identifier of the second terminal used by the
+server to compile a list of compatible content files by searching the server
+database for configuration information and compatible content files;
+
+means for identifying by the gift server the compatible content files using the
+stored information about the hardware and software configuration of the
+second terminal in the database (306; 308);
+
+means (208, 112, 212) for generating the catalog of compatible content files
+using the terminal identifier of the second terminal included in the catalog
+request by identifying (303) targeted content that is compatible with the
+second terminal, and generating the catalog so that it identifies the
+targeted content;
+
+means (204) for transmitting the catalog of compatible content files to the first
+terminal;
+
+means (206) for receiving a gift request from the first terminal at the gift server
+requesting that one or more content gifts selected from the catalog be
+provided to the second terminal, the gift request including one or more
+identifiers that identify selected content gifts; and
+
+means (114) for providing the one or more selected content gift to the second
+
+terminal.
+
+38. | The apparatus of claim 37, wherein the means for receiving the catalog request
+
+further comprises means for authenticating the catalog request.
+
+30. The apparatus of claim 37, wherein the means for transmitting comprises
+means for transmitting the catalog to the first terminal using a communication
+channel that is selected from channels comprising wired and _ wireless
+
+communication channels.
+
+40. The apparatus of claim 37, wherein the means for receiving a gift request
+
+comprises means for receiving the gift request requesting the content gift from
+
+--- PAGE 8 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+the catalog be provided to the second terminal, wherein the content gift is
+
+content that is not currently owned by the second terminal.
+
+41. The apparatus of claim 37, further comprising:
+means for determining that the content gift is already owned by the second
+terminal; and
+means for transmitting a notification message to the first terminal to indicate
+
+that the content gift was not provided to the second terminal.
+
+42. | The apparatus of claim 37, further comprising means for associating the costs of
+
+the content gift with the first terminal.
+
+43. The apparatus of claim 37, wherein the means for providing the content gift
+comprises means for transmitting the content gift to the second terminal using
+a communication channel that is selected from channels comprising wired and
+
+wireless communication channels.
+
+44. The apparatus of claim 37, wherein at least one of the first and second terminals
+
+is a wireless device.
+
+45. The apparatus of any of the preceding claims 37 to 44, wherein the means (202)
+for receiving a catalog request from the first terminal comprises a catalog
+
+request receiver.
+
+46. The apparatus of any of the preceding claims 37 to 45, wherein the means (208,
+112, 212) for generating the catalog comprises a database for generating the
+
+catalog.
+
+47. The apparatus of any of the preceding claims 37 to 46, wherein the means (204)
+
+for transmitting the catalog to the first terminal comprises a catalog transmitter.
+
+48. The apparatus of any of the preceding claims 37 to 47, wherein the means (206)
+
+for receiving a gift request from the first terminal comprises a gift receiver.
+
+--- PAGE 9 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+49. The apparatus of any of the preceding claims 37 to 48, wherein the means (114)
+for providing the content gift to the second terminal comprises logic for
+
+providing the content gift to the second terminal.
+
+50. Acomputer-readable media comprising instructions, which when executed by a
+processor in a gift server (108), operate to provide a content gift by a first
+terminal (402) to a second terminal (110), both terminals selectively
+communicating with the gift server (108) in a data network (104), the computer-
+
+readable media comprising instructions for:
+
+providing content files (414) at the gift server;
+
+storing information about the hardware and software configurations of the
+second terminal in a database (112) at the gift server;
+
+receiving (302) a catalog request from the first terminal at the gift server for a
+catalog that identifies content files compatible with the hardware and
+software configuration of the second terminal, the catalog request
+including a terminal identifier of the second terminal used by the server to
+compile a list of compatible content files by searching the server database
+for configuration information and compatible content files;
+
+identifying by the gift server the compatible content files using the stored
+information about the hardware and software configuration of the second
+terminal in the database (306; 308);
+
+generating (308) the catalog of compatible content files using the terminal
+identifier of the second terminal included in the catalog request by
+identifying (303) targeted content that is compatible with the second
+terminal, and generating the catalog so that it identifies the targeted
+content;
+
+transmitting (310) the catalog of compatible content files to the first terminal;
+
+receiving (312) a gift request from the first terminal at the gift server requesting
+that one or more content gifts selected from the catalog be provided to the
+second terminal, the gift request including one or more identifiers that
+identify selected content gifts; and
+providing (324) the one or more selected content gift to the second
+
+terminal.
+
+--- PAGE 10 ---
+T1503/12-33.5-01 February 6, 2019
+QUALCOMM Incorporated Q109269WOEP We/Mod/mel
+
+51. The computer-readable media of claim 50, wherein the instructions for
+receiving the catalog request further comprise instructions for authenticating
+
+the catalog request.
+
+52. The computer-readable media of claim 50, wherein the instructions for
+transmitting comprise instructions for transmitting the catalog to the first
+terminal using a communication channel that is selected from channels
+
+comprising wired and wireless communication channels.
+
+53. The computer-readable media of claim 50, wherein the instructions for
+receiving a gift request comprise instructions for receiving the gift request
+requesting the content gift from the catalog, wherein the content gift is content
+
+that is not currently owned by the second terminal.
+
+54. | The computer-readable media of claim 50, further comprising:
+instructions for determining that the content gift is already owned by the second
+terminal; and
+instructions for transmitting a notification message to the first terminal to
+
+indicate that the content gift was not provided to the second terminal.
+
+55. The computer-readable media of claim 50, further comprising instructions for
+
+associating the costs of the content gift with the first terminal.
+
+56. The computer-readable media of claim 50, wherein the instructions for
+providing the content gift comprise instructions for transmitting the content gift
+to the second terminal using a communication channel that is selected from
+
+channels comprising wired and wireless communication channels.
+
+57. The computer-readable media of claim 50, wherein at least one of the first and
+
+second terminals is a wireless device.

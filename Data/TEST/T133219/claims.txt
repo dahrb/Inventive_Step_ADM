@@ -1,0 +1,284 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+NEW CLAIMS
+
+1. A user device (16) serving as a secure agent for electronic ticket redeeming
+systems, the user device comprising:
+
+At least one wireless communication interface (42, 44) to communicate
+redemption transactions with the redeeming systems and electronic ticket transactions
+with a ticket issuing system, TIS (12);
+
+A security element (20) being a tamper resistant secure module, comprising at
+least one processor and associated memory, arranged for:
+
+storing an electronic ticket in the memory of the security element (20), said
+electronic ticket being generated with the desired content and signed or otherwise
+authenticated by the TIS (12) and
+
+sending the electronic ticket to a redeeming system (14) for high security
+verification of the ticket by a redeeming system, the electronic ticket comprised in a
+composite data object, digitally signed by the user device (16) and encrypted with a key
+known to the redeeming system, wherein the redeeming system (14) checks whether the
+received electronic ticket includes an authentic signature or other verification information
+from a legitimate TIS (12); wherein the user device further being arranged for:
+
+receiving a rapid verification object comprising a seed value from the redeeming
+system, in response to the verification; and
+
+using the rapid verification object for subsequent verification by generating a
+rapid verification token, RVT, based on the seed value of the rapid verification object,
+and for providing the rapid verification token to a rapid verification system (100) for
+subsequent verification by the rapid verification system having the same seed value as
+
+used by the user device (16), wherein the RVT is a verification sequence having at least
+
+22/31
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+one pseudorandom element generated in dependence on the seed value provided by
+
+the redeeming system (14).
+
+2. The user device of claim 1, wherein the user device is further arranged to
+generate a verification image having at least one pseudorandom attribute dependent on
+
+the seed value, which verification image is used for subsequent verification.
+
+3. The user device of claim 2, further comprising a user interface (54) arranged for
+
+displaying the verification image, for verification by a human operator.
+
+4. The user device of any of claims 1-3, wherein the security element (20) is
+arranged for encrypting the electronic ticket, and for sending the encrypted electronic
+
+ticket to the redeeming system.
+
+5. A redeeming system (14) arranged for managing the redemption of electronic
+tickets; the redeeming system comprising:
+
+At least one communication interface (80) to communicate redemption
+transactions with user devices storing electronic tickets; and
+
+A processing system (82) arranged for:
+
+Receiving, via the communication interface (80), an electronic ticket comprised in
+a composite data object, digitally signed by the user device (16) and encrypted with a
+key known to the redeeming system from a user device (16) according to any of claims
+1-4; and
+
+Verifying the electronic ticket by high security verification, wherein the redeeming
+system (14) checks whether the received electronic ticket includes an authentic
+signature or other verification information from a legitimate TIS (12);
+
+23/31
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+Wherein the redeeming system being further arranged for:
+Issuing a rapid verification object comprising a seed value to the user device
+(16), in response to the verification for subsequent verification use, wherein said seed
+
+value is provided by the redeeming system (14).
+
+6. The redeeming system according to claim 5, wherein the rapid verification object
+
+further comprises a user-identifying image.
+
+7. A system adapted for managing the redemption of electronic tickets, the system
+comprising:
+A user device (16) according to claim 1, and
+
+A redeeming system (14) according to claim 5,
+
+8. The system according to claim 7, wherein a seed value is used by the user
+device (16) in generating a verification sequence having a first pseudorandom element
+as the RVT, and wherein the rapid verification system (100) arranged for:
+
+receiving the verification sequence from the user device (16);
+
+generating a second pseudorandom element using the same seed value
+
+as used by the user device (16), and
+
+validating the RVT by comparing the first pseudorandom element to the
+
+second pseudorandom element.
+
+9. A method in a user device (16) for handling electronic tickets, wherein the user
+
+device, serving as a secure agent for electronic ticket redeeming, has at least one
+
+wireless communication interface (42) to communicate with redeeming systems, and a
+
+24/31
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+security element (20) being a tamper resistant secure module, comprising at least one
+processor and associated memory, the method comprising:
+
+Storing an electronic ticket in the memory in the memory of the security element
+(20);
+
+Sending the electronic ticket to a redeeming system (14) for high security
+verification by the redeeming system, wherein the redeeming system (14)
+checks whether the received electronic ticket includes an authentic
+signature or other verification information from a legitimate Ticket Issuing
+System (12);
+
+wherein that the method further comprises:
+
+Receiving a rapid verification object comprising a seed value from the redeeming
+system, in response to the verification, and
+
+Using the rapid verification object comprising a seed value for subsequent
+verification by generating a rapid verification token, RVT, based on the
+seed value of the rapid verification object, and for providing the rapid
+verification token to a rapid verification system (100) for subsequent
+verification by the rapid verification system having the same seed value
+as used by the user device (16), wherein the RVT is a verification
+sequence having at least one pseudorandom element generated in
+
+dependence on the seed value provided by the redeeming system (14).
+
+10. The method according to claim 9, further comprising the step of encrypting the
+
+electronic ticket, and wherein the step of sending comprises sending the encrypted
+
+electronic ticket object to the redeeming system.
+
+29/31
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+11. The method according to any of claims 9-10, wherein the step of using the rapid
+verification object comprises generating a verification image having at least one
+pseudorandom attribute dependent on the seed value, which verification image is used
+
+for subsequent verification.
+
+12. A method in a redeeming system (14) arranged for managing the redemption of
+electronic tickets; the redeeming system comprising at least one communication
+interface (80) to communicate with user devices according to any of claims 1-4 and
+storing electronic tickets, and a processing system (82), the method comprising the
+steps of:
+
+Receiving, via the communication interface (80), an electronic ticket comprised in
+a composite data object, digitally signed by the user device (16) and encrypted with a
+key known to the redeeming system from a user device (16); and
+
+Verifying the electronic ticket, by high security verification;
+wherein the method further comprises the step of:
+
+Issuing a rapid verification object comprising a seed value to the user device in
+response to the verification, for subsequent verification use, wherein said seed value is
+
+provided by the redeeming system (14).
+
+13. The method of claim 12, wherein the step of receiving comprises receiving an
+encrypted version of the electronic ticket, the method further comprises the step of
+
+decrypting the electronic ticket before it is verified.
+
+14. The method of claim 12 or 13, wherein the step of issuing a rapid verification
+object comprises transmitting a user-identifying image to the user device (16) as part of
+the rapid verification object.
+
+26/31
+
+--- PAGE 6 ---
+15. A method of managing the redemption of electronic tickets, the method
+comprising:
+A method in a user device (16) according to claim 9, and
+
+5 A method in a redeeming system (14) according to claim 12.
+
+16. The method according to claim 15, wherein the step of using the rapid verification
+object comprises:
+generating, in the user device, a rapid verification token, RVT, based on the rapid
+10 verification object, and
+
+subsequently verifying the rapid verification token.
+
+17. The method of claim16, wherein verifying the RVT comprises:
+receiving the verification sequence from the user device (16) at a rapid
+15 verification system (100); and
+validating the RVT by comparing the first pseudorandom element to a second
+pseudorandom element generated by the rapid verification system (100)
+
+using the same seed value used by the user device (16).
+
+2018. The method of claim 17, wherein the first pseudorandom element depends on
+the seed value and a user device (16) time-of-day value, and further comprising:
+receiving the verification sequence including the first pseudorandom element and
+the user device time-of-day value at the rapid verification system (100);
+generating the second pseudorandom element at the rapid verification system in
+25 dependence on the seed value and the user device time-of-day
+value; and
+
+27/31
+
+--- PAGE 7 ---
+validating the RVT by comparing the first pseudorandom element to the second
+pseudorandom element, and by verifying that the user device time-of-day
+value is within a predefined range of a rapid verification system time-of-
+
+day value.
+
+19. The method of claim 17, wherein the first pseudorandom element depends on
+the seed value and a user device (16) time-of-day value, and further comprising:
+receiving the verification sequence including the first pseudorandom element at
+the rapid verification system (100);
+
+10 generating the second pseudorandom element at the rapid verification system in
+dependence on the seed value and a rapid verification system time-of-
+day value; and
+
+validating the RVT by comparing the first pseudorandom element to the second
+pseudorandom element.
+
+15
+
+20. The method of any of claims 15-19, further comprising transmitting a user-
+identifying image from the redeeming system to the user device as part of the rapid
+
+verification object.
+
+28/31

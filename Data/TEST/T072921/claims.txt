@@ -1,0 +1,249 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+1 EP 18 175 669.3
+A5013160EPQ00Mm
+Main request (clean copy)
+
+CLAIMS
+
+A method for handling data requests directed to a database environment, the database en-
+vironment comprising a least one first platform providing original results to be stored in a
+second platform as prepared results, the second platform maintaining a pool of the pre-
+pared results in order to be returned to data requests, and a control unit for processing the
+data requests directed to the database environment, wherein each prepared result main-
+tained in the pool of the second platform is associated with an update indicator being a
+measure that the associated prepared result kept in the pool of the second platform is to be
+updated, the method comprising:
+— receiving, by the control unit, a data request;
+— determining, by the control unit, at least one prepared result corresponding to the
+data request;
+— comparing, by the control unit, the update indicator of the determined prepared re-
+sult corresponding to the data request with a threshold value;
+— inresponse to the control unit determining that the comparison indicates a require-
+ment to update the prepared result,
+
+— retrieving, by the control unit from the first platform, an updated version of
+the at least one prepared result;
+
+— updating, by the control unit, the prepared result in the pool of the second
+platform and the associated update indicator based on the updated version
+of the at least one prepared result by storing a new timestamp of the update
+of the at least one prepared result; and
+
+— returning, by the control unit, the updated version of the at least one result,
+
+— inresponse to the control unit determining that the comparison does not indicate a
+requirement to update the at least one prepared result,
+
+— the control unit returning the at least one determined prepared result;
+
+wherein the update indicator is defined by (1 — acc) - t, wherein acc is a probability
+that the associated prepared result is valid and t as an age of the associated prepared
+
+result.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2 EP 18 175 669.3
+A5013160EPQ00Mm
+Main request (clean copy)
+
+The method of claim 1, wherein the update indicator is defined by p - (1 — acc) - t,
+wherein p is an access frequency of the associated prepared result from the database envi-
+
+ronment.
+
+1- “t
+The method of claim 1, wherein the update indicator is defined by oe , wherein c
+
+is a measure for computation resources of the first platform needed to prepare the updated
+
+version of the associated prepared result.
+
+. 1- . t
+The method of any of claim 1, wherein the update indicator is defined by po
+
+wherein p is an access frequency of the associated prepared result from the database envi-
+ronment and c is a measure for computation resources of the first platform needed to pre-
+
+pare the updated version of the associated prepared result.
+
+The method of any of claims 1 to 4, further comprising
+— querying, by the control unit, a control data store on the basis of key infor-
+mation identifying the at least one prepared result;
+— receiving, by the control unit from the control data store, control data spec-
+
+ifying the update indicator associated with the at least one prepared result.
+
+6. The method of claim 5, wherein determining the at least one prepared result comprises
+
+— querying, by the control unit, the second platform for the at least one deter-
+mined prepared result fulfilling criteria specified by the data request;
+— receiving, by the control unit, the at least one prepared result from the pool
+
+of prepared results of the second platform.
+
+7. The method of any of claims 1 to 4, wherein determining the at least one prepared result
+
+corresponding to the data request comprises:
+— relaying, by the control unit, the data request to the second platform; and
+— receiving, by the control unit from the second platform, the at least one prepared
+
+result fulfilling criteria specified by the data request;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3 EP 18 175 669.3
+A5013160EPQ00Mm
+Main request (clean copy)
+
+wherein the method further comprises:
+— retrieving, by the control unit, the update indicator associated with the received
+
+prepared result.
+
+The method of any of claims 1 to 7, wherein the at least one prepared result corresponding
+to the data request comprises at least two prepared results, a first prepared result and a
+second prepared result, the method further comprising:
+
+— determining, by the control unit, that the comparison indicates a requirement to
+update the first prepared result, but does not indicate a requirement to update the
+second prepared result,
+
+— the control unit retrieving an updated version of the first prepared result from the
+first platform and updating the first prepared result in the pool of the second plat-
+form and the associated update indicator based on the retrieved updated version of
+the first prepared result; and
+
+— returning the updated version of the first prepared result and the second prepared
+
+result.
+
+9. Acontrol unit for handling data requests directed to a database environment, the control
+
+unit being coupled to a first platform providing original results to be stored in a second
+platform as prepared results, the second platform maintaining a pool of the prepared re-
+sults in order to be returned to data requests, wherein each prepared result maintained by
+the second platform is associated with an update indicator being a measure that the associ-
+ated prepared result kept in the second platform is to be updated, the control unit being
+arranged to:
+
+— receive a data request;
+
+— determine at least one prepared result corresponding to the data request;
+
+— compare the update indicator of the determined prepared result corresponding to
+
+the data request with a threshold value;
+— inresponse to determining that the comparison indicates a requirement to update
+
+the prepared result;
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+10.
+
+11.
+
+4 EP 18 175 669.3
+A5013160EPQ00Mm
+Main request (clean copy)
+
+— retrieve an updated version of the at least one prepared result based on the
+original response data from the first platform;
+
+— update the prepared result in the pool of the second platform and the asso-
+ciated update indicator based on the updated version of the at least one pre-
+pared result by storing a new timestamp of the update of the at least one
+prepared result; and
+
+— return the updated version of the at least one result;
+
+— inresponse to determining that the comparison does not indicate a requirement to
+update the at least one prepared result,
+
+— return the determined at least one prepared result;
+
+wherein the update indicator is defined by (1 — acc) - t, wherein acc is a probability that
+
+the associated prepared result is valid and t as an age of the associated prepared result.
+
+The control unit of claim 9 being arranged to perform the method of any of claims 2 to 8.
+
+A computer program for execution by a control unit for handling data requests directed to
+a database environment, the control unit being coupled to a first platform providing origi-
+nal results to be stored in a second platform as prepared results, the second platform main-
+taining a pool of the prepared results in order to be returned to data requests, wherein each
+prepared result maintained by the second platform is associated with an update indicator
+being a measure that the associated prepared result kept in the second platform is to be
+updated, the computer program being configured to — when executed by the control unit —
+to cause the control unit to:
+— receive a data request;
+— determine at least one prepared result corresponding to the data request;
+— compare the update indicator of the determined prepared result corresponding to
+the data request with a threshold value;
+— inresponse to determining that the comparison indicates a requirement to update
+the prepared result;
+— retrieve an updated version of the at least one prepared result based on the
+
+original response data from the first platform;
+
+--- PAGE 5 ---
+5 EP 18 175 669.3
+A5013160EPQ00Mm
+Main request (clean copy)
+
+— update the prepared result in the pool of the second platform and the asso-
+ciated update indicator based on the updated version of the at least one pre-
+pared result by storing a new timestamp of the update of the at least one
+prepared result; and
+
+5 — return the updated version of the at least one result;
+— inresponse to determining that the comparison does not indicate a requirement to
+update the at least one prepared result,
+
+— return the determined at least one prepared result;
+
+wherein the update indicator is defined by (1 — acc) - t, wherein acc is a probability that
+
+10 the associated prepared result is valid and t as an age of the associated prepared result.
+
+12. The computer program of claim 11 being configured to — when executed by the control
+
+unit — to cause the control unit to perform the method of any of claims 2 to 8.

@@ -1,0 +1,8 @@
+TITLE:
+A VLSI interconnection network router using a D-CAM with hidden refresh
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+A VLSI implementation of a programmable router scheme for parallel interconnection network architectures is presented in this paper. The router executes routing algorithms in 1.5 clock cycles, this being the fastest approach for flexible routers. To further increase throughput, the router operation has been made pipelined, achieving 1 routing decision per cycle. The implementation is based on a content addressable memory (CAM) that supports per entry unique bit masking. This programmable CAM requires few entries; this in turn makes it possible to implement a dynamic approach in order to reduce the transistor count. We have provided circuitry and arranged timing to achieve refreshing of the stored data in a hidden fashion. In addition to the CAM, we have incorporated a fast priority scheme that allows only one entry to be selected and a memory that stores the port assignment. The number of required CAM entries is extremely small; it is of the same order as the output ports.

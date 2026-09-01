@@ -1,0 +1,33 @@
+TITLE:
+Methods and systems for creating and using skins
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Systems for creating and rendering skins are described. In one described embodiment, a system is configured to provide multiple skin elements that comprise part of a user interface that is executing under the influence of a software application. The system synchronizes a property of at least one of the skin elements with a state associated with the software application such that a change in the state of the software application causes a change in the property of the one skin element. In one embodiment, synchronization takes place using an XML data structure.
+
+CLAIMS:
+A system comprising:
+means for providing multiple skin elements that comprise part of a user interface that is executing under the influence of a software application;
+means for synchronizing a property of at least one of the skin elements with a state associated with the software application such that a change in the state of the software application causes a change in the property of the one skin element, wherein said means for synchronizing comprises means for describing a synchronization using an XML data structure.
+2. The system of claim 1, wherein said means for describing comprises means for using a keyword to establish the synchronization.
+3. The system of claim 1, wherein said means for describing comprises:
+means for associating a keyword with the property of the one element; and
+means for associating the state of the software application with the keyword.
+4. The system of claim 1, wherein said means for synchronizing comprises means for using an XML name-value pair to effect the synchronization.
+5. A system comprising:
+one or more computer-readable media;
+one or more processors;
+computer-readable instructions on the one or more computer-readable media which, when executed, implement a method comprising:
+providing multiple skin elements that comprise part of a user interface that is executing under the influence of a software application;
+synchronizing a property of at least one of the skin elements with a state associated with the software application such that a change in the state of the software application causes a change in the property of the one skin element, wherein said synchronizing comprises describing a synchronization using an XML data structure.
+6. The system of claim 5, wherein said describing comprises using a keyword to establish the synchronization.
+7. The system of claim 5, wherein said describing comprises:
+associating a keyword with the property of the one element; and
+associating the state of the software application with the keyword.
+8. The system of claim 5, wherein said synchronizing comprises using an XML name-value pair to effect the synchronization.
+9. A system comprising:
+means for associating a state associated with a software application with a keyword, the state comprising one to which a property for a skin element associated with the software application is to be synchronized; and
+means for assigning the keyword and its associated state as a value of the property of the skin element.
+10. The system of claim 9, wherein said means for associating and said means for assigning comprise means for using an XML data structure.

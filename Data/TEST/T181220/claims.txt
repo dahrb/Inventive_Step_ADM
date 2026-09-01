@@ -1,0 +1,377 @@
+--- PAGE 1 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+CLAIMS (MAIN REQUEST)
+
+1. A method for generating configuration information, comprising:
+
+receiving (110, 210, 310), by a network control unit, a virtual machine association
+message, wherein the virtual machine association message comprises an identifier of a first
+virtual machine in a server and an identifier of a first virtual built-in network element in the
+server, where the first virtual built-in network element corresponds to the first virtual machine
+and the first virtual machine directly or indirectly connects with the first virtual built-in
+network element;
+
+determining (120, 211, 311), by the network control unit, first information according to
+the identifier of the first virtual machine,
+
+sending (212, 312), by the network control unit, the first information to a first network
+element and a network virtualization edge node in a virtual network to which the first virtual
+machine belongs, so that the first network element and the network virtualization edge node
+obtains an updated virtual machine location information mapping table according to the first
+information;
+
+wherein the first information comprises at least one of the following information:
+
+a first forwarding entry,
+
+a location information mapping entry of the first virtual machine, wherein the location
+information mapping entry of the first virtual machine comprises the identifier of the first
+virtual machine, an identifier of the first network element and an identifier of a first virtual
+network, wherein the first virtual network comprises the first virtual machine and the first
+virtual built-in network element;
+
+and
+
+a first network policy comprising at least one of the following: a virtual local area
+network configuration, a bandwidth limitation configuration, a quality of service
+configuration, a firewall configuration, a port isolation configuration, Dynamic Host
+Configuration Protocol snooping, load balancing, a virtual network identifier configuration;
+
+wherein when the first information comprises the first forwarding entry, the determining,
+by the network control unit, first information according to the identifier of the first virtual
+machine comprises:
+
+determining an address of the first virtual machine according to the identifier
+of the first virtual machine;
+
+determining, according to the identifier of the first virtual built-in network
+
+--- PAGE 2 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+element, the identifier of the first network element, and a network topology of the virtual
+network comprising the first virtual built-in network element, the first network element and
+the network virtualization edge node, a first outbound port that is on the first network element
+and leads to the first virtual built-in network element; and
+generating the first forwarding entry for the first network element according
+to the address of the first virtual machine and the first outbound port, wherein the address of
+the first virtual machine is an Internet Protocol address and/or a Media Access Control
+address;
+wherein when the first information comprises the location information mapping entry of
+the first virtual machine, the determining, by the network control unit, first information
+according to the identifier of the first virtual machine comprises:
+determining, according to a network topology of the virtual network
+comprising the first virtual built-in network element and the network virtualization edge node,
+and the identifier of the first virtual built-in network element, the network virtualization edge
+node, the number of hops from which to the first virtual built-in network element is the
+smallest;
+determining the identifier of the first virtual network; and
+generating the location information mapping entry of the first virtual
+machine;
+wherein when the first information comprises the first network policy, the determining,
+by the network control unit, first information according to the identifier of the first virtual
+machine comprises:
+searching a correspondence table and a network policy table according to the
+identifier of the first virtual machine, and determining a network policy corresponding to the
+first virtual machine, wherein the correspondence table is used to indicate a correspondence
+between an identifier of a virtual machine and an identifier of a network policy, and the
+network policy table comprises at least one group of network policies and an identifier of each
+group of network policies; and
+determining the first network policy, wherein the first network policy
+comprises the network policy corresponding to the first virtual machine.
+2. The method according to claim 1, wherein the determining an address of the first
+virtual machine according to the identifier of the first virtual machine comprises:
+when the identifier of the first virtual machine is the address of the first virtual machine,
+determining the identifier of the first virtual machine as the address of the first virtual
+
+machine;
+
+--- PAGE 3 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+or,
+
+searching for a correspondence between the identifier of the first virtual machine and the
+address of the first virtual machine according to the identifier of the first virtual machine, and
+determining the address of the first virtual machine.
+
+3. The method according to claim 1 or 2, wherein the determining an identifier of a first
+virtual network comprising the first virtual machine and the first virtual built-in network
+element comprises:
+
+when the virtual machine association message carries the identifier of the first virtual
+network, determining the identifier of the first virtual network according to the virtual
+machine association message;
+
+or,
+
+determining, according to the identifier of the first virtual machine, a first policy
+corresponding to the identifier of the first virtual machine, and determining the identifier of
+the first virtual network according to the first policy, wherein the first policy comprises the
+identifier of the first virtual network.
+
+4. The method according to any one of claims 1 to 3, further comprising:
+
+sending the first network policy to a network service device, wherein the network service
+device is configured to process services, where the services are at the fourth layer to the
+seventh layer of the Open System Interconnection model and are in an area in which the first
+virtual built-in network element is located, and the network service device is determined
+according to the identifier of the first virtual built-in network element and a network topology
+of a network comprising the first virtual built-in network element.
+
+5. The method according to any one of claims 1 to 4, wherein:
+
+the first network element is a network element on a path between a second virtual
+machine and the first virtual machine;
+
+or,
+
+the first network element is a network element on a path between a network
+virtualization edge node, the number of hops from which to the first virtual built-in network
+element is the smallest, and the first virtual machine;
+
+or,
+
+the first network element is a network virtualization edge node, the number of hops from
+which to the first virtual built-in network element is the smallest;
+
+or,
+
+the first network element is any network virtualization edge node in a virtual network to
+
+which the first virtual machine belongs;
+
+--- PAGE 4 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+or,
+the first network element is any network element in a network.
+
+6. The method according to any one of claims 1 to 5, wherein the receiving, by a network
+control unit, a virtual machine association message comprises:
+
+receiving, by the network control unit, the virtual machine association message from the
+first virtual built-in network element;
+
+or,
+
+receiving, by the network control unit, the virtual machine association message from an
+access switch, wherein the virtual machine association message is received by the access
+switch from the first virtual built-in network element.
+
+7. Anetwork control unit (1000), comprising:
+
+a receiving module (1010), configured to receive a virtual machine association message,
+wherein the virtual machine association message comprises an identifier of a first virtual
+machine in a server and an identifier of a first virtual built-in network element in the server,
+where the first virtual built-in network element corresponds to the first virtual machine and
+the first virtual machine directly or indirectly connects with the first virtual built-in network
+element; and
+
+a determining module (1020), configured to determine first information according to the
+identifier of the first virtual machine, wherein the first information comprises at least one of
+the following information: a first forwarding entry, a location information mapping entry of
+the first virtual machine, and a first network policy;
+
+a sending module (1030), configured to send the first information to a first network
+element;
+
+wherein the location information mapping entry of the first virtual machine comprises
+the identifier of the first virtual machine, an identifier of the first network element and an
+identifier of a first virtual network, wherein the first virtual network comprises the first virtual
+machine and the first virtual built-in network element; the first network policy comprises at
+least one of the following: a virtual local area network configuration, a bandwidth limitation
+configuration, a quality of service configuration, a firewall configuration, a port isolation
+configuration, Dynamic Host Configuration Protocol snooping, load balancing, a virtual
+network identifier configuration;
+
+wherein when the first information comprises the first forwarding entry, the determining,
+by the network control unit, first information according to the identifier of the first virtual
+machine comprises:
+
+determining an address of the first virtual machine according to the identifier
+
+4
+
+--- PAGE 5 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+of the first virtual machine;
+determining, according to the identifier of the first virtual built-in network
+element, the identifier of the first network element, and a network topology of the virtual
+network comprising the first virtual built-in network element, the first network element and
+the network virtualization edge node, a first outbound port that is on the first network element
+and leads to the first virtual built-in network element; and
+generating the first forwarding entry for the first network element according
+to the address of the first virtual machine and the first outbound port, wherein the address of
+the first virtual machine is an Internet Protocol address and/or a Media Access Control
+address;
+wherein when the first information comprises the location information mapping entry of
+the first virtual machine, the determining, by the network control unit, first information
+according to the identifier of the first virtual machine comprises:
+determining, according to a network topology of the virtual network
+comprising the first virtual built-in network element and the network virtualization edge node,
+and the identifier of the first virtual built-in network element, the network virtualization edge
+node, the number of hops from which to the first virtual built-in network element is the
+smallest;
+determining the identifier of the first virtual network; and
+generating the location information mapping entry of the first virtual
+machine;
+wherein when the first information comprises the first network policy, the determining,
+by the network control unit, first information according to the identifier of the first virtual
+machine comprises:
+searching a correspondence table and a network policy table according to the
+identifier of the first virtual machine, and determining a network policy corresponding to the
+first virtual machine, wherein the correspondence table is used to indicate a correspondence
+between an identifier of a virtual machine and an identifier of a network policy, and the
+network policy table comprises at least one group of network policies and an identifier of each
+group of network policies; and
+determining the first network policy, wherein the first network policy comprises the
+network policy corresponding to the first virtual machine.
+8. The network control unit (1000) according to claim 7, wherein when the first
+information comprises the first forwarding entry, the determining module (1020) is
+
+specifically configured to:
+
+--- PAGE 6 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+determine an address of the first virtual machine according to the identifier of the first
+virtual machine;
+
+determine, according to the identifier of the first virtual built-in network element, an
+identifier of the first network element, and a network topology of a network comprising the
+first virtual built-in network element and the first network element, a first outbound port,
+where the first outbound port is on the first network element and leads to the first virtual
+built-in network element; and
+
+generate the first forwarding entry for the first network element according to the address
+of the first virtual machine and the first outbound port, wherein a destination address of the
+first forwarding entry comprises the address of the first virtual machine, and an outbound port
+of the first forwarding entry comprises the first outbound port, wherein the address of the first
+virtual machine is an Internet Protocol address and/or a Media Access Control address.
+
+9. The network control unit (1000) according to claim 8, wherein the determining
+module (1020) is specifically configured to:
+
+when the identifier of the first virtual machine is the address of the first virtual machine,
+determine the identifier of the first virtual machine as the address of the first virtual machine;
+
+or,
+
+the determining module (1020) is specifically configured to search for a correspondence
+between the identifier of the first virtual machine and the address of the first virtual machine
+according to the identifier of the first virtual machine, and determine the address of the first
+virtual machine.
+
+10. The network control unit (1000) according to claim 8 or 9, wherein
+
+the first network element is a network element on a path between a second virtual
+machine and the first virtual machine;
+
+or,
+
+the first network element is a network element on a path between a network
+virtualization edge node, the number of hops from which to the first virtual built-in network
+element is the smallest, and the first virtual machine;
+
+or,
+
+the first network element is a network virtualization edge node, the number of hops from
+which to the first virtual built-in network element is the smallest;
+
+or,
+
+the first network element is any network virtualization edge node in a virtual network to
+which the first virtual machine belongs;
+
+or,
+
+--- PAGE 7 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+the first network element is any network element in a network.
+
+11. The network control unit (1000) according to any one of claims 7 to 10, wherein
+when the first information comprises the location information mapping entry of the first
+virtual machine, the determining module (1020) is specifically configured to:
+
+determine, according to a network topology of a network comprising the first virtual
+built-in network element and at least one network virtualization edge node, and the identifier
+of the first built-in network element, the network virtualization edge node, the number of hops
+from which to the first virtual built-in network element is the smallest;
+
+determine an identifier of a first virtual network comprising the first virtual machine and
+the first virtual built-in network element; and
+
+generate the location information mapping entry of the first virtual machine, wherein the
+location information mapping entry of the first virtual machine comprises:
+
+the identifier of the first virtual machine,
+
+an identifier of the network virtualization edge node, the number of hops from
+which to the first virtual built-in network element is the smallest, and
+
+the identifier of the first virtual network.
+
+12. The network control unit (1000) according to claim 11, wherein the determining
+module (1020) is specifically configured to:
+
+when the virtual machine association message carries the identifier of the first virtual
+network, determine the identifier of the first virtual network according to the virtual machine
+association message;
+
+or,
+
+determine, according to the identifier of the first virtual machine, a first policy
+corresponding to the identifier of the first virtual machine, and determine the identifier of the
+first virtual network according to the first policy, wherein the first policy comprises the
+identifier of the first virtual network.
+
+13. The network control unit (1000) according to any one of claims 7 to 12, wherein
+when the first information comprises the first network policy, the determining module (1020)
+is specifically configured to:
+
+search a correspondence table and a network policy table according to the identifier of
+the first virtual machine, and determine a network policy corresponding to the first virtual
+machine, wherein the correspondence table is used to indicate a correspondence between an
+identifier of a virtual machine and an identifier of a network policy, and the network policy
+table comprises at least one group of network policies and an identifier of each group of
+
+network policies; and
+
+--- PAGE 8 ---
+EP 14 751 284.2 Amendments clean
+14 July 2020
+
+determine the first network policy, wherein the first network policy comprises the
+network policy corresponding to the first virtual machine.
+
+14. The network control unit (1000) according to claim 13, wherein the sending module,
+configured to send the first network policy to a network service device, wherein the network
+service device is configured to process services, where the services are at the fourth layer to
+the seventh layer of the Open System Interconnection model and are in an area in which the
+first virtual built-in network element is located, and the network service device is determined
+according to the identifier of the first virtual built-in network element and a network topology
+of a network comprising the first virtual built-in network element.
+
+15. The network control unit (1000) according to any one of claims 7 to 14, wherein the
+receiving module (1010) is specifically configured to:
+
+receive the virtual machine association message from the first virtual built-in network
+element;
+
+or,
+
+receive the virtual machine association message from an access switch, wherein the
+virtual machine association message is received by the access switch from the first virtual
+
+built-in network element.

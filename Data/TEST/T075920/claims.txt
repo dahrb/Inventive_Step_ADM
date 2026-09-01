@@ -1,0 +1,169 @@
+--- PAGE 1 ---
+European Patent Application NUTECH COMPANY LIMITED
+No. 15200345.5 M/CPT-066-EP
+December 1, 2017 PA/HX
+
+NEW CLAIMS
+
+A method of vehicle type recognition, based on a laser scanner, recognizing a
+gap portion between a first portion, which is a head portion, and a second
+portion, which is a cargo portion, of a vehicle to be checked, the method
+
+comprising steps of:
+detecting that the vehicle to be checked has entered into a recognition area;
+causing the laser scanner to move relative to the vehicle to be checked;
+
+scanning the vehicle to be checked using the laser scanner on a basis of
+columns, and storing and splicing data of each column obtained by scanning to
+form a three-dimensional image of the vehicle to be checked, wherein a lateral
+
+width value is specified for each single column of data;
+specifying a height difference threshold;
+specifying an initial number of columns;
+
+starting the step of determining height difference only when data of columns
+
+after the initial number of columns has been scanned; and
+
+determining a height difference between the height at the lowest position of
+the vehicle to be checked in data of column N and the height at the lowest
+position of the vehicle to be checked in data of specified numbers of columns
+preceding and/or succeeding to the column N, if the absolute value of the
+height difference is larger than the specified height difference threshold,
+labeling a position of the vehicle to be checked corresponding to the data of
+the column N as a start position of the gap portion (C) of the vehicle to be
+checked, a length corresponding to data of the first N columns being the
+length of the first portion of the vehicle to be checked in the three-dimensional
+image, wherein the first portion is a head portion of the vehicle to be
+checked, after the column N is scanned, determining a third height difference
+
+between the height at the lowest position of the vehicle to be checked in data
+
+--- PAGE 2 ---
+European Patent Application NUTECH COMPANY LIMITED
+No. 15200345.5 M/CPT-066-EP
+December i, 2017 PA/HX
+
+of a column M and the height at the lowest position of the vehicle to be
+checked in data of specified numbers of columns preceding to the column M,
+wherein M > N, if the absolute value of the third height difference is larger
+than the specified height difference threshold, determining a length of the gap
+portion (C) of the vehicle to be checked in the three-dimensional image based
+on a distance difference between a position of the vehicle to be checked
+corresponding to the data of.the column M and a position of the vehicle to be
+
+checked corresponding to the data of the column N;
+determining the type of vehicle from the three-dimensional image.
+
+The method of either of claim 1, in particular claim 2, further comprising steps
+
+of:
+
+continuously measuring the movement speed of the vehicle to be checked
+
+relative to the laser scanner; and
+
+performing horizontal restoration of the three-dimensional image using the
+
+measured speed.
+
+The method of any one of claims 1 to 2, in particular claim 2, further
+
+comprising steps of:
+
+providing a restoration scale curve based on the measured relative movement
+speed, wherein the restoration scale curve depends on a speed corresponding
+
+to a collection frequency of the laser scanner;
+
+by restoring the length of the head portion of the vehicle and the length of the
+gap portion (C) in the three-dimensional image using the restoration scale
+curve, calculating the actual length of the head portion of the vehicle and the
+
+length of the gap portion (C); and
+
+by comparing the calculated actual length of the head portion of the vehicle
+and the length of the gap portion (C) with vehicle type information in a vehicle
+
+type database, obtaining the type of the vehicle to be checked.
+
+--- PAGE 3 ---
+4.
+
+European Patent Application NUTECH COMPANY LIMITED
+
+No. 15200345.5 M/CPT-066-EP
+December 1, 2017 PA/HX
+A fast vehicle type recognition system, comprising:
+
+a radiation scanning and imaging device comprising a radiation source for
+generating radiations and a detection device for receiving radiations passing
+through a vehicle to be checked, wherein the radiation source images the
+
+vehicle to be checked by emitting radiations towards the target to be checked;
+
+a laser scanner for recognizing the gap portion of the vehicle to be checked
+according to the method of one of claims 1 to 4 to distinguish the first portion
+and the second portion of the vehicle to be checked which are separated by
+
+the gap portion (C); and
+
+a control device for controlling the radiation source based on a signal from the
+laser scanner to emit radiations to irradiate the vehicle to be checked, wherein
+when the first portion of the vehicle to be checked enters into a radiation
+scanning region, the control device controls the radiation source to scan with a
+first dose; when the second portion of the vehicle to be checked enters into
+the radiation scanning region, the control device controls the radiation source
+
+to scan with a second dose.
+
+The fast vehicle type recognition system of claim 4, wherein distinguishing the
+first portion and the second portion of the vehicle to be checked is performed
+
+manually or using a computer algorithm program.
+
+The fast vehicle type recognition system of either of claims 4 or 5, in particular
+claim 5, wherein the first portion of the vehicle to be checked is a portion to
+be protected and the second portion of the vehicle to be checked is a portion
+for which no protection is needed; the first dose of the radiation source is a
+
+low dose and the second dose of the radiation source is a high dose.
+
+The fast vehicle type recognition system of any one of claims 4 to 6, in
+particular claim 6, wherein the low dose comprises a dose of zero; and/or the
+
+portion to be protected is the head portion of the vehicle.
+
+The fast vehicle type recognition system of one of claims 4-7, wherein the
+
+3
+
+--- PAGE 4 ---
+European Patent Application NUTECH COMPANY LIMITED
+No. 15200345.5 M/CPT-066-EP
+December 1, 2017 PA/HX
+
+10.
+
+11.
+
+laser scanner is further used to detect that a vehicle to be checked has
+
+entered into the radiation scanning region.
+
+The fast vehicle type recognition system of one of claims 4-8, further
+comprising a photoelectric switch for detecting that a vehicle to be checked
+
+has entered into the radiation scanning region.
+
+The fast vehicle type recognition system of one of claims 4-9, further
+comprising a speed measuring radar for detecting that a vehicle to be
+
+checked has entered into the radiation scanning region.
+
+The fast vehicle type recognition system of any one of claims 4 to 10, in
+particular claim 11, wherein after the vehicle to be checked has entered into
+the radiation scanning region, the speed measuring radar monitors the speed
+of the vehicle to be checked and provides a feedback to the control device, so
+as to control the scanning speed of the laser scanner and/or control the
+irradiation frequency of the radiation source.

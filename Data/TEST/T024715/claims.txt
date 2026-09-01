@@ -1,0 +1,95 @@
+--- PAGE 1 ---
+Main request
+
+Claims
+
+1. A method of scheduling delivery of multiple advertisements selectively to a
+
+plurality of online users having client devices (10), comprising:
+
+— determining expected values relating to each user being online to access
+information over the Internet during a given time period;
+
+— generating an ordered list of the advertisements to be selectively delivered to the
+users based on the expected values, said ordered list being prioritized to meet
+delivery requirements associated with said advertisements;
+
+— and generating an individual list of items of advertisements to be delivered to
+each user based on the ordered list, wherein said individual list is dynamically
+generated for each user on user login,
+
+— transmitting advertisements according to the individual list of advertisements to
+
+each user.
+
+2. The method of claim 1 wherein said expected values include the probability of
+each user being online during the given time period.
+
+3. The method of claim 1 wherein said expected values include a length of time each
+
+user is expected to be online during the given time period.
+
+4. Tne method of claim 1 wherein each said user has known profile or preference
+data, and said advertisement are selectively delivered to users based on their profile
+or preference data.
+
+5. The method of claim 1 wherein said ordered list is periodically generated based
+
+further on prior content deliveries made.
+6. The method of claim 5 wherein said ordered list is generated daily.
+
+7. The method of claim 1 wherein said ordered list comprises list excluded
+advertisements, said exclusion is based on the maximum number of times an
+
+advertisement can be delivered to the user.
+
+8. The method of Claim 1 wherein said advertisements are displayed on a display
+device operated by each user.
+
+--- PAGE 2 ---
+Main request
+
+9. The method of Claim 8 wherein said advertisements comprise banner
+
+advertisements
+
+10. The method of Claim 8 wherein said advertisements comprise pop-up
+
+advertisements.
+
+11. The method of Claim 1 further comprising tracking which advertisements have
+been delivered to each user.
+
+12. The method of Claim 1 wherein said delivery requirements specify the number of
+times an item of content is to be delivered to the users.
+
+13. The method of Claim 1 wherein said delivery requirements specify a time period
+
+during which a given number of deliveries of an item of content is to be made.
+
+14. A computer system for scheduling and delivering multiple advertisements
+
+selectively to a plurality of online users having client machines (10), each
+
+advertisement being associated with a delivery requirement, the system comprising:
+
+— amaster server (18) for determining data relating to a probability of a given user
+being online to access information over the Internet during a given time period,
+and generating an ordered master list of advertisements to be delivered based on
+a probability data and known prior deliveries of advertisements to users, said list
+being prioritized to meet delivery requirements associated with said
+advertisements; and
+
+— a plurality of local computers (10) linked to said master server (18), each local
+computer (10) generating an individual schedule on user login, said schedule
+comprising an individual list of selected advertisements to be delivered to said
+user in accordance with said ordered master list,
+
+— said selected advertisements comprising content for which the user is eligible to
+receive based on user profile or preference data.
+
+15. The system of claim 14 wherein said master server (18) comprises a Web server.
+
+16. The system of claim 14 wherein each of said local computers (10) comprises an
+
+Internet service provider point-of presence server.

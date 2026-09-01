@@ -1,0 +1,28 @@
+TITLE:
+Method and apparatus for providing availability of airline seats
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+An availability system used for a travel planning system is described. The system includes a cache having entries of availability information of seats for a mode of transportation and a cache manager that manages entry information in the cache so that information in the cache is correct, current, complete, or otherwise as useful as possible. The cache manager determines when a stored answer is stale and, if a stored answer is stale, sends an availability query to a source of availability information.
+
+CLAIMS:
+1. A method for managing a cache of entries containing availability information for a seat on an airline, comprises: determining a stored answer is stale and, if the retrieved stored answer is stale, sending an actual availability query to an source of availability information for an airline.
+2. The method of claim 1 wherein determining if the stored answer is stale comprises: monitoring availability queries made to the cache by a travel planning system to determine which flights, sets of flights, the flights for a certain day, date, or market have a high demand for availability information.
+3. The method of claim 1 wherein determining if the stored answer is stale comprises: scheduling a list where a list of keys of entries to update or add are generated and for each entry on the list in the order given, submitting a query to the availability source; and storing the result in the cache, by updating an entry if present and adding an entry if not present in the cache.
+4. The method of claim 1 wherein determining if the stored answer is stale comprises: scheduling multiple lists, by processes one entry from each list by a round-robin polling through the lists in turn until one entry has been processed from each list, and returning to the first list to process the next entry; generated an entry for each entry on the list in the order given, by submitting a query to the availability source; and storing the result in the cache, by updating an entry if present and adding an entry if not present in the cache .
+5. An availabilty system used for a travel planning system comprises: a cache includes entries of availability information of seats for a mode of transportation; and a cache manager that manages entry information in the cache so that information in the cache is correct, current, complete, or otherwise as useful as possible.
+6. The availability system of claim 5 wherein the cache manager determines when an entry should be added to the cache.
+7. The availability system of claim 5 wherein the cache manager determines when an entry should be deleted from the cache.
+8. The availability system of claim 5 wherein the cache manager determines when an entry already in the cache should be modified.
+9. The availability system of claim 5 wherein entries to be added, modified, or deleted are obtained by asynchronous notification from external systems.
+10. The availability system of claim 9 wherein entries to be added, modified, or deleted are taken from a list or multiple lists of predetermined entries.
+11. The availability system of claim 10 wherein the entries in the list include predetermined orderings or priorities.
+12. The availability system of claim 10 wherein entries to be added, modified, or deleted are determined from the distribution or nature of availability queries posed to the cache.
+13. The availability system of claim 10 wherein entries to be added, modified, or deleted are determined by using a predictor or model of the availability queries which are likely to be posed or are likely to be useful in the future.
+14. The availability system of claim 5 wherein the predictor or model is based on a deterministic, probabilistic, or statistical classifier or predictor, databases or cache of historical data or previously predicted information, simulations of various availability systems and actual availability data sources.
+15. The availability system of claim 10 wherein entries to be added, modified, or deleted are determined by comparing actual answers or cached answers to predictions made by a predictor or model of the availability information.
+16. The availability system of claim 10 wherein the predictor used to guide the cache manager operation predicts the rate of change or time of change of the seat availability.
+17. The availability system of claim 10 wherein entries to be added, modified, or deleted are determined by prior knowledge, such as busy travel days, important or busy markets, or busy travel times.
+18. The availability system of claim 10 wherein entries to be modified or deleted are determined by the date of travel for the seat in comparison to the current date.

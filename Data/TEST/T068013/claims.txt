@@ -1,0 +1,239 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+35
+
+Telefonaktiebolaget LM Ericsson (publ) -1l- EPA-102 355
+
+07 025 057.6
+
+Main Request of 1 March 2013
+
+Main Request
+
+1. An apparatus (100) for providing network access, the apparatus (100) com-
+prising:
+
+a first platform module (104) adapted to support network access via a
+first Radio Access Technology, or RAT, and comprising a first data inter-
+face (112);
+
+a second platform module (106) co-located with the first platform mod-
+ule (104) in the apparatus (100) and adapted to support network ac-
+cess via at least one second RAT;
+
+a first application (120) residing on the apparatus (100) and deployed
+within the second platform module (106) or on an application platform
+module coupled to the second platform module (106);
+
+a second data interface (164) adapted to be coupled to the second plat-
+form module (106);
+
+characterized by
+
+a third data interface (160') adapted to be coupled to an external device
+(102), wherein the device (102) is external with respect to the appa-
+ratus (100) and comprises a second application (142); and
+a switching hub (116) comprising the second data interface (164) and
+third data interface (160), the switching hub (116) having at least a
+first switching state and a second switching state and realizing a first
+switching mechanism (170, 172) adapted to selectively couple the first
+data interface (112) to at least one of
+i, the second data interface (164) in the first switching state to
+provide network access, via the first RAT, over a first data path
+and via the second platform module (106), to the first applica-
+tion (120) residing on the apparatus (100) and
+ii. the third data interface (160') in the second switching state to
+provide network access, via the first RAT, over a second data
+path to the second application (142) residing on the external de-
+vice (102).
+
+--- PAGE 2 ---
+Telefonaktiebolaget LM Ericsson (publ) -2- EPA-102 355
+07 025 057.6 Main Request of 1 March 2013
+
+2. The apparatus of claim 1, further comprising a first control mechanism (118)
+
+10
+
+20
+
+25
+
+30
+
+adapted to detect whether or not the external device (102) is connected to the
+apparatus (100) via the third interface (160), and to control the first switching
+mechanism (170, 172) dependent on a result of this detection.
+
+. The apparatus of claim 1 or 2, further comprising a second switching mecha-
+
+nism (170, 172) adapted to couple the second data interface (164) to the third
+data interface (160).
+
+. The apparatus of claims 2 and 3, wherein the first contro! mechanism (118)
+
+also controls the second switching mechanism (170, 172) dependent on the
+result of the detection of whether or not the external device (102) is connect-
+ed to the apparatus (100) via the third interface (160).
+
+. The apparatus of claim 4, further comprising a third control mechanism (118)
+
+adapted to control the second switching mechanism (170, 172) to couple the
+second data interface (164) to the third data interface (160') and to control
+the first switching mechanism (170, 172) to couple the first data interface
+(112) to the third data interface (160') to provide the first application (120)
+with network access via the first RAT, wherein network traffic between the
+first data interface (112) and the second data interface (164) is routed
+through the external device (102).
+
+. The apparatus of any of the preceding claims, wherein the first platform mod-
+
+ule (104) comprises a first control interface (122) and wherein the second
+platform module (106) comprises a second control interface (124).
+
+. The apparatus of claim 6, wherein the first control interface (122) and the se-
+
+cond control interface (124) are adapted for the transfer of both control sig-
+nalling and network traffic between the first platform module (104) and the
+second platform module (106).
+
+. The apparatus of claim 7, wherein network traffic between the first control in-
+
+terface (122) and the second control interface (124) is enabled when the first
+data interface (112) is coupled to the third data interface (160') to provide
+concurrent network access via the first RAT to the external device (102) and
+to the second platform module (106).
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+35
+
+Telefonaktiebolaget LM Ericsson (publ) -3- EPA-102 355
+07 025 057.6 Main Request of 1 March 2013
+
+9. The apparatus of any of the preceding claims, further comprising a network
+traffic splitter/combiner (116) located between the first data interface (116)
+on the one hand and, on the other hand, the first application (120) and the
+external device (102).
+
+10. The apparatus of any of the preceding claims, wherein the switching hub
+(116) further comprises a fourth data interface (162) adapted to be coupled to
+the first interface (112).
+
+11.The apparatus of any of the preceding claims, wherein the first platform mod-
+ule (104), the switching hub (116) and one or more of the switching mecha-
+nisms (170, 172) are integrated in an Application Specific Integrated Circuit,
+or ASIC.
+
+12. The apparatus of any of the preceding claims, wherein the first data interface
+(112) is selectively operable in a device mode and in a host mode.
+
+13.The apparatus of claim 12, further comprising a fourth control mechanism
+(118) adapted to operate the first data interface (112) in the host mode when
+the first data interface (112) is coupled via the second data interface (164) to
+the first application (120), and in the device mode when the first data inter-
+face (112) is coupled via the third data interface (160') to the external device
+(102).
+
+14. The apparatus of any of the preceding claims, wherein at least one of the first,
+the second and the third data interface (112, 164, 160) is a Universal Serial
+Bus, or USB, interface.
+
+15.The apparatus of any of the preceding claims, further comprising an applica-
+tion processor coupled to or included in the second platform module (106).
+
+16.The apparatus of any of the preceding claims, wherein at least one of the first
+platform module (104) and the second platform module (106) comprises a
+digital baseband processor (108, 110) configured in accordance with at least
+one of the first RAT and the second RAT, respectively.
+
+17.The apparatus of any of the preceding claims, wherein the apparatus (100) is
+configured as at least one of a mobile terminal, a mobile telephone and a
+
+--- PAGE 4 ---
+15
+
+20
+
+25
+
+30
+
+35
+
+Telefonaktiebolaget LM Ericsson (publ) -4- EPA-102 355
+
+07 025 057.6
+
+Main Request of 1 March 2013
+
+network card, or as an ASIC for use in a mobile terminal, a mobile telephone
+or a network card.
+
+18.A method of providing network access by an apparatus (100) having a first
+platform module (104), a second platform module (106) co-located with the
+first platform module (104) in the apparatus (100) and a first application (120)
+residing on the apparatus (100) and deployed within the second platform
+module (160) or on an application platform moduel coupled to the second
+platform module (106), the method comprising:
+
+providing, at a first data interface (112) of the first platform module
+(104), network access via a Radio Access Technology, or RAT, support-
+ed by the first platform module (104), wherein the second platform
+module (106) is adapted to support network access via at least one se-
+cond RAT; and
+
+characterized by
+
+providing a device (102) that is external with respect to the apparatus
+(100) and comprises a second application (142); and
+selectively coupling, by a switching hub (116) comprising the second
+data interface (164) and the third data interface (160), the switching
+hub (160) having a least a first switching state and a second switching
+state, the first data interface (112) to at least one of
+i. asecond data interface (164) in the first switching state to pro-
+vide network access, via the first RAT, over a first data path and
+via the second platform module (106) coupled to the second da-
+ta interface (164), to the first application (120) residing on the
+apparatus (100) and
+ii. a third data interface (160') in the second switching state to pro-
+vide network access, via the first RAT, over a second data path
+to the second application (142) residing on the external device
+(102) coupled to the third interface (160').
+
+19.The method of claim 18, further comprising detecting the presence of the ex-
+ternal device (102) at the third data interface (160') and coupling the first data
+interface (112) to the third data interface (160’).
+
+20.The method of claim 18 or 19, further comprising receiving a network access
+request from the second platform module (106) and coupling the first data in-
+
+--- PAGE 5 ---
+Telefonaktiebolaget LM Ericsson (pub!) -5- EPA-102 355
+07 025 057.6 Main Request of 1 March 2013
+
+terface (112) to the second data interface (164).
+
+21.The method of any of claims 18 to 20, further comprising coupling the second
+data interface (164) to the third data interface (160') and coupling the first da-
+5 ta interface (112) to the third data interface (160') to provide the first applica-
+tion (120) with network access via the first RAT, wherein network traffic
+between the first data interface (112) and the second data interface (164) is
+routed through the external device (102).
+
+10 22.A computer program product comprising program code portions for perform-
+ing the steps of any of claims 18 to 21 when executed by the apparatus of any
+of claims 1 to 17.
+
+23. The computer program product of claim 22, stored on a computer-readable
+15 recording medium.

@@ -1,0 +1,43 @@
+TITLE:
+A receipt storage system
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+The management of printed receipts is complex. Invariably, receipts are lost or fade through handling so as to become illegible, thereby resulting in the purchaser undesirably having no proof of purchase. To address this problem A receipt storage system (2) is provided as shown. The system (2) is arranged to systematically store in a receipt database (22), electronic (or software) receipts that correspond to purchases made by a user (8). The user (8) can remotely access the receipt database (22) using a networked personal computer (4) at a later stage, and in doing so obtain copies of their receipts or manage their receipts as required. The electronic receipt can be retained as a proof of purchase, and can be used at a later stage when returning faulty goods or when claiming purchases as tax deductions.
+
+CLAIMS:
+1. A system for storing an electronic receipt relating to a purchase made by a user, the system including: a receiver for receiving a user identifier associated with the user from an identity device; a generator responsive to the receiver for generating the receipt which is associated with the received user identifier; and a storage device in communication with the generator for storing the generated receipt.
+3. A system according to claim 1 further including the identity device for carrying the user identifier.
+4. A system according to any one of the preceding claims, wherein the identity device comprises a swipe card.
+5. A system according to any one of claims 1 to 4, wherein the identity device comprises a proximity card.
+6. A system according to any one of the preceding claims, wherein the reader comprises a card reader.
+7. A system according to any one of claims 1 to 5, including a point of sale (POS) terminal which includes the card reader.
+8. A system according to claim 7, wherein the POS terminal includes an electronic funds transfer (EFT) POS terminal for reading a funds card associated with a user account.
+9. A system according to claim 8, including a funds transfer manager for transferring funds from the user account to a merchant account.
+10. A system according to any one of the preceding claims, wherein the generator includes the card reader.
+11. A system according to any one of claims 1 to 9 wherein the generator includes a system administrator interfaced between the card reader and the storage device.
+12. A system according to any one of claims 1 to 9, wherein the generator includes the card reader and a system administrator interfaced between the card reader and the storage device.
+13. A system according to any one of claims 11 to 12, wherein the system administrator includes a computational device and a network server.
+14. A system according to claim 13, wherein the system further includes a user interface for enabling the user to remotely access to the storage device.
+15. A system according to claim 1 to claim X, wherein the generated receipt includes the received user identifier is thereby associated with the received user identifier.
+16. A system according to claim 15, wherein the generated receipt further includes any one or more of the following group of purchase fields: the name of each purchased item, the price of each purchased item, a tax deduction flag associated with each item and which indicates whether the item is tax deductible, a tax deduction flag associated with the receipt and which indicates whether each item of the receipt is tax deductible, the total purchase price, a merchant identifier associated with merchant from whom the purchase was made, a unique receipt number, the user name and/or address, the merchant name and/or address, and the time and date of the purchase.
+17. A system according to any one of claims 1 to X wherein the storage device defines a database of user records, each user record including a user identifier which corresponds to a respective user and one or more receipts associated with the user identifier.
+18. A system according to claim 17, wherein the storage device defines a database of merchant records, each merchant record including a merchant identifier which corresponds to a respective merchant.
+19. A system for generating an electronic receipt relating to a purchase made by a user, the system including: a generator for generating the receipt which is associated with a received user identifier, the user identifier being associated with the user.
+20. A method for storing an electronic receipt relating to a purchase made by a user, the method including the steps of: receiving a user identifier associated with the user from an identity device; generating the receipt which is associated with the received user identifier; and storing the generated receipt.
+21. A method according to claim 20, wherein the step of receiving includes swiping the identity device through a reader.
+22. A method according to claim 20 or claim 21 , wherein the step of generating includes a step of combining information received from the identity device with information relating to the merchant.
+23. A method according to any one of claims 20 to 22 wherein the purchase is made using a funds card such as a credit card or a debit card.
+24. A method for generating an electronic receipt relating to a purchase made by a user, the method including the step of: generating the receipt which is associated with a received user identifier from an identity device, the received user identifier being associated with the user.
+25. A method for generating an electronic receipt relating to a purchase made by a user, the method including the step of: generating the receipt which is associated with a received user identifier, the received user identifier being associated with the user.
+26. A system arranged to perform a method according to any one of claims 20 to 25.
+27. An electronic receipt generated in accordance with any one or more of claims 20 to 25.
+28. A media containing machine readable instructions for execution by one or more processors to thereby perform a method according to any one of claims 20 to 25.
+29. A media according to claim 28 comprising any one of: a magnetic disk; an optical disk; a solid state memory; a radio frequency ID device.
+30. A computational device loaded with computer readable instructions to perform a method according to any one of claims 20 to 25.
+31. A database including a plurality of user records, each user record including a user identifier which corresponds to a respective user and one or more electronic receipts associated with the user identifier.
+32. A database according to claim 31 , including merchant records, each merchant record including a merchant identifier which corresponds to a respective merchant.
+33. A method for preparing a tax return using a plurality of electronic receipts, the method involving the step of: forming, using a computational device, a set of tax deductible receipts from the plurality of receipts or a set of tax deductible purchase items from one or more of the receipts.
+34. A method for forming a set of tax deductible purchase items, the method involving the step of: selecting, using a computational device, one or more tax deductible purchase items from one or more electronic receipts to thereby form the set.

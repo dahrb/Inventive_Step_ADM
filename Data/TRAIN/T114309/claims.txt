@@ -1,0 +1,200 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A contribution processing system having a plurality of contribution
+processing devices connected to a server over the Internet, each contribution
+processing device comprising:
+
+receiving means operable to receive over the network (300), from the server
+(301), content data for displaying a web page, wherein the receiving means is
+operable such that, said web page displays a user contribution icon (242) including
+a contribution button which is configured to be selected to indicate that a
+contribution is to be given;
+
+display means operable to control a content display screen, said content display
+screen being operable to display the contribution icon (242) and the contribution
+button;
+
+contribution data creating means operable to create contribution data that is a
+
+monetary amount of contribution after the contribution button is selected on said
+content display screen; wherein the
+
+transmitting means is operable to transmit to said server said contribution data
+
+created by said contribution data creating means to a contribution managing device
+located in the contribution acceptance unit (32) over said network (300) and user
+identification information, and the server comprising
+a contribution acceptance unit (32) operable to provide an indication of an
+acceptance of the contribution and to require monetary payment information if the user
+is not identified as a registered user in a user information database (45);
+
+a user information database (45) located in the contribution acceptance unit
+(32) operable to store the content identification data in association with the content,
+and a management server (36) operable to convert the contribution data received from
+the contribution processing device into points at a given conversation rate; and
+
+the user information database (45) being operable to update the points stored in
+
+the user information database (45) associated with the content identification data.
+
+2. The contribution processing system according to Claim 1, wherein
+
+102
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+said contribution data creating means is operable to display a contribution
+amount selection screen showing a plurality of amounts on said display means in
+response to the selection of said contribution button, and creates said contribution data
+
+corresponding to said amount selected on said contribution amount selection screen.
+
+3. The contribution processing system according to Claim 1, wherein
+said contribution data creating means creates said contribution data equivalent
+to an amount which is directly entered in a contribution amount input area
+
+corresponding to said contribution button when the contribution button is selected.
+
+4. The contribution processing system according to Claim 1, wherein
+
+said contribution data creating means changes an amount directly entered in a
+contribution amount input area corresponding to said contribution button by the
+amount more than a fixed minimum amount, according to user's operations when the
+contribution button is selected, and creates said contribution data equivalent to the
+
+changed amount.
+
+5. A contribution processing method carried out over the Internet, the method
+at a client comprising:
+
+a receiving step of receiving over the network (300), from a server, content
+data for displaying a web page, said web page configured to display a user contribution
+icon (242) including a contribution button configured to be selected to indicate that a
+contribution is to be given.
+
+a control step of controlling a content display screen such that the content
+display screen displays the contribution button;
+
+a contribution data creating step of creating contribution data that is a monetary
+amount of contribution after the contribution button is selected on said content display
+screen; and
+
+a transmitting step of transmitting user identification information for
+comparison in a user information database (37) located in the contribution acceptance
+
+unit (32) and transmitting said contribution data created at said contribution data
+
+103
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+creating step to a contribution managing device located in the contribution acceptance
+unit (32) over said network, the method at the server comprising:
+
+an indication step of indicating an acceptance of the contribution and to require
+payment information if the user is not identified as a registered user in a viewer
+information database (40);
+
+storing the content identification data in association with the content;
+
+converting the contribution data received from the client into points at a given
+conversion rate; and
+
+updating the points stored in the user information database (45) which are
+
+associated with the content identification data.
+
+6. The contribution processing method according to Claim 5, wherein
+
+said contribution data creating step is to display a contribution amount
+selection screen displaying a plurality of amounts in response to the selection of said
+contribution button, and to create said contribution data equivalent to said amount
+
+selected on said contribution amount selection screen.
+
+7. The contribution processing method according to Claim 5, wherein
+said contribution data creating step further creates said contribution data
+equivalent to an amount which is directly entered in a contribution amount input area
+
+corresponding to said contribution button when the contribution button is selected.
+
+8. The contribution processing method according to Claim 5, wherein
+
+said contribution data creating step further changes an amount directly entered
+in a contribution amount input area corresponding to said contribution button by the
+amount more than a fixed minimum amount, according to user's operations when the
+contribution button is selected, and to create said contribution data equivalent to the
+
+changed amount.
+
+9. A program storage medium which, when loaded into a computer system,
+
+configure the system to perform a method according to anyone of claims 5 to 8.
+
+104
+
+--- PAGE 4 ---
+10
+
+15
+
+MAIN REQUEST
+
+10. A server being connected to a plurality of contribution processing devices
+over the Internet, the server (301) storing content data for displaying a web page on
+each of the contribution processing devices and being configured to receive
+contribution data that is a monetary amount of contribution from each of the plurality
+of contribution processing devices in response to the request for the content data as
+well as receiving user identification information from each of the contribution
+processing devices that identifies the user of the respective device, the server
+comprising:
+
+a contribution acceptance unit (32) operable to provide an indication of an
+acceptance of the contribution and to require monetary payment information if the user
+is not identified as a registered user in a user information database (45);
+
+a user information database (45) located in the contribution acceptance unit
+(32) operable to store the content identification data in association with the content,
+and a management server (36) operable to convert the contribution data received from
+the contribution processing device into points at a given conversation rate; and
+
+the user information database (45) being operable to update the points stored in
+
+the user information database (45) associated with the content identification data.
+
+105

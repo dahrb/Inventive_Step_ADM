@@ -1,0 +1,46 @@
+TITLE:
+Method and System for Processing Electronic Mail
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method and system for processing email messages are disclosed. In at least one embodiment, the method includes receiving a first signal input indicative of a request that contents of a selected email message be displayed on a display associated with a client computer device, wherein the contents are stored in a memory device associated with a server computer device and include contents of at least one other email message. The method further includes causing displaying of the contents of the selected email message for reviewing by the user. The method additionally includes making a determination of whether the contents of the at least one other email message have been reviewed by the user during the user's review of the contents of the selected email message, and providing an indication regarding whether or to what extent the at least one other email message has been read based upon the determination.
+
+CLAIMS:
+1. A method of processing email messages, the method comprising:
+receiving a first signal input by a user via a client computer device indicative of a request that contents of a selected email message be displayed on a display associated with the client computer device,
+wherein the contents of the selected email message are stored in a memory device associated with a server computer device and include contents of at least one other email message;
+causing displaying on the display of at least some of the contents of the selected email message for reviewing by the user;
+making a determination, at either the client computer device or the server computer device, of whether the contents of the at least one other email message have been reviewed by the user during a review by the user of the displayed contents of the selected email message; and
+providing an indication regarding whether or to what extent the at least one other email message has been read based upon the determination.
+2. The method of claim 1, wherein the at least one other email message includes a first message, and wherein the indication that is provided is regarding whether the first message has been read.
+3. The method of claim 1, wherein the determination of whether the contents of the at least one other email message have been reviewed by the user includes a further determination as to an extent to which the contents of the selected email message have been read entirely or partially by the user.
+4. The method of claim 3, wherein at least one visual cue within the selected email message is employed in the making of the determination as to the extent to which the contents of the selected email message have been read entirely or partially by the user.
+5. The method of claim 4, wherein the at least one visual cue is selected from the group consisting of a highlighting of text, a boldfacing of text, an italicizing of text and a colorization of text.
+6. The method of claim 4, wherein the at least one visual cue can be set based upon one of a manually provided input or an automatically set value.
+7. The method of claim 3, wherein the determination as to the extent to which the contents of the selected email message have been read entirely or partially by the user depends upon a length of time that those contents are displayed by the display.
+8. The method of claim 7, wherein the contents of the selected email message must be displayed for at least the length of time in order for it to be determined that those contents have been read by the user, and wherein the length of time is selected from one of a pre-defined value, a user-defined value and a dynamically set function.
+9. The method of claim 1, further comprising determining whether a first portion of the contents of the selected email message corresponds exactly to first contents of a first other email message among the at least one other email message.
+10. The method of claim 9, wherein the determining is achieved by using at least one of cyclical redundancy check (CRC) information embedded within at least one of the selected email message and the first other email message, and a unique key assigned to the first other email message.
+11. The method of claim 1, wherein the indication provided is indicative as to what extent the at least one other email message has been read, and the indication is selected from the group consisting of a progress bar, a color hue and a percentage number.
+12. The method of claim 1, wherein the contents of the selected email message and the at least one other email message are all stored in the memory device associated with the server computer device in a first inbox affiliated with the client computer device, and wherein the selected email message was received in the inbox after being sent by an additional client computer device.
+13. The method of claim 12, wherein the display is caused to provide a listing of all of the email messages within the inbox affiliated with the client computer device, and wherein the server computer device in a second inbox stores additional email messages associated with an additional inbox.
+14. A method for processing email messages, the method comprising:
+a) receiving at a client computer device an indication from a user to display contents of a selected email message stored in a server device, wherein the contents of the selected email message include a first portion and a second portion corresponding to contents of first and second previous email messages also stored in the server device, respectively;
+b) displaying at the client computer device the contents of the selected email message for reading;
+c) determining whether the first portion of the selected email message has been sufficiently considered by the user during the displaying of the contents of the selected email message;
+d) providing an indication at the client computer device as to whether the first previous email message has been read based upon the determining; and
+e) repeating (c)-(d) in relation to the second portion and the second previous email message.
+15. The method of claim 14, wherein the determining of whether the first portion of the selected email message has been sufficiently considered includes at least one of determining whether a manual input has been received from the user indicating that the user has read the first portion, and determining whether the first portion has been displayed at the client computer device in a manner meeting a first criterion.
+16. The method of claim 15, wherein when the manual input is received, the client computer device modifies a manner in which the first portion is displayed.
+17. The method of claim 15, wherein the first criterion is a length of time that the first portion has been displayed at the client computer device.
+18. The method of claim 15, further comprising displaying at the client computer device a listing of a plurality of email messages included in an inbox associated with the client computer device, wherein the selected, first and second previous email messages are included among the plurality of email messages, and wherein the indication that is provided as to whether the first previous email message has been read is a modification of a manner in which a subject line associated with the first previous email message in the listing is displayed.
+19. A system for processing emails, the system comprising:
+a server computer device having a processing device and a memory including at least one database for storing a plurality of email messages associated with an inbox accessible by a client computer device operated by a user,
+wherein the server computer device is capable of receiving information from a client computer device that is indicative of an extent to which a user operating the client computer device has reviewed contents of a first email message included among the plurality of email messages,
+wherein the server computer device is configured to determine, based upon the received information, whether the user has reviewed contents of another email message among the plurality of email messages while reviewing the contents of the first email message, and
+wherein, upon making a determination that the user has reviewed the contents of the other email message while reviewing the contents of the first email message, the server computer device modifies a read status of the other email message as stored in the memory and further provides a signal for receipt by the client computer device causing the client computer device to provide an indication of the modified read status.
+20. The system of claim 19, wherein at least one of the following is true:
+(i) the memory further stores an additional plurality of email messages associated with an additional inbox accessible by an additional client computer device, wherein the additional inbox is capable of storing at least one email message that is sent from the client computer device that is intended for an additional client computer device associated with the additional inbox; and
+(ii) the server computer device is capable of communicating at least indirectly with at least one additional server computer device from which the server computer device has received at least one of the email messages.

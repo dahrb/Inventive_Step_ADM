@@ -1,0 +1,192 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+- 43 -
+Claims:
+
+1. A method of identifying a non-small cell lung cancer patient as being likely to
+benefit from treatment with a drug targeting an epidermal growth factor receptor
+pathway or not likely to benefit from treatment with said drug, comprising the steps
+of:
+
+a) obtaining a mass spectrum from a blood-based sample from the
+patient (1502);
+
+b) —_ performing one or more predefined pre-processing steps on the
+mass spectrum obtained in step a) (1504);
+
+Cc) obtaining integrated intensity values of selected features in said
+spectrum at one or more m/z ranges associated with differentiating peaks obtained
+from a training set of class-labelled spectra produced from samples from other
+patients having a same or similar clinical stage disease after the pre-processing
+steps on the mass spectrum in step b) have been performed;
+
+d) using the values obtained in step c) in a classification algorithm
+using said training set to identify the patient as being either likely or not likely to
+benefit from the said drug (1506).
+
+2. The method of claim 1, wherein said one or more m/z ranges comprise one
+or more m/z ranges selected from the. group of m/z ranges consisting of:
+5732 to 5795
+
+5811 to 5875
+
+6398 to 6469
+
+11376 to 11515
+
+11459 to 11599.
+
+11614 to 11756
+
+11687 to 11831
+
+11830 to 11976
+
+12375 to 12529
+
+23183 to 23525
+
+23279 to 23622
+
+65902 to 67502.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+~44-
+
+3. The method of claim 2, wherein step c) obtains values from said spectrum at
+at least 8 of said m/z ranges in the group.
+
+4. The method of claim 2 or 3, wherein step c) obtains values from said
+
+spectrum at all of the m/z ranges in the group.
+
+5. The method of claim 1, 2, 3 or 4, wherein the one or more pre-processing
+
+steps includes a step of subtracting background contained in the spectrum.
+
+6. The method of claim 5, wherein the one or more pre-processing steps
+includes a step of normalizing the background subtracted spectrum.
+
+7. The method of claim 6, wherein the step of normalizing the background
+
+subtracted spectrum comprises performing a total ion current normalization.
+
+8. The method of claim 5, 6 or 7, wherein the one or more pre-processing
+steps includes a step of aligning the background subtracted spectrum to a
+
+predefined mass scale.
+
+9. The method of any preceding claim, wherein the mass spectrum is obtained
+
+from a MALDI mass spectrometer.
+
+10. Apparatus (202) configured to identify a non-small cell lung cancer patient
+as being likely to benefit from treatment with a drug targeting an epidermal growth
+factor receptor pathway or not likely to benefit from treatment with said drug,
+comprising:
+a storage device (218) storing a mass spectrum of a blood-based sample
+from the patient, and .
+a processor (210) executing software instructions configured to
+a) obtain integrated intensity values of features in said mass
+spectrum at one or more m/z ranges, the m/z ranges associated with
+differentiating peaks obtained from a training set of class-labelled spectra
+produced from samples from other patients having a same or similar clinical
+stage disease selected from the group of m/z ranges consisting of:
+5732 to 5795
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+- 45 -
+
+5811 to 5875
+
+6398 to 6469
+
+11376 to 11515
+
+11459 to 11599
+
+11614 to 11756
+
+11687 to 11831
+
+11830 to 11976
+
+12375 to 12529
+
+23183.to 23525
+
+23279 to 23622
+
+65902 to 67502; and
+
+b) apply a classification algorithm operating on the values of the
+features in the spectrum at the selected one or more m/z ranges and using
+said training set to identify the patient as being either likely or not likely to
+benefit from a drug targeting an epithelial growth factor receptor pathway.
+
+11. The apparatus of claim 10, wherein the instructions obtains values at at
+
+least eight of the m/z ranges in the group.
+
+12. The apparatus of claim 10 or 11, wherein the instructions obtains values at
+
+all of the m/z ranges in the group.
+13. | The method of any of claims 1 to 9, wherein the drug comprises gefitinib.
+14. The method of any of claims 1 to 9, wherein the drug comprises erlotinib.
+
+15. | The method of any of claims 1 to 9, 13 or 14, wherein the classification
+algorithm comprises a K-nearest neighbour classification algorithm.
+
+16. The method of claim 15, wherein the K-nearest neighbour classification
+algorithm comprises a probabilistic K-nearest neighbour classification algorithm.
+
+17. The apparatus of any of claims 10 to 12, wherein the drug comprises
+
+gefitinib.
+
+--- PAGE 4 ---
+- 46 -
+
+18. | The apparatus of any of claims 10 to 12, wherein the drug comprises
+
+erlotinib.
+
+19. The apparatus of any of claims 10 to 12, 17 or 18, wherein the classification
+
+algorithm comprises a K-nearest neighbour classification algorithm.
+
+20. The apparatus of claim 19, wherein the K-nearest neighbour classification
+algorithm comprises a probabilistic K-nearest neighbour classification algorithm.

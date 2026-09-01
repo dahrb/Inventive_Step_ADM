@@ -1,0 +1,84 @@
+Title: Automated Network Configuration of Virtual Machines in a Virtual Lab Environment
+
+Abstract: Methods, systems, and computer programs for creating virtual machines (VM) and associated networks in a virtual infrastructure are presented. The method defines virtual network templates in a database, where each virtual network template includes network specifications. A configuration of a virtual system is created, which includes VMs, virtual lab networks associated with virtual network templates, and connections from the VMs to the virtual lab networks. Further, the configuration is deployed in the virtual infrastructure resulting in a deployed configuration. The deployment of the configuration includes instantiating in the virtual infrastructure the VMs of the configuration, instantiating in the virtual infrastructure the virtual lab networks, retrieving information from the database, and creating and executing programming instructions for the VMs. The database information includes the network specifications from the virtual network templates associated with the virtual lab networks, and network resources for the virtual lab networks from a pool of available network resources. The programming instructions are created for the particular Guest Operating System (GOS) running in each VM based on the GOS and on the retrieved database information. When executed in the corresponding VM GOS, the programming instructions configure the VMs network interfaces with the corresponding network specifications.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for creating virtual machines (VM) and associated networks in a virtual infrastructure, the method comprising:
+defining virtual network templates in a database, each virtual network template including network specifications;
+creating a configuration of a virtual system which includes VMs, virtual lab networks associated with virtual network templates, and connections from the VMs to the virtual lab networks; and
+deploying the configuration in the virtual infrastructure to obtain a deployed configuration, the deploying including,
+instantiating in the virtual infrastructure the VMs of the configuration,
+instantiating in the virtual infrastructure the virtual lab networks of the configuration if the virtual networks do not yet exist in the virtual infrastructure,
+retrieving information from the database, the information including the network specifications from the virtual network templates associated with the virtual lab networks and network resources for the virtual lab networks from a pool of available network resources,
+creating programming instructions for each VM according to a guest operating system (GOS) of the each VM and the retrieved information from the database, and
+performing the programming instructions in the corresponding GOS to configure the VMs network interfaces with the corresponding network specifications.
+2. The method as recited in claim 1, further including:
+cloning the configuration of the virtual system to create a cloned configuration;
+deploying the cloned configuration in the virtual infrastructure to obtain a cloned deployed configuration, wherein each deployed configuration has identical network specifications and the deployed configurations do not conflict with each other.
+3. The method as recited in claim 1, further including:
+creating a VM template, the VM template including one or more network interfaces; and
+associating each network interface of the VM template with one of the virtual lab networks, wherein a VM associated with the VM template is configured with the network specifications of the corresponding virtual lab network when the VM is instantiated during the deploying.
+4. The method as recited in claim 1, wherein the network specifications are selected from a group consisting of a subnet mask, a gateway, a network address range, one or more Domain Name System (DNS) servers, available addressing modes, shared network or configuration local network (CLN) mode, or fencing mode.
+5. The method as recited in claim 1, wherein each virtual lab network is one of a CLN or a shared network, wherein the CLN is isolated and available only to VMs in the deployed configuration, wherein the shared network is available to all deployed configurations.
+6. The method as recited in claim 1, further including:
+copying the configuration of the virtual system to create a copy configuration;
+modifying the copy configuration; and
+deploying the copy configuration to obtain a deployed copy configuration, wherein the deployed configuration and the deployed copy configuration coexist within the virtual infrastructure without conflicting with each other.
+7. The method as recited in claim 1, further including:
+capturing an existing VM in the virtual infrastructure to create a VM template;
+reconfiguring network interfaces from the existing VM to a matching network template in the created VM template.
+8. The method as recited in claim 1, further including:
+deploying a second configuration of the virtual system to obtain a second deployed configuration, the configuration including a first CLN, the second configuration including a second CLN, wherein the first and the second CLNs have same network specifications, the first and the second CLNs being isolated and independent from each other after deploying the second configuration.
+9. The method as recited in claim 8, further including:
+joining the first CLN and the second CLN when the first CLN and the second CLN have same network specifications, the joining providing connectivity between VMs connected to the first CLN and the second CLN.
+10. The method as recited in claim 1, further including:
+copying a source VM from the configuration to a copy VM in a second configuration of the virtual system; and
+reconfiguring the network interfaces in the copy VM with matching networks in the second configuration.
+11. The method as recited in claim 10, further including:
+deploying the second configuration to obtain a second deployed configuration; and
+joining a virtual lab network from the VM in the deployed configuration with a virtual lab network from the VM in the second deployed configuration to provide connectivity between VMs of the deployed configurations, the joining being performed by the virtual infrastructure.
+12. The method as recited in claim 1, further including:
+deploying a second configuration of the virtual system to obtain a second deployed configuration, the configuration including a first CLN, the second configuration including a second CLN, wherein the network specifications of the second CLN are obtained by copying the network specifications of the first CLN and by modifying the copied network specifications, wherein the first and the second CLNs are isolated and independent from each other after deploying the second configuration.
+13. The method as recited in claim 1, wherein instantiating the VM further includes:
+registering the VM in the virtual infrastructure; and
+powering on the registered VM.
+14. The method as recited in claim 1, wherein the configuration of the virtual system further includes:
+virtual network interface cards (VNIC) for the VMs, wherein the connections from the VMs to the virtual lab networks are associated with a corresponding VNIC.
+15. A system for creating virtual machines (VM) and associated networks in a virtual infrastructure, the system comprising:
+a database for storing virtual network templates, configurations of virtual systems, virtual lab networks created, and a pool of available network resources for each of the virtual lab networks created, wherein each virtual network template includes network specifications, wherein each configuration includes VMs, virtual lab networks associated with virtual network templates, and connections from the VMs to the virtual lab networks; and
+an application module for deploying a configuration to obtain a deployed configuration, the deploying including,
+instantiating in the virtual infrastructure the VMs of the configuration,
+instantiating in the virtual infrastructure the virtual lab networks of the configuration if the virtual lab networks do not yet exist in the virtual infrastructure,
+retrieving information from the database, the information including the network specifications from the virtual network templates associated with the virtual lab networks and network resources for the virtual lab networks from the pool of available network resources,
+creating programming instructions for each VM of the configuration according to a guest operating system (GOS) of the each VM and the retrieved information from the database, and
+transmitting the programming instructions for execution in the GOS of corresponding VMs to configure the VMs network interfaces.
+16. The system as recited in claim 15, wherein the application module communicates via an application programming interface (API) with a virtual infrastructure server to request the instantiation of the VMs and the virtual lab networks.
+17. The system as recited in claim 15, wherein data structures in the database include:
+a network table for tracking the virtual lab networks created, the virtual lab networks being one of a shared network or a CLN;
+a network address range table defining a range of network addresses for the virtual lab networks in the network table; and
+a reserved network addresses table defining network addresses currently allocated to VMs.
+18. The system as recited in claim 17, wherein the application module accesses the reserved network addresses table to avoid creating VMs with duplicate network addresses when deploying the VMs.
+19. The system as recited in claim 17, wherein the data structures further include:
+a configuration table for tracking deployed configurations of virtual systems;
+a virtual machine table for tracking deployed VMs in the deployed configurations;
+a configuration network table for tracking deployed networks from the deployed configurations; and
+a network interface table for tracking the connections from the VMs to the virtual lab networks.
+20. A computer program embedded in a computer-readable storage medium, when executed by one or more processors, for creating virtual machines (VM) and associated networks in a virtual infrastructure, the computer program comprising:
+program instructions for defining virtual network templates in a database, each virtual lab network template including network specifications;
+program instructions for creating a configuration of a virtual system which includes VMs, virtual lab networks associated with virtual network templates, and connections from the VMs to the virtual lab networks; and
+program instructions for deploying the configuration in the virtual infrastructure to obtain a deployed configuration, the deploying including,
+instantiating in the virtual infrastructure the VMs of the configuration,
+instantiating in the virtual infrastructure the virtual lab networks of the configuration if the virtual lab networks do not yet exist in the virtual infrastructure,
+retrieving information from the database, the information including the network specifications from the virtual network templates associated with the virtual lab networks and network resources for the virtual lab networks from a pool of available network resources,
+creating programming instructions for each VM according to a guest operating system (GOS) of the each VM and the retrieved information from the database, and
+performing the programming instructions in the corresponding GOS to configure the VMs network interfaces with the corresponding network specifications.
+21. The computer program as recited in claim 20, wherein each virtual lab network is one of a CLN or a shared network, wherein the CLN is isolated and available only to VMs in the deployed configuration, wherein the shared network is available to all deployed configurations.
+22. The computer program as recited in claim 20, further including:
+program instructions for creating a VM template, the VM template including one or more network interfaces; and
+program instructions for associating each network interface of the VM template with one of the virtual lab networks, wherein a VM associated with the VM template is configured with the network specifications of the corresponding virtual lab network when the VM is instantiated during the deploying.
+23. The computer program as recited in claim 20, further including:
+program instructions for cloning the configuration of the virtual system to create a clone configuration; and
+program instructions for deploying the clone configuration in the virtual infrastructure to obtain a clone deployed configuration, wherein each deployed configuration has identical network specifications and the deployed configurations do not conflict with each other.

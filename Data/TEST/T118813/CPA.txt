@@ -1,0 +1,63 @@
+TITLE:
+Integrated flight management and textual air traffic control display system and method
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method is provided for transmitting, receiving, initiating, and displaying textual air traffic control clearance messages simultaneously with a graphic representation of an aircraft flight plan. Data representative of a current aircraft flight plan, and one or more textual clearance message signals representative of air traffic control clearance message, are each processed. One or more images representative of the current aircraft flight plan, and one or more images representative of the textual air traffic clearance messages, are each substantially simultaneously displayed in the same display area of a flight management system display.
+
+CLAIMS:
+1. An aircraft flight management display system for displaying air traffic control clearance messages transmitted to an aircraft, the system comprising:
+a processor adapted to receive (i) data representative of a current aircraft flight plan and (ii) one or more textual clearance message signals representative of the air traffic control clearance messages and operable, in response thereto, to supply one or more flight plan display commands and one or more clearance message display commands; and
+a display coupled to receive the flight plan display commands and the clearance message display commands and operable, in response thereto, to substantially simultaneously display (i) one or more images representative of the current aircraft flight plan and (ii) the textual air traffic clearance messages.
+2. The system of claim 1, wherein the display is further operable, in response to the clearance message display commands, to display one or more images representative of a modified aircraft flight plan, when the textual air traffic clearance message indicates the current aircraft flight plan should be modified.
+3. The system of claim 1, further comprising:
+a user interface configured to receive user input and operable, in response thereto, to supply one or more clearance message user response signals,
+wherein the processor is further coupled to receive the clearance message user response signals and is further operable, in response thereto, to transmit a response to the displayed textual air traffic control message.
+4. The system of claim 3, wherein:
+the user interface is further operable, in response to user input, to supply one or more flight plan modification signals; and
+the processor is further coupled to receive the flight plan modification signals and is further operable, in response thereto, to transmit a textual signal representative of the flight plan modification.
+5. The system of claim 4, wherein:
+the processor is further operable, in response to the flight plan modification signals, to supply flight plan modification display commands; and
+the display is further operable, in response to the flight plan modification display commands, to display one or more images representative of the modified flight plan.
+6. The system of claim 5, wherein the display is further operable to substantially simultaneously display the images representative of the current aircraft flight plan and the images representative of the modified flight plan.
+7. The system of claim 3, wherein the processor is further operable, in response to the user input command signals, to automatically update the current flight plan consistent with the transmitted response to the displayed air traffic control message.
+8. The system of claim 3, wherein the display is further operable, in response to the display commands, to selectively display a user interface field that allows a user to appropriately respond to the displayed textual air traffic control message via the user interface.
+9. The system of claim 1, further comprising:
+a user interface configured to receive user input and operable, in response thereto, to supply one or more flight plan modification command signals,
+wherein the processor is further coupled to receive the flight plan modification command signals and is further operable, in response thereto, to generate one or more textual clearance messages, and to supply one or more modified flight plan display commands and one or more clearance message display commands, and
+wherein the display is further coupled to receive the flight plan modification display commands and the clearance message display commands and is further operable, in response thereto, to substantially simultaneously display (i) one or more images representative of a modified aircraft flight plan and (ii) the textual clearance messages.
+10. The system of claim 1, wherein the data representative of aircraft flight plan includes navigation data, and wherein the system further comprises:
+one or more navigation databases in operable communication with the processor, each navigation database having navigation data stored therein,
+wherein the processor is further configured to selectively retrieve navigation data from each navigation database.
+11. The system of claim 1, wherein:
+the processor is further coupled to receive avionics data and is further operable, in response thereto, to supply one or more avionics data display commands; and
+the display is further coupled to receive the avionics data display commands and is further operable, in response thereto, to display one or more images representative of the avionics data substantially simultaneously with the current aircraft flight plan.
+12. The system of claim 1, wherein one of the images representative of the current aircraft flight plan is a lateral map image.
+13. A method of displaying an air traffic control clearance message transmitted to an aircraft in a display are of a flight deck display, the method comprising the steps of:
+processing data representative of a current aircraft flight plan;
+processing one or more textual clearance message signals representative of the air traffic control clearance message; and
+substantially simultaneously displaying, in the display area, (i) one or more images representative of the current aircraft flight plan and (ii) the textual air traffic clearance messages.
+14. The method of claim 13, further comprising:
+determining whether the textual air traffic clearance message indicates that the current aircraft flight plan should be modified; and
+if it is determined that the current flight plan should be modified, substantially simultaneously displaying (i) one or more images representative of a modified aircraft flight plan, (ii) each image representative of the current flight plan, and (iii) the textual air traffic clearance messages in the display area.
+15. The method of claim 13, further comprising:
+transmitting a response to the displayed textual air traffic control message to one or more air traffic control centers.
+16. The method of claim 15, further comprising:
+supplying one or more modifications to the current flight plan; and
+transmitting each of the flight plan modifications to one or more air traffic control centers as textual signals.
+17. The method of claim 16, further comprising:
+displaying one or more images representative of each modification to the flight plan.
+18. The method of claim 17, further comprising:
+substantially simultaneously displaying the images representative of the current aircraft flight plan and the images representative of each modification to the flight plan.
+19. The method of claim 15, further comprising:
+automatically updating the current flight plan consistent with the transmitted response to the displayed air traffic control message.
+20. The method of claim 15, further comprising:
+selectively displaying a user interface field that allows a user to appropriately respond to the displayed textual air traffic control message.
+21. The method of claim 13, further comprising:
+processing data representative of a modified flight plan;
+generating one or more modified flight plan textual clearance messages, each modified flight plan textual clearance message representative of the modified flight plan; and
+substantially simultaneously displaying one or more images representative of the modified flight plan and the modified flight plan textual clearance messages.
+22. The method of claim 21, further comprising:
+transmitting the modified flight plan textual clearance messages.

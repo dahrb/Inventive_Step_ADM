@@ -1,0 +1,87 @@
+TITLE:
+Double sheet detector method for automated transaction machine
+
+TYPE:
+US patent
+
+ABSTRACT:
+An automated transaction machine includes apparatus for distinguishing between single sheets and multiple sheets in a sheet path. The apparatus includes radiation emitters (14, 34) and radiation detectors (20, 40, 42). The radiation emitters are operated to emit radiation at periodic intervals. Signal conditioners (50) receive signals from the radiation detectors and generate outputs responsive to the intensities sensed by the detectors substantially only during the periodic intervals. The outputs are combined, weighed and/or compared to thresholds to distinguish single and multiple sheets. The apparatus enables reliable operation in noisy electrical environments and with a wide variety of sheet properties.
+
+CLAIMS:
+1. A method for distinguishing a single sheet from a multiple sheet comprised of a plurality of overlapping sheets, comprising the steps of:
+(a) illuminating a first face of a sheet with a first radiation source positioned on a first side of the sheet;
+(b) sensing with a detector on a first side of the sheet, a first level of radiation from the first radiation source reflected from the first face of the sheet;
+(c) sensing with a detector positioned on a second side of the sheet, a second level of radiation from the first radiation source transmitted through the sheet;
+(d) illuminating a second face of the sheet with a second radiation source positioned on a second side of the sheet;
+(e) sensing with a detector on the second side of the sheet, a third level of radiation from the second radiation source reflected from the second face of the sheet;
+(f) generating at least one value responsive to the first level, the second level and the third level;
+(g) comparing the at least one value to at least one threshold, wherein a relationship of the at least one value to the at least one threshold is indicative of whether the sheet is a single sheet or a multiple sheet.
+2. A method of distinguishing a single sheet from a multiple sheet comprised of a plurality of overlapping sheets, comprising:
+(a) illuminating a first face of a sheet with a first radiation source positioned on a first side of the sheet;
+(b) sensing with a first detector on a first side of the sheet, a first level of radiation from the first radiation source reflected from the first face of the sheet;
+(c) sensing with a second detector positioned on a second side of the sheet, a second level of radiation from the first radiation source transmitted through the sheet;
+(d) illuminating a second face of the sheet with a second radiation source positioned on a second side of the sheet;
+(e) sensing with the second detector on the second side of the sheet, a third level of radiation from the second radiation source reflected from the second face of the sheet;
+(f) generating at least one value responsive to the first level, the second level and the third level;
+(g) comparing the at least one value to at least one threshold, wherein a relationship of the at least one value to the at least one threshold is indicative of whether the sheet is a single sheet or a multiple sheet.
+3. The method according to claim 1 wherein steps (b) and (c) are carried out during a first time interval, and step (e) is carried out during a second time interval.
+4. The method according to claim 3 wherein the first time interval and the second time interval are non-overlapping.
+5. The method according to claim 1 wherein the sheet has generally non-uniform indicia printed on each of the first face and the second face, and further comprising the step of:
+moving the sheet in a sheet path through a detection area, and wherein steps (a) through (e) are each performed a plurality of times as the sheet moves through the detection area.
+6. The method according to claim 5 and further comprising the steps of:
+producing a first reflectance value responsive to each of a plurality of first levels sensed during performance of step (b), and
+combining a plurality of first reflectance values to produce a cumulative first reflectance value for the sheet.
+7. The method according to claim 5 and further comprising the steps of:
+producing a transmission value responsive to each of a plurality of second levels produced during performance of step (c), and
+combining a plurality of transmission values to produce a cumulative transmission value for the sheet.
+8. The method according to claim 6 and further comprising the steps of:
+producing a transmission value responsive to each of a plurality of second levels produced during performance of step (c),
+combining a plurality of transmission values to produce a cumulative transmission value for the sheet,
+and wherein step (f) comprises applying at least one weighing factor to at least one of the cumulative reflectance value and cumulative transmission value.
+9. The method according to claim 6 and further comprising the steps of:
+producing a transmission value responsive to each of a plurality of second levels produced during performance of step (c);
+combining a plurality of transmission values to produce a cumulative transmission value for the sheet,
+producing a second reflectance value responsive to each of a plurality of third levels produced during performance of step (e);
+combining a plurality of second reflectance values to produce a cumulative second reflectance value for the sheet.
+10. The method according to claim 9 wherein step (f) includes applying a weighing factor to at least one of the cumulative first reflectance value, cumulative second reflectance value and the cumulative transmission value.
+11. The method according to claim 10 wherein in step (f) the weighing factor is applied such that an increase in at least one of the cumulative first reflectance value and cumulative second reflectance value is operative to cause the relationship of the at least one value and at least one threshold compared in step (g) to tend toward an indication of a multiple sheet.
+12. The method according to claim 5 wherein steps (b) and (c) are performed during each of a plurality of first periodic intervals and step (e) is performed during a plurality of second periodic intervals, wherein the first periodic intervals are generally non-overlapping with the second periodic intervals.
+13. The method according to claim 1 wherein in step (f) the at least one value is generated by application of at least one weighing factor to at least one output corresponding to at least one of the first level, the second level and the third level.
+14. The method according to claim 13 wherein the at least one weighing factor is applied such that an increase in an output corresponding to an increase in the first level or an increase in the third level changes the relationship toward an indication of a multiple sheet in step (g).
+15. The method according to claim 1 wherein the first radiation source comprises an infrared radiation source.
+16. A method of distinguishing a single sheet from a multiple sheet comprised of a plurality of overlapping sheets, comprising:
+(a) illuminating a first face of a sheet with a first radiation source positioned on a first side of the sheet;
+(b) sensing with a detector on a first side of the sheet, a first level of radiation from the first radiation source reflected from the first face of the sheet;
+(c) sensing with a detector positioned on a second side of the sheet, a second level of radiation from the first radiation source transmitted through the sheet;
+(d) illuminating a second face of the sheet with a second radiation source positioned on a second side of the sheet, wherein at least one of the first radiation source and the second radiation source comprises an infrared radiation source;
+(e) sensing with a detector on the second side of the sheet, a third level of radiation from the second radiation source reflected from the second face of the sheet;
+(f) generating at least one value responsive to the first level, the second level and the third level;
+(g) comparing the at least one value to at least one threshold, wherein a relationship of the at least one value to the at least one threshold is indicative of whether the sheet is a single sheet or a multiple sheet.
+17. A method of distinguishing a single sheet from a multiple sheet comprised of a plurality of overlapping sheets, comprising:
+(a) illuminating a first face of a sheet with a first radiation source positioned on a first side of the sheet;
+(b) sensing with a detector on a first side of the sheet, a first level of radiation from the first radiation source reflected from the first face of the sheet;
+(c) sensing with a detector positioned on a second side of the sheet, a second level of radiation from the first radiation source transmitted through the sheet;
+(d) illuminating a second face of the sheet with a second radiation source positioned on a second side of the sheet;
+(e) sensing with a detector on the second side of the sheet, a third level of radiation from the second radiation source reflected from the second face of the sheet;
+(f) generating at least one value responsive to the first level, the second level and the third level;
+(g) comparing the at least one value to at least one threshold, wherein a relationship of the at least one value to the at least one threshold is indicative of whether the sheet is a single sheet or a multiple sheet;
+(h) moving the sheet along a sheet path; and
+(i) diverting the sheet from the sheet path responsive to the relationship of the at least one value and the at least one threshold compared in step (g) being indicative that the sheet is a multiple sheet.
+18. An apparatus comprising:
+a sheet, wherein the sheet comprises a first face and a second face;
+at least one first radiation source on a first side of the sheet;
+at least one first detector on the first side of the sheet, wherein the at least one first detector is operable to sense a first level of radiation from the at least one first radiation source reflected from the first face of the sheet;
+at least one second radiation source on a second side of the sheet opposed of the first side;
+at least one second detector on the second side of the sheet, wherein the at least one second detector is operable to sense a second level of radiation from the at least one first radiation source transmitted through the sheet and to sense a third level of radiation from the at least one second radiation source reflected from the second face of the sheet;
+at least one processor in operative connection with the at least one first radiation source, the at least one first detector, the at least one second radiation source, and the at least one second detector, wherein the at least one processor is operable to distinguish the sheet as a single sheet or as a multiple sheet comprised of plural overlapping sheets.
+19. The apparatus according to claim 18 and further comprising:
+a sheet path, wherein the sheet moves in the sheet path;
+a diverter in connection with the sheet path, wherein the diverter is in operative connection with the at least one processor;
+wherein the at least one processor is operative responsive to the sheet being distinguished as a multiple sheet to cause the diverter to operate to divert the sheet from the sheet path.
+20. A method for distinguishing a single sheet from a multiple sheet comprised of a plurality of overlapping sheets, comprising the step of:
+(a) illuminating a first face of a sheet with a first radiation source positioned on a first side of the sheet;
+(b) sensing with a detector on a first side of the sheet, a first level of radiation from the first radiation source reflected from the first face of the sheet;
+(c) sensing with a detector positioned on a second side of the sheet, a second level of radiation from the first radiation source transmitted through the sheet;
+(d) illuminating a second face of the sheet with a radiation source positioned on a second side of the sheet;
+(e) sensing with a detector on the second side of the sheet a third level of radiation from the second radiation source reflected from the second face of the sheet; and
+(f) determining if the sheet is a single sheet or a multiple sheet responsive to the first level, the second level and the third level.

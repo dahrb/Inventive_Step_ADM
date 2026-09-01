@@ -1,0 +1,31 @@
+TITLE:
+System for internet-based delivery of computer applications
+
+TYPE:
+US patent
+
+ABSTRACT:
+A development system is described which provides a form-based development environment for partitioning an application such that it can be seamlessly integrated into corporate Webs (i.e., "intranets"). A form is implemented as an "application page" and published as an ActiveX object. Specifically, a new "application" page MIME type is defined: application/x-appdoc. This contains information necessary to create a document (e.g., Microsoft ActiveX Document) locally but, in addition, also includes information necessary to find and download the program code for rendering the view of the document. If the program code is already present locally, it need only be downloaded for purpose of updating the local copy. Once a form is built into an ActiveX object and digitally signed, it can be downloaded to a client and run in a Web browser, such as Microsoft Internet Explorer.
+
+CLAIMS:
+1. In a Web-based computer system having a client connected to a Web server, the client including a Web browser, a method for Web-based delivery of executable applications, the method comprising:
+creating at the server an application document, said application document including information necessary for locating and downloading program code necessary for rendering a view of the application document within the Web browser, without requiring that an application document handler already be installed at the Web browser;
+installing at the client an application document handler, said handler capable of interpreting said information of said application document;
+displaying in the Web browser a Web page having a hyperlink reference to said application document;
+in response to user selection of the hyperlink reference, transmitting said application document from the server to the client;
+in response to said transmitting of said application document from the server to the client, invoking said handler for processing said application document, including performing substeps of:
+(i) determining whether program code capable of rendering the application document resides locally at the client;
+(ii) if the program code does not reside locally, automatically downloading the program code from a location indicated by said information of application document, in a manner that does not require user intervention; and
+(iii) rendering the application document within the Web browser by executing said program code.
+2. The method of claim 1, wherein said program code functions as a Microsoft OLE (Object Linking and Embedding) Server for the application document.
+3. The method of claim 2, wherein said OLE Server registers its own menus with the Web browser.
+4. The method of claim 1, wherein said application document comprises user data together with information indicating appropriate program code for hosting the user data.
+5. The method of claim 1, wherein said information indicating appropriate program code for hosting the user data includes a Globally Unique Identifier (GUID) for locating the program code.
+6. The method of claim 1, wherein said creating at the server step includes:
+defining a new MIME (Multipurpose Internet Mail Extension) data type to comprise an "application page."
+7. The method of claim 6, wherein said handler is invoked for processing objects of type "application page."
+8. The method of claim 1, wherein said step of determining whether program code capable of rendering the application document resides locally at the client includes:
+examining any available operating system registry for locating any program code located locally at the client which is capable of rendering a view of the application document.
+9. The method of claim 1, wherein said server comprises an HTTP (Hypertext Transport Protocol) server which responds to HTTP requests from the client.
+10. The method of claim 1, wherein before said step of transmitting said application document from the server to the client, further comprises:
+validating whether the client has sufficient access rights for obtaining a copy of the application document.

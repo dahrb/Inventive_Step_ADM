@@ -1,0 +1,227 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+27
+
+MAIN REQUEST
+CLAIMS
+
+1, An apparatus (10), comprising:
+
+a processor (20);
+
+memory (42) including computer program code, the memory (42) and the computer program
+code configured to, working with the processor (20), cause the apparatus (10) to perform at least the
+following:
+
+receiving a first set of information associated with a first information source (101);
+
+performing a first analysis of, at least part of, the first set of information based, at least in part, on
+an analysis criteria (200), the analysis criteria comprising a root node (230) and a plurality of nodes (201-
+210) associated with the root node, the plurality of nodes comprising a plurality of nodes relating to a
+condition and one or more nodes relating to a directive that associates two or more of the nodes relating
+to a condition;
+
+determining that the first set of information complies with the analysis criteria (200) at least by
+virtue of the root node (230) of the analysis criteria being determined positively by the first set of
+information;
+
+determining an analysis chronicle (220) based, at least in part, on the first analysis wherein the
+analysis chronicle (220) is determined if the first set of information complies with the analysis criteria
+(200), wherein the analysis chronicle (220) is a record that indicates which nodes (201-210, 230) of the
+analysis criteria (200) are positively determined by the first set of information;
+
+determining that the analysis chronicle (220) has changed by determining that a difference
+between the analysis chronicle (220) and another analysis chronicle (240) is significant, the another
+analysis chronicle being associated with a previously received set of information, wherein the previously
+received set of information complies with the analysis criteria at least by virtue of the root node of the
+analysis criteria being positively determined by the previously received set of information, wherein
+determining that the difference between the analysis chronicle (220) and the another analysis chronicle
+(240) is significant comprises determining that the difference between the analysis chronicle (220) and
+the another analysis chronicle (240) is within a particular number of nodes from the root node (230); and
+
+performing at least one operation for causing a user to be presented with information in response
+
+to determining that the analysis chronicle (220) has changed.
+
+2. The apparatus (10) of claim 1, wherein the memory (42) and the computer program code
+are further configured to, working with the processor (20), cause the apparatus to further perform causing
+
+storage of the analysis chronicle (220).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+28
+
+3. The apparatus (10) of claim 1, wherein the memory (42) and the computer program code
+are further configured to, working with the processor (20), cause the apparatus to further perform
+
+retrieving a previously stored analysis chronicle (240) associated with the analysis criteria (200).
+
+4, The apparatus (10) of claim 3, wherein the memory (42) and the computer program code
+are further configured to, working with the processor (20), cause the apparatus to further perform
+
+modifying the previously stored analysis chronicle (240).
+
+5. The apparatus (10) of claim 1, wherein the analysis chronicle (220) is associated with a
+
+single analysis criteria (200).
+
+6. The apparatus (10) of claim 1, wherein the first analysis relates to filtering and wherein
+
+the analysis criteria (200) relates to, at least one filtering rule.
+
+7. The apparatus (10) of claim 1, wherein the memory (42) and the computer program code
+are further configured to, working with the processor (20), cause the apparatus to further perform
+determining the particular number of nodes from the root node based, at least in part, on a setting
+
+associated with an analysis criteria and/or evaluation of available resources.
+
+8. The apparatus (10) of claim 1, wherein the analysis chronicle (220) relates to an activity
+detection graph comprising a plurality of nodes, wherein the plurality of nodes comprise a plurality of
+nodes relating to a condition and one or more nodes relating to a directive that associates two or more of
+
+the nodes relating to a condition.
+
+9. The apparatus (10) of claim 1, wherein the analysis chronicle (220) comprises less than
+
+the entirety of the set of information.
+
+10. The apparatus (10) of claim 1, wherein the at least one operation:
+relates to providing an indication that the analysis chronicle (220) has changed, or
+relates to providing an indication of the analysis criteria (200),
+relates to providing an indication of at least part of the analysis chronicle (220),
+comprises enabling display of an indication that the analysis chronicle (220) or the
+another analysis chronicle (240) has changed, or
+comprises enabling display of historical analysis chronicle information relating to the
+
+analysis chronicle (220) or the another analysis chronicle (240).
+
+11. The apparatus (10) of claim 4, wherein the memory (42) and the computer program code
+
+are configured to, working with the processor (20), cause the apparatus to perform modifying the
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+29
+
+previously stored analysis chronicle (240) by: replacing part of the previously stored analysis chronicle
+
+that is inconsistent with the analysis chronicle (220).
+
+12. The apparatus (10) of claim 1, wherein the memory (42) and the computer program code
+are further configured to, working with the processor (20), cause the apparatus to further perform:
+
+receiving a second set of information associated with a second information source (102);
+
+performing a second analysis of, at least part of, the second set of information based, at least in
+part, on the analysis criteria (200); and
+
+modifying the analysis chronicle (220) based, at least in part, on the second analysis.
+
+13. A mobile device comprising the apparatus (10) of any one or more of the preceding
+
+claims.
+
+14, A method, comprising:
+
+receiving a first set of information associated with a first information source (101);
+
+performing a first analysis of, at least part of, the first set of information based, at least in part, on
+an analysis criteria (200) comprising a root node (230) and a plurality of nodes (201-210) associated with
+the root node, the plurality of nodes comprising a plurality of nodes relating to a condition and one or
+more nodes relating to a directive that associates two or more of the nodes relating to a condition;
+
+determining that the first set of information complies with the analysis criteria (200) if the root
+node (230) is determined positively;
+
+determining an analysis chronicle (220) based, at least in part, on the first analysis wherein the
+analysis chronicle (220) is determined if the first set of information complies with the analysis criteria
+(200), wherein the analysis chronicle (220) is a record that indicates which nodes (201-210, 230) of the
+analysis criteria (200) are positively determined by the first set of information;
+
+determining that the analysis chronicle (220) has changed by determining that a difference
+between the analysis chronicle (220) and another analysis chronicle (240) is significant, the another
+analysis chronicle being associated with a previously received set of information, wherein the previously
+received set of information complies with the analysis criteria at least by virtue of the root node of the
+analysis criteria being positively determined by the previously received set of information, wherein
+determining that the difference between the analysis chronicle (220) and the another analysis chronicle
+(240) is significant comprises determining that the difference between the analysis chronicle (220) and
+the another analysis chronicle (240) is within a particular number of nodes from the root node (230); and
+
+performing at least one operation for causing a user to be presented with information in response
+
+to determining that the analysis chronicle (220) has changed.
+
+15. A software program that, when executed by at least one processor (20), causes an
+
+apparatus (10) to perform:
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+30
+
+receiving a first set of information associated with a first information source (101);
+
+performing a first analysis of, at least part of, the first set of information based, at least in part, on
+an analysis criteria (200) comprising a root node (230) and a plurality of nodes (201-210) associated with
+the root node, the plurality of nodes comprising a plurality of nodes relating to a condition and one or
+more nodes relating to a directive that associates two or more of the nodes relating to a condition;
+
+determining that the first set of information complies with the analysis criteria (200) if the root
+node (230) is determined positively;
+
+determining an analysis chronicle (220) based, at least in part, on the first analysis wherein the
+analysis chronicle (220) is determined if the first set of information complies with the analysis criteria
+(200), wherein the analysis chronicle (220) is a record that indicates which nodes (201-210, 230) of the
+analysis criteria (200) are positively determined by the first set of information;
+
+determining that the analysis chronicle (220) has changed by determining that a difference
+between the analysis chronicle (220) and another analysis chronicle (240) is significant, the another
+analysis chronicle being associated with a previously received set of information, wherein the previously
+received set of information complies with the analysis criteria at least by virtue of the root node of the
+analysis criteria being positively determined by the previously received set of information, wherein
+determining that the difference between the analysis chronicle (220) and the another analysis chronicle
+(240) is significant comprises determining that the difference between the analysis chronicle (220) and
+the another analysis chronicle (240)is within a particular number of nodes from the root node (230); and
+
+performing at least one operation for causing a user to be presented with information in response
+
+to determining that the analysis chronicle (220) has changed.

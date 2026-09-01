@@ -1,0 +1,20 @@
+TITLE:
+Apparatus for controlling a light source
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A device for controlling and adjusting a display light for a retail display system comprising a computer associated with plural light sources for adjusting the light sources to optimally display particular products. The light sources are adjusted based upon a prestored table specifying optimal lighting conditions for each of plural products, and a feedback loop that feeds back actual lighting conditions.
+
+CLAIMS:
+1. Apparatus for controlling multiple light sources to be mixed to form light of a predetermined color, said apparatus comprising: plural color sensors, for detecting an amount of light emitted from each of said light sources; storage means, for storing predetermined values indicative of a desired amount of light to be emitted from each of said light sources; a processor for comparing the amount of light detected from each of said light sources with the desired amount of light to be emitted from each of said light sources, and for adjusting a value input to a power source supplying said light sources in response thereto.
+2. The apparatus of claim 1 wherein said value adjusted is a Pulse Width Modulated (PWM) signal.
+3. The apparatus of claim 2 wherein said PWM value adjusted is at least one of an amplitude or a duty cycle of said PWM signal.
+4. The apparatus of claim 1 wherein said processor is connected to a separate computer, said computer including data and software for controlling the amount of light emitted from said sources based upon measured conditions and predetermined inputs.
+5. The apparatus of claim 4 wherein said measured conditions are obtained by inputting a product to be displayed with said light of a predetermined color, and said predetermined inputs are stored values indicating a predetermined color with which to display said product.
+6. Apparatus of claim 4 wherein said measured conditions are time.
+7. Apparatus of claim 2 wherein said PWM signal is adjusted to control both the predetermined color and the intensity of light emitted at said color.
+8. Apparatus of claim 1 for adjusting at least one of the color and intensity of light emitted to display products for sale, said apparatus comprising: a table of stored values indicative of the desired relative values of each of plural light sources for each type of product to be displayed; an external interface for accepting from an input device information indicative of a product to be displayed, with said light; and control logic for performing a table lookup and adjusting the relative intensities of the lights sources to cause said light sources to emit said stored desired values.
+9. The apparatus of claim 8 wherein said input device is a bar code scanner.
+10. Apparatus of claim 1 further comprising a DC/ AC converter for separately adjustment of the output current of each of plural Light Emitting Diode (LED) drivers.

@@ -1,0 +1,115 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+07 812 335.3 May 23, 2011
+Apple Inc. Ai17083WOEP JLa/cka/kas
+
+New claims
+
+1. A method usable by an accessory (502, 506, 508, 510) to interact with a
+media player (500”), the method comprising:
+
+receiving an authentication request from the media player (500”), the au-
+thentication request initiating an authentication operation
+
+transmitting authentication information to the media player (500”), in re-
+sponse to the authentication request, the authentication information being usable
+by the media player (500”) in the authentication operation;
+
+allowing the accessory to access the media player during the authentica-
+tion operation; and
+
+transmitting an authentication signature to the media player (500”) for
+validation, wherein the authentication operation completes upon validation of the
+authentication signature,
+
+wherein if the authentication operation fails, the accessory (502, 506, 508,
+
+510) is locked out from any further access to the media player (500”).
+
+2. The method of claim 1 wherein the authentication information includes an
+
+authentication certificate.
+
+3. The method of claim 1 further comprising:
+
+transmitting a device identification message to the media player (5007),
+the device identification message including an indication of a command set sup-
+ported by the accessory (502, 506, 508, 510),
+
+wherein the authentication operation fails in the event that the supported
+command set does not match an allowed command set determined based on the
+
+authentication information.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-2-
+
+4. The method of claim 3 wherein accessing a media player function includes
+
+sending a command from the supported command set to the media player (500”).
+
+5. The method of claim 1 further comprising:
+
+receiving a digital signature request from the media player (500”), the
+digital signature request including a random challenge; and
+
+generating a digitally signed version of the random challenge, wherein the
+authentication signature includes the digitally signed version of the random chal-
+
+lenge.
+
+6. The method of claim 5 wherein the digitally signed version of the random
+challenge is signed by the accessory (502, 506, 508, 510) using a private key and
+wherein the authentication information includes a public key corresponding to
+the private key, the public key being usable to validate the digitally signed version
+
+of the random challenge.
+
+7. The method of claim 1 further comprising:
+
+sending a device identification message to the media player (500”), the
+device identification message including an indication of a command set sup-
+ported by the accessory (502, 506, 508, 510), wherein the command set includes
+a first command that relates to a risky behavior and a second command that re-
+lates to a non-risky behavior,
+
+wherein prior to completion of the authentication operation, the accessory
+(502, 506, 508, 510) is allowed to access a first media player function associated
+with the second command but not allowed to access a second media player func-
+
+tion associated with the first command.
+
+8. The method of claim 1 further comprising:
+receiving from the media player (500”) an authentication status message
+
+indicating whether the authentication operation completed successfully.
+
+9. The method of claim 1, wherein if the authentication operation fails, the
+
+media player cancels all accessory-related activities.
+
+--- PAGE 3 ---
+-3-
+
+10. An accessory comprising an interface configured to execute the method
+
+according to one of the claims 1 to 9.

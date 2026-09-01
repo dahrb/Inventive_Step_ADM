@@ -1,0 +1,183 @@
+--- PAGE 1 ---
+Main Request
+
+CLAIMS
+
+1. A computer-implemented method, comprising:
+parsing (110) an extensible markup language (XML) document to acquire components of
+the document and content associated with each of the components;
+generating (120) an executable, which when subsequently executed by a machine
+reproduces the original XML document’s hierarchy of components and content as a data structure
+that is accessible within memory of that machine;
+receiving (210) the executable at a recipients machine;
+processing (220) the executable by the machine to produce a loaded version of components
+and content associated with the document, which is mapped to a data structure for subsequent use
+by XML-enabled applications to render the XML document within the machine or environment of
+the recipient;
+characterized in that said generating (120) comprises;
+acquiring authentication logic for verification of the identity of the recipient,
+the author or the distributor of the XML executable, the author or distributor of an
+XML document associated with the XML executable, or the resources that consume
+or use the XML executable;
+acquiring policy logic to conditionally enforce policy restrictions on how,
+when, and if various components and content of the original XML document are
+subsequently populated to the data structure for a particular recipient;
+embedding (130) within the executable said authentication logic and said
+policy logic;
+and in that said processing (220) the executable comprises;
+selectively determining the particular components and content that is to be
+loaded to the data structure within the machine or environment of the recipient by;
+conditionally populating at least some components and associated
+content to the data structure in response to satisfying policy limitations of the
+embedded policy logic; and
+enforcing identity-based restrictions and access rights to at least some
+components and associated content in the data structure in response to the
+
+embedded authentication logic.
+
+16
+
+--- PAGE 2 ---
+2. The method of claim 1, further comprising, ensuring (140) that embedded references to
+
+objects within the XML document use a common XML interface when generating the executable.
+
+3. The method of claim 1, further comprising, identifying (150) common logic for some
+portions of the XML document that is common with other portions of other XML documents and
+separating out the common logic as a common library and replacing the common logic within the
+
+executable with references to the common library.
+
+4. The method of claim 1, further comprising, identifying (160) embedded references within
+the XML document to external documents and creating retrieval logic within the executable to
+dynamically acquire the external documents when the executable is subsequently executed by the
+
+machine.
+
+5. The method of claim 4, further comprising, using (161) the authentication logic or the policy
+
+logic with the retrieval logic to conditionally and dynamically acquire the external documents.
+
+6. The method of claim 1, wherein generating (120) further includes generating (121) the
+executable so that when executed by the machine each component and its content are loaded into
+
+the memory in a Document Object Model (DOM) format.
+
+7. The method of claim 1, wherein generating (120) further includes producing (122) the
+executable in one of the following formats: a machine language code format, a byte-code format,
+
+and a common language infrastructure (CLI) code format.
+
+8. The method of claim 1, further comprising, processing (240) one or more of the following as
+
+the XML-enabled applications; a formatting template and a processing application.
+
+9. The method of claim 1, further comprising, prompting a user (270) in response to processing
+the authentication logic to provide authentication credentials and using the user-supplied
+authentication credentials to authenticate the user for dynamic content that is acquired and that is
+
+integrated into the data structure once the user is authenticated.
+
+10. The method of claim 1, wherein receiving (210) further includes recognizing (250) the
+
+executable as one of the following data formats: machine code format, byte code format, or
+
+17
+
+--- PAGE 3 ---
+common language interface code format in order for an interpreter service to be selected to process
+
+the executable.
+
+11. The method of claim 1, further comprising, dynamically enforcing (280) policy in response
+to processing the policy logic, wherein at least some content associated with the data structure is
+conditionally represented or loaded to the data structure when the policy is determined to be
+
+satisfied.
+
+12. The method of claim 1, further comprising, determining (230) that the XML-enabled
+applications can be processed without the assistance of an XML parser once the loaded version is
+
+populated in the data structure.
+
+13. | A computer system (300), comprising:
+a parser (301) for parsing (110) an extensible markup language (XML) document to acquire
+components of the document and content associated with each of the components;
+an extensible markup language (XML) compiler (302) for generating (120) an executable,
+which when subsequently executed by a machine reproduces the original XML document’s
+hierarchy of components and content as a data structure that is accessible within memory of that
+machine;
+a machine for receiving (210) the executable, and
+a processor for processing (220) the executable to produce a loaded version of components
+and content associated with the document, which is mapped to a data structure for subsequent use
+by XML-enabled applications to render the XML document within the machine or environment of a
+recipients machine;
+characterized in that said compiler (302) comprises;
+means for acquiring authentication logic for verification of the identity of the
+recipient, the author or the distributor of the XML executable, the author or
+distributor of an XML document associated with the XML executable, or the
+resources that consume or use the XML executable;
+means for acquiring policy logic to conditionally enforce policy restrictions
+on how, when, and if various components and content of the original XML
+document are subsequently populated to the data structure for a particular recipient;
+means for embedding (130) within the executable said authentication logic
+and said policy logic;
+
+and in that said processor comprises;
+
+18
+
+--- PAGE 4 ---
+means for selectively determining the particular components and content that
+is to be loaded to the data structure within the machine or environment of the
+recipient by;
+conditionally populating at least some components and associated
+content to the data structure in response to satisfying policy limitations of the
+embedded policy logic; and
+enforcing identity-based restrictions and access rights to at least some
+components and associated content in the data structure in response to the
+
+embedded authentication logic.
+
+14. The system of claim 13, further comprising, a common library (303) to represent portions
+of the executable that overlap within the executable or that overlap with other executables, wherein
+the XML compiler (302) is adapted to bundle the common library with the executable or to insert
+
+references to the common library within the portions of the executable.
+
+15. The system of claim 13, wherein the executable is adapted to include retrieval logic that is
+adapted to conditionally, dynamically, and externally acquire some of the components and content
+within the data structure when the authentication logic or the policy logic is processed and satisfied
+
+on the machine with the executable.
+
+16. The system of claim 13, wherein the XML compiler (302) represents the executable in one
+of the following data formats: a machine code format associated with the machine, a byte code
+format, or a common language infrastructure (CLI) code format that is independent of an
+
+architecture associated with the machine.
+
+17. The system of claim 13, wherein the data structure is represented in a Document Object
+
+Model (DOM) format.
+
+18. The system of claim 13, wherein the parser (301) utilizes a schema definition for the XML
+document to parse out the components and content and provide the components and content to the
+
+XML compiler.
+
+19. — The system of claim 13, wherein the XML compiler (302) is adapted to also link to other
+executables to properly permit the machine to produce the data structure for the XML content when
+
+the executable is to be subsequently processed on the machine.
+
+19
+
+--- PAGE 5 ---
+20. | A computer program, which when executing on a computer or computer network, performs
+
+the method of any one of claims 1 to 12.
+
+21. | The computer program of claim 20, when stored on a computer readable medium.
+
+20

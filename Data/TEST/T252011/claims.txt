@@ -1,0 +1,266 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28 AMENDED CLAIMS
+
+CLAIMS
+
+1, An information communication system comprising:
+
+an information storage medium (1) provided with a _ data
+communication function and capable of storing one or more of application
+services; and
+
+an information communication device (2) for accessing the information
+storage medium (1),
+
+characterized in that the information storage medium (1) is configured
+to store service directory data describing attribute information for each of the
+stored application services, and,
+
+the information communication device (2) being configured to read the
+service directory data from the detected information storage medium (1), to
+acquire the attribute information regarding a desired one of the application
+services, to confirm the application service is stored on the information storage
+medium (1) and to start up a service program corresponding to the application
+service to perform access,
+
+wherein the data communication function is configured to apply a given
+physical layer regarding communication, and
+
+the information communication device (2) being configured to
+automatically detect the physical layer of communication applied in the data
+communication function of the detected information storage medium (1), from
+among a plurality of potential physical communication layers and to perform
+acquisition of the service directory data and access to the application service
+stored on the information storage medium (1) in accordance with a protocol
+
+associated with the detected physical layer.
+
+2. The information communication system (1) according to Claim 1,
+wherein the attribute information of the application service described as the
+service directory data includes information allowing identification of one of a
+
+data structure and a data management method of the application service.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+29 AMENDED CLAIMS
+
+3. The information communication system (1) according to Claim 1,
+wherein the attribute information of the application service described as the
+service directory data includes information regarding a technical standard
+regarding the application service, and the name and type of the application
+
+service.
+
+4. The information communication system according to Claim 1,
+wherein the information communication device (2), in response to a failure of
+acquisition of the service directory data from the information storage medium
+(1), informs a user accordingly and stops access to the information storage
+
+medium (1).
+
+5. The information communication system according to Claim 1,
+wherein the information communication device (2), in response to detection of
+the absence of support of the service program corresponding to the application
+service discriminated from the service directory data read from the information
+storage medium (1), informs a user accordingly and stops access to the
+
+information storage medium.
+
+6. An information communication device (2) for performing data
+exchange with an information storage medium (1), which has a data
+communication function, and is capable of storing one or more application
+services, characterized in that the information storage medium (1) is configured
+to store service directory data describing attribute information for each of the
+stored application services, and in that the information communication device
+(2) comprises:
+
+communication means (201, 202, 203, 208, 209, 210) for performing
+communication with the information storage medium (1) using the data
+communication function;
+
+service directory data acquisition means (204, 206) for reading the
+service directory data from the detected information storage medium; and
+
+service access means (205) for acquiring attribute information
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+30 AMENDED CLAIMS
+
+regarding desired one of the application services from the service directory data,
+confirming the application service is stored on the information storage medium
+(1) and starting up a service program corresponding to the application service
+to perform access,
+
+wherein the data communication function of the information storage
+medium (1) is configured to apply a given physical layer regarding
+communication, and
+
+the communication means is configured to automatically detect the
+physical layer of communication applied in the data communication function of
+the detected information storage medium (1), from among a plurality of
+potential physical communication layers and to perform acquisition of the
+service directory data and access to the application service stored on the
+information storage medium (1) in accordance with a protocol associated with
+
+the detected physical layer.
+
+7. The information communication device (2) according to Claim 6,
+wherein the attribute information of the application service described as the
+service directory data includes information allowing identification of one of a
+
+data structure and a data management method of the application service.
+
+8. The information communication device according to Claim 6, wherein
+the attribute information of the application service described as the service
+directory data includes information regarding a technical standard regarding the
+
+application service, and the name and type of the application service.
+
+9. The information communication device (2) according to Claim 6,
+wherein the information communication device, in response to the service
+directory data acquisition means failing to acquire the service directory data
+from the information storage medium, informs a user accordingly and stops
+
+access to the information storage medium.
+
+10. The information communication device (2) according to Claim 6,
+
+wherein the information communication device, in response to detection that
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+31 AMENDED CLAIMS
+
+the service access means lacks support of the service program corresponding to
+the application service discriminated from the service directory data read from
+the information storage medium, informs a user accordingly and stops access to
+
+the information storage medium.
+
+11. An information communication method for performing data
+exchange with an information storage medium (1), which has a data
+communication function, is capable of storing one or more application services,
+characterized in that the information storage medium (1) stores service
+directory data describing attribute information for each of the stored application
+service, and in that the method comprises the steps of:
+
+reading (S4-1, S4-2) the service directory data from the detected
+information storage medium (1); and
+
+acquiring (S5-1, S5-2) attribute information regarding a desired one of
+the application services from the service directory data confirming the
+application service is stored on the information storage medium (1) and
+starting-up (S6) a service program corresponding to the application service to
+perform access,
+
+wherein the data communication function of the information storage
+medium (1) applies a given physical layer regarding communication, and
+
+the method further comprises the step of:
+
+automatically detecting (S3) the physical layer of communication
+applied in the data communication function of the detected information storage
+medium (1) from among a plurality of potential physical communication layers
+to perform acquisition of the service directory data and access to the application
+service stored on the information storage medium (1) in accordance with a
+
+protocol associated with the detected physical layer.
+
+12. The information communication method according to Claim 11,
+wherein the step of reading the service directory data including the step of, in
+
+response to a failure of acquisition of the service directory data from the
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+32 AMENDED CLAIMS
+
+information storage medium, informing (S8) a user accordingly and stopping
+
+access to the information storage medium.
+
+13. The information communication method according to Claim 11,
+further comprising the step of:
+
+in response to detection (S4-1, S4-2) of absence of support of the
+service program corresponding to the application service discriminated from the
+service directory data read from the information storage medium, informing
+(S8) a user accordingly and stopping access to the information storage medium.
+
+14. An article of manufacture described in a computer-readable form so
+as to execute a process, on a computer system, for exchanging data with an
+information storage medium (1), which has a data communication function, is
+capable of storing one or more application services, characterized in that the
+information storage medium (1) stores service directory data describing
+attribute information for each of the stored application services, and in that the
+article of manufacture comprises instructions for making the computer system
+perform the steps of:
+
+reading (S4) the service directory data from the detected information
+storage medium (1); and
+
+acquiring (S5) attribute information regarding desired one of the
+application services from the service directory data confirming the application
+service is stored on the information storage medium (1) and starting-up (S6) a
+service program corresponding to the application service to perform access,
+
+wherein the data communication function of the information storage
+medium (1) applies a given physical layer regarding communication, and
+
+further performing the step of:
+
+automatically detecting (S3) the physical layer of communication
+applied in the data communication function of the detected information storage
+medium (1) from among a plurality of potential physical communication layers
+to perform acquisition of the service directory data and access to the application
+service stored on the information storage medium (1) in accordance with a
+
+protecol associated with the detected physical layer.

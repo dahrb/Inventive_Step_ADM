@@ -1,0 +1,140 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request 23
+CLAIMS
+
+1. A method for determining accessor entitlement to a resource in response
+to an accessor request for access to the resource, comprising the steps of:
+
+a) associating with the resource a logical boolean entitlement
+expression, the entitlement expression including a reference to at least one
+membership bit map having membership information for the accessors, each
+member of the bit map corresponding to a respective accessor and being set or
+not set according to whether the corresponding accessor is a member or not a
+member respectively of the accessor group represented by the bit map;
+
+b) associating with the accessor a unique identifier (212), the unique
+identifier acting as an index into each membership bit map;
+
+Cc) evaluating the entitlement expression for the resource to
+determine the entitlement of the requesting accessor to the resource, the
+evaluation including looking up the accessor’s membership information in the at
+least one membership bit map using the accessor’s unique identifier (212).
+
+2. The method of claim 1, wherein the system further comprises at least one
+group, each group having a name, zero or more accessors that are members of
+the group, and a membership map for determining whether a particular accessor
+is a member of the group, entitlement expression referencing at least one
+membership bit map by including at least one group name corresponding to a
+group having a member bit map.
+
+3. The method of claim 2, wherein the entitlement expression comprises a
+plurality of group names and at least one operator.
+
+4. The method of claim 3, wherein the entitlement expression operator
+comprises one or more boolean operators.
+
+5. The method of claim 4, wherein the accessor’s unique identifier (212) is
+an index to a position in each bit map (214) wherein the bit at that position
+indicates whether the accessor is a member of the group corresponding to the
+bit map.
+
+6. The method of any preceding claim, wherein the bit maps are stored in
+
+paged data structures.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request 24
+
+7. The method of claim 2, wherein each group name is associated with a
+membership bit map identifier that represents the location of the membership bit
+map for the group.
+
+8. The method of claim 2, wherein each accessor has a unique name (210)
+and each accessor’s name and unique identifier (212) are stored in an accessor
+store (112).
+
+9. The method of claim 8, wherein the accessor identifier is a number.
+
+10. The method of claim 9, wherein an accessor store bit map tracks which
+identifier numbers are associated with accessors and which identifier numbers
+are available for association with a new accessor.
+
+11. The method of claim 9, wherein the group names and the membership bit
+map identifier associated with the group names are stored in an accessor group
+store (114).
+
+12. |The method of claim 11, wherein the membership map identifier is a
+number.
+
+13. | The method of claim 12, wherein an accessor group store bit map tracks
+which membership map identifier numbers are associated with group names and
+which membership map identifier numbers are available for association with a
+new group name.
+
+14. A system (100) for determining accessor entitlement to a resource
+comprising:
+
+a) a first means (112) for storing a plurality of accessors and a
+unique identifier associated with each accessor;
+
+b) a second means (114) for storing a plurality of unique accessor
+group names, each of the plurality of accessor group names having an
+associated membership bit map, the accessor identifier acting as an index into
+the accessor group membership bit maps for determining whether an accessor
+is a member of an accessor group; and
+
+Cc) a processor means (110) for determing whether an accessor is
+entitled to a resource in response to an accessor request for the resource by
+evaluating a logical boolean entitlement expression for the resource, the
+entitlement expression including a reference to at least one accessor group,
+
+wherein each member of the bit map corresponds to a respective
+
+accessor and is set or not set according to whether the corresponding accessor
+
+--- PAGE 3 ---
+10
+
+15
+
+Main Request 25
+
+is a member or not a member respectively of the accessor group represented by
+the bit map.
+
+15. |The system of claim 14, further comprising a third means (116) for storing
+at least one unique resource name corresponding to a resource and a logical
+boolean entitlement expression associated with each resource name.
+
+16. Thesystem of claim 14 or 15, wherein the processor means comprises a
+server process responsive to one or more client processes representing
+accessor requests for access to a resource.
+
+17. The system of claim 16, wherein the processor means comprises a
+plurality of threads executing on a server computer for accessing the first and
+second means and for evaluating accessor entitlement requests based on
+information retrieved from the first and second means.
+
+18. A computer program product operable to program processor means to
+
+perform the method of any of claims 1 to 13.

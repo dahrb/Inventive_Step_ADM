@@ -1,0 +1,329 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+P2018,0298 EP E / 85261365EP03 December 16, 2020
+16915920.9 main request
+
+CLAIMS (MAIN REQUEST)
+
+1. A storage system, wherein the storage system comprises a controller (100) and a solid
+state disk (200), the controller (100) is capable of communicating with the solid state disk (200),
+the solid state disk (200) comprises multiple channels, and each of the multiple channels is
+connected to multiple dies, wherein
+
+the controller (100) is configured to: create multiple segments; select a first die from the
+multiple dies; select a first segment from the multiple segments, and determine an available
+offset of the first segment; generate a write request, wherein the write request comprises a write
+address, target data, and a data length of the target data, and the write address comprises an
+identifier of a channel connected to the first die, an identifier of the first die, an identifier of the
+first segment, and the available offset; and send the write request to the solid state disk (200);
+
+the solid state disk (200) is configured to receive the write request, and store the target data
+according to the write address and the data length of the target data; and
+
+wherein the controller (100) is further configured to record an amount of valid data stored in
+each of the multiple dies; and the controller (100) is specifically configured to select a die in
+which an amount of valid data is less than a second threshold as the first die;
+
+wherein selecting the first die based on the second threshold comprises applying a criterion
+selected from
+
+- Criterion 1: Random principle,
+
+- Criterion 2: Stateless priority principle,
+
+- Criterion 3: Performance priority principle,
+
+- Criterion 6: Read request latency principle.
+
+2. The storage system according to claim 1, wherein the controller (100) is further
+configured to record states of the multiple dies; and
+
+the controller (100) is specifically configured to select a stateless die from the multiple dies
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+P2018,0298 EP E / 85261365EP03 December 16, 2020
+16915920.9 main request
+
+as the first die.
+
+3. The storage system according to claim 1, wherein the controller (100) is further
+configured to determine an access frequency of the target data based on a host logical block
+address of the target data; and
+
+if the access frequency of the target data is greater than an access frequency threshold, the
+controller (100) is specifically configured to select a die in which an amount of stored data
+whose access frequency is greater than the access frequency threshold is less than a first
+
+threshold as the first die.
+
+4. The storage system according to claim 1, wherein the controller (100) is further
+configured to record a wear degree of each of the multiple dies; and
+the controller (100) is specifically configured to select a die whose wear degree is less than
+
+a wear degree threshold as the first die.
+
+5. The storage system according to claim 1, wherein the controller (100) is further
+configured to record a quantity of read requests to be processed in each of the multiple dies; and
+
+the controller (100) is specifically configured to select a die in which there is no read
+request to be processed as the first die, or select a die in which a quantity of read requests to be
+
+processed is less than a third threshold as the first die.
+
+6. The storage system according to any one of claims | to 5, wherein the controller (100) is
+specifically configured to select a certain segment as the first segment if the certain segment is
+already allocated to the first die and has available storage space; or select a blank segment from
+
+the multiple segments as the first segment.
+
+7. The storage system according to any one of claims 1 to 6, wherein the controller (100) is
+further configured to: generate a mapping relationship, wherein the mapping relationship is
+
+configured to record a mapping between the host logical block address of the target data and the
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+P2018,0298 EP E / 85261365EP03 December 16, 2020
+16915920.9 main request
+
+3
+
+channel connected to the first die, the first die, the first segment, and the available offset; and
+
+store the mapping relationship in a system mapping table.
+
+8. The storage system according to claim 1, wherein the solid state disk (200) is specifically
+configured to:
+query a local mapping table according to the identifier of the first segment and the
+available offset comprised in the write address, wherein the local mapping table is configured to
+store a mapping relationship between a segment and a physical block address of the solid state
+disk (200); and if a block corresponding to the first segment is recorded in the local mapping
+table, determine a page identifier according to the available offset comprised in the write address,
+and write, based on the data length of the target data and starting from a page corresponding to
+the page identifier, the target data into the block; or else
+select a blank block from multiple blocks of the first die based on the identifier of the
+channel connected to the first die and the identifier of the first die, determine a page identifier
+according to the available offset comprised in the write address, and write, based on the data
+length of the target data and starting from a page corresponding to the page identifier, the target
+
+data into the blank block.
+
+9. The storage system according to claim 8, wherein the solid state disk (200) is further
+configured to: generate a new mapping relationship, wherein the new mapping relationship is
+configured to record a mapping between the first segment and the blank block; and store the new
+
+mapping relationship in the local mapping table.
+
+10. A solid state disk (200), wherein the solid state disk (200) comprises a processor (2002),
+a memory (2003), a communications interface (2001), and multiple channels, the processor
+(2002) and the memory (2003) are respectively connected to multiple dies via each of the
+multiple channels, each of the multiple dies comprises multiple blocks, and the processor (2002),
+the memory (2003), and the communications interface (2001) are capable of communicating
+
+with each other, wherein
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+P2018,0298 EP E / 85261365EP03 December 16, 2020
+16915920.9 main request
+
+4
+
+the communications interface (2001) is configured to receive a write request from a
+controller (100), wherein the write request comprises a write address, target data, and a data
+length of the target data, and the write address comprises an identifier of a first die, an identifier
+of a channel connected to the first die, an identifier of a first segment, and an available offset;
+
+the memory (2003) is configured to store a local mapping table, wherein the local mapping
+table is configured to record a mapping relationship between a segment and a physical block
+address of the solid state disk (200); and
+
+the processor (2002) is configured to: query the local mapping table according to the
+identifier of the first segment and the available offset comprised in the write address; and if a
+block corresponding to the first segment is recorded in the local mapping table, determine a page
+identifier according to the available offset, and write, based on the data length of the target data
+and starting from a page corresponding to the page identifier, the target data into the block; or
+else, select a blank block from multiple blocks of the first die based on the identifier of the
+channel connected to the first die and the identifier of the first die, determine a page identifier
+according to the available offset comprised in the write address, and write, based on the data
+length of the target data and starting from a page corresponding to the page identifier, the target
+data into the blank block;
+
+wherein the controller (100) is configured to record an amount of valid data stored in each
+of the multiple dies; and the controller (100) is specifically configured to select a die in which an
+amount of valid data is less than a second threshold as the first die;
+
+wherein selecting the first die based on the second threshold comprises applying a criterion
+selected from
+
+- Criterion 1: Random principle,
+
+- Criterion 2: Stateless priority principle,
+
+- Criterion 3: Performance priority principle,
+
+- Criterion 6: Read request latency principle.
+
+11. The solid state disk (200) according to claim 10, wherein the processor (2002) is further
+
+configured to: generate a new mapping relationship, wherein the new mapping relationship is
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+P2018,0298 EP E / 85261365EP03 December 16, 2020
+16915920.9 main request
+
+5
+
+configured to record a mapping between the first segment and the blank block; and store the new
+
+mapping relationship in the local mapping table.
+
+12. The solid state disk (200) according to claim 10, wherein — solid state disk (200)the
+identifier of the first segment carries an identifier of a first die and and wherein
+
+select a blank block from multiple blocks of the first die based on the identifier of the
+channel connected to the first die and the identifier of the first die, determine a page identifier
+according to the available offset comprised in the write address, and write, based on the data
+length of the target data and starting from a page corresponding to the page identifier, the target
+data into the blank block
+
+comprises
+
+parse the identifier of the first segment to obtain the identifier of the first die and the
+
+identifier of the channel connected to the first die.
+
+13. The solid state disk (200) according to claim 12, wherein the processor is further
+configured to: generate a new mapping relationship, wherein the new mapping relationship is
+configured to record a mapping between the first segment and the blank block; and store the new
+
+mapping relationship in the local mapping table.
+
+14. A method for writing data to a solid state disk (200), wherein the method is applicable to
+a storage system, the storage system comprises a controller (100) and the solid state disk (200),
+the controller (100) is capable of communicating with the solid state disk (200), the solid state
+disk (200) comprises multiple channels, and each of the multiple channels is connected to
+multiple dies; the controller (100) creates multiple segments in advance; and the method
+comprises:
+
+selecting, by the controller (100), a first die from the multiple dies;
+
+selecting, by the controller (100), a first segment from the multiple segments, and
+determining an available offset of the first segment;
+
+generating, by the controller (100), a write request, wherein the write request comprises a
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+P2018,0298 EP E / 85261365EP03 December 16, 2020
+16915920.9 main request
+
+6
+
+write address, target data, and a data length of the target data, and the write address comprises an
+identifier of a channel connected to the first die, an identifier of the first die, an identifier of the
+first segment, and the available offset; and
+
+storing, by the solid state disk (200), the target data according to the write address and the
+data length of the target data;
+
+sending, by the controller (100), the write request to the solid state disk (200);
+
+wherein an amount of valid data stored in the first die is less than a second threshold,
+
+wherein selecting the first die based on the second threshold comprises applying a criterion
+selected from
+
+- Criterion 1: Random principle,
+
+- Criterion 2: Stateless priority principle,
+
+- Criterion 3: Performance priority principle,
+
+- Criterion 6: Read request latency principle.
+
+15. The method according to claim 14, wherein the first die is a stateless die.
+
+16. The method according to claim 14, wherein the controller (100) determines an access
+frequency of the target data based on a host logical block address of the target data; and
+
+if the access frequency of the target data is greater than an access frequency threshold, an
+amount of data that is stored in the first die and whose access frequency is greater than the access
+
+frequency threshold is less than a first threshold.
+
+17. The method according to claim 14, wherein a wear degree of the first die is less than a
+
+wear degree threshold.
+
+18. The method according to claim 14, wherein there is no read request to be processed in
+the first die, or a quantity of read requests to be processed in the first die is less than a third
+
+threshold.
+
+--- PAGE 7 ---
+10
+
+P2018,0298 EP E / 85261365EP03 December 16, 2020
+16915920.9 main request
+
+7
+
+19. The method according to claim 14, wherein the first segment is a blank segment.
+
+20. The method according to claim 14, wherein the first segment is already allocated to the
+
+first die, and there is available space in the first segment.
+
+21. The method according to claim 14, wherein the method further comprises:
+
+generating, by the controller (100), a mapping relationship, wherein the mapping
+relationship is configured to record a mapping between a host logical block address of the target
+data and the channel connected to the first die, the first die, the first segment, and the available
+offset; and
+
+storing the mapping relationship in a system mapping table.

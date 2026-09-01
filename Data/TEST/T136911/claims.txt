@@ -1,0 +1,148 @@
+--- PAGE 1 ---
+EP Application No.: 05 105 313.0
+
+Applicant: Microsoft Corporation
+Our Ref.: EP35585MH199
+Date: May 11, 2011
+
+CLAIMS
+
+A computer-implemented method for automatically positioning labels associated with a
+
+visual data object, comprising:
+
+determining a first layout for the labels;
+
+scoring the first layout to determine a first score;
+determining a second layout for the labels;
+
+scoring the second layout to determine a second score;
+comparing the first score with the second score;
+
+proceeding with one of the first layout and the second layout as a selected layout for
+rendering the visual data object depending on the comparison of the first score to the
+
+second score; and
+
+repeating determining an additional layout for the labels and scoring the additional layout
+until a layout is achieved that approaches an optimal layout,
+
+wherein labels that are manually positioned are exempt from consideration during the
+
+optimization process.
+
+The computer-implemented method of claim 1, wherein scoring the first layout to
+determine a first score further comprises executing an objective function, wherein the
+objective function provides a goal by which the first layout is scored.
+
+The computer-implemented method of claim 2, wherein the goal corresponds to
+
+minimizing overlap of the labels.
+
+The computer-implemented method of claim 2, wherein the goal corresponds to
+minimizing the distance from the labels to their associated anchors within the chart.
+
+--- PAGE 2 ---
+10.
+
+11.
+
+The computer-implemented method of claim 1, wherein scoring the first layout to
+determine a first score further comprises comparing a score associated with the first
+layout to another score associated with an optimal layout.
+
+The computer-implemented method of claim 5, wherein proceeding with one of the first
+layout and the second layout further comprises proceeding with the layout that most
+closely corresponds to an optimal layout.
+
+The computer-implemented method of claim 1, wherein determining a second layout for
+the labels further comprises executing a perturb function, wherein the perturb function
+alters the first layout according to a set of constraints.
+
+The computer-implemented method of claim 7, wherein the perturb function corresponds
+with adjusting an aspect of a single label included in the chart.
+
+A system for rendering a chart, comprising:
+a chart object (512) that is arranged to define the chart (510) with chart elements;
+a graphics module (506) that is operable to render shapes;
+
+a charting module (518) that is operable to generate a shape-based chart definition
+based on the chart object (512), wherein the shape-based chart definition defines the
+chart (510) with shapes that can be rendered by the graphics module (506); and
+
+a label optimization (526) that automatically positions labels associated with the chart
+(510) within the chart (510) according to an optimal layout, the label optimization
+application comprises computer-executable instructions for performing a method
+according to claim 1.
+
+The system of claim 9, wherein scoring the first layout to determine a first score further
+comprises executing an objective function, wherein the objective function provides a goal
+
+by which the first layout is scored.
+
+The system of claim 9, wherein scoring the first layout to determine a first score further
+comprises comparing a score associated with the first layout to another score associated
+
+with an optimal layout.
+
+--- PAGE 3 ---
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+
+The system of claim 9, wherein determining a second layout for the labels further
+comprises executing a perturb function, wherein the perturb function alters the first layout
+according to a set of constraints.
+
+A computer-readable medium that includes computer-executable instructions
+automatically positioning labels associated with a visual data object, the instructions
+
+comprising:
+
+determining a first layout for the labels;
+
+scoring the first layout to determine a first score;
+determining a second layout for the labels;
+
+scoring the second layout to determine a second score;
+comparing the first score with the second score;
+
+proceeding with one of the first layout and the second layout as a selected layout for
+rendering the visual data object depending on the comparison of the first score to the
+
+second score; and
+
+repeating determining an additional layout for the labels and scoring the additional layout
+until a layout is achieved that approaches an optimal layout,
+
+wherein labels that are manually positioned by the user are ignored during the
+
+optimization process.
+
+The computer-readable medium of claim 13, wherein scoring the first layout to determine
+a first score further comprises executing an objective function, wherein the objective
+
+function provides a goal by which the first layout is scored.
+
+The computer-readable medium of claim 13, wherein scoring the first layout to determine
+a first score further comprises comparing a score associated with the first layout to
+another score associated with an optimal layout.
+
+The computer-readable medium of claim 15, wherein proceeding with one of the first
+layout and the second layout further comprises proceeding with the layout that most
+
+closely corresponds to an optimal layout.
+
+--- PAGE 4 ---
+17.
+
+The computer-readable medium of claim 13, wherein determining a second layout for the
+labels further comprises executing a perturb function, wherein the perturb function alters
+
+the first layout according to a set of constraints.

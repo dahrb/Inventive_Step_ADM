@@ -1,0 +1,103 @@
+Title: 
+Point of care
+
+Abstract: A computer-implementable method and apparatus provides concise bits of information at the point of care within the confines of a provider-patient relationship. Interactive computer screens display information to the provider in the form of selectable indications, drugs, methods and evidence-based articles. Health care organizations may integrate this computer-implementable method into the general work flow of patient care to provide timely information to the provider. The computer-implementable method and apparatus may be integrated into existing health care patient systems or may be instituted as a stand-alone application. The computer-implementable method allows the provider to drill down for digestible bits of information, within the system, to receive information at levels conversant to the need of the given situation in patient care. At any time, the provider may choose to receive more comprehensive bits of knowledge or have the information electronically mailed for later study. Integrated within the main point of care information system is a computer-implementable method used to write prescriptions for patients. The prescription writer permits the provider to either manually enter the prescription based on the original drug selection or lets the computer-implementable method issue a prescription. The prescription writer issues prescriptions based upon rules set forth in the computer-implementable method regarding dosing of a previously chosen drug and the patient information available to the computer-implementable method.
+
+Type: US Patent
+
+Claims: 
+
+The embodiments of the invention in which an exclusive property or privilege is claimed are defined as follows:
+1. A computer based method of providing evidence-based information to a service provider that is in the process of making a decision as to a treatment regimen to be followed, the method comprising the steps of:
+(a) prompting the provider to select a medication;
+(b) receiving the provider's selection of a medication; and
+(c) in response to the provider's selective request, providing evidence-based information on the selected medication on a scaled basis.
+2. The method of claim 1, further comprising the steps of:
+after step (b) and before step (c), prompting the provider to select an indication that is treatable using the selected medication; and
+receiving the provider's selection of an indication;
+wherein step (c) comprises providing evidence-based information on the selected medication as applied to treat the selected indication.
+3. The method of claim 2, wherein the step of prompting the provider to select an indication comprises providing a list of indications predetermined to be associated with the selected medication.
+4. The method of claim 1, further comprising the steps of:
+before step (a), prompting the provider to select a condition of a patient to be treated; and
+receiving the provider's selection of a condition;
+wherein step (a) comprises providing a list of medications predetermined to be associated with the selected condition, from which the provider is prompted to select one medication.
+5. The method of claim 4, wherein the step of prompting the provider to select a condition comprises providing a list of predefined conditions, from which the provider is prompted to select one condition.
+6. The method of claim 1, further comprising the step of:
+after step (b) and before step (c), presenting a summary of the evidence-based information on the selected medication to assist the provider in selectively requesting the evidence-based information on a scaled basis.
+7. The method of claim 1, wherein the evidence-based information comprises an article, and step (c) comprises the steps of:
+presenting an at least one line summary of available evidence-based information;
+presenting a synopsis of the article in response to a first request by the provider;
+presenting an abstract of the article in response to a second request by the provider; and
+presenting the article itself in response to a third request by the provider.
+8. The method of claim 1, wherein the evidence-based information is stored in a predefined database.
+9. The method of claim 1, which is implemented on a network.
+10. The method of claim 9, wherein the evidence-based information is retrieved over a network.
+11. The method of claim 9, wherein the network is the Internet.
+12. The method of claim 1, further comprising the step of prompting the provider to store, print, or forward to a designated location over a network the provided evidence-based information.
+13. The method of claim 1, further comprising the step of generating a prescription of the selected medication for a patient.
+14. The method of claim 13, further comprising the step of displaying a warning to the provider when the selected medication is known to possess medical dangers.
+15. The method of claim 14, further comprising the step of generating a selection whereby the provider may abandon the present prescription upon the warning.
+16. The method of claim 13, further comprising the step of generating dosing information by calculating the dose of the selected medication using information provided on a patient.
+17. A computer based method of providing evidence-based information to a service provider that is in the process of making a decision as to a treatment regimen to be followed, the method comprising the steps of:
+(a) prompting the provider to select a treatment regimen;
+(b) receiving the provider's selection of a treatment regimen; and
+(c) in response to the provider's selective request, providing evidence-based information on the selected treatment regimen on a scaled basis.
+18. The method of claim 17, further comprising the step of:
+after step (b) and before step (c), presenting a summary of the evidence-based information on the selected treatment regimen to assist the provider in selectively requesting the evidence-based information on a scaled basis.
+19. The method of claim 17, wherein the evidence-based information comprises an article, and step (c) comprises the steps of:
+presenting an at least one line summary of available evidence-based information;
+presenting a synopsis of the article in response to a first request by the provider;
+presenting an abstract of the article in response to a second request by the provider; and
+presenting the article itself in response to a third request by the provider.
+20. The method of claim 17, further comprising the step of:
+providing a list of lab tests predetermined to be associated with the selected treatment regimen, from which the provider is prompted to select one or more lab tests.
+21. The method of claim 17, further comprising the step of:
+providing a list of radiology examinations predetermined to be associated with the selected treatment regimen, from which the provider is prompted to select one or more radiology examinations.
+22. The method of claim 17, further comprising the step of generating treatment instructions for a patient.
+23. The method of claim 17, wherein the treatment regimen is a medication.
+24. The method of claim 23, wherein the step of prompting the provider to select a medication comprises providing a list of medications.
+25. The method of claim 17, which is implemented on a network.
+26. The method of claim 25, wherein the evidence-based information is retrieved over a network.
+27. The method of claim 25, wherein the network is the Internet.
+28. The method of claim 17, further comprising the step of prompting the provider to store, print, or forward to a designated location over a network the provided evidence-based information.
+29. A computer-readable medium having computer-executable instructions for providing evidence-based information to a service provider that is in the process of making a decision as to a treatment regimen to be followed, the medium being adapted for carrying out the method of any one of claims 1 through 28.
+30. A computer apparatus for providing evidence-based information to a service provider that is in the process of making a decision as to a treatment regimen to be followed, the apparatus comprising:
+means for prompting the provider to select a medication;
+means for receiving the provider's selection of a medication; and
+means for providing evidence-based information on the selected medication on a scaled basis in response to the provider's selective request.
+31. The apparatus of claim 30, wherein the means for providing evidence-based information comprises a predefined database that stores the evidence-based information.
+32. The apparatus of claim 30, wherein the apparatus is a part of a network.
+33. The apparatus of claim 32, wherein the network is the Internet.
+34. The apparatus of claim 30, further comprising means for prompting the provider to store, print, or forward to a designated location over a network the provided evidence-based information.
+35. The apparatus of claim 30, further comprising means for generating a prescription of the selected medication for a patient.
+36. The apparatus of claim 35, further comprising means for generating dosing information by calculating the dose of the selected medication using information provided on a patient.
+36. A computer system for providing evidence-based information to a service provider that is in the process of making a decision as to a treatment regimen to be followed, the system comprising:
+a user interface including input means and output means;
+a processing unit coupled to the user interface; and
+a storage medium coupled to the processing unit;
+wherein the processing unit being operable under control of program code stored in the storage medium to:
+prompt the provider via the output means to select a medication;
+receive the provider's selection of a medication via the input means; and
+in response to the provider's selective request via the input means, provide evidence-based information of the selected medication on a scaled basis via the output means.
+37. The system of claim 36, wherein the processing unit is further operable to:
+prompt the provider via the output means to select a condition of a patient to be treated; and
+receive the provider's selection of a condition via the input means;
+wherein the processing unit is operable to present a list of medications predetermined to be associated with the selected condition via the output means, from which list the provider is prompted to select one medication via the input means.
+38. The system of claim 36, wherein the processing unit is further operable to generate a prescription of the selected medication for a patient including dosing information suited for the patient.
+39. The system of claim 38, wherein the processing unit is further operable to calculate standard dosing based on the selected medication and physiological information of the patient.
+40. The system of claim 39, wherein the processing unit is further operable to prompt the provider via the output means to select standard dosing or manual dosing, wherein if the provider selects standard dosing via the input means, the unit calculates standard dosing of the selected medication, and if the provider selects manual dosing via the input means, the unit receives manual dosing that the provider enters via the input means.
+41. The system of claim 36, wherein the processing unit is further operable to output the generated prescription including the dosing information via the output means.
+42. The system of claim 36, wherein the processing unit is further operable to output the generated treatment instructions for a patient.
+43. The system of claim 36, which is a part of a network.
+44. The system of claim 43, wherein the network is the Internet.
+45. The system of claim 36, wherein the storage medium comprises a rules database, medication database, indications database, and rules notes database.
+46. The system of claim 36, wherein the rules database includes a predefined collection of evidence-based information, each piece of the evidence-based information comprising an article and being subdivided into a synopsis of the article, an abstract of the article, and the article itself, the synopsis, the abstract, and the article itself being independently retrievable from the rules database.
+47. The system of claim 46, wherein the medication database includes a predefined collection of records on common dosages, physical forms, and maximum dosages of medications.
+48. The system of claim 46, wherein the indication database includes a predefined collection of records on indications in association with medications that are used to treat the indications.
+49. The system of claim 46, wherein the rules notes database is adapted to store records of the provider's actions as indicated by the provider's input into the system using the input means.
+50. The system of claim 46, wherein the storage medium further comprises a formulary database.
+51. The system of claim 50, wherein the formulary database includes a predefined collection of records on formulas, intended uses, and methods of preparation of medications.
+52. The system of claim 46, wherein the storage medium further comprises a provider database.
+53. The system of claim 52, wherein the provider database includes a collection of provider records, each of the provider records comprising information selected from the group consisting of a name, Drug Enforcement Agency number, and email address of each provider.
+54. The system of claim 46, wherein the storage medium further comprises a patient database.
+55. The system of claim 54, wherein the patient database includes a collection of patient records, each of the patient records comprising information selected from the group consisting of a name, birth date, gender, insurance information, weight, height, treatment history, and medical history of each patient.

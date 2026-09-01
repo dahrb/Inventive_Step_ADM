@@ -1,0 +1,372 @@
+--- PAGE 1 ---
+20
+
+25
+
+EP 09 748 606.2
+MTI-2718.EP.0 / 68354.118533
+
+MAIN REQUEST
+
+1. An integrated circuit comprising:
+
+at least one analog input device (202) having a digitally controlled input offset
+voltage compensation circuit comprising a volatile trim register (310); and
+
+an auto-calibration circuit, said auto-calibration circuit being coupled to said at
+least one analog input device (202) and to the input offset voltage compensation circuit,
+wherein an input offset voltage is minimized in said at least one analog input device
+(202) during an auto-calibration cycle,
+
+characterized in that said auto-calibration circuit comprises a first trigger input
+receiving an output signal from a power on reset circuit (130) and a second trigger input
+(Acal) operable to be set under program control, wherein upon a power on reset, the
+power on reset circuit (130) is configured to initiate the auto-calibration cycle and
+wherein the power on reset circuit (130) is further configured to receive an output signal
+from a parity detection circuit (308, 312) coupled with said volatile trim register (310)
+wherein a parity error during operation of the at least one analog input device (202)
+
+causes a power on reset thereby initiating the auto-calibration cycle.
+
+2. The integrated circuit of claim 1, further comprising a plurality of analog input
+devices (202) and associated volatile trim registers (310), each coupled with a parity detection
+circuit (312), wherein outputs of the plurality of parity detection circuits (312) are coupled with
+the power on reset circuit (130) through an OR gate (308).
+
+3. The integrated circuit of claim 1, wherein said at least one analog input device
+(202) is a comparator or an operational amplifier having differential inputs (150, 152) and an
+
+output (212).
+
+4. The integrated circuit of claim 1, wherein the at least one analog input device is
+an operational amplifier (202) having differential inputs (150, 152), a first output (212) and a
+calibration output (218).
+
+5. The integrated circuit according to claim 4, wherein said auto-calibration circuit
+comprises:
+
+a voltage comparator (120, 204);
+
+21383971
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+EP 09 748 606.2
+MTI-2718.EP.0 / 68354.118533
+
+a programmable voltage reference (118) coupled to an input of the voltage
+comparator (120, 204);
+
+a voltage offset trim digital-to-analog converter (DAC) (112);
+
+voltage offset calibration switches (232, 234, 240);
+
+a successive approximation register (SAR) (306) having an input coupled to an
+output of the voltage comparator (204) and outputs coupled to the voltage offset trim
+DAC (112); and
+
+calibration logic (304), wherein when the event occurs the calibration logic (304)
+controls the voltage offset calibration switches (232, 234, 240) to
+
+couple the differential inputs (150, 152) of the operational amplifier
+(202) to the voltage reference (222), wherein said at least one analog input
+device may be controlled to have high gain; and
+
+to couple the output (212) or calibration output (218) of the operational
+
+amplifier (202) to another input of the voltage comparator (204);
+
+whereby the voltage comparator (204) causes the SAR (306) to change an output
+value to the voltage offset trim DAC (112) so as to minimize the input offset voltage of
+
+the at least one analog input device (202).
+
+6. The integrated circuit of claim 5, wherein the first output (212) of the operational
+amplifier is a tri-state output and is decoupled from the calibration output (218) when the input
+
+offset voltage of the at least one analog input device (202) is being minimized.
+
+7. The integrated circuit of claim 5, wherein the volatile trim register (310) is
+connected between the SAR (306) and the voltage offset trim DAC (112), wherein the volatile
+trim register (310) stores the SAR output value used to minimize the input offset voltage of the
+
+at least one analog input device (202).
+
+8. The integrated circuit of claim 1, wherein the input offset voltage compensation
+
+circuit comprises a state machine (304).
+
+9. The integrated circuit of claim 2, further comprising:
+switches (240, 242) for selecting from the plurality of analog input devices (202)
+each one thereof during respective auto-calibration cycles therefore, and
+
+a plurality of voltage offset trim DACs (112);
+
+21383971
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+EP 09 748 606.2
+MTI-2718.EP.0 / 68354.118533
+
+wherein said volatile trim registers (310, 310a) are connected between the SAR
+(306) and respective ones of the plurality of voltage offset trim DACs (112), wherein
+each one of the plurality of volatile trim registers (310, 310a) stores the SAR output
+value used to minimize the input offset voltage of respective ones of the plurality of
+
+analog input devices (202).
+
+10. A method for minimizing an input offset voltage in an analog input device
+
+(202) having a digitally controlled input offset voltage compensation circuit arranged within an
+
+integrated circuit and comprising a volatile trim register (310), said method comprising the steps
+
+of:
+
+21383971
+
+(a) monitoring a first input (AcaL) of an automatic calibration circuit (300) for
+detecting a user invoked auto-calibration and monitoring a second input for
+detecting an occurrence of a power-on reset within said integrated circuit,
+wherein an auto-calibration cycle is initiated through either said first or second
+input, wherein a power on reset is further caused by a parity error in said volatile
+trim register (310) during operation of the at least one analog input device (202);
+
+(b) upon initiating said auto-calibration cycle switching the analog input device
+(202) from a normal mode to an auto-calibration mode;
+
+(c) minimizing an input offset voltage in said at least one analog input device (202);
+and
+
+(d) switching the analog input device (202) from the calibration mode to the normal
+
+mode.
+
+11. The method according to claim 10, wherein upon initiating the auto-calibration
+cycle,
+
+configuring the analog input device (202) for high gain;
+
+applying a reference voltage or programmable reference voltage to the analog input
+device (202);
+
+and minimizing an input offset voltage of the analog input device by:
+(i) measuring an output voltage of the analog input device (202); and
+(ii) applying input offset compensation values to the input offset voltage
+
+compensation circuit until the output voltage from the analog input
+
+device (202) is at a desired value and then storing the input offset
+
+--- PAGE 4 ---
+EP 09 748 606.2
+MTI-2718.EP.0 / 68354.118533
+
+compensation value that minimizes the input offset voltage of the
+
+analog input device (202).
+
+12. The method according to one of the preceding claims 10-11, wherein auto-
+calibration is further initiated after a predetermined time period set by a programmable auto-
+
+5 calibration timer (302) has expired.
+
+13. The method according to one of the preceding claims 10-12, wherein auto-
+calibration is initiated when a change in temperature or supply voltage of the integrated circuit is
+
+detected.
+
+14. | The method of claim 10, wherein a plurality of analog input devices (202) and
+10 associated volatile trim registers (310) are provided and steps (b)-(e) are repeated for each one of
+
+the plurality of analog input devices (202).
+
+21383971
+
+--- PAGE 5 ---
+20
+
+25
+
+EP 09 748 606.2
+MTI-2718.EP.0 / 68354.118533
+
+AUXILIARY REQUEST
+
+1. An integrated circuit comprising:
+
+at least one analog input device (202) having a digitally controlled input offset
+voltage compensation circuit comprising a volatile trim register (310); and
+
+an auto-calibration circuit, said auto-calibration circuit being coupled to said at
+least one analog input device (202) and to the input offset voltage compensation circuit,
+wherein an input offset voltage is minimized in said at least one analog input device
+(202) during an auto-calibration cycle,
+
+characterized in that said auto-calibration circuit comprises a first trigger input
+receiving an output signal from a power on reset circuit (130) and a second trigger input
+(Acal) operable to be set under program control, wherein upon a power on reset, the
+power on reset circuit (130) is configured to initiate the auto-calibration cycle and
+wherein the power on reset circuit (130) is further configured to receive an output signal
+from a parity detection circuit (308, 312) coupled with said volatile trim register (310)
+wherein a parity error during operation of the at least one analog input device (202)
+
+causes a power on reset thereby initiating the auto-calibration cycle.
+
+2. The integrated circuit of claim 1, further comprising a plurality of analog input
+devices (202) and associated volatile trim registers (310), each coupled with a parity detection
+circuit (312), wherein outputs of the plurality of parity detection circuits (312) are coupled with
+the power on reset circuit (130) through an OR gate (308).
+
+3. The integrated circuit of claim 1, wherein said at least one analog input device
+(202) is a comparator or an operational amplifier having differential inputs (150, 152) and an
+
+output (212).
+
+4. The integrated circuit of claim 1, wherein the at least one analog input device is
+an operational amplifier (202) having differential inputs (150, 152), a first output (212) and a
+calibration output (218).
+
+5. The integrated circuit according to claim 4, wherein said auto-calibration circuit
+comprises:
+
+a voltage comparator (120, 204);
+
+21383971
+
+--- PAGE 6 ---
+EP 09 748 606.2
+MTI-2718.EP.0 / 68354.118533
+
+a programmable voltage reference (118) coupled to an input of the voltage
+comparator (120, 204);
+a voltage offset trim digital-to-analog converter (DAC) (112);
+voltage offset calibration switches (232, 234, 240);
+5 a successive approximation register (SAR) (306) having an input coupled to an
+output of the voltage comparator (204) and outputs coupled to the voltage offset trim
+DAC (112); and
+calibration logic (304), wherein when the event occurs the calibration logic (304)
+controls the voltage offset calibration switches (232, 234, 240) to
+10 couple the differential inputs (150, 152) of the operational amplifier
+(202) to the voltage reference (222), wherein said at least one analog input
+device may be controlled to have high gain; and
+to couple the output (212) or calibration output (218) of the operational
+amplifier (202) to another input of the voltage comparator (204);
+15 whereby the voltage comparator (204) causes the SAR (306) to change an output
+value to the voltage offset trim DAC (112) so as to minimize the input offset voltage of
+
+the at least one analog input device (202).
+
+6. The integrated circuit of claim 5, wherein the first output (212) of the operational
+amplifier is a tri-state output and is decoupled from the calibration output (218) when the input
+
+20 offset voltage of the at least one analog input device (202) is being minimized.
+
+7. The integrated circuit of claim 1, wherein the input offset voltage compensation
+
+circuit comprises a state machine (304).
+
+8. The integrated circuit of claim 2, further comprising:
+switches (240, 242) for selecting from the plurality of analog input devices (202)
+25 each one thereof during respective auto-calibration cycles therefore, and
+a plurality of voltage offset trim DACs (112);
+wherein said volatile trim registers (310, 310a) are connected between the SAR
+(306) and respective ones of the plurality of voltage offset trim DACs (112), wherein
+each one of the plurality of volatile trim registers (310, 310a) stores the SAR output
+
+21383971
+
+--- PAGE 7 ---
+20
+
+25
+
+30
+
+EP 09 748 606.2
+
+MTI-2718.EP.0 / 68354.118533
+
+value used to minimize the input offset voltage of respective ones of the plurality of
+
+analog input devices (202).
+
+9.
+
+A method for minimizing an input offset voltage in an analog input device
+
+(202) having a digitally controlled input offset voltage compensation circuit arranged within an
+
+integrated circuit and comprising a volatile trim register (310), said method comprising the steps
+
+of:
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+10.
+
+monitoring a first input (AcaL) of an automatic calibration circuit (300) for
+detecting a user invoked auto-calibration and monitoring a second input for
+detecting an occurrence of a power-on reset within said integrated circuit,
+wherein an auto-calibration cycle is initiated through either said first or second
+input, wherein a power on reset is further caused by a parity error in said volatile
+trim register (310) during operation of the at least one analog input device (202);
+upon initiating said auto-calibration cycle switching the analog input device
+(202) from a normal mode to an auto-calibration mode;
+
+minimizing an input offset voltage in said at least one analog input device (202);
+and
+
+switching the analog input device (202) from the calibration mode to the normal
+
+mode.
+
+The method according to claim 9, wherein upon initiating the auto-calibration
+
+cycle,
+
+configuring the analog input device (202) for high gain;
+
+applying a reference voltage or programmable reference voltage to the analog input
+
+device (202);
+
+and minimizing an input offset voltage of the analog input device by:
+
+21383971
+
+(i) measuring an output voltage of the analog input device (202); and
+
+(ii) applying input offset compensation values to the input offset voltage
+compensation circuit until the output voltage from the analog input
+device (202) is at a desired value and then storing the input offset
+compensation value that minimizes the input offset voltage of the
+
+analog input device (202).
+
+--- PAGE 8 ---
+EP 09 748 606.2
+MTI-2718.EP.0 / 68354.118533
+
+11. The method of claim 9, wherein a plurality of analog input devices (202) and
+associated volatile trim registers (310) are provided and steps (b)-(e) are repeated for each one of
+
+the plurality of analog input devices (202).
+
+21383971

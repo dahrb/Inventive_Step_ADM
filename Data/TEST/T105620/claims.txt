@@ -1,0 +1,157 @@
+--- PAGE 1 ---
+MEISSNER BOLTE
+
+Postfach 860624
+81633 Munchen
+
+EP Application No. 17 173 986.5 May 30, 2018
+The MathWorks, Inc. M/MATH-075-EP
+RU/IW/jl
+
+System and methods for generating code from executable models with floating
+point data
+
+Claims
+
+1. A method for generating code (220) for a graphical model (202), the
+graphical model comprising at least one block (204), wherein the at least
+one block comprises an operator to operate on one or more inputs, at least
+one of the one or more inputs having a floating point data type, the
+method comprising:
+
+- interpreting at least one of the one or more first inputs as a sign, a
+mantissa, and an exponent, and
+
+- generating instructions, e.g. source code and/or execution
+instructions, for the graphical model, the generated instructions
+comprising:
+
+- instructions for the one of the one or more inputs, wherein the
+instructions comprise variables representing the sign, the
+mantissa, and/or the exponent; and
+
+- instructions for a function that performs integer arithmetic on
+the variables when the instructions are executed, the function
+having equivalent behavior as the operator operating on the
+one or more inputs;
+
+wherein the variables preserves the raw bit pattern of the one of the one
+or more inputs;
+
+wherein the bit representations of the one of the one or more inputs are
+sliced or decomposed into the variables; and
+
+--- PAGE 2 ---
+EP 17 173 986.5 M/MATH-075-EP
+
+2
+wherein the generated code is suitable for use with programmable logic
+devices, application specific integrated circuits and/or microcontrollers that
+lack Floating Point Units.
+
+2. The method according to claim 1, wherein the method further comprises
+receiving at least one design objective and/or constraint, the at least one
+design objective and/or constraint imposing constraints on code generated
+from the graphical model;
+
+3. The method according to any of the preceding claims, wherein the method
+further comprises determining that code generated for the at least one
+block violates an/the at least one design objective.
+
+4. The method according to any of the previous claims, wherein the at least
+one design objective comprises hardware performance constraints,
+including:
+
+- timing, in particular a clock speed;
+
+- area, in particular a maximum number of logic element;
+
+- identity of a particular type of programmable logic device to which
+generated code is deployed and/or
+
+- power consumption.
+
+5. The method according to any of the previous claims, wherein the method
+further comprises:
+
+- detecting overflow and/or underflow conditions that occur in floating
+point calculations within the graphical model during the execution of
+the generated code, wherein the detecting is based on the sign, the
+mantissa and the exponent.
+
+6. The method according to any of the previous claims, wherein the
+generated code comprises C code, C++ code, HDL code, VHDL code
+Verilog, System Verilog, PLC code, assembly code or executable binary
+code.
+
+7. The method according to any of the previous claims, wherein the operator
+is a multiplication of at least two inputs, wherein the instructions for the
+function comprise instructions for:
+
+--- PAGE 3 ---
+EP 17 173 986.5 M/MATH-075-EP
+
+10.
+
+11.
+
+12.
+
+13.
+
+3
+- an XOR operation applied on the variables representing the signs of
+the at least two inputs;
+- an ADD operation applied on the variables representing the exponents
+of the at least two inputs; and/or
+- a MULTIPLY operation applied on the variables representing the
+mantissa of the at least two inputs.
+
+The method according to any of the previous claims, wherein the one or
+more inputs are interpreted based on IEEE standard 754.
+
+The method according to any of the previous claims, further comprising:
+- compiling the source code into executable code.
+
+The method according to claim 9, wherein compiling generates executable
+code from an instruction set for an architecture without a Floating Point
+Unit (FPU).
+
+The method of claim 9 or 10, wherein compiling generates executable code
+for programmable hardware or embedded hardware comprises integer-only
+micro controllers, FPGA (field-programmable gate array) units without
+floating point cores, or PLC units without floating point support.
+
+A computer-readable medium storing instructions that when executed by
+at least one processor cause the at least one processor to implement a
+method according to any of the previous claims.
+
+A data processing apparatus for generating code for a graphical model, the
+graphical model comprising at least one block, wherein the at least one
+block comprises an operator to operate on one or more inputs, at least one
+of the one more inputs having a floating point data type, the apparatus
+comprising:
+- a device for interpreting at least one of the one or more first inputs
+as a sign, a mantissa, and an exponent, and
+- a device for generating instructions, e.g. source code and/or
+execution instructions, for the graphical model, the generated
+instructions comprising:
+
+--- PAGE 4 ---
+EP 17 173 986.5 M/MATH-075-EP
+
+4
+- instructions for the one of the one or more inputs, wherein
+the instructions comprise variables representing the sign, the
+mantissa, and/or the exponent; and
+- instructions for a function that performs integer arithmetic on
+the variables when the instructions are executed, the
+function having equivalent behavior as the operator operating
+on the one or more inputs
+wherein the variables preserves the raw bit pattern of the one of the one
+or more inputs;
+wherein the bit representations of the one of the one or more inputs are
+sliced or decomposed into the variables; and
+wherein the generated code is suitable for use with programmable logic
+devices, application specific integrated circuits and/or microcontrollers that
+lack Floating Point Units.

@@ -1,0 +1,116 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+EP 10167783.9 - 1221 -1i- July 2019
+Clarion Co., Ltd.
+
+Main Request
+
+AMENDED CLAIMS
+
+What is claimed is:
+
+1. A data processor, comprising:
+a CPU (101);
+a plurality of peripheral devices (107; 108; 109; 110); and
+a memory (102) comprising:
+
+a plurality of device control threads (112; 113; 115; 117) for controlling
+operation of respective peripheral devices;
+
+a control thread (111) including a plurality of processing parts associated
+with respective device control threads;
+
+a table (118) storing configurations of a plurality of applications including
+application priority of respective applications, wherein each application includes an
+operation sequence of processing parts that constitute an application and a
+dependence relationship between the processing parts of the application, wherein
+the processing parts are prioritized such that processing part near end of the
+operation sequence is performed with higher priority than processing part near
+beginning of the operation sequence;
+
+the control thread is configured to perform the steps of:
+
+executing two or more of the applications sharing at least one peripheral
+device in parallel,
+
+wherein when an overlap between operation timings of respective
+processing parts of the two or more of the applications corresponding to a same
+
+peripheral device occurs, processing part with higher priority is executed before
+
+201335EP
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+EP 10167783.9 - 1221 -2- July 2019
+Clarion Co., Ltd.
+
+respective processing parts of other applications, wherein
+
+if priorities associated with the respective processing parts are the same,
+application priority of application associated with processing part that last executed
+is lowered such that processing part of the other application with higher priority is
+executed, and
+
+if each of the respective processing parts has no dependence relationship
+based on the configuration stored in the table, no priority is given to the respective
+processing parts such that the respective processing parts are executed in alternate
+
+manner.
+
+2. The data processor according to claim 1,
+
+wherein the plurality of the applications are defined by the table,
+
+wherein the control thread (111) is configured to instruct execution of sequences of
+processing parts defining a target application, according to the application priority provided
+to each of the applications, and to lower the application priority of the target application
+versus other applications, when control of the target application is returned to the control
+
+thread (111).
+
+3. The data processor according to claim 2,
+wherein among the applications the application priorities of which are equal, the
+application priority of an application corresponding to the processing part instructed last to
+
+be executed is lowered.
+
+4. The data processor according to claim 1, 2 or 3,
+wherein the plurality of threads include the device control threads (112, 113, 115,
+
+117) for controlling peripheral devices (107, 108, 109, 110) and CPU processing threads
+
+201335EP
+
+--- PAGE 3 ---
+EP 10167783.9 - 1221 -3- July 2019
+Clarion Co., Ltd.
+
+(114, 116) each corresponding to a predetermined data processing to be executed in the
+CPU,
+
+wherein the device control thread receiving the instruction of the execution controls
+the corresponding peripheral device according to the instruction, and in response to a
+completion notification from the peripheral device, sends to the control thread (111) a
+processing result of the peripheral device and the completion notification,
+
+each of the CPU processing threads receiving the instruction of the execution
+executes the predetermined data processing according to the instruction, and sends to the
+
+control thread a processing result of the predetermined data processing and a notification.
+
+201335EP

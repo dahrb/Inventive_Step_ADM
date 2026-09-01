@@ -1,0 +1,30 @@
+Title: Power reduction for processors by software control of functional units
+
+Abstract: A method of optimizing a computer program for reduced power consumption by a processor (10) having functional units (11 d, 11 e) that are independently controllable by instructions. The processor's instruction set (FIG. 4) has instructions that may be directed to a particular functional unit (11 d, 11 e) so as to place that functional unit in a power-down state while not being used during a program segment.
+
+Type: US Patent
+
+Claims: 
+What is claimed is:
+1. A method of optimizing a computer program for reduced power consumption, where the program is written for a processor having distinct functional units, comprising the steps of:
+during program production prior to completion of said computer program identifying at least one segment of said computer program in which at least one functional unit is not used; and
+based on the results of said identifying step, inserting a power-down instruction at the beginning of said segment;
+wherein said power-down instruction is operable to cause said at least one functional unit to use less power during execution of said segment.
+2. The method of claim 1, wherein said identifying step is accomplished by statically estimating processor cycles prior to running said computer program.
+3. The method of claim 1, further comprising the step of during program production prior to completion of said computer program inserting a power-up instruction in said computer program, wherein said power-up instruction directed to said at least one functional unit is operable to restore said at least one functional unit to a ready state.
+4. The method of claim 1, wherein said power-down instruction includes a first power-down instruction operable to reduce power to all of said at least one functional unit, such that said functional unit is placed in a low state of readiness and a second power-down instruction operable to reduce power to only a part of said at least one functional unit, such that said functional unit is placed in an intermediate state of readiness.
+5. The method of claim 1, wherein said identifying step is accomplished by comparing the duration of said segment with a predetermined threshold.
+6. The method of claim 1, wherein said power-down instruction has a format including a first portion identifying said instruction as a power-down instruction and a second portion indicating the identity of a single functional unit.
+7. The method of claim 1, wherein said power-down instruction has a format including a first portion identifying said instruction as a power-down instruction and a second portion indicating the identity of a number of functional units.
+8. The method of claim 1, wherein:
+said power-down instruction includes
+a first power-down instruction operable to reduce power of said at least one functional unit to a first low state and place that said functional unit in a low state of readiness, and
+a second power-down instruction operable to reduce power of said at least one functional unit to a second low state greater than said first low state but less than a ready state and place said functional unit in an intermediate state of readiness greater than said low state of readiness;
+said identifying step includes comparing the duration of said segment with a first predetermined threshold and second predetermined threshold shorter than said first predetermined threshold; and
+said inserting step
+inserts said first power-down instruction if said segment has a duration longer than said first predetermined threshold, and
+inserts said second power-down instruction if said segment has a duration longer than said second predetermined threshold and less than said first predetermined threshold.
+9. A method of optimizing a computer program for reduced power consumption, where the program is written for a processor having distinct functional units, comprising the steps of:
+during program production prior to completion of said computer program identifying at least one segment of said computer program in which at least one functional unit is not used; and
+based on the results of said identifying step, inserting a first power-control instruction at the beginning of said segment and a second power-control instruction before the end of said segment;
+wherein said power-control instruction is operable to cause said at least one functional unit to toggle between a full power ready state and a power-down state wherein said at least one functional unit consumes less power than in said ready state.

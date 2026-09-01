@@ -1,0 +1,208 @@
+--- PAGE 1 ---
+1%
+
+What is claimed is:
+
+1. A media engine apparatus (110) for creating a graphical interface (120) for an application
+(105) executed on a mobile device (100), the media engine comprising:
+
+a renderer (111) for rendering the graphical interface for the application to a display on
+the mobile device;
+
+a parser (114) for parsing, from a template file, template information defined using Scalar
+Vector Graphics (SVG) language, the template information comprising a set of data
+element objects and a set of custom event objects for controlling how the renderer
+renders the graphical interface, the set of data element objects associated with a set of
+data elements (107) defined by the application and the set of custom-event objects
+associated with a set of custom events defined by the application;
+
+a content interaction interface (112) for use by the application in notifying the media
+engine of changes to data elements of the set of data elements and the occurrence of
+custom events of the set of custom events of the application; and
+
+a layout manager (118) for dynamically controlling the display characteristics of template
+information based upon the changes to the data elements and the custom events
+
+notified using the content interaction interface prior to rendering.
+
+2. The media engine as claimed in claim 1, wherein the template information further comprises
+at least one of:
+layout manager control information for controlling how the layout manager controls the
+display of template information; and
+renderer control information for controlling:
+how the renderer renders the set of data element objects; and
+how the renderer renders the graphical interface based on at least one custom
+
+event of the set of custom events.
+
+3. The media engine as claimed in claim 2, wherein the layout manger control information
+
+comprises at least one of:
+information for dynamically modifying the length of at least one data element of the set
+
+of data elements prior to being rendered; and
+
+--- PAGE 2 ---
+information for controlling the display of template information to the graphical interface
+
+that the renderer cannot render.
+
+4. The media engine as claimed in claim 1, further comprising an event engine for providing
+
+event notification to the application.
+
+5. The media engine as claimed in claim 1, wherein the content interaction interface comprises
+a content interaction application programming interface, API including calls for:
+
+updating data elements;
+
+notification of custom events;
+
+querying of new events;
+
+getting a new event; and
+
+registering an event listener.
+
+6. The media engine as claimed in claim 2, wherein the template file comprises a markup
+language description of:
+
+the set of data element objects;
+
+the set of custom event objects;
+
+the layout manager control information; and
+
+the renderer control information.
+
+7. A mobile communication device (100) comprising:
+a display (101);
+an operating system (103);
+an input device (102);
+at least one application (105);
+at least one template file (113) associated with the at least one application, the template
+file defining template information using Scalar Vector Graphics (SVG) language, the
+template information comprises:
+a set of data element objects associated with a set of data elements (107) defined
+by the application ; and
+a set of custom event objects associated with a set of custom events defined by the
+
+application;
+
+--- PAGE 3 ---
+a media engine (110) comprising:
+
+a renderer (111) for rendering the graphical interface on the display;
+
+a parser (114) for parsing, from the at least one template file the template
+information comprising the set of data element objects and the custom events
+objects for controlling how the renderer renders the graphical interface on the
+display;
+
+a content interaction interface (112) for use by the application in notifying the
+media engine of changes to data elements of the set of data elements and the
+occurrence of custom events of the set of custom events of the application;
+and
+
+a layout manager (118) for dynamically controlling the display characteristics of
+template information based upon the changes to the data elements and the
+custom events notified using the content interaction interface prior to
+
+rendering.
+
+8. The mobile communication device as claimed in claim 7, wherein the template information
+further comprises at least one of:
+layout manager control information for controlling how the layout manager controls the
+display of template information; and
+renderer control information for controlling:
+how the renderer renders the set of data element objects; and
+how the renderer renders the graphical interface based on at least one custom
+
+event of the set of custom events.
+
+9. The mobile communication device as claimed in claim 8, wherein the layout manger control
+information comprises at least one of:
+information for dynamically modifying the length of at least one data element of the set
+of data elements prior to being rendered; and
+information for controlling the display of template information to the graphical interface
+
+that the renderer cannot render.
+
+--- PAGE 4 ---
+10. The mobile communication device as claimed in claim 7, wherein each application of the at
+least one applications comprises:
+at least one application data element; and
+
+application code.
+
+11. The mobile communication device as claimed in claim 10, wherein the application code
+comprises:
+
+code for modifying the at least one application data element;
+
+code for creating at least one application custom event; and
+
+code for communicating at least one of the application data element and at least one of
+
+the application custom event to the media engine using the interaction interface.
+
+12. The mobile communication device as claimed in claim 11, wherein the code for
+communicating the at least one application data element and the at least one custom event to the
+media engine binds the at least one application data element to at least one data element object of
+the set of data element objects of the template information and binds the at least one application
+custom event to at least one custom event object of the set of custom event objects of the
+
+template information.
+
+13. The mobile communication device as claimed in claim 7, further comprising an event engine
+
+for providing event notification to the application.
+
+14. The mobile communication device as claimed in claim 7, wherein the interaction interface
+comprises a content interaction application programming interface, API including calls for:
+updating data elements;
+notification of custom events;
+querying of new events;
+getting a new event; and
+
+registering an event listener.
+
+15. The mobile communication device as claimed in claim 7, wherein the template file
+comprises a markup language description of:
+
+the set of data element objects;
+
+--- PAGE 5 ---
+the set of custom event objects;
+the layout manager control information; and
+
+the renderer control information.
+
+16. A method of generating a graphical user interface (120) for an application (105) on a mobile
+device (100) comprising:
+parsing (565) template information from a template file (113) defined in Scalar Vector
+Graphics (SVG) language , the template information comprising a set of data element
+objects and a set of custom event objects for controlling how the renderer renders the
+graphical interface, the set of data element objects associated with a set of data
+elements (107) defined by the application and the set of custom event objects
+associated with a set of custom events defined by the application;
+storing (570) the parsed information in a template;
+receiving (575) updated data element information and from the application through
+content interaction interface for use by the application in notifying the media engine
+of changes to data elements of the set of data elements and the occurrence of custom
+events of the set of custom events of the application;
+updating (580) in the template at least one data element object of the set of data element
+objects with the received updated data element information;
+controlling (585) the display of the data element information using a layout manager;
+passing (590) the template to a renderer; and
+
+rendering (595) the template as a graphical interface
+
+17. The m ethod as claimed in claim 16, further comprising:
+
+providing event notification to the application.
+
+18. A compu ter-readable medium storing instructions or statements for use in executing in a
+computer a method of generating a graphical user interface for an application.on a mobile device
+
+as claimed in claim 16 or 17.

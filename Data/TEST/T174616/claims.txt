@@ -1,0 +1,188 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+CLAIMS MAIN REQUEST
+
+1. Method for transferring a money amount by using a two-dimensional image code (3’)
+between a paying party provided with a payment device (42) and a recipient party
+provided with a payment receiving device (41), comprising:
+
+A. Registration of both the paying party and the recipient party at a money transfer
+managing entity on a server (2), which provides for the management and verification of
+the paying party and the recipient party and is responsible of the authorization to the
+transfer of money amounts and their payment;
+
+B. Request of the recipient party to the paying party of a money amount, executed
+between the payment receiving device (41) and the payment device (42);
+
+C. order from the paying party to the money transfer managing entity to pay said
+money amount to the recipient party, after the insertion of an authorization PIN in the
+payment device (42) and information communication from the payment device to the
+server (2);
+
+D. authorization of the payment from the transfer managing entity to the recipient party,
+with information communication from the server (2) to the payment receiving device
+(41);
+
+E. payment of said money amount to the recipient party and sending of a confirmation
+information of effected money amount transfer to the payment device (42) and payment
+receiving device (41) concerning the effected payment of the money amount, or
+possible writing off or cancellation of an already effected payment operation;
+
+the method being characterized in that said payment device (42) is a payment mobile
+phone and said payment receiving device (41)is a payment receiving mobile phone,
+and in that:
+
+- in step B, the recipient party generates through a recipient party software module
+installed on the payment receiving mobile phone a two-dimensional image code (3’)
+and visualizes the two-dimensional image code on the display of the payment
+receiving mobile phone;
+
+- in step B, the payment mobile phone of the paying party captures the two-dimensional
+image code (3) from the display of the recipient party mobile phone;
+
+- in step C, the paying party sends to the server (2) of the money transfer managing
+entity via the payment mobile phone an encrypted authorization SMS message, the
+encrypted authorization SMS message including data contained in the two-dimensional
+image code (3’), comprising the indication of said money amourt,
+
+- in step D, the server (2) receives said encrypted authorization SMS message and
+authorizes or not the payment of the money amount,
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+45
+
+- the payment receiving mobile phone of the recipient party restricting itself in step B to
+the generation and visualization of said two-dimensional image code (3’), without
+sending any relevant information to the server of the money transfer managing entity.
+
+2. Method according to claim 1, wherein, in case of authorization to the payment in step
+D, the server (2) sends a confirmation of effected payment by means of two
+confirmation SMS, one directed to the payment mobile phone and the other one
+directed to the payment receiving mobile phone.
+
+3. Method according to claim 1 or 2, wherein the registration of step A of the paying
+party and the payment receiving party on the server (2) of the money transfer
+managing entity includes the generation by the server (2) of relevant unique codes
+called user-ID and assigned to the same paying party and payment receiving party, the
+definition of personal details data, account data, payment modes and payment limits,
+the type of user account, i.e. prepaid or credit card, the request of a ID-SMS utilized for
+validating the authorization SMS during the authorization of the payment, definition of
+an alteration code to generate an authorization PIN and an alteration method used to
+encrypt a protection key for the PIN, generation of a random key to protect the PIN,
+and definition of a data structure of the two-dimensional image code of step B
+
+4. Method according to any of claims 1 - 3, wherein step D includes the identification of
+the user who accesses the service on the basis of the information given in step B.
+
+5. Method according to any of claims 1 — 4, when dependent from claim 2, wherein the
+writing off or cancellation of the last effected transaction occurs upon request of the
+paying party by the generation of a QR-code provided to the recipient party, which
+confirms the writing off or cancellation by an authorization PIN, and wherein the two
+confirmation SMS confirm the effected writing off, guaranteeing to both the payment
+receiving party and the paying party the execution of the operation and the subsequent
+the restoration of the previous situation in the respective accounts.
+
+6. Method according to any of claims 1 - 5, wherein the two-dimensional image code
+(3’) generated on the display of the payment receiving mobile phone contains the user-
+ID retrieved from a "personal details" archive as well as information retrieved from an
+“operations” archive residing on the payment receiving mobile phone.
+
+7. Method according to any of claims 1 - 6, wherein the two-dimensional image code
+(3) presented by the payment receiving mobile phone and captured by the payment
+mobile phone, provides as guarantee of the privacy the only user-ID of the recipient
+party, an operation number, the money amount, the phone number of the payment
+receiving mobile phone.
+
+8. Method according to claim 7, characterized in that the payment mobile phone
+visualizes on the display the transaction money amount and requests the typing of the
+authorization PIN, extracts from a "personal details" archive the user-ID of the paying
+party, extracts from a "keys" archive the encryption key for the authorization PIN,
+encrypts the authorization PIN, composes an authorization SMS message and sends
+the authorization SMS message to the server (2).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+9. Method according to any of claims 1 - 8, wherein only the payment mobile phone
+receives a SMS of refusal to effect the payment in case of a wrong PIN, blocked user
+profile, exceeding of an expense limit, funds shortage, lack of authorization from a bank
+and/or credit card system.
+
+10. Method according to any of claims 1 - 9, wherein the two-dimensional image code
+(3) is a QR code, "Quick response code".
+
+11. System for transferring a money amount between a paying party and a payment
+receiving party by using a two-dimensional image code (3’), wherein a payment device
+(42) of the paying party and a reception payment device (41) of the recipient party are
+provided, as well as a server (2) of money transfer managing entity, wherein:
+
+- the payment device (42) is a payment mobile phone and the payment receiving
+device (41) is a payment receiving mobile phone, the payment mobile phone and the
+payment receiving mobile phone are both provided with a display and at least a
+camera,
+
+- on the payment receiving mobile phone a recipient party software module is installed,
+which is set up to create a two-dimensional image code (3’);
+
+- on the payment mobile phone a paying party software module is installed, which is set
+up to analyze the two-dimensional image code (3) and to send to said server (2) an
+SMS for authorization of payment of the money amount;
+
+- on the server (2) of the money transfer managing entity there is:
+
+© amanaging software module which is configured to allow registration and
+management of new users, blocking and unblocking of transaction service,
+management of security parameters values and encryption keys, and to
+manage a payment authorizing step, as well as a module configured to manage
+the reception and sending of SMS, by means of a connection to a SMS forward
+device;
+
+o amodule managing the information exchange with gateways of a bank and/or
+credit card system;
+
+said paying party software module, said recipient party software module and said
+managing software module being set up to execute the steps of the method according
+to any of claims 1-10.
+
+12. System according to claim 11, wherein said paying party software module and said
+recipient party software module are present on both the payment receiving mobile
+phone and the payment mobile phone, making both the payment receiving mobile
+phone and the payment mobile phone adapted to execute the role of paying party or
+recipient party indifferently.

@@ -1,0 +1,186 @@
+--- PAGE 1 ---
+27467 WO-FV
+CLAIMS
+
+1. A method of defining a testing procedure for collecting biomarker values, the method
+
+comprising the steps of:
+
+determining similar biomarker values based on contextualized data associated with received
+
+biomarker values ;
+
+determining a first criterion based on the similar biomarker values and determining a testing
+procedure, wherein said testing procedure includes a schedule of testing events for collecting
+
+biomarker values ;
+
+calculating an expected value based on similar biomarker samples ;
+determining a second criterion based on said calculated expected value ;
+
+defining a structured collection protocol or testing procedure according to said second
+
+criterion.
+
+2. The method of claim 1, further comprising the step of modifying the first criterion.
+
+3. The method of claims 1 or 2, further comprising the step of modifying the first criterion
+
+according to said second criterion.
+
+4. The method of any one of the preceding claims, wherein the testing procedure is performed
+
+until the second criterion is satisfied.
+
+5. The method of any one of the preceding claims, wherein the first criterion is an entry
+
+criterion and wherein the second criterion is an exit criterion.
+
+6. The method of claim 1, wherein the method comprises the steps of:
+receiving prior biomarker samples,
+
+wherein said prior biomarker samples comprise at least one value based on a
+
+measurement of a body fluid and
+
+Page 83 of 87
+
+--- PAGE 2 ---
+27467 WO-FV
+
+wherein said prior biomarker samples are associated with contextualized data ;
+
+defining similar biomarker samples based on a first criterion,
+wherein said first criterion is fulfilled if said biomarker samples have a contextualized
+
+data in common ;
+calculating an expected value based on similar biomarker samples ;
+determining a second criterion based on said calculated expected value ;
+
+defining a structured collection protocol or testing procedure according to said second
+
+criterion.
+
+7. The method of claim 6 wherein the number of similar biomarker samples is continuously
+
+adjusted according to the second criterion.
+
+8. The method of claim 6, further comprising the step of the second criterion defining a
+
+threshold and/or a range
+
+9. The method of claim 6, further comprising the step of triggering an alarm if the second
+
+criterion is not fulfilled.
+
+10. A system of performing a structured collection protocol on a collection device comprising
+
+a processor and a memory adapted to perform any one of the method steps 1 to 9.
+
+11. A method of defining a structured collection protocol on a collection device comprising a
+
+processor, wherein the method comprises:
+
+querying a diabetic patient via a display unit of the collection device regarding
+
+compliance with adherence criteria;
+
+instructing the diabetic patient to collect at least one sample in a sampling set of
+biomarker data, wherein each sampling set comprises a sufficient plurality of samples
+
+recorded over a collection period;
+
+comparing the collected sample to an acceptable range, wherein the acceptable range
+encompasses biomarker values that would be expected upon compliance with the adherence
+
+criteria;
+
+Page 84 of 87
+
+--- PAGE 3 ---
+27467 WO-FV
+informing the diabetic patient if at least one sample is an unacceptable value which
+
+falls outside of the acceptable range.
+
+12. The method of claim 11, further comprising the step of performing at least one additional
+
+task after detecting the unacceptable value.
+
+13. The method of claim 12 further comprising querying the diabetic patient regarding the
+
+additional task to be performed upon detection of the unacceptable value.
+
+14. The method of claim 12 wherein the additional task comprises collecting at least one
+
+additional sample.
+
+15. The method of claim 12 wherein the additional task comprises replacing the unacceptable
+
+value with another sample in the sampling set.
+
+16. The method of claim 15 wherein the replacement of the unacceptable value is performed
+
+automatically via the processor.
+
+17. The method of claim 12 wherein the additional task comprises ignoring the unacceptable
+
+value.
+18. The method of claim 12 wherein the additional task comprises restarting the sampling set.
+
+19. The method of claim 12 wherein the additional task comprises terminating the structured
+
+collection protocol.
+
+20. The method of claim 12 wherein the additional task comprises contacting a healthcare
+
+provider.
+
+21. The method of claim 12 wherein the additional task comprises computing a therapeutic
+
+result utilizing other samples.
+
+22. A collection device configured to guide a diabetic patient through a structured collection
+
+protocol, comprising:
+a meter configured to measure one or more selected biomarkers;
+a processor disposed inside the meter and coupled to memory, wherein the memory
+
+comprises collection procedures;
+
+Page 85 of 87
+
+--- PAGE 4 ---
+27467 WO-FV
+a display unit; and
+software having instructions that when executed by the processor causes the processor
+
+to:
+
+query the diabetic patient via the display unit regarding compliance
+
+with adherence criteria;
+
+instruct the diabetic patient to collect at least one sample in a sampling
+set of biomarker data, wherein each sampling set comprises a sufficient
+
+plurality of samples recorded over a collection period;
+
+compare samples to an acceptable range, wherein the acceptable range
+encompasses biomarker values that would be expected upon compliance with
+
+the adherence criteria;
+
+inform the diabetic patient if the collected sample is an unacceptable
+
+value which falls outside of the acceptable range; and
+
+perform at least one additional task after observing an unacceptable
+
+value.
+
+23. The collection device of claim 22 comprising means adapted to perform any one of the
+
+method steps 11 to 21.
+
+Page 86 of 87

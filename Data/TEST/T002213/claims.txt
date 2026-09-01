@@ -1,0 +1,127 @@
+--- PAGE 1 ---
+13 April 2016
+EPO Appeal No. T0022/13-3.5.05
+Page 1 of 3
+
+MAIN REQUEST
+
+1. A method of assisting a user in browsing an electronic catalog of media items to build
+a playlist, the method comprising:
+
+(a) obtaining access to metric values (504) derived from a knowledge base consisting
+ofa collection of mediasets, wherein the mediasets are lists of media items that have been
+grouped by users and are associated with the electronic catalog;
+
+wherein the metric values reflect a level of co-concurrency for each of pairs of media
+items within the knowledge base of mediasets;
+
+and further wherein the co-concurrency metric values indicate, for each pair of media
+items (i,j), how many times item i and item j appear together within any of the mediasets of
+the knowledge base;
+
+(b) receiving from the user an initial selection (506) of media items from the catalog
+to define an input media set;
+
+(c) for each of the media items of the input media set, generating a respective
+navigation list of media items (508) based on the metric values;
+
+(d) communicating the generated navigation lists (512) for display to the user;
+
+(e) receiving from the user a selection of a respective media item from one of the
+generated navigation lists (514);
+
+(f) adding the respective selected media item to the input media set (516), as
+instructed by the user, to generate a new input media set;
+
+(g) for each item of the new input media set, generating a respective new navigation
+list of media items (518) based on the metric values, the generated new navigation lists
+including a new navigation list corresponding to the respective selected media item that was
+added to the input media set in step (f); and
+
+(h) communicating the generated new navigation lists (520) for display to the user;
+
+(i) repeating steps (e) through (h) at least once to realize an interactive browsing
+session; and
+
+(j) saving a new playlist by storing the current input media set defined by following
+
+step (i).
+
+2. A method according to claim 1 further comprising: receiving from the user a selection
+of at least one media item on one of the generated navigation lists for deletion; and deleting
+
+the user-selected media item from the input media set to form another new input media set.
+
+--- PAGE 2 ---
+13 April 2016
+EPO Appeal No. T0022/13-3.5.05
+Page 2 of 3
+
+3. A method according to claim 1 wherein said communicating step comprises
+communication over a network for displaying the generated navigation lists on a remote
+
+client device.
+
+4. A method according to claim 1 including generating a collection of different
+
+navigation lists based on the metric values.
+
+5. A method according to claim 1 and further comprising ordering the generated
+navigation lists according to the metric values for the media items on the generated
+
+navigations lists.
+
+6. A method according to claim 1 and further comprising limiting the generated
+
+navigation lists to a predetermined maximum number of media items.
+
+7. A method according to claim 6 wherein the maximum number of media items per
+
+generated navigation list is determined by setup parameters.
+
+8. A method according to claim 1 wherein the user comprises a remote software process
+
+rather than a person.
+
+9. A method according to claim 1 wherein the catalog of media items comprise recorded
+
+music tracks.
+
+10. A method according to claim 9 wherein the metric values include at least one of a a
+pre-concurrency metric, a post-concurrency metric, a metric based on meta data similarities,
+
+and a combination of the foregoing metrics applied transitively.
+
+11. A method according to claim 1 wherein the method comprises deriving association
+metric values of a knowledge base of music mediasets for use in browsing through a
+corresponding catalog of music items, each mediaset comprising a plurality of music items,
+and the method further comprising the steps of: for each item in a mediaset, identifying every
+other item in the same mediaset, so as to define all of the pairs of media items in that
+mediaset; repeating said identifying step for every other mediaset in the knowledge base,
+thereby defining every pair of items that appears in any mediaset in the knowledge base; and
+
+for each identified pair of media items, calculating a metric value.
+
+--- PAGE 3 ---
+13 April 2016
+EPO Appeal No. T0022/13-3.5.05
+Page 3 of 3
+
+12. A method according to claim 11 wherein the calculated metric is co-concurrency
+metric, and said calculating step comprises incrementing the co-concurrency metric value
+
+responsive to every additional occurrence of the same pair of items in the knowledge base.
+
+13. A method according to claim 11 wherein: the media items are ordered within the
+mediasets in the knowledge base; said identifying step includes defining ordered pairs of
+items that appear in any mediaset in the knowledge base in the same order; the metric is an
+ordered concurrency metric, and said calculating step comprises incrementing the ordered
+concurrency metric value responsive to every additional occurrence of the same ordered pair
+
+of items in the knowledge base.
+
+14. A computer program product comprising a computer usable medium having
+computer-readable program code stored therein, said computer program product further
+comprising: computer-readable program code which when executed on computer apparatus
+
+configure the computer apparatus to perform the method of any of claims 1 to 13.

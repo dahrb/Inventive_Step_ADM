@@ -1,0 +1,50 @@
+TITLE:
+Methods and systems for making, tracking and authentication of products
+
+TYPE:
+Patent
+
+ABSTRACT:
+Manufactured goods are marked or labeled with a secure unique identifier. A central checking centre allows users to verify the authenticity of a particular good such as a cigarette pack or carton via any convenient interface such as the Internet or a cell phone. A system of secret sharing allows secure authentication of each item and prevents code breaking or misuse.
+
+CLAIMS:
+1. A method of marking manufactured items, comprising: providing a plurality of secret codes to a checking centre and to a production line for the manufactured items; generating an ID code for each manufactured item; digitally signing each ID code by means of a secret derived from the plurality of secret codes and known to the checking centre; and marking each manufactured item with said signed ID code.
+2. A method of claim I1 comprising using a covert taggant or a laser device in the marking step.
+3. A method according to claim 1 or 2, wherein said plurality of secret codes are precalculated random codes.
+4. A method according to of any of claims 1 to 3, providing the plurality of secret codes includes physical transfer of a non-volatile data support, on which the secret codes are recorded.
+5. A method according to any of claims 1 to 4, wherein said secret derived from said plurality of secret codes is derived at each of a plurality of production lines.
+6. A method according to any preceding claim, wherein part of said secret is transmitted by a code generator to the checking centre via a secure network connection.
+7. A method according to any preceding claim, wherein the plurality of secret codes is a collection of random codes, and comprising: generating an index relating to the manufacture of one or more items; transmitting the index to the checking centre; deriving the secret by a code generator, from the collection of random codes and from the index; and digitally signing each ID code for each manufactured item with a noise code derived by encrypting a copy of the ID code with the secret.
+8. A method according to claim 7, wherein the secret is further derived from the ID code.
+9. A method according to any of claims 1 to 8, comprising transmitting additional information concerning the manufactured items to the checking centre.
+10. A method according to any preceding claim, wherein said checking centre is managed by a trusted third party, independent from the manufacturer of the manufactured item.
+11. A method according to any preceding claim, wherein said marking is performed on packaging of said manufacturing article.
+12. A method according to any preceding claim, wherein the ID code comprises at least one of: a production site identifier; a production line identifier; a code generator identifier; a product identifier; and time information.
+13. A method according to any preceding claim, comprising encrypting the ID code.
+14. A method of any of the preceding claims, wherein said item is a cigarette pack or a cigarette carton.
+15. A manufactured item marked by the method according to any preceding claim.
+16. A method of authenticating an item marked according to the method of any of claims 1 to 14 comprising: transmitting the signed ID code to the checking centre; and authenticating the signed ID code at the checking centre.
+17. A method according to claim 16, comprising: marking on each manufactured item part of the information contained in the ID codefor that item; and verifying the consistency of information with processed information retransmitted by the checking centre.
+18. A method according to claim 16, comprising retransmitting additional information related to the transmitted ID code by the checking centre.
+19. A method according to any of claims 16-18 comprising detecting cloned 10 codes at the checking centre.
+20. A checking centre for authenticating an item by the method of claims 16, 17 or 18.
+21. A system for marking manufactured items comprising : a generator for generating collections of secret codes; a production line for manufacturing the items to be marked, the production line comprising: a code generator for generating an ID code for each manufactured item; a digital signor, for signing the ID codes with a secret derived from the secret codes; a data transmitter, for transmitting the secret to a checking centre; and a marker for marking each manufactured item with the signed ID code.
+22. A system according to claim 21, wherein said marker comprises a printer or a laser device.
+23. A system according to claim 21 or 22, wherein the production line is arranged for the production of tobacco products.
+24. A system according to claim 21, 22 or 23, wherein the generator comprises a data recorder, for recording the collection of secret codes on a non¬ volatile data support.
+25. A system according to any of claims 21-24, wherein the checking centre comprises an interface for accepting text or numeric queries from a network and for transmitting answers via the network.
+26. A system according to any of claims 21 to 25, wherein the generator for generating collections of secret codes is a salt generator.
+27. A system according to any of claims 21 to 26, wherein the production line 101 comprises a sensor to detect the marked signed ID code.
+28. A method of authenticating a manufactured item, comprising: generating a code and signing said code with a digital signature within a code generator; marking the item with the signed code; transmitting the signed code to a checking centre over a public network for authentication; authenticating the digital signature by the checking centre; retrieving the significance of the code at the checking centre; and transmitting the significance to a user over the public network.
+29. A method according to claim 28, wherein codes generated by the code generator are not stored.
+30. A method according to claim 28 or 29, wherein the code is signed with a secret shared by the code generator and the checking centre.
+31. A method according to claims 30, wherein the secret is extracted from a collection of secret codes shared by the code generator and the checking centre and is modified during operation of the code generator.
+32. A method according to claim 30 or 31, wherein said secret is different for each manufactured item.
+33. A method of controlling the volume of manufactured items marked according to the method of any of claims 1-14, comprising: gathering manufacturing volume information at the checking centre; and providing the manufacturing volume information to a user.
+34. A method according to claim 33, wherein the manufacturing volume information is obtained from ID codes transmitted to the checking centre.
+35. A method of tracking an item marked according to the method of any of claims 1-14 comprising: transmitting the signed ID code to the checking centre; authenticating the signed ID code by the checking centre; and retransmitting the tracking information related to the ID code to a user.
+36. A method according to claim 34, wherein the tracking information is obtained from the ID codes of manufactured items transmitted to the checking centre.
+37. A method according to any of claims 32-35, comprising identifying the user.
+38. A method according to any of claims 33 to 37, comprising a step of denying information to users not belonging to a predefined group of privileged users.
+39. A method of authenticating manufactured items, comprising marking the items by: providing a plurality of secret codes to a checking centre and to a production line for the manufactured items; generating an ID code for each manufactured item; digitally signing each ID code by means of a secret derived from the plurality of secret codes and known to the checking centre; and marking each manufactured item with said signed ID code; and authenticating a manufactured item on request by validating the secret at the checking centre.
+40. A system for authenticating manufactured items, comprising: a system for marking manufactured items comprising: a generator for generating collections of secret codes; a production line for manufacturing the items to be marked, the production line comprising: a code generator for generating an ID code for each manufactured item; a digital signor, for signing the ID codes with a secret derived from the secret codes; a data transmitter, for transmitting the secret to a checking centre; and a marker for marking each manufactured item with the signed ID code; the authentication system further comprising a checking centre for authenticating a manufactured item on request by validating the secret.

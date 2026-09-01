@@ -1,0 +1,90 @@
+--- PAGE 1 ---
+CLAIMS
+1. A computing system (12), comprising:
+an operating system (OS) (34);
+a basic input/output system (BIOS) (24) having a boot routine (30) and a security
+routine (32); and
+a hard disk drive (HDD) (44) comprising a disk memory (56) for storing data in an
+encrypted format,
+wherein the computing system (12) is configured to:
+initiate (200) by the BIOS (24) a boot sequence of the computing system (12) us-
+ing the boot routine (30), wherein a security authentication operation for obtaining and/or
+generating an encryption/decryption key (62) has not yet been performed by the OS (34)
+so that the HDD (44) is inaccessible by BIOS (24) during execution of the boot routine
+(30);
+transfer (202) control of the computing system (12) to the OS (34), when the BIOS
+(24) completed its share of the booting process of the computing system (12);
+initiate (204) by the OS (34) an encryption/decryption security routine (60) on the
+HDD (44), the encryption/decryption security routine (60) being stored in a master boot
+record sector of the disk memory (56) for encrypting data that is to be written to disk
+memory (56) and decrypting data retrieved from disk memory (56),
+retrieve and/or otherwise obtain (208) by the OS (34) an encryption/decryption key
+(62) associated with the HDD (44) for encrypting data to be stored on the HDD (44) and
+decrypting data retrieved from the HDD (44), when the security credential has been au-
+thenticated and/or otherwise validated (206);
+initiate (210) by the OS (34) a call to the BIOS (24);
+execute (211) by the BIOS (24) at least a portion of the security routine (32) to de-
+termine whether an instance (64) of the security routine (32) is present on the disk
+memory (56) of the HDD (44);
+if an instance (64) of the security routine (32) is present on the disk memory (56) of
+the HDD (44), return (218) control of the computing system (12) to the OS (34);
+if an instance (64) of the security routine (32) is not present on the disk memory
+(56) of the HDD (44),
+retrieve (214) by the BIOS (24) an instance of the security routine (32),
+facilitate (216) by the BIOS (24) an instance of the security routine (32) to
+be stored on the disk memory (56) of the HDD (44) in an encrypted format via the
+encryption/decryption security routine (60), and
+return (218) control of the computing system (12) to the OS (34); and
+
+--- PAGE 2 ---
+execute (220) by the OS (34) the instance (64) of the security routine (32) stored
+on the disk memory (56) of the HDD (44).
+
+2. A method for providing an instance (64) of a security routine (32) on a hard
+disk drive (HDD) (44) of a computing system (12), the HDD (44) comprising a disk
+memory (56) for storing data in an encrypted format, the computing system (12) compris-
+ing an operating system (OS) (34) and a basic input/output system (BIOS) (24) having a
+boot routine (30) and the security routine (32), the method comprising:
+
+initiating (200) by the BIOS (24) a boot sequence of the computing system (12) us-
+ing the boot routine (30), wherein a security authentication operation for obtaining and/or
+generating an encryption/decryption key (62) has not yet been performed by the OS (34)
+so that the HDD (44) is inaccessible by BIOS (24) during execution of the boot routine
+(30);
+
+transferring (202) control of the computing system (12) to the OS (34), when the
+BIOS (24) completed its share of the booting process of the computing system (12);
+
+initiating (204) by the OS (34) an encryption/decryption security routine (60) on the
+HDD (44), the encryption/decryption security routine (60) being stored in a master boot
+record sector of the disk memory (56) for encrypting data that is to be written to disk
+memory (56) and decrypting data retrieved from disk memory (56);
+
+retrieving and/or otherwise obtaining (208) by the OS (34) an encryption/decryption
+key (62) associated with the HDD (44) for encrypting data to be stored on the HDD (44)
+and decrypting data retrieved from the HDD (44), when the security credential has been
+authenticated and/or otherwise validated (206);
+
+initiating (210) by the OS (34) a call to the BIOS (24);
+
+executing (211) by the BIOS (24) at least a portion of the security routine (32) to
+determine whether an instance (64) of the security routine (32) is present on the disk
+memory (56) of the HDD (44);
+
+if an instance (64) of the security routine (32) is present on the disk memory (56) of
+the HDD (44), returning (218) control of the computing system (12) to the OS (34);
+
+if an instance (64) of the security routine (32) is not present on the disk memory
+(56) of the HDD (44),
+
+retrieving (214) by the BIOS (24) an instance of the security routine (32),
+
+facilitating (216) by the BIOS (24) an instance of the security routine (32) to
+be stored on the disk memory (56) of the HDD (44) in an encrypted format via the
+encryption/decryption security routine (60), and
+
+returning (218) control of the computing system (12) to the OS (34); and
+
+--- PAGE 3 ---
+executing (220) by the OS (34) the instance (64) of the security routine (32) stored
+on the HDD (44).

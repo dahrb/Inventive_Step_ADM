@@ -1,0 +1,100 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS:
+
+1. A method comprising:
+
+receiving, by an image analysis server (124), an image of at least one product within an
+inventory environment (102);
+
+identifying, by a planogram server (126) in communication with the image analysis
+server, at least one candidate product based on a configuration profile;
+
+performing, by the image analysis server, object recognition analysis on the image based
+on stored product images corresponding to the at least one candidate product to provide product
+recognition data; and
+
+providing, by the planogram server, an extracted planogram, based on the product
+recognition data, indicating a current state visually representing actual locations of the at least
+one product within the inventory environment by mapping the actual locations of the at least one
+product within the inventory environment to corresponding locations within the extracted
+
+planogram.
+
+2. The method of claim 1, further comprising:
+
+identifying, by the image analysis server (124), an image location of a product support
+device (108) within the image; and
+
+mapping, by the planogram server (126), the location of the product support device in the
+image into an actual location of the shelf within the inventory environment (102),
+
+wherein the extracted planogram further illustrates the actual location of the product
+
+support device.
+
+2914062v1
+
+37
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+3. The method of claim 1, wherein the product recognition data includes at least one
+recognized product instance, and wherein extracted planogram (400) includes for each of the at
+
+least one recognized product instance, a corresponding image of the recognized product instance.
+
+4. The method of claim 2, further comprising mapping, by the planogram server
+(126), the image location to the actual location based on position information of an image
+
+capture device (104) within the inventory environment (102) used to capture the image.
+
+5. The method of claim 1, further comprising:
+sending, by the image analysis server (124), a request for the image to an image capture
+
+device (104) within the inventory environment (102).
+
+6. The method of claim 1, further comprising:
+comparing, by the planogram server (126), the extracted planogram (400) to a target
+
+planogram.
+
+7. The method of claim 6, wherein the target planogram is either of a previously
+
+extracted planogram based on a previous image and an optimal planogram.
+
+8. The method of claim 6, further comprising:
+
+determining, by the planogram server (126), a cost associated with differences between
+
+the extracted planogram (400) and the target planogram.
+
+2914062v1 38
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+9. A processor-readable medium having stored thereon executable instructions that,
+
+when executed, cause a processing device to perform the method of any preceding claim.
+
+10. Asystem comprising:
+
+an image capture device (104) configured and disposed to capture an image of at least
+one product within an inventory environment (102); and
+
+an automatic planogram generator, in communication with the image capture device,
+operative to identify at least one candidate product based on a configuration profile, to perform
+object recognition analysis on the image based on stored product images corresponding to the at
+least one candidate product to provide product recognition data and to provide an extracted
+planogram, based on the product recognition data, indicating a current state visually representing
+actual locations of the at least one product within the inventory environment by mapping the
+actual locations of the at least one product within the inventory environment to corresponding
+
+locations within the extracted planogram.
+
+11. | An apparatus arranged to perform the method of any one of claims | to 8.
+
+2914062v1 39

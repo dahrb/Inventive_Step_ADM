@@ -1,0 +1,151 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P2017,0592 EP N / 122354-5044 February 9, 2022
+10843499.4 / T1743/19-3.5.05
+Main request
+
+MAIN REQUEST
+
+1. A method of adapting a medical workflow implemented at a processor coupled to a
+hospital network, comprising:
+receiving a message comprising medical information data;
+predicting a healthcare worker's workflow using, at least in part, the medical information
+data; and
+communicating to an interface, based on the predicting, a menu comprising one or more
+medical action options;
+the method being characterized in that:
+said predicting comprises using information related to past actions by the healthcare
+worker for predicting the healthcare worker's workflow, and associating probabilities with
+actions possible by the healthcare worker; and
+prioritizing display of possible next actions in the menu using the probability values
+
+associated with said actions.
+
+2. The method of claim 1, wherein:
+
+the predicting further comprises predicting using the healthcare worker's identity and the
+authorization level; and/or
+
+the medical information data comprises at least one of a patient identification, a medical
+
+item identification, a barcode information and a medical action selected by the healthcare worker.
+
+3. The method of claim 1 or 2, further comprising:
+
+determining a state associated with the medical information data.
+
+4. The method of claim 3, wherein the predicting further comprises predicting using
+
+the state associated with the medical information data.
+
+5. The method of any of the preceding claims, further comprising: associating a session
+
+information with the first message.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P2017,0592 EP N / 122354-5044 February 9, 2022
+10843499.4 / T1743/19-3.5.05
+Main request
+
+2
+6. The method of claim 5, wherein the predicting further comprises predicting based
+on the session information.
+7. The method of any of the preceding claims, wherein the predicting further
+
+comprises: accessing a workflow database comprising medical action option entries; and
+
+including at least one medical action option in the healthcare worker's predicted workflow.
+
+8. The method of any of the preceding claims, further comprising disabling an action
+item from the menu so that a healthcare worker may be able to see said action item on the menu,
+
+but may not be able to interact with said action item by selecting it from the menu.
+
+9. A computer program comprising computer-readable instructions that, when
+executed by a processor, cause the processor to perform a method according to any of the
+
+preceding claims.
+
+10. A system for adapting a medical workflow, comprising:
+a server;
+a scanner having an interface; and
+a database;
+wherein the server comprises:
+
+a medical information reception section configured to receive a message from the
+scanner comprising medical information data;
+
+a workflow prediction section configured to predict a healthcare worker's workflow
+using, at least in part, the medical information data; and
+
+a menu communication section configured to communicate to the scanner, based
+on the predicted workflow, a menu comprising one or more medical action options for
+displaying on the interface;
+
+the system being characterized in that the workflow prediction section is configured
+to use information related to past actions by the healthcare worker for predicting the
+healthcare worker's workflow and is capable of associating probabilities with actions
+possible by a healthcare worker; and
+
+the menu communication section is capable of prioritizing display of possible next
+
+actions in the menu using the probability values associated with said actions.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+P2017,0592 EP N / 122354-5044 February 9, 2022
+10843499.4 / T1743/19-3.5.05
+Main request
+
+11. The system of claim 10, wherein the workflow prediction section is further
+configured to predict the healthcare worker's workflow using the healthcare worker's identity and
+
+the authorization level.
+
+12. The system of claim 10 or 11, further comprising:
+a state determination section configured to determine a state associated with the medical
+
+information data.
+
+13. The system of claim 12, wherein the workflow prediction section is further
+
+configured to predict using the state associated with the medical information data.
+
+14. The system of any of claims 10 to 13, further comprising:
+a session management section configured to associate a session information with the first
+
+message.
+
+15. The system of claim 14, wherein, the workflow prediction section is further
+
+configured to predict using the session information.
+
+16. The system of claim 10, wherein the menu communication section is capable of
+disabling an action item from the menu so that a healthcare worker may be able to see said action
+item on the menu, but may not be able to interact with said action item by selecting it from the
+
+menu.

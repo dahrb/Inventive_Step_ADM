@@ -1,0 +1,114 @@
+TITLE:
+System and method for protecting a computer and a network from hostile downloadables
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system protects a computer from suspicious Downloadables. The system comprises a security policy, an interface for receiving a Downloadable, and a comparator, coupled to the interface, for applying the security policy to the Downloadable to determine if the security policy has been violated. The Downloadable may include a Java™ applet, an ActiveX™ control, a JavaScript™ script, or a Visual Basic script. The security policy may include a default security policy to be applied regardless of the client to whom the Downloadable is addressed, or a specific security policy to be applied based on the client or the group to which the client belongs. The system uses an ID generator to compute a Downloadable ID identifying the Downloadable, preferably, by fetching all components of the Downloadable and performing a hashing function on the Downloadable including the fetched components. Further, the security policy may indicate several tests to perform, including (1) a comparison with known hostile and non-hostile Downloadables; (2) a comparison with Downloadables to be blocked or allowed per administrative override; (3) a comparison of the Downloadable security profile data against access control lists; (4) a comparison of a certificate embodied in the Downloadable against trusted certificates; and (5) a comparison of the URL from which the Downloadable originated against trusted and untrusted URLs. Based on these tests, a logical engine can determine whether to allow or block the Downloadable.
+
+CLAIMS:
+1. A computer-based method, comprising the steps of:
+receiving an incoming Downloadable addressed to a client, by a server that serves as a gateway to the client;
+comparing, by the server, Downloadable security profile data pertaining to the Downloadable, the Downloadable security profile data includes a list a suspicious computer operations that may be attempted by the Downloadable, against a security policy to determine if the security policy has been violated; and
+preventing execution of the Downloadable by the client if the security policy has been violated.
+2. The method of claim 1, further comprising the step of decomposing the Downloadable into the Downloadable security profile data.
+3. The method of claim 2, wherein the security policy includes an access control list and further comprising the step of comparing the Downloadable security profile data against the access control list.
+4. The method of claim 1, further comprising the steps of scanning for a certificate and comparing the certificate against a trusted certificate.
+5. The method of claim 1, further comprising the step of comparing the URL from which the Downloadable originated against a known URL.
+6. The method of claim 5, wherein the known URL is a trusted URL.
+7. The method of claim 5, wherein the known URL is an untrusted URL.
+8. The method of claim 1, wherein the Downloadable includes a Java™ applet.
+9. The method of claim 1, wherein the Downloadable includes an ActiveX™ control.
+10. The method of claim 1, wherein the Downloadable includes a JavaScript™ script.
+11. The method of claim 1, wherein the Downloadable includes a Visual Basic script.
+12. The method of claim 1, wherein
+the security policy includes a default security policy to be applied regardless of the client to whom the Downloadable is addressed.
+13. The method of claim 1, wherein
+the security policy includes a specific security policy corresponding to the client to whom the Downloadable is addressed.
+14. The method of claim 1, wherein
+the client belongs to a particular group; and
+the security policy includes a specific security policy corresponding to the particular group.
+15. The method of claim 1, further comprising, after preventing execution of the Downloadable, the step of sending a substitute non-hostile Downloadable to the client for informing the client.
+16. The method of claim 1, further comprising, after preventing execution of the Downloadable, the step of recording the violation in an event log.
+17. The method of claim 1, further comprising the step of computing a Downloadable ID to identify the Downloadable.
+18. The method of claim 16, further comprising the steps of fetching components identified by the Downloadable and including the fetched components in the Downloadable.
+19. The method of claim 18, further comprising the step of performing a hashing function on the Downloadable to compute a Downloadable ID to identify the Downloadable.
+20. The method of claim 18, further comprising the step of fetching all components identified by the Downloadable.
+21. The method of claim 1 further comprising the step of examining the intended recipient userID to determine the appropriate security policy.
+22. The method of claim 20, wherein the appropriate security policy includes a default security policy.
+23. The method of claim 1, further comprising the step of examining the Downloadable to determine the appropriate security policy.
+24. The method of claim 1, further comprising the step of comparing the Downloadable against a known Downloadable.
+25. The method of claim 24, wherein the known Downloadable is hostile.
+26. The method of claim 24, wherein the known Downloadable is non-hostile.
+27. The method of claim 24, further comprising the step of including a previously received Downloadable as a known Downloadable.
+28. The method of claim 27, wherein the security policy identifies a Downloadable to be blocked per administrative override.
+29. The method of claim 28, wherein the security policy identifies a Downloadable to be allowed per administrative override.
+30. The method of claim 1, further comprising the step of informing a user upon detection of a security policy violation.
+31. The method of claim 1, further comprising the steps of recognizing the incoming Downloadable, and obtaining the Downloadable security profile data for the incoming Downloadable from memory.
+32. A system for execution by a server that serves as a gateway to a client, the system comprising:
+a security policy;
+an interface for receiving an incoming Downloadable addressed to a client;
+a comparator, coupled to the interface, for comparing Downloadable security profile data pertaining to the Downloadable, the Downloadable security profile data includes a list a suspicious computer operations that may be attempted by the Downloadable, against the security policy to determine if the security policy has been violated; and
+a logical engine for preventing execution of the Downloadable by the client if the security policy has been violated.
+33. The system of claim 32, wherein the Downloadable includes a Java™ applet.
+34. The system of claim 32, wherein the Downloadable includes ActiveX™ control.
+35. The system of claim 32, wherein the Downloadable includes a JavaScript™ script.
+36. The system of claim 32, wherein the Downloadable includes a Visual Basic script.
+37. The system of claim 32, wherein
+the security policy includes a default security policy to be applied regardless of the client to whom the Downloadable is addressed.
+38. The system of claim 32, wherein
+the security policy includes a specific security policy corresponding to the client to whom the Downloadable is addressed.
+39. The system of claim 32, wherein
+the client belongs to a particular group; and
+the security policy includes a specific security policy corresponding to the particular group.
+40. The system of claim 32, further comprising an ID generator coupled to the interface for computing a Downloadable ID identifying the Downloadable.
+41. The system of claim 40, wherein the ID generator prefetches all components of the Downloadable and uses all components to compute the Downloadable ID.
+42. The system of claim 41, wherein the ID generator computes the digital hash of all the prefetched components.
+43. The system of claim 32, further comprising a policy finder for finding the security policy.
+44. The system of claim 43, wherein the policy finder finds the security policy based on the user.
+45. The system of claim 43 wherein the policy finder finds the security policy based on the user and the Downloadable.
+46. The system of claim 43, wherein the policy finder obtains the default security policy.
+47. The system of claim 32 wherein the comparator examines the security policy to determine which tests to apply.
+48. The system of claim 47 wherein the comparator compares the Downloadable against a known Downloadable.
+49. The system of claim 48, wherein the known Downloadable is hostile.
+50. The system of claim 48, wherein the known Downloadable is non-hostile.
+51. The system of claim 32, wherein the security policy identifies a Downloadable to be blocked per administrative override.
+52. The system of claim 32, wherein the security policy identifies a Downloadable to be allowed per administrative override.
+53. The system of claim 32, wherein
+the comparator sends a substitute non-hostile Downloadable to the client for informing the client.
+54. The system of claim 32, further comprising a code scanner coupled to the comparator for decomposing the Downloadable into the Downloadable security profile data.
+55. The system of claim 54, further comprising an ACL comparator coupled to the code scanner for comparing the Downloadable security profile data against an access control list.
+56. The system of claim 32, further comprising a certificate scanner coupled to the comparator for examining the Downloadable for a certificate.
+57. The system of claim 56, further comprising a certificate comparator coupled to the certificate scanner for comparing the certificate against a trusted certificate.
+58. The system of claim 32, further comprising a URL comparator coupled to the comparator for comparing the URL from which the Downloadable originated against a known URL.
+59. The system of claim 58, wherein the known URL identifies an untrusted URL.
+60. The system of claim 58, wherein the known URL identifies a trusted URL.
+61. The system of claim 31, wherein the logical engine responds according to the security policy.
+62. The system of claim 31, further comprising a record-keeping engine coupled to the comparator for recording results in an event log.
+63. The system of claim 32, further comprising memory storing the Downloadable security profile data for the incoming Downloadable.
+64. A system for execution on a server that serves as a gateway to a client, comprising:
+means for receiving an incoming Downloadable addressed to a client;
+means for comparing Downloadable security profile data pertaining to the Downloadable, the Downloadable security profile data includes a list a suspicious computer operations that may be attempted by the Downloadable, against a security policy to determine if the security policy has been violated; and
+means for preventing execution of the Downloadable by the client if the security policy has been violated.
+65. A computer-readable storage medium storing program code for causing a server that serves as a gateway to a client to perform the steps of:
+receiving an incoming Downloadable addressed to a client;
+comparing Downloadable security profile data pertaining to the Downloadable against a security policy to determine if the security policy has been violated; and
+preventing execution of the Downloadable by the client if the security policy has been violated.
+66. A method, comprising:
+receiving a Downloadable;
+decomposing the Downloadable into Downloadable security profile data; the Downloadable security profile data includes a list a suspicious computer operations that may be attempted by the Downloadable,
+comparing the Downloadable security profile data against a security policy; and
+preventing execution of the Downloadable if the Downloadable security profile data violates the security policy.
+67. The method of claim 66, further comprising:
+fetching all components referenced by the Downloadable;
+performing a hashing function of the Downloadable and the components fetched to compute a Downloadable ID; and
+storing the Downloadable security profile data and the Downloadable ID in memory.
+68. A method, comprising:
+providing memory storing known-Downloadable security profile data and a that includes a list a suspicious computer operations that may be attempted by a Downloadable known-Downloadable ID corresponding to the Downloadable security profile data;
+receiving an incoming Downloadable;
+fetching all components referenced by the incoming Downloadable;
+performing a hashing function of the Downloadable and the components to compute an incoming-Downloadable ID;
+comparing the known-Downloadable ID against the incoming-Downloadable ID;
+retrieving the Downloadable security profile data if the known-Downloadable ID and the incoming-Downloadable ID match; and
+comparing the Downloadable security profile data against a security policy to determine if the incoming Downloadable violates the security policy.

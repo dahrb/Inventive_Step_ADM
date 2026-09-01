@@ -1,0 +1,228 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+1. A method, comprising:
+using a processor on an electronic device to:
+
+detect a respective occurrence of a user interface event (88)
+requesting audio feedback on the electronic device at a first time;
+
+in response to detecting the respective occurrence of the user
+interface event (88) at the first time, identify a plurality of audio items (148) and a
+first visual feedback (142) associated with the user interface event (88), wherein
+each of the plurality of audio items (148) has a different level of verbosity, and
+wherein the plurality of audio items (148) include at least a first audio item (150)
+having a first verbosity level and comprising speech synthesized based on the first
+visual feedback (142), and a second audio item having a second verbosity level
+lower than the first verbosity level (152, 154, 156);
+
+determine whether the user interface event (88) previously
+occurred within a particular time interval prior to the first time and whether the
+first audio item (150) was provided during said previous occurrence; and
+
+in accordance with at least a determination that the user interface
+event previously occurred within the particular time interval prior to the first time
+and that the first audio item was provided during said previous occurrence,
+concurrently provide the second audio item (152, 154, 156) with the first visual
+feedback (142)on the electronic device using an audio output device, wherein the
+first audio item (150) was provided with the first visual feedback during said
+
+previous occurrence.
+2. The method of claim 1, further comprising:
+
+in accordance with at least a determination that the user interface event did not
+
+previously occur within the particular time interval prior to the first time,
+
+56
+
+--- PAGE 2 ---
+selecting an audio item having the highest level of verbosity from the plurality of
+audio items for playback with the visual notification; and
+
+in accordance with at least a determination that the user interface event
+previously occurred within the particular time interval prior to the first time,
+determining the verbosity level of an audio item selected from the plurality of
+audio items during the previous occurrence of the user interface event, and
+selecting an audio item from the plurality of audio items that is at least one step
+
+less verbose relative to the previously selected audio item.
+
+3. The method of claim 2, further comprising:
+
+detecting a subsequent occurrence of the user interface event on the
+electronic device at a second time;
+
+selecting a respective one of the plurality of audio items that corresponds
+to a respective desired verbosity level determined based upon the duration
+between the first time and the second time; and
+
+playing the selected respective audio item on the electronic device using
+
+the audio output device.
+
+4, The method of claim 3, wherein selecting said respective one audio
+item comprises:
+
+in accordance with at least a determination that the duration between the
+first and second times is less than or equal to the particular time interval, selecting
+an audio item from the plurality of audio items that is at least one step less
+verbose relative to the second audio item; and
+
+in accordance with at least a determination that the duration between the
+first and second times is greater than the particular time interval, selecting an
+audio item from the plurality of audio items that is at least one step more verbose
+
+relative to the second audio item.
+
+57
+
+--- PAGE 3 ---
+5. The method of claim 4, wherein selecting the audio item that is at
+least one step more verbose relative to the second audio item comprises selecting
+the audio item having the highest verbosity level within the plurality of audio
+
+items regardless of the verbosity level of the second audio item.
+
+6. The method of claim 2, wherein selecting the respective one of the
+plurality of audio items comprises:
+
+determining whether a playback termination event was detected during the
+respective occurrence of the user interface event at the second time; and
+
+in accordance with at least a determination that a playback termination
+event was detected during the respective occurrence, selecting an audio item from
+the plurality of audio items having a lower level of verbosity regardless of the
+
+verbosity level of the second audio item.
+
+7. The method of claim 6, comprising:
+
+in accordance with at least a determination that a playback termination
+event was not detected during the respective occurrence of the user interface
+event, using a graphical user interface to display the first visual feedback (142)
+at least partially concurrently with the playback of the selected -respective one
+audio item; and
+
+in accordance with at least a determination that a playback termination
+event was detected during the respective occurrence of the user interface event,
+using a graphical user interface to display a second visual feedback (164)
+substantially concurrently with the playback of the selected respective one
+audio item, wherein the second visual feedback is less verbose relative to the
+
+first visual feedback.
+
+8. The method of claim 7, wherein displaying the second visual
+
+feedback further comprises:
+
+58
+
+--- PAGE 4 ---
+displaying the second visual feedback at a second location in the graphical
+user interface that is different from a first location at which the first visual
+
+feedback was previously displayed.
+
+9. The method of claim 7, wherein displaying the second visual
+feedback further comprises:
+
+displaying the second visual feedback at a second location in the graphical
+user interface that is less prominent than a first location at which the first visual
+
+feedback was previously displayed.
+
+10. The method of claim 7, wherein displaying the second visual
+feedback further comprises:
+displaying a graphic user interface element (166) in the second visual
+feedback (164), wherein selection of the graphical user interface element (166)
+causes the second visual feedback (164) to expand into a window (140)
+
+containing the first visual feedback (142).
+
+11. The method of claim 7, further comprising:
+automatically removing the second visual feedback (164) from the graphical user
+
+interface after a predetermined period of time.
+
+12. An electronic device (10), comprising:
+one or more processors (16); and
+memory (18) storing instructions, which, when executed by the one or
+more processors, cause the processors to:
+detect a respective occurrence of a user interface event (88)
+requesting audio feedback on the electronic device at a first time;
+in response to detecting the respective occurrence of the user
+
+interface event (88) at the first time, identify a plurality of audio items (148) and a
+
+59
+
+--- PAGE 5 ---
+first visual feedback (142) associated with the user interface event (88), wherein
+each of the plurality of audio items (148) has a different level of verbosity, and
+wherein the plurality of audio items (148) include at least a first audio item (150)
+having a first verbosity level and comprising speech synthesized based on the first
+visual feedback (142), and a second audio item having a second verbosity level
+lower than the first verbosity level (152, 154, 156);
+
+determine whether the user interface event (88) previously
+occurred within a particular time interval prior to the first time and whether the
+first audio item (150) was provided during said previous occurrence; and
+
+in accordance with at least a determination that the user interface
+event previously occurred within the particular time interval prior to the first time
+and that the first audio item was provided during said previous occurrence,
+concurrently provide the second audio item (152, 154, 156) with the first visual
+feedback (142) on the electronic device using an audio output device, wherein the
+first audio item (150) was provided with the first visual feedback during said
+
+previous occurrence.
+
+13. The electronic device (10) of claim 12, comprising:
+
+one or more processors (16); and
+
+memory (18) storing instructions, which, when executed by the one or
+more processors, cause the processors to perform any of the method of claims | to
+
+11.
+
+14. A computer-readable medium (18) storing instructions, which,
+when executed by one or more processors, cause the processors to:
+
+detect a respective occurrence of a user interface event (88) requesting
+audio feedback on the electronic device at a first time;
+
+in response to detecting the respective occurrence of the user interface
+
+event (88) at the first time, identify a plurality of audio items (148) and a first
+
+60
+
+--- PAGE 6 ---
+visual feedback (142) associated with the user interface event (88), wherein each
+of the plurality of audio items (148) has a different level of verbosity, and wherein
+the plurality of audio items (148) include at least a first audio item (150) having a
+first verbosity level and comprising speech synthesized based on the first visual
+feedback (142), and a second audio item having a second verbosity level lower
+than the first verbosity level (152, 154, 156);
+
+determine whether the user interface event (88) previously occurred
+within a particular time interval prior to the first time and whether the first
+audio item (150) was provided during said previous occurrence; and
+
+in accordance with at least a determination that the user interface event
+previously occurred within the particular time interval prior to the first time and
+that the first audio item was provided during said previous occurrence,
+concurrently provide the second audio item (152, 154, 156) with the first visual
+feedback (142) on the electronic device using an audio output device, wherein the
+first audio item (150) was provided with the first visual feedback during said
+
+previous occurrence.
+15. The computer-readable medium (18) of claim 14, storing
+
+instructions, which, when executed by the one or more processors, cause the
+
+processors to perform any of the method of claims | to 11.
+
+61

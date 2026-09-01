@@ -1,0 +1,65 @@
+TITLE:
+Method and apparatus for detecting bus utilization in a computer system based on a number of bus events per sample period
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A bus utilization detection circuit and method. An input is configured to be coupled to a bus to detect bus events. A circuit coupled to the input determines a number of bus events during a first sample period to indicate a percent bus utilization. If the number of bus events during the first sample period meets a first predetermined threshold value, then an activity event is generated. In another embodiment, an activity event is generated only if during a second sample period, the number of first sample periods for which the percent bus utilization meets the first threshold value meets a second threshold value.
+
+CLAIMS:
+1. An apparatus for detecting activity on a bus in a computer system, the apparatus comprising:
+an input to be coupled to the bus to detect bus events;
+a first circuit coupled to the input to determine a number of bus events during a first sample period, the first circuit to assert an activity signal if the number of bus events during the first sample period meets a first threshold value; and
+a second circuit coupled receive an activity signal from the the first circuit, the second circuit to count a number of times the activity signal is asserted during a second sample period, wherein the first sample period is a subset of the second sample period the second circuit to generate an activity event if the number of times the activity signal is asserted meets or exceeds a second threshold value, the second circuit to indicate bus inactivity if an activity event is not generated within an idle time period wherein the first and second sample periods are each a subset of the idle time period.
+2. An apparatus for detecting activity on a bus in a computer system, the apparatus comprising:
+an input to be coupled to the bus to detect bus events; and
+a circuit coupled to the input to determine a number of first sample periods within a second sample period in which a number of bus events detected meets a first threshold value, the circuit to generate an activity event if the determined number of first sample periods meets or exceeds a second threshold value, the circuit to indicate bus inactivity if an activity event is not generated within an idle time period wherein the first and second sample periods are each a subset of the idle time period.
+3. The apparatus as set forth in claim 2 wherein the first sample period is 256 clock cycles and the second sample period is 256×256 clock cycles.
+4. The apparatus as set forth in claim 2 wherein the bus is a peripheral components interconnect (PCI) bus and the bus events are FRAME# signals.
+5. The apparatus as set forth in claim 2 wherein the first and second threshold values are programmable.
+6. The apparatus as set forth in claim 2 wherein an output of the circuit is to be coupled to a reset input of an idle timer such that the activity event resets the idle timer, the idle timer to indicate the third idle time period.
+7. A bus utilization detection circuit comprising:
+a bus event input to be coupled to a bus to detect bus events;
+a first counter coupled to the bus event input to count a number of bus events detected during a first sample period;
+a first comparator coupled to the first counter, the first comparator to assert a first signal if the number of bus events during the first sample period meets or exceeds a first threshold value;
+a second counter coupled to the first comparator to count a number of times the first signal is asserted during a second sample period wherein the first sample periods is a subset of the second sample period; and
+a second comparator coupled to the second counter, the second comparator to assert an activity event signal when the number of times the first signal is asserted during the second sample period meets or exceeds a second threshold value, the second comparator to indicate bus inactivity if an activity event signal is not asserted during an idle time period wherein the first and second sample periods are each a subset of the idle time period.
+8. The bus utilization detection circuit as set forth in claim 7 further including
+a first clock divider coupled to the first counter to divide an incoming clock signal to generate the first sample period, and
+a first flip-flop having an input coupled to an output of the first clock divider and an output coupled to a CLEAR input of the first counter such that the first counter is cleared at the end of the divided clock cycle from the first clock divider.
+9. The bus utilization detection circuit as set forth in claim 8 further including
+a second clock divider coupled to the first clock divider to divide the output clock signal from the first clock divider to generate the second sample period, and
+a second flip-flop having an input coupled to the output of the second clock divider and an output coupled to a CLEAR input of the second counter such that the second counter is cleared at the end of the divided clock cycle from the second clock divider.
+10. The bus utilization detection circuit as set forth in claim 7 wherein the first and second threshold values are programmable.
+11. The bus utilization detection circuit as set forth in claim 7 wherein the first sample period is 256 clock cycles and the first counter is an 8-bit counter.
+12. The bus utilization detection circuit as set forth in claim 7 wherein the second sample period is 65,536 (2562) clock cycles and the second counter is an 8-bit counter.
+13. The bus utilization detection circuit as set forth in claim 9 wherein the first and second clock dividers each divide an incoming clock signal by 256.
+14. The bus utilization detection circuit as set forth in claim 7 wherein the second comparator is to be coupled to a reset input of an idle timer such that the idle timer is reset in response to the activity event signal being asserted.
+15. A method for detecting activity on a bus in a computer system including a clock, the method comprising the steps of:
+determining a number of bus events on the bus during a first sample period;
+determining a number of first sample periods within a second sample period in which the number of bus events meets a first threshold value;
+asserting an activity event signal if the determined number of first sample periods meets or exceeds a second threshold value; and
+indicating bus inactivity if an activity event signal is not asserted within an idle time period wherein the first and second sample periods are each a subset of the idle time period.
+16. The method as set forth in claim 15 wherein the step of determining a number of bus events includes a step of incrementing a first counter.
+17. The method as set forth in claim 15 wherein the step of determining a number of first sample periods includes a step of comparing the number of bus events to the first threshold value.
+18. The method as set forth in claim 15 further including a step of enabling bus utilization detection logic.
+19. The method as set forth in claim 15 further including a step of programming the first and second threshold values.
+20. A computer system comprising;
+a bus;
+a processor coupled to the bus to process instructions for the computer system;
+power management control logic coupled to the bus to activate power management measures in response to being enabled;
+a bus utilization detection circuit including
+a bus event input coupled to the bus to detect bus events, and
+logic coupled to the bus event input and the idle timer to determine a number of first sample periods, within a second sample period, in which a number of detected bus events meets a first threshold value, the logic to generate an activity event if the determined number of first sample periods meets or exceeds a second threshold value, and;
+an idle timer coupled to the bus utilization detection circuit and the power management control logic, the idle timer to enable the power management control logic unless an activity event is generated before expiration of the idle timer wherein the first and second sample periods are each a subset of the idle time period indicated by the idle timer.
+21. The computer system as set forth in claim 20 wherein the bus is a peripheral components interconnect (PCI) bus.
+22. The computer system as set forth in claim 21 wherein the bus events are indicated by a FRAME# signal.
+23. The apparatus of claim 1 further comprising:
+an idle timer coupled to the second circuit, the idle timer to measure the idle time period, the idle timer to trigger a power management event upon expiration of the idle time period unless the second circuit generates an activity event during the idle time period.
+24. The apparatus of claim 2 further comprising:
+an idle timer coupled to the circuit, the idle timer to indicate the third idle time period, the idle timer to trigger a power management event upon expiration of the idle time period unless the circuit generates an activity event during the idle time period.
+25. The bus utilization detection circuit as set forth in claim 7 further comprising:
+an idle timer coupled to the second comparator, the idle timer to indicate the idle time period, the idle timer to cause a power management event upon expiration of the idle time period unless the second comparator asserts an activity event signal during the idle time period.
+26. The method as set forth in claim 15 further including a step of:
+taking a power management measure in response to the step of indicating bus inactivity.

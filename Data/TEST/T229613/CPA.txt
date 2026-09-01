@@ -1,0 +1,65 @@
+Title: Antivirus protection system and method for computers
+
+Abstract: The example embodiments herein relate to an antivirus protection system and method for computers based on program behavior analysis. The antivirus protection system may comprise: a Process Behavior-Evaluating Unit for identifying the programs existing in the user's computers and classifying them into normal programs and suspect programs; a Program-Monitoring Unit for monitoring and recording the actions and/or behaviors of programs; a Correlation-Analyzing Unit for creating correlative trees and analyzing the correlations of actions and/or behaviors of programs, the correlative trees comprising a process tree and a file tree; a Virus-Identifying Knowledge Base, comprising a Program-Behavior Knowledge Base and a Database of Attack-Identifying Rules; a Virus-Identifying Unit for comparing captured actions and/or behaviors to the information in the Virus-Identifying Knowledge Base to determine whether the program is a virus program. With the techniques of certain example embodiments, it may be possible to increase efficiency and reduce the need to upgrade virus codes after viruses become active, while also effectively blocking unknown viruses, Trojans, etc.
+
+Type: US Patent
+
+Claims: 
+
+1. An antivirus protection system for computers, comprising:
+a Process Behavior-Evaluating Unit for identifying programs existing in a user's computer and classifying the programs as normal programs or suspect programs;
+a Program-Monitoring Unit for monitoring and recording actions and/or behaviors of the programs;
+a Correlation-Analyzing Unit for creating correlative trees and analyzing correlations of actions and/or behaviors of programs, the correlative trees comprising a process tree and a file tree;
+a Virus-Identifying Knowledge Base, comprising a Program-Behavior Knowledge Base and a Database of Attack-Identifying Rules; and
+a Virus-Identifying Unit for receiving program actions and/or behaviors captured by the Program-Monitoring Unit, comparing the captured actions and/or behaviors to information stored in the Program-Behavior Knowledge Base or the Database of Attack-Identifying Rules, in combination with information stored in the Process Behavior-Evaluating Unit, and calling the Correlation-Analyzing Unit to determine whether the program is a virus in dependence on the comparison.
+2. The system of claim 1, wherein the Program-Monitoring Unit is configured to capture and record the program actions and/or behaviors by hooking one or more system API function calls of the program.
+3. The system of claim 1, wherein:
+the normal programs comprise all known programs identified by the comparison of the programs in the computer with the known-program knowledge base, programs having icons on the computer's desktop, programs appearing in program groups, and programs installed by an installation program; and,
+the suspect programs comprise programs excluding the normal programs.
+4. The system of claim 3, wherein the installation program is a program having a running window that creates a program group and/or desktop icons, and creates an uninstall item.
+5. The system of claim 1, wherein each node in the said process tree represents a process, and stores action and/or behavior information of the respective process during running and index information of the process in the file tree, and further wherein each node has a parent node corresponding to the parent process of the process corresponding the node.
+6. The system of claim 5, wherein the information stored in each node in the process tree comprises at least one of: a full path associated with a PE file, a full path of the process' loader, whether the process has a description, whether the process is self-starting, a creator of a self-starting process, properties associated with the process, whether the process is started by its creator, whether the process created any startup items, whether the process has an associated windows and/or tray icon, a pid number of the process's parent process, a linked list of modified system registry items, and a network action linked list.
+7. The system of claim 6, wherein the linked list of modified system registry items comprises a structure including at least entry list, key name, value name, and value, each being associated with the registry items.
+8. The system of claim 6, wherein the network action linked list comprises a structure including at least type, local port, local IP address, remote port, remote IP address, and operation protocol, each being associated with the network action.
+9. The system of claim 1, wherein, in the file tree, each node represents a program, and stores information when the program file is created and index information in the process tree, and further wherein each node has a parent node corresponding to the parent process of the process corresponding the node.
+10. The system of claim 9, wherein the information stored in each node of file tree comprise at least one of: a full path associated with a PE file, a full path of the file's creator, a characteristic of the creator, whether the creator has a window, whether the file and the creator are the same file, and whether the file has copied or is copying itself.
+11. The system of claim 10, wherein the characteristic of the creator is to classify all programs comprising unknown programs, a mail system, a network browser, a network intercommunication system, and other known programs.
+12. The system of claim 1, wherein the Program-Behavior Knowledge Base is a database configured to analyze and list actions and/or behaviors executed by each of the known programs by hooking the computer's system API functions, and is further configured to store the analysis and list therein; and
+further wherein the Database of Attack-Identifying Rules is a database configured to record the attacking behavior features of computer viruses, worms, and/or other harmful programs, each record in the Database of Attack-Identifying Rules corresponding to a type of virus, each type of viruses corresponding to an action collection which comprises a series of actions and the correlations between the actions.
+13. The system of claim 12, wherein the Database of Attack-Identifying Rules comprises a network virus rule, the network virus rule being when a suspect program is running to detect that:
+none of its correlative programs have windows,
+the suspect program copies itself and performs system registry modifications to enable itself or its copy to run at system startup, and
+the suspect program executes actions comprising sending a data package, network listening, injecting a thread into other processes, creating a global hook and sending a mail.
+14. The system of claim 12, wherein the Database of Attack-Identifying Rules comprises a worm virus rule, the worm virus rule being to detect:
+a suspect program, receives files from a mail system or an instant communication software, and
+after the suspect program runs, the suspect program operates a user keyboard and/or user mouse to simulates user's actions to automatically send mails by the mail system and/or to automatically send files via the instant communication software.
+15. The system of claim 12, wherein the Database of Attack-Identifying Rules comprises a worm virus rule, the worm virus rule being to detect:
+a suspect program, which does not have a window when running and creates over 10 of same threads, every thread for sending subsequent data packages within 1 second of each other.
+16. The system of claim 1, wherein the Virus-Identifying Unit judges the known programs and the unknown programs respectively by:
+comparing the dangerous actions executed by a known program to actions and/or behaviors recorded in the Program-Behavior Knowledge Base to determine whether the dangerous actions are legal actions, and
+comparing the dangerous actions executed by an unknown program to virus rules recorded in the Database of Attack-Identifying Rules to determine whether the dangerous actions are harmful actions and/or behaviors.
+17. An antivirus protection method for computer, the method comprising:
+17.1) hooking system API function calls of a program after the program is running;
+17.2) monitoring actions of the program, and recording the actions of the program in a process tree;
+17.3) determining whether the action is a program creation action to create a created program;
+17.4) if the program performs a program creation action, adding program creation information associated with the program creation action into the file tree, and determining whether the created program is a normal program and recording the result of the determination, or if the program does not perform a program creation action, determining whether the action is a dangerous action;
+17.5) if the action is not a dangerous action, returning to step 17.2), or if the program has performed a dangerous action, determining whether the action and/or behavior is a harmful program behavior by the Virus-Identifying Unit; and
+17.6) if it is determined the action and/or behavior is not a harmful program behavior, returning to step 17.2), or if the action behavior is determined to be a harmful program behavior, dealing with the program by the Virus-Identifying Unit.
+18. The method of claim 17, wherein, in step 17.5), the known program and the unknown program are judged separately.
+19. The method of claim 17 or 18, further comprising when the dangerous actions executed by a known program, comparing the dangerous actions to the legal actions and/or behaviors recorded in the Program-Behavior Knowledge Base to judge whether the program is attacked; and,
+if the known program is determined to be a legal program, returning to step 17.2) or otherwise judging that the program has been attacked by a virus, and terminating program execution.
+20. The method of claim 19, wherein the determination of whether the known program has been attacked comprises:
+20.1) monitoring and capturing dangerous actions executed by the known program;
+20.2) comparing captured dangerous actions to information stored in the Program-Behavior Knowledge Base to determine whether the captured dangerous action is a legal behavior;
+20.3) if it is determined to be a legal behavior, returning to step 20.1), or if it is determined to be not a legal behavior, determining how to terminate a process associated with the program according to the Program-Behavior Knowledge Base;
+20.4) if it is determined that the process should be terminated, terminating the process of the known program via a system API call; or if it is determined that the process should not be terminated, terminating a thread of the program via a system API call.
+21. The method of claim 20, wherein in step 20.3), the knowledge base may be defined so that when a system process is in overflow, a system API call terminates the thread.
+22. The method of claim 17 or 18, wherein for an unknown program, the dangerous actions executed are compared to virus rules recorded in a Database of Attack-Identifying Rules to determine whether the program is a harmful program; and
+if it is determined to be a harmful program, terminating program execution, otherwise returning to step 17.2).
+23. The method of claim 18, wherein the determination of whether the unknown program is a harmful program comprises:
+23.1) monitoring and capturing dangerous actions executed by the unknown program;
+23.2) determining whether the unknown program is a normal program;
+23.3) if it the unknown program is a normal program, recording the monitored actions and/or behaviors into the Program-Behavior Knowledge Base, and returning to step 23.1), or if it is not a normal program, reviewing the rules in the Database of Attack-Identifying Rules to determine whether the actions and/or behaviors are harmful program actions;
+23.4) if it is determined that the actions and/or behaviors are not harmful program actions, returning to step 23.1), or if it is determined that the actions and/or behaviors are harmful program actions, requiring user confirmation as to whether to allow the current action;
+23.5) if the user allows the current action, marking the program as a normal program and recording the action and/or behavior in the Program-Behavior Knowledge Base, and returning to step 23.1), or if the user does not allow the action, terminating a process of the unknown program via a system API call.
+24. The method of claim 23, wherein step 23.5) includes a direct system API call to terminate the process of the unknown program upon a user request.

@@ -1,0 +1,29 @@
+Title: Hand written character input system/allowing change of size of character writing frames
+
+Abstract: 
+On a liquid crystal display panel of the handwritten character input system, a data input frame is displayed, and in the data input frame, a plurality of character writing frames are displayed. Each of the character writing frames defines an area to which a handwritten character can be input. In a frame number changing mode, when the size of the data input frame is changed, the number of character writing frames is changed in accordance with the change size. In a frame size changing mode, when the size of the data input frame is changed, the size of the character writing frame is changed in accordance with the changed size. Further, when the size of the character writing frame is changed, the character font to be displayed is also changed in accordance with the changed size.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A hand written character input system, comprising:
+input means for inputting handwritten characters;
+display means for displaying in said input means, one or more character writing frames each defining an area in which at least one of said handwritten characters can be input, and a data input frame including said one or more character writing frames;
+first changing means for changing size of said data input frame;
+second changing a means for changing number of said character writing frames in response to the size of said data input frame changed by said first changing means;
+third changing means for changing size of said character writing frames in response to the size of said data input frame changed by said first changing means; and
+mode selecting means for selecting change of the number of said character writing frames by said second changing means, or change of the size of said character writing frames by said third changing means.
+2. The system according to claim 1, further comprising:
+recognizing means for recognizing said handwritten character input in said character writing frame for converting it to a character code; and
+font selecting means for selecting one character font out of a plurality of character fonts in response to the size of said character writing frame when said handwritten character is input; wherein
+said display means further displays a print specified by said character font selected by said font selecting means and by said character code recognized by said recognizing means.
+3. The system according to claim 2, wherein
+said font selecting means further selects again one character font out of said plurality of character fonts in response to the size of said character writing frame changed by said third changing means.
+4. The system according to claim 1, wherein
+said data input frame further includes an arbitrary information to be displayed on an area other than the area of said character writing frame;
+said system further comprising
+rearranging means for rearranging said arbitrary information with its size unchanged, in response to the size of said data input frame changed by said first changing means.
+5. The system according to claim 1, wherein
+said first changing means further includes means for changing the size of said data input frame by designating an original coordinate on said data input frame having its original size before changed and by designating a new coordinate corresponding to said original coordinate on said data input frame having its new size changed.

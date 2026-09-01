@@ -1,0 +1,805 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request
+
+EP 08 0006 061.9
+NTT DoCoMo, Inc.
+1.
+
+a displ
+
+ay
+
+a
+
+includin
+
+a s
+
+first
+
+Claims
+
+(Main Request)
+
+(18c)
+
+ga
+
+econd storage unit
+
+first text s
+
+tring;
+(18b)
+
+pluralit
+
+includi
+
+least one of
+
+with the
+
+communic
+
+communicatio
+
+a
+
+display,
+
+y of in
+
+Formation
+
+sets,
+
+ng a name of
+
+a
+
+Fir
+
+name of
+
+ations
+
+first
+
+on the
+
+a communicatio
+address
+ns recipient;
+display
+display
+
+expressed by data
+
+(18c) ;
+
+and
+
+st
+
+(14),
+
+stored in
+
+a second display controller
+
+storage
+
+identify,
+
+MW BUS
+
+N
+
+BSS A”
+
+by a second text string included in
+
+Ss
+
+determine whether
+
+unit
+
+among
+(18b),
+
+names
+
+a
+
+coni
+
+con
+
+each
+
+a communications
+
+associated with the
+
+controller
+
+Marked-Up Copy
+127 333 s5/r40
+May 25, 2020
+
+A communications terminal comprising:
+(14);
+
+storage unit
+
+igured to store data
+
+figured to store a
+
+Lion
+
+informa set
+
+recipient and at
+
+communications address associated
+
+ns recipient and a second
+
+name of a
+
+(15)
+
+configured to
+
+the
+
+the
+
+(15)
+
+stored
+
+name
+
+first text string
+
+first storage unit
+
+configured to:
+the second
+YOSHIDA”,
+
+in
+
+(“TARO
+
+) that corresponds to a name indicated
+
+tring displayed by the
+
+the first text
+first display controller,
+the identified name (“TARO
+
+YOSHIDA”, “BUSINESS A”) is associated with only one
+of the first communications address and the second
+communications address,
+
+when the identified name (“TARO YOSHIDA”) is
+associated with only the first communications
+address, display on the display (14) a screen
+comprising the first text string in which the
+
+second text
+
+associate wi
+
+th
+
+first communications address
+
+the second text string a lin
+
+string has a predetermined appearance,
+
+k to the
+
+(T
+
+EL
+
+bi PHONE
+
+NUMB
+
+ER) for
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request
+BP 08 0006 061.9
+NTT DoCoMo, Inc.
+
+starting up a telephone
+
+Marked-Up Copy
+127 333 s5/r40
+2 May 25, 2020
+
+call application program
+
+and, in response to the second text string being
+selected by a user, immediately start up the
+telephone call application program, and
+
+when the identified name (“BUSINESS A”) is
+associated with only the second communications
+address, display on the display (14 a screen
+comprising the first text string in which the
+second text string has a predetermined appearance,
+associate with the second text string a link to the
+second communications address (EMATL ADDRESS) for
+starting up a mail application program and, in
+response to the second text string being selected
+
+by the user, immediately start up the mail
+
+application program,
+wherein the second display controller (15) is further
+configured to:
+
+determine whether the identified name (“TARO
+YOSHIDA”, “BUSINESS A”) is associated with both of the
+first communications address and the second
+
+communications address;
+
+when the identified n
+
+A”) 1s
+
+associated with both the
+
+address and the second communications address,
+
+ame (“TARO YOSHIDA’, “BUSINESS
+
+first communications
+
+determine
+
+whether the first text 5s
+
+tring displayed by the first
+
+display controller includes a
+
+first related text string
+
+or a second related
+related
+
+communicatio
+
+(“phone”)
+
+and second
+
+first
+
+representative of
+
+and communications address,
+when the related
+the (14)
+
+first
+
+display on display
+
+first
+predetermined appearance,
+link to the
+
+string a
+
+text
+
+the
+
+words
+
+text (“email”) string,
+
+strings being
+
+first
+
+ns performed by the
+
+respectively;
+
+text
+
+first
+
+string is included,
+
+a screen comprising the
+
+text string in which the second text string has a
+
+associate with the second text
+
+communications address
+
+--- PAGE 3 ---
+Main Request Marked-Up Copy
+EP 08 0006 061.9 127 333 s5/r40
+NTT DoCoMo, Inc. 3 May 25, 2020
+
+(TELEPHONE NUMBER) for starting up the telephone call
+
+application program and, in response to the second text
+
+string being selected by a user, immediately start up
+
+the telephone call application program; and
+
+when the second related text string is included,
+
+display on the display (14) a screen comprising the
+
+first text string in which the second text string has a
+predetermined appearance, associate with the second text
+
+string a link to the second communications address
+
+(EMATL ADDRESS) for starting up the mail application
+
+program and, in response to the second text string being
+
+selected by the user, immediately start up the mail
+
+2. The communications terminal according to claim 1,
+
+wherein the first communications address is a telephone
+
+number, and the second communications address is an
+
+3. A method for generating a graphical user interface
+
+on a display (14), the method comprising:
+
+storing data including a first text string in a
+
+first storage unit (18c);
+
+storing a plurality of information sets in a second
+
+storage unit (18b), each information set including a
+
+name of a communications recipient and at least one of a
+
+first communications address associated with the name of
+
+a communications recipient and a second communications
+
+address associated with the name of a communications
+
+displaying, on the display (14), the first text
+
+tring expressed by data stored in the first storage
+
+identifying, among names stored in the second
+
+5
+10
+
+application program.
+15
+
+email address.
+20
+25
+30 recipient;
+
+Ss
+
+unit (18c); and
+35
+
+storage unit, a name (“TARO YOSHIDA’, “BUSINESS A”) that
+
+corresponds to a name indicated by a second text string
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request
+
+Marked-Up Copy
+
+EP 08 0006 061.9 127 333 s5/r40
+NTT DoCoMo, Inc. 4 May 25, 2020
+included in the first text string displayed on the
+display;
+
+determining whether the identified name (“TARO
+YOSHIDA”, “BUSINESS A”) is associated with only one of
+the first communications address and the second
+communications address;
+
+when the identified name (“TARO YOSHIDA”) 1s
+associated with the first communications address,
+displaying on the display (14) a screen comprising the
+
+for
+and, in
+
+selected
+
+telephone
+
+when
+
+associated
+
+displayin
+
+text string a link
+
+starting up a
+
+predetermined appearance,
+
+associat
+
+LO
+tel
+
+CO
+
+response
+by
+call
+the
+with
+
+a user,
+
+the
+g
+
+first tex
+
+Lext stri
+
+for
+response
+user,
+
+program;
+
+wherein
+
+determining
+
+YOSH
+
+first
+
+A",
+
+communica
+when
+A” )
+
+address
+
+1s
+
+determining whether
+
+the
+
+starting up
+
+immediately
+
+associat
+
+t string in wh
+
+predetermined appearance,
+the
+
+a mail
+
+ng a link to
+
+and
+the method
+
+MW
+
+BUS
+
+N
+
+BSS A’)
+
+communications
+
+tions address;
+th
+
+and the
+
+identified
+
+on the display
+
+whether
+
+the
+ephone
+the
+
+imm
+
+second
+
+starting
+
+the
+
+1s associated with both of
+
+first
+
+(14)
+
+ich the second text
+
+call
+
+second
+
+ediately
+application program;
+name
+
+communications
+
+up ¢t
+
+first text string in which the second text
+
+Ling with the
+
+string has a
+
+second
+
+communications address
+
+application program
+
+text
+
+and
+
+starting
+
+string being
+
+up the
+
+N 1s
+
+ESS
+
+(“ BUS
+
+associating with the
+
+application program and,
+
+he
+
+further comprises:
+
+identified
+
+address
+
+e identified name
+ted with both the
+
+second
+
+(“TAR
+
+communications
+
+and
+
+mail
+
+A” )
+
+address,
+
+a screen comprising the
+
+string has a
+
+second
+
+second communications address
+
+in
+
+to the second text string being selected by the
+
+application
+
+(“TARO
+the
+
+second
+
+name
+
+the
+
+OQ YOSH
+
+MW
+
+N
+
+AY, BUSINESS
+
+first
+
+the
+
+first
+
+text
+
+first display controller includes
+
+communications
+
+address,
+
+string displayed by
+
+a
+
+first related
+
+--- PAGE 5 ---
+Main Request
+
+text string
+
+EP 08 0006 061.9
+NTT DoCoMo, Inc.
+
+“phone”) or
+
+Marked-Up Copy
+127 333 s5/r40
+5 May 25, 2020
+
+a second related text (“email”)
+
+string, the first and second related text strings being
+
+words representative of communications performed by the
+
+when the
+
+displaying on t
+
+application program
+
+first text stri
+
+Lext string a
+(TELEPHONE NUM
+
+first and communications address, respectively;
+
+related text string is included,
+
+predetermined appearance,
+
+and,
+
+he display (14) a screen comprising the
+
+ng in which the second text string has a
+
+associating with the second
+
+to the first communications address
+
+for starting up the telephone call
+
+in response to the second text
+
+string being selected by a user, immediately starting up
+
+the telephone call
+
+when the
+
+application program; and
+
+second related text string is included,
+
+displaying on the display (14) a screen comprising the
+
+first text string in wh
+
+Lext string a link to
+(EMAIL ADDRESS)
+
+predetermined appearance,
+
+ich the second text string has a
+
+associating with the second
+
+the second communications address
+
+starting up the mail application
+
+program and, in response to the second text string being
+
+selected by the user,
+
+application program.
+
+immediately starting up the mail

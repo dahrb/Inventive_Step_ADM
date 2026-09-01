@@ -1,0 +1,412 @@
+--- PAGE 1 ---
+05719929.1
+
+1. A signal processing method comprising the steps of:
+
+providing a plurality of
+
+sampling
+
+functi
+
+Ons
+
+New Claims
+
+fluency AD
+
+sto
+
+waveform signal
+
+functions a
+
+operation of
+
+integer
+
+continuously
+
+t sampling points,
+
+the input signal is executed based on the
+
+theory and categorized with parameters m,
+
+fF obtained discrete signals,
+
+functions,
+
+for acquiring discrete signals
+
+value of
+
+obtain a function
+
+the
+
+and
+
+and the sampled value of
+
+which are
+
+from continuous
+Fluency sampling
+
+further an inner product
+
+fluency information
+
+where m is a positive
+
+from 1 to™, denoting that the fluency AD function is only
+differentiable as often as (m-2) times,
+sampling the continuous waveform signal which is inputted
+
+using each of
+
+to provide approximate sampling data ot
+
+the
+
+fluency
+
+functions
+
+which minimizes an approximation error,
+
+characterized by
+
+values by executing inner product operations between values o
+
+}-
+
+AD
+
+0235-63.9561
+
+finding,
+
+nputted continuous waveform
+
+functions having each di
+
+within a certain period,
+
+EP-CM/KE£
+
+fF an interpolat
+
+signal and the plurality of
+
+to get sampling values; the acquired discrete signals being used
+
+Lion range by
+
+from which one is selected
+
+inner product operating
+
+£ the
+
+fluency
+
+fferent parameters m;
+
+--- PAGE 2 ---
+judging the differences between the sampling values and the
+
+inner product operating values at the sampling points;
+
+determining the parameter m linked to the period for
+
+calculating the inner product, in which values of the differences
+
+come to minimum; and
+
+outputting a combination of a parameter m signal indicating
+
+said determined parameter m and a discrete signal composed of a
+
+string of the sampling values or a combination of a parameter m
+
+signal indicating the parameter manda discrete signal composed
+
+of a string of said inner product operating values as an output
+
+signal.
+
+2. The signal processing method according to claim 1,
+
+wherein each of the values of the differences is a value
+
+selected from the group consisting of a sum of squares of absolute
+
+values for the differences between the sampling values and the
+
+inner product operating values at sampling points within a
+
+predetermined span, a sum of the absolute values for the
+
+differences and the maximum of the absolute values for the
+
+differences.
+
+3. The signal processing method according to claim 1,
+wherein the parameters m contain at least three types which are
+
+m= 2, 3, and ©.
+
+--- PAGE 3 ---
+4. The signal processing method according to any one of
+
+claims 1 to 3,
+
+wherein the inputted continuous wave!
+
+Form signal corresponds
+to a discrete signal which is sampled at shorter sampling period
+
+than that for getting the sampling values and then PCM encoded.
+
+5. A signal processing method according to claiml, further
+
+comprising the
+
+steps of:
+
+providing a plurality of fluency DA functions categorized
+
+with the parameters m, wherein the parameter m is denoting that
+
+the fluency DA
+
+often as (m-2)
+
+inputting
+
+times;
+
+function is only continuously differentiable as
+
+the output signal;
+
+providing fluency DA functions according to the determined
+
+parameter m indicated by the parameter m signal in the output
+
+signal; and
+
+generating a continuous signal by pert
+
+integration between the provided
+
+discrete signal
+
+the discrete signal composed of
+
+fluency DA
+
+operating values in the output signal,
+
+forming convoluting
+
+function and the
+
+composed of the string of the sampling values or
+
+fF the string of the inner product
+
+wherein the fluency AD function and the
+
+maintain orthogona
+
+parameter m.
+
+1 relation with each o
+
+fluency DA function
+
+ther for each of the
+
+--- PAGE 4 ---
+provide a plurality of
+
+functi
+
+6. A signal processing device comprising:
+
+a plurality of
+
+ons
+
+signals to obtain a
+
+functi
+operat
+
+the in
+
+theory
+intege
+
+contin
+
+signal which is inputted to get sampling values,
+
+discrete signals being used to provide approxima
+
+characterized by
+
+produc
+
+betwee
+
+ons at
+
+lon of
+
+put
+
+vr from ]
+
+uously di
+
+for acquiri
+
+signal is execut
+and categorized wit
+
+to ©,
+
+fluency AD
+fluency AD
+ng discrete signals
+function value of
+sampling points,
+obtained discrete signals,
+ted based on the
+th parameter m,
+denoting that the
+
+fFferentiable as often as
+
+function generators
+
+fro
+
+the
+
+and further an
+
+fluency
+
+(m-2) times;
+
+(3)
+
+and the sampled value of
+
+which
+
+functions which are sampling
+
+n continuous waveform
+fluency sampling
+
+inner product
+
+fluency information
+where mis a positive
+
+function is only
+
+a sampling circuit (2) which samples the continuous waveform
+
+a plurality of
+
+nthe values of the in
+
+of an interpolation range by using each of
+
+operating units
+
+t operating values by executing inner prod
+
+the
+
+fluency
+
+(4)
+
+the acquired
+
+te sampling data
+
+functions
+
+from which one is selected which minimizes an approximation error;
+
+which output inner
+
+uct operations
+
+putted continuous waveform signal and
+
+the pl
+
+parame
+
+sampling values and the inner product operating values at
+
+sampling points,
+
+ters mM,
+
+a judging unit
+
+urality of
+
+fluency A
+
+(8)
+
+outputted
+
+D
+
+which judges diff
+
+fferent
+
+functions having each di
+
+rences betw
+
+n
+
+from the operating unit
+
+(4),
+
+the
+
+and
+
+--- PAGE 5 ---
+determines the parameter min which values of the differences come
+
+to minimum; and
+
+an output device (9) which outputs a combination of a
+
+parameter m signal indicating the predetermined parameter m and
+
+a discrete signal composed of a string of the sampling values or
+
+a combination of a parameter m signal indicating the predetermined
+
+parameter manda discrete signal composed of a string of the inner
+
+product operating values as an output signal.

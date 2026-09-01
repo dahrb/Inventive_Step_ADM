@@ -1,0 +1,231 @@
+--- PAGE 1 ---
+- JO -
+
+Main Request
+Claims
+1. A swimmer posture adjustment method, wherein: the
+
+center of mass location (Xi) of a swimmer, and the center
+
+of buoyancy location (Xz) and buoyant force (B) of the
+swimmer maintaining a streamlined gliding posture in a
+downward-facing floating state in the water are obtained
+as measured swimmer information by measurement of the
+swimmer; and a buoyant and detachable balancer is
+attached to the body of the swimmer on the basis of the
+measured swimmer information, to adjust the difference
+between the center of mass location (Xi) and the center
+
+of buoyancy location (Xz) of the swimmer.
+
+2. The swimmer posture adjustment method according to
+claim 1, wherein: the center of mass location (Xi) of the
+swimmer, a residual air amount (Vc) in the lungs of the
+swimmer maintaining a streamlined gliding posture in the
+downward-facing floating state in the water, and the
+center of buoyancy location (X2) and buoyant force (B)
+both corresponding to the residual air amount are
+
+obtained as measured swimmer information.
+
+3. The swimmer posture adjustment method according to
+
+claim 1 or claim 2, wherein: on the basis of the weight
+
+(W) of the swimmer, the weight being measured by a load
+
+cell on the ground, and on the basis of a load (Fa) of
+
+--- PAGE 2 ---
+- 7J1-
+
+the swimmer maintaining a streamlined gliding posture
+
+with the body of the swimmer horizontally stretched out,
+the load being measured by a load sensor by using, as a
+measurement point, one of two supporting points
+supporting the body of the swimmer and separated from
+each other by a predetermined distance (Xo), the center
+of mass location (Xi) is calculated, from relational
+expression (1), as a distance from the other supporting
+point to the center of mass of the swimmer; and
+
+in the state where the upper half body and the lower
+half body of the swimmer maintaining a streamlined
+gliding posture in a downward-facing floating state in
+the water are respectively supported at two points
+between which the center of buoyancy and the center of
+mass of the swimmer are located, the buoyant force (B) is
+obtained from relational expression (4) on the basis of
+an upper half body load (F1) measured by an upper half
+body load sensor, and a lower half body load (F2)
+measured by a lower half body load sensor, and the
+distance (Xo) between the two load measurement points is
+measured, and the center of buoyancy location (X2) is
+obtained from relational expression (5)
+
+Fa-Xo = WX1 ... (1)
+
+B=W+ Fl + F2 ... (4)
+
+X2B + X1-(-W) + Xo-(-F1) = 0... (5).
+
+--- PAGE 3 ---
+- J? -
+
+4, The swimmer posture adjustment method according to
+
+claim 2, wherein: on the basis of the weight (W) of the
+
+swimmer, the weight being measured by a load cell on the
+ground, and on the basis of a load (Fa) of the swimmer
+maintaining a streamlined gliding posture with the body
+of the swimmer horizontally stretched out, the load being
+measured by a load sensor by using, as a measurement
+point, one of two supporting points supporting the body
+of the swimmer and separated from each other by a
+predetermined distance (Xo), the center of mass location
+(Xi) is calculated, from relational expression (1), as a
+distance from the other supporting point to the center of
+mass of the swimmer;
+
+in the state where the upper half body and the lower
+half body of the swimmer maintaining a streamlined
+gliding posture in a downward-facing floating state in
+the water are respectively supported at two points
+between which the center of buoyancy and the center of
+mass of the swimmer are located, regression expressions
+are created in such a manner that a load (F1) measured by
+
+an upper half body load sensor provided at an upper half
+
+body supporting section supporting the upper half body of
+the swimmer, or a load (F2) measured by a lower half body
+load sensor provided at a lower half body supporting
+
+section supporting the lower half body of the swimmer, is
+
+set as an explanatory variable, and a residual air amount
+
+(Vc) of the swimmer is set as an objective variable, the
+
+--- PAGE 4 ---
+- 73 -
+
+amount being measured by residual air amount measurement
+
+means, and the regression expressions are substituted in
+
+relational expression (4), to calculate the buoyant force
+
+(B) corresponding to the residual air amount (Vc); and
+
+the regression expressions of the buoyant force (B)
+and the upper half body load (Fl) are substituted in
+
+relational expression (5) to calculate the center of
+
+buoyancy location (Xz) corresponding to the residual air
+
+amount (Vc)
+
+Fa-Xo = WXi ... (1)
+B=W+ Fl + F2 ... (4)
+X2B + Xi-(-W) + Xo-(-F1) = 0... (5).
+5. The swimmer posture adjustment method according to
+
+claim 3 or claim 4, wherein the difference between the
+calculated center of buoyancy location (Xz) and the
+
+calculated center of mass location (Xi) is calculated.
+
+6. The swimmer posture adjustment method according to
+claim 1 or claim 2, wherein the balancer is made of an
+elastic foam body having a closed cell structure, and is
+a supporter which can be attached to part of the body of
+
+the swimmer.
+
+7. The swimmer posture adjustment method according to
+
+claim 1 or claim 2, wherein the balancer is made of an
+
+--- PAGE 5 ---
+- 74 -
+
+elastic foam body having a closed cell structure, and is
+
+formed as a part of a swim suit.
+
+8. A swimmer information measurement device for use in
+
+the swimmer posture adjustment method according to claim
+1, claim 2 or claim 4, comprising:
+
+an upper half body supporting section and a lower
+half body supporting section which include therebetween
+the center of buoyancy and the center of mass of the
+swimmer maintaining the streamlined gliding posture in
+the downward-facing floating state in the water and
+respectively support, at two points, the upper half body
+and the lower half body of the swimmer; an upper half
+body load sensor which measures a load (Fl) acting at the
+upper half body supporting section; a lower half body
+load sensor which measures a load (F2) acting at the
+lower half body supporting section; residual air amount
+measurement means which measures a residual air amount
+(Vc) of the swimmer at the time of measurement of the
+loads; a storage section which stores the upper half body
+load (F1), the lower half body load (F2), the distance
+(Xo) between both the load measurement points, the
+
+residual air amount (Vc), and the previously measured
+
+weight (W) and calculated center of mass location (Xi) of
+
+the swimmer; arithmetic processing means which calculates
+
+the swimmer information including the buoyant force (B)
+
+and the center of buoyancy location (Xz) on the basis of
+
+--- PAGE 6 ---
+- 775 -
+
+the upper half body load (F1), the lower half body load
+
+(F2), the distance (Xo) between both the load measurement
+points, the residual air amount (Vc), which are stored in
+
+the storage section; and output means which outputs the
+
+swimmer information calculated by the arithmetic
+operation means,
+
+wherein: the arithmetic processing means can perform
+processing in which a regression expression is created by
+setting, as an explanatory variable, each of a set of a
+plurality of the upper half body loads (Fl) and a set of
+a plurality of the lower half body loads (F2) that are
+stored in the storage section, and by setting, as an
+objective variable, the residual air amounts (Vc) stored
+in the storage section;
+
+the following relational expression (4) stored
+beforehand in the storage section is called, and then the
+buoyant force (B) is calculated by substituting these
+created regression expressions into relational expression
+(4); and
+
+the following relational expression (5) stored
+beforehand in the storage section is called, and the
+center of buoyancy location (X2) is calculated by
+substituting the regression expressions of the buoyant
+
+force (B) and the upper half body load (F1) into the
+
+relational expression (5)
+
+B=W+ Fl + F2 ... (4)
+
+X2B + X1i-(-W) + Xo-(-F1) = 0... (5).

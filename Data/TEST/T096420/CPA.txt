@@ -1,0 +1,51 @@
+TITLE:
+Method and apparatus to determine when all outstanding fetches are complete
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method and apparatus determines completion of all of one or more operations for a particular input/output device initiated prior to an inquiry start time. The method provides one or more in-progress bits and an equal number of snapshot bits. Each in-progress bit corresponds to a respective associated operation for the input/output device. An in-progress bit is set when the associated operation is initiated. The in-progress bit is cleared when the associated operation is completed. The method copies, at the inquiry start time, all of the in-progress bits to the corresponding snapshot bits and clears a snapshot bit when the associated operations is completed. Finally, the method determines whether every one of said one or more snapshot bits is cleared. The apparatus comprises an input/output operator, one or more operation requesters, one or more in-progress bits and an equal number of snapshot bits. Preferably, the in-progress bits are grouped in a register, as are the snapshot bits. Each in-progress bit corresponds to a respective associated operation for the input/output devices, is set when the associated operation is initiated, and is cleared when the associated operations is completed.
+
+CLAIMS:
+1. A method for determining completion of all of one or more operations for a particular input/output device initiated prior to an inquiry start time, the method comprising:
+providing one or more in-progress bits, each in-progress bit corresponding to a respective associated one of said one or more operations for said input/output device;
+setting an in-progress bit when said associated one of said one or more operations is initiated;
+clearing the in-progress bit when said associated one or more operations is completed;
+providing one or more snapshot bits of equal number to said in-progress bits;
+copying, at said inquiry start time, all of the one or more in-progress bits to the corresponding one or more snapshot bits;
+clearing each of said one or more snapshot bits when said associated one or more operations is completed; and
+determining whether every one of said one or more snapshot bits is cleared.
+2. The method of claim 1 further comprising:
+clearing all data that has been read for said input/output device upon determination that every one of said one or more snapshot bits have been cleared.
+3. The method of claim 1 wherein said operations comprise input/output memory requests.
+4. The method of claim 1 further comprising:
+grouping all of said one or more in-progress bits in a register; and
+grouping all of said one or more snapshot bits in a register.
+5. An apparatus for determining completion of all of one or more operations for a particular input/output device initiated prior to an inquiry start time, the apparatus comprising:
+an input/output operator;
+one or more operation requesters;
+one or more in-progress bits, each in-progress bit corresponding to a respective associated one of said one or more operations for said input/output devices, each of said one or more in-progress bits being set when said associated one of said one or more operations is initiated, and being cleared when said associated one or more operations is completed; and
+one or more snapshot bits of equal number to said in-progress bits.
+6. The apparatus of claim 5 wherein said one or more operations are selected from the group consisting of:
+input/output memory requests; and
+a copy of all the in-progress bits into the snapshot bits.
+7. The apparatus of claim 5 wherein the operator comprises an input/output processor and associated memory.
+8. The apparatus of claim 5 wherein the one or more operation requesters comprise:
+one or more input/output devices; and
+system software.
+9. The apparatus of claim 5 further comprising:
+an in-progress register grouping all of said one or more in-progress bits; and
+a snapshot register grouping all of said one or more snapshot bits.
+10. A computer readable medium on which is embedded a program, the program comprising components that execute a method for determining completion of all of one or more operations for a particular input/output device initiated prior to an inquiry start time, the method comprising:
+providing one or more in-progress bits, each in-progress bit corresponding to a respective associated one of said one or more operations for said input/output device, each of said one or more in-progress bits being set when said associated one of said one or more operations is initiated, and being cleared when said associated one or more operations is completed;
+providing one or more snapshot bits of equal number to said in-progress bits;
+copying, at said inquiry start time, all of the one or more in-progress bits to the corresponding one or more snapshot bits;
+clearing each of said one or more snapshot bits when said associated one or more operations is completed; and
+determining whether every one of said one or more snapshot bits is cleared.
+11. The computer readable medium of claim 10 wherein the method further comprises:
+clearing all data that has been read for said input/output device upon determination that every one of said one or more snapshot bits.
+12. The computer readable medium of claim 10 wherein said operations comprises input/output memory requests.
+13. The computer readable medium of claim 10 wherein the method further comprises:
+grouping all of said one or more in-progress bits in a register; and
+grouping all of said one or more snapshot bits in a register.

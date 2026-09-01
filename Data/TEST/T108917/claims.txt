@@ -1,0 +1,197 @@
+--- PAGE 1 ---
+EP 13 197 982.5 N/FABOO- 132-EP
+
+Main Request April 3, 2017
+
+Clean version NUGS/nuhr
+61
+
+CLAIMS
+
+1. A method of operating an online social network (160), comprising:
+
+accessing (510), by a computing device (160), a database (164) of the
+
+online social network (160), the database (164) implemented as a social-
+
+graph database (164) comprising a plurality of nodes (202, 204) and a
+
+plurality of edges (206) connecting the nodes (202, 204), each of the
+
+edges (206) between two of the nodes (202, 204) representing a single
+degree of separation between them, the nodes (202, 204) comprising:
+
+a first node corresponding to a first user associated with the online social
+
+network (160); and
+
+a plurality of second nodes that each correspond to a concept or a second
+
+user associated with the online social network (160);
+
+by the computing device:
+
+- receiving (520) from a client system (130) of the first user an un-
+structured text query comprising an ambiguous n-gram;
+
+- identifying (530) in the social-graph database (164) a plurality of
+second nodes or a plurality of edges corresponding to the ambiguous
+n-gram;
+
+- generating (540) a first set of structured queries, each structured que-
+ry from the first set of structured queries corresponding to an identi-
+fied second node or identified edge, the structured query comprising a
+reference to the identified second node or identified edge;
+
+- receiving (550) from the client system (130) of the first user a select-
+ed first structured query from the first set of structured queries, the
+first structured query corresponding to a selected second node or se-
+lected edge from the identified second nodes or identified edges, re-
+spectively; and
+
+- generating (560) a second set of structured queries, each structured
+query of the second set of structured queries comprising a reference
+
+to the selected second node or selected edge.
+
+--- PAGE 2 ---
+EP 13 197 982.5 N/FABOO- 132-EP
+
+Main Request April 3, 2017
+Clean version NUGS/nuhr
+
+62
+2. The method of Claim 1, wherein receiving from the client system (130)
+
+of the first user the unstructured text query comprises receiving one or
+more characters of a character string as the first user at the client system
+
+(130) enters the character string into a graphical user interface.
+
+3. The method of Claim 2, wherein the graphical user interface comprises a
+query field, and wherein the character string is entered by the first user
+
+into the query field.
+
+4. The method of any of Claims | to 3, wherein for each structured query
+from the first set of structured queries, the reference to the identified
+second node or identified edge is highlighted to indicate the reference
+corresponds to the ambiguous n-gram; and/or
+the structured query further comprises a snippet comprising contextual
+information about the identified second node or identified edge corre-
+
+sponding to the structured query.
+
+5. The method of any of Claims | to 4, further comprising transmitting the
+first set of structured queries to the client system (130) of the first user,
+wherein each structured query of the first set of structured queries is se-
+lectable by the first user to indicate that the identified second node or
+identified edge referenced in the structured query matches an intent of
+
+the user for the ambiguous n-gram.
+
+6. The method of any of Claims | to 5, further comprising transmitting the
+first set of structured queries for presentation on the client device (130)
+to the first user as the first user enters the unstructured text query into a
+graphical user interface(350), the presentation of the first set of struc-
+tured queries on the client system (130) to the first user enabling the
+first user to select the first structured query from the first set of struc-
+
+tured queries.
+
+--- PAGE 3 ---
+EP 13 197 982.5 N/FABOO- 132-EP
+
+Main Request April 3, 2017
+Clean version NUGS/nuhr
+63
+7. The method of any of Claims | to 6, further comprising receiving, by the
+
+10.
+
+11.
+
+computing device (160), from the client system (130) of the first user a
+elected second structured query from the second set of structured que-
+ries;
+
+preferably further comprising generating, by the computing device (160),
+one or more search results corresponding to the second structured query;
+wherein preferably the second structured query further comprises refer-
+ence to zero or more additional second nodes of the plurality of second
+nodes and zero or more additional edges of the plurality of edges, and
+wherein each search result corresponds to a second node of the plurality
+of second nodes that is connect to either the selected second node or one
+of the additional second nodes by one or more of either the selected edge
+
+or one of the additional edges.
+
+The method of any of Claims | to 7, wherein the unstructured text query
+is received by the computing device (160) as a portion of a third struc-
+tured query, wherein the third structured query comprises:
+
+references to one or more second nodes or second edges; and
+
+the unstructured text query.
+
+The method of any of Claims | to 8, wherein the ambiguous n-gram
+comprises one or more characters of text entered by the first user and/or
+
+a contiguous sequence of m items from the unstructured text query.
+
+The method of any of Claims | to 9, wherein one or more of the struc-
+tured queries of the second set of structured queries further comprises
+references to one or more second nodes of the plurality of second nodes
+
+and one or more edges of the plurality of edges.
+
+The method of any of Claims | to 10, wherein identifying the plurality of
+second nodes or the plurality of edges corresponding to the ambiguous n-
+
+gram comprises, by the computing device (160):
+
+--- PAGE 4 ---
+EP 13 197 982.5 N/FABOO- 132-EP
+Main Request April 3, 2017
+Clean version NUGS/nuhr
+
+12.
+
+13.
+
+14.
+
+64
+
+determining a score for each n-gram that the n-gram corresponds to a
+second node of the plurality of second nodes or an edge of the plurality
+of edges; and
+
+identifying each second nodes or each edge having a score greater than a
+threshold score, wherein at least two second nodes or two edges have a
+
+score greater than the threshold score.
+
+The method of Claim 11, wherein the score for each n-gram is a proba-
+bility that the n-gram correspond to a second node of the plurality of
+second nodes or an edge of the plurality of edges; and/or
+
+wherein determining the score that an n-gram corresponds to a second
+node of the plurality of second nodes is based on the degree of separa-
+tion between the first node and the second node; and/or
+
+wherein determining the score for each n-gram is based on a search his-
+
+tory associated with the first user.
+
+One or more computer-readable non-transitory storage media embodying
+software that is operable when executed to perform a method according
+
+to any of Claims | to 12.
+
+A system (800) comprising: one or more processors (802); and a memory
+(804) coupled to the processors (802) comprising instructions executable
+by the processors (802), the processors (802) operable when executing
+the instructions to perform a method according to any of the Claims 1
+
+to 12.

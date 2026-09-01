@@ -1,0 +1,56 @@
+TITLE:
+Human machine interface
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+An industrial control user interface provides a flexible, extensible architecture for the provision of real-time process data to a state-of-the-art user interface, using MSHTML as the underlying rendering engine. The architecture of the interface provides a user interface that is designed to harness key industry standard technologies in an open, adaptable, architecture that facilitates the technological convergence of disparate HMI products. The preferred embodiments offer open display page architecture via the separation of the provision of data and server specific user interactions from the implementation of individual page elements. The only real assumption made about a page element is that it is part of the HTML display page and accessible via the Document Object Model.
+
+CLAIMS:
+1. A Human Machine Interface (HMI) including: a display page including a plurality of display page elements; a data source manager including a plurality of data source components; and a binding engine wliich transfers data and commands between the data source components and the display page elements.
+2. An HMI according to claim 1 wherein the display page further includes a plurality of infrastructure components.
+3. An HMI according to claim 1 wherein the data source components are server system specific data source components.
+4. An HMI according to claim 1 wherein each display page has its own conesponding binding engine.
+5. An HMI according to claim 1 wherein the individual data source components are shared by more than one binding engine.
+6. An HMI according to claim 1 wherein the display page acts as a container for the page elements that make up the display page and provides the primary user interface thread of execution.
+7. An HMI according to claim 1 wherein the page elements include any one or more element that can be included in an HTML file.
+8. An HMI according to claim 7 wherem the page elements include one or more of: ActiveX controls; VML graphics elements; HTML elements; HTML scriptlets; and Java Applets.
+9. An HMI according to claim 1 wherein the display page is constructed using a mixture of standard HTML and XML tags.
+10. An HMI according to claim 9 wherem the HTML describes presentation aspects of the display page and the XML tags describe what data is required for the page and how that data is to be applied to the page.
+11. An HMI according to claim 2 wherein the infrastructure components assist with the parsing of an XML content ofthe display page, the delivery of data to the display page and the initiation of server commands from display page elements.
+12. An HMI according to claim 1 wherein, at run time, the display page appears as an instance of a standard Document Object Model (DOM).
+13. An HMI according to claim 12 wherein the DOM is the standard for the industry to which the HMI is applied.
+14. An HMI according to claim 12 wherein the DOM provides the destination for data provided by the binding engine.
+15. An HMI according to claim 14 wherein the DOM further provides the basis for the display page scripting environment.
+16. An HMI according to claim 1 wherein the display pages are capable of being encapsulated and re-used as encapsulated displays.
+17. An HMI according to claim 16 wherein the encapsulation includes the parameterisation of any data references in the display page and the addition of properties, methods and events that allow the encapsulated display to act as a fully fledged component.
+18. An HMI according to claim 17 wherein the encapsulated displays are embeddable.
+19. An HMI according to claim 18 wherein the encapsulated displays are linked into containing display pages.
+20. An HMI according to claim 1 wherein the display page is HTML based.
+21. An HMI according to claim 1 wherein the data source manager manages a plurality of server system specific data source components that encapsulate the details of delivering data to and from particular server systems.
+22. An HMI according to claim 1 wherein each data source component presents data from a server system in the form of a hierarchical object model.
+23. An HMI according to claim 1 wherein the data source manager pulls the separate data source component object models together into a unified data source object model
+(DSOM) that is used as the source of data for the binding engine.
+24. An HMI according to claim 23 wherein the data source components are informed ofthe data requirements for a particular display page by means of a data source definition that is stored as part of an HTML/XML display page file.
+25. An HMI according to claim 1 wherein the server systems include one or more of a variety of different server system, a small subset of wliich includes the server systems provided by Honeywell Limited and that are known as:
+Plantscape;
+Enterprise Buildings Integrator; TPS;
+TPA;
+QCS;
+Uniformance; OPC; and
+HCI.
+26. An HMI according to claim 12 wherein the data binding engine takes the data provided by the data source object model and applies it to the display page.
+27. An HMI according to claim 26 wherein the data binding engine takes the data provided by the data source object model and applies it to the display page in a way defined by binding definitions contained in the HTML/XML display page.
+28. An HMI according to claim 27 wherein each display element that requires data has an associated binding definition that defines what data is required for the element and how it is to be applied to the element.
+29. An HMI according to claim 26 wherein the data binding engine is able to bind data to any property ofthe DOM.
+30. An HMI according to claim 26 wherein the DOM includes the body element and any container elements that are used to organise other elements on the display page.
+31. An HMI according to claim 26 wherein the binding engine uses transformations to perform the fransfer of data from the data source object model to the display page.
+32. An HMI according to claim 31 wherein the transformations fransfer the data directly from the data source object model to the display page.
+33. An HMI according to claim 32 wherein the transformations transforms the data as they fransfer the data.
+34. An HMI according to claim 32 wherein the transformations include user written
+"OnDataChange" scripts and data driven page element "dynamics" such as rotation, path animation and break point animation.
+35. An HMI according to claim 32 wherein the transformations are binary components.
+36. An HMI according to claim 32 wherein the transformations are written using an
+XML syntax and script code.
+37. An HMI according to claim 12 wherein the binding engine executes in an apartment managed by the data source manager and transfers data from the data source object model to the display page in a very efficient manner

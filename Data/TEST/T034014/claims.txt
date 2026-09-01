@@ -1,0 +1,132 @@
+--- PAGE 1 ---
+10 176 516.2 - 1957 EPAB-106657.5
+Kaspersky Lab, ZAO January 23, 2014
+
+MAIN REQUEST [clean copy]
+
+1. A computer-implemented method for detection of unknown malware, the
+method comprising:
+
+(a) receiving metadata information about files executed on a remote computer
+and information about events of execution of the files, including information
+about actions performed on the files;
+
+(b) filtering out known metadata information and known information about
+events on basis of information stored in WhiteList and BlackList knowledge
+databases;
+
+characterized by
+
+(c) determining an invocation sequence of the files based on the information
+
+‘about events of file execution, including at least events of file download,
+dropping, linking and invocation;
+
+(d) constructing a parent-child hierarchy based on the invocation sequence of
+the files, wherein the parent-child hierarchy describes parent-child
+relationships between the files;
+
+(e) performing a risk analysis of the files based on the received, not filtered
+information and based at least in part on one of the following criteria:
+statistics of the events of execution of each file, name stability of the file
+source, address stability of the file source, activity of the file and a behavioral
+pattern of the file;
+
+(f) performing a risk assessment of the files based on the parent-child hierarchy
+to determine a level of danger of the related files, wherein a risk assessed to
+a parent file is based at least in part on the risk associated with one or more
+children files of the parent file; and
+
+(g) determining whether the files are malicious based on the risk analysis and
+
+risk assessment,
+
+--- PAGE 2 ---
+MAIN REQUEST 2
+
+wherein the risk analysis of a file is based on calculating a level of activity of the
+file (Activity” parameter), a degree of danger of the file Danger” parameter),
+and a significance for the file (‘Significance” parameter), wherein the
+Significance parameter is computed as Significance = (Activity * Danger), and
+wherein the Danger parameter is calculated based on a decision tree of weight
+
+coefficients built up for the criteria used in the risk analysis of the file.
+
+2. The method of claim 1, wherein the risk assessment further includes aggregating
+values of the computed criteria to determine whether the risk of the file is high,
+
+medium or low.
+
+3. The method of claim 1, wherein performing risk assessment of a file further
+
+includes determining a ratio of clean to malicious programs invoked by the file.
+
+4. The method of claim 1, wherein the weight coefficients are dynamically changing
+
+depending on the accumulated information in the knowledge databases.
+
+5. The method of claim 1, wherein the following further criteria are used: masking a
+name, masking a file extension, missing file extension, and/or syntactic of the file
+
+name.
+
+6. The method of claim 1, wherein the Activity parameter is calculated based on a
+number of downloads or a number of times a given file is invoked over a certain
+
+period of time.
+
+7. The method of claim 6, wherein the Activity parameter is calculated as Activity =
+Hits * F(At), wherein Hits is a number of the file downloads, program starts, and
+net attack attempts, F is a probability distribution function, and At is the period
+
+of time since the occurrence of a last event of the file.
+
+--- PAGE 3 ---
+MAIN REQUEST 3
+
+8. The method of claim 1, wherein the decision tree of weight is expandable by
+adding new criteria, wherein a maximum weight of a criterion associated with a
+higher level tree node is not changed by weights of added criteria at lower tree
+
+node levels.
+
+9. A system for detection of unknown malware, the method comprising:
+
+a processor configured to receive metadata information about files executed on a
+computer and information about events of execution of the files, including
+information about actions performed on the files, wherein known metadata
+information and known information about events are filtered out on basis of
+information stored in WhiteList and BlackList knowledge databases;
+the processor being characterized by being further configured to:
+
+determine an invocation sequence of the files based on the information
+about events of file execution, including at least events of file download,
+dropping, linking and invocation;
+
+construct a parent-child hierarchy based on the invocation sequence of
+the files, wherein the parent-child hierarchy describes parent-child relationships
+between the files;
+
+perform a risk analysis of the files based on the received, not filtered
+information and based at least in part on one of the following criteria: statistics
+of the events of execution of each file, name stability of the file source, address
+stability of the file source, activity of the file and a behavioral pattern of the file;
+
+perform a risk assessment of the files based on the parent-child hierarchy
+to determine a level of danger of the related files, wherein the risk assessed to a
+parent file is based at least in part on the risk associated with one or more
+children files of the parent file; and
+
+determine whether the files are malicious based on the risk analysis and
+risk assessment,
+wherein the risk analysis of a file is based on calculating a level of activity of the
+file (Activity” parameter), a degree of danger of the file (Danger” parameter),
+
+--- PAGE 4 ---
+MAIN REQUEST
+
+and a significance for the file (‘Significance” parameter), wherein the
+Significance parameter is computed as Significance = (Activity * Danger), and
+wherein the Danger parameter is calculated based on a decision tree of weight
+
+coefficients built up for the criteria used in the risk analysis of the file.

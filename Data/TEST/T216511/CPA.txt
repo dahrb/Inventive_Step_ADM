@@ -1,0 +1,44 @@
+Title: Method and apparatus for embedding comments in electronic messages
+
+Abstract: A message processing system and method 10 allows a user to create messages for delivery to a number of recipients. In addition, the user can create one or more comments or special instructions in the message that are to be delivered to fewer than all of the recipients of the common message. The comments are encrypted such that they cannot be accessed by all recipients of the message but only selected recipients of the message. The message processing system may decrypt the comments and include them along with the common portion of the message prior to delivery to those recipients that are to receive the comments. Alternatively, a recipient of a common portion of a message selects an icon or other prompt indicating that a comment is attached to the message. The recipient is asked to enter a password or other security code that causes the messaging system to determine whether the recipient is to receive a comment and if so, to decrypt the attached comment.
+
+Type: 
+EPO patent
+
+Claims: 
+
+A method of sending messages in an electronic messaging system, comprising: creating an electronic message with a common message portion (50) that is to be delivered to a number of recipients;
+creating a comment to said common message portion in said electronic message (54), wherein said comment is to be reviewed only by a selected subset of said recipients;
+determining said recipients and said selected subset (52, 56);
+delivering said common message portion without said comment to said recipients not in the subset and delivering said common message portion with said comment to said selected subset.
+A method according to claim 1, wherein said determining step comprises:
+creating a first address list that specifies said number of recipients;
+creating a second address list that specifies said selected subset; and wherein said delivering step includes:
+determining whether a particular recipient is included on both said first and second address lists.
+A method according to claim 1 or 2 wherein said delivering step further includes:
+encrypting said comment;
+transmitting (100) said common message portion and said encrypted comment to said number of recipients; and determining whether a particular recipient is allowed to decode said encrypted comment.
+A method according to claim 3, wherein the determination of whether a particular recipient is allowed to decode said encrypted comment is made by:
+transmitting an icon or an instruction with said common message portion and said encrypted comment; and determining if said particular recipient has selected the icon or performed the instruction and if so, determining if said particular recipient is on said second address list of said number of recipients selected to review said comment; and/or
+prompting (106) the particular recipient for a password or security code prior to decoding said encrypted comment for the particular recipient.
+A method according to claim 4 wherein said icon or instruction transmitting step comprises transmitting an applet or mini-program with said common message portion and said encrypted comment.
+A method according to claim 1 or 2, wherein said delivering step further includes:
+encrypting said comment;
+transmitting (58) said common message portion and said encrypted comment to a messaging processor (20);
+decrypting (76) said comment and forwarding (78) said common message portion with said decrypted comment from said messaging processor (20) to said particular recipient if said particular recipient is included on both said first and second address lists; and
+forwarding (74) only said common message potion without said comment from said messaging processor (20) to said particular recipient if said particular recipient is not included on both said first and second address lists.
+A system for delivering electronic messages to one or more recipients, comprising:
+a plurality of user stations (22a...22n) at which a user enters and receives electronic messages, wherein one of said plurality of user stations creates an electronic message with a common message portion that is to be delivered to recipients at a number of said user stations and also creates a comment to said common message portion of said electronic message, wherein said comment can be reviewed only by selected recipients at a selected subset of said number of said user stations;
+a message processor (20) coupled to the plurality of user stations, the message processor being programmed to:
+deliver said common message portion without said comment to said user stations not in said selected subset and said common message portion with said comment to said selected subset.
+A system according to claim 7, wherein said message processor (20) determines whether a particular recipient is included on both a first address list and a second address list, wherein said first address list specifies said recipients, and said second address list specifies said selected recipients.
+A system according to claim 7 or 8, wherein said message processor:
+encrypts said comment;
+transmits said common message portion and said encrypted comment to said recipients; and
+determines whether a particular recipient is allowed to decode said encrypted comment.
+A system according to claim 9, wherein the message processor determines whether a particular recipient is allowed to decode said encrypted comment by:
+transmitting an icon or an instruction with said common message portion and said encrypted comment and determining if said particular recipient has selected the icon or performed the instruction and if so, determining if said particular recipient is on said second address list of said selected recipients selected to review said comment; and/or
+prompting the particular recipient for a password or security code prior to decoding said encrypted comment for the particular recipient.
+A system according to claim 10, wherein said message processor (20) transmits to said recipients said icon or instruction by transmitting an applet or mini-program with said common message portion and said encrypted comment.
+A system according to claim 7, wherein said one of said plurality of user stations encrypts said comment, transmits said common message portion and said encrypted comment to said message processor (20); and wherein said message processor (20) decrypts said comment and forwards said common message portion with said decrypted comment from said message processor to said particular recipient if said particular recipient is included on both said first and second address lists, and wherein said message processor forwards only said common message portion without said comment from said message processor to said particular recipient if said particular recipient is not included on both said first and second address lists.
+The system according to any preceding system claim, wherein said message processor is a voice mail system coupled to user stations comprising telephones, an e-mail server coupled to user stations comprising computers, or a multimedia messaging system.

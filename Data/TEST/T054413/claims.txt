@@ -1,0 +1,63 @@
+--- PAGE 1 ---
+From: To:EPO Munich 28/12/2012 14:42 #189 P.010/015
+
+PG432107EP Main Request
+
+Main Request
+Claims
+
+5 1. A geocoding engine for providing geocodes in response to receiving address information from
+a remote user, the geocoding engine comprising:
+a module for detecting a country code designation in a request to provide a geocode;
+a module for invoking a parser corresponding to the country code from the received
+request to provide a parsed input address;
+10 a module in the parser for detecting a postal-code corresponding to the country code in
+the received request;
+a module in the parser for detecting a world city name in the received request;
+a module for obtaining a candidate list selected from a geocoding database
+corresponding to at least one member of the set consisting of the postal-code, the parsed input
+15 address, and the world city name;
+a module for invoking a matcher module for evaluating the candidate list by matching it
+to the input address; and
+a module for invoking an interpolator corresponding to the country code for generating a
+geocode corresponding to a selected candidate.
+20
+2. A computer readable media containing computer executable instructions for performing the
+steps of a method for providing geographical information to a plurality of users, the plurality of
+users employing a plurality of formats, the method comprising the steps of: encoding
+geographical data to generate default data in a parent class ; overriding at least a portion of the
+25 default data via a sub class so that access via the sub-class accesses customized data rather
+than the overridden default data; determining, in response to a user request specifying a country
+code, a class for processing geographical data corresponding to the country code; processing
+the user request via a parser to generate a parsed object; and matching the parsed object to
+generate a set of ordered matches corresponding to the parsed object for responding to the
+
+30 _— user request.
+
+3, The computer readable media of claim 2 further including computer executable instructions
+for performing the step of selecting a parser corresponding to the country code.
+
+51175828-1-gmcglashan 32
+
+Duration: 28.12.2012 15:38:53 - 28.12.2012 15:48:48. This page 10 of 15 was completed at 28.12.2012 15:46:37
+Received at the EPO on Dec 28, 2012 15:48:48. Page 10 of 15
+
+--- PAGE 2 ---
+From: To:EPO Munich 28/12/2012 14:43 #189 P.011/015
+
+PG432107EP Main Request
+
+4, The computer readable media of claim 3 further including computer executable instructions
+for performing the step of interpolating between known geographical points to generate
+geographical data corresponding to a selected match from the set of ordered matches for
+responding to the user request.
+
+5. The computer readable media of claim 4 further including computer executable instructions
+
+for performing the step of interpolating to determine a geocode of a desired type from the
+selected match from the set of ordered matches for responding to the user request.
+
+51175828-1-gmeglashan 33
+
+Duration: 28.12.2012 15:38:53 - 28.12.2012 15:48:48. This page 11 of 15 was completed at 28.12.2012 15:46:56
+Received at the EPO on Dec 28, 2012 15:48:48. Page 11 of 15

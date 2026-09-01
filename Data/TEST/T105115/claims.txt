@@ -1,0 +1,116 @@
+--- PAGE 1 ---
+ABBO1972/EP
+
+NEW SET OF CLAIMS
+
+A low or medium voltage distribution network, comprising:
+
+- atleast a P&C device (IED;, IED);
+
+- a computer station (11) which communicates with said P&C device through a
+communication network (12), said computer station comprising first computerized
+means (111) for executing, according to a batch processing mode, downloading
+sessions of software packages (F, Fn) to said P&C devices in order to upgrade the
+software of said P&C device;
+
+said P&C device comprising second computerized means (115) for executing
+
+procedure for safely managing of the software upgrade in said P&C device and third
+
+computerized means (116) for storing the software packages downloaded by said
+computer station and for saving a back-up copy of the old software that is already
+resident in said at least a P&C device;
+
+characterised in that the procedure executed by said second computerized means
+
+comprises the following steps:
+
+- checking whether the software package downloaded by said computer station (11)
+have been correctly stored, a consistency check between a configuration tool of the
+computer station and said at least a P&C device being performed to validate the
+upgraded software; and
+
+- waiting for a message confirming that the software packages downloaded by said
+computer station (11) have been stored correctly;
+
+- if said message is not received in a predefined period of time, sending instructions
+to recover said back-up copy of the old software, said old software being used to
+continue the normal operations of said at least a P&C device.
+
+A low or medium voltage distribution network, according to claim 1, characterized in
+
+that said first computerized means execute a plurality of processing threads during a
+
+downloading/uploading session of said software packages, each of said processing
+
+threads being executed for performing the task of downloading one software package
+
+to said P&C device in parallel and independent manner with respect to other P&C
+
+devices.
+
+A low or medium voltage distribution network, according to one or more of the
+
+previous claims, characterized in that said computer station comprises fourth
+
+--- PAGE 2 ---
+ABBO1972/EP
+
+computerized means (112) for selecting the software package to be downloaded to
+
+said P&C device.
+
+A low or medium voltage distribution network, according to one or more of the
+
+previous claims, characterized in that said computer station comprises fifth
+
+computerized means (113) for performing compatibility checks on the software
+packages to be downloaded to said P&C device.
+
+A low or medium voltage distribution network, according to one or more of the
+
+previous claims, characterized in that each of said software packages (F), Fy)
+
+comprises one software file.
+
+A low or medium voltage distribution network, according to one or more of the
+
+previous claims, characterized in that said communication network is a an Ethernet
+
+LAN.
+
+A method for performing a software upgrade in at least a P&C device of a low or
+
+medium voltage distribution network, said at least a P&C device communicating with
+
+a computer station (11) through a communication network (12), said computer station
+
+executing, according to a batch processing mode, downloading sessions of software
+
+packages (F;, Fy) to said P&C devices in order to upgrade the software of said at least
+
+a P&C device;
+
+said method comprising the following steps:
+
+- receiving the software package downloaded by said computer station (11); and
+
+- storing the software package downloaded by said computer station (11); and
+
+- saving a back-up copy of the old software that is already resident in said at least a
+P&C device; and
+
+characterised in that it comprises the following steps:
+
+- checking whether the software package downloaded by said computer station (11)
+have been correctly stored, a consistency check between a configuration tool of the
+computer station and said at least a P&C device being performed to validate the
+upgraded software; and
+
+- waiting for a message confirming that the software packages downloaded by said
+computer station (11) have been stored correctly;
+
+- if said message is not received in a predefined period of time, sending instructions
+to recover said back-up copy of the old software, said old software being used to
+
+continue the normal operations of said at least a P&C device.

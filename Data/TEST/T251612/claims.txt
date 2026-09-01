@@ -1,0 +1,129 @@
+--- PAGE 1 ---
+EP 00959523,» ne 170200 CLMS 2009-03-20
+
+CLAIMS:
+
+1. A data processing system for managing use of chemical product in a
+s chemical application system corresponding to a first customer account identified
+by an account identifier, the system comprising:
+a chemical product dispenser distributing the chemical product to the chemical
+application system; ;
+4 monitor module detecting dispenser data based on distribution of the chemical
+10 product by the chemical product dispenser,
+a database coupled to the chemical product dispenser and storing the account
+identifier in association with the dispenser data of the chemical product dispenser;
+the database further storing corporate data in association with the dispenser data
+and the account identifier; and
+is an analysis application analyzing the dispenser data in relation with the corporate
+data to characterize use of the chemical product in the chemical application sys-
+
+tem.
+
+2. The data processing system of claim 1 further comprising:
+20 an alignment identifier associated with a plurality of customer accounts, including
+the first customer account, wherein the analysis application is capable of limiting
+analysis to database data sharing a common alignment identifier.
+
+3. The data processing system of claim 1 further comprising:
+25 a time period specifier associated with one or more tables of corporate data fo
+indicate the pericd of time for which the corporate data is valid.
+
+4, The data processing system of claim 1 further comprising:
+a time period specifier associated with one or more tables of dispenser data to
+30 indicate the period of time for which the dispenser data is valid.
+
+5. The data processing system of claim 1, wherein the dispenser, data in-
+cludes detected dispenser data detected by the monitor module and dispenser
+
+--- PAGE 2 ---
+EP00959523. CLMS
+
+i
+
+20
+
+a5
+
+20
+
+25
+
+3
+
+Q
+
+P20417-1.doc
+-2.
+
+system data stored in the dispenser, both types of data being © communicated from
+the chemical product dispenser to the database.
+
+6. The data processing system of claim 1, wherein the corporate data re-
+lates to business operations of a facility at which the chemical application system
+
+is operating.
+
+q. The data processing system of claim 1, wherein the corporate data de-
+scribes occupancy of a facility at which the chemical application system is operat-
+ing.
+
+8. The data processing system of claim 1, wherein the corporate data de-
+scribes a utility cost of a facility at which the chemical application system is operat-
+
+ing.
+
+9. The data processing system of claim 1, wherein the corporate data de-
+scribes a labor cost of a facility at which the chemical application system is operat-
+
+ing.
+
+10. The data processing system of claim 1, wherein the corporate data de-
+scribes operator shift times of a facility at which the chemical application system is
+operating.
+
+11. A method of managing use of chemical product in a chemical ap-
+plication system corresponding to a first customer account identified by an account
+identifier, the method comprising:
+distributing the chemical product to the chemical application system via a first
+chemical product dispenser;
+recording first dispenser data based on distribution of the chemical product by the
+chemical product dispenser;
+recording the account identifier in association with the dispenser data of the first
+chemical product dispenser;
+
+2009-03-20
+
+--- PAGE 3 ---
+EP00959523 so CLMS 2009-03-20
+
+-3.
+
+storing second dispenser data from a second chemical product dispenser corre-
+sponding to a second customer account; and
+
+analyzing the first dispenser data of the first chemical product dispenser relative to
+the second dispenser data of the second chemical product dispenser to character-
+
+s ize the use of the chemical product in the chemical application system.
+
+42. The method of claim 11 further comprising:
+recording an alignment identifier associated with the first and second customer
+accounts; .
+10 limiting analysis of the first dispenser data and the second dispenser data in ac-
+cordance with the alignment identifier in exclusion of other recorded dispenser
+
+data.
+
+13. The method of claim 11 further comprising:
+xs recording corporate data associated with the first customer account;
+analyzing the first dispenser data in relation with the corporate data to characterize
+use of the chemical product in the chemical application system.
+
+14. The method of claim 11 further comprising:
+20 recording corporate data associaied with the first customer account;
+generating product usage data from a combination of the corporate data and the
+first dispenser data; and
+analyzing the product usage data to characterize use of the chemical product in
+the chemical application system.
+
+a5

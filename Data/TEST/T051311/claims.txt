@@ -1,0 +1,252 @@
+--- PAGE 1 ---
+PNS85802EP
+MAIN REQUEST
+
+Claims:
+
+1. A computer system executable method for an automated workflow system for
+manipulating a work item meeting predetermined criteria, and stored in a database of
+work items, for subsequent execution by an operator, which method comprises:
+
+storing in a memory a processes table (100) comprising a plurality of process
+identifiers (114, 116), each process identifier representing a process for manipulating
+a work item (10) in the workflow system, each process identifier being associated
+with one or more nodes, each of the one or more nodes representing a manipulation
+task of the corresponding process;
+
+storing in the memory a nodes table (140) comprising a plurality of node
+identifiers (152, 154, 156, 158), each node identifier representing a node, each node
+identifier being associated with one or more processes;
+
+receiving a directive from an administrator to remove a first node from the
+memory;
+
+setting a mark in the nodes table associated with the first node to indicate that
+the first node is to be removed from the memory;
+
+using the mark to prevent a process from being made dependent on the first
+node after the mark was set;
+
+using the mark to prevent the first node from affecting work items meeting the
+predetermined criteria that enter the workflow system after the mark was set; and
+
+removing the first node from the memory after the processes table is modified
+
+such that no process is associated with the first node.
+
+2. The method of claim 1, comprising:
+
+storing in the memory a rules table (300) comprising a plurality of rule
+identifiers (320, 322), each rule identifier representing a rule for affecting how the
+workflow system processes work items meeting a predetermined criteria defined by
+the rule, each rule identifier. being associated with one or more nodes;
+
+receiving a directive from an administrator to remove a first rule from the
+memory;
+
+setting a mark in the rules table associated with the first rule to indicate that
+the first rule is to be removed from the memory;
+
+using the mark to prevent a node from being made dependent on the first rule
+
+24
+2821539-1-tprock
+
+--- PAGE 2 ---
+PN585802EP
+MAIN REQUEST
+
+after the mark was set; and
+removing the first rule from the memory after the workflow system has fewer
+than a predetermined number of pending work items meeting the predetermined
+
+criteria defined by the first rule.
+
+3. The method of claim 2, comprising executing a batch program regularly to
+remove from the memory any rule that has been marked for deletion in which the
+workflow system has fewer than the predetermined number of pending work items
+meeting the predetermined criteria defined by the rule wherein a processes table
+
+comprises other definitional data items.
+
+4. The method of claim 2 or 3, wherein each rule comprises an “IF” portion and a
+“THEN” portion, the “IF” portion defining the predetermined criteria defined by the
+rule, and the “THEN” portion defining how the rule affects the processing of work
+items meeting the predetermined criteria of the “IF” portion, and
+
+the first rule is removed from the memory after the workflow system has
+fewer than a predetermined number of pending work items meeting the predetermined
+
+criteria defined by the “IF” portion of the first rule.
+
+5. The method of any one of claims 2 to 4, comprising using the mark to prevent
+the rule from affecting any work item failing to meet the predetermined criteria until
+
+after the mark was set.
+
+6. The method of any one of claims 1 to 5, comprising executing a batch
+program regularly to remove from the memory any node that has been marked for
+
+deletion in which no process in the processes table is associated with the node.
+
+7. The method of any one of claims 1 to 6, comprising, upon receiving the
+
+directive to remove the first node from the memory, marking lower level data
+
+structures for removal, the lower level data structures referring to the first node; and
+removing each of the lower level data structures from the memory after
+
+determining that workflow system is independent of the lower level data structure.
+
+25
+2821539-1-tprock
+
+--- PAGE 3 ---
+PN585802EP
+MAIN REQUEST
+
+8. The method of any one of claims 1 to 7, comprising storing in the memory a
+queues table (400) comprising a plurality of queue identifiers (416, 418, 420, 422,
+424, 426, 428, 430), each queue identifier representing a queue associated with a node
+and a list indicating work items (10) appropriate for execution at the node associated
+with the queue;
+
+receiving a directive from an administrator to remove a first queue from the
+memory;
+
+setting a mark in the queues table associated with the first queue to indicate
+that the first queue is to be removed from the memory;
+
+using the mark to prevent a work item from being associated with the first
+queue after the mark was set; and
+
+removing the first queue from the memory after all the work items associated
+
+with the first queue have been processed.
+
+9. Computer software, residing on a computer-readable storage medium,
+comprising instructions for use in a computer system in an automated workflow
+system for manipulating a work item stored in a database of work items for
+subsequent execution by an operator, the instructions causing the computer system to:
+
+store in a memory a process table (100) comprising a plurality of process
+identifiers (114, 116), each process identifier (114, 116) representing a process for
+manipulating a work item (10) in the workflow system, each process identifier (114,
+116) being associated with one or more nodes, each of the one or more nodes
+representing a manipulation task of the corresponding process;
+
+store in the memory a nodes table (140) comprising a plurality of node
+identifiers (152, 154, 156, 158), each node identifier representing a node, each node
+identifier being associated with one or more processes;
+
+receive a directive from an administrator to remove a first node from the
+memory;
+
+set a mark in the nodes table associated with the first node to indicate that the
+first node is to be removed from the memory;
+
+use the mark to prevent a process from being made dependent on the first node
+after the mark was set;
+
+using the mark to prevent the first node from affecting work items meeting
+
+predetermined criteria that enter the workflow system after the mark was set; and
+
+26
+2821539-1-tprock
+
+--- PAGE 4 ---
+PN585802EP
+MAIN REQUEST
+
+remove the first node from the memory after the processes table is modified
+
+such that no process is associated with the first node.
+
+10. The software of claim 9, comprising instructions causing the computer system
+to:
+
+store in the memory a rules table (300) comprising a plurality of rule
+identifiers (320, 332), each rule identifier (320, 332) representing a rule for affecting
+how the workflow system processes work items meeting a predetermined criteria
+defined by the rule, each rule identifier being associated with one or more nodes;
+
+receive a directive from an administrator to remove a first rule from the
+memory;
+
+set a mark in the rules table associated with the first rule to indicate that the
+first rule is to be removed from the memory;
+
+use the mark to prevent a node from being made dependent on the first rule
+after the mark was set; and
+
+remove the first rule from the memory after the workflow system has fewer
+than a predetermined number of pending work items meeting the predetermined
+
+criteria defined by the first rule.
+
+11. The software of claim 9 or 10, comprising instructions causing the computer
+system to:
+
+execute a batch program regularly to remove from the memory any node that
+has been marked for deletion in which no process in the processes table is associated
+
+with the node.
+
+12. The software of any one of claims 9 to 11, comprising instructions causing the
+computer system to:
+
+upon receiving the directive to remove the first node from the memory, mark
+lower level data structures for removal, the lower level data structures referring to the
+first node; and
+
+remove each of the lower level data structures from the memory after
+
+determining that workflow system is independent of the lower level data structure.
+
+13. The software of any one of claims 9 to 12, comprising instructions causing the
+
+27
+2821539-1-tprock
+
+--- PAGE 5 ---
+PN585802EP
+MAIN REQUEST
+
+computer system to:
+
+execute a batch program regularly to remove from the memory any rule that
+has been marked for deletion in which the workflow system has fewer than the
+predetermined number of pending work items meeting the predetermined criteria
+
+defined by the rule wherein a processes table comprises other definitional data items.
+
+14. The software of any one of claims 9 to 13, comprising instructions causing the
+computer system to:
+use the mark to prevent the rule from affecting any work item failing to meet
+
+the predetermined criteria until after the mark was set.
+
+15. The software of any one of claims 9 to 14, comprising instructions causing the
+computer system to:
+
+store in the memory a queues table (400) comprising a plurality of queue
+identifiers (416, 418, 420, 422, 424, 426, 428, 430), each queue identifier representing
+a queue associated with a node and a list indicating work items (10) appropriate for
+execution at the node associated with the queue;
+
+receive a directive from an administrator to remove a first queue from the
+memory;
+
+set a mark in the queues table associated with the first queue to indicate that
+the first queue is to be removed from the memory;
+
+use the mark to prevent a work item from being associated with the first queue
+after the mark was set; and
+
+remove the first queue from the memory after all the work items associated
+
+with the first queue have been processed.
+
+28
+2821539-1-tprock

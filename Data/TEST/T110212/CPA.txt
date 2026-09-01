@@ -1,0 +1,51 @@
+TITLE:
+Dymamic translucent windows in a graphical user interface
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A method of and system (10) for implementing dynamic translucent windows (49) in a graphical user interface. Each translucent window (49) has associated therewith a foreground buffer (57) and a background buffer (59) . Whenever a translucent window is updated, the system (10), starting with the lowest z-order updated translucent window, combines (95)the updated translucent window's foreground (57) and background (59) buffers into a translucent image. If the translucent image is in a clip region (43), the system (10) displays (97) the portion of the translucent image in the clip region (43) and turns off (119) the update marker. If the translucent image is in a deferred clip region (55), the system copies (111) the portion of the translucent image in any deferred clip region (55) into the background buffer (59) or buffers of the translucent window (49) or windows that define the deferred clip region (55) and marks (113) the translucent window updated. The system then goes (117) to the next lowest z-order updated translucent window and repeats the process until the topmost window is reached, thereby to propagate the translucency effect up through the stack of windows.
+
+CLAIMS:
+A method of implementing translucent windows (49) in a computer system having a display (23), which comprises the steps of:
+for each window (35,49) displayed on said display, defining a clip region (43) that includes a portion of the window not overlaid by any other window and a deferred clip region (55) that includes a portion of the window directly overlaid by a translucent window (49);
+for each translucent window displayed on said display, defining a foreground buffer (57) that contains the contents of the translucent window and a background buffer (59) that contains an image of the deferred clip region of any window directly overlaid by the translucent window.
+A method of implementing translucent windows as claimed in claim 1, further comprising the steps of:
+whenever an application draws a drawing into a clip region (43) of a translucent window (49), adding (73) the drawing to the foreground buffer (57) of said translucent window;
+whenever an application draws a drawing into a deferred clip region (55) of a window, adding (83) the drawing to the background buffer (59) of the translucent window that defines said deferred clip region and marking (85) the translucent window that defines said deferred clip region updated.
+A method as claimed in claim 2, further comprising the step of:
+   combining (95) the background buffer (59) with the foreground buffer (57) of any translucent window (49) having a buffer that has been drawn into to create a translucent image, displaying (97) any portion of said translucent image that is within a clip region of said updated translucent window and copying (99) any portion of said translucent image that is within a deferred clip region of said updated translucent window into the background buffer of the translucent window that defines said deferred clip region.
+A method as claimed in claim 1, further comprising the steps of:
+whenever an application draws a drawing into a clip region of an opaque window, displaying (71) said drawing in said clip region;
+whenever an application draws a drawing into a clip region of a translucent window (49), adding (73) the drawing to the foreground buffer (57) of the translucent window and marking (75) the translucent window updated;
+whenever an application draws a drawing into a deferred clip region of a window, adding (83) the drawing to the background buffer (59) of the translucent window that defines said deferred clip region and marking (85) the translucent window that defines said deferred clip region updated;
+for each updated translucent window, combining (95) the background buffer with the foreground buffer to create a translucent image, displaying (97) any portion of said translucent image that is within a clip region of said updated translucent window and copying (99) any portion of said translucent image that is within a deferred clip region of said updated translucent window into the background buffer of translucent window that defines said deferred clip region and marking (119) said translucent window as updated.
+A method as claimed in claim 4 wherein:
+said display (23) is adapted to display a plurality of windows arranged in a z order: and
+said combining step is carried out on the translucent window (49) having the lowest z order in said display.
+A method as claimed in claim 5, further comprising steps of:
+unmarking (119) said updated lowest z-order translucent window; and,
+repeating said combining step (95).
+A system for implementing translucent windows (49) in a computer system (10) having a display (23), which comprises:
+means for defining, for each window (35, 49) displayed on said display, a clip region (43) that includes a portion of the window not overlaid by any other window and a deferred clip region (55) that includes a portion of the window directly overlaid by a translucent window (49);
+a foreground buffer (57) for each translucent window displayed on said display, said foreground buffer containing the contents of the translucent window; and
+a background buffer (59) for each translucent window displayed on said display, said background buffer containing an image of the deferred clip region of any window directly overlaid by the translucent window.
+A system as claimed in claim 7, further comprising:
+means for adding (73), whenever an application draws a drawing into a clip region (43) of a translucent window (49), the drawing to the foreground buffer (57) of said translucent window;
+means for adding (83), whenever an application draws a drawing into a deferred clip region (55) of a window, the drawing to the background buffer (59) of the translucent window that defines said deferred clip region and marking (85) the translucent window that defines said deferred clip region updated.
+A system as claimed in claim 8, further comprising:
+means for combining (95) the background buffer (59) with the foreground buffer (57) of any translucent window (49) having a buffer that has been drawn into to create a translucent image;
+means for displaying (97) any portion of said translucent image that is within a clip region of said updated translucent window; and,
+means for copying (99) any portion of said translucent image that is within a deferred clip region of said updated translucent window into the background buffer of the translucent window that defines said deferred clip region.
+A system as claimed in claim 7, further comprising:
+means for displaying (71), whenever an application draws a drawing into a clip region of an opaque window, said drawing in said clip region;
+means for adding (73), whenever an application draws a drawing into a clip region of a translucent window (49), the drawing to the foreground buffer (57) of the translucent window and marking (75) the translucent window updated;
+means for adding (83), whenever an application draws a drawing into a deferred clip region of a window, the drawing to the background buffer (59) of the translucent window that defines said deferred clip region and marking (85) the translucent window that defines said deferred clip region updated;
+means for combining (95), for each updated translucent window, the background buffer with the foreground buffer to create a translucent image;
+means for displaying (97) any portion of said translucent image that is within a clip region of said updated translucent window;
+means for copying (99) any portion of said translucent image that is within a deferred clip region of said updated translucent window into the background buffer of the translucent window that defines said deferred clip region; and
+means for marking (119) said translucent window as updated.
+A system as claimed in claim 10, wherein:
+said display (23) is adapted to display a plurality of windows arranged in a z-order; and
+said combining step (95) is carried on the translucent window (49) having the lowest z-order in said display.

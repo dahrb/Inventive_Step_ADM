@@ -1,0 +1,140 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Auxiliary request B-1
+CLAIMS
+
+1. A method of data enrichment for subsequent indexing and clustering, the
+method comprising:
+
+identifying, by a computer system, a pattern in data from one or more
+data sources, wherein the pattern is defined by a type of data;
+
+comparing the pattern to each of a plurality of entities in entity information
+obtained from a knowledge source, wherein the plurality of entities includes a
+first entity and a second entity, wherein the first entity is associated with a first
+pattern defined by a first type of data, and wherein the second entity is
+associated with a second pattern defined by a second type of data:
+
+matching, based on comparing the pattern to each of the plurality of
+entities, the pattern in the data to the first pattern associated with the first entity
+in the entity information, wherein matching the pattern to the first pattern
+includes matching the type of data defined by the pattern to the first type of data
+defined by the first pattern;
+
+generating one or more transformation scripts for the data based on the
+entity information corresponding to the first entity associated with the first pattern
+matching the pattern in the data, wherein a transformation script includes code
+executable to transform the data;
+
+generating one or more indicators of a recommended data transform to
+perform on the data, where the one or more indicators correspond to the one or
+more transformation scripts;
+
+causing the one or more indicators to be displayed in a graphical user
+interface;
+
+receiving one or more transformation instructions based on input from the
+graphical user interface, the input corresponding to a selection of an indicator of
+the one or more indicators;
+
+transforming the data by executing a transformation script corresponding
+to the indicator; and
+
+publishing the transformed data to one or more data target sources;
+
+54
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Auxiliary request B-1
+
+wherein the step of identifying a pattern in data comprises using a set of
+regular expressions to determine the structure of that data, wherein the regular
+expressions are defined by semantic or syntactic constraints;
+
+wherein the entity information is obtained from the knowledge source
+based on the determined structure of the data.
+
+2. The method of claim 1, further comprising:
+
+receiving a selection of at least one column of data from at least one of
+the one or more data sources; and
+
+causing a data profile of the at least one column of data to be displayed,
+wherein the data profile indicates a plurality of patterns identified in the at least
+one column of data and at least one data visualization associated with the at
+least one column of data.
+
+3. The method of claim 1, wherein the transformation instructions include a
+transformation instruction to rename at least one column of data based on the
+
+entity information.
+
+4. The method of claim 3, further comprising:
+receiving a further transformation instruction to rename the at least one
+column of data to a default name.
+
+5. The method of any one of the preceding claims, wherein the
+transformation instructions include a transformation instruction to reformat at
+
+least one column of data based on the entity information.
+
+6. The method of claim 5, wherein the transformation instructions include a
+further transformation instruction to obfuscate at least one column of data based
+
+on the entity information.
+
+7. The method of any one of the preceding claims, wherein the
+transformation instructions include an enrichment instruction to add one or more
+
+55
+
+--- PAGE 3 ---
+10
+
+15
+
+Auxiliary request B-1
+
+columns of data obtained from the knowledge source based on the entity
+information.
+
+8. A system comprising:
+
+a plurality of data sources;
+a plurality of data target sources; and
+a cloud computing infrastructure system comprising:
+
+one or more processors communicatively coupled to the plurality
+of data sources and communicatively coupled to the plurality of data
+target sources, over at least one communication network; and
+
+a memory coupled to the one or more processors, the memory
+storing instructions to provide a data enrichment service, wherein the
+instructions, when executed by the one or more processors, cause the
+one or more processors to perform the method of one of claims 1 to 7.
+
+9. A non-transitory computer readable storage medium _ including
+
+instructions stored thereon which, when executed by a processor, cause the
+processor to perform operations comprising the method of one of claims 1 to 7.
+
+56

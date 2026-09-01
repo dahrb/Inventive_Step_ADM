@@ -1,0 +1,176 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28767
+
+CLAIMS
+1. A method of decoding data received from an electronically-readable medium
+in a non-transitory form, wherein the received data to be decoded is received as a set of
+output symbols comprising all or some of a plurality of output symbols generated using a
+rateless encoding process and encoding for K input symbols, wherein K is an integer greater
+than one and a rateless encoding process is rateless in that the number of output symbols the
+process can generate is independent of K, wherein each of the K input symbols is
+representable by a value that is from an input symbol alphabet, and wherein each of the
+received output symbols has a value that is from an output symbol alphabet, the method
+comprising:
+determining a key for each of the received output symbols to be used in decoding;
+if an output symbol’s key is a systematic key, storing that output symbol’s value as
+the value for at least one of the K input symbols corresponding to the systematic key, thereby
+recovering at least one input symbol, and indicating that the output symbol is used up;
+determining if any of the K input symbols are not yet recovered; and
+if any unrecovered input symbols remain, performing the steps of:
+a) determining at least one non-systematic key for output symbols that are not
+used up;
+b) determining, based on a non-systematic key, a mapping between input
+symbols and the output symbol corresponding to that non-systematic key;
+c) identifying if any input symbols can be recovered from the available not
+used up output symbols;
+d) recovering input symbols that can be recovered;
+e) removing dependency of the not used up output symbols on the recovered
+input symbols; and
+f) repeating steps c), d) and e), until a threshold number of the K input
+
+symbols are recovered.
+
+2. The method of claim 1, wherein the threshold number of the K input symbols
+is K.
+
+3. The method of claim 1, wherein the number of received output symbols is
+
+between K and K plus a predetermined increment.
+
+4. The method of claim 3, wherein the predetermined increment is less than K.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PATENT
+
+Our Reference: 091839EPD4
+Application No.: 10013219.0
+
+5. The method of claim 3, wherein the predetermined increment is larger than or
+equal to K.
+6. The method of claim 1, wherein determining a mapping between input
+
+symbols and the output symbol corresponding to a non-systematic key comprises determining
+a mapping between one or more intermediate symbol and the output symbols and a mapping
+between the one or more intermediate symbol and the input symbols, wherein identifying if
+any input symbols can be recovered further comprises identifying if any intermediate
+symbols can be recovered from the available not used up output symbols, the method further
+comprising:
+
+recovering intermediate symbols that can be recovered;
+
+recovering input symbols from the recovered intermediate symbols, using a rateless
+encoding process; and
+
+removing dependency of the not used up output symbols on the recovered
+
+intermediate symbols.
+
+7. The method of claim 6, wherein the mapping between the one or more
+intermediate symbol and the input symbols is defined by a set of neighbors for each
+intermediate symbol, wherein a set of neighbors represents a number, from one to K, of the K
+input symbols upon which a value of the intermediate symbol depends and is a function of its
+
+set of neighbors.
+
+8. A decoder, having an input to electronically receive data to be decoded and an
+output to output decoded data wherein the received data represents, at least in part, encoded
+data that is, at least in part, decodable into the encoded data, wherein the encoded data is
+representable as a plurality of output symbols, the received data is a set of output symbols
+comprising all or some of a plurality of output symbols generated using a rateless encoding
+process and encoding for K input symbols, the decoder comprising:
+
+an input for receiving the received set of output symbols;
+
+storage for at least some recovered input symbols;
+
+logic for determining, for each one of at least some of the received output symbols, a
+key corresponding to the output symbol;
+
+logic for designating or storing values of output symbols as values of input symbols
+
+when the key of an output symbol is a systematic key;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+28767
+
+logic for determining mappings of output symbols to input symbols for output
+symbols that are not used up in decoding; and
+
+logic for determining values of input symbols not already recovered, from output
+symbols that are not used up in decoding and the mappings; and
+
+an output for outputting at least a threshold number of input symbols upon receiving a
+
+predetermined number of output symbols.
+
+9. The decoder of claim 8, wherein the threshold number of input symbols is K
+and the predetermined number of output symbols is between K and K plus a predetermined
+
+increment.
+10... The decoder of claim 9, wherein the predetermined increment is less than K.
+
+11. | The decoder of claim 9, wherein the predetermined increment is greater than
+
+or equal to K.
+
+12. The decoder of claim 8, wherein the threshold number of input symbols is less
+
+than K and the predetermined number of output symbols is at least K.
+
+13. The decoder of claim 8, further comprising storage for intermediate symbols, a
+mapping between one or more intermediate symbol and the output symbols, a mapping
+between the one or more intermediate symbol and the input symbols, and for keys associated
+
+with at least some of the output symbols and/or at least some of the input symbols.
+
+14. The decoder of claim 13, wherein the mapping between the one or more
+intermediate symbol and the input symbols is defined by a set of neighbors for each
+intermediate symbol, wherein a set of neighbors represents a number, from one to K, of the K
+input symbols upon which a value of the intermediate symbol depends and is a function of its
+
+set of neighbors.
+
+15. | A computer program product that comprises a non-transitory tangible media
+storing computer-executable code for execution upon a computer system including a
+processor, the computer program product comprising:
+
+program code for carrying out the method of any of claims 1-7.
+
+16. The computer program product of claim 15, further comprising program code
+
+to receive a seed usable for regenerating K systematic keys usable for decoding.
+
+--- PAGE 4 ---
+28767
+
+17. The computer program product of claim 15, further comprising program code
+
+to receive transmitted representations of K systematic keys usable for decoding.

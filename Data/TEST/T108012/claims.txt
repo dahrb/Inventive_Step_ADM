@@ -1,0 +1,137 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+08 154 350.6 29 March 26, 2018
+(NEW) MAIN REQUEST
+
+CLAIMS
+
+1. An image processing apparatus for performing frame rate
+conversion on an input image signal comprising a chronological sequence of
+image frames, the apparatus comprising:
+
+a detecting unit (92) configured to detect motion between successive
+image frames of the input image signal,on a block-by-block basis, and to output a
+motion vector indicative of the detected motion;
+
+a determining unit (82) configured to determine whether said input
+image signal is subject to fade in or fade out; and
+
+an interpolating unit (95) configured:
+
+responsive to a determination by the determining unit that the input
+image signal is not subject to fade in nor to fade out, to generate and output an
+intermediate image frame interposed chronologically between a first image frame
+of said input image signal and the preceding image frame of said input image
+signal, by interpolation between said first image frame and said preceding image
+frame in accordance with said block by block motion vector, and
+
+responsive to a determination by the determining unit that the input
+image signal is subject to fade in or to fade out, to allow said preceding image
+frame of the input image signal to be output unchanged as said intermediate
+image frame interposed chronologically between said first image frame and said
+
+preceding image frame.
+
+2. The image processing apparatus according to claim 1, wherein said
+determining unit (82) determines whether said input image signal is subject to
+fade-in or to fade-out based on a time-varied change in at least one of factors
+representing a maxmimum level of said input image signal, the number of pixels
+for which said input image signal is at a zero level, and a total sum of all pixel
+
+levels in respective successive image frames of said input image signal.
+
+3. The image processing apparatus according to claim 1, wherein, if
+the number of pixels for which either said first image frame of the input image
+
+signal or said preceding image frame of the input image signal is at a zero level is
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+08 154 350.6 30 March 26, 2018
+(NEW) MAIN REQUEST
+
+larger than a threshold value, then said determining unit (82) determines
+whether said input image sgnal is subject to fade-in or to fade-out based on a
+time-varied change in at least one of factors representing a maximum level of
+said input image signal, the number of pixels for which said input image signal is
+at a zero level, and a total sum of all pixel levels in respective successive frames
+
+of said input image signal.
+
+4. An image processing method for use with an image processing
+apparatus for performing frame rate conversion on an input image signal
+comprising a chronological sequence of image frames , said image processing
+method comprising the steps of:
+
+detecting motion between successive image frames of said input image
+signal, on a block-by-block basis, and outputting a motion vector indicative of the
+detected motion;
+
+determining whether said input image signal is subject to fade in or fade
+out; and
+
+upon determining, in the determining step, that the input image signal is
+not subject to fade in nor to fade out, generating and outputting an intermediate
+image frame interposed chronologically between a first image frame of said input
+image signal and the preceding image frame of the input image signal, by
+interpolation between said first image frame and said preceding image frame in
+accordance with said block by block motion vector, and
+
+upon determining, in the determining step, that the input image signal is
+subject to fade in or to fade out, allowing said preceding image frame of the
+input image signal to be output unchanged as said intermediate image frame
+interposed chronologically between said first image frame and said preceding
+
+image frame.
+
+5. A program configured for causing a computer to perform frame rate
+conversion on an input image signal comprising a chronological sequence of
+image frames, said image processing procedure comprising the steps of:
+
+detecting motion between successive image frames of said input image
+
+signal, on a block-by-block basis, and outputting a motion vector indicative of the
+
+--- PAGE 3 ---
+10
+
+15
+
+08 154 350.6 31 March 26, 2018
+(NEW) MAIN REQUEST
+detected motion;
+
+determining whether said input image signal is subject to fade in or fade
+out; and
+
+upon determining, in the determining step, that the input image signal is
+not subject to fade in nor to fade out, generating and outputting an intermediate
+image frame interposed chronologically between a first image frame of said input
+image signal and the preceding image frame of the input image signal, by
+interpolation between said first image frame and said preceding image frame in
+accordance with said block by block motion vector, and
+
+upon determining, in the determining step, that the input image signal is
+subject to fade in or to fade out, allowing said preceding image frame of the
+input image signal to be output unchanged as said intermediate image frame
+interposed chronologically between said first image frame and said preceding
+
+image frame.

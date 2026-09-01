@@ -1,0 +1,91 @@
+--- PAGE 1 ---
+90
+
+CLAIMS
+
+1. A multiprocessor comprising:
+a register file to store operands; and
+a plurality of processing cores, each core having execution logic to perform mixed precision
+multi-dimensional matrix fused multiply-accumulate (FMAC) operations, the execution logic
+to execute one or more instructions to:
+multiply a first 16-bit floating point (FP16) operand with a second FP16 operand to
+obtain a first 32-bit floating point (FP32) intermediate product;
+multiply a third FP16 operand with a fourth FP16 operand to obtain a second FP32
+intermediate product; and
+add the second FP32 intermediate product with the first FP32 intermediate product
+
+to generate a FP32 sum result.
+
+2. The multiprocessor of claim 1, wherein the register file is to store the first FP16
+
+operand, the second FP16 operand, and the first and second FP32 intermediate products.
+
+3. The multiprocessor of claim 1, further comprising an instruction cache to store the
+
+one or more instructions.
+
+4. The multiprocessor of claim 3, further comprising a dispatch unit to dispatch the
+
+one or more instructions for execution at the execution logic.
+
+5. The multiprocessor of claim 1, further comprising a scheduler to schedule the
+
+FMAC operations.
+
+6. A method to facilitate execution of mixed precision multi- dimensional matrix
+
+fused multiply-accumulate (FMAC) operations comprising:
+
+--- PAGE 2 ---
+91
+
+receiving a first 16-bit floating point (FP16) operand and a second FP16 operand at one
+or more processing cores;
+
+multiplying the first FP16 operand with the second FP16 operand to obtain a first 32-bit
+floating point (FP32) intermediate product;
+
+multiplying a third FP16 operand with a fourth FP16 operand to obtain a second FP32
+intermediate product; and
+
+adding the second FP32 intermediate product with the first FP32 intermediate product to
+
+generate a FP32 sum result.
+
+7. The method of claim 6, wherein the first FP16 operand, the second FP16 operand,
+
+and the first and second FP32 intermediate products are received from a register file.
+
+8. A graphics processing unit comprising a plurality of multiprocessors, wherein
+each multiprocessor comprises:
+a register file to store operands; and
+a plurality of processing cores, each core having execution logic to perform mixed
+precision multi-dimensional matrix fused multiply-accumulate (FMAC) operations, the
+execution logic to execute one or more instructions to:
+multiply a first 16-bit floating point (FP16) operand with a second FP16
+operand to obtain a first 32-bit floating point (FP32) intermediate product;
+multiply a third FP16 operand with a fourth FP16 operand to obtain a
+second FP32 intermediate product; and
+add the second intermediate FP32 product with the first FP32 intermediate
+
+product to generate a FP32 sum result.
+
+9. The graphics processing unit of claim 8, wherein the register file is to store the
+first FP16 operand, the second FP16 operand, and the first and second FP32 intermediate
+
+products.
+
+--- PAGE 3 ---
+92
+
+10. The graphics processing unit of claim 8, further comprising an instruction cache to
+
+store the one or more instructions.
+
+11. The graphics processing unit of claim 8, further comprising a dispatch unit to
+
+dispatch the one or more instructions for execution at the execution logic.
+
+12.‘ The graphics processing unit of claim 8, further comprising a scheduler to
+
+schedule the FMAC operations.

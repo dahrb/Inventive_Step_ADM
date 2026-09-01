@@ -1,0 +1,16 @@
+TITLE:
+Alleviating the Latency and Bandwidth Problems in WWW Browsing
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+This work addresses three problems that are associated with Web browsing: (a) low bandwidth
+available to the end user who is connected via slow modems or outdoor wireless networks, (b) long and
+variable latencies in document access, and (c) temporary disconnections of mobile users. Three techniques are used with a variety of heuristics in order to overcome these problems: (a) proling user
+and group access patterns and using these proles
+in order to pre-fetch documents, (b) ltering HTTP
+requests and responses in order to reduce data transmission over bottleneck links, and (c) hoarding documents based on user proles in order to support
+limited web browsing even during disconnection. In
+this paper, we describe the design and implementation of a WWW proxy-based system that incorporates the above techniques. We describe our experiences with the proxy system, and present performance results that show an improvement in the
+experience of Web browsing using this system.

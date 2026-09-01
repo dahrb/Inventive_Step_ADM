@@ -1,0 +1,304 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+European application 11195203.2
+Our ref. P96862EP00
+Date: April 16, 2019
+
+Main Request
+
+1. A method of operating a communication network device for coordinating
+communication between devices in a network, comprising:
+
+generating, by the communication network device, a first identification
+code;
+
+assigning, by the communication network device, the first identification
+code to a first application executing on a first device, wherein the first identification
+code is unique to the first application executing on the first device;
+
+receiving, by the communication network device, a transmission of data
+from a sending device, wherein the transmission specifies a recipient of the data using
+the first identification code, the recipient being different from the sending device;
+
+determining, by the communication network device, that the transmission
+of data is incompatible with the first application based on compatibility information of
+the first application;
+
+modifying, by the communication network device, the data to generate a
+version of the data that is compatible with the first application;
+
+determining, by the communication network device, that the transmission
+is incompatible with the first device based on compatibility information of the first
+device;
+
+modifying, by the communication network device, the data to generate a
+version of the data compatible with the first device; and
+
+transmitting, by the communication network device, the transmission of
+
+data to the recipient.
+
+2. The method of claim 1, further comprising:
+
+receiving registration information for a second application executing on
+the first device; and
+
+generating a second identification code for the second application,
+wherein the second identification code is unique, among all identification codes stored
+in the communication network device, to the second application executing on the first
+
+device.
+
+26
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+European application 11195203.2
+Our ref. P96862EP00
+Date: April 16, 2019
+
+3. The method of claim | or 2, further comprising:
+
+determining a list of other identification codes stored in the
+communication network device, wherein the other identification codes identify at
+least one of: other devices and other applications; and
+
+transmitting the list of said other identification codes to the at least one of
+
+the other devices and the first application.
+
+4. The method of claim 3, further comprising:
+receiving a user selection of a role of the first device and the first
+application with respect to at least one of a second device and a second application,
+
+wherein the role includes one or more of: a sender and a receiver.
+
+5. The method according to any of the previous claims, wherein the
+transmission of data comprises a command to control playback of a video content
+item displayed on a display device different from the first device,
+
+wherein the first device comprises a remote control and the display device
+comprises customer premises equipment configured to output video signals to a
+display, and
+
+wherein the data comprises a location specified as coordinates and
+wherein modifying the data includes converting the location into one or more
+
+directional commands.
+
+6. An apparatus for coordinating communication between devices in a
+network, comprising:
+at least one processor; and
+memory operatively coupled to the at least one processor and storing
+computer readable instructions that, when executed, cause the apparatus to:
+generate a first identification code;
+assign the first identification code to a first application executing on a
+first device, wherein the first identification code is unique to the first application
+
+executing on the first device;
+
+27
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+European application 11195203.2
+Our ref. P96862EP00
+Date: April 16, 2019
+
+receive a transmission of data from a sending device, wherein the
+transmission specifies a recipient of the data using the first identification code, the
+recipient being different from the sending device;
+
+determine that the transmission of data is incompatible with the first
+application based on compatibility information of the first application;
+
+modify the data to generate a version of the data that is compatible
+with the first application;
+
+determine that the transmission is incompatible with the first device
+based on compatibility information of the first device;
+
+modify the data to generate a version of the data compatible with the
+first device; and
+
+transmit the transmission of data to the recipient.
+
+7. The apparatus of claim 6, wherein the instructions further cause the
+apparatus to:
+
+receive registration information for a second application executing on the
+first device; and
+
+generate a second identification code for the second application, wherein
+the second identification code is unique, among all identification codes stored in the
+communication network device, to the second application executing on the first
+
+device.
+
+8. The apparatus of either of claims 6 or 7, wherein the instructions further
+cause the apparatus to:
+
+determine a list of other identification codes stored in the communication
+network device, wherein the other identification codes identify at least one of: other
+devices and other applications; and
+
+transmit the list of said other identification codes to the at least one of the
+
+other devices and the first application.
+
+9. The apparatus of claim 8, wherein the instructions further cause the
+
+apparatus to:
+
+28
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+European application 11195203.2
+Our ref. P96862EP00
+Date: April 16, 2019
+
+receive a user selection of a role of the first device and the first application
+with respect to at least one of a second device and a second application, wherein the
+
+role includes one or more of: a sender and a receiver.
+
+10. The apparatus according to any of claims 6-9, wherein the transmission
+of data comprises a command to control playback of a video content item displayed
+on a display device different from the first device,
+
+wherein the first device comprises a remote control and the display device
+comprises customer premises equipment configured to output video signals to a
+display, and
+
+wherein the data comprises a location specified as coordinates and
+wherein modifying the data includes converting the location into one or more
+
+directional commands.
+
+11. A system comprising:
+a network;
+a first device configured to execute a first application; and
+a computing device for coordinating communication between devices in
+the network, the computing device configured to:
+generate a first identification code;
+assign the first identification code to the first application executing on
+the first device, wherein the first identification code is unique to the first application
+executing on the first device;
+receive a transmission of data from a sending device, wherein the
+transmission specifies a recipient of the data using the first identification code, the
+recipient being different from the sending device;
+determine that the transmission of data is incompatible with the first
+application based on compatibility information of the first application;
+modify the data to generate a version of the data that is compatible
+with the first application;
+determine that the transmission is incompatible with the first device based
+
+on compatibility information of the first device;
+
+29
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+European application 11195203.2
+Our ref. P96862EP00
+Date: April 16, 2019
+
+modify the data to generate a version of the data compatible with the first
+device; and
+
+transmit the transmission of data to the recipient.
+
+12. The system of claim 11, the computing device further configured to:
+receive registration information for a second application executing on the
+first device; and
+generate a second identification code for the second application, wherein
+the second identification code is unique, among all identification codes stored in the
+communication network device, to the second application executing on the first
+
+device.
+
+13. The system of either of claims 11 or 12, the computing device further
+configured to:
+
+determine a list of other identification codes stored in the communication
+network device, wherein the other identification codes identify at least one of: other
+devices and other applications; and
+
+transmit the list of said other identification codes to the at least one of the
+
+other devices and the first application.
+
+14. The system of claim 13, the computing device further configured to:
+receive a user selection of a role of the first device and the first application
+with respect to at least one of a second device and a second application, wherein the
+
+role includes one or more of: a sender and a receiver.
+
+15. The system according to any of claims 11-14, wherein the transmission of
+data comprises a command to control playback of a video content item displayed on a
+display device different from the first device,
+
+wherein the first device comprises a remote control and the display device
+comprises customer premises equipment configured to output video signals to a
+
+display, and
+
+30
+
+--- PAGE 6 ---
+European application 11195203.2
+Our ref. P96862EP00
+Date: April 16, 2019
+
+wherein the data comprises a location specified as coordinates and
+wherein modifying the data includes converting the location into one or more
+
+directional commands.
+
+31

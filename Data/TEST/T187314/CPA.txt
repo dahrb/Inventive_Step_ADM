@@ -1,0 +1,5 @@
+Title: Towards Reference Passing in Web Service and Workflow-Based Applications
+
+Abstract: In a Service-Oriented Architecture (SOA) based on Web Service technology the services typically communicate with each other by passing data values directly from one service to another. In the case the services are orchestrated by workflows the services receive their input values from the workflow engine and return their calculated results back to the engine by value. In this paper we show several use cases where such value passing behavior has drawbacks. To address this challenge we introduce the concept of pointers in SOA. Pointers allow services to pass their data by reference which is a fundamental advantage for Web Service communication. Furthermore we show an extension of BPEL that introduces reference variables as new type of data containers in workflows. In addition, for the management of pointers we present the Reference Resolution System which can be used in very flexible setups either as central or distributed system.
+
+Type: Academic Paper

@@ -1,0 +1,115 @@
+TITLE:
+Multi-player computer game system and method
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A multi-player computer game, system and development method that facilitate multi-player game play between and among various hardware platforms employing various operating systems and communication protocols. Special purpose software operable in connection with a processor of a client computing device provides a multi-player computer game. The special purpose software provides an interface between an application module, which provides the functionality for a specific multi-player computer game, and the operating system and hardware devices and protocols of the client computing device. A multi-player game system facilitates multi-player game play between and among a plurality of players regardless of the different hardware platforms (i.e., different client computing devices) used by the various players.
+
+CLAIMS:
+1. A computer readable medium comprising computer code operable in
+connection with a processor of a computer having a data storage device and having an
+operating system stored thereon, the computer including a hardware device and a
+communication device, said computer readable medium comprising computer code for:
+providing an application module; and
+providing an interface to facilitate communication between said application module and any operating system, including the operating system.
+2. A computer readable medium as recited by claim 1, wherein said interface for
+facilitates communication between said application module and any hardware device, including the hardware device.
+3. A computer readable medium as recited by claim 2, wherein said interface further facilitates communication between said application module and any communication device, including the communication device.
+4. A computer readable medium as recited by claim 1, wherein said interface
+comprises a cross-platform core.
+5. A computer readable medium as recited by claim 1, wherein said interface
+comprises a communications engine comprising: a communications engine API in communication with said application
+module;
+a service layer in communication with said communications engine API; and
+a device layer in communication with said service layer and with the hardware
+device and communication device.
+6. A computer readable medium as recited by claim 5, wherein said service layer
+comprises a hardware emulation layer that forwards hardware implement calls from said application module to said device layer and that is capable of providing hardware emulation to said application module.
+7. A computer readable medium as recited by claim 6, wherein said service layer further comprises:
+a channel manager for managing a list of channels for a session; a session manager for causing said channel manager to perform an operation on said list of channels; and
+a message queue manager for managing the comm engine message queues.
+8. A computer readable medium as recited by claim 1, wherein said application
+module comprises a multi-player computer game.
+9. A computer readable medium as recited by claim 1, wherein said interface
+enables communication between the computer and another computer, and wherein a user of the computer may play said multi-player computer game against a user of the another
+computer.
+10. A multi -player computer game system comprising a server having a data
+storage device and having special purpose software stored thereon and operable in connection
+with a processor of said server, said special purpose software enabling multi-player computer
+game play between a user of a first computer and a user of a second computer over a network,
+the first computer having a data storage device and having a first operating system stored
+thereon and further having special purpose software stored thereon and operable in connection with a processor of the first computer, the second computer having a data storage device and having a second operating system stored thereon and further having special purpose software stored thereon and operable in connection with a processor of the second computer, wherein one of the first operating system and the second operating system, or one
+of the first computer and the second computer, are different from each other.
+11. A multi-player computer game system as recited by claim 10, wherein said server comprises a plurality of servers in communication with each other and each providing
+a predetermined functionality.
+12. A multi-player computer game system as recited by claim 1 1, wherein said
+plurality of servers comprise a web server, a match maker server, a resource server, a user
+identification server, a chat server, a tournament server, a ranking server, an ideal service
+finder, a domain name server, and a game server.
+13. A multi-player computer game system as recited by claim 12, wherein the
+special purpose software installed on each of the first and second computers provides a subset
+of the functionality provided said plurality of servers.
+14. A multi-player computer game system as recited by claim 10, wherein said
+special purpose software controls multi-player computer game play between the user of the
+first computer and the user of the second computer over the network.
+15. A multi-player computer game system as recited by claim 10, wherein said
+special purpose software partially controls multi-player computer game play between the user of the first computer and the user of the second computer over the network.
+16. A multi-player computer game system comprising: a first computer having a data storage device and having special purpose
+software stored thereon and operable in connection with a processor of said first computer, said first computer having a data storage device and having a first operating system stored
+thereon and operable in connection with said processor of said first computer; and
+a second computer having a data storage device and having special purpose software stored thereon and operable in connection with a processor of said second computer,
+said second computer having a data storage device and having a second operating system
+stored thereon and operable in connection with said processor of said second computer;
+said special purpose software on said first and said second computers enabling
+multi-player computer game play between a user of said first computer and a user of said
+second computer over a network, wherein one of said first computer and said second computer, or one of said first operating system and said second operating system are different
+from each other.
+17. A multi-player computer game system as recited by claim 16, wherein said
+each of said first and said second computer further comprises a first and second hardware
+device and a first and second communication device, said wherein said special purpose software on each of said first and said second computer is a multi-player computer game
+comprising:
+an application module; and an interface to facilitate communication between said application module and any operating system, including each of said first and said second operating system.
+18. A multi-player computer game system as recited by claim 17, wherein said interface further facilitates communication between said application module and any
+hardware device, including each of said first and said second hardware device.
+19. A multi-player computer game system as recited by claim 18, wherein said
+interface further facilitates communication between said application module and any
+communication device, including each of said first and said second communication device.
+20. A multi-player computer game system as recited by claim 17, wherein said
+interface comprises a cross-platform core.
+21. A multi-player computer game system as recited by claim 17, wherein said interface comprises a communications engine comprising:
+a communications engine API in communication with said application
+module;
+a service layer in communication with said communications engine API; and
+a device layer in communication with said service layer and with the hardware device and communication device.
+22. A multi -player computer game system as recited by claim 21, wherein said service layer comprises a hardware emulation layer that forwards hardware implement calls from said application module to said device layer and that is capable of providing hardware emulation to said application module.
+23. A multi-player computer game system as recited by claim 22, wherein said service layer further comprises:
+a channel manager for managing a list of channels for a session; a session manager for causing said channel manager to perform an operation
+on said list of channels; and
+a message queue manager for managing a message queue of said
+communications engine.
+24. A multi-player computer game development method for developing a multi-
+player computer game installable on a data storage device of a computer and operable in connection with a processor of the computer, an operating system being installed on the data storage device and operable in connection with the processor, said method comprising the
+step of providing an interface to facilitate communication between an application module and
+more than one operating system.
+25. A multi -player computer game development method as recited by claim 24,
+wherein said interface facilitates communication between the application module and more
+than one hardware device, including the hardware device.
+26. A multi-player computer game development method as recited by claim 25,
+wherein said interface further facilitates communication between said application module and any communication device, including the communication device, including the communication device.
+27. A multi-player computer game development method as recited by claim 24, wherein said interface comprises a cross-platform core.
+28. A multi -player computer game development method as recited by claim 24,
+wherein said interface comprises a communications engine comprising: a communications engine API in communication with the application module;
+a service layer in communication with said communications engine API; and
+a device layer in communication with said service layer and with the hardware
+device and communication device.
+29. A multi-player computer game development method as recited by claim 28,
+wherein said service layer comprises a hardware emulation layer that forwards hardware
+implement calls from said application module to said device layer and that is capable of
+providing hardware emulation to said application module.
+30. A multi-player computer game development method as recited by claim 29, wherein said service layer further comprises:
+a channel manager for managing a list of channels for a session;
+a session manager for causing said channel manager to perform an operation
+on said list of channels; and a message queue manager for managing the comm engine message queues.
+31. A multi-player computer game development method as recited by claim 24, wherein the application module comprises a multi-player computer game.

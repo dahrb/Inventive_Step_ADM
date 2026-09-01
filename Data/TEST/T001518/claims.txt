@@ -1,0 +1,161 @@
+--- PAGE 1 ---
+MAIN REQUEST
+CLAIMS
+
+1. A network comprising:
+
+one or more source nodes;
+
+one or more receiver nodes; and
+
+coding nodes, allowing communication of source processes to each receiver node,
+the coding nodes being connected with input links for communication of input signals to
+the coding nodes and output links for communication of output signals from the coding
+nodes,
+
+wherein the output signals from the coding nodes are a linear combination of the
+input signals,
+
+characterized in that a plurality of said coding nodes are configured to generate
+coefficients of the linear combination using local node numbers or alternatively local link
+numbers as inputs to a deterministic mapping from the local node numbers or alternatively
+from local link numbers to the coefficients of the linear combination,
+
+wherein
+
+the linear combination of processes transmitted from the one or more source nodes
+present in each signal in the network is specified as a vector of the coefficients , each
+coefficient corresponding to a process to be transmitted from one or more source nodes,
+and
+
+wherein said coding nodes are configured to update and to transmit the vector of
+coefficients by applying to the vector of coefficients linear combinations, wherein the
+linear combinations applied to the vector of coefficients are the same as the linear
+
+combinations applied to data transmitted through the network.
+
+2. The network of claim 1, wherein said plurality of coding nodes are further configured to
+generate deterministically coefficients of the linear combination also on a local counter or
+clock signal.
+
+3. The network of claim 1, wherein said node numbers and/or link numbers are obtained
+
+12
+
+--- PAGE 2 ---
+from physical characteristics associated to the coding nodes or the node numbers and/or the
+
+link numbers are assigned in any deterministic order.
+
+4, The network according to any one of claims 1-3, wherein the network further comprises
+bidirectional and/or reverse links and wherein the mapping is adjustable through feedback
+
+from the receiver nodes.
+
+5. The network according to any one of claims 1-4, further comprising routing nodes, the
+routing nodes being connected with input links for communication of input signals to the
+routing nodes and output links for communication of output signals from the routing nodes,
+wherein the output signals from a routing node are obtained through routing without coding
+
+of the input signals to the routing node.
+
+6. The network according to any one of claims 1-5, wherein at least some deterministically
+chosen coefficients of an output signal of a first coding node along a first outgoing link of
+the first coding node are linearly independent from deterministically chosen coefficients of
+an output signal of the first coding node along a second outgoing link of the first coding
+
+node.
+
+7, The network according to any one of claims 1-5, wherein at least some deterministically
+chosen coefficients of an output signal of a first coding node along an outgoing link of the
+first coding node are linearly independent from deterministically chosen coefficients of an
+
+output signal of a second coding node along an outgoing link of the second coding node.
+
+8. The network according to any one of claims 1-5, wherein at least some deterministically
+chosen coefficients from a first output signal of a first coding node along an outgoing link
+of the first coding node at a first time are linearly independent from deterministically
+chosen coefficient from a second output signal of the first coding node along the outgoing
+
+link of the first coding node at a second time.
+
+9. A method for transmitting processes from one or more sources to each receiver of one or
+
+more receivers in a network, the method comprising:
+
+13
+
+--- PAGE 3 ---
+providing coding nodes between the one or more sources and the one or more
+receivers;
+
+providing, for each coding node, input links for transmitting input signals to the
+coding node, and output links for transmitting output signals from the coding node, the
+output signals being a linear combination of the input signals;
+
+characterized in that the method comprises the steps of:
+
+generating at a plurality of said coding nodes coefficients of the linear combination
+using local node numbers or alternatively local link numbers as inputs to a deterministic
+mapping from the local node numbers or alternatively from local link numbers to the
+coefficients of the linear combination,
+
+wherein the linear combination of processes transmitted from the one or more
+source nodes present in each signal in the network is specified as a vector of the
+coefficients, each coefficient corresponding to a process to be transmitted from the one or
+more source nodes, and
+
+wherein the vector of coefficients is transmitted through the network and updated at
+said coding nodes by applying to the vector of coefficients linear combinations, wherein
+the linear combinations applied to the vector of coefficients are the same as the linear
+
+combinations applied to data transmitted through the network.
+
+10. The method according to claim 9, comprising the step of generating deterministically,
+at said plurality of coding nodes, coefficients of the linear combination also on a local
+
+counter or clock signal .
+
+11. The method according to claim 9, wherein said node numbers and/or link numbers are
+obtained from physical characteristics associated to the coding node or the node numbers
+
+and/or the link numbers are assigned in any deterministic order.
+
+12. The method according to one of claims 9-11, wherein the network further comprises
+bidirectional and/or reverse links and wherein the mapping is adjustable through feedback
+
+from the receiver nodes.
+
+13. The method according to any one of claims 9-11, further comprising providing routing
+
+14
+
+--- PAGE 4 ---
+nodes, the routing nodes being connected with input links for communication of input
+signals to the routing nodes and output links for communication of output signals from the
+routing nodes, wherein the output signals from a routing node are obtained through
+
+routing without coding of the input signals to the routing node.
+
+14. The method according to any one of claims 9-11, wherein at least some
+deterministically locally generated coefficients of an output signal of a first coding node
+along a first outgoing link of the first coding node are linearly independent from
+deterministically locally generated coefficients of an output signal of the first coding node
+
+along a second outgoing link of the first coding node.
+
+15. The method according to any one of claims 9-11, wherein at least some
+deterministically locally generated coefficients of an output signal of a first coding node
+along an outgoing link of the first coding node are linearly independent from
+deterministically locally generated coefficients of an output signal of a second coding node
+
+along an outgoing link of the second coding node.
+
+16. The method according to any one of claims 9-11, wherein at least some
+deterministically locally generated coefficients from a first output signal of a first coding
+node along an outgoing link of the first coding node at a first time are linearly independent
+from deterministically locally generated coefficient from a second output signal of the first
+
+coding node along the outgoing link of the first coding node at a second time.
+
+15

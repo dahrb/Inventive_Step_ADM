@@ -1,0 +1,26 @@
+TITLE:
+A system architecture and a method for customer flow management
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+An open-architecture system for queue management of users that is hardware independent, wherein the system includes at least one Web-based server for an organization containing the logic and central systems functions. The system also includes a Web client application allowing interaction between the users and the web-based server, and which is accessible through a browser on client workstations, a database installed on an Structured Query Language (SQL) server for record maintenance and interactions with the web-based server and the client application, an announcer server for activating displays, speakers, etc., according to orders from the Web-based server and an automated receptionist for issuing tickets to and otherwise interacting with users.
+
+CLAIM:
+1. An open-architecture system for queue management of users that is hardware independent, said system comprising: at least one Web-based server for an organization containing the logic and central systems functions; a Web client application allowing interaction between the users and said web-based server, and accessible through a browser on client workstations; a database installed on an Structured Query Language (SQL) server for record maintenance and interactions with said web-based server and said client application; an announcer server for activating at least one of at least one of the following: displays; and speakers, according to orders from said at least one Web-based server; and an automated receptionist for issuing tickets to, and otherwise interacting with, users.
+2. The system according to claim 1 , based on .NET technology.
+3. The system according to claim 1 , wherein said receptionist issues tickets via an automated ticket printer.
+4. The system according to claim 1 , wherein standard hardware may be attached to the system.
+5. The system according to claim 4, wherein the system communicates with said standard hardware using standard drivers, for at least one of at least one of the following: printers; and speakers.
+6. The system according to claim 4, wherein the system communicates with said standard hardware using specially customized drivers.
+7. The system according to claim 1 , wherein said Web client application is accessible through a browser on a handheld device.
+8. The system according to claim 1 , wherein said browser is used for other business applications.
+9. The system according to claim 1 , wherein said standard hardware comprises at least one wireless device.
+10. The system according to claim 1 , wherein the system inserts personal information into the ticket.
+11. The system according to claim 1, wherein the system inserts personal information onto a display screen.
+12. The system according to claim 1 , wherein the system prints forms to be filled out.
+13. The system according to claim 1, wherein the system prints marketing brochures.
+14. The system according to claim 1, wherein the system administration functions comprising at least one of the following: hardware configuration; business logic; and user ID and passwords can be performed from anywhere in said enterprise.
+15. A method for an open-architecture .Net system for management of users comprising: at least one Web-based server for an organization containing the logic and central systems functions; a Web client application allowing interaction between the users and said Web-based server, and accessible through a browser on client workstations; a database installed on an Structured Query Language (SQL) server for record maintenance and interactions with said web-based server and said client application; an announcer server for activating at least one of at least one of the following: displays; and speakers, according to orders from said at least one Web-based server; and an automated receptionist for issuing tickets to, and otherwise interacting with, the users, the method provides for queue management of users that is hardware independent, the method comprising: scheduling, wherein the user contacts the secretary or a call center; arriving, wherein the user arrives at the reception center and approaches the kiosk; waiting, wherein the user waits until called; and servicing, wherein the user and agent interact.
+16. The method according to claim 15, wherein waiting further comprises abandoning, wherein the user leaves the queue.

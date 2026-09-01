@@ -1,0 +1,247 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+P2017,0581 EP N / 122354-5830 November 14, 2019
+11827387.9 main request
+
+MAIN REQUEST
+CLAIMS
+
+1. A method of associating a plurality of objects, the method comprising the
+steps of:
+defining a physical space;
+determining by use of a real-time locating system (RTLS) objects that are within the
+physical space; and
+automatically creating at least one association between the objects determined by the
+RTLS to be within the physical space, wherein the objects include a caregiver, a patient, and
+a medical device;
+wherein said determining comprises:
+determining that a patient is within the physical space; determining that a
+medical device is within the physical space; and
+determining that a caregiver is within the physical space;
+wherein said automatically associating comprises:
+automatically creating an association between the medical device and the
+patient; automatically creating an association between the caregiver and the medical
+device; and
+recording, in a database connected to a real-time locating system (RTLS), the
+
+association between the objects within the physical space.
+
+2. The method of claim 1, further comprising the step of downloading one or
+more operating parameters to the medical device from a database, wherein the operating
+
+parameters are associated with a procedure that has been ordered for the patient.
+
+3. The method of claim 1, further comprising the step of uploading one or more
+data records from the medical device to a database, wherein the data records are associated
+
+with a procedure that has been performed for the patient.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P2017,0581 EP N / 122354-5830 November 14, 2019
+11827387.9 main request
+2
+4. The method of claim 1, further comprising notifying immediately the
+caregiver if a change in an operating parameter of the medical device occurs when no
+
+caregiver is proximate the medical device.
+
+5. The method of claim 1, further comprising the steps of:
+
+determining that more than one patient is within the physical space;
+
+presenting the identifications of the patients to the caregiver; and
+
+accepting a selection from the caregiver of the patient with whom the medical device
+
+is to be associated.
+
+6. The method of claim 1, further comprising the steps of:
+allowing access to the medical device only when a caregiver is within the physical
+
+space.
+
+7. The method of claim 6, further comprising the step of controlling access to the
+medical device according to privileges associated with the medical device assigned to the
+
+caregiver.
+
+8. The method of claim 1, further comprising the steps of:
+
+identifying actions or events related to the medical device;
+
+identifying one or more caregivers that are within the physical space when the action
+or event occurred; and
+
+recording the action or event and the identities of the caregivers.
+
+9. The method of claim 1, further comprising the steps of:
+identifying a medication that is within the physical space; and
+
+configuring the medical device to be used with the medication.
+10. The method of claim 9, further comprising the steps of:
+verifying that the patient has a prescription comprising the medication; and
+
+configuring the medical device according to the prescription.
+
+11. The method of claim 10, further comprising the steps of:
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P2017,0581 EP N / 122354-5830 November 14, 2019
+11827387.9 main request
+
+presenting the identifications of the patients to the caregiver when more than one
+patient is in the physical space; and accepting a selection from the caregiver of the
+
+identification of the patient with whom the first medical device is to be associated.
+
+12. The method of claim 9, further comprising the step of
+recording the identification of the patient, the identification of the caregiver, and the
+
+identification of the medication when the first medical device is activated.
+
+13. A system comprising:
+
+a RTLS transceiver configured to define a physical space and identify objects
+comprising RTLS tags that are within the physical space; and
+
+a processor coupled to the RTLS transceiver, the processor configured to receive the
+identification of the tagged objects and, upon verifying that the objects are within the
+physical space, automatically create at least one association between the identified objects,
+wherein the objects include at least one of a caregiver, a patient, and a medical device;
+
+the system further comprising a database coupled to the processor, the database
+configured to store data, wherein the processor is further configured to store associations of
+objects in the database;
+
+wherein the processor is further configured to
+
+automatically create an association between a medical device identified by the RTLS
+transceiver to be within the physical space with a patient identified by the RTLS transceiver
+to be within the physical space; and to automatically create an association between a
+caregiver identified by the RTLS transceiver to be within the physical space and said medical
+device identified by the RTLS transceiver to be within the physical space wherein the
+processor is further configured to effect recording, in the database, the association between
+the patient and the medical device and the association between the caregiver and the medical
+
+device.
+
+14. The system of claim 13, wherein the database comprises at least one
+prescription for the patient identified by the RTLS transceiver to be within the physical space,
+wherein the prescription comprises one or more operating parameters associated with the
+
+medical device associated with the patient, and wherein the processor is configured to
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P2017,0581 EP N / 122354-5830 November 14, 2019
+11827387.9 main request
+4
+
+retrieve the operating parameters from the prescription and download the operating
+
+parameters to the medical device.
+
+15. The system of claim 14, wherein the processor is further configured to
+associate a medication identified by the RTLS transceiver to be within the physical space
+with the medical device, identify a prescription in the database that comprises the medication,
+
+and retrieve the operating parameters from the identified prescription.
+
+16. | The system of claim 13, wherein the processor is configured to upload one or
+more data records associated with a procedure that has been performed for the patient from
+
+the medical device and to store the data records in the database.
+
+17. The system of claim 16, wherein the processor is configured to notify
+immediately said caregiver if a change in an operating parameter of the medical device
+
+occurs when no caregiver is proximate the medical device.
+
+18. The system of claim 13, wherein the processor is further configured to
+
+present the identifications of one or more patients identified by the RTLS transceiver
+to be within the physical space to said caregiver and to accept
+
+a selection from the caregiver of the patient with whom the medical device is to be
+
+associated.
+
+19. The system of claim 13, wherein the processor is further configured to control
+the medical device to allow access according to whether said caregiver is within the physical
+
+space.
+
+20. The system of claim 13, wherein the processor is further configured to store in
+the database a data record of actions and events associated with the medical device with the
+identification of all caregivers identified by the RTLS transceiver to be within the physical
+
+space at the time of the action or event.
+
+--- PAGE 5 ---
+10
+
+15
+
+P2017,0581 EP N / 122354-5830 November 14, 2019
+11827387.9 main request
+5
+21. | Acomputer-readable medium having computer-executable instructions
+storedthereon for execution by a processor to perform a method according to any of claim 1-
+
+12.
+
+22. The method of Claim 1, wherein the association between the patient and the
+medical device remains until the medical device is reassigned or until discharge of the
+
+patient.
+
+23. The system of Claim 13, wherein the association between the patient and the
+medical device remains until the medical device is reassigned or until discharge of the
+
+patient.
+
+24. The method of Claim 1, further comprising transmitting a notification to the
+caregiver when a change occurs with respect to the medical device while no caregiver is
+
+proximate to the medical device.
+
+25. The system of Claim 13, wherein the processor is further configured to
+transmit a notification to the caregiver when a change occurs with respect to the medical
+
+device while no caregiver is proximate to the medical device.

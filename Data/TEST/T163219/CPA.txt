@@ -1,0 +1,87 @@
+TITLE:
+System and method for searching venues based on similarity values
+
+TYPE:
+US patent
+
+ABSTRACT:
+A method, system and computer program product for searching for a venue based on a similarity value is disclosed. In one embodiment, the method includes receiving one or more selected attributes. The method further includes receiving one or more attribute-specific optional factor values and one or more venue-specific optional factor values. The method further includes searching a database containing a plurality of venue records each having one or more attributes and identifying the venue records having one or more attribute matches, the attribute matches being the selected attributes. The method further includes generating an attribute-specific similarity value and a venue-specific similarity value, and a total similarity value.
+
+CLAIMS:
+1. A method for searching for a venue based on a similarity value, comprising:
+receiving one or more selected attributes;
+receiving one or more optional factor values;
+searching a database containing a plurality of venue records each having one or more attributes;
+identifying the venue records having one or more attribute matches, the attribute matches being the selected attributes;
+applying the optional factor values to the attribute matches to weight the attribute matches;
+determining the similarity value of the venue records based on the sum of the weighted attribute matches of each venue;
+listing at least one of the venue records based on the similarity value.
+2. The method of claim 1, wherein the optional factors are attribute-specific optional factors.
+3. The method of claim 1, wherein the optional factors are venue-specific optional factors.
+4. The method of claim 1, wherein the application of the optional factor values and determination of the similarity values further comprise:
+applying attribute-specific optional factor values to the attribute matches to weight the attribute matches with the attribute-specific optional factor values;
+summing the attribute matches weighted by the attribute-specific optional factor values to generate an attribute-specific similarity value;
+applying venue-specific optional factor values to the attribute matches to weight the attribute matches with the venue-specific optional factor values;
+summing the attribute matches weighted by the venue-specific optional factor values to generate a venue-specific similarity value;
+applying a first predetermined weight to the attribute-specific similarity value and a second predetermined weight to the venue-specific similarity value to generate weighted first and second values, respectively;
+summing the weighted first and second values to generate the total similarity value.
+5. The method of claim 1, wherein the optional factor values include an Importance factor representing the importance of a particular attribute relative to other attributes.
+6. The method of claim 1, wherein the optional factor values include a Uniqueness factor representing the uniqueness of a particular attribute relative to other attributes.
+7. The method of claim 1, wherein the optional factor values include a Prominence factor representing how much of an attribute a venue has.
+8. The method of claim 1, wherein the optional factor values include a Shared Subsets factor representing the uniqueness of Shared Subsets of attributes among venues.
+9. The method of claim 1, wherein the optional factor values include a Preference factor representing a user's preference for a particular attribute.
+10. The method of claim 1, wherein the selected attributes are related to a specified venue, the specified venue being mapped to the selected attributes.
+11. The method of claim 1, wherein the selected attributes are related to an identification (ID) of a specified venue, the ID being mapped to the selected attributes.
+12. A method for searching for a venue based on a similarity value, comprising:
+receiving one or more selected attributes;
+receiving one or more attribute-specific optional factor values;
+receiving one or more venue-specific optional factor values;
+searching a database containing a plurality of venue records each having one or more attributes;
+identifying the venue records having one or more attribute matches, the attribute matches being the selected attributes;
+applying the attribute-specific optional factor values to the attribute matches to weight the attribute matches with the attribute-specific optional factor values;
+summing the attribute matches weighted by the attribute-specific optional factor values to generate an attribute-specific similarity value;
+applying the venue-specific optional factor values to the attribute matches to weight the attribute matches with the venue-specific optional factor values;
+summing the attribute matches weighted by the venue-specific optional factor values to generate a venue-specific similarity value;
+applying a first predetermined weight to the attribute-specific similarity value and a second predetermined weight to the venue-specific similarity value to generate weighted first and second values, respectively;
+summing the weighted first and second values to generate the total similarity value.
+13. The method of claim 12, further comprising computing the total similarity values of a plurality of venues.
+14. The method of claim 12, further comprising listing one or more venues based on their respective total similarity values.
+15. The method of claim 12, wherein the attribute-specific optional factor values include an Importance factor representing the importance of a particular attribute relative to other attributes.
+16. The method of claim 12, wherein the attribute-specific optional factor values include a Uniqueness factor representing the uniqueness of a particular attribute relative to other attributes.
+17. The method of claim 12, wherein the attribute-specific optional factor values include a Prominence factor representing how much of the attribute the venue has.
+18. The method of claim 12, wherein the venue-specific optional factor values include a Shared Subsets factor representing the uniqueness of Shared Subsets of attributes among venues.
+19. The method of claim 12, wherein the attribute-specific optional factor values include a Preference factor representing a user's preference for a particular attribute.
+20. The method of claim 12, wherein the selected attributes are related to a user specified venue, the user specified venue being mapped to the selected attributes.
+21. In an online social network having a plurality of users connected through the Internet, a computer-implemented method for searching for a venue based on a similarity value, comprising:
+receiving one or more selected attributes;
+receiving one or more attribute-specific optional factor values;
+receiving one or more venue-specific optional factor values;
+searching a database containing a plurality of venue records each having one or more attributes;
+identifying the venue records having one or more attribute matches, the attribute matches being the selected attributes;
+applying the attribute-specific optional factor values to the attribute matches to weight the attribute matches with the attribute-specific optional factor values;
+summing the attribute matches weighted by the attribute-specific optional factor values to generate an attribute-specific similarity value;
+applying the venue-specific optional factor values to the attribute matches to weight the attribute matches with the venue-specific optional factor values;
+summing the attribute matches weighted by the venue-specific optional factor values to generate a venue-specific similarity value;
+applying a first predetermined weight to the attribute-specific similarity value and a second predetermined weight to the venue-specific similarity value to generate weighted first and second values, respectively;
+summing the weighted first and second values to generate the total similarity value.
+22. The computer-implemented method of claim 21, further comprising computing the total similarity values of a plurality of venues.
+23. The computer-implemented method of claim 21, further comprising listing one or more venues based on their respective total similarity values.
+24. A computer-implemented system for searching for a venue based on a similarity value, the system being linked to a plurality of users by the Internet, comprising:
+a processor configured to receive a plurality of user inputs;
+a database connected to the processor, the database containing a plurality of venue records each having one or more attributes, the database responsive to the processor to provide data to the processor;
+the processor configured to execute a plurality of steps comprising:
+receiving one or more selected attributes;
+receiving one or more optional factor values;
+searching a database containing a plurality of venue records each having one or more attributes;
+identifying the venue records having one or more attribute matches, the attribute matches being the selected attributes;
+applying the optional factor values to the attribute matches to weight the attribute matches;
+determining the similarity value of the venue records based on the sum of the weighted attribute matches of each venue;
+listing at least one of the venue records based on the similarity value.
+25. A method for searching for a venue based on a similarity value, comprising:
+receiving an identification (ID) for a specified venue, the specified venue being mapped to first attributes;
+receiving one or more optional factor values;
+searching a database containing a plurality of venue records;
+identifying the venue records having one or more attribute matches, the attribute matches being the first attributes;
+applying the optional factor values to the attribute matches to weight the attribute matches;
+determining the similarity value of the venue records based on the sum of the weighted attribute matches of each venue;
+listing at least one of the venue records based on the similarity value.

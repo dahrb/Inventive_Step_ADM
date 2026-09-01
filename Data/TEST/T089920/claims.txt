@@ -1,0 +1,125 @@
+--- PAGE 1 ---
+EP 11 874 761.7
+Hewlett-Packard Development Company, L.P.
+
+H31779WOEP
+
+May 7, 2019
+NEW CLAIMS
+Main Request
+
+1. A method (300) for memory allocation, comprising:
+
+loading (310) boot data from a first portion (142) of a first non-volatile memory (140)
+to complete a first booting of a device (150), wherein the first non-volatile memory (140) is a
+solid-state drive;
+
+storing (320) the boot data to a second non-volatile memory (160), wherein the sec-
+ond non-volatile memory (160) is a hard-disk drive;
+
+after the storing (320), releasing (330) the first portion (142) of the first non-volatile
+memory (140) to allow the device (150) to overwrite the first portion (142);
+
+writing (350) the boot data from the second non-volatile memory (160) to the first
+non-volatile memory (140) before the device (150) enters a reduced power state, wherein the
+written boot data is to be loaded from the first non-volatile memory (140) to complete a sec-
+ond booting of the device (150), if the second booting is initiated;
+
+retaining a copy of the boot data at the second non-volatile memory (160);
+
+storing, on the first non-volatile memory (140), an address location of the copy of the
+boot data at the second non-volatile memory (160); and
+
+loading (390) the boot data from the second non-volatile memory (160) if the boot
+data cannot be loaded from the first non-volatile memory (140) to complete at least one of
+the first and second booting, wherein the boot data is loadable faster from the first non-
+
+volatile memory (140) than the second non-volatile memory (160).
+
+2. The method of claim 1, wherein the releasing (330) includes using the first portion
+
+(142) of the first non-volatile memory (140) as a cache to store cache data.
+
+3. The method of claim 2, further comprising:
+storing (340) the cache data at the first non-volatile memory (140) to the second non-
+
+volatile memory (160), before the writing (350).
+
+4. The method of claim 1, wherein the first non-volatile memory (140) has a lower access
+
+time than the second non-volatile memory (160).
+
+--- PAGE 2 ---
+5. The method of claim 4, wherein the first non-volatile memory (140) includes a flash
+memory and the second non-volatile memory (160) includes a magnetic storage medium
+
+(210).
+
+6. A device (150), comprising:
+
+a first non-volatile memory (140) to store boot data at a first portion (142), the boot
+data to complete a first booting of the device (150), wherein the first non-volatile memory
+(140) is a sold-state-drive;
+
+a second non-volatile memory (160) to store the boot data, wherein the second non-
+volatile memory (160) is a hard-disk drive;
+
+a cache module (120) to write cache data to the first portion (142) of the first nonvola-
+tile memory (140) after the boot data is loaded from the first non-volatile memory (140); and
+
+a boot module (130) to write the boot data to the second non-volatile memory (160)
+before the cache module (120) writes the cache data to the first portion (142) of the first non-
+volatile memory (140) and to write the boot data at the second non-volatile memory (160) to
+the first non-volatile memory (140) before the device (150) enters a reduced power state,
+
+wherein a copy of the boot data is retained at the second non-volatile memory (160),
+and an address location of the copy of the boot data at the second non-volatile memory (160)
+is stored on the first non-volatile memory (140),
+
+wherein the written boot data is to be loaded from the first non-volatile memory (140)
+to complete a second booting of the device (450), if the second booting is initiated, and
+
+wherein the boot data is to be loaded from the second non-volatile memory (160) if
+the boot data cannot be loaded from the first non-volatile memory (140) to complete at least
+
+one of the first and second booting.
+
+7. The device of claim 6, wherein the cache module (120) is to store the cache data at the
+first non-volatile memory (140) to the second non-volatile memory (160) before the device
+
+(150) enters the reduced power state.
+
+8. The device of claim 6, wherein the first non-volatile memory (140) includes a flash
+memory and the second non-volatile memory (460) includes a magnetic storage medium
+(210), the first non-volatile memory (140) to have a lower access time than the second non-
+
+volatile memory (160).
+
+--- PAGE 3 ---
+9. A non-transitory machine-readable storage medium storing instructions that, if exe-
+cuted by a processor (110) of a device (150), cause the processor (110) to:
+
+load (212) boot data from a first portion (142) of a first non-volatile memory (140) to
+complete a first booting of the device (150) , wherein the first non-volatile memory (140) is a
+sold-state-drive;
+
+store the boot data at the first portion (142) of the first non-volatile memory (140) toa
+second non-volatile memory (160) before the first portion (142) is released, wherein the sec-
+ond non-volatile memory (160) is a hard-disk drive;
+
+release (214) the first portion (142) of the first non-volatile memory (140) to allow the
+device to overwrite the first portion (142);
+
+write (216) the boot data from the second non-volatile memory (160) to the first non-
+volatile memory (140) before the device (150) enters a reduced power state, wherein a copy of
+the boot data is retained at the second non-volatile memory (160), and an address location of
+the copy of the boot data at the second non-volatile memory (160) is stored on the first non-
+volatile memory (140), wherein the written boot data is to be loaded from the first non-
+volatile memory (140) to complete a second booting of the device (150), if the second booting
+is initiated; and
+
+load the boot data from the second non-volatile memory (160) if the boot data cannot
+be loaded from the first non-volatile memory (140) to complete at least one of the first and
+second booting, wherein the boot data is loadable faster from the first non-volatile memory
+
+(140) than the second non-volatile memory (160).

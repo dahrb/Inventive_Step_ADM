@@ -1,0 +1,220 @@
+Title: Asynchronous unconscious retrieval in a network of information appliances
+
+Abstract: A method, system, and computer program product for asynchronous unconscious retrieval retrieves and presents information to end users without requiring the end users to explicitly request the information. The invention automatically and asynchronously formulates queries and presents relevant information to end users within the context of existing applications, so as to minimize the effort, overhead, and context shifts associated with conventional conscious retrieval.
+
+Type: US Patent
+
+Claims: 
+
+1. A computer-implemented method for unconscious data retrieval, comprising:
+extracting at least one query key from a primary document;
+responsive to a connection with at least one data source being available, pre-fetching at least one query result by:
+querying the at least one data source with the at least one query key; and
+receiving at least one query result from at least one data source;
+evaluating the received at least one query result;
+accessing the primary document; and
+displaying at least one received query result;
+wherein extracting, querying, receiving, and evaluating are performed automated asynchronously with respect to user interaction with the primary document; and
+wherein displaying the at least one received query result is performed without regard to whether a connection with a data source is available and in response to accessing the primary document.
+2. The method of claim 1, further comprising, prior to extracting:
+receiving the primary document;
+and wherein extracting, querying, receiving, and evaluating are performed in response to receiving the primary document.
+3. The method of claim 1, further comprising, prior to displaying at least one received query result:
+displaying the primary document;
+and wherein displaying at least one received query result is performed in response to displaying the primary document.
+4. The method of claim 1, wherein the primary document comprises an electronic communication.
+5. The method of claim 4, wherein the primary document comprises an e-mail message.
+6. The method of claim 4, further comprising, prior to extracting:
+receiving the electronic communication;
+and wherein extracting, querying, receiving, and evaluating are performed in response to receiving the electronic communication.
+7. The method of claim 6, wherein receiving the electronic communication comprises receiving the electronic communication at an e-mail server.
+8. The method of claim 6, wherein receiving the electronic communication comprises receiving the electronic communication at a user's computer.
+9. The method of claim 6, wherein receiving the electronic communication comprises retrieving the electronic communication from an e-mail server to a user's computer.
+10. The method of claim 1, further comprising:
+storing the evaluated at least one query result;
+and wherein displaying at least one received query result comprises:
+retrieving the stored at least one query result; and
+displaying the retrieved at least one query result.
+11. The method of claim 1, wherein querying at least one data source comprises:
+transmitting a query over a network.
+12. The method of claim 1, wherein querying at least one data source comprises transmitting an e-mail message containing a query to the at least one data source.
+13. The method of claim 1, wherein querying at least one data source comprises transmitting across a firewall an e-mail message containing a query to the at least one data source.
+14. The method of claim 1, wherein querying at least one data source comprises transmitting an XML-encoded e-mail message containing a query to the at least one data source.
+15. The method of claim 1, wherein receiving at least one query result from at least one data source comprises receiving an e-mail message containing at least one query result from at least one data source.
+16. The method of claim 1, wherein receiving at least one query result from at least one data source comprises receiving an XML-encoded e-mail message containing at least one query result from at least one data source.
+17. The method of claim 1, wherein the at least one data source comprises:
+at least one information appliance.
+18. The method of claim 17, wherein at least one of the information appliances comprises one selected from the group consisting of:
+a visitor kiosk;
+a meeting recorder;
+a presentation recorder;
+a whiteboard capture device;
+a communication device; and
+a document management device.
+19. The method of claim, 1, wherein evaluating the received at least one query result comprises estimating the relevance of the query result with respect to the electronic communication.
+20. The method of claim 1, wherein evaluating the received at least one query result comprises determining whether the query result has previously been displayed.
+21. The method of claim 1, wherein evaluating the received at least one query result comprises determining whether the query result is sufficiently relevant with respect to a predetermined relevancy threshold;
+and wherein displaying at least one received query result comprises displaying a query result responsive to the determination indicating that the query result is sufficiently relevant.
+22. The method of claim 1, wherein displaying at least one received query result comprises determining displaying at least one received query result in a sequence prioritized according to estimated relevance.
+23. The method of claim 1, wherein displaying at least one received query result comprises displaying the query result in the context of a currently active software application.
+24. The method of claim 1, wherein displaying at least one received query result comprises displaying the query result in a sidebar pane adjacent to a currently active on-screen window.
+25. The method of claim 1, wherein displaying at least one received query result comprises displaying the query result in an on-screen window concurrently with display of a currently active on-screen window.
+26. The method of claim 1, wherein displaying at least one received query result comprises displaying the query result in an on-screen dialog box.
+27. The method of claim 1, wherein at least a portion of the displayed query result comprises a hyperlink to a resource containing data related to the displayed query result.
+28. The method of claim 1, wherein the at least one received query result comprises a plurality of query results, the method further comprising:
+prioritizing the query results according to estimated relevance;
+and wherein displaying at least one received query result comprises displaying a plurality of query results in order of priority.
+29. The method of claim 28, wherein prioritizing the query results is performed responsive to the context of the query results.
+30. The method of claim 28, wherein prioritizing the query results is performed responsive to the context of the query key in the primary document.
+31. The method of claim 1, wherein at least one of the data sources comprises a network-connected computer containing shared information.
+32. The method of claim 1, wherein at least one of the data sources comprises a shared directory.
+33. The method of claim 1, wherein at least one of the data sources is intermittently connected via a network.
+34. The method of claim 1, wherein the primary document is one selected from the group consisting of:
+an electronic communication;
+a word processing document;
+a spreadsheet document;
+a task item;
+a calendar item;
+a file;
+an image;
+a sound recording;
+a video recording; and
+a contact record.
+35. The method of claim 1, wherein querying at least one data source comprises:
+formulating a structured query based on the extracted at least one query key; and
+transmitting the structured query to the at least one data source.
+36. The method of claim 1, wherein extracting at least one query key comprises applying a part-of-speech analysis to the primary document.
+37. The method of claim 1, further comprising:
+selecting at least one data source based on the extracted at least one query key;
+and wherein querying at least one data source comprises querying the selected at least one data source.
+38. The method of claim 1, wherein evaluating the received at least one query result comprises applying a Bayesian belief net to determine estimated relevance of the at least one query result.
+39. The method of claim 1, wherein displaying at least one received query result comprises displaying the result on a device that is intermittently connected via a network.
+40. The method of claim 39, wherein the device comprises a portable computing device.
+41. The method of claim 1, wherein the primary document comprises a text document.
+42. The method of claim 1, wherein the primary document comprises a non-text document.
+43. The method of claim 1, wherein querying at least one data source comprises transmitting a text query.
+44. The method of claim 1, wherein querying at least one data source comprises transmitting a non-text query.
+45. The method of claim 1, wherein
+displaying at least one received query result comprises displaying the query result in a calendar display.
+46. The method of claim 1, wherein displaying at least one received query result comprises:
+designating at least a portion of the primary document as a hyperlink; and
+responsive to user activation of the hyperlink, displaying a query result.
+47. The method of claim 1, wherein displaying at least one received query result comprises:
+displaying an on-screen button; and
+responsive to user activation of the button, displaying a query result.
+48. The method of claim 1, wherein displaying at least one received query result comprises:
+displaying a toolbar menu activation button; and
+responsive to user activation of the button, displaying a query result.
+49. The method of claim 1, wherein displaying at least one received query result comprises:
+displaying a menu comprising at least one command; and
+responsive to user selection of one of the at least one command, displaying a query result.
+50. The method of claim 1, wherein displaying at least one received query result comprises:
+displaying a menu activation icon;
+responsive to user activation of the menu activation icon, displaying a menu comprising at least one command; and
+responsive to user selection of one of the at least one command, displaying a query result.
+51. A computer-implemented system for unconscious data retrieval, comprising:
+a receiver, for receiving a primary document;
+a requester, coupled to the receiver, for, responsive to a connection with at least one data source being available, pre-fetching at least one query result by generating and transmitting to at least one data source at least one query related to the primary document;
+an evaluator, for receiving at least one query result from the at least one data source and for evaluating the received at least one query result; and
+a display, coupled to the evaluator, for displaying the at least one received query result without regard to whether a connection with a data source is available;
+wherein the receiver, the requester, and the evaluator operate automated asynchronously with respect to user interaction with the primary document.
+52. The system of claim 51, wherein the primary document comprises an electronic communication.
+53. The system of claim 52, wherein the primary document comprises an e-mail message.
+54. The system of claim 53, wherein the receiver comprises an e-mail server.
+55. The system of claim 53, wherein the receiver comprises an e-mail program running on a user's computer.
+56. The system of claim 51, further comprising:
+a storage device, coupled to the evaluator, for storing the evaluated at least one query result;
+and wherein the display displays at least one received query result retrieved from the storage device.
+57. The system of claim 51, wherein the requester transmits the query over a network.
+58. The system of claim 57, wherein the requester transmits an e-mail message containing the query to the at least one data source.
+59. The system of claim 57, wherein the requester transmits across a firewall an e-mail message containing the query to the at least one data source.
+60. The system of claim 57, wherein the evaluator receives an e-mail message containing at least one query result from at least one data source.
+61. The system of claim 51, wherein the evaluator estimates the relevance of the query result with respect to the primary document.
+62. The system of claim 51, wherein the evaluator determines whether the query result is sufficiently relevant with respect to a predetermined relevancy threshold;
+and wherein the display displays a query result responsive to the determination indicating that the query result is sufficiently relevant.
+63. The system of claim 51, wherein the display displays at least one received query result in a sequence prioritized according to estimated relevance.
+64. The system of claim 51, wherein the display displays the query result in the context of a currently active software application.
+65. The system of claim 51, wherein the display comprises a sidebar pane adjacent to a currently active on-screen window.
+66. The system of claim 51, wherein the display comprises an on-screen window shown concurrently with a currently active on-screen window.
+67. The system of claim 51, wherein the display comprises an on-screen dialog box.
+68. The system of claim 51, wherein at least a portion of the displayed query result comprises a hyperlink to a resource containing data related to the displayed query result.
+69. The system of claim 51, wherein at least one of the data sources comprises a network-connected computer containing shared information.
+70. The system of claim 51, wherein at least one of the data sources comprises a shared directory.
+71. The system of claim 51, wherein at least one of the data sources is intermittently connected via a network.
+72. The system of claim 51, wherein the primary document is one selected from the group consisting of:
+an electronic communication;
+a word processing document;
+a spreadsheet document;
+a task item;
+a calendar item;
+a file;
+an image;
+a sound recording;
+a video recording; and
+a contact record.
+73. The system of claim 51, wherein the requester comprises:
+a query formulator, for formulating a structured query based on the extracted at least one query key; and
+a transmitter, coupled to the query formulator, for transmitting the structured query to the at least one data source.
+74. The system of claim 51, wherein the evaluator applies a Bayesian belief net to determine estimated relevance of the at least one query result.
+75. The system of claim 51, wherein the display comprises a portable computing device.
+76. The system of claim 51, wherein the primary document comprises a text document.
+77. The system of claim 51, wherein the primary document comprises a non-text document.
+78. The system of claim 51, wherein the display comprises a calendar display.
+79. The system of claim 51, wherein the display comprises a user-activated toolbar menu.
+80. A computer program product comprising a computer-usable medium having computer-readable code embodied therein for unconscious data retrieval, comprising:
+computer-readable program code configured to cause a computer to extract at least one query key from a primary document;
+computer-readable program code configured to cause a computer to, responsive to a connection with at least one data source being available, pre-fetching at least one query result by:
+querying at least one data source with the at least one query key; and
+receiving at least one query result from at least one data source;
+computer-readable program code configured to cause a computer to evaluate the received at least one query result;
+computer-readable program code configured to cause a computer to access the primary document; and
+computer-readable program code configured to cause a computer to display at least one received query result;
+wherein the computer-readable program code configured to cause a computer to extract, query, receive, and evaluate operate automated asynchronously with respect to user interaction with the primary document;
+and wherein the computer-readable program code configured to cause a computer to display the at least one received query result operates without regard to whether a connection with a data source is available and in response to accessing the primary document.
+81. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to extract, query, receive, and evaluate operate asynchronously with respect to user interaction with the primary document.
+82. The computer program product of claim 80, further comprising: computer-readable program code configured to cause a computer to store the evaluated at least one query result;
+and wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises:
+computer-readable program code configured to cause a computer to retrieve the stored at least one query result; and
+computer-readable program code configured to cause a computer to display the retrieved at least one query result.
+83. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to evaluate the received at least one query result comprises computer-readable program code configured to cause a computer to estimate the relevance of the query result with respect to the primary document.
+84. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to evaluate the received at least one query result comprises computer-readable program code configured to cause a computer to determine whether the query result is sufficiently relevant with respect to a predetermined relevancy threshold;
+and wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises computer-readable program code configured to cause a computer to display a query result responsive to the determination indicating that the query result is sufficiently relevant.
+85. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises computer-readable program code configured to cause a computer to display the query result in the context of a currently active software application.
+86. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises computer-readable program code configured to cause a computer to display the query result in a sidebar pane adjacent to a currently active on-screen window.
+87. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises computer-readable program code configured to cause a computer to display the query result in an on-screen window concurrently with display of a currently active on-screen window.
+88. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises computer-readable program code configured to cause a computer to display the query result in an on-screen dialog box.
+89. The computer program product of claim 80, wherein at least one of the data sources comprises a network-connected computer containing shared information.
+90. The computer program product of claim 80, wherein at least one of the data sources comprises a shared directory.
+91. The computer program product of claim 80, wherein the primary document is one selected from the group consisting of:
+an electronic communication;
+a word processing document;
+a spreadsheet document;
+a task item;
+a calendar item;
+a file;
+an image;
+a sound recording;
+a video recording; and
+a contact record.
+92. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to query at least one data source comprises:
+computer-readable program code configured to cause a computer to formulate a structured query based on the extracted at least one query key; and
+computer-readable program code configured to cause a computer to transmit the structured query to the at least one data source.
+93. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to extract at least one query key comprises computer-readable program code configured to cause a computer to apply a part-of-speech analysis to the primary document.
+94. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to evaluate the received at least one query result comprises computer-readable program code configured to cause a computer to apply a Bayesian belief net to determine estimated relevance of the at least one query result.
+95. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises computer-readable program code configured to cause a computer to display the result on a device that is intermittently connected via a network.
+96. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises:
+computer-readable program code configured to cause a computer to designate at least a portion of the primary document as a hyperlink; and
+computer-readable program code configured to cause a computer to, responsive to user activation of the hyperlink, display a query result.
+97. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises:
+computer-readable program code configured to cause a computer to display an on-screen button; and
+computer-readable program code configured to cause a computer to, responsive to user activation of the button, display a query result.
+98. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises:
+computer-readable program code configured to cause a computer to display a toolbar menu activation button; and
+computer-readable program code configured to cause a computer to, responsive to user activation of the button, display a query result.
+99. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises:
+computer-readable program code configured to cause a computer to display a menu comprising at least one command; and
+computer-readable program code configured to cause a computer to, responsive to user selection of one of the at least one command, display a query result.
+100. The computer program product of claim 80, wherein the computer-readable program code configured to cause a computer to display at least one received query result comprises:
+computer-readable program code configured to cause a computer to display a menu activation icon;
+computer-readable program code configured to cause a computer to, responsive to user activation of the menu activation icon, display a menu comprising at least one command; and
+computer-readable program code configured to cause a computer to, responsive to user selection of one of the at least one command, display a query res

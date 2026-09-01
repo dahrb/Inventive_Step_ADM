@@ -1,0 +1,91 @@
+TITLE:
+Data conversion in a multiprocessing system usable while maintaining system operations
+
+TYPE:
+European patent
+
+ABSTRACT:
+In a multiprocessing system, data which is stored on an external storage media and shared by a plurality of processors is converted from an old format to a new format without bringing the multiprocessing system down. One processor at a time is provided the capability to view the data in the new format, while the other processors view the data in the old format. After all of the processors are capable of viewing the data in the new format, the data is converted from the old format to the new format and the data in the new format is stored on the external storage media. If for some reason the new format turns out to be unacceptable, procedures are also in place for falling back to the old format without disrupting system availability. <IMAGE>
+
+CLAIMS:
+A data conversion method in a multiprocessing system comprising a first processor, a second processor, and an external storage media coupled to said first processor and said second processor, said external storage media comprising a datum having a first format, said datum sharable by said first processor and said second processor, said method comprising:
+retrieving by said first processor said datum from said external storage media in said first format and using said retrieved datum in a second format, wherein said datum in said first format is usable by said second processor;
+retrieving by said second processor said datum from said external storage media in said first format and using said retrieved datum in said second format, wherein said datum is usable by said first processor and said second processor in said second format; and
+converting said datum on said external storage media from said first format to said second format when said datum is usable by said first processor and said second processor in said second format, said converting allowing said first processor and said second processor to remain activated.
+The data conversion method of claim 1, wherein said multiprocessing system comprises a first central processing complex and a second central processing complex, and wherein said retrieving by said first processor comprises retrieving by said first central processing complex comprising said first processor, and said retrieving by said second processor comprises retrieving by said second central processing complex comprising said second processor.
+The data conversion method of claim 1, wherein said using comprises reformatting said datum from said first format to said second format.
+The data conversion method of claim 3, further comprising:
+unformatting said datum from said second format to said first format subsequent to using said datum; and
+storing said datum in said first format on said external storage media.
+The data conversion method of claim 1, wherein said converting comprises:
+writing said datum in said second format to said external storage media; and
+setting an indicator located within said datum to specify said datum has been converted.
+The data conversion method of claim 5, further comprising modifying said datum on said external storage media from said second format to said first format, wherein said datum in said first format is usable by said first processor and said second processor.
+The data conversion method of claim 6, wherein said modifying comprises:
+retrieving said datum in said second format from said external storage media;
+reformatting said datum to said first format when said datum is retrieved;
+writing said datum in said first format to said external storage media; and
+setting an indicator located within said datum to specify said datum has been unconverted.
+The data conversion method of claim 6, wherein said external storage media comprises a plurality of data records stored in said second format and wherein said modifying comprises:
+(a) retrieving a first data record of said plurality of data records from said external storage media;
+(b)setting an indicator located within said first data record to specify unconverting is beginning for said plurality of data records;
+(c)reformatting said first data record to said first format when said first data record is retrieved;
+(d)writing said first data record in said first format to said external storage media;
+(e)retrieving a next data record of said plurality of data records;
+(f)reformatting said next data record from said second format to said first format when said next data record is retrieved;
+(g)setting a flag located within said next data record to indicate said next data record is not converted;
+(h)writing said next data record in said first format to said external storage media;
+(i)repeating steps (e)-(h) until a prespecified number of said plurality of data records are reformatted to said first format; and
+(j)setting said indicator to not converted when said prespecified number of said plurality of data records have been unconverted.
+The data conversion method of claim 1, wherein said external storage media comprises a plurality of data records stored in said first format and said converting comprises:
+(a)retrieving a first data record of said plurality of data records from said external storage media;
+(b)setting an indicator located within said first data record to specify converting is beginning for said plurality of data records;
+(c)reformatting said first data record to said second format when said first data record is retrieved;
+(d)writing said first data record in said second format to said external storage media;
+(e)retrieving a next data record of said plurality of data records;
+(f)reformatting said next data record from said first format to said second format when said next data record is retrieved;
+(g)setting a flag located within said next data record to indicate said next data record is converted;
+(h)writing said next data record in said second format to said external storage media;
+(i)repeating steps (e)-(h) until a prespecified number of said plurality of data records are converted; and
+(j)setting said indicator to converted when said prespecified number of said plurality of data records have been converted.
+A multiprocessing system comprising:
+an external storage media comprising a datum having a first format;
+a first processor and a second processor coupled to said external storage media, said first processor programmable to retrieve said datum from said external storage media in said first format and to use said datum in a second format when said datum is retrieved, wherein said datum in said first format is usable by said second processor;
+said second processor programmable to retrieve said datum from said external storage media in said first format and to use said datum in said second format when said datum is retrieved, wherein said datum is usable by said first processor and said second processor in said second format; and
+means for converting said datum on said external storage media from said first format to said second format when said datum is usable by said first processor and said second processor in said second format, said means for converting comprising means for allowing said first processor and said second processor to remain activated.
+The multiprocessing system of claim 10, further comprising:
+a first central processing complex comprising said first processor; and
+a second central processing complex comprising said second processor.
+The multiprocessing system of claim 10, wherein said first processor and said second processor are further programmable to reformat said datum from said first format to said second format in order to use said datum in said second format.
+The multiprocessing system of claim 12, further comprising means for unformatting said datum from said second format to said first format subsequent to using said datum in order to store said datum in said first format on said external storage media.
+The multiprocessing system of claim 10, wherein said means for converting comprises:
+means for writing said datum in said second format to said external storage media; and
+means for setting an indicator located within said datum to specify said datum has been converted.
+The multiprocessing system of claim 14, further comprising means for modifying said datum on said external storage media from said second format to said first format, wherein said datum in said first format is usable by said first processor and said second processor.
+The multiprocessing system of claim 15, wherein said means for modifying comprises:
+means for retrieving said datum in said second format from said external storage media;
+means for reformatting said datum to said first format when said datum is retrieved;
+means for writing said datum in said first format to said external storage media; and
+means for setting an indicator located within said datum to specify said datum has been unconverted.
+The multiprocessing system of claim 15, wherein said external storage media comprises a plurality of data records stored in said second format and wherein said means for modifying further comprises:
+means for retrieving a first data record of said plurality of data records from said external storage media;
+means for setting an indicator located within said first data record to specify unconverting is beginning for said plurality of data records;
+means for reformatting said first data record to said first format when said first data record is retrieved;
+means for writing said first data record in said first format to said external storage media;
+means for retrieving a next data record of said plurality of data records;
+means for reformatting said next data record from said second format to said first format when said next data record is retrieved;
+means for setting a flag located within said next data record to indicate said next data record is not converted;
+means for writing said next data record in said first format to said external storage media;
+means for repeating said retrieving, said reformatting, said setting, and said writing until a prespecified number of said plurality of data records are reformatted to said first format; and
+means for setting said indicator to not converted when said prespecified number of said plurality of data records have been unconverted.
+The multiprocessing system of claim 10, wherein said external storage media comprises a plurality of data records stored in said first format and said means for converting comprises:
+means for retrieving a first data record of said plurality of data records from said external storage media;
+means for setting an indicator located within said first data record to specify converting is beginning for said plurality of data records;
+means for reformatting said first data record to said second format when said first data record is retrieved;
+means for writing said first data record in said second format to said external storage media;
+means for retrieving a next data record of said plurality of data records;
+means for reformatting said next data record from said first format to said second format when said next data record is retrieved;
+means for setting a flag located within said next data record to indicate said next data record is converted;
+means for writing said next data record in said second format to said external storage media;
+means for repeating said retrieving, said reformatting, said setting and said writing until a prespecified number of said plurality of data records are converted; and
+means for setting said indicator to converted when said prespecified number of said plurality of data records have been converted.

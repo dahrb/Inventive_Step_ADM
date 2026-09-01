@@ -1,0 +1,34 @@
+Title: Mail processing system with a printer setup using a database
+
+
+Abstract: The present invention is directed toward a method and system for printing information onto a print media. In one aspect the present invention may be utilized by an on-line postage system to query one or more databases, containing set up data on one or more printer drivers, to determine set up data for a user's printer. The present invention may then be used to perform a printer configuration test to determine the set up data for the user's printer if the set up data is not contained in the databases. The present invention then stores the results of the printer configuration test in one or more of the database for use by subsequent users.
+
+
+Type: WIPO
+
+Claims: 
+
+WHAT IS CLAIMED IS:
+1. A method of printing information onto print media comprising: translating a first component of said information as a function of printer margin size; determining a printable bounding area as a function of said first component; scaling a second component of said information as a function of said printable bounding area; and printing said information.
+2. The method of claim 1 wherein the step of shifting said first component of said information as a function of said printer margin size comprises shifting a human readable portion.
+3. The method of claim 1 wherein the step of printing said information comprises printing a postal indicia comprising a FIM and said first and second components, wherein said first component is a human readable portion and said second component is a logo.
+4. The method of claim 3 wherein the step of scaling said second component of said information comprises scaling width of said second component so that a sum of said printer margin, width of said human readable portion, width of said logo and width of said FIM clear zone is greater than about 1.875" and less than about 2.125".
+5. A method of printing graphics onto print media comprising: determining a printer offset as a function of how the print media is fed into the printer; and rendering an image of said graphic within a printable region as a function of said offset.
+6. The method of claim 5 wherein the step of determining said printer offset comprises sending a print job having one or more patterns to said printer and determining said printer offset as a function of how said patterns print on a test envelope.
+7. The method of claim 5 wherein the step of determining said printer offset comprises: selecting a printer; determining the offset for the printer from a printer database having information on one or more printer drivers.
+8. A method of printing information onto a print media comprising: querying one or more databases, containing set up data on one or more printer drivers, to determine set up data for a user's printer; performing a printer configuration test to determine the set up data for the user's printer as a function of said query; storing results of said printer configuration test in said one ore more databases for use by subsequent users; and printing said information onto said print media in accordance with said set up data.
+9. The method of claim 8 wherein the step of determining set up data from said database comprises determining a printer offset as a function of how the print media is fed into a printer.
+10. The method of claim 9 wherein the step of performing a printer configuration test comprises sending a print job having one or more patterns to said printer and determining said printer offset as a function of how said one or more patterns print on a test print media.
+11. The method of claim 8 wherein the step of determining set up information from said one or more databases comprises determining a shift code for a paper feed tray to determine how guides of the paper feed trays move to feed the print media into the printer.
+12. The method of claim 8 further comprising rotating an image of said information into landscape mode and compensating for over rotation of said image in accordance with a variable stored in said one or more databases.
+13. The method of claim 8 wherein the step of determining set up data from said one or more databases comprises determining whether said printer configuration test may be used to support printers whose set up data is not known, and if unknown printers are not allowed, notifying a user who selects a printer whose set up data is not known that the selected printer is not supported.
+14. The method of claim 8 wherein the step of determining set up data from said one or more databases comprises determining print media supported by a user's printer.
+15. The method of claim 8 wherein the step of determining set up data from said one or more databases comprises determining size of print media.
+16. The method of claim 8 further comprising querying one or more printer databases, containing set up information on one or more printers, to determine set up data for a user's printer.
+17. A system for printing information onto a print media comprising: means for querying one or more databases, containing set up data on one or more printer drivers, to determine set up data for a user's printer; means for performing a printer configuration test to determine said set up data as a function of said query; means for storing results of said printer configuration test in said one or more databases for use by subsequent users; and means for printing said information onto said print media in accordance with said set up data.
+18. The system of claim 17 wherein the means for querying one or more databases to determine the set up data for the user's printer comprises means for querying one or more databases to determine a printer offset as a function of how the print media is fed into a printer.
+19. The method of claim 18 wherein the performing said printer configuration test comprises means for sending a print job having one or more patterns to said printer and determining said printer offset as a function of how said one or more patterns print on a test print media.
+20. The method of claim 17 further comprising means for rotating an image of said information into landscape mode and means for compensating for over rotation of said image in accordance with a variable stored in said one or more databases.
+21. The method of claim 17 wherein the means for querying one or more databases to determine set up data comprises means for querying one or more databases to determine print media supported by a user's printer.
+22. The method of claim 17 wherein the means for querying one or more databases to determine set up data comprises means for querying one or more databases to determine size of print media.
+23. The method of claim 17 means for querying one or more databases, containing set up information on one or more printers, to determine set up data for said user's printer.

@@ -1,0 +1,149 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+32
+Claims
+
+1. A method for monitoring the performance of a subsystem or function of a
+forest machine, comprising the steps of:
+
+performing processing of several tree trunks by a harvester head
+connected to the forest machine;
+
+during the processing of each trunk, taking measurements to find
+out a trunk size class specific to the trunk being processed;
+
+collecting, during the processing of said trunk, measurement data
+associated with said trunk and relating to the function of a subsystem or
+the performing of a function;
+
+continually collecting said measurement data for several trunks
+during the processing of said several trunks;
+
+characterized in that the method further comprises the steps of:
+
+making a division of said collected measurement data into several
+trunk size classes to compensate for processing conditions, wherein the
+division is based on the trunk size class of the trunk said collected
+measurement data is associated with, and wherein the trunk size class is
+based on a diameter of the trunk, or a volume of the trunk, or a remaining
+volume of the trunk;
+
+computing at least one characteristic value for said several trunks,
+wherein the computation takes place on the basis of the measurement data
+divided into the trunk size classes, to describe the performance of said
+subsystem or function;
+
+repeatedly computing the characteristic value; and
+
+storing the time history of the computed characteristic value in the
+form of a performance history of the forest machine, by means of which the
+variation in time of the computed characteristic value and thereby the
+performance of the subsystem or function can be monitored.
+
+2. The method according to claim 1, characterized in
+displaying the time history in the form of an illustrative graphic
+presentation to the user.
+
+3. The method according to claim 2, characterized in that the forest machine
+comprises a control system and a display module connected to the same, and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+35
+
+to collect, during the processing of said trunk, measurement data
+associated with said trunk and relating to the function of said subsystem or the
+performing of said function;
+
+to continually collect said measurement data for several trunks
+during the processing of said several trunks;
+
+characterized in that the control system is further arranged:
+
+to make a division of said collected measurement data into several
+trunk size classes to compensate for processing conditions, wherein the
+division is based on the trunk size class of the trunk said collected
+measurement data is associated with, and wherein the trunk size class is
+based on a diameter of the trunk, or a volume of the trunk, or a remaining
+volume of the trunk;
+
+to compute at least one characteristic value for said several
+trunks, wherein the computation takes place on the basis of the measurement
+data divided into the trunk size classes, to describe the performance of
+said subsystem or function;
+
+to repeatedly compute the characteristic value; and
+
+to store the time history of the computed characteristic value in the
+form of a performance history of the forest machine, by means of which the
+variation in time of the computed characteristic value and thereby the
+performance of the subsystem or function can be monitored.
+
+14. The system according to claim 13, characterized in that the system further
+comprises a control bus arranged to operate under the control of the control
+system and to transmit said measurement data relating to the performance.
+
+15. The system according to claim 13 or 14, characterized in that the control
+system is arranged
+
+to display the time history in the form of an illustrative graphical
+representation to the user.
+
+16. The system according to claim 15, characterized in that the system
+comprises a display module related to the control system, intended to display
+said illustrative graphic representation.
+
+17. The system according to any one of the claims 13 to 16, characterized in
+that said forest machine is a harvester and said control bus is a CAN bus.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+36
+
+18. The system according to any one of the claims 13 to 17, characterized in
+that the control system is arranged
+
+to compute the characteristic value as an average for said several
+trunks.
+
+19. The system according to claim 13, characterized in that, the computed
+characteristic value being an index value, the control system is arranged
+to determine a separate index value for each trunk size class, and
+to obtain a final index value by computing a weighted average
+based on the separate index values weighted by the number of the
+measurement values for each trunk size class, for monitoring the performance
+of the function.
+
+20. The system according to any one of the claims 13 to 19, characterized in
+that the control system is arranged
+
+to compute a characteristic value describing the total performance,
+based on computed characteristic values of several different subsystems or
+functions.

@@ -1,0 +1,267 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+- 44 -
+
+CLAIMS
+
+1. An information-processing apparatus capable of
+
+maintaining a state in which a plurality of users have been
+
+logged in to the information-processing apparatus, comprising:
+
+a display control means (104) configured to cau
+
+display means (301) to switch an operation screen
+
+who is currently logged in to the init
+
+apparatus (101) between an active state, where the user
+
+sea
+
+for a user
+
+formation-processing
+
+can
+
+operate the operation screen, and an inactive state, where the
+
+user cannot operate the operation screen;
+
+a first setting means (104)
+
+point for measuring a logout time
+
+configured to set a start
+
+or a first user, when
+
+the
+
+operation screen for the first user enters the active state;
+
+a detecting means (104) configured to detect an
+
+operation via the operation screen
+
+for the first user, be
+
+fore
+
+the operation screen for the first user switches to the inactive
+
+state;
+
+a second setting means (104) configured to update
+
+the
+
+start point for the first user, when the detecting means detects
+
+the operation via the operation screen for the first user;
+
+a control means (104) configured to automatically log
+
+out the first user, when the operation screen for the first user
+
+is in the active state and the logout time has elapsed {
+
+start point for the first user (81605, YES) , and
+
+a preventing means (104) configured, while the
+
+From the
+
+operation screen for the first user is switched to the inactive
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+- 45 -
+
+state (S1607) in accordance with the operation screen for the
+
+second user entering the active state (S1608), to prevent
+
+automatic logging out of the first user, even if the operation
+
+screen for the first user is inthe inactive state and the log-out
+
+time has elapsed from the start point for the first user.
+
+2. Aninformation-processing apparatus according to claim
+
+1, wherein in a case where an instruction is input to switch
+
+the operation screen for a user from the inactive state to the
+
+active state when the display means (301) displays the operation
+
+screen for another user in the active state, the display control
+
+means (104) is adapted to switch the operation screen for the
+
+user from the inactive state to the active state and switch the
+
+operation screen for the another user from the active state to
+
+the inactive state.
+
+3. Aninformation-processing apparatus according to claim
+
+1 or claim 2, wherein in a case where the display means (301)
+
+displays the operation screen for a user in the active state,
+
+the display control means (104) is adapted to cause the display
+
+means (301) not to display an operation screen
+
+4. An information-processing apparatus
+
+for another user.
+
+according to any
+
+one of claims 1 to 3, wherein in a case where a number of users
+
+who are controlled so as to be prevented from being
+
+automatically logged out of the information-processing
+
+apparatus (101) when the log-out time has elapsed exceeds a
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+- 46 -
+
+predetermined number of users, the control means (104)
+
+adapted to log out one of the users of the
+
+information-processing apparatus (101).
+
+1s
+
+5. A method for controlling an information-processing
+
+apparatus capable of maintaining a state in which a plurality
+
+of users have been logged in to the inf
+
+apparatus (101), the method comprising:
+
+Scre
+
+formation-processing
+
+causing a display means (301) to switch an operation
+
+en for a user who is currently logged in to the
+
+info
+
+where th
+
+rmation-processing apparatus (101) between an active state
+
+e user can operate the operation screen and an inactive
+
+state where the user cannot operate the operation screen;
+
+setting a start point for measuring a logout time
+
+for
+
+a first user, when the operation screen for the first user enters
+
+the
+
+the
+
+Swit
+
+oper
+
+dete
+
+oper
+
+active state;
+
+detecting an operation via the operation screen
+
+ches to the inactive state;
+
+for
+
+first user, before the operation screen for the first user
+
+updating the start point for the first user, when
+
+the
+
+ation via the operation screen for the first user is
+cted;
+
+automatically logging out the first user, when
+ation screen for the first user is in the active state
+
+and
+
+the logout time has elapsed from the start point for the first
+
+user
+
+(S1605, YES); and
+
+preventing, while the operation screen for the first
+
+--- PAGE 4 ---
+10
+
+15
+
+- Aj -
+
+user 1S switched to the inactive state (S1607) in accordance
+
+with the operation screen for the second user entering the
+
+active state(S1608), preventing automatic logging out of the
+
+first user, even if the operation screen for the first user is
+
+in the inactive state and the logout time has elapsed from the
+
+start point for the first user.
+
+6. A program that, when executed by a computer or processor
+
+in an information-processing apparatus, causes the information
+
+processing apparatus to perform a method according to claim 5.
+
+7. A storage medium storing a program according to claim

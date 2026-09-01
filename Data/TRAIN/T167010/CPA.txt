@@ -1,0 +1,54 @@
+TITLE:
+Deputization in a distributed computing system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Methods, signals, devices, and systems are provided for delegating rights in a distributed computer system from a principal to one or more deputies. The deputies have identities separate from the principal. This allows the deputies to persist after the principal logs off the system, and permits deputization across boundaries imposed by namespaces and particular network protocols. A deputy may also delegate rights to additional deputies. Deputization is accomplished using certificates, credentials, public and private keys, process creation, and other tools and techniques.
+
+CLAIMS:
+What is claimed and desired to be secured by Letters Patent is:
+1. A method for delegating rights in a distributed computing system, the method comprising the steps of:
+receiving at a deputization point in the system a request from a principal for delegation of at least one right of the principal to at least one deputy, the request identifying the principal and the rights to be delegated, the principal having a public key and a corresponding private key;
+creating at least one deputy having an identity which is different from the identity of the principal such that the deputy can persist even after the principal is logged off of the computing system;
+providing the deputy with a public key and a corresponding private key; and
+forming a deputy credential which identifies the principal, identifies the rights delegated to the deputy by the principal, contains the deputy private key encrypted with the principal public key, contains the deputy public key, and is signed by the deputization point;
+wherein the deputy is a first deputy and the method further comprises the step of delegating at least one right from the first deputy to a second deputy by conducting delegation steps with the first deputy acting as the principal and the second deputy as the deputy; and
+wherein the deputization point is a first deputization point, and the step of delegating at least one right from the first deputy to a second deputy utilizes a second deputization point.
+2. The method of claim 1, further comprising the step of authenticating the principal to the deputization point prior to forming the deputy credential.
+3. The method of claim 1, further comprising the step of using the deputy credential to authenticate the deputy after the principal has logged off the system.
+4. The method of claim 1, further comprising the step of deputizing a function using the deputy credential, the function being provided by the principal.
+5. The method of claim 1, wherein the distributed computing system includes at least two networks, one of which networks contains the principal, and the step of creating a deputy comprises the steps of:
+authenticating to a distributed deputization point which is known by a different network in the distributed computing system, that is, a network other than the network containing the principal; and
+obtaining a deputy identifier from that distributed deputization point.
+6. A distributed computing system supporting deputization, the system comprising:
+at least two computers, each having a memory and a processor;
+a communications link between the computers;
+principal located on one of the computers contained within a first network included within the distributed computing system;
+a deputization point located on another of the computers, the principal and the deputization point configured to communicate with one another through the communications link, wherein the deputization point is known by a different network in the distributed computing system, the different network being a network other than the first network containing the principal;
+authentication means for authenticating the principal to the deputization point; and
+deputization means for delegating at least one right of the principal to at least one deputy after the principal is authenticated to the deputization point, wherein the at least one deputy has an identity which is different from the identity of the principal.
+7. The distributed computing system of claim 6, wherein the principal is a user task.
+8. The distributed computing system of claim 6, wherein the principal is a system task.
+9. The distributed computing system of claim 6, wherein the system spans at least two namespaces, the principal is in one namespace, and the deputy is in a second namespace.
+10. The distributed computing system of claim 9, wherein at least one of the namespaces is maintained using a distributed directory service.
+11. A computer storage medium having a configuration that represents data and instructions which will cause performance of method steps for delegating rights in a distributed computing system, the method comprising the steps of:
+authenticating to a deputization point in the system;
+requesting that the deputization point delegate at least one right, the request identifying the requester and the rights to be delegated; and
+delegating the rights to a deputy which has an identity different from the identity of the requester, the delegation being recorded in a deputy credential which identifies the requester, identifies the deputy, identifies the rights delegated, and is signed by the deputization point;
+wherein the system spans at least two namespaces, the requester being in one namespace and the deputy being in a second namespace.
+12. The configured storage medium of claim 11, further comprising the step of using the deputy credential to authenticate the deputy after the requester has logged off the system.
+13. The configured storage medium of claim 11, wherein the requester previously received rights which were delegated to it as a deputy, the rights having been delegated to the requester by previously executed authenticating, requesting, and delegating steps.
+14. The configured storage medium of claim 11, wherein the method further comprises the step of specifying an expiration event, upon a subsequent occurrence of which the delegated rights would expire.
+15. The configured storage medium of claim 14, wherein the expiration event specifies a life span for the delegated rights.
+16. The configured storage medium of claim 11, wherein the method further comprises a step in which the requester deputizes a function using the deputy credential.
+17. The configured storage medium of claim 11, wherein at least the requesting and delegating steps are repeated to generate at least three deputies whose rights are directly or indirectly traceable through delegation back to the requester.
+18. A distributed computing system supporting deputization, the system comprising:
+at least two computers, each having a memory and a processor;
+a communications link between the computers;
+a principal located on one of the computers;
+a deputization point located on another of the computers, the principal and the deputization point configured to communicate with one another through the communications link;
+authentication means for authenticating the principal to the deputization point; and
+deputization means for delegating at least one right of the principal to at least one deputy after the principal is authenticated to the deputization point;
+wherein the system spans at least two namespaces, the principal is in one namespace, and the deputy is in a second namespace.

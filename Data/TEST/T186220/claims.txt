@@ -1,0 +1,108 @@
+--- PAGE 1 ---
+MAIN REQUEST
+WHAT IS CLAIMED IS:
+
+1. A method, comprising:
+
+injecting (312) a randomly determined amount of dither into a digital-to-analog
+converter (DAC) component in a first stage (100) of a multi-stage pipelined analog-to-digital
+converter (ADC), the DAC having a switched capacitor network comprising a plurality of
+capacitors (8C) that are switchably connected to an input signal source to the ADC, wherein
+the dither is injected by:
+
+connecting a first capacitor (CCal) to a first or second reference voltage
+
+(Vref+, Vref-) in accordance with a randomly generated number (RN) when the
+
+switched capacitor network is disconnected from the input signal source during a hold
+
+phase of the switched capacitor network, and
+
+connecting the first capacitor in parallel with the capacitors of the switched
+
+capacitor network when the switched capacitor network is connected to the input
+
+signal source to sample an input signal (Vin+, Vin-) during a subsequent sampling
+
+phase of the switched capacitor network, such that in the presence of kickback
+
+between the switched capacitor network and the input signal source, at least some
+
+charge from the first capacitor is sampled by the switched capacitor network with the
+
+input signal at the end of the subsequent sampling phase;
+
+after injecting the dither, determining (316) at least one gain coefficient (GC) by
+correlating the random number (RN) and an overall digital output of the ADC corresponding
+to the input signal sampled during the subsequent sampling phase, wherein the gain
+coefficient is indicative of a transfer function of the kick-back;
+
+generating (320), as a function of the at least one gain coefficient, the random number
+(RN) and a digital output of the first stage (D1) corresponding to a previous input sample, at
+least two correction values corresponding to a contribution of the kick-back to the overall
+digital output of the ADC; and
+
+subtracting (320) the correction values from the overall digital output of the ADC,
+
+thereby correcting for kick-back errors in the overall digital output.
+2. The method of claim 1, wherein one or more of the following applies:
+
+a) the at least one gain coefficient is stored together with the random number and the
+
+digital output (D1) of the first stage of the multi-stage ADC in a storage memory;
+
+NYO1 2257711 -15-
+
+--- PAGE 2 ---
+b) the at least one gain coefficient includes a first order (linear) gain coefficient and at
+least one higher order (non-linear) gain coefficient;
+c) the at least one gain coefficient is determined using a least means square (LMS)
+
+algorithm.
+
+3. A multi-stage pipelined analog-to-digital converter (ADC), comprising:
+
+a hardware arrangement that injects a randomly determined amount of dither into a
+digital-to-analog (DAC) component in a first stage (100) of the multi-stage ADC, the DAC
+having a switched capacitor network comprising a plurality of capacitors (8C) that are
+switchably connected to an input signal source to the ADC, the hardware arrangement
+configured to inject the dither by:
+
+connecting a first capacitor (CCal) to a first or second reference voltage (Vref+, Vref-
+) in accordance with a randomly generated number (RN) when the switched capacitor
+network is disconnected from the input signal source during a hold phase of the switched
+capacitor network, and
+
+connecting the first capacitor in parallel with the capacitors of the switched capacitor
+network when the switched capacitor network is connected to the input signal source to
+sample an input signal (Vint, Vin-) during a subsequent sampling phase of the switched
+capacitor network, such that in the presence of kickback between the switched capacitor
+network and the input signal source, at least some charge from the first capacitor is sampled
+by the switched capacitor network with the input signal at the end of the subsequent sampling
+phase;
+
+a correlation circuit that, after the dither is injected, determines at least one gain
+coefficient (GC) by correlating the random number (RN) and an overall digital output of the
+ADC corresponding to the input signal sampled during the subsequent sampling phase,
+wherein the gain coefficient is indicative of a transfer function of the kick-back; and
+
+a correction circuit that generates, as a function of the at least one gain coefficient, the
+random number (RN) and a digital output of the first stage (D1) corresponding to a previous
+input sample, at least two correction values corresponding to a contribution of the kick-back
+to the overall digital output of the ADC, and subtracts the correction values from the overall
+digital output of the ADC, thereby correcting for kick-back errors in the overall digital
+
+output.
+
+4. The device of claim 3, wherein one or more of the following applies:
+
+--- PAGE 3 ---
+a) the at least one gain coefficient is stored together with the random number and the
+digital output (D1) of the first stage of the multi-stage ADC in a storage memory;
+b) the at least one gain coefficient includes a first order (linear) gain coefficient and at
+
+least one higher order (non-linear) gain coefficient.
+
+5. The device of claim 3, wherein the at least one gain coefficient is determined using a
+
+least means square (LMS) algorithm.

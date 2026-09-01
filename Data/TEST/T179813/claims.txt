@@ -1,0 +1,444 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+What is claimed:
+
+1. Amethod for forecasting a value of a weather-based structured financial
+product for steering of an optimal weather derivative portfolio based on specified
+weather measures comprising temperature and/or precipitation and/or hours of
+sunshine and/or heating degree days and/or cooling degree days and/or wind speed
+
+retrieved from a weather data measuring and monitoring system comprising:
+
+calculating reference weather data at least including temperature data
+from historical weather data at least including temperature data stored in a database
+(16) or retrieved from an external weather-data measuring system (5) by means of a
+weather reference module (11) for a defined time period and a defined geographical
+area, wherein the historical weather data covering a plurality of years as a time series, is
+decomposed in portions with deterministic data and a portion with stochastic data,
+wherein the deterministic portions include historical trend data and seasonal pattern
+
+data, and wherein the reference weather data is determined for the defined time
+
+period and the defined geographical area defined in correspondence with the
+parameters of the structured financial product to be forecasted by establishing the
+reference weather data from the deterministic data, applicable to the defined time
+period, through auto regression, and from stochastic data determined for the time
+
+period;
+
+establishing forecasted weather data by means of a weather forecast
+module (12) based on multi-year historical weather data and long-term weather
+forecast data covering one or more months and storing the forecasted weather data
+
+as multiple sets of forecasted weather data for subsequent time periods in database
+
+(16) assigned to their respective time period:
+
+calculating weighted forecasted weather data by means of a weighting
+
+module (121) from the multiple sets of forecasted weather data stored in the database
+
+(16), wherein each set of forecasted weather data is weighted by a weighting factor
+
+having a value that increases from one time period to the next subsequent time period:
+
+calculating a forecasted weather index at least including an average
+
+temperature, a cumulative temperature a number of heating degree days ora
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+number of cooling degree days for the defined time period and the defined
+geographic area from the forecasted weather data, wherein the type of index is
+defined by a respective parameter of the financial product to be forecasted, and
+calculating a forecast value of the structured financial product based on forecasted
+weather data for a defined time period and a defined geographical area, wherein the
+forecast value is calculated by applying structural parameters of the financial product
+
+to the forecasted weather index determined from the forecasted weather data;
+
+calculating a reference weather index at least including an average
+
+temperature, a cumulative temperature a number of heating degree days ora
+number of cooling degree days for the defined time period and the defined
+geographic area from the reference weather data by means of a reference module
+
+(13), wherein the type of index is defined by a respective parameter of the financial
+
+product to be forecasted, and calculating a reference value of the structured financial
+
+product based on the reference weather data, wherein the reference value is
+
+calculated by applying the structural parameters of the financial product to the
+
+reference weather index determined from the reference weather data;
+
+calculating a ranked probability score for the reference weather data by
+integrating a cumulative distribution function of the forecasted weather data
+
+representing the actual relevant weather situation, and calculating a ranked
+
+probability score for the forecasted weather data, by integrating a cumulative
+distriobution function of the forecasted weather data representing the actual relevant
+
+weather situation,
+
+calculating a quality indicator by means of a quality indicator module (15),
+indicative of a forecasting quality associated with the forecasted weather data, based
+on the forecasted weather data and the reference weather data, wherein the quality
+
+indicator is calculated as a ranked probability skill score from the ranked probability
+
+score for the forecasted weather data and the ranked probability score for the
+reference weather data, the ranked probability skill score indicating the accuracy of
+the forecast of the weather data compared to the reference weather data according
+to the percentage of improvement in accuracy of the forecast weather data over the
+
+reference weather data; and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+calculating the value of the financial product by means of a value
+forecasting module from the reference value and from the forecast value weighted by
+
+the quality indicator, wherein the influence of the forecasted value on the calculated
+
+value of the financial product is adjusted.
+
+2. The method according to claim 1, wherein the forecasted weather data,
+
+the reference weather data, and the historical weather data include temperature
+
+data; and wherein the forecasted weather index and the reference weather index
+
+include one of average temperature, cumulative temperature, number of heating
+
+degree days, and number of cooling degree days for the defined time period and the
+
+defined geographical area.
+
+3. The method according to one of the claims 1 or 2, wherein calculating
+the quality indicator includes calculating a ranked probability score for the forecasted
+weather data, calculating a ranked probability score for the probability weather data,
+
+and calculating the quality indicator as a ranked probability skill score from the ranked
+
+probability score for the forecasted weather data and the ranked probability score for
+
+the reference weather data.
+
+4. The method according to one of the claims 1 to 3, wherein the
+forecasted weather data is calculated from multi-year historical weather data and
+
+from long-term weather forecast data covering one or more months.
+
+5. The method according to claim 4, wherein calculating the forecasted
+weather data includes determining for the defined time period a first cumulated
+distribution function for the historical weather data, calculating cumulative values
+included in terciles of the first cumulated distribution function, and determining for the
+defined time period a second cumulated distribution function for the forecasted
+weather data by downscaling the first cumulated distribution function using quantile
+levels obtained from the long term weather forecast data for the cumulative values
+
+included in the terciles of the first cumulated distribution function.
+
+6. The method according to claim 4, wherein calculating the forecasted
+weather data includes determining for the defined time period a reference climatology
+
+comprising deterministic components from the historical weather data, and calculating
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+the forecasted weather data from the reference climatology and from ensemble
+
+forecasts for the defined time period.
+
+7. The method according to one of the claims 1 to 6, wherein multiple sets
+
+of forecasted weather data for subsequent time periods are stored assigned to their
+
+respective time period; and wherein the forecasted weather data is calculated from
+
+the multiple sets of forecasted weather data, each set of forecasted weather data
+
+being weighted by a weighting factor having a value increasing from one time period
+
+to a subsequent time period.
+
+8. The method according to one of the claims 1 to 7, wherein the
+forecasted weather data includes a first cumulative distribution function of temperature
+data determined from multi-year historical temperature data and from long term
+temperature forecast data covering one or more months; wherein calculating the
+reference weather data includes determining a second cumulative distribution function
+of temperature data by applying a stochastic time series model to the historical
+
+temperature data; wherein the forecast value is calculated by applying structural
+
+parameters of the financial product to a forecasted weather index determined from
+
+the first cumulative distribution function; wherein the reference value is calculated by
+applying structural parameters of the financial product to a reference weather index
+determined from the second cumulative distribution function; wherein calculating the
+quality indicator includes calculating a first ranked probability score based on the first
+cumulative distribution function, calculating a second ranked probability score based
+on the second cumulative distribution function, and calculating the quality indicator as
+a ranked probability skill score from the first ranked probability score and the second
+ranked probability score; and wherein the value of the financial product is calculated
+from the reference value and from the forecast value weighted by the quality
+
+indicator.
+
+9. Asystem for forecasting a value of a weather-based structured financial
+product for optimized steering of a weather derivative portfolio based on specified
+weather measures comprising temperature and/or precipitation and/or hours of
+sunshine and/or heating degree days and/or cooling degree days and/or wind speed
+
+retrieved from a weather data measuring and monitoring system, Comprising:
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+a weather forecast module (12) for establishing forecasted weather data
+by means of based on multi-year historical weather data and long-term weather
+forecast data covering one or more months and to store the forecasted weather data
+as multiple sets of forecasted weather data for subsequent time periods in database
+
+(16) assigned to their respective time period:
+
+a weather reference module (11) for calculating reference weather data
+at least including temperature data from historical weather data at least including
+temperature data stored in a database (16) or retrieved from an external weather-data
+measuring system (5) for the defined time period and the defined geographical area
+
+by applying a stochastic time series model to the historical weather data;
+
+a weighting module (121) for calculating weighted forecasted weather
+
+data used for further computation from the multiple sets of forecasted weather data
+
+stored in the database (16), wherein each set of forecasted weather data is weighted
+
+by a weighting factor having a value that increases from one time period to the next
+
+subsequent time period:
+
+means for calculating a forecasted weather index at least including an
+average temperature, a cumulative temperature a number of heating degree days or
+a number of cooling degree days for the defined time period and the defined
+geographic area from the forecasted weather data, wherein the type of index is
+defined by a respective parameter of the financial product to be forecasted, and
+means for calculating a forecast value of the structured financial product based on
+forecasted weather data for a defined time period and a defined geographical area,
+
+wherein the forecast value is calculated by applying structural parameters of the
+
+financial product to the forecasted weather index determined from the forecasted
+
+weather data;
+
+a reference module (13) for calculating a reference weather index at least
+including an average temperature, a cumulative temperature a number of heating
+degree days or a number of cooling degree days for the defined time period and the
+defined geographic area from the reference weather data, wherein the type of index
+is defined by a respective parameter of the financial product to be forecasted, and
+
+calculating a reference value of the structured financial product based on the
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+20
+
+reference weather data, wherein the reference value is calculated by applying the
+
+structural parameters of the financial product to the reference weather index
+
+determined from the reference weather data;
+
+means for calculating a ranked probability score for the reference weather
+data by integrating a cumulative distribution function of the forecasted weather data
+representing the actual relevant weather situation, and means calculating a ranked
+
+probability score for the forecasted weather data, by integrating a cumulative
+
+distribution function of the forecasted weather data representing the actual relevant
+
+weather situation,
+
+a quality indicator module (15) for calculating a quality indicator, indicative
+of a forecasting quality associated with the forecasted weather data, based on the
+forecasted weather data and the reference weather data, wherein the quality
+indicator is calculated as a ranked probability skill score from the ranked probability
+
+score for the forecasted weather data and the ranked probability score for the
+
+reference weather data, the ranked probability skill score indicating the accuracy of
+the forecast of the weather data compared to the reference weather data according
+to the percentage of improvement in accuracy of the forecast weather data over the
+
+reference weather data; and
+
+a value forecasting module (14) for calculating the value of the financial
+
+product from the reference value and from the forecast value weighted by the quality
+
+indicator, wherein the influence of the forecasted value on the calculated value of the
+
+financial product is adjusted.
+
+10. The computer system according to claim 9, wherein the forecasted
+
+weather data, the reference weather data, and the historical weather data include
+
+temperature data; and wherein the forecasted weather index and the reference
+
+weather index include one of average temperature, cumulative temperature, number
+of heating degree days, and number of cooling degree days for the defined time
+
+period and the defined geographical area.
+
+11. The computer system according to one of the claims 9 and 10, wherein
+
+the quality indicator module is configured to calculate a ranked probability score for
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+21
+
+the forecasted weather data, to calculate a ranked probability score for the reference
+weather data, and to calculate the quality indicator as a ranked probability skill score
+
+from the ranked probability score for the forecasted weather data and the ranked
+
+probability score for the reference weather data.
+
+12. The computer system according to one of the claims 9 to 11, wherein
+the system includes a weather forecast module for calculating the forecasted weather
+data from multi-year historical weather data and from long-term weather forecast data
+
+covering one or more months.
+
+13. The computer system according to claim 12, wherein the weather
+
+forecast module is configured to determine for the defined time period a first
+
+cumulated distribution function for the historical weather data, to calculate cumulative
+values included in terciles of the first cumulated distribution function, and to determine
+for the defined time period a second cumulated distribution function for the forecasted
+weather data, by downscaling the first cumulated distribution function using quantile
+levels, obtained from the long term weather forecast data, for the cumulative values
+
+included in the terciles of the first cumulated distribution function.
+
+14. The computer system according to claim 12, wherein the weather
+
+forecast module is configured to determine for the defined time period a reference
+climatology comprising deterministic components from the historical weather data,
+and to calculate the forecasted weather data from the reference climatology and
+
+from ensemble forecasts for the defined time period.
+
+15. The computer system according to one of the claims 9 to 14, wherein
+
+the system includes a database with multiple sets of forecasted weather data for
+
+subsequent time periods, each set stored assigned to its respective time period: and
+wherein the system includes a weather forecast module for calculating the forecasted
+weather data from the multiple sets of forecasted weather data, each set of
+forecasted weather data being weighted by a weighting factor having a value
+
+increasing from one time period to a subsequent time period.
+
+16. The computer system according to one of the claims 9 to 15, wherein
+
+the forecasted weather data includes a first cumulative distribution function of
+
+--- PAGE 8 ---
+10
+
+15
+
+22
+
+temperature data determined from multi-year historical temperature data and from
+long term temperature forecast data covering one or more months; wherein the system
+includes a weather reference module for calculating the reference weather data, the
+weather reference module being configured to determine a second cumulative
+distribution function of temperature data by applying a stochastic time series model to
+the historical temperature data; wherein the value forecasting module is configured to
+calculate the forecast value by applying structural parameters of the financial product
+
+to a forecasted weather index determined from the first cumulative distribution
+
+function; wherein the reference module is configured to calculate the reference value
+by applying structural parameters of the financial product to a reference weather
+index, determined from the second cumulative distribution function; wherein the quality
+indicator module is configured to calculate a first ranked probability score based on
+the first cumulative distribution function, to calculate a second ranked probability score
+based on the second cumulative distribution function, and to calculate the quality
+indicator as a ranked probability skill score from the first ranked probability score and
+the second ranked probability score; and wherein the value forecasting module is
+configured to calculate the value of the financial product from the reference value
+
+and from the forecast value weighted by the quality indicator.

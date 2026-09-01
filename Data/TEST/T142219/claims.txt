@@ -1,0 +1,257 @@
+--- PAGE 1 ---
+GGL410EP 14 768 301.5
+New independent claims 23.04.2018
+
+1. A computer-implemented method (400) for determining content visibility
+when a content item is included in a cross-domain iframe (308), comprising:
+
+determining (402) a first estimate of a size of a webpage viewing area (206)
+of a viewport (202) associated with a browser including (1) reading, from inside the
+iframe (308), an outer bound for size of the viewport (202), (i) performing a
+statistical analysis to determine an average size of one or more browser elements
+(204, 208a, 208b) including determining a browser header (204) size based on
+historical measurements that are gathered as statistical data, and (iii) subtracting from
+the size of the viewport (202) the average size of the one or more browser elements
+(204, 208a, 208b);
+
+determining (404) a second estimate for a size of the content item for display
+in the webpage viewing area (206), including reading iframe inside measurements
+for the iframe (308) from the browser;
+
+determining (406) content item visibility including determining of a location
+of the content item relative to the webpage viewing area (206) by reading a location
+of the viewport (202) and, from inside the iframe (308), a location of the iframe (308)
+within the viewport (202) in screen coordinates and calculating how much of the
+content item is visible by determining an area of overlap of two rectangles, the first
+rectangle defined by the location of the viewport (202) and the estimate of the
+webpage viewing area (206), and the second rectangle defined by the location of the
+iframe (308) and the size of the content item; and
+
+reporting (408) information about the visibility of the content item to a
+
+content sponsor.
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+35
+
+Google Inc. ~1- EPA-130 678
+14 768 301,5-1951 30.05.2017
+
+Amended Claims
+
+Hh--—A-compu erinpiementec method for tor cete ieorcontent visibitihr wher
+
+a content item is included In a cross-domain iframe (308), comprising:
+
+determining (402) a first estimate of a size of a webpage viewing ared (206)
+of a viewport (202) associated with a browser including reading an outef bound for a
+size of the viewport (202), performing a statistical analysis to determine an estimated
+size of one or more browser elements (204, 208a, 208b), and-subtracting from the
+size of the viewport (202) the estimated size of the one or’more browser elements
+(204, 208a, 208b);
+
+determining (404) a second estimate for aSize of the content item for display
+in the webpage viewing area (206), including‘reading iframe inside measurements
+for the frame (308) from the browser;
+
+determining (406) content Itern visibility including determining a location of
+the content item relative to the- Webpage viewing area (206) by reading a location of
+the viewport (202) and theframe (308) in screen coordinates and calculating how
+much of the content |kem is visible by determining an area of overlap of two rectan-
+gles, the first rectahgle defined by the location of the viewport (202) and the esti-
+mate of the wébpage viewing area (206), and the second rectangle defined by the
+location ef the iframe (308) and the size of the content item; and
+
+reporting (408) information about the visibility of the content item to a content
+
+sponser-108}-|
+
+2. The method of claim 1, wherein determining the first estimate includes one of
+subtracting an estimated size of a browser header (204) from the size of the view-
+port (202) and subtracting an estimated size for a browser header (204) and a scroll-
+bar (208a, 208b).
+
+3. The method of claim 1, wherein determining content item visibility further
+includes compensating for an estimated size of the one or more browser elements
+(204, 208a, 208b) In the viewport (202).
+
+4, The method of claim 1, wherein determining the first estimate further Includes
+performing a statistical analysis to determine an average size of the one or more
+browser elements (204, 208a, 208b).
+
+--- PAGE 3 ---
+15
+
+20
+
+25
+
+30
+
+35
+
+Google Inc. ~2- EPA-130 678
+14 768 301.5-1954 30.05.2017
+
+5. The method of claim 1, wherein determining the second estimate includes
+approximating the size of the content item as being a same size as an inside portion
+of the iframe (308).
+
+6. The method of claim 1, wherein determining the location of the content item
+further includes using an API of the browser to locate the viewport (202) and the
+iframe (308) in screen coordinates.
+
+7. The method of claim 6, wherein the browser Is a Firefox® browser.
+
+8. The method of claim 1, wherein reporting the visibility further includes report-
+ing to the content sponsor (108) whether the content item was visible when present-
+ed to a user in association with a delivery of the content item to the cross-domain
+
+iframe (308).
+
+9. The method of claim 1, wherein the content item is an advertisement.
+
+(204, 208a, 208b);
+
+determine (404) a second estimate for asize of a content Item for display in
+the webpage viewing area (206), including réading iframe inside measurements for
+the iframe (308) from the browser;
+
+determine (406) content iten visibility including determining a location of the
+content item relative to the webpage viewing area (206) by reading a location of the
+viewport (202) and the ifratne (308) In screen coordinates and calculating how much
+of the content item is visible by determining an area of overlap of two rectangles, the
+first rectangle va by the location of the viewport (202) and the estimate of the
+webpage ve ng area (206), and the second rectangle defined by the location of the
+
+iframe ) and the size of the content item; and
+report (408) information about the visibility of the content item to a content
+
+--- PAGE 4 ---
+GGL410EP 14 768 301.5
+New independent claims 23.04.2018
+
+10. A computer program product embodied in a tangible medium including
+instructions, that when executed, cause one or more processors to:
+
+determine (402) a first estimate of a size of a webpage viewing area (206) of
+a viewport (202) associated with a browser including (i) reading, from inside the
+iframe (308), an outer bound for size of the viewport (202), Gi) performing a
+statistical analysis to determine an average size of one or more browser elements
+(204, 208a, 208b) including determining a browser header (204) size based on
+historical measurements that are gathered as statistical data, and (iii) subtracting from
+the size of the viewport (202) the average size of the one or more browser elements
+(204, 208a, 208b);
+
+determine (404) a second estimate for a size of the content item for display in
+the webpage viewing area (206), including reading iframe inside measurements for
+the iframe (308) from the browser;
+
+determine (406) content item visibility including determining of a location of
+the content item relative to the webpage viewing area (206) by reading a location of
+the viewport (202) and, from inside the iframe (308), a location of the iframe (308)
+within the viewport (202) in screen coordinates and calculating how much of the
+content item is visible by determining an area of overlap of two rectangles, the first
+rectangle defined by the location of the viewport (202) and the estimate of the
+webpage viewing area (206), and the second rectangle defined by the location of the
+iframe (308) and the size of the content item; and
+
+report (408) information about the visibility of the content item to a content
+
+Sponsor.
+
+--- PAGE 5 ---
+GGL410EP 14 768 301.5
+New independent claims 23.04.2018
+
+12. Asystem comprising:
+
+one or more processors; and
+
+one or more memory elements including instructions that, when executed,
+cause the one or more processors to:
+
+determine (402) a first estimate of a size of a webpage viewing area (206) of
+a viewport (202) associated with a browser including (i) reading, from inside the
+iframe (308), an outer bound for size of the viewport (202), (1) performing a
+statistical analysis to determine an average size of one or more browser elements
+(204, 208a, 208b) including determining a browser header (204) size based on
+historical measurements that are gathered as statistical data, and (111) subtracting from
+the size of the viewport (202) the average size of the one or more browser elements
+(204, 208a, 208b);
+
+determine (404) a second estimate for a size of the content item for display in
+the webpage viewing area (206), including reading iframe inside measurements for
+the iframe (308) from the browser;
+
+determine (406) content item visibility including determining of a location of
+the content item relative to the webpage viewing area (206) by reading a location of
+the viewport (202) and, from inside the iframe (308), a location of the iframe (308)
+within the viewport (202) in screen coordinates and calculating how much of the
+content item is visible by determining an area of overlap of two rectangles, the first
+rectangle defined by the location of the viewport (202) and the estimate of the
+webpage viewing area (206), and the second rectangle defined by the location of the
+iframe (308) and the size of the content item; and
+
+report (408) information about the visibility of the content item to a content
+
+Sponsor.
+
+--- PAGE 6 ---
+10
+
+20
+
+25
+
+30
+
+Google Inc. ~3- EPA-130 678
+14 768 301.5-1951 30.05.2017
+
+11. The computer program product of claim 10, wherein determining content item
+visibility further includes compensating for an estimated size of the one or more
+browser elements (204, 208a, 208b) in the viewport (202); or determining the first
+estimate Includes subtracting an estimated size of a browser header (204) from the
+size of the viewport (202).
+
+one or more processors; and
+
+one or more memory elements including instructions that, when execxdted,
+cause the one or more processors to:
+
+determine (402) a first estimate of a size of a webpage viewjng area (206) of
+a viewport (202) associated with a browser Including reading an-Outer bound for a
+size of the viewport (202), performing a statistical analysis te determine an estimated
+size of one or more browser elements (204, 208a, 208b)7 and subtracting from the
+size of the viewport (202) the estimated size of the ehe or more browser elements
+(204, 208a, 208b);
+
+determine (404) a second estimate for’a size of a content item for display in
+the webpage viewing area (206), Includivfg reading iframe inside measurements for
+the iframe (308) from the browser;
+
+determine (406) content item visibility including determining a location of the
+content item relative to the webpage viewing area (206) by reading a location of the
+viewport (202) and the Jffame (308) in screen coordinates and calculating how much
+of the content item Js’visible by determining an area of overlap of two rectangles, the
+first rectangle defined by the location of the viewport (202) and the estimate of the
+webpage viewing area (206), and the second rectangle defined by the location of the
+iframe (308) and the size of the content item; and
+
+report (408) Information about the visibility of the content item to a content
+
+“4 it
+oe a
+
+a
+
+13. The system of claim 12, wherein determining content item visibility further
+includes compensating for an estimated size of the one or more browser elements
+(204, 208a, 208b) In the viewport (202).

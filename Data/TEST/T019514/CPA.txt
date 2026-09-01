@@ -1,0 +1,33 @@
+TITLE:
+Multimodal natural language interface for cross-application tasks
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A multimodal natural language interface interprets user requests combining natural language input from the user with information selected from a current application and sends the request in the proper form to an appropriate auxiliary application for processing. The multimodal natural language interface enables users to combine natural language (spoken, typed or handwritten) input selected by any standard means from an application the user is running (the current application) to perform a task in another application (the auxiliary application) without either leaving the current application, opening new windows, etc., or determining in advance of running the current application what actions are to be done in the auxiliary application. The multimodal natural language interface carries out the following functions: (1) parsing of the combined multimodal input; (2) semantic interpretation (i.e., determination of the request implicit in the pars); (3) dialog providing feedback to the user indicating the systems understanding of the input and interacting with the user to clarify the request (e.g., missing information and ambiguities); (4) determination of which application should process the request and application program interface (API) code generation; and (5) presentation of a response as may be applicable. Functions (1) to (3) are carried out by the natural language processor, function (4) is carried out by the application manager, and function (5) is carried out by the response generator.
+
+CLAIMS:
+Having thus described my invention, what I claim as new and desire to secure by Letters Patent is as follows:
+1. A multimodal natural language interface for a computer system which interprets user requests combining natural language input from the user with information selected from a current application running on the computer system and sends the request in proper form to an appropriate auxiliary application for processing, the multimodal natural language interface comprising:
+a dispatcher receiving a natural language input from the user and combining the natural language input with input information selected from a current application to form a combined multimodal request;
+a parser receiving the combined multimodal request for parsing the combined multimodal request;
+a natural language processor performing semantic interpretation of the parsed combined multimodal request and generating a semantic representation of the combined multimodal request;
+an application manager receiving the semantic representation from the natural language processor for determining which auxiliary application should process the request, said application manager invoking the auxiliary application and generating application program interface (API) code to access requested information via the auxiliary application, the accessed requested information being supplied to said dispatcher; and
+a response generator receiving the accessed requested information from the dispatcher for generating a response as may be applicable to the user's request.
+2. The multimodal natural language interface recited in claim 1 further comprising a dialog manager providing feedback to the user indicating the system's understanding of the input and interacting with the user to clarify the request, if necessary.
+3. The multimodal natural language interface recited in claim 2 wherein said dispatcher forms the combined multimodal request by concatenating the user natural language input with the input information selected from the current application running on the system.
+4. The multimodal natural language interface recited in claim 3 wherein the application manager includes a concept/application registration table, said application manager finding all concepts in the semantic representation from the natural language processor and then finding all applications registered in said concept/application registration table for those concepts.
+5. A method implemented in a computer system for interpreting user requests by combining natural language input from a user with information selected from a current application running on the computer system comprising the steps of:
+receiving a natural language input from the user and combining the natural language input with input information selected from a current application to for a combined multimodal request;
+parsing the combined multimodal request;
+performing semantic interpretation of the parsed combined multimodal request to generate a semantic representation of the combined multimodal request;
+determining of which auxiliary application should process the request;
+invoking the auxiliary application and generating application program interface (API) code to access requested information via the auxiliary application; and
+receiving the accessed requested information and generating a response as may be applicable to the user's request.
+6. The method recited in claim 5 further comprising the step of providing feedback to the user indicating the system's understanding of the input and interacting with the user to clarify the request, if necessary.
+7. The method recited in claim 6 wherein the step of combining is performed by concatenating the user natural language input with the input information selected from the current application running on the system.
+8. The method recited in claim 7 further comprising the steps of:
+generating a concept/application registration table;
+finding all concepts in the semantic representation; and
+then finding all applications registered in said concept/application registration table for those concepts.

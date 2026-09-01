@@ -1,0 +1,116 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+Claims
+
+1. A method, comprising:
+at an electronic device configured to execute software that includes a view hierarchy with a
+plurality of views:
+
+displaying a plurality of views of the view hierarchy;
+
+executing one or more software elements, each software element being associated
+with a particular view, wherein each particular view includes one or more event recognizers,
+each event recognizer having:
+
+an event definition based on one or more sub-events; and
+an event handler, wherein the event handler:
+specifies an action for a target; and
+is configured to send the action to the target in response to the event
+
+recognizer detecting an event corresponding to the event definition;
+
+detecting a sequence of one or more sub-events;
+
+identifying one of the views of the view hierarchy, that is a lowest level view in the
+view hierarchy in which a first sub-event in the sequence of one or more sub-events occurs,
+as a hit view, wherein the hit view establishes which views in the view hierarchy are
+actively involved views;
+
+delivering a respective sub-event to event recognizers for a first actively involved
+view and to event recognizers for a second actively involved view within the view
+hierarchy; and
+
+at the event recognizers for the first and second actively involved views in the view
+hierarchy, concurrently processing the respective sub-event prior to concurrently processing
+a next sub-event in the sequence of sub-events at the event recognizers for the first and
+
+second actively involved views in the view hierarchy.
+
+2. The method of claim 1, wherein a third actively involved view within the view
+hierarchy is either configured to prevent delivery of the respective sub-event to one or more
+event recognizers associated with the third actively involved view or
+
+is configured to prevent delivery of the respective sub-event to one or more event
+recognizers associated with the third actively involved view unless the third actively
+
+involved view is the hit view.
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+3. The method of claim 1, wherein a third actively involved view within the view
+hierarchy is configured to prevent delivery of the respective sub-event to one or more event
+recognizers associated with the third actively involved view and to one or more event
+
+recognizers associated with one or more ancestors of the third actively involved view.
+
+4. The method of any of claims 1 to 3, wherein:
+at least one of the one or more event recognizers is a gesture recognizer having a
+
+gesture definition and a gesture handler.
+
+5. The method of any of claims 1 to 4, wherein the electronic device further comprises
+
+a touch sensitive surface configured to detect multi-touch gestures.
+
+6. The method of any of claims 1 to 5, wherein the sequence of one or more sub-events
+
+includes primitive touch events.
+
+7. The method of any of claims | to 6, wherein each event recognizer has a set of event
+recognition states including at least an event possible state, an event impossible state, and an
+
+event recognized state.
+
+8. The method of claim 7, wherein a respective event handler is configured to initiate
+preparation of a corresponding action for delivery to the target if the respective event
+
+recognizer enters the event possible state.
+
+9. The method of any of claims 1 to 8, wherein each event recognizer has a view
+hierarchy reference for establishing which view is coupled to the event recognizer, and
+
+metadata including configurable properties of the event recognizer.
+
+10. The method of claim 4, wherein at least one event recognizer of the one or more
+event recognizers is adapted to delay delivering one or more sub-events of the sequence of
+sub-events to the at least one event recognizer’s hit view until it has been determined that
+the sequence of sub-events does not correspond to the event definition of the event
+
+recognizer.
+
+11. The method of any of claims 1 to 10, wherein:
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+one or more exclusive event recognizers, comprising a subset of the event
+recognizers for the first and second actively involved views, are configured to perform
+exclusive event recognition, and
+
+when any of the one or more exclusive event recognizers recognizes a particular
+sub-event, an event delivery system prevents any other event recognizers for the first and
+second actively involved views in the view hierarchy from receiving subsequent sub-events
+
+of the sequence of sub-events.
+
+12. A computer readable storage medium storing one or more programs for execution by
+one or more processors of a computer system or device, the one or more programs including
+
+instructions for performing the method of any of claims 1-11.
+
+13. A computer system or device, comprising: a display; one or more processors;
+memory storing one or more programs for execution by the one or more processors, the one
+
+or more programs including instructions for performing the method of any of claims 1-11.

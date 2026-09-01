@@ -1,0 +1,196 @@
+--- PAGE 1 ---
+EP 11 832 927.5
+Microsoft Technology Licensing, LLC
+M11221EP
+
+24 June 2019
+
+MAIN REQUEST
+
+1. A computer-based method (200) for rendering online ads on a page, the method
+comprising:
+creating a first inter-frame communication channel comprising a first
+communication channel between a first cross-domain frame and a host page,
+where the first cross-domain frame comprises content from a first domain
+different than a domain of the host page (206); and
+creating a second inter-frame communication channel comprising a second
+communication channel between the first cross-domain frame and a second
+cross-domain frame in the host page, wherein the second cross-domain frame
+comprises content from a second domain different than the domain of the host
+page (210), wherein content from the first cross-domain frame communicates a
+request to interact with the second cross-domain frame in order to initiate an
+interactive ad with the second cross-domain frame, including passing ad
+content from the first cross-domain frame to the second cross-domain frame as
+
+an animation.
+
+2. The method of claim 1, comprising creating host ad space in the host page to
+
+accommodate an initial size of the first cross-domain frame.
+
+3. The method of claim 1, comprising at least one of creating the first cross-domain
+
+frame and creating one or more second cross-domain frames in the host page.
+
+4. The method of claim 1, comprising allowing merely white-listed data to travel
+
+over at least one of the first and second communication channels.
+
+5. The method of claim 1, comprising validating a source of data traveling over at
+least one of the first and second communication channels prior to allowing the
+
+data to cross to the host page.
+
+6. The method of claim 1, comprising one or more of:
+serializing a communication to the host page across at least one of the first and
+
+second communication channels; and
+
+--- PAGE 2 ---
+10.
+
+11.
+
+treating a communication to the host page across at least one of the first and
+
+second communication channels as a non-executable string.
+
+The method of claim 1, creating a second inter-frame communication channel
+comprising one or more of:
+
+creating a communications channel that passes data from the first cross-domain
+frame to the host page to the second cross-domain frame; and
+
+creating the first cross-domain frame and the second cross-domain frame where
+both the first and second cross-domain frames comprise content from a same
+
+domain.
+
+The method of claim 1, comprising the first and second cross-domain frames
+synchronizing with each other to provide coordinated rendering of one or more
+
+online ads.
+
+The method of claim 1, comprising securing at least one of the first and second
+inter-frame communication channels comprising using a list of allowed
+functionalities for content inside at least one of the first and second cross-
+
+domain frames.
+
+The method of claim 1, comprising, in response to a request originating from the
+first or second cross-domain frame, one or more of:
+
+resizing a cross-domain frame within the host page;
+
+moving a cross-domain frame within the host page;
+
+spawning a child cross-domain frame within the host page;
+
+synchronizing content between two or more cross-domain frames;
+
+broadcast a message to one or more cross-domain frames; and
+
+closing a cross-domain frame.
+
+A system (500) for coordinating online ad content on a host page, the system
+comprising:
+
+a processor (502) configured to process data for the system;
+
+a frame-host communication channel creation component (504) operably
+coupled with the processor, and configured to create a frame-host
+
+communication channel between the host page and a first cross-domain frame
+
+2/4
+
+--- PAGE 3 ---
+12.
+
+13.
+
+hosted in the host page, where the first cross-domain frame comprises content
+from a first domain different than a domain of the host page; and
+
+a frame-frame communication channel creation component (506) operably
+coupled with the processor, and configured to create a frame-frame
+communication channel between the first cross-domain frame and a second
+cross-domain frame hosted in the host page, where the second cross-domain
+frame comprises content from a second domain different than the domain of the
+host page, wherein content from the first cross-domain frame communicates a
+request to interact with the second cross-domain frame in order to initiate an
+interactive ad with the second cross-domain frame, including passing ad
+content from the first cross-domain frame to the second cross-domain frame as
+
+an animation.
+
+The system of claim 11, the first cross-domain frame comprising one or more of:
+the frame-host communication channel creation component, configured to be
+activated by content in the first cross-domain frame; and
+
+the frame-frame communication channel creation component, configured to be
+
+activated by content in the first cross-domain frame.
+
+The system of claim 11, comprising a security component configured to filter
+requests across the frame-host communication channel originating from inside
+a cross-domain frame in the host page, the security component comprising one
+or more of:
+
+a white-list comparison component configured to allow merely white-listed data
+to travel over the frame-host communication channel;
+
+a validation component configured to validate a source of data traveling over the
+frame-host communication channel prior to allowing the data to cross to the
+host page;
+
+a token utilization component configured to perform one or more of:
+
+plant a token in a cross-domain frame created in the host page; and
+
+merely allow data comprising the token to travel over the frame-host
+communication channel; and
+
+a serialization component configured to perform one or more of:
+
+serialize a communication to the host page across the frame-host
+
+communication channel; and
+
+3/4
+
+--- PAGE 4 ---
+14.
+
+15.
+
+configure a communication to the host page across the frame-host
+
+communication channel as a non-executable string.
+
+The system of claim 11, the frame-frame communication channel configured to
+perform one or more of:
+
+pass communications from the first cross-domain frame to the second cross-
+domain frame through the host page; and
+
+pass communications from the first cross-domain frame to the second cross-
+domain frame in a same domain, where content from the first cross-domain
+frame and content from the second cross-domain frame are comprised in the
+
+same domain.
+
+The system of claim 11, where the first and second cross-domain frames
+comprise content from a same domain, the frame-frame communication
+channel creation component configured to:
+
+pass a reference for the content from the second cross-domain frame to the first
+cross-domain frame; and
+
+pass a reference for the content from the first cross-domain frame to the second
+
+cross-domain frame.
+
+54.54
+
+4/4

@@ -1,0 +1,159 @@
+--- PAGE 1 ---
+N&G_DE2750PTEP 11769597.3
+
+Amended Claims
+
+1. A method comprising:
+(a) receiving an inquiry (103) to initiate a search for data concerning a specific individual;
+(b) extracting, from said inquiry (103), an attribute that is relevant to a search of a reference
+
+database (110), wherein said inquiry (103) includes an inquiry value for said attribute;
+
+(c) obtaining, from a first table, a weight that is indicative of aa relative impact of said
+
+attribute in finding a match to said inquiry in said reference database;
+
+(d) obtaining, from a second table, a number of records in said reference database that have
+
+said inquiry value for said attribute;
+
+(e) modifying said weight based on said number of records in said reference database that have
+said inquiry value for said attribute, thus yielding a predictive weight for said attribute,
+where K = W x F, where K is said predictive weight, W is said weight, and F is said total
+
+number of records;
+(f) setting K,<field1> = K, wherein said attribute is a first attribute;
+
+(g) repeating operations (b) through (ec) for a second attribute through an Nth attribute, thus
+yielding K><field2> through Ky<fieldN>;
+
+(h) establishing a function that characterizes a relationship among said field] through said
+fieldN as an indication of a degree of relationship of said field1 through said fieldN to
+said inquiry, wherein said establishing is performed prior to retrieving candidates for
+
+said match from said reference database;
+(1) searching said reference database for said match, wherein said searching comprises:
+
+retrieving from said reference database, based on said function, candidates having
+
+attribute values that indicate likely matches to said inquiry;
+determining a best candidate from said candidates; and
+returning said best candidate as said match;
+(j) outputting said match; and
+
+(k) outputting an indicator of a level of confidence that said match is an appropriate match to
+
+said inquiry.
+
+--- PAGE 2 ---
+N&G_DE2750PTEP 11769597.3
+
+2. A system comprising:
+
+a processor; and
+
+a memory that contains instructions that, when read by said processor, cause said
+processor to:
+
+(a) receive an inquiry to initiate a search for data concerning a specific individual;
+
+(b) extract from said inquiry, an attribute that is relevant to a search of a reference
+
+database, wherein said inquiry includes an inquiry value for said attribute;
+
+(c) obtain, from a first table, a weight that is indicative of a relative impact of said
+
+attribute in finding a match to said inquiry in said reference database;
+
+(d) obtain, from a second table, a number of records in said reference database that have
+
+said inquiry value for said attribute;
+
+(e) modify said weight based on said number of records in said reference database that
+have said inquiry value for said attribute, thus yielding a predictive weight for said
+attribute, where K = W x F, where K is said predictive weight, W is said weight,
+and F is said total number of records;(f) set K,<field1> = K, wherein said attribute
+
+is a first attribute;
+
+(g) repeating operations (b) through (ec) for a second attribute through an Nth attribute,
+thus yielding K><field2> through Ky<fieldN>;
+
+(h) establish a function that characterizes a relationship among said field1 through said
+fieldN as an indication of a degree of relationship of said field1 through said fieldN
+to said inquiry, wherein said establish operation is performed prior to retrieving
+
+candidates for said match from said reference database;
+
+(1) search said reference database for said match, wherein said instructions, for said search,
+
+cause said processor to:
+
+retrieve from said reference database, based on said function, candidates having
+
+attribute values that indicate likely matches to said inquiry;
+determine a best candidate from said candidates; and
+
+return said best candidate as said match;
+
+--- PAGE 3 ---
+N&G_DE2750PTEP 11769597.3
+
+(j) output said match; and
+
+(k) output an indicator of a level of confidence that said match is an appropriate match to
+
+said inquiry.
+
+3. A storage medium, comprising instructions that, when read by said processor, cause said
+processor to:
+
+(a) receive an inquiry to initiate a search for data concerning a specific individual; determine;
+
+(b) extract from said inquiry, an attribute that is relevant to a search of a reference database,
+
+wherein said inquiry includes an inquiry value for said attribute;
+
+(c) obtain, from a first table, a weight that is indicative of a relative impact of said attribute in
+
+finding a match to said inquiry in said reference database;
+
+(d) obtain, from a second table, a number of records in said reference database that have said
+
+inquiry value for said attribute;
+
+(e) modify said weight based on said number of records in said reference database that have said
+inquiry value for said attribute, thus yielding a predictive weight for said attribute, where
+K =WxF, where K = W x F, where K is said predictive weight, W is said weight, and F
+
+is said total number of records;
+(f) set K,<field1> = K, wherein said attribute is a first attribute;
+
+(g) repeating operations (b) through (ec) for a second attribute through an Nth attribute, thus
+yielding K><field2> through Ky<fieldN>;
+
+(h) establish a function that characterizes a relationship among said field1 through said fieldN as
+an indication of a degree of relationship of said field1 through said fieldN to said inquiry,
+wherein said establish operation is performed prior to retrieving candidates for said match
+
+from said reference database;
+
+(1) search said reference database for a match, wherein said instructions, for said search, cause
+
+said processor to:
+
+retrieve from said reference database, based on said function, candidates having attribute
+
+values that indicate likely matches to said inquiry;
+determine a best candidate from said candidates; and
+
+return said best candidate as said match;
+
+--- PAGE 4 ---
+N&G_DE2750PTEP 11769597.3
+
+(j) output said match; and
+
+(k) output an indicator of a level of confidence that said match is an appropriate match to said
+
+inquiry.

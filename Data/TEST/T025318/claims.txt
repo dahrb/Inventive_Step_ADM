@@ -1,0 +1,59 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+9
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A method of generating origin signals of an encoder having a scale(10) on
+which an incremental pattern(12) and an origin pattern(14) are formed,
+
+the method comprising initially detecting the origin pattern and generating a
+corresponding origin signal
+
+characterised in that the method further comprises
+
+initially generating a first origin signal with preset width(P) at an origin position
+actually detected by an initial operation after power-on;
+
+then generating following origin signals with the preset width(P) using
+software, the following origin signals being generated at positions of predetermined
+counted value of DOWN pulses and UP pulses output from an internal counter (48)
+based upon a main signal waveform obtained from the incremental pattern, wherein
+the first origin pattern is actually detected in the first operation alone, and the
+following origin signals are subsequently generated virtually by software according to
+the counted value of the internal counter (48).
+
+2. An apparatus for generating an origin signal of an encoder having a scale(10)
+on which an incremental pattern (12) and an origin pattern (14) are formed,
+
+the apparatus comprising:
+
+means for obtaining an origin waveform from the origin pattern(14);
+
+means for obtaining a main signal waveform form the incremental pattern
+(12);
+
+means for generating a first origin signal with preset width(P) at an origin
+position actually detected by an initial operation after power-on;
+an internal counter (48) for counting the main signal waveform and outputting
+counted value of DOWN pulses and UP puslese;
+
+means for generating following origin signals with preset width(P) using
+software, wherein the organ pattern is actually detected in the first operation alone,
+and the following origin signals are subsequently generated virtually by software
+according to the counted value of the internal counter (48).
+
+--- PAGE 2 ---
+10
+MAIN REQUEST
+3. The apparatus for generating an origin signal of an encoder according to
+
+claim 2, further comprising means for storing an origin position detected by an initial
+operation after power-on and the preset width(P) of the origin signal.

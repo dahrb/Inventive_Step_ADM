@@ -1,0 +1,324 @@
+--- PAGE 1 ---
+35
+
+PO032065EPPA
+Main Request
+Claims
+1. An apparatus for receiving data from Orthogonal Frequency Divisional
+
+Multiplexed (OFDM) symbols transmitted by a transmitter, the OFDM symbols comprising a
+plurality of data bearing sub-carriers and one or more continuous pilot sub-carrier symbols,
+which are located in the same position for each of the OFDM symbols and scattered pilot
+carrier symbols, which change position between one OFDM symbol and another in
+accordance with a predetermined pattern, the predetermined pattern of scattered pilot carrier
+symbols being in accordance with a Digital Video Broadcast-Terrestrial, DVB-T, standard
+and the data bearing sub-carriers carrying data symbols which are paired by generating a first
+pair of modulation symbols for each of the pairs of data symbols, the first pair of modulation
+symbols forming first and second modulation symbols of an Alamouti cell, forming a first
+version of the OFDM symbols by modulating the sub-carriers allocated for carrying the one
+or more pilot carriers in accordance with the predetermined pattern, and modulating the sub-
+carriers allocated for carrying the data with the first and second data symbols of the Alamouti
+cell, generating a second pair of modulation symbols for each of the pairs of data symbols,
+the second pair of modulation symbols forming third and fourth modulation symbols of the
+Alamouti cell formed for the pair of data symbols in the first version of the OFDM symbols,
+forming a second version of the OFDM symbols by modulating the sub-carriers allocated for
+carrying the one or more pilot carriers in accordance with the predetermined pattern, and
+modulating the sub-carriers allocated for carrying the data with the third and fourth
+modulation symbols of the Alamouti cell, the first version of the OFDM symbols being
+transmitted from a first antenna (112), and the second version of the OFDM symbols being
+transmitted from a second antenna (114), the apparatus comprising
+
+a receiver (200, 204, 206, 208, 210) for receiving the first version of the OFDM
+symbols transmitted from the first antenna (112), and the second version of the OFDM
+symbols transmitted from the second antenna (114),
+
+a demodulator (200) operable
+
+to form an estimate of a first pair of modulation symbols for each of the pairs of data
+symbols from the first version of the OFDM symbols, using the one or more pilot carriers, the
+first pair of modulation symbols forming first and second modulation symbols of an
+
+Alamouti cell,
+
+--- PAGE 2 ---
+36
+PO32065EPPA
+Main Request
+to form an estimate of a second pair of modulation symbols for each of the pairs of
+
+data symbols from the second version of the OFDM symbol, using the one or more pilot
+carriers, the second pair of modulation symbols forming third and fourth modulation symbols
+of the Alamouti cell corresponding to the pair of data symbols in the first version of the
+OFDM symbols,
+
+a data detector (206) operable to generate an estimate of each of the pairs of the data
+symbols from the first, second, third and fourth modulation symbols corresponding to each of
+the Alamouti cells recovered from the first and second versions of the OFDM symbols,
+
+wherein for at least one of the pairs of data symbols carried by the first and second
+versions of the OFDM symbols, the sub-carriers carrying the modulation symbols of the first
+and second modulation symbols and the third and the fourth modulation symbols forming the
+Alamouti cells are separated within the first and second versions of the OFDM symbol
+respectively by at least one other data bearing sub-carrier or one or more of the pilot carriers,
+and the apparatus including
+
+a controller (208) operable to provide the predetermined pattern of scattered and
+continuous pilot sub-carriers for the OFDM symbols to the data detector and to control the
+data detector (206) to detect the pairs of data symbols according to whether the pairs of first
+and second and third and fourth modulation symbols are separated by the one or more other
+data bearing sub-carriers or one or more of the scattered or continuous pilot symbol sub-
+carriers according to the provided predetermined pattern of scattered and continuous pilot
+sub-carriers for the OFDM symbols, and the data detector (206) is operable to detect the pairs
+of data symbols carried by the sub-carriers by
+
+adapting a detection technique for recovering the data symbols from the Alamouti
+cells depending on whether the pairs of data symbols are detected from sub-carriers which are
+adjacent or whether the sub-carriers have one or more other sub-carriers or pilot carriers
+inter-posed there between, and
+
+if detecting a pair of the data symbols from pairs of data symbols, which are separated
+by the at least one other data bearing sub-carrier or pilot carrier, using a different estimate of
+a coefficient of the channel frequency response corresponding to the position of each of the
+sub-carriers within each of the first and second versions of the OFDM symbol, or
+
+if the first and the second modulation symbols and the third and the fourth modulation
+symbols are carried by adjacent sub-carriers, detecting the pair of data symbols carried by the
+
+sub-carriers by assuming that a coefficient of the channel frequency response corresponding
+
+--- PAGE 3 ---
+37
+PO032065EPPA
+Main Request
+to the position of each of the sub-carriers within each of the first and second versions of the
+
+OFDM symbol are the same.
+
+2. An apparatus as claimed in Claim 1, wherein the data detector (206) uses a
+zero forcing or minimum mean square error technique to recover an estimate of the pairs of
+
+data symbols of each of the Alamouti cells.
+
+3. An apparatus as claimed in Claim 1 or 2, wherein the data symbols have been
+error correction encoded and interleaved, the apparatus comprising
+
+a de-interleaver (212) for de-interleaving the first and the second modulation symbols
+and the third and fourth modulation symbols of each of the Alamouti cells, the data detector
+being arranged to detect the modulation symbols for the de-interleaved modulation symbols
+of the Alamouti cells, and
+
+a decoder for error correction decoding the data symbols recovered from the detected
+
+modulation symbols provided by the data detector.
+
+4. A method of receiving data from Orthogonal Frequency Divisional
+Multiplexed (OFDM) symbols transmitted by a transmitter, the OFDM symbols comprising a
+plurality of data bearing sub-carriers and one or more continuous pilot sub-carrier symbols,
+which are located in the same position for each of the OFDM symbols and scattered pilot
+sub-carrier symbols, which change position between one OFDM symbol and another, in
+accordance with a predetermined pattern, the predetermined pattern of scattered pilot carrier
+symbols being in accordance with a Digital Video Broadcast-Terrestrial, DVB-T, standard
+and the data bearing sub-carriers carrying data symbols which are paired by generating a first
+pair of modulation symbols for each of the pairs of data symbols, the first pair of modulation
+symbols forming first and second modulation symbols of an Alamouti cell, forming a first
+version of the OFDM symbols by modulating the sub-carriers allocated for carrying the one
+or more pilot carriers in accordance with the predetermined pattern, and modulating the sub-
+carriers allocated for carrying the data with the first and second data symbols of the Alamouti
+cell, generating a second pair of modulation symbols for each of the pairs of data symbols,
+the second pair of modulation symbols forming third and fourth modulation symbols of the
+Alamouti cell formed for the pair of data symbols in the first version of the OFDM symbols,
+
+forming a second version of the OFDM symbols by modulating the sub-carriers allocated for
+
+--- PAGE 4 ---
+38
+PO32065EPPA
+Main Request
+carrying the one or more pilot carriers in accordance with the predetermined pattern, and
+
+modulating the sub-carriers allocated for carrying the data with the third and fourth
+modulation symbols of the Alamouti cell, and the first version of the OFDM symbols being
+transmitted from a first antenna (112), and the second version of the OFDM symbols being
+transmitted from a second antenna (114), the method comprising
+
+receiving the first version of the OFDM symbols from the first antenna (112), and the
+second version of the OFDM symbols from the second antenna (114),
+
+forming an estimate of a first pair of modulation symbols for each of the pairs of data
+symbols from the first version of the OFDM symbols, using the one or more pilot carriers, the
+first pair of modulation symbols forming first and second modulation symbols of an
+Alamouti cell,
+
+forming an estimate of a second pair of modulation symbols for each of the pairs of
+data symbols from the second version of the OFDM symbols, using the one or more pilot
+carriers, the second pair of modulation symbols forming third and fourth modulation symbols
+of the Alamouti cell corresponding to the pair of data symbols in the first version of the
+OFDM symbols,
+
+generating an estimate of each of the pairs of the data symbols from the first, second,
+third and fourth modulation symbols corresponding to each of the Alamouti cells recovered
+from the first and second versions of the OFDM symbols,
+
+wherein for at least one of the pairs of data symbols carried by the first and second
+versions of the OFDM symbols, the sub-carriers carrying the modulation symbols of the first
+and second modulation symbols and the third and the fourth modulation symbols forming the
+Alamouti cells are separated within the first and second versions of the OFDM symbols
+respectively by at least one other data bearing sub-carrier or one or more of the pilot carriers,
+and the generating an estimate of each of the pairs of data symbols comprises
+
+detecting the pairs of data symbols according to whether the pairs of first and second
+and third and fourth modulation symbols are separated by the one or more other data bearing
+sub-carriers or one or more of the scattered or continuous pilot sub-carriers according to the
+predetermined pilot pattern by
+
+providing the predetermined pattern of scattered and continuous pilot sub-carriers for
+the OFDM symbols,
+
+adapting a detection technique for recovering the data symbols from the Alamouti
+
+cells depending on whether the pairs of data symbols are detected from sub-carriers which are
+
+--- PAGE 5 ---
+39
+PQ32065EPPA
+Main Request
+adjacent or whether the sub-carriers have one or more other sub-carriers or pilot carriers
+
+inter-posed there between in accordance with the provided predetermined pattern of scattered
+and continuous pilot sub-carriers for the OFDM symbols, and
+
+if detecting a pair of the data symbols from pairs of data symbols, which are separated
+by the at least one other data bearing sub-carrier or pilot carrier, using a different estimate of
+a coefficient of the channel frequency response corresponding to the position of each of the
+sub-carriers within each of the first and second versions of the OFDM symbol, or
+
+if the first and the second modulation symbols and the third and the fourth modulation
+symbols are carried by adjacent sub-carriers, detecting the pair of data symbols carried by the
+sub-carriers by assuming that a coefficient of the channel frequency response corresponding
+to the position of each of the sub-carriers within each of the first and second versions of the
+
+OFDM symbol are the same.
+
+5. A method as claimed in Claim 4, wherein the detecting a pair of the data
+symbols from pairs of data symbols, which are separated by the at least one other data
+bearing sub-carrier or pilot carrier, using a different estimate of a coefficient of the channel
+frequency response includes using a zero forcing or minimum mean square error technique to
+
+recover an estimate of the pairs of data symbols of each of the Alamouti cells.
+
+6. A method as claimed in Claim 4 or 5, wherein the data symbols have been
+error correction encoded and interleaved, and the method comprises
+
+de-interleaving the first and the second modulation symbols and the third and fourth
+modulation symbols of each of the Alamouti cells, the data detector being arranged to detect
+the modulation symbols for the de-interleaved modulation symbols of the Alamouti cells, and
+
+error correction decoding the data symbols recovered from the detected modulation
+
+symbols provided by the data detector.
+
+7. A system for communicating data symbols via Orthogonal Frequency Division
+Multiplexed (OFDM) symbols transmitted by a transmitter, the OFDM symbols comprising a
+plurality of data bearing sub-carriers and one or more continuous pilot sub-carrier symbols,
+which are located in the same position for each of the OFDM symbols and scattered pilot
+sub-carrier symbols, which change position between one OFDM symbol and another, in
+
+accordance with a predetermined pattern, the predetermined pattern of scattered pilot carrier
+
+--- PAGE 6 ---
+40
+P03206SEPPA
+Main Request
+symbols being in accordance with a Digital Video Broadcast-Terrestrial, DVB-T, standard
+
+and the system comprising an apparatus for transmitting and an apparatus for receiving,
+
+the apparatus for transmitting comprising
+
+a modulator (28, 37.1, 37.2, 38.1, 38.2) operable to receive the data symbols for
+communicating via the OFDM symbols,
+
+to form the data symbols into pairs,
+
+to generate first pairs of modulation symbols for each of the pairs of data symbols, the
+first pair of modulation symbols forming first and second modulation symbols of an
+Alamouti cell,
+
+to form a first version of the OFDM symbols by modulating the sub-carriers allocated
+for carrying the one or more pilot carriers in accordance with the predetermined pattern, and
+modulating the sub-carriers allocated for carrying the data with the first and second
+modulation symbols of the Alamouti cells,
+
+to generate second pairs of modulation symbols for each of the pairs of data symbols,
+the second pairs of modulation symbols forming third and fourth modulation symbols of the
+Alamouti cell formed for the pair of data symbols in the first version of the OFDM symbol,
+
+to form a second version of the OFDM symbols by modulating the sub-carriers
+allocated for carrying the one or more pilot carriers in accordance with the predetermined
+pattern, and modulating the sub-carriers allocated for carrying the data with the third and
+fourth modulation symbols of the Alamouti cells, and
+
+a transmitter (42, 44, 46) for transmitting the first version of the OFDM symbols via a
+first antenna (112), and the second version of the OFDM symbols via a second antenna (114),
+wherein the apparatus for receiving comprises
+
+a receiver (200, 204, 206, 208, 210) for receiving the first version of the OFDM
+symbols transmitted from the first antenna (112), and the second version of the OFDM
+symbols transmitted from the second antenna (114),
+
+a demodulator (200) operable
+
+to form an estimate of a first pair of modulation symbols for each of the pairs of data
+symbols from the first version of the OFDM symbols, using the one or more pilot carriers, the
+first pair of modulation symbols forming first and second modulation symbols of an
+Alamouti cell,
+
+to form an estimate of a second pair of modulation symbols for each of the pairs of
+
+data symbols from the second version of the OFDM symbol, using the one or more pilot
+
+--- PAGE 7 ---
+41
+PO32065EPPA
+Main Request
+carriers, the second pair of modulation symbols forming third and fourth modulation symbols
+
+of the Alamouti cell corresponding to the pair of data symbols in the first version of the
+OFDM symbols,
+
+a data detector (206) operable to generate an estimate of each of the pairs of the data
+symbols from the first, second, third and fourth modulation symbols corresponding to each of
+the Alamouti cells recovered from the first and second versions of the OFDM symbols,
+
+wherein for at least one of the pairs of data symbols carried by the first and second
+versions of the OFDM symbols, the sub-carriers carrying the modulation symbols of the first
+and second modulation symbols and the third and the fourth modulation symbols forming the
+Alamouti cells are separate within the first and second versions of the OFDM symbol
+respectively by at least one other data bearing sub-carrier or one or more of the pilot carriers,
+and the receiver includes a controller (208) operable to provide the predetermined pattern of
+scattered and continuous pilot sub-carriers for the OFDM symbols to the data detector and to
+control the data detector (206) to detect the pairs of data symbols according to whether the
+pairs of first and second and third and fourth modulation symbols are separated by the one or
+more other data bearing sub-carriers or one or more of the scattered or continuous pilot
+symbol sub-carriers according to the provided predetermined pattern of scattered and
+continuous pilot sub-carriers for the OFDM symbols, and the data detector (206) is operable
+to detect the pairs of data symbols carried by the sub-carriers by
+
+adapting a detection technique for recovering the data symbols from the Alamouti
+cells depending on whether the pairs of data symbols are detected from sub-carriers which are
+adjacent or whether the sub-carriers have one or more other sub-carriers or pilot carriers
+inter-posed there between, and
+
+if detecting a pair of the data symbols from pairs of data symbols, which are separated
+by the at least one other data bearing sub-carrier or pilot carrier, using a different estimate of
+a coefficient of the channel frequency response corresponding to the position of each of the
+sub-carriers within each of the first and second versions of the OFDM symbol, or
+
+if the first and the second modulation symbols and the third and the fourth modulation
+symbols are carried by adjacent sub-carriers, detecting the pair of data symbols carried by the
+sub-carriers by assuming that a coefficient of the channel frequency response corresponding
+to the position of each of the sub-carriers within each of the first and second versions of the
+
+OFDM symbol are the same.
+
+--- PAGE 8 ---

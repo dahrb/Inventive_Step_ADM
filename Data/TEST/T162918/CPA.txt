@@ -1,0 +1,207 @@
+TITLE:
+System and process for locating and tracking a person or object in a scene using a series of range images
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method for locating and tracking people and non-stationary objects of interest in a scene using a series of range images of the scene taken over time. The system and process generally entails first generating the series of range images which are preferably a continuous temporal sequence of depth maps of the scene. A background model is computed from a block of the range images. Once the background model has been computed, a range image generated subsequent to the block of range images is selected for processing. The background is then subtracted from this currently selected range image based on the background model to produce a foreground image. The foreground image is next segmented into regions, each of which represents a different person or object of interest in the scene captured by the currently selected range image. The locating process continues by projecting the segmented regions of the foreground image onto a ground plane of the scene. The ground plane coordinates determined in the projection procedure can be used to designate the location of each separate person or object of interest in the scene captured by the currently selected range image. However, if desired an optional ground plane segmentation refinement technique can be employed first to ensure each projected region represents only a single person or object. Once the location of each person or object of interest has been established, they can be tracked by analyzing subsequently generated range images.
+
+CLAIMS:
+1. A computer-implemented process for locating persons and objects in a scene, said process comprising using a computer to perform the following acts:
+(a) generating a series of range images of the scene over time;
+(b) computing a background model using only range information from a block of said range images;
+(c) selecting a range image generated subsequent to said block of range images;
+(d) subtracting the background from the currently selected range image using the background model to produce a foreground image;
+(e) segmenting the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured by the currently selected range image;
+(f) projecting the segmented regions of the foreground image onto a ground plane of the scene to produce segmented ground plane regions; and
+(g) designating ground plane coordinates associated with each of the segmented ground plane regions as the location of a separate person or object of interest in the scene captured by the currently selected range image.
+2. The process of claim 1, wherein the act of generating the series of range images, comprises the act of generating a continuous temporal sequence of depth maps of the scene.
+3. The process of claim 1, wherein the act of computing the background model, comprises the act of computing the background model from a block of range images comprising a prescribed number of temporally sequential range images.
+4. The process of claim 1, wherein the act of computing the background model, comprises the acts of:
+identifying, in a block of said range images, pixels locations having reliable depth values.
+5. The process of claim 1, wherein the act of subtracting the background, comprises the acts of:
+identifying pixels representing non-static portions of the scene depicted in the selected range image;
+collectively designating the pixels representing the non-static portions of the scene as the foreground image.
+6. The process of claim 1, wherein the act of selecting a range image generated subsequent to said block of range images, comprises the act of selecting the next range image generated following the last range image of said block of range images used to compute the background model.
+7. The process of claim 1, wherein the act of segmenting the foreground image, comprises the act of identifying regions in the foreground image comprising pixels exhibiting smoothly varying depth values.
+8. The process of claim 7, wherein the act of segmenting the foreground image, comprises the act of eliminating any region having an actual area too small to represent a person or object of interest in the scene.
+9. The process of claim 1, wherein the act of projecting the segmented regions of the foreground image onto the ground plane of the scene, comprises the acts of:
+computing ground plane boundaries for the scene depicted in the selected range image;
+identifying vertical, horizontal and depth coordinates of each pixel in each segmented region;
+adjusting the identified pixel coordinates to compensate for camera roll and pitch; and
+projecting each pixel onto the ground plane.
+10. The process of claim 1, further comprising performing the acts of:
+selecting at least one range image generated subsequent to said previously selected range image;
+designating, in turn, each newly selected range image as the currently selected range image in the sequence in which each was generated; and
+repeating acts (d) through (g) in turn for each currently selected range image.
+11. The process of claim 10, wherein the act of selecting at least one range image generated subsequent to said previously selected range image, comprises the act of selecting each range image such that it is an image generated immediately following the previously selected range image.
+12. The process of claim 1, further comprising performing the acts of:
+selecting at least one range image generated subsequent to said previously selected range image;
+designating, in turn, each newly selected range image as the currently selected range image in the sequence in which each was generated;
+for each currently selected range image in turn, re-computing the background model; and
+repeating acts (d) through (g) in turn for each currently selected range image using its associated background model.
+13. The process of claim 12, wherein the act of selecting at least one range image generated subsequent to said previously selected range image, comprises the act of selecting each range image such that it is an image generated immediately following a previously selected range image.
+14. The process of claim 1, further comprising, prior to performing the segmentation action, performing the act of morphologically growing and then shrinking the foreground image so as to connect separated regions associated with the same person or object.
+15. The process of claim 14, wherein the act of morphologically growing and shrinking the foreground image, comprises the act of adding pixels in gaps between regions to the foreground image only when pixels in the vicinity of the gap exhibit similar depth values.
+16. The process of claim 1, further comprising the act of determining the identity of a person or object associated with a segmented region in the foreground image.
+17. The process of claim 16, wherein the act of determining the identity of a person or object associated with a segmented region in the foreground image, comprises the acts of:
+capturing an intensity image of the scene contemporaneously with the generation of the currently selected range image;
+identifying a region of said intensity image that corresponds in location within the scene to the segmented region in the foreground image;
+employing the identified region to determine the identity of the person or object represented by that region.
+18. The process of claim 17, wherein the act of employing the identified region to determine the identity of the person or object represented by that region, comprises the acts of:
+characterizing the identified region in a way similar to a series of stored intensity-based images of known persons and objects that are to be identified in said captured intensity image of the scene;
+comparing the characterized identified region to each of the stored, similarly characterized images;
+assessing the degree of similarity between the compared region and each image; and
+whenever a prescribed degree of similarity exists between the identified region and one of the stored images, designating the person or object represented by the identified region to be the person or object associated with that stored image.
+19. The process of claim 17, wherein the intensity image of the scene is a color image.
+20. The process of claim 1, further comprising the act of refining the segmentation of a projected region prior to designating its ground plane coordinates so as to ensure the projected region represents only a single person or object.
+21. The process of claim 20, wherein the act of refining the segmentation of a projected region, comprises the acts of:
+cordoning the projected region into a series of cells;
+identifying one or more peak cells in the projected region, wherein a peak cell is one which contains the greatest number of pixels in comparison to neighboring cells located within a first prescribed radius of the cell and whose pixel density exceeds a prescribed threshold indicative of a density of pixels expected in a cell containing pixels representing a person or object of interest;
+for each peak cell identified, conglomerating the regions contributing pixels to the peak cell as well as neighboring cells located within a second prescribed radius from the peak cell;
+dividing any region contributing pixels to more than one conglomeration by reassigning each pixel of the region to the conglomeration associated with the closest peak cell to produce a revised conglomeration; and
+designating each revised conglomeration as a segmented ground plane region.
+22. The process of claim 20, further comprising the act of determining the identity of a person or object associated with a segmented ground plane region.
+23. A system for locating persons and objects in a scene, comprising:
+a general purpose computing device;
+a computer program comprising program modules executable by the computing device, wherein the computing device is directed by the program modules of the computer program to:
+generate a series of range images of the scene over time;
+compute a background model using only range information from a block of said range images;
+select a range image generated subsequent to said block of range images and designate it as the currently selected range image;
+subtract the background from the currently selected range image using the background model to produce a foreground image;
+segment the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured by the currently selected range image;
+project the segmented regions of the foreground image onto a ground plane of the scene to produce segmented ground plane regions; and
+determine the location of each segmented ground plane region by ascertaining its ground plane coordinates.
+24. The system of claim 23, wherein the program module for generating the series of range images, comprises a sub-module for generating a continuous temporal sequence of depth maps of the scene.
+25. The system of claim 23, wherein the program module for computing the background model, comprises a sub-module for computing the background model from a block of range images comprising a prescribed number of temporally sequential range images.
+26. The system of claim 23, wherein the program module for computing the background model, comprises sub-modules for:
+identifying, in a block of said range images, pixels locations having reliable depth values.
+27. The system of claim 23, wherein the program module for subtracting the background model, comprises sub-modules for:
+identifying pixels representing non-static portions of the scene depicted in the selected range image;
+collectively designating the pixels representing the non-static portions of the scene as the foreground image.
+28. The system of claim 23, wherein the program module for selecting a range image generated subsequent to said block of range images, comprises a sub-module for selecting the next range image generated following the last range image of said block of range images used to compute the background model.
+29. The system of claim 23, wherein the program module for segmenting the foreground image, comprises a sub-module for identifying regions in the foreground image comprising pixels exhibiting smoothly varying depth values.
+30. The system of claim 29, wherein the program module for segmenting the foreground image, comprises a sub-module for eliminating any region having an actual area too small to represent a person or object of interest in the scene.
+31. The system of claim 23, wherein the program module for projecting the segmented regions of the foreground image onto the ground plane of the scene, comprises sub-modules for:
+computing ground plane boundaries for the scene depicted in the selected range image;
+identifying vertical, horizontal and depth coordinates of each pixel in each segmented region;
+adjusting the identified pixel coordinates to compensate for camera roll and pitch; and
+projecting each pixel onto the ground.
+32. The system of claim 23, further comprising program modules for:
+(a) selecting a range image generated subsequent to the last previously selected range image;
+(b) designating the newly selected range image as the currently selected range image;
+(c) subtracting the background from a currently selected range image to produce a foreground image;
+(d) segmenting the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured by the currently selected range image;
+(e) projecting the segmented regions of the foreground image onto a ground plane of the scene;
+(f) designating the ground plane coordinates associated with each of the segmented foreground image regions as the location of a separate person or object of interest in the scene captured by the currently selected range image; and
+(g) repeating program modules (a) through (f) for as long as it is desired to track persons and objects in the scene.
+33. The system of claim 32, wherein the program module for selecting a new range image generated subsequent to the last previously selected range image, comprises a sub-module for selecting the range image generated immediately following the last previously selected range image.
+34. The system of claim 23, further comprising program modules for:
+(a) selecting a range image generated subsequent to the last previously selected range image;
+(b) designating the newly selected range image as the currently selected range image;
+(c) re-computing the background model; and
+(d) subtracting the background from a currently selected range image to produce a foreground image;
+(e) segmenting the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured by the currently selected range image;
+(f) projecting the segmented regions of the foreground image onto a ground plane of the scene;
+(g) designating the ground plane coordinates associated with each of the segmented foreground image regions as the location of a separate person or object of interest in the scene captured by the currently selected range image; and
+(h) repeating program modules (a) through (g) for as long as it is desired to track persons and objects in the scene.
+35. The system of claim 34, wherein the program module for selecting a range image generated subsequent to the last previously selected range image, comprises a sub-module for selecting the range image generated immediately following the last previously selected range image.
+36. The system of claim 23, wherein the computer program further comprises a program module, executable prior to the execution of the program module for segmenting the foreground image, for morphologically growing and then shrinking the foreground image so as to connect separated regions associated with the same person or object.
+37. The system of claim 36, wherein the program module for morphologically growing and shrinking the foreground image, comprises a sub-module for adding pixels in gaps between regions to the foreground image only when pixels in the vicinity of the gap exhibit similar depth values.
+38. The system of claim 23, further comprising a program module for determining the identity of a person or object associated with a segmented region in the foreground image.
+39. The system of claim 38, wherein the program module for determining the identity of a person or object associated with a segmented region in the foreground image, comprises sub-modules for:
+capturing an intensity image of the scene contemporaneously with the generation of the currently selected range image;
+identifying a region of said intensity image that corresponds in location within the scene to the segmented region in the foreground image;
+employing the identified region to determine the identity of the person or object represented by that region.
+40. The system of claim 39, wherein the sub-module for employing the identified region to determine the identity of the person or object represented by that region, comprises sub-modules for:
+characterizing the identified region in a way similar to a series of stored intensity images of known persons and objects that are to be identified in said captured intensity-based image of the scene;
+comparing the characterized identified region to each of the stored, similarly characterized images;
+assessing the degree of similarity between the compared region and each image; and
+whenever a prescribed degree of similarity exists between the identified region and one of the stored images, designating the person or object represented by the identified region to be the person or object associated with that stored image.
+41. The system of claim 39, wherein the intensity image of the scene is a color image.
+42. The system of claim 23, further comprising a program module for refining the segmentation of a projected region prior to designating its ground plane coordinates so as to ensure the projected region represents only a single person or object.
+43. The system of claim 42, wherein the program module for refining the segmentation of a projected region, comprises sub-modules for:
+cordoning the projected region into a series of cells;
+identifying one or more peak cells in the projected region, wherein a peak cell is one which contains the greatest number of pixels in comparison to neighboring cells located within a first prescribed radius of the cell and whose pixel density exceeds a prescribed threshold indicative of a density of pixels expected in a cell containing pixels representing a person or object of interest;
+for each peak cell identified, conglomerating the regions contributing pixels to the peak cell as well as neighboring cells located within a second prescribed radius from the peak cell;
+dividing any region contributing pixels to more than one conglomeration by reassigning each pixel of the region to the conglomeration associated with the closest peak cell to produce a revised conglomeration; and
+designating each revised conglomeration as a segmented ground plane region.
+44. The system of claim 42, further comprising a program module for determining the identity of a person or object associated with a segmented ground plane region.
+45. A computer-readable memory for locating persons and objects in a scene, comprising:
+a computer-readable storage medium; and
+a computer program comprising program modules stored in the storage medium, wherein the storage medium is so configured by the computer program that it causes the computer to:
+generate a series of range images of the scene over time;
+compute a background model using only range information from a block of said range images;
+select a range image generated subsequent to said block of range images and designate it as the currently selected range image;
+subtract the background from the currently selected range image using the background model to produce a foreground image;
+segment the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured by the currently selected range image;
+project the segmented regions of the foreground image onto a ground plane of the scene to produce segmented ground plane regions; and
+designate the ground plane coordinates associated with each of the segmented ground plane regions as the location of a separate person or object of interest in the scene captured by the currently selected range image.
+46. The computer-readable memory of claim 45, wherein the program module for generating the series of range images, comprises a sub-module for generating a continuous temporal sequence of depth maps of the scene.
+47. The computer-readable memory of claim 45, wherein the program module for computing the background model, comprises a sub-module for computing the background model from a block of range images comprising a prescribed number of temporally sequential range images.
+48. The computer-readable memory of claim 45, wherein the program module for computing the background model, comprises sub-modules for:
+identifying, in a block of said range images, pixels locations having reliable depth values.
+49. The computer-readable memory of claim 45, wherein the program module for subtracting the background, comprises sub-modules for:
+identifying pixels representing non-static portions of the scene depicted in the selected range image;
+collectively designating the pixels representing the non-static portions of the scene as the foreground image.
+50. The computer-readable memory of claim 45, wherein the program module for selecting a range image generated subsequent to said block of range images, comprises a sub-module for selecting the next range image generated following the last range image of said block of range images used to compute the background model.
+51. The computer-readable memory of claim 45, wherein the program module for segmenting the foreground image, comprises a sub-module for identifying regions in the foreground image comprising pixels exhibiting smoothly varying depth values.
+52. The computer-readable memory of claim 51, wherein the program module for segmenting the foreground image, comprises a sub-module for eliminating any region having an actual area too small to represent a person or object of interest in the scene.
+53. The computer-readable memory of claim 45, wherein the program module for projecting the segmented regions of the foreground image onto the ground p lane of the scene, comprises sub-modules for:
+computing ground plane boundaries for the scene depicted in the selected range image;
+identifying vertical, horizontal and depth coordinates of each pixel in each segmented region;
+adjusting the identified pixel coordinates to compensate for camera roll and pitch; and
+projecting each pixel onto the ground plane.
+54. The computer-readable memory of claim 45, further comprising program modules for:
+(a) selecting a range image generated subsequent to the last previously selected range image;
+(b) designating the newly selected range image as the currently selected range image;
+(c) subtracting the background from a currently selected range image to produce a foreground image;
+(d) segmenting the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured by the currently selected range image;
+(e) projecting the segmented regions of the foreground image onto a ground plane of the scene;
+(f) designating the ground plane coordinates associated with each of the segmented foreground image regions as the location of a separate person or object of interest in the scene captured by the currently selected range image; and
+(g) repeating program modules (a) through (f) for as long as it is desired to track persons and objects in the scene.
+55. The computer-readable memory of claim 54, wherein the program module for selecting a new range image generated subsequent to the last previously selected range image, comprises a sub-module for selecting the range image generated immediately following the last previously selected range image.
+56. The computer-readable memory of claim 45, further comprising program modules for:
+(a) selecting a range image generated subsequent to the last previously selected range image;
+(b) designating the newly selected range image as the currently selected range image;
+(c) re-computing the background model; and
+(d) subtracting the background from a currently selected range image to produce a foreground image;
+(e) segmenting the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured by the currently selected range image;
+(f) projecting the segmented regions of the foreground image onto a ground plane of the scene;
+(g) designating the ground plane coordinates associated with each of the segmented foreground image regions as the location of a separate person or object of interest in the scene captured by the currently selected range image; and
+(h) repeating program modules (a) through (g) for as long as it is desired to track persons and objects in the scene.
+57. The computer-readable memory of claim 56, wherein the program module for selecting a range image generated subsequent to the last previously selected range image, comprises a sub-module for selecting the range image generated immediately following the last previously selected range image.
+58. The computer-readable memory of claim 45, wherein the computer program further comprises a program module, executable prior to the execution of the program module for segmenting the foreground image, for morphologically growing and then shrinking the foreground image so as to connect separated regions associated with the same person or object.
+59. The computer-readable memory of claim 58, wherein the program module for morphologically growing and shrinking the foreground image, comprises a sub-module for adding pixels in gaps between regions to the foreground image only when pixels in the vicinity of the gap exhibit similar depth values.
+60. The computer-readable memory of claim 45, further comprising a program module for determining the identity of a person or object associated with a segmented region in the foreground image.
+61. The computer-readable memory of claim 60, wherein the program module for determining the identity of a person or object associated with a segmented region in the foreground image, comprises sub-modules for:
+capturing an intensity image of the scene contemporaneously with the generation of the currently selected range image;
+identifying a region of said intensity image that corresponds in location within the scene to the segmented region in the foreground image;
+employing the identified region to determine the identity of the person or object represented by that region.
+62. The computer-readable memory of claim 61, wherein the sub-module for employing the identified region to determine the identity of the person or object represented by that region, comprises sub-modules for:
+characterizing the identified region in a way similar to a series of stored intensity images of known persons and objects that are to be identified in said captured intensity-based image of the scene;
+comparing the characterized identified region to each of the stored, similarly characterized images;
+assessing the degree of similarity between the compared region and each image; and
+whenever a prescribed degree of similarity exists between the identified region and one of the stored images, designating the person or object represented by the identified region to be the person or object associated with that stored image.
+63. The computer-readable memory of claim 61, wherein the intensity image of the scene is a color image.
+64. The computer-readable memory of claim 45, further comprising a program module for refining the segmentation of a projected region prior to designating its ground plane coordinates so as to ensure the projected region represents only a single person or object.
+65. The computer-readable memory of claim 64, wherein the program module for refining the segmentation of a projected region, comprises sub-modules for:
+cordoning the projected region into a series of cells;
+identifying one or more peak cells in the projected region, wherein a peak cell is one which contains the greatest number of pixels in comparison to neighboring cells located within a first prescribed radius of the cell and whose pixel density exceeds a prescribed threshold indicative of a density of pixels expected in a cell containing pixels representing a person or object of interest;
+for each peak cell identified, conglomerating the regions contributing pixels to the peak cell as well as neighboring cells located within a second prescribed radius from the peak cell;
+dividing any region contributing pixels to more than one conglomeration by reassigning each pixel of the region to the conglomeration associated with the closest peak cell to produce a revised conglomeration; and
+designating each revised conglomeration as a segmented ground plane region.
+66. The computer-readable memory of claim 64, further comprising a program module for determining the identity of a person or object associated with a segmented ground plane region.
+67. A system for determining the location of persons and objects in a scene, comprising:
+a range imager module capable of generating a series of range images of the scene over time;
+a background model generator module capable of computing a background model using only range information from a block of range images provided by the range imager module;
+a background subtractor module capable of subtracting the background from a currently selected range image which was generated subsequent to said block of range images using the background model and provided to the background subtractor module by the range imager module, said subtracting resulting in a foreground image;
+a foreground image segmenter module capable of segmenting the foreground image into at least one region, wherein each region represents a different person or object of interest in the scene captured in said currently selected range image;
+an object locator module capable of projecting the segmented regions of the foreground image onto a ground plane of the scene and determining the location of each projected region on the ground plane; and
+an output module capable of outputting the ground plane coordinates associated with each of the projected regions.
+68. The system of claim 67, further comprising a morphological operator module capable of morphologically growing and then shrinking the foreground image so as to connect separated regions associated with the same person or object prior to providing the foreground image to the foreground image segmentor module.
+69. The system of claim 67, further comprising:
+an imager module for capturing an intensity image of the scene contemporaneously with the generation of the currently selected range image;
+an object identifier module capable of determining the identity of a person or object associated with a portion of the intensity image captured by the imager module which corresponds in location within the scene to a segmented region in the foreground image provided by the foreground image segmentor module.
+70. The system of claim 67, wherein the object locator module is further capable of refining the segmentation of a projected region prior to determining the location the projected region on the ground plane, so as to ensure the projected region represents only a single person or object.

@@ -1,0 +1,290 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+| . Mitler-Boré & Partner
+
+Application No.: 11 010 010.4-1958
+
+Applicant: SAP AG
+
+"System And Method For Improved Service Oriented Architecture"
+Our Ref: $11043EU - hb / mgo
+
+Claims (Main Request)
+
+1. A computer-implemented method of executing a service-oriented task in a
+distributed network environment, comprising: .
+
+__ - providing a task-coordinating unit (202) comprising an enterprise service
+bus;
+
+- saving (102), by the task-coordinating unit (202), the task as a sequence
+of services including a first service and a second service, wherein the saved task
+includes a first service-input location (202A) that indicates where first service-input
+values are stored for the first service, wherein the first service-input location
+(202A) is a file directory under the control of the task-coordinating unit (202);
+
+- sending (104) a first task-pending notification from the task-coordinating
+unit (202) to a first service provider (204) corresponding to the first service, wherein
+the first task-pending notification includes the first service-input location (202A); ©
+
+- receiving (106) at the task-coordinating unit (202) a first task-results notifi-
+cation from the first service provider, wherein the first task-results notification in-
+cludes a first service-output location (204A) that indicates where the first service
+provider has stored corresponding first service-output values, wherein the first
+service-output location (204A) ts a file directory under the control of the first serv-
+ice provider (204);
+
+sending (108) a second task-pending notification from the task-coordinating
+unit (202) to a second service provider (206) corresponding to the second service,
+wherein the second task-pending notification includes the first service-output loca-
+tion (204A) identified as a second service-input location that indicates where sec-
+ond service-input values are stored for the second service;
+
+- receiving (110), at the task-coordinating unit (202) a second task-results
+notification from the second service provider (206), wherein the second task-
+results notification includes a second service-output location (206A) that indicates
+
+where the second service provider (206) has stored corresponding second serv-
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2 Miller-Boré & Partner
+
+ice-output values, wherein the second service-output location (206A) is a file di-
+rectory under the control of the second service provider (206);
+
+- providing the first service at the first service provider (204) by accessing
+the first service-input values at the first service-input location (202A), generating
+the first service-output values from the first service-input values, and storing the
+first service-output values at the first service-output location (204A);
+
+- providing the second service at the second service provider (206) by ac-
+cessing the second service-input values at the second service-input location, gen-
+erating the second service-output values from the second service-input values and
+storing the second service-output values at the second service-output location
+(206A), wherein providing at least one of the services includes:
+
+-- maintaining a cache of service-output values for the at least one
+service; and
+
+-- generating at least some service-output values for the at least one
+service by accessing cache values stored prior to receiving a corresponding
+task-pending notification; and
+
+- sending, by the task-coordinating unit (202) the second service-output lo-
+
+cation (206A) to a user.
+
+2. The method of claim 1, further comprising:
+
+receiving task-input values from a user to specify the first service-input val-
+
+ues.
+
+3. The method of claim 1 or 2, wherein the first and second task-pending notifi-
+cations each include a saved-task location that indicates where the saved task is
+
+stored.
+
+4. The method of any of claims 1 to 3, further comprising:
+
+in response to receiving the first task-results notification, updating the
+saved task to indicate completion of the first service; and
+
+in response to receiving the second task-results notification, updating the
+saved task to indicate completion of the second service; and/or
+
+providing selected service-output values to a user as a final result of the
+
+task.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3 Miller-Boré & Partner
+
+5. The method of any of claims 1 to 4, wherein the services include a third serv-
+ice, and the method further comprises:
+
+sending a third task-pending notification to a third service provider corre-
+sponding to the third service, wherein the third task-pending notification includes
+the second service-output location (206A) identified as a third service-input loca-
+tion that indicates where input values for the third service are stored; and
+
+receiving a third task-results notification from the third service provider,
+wherein the third task-results notification includes a third service-output location
+that indicates where the third service provider has stored corresponding third
+
+service-output results.
+
+6. The method of any of claims 1 to 5, further comprising: .
+identifying at least one of the service providers by accessing a service-
+provider interface and relating the service-provider interface to at least one of the
+
+services.
+
+7, A computer-readable medium that stores a computer program for executing a
+
+task, wherein the computer program includes instructions that, when executed by a
+
+computer, cause the computer to perform the method of any of claims 1 to 6.
+
+8. An apparatus that executes a service-oriented task in a distributed network
+environment, the apparatus comprising:
+
+a task-saving module that performs operations including: saving (102), by a
+task-coordinating unit (202), the task as a sequence of services including a first
+service and a second service, wherein the saved task includes a first service-input
+location (202A) that indicates where first service-input values are stored for the
+first service, wherein the first service-input location (202A) is a file directory under
+the control of the task-coordinating unit (202);
+
+a first task-pending notification module that performs operations including:
+sending (104) a first task-pending notification to a first service provider (204) cor-
+responding to the first service, wherein the first task-pending notification includes
+the first service-input location (202A);
+
+a first task-results notification module that performs operations including:
+
+receiving (106) a first task-results notification from the first service provider (204),
+
+-wherein the first task-results notification includes a first service-output location
+
+(204A) that indicates where the first service provider (204) has stored corre-
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4 Miuller-Boré & Partner
+
+sponding first service-output values, wherein the first service-output location
+(204A) is a file directory under the control of the first service provider (204);
+
+a second task-pending notification module that performs operations in-
+cluding: sending (108) a second task-pending notification to a second service pro-
+vider (206) corresponding to the second service, wherein the second task-pending
+notification includes the first service-output location (204A) identified as a second
+service-input location that indicates where second service-input values are stored
+for the second service;
+
+a second task-results notification module that performs operations includ-
+ing: receiving (110) a second task-results notification from the second service pro-
+vider (206), wherein the second task-results notification includes a second serv-
+ice-output location (206A) that indicates where the second service provider (206)
+has stored corresponding second service-output values, wherein the second
+service-output location (206A) is a file directory under the control of the second
+service provider (206);
+
+a first service module at the first service provider (204), wherein the first
+service module performs operations including: providing the first service at the first
+service provider (204) by accessing the first service-input values at the first serv-
+ice-input location (202A), generating the first service-output values from the first
+service-input values, and storing the first service-output values at the first service-
+output location (204A);
+
+a second service module at the second service provider (206), wherein the
+second service module performs operations including: providing the second service
+at the second service provider (206) by accessing the second service-input values at
+the second service-input location, generating the second service-output values from
+the second service-input values and storing the second service-output values at the
+second service-output location (206A), wherein providing at least one of the services |
+includes: |
+
+- maintaining a cache of service-output values for the at least one
+service; and
+
+- generating at least some service-output values for the- at least one
+service by accessing cache values stored prior to receiving a corresponding
+task-pending notification; and
+
+wherein the task-coordinating unit (202) is sending the second service-output
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+5 Muller-Boré & Partner
+
+location (206A) to a user.
+
+9. The apparatus of claim 8, wherein the task-saving module performs opera-
+tions including: receiving task-input values from a user to specify the first service-
+input values, and/or wherein the first and second task-pending notifications each in-
+clude a saved-task location that indicates where the saved task is stored, and/or
+wherein
+
+the first task-results notification module performs operations including: in
+response to receiving the first task-results notification, updating the saved task to
+indicate completion of the first service; and
+
+the second task-results notification module performs operations including:
+in response to receiving the second task-results notification, updating the saved
+
+task to indicate completion of the second service.
+
+10. The apparatus of claim 8 or 9, wherein the apparatus performs operations
+including:
+
+providing selected service-output values to a user as a final result of the
+
+task; and/or
+
+identifying at least one of the service providers by accessing a service-
+provider interface and relating the service-provider interface to at least one of the
+
+services.
+
+11. The apparatus of any of claims 8 to 10, wherein the services include a third
+service, and the apparatus further comprises:
+
+a third task-pending notification module that performs operations including:
+sending a third task-pending notification to a third service provider corresponding
+to the third service, wherein the third task-pending notification includes the second
+service-output location (206A) identified as.a third service-input location that indi-
+cates where input values for the third service are stored; and
+
+a third task-results notification module that performs operations including:
+receiving a third task-results notification from the third service provider, wherein
+the third task-results notification includes a third service-output location that indi-
+cates where the third service provider has stored corresponding third service-
+
+output results.

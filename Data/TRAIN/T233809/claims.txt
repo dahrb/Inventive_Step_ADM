@@ -1,0 +1,120 @@
+--- PAGE 1 ---
+Application No.: 99 304 645.7
+
+Applicant: Panasonic Corporation
+Our Ref.: EP67038DK104bec
+Date: November 30, 2009
+
+CLAIMS - MAIN REQUEST (clean)
+
+1. Anintegrated image input/output apparatus (10) for enabling a user of a computer (30)
+connected to said integrated image input/output apparatus (10) over a network to
+
+output image data, said integrated image input/output apparatus (10) comprising:
+
+an operation panel (4b) including a start button (4c), image data input means (2a),
+being a document scanner, for inputting image data by reading a document when the
+start button (4c) is pressed, and image data output means (1a), being a printer, for
+printing the image data; storage means (9) for storing the inputted image data;
+
+attribute information generating means (3) for issuing a registration number which
+uniquely identifies the inputted image data in the integrated image input/output
+apparatus (10), in response to the start button (4c) being pressed, and generating
+attribute information for the inputted image data, the attribute information containing
+
+the issued registration number;
+
+image data management means (8) for adding a location of the inputted image data to
+be stored on the storage means (9) to the attribute information for the image data, and
+recording the attribute information in an attribute information table (9a) on the storage
+
+means (9); and
+
+publication means (6) for conducting data communications with the computer (30) over
+the network, for sending data over the network to create on the computer (30) a list for
+displaying items of records in the attribute information table (9a) and clickable items for
+specifying the stored image data to be outputted; in response to a list transfer request
+from the computer (30) and for, upon receipt of an output request from the computer
+(30) together with the registration number of the image data specified by using the
+created list, notifying the image data management means (8) of the received
+
+registration number,
+
+--- PAGE 2 ---
+and wherein the image data management means (8) fetches the image data to be
+outputted from the storage means (9) according to the location of the image data
+corresponding to the notified registration number, and the image data output means
+(1a) prints the fetched image data, the image data being printed without passing
+through the network.
+
+An integrated image input/output apparatus according to claim 1, wherein the
+publication means (6) is arranged to create a list which displays a plurality of feature
+
+image data for the stored image data.
+
+An integrated image input/output apparatus according to claim 2, wherein the image
+data management means (8) is arranged to add the feature image data on the storage
+means (9) to the record for the inputted image data in the attribute information table
+(9a).
+
+An integrated image input/output apparatus according to claim 3, further comprising
+thumbnail image generating means (12) for generating thumbnail image data from the
+
+inputted image data,
+
+and wherein the image data management means (8) is arranged to store the
+generated thumbnail image data on the storage means (9) and to add the location of
+the thumbnail image data on the storage means (9) to the record for the image data
+used for generating the thumbnail image data in the attribute information table (9a),
+
+and wherein the publication means (6) is arranged to create a list displaying a plurality
+of the thumbnail image data based on the locations of the plurality of the thumbnail
+
+image data recorded in the attribute information table (9a).
+
+An integrated image input/output apparatus according to claim 3, wherein the image
+data management means (8) is arranged to add the feature image data selected from
+predetermined image data for the inputted image data, on the storage means (9), to
+the record for the image data in the attribute information table (9a),
+
+and wherein the publication means (6) is arranged to create a list displaying a plurality
+of the feature image data based on the feature image data recorded in the attribute
+information table (9a).
+
+--- PAGE 3 ---
+An integrated image input/output apparatus according to any preceding claim, further
+comprising a user information table (9c) configured to have unique user IDs
+
+(identifications) and passwords,
+
+and wherein, when the user ID and password in the user information table is inputted
+before the start button (4c) is pressed, the attribute information generating means (3) is
+arranged to generate attribute information further containing the inputted user ID and
+
+password,
+
+and wherein the publication means (6) is arranged to create a list further displaying the
+
+user IDs of the records in the attribute information table (9a).
+
+An integrated image input/output apparatus according to any preceding claim, further
+
+comprising:
+
+receipt number issuing means for, in response to a security print request for the
+printing of image data by the image data output means (1a) in order to not be seen by
+any third person after the output request, issuing a unique receipt number for the
+image data to be outputted, the issued receipt number being notified by the publication
+
+means (6) to a user of the computer sending the output request; and
+
+image output control means (1b) for, when the receipt number is inputted or received
+after the output request, instructing the image data output means (1a) to print image
+
+data corresponding to the receipt number.
+
+An integrated image data management system comprising an integrated image
+input/output apparatus as claimed in any preceding claim, and a plurality of computers,
+each computer including browser means, the computers and the integrated image
+
+input/output apparatus being connected through a network.

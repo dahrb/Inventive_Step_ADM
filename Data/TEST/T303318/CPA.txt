@@ -1,0 +1,36 @@
+Title: Bringing a visual representation to life via learned input from the user
+
+Abstract: Data captured with respect to a human may be analyzed and applied to a visual representation of a user such that the visual representation begins to reflect the behavioral characteristics of the user. For example, a system may have a capture device that captures data about the user in the physical space. The system may identify the user's characteristics, tendencies, voice patterns, behaviors, gestures, etc. Over time, the system may learn a user's tendencies and intelligently apply animations to the user's avatar such that the avatar behaves and responds in accordance with the identified behaviors of the user. The animations applied to the avatar may be animations selected from a library of pre-packaged animations, or the animations may be entered and recorded by the user into the avatar's avatar library.
+
+Type: US Patent
+
+Claims: 
+1. A method for applying an animation to a visual representation, the method comprising:
+rendering the visual representation of a user;
+selecting an animation from an avatar library that is representative of a user's behavior identified from a history of user data, wherein the history of user data comprises user data previously captured from a physical space; and
+applying the animation from the avatar library to the visual representation of the user.
+2. The method of claim 1, wherein the animation from the avatar library is applied to the visual representation when the user is not available in the physical space for capture by the capture device.
+3. The method of claim 2, wherein the unavailable user is a first user and the visual representation of the first user is configured for rendering to a second user.
+4. The method of claim 1, wherein the animation selected from the avatar library and applied to the user's visual representation does not correspond to data presently captured by the capture device of the user present in the physical space.
+5. The method of claim 1, wherein the avatar library is a pre-packaged avatar library and selecting the animation from the avatar library comprises selecting the animation from the pre-packaged avatar library.
+6. The method of claim 1, further comprising rewriting the animation in the avatar library to correspond to the user's motion captured by a capture device.
+7. The method of claim 7, wherein rewriting the animation is prompted by a user's gesture in the physical space.
+8. A method for storing behavioral data captured by a capture device, the method comprising:
+receiving data of a physical space, wherein the data is representative of a user in the physical space;
+identifying characteristics indicative of a user's behavior from the data; and
+storing a history of the characteristics indicative of the user's behavior.
+9. The method of claim 8, further comprising applying an animation to an avatar associated with the user, wherein the animation is from an avatar library and is representative of the user's behavior identified from the history data.
+10. The method of claim 8, further comprising correlating the user's behavior with a contextual circumstance by correlating at least one of the characteristics indicative of the user's behavior with the contextual circumstance.
+11. The method of claim 10, wherein a contextual circumstance comprises at least one of a condition of a user's physical environment, a condition of a user's virtual environment, a status of a system, a status of an application, a success of the user in an application, a failure of the user in an application, an active/non-active status of the user, a presence of a second user, or a gesture.
+12. The method of claim 8, further comprising:
+identifying a contextual circumstance;
+comparing the contextual circumstance to the history of the characteristics indicative of the user's behavior and identifying a correlation between at least one of the characteristics indicative of the user's behavior with the contextual circumstance; and
+selecting, from an animation library, an animation representative of the user's behavior that corresponds to the contextual circumstance.
+13. The method of claim 8, further comprising at least one of adding to or rewriting an animation to the avatar library.
+14. The method of claim 13, wherein the avatar library is a pre-packaged avatar library, and rewriting an animation comprises rewriting an animation in the pre-packaged avatar library to correspond to the history of the characteristics indicative of the user's behavior.
+15. The method of claim 13, wherein adding the animation to the avatar library comprises recording a user's motion in the physical space and adding an animation representative of the user's motion to the avatar library.
+16. The method of claim 13, wherein the at least one the adding or rewriting is prompted by a user's gesture.
+17. The method of claim 13, further comprising validating the animation prior to adding the animation to the avatar library.
+18. The method of claim 8, wherein the characteristics indicative of the user's behavior comprises at least one of physical characteristics, facial features, speech patterns, vocabulary, voice commands, a gesture, motion, or body position.
+19. The method of claim 8, wherein identifying characteristics of a user's behavior from the data comprises passively identifying characteristics associated with natural activity of the user.
+20. The method of claim 8, wherein identifying characteristics of a user's behavior from the data comprises actively identifying characteristics associated with a user's gesture.

@@ -1,0 +1,43 @@
+TITLE:
+Diagnostic module for distributed industrial network including industrial control devices
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A network component for an industrial automation system. The component includes a network switch processor configured to implement a networking switching function, at least one communication port configured to provide a communication channel between the network switch processor and at least one industrial control device over a network, and a diagnostic module configured to be implemented by the network switch processor and configured to retrieve diagnostic information from the at least one industrial control device.
+
+CLAIMS:
+An industrial control system comprising:
+a plurality of industrial control devices each providing an electronic network interface and providing network readable diagnostic information;
+a diagnostic management interface providing a human machine interface to an operator; and
+a network appliance communicating with the diagnostic management interface and providing an electronic network interface communication with the plurality of industrial control devices, the network appliance including an electronic computer executing a stored program to perform the steps of:
+(1) communicate with the plurality of industrial control devices to collect network readable network diagnostic information;
+(2) translate the collected network diagnostic information into a common format; and
+(3) present an integrated depiction of the network health from the translated collected network diagnostic information.
+The industrial control system of claim 1, wherein the network appliance is configured to identify the industrial control devices and determine the native protocol used by each device.
+The industrial control system of claim 2, wherein the network application is configured to retrieve diagnostic information utilizing the native protocol of the industrial control device, or
+wherein the network appliance is configured to generate a network topology based on the identification of the industrial control devices.
+The industrial control system of one of claims 1 to 3, wherein the network appliance further includes a data repository configured to receive and store the diagnostic information for the network appliance in the native format of the industrial control device.
+The industrial control system of one of claims 1 to 4, wherein the network appliance is configured to receive instructions through the diagnostic management interface utilized to modify the diagnostic behavior of at least one industrial control device.
+The industrial control system of one of claims 1 to 5, wherein the diagnostic information station interface is configured to provide communication with the diagnostic management interface using the common industrial protocol.
+The industrial control system of one of claims 1 to 6, wherein the network appliance is configured to identify the at least one industrial control device using an initialization broadcast message, and/or
+wherein the initialization broadcast message is further utilized to identify the native protocol of at least one industrial control device.
+The industrial control system of one of claims 1 to 7, wherein the network appliance is configured to monitor network data traffic for diagnostic information being transmitted by an industrial control device.
+The industrial control system of one of claims 1 to 8, wherein the network appliance is configured to broadcast one or more requests for diagnostic information to the industrial control devices.
+A computer implemented method for implementing diagnostic information management in a computer network switch for an industrial automation system, comprising:
+providing a networking switching function over and industrial automation system network;
+communicating with at least one industrial control device over the industrial automation system network;
+receiving diagnostic information from the at least one industrial control device over the industrial automation system network in a native protocol of the industrial control device; and
+translating the received diagnostic information to a common protocol.
+The method of claim 10, further including identifying the industrial control devices and determine the native protocol used by each device, and/or
+wherein receiving diagnostic information includes requesting and receiving the information utilizing the native protocol of the industrial control device, or
+further including generating a network topology based on the identification of the industrial control devices.
+The method of claim 10 or 11, further including storing the diagnostic information for the diagnostic module in the native format of the industrial control device.
+The method of claim 10 to 12, further including transmitting and receiving information between the data repository and a diagnostic management station, and/or
+further including receiving instructions through the diagnostic management interface utilized to modify the diagnostic behavior of at least one of the industrial control devices, or
+wherein communication with the diagnostic management station is implemented using the common industrial protocol.
+The method of claim 10 to 13, further including indentifying the at least one industrial control device using an initialization broadcast message transmitted through each of the one or more ports, and/or
+wherein identify the at least one industrial control device further includes identifying the native protocol of at least one industrial control device.
+The method of claim 10 to 14, further including monitoring network data traffic for diagnostic information being transmitted by an industrial control device, or
+further including broadcasting one or more requests for diagnostic information through the one or more ports of the network component.

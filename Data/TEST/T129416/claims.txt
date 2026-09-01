@@ -1,0 +1,335 @@
+--- PAGE 1 ---
+From:Kilian Kilian & Partner IO EPA DBY2Z3994465 31/03/2016 16:03 #3/8 P.OU13/134
+
+main request -1-
+
+Claims
+
+1. An image processing device (1) for specifying a region in an
+input image based on a correlation value with a model image; the im-
+age processing device (1) comprising:
+
+an input image acquiring means (2) adapted to acquire the input
+image made up of a plurality of pixels defined by three color variables in
+which each color is independent from each other;
+
+a determination target region setting means adapted to set a de-
+termination target region (OB3) in the input image, the determination
+target region (OBJ) having a size equal to the model image acquired in
+advance;
+
+a first data array transformation means adapted to arrange at
+least two of the three color variables of each pixel contained in the de-
+termination target region (OBJ) in a single first data array (40) accord-
+ing to a predetermined rule;
+
+a correlation value calculating means adapted to calculate the cor-
+relation value between the single first data array (40) and a single sec-
+ond data array (44) in which at least two of the three color variables of
+each pixel configuring the model image are arranged according to the
+predetermined rule; wherein
+
+the determination target region setting means are adapted to se-
+quentially move the determination target region (OBJ) in a search re-
+gion (SEARCH) of the input image, and to repeatedly execute, for every
+movement of the determination target region (OBJ), the processes in
+the first data array transformation means and the correlation value cal-
+culating means; and
+
+a determining means adapted to specify the determination target
+region (OBJ) having high correlation value with the model image based
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 13 of 134 was completed at 31.03.2016 17:03:09
+Received at the EPO on Mar 31, 2016 18:02:54. Page 13 of 134
+
+--- PAGE 2 ---
+From:Kilian Kilian & Partner IO: EPA OBS23994465 BI/O3/2016 16:04 #3768 P.U14/134
+
+main request -2-
+
+On a comparison between the correlation value calculated for every
+movement of the determination target region and a predetermined
+threshold value, and to output the total number of specified determina-
+tion target regions (OBJ) and/or each position of the specified determi-
+nation target regions (OBJ) when the movement of the determination
+target region is completed.
+
+2. An image processing device (1) for specifying a region in an
+input image based on a correlation value with a model image; the im-
+age processing device (1) comprising:
+
+an input image acquiring means (2) adapted to acquire the input
+image made up of a plurality of pixels defined by three color variables in
+which each color is independent from each other;
+
+a determination target region setting means adapted to set a de-
+termination target region (OBJ) in the input image, the determination
+target region (OBJ) having a size equal to the model image acquired in
+advance;
+
+a first data array transformation means adapted to arrange at
+least two of the three color variables of each pixel contained in the de-
+termination target region (OBJ) in a single first data array (40) accord-
+ing to a predetermined rule;
+
+a correlation value calculating means adapted to calculate the cor-
+relation value between the single first data array (40) and a single sec-
+ond data array (44) in which at least two of the three color variables
+defining each pixel configuring the model image are arranged according
+to the predetermined rule; wherein
+
+the determination target region setting means are adapted to se-
+quentially move the determination target region (OBJ) in a search re-
+gion (SEARCH) of the input image, and to repeatedly execute, for every
+movement of the determination target region (OBJ), the processes in
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 14 of 134 was completed at 31.03.2016 17:03:36
+Received at the EPO on Mar 31, 2016 18:02:54. Page 14 of 134
+
+--- PAGE 3 ---
+From:Kilian Kilian & Partner IOlSEPA OUBSG23994465 31/03/2016 16:04 #3768 P.U1S/134
+
+main request -3-
+
+the first data array transformation means and the correlation value cal-
+culating means; and
+
+a determining means adapted to extract a predetermined number
+of correlation values in order from highest value out of the correlation
+values calculated for every movement of the determination target re-
+gion (OBJ) and to specify the determination target regions (OBJ) corre-
+sponding to the extracted correlation values when the movement of the
+determination target region (OBJ) is completed, and to output each po-
+sition of the specified determination target regions (OBJ).
+
+3. The image processing device (1) according to claim 1 or 2,
+further comprising
+
+a second data array transformation means for transforming the at
+least two of the three color variables of each pixel configuring the model
+image to the single second data array (44) according to the predeter-
+
+mined rule.
+
+4. The image processing device (1) according to claim 3, fur-
+ther comprising:
+
+a reference image acquiring means adapted to acquire a reference
+image (SIMG); and
+
+a model image acquiring means adapted to extract an image in
+response to a command from the outside from the reference image
+(SIMG), and to acquire the extracted image as the model image;
+wherein
+
+the second data array transformation means is adapted to trans-
+form the at least two of the three color variables of each pixel configur-
+ing the model image to the single second data array (44) according to
+the predetermined rule.
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 15 of 134 was completed at 31.03.2016 17:04:00
+Received at the EPO on Mar 31, 2016 18:02:54. Page 15 of 134
+
+--- PAGE 4 ---
+2: 3 x x z 3 5: x - 5/134
+From:Kilian Kilian & Partner IO EPA UB9Y2Z3994465 B1/U3/2016 16:04 #3/8 P.U1G/
+
+main request -4-
+
+5. The image processing device (1) according to claim 3,
+wherein each of the single first and single second data arrays (40, 44)
+is a two-dimensional array made up of a plurality of elements (42) ar-
+ranged in a matrix form,
+
+each of the elements (42) in the single first data array (40) corre-
+sponding to one of the pixels contained in the determination target re-
+gion (OBJ), and
+
+each of the elements in the single second data array (44) corre-
+sponding to one of the pixels contained in the model image, wherein
+
+the elements (42) are arranged in the matrix form in association
+with the position of the corresponding pixel; and
+
+each of the plurality of elements (42) contains a one-dimensional
+array of the three color variables defining the corresponding pixel.
+
+6. The image processing device (1) according to claim 3,
+wherein each of the single first and single second arrays (40, 44) in-
+cludes three two-dimensional arrays (30R, 30G, 30B) arranged in a ma-
+trix form, wherein
+
+each two-dimensional array (30R, 30G, 30B) included in the sin-
+gle first data array (40) is made up of one color variable out of the
+three color variables defining each pixel contained in the determination
+target region (OBJ) and
+
+each two-dimensional array (30R, 30G, 30B) included in the sin-
+gle second data array (44) is made up of one color variable out of the
+three color variables defining each pixel contained in the model image;
+
+in the single first and single second data array (40, 44), the one
+color variable being arranged in the two-dimensional array (30R, 30G,
+30B) in association with the position of the corresponding pixel; and,
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 16 of 134 was completed at 31.03.2016 17:04:26
+Received at the EPO on Mar 31, 2016 18:02:54. Page 16 of 134
+
+--- PAGE 5 ---
+From:Kilian Kilian & Partner IO: EPA OBY23994465 BI/OU3/2016G 16:05 #3768 P.O017/134
+
+main request ~5-
+
+in the single first and single second arrays (40, 44), the three
+two-dimensional arrays (30R, 30G, 30B) are arranged in order along
+the same direction and configure the single data array (60).
+
+7. The image processing device (1) according to claim 3,
+wherein each of the single first and single second data arrays (40, 44)
+includes three one-dimensional arrays (72R, 72G, 72B), wherein
+
+each one-dimensional array (72R, 72G, 72B) included in the sin-
+gle first data array (40) is made up of one color variable out of the
+three color variables defining each pixel contained in the determination
+target region (OBJ), and
+
+each one-dimensional array (72R, 72G, 72B) included in the sin-
+gle second data array (44) is made up of one color variable out of the
+three color variables defining each pixel contained in the model image;
+
+the one color variable being continuously arranged in the corre-
+sponding one-dimensional array (72R, 72G, 72B); and
+
+the three one-dimensional arrays (72R, 72G, 72B) are arranged in
+order in the same direction and configure a single data array (70).
+
+8. The image processing device (1) according to claim 3,
+wherein the three color variables are gray values of red, green, and
+blue; and
+
+the correlation value calculating means is adapted to calculate a
+
+normalized correlation value as correlation value.
+
+9, The image processing device (1) according to claim 1 or 2,
+wherein the three color variables are level values representing hue, val-
+ue, chroma; and
+
+each of the single first and single second data arrays (40, 44) isa
+single data array transformed from the level value of the hue and
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 17 of 134 was completed at 31.03.2016 17:04:51
+Received at the EPO on Mar 31, 2016 18:02:54. Page 17 of 134
+
+--- PAGE 6 ---
+From:Kilian Kilian & Partner IODEPA DVBY23994465 31/03/2016 16:05 #3/8 P.O18/134
+
+main request -6-
+
+chroma without including the level value of brightness according to the
+predetermined rule.
+
+10. An image processing method for specifying a region in an
+input image based on a correlation value with a model image; the im-
+age processing method comprising:
+
+an input image acquiring step for acquiring the input image made
+up of a plurality of pixels defined by three color variables in which each
+color is independent from each other;
+
+a determination target region setting step for setting a determina-
+tion target region (OBJ) in the input image, the determination target
+region (OBJ) having a size equal to the model image acquired in ad-
+vance;
+
+a first data array transformation step for arranging at least two of
+the three color variables of each pixel contained in the determination
+target region (OBJ) in a single first data array (40) according to a pre-
+determined rule;
+
+a correlation value calculating step for calculating the correlation
+value between the single first data array (40) and a single second data
+array (44) in which at least two of the three color variables of each pixel
+configuring the model image are arranged according to the predeter-
+mined rule; wherein
+
+the determination target region setting step sequentially moves
+the determination target region (OBJ) in a search region (SEARCH) of
+the input image, and repeatedly executes, for every movement of the
+determination target region (OBJ), the processes of the first data array
+transformation step and the correlation value calculating step; and
+
+a determining step of specifying the determination target region
+(OBJ) having high correlation value with the model image based on a
+comparison between the correlation value calculated for every move-
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 18 of 134 was completed at 31.03.2016 17:05:18
+Received at the EPO on Mar 31, 2016 18:02:54. Page 18 of 134
+
+--- PAGE 7 ---
+From:Kilian Kilian & Partner IODEPA DVBY23994465 31/03/2016 16:06 #3/8 P.U19/134
+
+main request -7-
+
+ment of the determination target region (OBJ) and a predetermined
+threshold value, and of outputting the total number of specified deter-
+mination target regions (OBJ) and/or each position of the specified de-
+termination target regions (OBJ) when the movement of the determina-
+tion target region is completed.
+
+11. An image processing method for specifying a region in an
+input image based on a correlation value with a model image; the im-
+age processing method comprising:
+
+an input image acquiring step for acquiring the input image made
+up of a plurality of pixels defined by three color variables in which each
+color is independent from each other;
+
+a determination target region setting step for setting a determina-
+tion target region (OBJ) in the input image, the determination target
+region (OBJ) having a size equal to the model image acquired in ad-
+vance;
+
+a first data array transformation step for arranging at least two of
+the three color variables of each pixel contained in the determination
+target region (OBJ) in a single first data array (40) according to a pre-
+determined rule;
+
+a correlation value calculating step for calculating the correlation
+value between the single first data array (40) and a single second data
+array (44) in which at least two of the three color variables of each pixel
+configuring the model image are arranged according to the predeter-
+mined rule; wherein
+
+the determination target region setting step sequentially moves
+the determination target region (OBJ) in a search region (SEARCH) of
+the input image, and repeatedly executes, for every movement of the
+determination target region (OBJ), the processes of the first data array
+transformation step and the correlation value calculating step; and
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 19 of 134 was completed at 31.03.2016 17:05:45
+Received at the EPO on Mar 31, 2016 18:02:54. Page 19 of 134
+
+--- PAGE 8 ---
+From:Kilian Kilian & Partner IO: EPA OBS23994465 B1I/O3/2016 16:06 #3768 P.U20/134
+
+main request -8-
+
+a determining step of extracting a predetermined number of cor-
+relation values in order from highest value out of the correlation values
+calculated for every movement of the determination target region (OBJ)
+and to specify the determination target regions (OBJ) corresponding to
+the extracted correlation values when the movement of the determina-
+tion target region (OBJ) is completed, and to output each position of the
+specified determination target regions (OBJ).
+
+12. A program for specifying a region in an input image based
+on a correlation value with a model image; the image processing pro-
+gram executed by a computer comprising the steps of the method ac-
+cording to claims 10 and 11.
+
+13. A computer readable recording medium recorded with the
+program according to claim 12.
+
+Duration: 31.03.2016 16:57:19 - 31.03.2016 18:02:54. This page 20 of 134 was completed at 31.03.2016 17:06:02
+Received at the EPO on Mar 31, 2016 18:02:54. Page 20 of 134

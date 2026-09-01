@@ -1,0 +1,161 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+27
+
+CLAIMS:
+
+1. A method of accessing multiple independent databases with a single query
+having multiple expressions, the method comprising:
+
+deriving from a single query at least one filtering query containing at least one
+filtering expression and a target query containing at least one target expressions;
+
+searching a first one of the multiple independent databases using the at least
+one filtering query to obtain a filtering set of target entries matching the at least one
+filtering expression;
+
+applying identifiers only of the filtering set of target entries and the target query
+to a second one of the multiple independent databases to search amongst the filtering
+set of target entries only in the second database for entries that match the target
+expression; and
+
+generating a set of result entries from the second database which thereby
+
+satisfy the filtering expression and the target expression.
+
+2. A method according to claim 1, comprising the step of aggregating the result
+
+entries into groups according to attributes of the entries.
+
+3. A method according to claim 1 or 2, wherein the step of applying identifiers of a
+filtering set of target entries to a second one of the multiple independent databases
+comprises receiving at a controller the identifiers from the first one of the multiple
+independent databases, identifying the second one of the multiple independent
+databases at the controller and transmitting the identifiers of the filtering set of target
+
+entries to the second one of the multiple independent databases.
+
+4. A method according to claim 1 or 2, wherein the step of applying identifiers of
+the filtering set of target entries to a second one of the multiple independent databases
+comprises the step of identifying the second one of the multiple independent databases
+
+based on the target expression and automatically transmitting the identifiers from the
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+28
+
+first one of the multiple independent databases to the second one of the multiple
+
+independent databases, without the identifiers passing through a central controller.
+
+5. A method according to any preceding claim, wherein there is more than one
+filtering query, and a second one of the more than one filtering queries is used to
+search a further one of the multiple independent databases to obtain a further filtering
+
+set of target entries.
+
+6. A method according to any preceding claim, which comprises the step of
+applying a further target query derived from the single query to a further target
+
+database selected from the multiple independent databases.
+
+7. A method according to any preceding claim, comprising the step of associating
+
+with each one of the multiple independent databases a respective database agent.
+
+8. A method according to claim 7, comprising the step of transmitting the at least
+one filtering query to a database agent associated with the first one of the multiple
+
+independent databases.
+
+9. A method according to claim 2, wherein the groups comprise statistical bins,
+each bin containing result entries with attributes in a predefined parameter range for
+that attribute.
+
+10. A method according claim 9, comprising the step of applying a redaction
+threshold of at least one of: a minimum number of entries per bin; and a total minimum
+
+number of result entries.
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+29
+
+11... A method according to any preceding claim, comprising the step of encrypting
+the identifiers of the filtering set of target entries prior to applying the identifier to the
+
+second one of the multiple independent databases.
+
+12. A method according to claim 11, comprising the step of transmitting the
+encrypted identifiers over a communication network from a central controller to the
+
+multiple independent databases.
+
+13. A method according to claim 11, comprising the step of transmitting the
+encrypted identifiers over a communication network directly from the first one of the
+multiple independent databases to the second one of the multiple independent
+
+databases.
+
+14. A method according to any of claims 11 to 13, comprising the step of applying
+the identifiers to the second one of the multiple independent databases as a bloom
+
+filter or in a hashed form.
+
+15. A control module comprising a computer arranged to execute a computer
+program in the form of computer readable instructions to configure the control module
+to:
+
+receive a query having multiple expressions;
+
+derive from the query at least one filtering query containing at least one filtering
+expression and a target query containing at least one target expression;
+
+identify a first one of multiple independent databases and apply the at least one
+filtering query to the identified first database;
+
+receive identifiers of a filtering set of target entries matching the at least one
+filtering expression as a result of applying the filtering query to the first database;
+
+identify a second one of the multiple independent databases; and
+
+--- PAGE 4 ---
+MAIN REQUEST
+
+30
+
+cause the identifiers only of the filtering set of target entries to be applied to the
+second database with the target query to search for any of the target entries in the
+second database that match the target expression;
+
+whereby a set of result entries from the second database which satisfy the
+filtering expression and the target expression is generated.
+
+16. A computer system comprising a control module as defined in claim 15, which
+is in communication with multiple independent databases via a communication
+network, wherein each of the multiple independent databases is in communication with
+the control module via a separate independently operable communication link, and
+wherein the step of applying the filtering query to a first one of the databases
+comprising transmitting the filtering query over a first one of the communication links
+to the first database, and wherein the step of applying identifiers of the target entries
+and the target query comprise transmitting the identifiers and the target query to the
+
+second database over a second communication link.
+
+17. A computer system according to claim 16, wherein the first and second
+independent databases are at separate geographical locations or separate IP
+addresses.
+
+18. A computer system according to claim 16, wherein the first and second
+independent databases are under independent control, with a privacy restriction
+
+between the data comprised in each of the first and second independent databases.
+
+19. A computer system according to claim 16, wherein each of the independent
+databases is associated with a local database agent which is configured to receive the
+
+filtering query or target query respectively and apply it to their associated database.

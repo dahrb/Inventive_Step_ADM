@@ -1,0 +1,263 @@
+--- PAGE 1 ---
+10
+
+20
+
+25
+
+30
+
+35
+
+40
+
+EPO -DG2
+
+15 05. 05. 2011
+
+CLAIMS
+
+1.- A method for safely guiding interventions in processes the substrate of which is the
+neuronal plasticity, of the type which comprises generating and using a database with information
+regarding a plurality of users at least in relation to interventions to be performed or to which to be
+subjected and to the users responses to the performance of said interventions, said method being
+characterized in that it comprises automatically performing the following steps:
+
+a) generating at least two groups of candidate predictions related to possible
+interventions, performing at least two steps of classification based on at least heuristic rules on
+the information of said database considered as constituent of some basic training data,
+
+b) generating from at least said two groups of candidate predictions a set of training data
+in meta-level, and
+
+c) performing a meta-classification based on at least heuristic rules on said set of training
+data in meta-level, and
+
+d) determining a group of optimum predictions based on the results of said step c),
+selecting one of said groups of candidate predictions obtained in step a), or combining them to
+one another.
+
+2.- The method according to claim 1, characterized in that said step a) comprises carrying
+out said at least two steps of classification independently by means of using two respective
+classifiers differentiated from one another at least in that each of them is based on applying a
+respective set of heuristic rules different from that of the other classifier to obtain said at least
+two groups of candidate predictions which are different from one another.
+
+3.- The method according to claim 2, characterized in that when said step d) comprises
+selecting one of said groups of candidate predictions, step d) also comprises selecting the
+classifier and heuristic rules used which have caused said optimum predictions.
+
+4.- The method according to claim 1, characterized in that said step a) comprises carrying
+out said at least two steps of classification by means of using a single classifier based on a single
+set of heuristic rules, said classifier being used at least twice, once for each step of classification
+with different input parameters every time.
+
+5.- The method according to claim 4, characterized in that when said step d) comprises
+selecting one of said groups of candidate predictions, step d) also comprises selecting the input
+parameters of said classifier which have caused said optimum predictions.
+
+6.- The method according to claim 3 or 5, characterized in that it comprises performing
+said steps a) to d) prior to requesting or applying for a prediction in relation to an intervention for
+a determined user, and in that it comprises, for the purpose of carrying out said prediction,
+applying the classifier together with its input parameters and heuristic rules selected after said
+step d) on data with information regarding said determined user to obtain at least the prediction in
+relation to an intervention to be performed.
+
+7.- The method according to claim 3 or 5, characterized in that it comprises performing
+
+said steps a) to d) after requesting the prediction in relation to an intervention for a determined
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+16
+
+user, data with information regarding said determined user being included in said database to be
+used in said step a) to finally obtain at least the prediction in relation to said intervention to be
+performed.
+
+8.- The method according to claim 6 or 7, characterized in that if said determined user is
+a user of said plurality of users, the method comprises extracting said data with information
+regarding said determined user from said database.
+
+9.- The method according to claim 6 or 7, characterized in that if said determined user is
+not a user of said plurality of users, the method comprises introducing said data with information
+regarding said determined user in said database.
+
+10.- The method according to claim 8 or 9, characterized in that it comprises:
+
+- providing said intervention to said determined user;
+
+- subjecting said determined user to said intervention; and
+
+- acquiring and recording in said database data with information regarding the results of
+the determined user been subjected to said intervention and, if appropriate, other new data
+regarding said determined user for the purpose of updating said database
+
+11.- The method according to claim 10, characterized in that it comprises sequentially
+performing said steps a) to d) again periodically or every time new data is introduced in said
+database.
+
+12.- The method according to any of the previous claims, characterized in that said step
+a) comprises validating the results of said steps of classification from validation data common for
+validating the results of all the steps of classification, the candidate predictions being performed
+after said validation.
+
+13.- The method according to claim 12, characterized in that said step b) comprises
+generating said set of training data in meta-level also from said validation data.
+
+14.- The method according to any one of the previous claims when it depends on claim 4
+or 5, characterized in that said steps of classification of said step a) and said step d) of meta-
+classification are carried out by means of using artificial neural networks, said input parameters
+being at least related to one of the following characteristics of an artificial neural network:
+network topology, activation function, end condition, learning mechanism, or to a combination
+thereof.
+
+15.- The method according to any of the previous claims, characterized in that said steps
+of classification of said step a) and said step d) of meta-classification are carried out by means of
+using automatic inductive learning algorithms, carrying out in said step d) the selection of the
+inductive learning algorithm and/or of its input parameters which have caused the
+aforementioned optimum predictions.
+
+16.- The method according to claim 15 when it depends on claim 6, characterized in that
+said performing of steps a) to d) prior to requesting or applying for a prediction in relation to an
+intervention for a determined user forms part of the execution of greedy automatic inductive
+
+learning algorithms.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+17
+
+17.- The method according to claim 15 when it depends on claim 7, characterized in that
+said performing of steps a) to d) after requesting or applying for a prediction in relation to an
+intervention for a determined user forms part of the execution of lazy type automatic inductive
+learning algorithms.
+
+18.- The method according to any of the previous claims, characterized in that said step
+for generating said database comprises including information regarding each user of said plurality
+of users in relation to personal variables and/or structural variables and/or functional variables
+and/or evolutionary variables.
+
+19.- The method according to claim 18, characterized in that said process the substrate of
+which is the neuronal plasticity is a neurorehabilitation process.
+
+20.- The method according to claim 18, characterized in that said process the substrate of
+which is the neuronal plasticity is a neuroeducation/neurolearning process.
+
+21.- The method according to claim 18, characterized in that said process the substrate of
+which is the neuronal plasticity is a cognitive neurostimulation process.
+
+22.- The method according to claim 19, 20 or 21, characterized in that said interventions
+comprise at least cognitive and/or functional tasks to be performed by said determined user or
+subject of said neurorehabilitation, of said neuroeducation/neurolearning or of said cognitive
+neurostimulation.
+
+23.- The method according to any one of claims 18 to 22, characterized in that said
+personal variables comprise biological variables and/or psychological variables and/or social
+variables.
+
+24.- The method according to any one of claims 18 to 23, characterized in that said
+structural variables comprise variables which allow defining whether alterations at a structural
+level exist, as well as describing the involvement, if it exists, for each of the users, and they
+comprise primary and secondary diagnosis variables, if appropriate, and/or variables of etiology
+and/or variables of lesions in neuroimaging and/or variables of the severity of the lesion and/or
+variables of time of evolution.
+
+25.- The method according to any one of claims 18 to 24, characterized in that said
+functional variables comprise information in relation to the cognitive aspects of the users
+assessed by means of a round of neuropsychological examination, and they comprise attention
+variables and/or language variables and/or memory variables and/or executive functioning
+variables.
+
+26.- The method according to claim 22, characterized in that said evolutionary variables
+comprise information in relation to the success of each user been subjected to one or more
+interventions, said success being analyzed at at least one of the following four levels:
+
+- success at level of execution of the cognitive and/or functional task and of the
+suitability or adequacy of the task proposed for each specific profile of user;
+
+- success at level of achievement of the immediate objective which is understood as an
+improvement in the cognitive function for which the cognitive and/or functional task has been
+
+selected;
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+18
+
+- success at level of achievement of the generic objective which is understood as
+objectified improvements at other cognitive functions in addition to the target function; and
+
+- success at level of achievement of the long term objective which is understood as a
+reduction of the functional limitations for the development of daily activities in the case of a
+neurorehabilitation process, or which is understood as the achievement of a certain degree of
+neurolearning in the case of a neuroeducation/neurolearning process, or which is understood as
+an improvement in the stimulated cognitive capacities in the case of cognitive neurostimulation.
+
+27.- The method according to any of the previous claims, characterized in that it
+comprises starting said step a) after the prior selection by the person responsible for selecting the
+intervention or interventions of at least one intervention to be applied to a determined user.
+
+28.- The method according to claim 27, characterized in that said predictions refer to the
+percentage of success or risk of applying an intervention to a determined user.
+
+29.- The method according to claim 28 when it depends on claim 26, characterized in that
+it comprises depicting said percentage of success or risk for said determined user by means of
+said evolutionary variables and incorporating the new values of the evolutionary variables for
+said determined user in the database.
+
+30.- A system for safely guiding interventions in processes the substrate of which is the
+neuronal plasticity, comprising:
+
+- a central computer server (5) with access to a database (6) with information regarding a
+plurality of users at least in relation to interventions to which to be subjected or to be performed
+and to the user responses to the performance of said interventions,
+
+- a plurality of computerized user computer terminals (7a, 7b, 7c) in two-way
+communication with said central computer server (5) for receiving, each of them, information in
+relation to said interventions and for sending the result of performing said interventions to the
+central computer server (5), and
+
+- at least one therapist computer terminal (8) in remote communication with said central
+computer server (5) for requesting the prediction in relation to at least one intervention for a
+determined user, for receiving said requested prediction and for confirming that information in
+relation to said intervention, in relation to which said prediction has been required, has been sent
+by the server to the terminal of said determined user (7a),
+said system being suitable for applying the method according to any one of claims 1 to 29.
+
+31.- The system according to claim 30, characterized in that said central computer server
+
+(5) is provided for carrying out said steps a) to d).

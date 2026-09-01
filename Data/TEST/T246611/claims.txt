@@ -1,0 +1,125 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS
+
+1. A method of adaptive interpolation filtering a signal in a receiver to estimate a
+channel using pilot symbols, comprising:
+
+determining (120, 130, 140, 150) at least one correlation function parameter of
+the channel, wherein the at least one correlation function parameter is a Doppler
+frequency shift; characterized by
+
+determining (122, 134, 142, 152) an asymmetric first filter configuration, for
+which more old pilot symbols than future pilot symbols are used to perform the channel
+estimation, based on the correlation function parameter; and
+
+performing (124, 136, 144, 158) interpolation filtering in time on the signal using
+the determined first filter configuration; wherein
+
+the method repeats to update the first filter configuration.
+
+2. The method of claim 1, comprising:
+determining (132) a signal-to-noise ratio associated with the signal; and
+determining (136) the first filter configuration based on the correlation function
+
+parameter and the signal-to-noise ratio.
+
+3. The method of claim 1, wherein determining the first filter configuration
+includes basing the determination on a predetermined threshold signal-to-noise ratio
+
+associated with the signal, below which the signal cannot be processed.
+
+4. The method of claim 1, further comprising:
+
+determining (154) a delay spread of the channel;
+
+determining (156) a second filter configuration based on the delay spread; and
+performing (160) interpolation filtering on the signal in frequency using the
+
+determined second filter configuration.
+
+5. The method of claim 1, wherein the Doppler frequency shift is estimated using
+
+at least one of a level crossing rate method and a zero crossing rate method.
+
+AMENDED SHEET
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+6. The method of claim 1, wherein the signal is an orthogonal frequency division
+multiplexing (OFDM) signal.
+
+7. The method of claim 1, wherein the signal is a digital video broadcasting
+(DVB) signal.
+
+8. An apparatus for adaptive interpolation filtering a signal in a receiver to
+estimate a channel using pilot symbols, comprising:
+
+logic (230, 360) that repetitively determines at least one correlation function
+parameter of the channel, wherein the at least one correlation function parameter is a
+Doppler frequency shift; characterized by
+
+logic (250) that repetitively determines an asymmetric first filter configuration, for
+which more old pilots than future pilots are used to perform the channel estimation,
+based on the correlation function parameter; and
+
+logic (240, 340) that performs interpolation filtering in time on the signal using the
+
+determined filter configuration.
+
+9. The apparatus of claim 8, comprising:
+
+logic (235, 370) that determines a signal-to-noise ratio associated with the
+signal; and
+
+logic (250) that determines the first filter configuration based on the correlation
+
+function parameter and the signal-to-noise ratio.
+
+10. The apparatus of claim 8, wherein the logic (250) that determines the first
+filter configuration bases the determination on a predetermined threshold signal-to-
+noise ratio associated with the signal, below which the signal cannot be processed.
+
+11. The apparatus of claim 8, further comprising:
+logic (380) that determines a delay spread of the channel;
+logic (250) that determines a second filter configuration based on the delay
+
+spread; and
+
+AMENDED SHEET
+
+--- PAGE 3 ---
+3
+
+logic (240, 350) that performs interpolation filtering on the signal in frequency
+using the determined second filter configuration.
+
+12. The apparatus of claim 8, wherein the Doppler frequency shift is estimated
+5 using at least one of a level crossing rate method and a zero crossing rate method.
+
+13. The apparatus of claim 8, wherein the signal is an orthogonal frequency
+
+division multiplexing (OFDM) signal.
+
+10 14. The apparatus of claim 8, wherein the signal is a digital video broadcasting
+(DVB) signal.
+
+AMENDED SHEET

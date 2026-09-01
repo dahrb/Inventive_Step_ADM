@@ -1,0 +1,46 @@
+TITLE:
+Image processing based on ambient air attributes
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method of processing a digital image captured by a camera includes providing an ambient air measuring device associated with the camera; using the ambient air measuring device to measure air attributes at substantially the time the digital image was captured; determining a transform for modifying the digital image from the measured air attributes; and applying the transform to the digital image to produce an improved digital image.
+
+CLAIMS:
+1. A method of processing a digital image captured by a camera comprising:
+(a) providing an ambient air measuring device associated with the camera;
+(b) using the ambient air measuring device to measure air attributes at substantially the time the digital image was captured;
+(c) determining a transform for modifying the digital image from the measured air attributes; and
+(d) applying the transform to the digital image to produce an improved digital image.
+2. The method claimed in claim 1, wherein the transform includes a noise table representing noise magnitude vs. intensity of the digital image, and the noise table is a function of the measured air attributes.
+3. The method claimed in claim 2 wherein the transform provides image noise reduction or sharpening or both.
+4. The method claimed in claim 2, wherein the measured air attribute is ambient air temperature.
+5. A method of processing a digital image of a scene captured by a camera comprising:
+(a) providing an ambient air measuring device associated with the camera;
+(b) using the ambient air measuring device to measure air attributes at substantially the time the digital image was captured; and
+(c) classifying regions of the digital image according to the type of material in the scene based on the measured air attributes.
+6. The method of claim 5, wherein the material type includes inanimate and animate objects.
+7. The method of claim 6, wherein the inanimate objects include sky, grass, water, clouds, pavement, road surface, snow, automobiles, or walls.
+8. The method of claim 6, wherein the animate objects include humans or animals.
+9. The method of claim 6, wherein the regions are classified by learning the probabilities that a given material appears in an digital image captured with a variety of measured air attributes.
+10. The method claimed in claim 5, wherein the measured air attribute is ambient air temperature.
+11. A method of processing a digital image of a scene captured by a camera comprising:
+(a) providing an ambient air measuring device associated with the camera;
+(b) using the ambient air measuring device to measure air attributes at substantially the time the digital image was captured; and
+(c) classifying the digital image as an indoor image or an outdoor image according to the measured air attributes.
+12. The method of claim 11, wherein the classification includes a probability that the image is an indoor image or a probability that the image is an outdoor image.
+13. The method of claim 11, further comprising:
+(d) determining a transform for modifying the digital image based on the classification from step (c).
+14. The method claimed in claim 13, wherein the transform is a balance adjustment or a tone scale adjustment.
+15. A method of processing a digital image of a scene captured by a camera comprising:
+(a) providing an ambient air measuring device associated with the camera;
+(b) using the ambient air measuring device to measure air attributes at substantially the time the digital image was captured;
+(c) storing the digital image and the associated air attributes; and
+(d) locating the stored image in response to a query based on the measured air attributes.
+16. A method of processing digital images of scenes captured by a camera comprising:
+(a) providing an ambient air measuring device associated with the camera;
+(b) using the ambient air measuring device to measure air attributes at substantially the time each digital image was captured;
+(c) storing the captured digital images and the associated air attributes; and
+(d) associating related stored digital images by using the measured air attributes;
+17. The method of claim 1, wherein the stored air attribute for each digital image also includes the time each such digital image was captured and step d) includes using the time of the captured digital images.

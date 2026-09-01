@@ -1,0 +1,126 @@
+--- PAGE 1 ---
+TiVo, Inc. 00 921 559.1 /1 183 689
+
+C15395EP (60097-0158) April 20, 2015
+Main Request
+(Clean Copy)
+CLAIMS
+1. A process for automatically correcting the playback position within an audio or
+
+video program's material after a user terminates a fast forward or reverse progression
+through the program material, comprising the steps of:
+
+receiving a first user command input;
+
+playing the program material in fast forward mode or reverse mode in response to
+the first user command;
+
+terminating the fast forward or reverse progression through the program material
+based on a second user command;
+
+detecting by a media controller a current frame position in said program material
+where said termination occurred;
+
+calculating a new frame position by adding a positional offset to said current
+frame position when reverse mode has been terminated or subtracting a positional offset
+from said current frame position when fast forward mode has been terminated, the
+positional offset being dependent upon the speed of the reverse mode or fast forward
+mode being terminated, to compensate for a user's reaction time when stopping the
+forward or reverse progression through the audio or video program; and
+
+playing, by said media controller, the program material starting at said new frame
+
+position.
+
+2. The process of claim 1, wherein said positional offset is determined by observing
+how much the user makes positional corrections by issuing reverse or fast forward
+commands after the user terminates the fast forward or reverse progression, upon
+observing the user continuing to make the positional corrections, setting said positional
+offset to a factor using the observed user's positional corrections, the factor calculated for
+
+each speed of reverse mode or fast forward mode.
+
+--- PAGE 2 ---
+TiVo, Inc. 00 921 559.1 /1 183 689
+
+C15395EP (60097-0158) April 20, 2015
+Main Request
+(Clean Copy)
+
+3. The process of claim 1, wherein said positional offset is adjusted when the user
+
+continues to make corrections by issuing reverse or fast forward commands.
+
+4. The process of claim 1, wherein said positional offset is calculated by using data
+from a testing of the user's reaction time using a test video where the user initiates and
+then terminates the fast forward or reverse mode while the test video is playing, the user
+then positions the video to the position that he expected the termination to occur, the
+difference between the termination point and the expected point is the value used for the
+
+calculation of the positional offset.
+
+5. The process of claim 1, wherein said positional offset is calculated using a
+sensitivity setting that is selected by the user, a multiple of the sensitivity setting being
+
+used depending upon fast forward mode or reverse mode used.
+
+6. An apparatus for automatically correcting the playback position within an audio
+or video program's material after a user terminates a fast forward or reverse progression
+through the program material, comprising:
+
+a media controller;
+
+a module for receiving a first user command input;
+
+a module for playing the program material in fast forward mode or reverse mode
+in response to the first user command;
+
+a module for terminating the fast forward or reverse progression through the
+program material based on a second user command;
+
+wherein said media controller detects a current frame position in said program
+material where said termination occurred;
+
+a module for calculating a new frame position by adding a positional offset to said
+current frame position when reverse mode has been terminated or subtracting a positional
+offset from said current frame position when fast forward mode has been terminated, the
+
+positional offset being dependent upon the speed of the reverse mode or fast forward
+
+--- PAGE 3 ---
+TiVo, Inc. 00 921 559.1 /1 183 689
+C15395EP (60097-0158) April 20, 2015
+
+Main Request
+(Clean Copy)
+
+mode being terminated, to compensate for a user's reaction time when stopping the
+forward or reverse progression through the audio or video program; and
+a module for playing, by said media controller, the program material starting at
+
+said new frame position.
+
+7. The apparatus of claim 6, wherein said positional offset is determined by
+observing the amount that the user makes positional corrections by issuing reverse or fast
+forward commands after the user terminates the fast forward or reverse progression, upon
+observing the user continuing to make the positional corrections, setting said positional
+offset to a factor using the observed user's positional corrections, the factor calculated for
+
+each speed of reverse mode or fast forward mode.
+
+8. The apparatus of claim 6, wherein said positional offset is adjusted when the user
+
+continues to make corrections by issuing reverse or fast forward commands.
+
+9. The apparatus of claim 6, wherein said positional offset is calculated by using data
+from a testing of the user's reaction time via a test video where the user initiates and then
+terminates the fast forward or reverse mode while the test video is playing, the user then
+positions the video to the position that he expected the termination to occur, the difference
+between the termination point and the expected point is the value used for the calculation
+
+of the positional offset.
+
+10. The apparatus of claim 6, wherein said positional offset is calculated using a
+sensitivity setting that is selected by the user, a multiple of the sensitivity setting being
+
+used depending upon fast forward mode or reverse mode used.

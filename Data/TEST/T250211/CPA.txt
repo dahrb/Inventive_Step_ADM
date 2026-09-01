@@ -1,0 +1,28 @@
+Title: Job Scheduling in Multiprogrammed
+Parallel Systems
+
+Abstract: Scheduling in the context of parallel systems is often thought of in terms of assigning
+tasks in a program to processors, so as to minimize the makespan. This formulation
+assumes that the processors are dedicated to the program in question. But when the
+parallel system is shared by a number of users, this is not necessarily the case. In the
+context of multiprogrammed parallel machines, scheduling refers to the execution of
+threads from competing programs. This is an operating system issue, involved with
+resource allocation, not a program development issue.
+Scheduling schemes for multiprogrammed parallel systems can be classied as one
+or two leveled. Single-level scheduling combines the allocation of processing power with
+the decision of which thread will use it. Two level scheduling decouples the two issues:
+rst, processors are allocated to the job, and then the job's threads are scheduled using
+this pool of processors. The processors of a parallel system can be shared in two basic
+ways, which are relevant for both one-level and two-level scheduling. One approach is
+to use time slicing, e.g. when all the processors in the system (or all the processors in
+the pool) service a global queue of ready threads. The other approach is to use space
+slicing, and partition the processors statically or dynamically among the dierent jobs.
+As these approaches are orthogonal to each other, it is also possible to combine them
+in various ways; for example, this is often done in gang scheduling. Systems using the
+various approaches are described, and the implications of the dierent mechanisms are
+discussed. The goals of this survey are to describe the many dierent approaches within
+a unied framework based on the mechanisms used to achieve multiprogramming, and
+at the same time document commercial systems that have not been described in the
+open literature.
+
+Type: Academic Paper

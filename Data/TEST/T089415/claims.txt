@@ -1,0 +1,370 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Appeal No.: T 0894/15 — 3.5.07
+Application No.: 00 935 678.3
+
+Applicant: Samsung Electronics Co., Ltd.
+Our Ref.: EP20525-EH
+Date: September 27, 2019
+
+~ Main Request —
+CLAIMS
+
+1. An adaptive MAP channel decoding apparatus, comprising:
+
+a channel estimator (420) adapted to calculate a channel noise power and a
+scaling factor;
+
+a MAP channel decoder (440), wherein an input signal is multiplied by the scaling
+factor so that the MAP channel decoder operates regardless of a current channel
+
+state;
+
+a controller (430) adapted to determine an operation mode of the MAP channel
+decoder (440) according to changes in the channel noise power and the scaling
+
+factor; and
+
+the MAP channel decoder (440) being adapted to selectively operate in a static
+channel mode or in a time-varying mode, wherein the MAP channel decoder is
+adapted to use in the static channel mode the following equation for decoding:
+xEy = min(x, y) - log(1+e7!x-¥!)
+and wherein the MAP channel decoder is adapted to use in the time-varying
+mode the following equation for decoding:
+xEy = min(x, y)
+where x and y are metric values, and
+
+wherein the controller (430) is adapted to determine the operation mode of the
+MAP channel decoder (440), and
+
+wherein a current channel state is checked based on the changes in the channel
+noise power or the scaling factor, and wherein the time-varying channel mode is
+determined when the current channel state is determined to be time-varying, and
+
+otherwise the static channel mode is determined.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+The adaptive MAP channel decoding apparatus of Claim 1, wherein the MAP
+channel decoder performs a first MAP channel decoding operation using the
+following equations while in the static channel mode:
+
+Dxi(m) = (La(dk) + Le-Xx)-i + Le-yr- Yim)
+
+Ax'(m) = Dx'(m) + Etj-0(Ar-1! (Se(m))
+
+Bxi(m) = Etj-0 (Bik+1(Sp! (m)) + Di+1(S#(m))
+
+L(d,) = ENS) Ap(m) + By(m)- EX) A; (m) + B, (m)
+
+where D,'(m) = a branch metric, BM;
+
+La(d«) = extrinsic information obtained from a feed-back loop in the MAP channel
+decoder:
+
+L. = channel reliability which can be expressed as 2/c?, wherein oc? is noise
+
+power;
+Xk = a systematic code;
+
+Y« = a parity code;
+
+i = an expected systematic code;
+Yii(m) = an expected parity code;
+Ai<(m) = a forward state metric, FSM;
+
+Spi(m) = a backward changed state when an information bit is j to set a current
+state to m;
+
+B.'(m) = a reverse state metric, RSM;
+
+S(m) = a state changed forward when an information bit is input in a current
+encode state m; and
+
+L(d,) = a log likelinood ratio, LLR, when an information bit is d. at time k of MAP;
+and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+performs a second MAP channel decoding operation using the following
+
+equations while in a time-varying mode:
+
+Dxi(m) = (La(dk) + XK):i + ye Yi(m)
+
+Ax(m) = Dx'(m) + mintj=o(Ak-1' (Spi(m))
+
+Bxi(m) = mintj=0 (Bik+1(Sp! (m)) + Dicei(Sé(m))
+
+L(d,)=min3S} Ay (m) + By(m)- minyS> A; (m) + By (m)
+
+where D,'(m) = a BM
+
+La(dx) = extrinsic information obtained from a feed-back loop in the MAP channel
+decoder:
+
+X, = a systematic code;
+
+Y« = a parity code;
+
+i = an expected systematic code;
+Yii(m) = an expected parity code;
+Aix(m) = a forward state metric, FSM;
+
+S»i(m) = a backward changed state when an information bit is j to set a current
+state to m;
+
+Bxi(m) = an RSM;
+
+Si(m) = a state changed forward when an information bit is input in a current
+
+encode state m; and
+
+L(dx) = a log likelihood ratio, LLR, when an information bit is dk at time k of MAP.
+
+The adaptive MAP channel decoding apparatus of Claim 2, wherein the E
+function operator uses the absolute value of the difference between function input
+values as a memory address to look-up stored corresponding calculated log
+function values in a data area of a memory and output the corresponding log
+function values.
+
+An adaptive MAP channel decoding apparatus, comprising:
+
+a channel estimator (420) adapted to calculate a channel noise power and a
+scaling factor;
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+a MAP channel decoder (440), wherein an input signal is multiplied by the scaling
+factor so that the MAP channel decoder operates regardless of a current channel
+state;
+
+a controller (430) adapted to determine an operation mode of the MAP channel
+decoder (440) according to a change in a bit error rate (BER) and a frame error
+rate (FER) received from the MAP channel decoder (440); and
+
+the MAP channel decoder (440) being adapted to selectively operate in a static
+channel mode or in a time-varying mode, wherein the MAP channel decoder is
+
+adapted to use in the static channel mode the following equation for decoding:
+xEy = min(x, y) - log(1+e7|*¥/)
+and wherein the MAP channel decoder is adapted to use in the time-varying
+mode the following equation for decoding:
+xEy = min(x, y)
+where x and y are metric values, and
+
+wherein the controller (430) is adapted to determine the operation mode of the
+MAP channel decoder (440), and
+
+wherein a current channel state is checked based on the changes in the bit error
+rate and the frame error rate, and wherein the time-varying channel mode is
+determined when the current channel state is determined to be time-varying, and
+
+otherwise the static channel mode is determined.
+
+The adaptive MAP channel decoding apparatus of Claim 4, wherein the MAP
+channel decoder performs a first MAP channel decoding operation using the
+
+following equations while in the static channel mode:
+Dxi(m) = (La(dx) + Le-Xk)-i + Le-ye Vit)
+Axi(m) = Dx'(m) + Et-o(An-1' (Se(m))
+Bum) = Etro (Bis(Sp' (m)) + Dik+a(Se(m))
+L(d,) = Exo Ay (m) + By(m)-E 5 Ay (m) +B, (m)
+
+m=0 m=
+
+where D,'(m) = a branch metric, BM;
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+La(dx) = extrinsic information obtained from a feed-back loop in the MAP channel
+decoder;
+
+L. = channel reliability which can be expressed as 2/o2, wherein o2 is noise
+
+power;
+Xk = a systematic code;
+
+Y« = a parity code;
+
+i= an expected systematic code;
+Yii(m) = an expected parity code;
+A(m) = a forward state metric, FSM;
+
+S,/(m) = a backward changed state when an information bit is j to set a current
+
+state to m;
+B,'(m) = a reverse state metric, RSM;
+
+S#(m) = a state changed forward when an information bit is input in a current
+encode state m; and
+
+L(dx) = a log likelinood ratio, LLR, when an information bit is d at time k of MAP;
+and
+
+performs a second MAP channel decoding operation using the following
+equations while in a time-varying mode:
+
+Dx'(m) = (La(dk) + Xk)-i + ye Yi(m)
+
+Ax(m) = Dx'(m) + mintj=o(Ax-1! (Spi(m))
+
+B.i(m) = min'jo (Bik+1(So! (m)) + Die1(S#(m))
+
+L(d,) =min“S) A? (m) + By (m) - min“S} Aj.(m) + B; (m)
+
+where D,'(m) = a BM
+
+La(dx) = extrinsic information obtained from a feed-back loop in the MAP channel
+
+decoder;
+Xk = a systematic code;
+Y« = a parity code;
+
+i= an expected systematic code;
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+Yi{m) = an expected parity code;
+Ai(m) = a forward state metric, FSM;
+
+S(m) = a backward changed state when an information bit is j to set a current
+state to m:
+
+Bxi(m) = an RSM;
+
+S(m) = a state changed forward when an information bit is input in a current
+encode state m; and
+
+L(dx) = a log likelihood ratio, LLR, when an information bit is d, at time k of MAP.
+
+The adaptive MAP channel decoding apparatus of Claim 5, wherein the E
+function operator uses the absolute value of the difference between function input
+values as a memory address to look-up stored corresponding calculated log
+
+function values in a data area of a memory and output the corresponding log
+
+function values.
+
+An adaptive MAP channel decoding method in a communication system,
+comprising the steps of:
+
+estimating a current channel state (610);
+
+controlling an E function operation according to the estimated current channel
+
+state;
+
+performing (630) MAP channel decoding using the E function operation according
+to the following first MAP decoding equation when the current channel state is
+determined to be a static channel mode:
+
+xEy = min(x, y) — log(1+e7!x!)
+where x and y are metric values; and
+
+performing MAP channel decoding using the E function operation according to the
+following second MAP decoding equation when the current channel state is
+determined to be a time-varying channel mode:
+
+xEy = min(x, y)
+
+where x and y are metric values, and
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+wherein the current channel state is checked based on changes in a channel
+noise power or a scaling factor calculated by a channel estimator, or based on
+changes in a bit error rate and a frame error rate received from a MAP channel
+
+decoder, and
+
+wherein the time-varying channel mode is determined when the current channel
+state is determined to be time-varying, and otherwise the static channel mode is
+determined, and ,
+
+wherein an input signal to the MAP channel decoder is multiplied by the scaling
+factor so that the MAP channel decoding operates regardless of the current
+channel state.
+
+The adaptive MAP channel decoding method of Claim 7, wherein a second MAP
+channel decoding operation is performed (660) using the following equations:
+
+Dyi(m) = (La(dk) + X4)-i + yee Yi(m)
+Axi(m) = De(m) + mintj-o(Ak-+' (Se(m))
+
+Bui(m) = mintj=0 (Bik+1(Sp' (m)) + Dias(Se(m))
+
+L(d,) =min'S) Ay(m) + By (m) - mint) Aj.(m) + B, (m)
+
+where Dx'(m) = a BM
+
+La(dx) = extrinsic information obtained from a feed-back loop in the MAP channel
+decoder; |
+
+Xx = a systematic code;
+
+Y« = a parity code;
+
+i = an expected systematic code;
+Yii(m) = an expected parity code;
+Ai*(m) = a forward state metric, FSM;
+
+S»y(m) = a backward changed state when an information bit is j to set a current
+state to m;
+
+B,(m) = an RSM;
+
+S(m) = a state changed forward when an information bit is input in a current
+encode state m; and
+
+--- PAGE 8 ---
+L(d,) = a log likelinood ratio, LLR, when an information bit is d, at time k of MAP.

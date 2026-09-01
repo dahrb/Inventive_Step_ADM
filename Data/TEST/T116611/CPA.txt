@@ -1,0 +1,95 @@
+TITLE:
+Method and system for distributing applications
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Methods and systems for distributing applications are described herein. In one aspect of the invention, an exemplary method includes receiving an original request for accessing a distributed resource management system (DRMS) through an application distributor application programming interface (API), the application distributor API being independent of the DRMS, selecting the DRMS as requested, translating the original request to be compatible with the selected DRMS, and transmitting translated request to the selected DRMS. Other methods and systems are also described.
+
+CLAIMS:
+1. A method, comprising:
+receiving an original request for accessing a distributed resource management system (DRMS) through an application distributor application programming interface (API), the application distributor API being independent of the DRMS;
+selecting the DRMS as requested;
+translating the original request to be compatible with the selected DRMS; and
+transmitting translated request to the selected DRMS.
+2. The method of claim 1, further comprising:
+specifying a type of the DRMS;
+initializing an application distributor library; and
+submitting the request through the application distributor library API.
+3. The method of claim 2, wherein the specifying comprises setting up an executing environment, through a scripting file.
+4. The method of claim 2, wherein the specifying comprises setting up an execution environment through a set of global environmental variables.
+5. The method of claim 1, further comprising:
+scheduling the translated request by the DRMS to a remote node over a network; and
+executing the translated request at the remote node.
+6. A method, comprising:
+replacing a child application with a local proxy application at a local node, the child application being launched from a parent distributed application, and the child application communicating with the parent distributed application;
+transmitting by the local proxy, a remote proxy execution request to a distributed resource management system (DRMS);
+executing the child application as a remote child application via a remote proxy at a remote node; and
+maintaining a communication channel between the remote child application and the parent distributed application, the remote child application communicating transparently with the parent distributed application through the communication channel established by the local and remote proxies.
+7. The method of claim 6, further comprising:
+receiving a message by the local proxy at the local node from the parent distributed application, the message being dedicated to the child application;
+redirecting the message to a remote proxy at the remote node through the communication channel over the network; and
+transmitting the message from the remote proxy to the remote child application.
+8. The method of claim 6, wherein maintaining a communication channel comprises:
+starting a communication server within the local proxy at the local node; and
+starting a communication client within the remote proxy at the remote node, the communication client communicating with the communication server over the network, and the communication server and client maintaining the communication between the remote child application and the parent distributed application.
+9. The method of claim 8, wherein the communication server is a socket server and the communication client is a socket client.
+10. The method of claim 6 further comprising periodically monitoring the remote proxy and the remote child application at the remote node by a daemon monitor.
+11. The method of claim 10 further comprising terminating the remote child application upon termination of the remote proxy if the remote child application is still running.
+12. The method of claim 11 further comprising terminating the daemon monitor if there is no activity of remote proxy and remote child application for a predetermined period of time.
+13. The method of claim 6, further comprising:
+selecting the DRMS as requested;
+receiving an original request to submit a remote job to execute the child application to a distributed resource management system (DRMS) using an application distributor application programming interface (API), the application distributor API encapsulating specific information with respect to the DRMS;
+translating the original request to be compatible with the selected DRMS, forming a remote job request to execute the child application for the selected DRMS; and
+transmitting the remote job request to the DRMS.
+14. A system, comprising:
+a distributed application received at a local node;
+an application programming interface (API) to receive a request from the distributed application to access a distributed resource management system (DRMS) to submit a remote job on behalf of the distributed application, the API being independent of the DRMS; and
+a DRMS to schedule the remote job on remote resources.
+15. The system of claim 14 further comprising an application driver script to provide interface to the distributed application.
+16. A system, comprising:
+a child application launched from a parent distributed application, the child application communicating with the parent distributed application;
+a local proxy being launched from the parent distributed application at a local node, the local proxy communicating with the parent distributed application, and submitting a request to a DRMS to execute remote proxy on a remote node;
+a remote proxy located at the remote node to execute the child application as a remote child application at the remote node; and
+a communication channel transparently established between the remote child application at the remote node and the parent distributed application at the local node, the communication channel being maintained by the local and remote proxies.
+17. The system of claim 16, wherein the communication channel comprises:
+a communication server started within the local proxy at the local node; and
+a communication client started within the remote proxy at the remote node, the communication client communicating with the communication server over the network, and the communication server and client maintain the communication between the remote child application and the parent distributed application on the local node.
+18. The system of claim 16 further comprises a proxy daemon being executed to periodically monitor the remote proxy and the remote child application being executed.
+19. The system of claim 16 further comprising a library that implements an application programming interface (API) to receive the execution request from a user, the API being independent to the DRMS and encapsulating specific information of the DRMS.
+20. The system of claim 19, wherein the API library has multiple paths for translating the execution request to be compatible with the DRMS requested.
+21. A machine readable medium having stored thereon executable code which causes a machine to perform a method, the method comprising:
+receiving an original request for accessing a distributed resource management system (DRMS) through an application distributor application programming interface (API), the application distributor API being independent to the DRMS;
+selecting the DRMS as requested;
+translating the original request to be compatible with the selected DRMS; and
+transmitting the translated request to the selected DRMS.
+22. The machine readable medium of claim 21, wherein the method further comprises:
+specifying a type of the DRMS;
+initializing an application distributor; and
+submitting the request through an application distributor API, the application distributed API being independent of the DRMS.
+23. The machine readable medium of claim 21, wherein the method further comprises:
+scheduling the translated request by the DRMS to a remote node over a network; and
+executing the translated request at the remote node.
+24. A machine readable medium having stored thereon executable code which causes a machine to perform a method, the method comprising:
+replacing a child application with a local proxy application at a local node, the child application being launched from a parent distributed application, and the child application communicating with the parent distributed application;
+transmitting by the local proxy, a remote proxy execution request to a distributed resource management system (DRMS);
+executing the child application as a remote child application via a remote proxy at a remote node; and
+maintaining a communication channel between the remote child application and the parent distributed application, the remote child application communicating transparently with the parent distributed application through the communication channel established by the local and remote proxies.
+25. The machine readable medium of claim 24, wherein the method further comprises:
+receiving a message by the local proxy at the local node from the parent distributed application, the message being sent to the child application;
+redirecting the message to the remote proxy at the remote node through the communication channel over the network; and
+transmitting the message from the remote proxy to the remote child application.
+26. The machine readable medium of claim 24, wherein the method further comprises:
+receiving a signal by the local proxy at the local node sent from the parent distributed application, the signal being sent to the child application;
+encoding and redirecting the signal to the remote proxy at the remote node through the communication channel over the network; and
+remote proxy decoding the signal and resending it to the remote child application.
+27. The machine readable medium of claim 24, wherein the method further comprises periodically monitoring the remote proxy and the remote child application at the remote node.
+28. The machine readable medium of claim 24, wherein the method further comprises:
+selecting the DRMS as requested;
+receiving an original request to submit a remote job to execute the child application to a distributed resource management system (DRMS) using an application distributor application programming interface (API), the application distributor API encapsulating specific information with respect to the DRMS;
+translating the first request to be compatible with the selected DRMS, forming a remote job request to execute the child application for the selected DRMS; and
+transmitting the remote job request to the DRMS.
+29. The machine readable medium of claim 24, wherein maintaining a communication channel comprises:
+starting a communication server within the local proxy at the local node; and
+starting a communication client within the remote proxy at the remote node, the communication client communicating with the communication server over the network, and the communication server and client maintaining the communication between the remote child application and the parent distributed application.

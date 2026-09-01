@@ -1,0 +1,42 @@
+TITLE:
+Method and system for inviting and creating accounts for prospective users of an instant messaging system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method for assigning a unique identifier to a prospective user of an instant messaging system. The IM system comprises a plurality of clients (111) having IM applications of the same or different types, selectively interconnected to an IM server (113) by way of the internet (117). The system includes a registration handler (119) for receiving a client specific access address (johnsmith@company.com) of a prospective user (127) on the internet (117) together with a request (115) to register or tentatively register the prospective user (127). A unique identifier assigner is provided to automatically allocate a unique numeric identifier (UIN) to the prospective user (127) and match the UIN to the client specific address (johnsmith@company.com) of the prospective user. An account processer registers or tentatively registers an account for the prospective user (127) in a user database (123) for future use (125) by storing (121) the matched UIN and client specific access address under the UIN in the database. A message despatcher sends a notification (129) of the UIN to the prospective user (127) at the client specific address of the prospective user, either: confirming the registering of the prospective user if the initial sending was associated with a direct request to register from the prospective user; or inviting registration of the prospective user if the initial sending was associated with a request to register from someone other than the prospective user.
+
+CLAIMS:
+1. A method for assigning a unique identifier to a prospective user of an instant messaging system comprising a plurality of clients having IM applications of the same or different types, selectively interconnected to an IM server by way of a computer network, the method comprising the following steps:
+receiving a client specific access address of a prospective user on the computer network together with a request to register or tentatively register an account for said prospective user;
+automatically allocating a unique identifier to the prospective user;
+matching said unique identifier to the client specific access address of the prospective user;
+registering or tentatively registering an account for said prospective user by storing the matched unique identifier and client specific access address with said IM server under the unique identifier; and
+sending notification of said unique identifier to said prospective user at the client specific address of the prospective user, either: confirming the registering of the prospective user if the initial sending was associated with a direct request to register from the prospective user; or inviting registration of the prospective user if the initial sending was associated with a request to register from someone other than the prospective user.
+2. A method as claimed in claim 1, wherein the unique identifier is a UIN.
+3. A method as claimed in claim 1 or 2, wherein said computer network is the internet and/or any direct electronic link.
+4. A method as claimed in any one of the preceding claims, wherein the prospective user has an email-based client application for accessing the IM system.
+5. A method as claimed in any one of the preceding claims, wherein the prospective user has a GSM device forming part of a GSM network for accessing the IM system.
+6. A method as claimed in claim 5, wherein said GSM network has SMS capability and said prospective user is initially connected to an SMSC server to control and manage said SMS therebetween, and wherein said SMSC server is directly connected to said IM server via said computer network.
+7. A method as claimed in any one of the preceding claims, wherein said client specific address is sourced from an email or SMS message sent to the email address of said IM server.
+8. A method as claimed in any one of the preceding claims, wherein said client specific address is sourced from an email or SMS message sent to the email address of a registered user on said IM server.
+9. A method as claimed in claim 7 or 8, wherein said email or SMS message is sent by said prospective user.
+10. A method as claimed in any one of the preceding claims, wherein said client specific address is sourced from a message sent to said IM server from a registered user of said IM system, on any client type accessible to said IM server.
+11. A system for assigning a unique identifier to a prospective user of an instant messaging system comprising a plurality of clients having IM applications of the same or different types, selectively interconnected to an IM server by way of a computer network, the system comprising:
+a registration handling means for receiving a client specific access address of a prospective user on the computer network together with a request to register or tentatively register said prospective user;
+a unique identifier assigning means to automatically allocate said unique identifier to said prospective user and match said unique identifier to the client specific address of the prospective user;
+account processing means to register or tentatively register an account for said prospective user;
+database means for storing the matched unique identifier and client specific access address under the unique identifier; and
+a message despatching means for sending notification of said unique identifier to said prospective user at the client specific address of the prospective user, either: confirming the registering of the prospective user if the initial sending was associated with a direct request to register from the prospective user; or inviting registration of the prospective user if the initial sending was associated with a request to register from someone other than the prospective user.
+12. A system as claimed in claim 7, wherein the unique identifier is a UIN.
+13. A system as claimed in claim 7 or 8, wherein said computer network is the internet and/or any direct electronic link.
+14. A system as claimed in any one of claims 7 to 9, wherein the prospective user has an email-based client application for accessing the IM system.
+15. A system as claimed in any one of claims 7 to 10, wherein the prospective user has a GSM device forming part of a GSM network for accessing the IM system.
+16. A system as claimed in any one of claims 7 to 10, wherein said GSM network has SMS capability and said prospective user is initially connected to an SMSC server to control and manage said SMS therebetween, and wherein said SMSC server is directly connected to said IM server via said computer network.
+17. A system as claimed in any one of the preceding claims, wherein said client specific address is sourced from an email or SMS message sent to the email address of said IM server.
+18. A system as claimed in any one of the preceding claims, wherein said client specific address is sourced from an email or SMS message sent to the email address of a registered user on said IM server.
+19. A system as claimed in claim 17 or 18, wherein said email or SMS message is sent by said prospective user.
+20. A system as claimed in any one of the preceding claims, wherein said client specific address is sourced from a message sent to said IM server from a registered user of said IM system, on any client type accessible to said IM server.
+21. A method for assigning a unique identifier to a prospective user of an instant messaging system substantially as herein described with reference to the accompanying drawings as appropriate.
+22. A system for assigning a unique identifier to a prospective user of an instant messaging system substantially as herein described with reference to the accompanying drawings as appropriate.

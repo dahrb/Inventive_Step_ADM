@@ -1,0 +1,309 @@
+--- PAGE 1 ---
+EP 16 167 210.0 Main request
+
+Claims
+
+1. A four-primary-color organic light emitting display
+comprising:
+a display panel (10) where a plurality of first-color
+
+pixels, second-color pixels, third-color pixels, and
+
+fourth-color pixels are disposed; and
+
+a data drive circuit (13) that has a single, digital-to-
+analog converter (134) to generate first- to fourth-color
+data voltages and to apply the first-color data voltage to
+
+the first-color pixels, the second-color data voltage to
+
+the second-color pixels, the third-color data voltage to
+the third-color pixels, and the fourth-color data voltage
+to the fourth-color pixels,
+
+wherein the maximum grayscale voltages for the first- to
+fourth-color data voltages are adjusted to be different on
+a single gamma graph defined as the input grayscale versus
+output voltage; and
+
+a data modulator (12) configured to receive the same
+number m of bits of first-, second-, third-, and fourth-
+color digital video data, which is to be displayed in each
+of the first- to fourth-color pixels, and that is
+configured to modulate the first- to fourth-color digital
+video data based on the maximum grayscale values of the
+first- to fourth-color digital video data individually
+determined based on luminous efficiency, wherein m is a
+natural number,
+
+wherein, with the first-color pixels having the lowest
+luminous efficiency and the fourth-color pixels having the
+
+highest luminous efficiency, the data modulator (12) is
+
+configured to set the maximum grayscale value of the first
+
+color at a reference value of 2™-1, and is configured to
+
+bypass first-color digital video data as the modulated
+
+first-color video data, and is configured to set the
+
+maximum second- and third-color grayscale values to be
+
+--- PAGE 2 ---
+EP 16 167 210.0 Main request
+
+smaller than the reference value and the maximum fourth-
+color grayscale value to be smaller than the maximum
+second- and third-color grayscale values,
+
+and is configured to then bypass second-color digital
+video data as second-color video data if the second-color
+digital video data does not exceed the second-color
+
+maximum grayscale value or to replace second-color digital
+
+video data by the second-color maximum grayscale value if
+second-color digital video data exceeds the second-color
+
+maximum grayscale value, and to bypass third-color digital
+
+video data as third-color video data if the third-color
+
+digital video data does not exceed the third-color maximum
+
+grayscale value or to replace third-color digital video
+data by the third-color maximum grayscale value if third-
+color digital video data exceeds the third-color maximum
+grayscale value, and to bypass fourth-color digital video
+data as fourth-color video data if the fourth-color
+digital video data does not exceed the fourth-color
+maximum grayscale value or to replace fourth-color digital
+video data by the fourth-color maximum grayscale value if
+fourth-color digital video data exceeds the fourth-color
+
+maximum grayscale value.
+
+2. The four-primary-color organic light emitting display of
+claim 1, wherein the maximum grayscale values of the
+first- to fourth-color digital video data are set ina
+
+range that satisfies white color coordinates.
+
+3. The four-primary-color organic light emitting display of
+
+claim 2, wherein pixels with the lowest luminous
+
+efficiency are set to have the highest maximum grayscale
+
+value, and pixels with the highest luminous efficiency are
+
+set to have the lowest maximum grayscale value.
+
+--- PAGE 3 ---
+EP 16 167 210.0 Main request
+
+4. The four-primary-color organic light emitting display of
+
+claim 1, wherein the number of bits of the first- to
+
+third-color digital video data is maintained at m, and the
+
+number of bits of the fourth-color digital video data is
+
+modulated to be smaller than m, in order to set the first-
+
+to fourth-color maximum grayscale values.
+
+5. The four-primary-color organic light emitting display of
+
+any one of claims 1 to 4, wherein the single, digital-to-
+
+analog converter (134) comprises:
+a gamma voltage generator (1341) that divides an operating
+
+voltage to generate a predetermined number of gamma
+
+voltages; and
+
+a DAC switching part (1342) that maps first- to fourth-
+color modulated digital video data input from the data
+modulator (12) to the gamma voltages input from the gamma
+voltage generator (1341) to generate the first- to fourth-
+color data voltages,
+
+wherein, preferably, the gamma voltage generator (1341) is
+implemented as a resistor string or capacitor string that
+
+divides the operating voltage.
+
+6. The four-primary-color organic light emitting display of
+claim 5, wherein the DAC switching part (1342) comprises:
+a P-MOS switching part (1342A) comprising a plurality of
+PMOS switches connected to a high grayscale output section
+
+of the gamma voltage generator (1341); and
+
+an N-MOS switching part (1342B) comprising a plurality of
+
+NMOS switches connected to a low grayscale output section
+
+of the gamma voltage generator (1341), or
+
+wherein the DAC switching part (1342) comprises:
+
+an N-MOS switching part (1342A) comprising a plurality of
+
+NMOS switches connected to a high grayscale output section
+
+of the gamma voltage generator (1341); and
+
+--- PAGE 4 ---
+EP 16 167 210.0 Main request
+
+a P-MOS switching part (1342B) comprising a plurality of
+
+PMOS switches connected to a low grayscale output section
+
+of the gamma voltage generator (1341).
+
+7. The four-primary-color organic light emitting display of
+any one of claims 1 to 6, wherein each of the first-color
+
+pixels, second-color pixels, third-color pixels, and
+
+fourth-color pixels comprises an organic light emitting
+
+diode (OLED) and a driving thin film transistor (DT) for
+
+controlling the amount of driving current flowing through
+
+the organic light emitting diode (OLED).
+
+8. The four-primary-color organic light emitting display of
+claim 7, wherein the driving thin film transistor (DT) has
+the largest size in pixels with the lowest luminous
+efficiency and the smallest size in pixels with the
+
+highest luminous efficiency.
+
+9. A driving method of a four-primary-color organic light
+emitting display with a display panel (10) where a
+plurality of first-color pixels, second-color pixels,
+third-color pixels, and fourth-color pixels are disposed,
+the method comprising:
+generating first- to fourth-color data voltages by a
+single, digital-to-analog converter (134); and
+applying the first-color data voltage to the first-color
+pixels, the second-color data voltage to the second-color
+pixels, the third-color data voltage to the third-color
+pixels, and the fourth-color data voltage to the fourth-
+
+color pixels,
+
+wherein the maximum grayscale voltages for the first- to
+
+fourth-color data voltages are adjusted to be different on
+
+a single gamma graph defined as the input grayscale versus
+
+output voltage;
+
+--- PAGE 5 ---
+EP 16 167 210.0 Main request
+
+receiving the same number m of bits of first-, second-,
+third-, and fourth-color digital video data, which is to
+be displayed in each of the first- to fourth-color pixels,
+and modulating the first- to fourth-color digital video
+
+data based on the maximum grayscale values of the first-
+
+to fourth-color digital video data individually determined
+
+based on luminous efficiency, wherein m is a natural
+number,
+wherein, preferably, pixels with the lowest luminous
+
+efficiency are set to have the highest maximum grayscale
+
+value, and pixels with the highest luminous efficiency are
+
+set to have the lowest maximum grayscale value,
+
+wherein the modulating of the first- to fourth-color
+digital video data comprises:
+
+with the first-color pixels having the lowest luminous
+efficiency and the fourth-color pixels having the highest
+luminous efficiency, setting the maximum grayscale value
+of the first color at a reference value of 2™-1, and
+bypassing first-color digital video data as the modulated
+first-color video data; and
+
+setting the maximum second- and third-color grayscale
+values to be smaller than the reference value and the
+maximum fourth-color grayscale value to be smaller than
+the maximum second- and third-color grayscale values, and
+then bypassing second-color digital video data as second-
+color video data if the second-color digital video data
+does not exceed the second-color maximum grayscale value
+or replacing second-color digital video data by the
+second-color maximum grayscale value if second-color
+
+digital video data exceeds the second-color maximum
+
+grayscale value, and bypassing third-color digital video
+
+data as third-color video data if the third-color digital
+
+video data does not exceed the third-color maximum
+
+grayscale value or replacing third-color digital video
+
+data by the third-color maximum grayscale value if third-
+
+5
+
+--- PAGE 6 ---
+10.
+
+11.
+
+EP 16 167 210.0 Main request
+
+color digital video data exceeds the third-color maximum
+
+grayscale value, and bypassing fourth-color digital video
+
+-
+
+data as fourth-color video data if the fourth-color
+
+Lf
+
+digital video data does not exceed the fourth-color
+
+maximum grayscale value or replacing fourth-color digital
+
+video data by the fourth-color maximum grayscale value if
+
+fourth-color digital video data exceeds the fourth-color
+
+maximum grayscale value.
+
+The method of claim 9, wherein the maximum grayscale
+
+values of the first- to fourth-color digital video data
+
+are set in a range that satisfies white color coordinates.
+
+The method of claim 9, wherein the modulating of the
+first- to fourth-color digital video data comprises
+maintaining the number of bits of the first- to third-
+color digital video data at m and modulating the number of
+bits of the fourth-color digital video data to be smaller
+than m, in order to set the first- to fourth-color maximum
+
+grayscale values.

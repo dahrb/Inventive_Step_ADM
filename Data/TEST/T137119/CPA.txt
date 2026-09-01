@@ -1,0 +1,52 @@
+TITLE:
+System and method of information filtering using measures of affinity of a relationship
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system, apparatus, and method are directed towards enabling information filtering using measures of an affinity of a relationship between subscribers of an online portal system. The affinity of a relationship may be determined based, in part, on the tracking of various online behaviors of and between subscribers of the portal system. Any of a variety of behaviors may be tracked, including message communications between subscribers, participation in instant messaging groups, purchases, activities, categories, and so forth. Such behaviors may be employed to determine a level of trust (or affinity) between subscribers of the portal system. This affinity measurement may be used to filter various information, including, but not limited to, product recommendations, ratings, polling queries, advertising, social network communications, personal ads, search results, and the like. Moreover, this affinity measurement may also be employed to perform message spam detection.
+
+CLAIMS:
+1. A method of sharing information in an online social network, comprising:
+determining information related to at least one behavior of a subscriber of the online social network, wherein the behavior comprises at least one interaction with another subscriber of the online portal;
+determining an affinity of a relationship between the subscriber and the other subscriber of the online portal based, in part on the determined information;
+filtering the determined information based at least in part on the determined affinity of the relationship; and
+enabling at least a portion of the filtered information to be shared with at least one other subscriber of the online social network.
+2. The method of claim 1, wherein determining the information further comprises tracking at least one of a frequency with which the subscriber accessed at least one of a portal service and a non-portal Web site, a duration over which the subscriber accessed at least one of the portal service and the non-portal Web site, a content type accessed by the subscriber through at least one of the portal service and the non-portal Web site, a portal assessment, and an online purchase made by the subscriber through at least one of the portal service and the non-portal Web site.
+3. The method of claim 1, wherein determining the information further comprises tracking at least one of communicating a message between the subscriber and the other subscriber, participation in a group, a buddy list, a contact list, and an activity.
+4. The method of claim 1, wherein the behavior of the subscriber further comprises participating in at least one of an online friend matching service, an online dating service, an online job searching service, an online classmate searching service, an online military colleague searching service, an online club, an online financial service, an online auction, and an online purchase.
+5. The method of claim 1, further comprising:
+determining that the subscriber has engaged in spamming; and
+indicating in the information that the subscriber has engaged in spamming.
+6. The method of claim 1, wherein the affinity of the relationship is further based at least one of multiple degree relationships between the subscriber and other members of the online social network, and a shared interest among members of the online social network.
+7. The method of claim 1, wherein determining the affinity of the relationship further comprises determining an affinity measurement based on at least one of a relationship trust and a relationship strength.
+8. The method of claim 1, wherein filtering the determined information further comprises performing a search using the determined affinity of the relationship and a subject matter to filter the determined information.
+9. A server for communicating in an online social network, comprising:
+a transceiver for receiving and sending information to a computing device;
+a processor in communication with the transceiver; and
+a memory in communication with the processor and storing data and machine instructions that cause the processor to perform a plurality of operations, including:
+determining information related to at least one behavior of a subscriber of the online social network, wherein the behavior comprises at least one interaction with another subscriber of the online portal;
+determining an affinity of a relationship between the subscriber and the other subscriber of the online portal based on the determined information;
+filtering the determined information based at least in part on the determined affinity of the relationship; and
+enabling at least a portion of the filtered information to be shared with at least one other subscriber of the online social network
+10. The server of claim 9, wherein determining the information further comprises tracking at least one of communicating a message between the subscriber and the other subscriber, participation in a group, a buddy list, a contact list, and an activity.
+11. The server of claim 9, wherein determining the affinity of the relationship further comprises employing a relationship graph.
+12. The server of claim 9, where determining the affinity of the relationship further comprises determining an affinity measurement based on at least one of a relationship trust and a relationship strength.
+13. The server of claim 9, where determining the affinity of the relationship further comprises determining a relationship trust and a relationship strength, and by combining the relationship trust and relationship strength to determine the affinity.
+14. The server of claim 9, wherein enabling the portion of the filtered information to be shared further comprises sharing the portion of information with a mobile device.
+15. The server of claim 9, wherein filtering the determined information further comprises performing a search using the determined affinity of the relationship to filter the determined information.
+16. The server of claim 9, wherein filtering the determined information further comprises performing a search using the determined affinity of the relationship and a subject matter to filter the determined information.
+17. A modulated data signal for accessing portal subscriber information in an online social network, the modulated data signal comprising instructions that enable a computing device to perform the actions of:
+tracking portal subscriber information based at least in part on a behavior of the portal subscriber, including at least one interaction between the portal subscriber and another portal subscriber;
+enabling a determination of an affinity of a relationship between the portal subscriber and the other portal subscriber of the portal based on the tracked information; and
+enabling a member of the online social network to access at least a portion of the portal subscriber information based at least in part on the affinity of the relationship.
+18. The modulated data signal of claim 17, wherein accessing the portion of portal subscriber information further comprises accessing the portion of portal subscriber information from a mobile device.
+19. The modulated data signal of claim 17, wherein enabling the determination of the affinity of the relationship further comprises, determining the affinity of the relationship further comprises determining an affinity measurement based on at least one of a relationship trust and a relationship strength.
+20. The modulated data signal of claim 17, wherein the behavior of the subscriber further comprises participating in at least one of an online friend matching service, an online dating service, an online job searching service, an online classmate searching service, an online military colleague searching service, an online club, an online financial service, an online auction, an activity, a category, a chat session, an instant messaging session, an email communication, and an online purchase.
+21. The modulated data signal of claim 17, wherein enabling the member to access the portion of the portal subscriber information further comprises determining the portion based on a search using a subject matter and an affinity parameter to filter the portal subscriber information.
+22. The modulated data signal of claim 17, wherein enabling a member of the online social network to access at least a portion of the portal subscriber information further comprises performing a search using at least in part the affinity of the relationship to filter the portal subscriber information.
+23. An apparatus for accessing portal subscriber information in an online social network, comprising:
+a means for tracking portal subscriber information based at least in part on a behavior of the portal subscriber, including at least one interaction between the portal subscriber and another portal subscriber;
+a means for determining of an affinity of a relationship between the portal subscriber and the other portal subscriber of the portal based on the tracked information; and
+a means for enabling a member of the online social network to access at least a portion of the portal subscriber information based at least in part on the affinity of the relationship.

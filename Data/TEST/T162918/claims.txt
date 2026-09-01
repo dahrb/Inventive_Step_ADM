@@ -1,0 +1,98 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+MAIN REQUEST
+
+CLAIMS
+
+1. An apparatus for detecting a face (510) from left and right images (503, 504)
+acquired by a stereo camera (301), comprising:
+
+a first distance image acquiring unit (302) to acquire a first distance image (505) of a
+scene with only a background, from a left background image (501) and a right
+background image (502) obtained from the camera;
+
+a second distance image acquiring unit (303) to acquire a second distance image
+(506) of the same scene but with an object as well as the background, from a left
+background-and-object image (503) and a right background-and-object image (504)
+obtained from the camera, the second distance image differing from the first distance
+image due to the presence of the object;
+
+and an object area detector (306) to detect an object area (509) of the object in one
+of the background-and-object images;
+
+characterised by a distance difference image acquiring unit (304) to acquire a
+distance difference image (507) being the difference between the first distance image
+and the second distance image;
+
+an object mask creator (305) to create an object mask (508) from the distance
+difference image (507), for use by the object area detector (306) to detect the object
+area (509) of the object by applying the mask to one of the background-and-object
+images;
+
+a facial area detector (307) to detect the face (510) in the detected object area (509);
+and a search window size determiner (401) to calculate the distance from the camera
+to the object from the distance difference image (507) and to determine a size for a
+search window for face detection scanning of the detected object area (509) based
+
+on the calculated distance to the object.
+
+11
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2. The apparatus of claim 1, wherein the facial area detector (307) is configured
+to scan the search window of the determined size over the detected object area to
+detect the facial area (510).
+
+3. The apparatus of claim 1 or 2, wherein the object mask creator (305) is
+configured to create the object mask by reducing noise from the acquired distance
+difference image (507) and binarizing the distance difference image with the reduced
+
+noise.
+
+4. A method of detecting a face (510) from left and right images (503, 504)
+acquired by a stereo camera (301), comprising:
+
+acquiring (601) a first distance image of a scene with only a background, from a left
+background image (501) and a right background image (502) obtained from the
+camera;
+
+acquiring (602) a second distance image (506) of the same scene but with an object
+as well as the background, from a left background-and-object image (503) and a right
+background-and-object image (504) obtained from the camera, the second distance
+image differing from the first distance image due to the presence of the object:
+
+and detecting (606) an object area (509) of the object in one of the obtained
+background-and-object images;
+
+characterised by computing (603) a distance difference image being the difference
+between the first distance image and the second distance image;
+
+creating (604) an object mask from the distance difference image (507) for use in the
+detection of the object area (509) of the object by applying the mask to one of the
+background-and-object images;
+
+detecting (607) a facial area in the detected object area (509):
+
+calculating the distance from the camera to the object from the distance difference
+image (507) and determining a size for a search window for face detection scanning
+
+of the detected object area (509) based on the calculated distance to the object.
+
+12

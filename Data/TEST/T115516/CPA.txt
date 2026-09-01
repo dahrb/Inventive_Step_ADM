@@ -1,0 +1,8 @@
+TITLE:
+A practical cone beam artifact correction algorithm
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+Cone beam reconstruction has been the focus of many studies. One of the most widely referenced and used algorithms for a circular trajectory is the Feldkamp algorithm. The advantage of the algorithm is its simplicity of implementation, efficiency in computation, and close resemblance to the well-known filtered backprojection algorithm for fan beam and parallel beam reconstruction. The algorithm is effective in terms of combating some of the cone beam artifacts. However, when high-density objects are placed off the center plane (the fan beam plane), severe shading artifact will result. In the paper, we propose a two-pass cone beam reconstruction scheme. The algorithm is based on the observation that to a first order approximation, the high-density object reconstructed with the Feldkamp algorithm is accurate. The shading and streaking artifacts near the high-density objects are caused mainly by the incomplete sampling of the circular trajectory. Therefore, we can use the reconstructed images with Feldkamp algorithm as the basis for error estimation. The final images are produced by removing error images from the first-pass images.

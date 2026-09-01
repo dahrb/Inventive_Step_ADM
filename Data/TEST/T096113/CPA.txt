@@ -1,0 +1,156 @@
+TITLE:
+Configurable width buffered module having a bypass circuit
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A memory system architecture/interconnect topology includes a configurable width buffered memory module having a configurable width buffer device with at least one bypass circuit. A buffer device, such as a configurable width buffer device, is positioned between or with at least one integrated circuit memory device positioned on a substrate surface of a memory module, such as a DIMM. The configurable width buffer device is coupled to at least one memory device (by way of an internal channel), entry pin and exit pin on the memory module. The configurable width buffer device includes a multiplexer/demultiplexer circuit coupled to the entry pin and the internal channel for accessing the memory device. A bypass circuit is coupled to the entry pin and the exit pin in order to allow information to be transferred through the memory module to another coupled memory module in the memory system by way of an external channel. In an alternate embodiment of the present invention, two bypass circuits are coupled to a pair of entry and exit pins. In an embodiment of the present invention, a memory system may include at least four interfaces, or sockets, for respective memory modules having configurable width buffer devices with bypass circuits that enable additional upgrade options while reducing memory system access delays.
+
+CLAIMS:
+1. A memory module comprising:
+a connector interface which includes a first contact, a second contact and a third contact;
+a first integrated circuit having memory including a first storage cell and a second storage cell; and
+a buffer device coupled to the first integrated circuit and the connector interface, wherein the buffer device is operable in a first mode and a second mode, wherein:
+during the first mode of operation, the first storage cell and the second storage cell are accessible from the first contact and the second contact, respectively; and
+during the second mode of operation, at a first time the first storage cell is accessible from the first contact and the second contact is coupled to the third contact.
+2. The memory module of claim 1, wherein:
+during the second mode of operation, at a second time the second storage cell is accessible from the first contact and the second contact is coupled to the third contact.
+3. The memory module of claim 1, wherein a delay is provided when accessing the first storage cell in the second mode of operation.
+4. The memory module of claim 1, wherein during the first mode of operation,
+a first coupling circuit couples a first external signal line coupled to the first contact to a first internal signal line coupled to the first storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a second internal line coupled to the second storage cell.
+5. The memory module of claim 1, wherein during the second mode of operation at the first time,
+a first coupling circuit couples a first external signal line coupled to the first contact to an internal signal line coupled to the first storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a third external line coupled to the third contact.
+6. The memory module of claim 2, wherein during the second mode of operation at the second time,
+a first coupling circuit couples a first external signal line coupled to the first contact to an internal signal line coupled to the second storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a third external line coupled to the third contact.
+7. The memory module of claim 1, wherein the buffer device further comprises a multiplexer/demultiplexer circuit coupled to the first and second contacts to access the first and second storage cells.
+8. The memory module of claim 1, wherein the buffer device further comprises a bypass circuit capable to transfer information between the first and third contacts.
+9. The memory module of claim 1, further comprising a fourth contact and wherein the buffer device includes:
+a first bypass circuit capable to transfer information between the first and fourth contacts: and,
+a second bypass circuit capable to transfer information between the second and third contacts.
+10. The memory module of claim 9, further comprising a fifth, a sixth, a seventh and a eighth contact and wherein the buffer device includes:
+a third bypass circuit capable to transfer information between the fifth and seventh contacts: and,
+a fourth bypass circuit capable to transfer information between the sixth and seventh contacts.
+11. The memory module of claim 1, wherein the first, second and third contacts are pins for mating to a socket.
+12. The memory module of claim 1, wherein in a master device generates a control signal to the memory module to determine the mode of operation.
+13. A memory module comprising:
+a connector interface which includes a first contact, a second contact and a third contact;
+a first integrated circuit having memory including a first storage cell;
+a second integrated circuit memory having a second storage cell; and
+a buffer device coupled to the first integrated circuit, the second integrated circuit and the connector interface, wherein the buffer device is operable in a first mode and a second mode, wherein:
+during the first mode of operation, the first storage cell and the second storage cell are accessible from the first contact and the second contact, respectively; and
+during the second mode of operation, at a first time the first storage cell is accessible from the first contact and the second contact is coupled to the third contact.
+14. The memory module of claim 13, wherein:
+during the second mode of operation, at a second time the second storage cell is accessible from the first contact and the second contact is coupled to the third contact.
+15. The memory module of claim 13, wherein a delay is provided when accessing the first storage cell in the second mode of operation.
+16. The memory module of claim 13, wherein during the first mode of operation,
+a first coupling circuit couples a first external signal line coupled to the first contact to a first internal signal line coupled to the first storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a second internal line coupled to the second storage cell.
+17. The memory module of claim 13, wherein during the second mode of operation at the first time,
+a first coupling circuit couples a first external signal line coupled to the first contact to an internal signal line coupled to the first storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a third external line coupled to the third contact.
+18. The memory module of claim 14, wherein during the third mode of operation,
+a first coupling circuit couples a first external signal line coupled to the first contact to an internal signal line coupled to the second storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a third external line coupled to the third contact.
+19. The memory module of claim 13, wherein the buffer device further comprises a multiplexer/demultiplexer circuit coupled to the first and second contacts to access the first and second storage cells.
+20. The memory module of claim 13, wherein the buffer device further comprises a bypass circuit capable to transfer information between the first and third contacts.
+21. The memory module of claim 13, further comprising a fourth contact and wherein the buffer device includes:
+a first bypass circuit capable to transfer information between the first and third contacts: and,
+a second bypass circuit capable to transfer information between the second and fourth contacts.
+22. The memory module of claim 21, further comprising a fifth, a sixth, a seventh and a eighth contact and wherein the buffer device includes:
+a third bypass circuit capable to transfer information between the fifth and seventh contacts: and,
+a fourth bypass circuit capable to transfer information between the sixth and seventh contacts.
+23. The memory module of claim 13, wherein the first, second and third contacts are pins for mating to a socket.
+24. The memory module of claim 13, wherein in a master device generates a control signal to the memory module to determine the mode of operation.
+25. A memory module comprising:
+a first integrated circuit having memory including a first storage cell, a second storage cell and a third storage cell;
+a plurality of internal signal lines including a first and a second internal signal line coupled to the first integrated circuit;
+a plurality of external signal lines including a first external signal line, a second external signal line, and a third external signal line; and,
+a buffer device coupled to the plurality of internal signal lines and the plurality of external signal lines, wherein:
+at a first time the first storage cell is accessible from the first external signal line coupled to the first internal signal line and the second storage cell is accessible from the second external signal line coupled to the second internal signal line; and
+at a second time the third storage cell is accessible from the first external signal line coupled to the first internal signal line and the second external signal line is coupled to the third external signal line.
+26. The memory module of claim 25, wherein:
+at a third time, the third storage cell is accessible from the first external signal line coupled to the second internal signal line and the second external signal line is coupled to the third external signal line.
+27. The memory module of claim 25, wherein a delay is provided when accessing the third storage cell in the second mode of operation.
+28. The memory module of claim 25, wherein the buffer device further comprises a multiplexer/demultiplexer circuit coupled to the first and second external signal lines to access the first, second, and third storage cells.
+29. The memory module of claim 25, wherein the buffer device further comprises a bypass circuit capable to transfer information between the first and third external signal lines.
+30. The memory module of claim 25, wherein the first, second and third external signal lines are coupled to a socket for positioning the memory module.
+31. The memory module of claim 25, wherein in a master device generates a control signal to the memory module to determine the mode of operation.
+32. A memory module comprising:
+a first integrated circuit having memory including a first storage cell and a second storage cell;
+a second integrated circuit having memory including a third storage cell and a fourth storage cell;
+a plurality of internal signal lines including a first and a second internal signal line coupled to the first and second integrated circuits;
+a plurality of external signal lines including a first external signal line, a second external signal line, and a third external signal line; and,
+a buffer device coupled to the plurality of internal signal lines and the plurality of external signal lines, wherein:
+at a first time, the first storage cell is accessible from the first external signal line coupled to the first internal signal line and the second storage cell is accessible from the second external signal line coupled to the second internal signal line; and
+at a second time, the second storage cell is accessible from the first external signal line coupled to the first internal signal line and the second external signal line is coupled to the third external signal line.
+33. The memory module of claim 32, wherein:
+at a third time, the fourth storage cell is accessible from the first external signal line coupled to the second internal signal line and the second external signal line is coupled to the third external signal line.
+34. The memory module of claim 32, wherein a delay is provided when accessing the second storage cell in the second mode of operation.
+35. The memory module of claim 32, wherein the buffer device further comprises a multiplexer/demultiplexer circuit coupled to the first and second external signal lines to access the first, second, third and fourth storage cells.
+36. The memory module of claim 32, wherein the buffer device further comprises a bypass circuit capable to transfer information between the first and third external signal lines.
+37. The memory module of claim 32, wherein the first, second and third external signal lines are coupled to a socket for positioning the memory module.
+38. The memory module of claim 32, wherein in a master device generates a control signal to the memory module to determine the mode of operation.
+39. A system comprising,
+a first memory module coupled to a first external channel, a second external channel, and a third external channel, wherein information is transferred through the first memory module having a first delay;
+a second memory module coupled to the second external channel; and,
+a third memory module coupled to a third external channel, wherein information retrieved from the first, the second and the third memory modules is provided on the first external channel having the first delay.
+40. The system of claim 39, wherein the first memory module is coupled to a fourth external channel, further comprising:
+a fourth memory module coupled to the fourth external channel, wherein information retrieved from the first, second, third and fourth memory modules is provided on the first external channel having the first delay.
+41. The system of claim 39, wherein the first memory module includes a buffer device, coupled to the first and second external channels, having a multiplexer/demultiplexer circuit for accessing a plurality of storage cells in the first memory module.
+42. The system of claim 41, wherein the buffer device comprises a first bypass circuit capable to transfer information between the first external channel and the second external channel.
+43. The system of claim 42, wherein the buffer device further comprises a second bypass circuit capable to transfer information between the first external channel and the third external channel.
+44. The system of claim 39, further comprising:
+a master device, coupled to the first external channel, capable to generate a control signal to the first, second and third memory modules to determine the mode of operation of the first, second and third memory modules.
+45. A buffer device, comprising:
+a configurable width interface;
+a multiplexer/demultiplexer circuit capable to access a first storage cell in a plurality of storage cells; and,
+a first bypass circuit capable to transfer information through the buffer device from a first contact to a second contact.
+46. The buffer device of claim 45, further comprising:
+second bypass circuit capable to transfer information through the buffer device from a third contact to a fourth contact.
+47. The buffer device of claim 46, further comprising:
+a third bypass circuit capable to transfer information through the buffer device from a fifth contact to a sixth contact; and,
+a fourth bypass circuit capable to transfer information through the buffer device from a seventh contact to a eighth contact.
+48. A buffer device, comprising:
+a multiplexer/demultiplexer circuit capable to access a first storage cell in a plurality of storage cells; and,
+means for transferring information between the buffer device.
+49. The buffer device of claim 48, wherein the buffer device is positioned in a memory module.
+50. The buffer device of claim 49, wherein the memory module is positioned in a memory system having a controller.
+51. A memory module, comprising:
+a substrate having a first and second surface;
+a first integrated circuit memory device positioned about the first surface;
+a buffer device positioned about the first surface; and,
+a second integrated circuit memory device positioned with the buffer device.
+52. The memory module of claim 51, wherein the buffer device and second integrated circuit memory device is included in a package.
+53. The memory module of claim 51, wherein the package includes a connector coupled to the first surface.
+54. The memory module of claim 52, wherein the buffer device is positioned on a first die and the second integrated circuit memory device is positioned on a second die, wherein the first and second dies are included in the package.
+55. The memory module of claim 51, wherein the second integrated circuit memory device is included in a first package and the buffer device is included in a second package, and wherein the second integrated circuit memory device is positioned above the buffer device coupled to the first surface.
+56. The memory module of claim 51, wherein the memory module is a dual inline memory module.
+57. The memory module of claim 51, wherein the first and second integrated circuits are dynamic random access memory (“DRAM”) devices.
+58. The memory module of claim 51, wherein the memory module includes 18 integrated circuit memory devices, wherein 9 integrated circuit memory devices are positioned on the second surface, 6 integrated circuit memory devices are positioned on the first surface, and 3 integrated circuit memory devices are positioned on the buffer device.
+59. The memory module of claim 51, wherein the memory module includes 18 integrated circuit memory devices, wherein 10 integrated circuit memory devices are positioned on the second surface, 6 integrated circuit memory devices are positioned on the first surface, and 2 integrated circuit memory devices positioned with the buffer device, wherein the 2 integrated circuit memory devices and the buffer device are included in a package positioned on the first surface.
+60. The memory module of claim 51, wherein the buffer device includes a configurable width interface.
+61. The memory module of claim 51, wherein the buffer device includes a bypass circuit.
+62. The memory module of claim 51, wherein the memory module is coupled to a master device.
+63. A memory module, comprising:
+a substrate;
+a connector interface, coupled to the substrate, which includes a first contact, a second contact and a third contact;
+a first integrated circuit having memory including a first storage cell and a second storage cell; and
+a buffer device with the first integrated circuit positioned in a package coupled to the substrate, wherein the buffer device is operable in a first mode and a second mode, wherein:
+during the first mode of operation, the first storage cell and the second storage cell are accessible from the first contact and the second contact, respectively; and
+during the second mode of operation, at a first time the first storage cell is accessible from the first contact and the second contact is coupled to the third contact.
+64. The memory module of claim 63, wherein:
+during the second mode of operation, at a second time the second storage cell is accessible from the first contact and the second contact is coupled to the third contact.
+65. The memory module of claim 63, wherein a delay is provided when accessing the first storage cell in the second mode of operation.
+66. The memory module of claim 63, wherein during the first mode of operation,
+a first coupling circuit couples a first external signal line coupled to the first contact to a first internal signal line coupled to the first storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a second internal line coupled to the second storage cell.
+67. The memory module of claim 63, wherein during the second mode of operation at the first time,
+a first coupling circuit couples a first external signal line coupled to the first contact to an internal signal line coupled to the first storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a third external line coupled to the third contact.
+68. The memory module of claim 63, wherein during the second mode of operation at the second time,
+a first coupling circuit couples a first external signal line coupled to the first contact to an internal signal line coupled to the second storage cell; and,
+a second coupling circuit couples a second external signal line coupled to the second contact to a third external line coupled to the third contact.

@@ -1,0 +1,201 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+CLAIMS
+
+1, A computer program for a portable type terminal device (10), the portable type
+terminal device (10) including: a display (12) having a rectangular shape defined by a long
+side (L2) along a first direction and a short side (LI) along a second direction, the second
+direction being perpendicular to the first direction; and. a display controlling unit (30)
+configured to: in a state where the posture of the portable type terminal device (10) is
+vertically oriented with the long side (L2) of the display (12) extending along a
+perpendicular direction relative to the ground surface, create image data for vertical
+orientation such that the up-down direction of an image (80) represented by Web data is
+along the long side of the display (12), and the left-right direction of the image (80) is
+along the short side (L1) of the display (12), and cause the display (12) to show the image
+(80) represented by the Web data in the vertical orientation; and in a state where the
+posture of the mobile terminal device (10) is horizontally orientated with the short side
+(L1) of the display (12) extending along the perpendicular direction relative to the ground
+surface, create image data for horizontal orientation such that the up-down direction of the
+image (90) represented by the Web data is along the short side (L1) of the display (12), and
+the left-right direction of the image (90) is along the long side (L2) of the display (12) and
+cause the display (12) to show the image (90) represented by the Web data in the
+horizontal orientation,
+
+the computer program including instructions for ordering the portable type terminal
+device (10) to perform:
+
+creating display data representing a preview image (100, 110, 200, 210) indicating
+a print result of the image (80, 90) so as to supply the display data to the display (12) in the
+case where the print of the image (80, 90) is instructed;
+
+creating print data by utilizing the Web data in the case where the print of the
+image (80, 90) is instructed, the print data having a format that a printer (60) is capable of
+interpreting; and
+
+sending the print data to the printer (60), wherein:
+
+in both of a first case where the print of the image (80) is instructed without
+designation of a print orientation in a first state and a second case where the print of the
+
+specific Web image (90) is instructed without designation of a print orientation in a second
+19
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+state, a first type of the print data for causing the printer (60) to perform a first type of a
+print is created,
+
+the first state is a state in which the image (80) is shown in the display (12) such
+that the up-down direction of the image (80) is along the long side (L2), and the left-right
+direction of the image (80) is along the short side (LD,
+
+the second. state is a state in which the image (90) is shown in the display (L2) such
+that the up-down direction of the image (90) is along the short side (LI), and the left-right
+direction of the image (90) is along the long side (L2), and
+
+in the first type of the print, the left-right direction of the image (80. 90) is along a
+short side of a print medium (300), and an entire length of the image (80. 90) in the left-
+right direction corresponds to the short side of the print medium (300),
+
+wherein in the first case, a first type of the display data is supplied to the display
+(12), the first type of the display data being for causing a first type of the preview image
+(100) indicating a print result of one piece of the print medium (300) to be shown in the
+display (12), such that an up- down direction of the first type of the preview image (100) is
+along the long side (L2) of the display (12), and a left-right direction of the first type of the
+preview image (100) is along the short side (LI) of the display (12), the first type of the
+display data being data for causing an entirety of the first type of the preview image (100)
+to be simultaneously shown in the display (12), and
+
+wherein in the second case, a second type of the display data is supplied to the
+display (12), the second type of the display data being for causing a second type of the
+preview image (110) indicating a print result of one piece of the print medium (300) to be
+shown in the display (12), such that an up-down direction of the second type of the
+preview image (110) is along the short side (LI) of the display (12), and a left-right
+direction of the second type of the preview image (110) is along the long side (L2) of the
+display (12), the second type of the display data being data for causing an entirety of the
+
+second type of the preview image (110) to be simultaneously shown in the display (12).
+
+2, The computer program as in claim 1, wherein
+in the first case, before a specific print condition is set by the user on the print
+condition setting screen, the first type of the display data is supplied to the display (12) in
+accordance with a predetermined print condition, and in the second case, before the
+20
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+specific print condition is set by the user, the second type of the display data is supplied to
+
+the display (12) in accordance with the predetermined print condition.
+
+3. The computer program as in claim 2, including instructions for ordering the
+portable type terminal device (10) to perform:
+
+after the specific print condition is set by the user on the print condition setting
+screen, creating a third type of the display data so as to supply the third type of the display
+data to the display (12), and
+
+the third type of the display data represents a third type of the preview image (200,
+210) indicating a print result of the image (80, 90) in accordance with the specific print
+
+condition.
+
+4, The computer program as in claim 3, wherein
+
+in the first case, before the specific print condition is set by the user on the print
+condition setting screen, the first type of the display data is created by utilizing a size of a
+predetermined print medium included in the predetermined print condition,
+
+in the second case, before the specific print condition is set by the user on the print
+condition setting screen, the second type of the display data is created by utilizing the size
+of the predetermined print medium,
+
+after the specific print condition is set by the user on the print condition setting
+screen, the third type of the display data is created by utilizing a size of a print medium set
+
+as the specific print condition.
+
+5. The computer program as in any one of claims | to 4, wherein
+
+in a state where a first mode has been selected by the user, the first type of the print
+data is created in both of the first case and the second case,
+
+in a state where a second mode has been selected by the user, the first type of the
+print data is created in the first case, and a second type of the print data for causing the
+printer (60) to perform a second type of a print is created in the second case; and
+
+in the second type of the print, the up-down direction of the image (80, 90) is along
+the short side of the print medium (300).
+
+21
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+MAIN REQUEST
+
+6. The computer program as in any one of claims | to 5, wherein
+
+the Web data is HTML. data.
+
+7. The computer program as in any one of claims 1 to 6, wherein
+
+in a case where an action is performed by the user in a state where the first type of
+the preview image (100) is shown in the display (12), the action being an action to cause
+the portable type terminal device (10) to be in a posture in which the short side (LI)
+extends along the perpendicular direction relative to the ground surface, the second type of
+
+display data is supplied to the display (12).
+
+8, The computer program as in any one of claims | to 7, wherein
+
+a print result of the image (80, 90) in accordance with the first type of the print data
+indicates a print result in which:
+
+an entire length of the image (80, 90) in the left-right direction is printed along the
+short side of the print medium (300); and
+
+only a length within an entire length of the image (80, 90) in the up-down direction
+is printed along a long side of the print medium (300), the length being a length from a top
+edge of the image (80, 90) and shorter than the entire length of the image in the up-down
+
+direction.
+
+22

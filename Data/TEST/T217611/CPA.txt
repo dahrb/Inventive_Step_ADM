@@ -1,0 +1,18 @@
+Title: Adaptive weiner filtering using line spectral frequencies
+
+Abstract: An acoustic noise suppression filter including attenuation filtering with a noise-free estimate based on a codebook of line spectral frequencies.
+
+Type: 
+US Patent
+
+Claims: 
+What is claimed is:
+1. A method of filtering a stream of sampled acoustic signals, comprising the steps of:
+(a) partitioning a stream of sampled acoustic signals into a sequence of frames;
+(b) Fourier transforming said flames to yield a sequence of transformed frames;
+(c) applying a generalized Wiener filter to said transformed frames to yield a sequence of filtered transformed frames, wherein said filter uses power spectrum estimates from LSFs defined as weighted sums of LSFs of a codebook of LSFs with the weights determined by the LSFs of said transformed frames; and
+(d) inverse Fourier transforming said sequence of filtered transformed frames to yield a sequence of filtered frames.
+2. The method of claim 1, further comprising the steps of:
+(a) repeating step (c) of claim 1 but with the LSFs of said transformed frame replaced with the LSFs of the filtered transformed frame of a preceding iteration of said step (c) of claim 1.
+3. The method of claim 2, wherein:
+(a) said step (c) of claim 1 is repeated a number of times with the number in the range of 6 to 7.

@@ -1,0 +1,147 @@
+--- PAGE 1 ---
+Main Request EP Application 04810576.1; Attorney File P 61908
+
+A method for providing color coordination comprising:
+receiving a starting color for which coordinating colors are sought;
+associating the starting color with a first color in a color database, the first color being
+the closest matching color in the color database to the starting color;
+retrieving one or more color palettes associated with the first color, each palette
+including one or more coordinating colors, the coordinating colors being
+predetermined based on the first color and a color coordination algorithm; and
+fine-tuning a characteristic of the first color by
+accessing a first color data structure associated with the first color, the first color
+data structure being stored on a computer readable medium and including a
+unique identifier for the first color data structure, a first plurality of color
+metrics defining the first color, and a plurality of references to other data
+structures representing neighboring colors in color space, each neighboring
+color having at least one color characteristic which differs from those of the
+first color;
+accessing a second color data structure specified by one of the references from the
+plurality of references to other data structures, and
+determining a second color, said second color being specified by a second
+plurality of color metrics defining the second color in the second color data
+
+structure.
+
+The method of claim 1 wherein the first color data structure further comprises:
+
+a source identifier indicating a source where the first color is located; and
+
+--- PAGE 2 ---
+a usage identifier for indicating a type of use for which the corresponding color is or is
+
+not appropriate.
+
+The method of claim 1 wherein the color palette includes
+a trim color,
+a wall color, and
+
+an accent color.
+
+The method of claim | further comprising:
+
+accessing one or more calibration tables associated with the first color and the one or
+more color palettes, each calibration table being stored on a computer readable
+medium and containing calibration data for a display unit; and
+
+displaying the retrieved color palettes according to the specification of the one or
+
+more calibration tables.
+
+The method of claim 1 wherein the one or more coordinating colors include
+
+complementary colors, analogous colors, or monochromatic colors.
+
+The method of claim 1 wherein one or more color palettes are retrieved, each of
+
+which is associated with the fine-tuned color.
+
+A paint color selection and coordination system comprising:
+
+a first color data structure representing a first color and its relationship to other colors,
+the first color data structure including
+a unique identifier for the first color data structure;
+a source identifier indicating the source of the first color;
+
+a plurality of color metrics defining the first color;
+
+--- PAGE 3 ---
+a plurality of references to other data structures representing neighboring colors in
+color space, the neighboring colors having different color characteristics than
+the first color; and
+
+a user color selection interface permitting a user to select the first color and for
+then permitting the user to retrieve a color palette associated with the first
+color, each palette including a plurality of coordinating colors, the
+coordinating colors being predetermined based on the first color and a color
+coordination algorithm and wherein each color palette is specified in a paint
+color palette data structure comprising:
+
+a primary key for the palette;
+
+a foreign key to a corresponding wall paint color;
+
+a foreign key to a corresponding accent paint color; and
+a foreign key to a corresponding trim paint color;
+
+wherein the paint color and coordination system enables fine-tuning a
+
+characteristic of the first color by
+accessing the first color data structure associated with the first color,
+accessing a second color data structure specified by one of the
+references from the plurality of references to other data structures, and
+determining a second color, said second color being specified by a
+second plurality of color metrics defining the second color in the second color
+
+data structure.
+
+The paint color selection and coordination system of claim 7 further comprising: a
+calibration data structure including information to accurately display first color
+
+retrieved from the color database.
+
+--- PAGE 4 ---
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+The paint color selection and coordination system of claim 7 wherein the data in the
+calibration data structure includes the appropriate proportions of red color, green
+
+color, and blue color to generate the first color.
+
+The paint color selection and coordination system of claim 7 wherein the color palette
+
+associated with the first color includes a trim color and an accent color.
+
+The paint color selection and coordination system of claim 7 wherein the first color is
+
+found in a predetermined color list.
+
+The paint color selection and coordination system of claim 7 wherein, if the first color
+is provided by a user, the first color data structure is generated for the first color based
+
+on measured qualities of the first color.
+
+The paint color selection and coordination system of claim 7 wherein the data in two
+or more color data structures may be interpolated to generate the color data structure
+
+corresponding to the first color.
+
+The paint color selection and coordination system of claim 7 wherein the one or more
+coordinating colors include complementary colors, analogous colors, or
+
+monochromatic colors.
+
+The paint color selection and coordination system of claim 7 wherein the plurality of
+color metrics defining the first color include a luminosity value, a hue value, and a
+
+chroma value.

@@ -1,0 +1,60 @@
+TITLE:
+Method and apparatus for processing rewards
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Methods, systems, apparatus, computer program code and means for processing reward transactions are provided including receiving, from a point of interaction associated with a merchant, an authorization request message identifying a requested purchase transaction, the authorization request message including data identifying a payment account identifier and a purchase amount. Authorizing the purchase transaction, and receiving, from the merchant, merchant reward data associated with the purchase transaction, and updating a pooled rewards database entry associated with the consumer.
+
+CLAIMS:
+1. A method, comprising:
+receiving, from a point of interaction associated with a merchant, an authorization request message identifying a requested purchase transaction, said authorization request message including data identifying a payment account identifier and a purchase amount;
+authorizing said purchase transaction;
+receiving, from said merchant, merchant reward data associated with said purchase transaction; and
+updating a pooled rewards database entry associated with said consumer.
+2. The method of claim 1, further comprising:
+determining that said payment account identifier is associated with a consumer participating in a pooled rewards program.
+3. The method of claim 1, further comprising:
+determining that said merchant is a participant in said pooled rewards program.
+4. The method of claim 2, wherein said determining that said payment account identifier is associated with a consumer participating in a pooled rewards program is performed based on information in said authorization request and substantially in conjunction with said authorizing.
+5. The method of claim 2, wherein said determining that said payment account identifier is associated with a consumer participating in a pooled rewards program is performed based on batch data received from said merchant after completion of said purchase transaction.
+6. The method of claim 4, further comprising:
+communicating information identifying said updated pooled rewards database entry to said consumer during said purchase transaction.
+7. The method of claim 5, further comprising:
+communicating information identifying said updated pooled rewards database entry to said consumer after said purchase transaction.
+8. The method of claim 1, wherein said updating said pooled rewards database entry comprises:
+receiving merchant reward information identifying a merchant reward point total associated with said transaction and applying a conversion factor to calculate a pooled reward point total associated with said transaction.
+9. The method of claim 2, further comprising:
+transmitting an administrative message to said merchant point of interaction, said administrative message containing information identifying the consumers current pooled reward point information;
+receiving, in response to said administrative message, an acknowledgement message confirming receipt of said administrative message;
+receiving, from said merchant point of interaction, an updated authorization request, said updated authorization request including an updated purchase amount based on at least one of: (i) a discount amount applied to the original purchase amount, and (ii) a reward point redemption amount applied to the original purchase amount; and
+authorizing said purchase transaction based on said updated authorization request.
+10. The method of claim 9, further comprising:
+updating said pooled rewards database entry based on said updated authorization request.
+11. The method of claim 1, wherein said pooled rewards database entry includes information identifying at least one of: a unique consumer identifier associated with said consumer, a pooled reward point total, and at least a first merchant reward program point total.
+12. An apparatus, comprising:
+a processor; and
+a memory in communication with the processor, the memory storing program instructions, the processor operative with the program instructions to:
+receive, from a point of interaction associated with a merchant, an authorization request message identifying a requested purchase transaction, said authorization request message including data identifying a payment account identifier and a purchase amount;
+authorize said purchase transaction;
+receive, from said merchant, merchant reward data associated with said purchase transaction; and
+update a pooled rewards database entry associated with said consumer.
+13. The apparatus of claim 12, wherein the processor is further operative with the program instructions to:
+determine that said payment account identifier is associated with a consumer participating in a pooled rewards program.
+14. The apparatus of claim 13, wherein the processor is further operative with the program instructions to:
+transmit an administrative message to said merchant point of interaction, said administrative message containing information identifying the consumers current pooled reward point information;
+receive, in response to said administrative message, an acknowledgement message confirming receipt of said administrative message;
+receive, from said merchant point of interaction, an updated authorization request, said updated authorization request including an updated purchase amount based on at least one of: (i) a discount amount applied to the original purchase amount, and (ii) a reward point redemption amount applied to the original purchase amount; and
+authorize said purchase transaction based on said updated authorization request.
+15. The apparatus of claim 14, wherein the processor is further operative with the program instructions to:
+update said pooled rewards database entry based on said updated authorization request.
+16. The apparatus of claim 15, wherein said pooled rewards database entry includes information identifying at least one of: a unique consumer identifier associated with said consumer, a pooled reward point total, and at least a first merchant reward program point total.
+17. A rewards system, comprising:
+a point of interaction generating a transaction authorization request message associated with a transaction, the request message including a purchase amount, a payment account identifier, and a merchant identifier;
+an authorization system, in communication with the point of interaction to receive the transaction authorization request message and authorize said transaction;
+a pooled rewards system, associated with said authorization system, and controlling a pooled rewards database, said pooled rewards database storing information identifying participating consumers, participating merchants, pooled reward point balances, and merchant reward program point balances; the pooled rewards system operative with said authorization system to
+determine that a consumer associated with said payment account identifier and a merchant associated with said merchant identifier are participants in a pooled rewards program; and
+update a record associated with said consumer to reflect a number of merchant reward point earned by said transaction and a corresponding number of pooled reward points earned by said transaction.
+18. The rewards system of claim 17, wherein said pooled reward systems is further operative with said authorization system to:
+transmit an administrative message to said point of interaction, during said transaction, to inform said consumer of at least one of said pooled reward points and said merchant reward points.

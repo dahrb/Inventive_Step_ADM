@@ -1,0 +1,54 @@
+TITLE:
+Signal Strength Detection
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Disclosed is an apparatus and method for identifying a source or sources of noise that interferes or potentially interfere with communications between a remote and a receiver. The noise source may be detected through the operation of a noise detector which is integrated as a component of a remote. The remote may be configured to operate in one of two modes. In a first mode, the remote may convey commands inputted by a user from the remote to the receiver. In a second mode the receiver may operate as a noise detector device.
+
+CLAIMS:
+1. A remote control device having a first mode of operation and a second mode of operation, the remote control device comprising:
+a signal transceiver configured to at least send wireless signals to an electronic device controlled by the remote control, wherein in the first mode of operation the signal transceiver is configured to transmit signals that convey user commands to the electronic device;
+a noise detection circuit in communication with the signal transceiver, wherein in the second mode of operation, the noise detector circuit is configured to detect electromagnetic noise in a surrounding area; and
+an output device in communication with the noise detection circuit, where in the second mode of operation the output device is configured to output information regarding electromagnetic noise detected by the noise detection circuit.
+2. The remote control device of claim 1, wherein:
+the output device is a light emitting diode; and
+in the second mode of operation the light emitting diode blinks at a frequency that corresponds to the electromagnetic noise measured by the noise detection circuit.
+3. The remote control device of claim 1, wherein:
+the output device is a tone generator; and
+in the second mode of operation the tone generator emits sound at a frequency that corresponds to the electromagnetic noise measured by the noise detection circuit.
+4. The remote control device of claim 1, wherein the signal transceiver communicates over one of three possible channels.
+5. The remote control device of claim 1, further comprising:
+a second output device configured to output an indication that a predetermined threshold noise level has been exceeded.
+6. The remote control device of claim 5, wherein the second output device is a light emitting diode, the light emitting diode configured to provide a constant illumination when a noise level is detected that exceeds the predetermined threshold.
+7. An electronic device having a first mode of operation and a second mode of operation, the electronic device comprising:
+a signal transceiver configured to at least receive wireless signals from a remote, wherein in the first mode of operation the signal transceiver is configured to receiver signals that convey user commands from the remote;
+a noise detection circuit in communication with the signal transceiver, wherein in the second mode of operation, the noise detector circuit is configured to detect electromagnetic noise in a surrounding area;
+an output device in communication with the noise detection circuit, where in the second mode of operation the output device is configured to convey information regarding electromagnetic noise detected by the noise detection circuit.
+8. The system of claim 7, further comprising a tuner configured to receive a program service transmission from a service provider, the tuner operatively connected to the processor.
+9. The system of claim 7, wherein:
+the output device is a speaker; and
+in the second mode of operation the tone generator emits sound at a frequency that corresponds to the electromagnetic noise measured by the noise detection circuit.
+10. The system of claim 7, wherein:
+the output device is a display device;
+in the first mode of operation, the display device displays a program received through an operation of the tuner; and
+in a second mode of operation, the display device displays information regarding the electromagnetic noise measured by the noise detection circuit.
+11. The system of claim 10, wherein:
+the signal transceiver is configured to communicate with the remote over one of a plurality of possible channels; and
+in the second mode of operation, the display device includes a visual indication of a noise level associated with each of the plurality communication channels.
+12. The system of claim 10, wherein the display device is configured to display a threshold noise level.
+13. A method of mitigating the effect of interference sources in a communication path between an electronic device and a remote control device, comprising:
+detecting a presence of noise on a communication path between an electronic device and a remote control device in communication with the electronic device;
+receiving a plurality of noise level inputs at the remote control, the plurality of noise level inputs corresponding to a plurality of remote control locations;
+outputting a noise level indication as the remote control moves between the plurality of remote control positions; and
+in response to outputting the noise level indication, identifying a noise source.
+14. The method of claim 13, wherein the operation of outputting a noise level indication includes flashing a light emitting diode disposed on the remote control device at a rate that is proportional to an intensity noise.
+15. The method of claim 13, further comprising:
+employing at least three of the plurality of noise level inputs to triangulate a source of noise.
+16. The method of claim 13, wherein the operation of switching the remote control device from the first mode of operation to the second mode of operation includes switching out firmware.
+17. The method of claim 13, wherein the communication path between the electronic device and the remote control device includes a plurality of channels, and wherein the operation of determining the presence of noise of the communication path includes determining a presence of noise on at least one channel.
+18. The method of claim 13, wherein the communication path between the electronic device and the remote control device includes a plurality of channels, and wherein the operation of determining the presence of noise of the communication path includes determining a presence of noise on all of the plurality of channels.
+19. The method of claim 13, wherein the communication path between the electronic device and the remote control device includes at least three channels, the method further comprising:
+displaying an indication of a noise level for each of the three channels on a television screen associated with the electronic device.
+20. The method of claim 13, wherein outputting the noise level indication including display and indication as the noise level is above or below an acceptable threshold.

@@ -1,0 +1,81 @@
+Title: Information processing apparatus and user interface control method
+
+Abstract: 
+There is provided an information processing apparatus which allows a user interface implemented in a description language such as XML or the like to re-use a widget. A user interface description document can describe a command to allocate a widget with reference to a widget description document that describes the definition of the widget of the user interface. When the user interface description document describes the command, the information processing apparatus refers to the widget description document and generates structured data which expresses the contents that integrate the user interface description document and widget description document. The apparatus displays the user interface based on the generated structured data, and executes an operation in response to an input event from the user.
+
+Type: US Patent
+
+Claims: 
+1. An information processing apparatus comprising:
+a storage unit adapted to store first and second user interface description documents including input information, output information, and control information;
+a parsing unit adapted to parse the first and second user interface description documents;
+a management unit adapted to manage user interface information obtained as a result of parsing by said parsing unit;
+an input unit adapted to control data input, according to the input information;
+an output unit adapted to control data output, according to the output information; and
+a control unit adapted to control operation of a user interface, according to the control information,
+wherein the first user interface description document includes an instruction to refer to the second user interface description document,
+said parsing unit parses the first user interface description document and the second user interface description document as a reference destination of the first user interface description document,
+said management unit integrates and manages user interface information of the parsed first and second user interface description documents,
+said control unit implements operations according to both the control information of the first user interface description document and the control information of the second user interface description document,
+the first user interface description document further includes a designation that designates attributes and attribute values thereof in the second user interface description document as the reference destination, and has a overwriting part used to overwrite the attribute values of the input information, the output information, and the control information in the second user interface description document according to the description of the designation, and
+said input unit, said output unit, and said control unit-perform the input, output, and control operations according to contents overwritten by the overwriting part, respectively.
+2. An information processing apparatus comprising:
+a storage unit adapted to store first and second user interface description documents including input information, output information, and control information;
+a parsing unit adapted to parse the first and second user interface description documents;
+a management unit adapted to manage user interface information obtained as a result of parsing by said parsing unit;
+an input unit adapted to control data input, according to the input information;
+an output unit adapted to control data output, according to the output information; and
+a control unit adapted to control operation of a user interface, according to the control information,
+wherein the first user interface description document includes an instruction to refer to the second user interface description document,
+said parsing unit parses the first user interface description document and the second user interface description document as a reference destination of the first user interface description document,
+said management unit integrates and manages user interface information of the parsed first and second user interface description documents,
+said control unit implements operation, according to the control information of the second user interface description document,
+the first user interface description document further includes a designation which defines, as a widget, a user interface described by the second user interface description document as the reference destination, and is associated with an operation of the widget,
+the second user interface description document includes descriptions of an event corresponding to the description associated with the operation and an action corresponding to the event in the control information, and has a conversion part that converts execution of the operation of the widget into an event of the second user interface description document, and
+said control unit executes an action in response to the event converted by the conversion part in accordance with the control information in the second user interface description document.
+3. The apparatus according to claim 1, wherein the output information is display information, and said output unit displays an image.
+4. The apparatus according to claim 1, wherein the output information is sound output information, and said output unit outputs a sound.
+5. The apparatus according to claim 1, wherein the input information is information regarding a graphical user interface, and said input unit performs input of the graphical user interface.
+6. The apparatus according to claim 1, wherein the input information is sound input information, and said input unit inputs a sound.
+7. The apparatus according to claim 1, further comprising a reception unit which exists on a device different from the first and second user interface description documents, and which is adapted to acquire the first and second user interface description documents via a network.
+8. An information processing apparatus for controlling parsing of a user interface description document and to display a GUI, comprising:
+a reference unit adapted to refer to a first user interface description document having a description which defines a GUI widget as a part of the GUI, and includes a description that indicates operation information representing a type of an operation for the GUI widget, and an image designation description that designates an image representing the GUI widget upon application of the operation,
+a parsing unit adapted to parse the first user interface description document referred to by said reference unit; and
+a display control unit adapted to perform control in order to display the GUI widget according to a parsing result of said parsing unit,
+wherein said reference unit further refers to a second user interface description document which includes a reference description required to refer to the first user interface description document, a description that designates the operation information included in the first user interface description document, and an image designation description that designates an image different from the image designated by the image designation description included in the first user interface description document,
+said parsing unit replaces the image designation description included in the description that defines the GUI widget in the first user interface description document, which is referred to according to the reference description, by the image designation description included in the second user interface description document, and
+said display control unit performs control in order to display the GUI widget, based on the second user interface description document, the image designation description of which is replaced by said parsing unit.
+9. A user interface control method executed by an information processing apparatus, which comprises:
+a storage unit adapted to store first and second user interface description documents including input information, output information, and control information, wherein the first user interface description document includes an instruction to refer to the second user interface description document, and a designation that designates attributes and attribute values thereof in the second user interface description document as the reference destination, and has a overwriting part used to overwrite the attribute values of the input information, the output information, and the control information in the second user interface description document according to the description of the designation;
+a parsing unit adapted to parse the first and second user interface description documents;
+a management unit adapted to manage user interface information obtained as a result of parsing by the parsing unit;
+an input unit adapted to control data input, according to the input information;
+an output unit adapted to control data output, according to the output information; and
+a control unit adapted to control operation of a user interface, according to the control information,
+said method comprising:
+parsing, by the parsing unit, of the first user interface description document and the second user interface description document as a reference destination of the first user interface description document;
+integration and management, by the management unit, of user interface information of the parsed first and second user interface description documents;
+implementation, by the control unit, of operations according to both the control information of the first user interface description document and the control information of the second user interface description document; and
+performance, by the input unit, the output unit, and the control unit, of the input, output, and control operations according to contents overwritten by the overwriting part.
+10. A user interface control method executed by an information processing apparatus, which comprises:
+a storage unit adapted to store first and second user interface description documents including input information, output information, and control information, wherein the first user interface description document includes an instruction to refer to the second user interface description document, and a designation which defines, as a widget, a user interface described by the second user interface description document as the reference destination, and is associated with an operation of the widget, and the second user interface description document includes descriptions of an event corresponding to the description associated with the operation and an action corresponding to the event in the control information, and has a conversion part that converts execution of the operation of the widget into an event of the second user interface description document;
+a parsing unit adapted to parse the first and second user interface description documents;
+a management unit adapted to manage user interface information obtained as a result of parsing by the parsing unit;
+an input unit adapted to control data input, according to the input information;
+an output unit adapted to control data output, according to the output information; and
+a control unit adapted to control operation of a user interface, according to the control information,
+said method comprising:
+parsing, by the parsing unit, of the first user interface description document and the second user interface description document as a reference destination of the first user interface description document;
+integration and management, by the management unit, of user interface information of the parsed first and second user interface description documents;
+implementation, by the control unit, of an operation, according to the control information of the second user interface description document; and
+execution, by the control unit, of an action in response to the event converted by the conversion part in accordance with the control information in the second user interface description document.
+11. An information processing method for controlling parsing of a user interface description document and display of a GUI, comprising:
+a reference step of referring to a first user interface description document having a description which defines a GUI widget as a part of the GUI, and includes a description that indicates operation information representing a type of an operation for the GUI widget, and an image designation description that designates an image representing the GUI widget upon application of the operation,
+a parsing step of parsing the first user interface description document referred to in the reference step; and
+a display control step of controlling display of the GUI widget according to a parsing result in the parsing step,
+wherein the reference step further refers to a second user interface description document, which includes a reference description required to refer to the first user interface description document, a description that designates the operation information included in the first user interface description document, and an image designation description that designates an image different from the image designated by the image designation description included in the first user interface description document,
+the parsing step replaces the image designation description, included in the description that defines the GUI widget in the first user interface description document, which is referred to according to the reference description, by the image designation description included in the second user interface description document, and
+the display control step controls display of the GUI widget based on the second user interface description document, the image designation description of which is replaced in the parsing step.
+12. A program stored on a computer-readable medium for making a computer to execute a user interface control method according to claim 9.
+13. A program stored on a computer-readable medium for making a computer to execute a user interface control method according to claim 10.
+14. A program stored on a computer-readable medium for making a computer to execute an information processing method according to claim 11.

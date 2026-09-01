@@ -1,0 +1,208 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+- 26 -
+
+CLAIMS
+
+An electricity supply apparatus (ESA) of an industrial site (TS) comprising a load
+
+(TA), said electricity supply apparatus (ESA) comprising:
+
+- a control device (CD) configured to calculate an amplitude (A) of a control
+signal (Vc) according to a price information (InfoP) indicative of a price per
+time unit of a first current (I2) drawn from a mains (Ms) and to generate said
+control signal (Vc);
+
+- an energy station (ES) configured to draw said first current (12) from said
+mains (Ms), to provide at least a first part (14) of said first current (12) to said
+load (TA), to receive said control signal (Vc) from said control device (CD), and
+to reduce said first current (12) by an amount proportional to said amplitude (A)
+of said control signal (Vc); and
+
+- a battery (B) electrically connected to said energy station (ES) and to said load
+(TS), said battery (B) being configured to recharge by drawing a second part
+(13) of said first current (12) from said energy station (ES) and to discharge by
+providing a second current (-I3) to said load (TA),
+
+wherein said control device (CD) is further configured to calculate said
+
+amplitude (A) of said control signal (Vc) also according to battery information
+
+(InfoB) relating to at least one of a recharge condition and a discharge condition
+
+of said battery (B), said amplitude (A) having an intermediate value of a range
+
+delimited by a minimum value and a maximum value (Amax).
+
+The apparatus (ESA) according to claim 1, wherein said price information
+(InfoP) comprise a price table (PT), said price table (PT) comprising a number of
+rows, each of said number of rows comprising an hour of the day and a price
+per hour of said first current (12) during said hour.
+
+The apparatus (ESA) according to claim 2, wherein said control device (CD) is
+further configured to classify each hour comprised in said price table (PT) as
+one of a peak hour, a neutral hour and an off-peak hour, according to said
+battery information (InfoB).
+
+The apparatus (ESA) according to claim 3, wherein said battery information
+(InfoB) comprise an optimum charge level (BCLopt) of said battery (B), a
+minimum charge level (BCLmin) of said battery (B) and an optimum discharge
+current (I3opt-) of said battery (B), said optimum charge level (BCLopt) being
+the maximum charge level allowing said battery (B) to store energy with a
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+- 27 -
+
+storage efficiency higher than a predetermined threshold.
+
+The apparatus (ESA) according to claim 4, wherein said control device (CD) is
+configured to determine a first number N of peak hours as a number of hours
+required to discharge said battery (B) from said optimum charge level (BCLopt)
+to said minimum charge level (BCLmin) with a discharge current equal to said
+optimum discharge current (I3opt-).
+
+The apparatus (ESA) according to claim 4 or 5, wherein said battery information
+(InfoB) further comprise an optimum recharge current (ISopt+) of said battery
+(B).
+
+The apparatus (ESA) according to claim 6, wherein said control device (CD) is
+further configured to determine a second number M of off-peak hours as a
+number of hours required to recharge said battery (B) from said minimum
+charge level (BCLmin) to said optimum charge level (BCLopt) with a recharge
+current equal to said optimum recharge current (I3opt+).
+
+The apparatus (ESA) according to claim 6, wherein said second number M is a
+function of the day of the week.
+
+The apparatus (ESA) according to claim 7, wherein said control device (CD) is
+configured to determine a third number of neutral hours according to the
+formula: 24-N-M.
+
+. The apparatus (ESA) according to any of claims 3 to 9, wherein said control
+
+device (CD) is configured to detect a present time and to determine whether
+said present time corresponds to a peak hour, or to an off-peak hour or to a
+neutral hour.
+
+. The apparatus (ESA) according to claim 10, wherein said control device (CD) is
+
+further configured, if said present time corresponds to a neutral hour, to detect a
+
+present battery charge level, to determine whether said present battery charge
+
+level is equal to a maximum charge level (BCLmax) of said battery (B), and:
+
+- inthe affirmative, to set said amplitude (A) to said minimum value; and
+
+- inthe negative, to set said amplitude (A) to a first intermediate value (A5)
+such that said first current (I2) is equal to a current (l4*) requested by said
+load (TA), said second part (I3) of said first current (12) being equal to zero.
+
+. The apparatus (ESA) according to claim 10 or 11, wherein said control device
+
+(CD) is further configured, if said present time corresponds to a peak hour, to
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+- 28 -
+
+detect said present battery charge level, to determine whether said present
+battery charge level is higher than said minimum battery charge level (BCLmin)
+of said battery (B), and:
+
+in the affirmative, to set said amplitude (A) to a second intermediate value
+(A62) such that said first current (I2) is equal to said current (l4*) requested
+by said load (TA) decreased by said optimum discharge current (ISopt-) of
+said battery (B), said battery (B) being discharged with said second current (-
+13) equal to said optimum discharge current (IS8opt-); and
+
+in the negative, to set said amplitude (A) to a third intermediate value (A61)
+such that said first current (l2) is equal to said current (l4*) requested by said
+load (TA), said second current (13-) being equal to zero.
+
+. The apparatus (ESA) according to any of claims 10 to 12, wherein said control
+
+device (CD) is further configured, if said present time corresponds to a off-peak
+hour, to detect said present battery charge level, to determine whether said
+present battery charge level is equal to said maximum battery charge level
+(BCLmax) of said battery (B), and:
+
+in the affirmative, to set said amplitude (A) to said minimum value; and
+
+in the negative, to set said amplitude (A) to a fourth intermediate value (A71)
+such that said first current (I2) is equal to said current (l4*) requested by said
+load (TA) increased by said optimum recharge current (IZopt+) of said battery
+(B), said battery (B) recharging with said second part (I3) of said first current
+(12) equal to said optimum recharge current (I3opt+).
+
+. The apparatus (ESA) according to any of claims 10 to 13, wherein said control
+
+device (CD) is further configured to:
+
+detect whether it is receiving a load reduction signal (S);
+
+in the affirmative, determine whether said present battery charge level is
+
+higher than said minimum battery charge level (BCLmin) of said battery (B),
+
+and:
+
+- in the affirmative, set said amplitude (A) to one of said minimum value
+and a fifth intermediate value, such that said first current (I2) is reduced
+to a target value; and
+
+- inthe negative, activate a generator (G) and instruct said energy station
+to start drawing said first current (I2) from said generator (G).
+
+15. A method for supplying, by means of an energy station (ES), an industrial site
+
+--- PAGE 4 ---
+20
+
+- 29 -
+
+(TS) comprising a load (TA), said method comprising:
+
+a)
+
+at said energy station (ES), drawing a first current (I2) from a mains (Ms) by
+means of said energy station (ES) and providing at least part (l4) of said
+first current (I2) to said load (TA);
+
+at a control device (CD), calculating an amplitude (A) of a control signal (Vc)
+according to a price information (InfoP) indicative of a price per time unit of
+said first current (l2) and providing said control signal (Vc) to said energy
+station (ES);
+
+at said energy station (ES), receiving said control signal (Vc) and reducing
+said first current (l2) by an amount proportional to said amplitude (A) of said
+control signal (Vc); and
+
+performing one of an operation of recharging a battery electrically
+connected to said energy station (ES) and to said load (TS) with a second
+part (13) of said first current (12) and an operation of discharging said battery
+(B) by providing a second current (-I3) to said load (TA),
+
+wherein said step b) comprises calculating said amplitude (A) of said control
+signal (Vc) also according to battery information (InfoB) relating to at least one
+
+of a recharge condition and a discharge condition of said battery (B), said
+amplitude (A) having an intermediate value of a range delimited by a minimum
+
+value and a maximum value (Amax).

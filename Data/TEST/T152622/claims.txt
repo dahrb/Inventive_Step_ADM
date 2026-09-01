@@ -1,0 +1,140 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+19 September 2021
+
+CLAIMS
+
+1. An apparatus for a motor vehicle driver assistance system for an ego vehicle, the apparatus
+
+being configured to:
+
+implement a state estimator configured to use a first state of the ego vehicle to calculate a
+subsequent second state of the ego vehicle, wherein calculating the second state from the first state
+
+includes a prediction element and an update element, wherein:
+
+the prediction element includes implementing a prediction model to estimate the second
+
+state from the first state;
+
+the update element includes implementing an update model to refine the estimated
+second state, wherein the update model refines the estimated second state on the basis of at
+least one value corresponding to a measurement of the second state, the at least one value being
+
+determined from a sensor measurement, and;
+
+wherein calculating the second state from the first state includes using an artificial neural network
+CANN’);
+
+wherein the first state and the second state each include at least one ego vehicle attribute describing an
+aspect of a motion of the ego vehicle, and the first state and the second state each include at least one
+local object attribute describing a local object located in the vicinity of the ego vehicle, wherein the local
+
+object is a local vehicle.
+
+2. An apparatus according to claim 1, wherein the ANN is part of one or both of the prediction model
+
+and the update model.
+3. An apparatus according to claim 1, wherein the prediction model is a prediction ANN,
+
+wherein an input vector to the prediction ANN is formed from at least a portion of the first state
+
+and;
+an output vector of the prediction model ANN is at least a portion of the estimated second state.
+4. An apparatus according to claim 1, wherein the update model is an update ANN, and
+
+wherein an input vector to the update ANN is formed from at least a portion of the estimated
+
+second state and the at least one value corresponding to a measurement of the second state, and;
+an output vector of the update ANN is at least a portion of the second state.
+
+5. An apparatus according to claim 1, wherein the update model and the prediction model are
+
+combined into a combined ANN, and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+20 September 2021
+
+wherein an input vector to the combined ANN is formed from at least a portion of the first state
+
+and the at least one value determined from a sensor measurement, and;
+an output vector of the combined ANN forms at least a portion of the second state.
+
+6. An apparatus according to any preceding claim, wherein the at least one local object attribute
+
+includes a location of the local object.
+
+7. An apparatus according to any preceding claim, wherein the prediction element is configured to
+estimate a second location of the local object in the estimated second state using a first location of the
+
+local object in the first state.
+
+8. An apparatus according to any preceding claim, wherein the at least one value corresponding to
+
+a measurement of the second state includes a measurement of the second location of the local vehicle.
+
+9. An apparatus according to any preceding claim, wherein the apparatus is configured to output an
+output variable from the second state for use by an active driver assistance device or a passive driver
+
+assistance device.
+
+10. An apparatus according to any preceding claim, wherein the apparatus is configured to output an
+
+output variable from the second state for presentation to a driver of the ego vehicle.
+
+11. An apparatus according to any preceding claim, wherein the first state and the second state each
+
+include at least one environment attribute describing an environment in which the ego vehicle is located.
+
+12. A method for estimating a state of an ego vehicle, the method being implemented on a compute
+module, the state being for use in a motor vehicle driver assistance system for the ego vehicle, the
+
+method including the steps of:
+
+implementing a state estimator to use a first state of the ego vehicle to calculate a subsequent
+second state of the ego vehicle, wherein calculating the second state from the first state includes a
+
+prediction element and an update element, wherein:
+
+the prediction element includes implementing a prediction model to estimate the second
+
+state from the first state;
+
+the update element includes implementing an update model to refine the estimated
+
+second state, wherein the update model refines the estimated second state on the basis of at
+
+least one value corresponding to a measurement of the second state, the at least one value being
+
+determined from a sensor measurement, and;
+
+wherein calculating the second state from the first state includes using an artificial neural network (“CANN”)
+wherein the first state and the second state each include at least one ego vehicle attribute describing an
+
+aspect of a motion of the ego vehicle, and the first state and the second state each include at least one
+
+--- PAGE 3 ---
+21 September 2021
+
+local object attribute describing a local object located in the vicinity of the ego vehicle, wherein the local
+
+object is a local vehicle.

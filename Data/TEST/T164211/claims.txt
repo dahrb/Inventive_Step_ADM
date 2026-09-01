@@ -1,0 +1,111 @@
+--- PAGE 1 ---
+| Eisenfuhr Speiser
+
+Bremen, 21 December 2010
+Our Ref.: RA 1126-01EP JOE/cho/mal
+Applicant: RAMBUS INC.
+
+SerialNumber: 01 901 833.2-2212
+
+New claims (main request) (clear copy)
+
+1. An output driver to drive on a multi-drop bus, an output symbol representing
+at least two bits including a most significant bit (MSB) and a least significant bit
+(LSB), comprising:
+
+a first driver circuit (952) to drive the LSB by generating an LSB symbol
+component representing the LSB; and .
+
+a second driver circuit (954) to drive the MSB by generating an MSB
+symbol component representing the MSB, the LSB symbol component being
+combined with the MSB symbol component to provide the output symbol, where-
+in one of the MSB and LSB is driven with about twice as much current as the
+other one of the MSB and LSB;
+
+characterized in that
+
+the first driver circuit (952) includes at least one driver transistor (960-1)
+and the second driver circuit (954) includes at least one driver transistor (960-3),
+
+- and in that
+
+a respective driver transistor (960-4) in one of the first and second driver
+circuits (952, 954) is about twice as large in size as a corresponding driver tran-
+sistor (960-1) in the other one of the first and second driver circuits (952, 954).
+
+2. The output driver of claim 1, wherein the first driver circuit (952) is
+
+connected in parallel with the second driver circuit (954).
+
+3. The output driver of claim 1, wherein the first driver circuit (952) includes
+
+one or more first driver transistors (960-0, 960-1), the second driver circuit (954)
+
+--- PAGE 2 ---
+-2-
+
+includes one or more second driver transistors (960-3, 960-4), the first and
+second driver circuits having the same number of driver transistors, wherein the
+the second driver transistors (960-3, 960-4) of the second driver circuit (954)
+provide twice as much current as the first driver transistors (960-0, 960-1) of the
+first driver circuit (952).
+
+4. The output driver of claim 1, wherein the first driver circuit (952) includes
+one or more first driver transistors (960-0, 960-1), the first driver transistors (960-
+0, 960-1) being binary weighted with respect to each other to provide
+correspondingly weighted amounts of current in response to the LSB, the second
+driver circuit (950) includes one or more second driver transistors (960-3, 960-4),
+the second driver transistors (960-3, 960-4) being binary weighted with respect to
+each other to provide correspondingly weighted amounts of current in response
+to the MSB, the first and second driver circuits (952, 954) having the same
+
+number of driver transistors.
+
+5. The output driver of claim 3, wherein a set of current control signals (CCtrl)
+enables and disables corresponding ones of the first and second driver
+transistors (960-0, 960-1, 960-3, 960-4).
+
+6. The output driver of claim 1, wherein the first and second driver circuit (952,
+954) include driver transistors (1012, 1014) to drive the output symbol, a
+respective driver transistor (1012, 1014) being part of a respective differential pair
+(1010) that provides a semi-constant current to ground regardless of the output
+
+symbol being driven.
+
+7. | The output driver of claim 1, wherein the first driver circuit (952) includes a
+first set of binary-weighted driver transistors (960-0, 960-1) and the second driver
+circuit (954) includes a corresponding second set of binary-weighted driver
+transistors (960-3, 960-4), and wherein a respective driver transistor (960-3, 960-
+4) in one of the first and second sets of binary-weighted driver transistors (960-0,
+960-1, 960-3, 960-4) is about twice as large in size as a corresponding driver
+transistor (960-0, 960-1) in the other one of the first and second sets of driver
+transistors (960-0, 960-1, 960-3, 960-4).
+
+--- PAGE 3 ---
+-3-
+
+8. The output driver of claim 7, wherein the first driver circuit (952) further
+includes a first set of current-control transistors (981-1), a respective current-
+control transistor (982-2, 984-2) being coupled in series with a corresponding one
+of the first set of binary-weighted driver transistors (982-1, 984-1) and receiving
+
+at its control terminal a corresponding one of a set of current control bits.
+
+9. The output driver of claim 8, wherein the second driver circuit (954) further
+includes a second set of current-control transistors (981-2), a respective one of
+the second set of current-control transistors being coupled in series with a
+corresponding one of the second set of binary-weighted driver transistors and
+receiving at its control terminal a corresponding one of the set of current control
+bits.
+
+10. The output driver of claim 7, wherein respective driver transistor in the first
+and second driver circuits (952, 954) is coupled to receive one of the MSB and
+LSB through a respective control circuit, the respective control circuit controlling
+whether the respective driver transistor should respond to the one of the MSB
+
+and LSB based on one of a set of current control bits (CCrtl).
+
+11. The output driver of claim 9 or 10, wherein the set of current control bits
+(CCtrl) are determined based on process, voltage and temperature (PVT)
+
+conditions.

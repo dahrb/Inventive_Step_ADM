@@ -1,0 +1,421 @@
+--- PAGE 1 ---
+27
+
+06 024 090.0-2221 10.01.2012
+
+08640143EP WRZ/WRZ
+
+(amended) claims
+
+1. A system for brokering an electronic bidding process over
+
+a network (102), comprising:
+
+- a server (103) connected to the network (102), the server
+
+(103) having at least one input/output port (20la, 201b) for
+
+receiving over the network (102) bid requests (Rl, .., Rn) from
+
+network-connected requestor devices (110, 111) and bids (B1,
+
+., Bn) in response to the bid requests (R1, .., Rn) from
+network-connected bidder devices (108, 109);
+
+- at least one memory utility (106, 107) coupled to the
+
+network-connected server (103) for storing the bid requests
+
+(Rl, .., Rn) and the bids (Bl, .., Bn) made in response to the
+bid requests (Rl, .., Rn),
+
+characterized by
+
+- a set of machine-readable instructions for enabling
+
+automatic matching of the stored bids (Bl, .., Bn) to the
+
+stored bid requests (Rl, .., Rn), the set of machine-readable
+
+instructions being implemented as a software or firmware
+
+executable on the server (103),
+
+- a database (105) with lookup data and rules stored therein
+
+for use in the matching process,
+
+- a first client interface (112a, 112b) for generating and
+
+--- PAGE 2 ---
+28
+
+and
+
+for displaying
+
+for displaying
+
+for generating and
+
+results of
+
+submitting the bid requests (R11, .., Rn)
+results of matching; and
+
+- a second client interface (113a, 113b)
+submitting bids (Bl, .., Bn) and
+matching,
+
+wherein a required bid template is provided by
+
+(103)
+
+network-connec
+bid requests (
+in the second interface
+bidder devices
+
+response to the bid requests
+
+server
+
+enterprise rules and algorithms to compare bids (
+
+requests
+
+(103)
+
+(R
+
+back to the
+
+113b)
+
+109).
+
+2.
+
+physical
+
+protocol
+
+The system of
+
+se
+
+(SI
+
+(108, 109)
+
+the server
+
+for providing bids
+
+to be used in the first interface (112a, 112b) at the
+ted requestor devices (110, 111) for providing
+Rl, .., Rn) to the server (103), and subsequently
+(ll3a, 113b) at the network-connected
+
+in
+
+(Bl, .., Bn)
+
+1, .., Rn),
+
+claim 1
+
+(RL, oy
+
+accesses the memory utility
+
+first and second interfaces
+
+at the requestor and bidder devices
+
+rver machine (103)
+
+P).
+
+3.
+
+an
+
+The system of
+
+The system of
+
+claim 1 or
+
+Internet network.
+
+claim 3,
+
+enabled
+
+2;
+
+Rn),
+
+(106,
+
+and provides results of
+
+and wherein the
+
+107) to apply
+
+Bl, .., to
+
+Bn)
+
+the comparisons
+
+(112a, 112b, 113a,
+(110, 111, 108,
+(103) isa
+
+wherein the server
+
+wherein the network
+
+wherein the network
+
+for session initiation
+
+(102) is
+
+(102) isa
+
+--- PAGE 3 ---
+sub-network connected to the
+
+5.
+
+second interfaces
+
+The sys
+
+tem of
+
+—
+
+computing devices (
+
+server
+
+having network access to the network
+
+6.
+
+(102,
+
+computer,
+
+7.
+
+(103)
+
+The system of
+
+109, 110, 111
+
+The system of
+
+is a Sl]
+
+a cellul
+
+(103), the computing devices
+
+lar telephone,
+
+29
+
+one of claims 1 to 4,
+
+112a, 113a) are deployed on S$]
+
+(102,
+
+Internet network.
+
+wherein the
+
+109, 110,
+
+(102).
+
+111)
+
+first and
+[P enabled
+
+102, 109, 110, 111) that are remote to the
+
+claim 5, wherein the computing devices
+
+) are one of a desktop computer,
+
+one of claims 1 to 6,
+
+a Laptop
+
+or a hand-held computer.
+
+wherein the server
+
+[P enabled proxy server that is adapted to
+
+initiate communication sessions by proxy (302, 303) on behalf
+of bidders (108, 109; 304 1-n) and requestors (110, 111; 301
+8. The system of one of claims 1 to 7, wherein the at least
+one memory utility includes a memory queue (106) for storing
+bid requests (Rl, .., Rn) and a memory queue (107) for storing
+bids (Bl, ., Bn).
+
+9, The system of one of claims 1 to 8, wherein the at least
+one memory utility (106, 107) is implemented as a volatile
+memory.
+
+10. The system of claim 9, wherein the volatile memory is a
+
+--- PAGE 4 ---
+30
+
+random access Memory.
+
+11. wherein the machine-
+
+one of
+
+The system of claims 1 to 10,
+
+bids (Bl, ..,
+
+readable instructions also enable screening of
+
+Bn)
+
+re]
+
+ative to requirements of a bid request (RI, ..,
+
+12. A method for brokering an electronic bidding process over
+
+a network (102), comprising steps of:
+
+a) receiving at at least one input/output port (20la, 201b) of
+
+a server
+
+(103) connected to the network (102) bid requests
+
+(Rl, .., Rn)
+
+from network-connected requestor devices
+
+(110,
+
+111) and bids (Bl, .., Bn) from network-connected bidder
+
+devices (108, 109);
+
+b) storing the bid requests (Rl, .., Rn) and the bids (BI, ..,
+
+Bn)
+
+on at least one memory utility (106, 107) coupled to the
+
+(103),
+
+network-connected server characterized by the following
+
+steps for enabling automatic matching of the stored bids (B1,
+., Bn) to the stored bid requests (Rl, .., Rn):
+c) storing lookup data and rules in a database (105) for use
+
+in the matching process,
+
+d) providing by the server (103) a required bid template to a
+First interface (112a, 112b) at the network-connected
+requestor devices (110, 111) to make bid requests (Rl, .., Rn),
+and to a second interface (113a, 113b) at the network-
+connected bidder devices (108, 109) to make bids (Bl, .., Bn)
+in response to the bid requests (R1, .., Rn),
+
+e) accessing the memory utility (106, 107) by the server (103)
+
+--- PAGE 5 ---
+31
+
+to apply enterprise rules and algorithms to compare bids (BI,
+
+., Bn) to requests (R11, .., Rn), and
+
+f) automatically conveying result of
+
+the comparisons back to
+
+the first and second interfaces (112a, 112b, 113a, 113b) at
+
+the requestor and bidder devices (108, .., 111).
+
+13. The method of claim 12, wherein the network (102) is the
+
+Internet network.
+
+14. The method of claim 12, wherein the network (102) is a
+
+Ssub-network connected to the Internet network.
+
+15. The method of one of claims 12 to 14, wherein in step b)
+
+the memory utility (106, 107) is a server cache memory.
+
+16. The method of one of claims 12 to 15,
+
+wherein in step b),
+
+the bid requests (Rl, .., Rn) and bids (BI,
+
+., Bn) are
+
+separately stored in separate queues (106; 107).
+
+17. The method of one of claims 12 to 16, wherein the method
+
+is realized as machine-readable instructions, in particular as
+
+software or firmware.
+
+18. The method of one of claims 12 to 17, wherein in step f)
+
+the data is conveyed to the requestor and bidder devices (108,
+
+w, 111) over the network (102) using SIP to initiate
+
+communication.
+
+--- PAGE 6 ---
+19.
+
+32
+
+A machine-readable medium having stored thereon a set
+
+machine-readable instructions that cause a machine
+
+per
+
+form the method according to one of
+
+claims 12 to
+
+(1
+
+18 4
+
+03)
+
+executed on the machine (103).

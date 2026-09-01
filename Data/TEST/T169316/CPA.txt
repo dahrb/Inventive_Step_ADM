@@ -1,0 +1,96 @@
+TITLE:
+Paint color matching and coordinating system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A paint color matching and coordinating system comprises an interface for receiving an input reference color, a processor capable of reading a memory, a memory including (1) instructions readable by the processor and (2) a database of architectural paint colors spanning all or most of the known color space, and a display generator. In use, the interface of the system receives an input reference color from a user. The processor selects a “reference paint color” from the database, the reference paint color being visually closer, with respect to color space, to the input reference color than any other paint color in the database. According to the invention, color space is divided into a plurality of fixed, generally equally sized, non-overlapping, contiguous portions, each color space portion being defined as the space of all colors within a band of hues within color space. The processor selects five sets of paint colors—one set from each of the color space portions that include the five hues that comprise the “five-way harmony” of the reference paint color. The processor may also select a sixth set of paint colors from the color space portion that includes the hue of the reference paint color. Finally, the processor directs the display generator to create a display of color samples of the reference paint color and of the first through sixth sets of paint colors.
+
+CLAIMS:
+1. A method of generating a display of complementary architectural paint color samples, comprising the steps of:
+receiving an input reference color;
+selecting a reference paint color from a database of architectural paint colors within a color space, said reference paint color being visually closer, with respect to said color space, to said input reference color than any other paint color within said database, each of said paint colors within said database being located within only one of a plurality of fixed non-overlapping contiguous portions of said color space, each of said color space portions being defined as the space of all colors within a band of hues within said color space, said color space portions spanning all hues in said color space, the number of said color space portions being at least 30;
+determining a first of said color space portions, said first color space portion including a first hue that is complementary to the hue of said reference paint color;
+selecting from said database a first set of architectural paint colors being located within said first color space portion; and
+displaying color samples of said first set of architectural paint colors on one of a display monitor or a hard-copy printout.
+2. The method of claim 1, wherein said color space portions are equal in size.
+3. The method of claim 1, wherein said first hue is one of the hues comprising a five-way harmony of the hue of said reference paint color.
+4. The method of claim 3, further comprising the steps of:
+determining a second, third, fourth, and fifth of said color space portions, which include second, third, fourth, and fifth hues, respectively, that, along with said first hue, collectively comprise the five-way harmony of the hue of said reference paint color;
+selecting from said database second, third, fourth, and fifth sets of architectural paint colors being located within said second, third, fourth, and fifth color space portions, respectively; and
+displaying color samples of said second, third, fourth, and fifth sets of architectural paint colors on one of a display monitor or a hard-copy printout.
+5. The method of claim 4, further comprising the steps of:
+determining a sixth of said color space portions, said sixth color space portion including the hue of said reference paint color;
+selecting from said database a sixth set of architectural paint colors being located within said sixth color space portion; and
+displaying color samples of said sixth set of architectural paint colors on one of a display monitor or a hard-copy printout.
+6. The method of claim 5, further comprising the step of generating a single output display including color samples of said first, second, third, fourth, fifth, and sixth sets.
+7. The method of claim 6, further comprising the step of including within said output display a color sample of said reference paint color.
+8. The method of claim 1, wherein said first hue is a split-complement of the hue of said reference paint color.
+9. The method of claim 8, further comprising the steps of:
+determining a second of said color space portions, which includes a second hue which is a split-complement of the hue of said reference paint color, said second hue being different from said first hue;
+selecting from said database a second set of architectural paint colors being located within said second color space portion; and
+displaying color samples of said second set of architectural paint colors on one of a display monitor or a hard-copy printout.
+10. The method of claim 9, further comprising the steps of:
+determining a third of said color space portions, said third color space portion including the hue of said reference paint color;
+selecting from said database a third set of architectural paint colors being located within said third color space portion; and
+displaying color samples of said third set of architectural paint colors on one of a display monitor or a hard-copy printout.
+11. The method of claim 10, further comprising the step of generating a single output display including color samples of said first, second, and third sets.
+12. The method of claim 11, further comprising the step of including within said output display a color sample of said reference paint color.
+13. The method of claim 1, further comprising the step of generating a color sample of said reference paint color.
+14. The method of claim 1, wherein said receiving step comprises receiving a selection of a paint color from said database.
+15. The method of claim 1, wherein said receiving step comprises receiving a color identification based upon a known color reference system.
+16. The method of claim 1, wherein said receiving step comprises receiving a color scanned from a physical specimen.
+17. The method of claim 16, wherein said specimen is scanned by a spectrophotometer.
+18. The method of claim 1, wherein said receiving step comprises receiving a color name having a known position within said color space.
+19. An architectural paint color coordination system for selecting complementary architectural paint colors, comprising:
+an interface for receiving an input reference color;
+a processor configured to perform instructions read from a memory;
+a memory storing instructions and a database of architectural paint colors within a color space, said instructions configured to be read and performed by said processor; and
+a display generator;
+wherein said instructions direct said processor to perform the steps of:
+directing said interface to receive an input reference color;
+selecting a reference paint color from said database, said reference paint color being visually closer, with respect to said color space, to said input reference color than all other paint colors within said database, each of said paint colors within said database being located within only one of a plurality of non-overlapping contiguous portions of said color space, each of said color space portions being defined as the space of all colors within a band of hues within said color space, said color space portions spanning all hues in said color space, the number of said color space portions being at least 30;
+determining a first of said color space portions, said first color space portion including a first hue that is one of the hues comprising a five-way harmony of the hue of said reference paint color;
+selecting from said database a first set of architectural paint colors being located within said first color space portion; and
+directing said display generator to display color samples of said first set of architectural paint colors.
+20. The system of claim 19, wherein said color space portions are equally sized.
+21. The system of claim 19, wherein said instructions further direct said processor to perform the steps of:
+determining a second, third, fourth, and fifth of said color space portions, which include second, third, fourth, and fifth hues, respectively, that, along with said first hue, collectively comprise the five-way harmony of the hue of said reference paint color;
+selecting from said database second, third, fourth, and fifth sets of architectural paint colors being located within said second, third, fourth, and fifth color space portions, respectively; and
+directing said display generator to display color samples of said second, third, fourth, and fifth sets of architectural paint colors.
+22. The system of claim 21, wherein said instructions further direct said processor to perform the steps of:
+determining a sixth of said color space portions, said sixth color space portion including the hue of said reference paint color;
+selecting from said database a sixth set of architectural paint colors being located within said sixth color space portion; and
+directing said display generator to display color samples of said sixth set of architectural paint colors.
+23. The system of claim 19, wherein said instructions further direct said processor to direct said display generator to display a color sample of said reference paint color.
+24. The system of claim 22, wherein said instructions direct said processor to direct said display generator to generate a single output display of color samples of said first, second, third, fourth, fifth, and sixth sets and of said reference paint color.
+25. The system of claim 19, wherein said interface comprises an architectural paint color display system for displaying color samples of architectural paint colors within said database, wherein said input reference color can be selected from said display system.
+26. The system of claim 19, wherein said interface is configured to receive a color identification based upon a known color reference system, said color identification identifying said input reference color.
+27. The system of claim 19, wherein said interface comprises a scanner for scanning said input reference color from a physical specimen.
+28. The system of claim 27, wherein said interface comprises a spectrophotometer.
+29. The system of claim 19, wherein said interface is configured to receive a color name having a known position within said color space.
+30. A paint color selection and coordination system comprising:
+a database of at least 30 different paint color sets, each set of paint colors having a plurality of different colors, all of which colors have the same or very similar hue, said hue being different from the hue of each of the other paint color sets, each color within said database being identified by a unique code; and
+a customer interface module permitting a customer to review and select paint colors from said database.
+31. A method of generating a display of complementary architectural paint color samples, comprising the steps of:
+receiving an input reference color;
+selecting a reference paint color from a database of architectural paint colors within a color space, said reference paint color being closer in hue, value, and chroma to said input reference color than any other color within said database, said reference paint color having a reference hue, a reference value, and a reference chroma, there being for every color in said database a predetermined range of hue, a predetermined range of value, and a predetermined range of chroma, said predetermined ranges including the hue, value, and chroma, respectively, of the color;
+determining a complementary hue that is five-way harmonious with said reference hue;
+selecting from said database a matching complementary color, defined as a color in said database that is closer to said complementary hue, said reference value, and said reference chroma than any other color in said database;
+selecting from said database a first offset color and a second offset color, said first offset color having a hue substantially equivalent to a first endpoint of the predetermined range of hue corresponding to said matching complementary color, said second offset color having a hue substantially equivalent to a second endpoint of the predetermined range of hue corresponding to said matching complementary color, said first and second offset colors having hues within the predetermined range of hue corresponding to said matching complementary color and having value and chroma substantially equal to said reference value and reference chroma, respectively; and
+displaying color samples of at least one of said first and second offset colors on one of a display monitor or a hard-copy printout.
+32. A method of generating a display of complementary architectural paint color samples, comprising the steps of:
+receiving an input reference color;
+selecting a reference paint color from a database of architectural paint colors within a color space, said reference paint color being closer in hue, value, and chroma to said input reference color than any other color within said database, said reference paint color having a reference hue, a reference value, and a reference chroma, there being for every color in said database a predetermined range of hue, a predetermined range of value, and a predetermined range of chroma, said predetermined ranges including the hue, value, and chroma, respectively, of the color;
+determining a complementary hue that is five-way harmonious with said reference hue;
+selecting from said database a matching complementary color, defined as a color in said database that is closer to said complementary hue, said reference value, and said reference chroma than any other color in said database;
+selecting from said database a first offset color and a second offset color, said first offset color having a value substantially equal to a first endpoint of the predetermined range of value corresponding to said matching complementary color, said second offset color having a value substantially equal to a second endpoint of the predetermined range of value corresponding to said matching complementary color, said first and second offset colors having values within the predetermined range of value corresponding to said matching complementary color and having hue and chroma substantially equal to said complementary hue and reference chroma, respectively; and
+displaying color samples of at least one of said first and second offset colors on one of a display monitor or a hard-copy printout.
+33. A method of generating a display of complementary architectural paint color samples, comprising the steps of:
+receiving an input reference color;
+selecting a reference paint color from a database of architectural paint colors within a color space, said reference paint color being closer in hue, value, and chroma to said input reference color than any other color within said database, said reference paint color having a reference hue, a reference value, and a reference chroma, there being for every color in said database a predetermined range of hue, a predetermined range of value, and a predetermined range of chroma, said predetermined ranges including the hue, value, and chroma, respectively, of the color;
+determining a complementary hue that is five-way harmonious with said reference hue;
+selecting from said database a matching complementary color, defined as a color in said database that is closer to said complementary hue, said reference value, and said reference chroma than any other color in said database;
+selecting from said database a first offset color and a second offset color, said first offset color having a chroma substantially equal to a first endpoint of the predetermined range of chroma corresponding to said matching complementary color, said second offset color having a chroma substantially equal to a second endpoint of the predetermined range of chroma corresponding to said matching complementary color, said first and second offset colors having chromas within the predetermined range of chroma corresponding to said matching complementary color and having hue and value substantially equal to said reference chroma and reference value, respectively; and
+displaying color samples of at least one of said first and second offset colors on one of a display monitor or a hard-copy printout.

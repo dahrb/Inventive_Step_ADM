@@ -1,0 +1,191 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+25
+
+MAIN REQUEST
+CLAIMS:
+I. A computer-implemented method in which a Forwarding Data Unit, FDU,
+
+performs operations providing a fast reroute of a unicast packet within a cluster of
+network elements to an available port associated with a multi-link trunk, MLT,
+wherein each of the network elements comprises a plurality of line cards, the method
+comprising the steps of:
+
+periodically receiving, by the FDU, heartbeat packets from the plurality of line
+cards, each heartbeat packet comprising a port state of all ports on a respective line
+card;
+
+updating, by the FDU based on the heartbeat packets, a local port state table
+and a remote port state table that are maintained by the FDU;
+
+receiving (202) a unicast packet by the FDU in a data plane of one of the
+network elements;
+
+determining (204) a destination for the packet;
+
+performing (208) a lookup in the local port state table to determine an
+available local port that is in an UP state for the destination; and
+
+if no local port is UP, then performing (208) a lookup in the remote port state
+table to determine an available remote port that is in an UP state for the destination,
+
+wherein determining the available local or remote port that is in an UP state
+
+occurs without involvement of a control plane.
+
+2. The method of claim | further comprising forwarding (210) said packet when
+a port in the UP state is determined for said unicast packet or dropping said packet
+
+when a port in the UP state cannot be determined for said unicast packet.
+
+3. The method of claim | wherein said determining a destination for said packet
+comprising determining (206) whether said destination port is a stand-alone port or a
+
+MLT group.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+26
+
+4. The method of claim 3 wherein when said destination port is a MLT group,
+then generating a hash value from selected fields of said unicast packet to determine a
+
+MLT port member.
+
+5. The method of claim 4 further comprising using said MLT group ID and said
+
+hash value to determine a port member that is in the UP state.
+
+6. The method of claim 5 further comprising determining whether all port
+members in a local table are down, and when said all port members are down, then
+
+determining an MLT port from a remote table.
+
+7. The method of claim 6 further comprising determining an IST port member
+
+that is in the UP state for a port member selected from said remote table.
+
+8. The method of claim 7 further comprising determining that no IST port
+
+member is in the UP state for said remote port and dropping said packet.
+
+9. A Forwarding Data Unit, FDU, comprising:
+
+amemory (1 12):
+
+a processor (113);
+
+a communications interface (115);
+
+an interconnection mechanism (111) coupling the memory, the processor and
+the communications interface; and
+
+wherein the memory is encoded with an application providing fast reroute of a
+unicast packet within a Cluster of network elements each comprising a plurality of line
+cards and wherein the application, when performed on the processor, provides a
+process for processing information, the process causing the FDU to perform the
+operations of:
+
+periodically receiving heartbeat packets from the plurality of line cards, each
+heartbeat packet comprising a port state of all ports on a respective line card;
+
+updating, based on the heartbeat packets, a local port state table and a remote
+
+port state table that are maintained by the FDU;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+27
+
+receiving (202) a unicast packet in a data plane of one of the network
+elements;
+
+determining (204) a destination for the packet;
+
+performing (208) a lookup in the local port state table to determine an
+available local port that is in an UP state for the destination; and
+
+if no local port is UP, then performing (208) a lookup in the remote port state
+table to determine an available remote port that is in an UP state for the destination,
+
+wherein determining the available local or remote port that is in an UP state
+
+occurs without involvement of a control plane.
+
+10. The FDU of claim 9 wherein the process causes the FDU to perform the
+further operations of:
+
+forwarding (210) said packet when a port in the UP state is determined for said
+unicast packet or dropping said packet when a port in the UP state cannot be
+
+determined for said unicast packet.
+
+11. The FDU of claim 9 wherein said determining a destination for said packet
+comprising determining (206) whether said destination port is a stand-alone port or a
+
+multi-link trunk, MLT, group.
+
+12. The FDU of claim 11 wherein when said destination port is a MLT group,
+then said FDU generates hash value from selected fields of said unicast packet to
+
+determine a MLT port member.
+
+13. The FDU of claim 12 wherein the process causes the FDU to perform the
+further operation of:
+using said MLT group ID and said hash value to determine a port member that
+
+is in the UP state.
+
+14. The FDU of claim 13 wherein the process causes the FDU to perform the
+
+further operations of:
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28
+
+determining whether all port members in a local table are down, and when said
+
+all port members are down, then determining an MLT port from a remote table.
+
+15. |The FDU of claim 14 wherein the process causes the FDU to perform the
+further operation of:
+determining an IST port member that is in the UP state for a port member
+
+selected from said remote table.

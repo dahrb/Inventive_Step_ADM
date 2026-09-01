@@ -1,0 +1,49 @@
+Title: Next/current/last ticker graphical presentation method
+
+Abstract: 
+A method for displaying a group of headlines from a headline stream across the bottom of a computer graphical user interface display provides a solid polygon shaped display which displays a headline, its immediate predecessor and its immediate successor on adjacent polygon faces. At predetermined intervals the bar rotates so that the successor headline moves into a dominant position, the previous headline moves to a predecessor position, and a new successor headline is displayed. In one embodiment, the predecessor and successor headlines are foreshortened to enhance the suggestion of a three-dimensional solid polygon being displayed and rotated about a central axis. The headline display method is less distracting than the usual ticker tape display, and is easier to read because the eye does not have to follow moving text. In another embodiment, the user double clicks on the a displayed headline to retrieve and display an associated news story. In another embodiment, the user can advance or retreat the display along the headline stream by alternatively single clicking on a successor or predecessor headline, respectively. In another group of embodiments, the invention defines an object for displaying headline type information.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for displaying information in an information processing system such that visual distraction and user stress and fatigue are minimized, the method comprising the steps of:
+providing access to a stream of headlines;
+defining a successor headline for each accessed headline of the stream;
+providing means for displaying an accessed headline;
+providing means such that at predetermined intervals the displayed headline is replaced by its successor headline;
+displaying the accessed headline as a single, horizontal line of symbols that does not scroll in the horizontal direction;
+substituting the successor headline for the displayed headline at the predetermined intervals such that visual distraction and user stress and fatigue are minimized; and
+repeating the previous two steps until stopped.
+2. The method as set forth in claim 1, further including the step of additionally displaying a predetermined number of successor headlines, each as a single, horizontal line of symbols that does not scroll in the horizontal direction.
+3. The method as set forth in claim 2, wherein the displayed headlines are stacked vertically in headline stream sequence.
+4. The method as set forth in claim 3, wherein the vertically stacked headline displays form the surfaces of a projection of a solid polygonal having a central axis parallel to the displayed headlines such that the adjacent visible polygon surfaces display successor headlines of the headline stream.
+5. The method as set forth in claim 4, wherein the headlines are advanced by rotating the displayed solid polygon and its headlines about the central axis at each predetermined interval, and wherein the rate of advance is selected to minimize visual distraction and user stress and fatigue.
+6. The method as set forth in claim 5, wherein the rotation pauses between intervals with one surface directly outward toward a viewer and adjacent surfaces foreshortened, and wherein the duration of the pauses is selected to further reduce visual distraction and user stress and fatigue.
+7. The method as set forth in claim 6, wherein the polygon has six sides and three headlines are displayed.
+8. The method as set forth in claim 4, further including displaying at one end of the solid polygon a projected edge view of the polygon joined compatibly with the displayed polygon surfaces.
+9. The method as set forth in claim 5, further defining a predecessor headline of each displayed headline, and wherein the user selects a displayed headline for display on a polygon surface facing directly outward toward a viewer, and for displaying predecessor and successor headlines of the selected headline on other surfaces of the polygon in headline stream sequence, and wherein the user selects the headline by clicking on the headline.
+10. The method as set forth in claim 9, further including means responsive to a pointer click on a displayed headline for alternatively stopping and starting the rotation of the displayed polygon and the advance of the displayed headlines when a user clicks on the directly forward displayed headline.
+11. The method as set forth in claim 10, wherein the means responsive to a pointer click on a displayed headline initiates a retrieval of a news story associated with the headline when a user double-clicks on the pointed to displayed headline.
+12. A computer program product for use with a computer system, comprising:
+a computer readable medium;
+means provided on the medium for directing the computer system to perform the following steps, defining a method for displaying information such that visual distraction and user stress and fatigue are minimized:
+providing means for receiving a stream of headlines;
+defining a successor headline for each received headline of the stream;
+providing means for displaying a received headline;
+providing automatic update means such that at predetermined intervals the displayed headline is replaced by its successor headline;
+displaying the received headline as a single, horizontal line of symbols that does not scroll in the horizontal direction;
+replacing the displayed headline by its successor headline at the predetermined intervals, wherein the successor headline is substituted for the displayed headline;
+the duration of the interval being selected to minimize visual distraction and user stress and fatigue; and
+repeating the displaying and replacing steps until stopped.
+13. An object for displaying a plurality of headlines from a stream of successive headlines such that visual distraction and user stress and fatigue are minimized, comprising:
+means for receiving a stream of successive headlines;
+means for displaying a headline and a predetermined number of successor headlines, wherein each headline is displayed as a single, horizontal line of symbols that does not scroll in the horizontal direction;
+means for advancing each headline to replace in the display its immediate predecessor, the original headline being no longer displayed and an immediate successor to the last displayed headline being received and displayed; and
+said advancing means being repeated at a predetermined interval, the duration of the interval being selected to minimize visual distraction and user stress and fatigue.
+14. The headline display object as set forth in claim 13, wherein the displayed headlines are stacked vertically in headline stream sequence.
+15. The headline display object as set forth in claim 14, wherein the vertically stacked headline displays form the surfaces of a projection of a solid polygonal having a central axis parallel to the displayed headlines such that adjacent visible polygon surfaces display adjacent headlines of the displayed headlines.
+16. The headline display object as set forth in claim 15, wherein the headlines are advanced by rotating the displayed solid polygon and its headlines about the central axis at each predetermined interval, and wherein the rotation pauses between intervals with one surface facing directly toward a viewer, and wherein the rate of advance is selected to minimize visual distraction and user stress and fatigue.
+17. The headline display object as set forth in claim 16, further including user control means permitting a user to select one displayed headline by the user positioning a displayed pointer to the headline and then clicking on the headline, whereby the selected headline replaces the current headline on the surface facing directly toward a viewer, the user control means defining a predecessor headline for each accessed headline, and predecessor and successor headlines of the selected headline are displayed on other surfaces of the polygon in headline stream sequence.
+18. The headline display object as set forth in claim 13, further including means for accessing news stories associated with accessed headlines, and means permitting a user to position a displayed pointer on a displayed headline, then double-click on the headline, initiating a retrieval of a news story associated with the selected headline.
+19. The headline display object as set forth in claim 15, wherein the polygon has six sides and three headlines are displayed.

@@ -1,0 +1,48 @@
+Title: A method and system for securely distributing a personal identification number and associating the number with a financial instrument
+
+Abstract: A method of securely distributing a financial instrument and an associated personal identification number (PIN) comprises in a first embodiment receiving, via a communications network, application data including personal information about an applicant for a financial instrument. In addition, receiving, via the same or a different communications network, personal identification number (PIN) data including a PIN which is to be used as the PIN for the financial instrument. The application data and the PIN data are stored in a database and then transferred to a financial instrument producer to produce a financial instrument such as a debit or a credit card.
+
+Type: 
+WIPO
+
+Claims: 
+
+1. A method of securely distributing a financial instrument and an associated personal identification number (PIN), the method comprising:
+receiving, via a communications network, application data including personal information about an applicant for a financial instrument;
+receiving, via the same or a different communications network, personal identification number (PIN) data including a PIN which is to be used as the PIN for the financial instrument;
+storing in a database the application data and the associated PIN data; and
+transferring at least the application data to a financial instrument producer, which data is to be used to produce a financial instrument with which the PIN will be associated.
+2. A method according to claim 1 wherein the financial instrument is a debit or a credit card.
+3. A method according to claim 1 wherein the PIN data is also transferred to the financial instrument producer.
+4. A method according to claim 1 wherein the application data and PIN data are received via a secure communications network.
+5. A method according to claim 4 wherein the application data and PIN data are received via the secure communications network which is secure socket layer (SSL) secured.
+6. A method of issuing a personal identification number (PIN) to a financial instrument holder, the method comprising:
+receiving, via a communications network, personal data and financial instrument data identifying a financial instrument and a holder of the financial instrument;
+verifying the validity of the financial instrument and that the entered holder of the financial instrument is the correct holder of the financial instrument;
+receiving, via the same or a different communications network, personal identification number (PIN) data including a PIN which is to be used as the PIN for the financial instrument;
+storing in a database the PIN data; and
+associating the PIN data with the financial instrument so that use of the financial instrument can be verified later with the PIN.
+7. A method according to claim 6 wherein the financial instrument is a debit or a credit card.
+8. A method according to claim 6 wherein the personal data, financial instrument data and PlN data are received via a secure communications network.
+9. A method according to claim 8 wherein the personal data, financial instrument data and PIN data are received via the secure communications network which is secure socket layer (SSL) secured.
+10. A method according to any one of claims 6 to 8 wherein the financial instrument data is a card verification check (CVC2) value.
+11. A method of issuing a personal identification number (PIN) to a financial instrument holder, the method comprising:
+receiving, via a communications network, personal data and financial instrument data identifying a financial instrument and a holder of the financial instrument;
+verifying the validity of the financial instrument and that the entered holder of the financial instrument is the correct holder of the financial instrument;
+transmitting, via the same or a different communications network, personal identification number (PIN) data including a PIN which is to be used as the PIN for the financial instrument;
+storing in a database the PlN data; and
+associating the PIN data with the financial instrument so that use of the financial instrument can be verified later with the PIN.
+12. A method according to claim 11 wherein the financial instrument is a debit or a credit card.
+13. A method according to claim 11 wherein the personal data, financial instrument data and PlN data are received via a secure communications network.
+14. A method according to claim 13 wherein the personal data, financial instrument data and PIN data are received via the secure communications network which is secure socket layer (SSL) secured.
+15. A method according to any one of claims 11 to 14 wherein the financial instrument data is a card verification check (CVC2) value.
+16. An electronic system for securely distributing a financial instrument and an associated personal identification number (PIN), the system including:
+a memory for storing: application data including personal information about an applicant for a financial instrument; and personal identification number (PIN) data including a PIN which is to be used as the PIN for a financial instrument; and
+a processor disposed in communication with the memory, the processor being adapted to: receive application data and PIN data and store it in the memory; and transfer at least the application data to a financial instrument producer, which data is to be used to produce a financial instrument with which the PlN will be associated.
+17. An electronic system for issuing a personal identification number (PIN) to a financial instrument holder, the system including:
+a memory for storing: personal data including personal information about an applicant for a financial instrument; financial instrument data identifying a financial instrument; and personal identification number (PIN) data including a PIN which is to be used as the PIN for the financial instrument; and
+a processor disposed in communication with the memory, the processor being adapted to: receive, via a communications network, personal data and financial instrument data; verify the validity of the financial instrument and that the entered holder of the financial instrument is the correct holder of the financial instrument; receive, via the same or a different communications network, personal identification number (PIN) data; store in the memory the PIN data; and associate the PIN data with the financial instrument so that use of the financial instrument can be verified later with the
+PIN.
+18. An electronic system for issuing a personal identification number (PIN) to a financial instrument holder, the system including:
+a memory for storing: personal data including personal information about an applicant for a financial instrument; financial instrument data identifying a financial instrument; and personal identification number (PIN) data including a PIN which is to be used as the PIN for the financial instrument; and a processor disposed in communication with the memory, the processor being adapted to: receive, via a communications network, personal data and financial instrument data; verify the validity of the financial instrument and that the entered holder of the financial instrument is the correct holder of the financial instrument; transmit, via the same or a different communications network, personal identification number (PIN) data; store in the memory the PIN data; and associate the PIN data with the financial instrument so that use of the financial instrument can be verified later with the
+PIN.

@@ -1,0 +1,232 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+06121099.3 - 1527 July 25, 2014
+Research In Motion Limited 200303EP
+
+MAIN REQUEST
+
+1. A method of updating and backing up a database (40, 42, 44) comprising
+data records, to accord with an updated database schema defining un updated
+structure of the data records in the database (40, 42, 44), wherein the database
+(40, 42, 44) is associated with mail store content, the method comprising:
+obtaining (100) at a portable electronic device (22) the updated database
+schema associated with the database (40, 42, 44);
+comparing the updated database schema (106) with a previous database
+schema associated with the database (40, 42, 44), to determine database
+schema changes;
+generating an update command (108) based on said comparing (106),
+when the updated database schema differs from said previous database
+schema, said update command comprising said database schema changes;
+updating the data records (110) of the database (40, 42, 44) according to
+the update command (108) by:
+deleting a first field from each of the data records, if said database
+schema changes comprise a deletion of said first field of the data records;
+deleting data stored in a second field in each of the data records, if
+said database schema changes comprise a modification of said second
+field of the data records; and
+adding a new field in each of the data records, if said database
+schema changes comprise an addition of said new field of the data
+records; and
+transmitting said update command (112) from said portable electronic
+device (22) to a server by way of a radio communication channel, said update
+command for enabling updating of a backup database (34, 36, 38) associated
+with the database (40, 42, 44) at the server, by performing the steps deleting a
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+first field, deleting data and adding a new field on backup data records of the
+backup database (34, 36, 38) according to the update command, so that each of
+the backup data records of the backup database (34, 36, 38) conforms to the
+
+updated structure as defined by the updated database schema.
+
+2. The method according to claim 1, wherein said previous database
+
+schema is stored in memory (52) at the portable electronic device (22).
+
+3. The method according to any one of the preceding claims, wherein the
+previous database schema and the updated database schema are defined as
+
+Extensible Markup Language files.
+
+4. The method according to any one of the preceding claims, wherein said
+obtaining (100) the updated database schema comprises obtaining a mapping
+between field tags of the updated database schema and field tags ina
+
+messaging application programming interface (MAP)).
+
+5. The method according to claim 4, wherein said update command
+comprises said mapping between field tags of the updated database schema
+
+and field tags in a messaging application programming interface (MAPI).
+
+6. The method according to any one of the preceding claims, further
+comprising storing the updated database schema (102) at said portable
+
+electronic device (22).
+
+7. The method according to any one of the preceding claims, comprising:
+receiving at the server the update command (114) from the portable
+electronic device (22) for updating the database schema for the corresponding
+backup database (34, 36, 38); and
+updating (118) the backup data records according to said update
+
+command.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+8. The method according to claim 7, wherein if said update command
+comprises a mapping between field tags of the updated database schema and
+field tags in a messaging application programming interface (MAPI), said
+receiving (114) said update command from the portable electronic device (22) at
+said server (30) comprises receiving said mapping between the field tags of said
+
+updated database schema and the field tags in the MAPI.
+
+9, The method according to claim 7 or 8, comprising storing at the server
+
+(120) the updated database schema in association with said backup database.
+
+10. The method according to any previous claim, wherein deleting data stored
+in a second field in each of the data records further comprising modifying field
+data in the second field in each of the data records; wherein the field data
+comprises one or more of: a field name, a field tag identification number, a data
+type, a maximum supported field length, an indication whether or not the field is
+
+a key field, and an indication that the field is supported for synchronization.
+
+11. Acomputer-readable medium having computer-readable code embodied
+therein for updating and backing up a database, comprising data records, to
+accord with an updated database schema, said computer-readable code for
+causing a computing device or system to perform the method of any one of
+claims 1 to 10.
+
+12. Aportable electronic device (22) comprising:
+
+an input for receiving an updated database schema associated with a
+database (40, 42, 44);
+
+a memory for storing data records in said database;
+
+a processor (46) for executing computer-readable code embodied in a
+
+computer readable medium of the portable electronic device (22), said
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+computer-readable code for causing the portable electronic device to perform the
+
+method of any one of claims 1 to 6.
+
+13. The portable electronic device according to claim 12, wherein said input
+
+(54) comprises at least one of a user input device, a receiver, and a connector.
+
+14. Amethod carried out at a server (30) for updating a backup database (34,
+36, 38) comprising backup data records stored on the server, to accord with an
+updated database schema of a database (40, 42, 44) operated by a portable
+electronic device (22), wherein the database (40, 42, 44) operated by the
+portable electronic device (22) is associated with mail store content, the method
+comprising:
+
+receiving an update command (114) from the portable electronic device
+(22) by way of a radio communication channel, said update command for
+enabling updating a database schema for the backup database (34, 36, 38);
+wherein the update command comprises database schema changes of the
+updated database schema with respect to a previous database schema of the
+database (40, 42, 44) operated by the portable electronic device (22); wherein
+the previous and updated database schema define a structure of the data
+records in the database (40, 42, 44) operated by the portable electronic device
+(22); and
+
+updating (118) the backup data records according to the update
+command so that each of the backup data records of the backup database (34,
+36, 38) conforms to the updated structure as defined by the updated database
+schema, by:
+
+deleting a first field from each of the backup data records, if said
+database schema changes comprise a deletion of said first field of the
+data records,
+deleting data stored in a second field in each of the backup data
+records, if said database schema changes comprise a modification of said
+
+second field of the data records; and
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+adding a new field in each of the backup data records, if said
+database schema changes comprise an addition of said new field of the
+
+data records.
+
+15. Aserver (30) for updating a backup database comprising backup data
+records, to accord with an updated database schema of a database (40, 42, 44)
+operated by a portable electronic device (22), wherein the database (40, 42, 44)
+operated by the portable electronic device (22) is associated with mail store
+content, the server comprising:
+means for receiving an update command (114) from the portable
+electronic device by way of a radio communication channel, said update
+command for enabling updating a database schema for the backup database
+(34, 36, 38), the backup database stored at the server; wherein the update
+command comprises database schema changes of the updated database
+schema with respect to a previous database schema of the database (40, 42,
+44) operated by the portable electronic device (22); wherein the previous and
+updated database schema define a structure of the data records in the database
+(40, 42, 44) operated by the portable electronic device (22); and
+means for updating (118) the backup data records according to the
+update command so that each of the backup data records of the backup
+database (34, 36, 38) conforms to the updated structure as defined by the
+updated database schema, by:
+deleting a first field from each of the backup data records if said
+database schema changes comprise a deletion of said first field of the
+data records,
+deleting data stored in a second field in each of the backup data
+records, if said database schema changes comprise a modification of said
+second field of the data records; and
+adding a new field in each of the backup data records, if said
+database schema changes comprise an addition of said new field of the
+
+data records.

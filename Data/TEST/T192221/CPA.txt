@@ -1,0 +1,46 @@
+Title: 
+Transport agnostic scsi i/o referrals
+
+Abstract: The present invention is a method for providing multi-pathing via Small Computer System Interface Input/Output (SCSI I/O) referral between an initiator and a storage cluster which are communicatively coupled via a network, the storage cluster including at least a first target device and a second target device. The method includes receiving an input/output (I/O) at the first target device from the initiator via the network. The I/O includes a data request. The method further includes transmitting a SCSI I/O referral list to the initiator when data included in the data request is not stored on the first target device, but is stored on the second target device. The referral list includes first and second port identifiers for identifying first and second ports of the second target device respectively. The first and second port identifiers are SCSI relative port identifiers. The first and second ports of the target device are identified as access ports for accessing the data requested in the data request.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for providing multi-pathing via Small Computer System Interface Input/Output (SCSI I/O) referral between an initiator and a storage cluster which are communicatively coupled via a network, the storage cluster including at least a first target device and a second target device, said method comprising:
+receiving an input/output (I/O) at the first target device from the initiator via the network, the I/O including a request for a first portion of data and a second portion of data; and
+when the first portion of data, but not the second portion of data is stored on the first target device and the second portion of data is stored on the second target device, initiating a transfer of the first portion of data to the initiator and transmitting a SCSI I/O referral list to the initiator,
+wherein the referral list includes a first SCSI relative port identifier for identifying a first port of the second target device and a second SCSI relative port identifier for identifying a second port of the second target device, the first port and the second port being identified as access ports for accessing the second portion of data.
+2. A method as claimed in claim 1, further comprising:
+receiving a referral I/O at the second target device from the initiator via the network, the referral I/O being responsive to the SCSI I/O referral list, said referral I/O requesting access to the second portion of data via one of: the first port and the second port as directed by the initiator.
+3. A method as claimed in claim 2, further comprising:
+initiating a transfer of the second portion of data to the initiator.
+4. A method as claimed in claim 3, wherein the first portion of data is located on a first data segment and the second portion of data is located on a second data segment.
+5. A method as claimed in claim 4, wherein the first data segment and the second data segment are included in a virtual volume.
+6. A method as claimed in claim 5, wherein the first target device and the second target device are one of: disks, storage arrays, tape libraries and storage devices.
+7. A method as claimed in claim 5, wherein the referral list identifies the second data segment by a data offset value of the second data segment.
+8. A method as claimed in claim 7, wherein the referral list identifies the second data segment by a data length value of the second data segment.
+9. A method as claimed in claim 8, wherein the referral list associates the first port identifier and the second port identifier with the second data segment, the data offset value of the second data segment and the data length value of the second data segment.
+10. A computer-readable medium having computer-executable instructions for performing a method for providing multi-pathing via Small Computer System Interface Input/Output (SCSI I/O) referral between an initiator and a storage cluster which are communicatively coupled via a network, the storage cluster including at least a first target device and a second target device, said method comprising:
+receiving an input/output (I/O) at the first target device from the initiator via the network, the I/O including a request for a first portion of data and a second portion of data; and
+when the first portion of data, but not the second portion of data is stored on the first target device and the second portion of data is stored on the second target device, initiating a transfer of the first portion of data to the initiator and transmitting a SCSI I/O referral list to the initiator,
+wherein the referral list includes a first SCSI relative port identifier for identifying a first port of the second target device and a second SCSI relative port identifier for identifying a second port of the second target device, the first port and the second port being identified as access ports for accessing the second portion of data.
+11. A computer-readable medium as claimed in claim 10, said method further comprising:
+receiving a referral I/O at the second target device from the initiator via the network, the referral I/O being responsive to the SCSI I/O referral list, said referral I/O requesting access to the second portion of data via one of: the first port and the second port as directed by the initiator.
+12. A computer-readable medium as claimed in claim 11, said method further comprising:
+initiating a transfer of the second portion of data to the initiator.
+13. A computer-readable medium as claimed in claim 12, wherein the first portion of data is located on a first data segment and the second portion of data is located on a second data segment.
+14. A computer-readable medium as claimed in claim 13, wherein the first data segment and the second data segment are included in a virtual volume.
+15. A computer-readable medium as claimed in claim 14, wherein the first target device and the second target device are one of: disks, storage arrays, tape libraries and storage devices.
+16. A computer-readable medium as claimed in claim 14, wherein the referral list identifies the second data segment by a data offset value of the second data segment.
+17. A computer-readable medium as claimed in claim 16, wherein the referral list identifies the second data segment by a data length value of the second data segment.
+18. A computer-readable medium as claimed in claim 17, wherein the referral list associates the first port identifier and the second port identifier with the second data segment, the data offset value of the second data segment and the data length value of the second data segment.
+19. A system, comprising:
+means for receiving an input/output (I/O) at a first target device from an initiator, the I/O including a request for a first portion of data and a second portion of data; and
+when the first portion of data, but not the second portion of data is stored on the first target device and the second portion of data is stored on the second target device, means for initiating a transfer of the first portion of data to the initiator and means for transmitting a SCSI I/O referral list to the initiator,
+wherein the referral list includes a first SCSI relative port identifier for identifying a first port of the second target device and a second SCSI relative port identifier for identifying a second port of the second target device, the first port and the second port being identified as access ports for accessing the second portion of data.
+20. A computer-readable medium having computer-executable instructions for performing a method for providing multi-pathing via Small Computer System Interface Input/Output (SCSI I/O) referral between an initiator and a storage cluster which are communicatively coupled via a network, the storage cluster including at least a first target device and a second target device, said method comprising:
+receiving an input/output (I/O) at the first target device from the initiator via the network, the I/O including a data request;
+when data included in the data request is not stored on the first target device but said data is stored on the second target device, transmitting a SCSI I/O referral list to the initiator, wherein the referral list includes a first SCSI relative port identifier for identifying a first port of the second target device and a second SCSI relative port identifier for identifying a second port of the second target device, the first port and the second port being identified as access ports for accessing said data;
+receiving a referral I/O at the second target device from the initiator via the network, the referral I/O being responsive to the SCSI I/O referral list and said referral I/O requesting access to the data via one of: the first port and the second port as directed by the initiator; and
+initiating a transfer of the data to the initiator.

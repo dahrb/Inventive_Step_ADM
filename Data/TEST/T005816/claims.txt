@@ -1,0 +1,594 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request
+
+CLAIMS
+
+What is claimed is:
+
+1. An arithmetic processing unit (0) comprising:
+an arithmetic section (3) for performing arithmetic
+processing;
+
+a register file (1) having K number of register windows
+
+each of which has N number of registers, a current window
+
+selecting unit for selecting one of the K number of register
+
+windows aS a current window according to windows address
+
+information, and a register selecting unit for selecting a
+
+reading register from N number of registers included in the
+
+selected current window according to reading address
+
+information, the register windows each including a plurality
+
+of in-registers, aplurality of local registers, andaplurality
+
+of out-registers, the in-register included in a specified
+
+register window being shared with an out-register included in
+
+a register window before the specified register window, and an
+
+in-register included in the specified register window and the
+
+out-register included in the register window before the
+
+specified register window being used for passing an argument
+
+when calling a subroutine;
+
+a control section (4) for outputting window address
+
+information used by the current window selecting unit to select
+a current window,
+
+wherein, when an instruction in a program is described
+
+rm
+
+in an order of first instruction, SAVE instruction, anda second
+
+rm
+
+instruction other than the SAVE instruction, or in an order of
+
+first instruction, RESTORE instruction, and a second
+
+instruction other than the RESTORE instruction, and the second
+
+instruction is out-of-order executed, pipelines of the SAVE
+
+instruction and the RESTORE instruction each including Fetch
+
+(F), Decode (D), Dispatch (P), Buffer Read (B), Execute (X),
+
+17
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Update Buffer (U), and Commit (W), the register selecting unit:
+selects a local register whose window number is 2n,
+a local register whose window number is 2n+1l, an out-register
+
+whose window number is 2n, an out-register whose window number
+
+is 2n-1, and an out-register whose window number is 2n+1l for
+
+an output of a first port, an output of a second port, an output
+
+of a third port, an output of a fourth port, and an output of
+
+a fifth port, respectively, during execution of
+
+any of Dispatch
+
+(P), Buffer Read (B), Execute (X), and Update Buffer (U) inthe
+
+pipeline of the SAVE instruction executed after an execution
+
+start of the first instruction and a current window of the
+
+windows address information indicates 2n (n indicating an
+integer),
+
+selects a local register whose window number is 2n+2,
+the local register whose window number is 2n+1, the out-register
+whose window number is 2n, the out-register whose window number
+
+is 2nt+1l, and an out-register whose window number is 0 instead
+
+of 2n+2 for the output of the first port, the output of the second
+
+port, the output of the third port, the output of the fourth
+
+port, and the output of the fifth port, respectively, during
+
+execution of any of Dispatch (P), Buffer Read (B), Execute (X),
+
+and Update Buffer (U) in the pipeline of the SAVE instruction
+
+executed after an execution start of the first instruction and
+
+a current window of the windows address information indicates
+
+2nt+l,
+
+selects the local register whose window number is
+2n, a local register whose window number is 2n-l1, the
+out-register whose window number is 2n, the out-register whose
+
+window number is 2n-1, and an out-register whose window number
+
+is 2n-2 forthe output of the first port, the output of the second
+
+port, the output of the third port, the output of the fourth
+
+port, and the output of the fifth port, respectively, during
+
+execution of any of Dispatch (P), Buffer Read (B), Execute (X),
+
+and Update Buffer (U) inthe pipeline of the RESTORE instruction
+
+executed after an execution start of the first instruction and
+
+18
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+a current window of
+
+2n, and
+
+2n,
+
+fF the windows address information indicates
+
+selects the local register whose window number is
+
+the local register whose window number is 2ntl,
+
+the
+
+out-register whose window number is 2n, the out-register whose
+
+window number is 2n+
+
+is 2n-2 for the output of
+
+port, the o
+
+port, andt
+
+1, and the out-register whose window number
+
+the
+
+First port, the output of the second
+
+utput of
+
+the third port, the output of
+
+the fourth
+
+execution of
+
+any of
+
+and Update B
+
+u
+
+executed after an execution start of
+
+a current window of
+
+he output of
+
+Dispatch (P), Bu
+Fer (U) int
+
+the £1
+
+fth port, respectively, during
+
+fFfer Read (B), Execute (X),
+
+he pipeline of the RESTORE instruction
+
+first instruction and
+
+the
+
+the windows address information indicates
+
+2n+1, and
+a global port for selecting registers from global
+registers shared among all subroutines, and the first to fifth
+
+ports are connected to the register selecting unit, a register
+
+value is selected j
+
+from register values output
+
+from the global
+
+port and th
+
+e first to
+
+Fifth ports according
+
+to the reading
+
+address information and then is output.
+
+2. Amethod of
+
+reading a register
+
+ile
+
+file (1), the register f
+
+file is
+
+having a pl
+
+divided into K number of
+
+number of r
+
+urality of
+
+egisters,
+
+registers, wherein
+
+the register
+
+which has N
+
+register windows each of
+
+wherein the registers are read by:
+
+a first step of
+
+windows aS a current window according to windows
+
+information
+
+a S€CO
+
+of registers included in
+to reading address information,
+
+including a plurality of
+
+registers,
+
+included in
+
+; and
+
+nd step of selecting a reading register
+
+fF selecting one of
+
+the K number of register
+
+address
+
+fromN number
+
+and a plurality of
+
+the selected current window according
+
+the register windows each
+
+in-registers, a plurality of local
+
+out-registers, the in-register
+
+a specified register window being shared with an
+
+19
+
+--- PAGE 4 ---
+out-register included ina register window before the specified
+
+register window, and an in-register included in the specified
+
+register window and the out-register included in the register
+
+window before the specified register window being used for
+passing an argument when calling a subroutine,
+
+wherein when an instruction in a program is described
+
+rm
+
+in an order of first instruction, SAVE instruction, anda second
+
+instruction other than the SAVE instruction, or in an order of
+
+first instruction, RESTORE instruction, and a second
+
+instruction other than the RESTORE instruction, and the second
+
+rm
+
+instruction is out-of-order executed, pipelines of the SAVE
+
+instruction and the RESTORE instruction each including Fetch
+
+(F), Decode (D), Dispatch (P), Buffer Read (B), Execute (X),
+
+Update Buffer (U), and Commit (W), the method comprising:
+
+selecting a local register whose window number is
+2n, a local register whose window number is 2ntl, an
+out-register whose window number is 2n, an out-register whose
+
+window number is 2n-1, and an out-register whose window number
+
+is 2nt+1 for an output of a first port, an output of a second
+
+port, an output of a third port, an output of a fourth port,
+
+and an output of a fifth port, respectively, during execution
+
+of any of Dispatch (P), Buffer Read (B), Execute (X), and Update
+
+rm
+
+Buffer (U) in the pipeline of the SAVE instruction executed
+
+after an execution start of the first instruction and a current
+
+window of the windows address information indicates 2n (n
+
+indicating an integer),
+
+selecting a local register whose window number is
+2nt+2, the local register whose window number is 2nt+1, the
+out-register whose window number is 2n, the out-register whose
+
+window number is 2n+l, and an out-register whose window number
+
+is 0 instead of 2n+2 for the output of the first port, the output
+
+of the second port, the output of the third port, the output
+
+of the fourth port, and the output of the ifth port,
+
+respectively, during execution of any of Dispatch (P), Buffer
+
+Read (B), Execute (X), and Update Buffer (U) in the pipeline
+
+20
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+rm
+
+of the SAV
+the
+address information
+
+is 2n, a
+
+out-regist
+
+window number is 2n-1, and an out-register whose wi
+
+is 2n-2 for
+
+port,
+
+port,
+
+execution of
+
+the output of
+
+and the output of
+
+indicates 2nt+l,
+
+FE instruction executed after an execu
+
+first instruction and a current window of
+
+tion start of
+
+the windows
+
+selecting the local register whose window number
+
+local register whose window number is 2n-l,
+
+the
+
+er whose window number is 2n, the out-register whose
+
+the output of the
+
+the
+
+the £1
+
+fth port,
+
+ndow number
+
+First port, the output of the second
+
+any of Dispatch (P), Bu
+
+and Update
+
+executed afi
+
+a current window of
+
+2n, and
+
+is 2n,
+
+out-regist
+
+But
+
+fer (U) inthe pipeline of theR
+
+respe
+
+third port, the output of
+
+ctively,
+
+ffer Read (B),
+
+ESTOR
+
+the fourth
+
+during
+
+Bxecute (X),
+
+BE instruction
+
+Fler an execution start of
+
+the
+
+first instruction and
+
+fF the windows address init
+
+formation indicates
+
+selecting the local register whose window number
+
+the local register whose window number is 2nt+l,
+
+the
+
+er whose window number is 2n, the out-register whose
+
+window number is 2nt+1l, and the out-register whose window number
+
+is 2n-2 forthe output of the first port, the output of the second
+port, the output of the third port, the output of the fourth
+port, and the output of the fifth port, respectively, during
+execution of any of Dispatch (P), Buffer Read (B), Execute (X),
+
+and Update Buf
+
+fer (U) inthe pipeline of theR
+
+ESTOR
+
+BE instruction
+
+executed afi
+
+a current window of
+
+2nt+l,
+
+and the method
+
+selecting registers
+
+Fler an execution start of
+
+the
+
+first instruction and
+
+all subroutines,
+
+selecting a register value
+
+fF the windows address init
+
+from global
+
+further comprising:
+
+the reading address information,
+
+from a global port and
+
+outputting th
+
+the
+
+first to fi
+
+and
+
+selected register value.
+
+21
+
+formation indicates
+
+registers shared among
+
+from register values output
+
+fFth ports according to

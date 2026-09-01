@@ -1,0 +1,211 @@
+--- PAGE 1 ---
+European Patent Application Rosemount Inc.
+No. 06825182.6 M/WEM-028-PC/EP
+August 26, 2016 PA/cd
+
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request
+
+A field device system (12) for use in an industrial process configured to
+couple to a process control loop (18) comprising:
+
+a field device (14) having a housing configured to couple to the industrial
+process and monitor or control the industrial process, the field device (14)
+including a temperature control signal output (20) related to a temperature
+of the field device (14), wherein the field device (14) includes an internal
+temperature sensor (36) and the temperature control signal output (20) is
+related to the temperature of the temperature sensor (36), and wherein
+the field device (14) includes a process interface element (30) configured
+to sense a process variable of the industrial process and wherein the field
+device (14) is adapted to transmit information related to the process
+variable via the control loop (18);
+
+a separate heater (22) mounted to the field device (14) by means of an
+interface between a connector (82) on the heater (22) and a mating
+connector (84) on the field device (14), wherein the heater (22) is
+configured to heat the field device in response to the temperature control
+signal (20), and
+
+a separate heater element (24), which is mounted externally on the
+housing of the field device (14) and controlled by the heater (22) in
+response to the temperature control signal output (20), wherein a
+connection (88) from the heater (22) is used to power the heater element
+(24), and wherein a relationship between the temperature control signal
+output (2) and heat from the heater element (24) is programmable.
+
+A field device system of claim 1, wherein the field device (14) comprises a
+transmitter configured to measure a process variable of the process and
+provide an output on a two-wire process control loop related to the
+measured process variable.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EPO No. 06825182.6 M/WEM-028-PC/EP
+(MAIN REQ)
+
+10.
+
+11.
+
+The apparatus of claim 1, wherein the temperature control signal output
+(20) comprises a digital signal.
+
+The apparatus of claim 1, wherein the temperature control signal output
+(20) is provided on a two-wire process control loop coupled to the field
+device (14) and to the heater.
+
+The apparatus of claim 4, wherein the electrical connection provides
+isolation of DC signals.
+
+The apparatus of claim 1, wherein the field device (14) is configured to
+couple to a high purity vacuum process.
+
+The apparatus of claim 1, wherein the heater (22) couples to an external
+power supply.
+
+The apparatus of claim 1, wherein the relationship between the
+temperature control signal output (20) and heat from the heater element
+(24) is programmed through a local interface.
+
+The apparatus of claim 1, wherein the relationship between the
+temperature contro! signal output (20) and heat from the heater element
+(24) is programmed through digital signals received in accordance with the
+HART® communications protocol.
+
+The apparatus of claim 1, wherein the field device (14) includes a pressure
+
+sensor configured to sense a pressure of the industrial process.
+
+The apparatus of claim 10, wherein the pressure sensor includes a
+temperature sensor and the temperature control signal output is related to
+the temperature of the temperature sensor.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EPO No. 06825182.6 M/WEM-028-PC/EP
+(MAIN REQ)
+
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+
+The apparatus of claim 1, wherein the heater (22) includes a controller
+(52) configured to implement a control algorithm and responsively control
+heat from the heater element (24) as a function of the temperature control
+signal output (20).
+
+The apparatus of claim 1, wherein the heater (22) includes thermal
+overload protection.
+
+The apparatus of claim 1, wherein the heater (22) includes a local output
+configured to provide an indication of heater status.
+
+The apparatus of claim 1, wherein the heater (22) is configured to
+diagnose impending failure of a heater element of the heater.
+
+A method reducing accumulation of process material on a field device (14)
+
+in an industrial process, comprising:
+
+sensing an internal temperature of the field device (14);
+
+providing a temperature control signal output (20) related to the sensed
+temperature;
+
+coupling the temperature contro! signal output (20) to a heater (22) which
+is thermally coupleable to the field device (14);
+
+responsively heating the field device (14) with the heater (22) as a
+
+function upon the temperature control signal output, and
+measuring temperature of the field device (14) with an internal
+temperature sensor (36) and the temperature control signal output (20) is
+
+related to temperature of the temperature sensor (36),
+
+characterised in that:
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EPO No. 06825182.6 M/WEM-028-PC/EP
+(MAIN REQ)
+
+17,
+
+18.
+
+19,
+
+20.
+
+the heater (22) is a separate element which is mounted to the field device
+(14) by means of an interface between a connector (82) on the heater (22)
+and a mating connector (84) on the field device (14), and characterized by
+
+heating the field device (14) by means of a heating element (24), which is
+mounted externally on the housing of the field device (14) and which is
+controlled by the heater (22) in response to the temperature control signal
+output (20),
+
+powering the heater element (24) by means of a connection (88) from the
+heater (22), and
+
+programming a relationship between the temperature contro! signal output
+(20) and heat from the heater element (24).
+
+The method of claim 16, wherein the temperature control signal output
+(20) comprises a digital signal.
+
+The method of claim 16, wherein the temperature control signal output
+(20) is provided on a two-wire process control loop coupled to the field
+device (14) and to the heater (22).
+
+The method of claim 16, including diagnosing impending failure of a heater
+element (24) of the heater (22).
+
+The method of claim 16, including controlling heating of the field device
+(14) so that heat is applied to the field device (14) when the temperature
+of the device approaches the temperature at which the device would
+freeze in order to prevent freezing of the device.

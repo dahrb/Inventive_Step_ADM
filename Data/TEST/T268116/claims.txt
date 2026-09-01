@@ -1,0 +1,196 @@
+--- PAGE 1 ---
+56
+
+MAIN REQUEST
+CLAIMS
+
+1. Asystem adapted to measure blood glucose variability, said system comprising:
+an acquisition module for acquiring a plurality of blood glucose data points;
+a processor programmed to:
+transform the plurality of blood glucose data points from a blood glucose range to a
+transformed range according to a transforming function;
+calculate a risk value for each of the transformed plurality of blood glucose data
+points; characterised by the processor being further programmed to:
+calculate a plurality of risk range values, each based on a maximal risk value of at
+least two of the calculated risk values within a period of time with a predetermined
+duration;
+calculate at least one composite risk range value based on a summation of a
+plurality of the calculated risk range values; and
+define risk categories using cutoff points of composite risk range values and
+classifying the calculated composite risk range value into one of the risk categories; and
+a display module adapted to display the risk category that the calculated composite risk
+
+range value is classified into.
+
+2. The system of claim 1, wherein the calculation of said at least one composite risk range value
+
+comprises computing an average risk range, as:
+
+Mf
+ADRR = ty [ZR‘'+ HR’*]
+M “=
+where LR! represents a maximal hypoglycemic risk value for period of time with a predetermined
+duration i, HR' represents a maximal hyperglycemic risk value for period of time with
+predetermined duration i, LR' + HR' represents a calculated risk range for a period of time with
+predetermined duration i, and the plurality of blood glucose data points are collected on periods
+
+of time with predetermined duration i = 1, 2, ..., M.
+
+3. The system of claim 1, wherein the calculation of said composite risk range comprises
+
+computing a standard deviation risk range as:
+
+--- PAGE 2 ---
+10.
+
+11.
+
+57
+
+, |
+SDRR ? = vine? ((LR ‘+ HR‘)— mean (LR‘'+ HR")? ,
+ied
+
+awe
+
+where LR! represents a maximal hypoglycemic risk value for period of time with a predetermined
+duration i, HR' represents a maximal hyperglycemic risk value for period of time with a
+predetermined duration i, LR' + HR' represents a calculated risk range for period of time with
+predetermined duration i, and the plurality of blood glucose data points are collected on periods
+
+of time with predetermined duration i=1, 2,..., M.
+
+The system of claim 1, wherein the plurality of blood glucose data points includes at least three
+
+blood glucose data point readings per period of time with predetermined duration.
+
+The system of claim 1, wherein the plurality of blood glucose data points includes blood glucose
+
+data points from about one to about two weeks of self-monitoring.
+
+The system of claim 1, wherein the plurality of blood glucose data points includes blood glucose
+
+data points from about two to about six weeks of self-monitoring.
+
+The system of claim 6, wherein the plurality of blood glucose data points includes blood glucose
+
+data points from about four weeks of self-monitoring.
+
+The system of claim 1, wherein the plurality of blood glucose data points includes blood glucose
+
+data points from greater than about six weeks of self-monitoring.
+
+The system of claim 1, wherein the plurality of blood glucose data points includes about thirty to
+
+about seventy-five blood glucose data points.
+
+The system of claim 1, wherein the plurality of blood glucose data points includes about seventy-
+
+five blood glucose data points.
+
+The system of claim 1, wherein the plurality of blood glucose data points includes greater than
+
+about seventy-five blood glucose data points.
+
+--- PAGE 3 ---
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+58
+
+The system of claim 1, wherein the display module is adapted to display the calculated
+composite risk range value, the displaying comprising providing a gauge having at least one
+
+indicator, wherein the at least one indicator displays the calculated composite risk range value.
+
+The system of claim 12, wherein the gauge is segmented into at least one category including
+
+“Low Risk", "Moderate Risk", and "High Risk.”
+
+The system of claim 13, wherein the "Low Risk" category corresponds to composite risk range
+values between about 0 and about 20, the "Moderate Risk" category corresponds to composite
+risk range values between about 20 and about 40, and the "High Risk" category corresponds to
+
+composite risk range values greater than about 40.
+
+The system of claim 12, wherein the gauge is segmented into at least one category including
+
+"Low Risk", "Low-Moderate Risk", "Moderate-High Risk", and "High Risk."
+
+The system of claim 15, wherein the "Low Risk" category corresponds to composite risk range
+values between about 0 and about 20, the "Low-Moderate Risk" category corresponds to
+composite risk range values between about 20 and about 30, the "Moderate-High Risk" category
+corresponds to composite risk range values between about 30 and about 40, and the "High Risk"
+
+category corresponds to composite risk range values greater than about 40.
+
+The system of claim 1, wherein said display of the calculated composite risk range value
+comprises:
+providing a high blood glucose indicator; and
+
+providing a low blood glucose indicator.
+
+The system of claim 1, further comprising storing and/or displaying the calculated composite risk
+
+range value into a plurality of category levels.
+
+The system of claim 1, further comprising displaying the calculated composite risk range value
+
+on an analog and/or digital display.
+
+The system of claim 1, wherein the period of time with predetermined duration is about daytime
+
+or about a nighttime in a daytime/nighttime cycle.
+
+--- PAGE 4 ---
+21.
+
+22.
+
+23.
+
+24.
+
+25.
+
+26.
+
+59
+
+The system of claim 1, wherein the period of time with predetermined duration is greater than
+about a daytime or about a nighttime in a daytime/nighttime cycle but less than a twenty-four
+
+hour period.
+
+The system of claim 1, wherein the period of time with predetermined duration is less than a
+
+twenty-four hour period.
+
+The system of claim 1, wherein the period of time with predetermined duration is about a
+
+twenty-four hour period.
+
+The system of claim 1, wherein the period of time with predetermined duration is greater than a
+
+twenty-four hour period but less than about a week.
+
+The system of claim 1, wherein the period of time with predetermined duration is about a week.
+
+The system of claim 1, wherein the period of time with predetermined duration is greater than a
+
+week.

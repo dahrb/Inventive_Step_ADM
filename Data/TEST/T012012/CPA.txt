@@ -1,0 +1,72 @@
+TITLE:
+Solid state power controller
+
+TYPE:
+US patent
+
+ABSTRACT:
+A solid state power controller for switching power on and off to an electrical load which also serves as a circuit protection device protecting the load and/or the wire connected between the load output terminal of the controller and ground from thermal damage due to current overload is shown. When a current overload exists the controller interrupts current to the load in a time inversely proportional to the square of the magnitude of the overload as shown in a trip time vs load current curve. The controller also limits the load current to a selected maximum level by controlling the drain-source resistance of power MOSFETs used for switching the power. A secondary interrupt is provided in the event that the junction temperature of the MOSFETs has risen a selected maximum level. A thermal memory feature is included for both interrupt signals. The controller is controlled by a single on/off input line and provides both a status and trip output line to indicate its state. The status can be configured to monitor load voltage or load current flow as desired. The controller also can be configured to default to either an on or off state in the event the input line is disconnected.
+
+CLAIMS:
+We claim:
+1. A solid state controller for controlling current through a wire to a load by means of a solid state switch through an input line comprising:
+solid state switch means serially connected to the load through a wire,
+a shunt resistor serially connected to the switch means and the wire,
+means for generating a first electrical signal proportional to the voltage drop across the shunt resistor,
+means for squaring the said first electrical signal to produce a second electrical signal proportional to the power being dissipated in the wire,
+RC network means coupled to the means for squaring the said second electrical signal and being charged thereby to integrate the second electrical signal as a function of time,
+means for comparing the voltage across the RC network indicative of the temperature rise of the wire with a reference and when the RC network voltage is greater than the reference for providing an electrical trip signal for turning off the solid state switch means and latch means for maintaining the controller in a trip condition once it is tripped until reset by an input signal.
+2. A solid state controller according to claim 1 in which the first electrical signal is a current.
+3. A solid state controller according to claim 1 in which the solid state switch means comprise at least one MOSFET.
+4. A solid state controller according to claim 1 including means for providing a signal indicative of whether the voltage at a load terminal exceeds a predetermined level.
+5. A solid state controller according to claim 1 including means for providing a signal indicative of whether the load current exceeds a predetermined level.
+6. A solid state controller according to claim 1 further including thermal memory means in which the voltage across the RC network means is allowed to decay in proportion to the cooling of the wire when the solid state switch means is turned off.
+7. Apparatus for providing an electrical trip signal representative of a selected temperature rise of a wire which has been reached due to power dissipated from load current flowing therethrough comprising:
+a shunt resistor serially connected to the wire,
+first and second current paths coupled together through a first current mirror, the first current path coupled to the shunt resistor and being adapted to conduct current in response to the voltage across the shunt resistor,
+current squaring means, a third current path coupled to the second current path through the current squaring means, the third current path coupled to a fourth current path through a second current mirror, the fourth current path coupled to an RC network to charge the network which is adapted to provide a voltage representative of the temperature rise of the wire, and
+voltage responsive means having a threshold level coupled to the RC network for comparing the voltage across the network to a reference voltage to provide a trip signal when the voltage across the network reaches the threshold level.
+8. A solid state controller according to claim 7 in which the current squaring means comprises first and second diode connected transistors, current to be squared being fed through the first and second transistors, a third transistor and a fourth diode connected transistor, a relatively large current source connected to the fourth transistor creating a relatively constant base emitter voltage, Vbe, thereby imposing the change in the two Vbe drops built-up across the first and second transistors across the base emitter of the third transistor.
+9. Apparatus according to claim 7 further including first and second calibration resistors respectively tied to the first and second current paths the first and second resistors selected to adjust the load current level relative to the threshold level of the voltage responsive means.
+10. Apparatus according to claim 9 further including an operational amplifier having a feedback circuit, the first current path coupled to the shunt resistor through the operational amplifier and a feedback resistor being connected to the feedback circuit of the operational amplifier whereby the first current is produced proportional to the voltage across the shunt resistor and wherein the trip signal is produced approximately according to the formula: ##EQU6## where Y=(Rs Rt 1/(Riv Rt 2))2/Iref
+______________________________________                                    
+and   R.sub.s =                                                           
+             shunt resistor  V.sub.w (t) =                                
+                                   trip signal                            
+      R.sub.1 =                                                           
+             resistor of RC network                                       
+                             I.sub.w =                                    
+                                   current through                        
+                                   the wire                               
+      C.sub.i =                                                           
+             capacitor of RC network                                      
+                             I.sub.ref =                                  
+                                   current source                         
+      R.sub.t 1 =                                                         
+             first resistor                                               
+      R.sub.t 2 =                                                         
+             second resistor                                              
+      R.sub.iv =                                                          
+             feedback resistor                                            
+______________________________________                                    
+11. Apparatus according to claim 7 further including a diode to allow selected decay of the RC network voltage to provide thermal memory.
+12. Apparatus according to claim 11 in which the trip signal is produced to conform to a selected trip time vs load current curve having the following component values:
+______________________________________                                    
+R.sub.s      10 m ohm (10.0 amp rated load current)                       
+R.sub.iv     15.8K ohm                                                    
+C.sub.i      1 uF                                                         
+R.sub.i      15.1 M ohm                                                   
+R.sub.t 1 and R.sub.t 2                                                   
+             adjusted to set nominal "ultimate trip"                      
+             load current percentage (126.5% of rated                     
+             current) - approximate value is 20K OHM                      
+             each.                                                        
+______________________________________                                    
+13. A solid state controller for controlling load current through a wire by means of a solid state switch through an input line comprising
+solid state switch means serially connected to the load through a wire,
+a shunt resistor serially connected to the switch means and the wire,
+means for measuring the voltage drop across the shunt resistor to generate a first electrical signal proportional to the voltage drop across the shunt resistor, means for squaring the first electrical signal to produce a second electrical signal proportional to the power dissipated in the wire, the means for squaring the first electrical signal including first and second diode connected transistors, current to be squared being fed through the first and second transistors, a third transistor and a fourth diode connected transistor, a relatively large current source connected to the fourth transistor creating a relatively constant base emitter voltage, Vbe, thereby imposing the change in the two Vbe drops built-up across the first and second transistors across the base emitter of the third transistor means for integrating the second electrical signal as a function of time providing a third electrical signal proportional to the temperature rise of the wire, and
+means for comparing the third electrical signal with a reference representing the maximum allowable temperature rise of the wire and for developing a trip signal when the third electrical signal exceeds the reference.
+14. A solid state controller according to claim 13 in which the means for integrating the second electrical signal comprises an RC network.
+15. A solid state controller according to claim 14 further including thermal memory means in which the voltage across the RC network is allowed to decay naturally in proportion to the cooling of the wire when the solid state switch means is turned off.
+16. A solid state controller according to claim 15 in which the thermal memory means includes a diode connected to the RC network.

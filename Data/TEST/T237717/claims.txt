@@ -1,0 +1,62 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+1998P01015WE
+
+1 05.10.2017
+CLAIMS: Main Request
+
+1. A data processing device comprising:
+
+an operand storage circuit comprising at least two source registers for storing
+operands and at least one result register for storing a result, each register being notionally
+subdivided into a plurality of segments at respective positions in the register,
+
+a functional unit for executing an instruction including an opcode and referring
+to one or more source operands and to a single result register in the operand storage circuit,
+
+said instruction causing the functional unit to execute at least two operations in
+parallel and independently of one another, at least one operation of the at least two operations
+differs from at least one of the other operations of the at least two operations, each of the at
+least two operations combining segments from the referred one or more source operands, the
+segments having mutually different positions in the referred one or more source operands,
+said positions are predetermined from the opcode from said instruction, and to store each
+
+result of the at least two operations in a respective segment of the single result register.
+
+2. A data processing device according to claim 1 wherein the at least two
+
+operations consist of addition and subtraction operations.
+
+3. A data processing device according to any of the previous claims wherein said
+
+instruction refers to at least two source operands.
+
+4. A data processing device according to claim 3 wherein the at least two
+operations combine a first segment from a first source operand with a second segment from a
+
+second source operand.
+
+5. A data processing device according to any of the previous claims, wherein the
+
+register is a 64 bit register.
+
+--- PAGE 2 ---
+1998P01015WE
+
+2 05.10.2017
+6. A data processing device according to claim 5 or claim 6, wherein the plurality
+of segments in each of the one or more source operands are located at predetermined bit
+
+positions in the source registers.
+
+7. A data processing device according to claim 1, wherein the operations caused
+by said instruction comprise computing a sum and a difference of two segments in one of the
+
+one or more source operands.

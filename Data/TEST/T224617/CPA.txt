@@ -1,0 +1,73 @@
+Title: Method and system for wireless audio transmission using low bit-weight words
+
+Abstract: A method and system for the wireless radio-frequency (RF) transmission and reception of an audio signal use a substantially oversampled and low bit-weight digital word representation. An analog electrical signal, representing acoustic audio information, is digitized with a high-precision delta-sigma modulator without corresponding decimating lowpass filter. The delta-sigma modulator output is a sequence of single bit words. Each bit is unweighted or equally weighted. The words are generated at a frequency that substantially exceeds the critical (Nyquist) sampling frequency, so that the signal is substantially oversampled. The oversampled and low bit-weight digital word representation minimizes the complexity and power consumption of analog-to-digital conversion, which facilitates mobile or portable use with long battery life. The corresponding digital decimating lowpass filter is implemented in the receiver system, when necessary.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A wireless audio signal transmission system, comprising:
+an analog signal source generating an analog audio signal of a desired audio bandwidth;
+an analog signal sampling circuit responsive to said analog audio signal and generating a sequence of low bit weight digital words, wherein said low bit weight words comprise binary words having four or fewer bits per word;
+wherein said sampling circuit samples said audio signal at a sampling frequency substantially greater than twice the highest frequency for said desired bandwidth of said audio signal;
+a data encoder responsive to said series of low bit weight words, wherein said data encoder encodes said series of low bit weight words into an error control coded digital signal; and
+a digital modulator responsive to said error control coded digital signal, wherein said digital modulator generates a representation of a desired RF signal for transmission to a receiver.
+2. The wireless audio signal transmission system of claim 1, wherein said analog signal sampling circuit generates a sequence of low bit weight digital words having one bit per word.
+3. The wireless audio signal transmission system of claim 1, wherein said sampling circuit samples said audio signal at a sampling frequency substantially greater than forty thousand times per second.
+4. The wireless audio signal transmission system of claim 1, wherein said sampling circuit samples said audio signal at a sampling frequency substantially greater than eighty thousand times per second.
+5. The wireless audio signal transmission system of claim 1, wherein said analog signal sampling circuit comprises a delta-sigma modulator responsive to said analog audio signal modulating said audio signal into a series of low bit weight words.
+6. The wireless audio signal transmission system of claim 1, wherein said digital modulator generates a first representation of a desired RF signal as an in-phase analog signal and generates a second representation of a desired RF signal as a quadrature analog signal, and
+said wireless audio signal transmission system further including an IQ modulator having a first input responsive to said in-phase analog signal and said IQ modulator having a second input responsive to said quadrature analog signal to generate an RF signal.
+7. The wireless audio signal transmission system of claim 1, wherein said encoder comprises:
+a scrambler responsive to said series of low bit weight words generating, through binary addition with a deterministic sequence of ones and zeros, a randomized sequence;
+a forward error control encoder responsive to said randomized sequence to generate a plurality of coded output bits for each randomized sequence input bit; and
+an interleaver responsive to said plurality of coded output bits and generating a shuffled sequence comprising said error control coded digital signal.
+8. The wireless audio signal transmission system of claim 7, wherein said interleaver has a length of less than one millisecond when the data transmitted is transmitted at approximately one megabit per second.
+9. The wireless audio signal transmission system of claim 7, wherein said. forward error control encoder generates said plurality of coded output bits in multi-bit parallel words which are then input to a parallel to serial converter.
+10. The wireless audio signal transmission system of claim 1, wherein said digital modulator generates an RF signal in an unlicensed frequency band.
+11. The wireless audio signal transmission system of claim 10, wherein said modulator generates an RF signal in the unlicensed frequency band in the frequency range of 902 MHz through 928 MHz.
+12. The wireless audio signal transmission system of claim 10, wherein said modulator generates an RF signal in the unlicensed frequency band in the frequency range of 2400 MHz through 2483.5 MHz.
+13. The wireless audio signal transmission system of claim 10, wherein said modulator generates an RF signal in the unlicensed frequency band in the frequency range of 5725 MHz through 5850 MHz.
+14. The wireless audio signal transmission system of claim 1, wherein said analog signal source comprises a transducer.
+15. The wireless audio signal transmission system of claim 14, wherein said transducer comprises a microphone.
+16. The wireless audio signal transmission system of claim 15, further including:
+an antenna responsive to said desired RF signal; and
+a housing adapted to support said microphone, said delta-sigma modulator, said data encoder, said digital modulator and said antenna.
+17. A method for transmitting a Radio Frequency (RF) signal corresponding to an analog audio or acoustic signal, comprising the method steps of:
+(a) converting an analog audio or acoustic signal into a low bit weight digital signal comprising four or fewer bits per word;
+(b) encoding said low bit weight digital signal with an error correction code to provide an encoded low bit weight digital signal;
+(c) modulating an RF carrier signal with said encoded low bit weight digital signal to generate an encoded low-bit weight digital transmission signal; and
+(d) transmitting said encoded low-bit weight digital transmission signal.
+18. The method of claim 17, wherein converting step (a) comprises converting said analog audio or acoustic signal into a low bit weight digital signal by a delta sigma modulation method.
+19. The method of claim 17, wherein converting step (a) comprises converting said analog audio or acoustic signal into a low bit weight digital signal having one bit per digital word.
+20. The method of claim 17, wherein encoding step (b) comprises encoding said low bit weight digital signal with a convolutional error correction code to generate a data stream and then processing said data stream using bit interleaving methods to provide an encoded low bit weight digital signal.
+21. The method of claim 17, wherein modulating step (c) comprises modulating an RF carrier signal with said encoded low bit weight digital signal using QAM quadrature amplitude digital modulation methods to generate an encoded low-bit weight digital transmission signal.
+22. The method of claim 17, wherein modulating step (c) comprises modulating an RF carrier signal with said encoded low bit weight digital signal using QPSK quadrature phase shift keying digital modulation methods to generate an encoded low-bit weight digital transmission signal.
+23. A wireless audio signal transmission system receiver, comprising:
+(a) a demodulator responsive a digitally modulated RF signal and configured to generate a digital low bit weight digital signal; and
+(b) a digital decimating low pass filter responsive to said digital low bit weight digital signal and configured to generate a pulse code modulation digital audio signal.
+24. The wireless audio signal transmission system receiver of claim 23, further comprising:
+(c) a digital to analog converter responsive to said digital filtered signal and configured to generate an analog audio signal.
+25. The wireless audio signal transmission system receiver of claim 21, further comprising:
+(c) a power sensing circuit responsive to said digitally modulated RF signal and configured to generate a received power level signal in response thereto.
+26. The wireless audio signal transmission system receiver of claim 23, further comprising:
+(c) a power level feedback signal transmitter responsive to said received power level signal and configured to transmit a power level feedback signal to a transmitter transmitting said digitally modulated RF signal.
+27. A wireless audio signal transmission system, comprising:
+an analog signal source generating an analog audio signal of a desired audio bandwidth;
+an analog signal sampling circuit responsive to said analog audio signal and generating a series of low bit weight words, wherein said low bit weight words comprise binary words having four or fewer bits per word;
+wherein said sampling circuit samples said audio signal at a sampling frequency substantially greater than twice the highest frequency for said bandwidth of said audio signal;
+a data encoder responsive to said series of low bit weight words, wherein said data encoder encodes said series of low bit weight words into an error control coded digital signal;
+a digital modulator responsive to said error control coded digital signal, wherein said digital modulator generates a representation of a desired RF signal for transmission to a receiver; and
+a receiver including a demodulator responsive to said RF signal and configured to generate a digital low bit weight digital signal.
+28. The wireless audio signal transmission system of claim 27, wherein said receiver includes a digital decimating low pass filter responsive to said digital low bit weight digital signal and configured to generate a pulse code modulation digital audio signal.
+29. The wireless audio signal transmission system of claim 27, further comprising a digital to analog converter responsive to said digital filtered signal and configured to generate an analog audio signal.
+30. The wireless audio signal transmission system of claim 27, further comprising a power sensing circuit responsive to said received RF signal and configured to generate a received power level signal in response thereto.
+31. The wireless audio signal transmission system of claim 30, further comprising a power level feedback signal transmitter responsive to said received power level signal and configured to transmit a power level feedback signal to said transmitter, wherein said transmitter adjusts amplitude of said transmitted signal in response to said power level feedback signal.
+32. The wireless audio signal transmission system of claim 27, further comprising a second receiver including a second demodulator responsive to said RF signal and configured to generate a second digital low bit weight digital signal.
+33. A wireless audio signal transmission system, comprising:
+an analog signal source generating an analog audio signal of a desired audio bandwidth;
+an analog signal sampling circuit responsive to said analog audio signal and generating a sequence of low bit weight digital words, wherein said low bit weight words comprise binary words having four or fewer bits per word;
+wherein said sampling circuit samples said audio signal at a sampling frequency of substantially 2.8224 megahertz;
+a data encoder responsive to said series of low bit weight words, wherein said data encoder encodes said series of low bit weight words into an error control coded digital signal; and
+a digital modulator responsive to said error control coded digital signal, wherein said digital modulator generates a representation of a desired RF signal for transmission to a receiver.

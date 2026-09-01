@@ -1,0 +1,100 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+94 MAIN REQUEST
+
+CLAIMS
+
+1. A computer-implemented method for viewing changes to an original
+optimization plan for a query to a database (212), the database (212) having an original
+table (308) with data stored therein, and the query including a reference to the original
+table (308),
+
+characterised by the method comprising:
+
+defining (402) a virtual table (312) that is a copy of the original table (308) but
+which excludes data stored in the rows of the original table (308), wherein defining
+(402) a-virtual table (312) includes copying the original table statistics to the virtual
+table (312), wherein the original table statistics include column statistics, histograms
+and segment storage;
+
+defining (404) a virtual index, the virtual index being an index associated with
+the virtual table;
+
+replacing (406), in the query, the reterence to the original table (308) with a
+reference to the virtual table (312);
+
+determining (408) a new optimization plan (324) for the query;
+
+replacing (410), in the new optimization plan, a reference to the virtual table
+(312) with a reference to the original table; and
+
+displaying (412) the new optimization plan (324).
+
+2. The method of claim 1, further comprising:
+
+adding, to the query, a reference to the virtual index (314).
+
+3. The method of claim 1 or claim 2, wherein defining (404) the virtual index
+(314) includes copying statistics associated with an original index (310) associated with
+
+the original table (308).
+
+4. A computer program product comprising instructions and data which, when
+executed by a suitable computer, cause the computer to perform the method of any one
+
+of claims 1 to 3.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+25 MAIN REQUEST
+
+5. An apparatus for viewing changes to an original optimization plan for a query
+to a database (212), the database (212) being suitable for having an original table (308)
+with data stored therein, and the query being suitable for including a reference to the
+original table (308),
+
+characterised by the apparatus comprising:
+
+means for defining a virtual table (312) that is a copy of the original table (308)
+but which excludes data stored in the rows of the original table (308), wherein the
+means for defining a virtual table (312) is operable to copy the original table statistics to
+the virtual table (312), wherein the original table statistics include column statistics,
+histograms and segment storage;
+
+means for defining a virtual index, the virtual index being an index associated
+with the virtual table;
+
+means for replacing, in the query, the reference to the original table (308) with
+a reference to the virtual table (312); .
+
+means for determining a new optimization plan (324) for the query;
+
+means for replacing, in the new optimization plan, a reference to the virtual
+table (312) with a reference to the original table; and
+
+. means for displaying the new optimization plan.
+
+6. The apparatus of claim 5, further comprising:
+
+means for adding, to the query, a reference to the virtual index (314).
+
+7. The apparatus of claim 5 or claim 6, wherein the means for defining a virtual
+index (314) includes means for copying statistics associated with an original index
+
+(310) associated with the original table (308).

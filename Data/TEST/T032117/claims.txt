@@ -1,0 +1,128 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Claims
+
+1. A method of managing Predicted Motion Vector candidates, PMV
+candidates (240), for a current block in a frame, wherein each PMV candidate
+(240) corresponds to a motion vector used for coding of a previous block in
+the frame, and wherein the PMV candidates are used in a block-based motion
+model in video coding, the method comprising:
+
+selecting (510) a set of PMV candidates (240) as a subset of the
+previously coded motion vectors (210) used for coding of previous blocks in
+the frame;
+
+removing (520) duplicate PMV candidates from the set of PMV
+candidates (240);
+
+ordering (530) PMV candidates from the set of PMV candidates in
+order of their expected usage, wherein the expected usage of each PMV
+candidate is determined from a distance of the current block to a previous
+block for which the PMV candidate was used as a motion vector;
+
+assigning (540) a code value to each PMV candidate (240) in the set of
+PMV candidates (240), wherein the code values vary in length and are
+assigned to the PMV candidates (240) in order of expected usage such that
+the PMV candidate (240) having the highest expected usage has the shortest
+
+code value.
+
+2. The method of any preceding claim, wherein the code values assigned
+(540) to each PMV candidate (240) are assigned according to at least one of:
+arithmetic coding; Variable Length Coding; and Context-Based Adaptive
+Arithmetic Coding.
+
+3. The method of claims 1 or 2, wherein the distance is measured as a
+Euclidean distance.
+
+4. The method of claims 1 or 2, wherein the distance is measured as a
+
+box distance.
+
+26
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+5. The method of claim 4, wherein the code values are assigned (540) to
+PMV candidates (240) having common box distance according to their
+Euclidean distance.
+
+6. A video encoding apparatus (120) for managing Predicted Motion
+Vector candidates, PMV candidates, (240) for a current block in a frame,
+wherein each PMV candidate (240) corresponds to a motion vector used for
+coding of a previous block the frame, wherein the PMV candidates are used in
+a block-based motion model in video coding, the apparatus comprising a
+processor (125) arranged to:
+
+select a set of PMV candidates (240) as a subset of the previously
+coded motion vectors (210) used for coding of previous blocks in the frame;
+
+remove duplicate PMV candidates from the set of PMV candidates
+(240);
+
+order PMV candidates from the set of PMV candidates in order of their
+expected usage, wherein the expected usage of each PMV candidate is
+determined from a distance of the current block to a previous block for which
+the PMV candidate was used as a motion vector;
+
+assign a code value to each PMV candidate (240) in the set of PMV
+candidates (240), wherein the code values vary in length and are assigned to
+the PMV candidates (240) in order of expected usage such that the PMV
+candidate (240) having the highest expected usage has the shortest code
+
+value.
+
+7. A video decoding apparatus (150) for managing Predicted Motion
+Vector candidates, PMV candidates (240), for a current block in a frame,
+wherein each PMV candidate (240) corresponds to a motion vector used for
+coding of a previous block the frame, wherein the PMV candidates are used in
+a block-based motion model in video coding, the apparatus comprising a
+processor (155) arranged to:
+
+select a set of PMV candidates (240) as a subset of the previously
+coded motion vectors (210) used for coding of previous blocks in the frame;
+
+remove duplicate PMV candidates from the set of PMV candidates
+(240);
+
+27
+
+--- PAGE 3 ---
+10
+
+order PMV candidates from the set of PMV candidates in order of their
+expected usage, wherein the expected usage of each PMV candidate is
+determined from a distance of the current block to a previous block for which
+the PMV candidate was used as a motion vector;
+
+assign (540) a code value to each PMV candidate (240) in the set of
+PMV candidates (240), wherein the code values vary in length and are
+assigned to the PMV candidates (240) in order of expected usage such that
+the PMV candidate (240) having the highest expected usage has the shortest
+
+code value.
+8. A computer-readable medium, carrying instructions, which, when
+
+executed by computer logic, causes said computer logic to carry out any of
+
+the methods defined by claims 1 to 5.
+
+28

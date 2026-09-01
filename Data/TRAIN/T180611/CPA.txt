@@ -1,0 +1,99 @@
+Title: 
+Modular data collection and analysis system
+
+Abstract: 
+A diagnostics/prognostics system and related method for collecting and processing data relating to a plurality of subsystems of a dynamic system includes a plurality of sensors, each sensor gathering data and generating a data signal indicative of the health of a corresponding one of the subsystems. In addition, the diagnostics/prognostics system includes a plurality of subsystem modules coupled to corresponding ones of the sensors for generating a subsystem health signal in response to corresponding ones of the data signals. Further, a master diagnostics module is coupled to the subsystems to generate an overall system health signal in response to the subsystem health signals. Preferably, the master diagnostics module includes a memory having an embedded model to facilitate generating the overall system health signal and a related trend analysis. Preferably, a controller is used to generate a control signal in response to at least one of a group consisting of the subsystem health signals and the vehicle health signal, the control signal causing an operation parameter of at least one of the subsystems to change. The diagnostics/prognostics system is especially well suited for vehicles, but can also be applied to other dynamic systems.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A diagnostic/prognostics system for collecting and processing data relating to a plurality of subsystems of a dynamic system, the system comprising:
+a plurality of sensors, each sensor gathering data and generating a data signal indicative of the health of a corresponding one of the subsystems;
+a plurality of subsystem modules each electrically coupled to at least one corresponding sensor for generating a subsystem health signal in response to corresponding ones of the data signals, wherein one of the subsystem modules determines the lubrication health of the lubrication of the corresponding subsystem; and
+a master diagnostics module electrically coupled to said subsystem modules, said master diagnostics module generating a system health signal in response to the subsystem health signals.
+2. The diagnostics/prognostics system of claim 1, further including a central terminal coupled to said master diagnostics module via a communications link to facilitate further processing of at least one of the group comprising the subsystem health signals and the system health signal.
+3. The diagnostics/prognostics system of claim 2, wherein the further processing includes generating a trend analysis, said trend analysis being indicative of a prediction regarding when one of the subsystems will require maintenance.
+4. The diagnostics/prognostics system of claim 1, wherein each said sensor is integral with an associated component of a corresponding one of the subsystems.
+5. The diagnostics/prognostics system of claim 2, wherein said master diagnostics module is a plug-in module and the communications link is a docking station disposed at the central terminal.
+6. The diagnostics/prognostics system of claim 4, wherein said central terminal includes a host computer for processing at least one member of the group consisting of the subsystem health signals and the system health signal so as to generate a maintenance schedule that is indicative of when at least one of the system subsystems will require maintenance.
+7. The diagnostics/prognostics system of claim 2, wherein the communications link is a wireless link.
+8. The diagnostics/prognostics system of claim 6, wherein said master diagnostics module includes a transmitter and the wireless link is a paging network.
+9. The diagnostics/prognostics system of claim 1, wherein said master diagnostics module includes a memory having an embedded model to facilitate generating the system health signal.
+10. The diagnostics/prognostics system of claim 9, wherein said embedded model facilitates assessment of the health of one of the subsystems based on the health of at least one other of the subsystems.
+11. The diagnostics/prognostics system of claim 1, wherein said system is a vehicle.
+12. The diagnostics/prognostics system of claim 1, wherein said system is a ship.
+13. The diagnostics/prognostics system of claim 1, wherein said system is an airplane.
+14. The diagnostics/prognostics system of claim 1, wherein one of said subsystem health signals is based on a corresponding one of the data signals indicative of vibration.
+15. The diagnostics/prognostics system of claim 1, wherein the sensors include a lubrication health sensor disposed within one of the engine, the transmission, the bearings, the radiator, the differential, and the steering gear box of the system.
+16. The diagnostics/prognostics system of claim 1, wherein the sensors include a torque sensor disposed within one of the engine, the transmission, the bearings, the radiator, the differential, and the steering gear box of the system.
+17. The diagnostics/prognostics system of claim 1, wherein the master diagnostics module includes a memory, the memory storing design and operating information specific to the system.
+18. The diagnostics/prognostics system of claim 1, wherein at least one of said sensors is a microviscosity sensor that senses the viscosity of a fluid, and includes
+at least one sensing element exposed to the fluid, said at least one sensing element adapted to be oscillated over a range of frequencies;
+wherein the viscosity of the fluid is determined as a function of the power required to maintain an oscillation of said at least one sensing element at a predetermined frequency.
+19. The diagnostics/prognostics system of claim 1, wherein at least one of said sensors comprises a multi-element sensor system that includes
+at least two sensors, each sensor adapted to collect data relating to a fluid;
+a data fusion processor operatively coupled to said at least two sensors, said data fusion processor processing said fluid data to at least compensate for fragmentation of information attributed to using the at least two sensors.
+20. The diagnostics/prognostics system of claim 19, wherein said at least two sensors are integrated onto a semiconductor base.
+21. The diagnostics/prognostics system of claim 1, wherein at least one of said sensors comprises a wear sensor that includes
+an optical fiber for transmitting light from a light source, the optical fiber being embedded in the article; and
+wherein the interferometric system provides the processor with information relating to wear of the optical fiber, and the processor determines wear of the article based on the information.
+22. A vehicle diagnostics/prognostics system for collecting data relating to a plurality of subsystems of a vehicle, the system comprising:
+a plurality of sensors for gathering data and generating corresponding data signals indicative of the health of associated ones of the subsystems, a first one of the sensors being disposed within a first vehicle subsystem and a second one of the sensors being disposed within a second vehicle subsystem;
+a plurality of subsystem modules electrically coupled to associated ones of the sensors, a first one of the subsystem modules being coupled to the first sensor and a second one of the subsystem modules being coupled to the second sensor, said subsystem modules generating first and second subsystem health signals in response to corresponding ones of the data signals; and
+a master diagnostics module electrically coupled to said subsystem modules to receive and process at least one member of the group consisting of the data signals and the subsystem health signals so as to facilitate rendering a health assessment of the vehicle.
+23. The vehicle diagnostics/prognostics system of claim 22, wherein the subsystem modules include a combination of at least two of the following: a drive train health module, an engine health module, a suspension system health module, and a rear differential health module.
+24. The vehicle diagnostics/prognostics system of claim 22, wherein the health assessment is a first health assessment of the first vehicle subsystem, the first health assessment being based on the second health signal.
+25. The vehicle diagnostics/prognostics system of claim 22, wherein at least one of said sensors is a microviscosity sensor that senses the viscosity of a fluid, and includes
+at least one sensing element exposed to the fluid, said at least one sensing element adapted to be oscillated over a range of frequencies;
+wherein the viscosity of the fluid is determined as a function of the power required to maintain an oscillation of said at least one sensing element at a predetermined frequency.
+26. The vehicle diagnostics/prognostics system of claim 22, wherein at least one of said sensors comprises a multi-element sensor system that includes
+at least two sensors, each sensor adapted to collect data relating to a fluid;
+a data fusion processor operatively coupled to said at least two sensors, said data fusion processor processing said fluid data to at least compensate for fragmentation of information attributed to using the at least two sensors.
+27. The vehicle diagnostics/prognostics system of claim 26, wherein said at least two sensors are integrated onto a semiconductor base.
+28. The vehicle diagnostics/prognostics system of claim 22, wherein at least one of said sensors comprises a wear sensor that includes
+an optical fiber for transmitting light from a light source, the optical fiber being embedded in the article; and
+wherein the interferometric system provides the processor with information relating to wear of the optical fiber, and the processor determines wear of the article based on the information.
+29. A method of determining when a vehicle having a plurality of subsystems requires maintenance, the method comprising the steps of:
+using a plurality of sensors to gather data indicative of the health of corresponding ones of the subsystems, and generate corresponding data signals based on the health data;
+providing a plurality of subsystem modules, each subsystem module being associated with a corresponding ones of the subsystems and being electrically coupled to a corresponding one of the sensors wherein one of the subsystem modules determines the lubrication health of the corresponding subsystem;
+generating, with the subsystem modules, subsystem health signals in response to corresponding ones of the data signals;
+providing a master diagnostics module electrically coupled to the subsystem modules; and
+generating, with the master diagnostics module and in response to the subsystem health signals, a vehicle health signal.
+30. The method according to claim 29, further comprising the steps of
+determining when the vehicle requires maintenance in response to at least one member of the group consisting of the subsystem health signals and the vehicle health signal; and
+determining what maintenance is required and when the maintenance is required to meet optimization criteria.
+31. The method according to claim 30, wherein said determining step is performed based on a maintenance model embedded in a memory of the master diagnostics module.
+32. The method according to claim 29, further comprising the step of receiving user input data indicative of an operational parameter, wherein said generating the vehicle health signal is based on the user input data.
+33. The method according to claim 32, wherein the operational parameter is one of travel distance parameter, a load parameter, and a terrain parameter.
+34. A method of determining when a vehicle having a plurality of subsystems requires maintenance, the method comprising the steps of:
+generating data signals with a plurality of sensors, the sensors being associated with corresponding ones of the subsystems;
+transmitting the data signals to corresponding ones of a plurality of subsystem modules;
+generating, with the subsystem modules, subsystem health signals in response to the corresponding data signals;
+transmitting the subsystem health signals to a central terminal at a location remote from the vehicle, the central terminal having a host computer for processing the subsystem health signals;
+determining, with the host computer and in response to the subsystem health signals, whether the vehicle requires maintenance; and
+wherein said determining step is based on a predetermined vehicle diagnostics/prognostics model.
+35. The vehicle diagnostics/prognostics system of claim 34, wherein said transmitting the subsystem health signals step includes activating a radio transmitter associated with corresponding ones of the subsystem modules.
+36. A method of determining when a vehicle having a plurality of subsystems requires maintenance, the method comprising the steps of:
+generating data signals with a plurality of sensors, the sensors being associated with corresponding ones of the subsystems;
+transmitting the data signals to corresponding ones of a plurality of subsystem modules;
+generating, with the subsystem modules, subsystem health signals in response to the corresponding data signals;
+transmitting the subsystem health signals to a master diagnostics, wherein said master diagnostics module is a swappable plug-in module and said transmitting the subsystem health signals and the vehicle health signal steps include removing the plug-in module and placing the plug-in module in a docking station disposed at the central terminal, the docking station being configured to mechanically receive the plug-in module;
+generating, with the master diagnostics module, a vehicle health signal in response to the subsystem health signals;
+transmitting at least one member of the group consisting of the subsystem health signals and the vehicle health signal to a central terminal at a location remote from the vehicle, the central terminal having a host computer; and
+determining, with the host computer and in response to the at least one signal, whether the vehicle requires maintenance.
+37. The method according to claim 36, wherein said determining step is based on a predetermined vehicle diagnostics/prognostics model.
+38. The method according to claim 36, wherein said transmitting the subsystem health signals step includes activating a radio transmitter associated with corresponding ones of the subsystem modules.
+39. The method according to claim 36, further comprising the step of predicting a trend, with the host computer and in response to at least one of a group consisting of the subsystem health signals and the vehicle health signals, the trend indicative of when one of the vehicle subsystems will be generally near failure such that maintenance will be warranted.
+40. A vehicle diagnostics/prognostics system for collecting and processing data relating to a plurality of subsystems of a vehicle, the system comprising:
+a plurality of subsystem modules for receiving health assessment information associated with each of the subsystems and generating corresponding subsystem health signals based on the health assessment information; and
+a master diagnostics module electrically coupled to said subsystem modules and including a memory having a health assessment model embedded in the memory, said master diagnostics module generating a vehicle health assessment based on said health assessment model and in response to the subsystem health signals.
+41. The diagnostics/prognostics system of claim 40, wherein said master diagnostics module includes a user input for receiving an operating parameter.
+42. The diagnostics/prognostics system of claim 41, wherein the vehicle health assessment is based on the operating parameter.
+43. The diagnostics/prognostics system of claim 42, wherein the operating parameter is one of a group consisting of an average speed of the vehicle and a travel distance.
+44. A vehicle diagnostics/prognostics system for collecting and processing data relating to a plurality of subsystems of a vehicle, the system comprising:
+a plurality of sensors, each sensor gathering data and generating a data signal indicative of the health of a corresponding one of the subsystems;
+a plurality of subsystem modules each electrically coupled to at least one corresponding sensor for generating a subsystem health signal in response to corresponding ones of the data signals wherein one of the subsystem modules determines the lubrication health of the lubrication corresponding system;
+a master diagnostics module electrically coupled to said subsystem modules, said master diagnostics module generating a vehicle health signal in response to the subsystem health signals; and
+a controller to generate a control signal in response to at least one of a group consisting of the subsystem health signals and the vehicle health signal, the control signal causing an operation parameter of at least one of the vehicle subsystems

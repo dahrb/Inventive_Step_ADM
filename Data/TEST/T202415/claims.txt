@@ -1,0 +1,293 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+15
+
+CLAIMS
+
+1. A receiver of a conditional access system (2a) wherein the receiver is
+arranged to receive a first encrypted control word (Er-(CW)) and a first challenge (C);
+wherein the receiver comprises:
+
+a firmware memory (22) storing firmware;
+
+a probe module (21) configured to receive the first challenge (C) which is
+indicative of one or more locations in the firmware memory (22) and to read data from
+the one or more locations in the firmware memory (22), the data forming a first response
+(R’) to the first challenge (C);
+
+a decrypter (23) configured to decrypt the first encrypted control word (Eg: (CW))
+using the first response (R') to obtain a first control word (CW); and
+
+a descrambler (24) configured to descramble first scrambled content (Ecw(M))
+
+using the first control word (CW) to obtain first descrambled content (M).
+
+2. The receiver (2a) according to claim 1, wherein the probe module (21) is
+further configured to receive a second challenge and to calculate a second response using
+the first response (R') and the second challenge; and optionally wherein the decrypter (23)
+is configured to decrypt a second encrypted control word using the second response to
+obtain a second control word, and optionally wherein the descrambler (24) is configured
+to descramble second scrambled content using the second control word to obtain second
+
+descrambled content.
+
+3. A smartcard (la) comprising:
+
+a key memory (11) configured to store a first key (P) and a second key (G);
+
+a first decrypter (13) configured to decrypt one or more encrypted challenge-
+response pairs Eg(C,R) using the second key (G) from the key memory (11) to obtain one
+or more decrypted challenge-response pairs (C,R) wherein each challenge-response pair
+(C,R) comprises a challenge and a respective response to the challenge for a
+corresponding receiver of a conditional access system;
+
+a memory (12) configured to store the one or more decrypted challenge-response
+
+pairs (C,R);
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+16
+
+a second decrypter (14) configured to decrypt an encrypted control word
+(Ep(CW)) using the first key (P) from the key memory (11) to obtain a decrypted control
+word (CW);
+
+an encrypter (15) configured to encrypt the decrypted control word (CW) using a
+response (R’) of one of the decrypted challenge-response pairs (C,R) stored in the
+memory (12) to obtain a re-encrypted control word (Er(CW)),
+
+wherein the smartcard (1a) is configured to transmit the re-encrypted control word
+(Er’ (CW)) and a challenge (C’) of the one of the decrypted challenge-response pairs
+(C,R) to the receiver corresponding to the one of the challenge-response pairs,
+
+and wherein the challenge (C’) is indicative of one or more locations in a firmware
+memory of the receiver corresponding to the one of the challenge-response pairs, the
+firmware memory storing firmware, data in the one or more locations in the firmware
+memory forming the response (R') thereby enabling the receiver corresponding to the one
+
+of the challenge-response pairs to decrypt the encrypted control word (Er(CW)).
+
+4. A smartcard (1b) comprising:
+
+a key memory (11) configured to store a key (P);
+
+a decrypter (14) configured to decrypt an encrypted control word (Ep(CW)), an
+encrypted challenge (Ep(C)) and two or more encrypted responses (Ep({R})) using the
+key (P) from the key memory (11) to obtain a decrypted control word (CW), a decrypted
+challenge (C) and two or more decrypted responses {R}, respectively, wherein each
+decrypted response (R') of the two or more decrypted responses {R} forms a decrypted
+challenge-response pair (C,R') with the decrypted challenge (C) for a particular receiver
+of a conditional access system;
+
+an encrypter (15) configured to encrypt the decrypted control word (CW) using a
+decrypted response (R') of one of the decrypted challenge-response pairs (C,R') to obtain
+a re-encrypted control word (Er (CW)), wherein the smartcard (1b) is configured to
+transmit the re-encrypted control word (Er(CW)) and the decrypted challenge (C) of the
+one of the decrypted challenge-response pairs (C,R’') to the particular receiver, and
+
+wherein the decrypted challenge (C) is indicative of one or more locations in a
+
+firmware memory of the receiver, the firmware memory storing firmware, data in the one
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+17
+
+or more locations in the firmware memory forming the response (R'), thereby enabling
+
+the particular receiver to decrypt the encrypted control word (Er(CW)).
+
+5. The smartcard (1b) according to claim 4, further comprising a memory
+
+(12) configured to store one or more of the decrypted challenge-response pairs (C,R’).
+
+6. The smartcard (1a,1b) according to claim 3 or claim 5, further configured
+to receive identification data from the receiver, wherein the decrypted response (R’) is
+linked to a particular identification data, and wherein the memory (12) is configured to
+store only the decrypted challenge-response pairs ((C,R), (C,R')) for which the particular
+
+identification data matches the received identification data.
+
+7. A head-end system (5) comprising a memory configured to store a copy of
+a firmware memory of a receiver of a conditional access system (2b,2c), the receiver
+according to claim | or claim 2, wherein the head-end system is configured to generate a
+challenge-response pair, wherein the challenge is indicative of one or more locations in
+the firmware memory and the response is formed by data read from the one or more
+locations in the firmware memory, and the head-end system is further configured to
+encrypt the challenge-response pair and transmit the encrypted challenge-response pair to
+
+a smartcard (1a,1b) according to any one of claims 3-6.
+
+8. The head-end system (5) according to claim 7,
+wherein the encrypted challenge-response pair is transmitted in an entitlement
+management message and wherein the head-end system is configured to transmit an
+
+encrypted control word to the smartcard (1a,1b) in an entitlement control message.
+
+9. The head-end system (5) according to claim 7,
+wherein the encrypted challenge-response pair is transmitted in an entitlement control
+message and wherein the entitlement control message further comprises an encrypted
+
+control word.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+18
+
+10. A conditional access system comprising a first receiver (2b,2c) according
+to claim | or claim 2 that is communicatively directly connected to a smartcard (1a,1b)
+according to any one of claims 3-6, the conditional access system further comprising a
+second receiver (2d) that is communicatively connected to the first receiver (2b,2c) via a
+network (4), wherein the second receiver (2d) uses the smartcard (1a,1b) to obtain a
+
+control word (CW) for descrambling scrambled content in the second receiver (2d).
+
+11. The conditional access system according to claim 10, further comprising a
+
+head-end system (5) according to any one of claims 7-9.
+
+12. A method for execution in a receiver of a conditional access system, the
+method comprising the steps of:
+
+receiving as input a first encrypted control word (Er (CW));
+
+receiving (201) a first challenge (C) indicative of one or more locations in a
+firmware memory of the receiver, the firmware memory storing firmware;
+
+reading (202) data from the one or more locations in the firmware memory, the
+data forming a first response (R’) to the first challenge (C);
+
+decrypting (203) the first encrypted control word (Er(CW)) using the first
+response (R’) to obtain a first control word (CW); and
+
+descrambling (204) first scrambled content (Ecw(M)) using the first control word
+(CW) to obtain first descrambled content (M).
+
+13. The method according to claim 12, further comprising the steps of:
+
+receiving (205) a second challenge;
+
+calculating (206) a second response using the first response (R') and the second
+challenge;
+
+decrypting (207) a second encrypted control word using the second response to
+obtain a second control word; and
+
+descrambling (208) second scrambled content using the second control word to
+
+obtain second descrambled content.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+19
+
+14. A method for execution in a smartcard (la), the method comprising the
+steps of:
+
+decrypting (101) one or more encrypted challenge-response pairs (Eqg(C,R)) using
+a second key (G) to obtain one or more decrypted challenge-response pairs (C,R),
+wherein each challenge-response pair (C,R) comprises a challenge and a respective
+response to the challenge for a corresponding receiver of a conditional access system;
+
+storing (102) the one or more decrypted challenge-response pairs (C,R) in a
+memory;
+
+decrypting (103) an encrypted control word (Ep(CW)) using a first key (P) to
+obtain a decrypted control word (CW);
+
+encrypting (104) the decrypted control word (CW) using a response (R’) of one of
+the decrypted challenge-response pairs (C,R) stored in the memory to obtain a re-
+encrypted control word (Er(CW)); and
+
+transmitting (105) the re-encrypted control word (Er(CW)) and a challenge (C’) of
+the one of the decrypted challenge-response pairs (C,R) to the receiver corresponding to
+the one of the challenge-response pairs,
+
+wherein the challenge (C’') is indicative of one or more locations in a firmware
+memory of the receiver corresponding to the one of the challenge-response pairs, the
+firmware memory storing firmware, data in the one or more locations in the firmware
+memory forming the response (R'), thereby enabling the receiver corresponding to the one
+
+of the challenge-response pairs to decrypt the encrypted control word (Er(CW)).
+
+15. A method for execution in a smartcard (1b), the method comprising the
+steps of:
+
+decrypting (106) an encrypted control word (Ep(CW)), an encrypted challenge
+(Ep(C)) and two or more encrypted responses (Ep({R})) using a key (P) to obtain a
+decrypted control word (CW), a decrypted challenge (C) and two or more decrypted
+responses {R}, respectively, wherein each decrypted response (R') of the two or more
+decrypted responses {R} forms a decrypted challenge-response pair (C,R') with the
+
+decrypted challenge (C) for a particular receiver of a conditional access system;
+
+--- PAGE 6 ---
+10
+
+MAIN REQUEST
+20
+
+encrypting (107) the decrypted control word (CW) using a decrypted response (R’')
+of one of the decrypted challenge-response pairs (C,R') to obtain a re-encrypted control
+word (Er (CW)); and
+
+transmitting (108) the re-encrypted control word (Er:(CW)) and the decrypted
+challenge (C) of the one of the decrypted challenge-response pairs (C,R’) to the particular
+receiver,
+
+wherein the decrypted challenge (C) is indicative of one or more locations in a
+firmware memory of the receiver, the firmware memory storing firmware, data in the one
+or more locations in the firmware memory forming the decrypted response (R’) thereby
+
+enabling the particular receiver to decrypt the encrypted control word (Er(CW)).

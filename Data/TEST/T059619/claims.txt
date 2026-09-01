@@ -1,0 +1,161 @@
+--- PAGE 1 ---
+14
+
+15158232.7 — re OP— MAIN REQUEST
+
+CLAIMS:
+
+1. Amethod of connecting to the Internet via a broadcast receiving device, comprising:
+extracting a transport stream (TS) from a received broadcast signal;
+obtaining mapping information between channel numbers and web addresses from the TS;
+
+connecting to the Internet via a web address mapped to a channel number selected by a user if
+
+the selected channel number is included in the mapping information;
+
+obtaining information on a website corresponding to one of the web addresses from the TS,
+
+wherein the information on the website includes guide information; and
+
+displaying an EPG screen which includes names of channel number allocated broadcast
+
+programs and a channel number allocated website,
+
+wherein, in response to a user operated selection tool moving to the channel number allocated
+
+website, displaying the guide information about the website.
+
+2. The method of claim 1, wherein the obtaining the mapping information includes obtaining the
+
+mapping information from a program and system information protocol (PSIP) included in the TS.
+
+3. The method of claim 2, wherein the obtaining the mapping information includes obtaining the
+mapping information via at least one of a virtual channel table (VCT) and an event information table
+(EIT) of the PSIP.
+
+4. The method of claim 1, wherein the information on the website further includes at least one
+
+of a website name, a website address, and a website banner.
+
+5. The method of claim 1, wherein the obtaining the information on the website includes
+obtaining the information on the website via at least one of an event information table (EIT) and an
+
+extended text table (ETT) of program and system information protocol (PSIP) included in the TS.
+
+6. The method of claim 1, further comprising:
+
+providing at least one of the mapping information and the information on the website as
+
+electronic program guide (EPG) information upon a user's request.
+
+¥12497EPND1
+
+--- PAGE 2 ---
+15
+
+7. The method of claim 1, further comprising:
+obtaining electronic program guide (EPG) information from the TS;
+providing the EPG information upon a user’s request;
+
+wherein the EPG information includes at least one of the information on the website
+
+corresponding to one of the web addresses and the mapping information.
+
+8. The method of claim 7, wherein the information on the website includes at least one of a
+
+website name, a website address, and a website banner.
+
+9. Amethod of providing information on allocating websites via a broadcast signal, comprising:
+encoding video and audio data of broadcast programs;
+
+providing additional information including mapping information mapping channel numbers and
+
+web addresses;
+
+generating a transport stream (TS) including the encoded video and audio data, and the
+
+additional information;
+outputting a broadcast signal including the TS,
+
+wherein the additional information includes information for an EPG screen which includes a
+name of channel number allocated broadcast program provided at each time and a channel number
+
+allocated website, and information on a website corresponding to one of the web addresses,
+
+wherein the information on the channel number allocated website comprises guide information
+
+about the website.
+
+10. A broadcast-receiving device (200), comprising:
+
+a broadcast-receiving module (210) that receives a broadcast signal and extracts transport
+
+stream (TS) from the broadcast signal;
+
+a display module that displays an EPG screen which includes a name of channel number
+allocated broadcast program provided at each time and a channel number allocated website, wherein
+in response to a user operated selection tool moving to the channel number allocated website,
+
+displaying the guide information about the website;
+
+a restoration module (220) that obtains mapping information between channel numbers and
+web addresses from the TS, and information on a website corresponding to one of the web addresses,
+
+wherein the information on the website includes guide information; and
+
+an Internet communication module (230) that connects to the Internet via a web address
+
+mapped to a channel number selected by a user if the channel number selected by a user is included
+
+¥12497EPND1
+
+--- PAGE 3 ---
+16
+
+in the mapping information.
+
+11. The device of claim 10, wherein the restoration module (220) obtains an information
+on a website that corresponds to one of the web addresses from the TS via at least one of an event
+information table (EIT) and an extended text table (ETT) of a program and system information
+protocol (PSIP) included in the TS.
+
+12. The device of claim 10, further comprising:
+
+a control module (280) that provides at least one of the mapping information and an information
+on a website that corresponds to one of the web addresses from the TS as electronic program guide
+
+information.
+13. The device of claim 10, further comprising:
+
+a control module (280) that provides electronic program guide (EPG) information upon a user’s
+
+request;
+
+wherein the restoration module (220) extracts the EPG information from the TS and includes at
+least one of an information on one or more websites that correspond to one or more of the web
+
+addresses and the mapping information.
+
+14. A broadcast-outputting device (100) comprising:
+a video-encoding module (110) that encodes video data of broadcast programs;
+an audio-encoding module (102) that encodes audio data of broadcast programs;
+
+an additional-information-providing module (130) that provides additional information including
+
+mapping information that maps channel numbers and web addresses;
+
+a multiplexing module (140) that generates a transport stream (TS) including the encoded video
+
+and audio data, and the additional information; and
+an output module (150) that outputs a broadcast signal including the TS,
+
+wherein the additional information includes information for an EPG screen which includes a
+name of channel number allocated broadcast program provided at each time and a channel number
+
+allocated website, and information on a website corresponding to one of the web addresses,
+
+wherein the information on the channel number allocated website comprises guide information
+
+about the website.
+
+¥12497EPND1

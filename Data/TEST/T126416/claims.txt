@@ -1,0 +1,76 @@
+--- PAGE 1 ---
+10
+
+IS
+
+20
+
+25
+
+30
+
+Main request
+
+10
+
+CLAIMS
+
+1. Electronic device, comprising sigma-delta modulation means
+(SDM) adapted to operate with a clock signal and having output means
+adapted to deliver a digital data signal, first means (PLL) adapted to
+deliver a radiofrequency transposition signal, and a notch filter
+including at least two identical radiofrequency digital to analog
+conversion blocks (RDCi), each having first input means coupled to said
+output means, second input means adapted to receive said
+radiofrequency transposition signal and second output means adapted to
+deliver a radiofrequency analog signal (ARFSi), digital delay means
+(DM) controlled by said clock signal and including a delay block
+connected between the two first input means, the frequency of a notch of
+said notch filter being related to the delay values of the delay block, and
+summation means (SM) adapted to sum said radiofrequency analog
+signals (ARFSi).
+
+2. Electronic device according to claim 1, wherein said notch
+filter comprises N identical radiofrequency digital to analog conversion
+blocks, N being greater than or equal to 2, and said digital delay means
+(DM) includes a chain of N-1 delay blocks respectively connected
+between the N first input means.
+
+3. Electronic device according to claim 1 or 2, wherein the
+delay’s value of the delay means is smaller than 1/(30*BW), where BW
+is the frequency band width of the radiofrequency analog signal.
+
+4.Electronic device according to any one of the preceding
+claims, wherein the delay means are programmable.
+
+5. Electronic device according to any one of the preceding
+claims, realized within an integrated circuit.
+
+6. Wireless apparatus, including an electronic device according
+to any one of the preceding claims.
+
+7. Method for notch filtering a digital signal delivered by sigma-
+delta modulation means operating with a clock signal, comprising
+delaying (40) said digital signal using said clock signal for obtaining at
+least one delayed digital signal, the frequency of a notch of said notch
+
+--- PAGE 2 ---
+10
+
+il
+
+filter being related to the delay’s value, processing (41) said digital
+signal and said delayed digital signal with an identical processing
+including a radiofrequency transposition and a digital to analog
+conversion for respectively obtaining radiofrequency analog signals, and
+summing (42) all said radiofrequency analog signals.
+
+8. Method according to claim 7, wherein delaying said digital
+signal comprises successively delaying (40) said digital signal with
+several respective delays for obtaining at least two different delayed
+signals, processing (41) said digital signal and all said delayed signal
+with said identical processing, and summing (82) all said radiofrequency
+analog signals.
+
+9. Method according to claim 7 or 8, wherein each delay’s value
+is programmable.

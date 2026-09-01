@@ -1,0 +1,52 @@
+TITLE:
+Method for processing log data from local and remote log-producing devices
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method is disclosed for collecting, storing and reporting raw log data from log-producing devices such as firewalls and routers. The log-producing devices may be both local and remote—i.e., linked to a raw log server via a LAN and/or a WAN. A log data analyzer at a remote location gathers log data from devices at that remote location into time-defined sets and then sends those sets over a WAN (which may be the Internet) to a raw log server using a first protocol. Local log-producing devices may send their log data to the log data analyzer via a LAN using a second protocol. The log data analyzer forwards the raw log data local devices to an appropriate log data analyzer for parsing, summarizing and storage in one or more databases. The raw log server combines local and remote sets of raw log data for a given time period and stores them in a storage area of raw log data. A central management station is used to query the various databases in the system and to merge database reports into a single report for display.
+
+CLAIMS:
+1. A method for processing log data from a plurality of log-producing devices comprising:
+receiving in a raw log server raw log data from a local log-producing device;
+collecting the raw log data from a local log-producing device into time-defined sets;
+storing a set of raw log data in a first temporary data buffer;
+receiving a set of raw log data via a wide area network from a remote log data analyzer;
+storing the set of raw log data from the remote log data analyzer in a second temporary data buffer;
+combining the raw log data from the first and second temporary data buffers to form a combined data set; and,
+storing the combined data set.
+2. A method for processing log data as recited in claim 1 further comprising sending a copy of the raw log data received from the local log-producing device to a local log data analyzer.
+3. A method for processing log data as recited in claim 2 wherein sending the raw log data to a log data analyzer is accomplished by associating a log-producing device with a certain log data analyzer.
+4. A method for processing log data as recited in claim 1 further comprising:
+receiving an additional set of raw log data via a wide area network from an additional remote log data analyzer;
+storing the additional set of raw log data from the additional remote log data analyzer in a third temporary data buffer;
+combining the combined data set and the third temporary data buffer to provide an updated combined data set; and,
+storing the updated combined data set.
+5. A method as recited in claim 1 wherein combining the raw log data includes concatenating the first and second temporary data buffers to form a concatenated data buffer and sorting the concatenated data buffer.
+6. A method as recited in claim 1 further comprising decrypting raw log data received via the wide area network.
+7. A method as recited in claim 1 further comprising decompressing raw log data received via the wide area network.
+8. A method as recited in claim 1 wherein the raw log data in the first and second temporary data buffers are from an equal time period.
+9. A method as recited in claim 8 wherein the combining is performed a period of time after the equal time period.
+10. A method as recited in claim 9 wherein the equal time period is one minute and the period of time after the equal time period is 3 minutes after the one-minute time period.
+11. A data processing system for processing log data from a plurality of log-producing devices comprising a raw log server which:
+receives raw log data from a local log-producing device;
+collects the raw log data from a local log-producing device into time-defined sets;
+stores a set of raw log data in a first temporary data buffer;
+receives a set of raw log data via a wide area network from a remote log data analyzer;
+stores the set of raw log data from the remote log data analyzer in a second temporary data buffer;
+combines the raw log data from the first and second temporary data buffers to form a combined data set; and,
+stores the combined data set.
+12. A data processing system as recited in claim 11 wherein the raw log server further sends a copy of the raw log data received from the local log-producing device to a local log data analyzer.
+13. A data processing system as recited in claim 12 wherein sending the raw log data to a log data analyzer is accomplished by the raw log server associating a log-producing device with a certain log data analyzer.
+14. A data processing system as recited in claim 11 wherein the raw log server further:
+receives an additional set of raw log data via a wide area network from an additional remote log data analyzer;
+stores the additional set of raw log data from the additional remote log data analyzer in a third temporary data buffer;
+combines the combined data set and the third temporary data buffer to provide an updated combined data set; and,
+stores the updated combined data set.
+15. A data processing system as recited in claim 11 wherein the raw log server further concatenates the first and second temporary data buffers to form a concatenated data buffer and sorts the concatenated data buffer.
+16. A data processing system as recited in claim 11 wherein the raw log server further decrypts raw log data received via the wide area network.
+17. A data processing system as recited in claim 11 wherein the raw log server further decompresses raw log data received via the wide area network.
+18. A data processing system as recited in claim 11 wherein the raw log server stores the raw log data in the first and second temporary data buffers for equal time periods.
+19. A data processing system as recited in claim 18 wherein the raw log server combines the raw log data from the first and second temporary data buffers a period of time after the equal time period.
+20. A data processing system as recited in claim 19 wherein the equal time period is one minute and the period of time after the equal time period is 3 minutes after the one-minute time period

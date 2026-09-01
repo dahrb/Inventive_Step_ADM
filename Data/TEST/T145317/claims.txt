@@ -1,0 +1,115 @@
+--- PAGE 1 ---
+CLAMS (Main request)
+
+1. An electronic communication network for securities trading and for
+providing real time, or near real time, execution quality indications, comprising:
+
+an electronic data connection between a trader and an executing broker
+for transmission of order information electronically from the trader to the
+executing broker and for transmission of execution information electronically
+from the executing broker to the trader;
+
+a message interceptor for without interfering with the data transmissions
+(a) intercepting in real time or almost real time an electronic order
+communication from the trader to the broker and accessing order data therefrom
+and (b) for intercepting in real time or in almost real time an electronic
+execution communication from the broker to the trader and accessing execution
+data;
+
+a generic market data source; and
+
+an execution quality calculation module (EQCM) in communication
+with the generic market data source, the message interceptor and the trader for
+electronically receiving on a real-time basis market data from the generic
+market data source, electronically receiving copy order data and copy execution
+data from the message interceptor, calculating one or more execution qualities
+corresponding to one or more of said electronic market order executions using
+said real-time or near real-time market data, and electronically transmitting to
+the trader information related to the one or more execution qualities for real-
+
+time or near real-time quality assessment of the market trade transactions.
+
+2. The network of claim 1, wherein the executing broker is configured to
+send execution data to the trader immediately as the relevant transactions occur
+and the message interceptor is configured to aggregate execution data and to
+transmit the data to the trader in larger lots so that multiple small executions are
+
+bunched into a smaller number of larger executions.
+
+--- PAGE 2 ---
+3. The network of claim 1 or 2, further comprising a display for displaying
+
+to the trader information related to the one or more execution qualities.
+
+4. The network of any preceding claim, wherein said information that is
+transmitted from the EQCM to the trader comprises at least one of said one or
+more execution qualities which is an indication of deviation of a value
+describing said at least one of said one or more execution qualities from one or
+
+more predetermined limits.
+
+5. The network of any preceding claim, wherein said EQCM is configured
+to assess at least one of said one or more execution qualities for one of said one
+or more electronic market orders by calculating a difference between a volume-
+weighted average price of said one or more electronic market order executions
+for said one of said one or more electronic market orders, and a volume-
+weighted average price of said real-time or near real-time market data related to
+
+a security for said one of said one or more electronic market orders.
+
+6. The network of any preceding claim, wherein said information related to
+the one or more execution qualities comprises a comparison of performance of
+all or selected brokers of said one or more brokers using said one or more
+
+execution qualities for a selected electronic market order.
+
+7. The network of any preceding claim, wherein said information related to
+said one or more execution qualities is accumulated over a predetermined
+
+period of time.
+
+8. The network of any preceding claim, wherein said EQCM is configured
+to provide information related to said one or more execution qualities to said
+trader via a display, said information comprises one or more of the following:
+
+a proportion of a market volume executed for a selected electronic
+
+market order of said one or more electronic market orders compared to a
+
+--- PAGE 3 ---
+volume being traded for a security of said selected electronic market order by
+other market participants;
+
+a comparison of execution qualities for a plurality of electronic market
+orders of said one or more electronic market orders sent to one, all or selected
+brokers of said one or more brokers;
+
+a comparison of execution qualities for a plurality of electronic market
+orders of said one or more electronic market orders;
+
+an identification of electronic market orders of said one or more
+electronic market orders for a particular broker of said one or more brokers;
+
+a proportion of a market volume executed for a selected electronic
+market order of said one or more electronic market orders compared to a
+volume being traded for a security of said selected electronic market order by
+other market participants,
+
+a visual identification of a plurality of execution qualities comprising all
+or selected one or more execution qualities which have been earlier or currently
+provided for a plurality of electronic market orders comprising all or selected
+electronic market orders of said one or more electronic market orders;
+
+a list of all or selected brokers of said one or more brokers in order
+corresponding to a performance quality;
+
+a selection for a related information to a particular electronic market
+order of said one or more electronic market orders;
+
+an indication of what proportion of a particular electronic market order
+of said one or more electronic market orders has been executed; and
+
+a selection for recording by a trader an opinion about implementation of
+a particular electronic market order of said one or more electronic market
+
+orders, or about performance of a particular broker of said one or more broker.

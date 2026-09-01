@@ -1,0 +1,48 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+MAIN REQUEST 50544-EP-EPA
+
+CLAIMS
+
+1. A method for providing a notification of a delay due to a border check,
+the method comprising:
+at a vehicle (510):
+determining (520) the vehicle (510) position;
+obtaining (522) sensor data from the vehicle; and
+issuing a report (530) to a network server (512); and
+at the network server (512), correlating (540) the sensor data with the
+vehicle position from the report;
+wherein the sensor data includes a rear door opening event;
+characterized in that:
+sensor data from the vehicle is obtained (522) in response to the
+determined vehicle position indicating that the vehicle has entered a border
+geofence; and
+the network server is further configured to:
+calculate a shipping delay (720) from the received report; and
+provide (722) a notification to a receiving company or customer of
+
+the shipping delay.
+
+2. The method of claim 1, wherein the sensor data includes accelerometer
+
+(155) readings showing repeated starts and stops.
+
+3. The method of claim 1, further comprising receiving data at the
+
+computing device from a third party and using the data in the corelating.
+
+4. The method of claim 1, wherein the network server further stores the
+reports from the vehicle and compiles historic data for the border crossing, and
+wherein the computing device re-routes (930) active vehicles based on the
+
+historic data.
+
+5. The method of claim 1, wherein the computing device apportions a cost
+for the border delay based on a cause.
+
+31

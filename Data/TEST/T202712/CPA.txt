@@ -1,0 +1,63 @@
+Title: Method of delivering stable data across an asynchronous interface
+
+Abstract: The present invention relates to a method and apparatus for asynchronously transferring data from a first synchronous sequential logic circuit which derives its clock source from a first clock to a second synchronous sequential logic circuit which derives its clock source from a second clock, whereby metastability of the second synchronous sequential logic circuit is avoided. The invention comprises a data path and a control path; a data synchronizer coupled to the data path for synchronizing data signals; a control synchronizer coupled to the control path for synchronizing control signals; a register coupled in parallel to the data path for storing valid data output from the data synchronizer; a multiplexor having one input coupled to the data path, another input coupled to the register, a selector input coupled to the control path for selecting between receiving as input synchronized data signals or the contents of the register, and an output for transmitting valid data. If metastability is unlikely, the control signal is deasserted causing the multiplexor to select the synchronized data as input. If metastability is likely, the synchronized control signal is asserted causing the multiplexor to select the register as input. The basic test is whether to accept the new state of the data signal or wait and use the old state currently maintained in the register, until such time as the likelihood of metastability has passed, as indicated by the synchronized control signal.
+
+Type: US Patent
+
+Claims: 
+
+I claim:
+1. An apparatus coupled in communication with a first logic circuit and a second logic circuit asynchronously transmitting data therebetween, said first and said second logic circuit each deriving a clock signal from a separate clock source, said apparatus comprising:
+a data path;
+a control path;
+a data synchronizer coupled in communication with said data path for synchronizing a data signal transferred from said first logic circuit to said second logic circuit;
+a control synchronizer coupled in communication with said control path for synchronizing a control signal transferred from said first logic circuit to said second logic circuit;
+a memory element coupled to said data path for storing a stable data signal output from said data synchronizer; and,
+a selector having a first data input coupled to said data path, a second data input coupled to said memory element, and a selector input coupled to said control path, for selecting as output said data signal or said stable data signal stored in said memory element on the basis of said control signal.
+2. An apparatus for transferring data between sequential logic circuits in separate clock domains, comprising:
+a data path;
+a control path;
+a first synchronizer coupled to said data path synchronizing a data signal transferred from a logic circuit in a first clock domain;
+a second synchronizer coupled to said control path synchronizing a control signal transferred from said logic circuit in said first clock domain;
+a memory element coupled to said first synchronizer for storing a stable data signal output from said first synchronizer; and,
+a selector selecting as output said data signal synchronized by said first synchronizer or said stable data signal stored in said memory element on the basis of said control signal synchronized by said second synchronizer, comprising:
+a first data input coupled to said first synchronizer for receiving said data signal synchronized by said first synchronizer;
+a second data input coupled to said memory element for receiving said stable data signal stored in said memory element;
+a control input coupled to said second synchronizer receiving said control signal synchronized by said second synchronizer; and,
+an output for transmitting said data signal synchronized by said first synchronizer or said stable value stored in said memory element.
+3. An apparatus providing stability of a data signal asynchronously transmitted between a first synchronous logic circuit and a second synchronous logic circuit, said synchronous logic circuits each deriving a clock signal from a separate clock source, said apparatus comprising:
+a data bus coupled in communication between said first synchronous logic circuit and said second synchronous logic circuit;
+a source register coupled to said data bus transmitting said data signal asynchronously to said second synchronous logic circuit;
+a data synchronizer coupled to said data bus receiving and synchronizing said data signal asynchronously transmitted from said source register;
+a control bus coupled in communication between said first synchronous logic circuit and said second synchronous logic circuit over which said first synchronous logic circuit asynchronously transmits a control signal;
+a control synchronizer coupled to said control bus receiving and synchronizing said control signal asynchronously transmitted;
+a destination register coupled to said data synchronizer and said control synchronizer forwarding said data signal synchronized by said data synchronizer on the basis of said control signal synchronized by said control synchronizer.
+4. An apparatus providing stability of a data signal asynchronously transmitted between a first synchronous logic circuit and a second synchronous logic circuit, said synchronous logic circuits each deriving a clock signal from a separate clock source, said apparatus comprising:
+a data bus coupled in communication between said first synchronous logic circuit and said second synchronous logic circuit;
+a source register coupled to said data bus storing and transmitting said data signal asynchronously to said second synchronous logic circuit over said data bus;
+a data synchronizer coupled to said data bus receiving and synchronizing said data signal asynchronously transmitted from said source register;
+a last stable value register coupled to said data synchronizer receiving and storing a stable synchronized data signal from said data synchronizer;
+a control bus coupled in communication between said first synchronous logic circuit and said second synchronous logic circuit over which said first synchronous logic circuit asynchronously transmits a control signal;
+a control synchronizer coupled to said control bus receiving and synchronizing said control signal asynchronously transmitted;
+a selector having a selector input coupled to said control synchronizer and data inputs coupled to said data synchronizer and said last stable value register for selecting as output said stable synchronized data signal from said last stable value register or a synchronized data signal from said data synchronizer on the basis of said control signal synchronized by said control synchronizer; and,
+a destination register coupled to said selector for storing and forwarding said output of said selector.
+5. The apparatus of claim 4, wherein said data synchronizer comprises a plurality of flip-flops coupled in sequence.
+6. The apparatus of claim 4, wherein said control synchronizer comprises a plurality of flip-flops coupled in sequence.
+7. A method of asynchronously transmitting a data signal from a first logic circuit to a second logic circuit, said first and second logic circuits each deriving a clock signal from a separate clock source, comprising the steps of:
+(a) asynchronously transmitting a data signal from said first logic circuit to said second logic circuit;
+(b) asynchronously transmitting a control signal from said first logic circuit to said second logic circuit;
+(c) maintaining an active state of said control signal for a period of time during which said data signal changes state;
+(d) synchronizing said data signal in accordance with said clock signal of said second logic circuit;
+(e) synchronizing said control signal in accordance with said clock signal of said second logic circuit;
+(f) if said control signal synchronized by said control synchronizer is not active:
+(i) saving said data signal synchronized by said data synchronizer in step (d) above to a memory element; and,
+(ii) transmitting said data signal synchronized by said data synchronizer in step (d) above; and,
+(g) if said control signal synchronized by said control synchronizer is active, transmitting said data signal saved in said memory element in step (f)(i) above.
+8. A method of asynchronously transmitting a data signal from a first logic circuit to a second logic circuit, said first and second logic circuits each deriving a clock signal from a separate clock source, comprising the steps of:
+(a) asynchronously transmitting a data signal from said first logic circuit to said second logic circuit;
+(b) asynchronously transmitting a control signal from said first logic circuit to said second logic circuit;
+(c) maintaining an active state of said control signal for a period of time during which said data signal changes state;
+(d) synchronizing said data signal in accordance with said clock signal of said second logic circuit;
+(e) synchronizing said control signal in accordance with said clock signal of said second logic circuit;
+(f) if said control signal synchronized by said control synchronizer is not in said active state, transmitting said data signal synchronized by said data synchronizer in step (d) above; and,
+(g) if said control signal synchronized by said control synchronizer is in said active state, withholding transmission of said data signal synchronized by said data synchronizer in step (d) above.

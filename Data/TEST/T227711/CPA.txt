@@ -1,0 +1,62 @@
+Title: Automated purchasing control system
+
+Abstract: An automated purchasing control system which can be customized for a corporate customer. The system receives an authorization request over the phone lines from a remote point-of-sale terminal and processes the request using unique software. The software has a database customized to a corporate user to establish that company hierarchial structure. Elements of the hierarchial structure are independently reconfigurable, so that a company can specify different hierarchial relationships in the software for authorization, billing and reporting purposes. Different authorization tests can be established for each position in a hierarchy, with a particular position being required to pass not only its own test, but the test of elements higher in the hierarchial tree.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A method for authorizing transactions for distributing currency or purchasing goods and services, comprising the following steps:
+generating a plurality of card numbers, each card number including an account number and a bank identification number (BIN), corresponding to card numbers encoded on a plurality of cards;
+creating a database on a central computer having at least a first field for said BIN and a second field for said account number;
+assigning a billing hierarchial position to each of said account numbers in said database;
+assigning a reporting hierarchial position to each of said account numbers in said database, said reporting hierarchial position being independent of said billing hierarchial position;
+assigning an authorization hierarchial position to each of said account numbers in said database, said authorization hierarchial position being independent of said billing and reporting hierarchial positions;
+creating a plurality of distinct authorization tests, each of said account numbers being subject to at least one of said authorization tests, said authorization tests varying according to the hierarchial position of an individual account number;
+subsequently receiving, from a remote terminal, a transmitted card number and a debit amount;
+determining, from said BIN in said transmitted card number, a location of said database;
+determining, from the transmitted account number in said transmitted card number, the hierarchial authorization tests applicable to said transmitted account number;
+applying said hierarchial tests to said debit amount;
+transmitting to said remote terminal an authorization message if said hierarchial tests are passed;
+transmitting to said remote terminal a message in accordance with a predetermined failure response option if said hierarchial tests are failed;
+generating reports of said transmitting steps organized according to said reporting hierarchy; and
+generating invoices for debit amounts corresponding to authorization messages organized according to said billing hierarchy.
+2. The method of claim 1 further comprising the steps of:
+creating groupings of merchant category codes;
+creating different authorization tests according to said groupings of merchant category codes and said hierarchial authorization levels;
+transmitting a merchant category code from said remote terminal with said transmitted card number; and
+applying said hierarchial tests corresponding to said the hierarchial level of said transmitted account number and said transmitted merchant category.
+3. The method of claim 2 wherein one of said authorization tests is a velocity test which varies for different groupings of merchant category codes comprising the steps of:
+recording the time of each transmission of a card number and a merchant category code;
+determining a frequency of usage from previous recorded times of transmission for the card number and merchant category code grouping; and
+transmitting a message denying authorization if said frequency of usage is greater than a predetermined limit for said merchant category code grouping and said card number.
+4. The method of claim 1 wherein said step of assigning a reporting heirarchy comprises assigning a plurality of independent reporting heirarchies.
+5. The method of claim 1 further comprising the step of assigning a default authorization test to an account number which does not have a separately assigned authorization test, said default authorization test being a corresponding test for a higher level in said authorization heirarchy from said account number.
+6. The method of claim 5 further comprising the step of performing a mass update of all default authorization tests in response a revision of said corresponding test.
+7. The method of claim 1 wherein said failure response option comprises approving the authorization request in said message but reporting a test failure in said step of generating reports.
+8. A system for authorizing transactions for distributing currency or purchasing goods and services, comprising:
+a plurality of cards, each card having a card number, each card number including an account number and a bank identification number (BIN);
+a central computer having a database with at least a first field for said BIN and a second field for said account number, each account number being organized according to a billing hierarchial position, a reporting hierarchial position, and an authorization hierarchial position, each of said hierarchial positions being independent of each other, said central computer having a plurality of distinct authorization tests, each of said account numbers being subject to at least one of said authorization tests, said authorization tests varying according to the hierarchial position of an individual account number;
+a remote terminal for transmitting a transmitted card number and a debit amount;
+a network coupling said remote terminal to said central computer;
+means, in said central computer, for determining, from said BIN in said transmitted card number, a location of said database;
+means, in said central computer, for determining, from the transmitted account number in said transmitted card number, the hierarchial authorization tests applicable to said transmitted account number;
+means, in said central computer, for applying said hierarchial tests to said debit amount;
+a transmitter for transmitting to said remote terminal an authorization message if said hierarchial tests are passed and transmitting to said remote terminal a message in accordance with a predetermined failure response option if said hierarchial tests are failed;
+report generating means for generating reports of said transmitting steps organized according to said reporting hierarchy; and
+invoice generating means for generating invoices for debit amounts corresponding to authorization messages organized according to said billing hierarchy.
+9. The system of claim 8 wherein said central computer further comprises:
+means for creating groupings of merchant category codes;
+means for creating different authorization tests according to said groupings of merchant category codes and said hierarchial authorization levels;
+means for transmitting a merchant category code from said remote terminal with said transmitted card number; and
+means for applying said hierarchial tests corresponding to said the hierarchial level of said transmitted account number and said transmitted merchant category.
+10. The system of claim 9 wherein one of said authorization tests is a velocity test which varies for different groupings of merchant category codes comprising:
+means for recording the time of each transmission of a card number and a merchant category code;
+means for determining a frequency of usage from previous recorded times of transmission for the card number and merchant category code grouping; and
+means for transmitting a message denying authorization if said frequency of usage is greater than a predetermined limit for said merchant category code grouping and said card number.
+11. The system of claim 8 wherein said reporting heirarchy comprises a plurality of independent reporting heirarchies.
+12. The system of claim 8 further comprising means for assigning a default authorization test to an account number which does not have a separately assigned authorization test, said default authorization test being a corresponding test for a higher level in said authorization heirarchy from said account number.
+13. The system of claim 12 further comprising means for performing a mass update of all default authorization tests in response to a revision of said corresponding test.
+14. The system of claim 8 wherein said failure response option comprises means for approving the authorization request in said message but reporting a test failure in said means for generating reports.
+15. The system of claim 8 wherein said remote terminal transmits merchant information, and one of said hierarchial tests compares said merchant information to an approved vendor list.

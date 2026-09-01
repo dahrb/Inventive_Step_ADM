@@ -1,0 +1,157 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+“25
+
+30
+
+35
+
+CLAIMS
+
+A system (10) for automated retrieval of information from one or more information
+sources (30) on the basis of at least one attribute (112) associated with a user, the
+
+system (10) comprising:
+
+a plurality of user parameters (14), the user parameters (14) including the at least
+one attribute (112), wherein the at least one attribute associates the user with the
+
+desired information to be retrieved;
+
+a library (18) containing a plurality of filters (20; 22), a filter (20; 22) specifying one
+or more search parameters (212) for one of the at least one attribute (112),
+wherein each attribute corresponds to an available filter;
+
+a translator (16) coupled to the library (18) and operable to access the user pa-
+rameters (14) in order to associate one or more filters (20; 22) from the library (18)
+with the user in accordance with the at least one attribute (112) included in the
+user parameters (14); and
+
+a searcher (28) coupled to the translator (16) and the information sources (30), the
+searcher (28) operable to generate one or more search requests using the search
+parameters (212) from the selected filters (20; 22), the searcher (28) further oper-
+able to retrieve information from the information sources (30) using the generated
+
+search requests.
+The system (10) of Claim 1, wherein the attribute (112) comprises a business role
+of information that describes a particular purpose for which information may be
+
+used.
+
+The system (10) of Claim 1, wherein the attribute (112) comprises an industry as-
+
+sociated with the user.
+
+The system (10) of Claim 1, wherein each filter (20; 22) comprises:
+
+a databaseffile listing (202); and
+
+one or more search terms (204-210).
+
+--- PAGE 2 ---
+15
+
+20
+
+25
+
+30
+
+35
+
+The system (10) of Claim 1, further comprising a modifier (48) operable to modify
+the search parameters (212) specified by a filter (20; 22) in response to the infor-
+
+mation being retrieved.
+
+The system (10) of Claim 1, further comprising an interactor (42) operable to elicit
+responses from the user in response to the information being retrieved using one
+
+or more feedback prompts.
+
+The system (10) of Claim 1, further comprising communication parameters (32)
+associated with each information source (30), the searcher (28) accessing the
+communication parameters (32) to retrieve information from the information
+
+sources (30).
+
+A method for automated retrieval of information from one or more information
+sources (30) on the basis of at least one attribute (112) associated with a user, the
+
+method comprising:
+
+accessing a user profile (102-106) of the user defined by one or more user pa-
+rameters (14), the user parameters (14) including the at least one attribute (112),
+wherein the at least one attribute associates the user with the desired information
+to be retrieved:
+
+associating (312) one or more filters (20; 22) with the user from a plurality of stored
+filters (20; 22) in accordance with the at least one attribute (112) included in the
+user parameters (14), wherein each attribute corresponds to an available filter, and
+wherein a filter (20; 22) specifying one or more search parameters (212) for an at-
+
+tribute (112) associated with a user;
+
+generating (314) one or more search requests using search parameters (212) from
+the selected filters (20; 22);
+
+issuing (315) the search requests to the information sources (30); and
+
+retrieving (322) information from the information sources (30) in response to the
+search requests.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+The method of Claim 8, wherein the attribute (112) comprises a business role of
+
+information that describes a particular purpose for which information may be used.
+
+The method of Claim 8, wherein the attribute (112) comprises an industry associ-
+ated with the user.
+
+The method of Claim 8, wherein each filter (20; 22) comprises:
+
+a databaseffile listing (202); and
+
+one or more search terms (204-210).
+
+The method of one of Claims 8 to 11, further comprising:
+
+eliciting (328) responses from the user concerning the retrieved information; and
+
+modifying (332, 334) the selected filters (20; 22) in accordance with the responses.
+
+The method of Claim 12, wherein eliciting (328) responses includes requesting the
+
+user to assess the relevance of the specified search parameters (212).
+
+The method of Claim 12, wherein eliciting (328) responses includes requesting the
+
+user to evaluate the volume of information retrieved.
+
+The method of Claim 12, wherein the responses are elicited (328) using one or
+more feedback prompts.

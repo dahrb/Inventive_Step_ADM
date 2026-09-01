@@ -1,0 +1,287 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+P36129-EPAP Auxiliary Request 1 amended claims (clean)
+
+CLAIMS
+
+What is claimed is:
+
+1. A method for cell changing of a user equipment in a heterogeneous network, comprising:
+
+determining (101), by the user equipment, a movement state of the user equipment;
+
+determining (102), by the user equipment, a frequency priority order according to the
+determined movement state, wherein: when the movement state is a high movement state in
+which the number of cell changes in a specified time exceeds a first threshold, a priority of a
+frequency used by a cell with a wide coverage in the heterogeneous network is higher than a
+priority of a frequency used by a cell with a small coverage, and, when the movement state is a
+low movement state in which the number of cell changes in a specified time is lower than a
+second threshold, a priority of a frequency used by a cell with a wide coverage in the
+heterogeneous network is lower than a priority of a frequency used by a cell with a small
+coverage;
+
+performing (103), by the user equipment, a frequency measurement according to the
+determined frequency priority order and the determined movement state; and
+
+performing (104), by the user equipment, a cell change according to the determined
+frequency priority order and a result of the frequency measurement,
+
+wherein the performing (103) the frequency measurement according to the determined
+frequency priority order and the determined movement state comprises:
+
+when the movement state is the high movement state in which the number of cell changes in
+the specified time exceeds the first threshold,
+
+if signal strength or signal quality of a current serving cell is greater than a first demarcation,
+measuring at least one high-priority frequency in the heterogeneous network at intervals of a first
+specified time; and
+
+if the signal strength or the signal quality of the current serving cell is less than the first
+demarcation, measuring all frequencies in the heterogeneous network at intervals of the first
+specified time;
+
+and
+
+when the movement state is the low movement state in which the number of cell changes in
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P36129-EPAP Auxiliary Request 1 amended claims (clean)
+
+the specified time is lower than the second threshold,
+
+if signal strength or signal quality of a current serving cell is greater than a first
+demarcation,
+
+measuring at least one high-priority frequency in the heterogeneous network at intervals of
+the first specified time;
+
+if no cell is found at the at least one high-priority frequency in a second specified time,
+measuring the at least one high-priority frequency at intervals of a third specified time, wherein
+the second specified time is greater than or equal to the first specified time, and the third
+specified time is greater than the first specified time;
+
+after at least one cell is found at the at least one high-priority frequency, measuring the at
+least one high-priority frequency at intervals of the first specified time; and
+
+if the signal strength or the signal quality of the current serving cell is less than the first
+demarcation, measuring all frequencies in the heterogeneous network at intervals of the first
+specified time, and
+
+wherein performing (104) the cell change, comprises: selecting, by the user equipment, a
+scaling factor corresponding to the current movement state of the user equipment according to a
+movement state of a user equipment, and scaling a relevant hysteresis used for cell reselection or
+handover, and then performing, by the user equipment, the cell change according to the
+frequency priority order, the result of the frequency measurement and the scaled relevant
+hysteresis,
+
+wherein the user equipment in the heterogeneous network uses two sets of scaling factors to
+scale the hysteresis, respectively, and the two sets of scaling factors correspond to the size of a
+target cell and the movement state of the user equipment, respectively, and
+
+wherein a first scaling factor among the first set of scaling factors is determined according
+to the size of the target cell for cell changing, and a second scaling factor among the second set
+
+of scaling factors is determined according to the movement state.
+
+2. The method according to claim 1, wherein:
+before the determining (102) a frequency priority order according to the determined
+movement state, the method further comprises:
+
+obtaining a frequency priority order corresponding to each movement state.
+
+2
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P36129-EPAP Auxiliary Request 1 amended claims (clean)
+
+3. The method according to claim 2, wherein:
+
+the obtaining a frequency priority order corresponding to each movement state comprises:
+
+receiving a system message, wherein the system message carries frequency priority order
+information corresponding to each movement state; and
+
+obtaining the frequency priority order corresponding to each movement state according to
+the system message;
+
+or
+
+receiving a dedicated message, wherein the dedicated message carries frequency priority
+order information corresponding to each movement state; and
+
+obtaining the frequency priority order corresponding to each movement state according to
+the dedicated message;
+
+or
+
+obtaining the frequency priority order corresponding to each movement state according to
+
+pre-stored frequency priority order information.
+
+4. A user equipment, comprising:
+
+a first determining unit (10), configured to determine a movement state of the user
+equipment;
+
+a second determining unit (11), configured to determine a frequency priority order
+according to the movement state determined by the first determining unit (10), wherein: when
+the movement state is a high movement state in which the number of cell changes in a specified
+time exceeds a first threshold, a priority of a frequency used by a cell with a wide coverage in the
+heterogeneous network is higher than a priority of a frequency used by a cell with a small
+coverage, and, when the movement state is a low movement state in which the number of cell
+changes in a specified time is lower than a second threshold, a priority of a frequency used by a
+cell with a wide coverage in the heterogeneous network is lower than a priority of a frequency
+used by a cell with a small coverage;
+
+a measuring unit (12), configured to perform a frequency measurement according to the
+frequency priority order determined by the second determining unit (11) and the determined
+
+movement state determined by the first determining unit (10); and
+
+3
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P36129-EPAP Auxiliary Request 1 amended claims (clean)
+
+a processing unit (13), configured to perform a cell change according to the frequency
+priority order determined by the second determining unit (11) and a result of the frequency
+measurement performed by the measuring unit (12),
+
+wherein the measuring unit (12) is specifically configured to:
+
+when the movement state is the high movement state in which the number of cell changes in
+the specified time exceeds the first threshold,
+
+if signal strength or signal quality of a current serving cell is greater than a first demarcation,
+measure at least one high-priority frequency in the heterogeneous network at intervals of a first
+specified time; and
+
+if the signal strength or the signal quality of the current serving cell is less than the first
+demarcation, measure all frequencies in the heterogeneous network at intervals of the first
+specified time;
+
+and
+
+when the movement state is the low movement state in which the number of cell changes in
+the specified time is lower than the second threshold,
+
+if signal strength or signal quality of a current serving cell is greater than a first
+demarcation,
+
+measure at least one high-priority frequency in the heterogeneous network at intervals of the
+first specified time; and
+
+if no cell is found at the at least one high-priority frequency in a second specified time,
+measure the at least one high-priority frequency at intervals of a third specified time, wherein the
+second specified time is greater than or equal to the first specified time, and the third specified
+time is greater than the first specified time;
+
+measure the at least one high-priority frequency at intervals of the first specified time after
+at least one cell is found at the at least one high-priority frequency; and
+
+if the signal strength or the signal quality of the current serving cell is less than the first
+demarcation, measure all frequencies in the heterogeneous network at intervals of the first
+specified time, and
+
+wherein the processing unit (13) includes:
+
+a receiving module (135) configured to receive a hysteresis used for cell changing from a
+
+current serving cell, where the hysteresis is obtained by the serving cell according to a size of a
+
+4
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P36129-EPAP Auxiliary Request 1 amended claims (clean)
+
+target cell for cell changing;
+
+a determining module (136) configured to determine a scaling factor according to the
+determined movement state;
+
+a scaling module (137) configured to scale the received hysteresis according to the
+determined scaling factor; and
+
+a processing module (138) configured to perform the cell change according to the frequency
+priority order, the result of the frequency measurement and the scaled hysteresis,
+
+wherein the user equipment in the heterogeneous network uses two sets of scaling factors to
+scale the hysteresis, respectively, and the two sets of scaling factors correspond to the size of the
+target cell and the movement state of the user equipment, respectively and
+
+wherein a first scaling factor among the first set of scaling factors is determined according
+to the size of the target cell for cell changing, and a second scaling factor among the second set
+
+of scaling factors is determined according to the movement state.
+
+5. The user equipment according to claim 4, further comprising an obtaining unit (14),
+configured to obtain a frequency priority order corresponding to each movement state before the
+
+second determining unit (11) determines the frequency priority order.
+
+6. The user equipment according to claim 5, wherein:
+
+the obtaining unit (14) is specifically configured to:
+
+receive a system message, wherein the system message carries frequency priority order
+information corresponding to each movement state; and obtain the frequency priority order
+corresponding to each movement state according to the system message;
+
+or
+
+receive a dedicated message, wherein the dedicated message carries frequency priority
+order information corresponding to each movement state; and obtain the frequency priority order
+corresponding to each movement state according to the dedicated message;
+
+or
+
+obtain the frequency priority order corresponding to each movement state according to
+
+pre-stored frequency priority order information.

@@ -1,0 +1,314 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+Claims
+
+1. A system for secure electronic communication of a secure email message from an
+originator’s computer to a recipient's computer, said system comprising:
+
+a message splitter for splitting the secure email message into a first email message and a
+second message, including removing a security sensitive portion of the secure email message to
+be contained by the second message;
+
+message sending and code requesting means for using a first network connection to send
+the second message from the originator’s computer to an externally accessible store and
+requesting a reference code from the externally accessible store, said externally accessible store
+being operative to grant access to stored content of said second message upon presentation of a
+two factor authentication comprising an authentication code and the reference code;
+
+email sending means to send the first email message along with the reference code and
+notification that content of said second message is in said store, from the originator's computer to
+the recipient's computer;
+
+code sending means, for using a second network connection, to send said authentication
+code, separately from the reference code, for access by the recipient;
+
+accessing means for the recipient's computer to access said externally accessible store
+using a third network connection; and
+
+authentication means for the recipient's computer to provide said externally accessible
+store, when so accessed, with said two factor authentication for said externally accessible store to
+
+grant access to said content of the second message.
+
+2, A system for originating secure electronic communication of a secure email message from
+an originator’s computer to a recipient's computer, for use in the system of claim 1, said system
+comprising:
+
+a message splitter for splitting the secure email message into a first email message and a
+second message, including removing a security sensitive portion of the secure email message to
+be contained by the second message;
+
+message sending and code requesting means for using a first network connection to send
+the second message to an externally accessible store, and requesting a reference code from the
+externally accessible store, said externally accessible store being operative to grant access to
+stored content of said second message upon presentation of a two factor authentication
+comprising an authentication code and the reference code;
+
+email sending means to send the first email message along with the reference code and
+notification that said content of the second message is in said store, to the recipient's computer;
+and
+
+code sending means, for using a second network connection to send said authentication
+
+code, separately from the reference code, for access by the recipient.
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+3. A system, according to either one of claims 1 or 2, including notification means for said
+store to send a notification message to said originator’s computer when the context of said second
+
+message has been accessed.
+
+4. A system, according to any one of claims 1 to 3, wherein said externally accessible store is
+
+operative to generate at least a portion of said authentication code.
+
+5. A system according to claim 4, wherein the externally accessible store is provided with the
+
+code sending means.
+
+6. A system, according to any one of claims 1 to 5, wherein said first network connection is a
+
+secure connection employing encryption.
+
+7. A system according to claim 6, wherein said secure network connection includes the use of
+a Secure Socket Layer (SSL).
+
+8. A system, according to any one of claims 1 to 7, wherein said first network connection
+
+comprises an internet connection.
+
+9. A system, according to claim 8, wherein said internet connection includes encryption.
+
+10. A system, according to any one of claims 1 to 9, wherein said gateway connects to a
+
+cellular telephone network.
+
+11. A system, according to claim 10, including means to send said authentication code for
+
+access by the recipient as a visually readable message.
+
+12. A system, according to claim 11, wherein said visually readable message comprises a short
+
+message service text message.
+
+13. A system, according to claim 11, wherein said visually readable message comprises
+
+Unstructured Supplementary Service Data (USSD).
+
+14. A system, according to any one of the preceding claims, wherein said second network
+connection connects to a Microsoft Passport network and said code sending means is operative to
+
+send said authentication code via said recipient's passport.
+
+15. A system, according to any one of the preceding claims, wherein said second network
+connection connects to a Microsoft Messenger network and said code sending means is operative
+
+to send said authentication code as an instant message.
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+16. A system, according to any one of the preceding claims, wherein said second network
+connection connects to a pager network and said code sending means is operative to send said
+
+authentication code as a pager message.
+
+17. A system, according to any one of the preceding claims, wherein said second network
+connection connects to a voice network and said code sending means includes means to generate
+
+said authentication code as a synthesised voice message.
+
+18. A system, according to any one of the preceding claims, wherein said authentication code
+
+is uniquely generated for the stored content of each second message.
+
+19. A system, according to any one of the preceding claims, including means to provide the
+identity of the originator of the secure email message along with said authentication code.
+
+20. A system, according to any one of claims 1 and 3 to 19, wherein said third network
+connection comprises a secure Internet connection from a web browser connecting via an
+
+encrypted link to a web server.
+
+21. A system, according to any one of claims 1 and 3 to 20, wherein said third network
+connection comprises a secure Internet connection from a web browser connecting via the URL
+HTTPS.
+
+22. A system, according to any one of claims 1 and 3 to 21, wherein said third network
+connection comprises a secure Internet connection from a web browser connection via a Secure
+
+Socket Layer (SSL) to a web server.
+
+23. A system, according to any one of claims 1 and 3 to 22, wherein said third network
+connection comprises a secure Internet connection from a web browser connection via Transport
+
+Layer Security (TLS) to a web server.
+
+24. A system, according to any one of claims 1 and 3 to 23, wherein said third network
+connection comprises a secure Internet connection from a mobile device's Wireless Access Protocol
+
+(WAP) browser connecting to a WAP gateway.
+
+25. A method for secure electronic communication of a secure email message from an
+originator’s computer to a recipient's computer, using a system according to any one of the
+preceding claims, said method comprising the steps of:
+
+splitting the secure email message into a first email message and a second message,
+including removing a security sensitive portion of the secure email message to be contained by the
+second message;
+
+employing the message sending code and requesting means to send the second message
+
+from the originator’s computer to the externally accessible store via the first network connection,
+
+--- PAGE 4 ---
+MAIN REQUEST
+
+and to request a reference code from the externally accessible store, said externally accessible
+store being operative to grant access to stored content of said second message upon presentation
+of a two factor authentication comprising an authentication code and the reference code:
+
+sending the first email message, along with the reference code and notification that
+content of said second message is in said store, from the originator’s computer to the recipient's
+computer;
+
+connecting by use of the second network connection to send said authentication code,
+separately from the reference code, for access by the recipient;
+
+accessing said externally accessible store from the recipient’s computer by use of the third
+network connection and employing the authentication means to provide said externally accessible
+store, when so assessed, with the necessary two factor authentication comprising said reference
+code and said authentication code; and
+
+granting access to said content of the second message.
+
+26. A method of originating secure electronic communication of a secure email message from
+an originator's computer to a recipient's computer, for use in the method of claim 25, said method
+comprising the steps of:
+
+splitting the secure email message into a first email message and a second message,
+including removing a security sensitive portion of the secure email message to be contained by the
+second message;
+
+employing the message sending and code requesting means to send the second message
+from the originator’s computer to the externally accessible store by means of the first network
+connection and to request a reference code from the externally accessible store, said externally
+accessible store being operative to grant access to stored content of said second message upon
+presentation of a two factor authentication comprising an authentication code and the reference
+code;
+
+sending the first email message, along with the reference code and notification that
+content of said second message is in said store, from the originator’s computer to the recipient's
+computer; and
+
+connection by use of the second network connection to send said authentication code,
+
+separately from the reference code, for access by the recipient.
+
+27. A method, according to either one of claims 25 or 26, including the step of causing said
+store to send a notification message to the originator’s computer when the content of said second
+
+message has been accessed.
+
+28. A method, according to any one of claims 25 to 27, wherein said store is operative to
+
+generate at least a portion of said authentication code.
+
+29. A method according to claim 28, wherein the store is operative to send the authentication
+
+code for access by the recipient.
+
+--- PAGE 5 ---
+MAIN REQUEST
+
+30. A method, according to any one of claims 25 to 29, wherein said first network connection
+
+comprises a secure Internet connection.
+
+31. A method, according to claim 30, where use of said secure Internet connection includes
+
+use of encryption.
+
+32. A method according to claim 30 or claim 31, wherein said secure Internet connection
+
+includes the use of a Secure Socket Layer (SSL).
+
+33. A method, according to any one of claims 25 to 32, wherein said first network connection
+
+comprises a secure network connection.
+
+34. A method, according to claim 33, wherein said secure network connection includes
+encryption.
+35. A method, according to any one of claims 25 to 34, wherein said second network
+
+connection connects to a cellular telephone network.
+
+36. A method, according to claim 35, including the step of sending said authentication code for
+
+access by the recipient as a visually readable message.
+
+37. A method, according to claim 36, wherein said visually readable message comprises a
+
+short message service text message.
+
+38. A method, according to claim 36, wherein said visually readable message comprises
+
+Unstructured Supplementary Service Data (USSD).
+
+39. A method, according to any one of claims 25 to 34, wherein said second network
+connection connects to Microsoft Passport network and said method includes the step of sending
+
+said authentication code via said recipient's passport.
+
+40. A method, according to any one of claims 25 to 34, wherein said second network
+connection connects to a Microsoft Messenger network and said method includes the step of
+
+sending said authentication code as an instant message.
+
+41. A method, according to any one of claims 25 to 34, wherein said second network
+connection connects to a pager network and said method includes the step of sending said
+
+authentication code as a pager message.
+
+42. A method, according to any one of claims 25 to 34, wherein said second network
+connection connects to a voice network and said method includes the step of generating said
+
+authentication code as a synthesised voice message.
+
+--- PAGE 6 ---
+MAIN REQUEST
+
+43. A method, according to any one of claims 25 to 42, wherein said authentication code is
+
+uniquely generated for the stored content of each second message.
+
+44. A method, according to any one of claims 25 to 43, including the step of providing the
+
+identity of the originator of the secure email message along with said authentication code.
+
+45. A method, according to any one of claims 25 and 27 to 44, wherein said third network
+connection comprises a secure Internet connection from a web browser connecting via an
+
+encrypted link to a web server.
+
+46. A method, according to any one of claims 25 and 27 to 45, wherein said third network
+connection comprises a secure Internet connection from a web browser connecting via the URL
+HTTPS.
+
+47. A method, according to any one of claims 25 and 27 to 46, wherein said third network
+connection comprises a secure Internet connection from a web browser connection via a Secure
+
+Socket Layer (SSL) to a web server.
+
+48. A method, according to any one of claims 25 and 27 to 47, wherein said third network
+connection comprises a secure Internet connection from a web browser connecting via Transport
+
+Layer Security (TLS) to a web server.
+
+49. A method, according to any one of claims 25 and 27 to 48, wherein said third network
+connection comprises a secure Internet connection from a mobile device's Wireless Access Protocol
+
+(WAP) browser connecting to a WAP gateway.

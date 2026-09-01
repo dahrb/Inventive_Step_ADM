@@ -1,0 +1,126 @@
+--- PAGE 1 ---
+EP Application No.: 04732 017.1
+
+Applicant: Panasonic Intellectual Property Corporation of America
+Our Ref.: EP36972-DK331
+Date: June 15, 2020
+
+New claims — Main Request (clean)
+
+. Avalue holding apparatus (500) for holding value information comprising:
+
+an authentication unit (502) operable to authenticate a request apparatus (600):
+
+characterized by
+
+a receiving unit (501) operable to receive, from the request apparatus (600), an instruction
+to add or remove a value relating to a payment, the instruction including an identifier
+
+identifying the instruction and time information indicating a time relating to the instruction;
+
+a judging unit (505) operable to hold the identifier and time information included in an
+instruction previously received by the receiving unit (501), to judge whether or not the
+identifier included in an instruction currently received from the request apparatus (600)
+matches the identifier held by the judging unit (505), and to judge whether or not a
+difference between the time indicated by the time information included in the instruction
+currently received from the request apparatus (600) and a time indicated by the time
+
+information held by the judging unit (505) is within a predetermined range,
+
+a rejecting unit (505) operable to reject the instruction currently received from the request
+apparatus (600) when the judging unit (505) judges that the identifier included in the
+instruction currently received from the request apparatus (600) matches the identifier held
+by the judging unit (505) and the difference between the time indicated by the time
+information included in the instruction currently received from the request apparatus (600)
+and the time indicated by the time information held by the judging unit (505) is within the
+
+predetermined range, and
+
+a balance management unit (506) operable to add or remove a value according to the
+instruction currently received from the request apparatus (600) when the judging unit (505)
+judges that the identifier included in the instruction currently received from the request
+apparatus (600) does not match the identifier held by the judging unit (505) or when the
+difference between the time indicated by the time information included in the instruction
+currently received from the request apparatus (600) and the time indicated by the time
+
+information held by the judging unit (505) is not within the predetermined range.
+
+--- PAGE 2 ---
+EP36972 Main Req (clean) 2
+
+2. A value holding apparatus to claim 1, wherein:
+
+the instruction currently received by the receiving unit (501) includes value information
+
+indicating a value to be paid, the value being equivalent to an amount of money; and
+
+the payment is processed by subtracting the value indicated by the value information
+included in the instruction currently received from the value indicated by the value
+
+information held by the value holding apparatus (500).
+3. A value holding apparatus according to claim 1 or 2, wherein:
+
+instruction information contains an apparatus ID identifying the request apparatus (600)
+
+as the identifier.
+
+4. A value holding apparatus according to one of claims 1 - 3, wherein said value holding
+
+apparatus is structured by a handheld device and a memory card (500), and wherein:
+said handheld device includes said receiving unit (501); and
+
+said memory card includes said judging unit (505), said rejecting unit (505) and said
+
+balance management unit (506).
+
+5. A value holding apparatus according to one of claims 1 - 3, wherein said value holding
+
+apparatus is a memory card (500).
+
+6. A value holding apparatus according to one of claims 1 - 3, wherein said value holding
+
+apparatus is a handheld device.
+7. A value holding method for holding value information comprising the steps of:
+authenticating a request apparatus (600);
+
+receiving, from the request apparatus (600), an instruction to add or remove a value
+relating to a payment, the instruction including an identifier identifying the instruction and
+
+time information indicating a time relating to the instruction;
+
+holding the identifier and time information included in an instruction previously received by
+the receiving step, judging whether or not the identifier included in an instruction currently
+received from the request apparatus (600) matches the identifier held, and to judge
+whether or not a difference between the time indicated by the time information included in
+the instruction currently received from the request apparatus (600) and a time indicated
+
+by the time information held is within a predetermined range;
+
+--- PAGE 3 ---
+EP36972 Main Req (clean) 3
+
+rejecting the instruction currently received from the request apparatus (600) when the
+judging step judges that the identifier included in the instruction currently received from
+the request apparatus (600) matches the identifier held and the difference between the
+time indicated by the time information included in the instruction currently received from
+the request apparatus (200) and the time indicated by the time information held is within
+
+the predetermined range, and
+
+adding or removing a value in accordance with the instruction currently received from the
+request apparatus (600) when the judging step judges that the identifier included in the
+instruction currently received from the request apparatus (600) does not match the
+identifier held or when the difference between the time indicated by the time information
+included in the instruction currently received from the request apparatus (600) and the
+
+time indicated by the time information held is not within the predetermined range.
+
+8. A computer program product loadable in the memory of a computer, comprising software
+code portions for performing the steps of method claim 7, when said product is run ona
+
+computer.
+
+9. A transaction system comprising a request apparatus (600) and a value holding apparatus
+(500) according to claims 1 to 6 and further comprising the computer program product
+
+according to claim 8.

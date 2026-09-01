@@ -1,0 +1,266 @@
+--- PAGE 1 ---
+Main Request
+Filed on 11 December 2017
+
+Claims
+
+1. A computer implementing a virtual machine (102) configurable to function as a web
+server, the virtual machine comprising:
+
+a request handler worker (202) for handling an incoming query (106) relating to an
+operational state of the virtual machine;
+
+a plurality of services (212) wherein a service performs operations for replying to the
+incoming query; and
+
+an operations worker (214) for generating output containing a reply (218) to the
+incoming query, using at least one of the plurality of services (22), wherein the reply provides
+state information regarding the operation of the virtual machine (102), and wherein the reply
+is an HTTP response comprising HTML or XML pages; and
+
+a request data structure (204) for transferring data between the request handler
+worker and the operations worker, the request data structure having a service pointer area
+(210) containing a pointer to one of the plurality of services (212) to be used for deriving the
+reply to the incoming query, a response buffer area (208), and a segment query area (206).
+
+2. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker is an HTTP thread (202).
+
+3. A computer implementing a virtual machine (102) as recited in claim 2 wherein the
+incoming query (106) is in HTTP format (201).
+
+4. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker (202) further includes a query parser for parsing the incoming query
+(106) such that one of the plurality of services (212) is identified for use by the operations
+worker (214) to generate the reply to the incoming query (106).
+
+5. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker (202) is created upon starting up the virtual machine (102).
+
+6. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker (202) is adapted to provide a network traffic manager for routing
+
+queries (106) and responses (216).
+
+14
+
+--- PAGE 2 ---
+7. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+plurality of services (212) contain in index of available services and parameters for each
+
+service.
+
+8. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+operations worker (214) is a virtual machine operations thread.
+
+9. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker (202) creates the request data structure (204).
+
+10. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+
+virtual machine is a Java(TM) virtual machine.
+
+11. A computer implementing a virtual machine as recited in claim 10 wherein the
+
+plurality of services (212) include a heap objects service.
+
+12. A computer implementing a virtual machine as recited in claim 10 wherein the
+plurality of services (212) include a profiling service.
+
+13. A computer implementing a virtual machine as recited in claim 10 wherein the
+
+plurality of services (212) include a memory usage service.
+
+14. A computer implementing a virtual machine as recited in claim 10 wherein the
+
+plurality of services (212) include a thread stacks service.
+
+15. A computer-implemented method for a virtual machine (102), configured to function
+as a web server, the method comprising:
+
+receiving an incoming query from a browser;
+
+a request handler worker (202) in the virtual machine handling the incoming query
+(106) relating to an operational state of the virtual machine;
+
+transferring data between the request handler worker and an operations worker in
+the virtual machine using a request data structure having a service pointer area (210)
+containing a pointer to one of a plurality of services (212) to be used for deriving a reply to
+the incoming query, a response buffer area (208), and a segment query area (206);
+
+the operations worker (214) generating output containing the reply (218) to the
+incoming query, using at least one of the plurality of services (22), wherein the reply provides
+
+15
+
+--- PAGE 3 ---
+state information regarding the operation of the virtual machine (102), and wherein the reply
+is an HTTP response comprising HTML or XML pages; and
+transmitting the reply to the browser.
+
+16. A method as recited in claim 15 further including invoking a web server in the virtual
+machine (102).
+
+17. A method as recited in claim 16 wherein receiving the incoming query from a browser
+(108) further includes establishing a secure HTTP connection when the incoming query is an
+HTTP request (201).
+
+18. A method as recited in claim 16 further including creating a request thread.
+
+19. A method as recited in claim 18 further including generating the HTTP response
+(218) into the response buffer area (208) of the request data structure (204).
+
+20. A method as recited in claim 18 further including generating XML pages into the
+response buffer area (208) of the request data structure (204).
+
+21. A method as recited in claim 15 further including stopping normal operation of the
+virtual machine (102) while the request is acted upon.
+
+22. A method as recited in claim 15 further including sending a response from the
+operations worker (214) to the request handler worker (202).
+
+23. A method as recited in claim 15, wherein the request handler manager (202) sends
+the response to the browser (108).
+
+24. A computer-readable medium containing programmed instructions arranged to
+handle an incoming query (106), in a virtual machine (102) configurable to function as a web
+server, the computer-readable medium including programmed instructions for performing the
+
+method of any of claims 15 to 23.
+
+16
+
+--- PAGE 4 ---
+AUXILIARY REQUEST
+FILED ON 11 DECEMBER 2017
+
+Claims
+
+1. A computer implementing a virtual machine (102) configurable to function as a web
+server, the virtual machine comprising:
+
+a request handler worker (202) for handling an incoming query (106) relating to an
+operational state of the virtual machine, wherein the request handler worker (202) further
+includes a query parser for parsing the incoming query (106) such that one of the plurality of
+services (212) is identified for use by the operations worker (214) to generate a reply to the
+incoming query (106);
+
+a plurality of services (212) wherein a service performs operations for replying to the
+incoming query; and
+
+an operations worker (214) for generating output containing the reply (218) to the
+incoming query, using at least one of the plurality of services (22), wherein the reply provides
+state information regarding the operation of the virtual machine (102), and wherein the reply
+is an HTTP response comprising HTML or XML pages; and
+
+a request data structure (204) for transferring data between the request handler
+worker and the operations worker, the request data structure having a service pointer area
+(210) containing a pointer to one of the plurality of services (212) to be used for deriving the
+reply to the incoming query, a response buffer area (208), and a query segment area (206);
+
+wherein normal operation of the virtual machine (102) is stopped, once the
+operations worker receives the request data structure, while the incoming query is acted
+
+upon.
+
+2. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker is an HTTP thread (202).
+
+3. A computer implementing a virtual machine (102) as recited in claim 2 wherein the
+incoming query (106) is in HTTP format (201).
+
+4. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker (202) is created upon starting up the virtual machine (102).
+
+14
+
+--- PAGE 5 ---
+5. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker (202) is adapted to provide a network traffic manager for routing
+queries (106) and responses (216).
+
+6. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+plurality of services (212) contain in index of available services and parameters for each
+
+service.
+
+7. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+operations worker (214) is a virtual machine operations thread.
+
+8. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+request handler worker (202) creates the request data structure (204).
+
+9. A computer implementing a virtual machine (102) as recited in claim 1 wherein the
+
+virtual machine is a Java(TM) virtual machine.
+
+10. A computer implementing a virtual machine as recited in claim 9 wherein the plurality
+of services (212) include a heap objects service.
+
+11. A computer implementing a virtual machine as recited in claim 9 wherein the plurality
+
+of services (212) include a profiling service.
+
+12. A computer implementing a virtual machine as recited in claim 9 wherein the plurality
+
+of services (212) include a memory usage service.
+
+13. A computer implementing a virtual machine as recited in claim 9 wherein the plurality
+of services (212) include a thread stacks service.
+
+14. A computer-implemented method for a virtual machine (102), configured to function
+as a web server, the method comprising:
+
+receiving an incoming query from a browser;
+
+a request handler worker (202) in the virtual machine handling the incoming query
+(106) relating to an operational state of the virtual machine, wherein the request handler
+worker (202) further includes a query parser for parsing the incoming query (106) such that
+one of the plurality of services (212) is identified for use by the operations worker (214) to
+generate a reply to the incoming query (106);
+
+15
+
+--- PAGE 6 ---
+transferring data between the request handler worker and an operations worker in
+the virtual machine using a request data structure having a service pointer area (210)
+containing a pointer to one of a plurality of services (212) to be used for deriving the reply to
+the incoming query, a response buffer area (208), and a query segment area (206), wherein
+normal operation of the virtual machine (102) is stopped, once the operations worker
+receives the request data structure, while the incoming query is acted upon;
+
+the operations worker (214) generating output containing the reply (218) to the
+incoming query, using at least one of the plurality of services (22), wherein the reply provides
+state information regarding the operation of the virtual machine (102), and wherein the reply
+is an HTTP response comprising HTML or XML pages; and
+
+transmitting the reply to the browser.
+
+15. A method as recited in claim 14 further including invoking a web server in the virtual
+machine (102).
+
+16. A method as recited in claim 15 wherein receiving the incoming query from a browser
+(108) further includes establishing a secure HTTP connection when the incoming query is an
+HTTP request (201).
+
+17. A method as recited in claim 15 further including creating a request thread.
+
+18. A method as recited in claim 17 further including generating the HTTP response
+(218) into the response buffer area (208) of the request data structure (204).
+
+19. A method as recited in claim 17 further including generating XML pages into the
+response buffer area (208) of the request data structure (204).
+
+20. A method as recited in claim 14 further including sending a response from the
+operations worker (214) to the request handler worker (202).
+
+21. A method as recited in claim 14, wherein the request handler manager (202) sends
+the response to the browser (108).
+
+22. A computer-readable medium containing programmed instructions arranged to
+handle an incoming query (106), in a virtual machine (102) configurable to function as a web
+server, the computer-readable medium including programmed instructions for performing the
+
+method of any of claims 14 to 21.
+
+16

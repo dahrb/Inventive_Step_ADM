@@ -1,0 +1,415 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+Miuller-Boré
+_Main request
+
+Application No.: 13 005 454.7
+
+Applicant: Accenture Global Services Limited
+"Data Consistency Management"
+Our Ref.: A 7380EU - hy/ tki
+
+Claims
+
+1. . Adata consistency management system (1 50) determining whether to forward
+a query to a not only structured query language (NoSQL) data store (152) or to a re- |
+
+lational database management system (RDBMS) (160) by monitoring database que-
+
+ries issued by an application, and identifying data tables with query patterns that are
+
+suitable to be managed by the NoSQL data store (152), the system (150) compris-
+ing: / a
+- a query identification module (151) monitoring and parsing queries (153) to
+identify all queries of a data table, and calculating how many of the identified queries
+are read queries, and how many of the identified queries match the query patterns:
+
+a data table ranking module (165) ranking data tables with a linear combina-
+
+_tion of a percentage of read queries and a percentage of the query patterns;
+
+‘a data table determination module (167) automatically determining which data
+
+_table are to be managed using the NoSQL data store (152);
+
+a query translation module (168) automatically translating queries targeting
+the determined data tables to NoSQL API calls;
+a memory (406) storing machine readable instructions to:
+receive, by the query identification module (151), a query (153);-
+| determine, by the query identification module (151), a suitability of the
+query (153) for processing by the NoSQL data store (152), or the RDBMS (161),
+
+wherein the machine readable instructions to determine the suitability of the query for
+
+processing by the NoSQL data store (152), or the RDBMS (161) further comprise:
+
+“4
+
+--- PAGE 2 ---
+. Miuller-Boré
+_ Main request
+
+determining whether the query (153) is a select query that selects data
+from a data table via a primary key (281) of the data table, the query matching
+a key-select pattern (181); and
+determining whether the query (153) is a select query that aggregates a
+5 single column of a data table, the query matching an aggregation pattern
+(182); |
+rank, by the data table ranking module (165), data tables based on a
+combination of read queries for the data tables and the query patterns suitable for
+the NoSQL data store (152) for the data tables, at least one of the data tables con-
+10 taining information for responding to the query (153), wherein the machine readable
+instructions to rank the data tables further comprise:
+ranking a data table based on a linear combination of a percentage of
+the read queries for the data table, a percentage of queries of the data table
+that matches the key-select pattern (181), anda percentage of queries of the |
+15 data table that matches the aggregation pattern (182),
+wherein the linear combination comprises an equation
+rank(t) = Ay rp(t) + A2 kp(t) + 23 max « (ap(t,¢)),
+wherein rp(t) represents a percentage of read queries of a table ¢, kp(t) |
+represents a percentage of queries of the table t that match the key-select
+20 pattern, ap(t,c) represents a percentage of queries of the table t that match
+the aggregation pattern and aggregate over the data in acolumn c of the table
+t, and Az Az and Aj are linear coefficients:
+based on the ranking, determine, by the data table determination mod-
+ule (167), data tables from the ranked data tables that are to be managed by the
+
+25 NoSQL data store (152), or by the RDBMS (161);
+
+--- PAGE 3 ---
+10
+
+. 15
+
+20
+
+25
+
+. Miiler-Boré
+Main request
+
+determine, by the query identification module (151), whether the query
+
+~ is for at least one data table managed by the NoSQL data store (152); and
+
+. based on a determination that the query (153) is for the at least one ~
+data table managed by the NoSQL data store (152), translate, by the query transla- .
+tion module (168), the query (153) to NoSQL application programming interface
+(API) calls for using the NoSQL data store (152) to respond to the query (153);
+
+“forward the translated query (153) to the NoSQL data store (152); and
+
+a processor (402) to execute the machine readable instructions.
+
+2. The data consistency management system (1 50) of claim 1, further compris-
+
+| ing machine readable instructions to:
+
+based on a determination that the query is not for the at least one data table
+
+managed by the NoSQL data store (152), forward the query to the RDBMS (161).
+
+3. The data consistency management system (150) of any one of the preceding
+
+claims, wherein the machine readable instructions to determine the suitability of the
+query for processing by the NoSQL data store (152), or the RDBMS (161) further
+comprise: | | |
+
+determining ifa predetermined percentage of queries to the data table
+are select queries that select data from the data table via the primary key (281) of the
+data tabteseandn a determination that a predetermined percentage of queries to the
+data table are select queries that select data from the data table Via the primary key
+(281) of the data table, using a key-value store for the NoSQL data store for proc-
+
+essing the query, and/or
+
+--- PAGE 4 ---
+10
+
+15
+
+20 .
+
+25
+
+: ~ Miiller-Boré
+Main request
+
+wherein the machine readable instructions to determine the suitability of the
+
+query for processing by the NoSQL data store (152), or the RDBMS (161) further _
+
+comprise:
+
+‘determining ifa predetermined percentage of queries to the data table
+are select queries that aggregate the single column of the data table; and
+based on a determination that a predetermined percentage of queries to the
+data table are select queries that aggregate the single column of the data table, us-
+
+ing a column store for the NoSQL data store (152) for processing the query.
+
+4. The data consistency management system (150) of any one of the preceding
+
+. claims, wherein the machine readable instructions to determine the data tables from
+
+the ranked data tables that are to be managed by the NoSQL data store (152), or by
+
+the RDBMS (161) further comprise:
+
+determining data tables for which the ranking exceeds a predetermined
+
+threshold, and/or
+
+wherein the machine readable instructions to determine the data tables from -
+
+‘the ranked data tables that are to be managed by the NoSQL data store (152), or by
+
+the RDBMS (161) further comprise:
+
+determining data tables for which at least one of the rankings related to
+
+the percentage of the read queries, the percentage of queries of the data tables that
+
+matches the key-select pattern, and the percentage of queries of the data tables that
+
+matches the aggregation pattern and aggregate over data in a column of the data
+
+_table, exceed at least one predetermined threshold related to the percentage of the
+
+read queries, the percentage of queries of the data tables that matches the key-
+
+select pattern, and the percentage of queries of the data tables that matches the ag-
+
+4
+
+--- PAGE 5 ---
+10°
+
+15
+
+20:
+
+25
+
+. Miiller-Boré
+Main request
+
+gregation. pattern and aggregate over data in a column of the data table.
+
+5. The data consistency management system (150) of any one of the preceding
+
+claims, wherein the machine readable instructions to translate the query further
+
+comprise:
+
+creating a data structure in the NoSQL data store (152) according to the
+
+_ structure of the at least one data table, and/or
+
+wherein the machine readable instructions to translate the query (153) further
+
+~ comprise:
+
+determining if the at least one data table includes a high percentage of que-
+ries that match the key-select pattern; and
+
+based on a determination that the at least one data table includes a high per- _
+
+. centage of queries that match the key-select pattern, creating a key-value store for
+
+the NoSQL data store (152) by using a primary key of the at least one data table. .
+
+«C6. The data consistency management system of any one of the preceding
+
+claims, wherein the machine readable instructions to translate the query further
+comprise: |
+| determining if the at least one data table includes a high percentage of que-
+ries that match the aggregation pattern: and |
+based on a determination that the at least one data table includes a high per- |
+centage of queries that match the aggregation pattern, creating a column store (300) |
+
+for the NoSQL data store (152).
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+, Miller-Boré
+Main request
+
+7. The data consistency management system (150) of any one of the preceding
+claims, wherein the machine readable instructions to determine the suitability of the
+query for processing by the NoSQL data store (152), or the RDBMS (161) further
+comprise:
+
+determining whether the query (153) is an update. query that updates data in
+
+the at least one data table managed by the NoSQL data store;
+
+‘determining whether a conflict exists in the data of the at least one data table
+based on processing of the update query; and | |
+
+based on a determination that a conflict exists in the data of the at least one
+data table based on processing of the update query, resolving the conflict based on a
+
+conflict resolution policy.
+
+8. A method for data consistency management for determining whether to for-
+ward a query to a not only structured query language (NoSQL) data store (152) or to
+a relational database management system (RDBMS) (160) by monitoring database
+queries issued by an application, and identifying data tables with query patterns that
+are suitable to be managed by the NoSQL data store (152), the method comprising:
+receiving (301), by a query identification module (151), a query (153), wherein
+
+the query identification module (151) monitors and parses queries (153) to identify all
+
+_ queries of a data table, and calculates how many of the identified queries are read
+
+queries, and how many of the identified queries match the query patterns:
+determining (302), by the query identification module (151), a suitability of the
+
+query (153) for the NoSQL data store (152), or the RDBMS (161), wherein deter- |
+
+mining (302) the suitability of the query (153) for processing by the NoSQL data store ©
+
+(152), or the RDBMS (161) further comprises:
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+. Miller-Boré
+Main request
+
+determining whether the query is a select query that selects data from a
+data table via a primary key of the data table, the query matching a key-select _
+~ pattern (181); and | |
+determining whether the query is a select query that aggregates a sin-
+gle column of a data table, the query matching an aggregation pattern (182); .
+ranking (303), by a data table ranking module (165), data tables based on a_
+combination of read queries for the data tables and query patterns suitable for the
+NoSQL data store for the data tables, at least one of the data tables containing in-
+formation for responding to the query (153), wherein the data table ranking module
+(165) ranks data tables with a linear combination of a percentage of read queries and
+a percentage of the query patterns, wherein ranking (303) the data tables further
+comprises: |
+ranking a data table based on the linear combination of the percentage
+‘of the read queries for the data table, a percentage of queries of the data table
+that matches a key-select pattern (181), anda percentage of queries of the
+‘data table that matches an aggregation pattern (182) and aggregate over data |
+in a.column of the data table,
+‘wherein the linear combination comprises an equation
+rank(t) = A; rp(t) + A2 kp(t) + Ag max ¢ (ap(t.c)),
+wherein rp(t) represents a percentage of read queries of a table f, kp(t)
+represents a percentage of queries of the table t that match the key-select
+pattern, ap(t,c) represents a percentage of queries of the table ¢ that match
+the aggregation pattern and aggregate over the data in a column c of the table
+t, and 2; Az and A3are linear coefficients; |
+based on the ranking, determining, by a data table determination module
+(167), data tables from the ranked data tables that are to be managed by the NoSQL
+7
+
+--- PAGE 8 ---
+10.
+
+15
+
+20
+
+25
+
+. Millier-Boré
+_ Main request
+
+data store (152), or by the RDBMS (161), wherein the data table determination mod-
+
+ule (167) automatically determines which data table are to be managed using the
+
+NoSQL data store (152); |
+determining (305), by the query identification module (151), whether the query
+(153) is for at least one data table managed by the NoSQL data store (152);. and
+based on a determination that the query (153) is for the at least one data table
+managed by the NoSQL data store, translating (306), by a query translation module
+(168), the query (153) to NoSQL application programming interface (API) calls for
+using the NoSQL data store (152) to respond to the query (153), wherein the query
+
+translation module (168) automatically translating queries targeting the determined
+
+_ data tables to NoSQL API calls; and
+
+forwarding the translated query (153) to the NoSQL data store (152);.
+
+9. The method of-claim 8, further comprising:
+| based on a determination that the query (153) is not for the at least one data |
+table managed by the NoSQL data store (152), forwarding the query to the RDBMS ~
+
+(161).
+
+40. The method of claim 8 or claim 9, wherein determining (302) the suitability of
+
+the query (153) for processing by the NoSQL data store (152), or the RDBMS (161)
+
+further comprises: determining whether the query (1 53) is a select query that
+
+. selects data from a data table via a primary key (281) of the data table;
+
+determining if a predetermined percentage of queries to the data table are ~
+select queries that select data from the data table via the primary key (281) of the
+
+data table; and
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+- Miller-Boré
+Main request
+
+based on a determination that a predetermined percentage of queries to the. -
+
+_ data table are select queries that select data from the data table via the primary key
+
+(281) of the data table, using a key-value store for the NoSQL data store (152) for
+
+processing the query (153).
+
+11. | The method of any one of claims 8-10, wherein determining the suitability of
+the query for processing by the NoSQL data store (152), or the RDBMS (161) further
+comprises: | |
+
+determining whether the query (153) isa select query that aggregates a single
+column of a data table; |
+
+determining if a predetermined percentage of queries to the data table are.
+select queries that aggregate the single column of the data table; and |
+
+based on a determination that a predetermined percentage of queries to the
+data table are select queries that aggregate the single column of the data table, us-
+
+ing a column store for the NoSQL data store (152) for processing the query (153).
+
+12, A non-transitory computer readable medium having stored thereon machine
+
+_ readable instructions for data consistency management, the machine readable in-
+
+structions when executed cause a computer system to perform operations according
+
+to the method of any one of claims 8 to 11.

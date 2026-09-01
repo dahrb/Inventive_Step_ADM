@@ -1,0 +1,103 @@
+--- PAGE 1 ---
+POQU920080006EP 1 44 New Page: 29 August 2012
+
+CLAIMS
+
+1. A method of operating a computer comprising:
+
+fetching a rotate-then-operate instruction in a program, the rotate-then-operate
+instruction defined for a computer architecture, the rotate-then-operate instruction comprising
+an opcode field, a first register field (R2), a second register field (R1), a T bit, and a rotate
+amount field (15) specifying a rotate amount, wherein the first register field specifies one of a
+plurality of general registers, wherein the second register field specifies one of the plurality of
+general registers;
+
+executing the rotate-then-operate instruction comprising:
+
+obtaining a first operand from a first register specified by the first register field;
+
+rotating the first operand by the instruction specified rotate amount to produce a
+rotated value wherein the rotation effectively shifts bits towards a higher order position and
+effectively shifts bits out of the high order bit position into the low order bit position;
+
+selecting a portion of the rotated value;
+
+obtaining a second operand from a second register specified by the second register
+field;
+
+performing a Boolean operation on the selected portion and corresponding bits of the
+second operand producing a result corresponding to the selected portion, the Boolean
+operation specified by the rotate-then-operate instruction;
+
+responsive to the T bit being 1, the execution does not change the second operand of
+the second register;
+
+responsive to the T bit being 0, saving the result in a second operand portion of the
+second operand in the second register, the second operand portion corresponding to bit
+positions of the selected portion, wherein all other bits of the second register other than the
+second operand portion are unchanged in the second register by the saving operation and
+continuing to a next instruction for execution; and
+
+setting a condition code, the condition code indicating the result is any one of zero or
+
+not zero.
+
+2. The method according to Claim 1, wherein the rotate-then-operate instruction further
+
+comprises a first immediate field (13) comprising a first value indicating a starting bit position
+
+--- PAGE 2 ---
+POU920080006EP 1 45 New Page: 29 August 2012
+
+of the portion to be selected and a second immediate field (14) comprising a second value
+
+indicating an ending bit position of the portion to be selected.
+
+3. The method according to Claim 2, comprising responsive to the T bit being 1, the
+
+execution does not change the second operand of the second register.
+
+4. The method according to Claim 3, wherein the opcode comprises a first opcode
+portion and a second opcode portion, wherein the second opcode portion specifies the
+Boolean operation comprising:
+
+responsive to the second opcode portion specifying an OR, performing the OR
+operation on the selected portion and the corresponding bits of the second operand;
+
+responsive to the second opcode portion specifying an AND, performing the AND
+operation on the selected portion and the corresponding bits of the second operand; and
+
+responsive to the second opcode portion specifying an exclusive-or (XOR),
+performing the XOR operation on the selected portion and the corresponding bits of the
+
+second operand.
+
+5. The method according to Claim 4, wherein the rotate-then-operate instruction consists
+of bits 0-47, wherein the first opcode portion consists of bits 0-7, and wherein the second
+
+opcode portion consists of bits 40-47.
+
+6. The method according to Claim 5, wherein the first register field consists of bits 8-11,
+the second register field consists of bits 12-15, the T bit is bit 16, the first immediate field
+consists of bits 17-23, the second immediate field consists of bits 24-31, and the rotate
+
+amount consists of bits 34-39.
+
+7. The method according to claim 1, wherein the selected portion of the rotated value
+
+wraps around from a high order bit of the rotated value to a low order bit of the rotated value.
+
+8. A computer system comprising:
+
+a memory;
+
+--- PAGE 3 ---
+POU920080006EP 1 46 New Page: 29 August 2012
+
+a processor in communication with the memory, the processor comprising an
+instruction fetching element for fetching instructions from memory and one or more execution
+elements for executing fetched instructions;
+
+wherein the computer system is configured to perform the method of any preceding
+
+claim.

@@ -1,0 +1,39 @@
+--- PAGE 1 ---
+Claims - Main Request
+
+1. A method of producing graphically produced data communications being one or more
+
+of
+Controller Pilot Data Link Communication (CPDLC),
+Flight Information Service (FIS),
+Airline Operational Communications (AOC),
+Aeronautical Administration Communication (AAC),
+Data Link Initiation Capability (DLIC) and
+Automatic Dependent Surveillance (ADS),
+the method comprising:
+receiving a datalink text message from an aircraft or an air traffic control center;
+parsing the datalink text message into message components;
+
+identifying the message components capable of graphical representationby using rules
+
+for applying graphical enhancements;
+
+retrieving individual graphic components from a graphics library corresponding to the
+
+identified message components using the rules for applying graphical enhancements;
+
+assembling the individual graphic components into a composite graphic presentation
+
+using rules for assembling graphics; and
+
+combining the datalink text message with the composite graphic presentation for
+
+display.
+
+2. The method of claim 1, wherein the datalink text message is an air-to-ground or
+
+ground-to-air datalink text message.
+
+3. The method of claim 2, wherein the datalink text message is received by an aircraft or
+
+a ground facility.

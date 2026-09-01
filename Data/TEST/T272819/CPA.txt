@@ -1,0 +1,235 @@
+Title: 
+System and methods for managing content in pre-existing mobile applications
+
+Abstract: 
+Methods and systems for managing distribution and retrieval of data (for example advertising content and viewing statistics) and insertion of control logic (for example display of advertising content) into pre-existing mobile applications. In some arrangements the method includes analyzing the pre-existing application in the context of the target platform and the desired placement of new content, and instrumenting the application to support the addition of the new content. The instrumenting process can include modification of the application to support one or more of features selected from a group comprising user identification, usage tracking, bi-directional communication with an advertising server, and displaying advertising content. The analysis and instrumenting process can be applied in a just-in-time fashion during application download. In some arrangements, a portal application can be provided to reside on the mobile device for managing communications with an advertising server.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for automating code modifications for an application comprising the steps of
+receiving an application comprising code and executable on a client device,
+automatically identifying locations within the code where additional code can be inserted,
+automatically modifying the application by inserting code [at least one of the identified locations] to add predetermined functionality to the application, and
+returning the modified application for delivery to the client device.
+2. The method of claim 1 wherein the modifying step includes deletion of code from the application.
+3. A method for automating modifications to an application comprising steps of
+receiving an application comprising code and an application descriptor and executable on a client device,
+automatically identifying locations within at least one of the code and the application descriptor where additional information can be inserted,
+selecting for modification at least one of the identified locations,
+modifying at least one of the identified locations,
+returning the modified application for delivery to the client device.
+4. The method of claim 3 wherein the additional information includes code.
+5. The method of claim 3 wherein the additional information includes text.
+6. The method of claim 4 wherein the application is modified by identifying locations within the code where additional code can be inserted.
+7. The method of claim 5 wherein the additional information is inserted into the application descriptor.
+8. The method of claim 7 wherein the information inserted into the application description includes information specific to the client or the client device.
+9. A method for automating modifications to an application comprising the steps of
+receiving an application comprising code and data and executable on a client device,
+automatically identifying locations within the application where either the code or the data, or both, can be modified,
+modifying at least one of the code or the data, and
+returning the modified application for delivery to the client device.
+10. A method for automating code modifications for an application comprising the steps of
+receiving an application comprising code and executable on a client device,
+automatically identifying locations within the code where additional code can be inserted,
+modifying the application by inserting code in at least one of the identified locations to add predetermined functionality to the application, and
+returning the modified application for delivery to the client device.
+11. A method for automating code modifications for an application comprising the steps of
+receiving an application comprising code and executable on a client device,
+identifying locations within the code where additional code can be inserted,
+automatically modifying the application by inserting code to add predetermined functionality to the application, and
+returning the modified application for delivery to the client device.
+12. The method of claim 10 wherein the modifying step is performed automatically.
+13. The method of claim 11 wherein the identifying step is performed automatically.
+14. A method for automating code modifications for an application comprising the steps of
+receiving an application comprising code and executable on a client device,
+automatically identifying locations within the code where additional code can be inserted,
+returning the application for selection of at least one of the identified locations,
+automatically modifying the application by inserting code at the selected location to add predetermined functionality to the application,
+repeating the returning and modifying steps as desired, and
+forwarding the modified application for delivery to the client device.
+15. The method of claim 14 further comprising the step of re-receiving the application following the selection of at least one of the identified locations.
+16. The method of claim 15 wherein the re-receiving step is repeated as desired.
+17. The method of claim 14 wherein the step of returning the application comprises returning an emulation of the application.
+18. The method of claim 1 further including the step of modifying the application by adding user-specific information.
+19. A method for automating modifications to an application comprising steps of
+receiving an application comprising code and an application descriptor and executable on a client device,
+identifying locations within at least one of the code and the application descriptor where additional information can be inserted,
+selecting for modification at least one of the identified locations,
+automatically modifying at least one of the identified locations,
+returning the modified application for delivery to the client device.
+20. The method of claim 9 where the data to be rendered comprises at least one of a group comprising audio, video, image, and text.
+21. The method of claim 10 wherein the application further comprises data.
+22. A method for automating modifications to an application comprising the steps of
+receiving an application comprising code and data and executable on a client device,
+identifying locations within the application where either the code or the data, or both, can be modified,
+automatically modifying at least one of the code or the data, and
+returning the modified application for delivery to the client device.
+23. The method of claim 1 wherein modifying comprises at least one of a group comprising adding, removing, or substituting.
+24. The method of claim 1 wherein the identifying step includes recognizing placeholders.
+25. The method of claim 1 wherein the identifying step includes decompiling the application.
+26. The method of claim 1 wherein the modifying step includes decompiling the application.
+27. A process for distributing content to a wireless device operated by a user comprising the steps of
+adapting a pre-existing application to enable the application to include additional content capable of being rendered on a wireless device,
+downloading the application to a user's wireless device, and
+receiving tracking data from the user's wireless device after the additional content has been rendered.
+28. A process for distributing content to a user's wireless device comprising the steps of
+modifying a pre-existing application to include additional content capable of being rendered on a wireless device,
+downloading the application to a user's wireless device,
+detecting a predetermined event, and
+downloading to the user's wireless device new content in response to the detection of the predetermined event.
+29. The process of claim 28 wherein the predetermined event is the passage of a period of time.
+30. The process of claim 28 wherein the predetermined event is a point in the application.
+31. The process of claim 28 wherein the predetermined event is the rendering of the initially downloaded content a predetermined number of times.
+32. The process of claim 28 further comprising the step of
+receiving from the user's device tracking data.
+33. The process of claim 28 further comprising the step of
+receiving from the user's device distribution data sufficient to allocate compensation.
+34. The process of claim 33 wherein the distribution data includes indicia for identifying each distributor associated with downloading of the application to a user's wireless device.
+35. The process of claim 27 wherein the additional content is static.
+36. The process of claim 27 wherein the additional content is dynamic.
+37. The process of claim 27 further comprising the step of
+further modifying the pre-existing application to include user-specific information.
+38. The process of claim 37 wherein the further modification occurs after the user requests the download and before the download occurs.
+39. The process of claim 33 wherein the receiving step is not contemporaneous with the rendering of the additional content on the user's device.
+40. The process of claim 39 wherein the distribution data is stored on the user's wireless device at least until the receiving step occurs.
+41. A method of distributing content to a user's wireless device comprising the steps of
+adapting a pre-existing application to enable the application to include additional content capable of being rendered on a wireless device,
+receiving a request for download,
+receiving user-specific information,
+modifying the application to include user-specific information, and
+downloading the modified application to a user's wireless device.
+42. The method of claim 41 further comprising the step of
+receiving from the wireless device information sufficient to track the rendering of the additional content.
+43. The method of claim 41 further comprising the step of
+receiving from the wireless device information sufficient to track the rendering of the additional content.
+44. The method of claim 41 further comprising the steps of
+detecting a predetermined event, and
+further modifying the application after detecting the predetermined event.
+45. The method of claim 41 further comprising the step of modifying the application to include content selected based on the user-specific information.
+46. The method of claim 28 wherein the predetermined event is a schedule.
+47. The method of claim 41 wherein the user-specific information is the manufacturer and model of the wireless device.
+48. A method of distributing content to a user's wireless device comprising the steps of
+adapting a pre-existing application to enable the application to include additional content capable of being rendered on a wireless device,
+receiving a request for download,
+receiving information specific to the user's wireless device,
+modifying the application to include device-specific information, and
+downloading the modified application to a user's wireless device.
+49. The method of claim 41 wherein the user-specific information comprises at least one of a group comprising the user's service provider, the user's residence, the user's device, the user's demographic data, and the user's current location.
+50. The method of claim 41 wherein the request for download originates with a user's device.
+51. The method of claim 41 wherein the request for download originates with a web site.
+52. A method for instrumenting an application adapted for execution on a wireless device comprising the steps of
+receiving an application comprising code and executable on a client device,
+receiving data specific to at least one of a group comprising the user or the user's device,
+modifying the application in accordance with the data by inserting code to add predetermined functionality to the application.
+53. The method of claim 52 wherein the data is received at substantially the same time as a download of the application is requested.
+54. The method of claim 52 wherein the data includes at least one of a group comprising the user's service provider, the user's location, the user's device, the user's country of residence, and the user's demographic data.
+55. The method of claim 52 further comprising the step of
+transmitting to a server tracking data indicative of the user's interaction with the modified application.
+56. The method of claim 52 wherein the modifying step further includes inserting content.
+57. The method of claim 56 wherein the content provided to the application is selected in accordance with the data received in the receiving step.
+58. The method of claim 56 wherein at least some of the content provided to the user's device on a subsequent execution of the application is different from the content provided to the user's device on the first execution of the application.
+59. The method of claim 52 wherein the data comprises information about the identification of each distributor associated with a download by the user.
+60. A method for rendering advertisements on a wireless device comprising the steps of
+providing to the wireless device an advertisement capable of being rendered on the device,
+caching the advertisement on the wireless device,
+retrieving from cache and rendering the advertisement in accordance with a predetermined criteria resident on the wireless device.
+61. The method of claim 60 wherein an advertisement includes logic.
+62. The method of claim 60 wherein an advertisement includes at least one, image.
+63. The method of claim 60 wherein an advertisement includes an audio portion.
+64. The method of claim 60 wherein the predetermined criteria is provided to the wireless device contemporaneously with the advertisement.
+65. The method of claim 60 wherein the predetermined criteria is provided to the wireless device prior to providing the advertisement to the wireless device.
+66. The method of claim 60 wherein the predetermined criteria is provided to the wireless device subsequent to providing the advertisement to the wireless device.
+67. The method of claim 60 wherein the predetermined criteria includes at least one of a group comprising: an end date for the advertisement, time of day, location of the wireless device, prior advertisement sequence, and targeting information.
+68. The method of claim 60 wherein the predetermined criteria includes selecting subsequent ads based on the rendering of a prior ad.
+69. The method of claim 60 wherein the predetermined criteria includes selecting subsequent ads based on the user's interaction with an ad rendered previously.
+70. The method of claim 68 wherein the predetermined criteria includes selecting a series of ads sequentially.
+71. The method of claim 67 wherein the rendering of a first ad at the beginning of an application causes the selection of a second ad later in the application.
+72. The method of claim 60 wherein the predetermined criteria is downloaded to the wireless device as part of the advertisement.
+73. The method of claim 60 further including the step of providing a plurality of available actions selectable by the user in response to the user's selection of an ad.
+74. The method of claim 60 wherein the ad includes a video portion.
+75. The method of claim 60 wherein the ad includes an audio clip.
+76. The method of claim 73 where the plurality of available actions includes a plurality of URLs.
+77. The method of claim 60 further comprising the step of recording information indicative of the rendering of the advertisement.
+78. The method of claim 60 further comprising the step of recording information indicative of a user interaction with the advertisement.
+79. The method of claim 60 further comprising the step of recording information indicative of a result of a user interaction with the advertisement.
+80. The method of claim 77 further comprising the step of providing to a remote server the recorded information.
+81. The method of claim 78 further comprising the step of providing to a remote server the recorded information.
+82. The method of claim 79 further comprising the step of providing to a remote server the recorded information.
+83. The method of claim 79 wherein the ad includes a video portion.
+84. The method of claim 79 wherein the ad includes an audio clip.
+85. A method for displaying advertisements on a wireless device comprising the steps of
+providing to the wireless device an advertisement capable of being rendered on the device, and
+providing a plurality of user-selectable actions in response to predetermined user interaction with the advertisement.
+86. A method for displaying advertisements on a wireless device comprising the steps of
+providing to the wireless device an advertisement capable of being rendered on the device, wherein the advertisement includes a plurality of user-selectable actions in response to predetermined user interaction with the advertisement, and
+rendering the advertisement as required by an application resident on the wireless device.
+87. A method of distributing advertisements in a campaign to wireless devices comprising the steps of
+identifying a number of impressions of an advertisement expected for a campaign, and
+downloading, during one or more downloads, an application and the advertisement to a quantity of users, where the potential quantity of resulting impressions is in excess of the expected number of impressions.
+88. The method of claim 87 further including the step of
+recording, on the wireless device, an indicia indicative of the rendering of the advertisement.
+89. The method of claim 87 further including the step of
+reporting the impression at a time not contemporaneous with the download of the application and advertisement.
+90. The method of claim 88 further including the step of
+reporting the impression at a time not contemporaneous with the download of the application and advertisement.
+91. The method of claim 87 wherein the a single user is predicted to receive multiple impressions of the advertisement.
+92. The method of claim 87 wherein a single user is predicted to receive at least one impression of the advertisement.
+93. A method of organizing an ad campaign comprising the steps of
+receiving at least one creative, the creative being provided in a plurality of formats, wherein each of the plurality of formats is compatible with one of a plurality of device types,
+organizing the at least one creative according to compatible device types,
+serving an appropriate format of the at least one creative in accordance with a user's device type.
+94. A method for distributing revenues among one or more participants associated with the distribution of electronically distributed data comprising the steps of
+providing data for download by a user,
+modifying the data to store therein an indicia representative of at least one participant in the distribution,
+apportioning at least a portion of the revenues in accordance with the stored indicia.
+95. The method of claim 94 wherein the at least one participant comprises at least one of a group comprising developer, publisher, distributor, infrastructure provider, agencies, advertiser and user.
+96. The method of claim 95 wherein the at least one link is at least two links.
+97. The method of claim 95 wherein the data is download to a wireless device.
+98. The method of claim 97 wherein the wireless device is at least one of a group comprising cellular phone, PDA, smart phone, portable game console, handheld computer.
+99. The method of claim 95 wherein the data is an application.
+100. The method of claim 95 wherein the data is content.
+101. The method of claim 95 where the data is a message.
+102. A method for assigning charging rates for electronically distributed downloadable data comprising the steps of
+inserting into downloadable data direct or indirect indicia of a user's demographic factors,
+providing the data to the user,
+characterizing additional data in accordance with a demographic criteria,
+serving to the user the additional data, and
+charging for the additional data provided based on a correlation of the demographic factors with the demographic criteria.
+103. The method of claim 102 wherein the user's demographic factors are correlated prior to download of the additional data.
+104. The method of claim 103 further including the step of authorizing the download only where the correlation meets a predetermined threshold.
+105. The method of claim 102 wherein the step of charging comprises charging different rates depending upon the degree of correlation.
+106. The method of claim 102 wherein the user's demographic factors are correlated after the additional data is downloaded.
+107. The method of claim 106 wherein the step of charging comprises charging different rates depending upon the degree of correlation.
+108. The method of claim 102 wherein the demographic factors are determined in accordance with at least one of the following group: cookies, survey information, phone number, device serial number, device email address, device direct connect number, device cell ID, device GPS location, web traffic header information, carrier gateway address.
+109. The method of claim 102 wherein the user is assigned a unique ID and the demographic factors are associated with that user ID.
+110. A method for assigning charging rates for electronically distributed downloadable data comprising the steps of
+inserting into downloadable data at least one direct or indirect demographic criteria,
+providing the data to a user having identifiable demographic factors,
+comparing the user's demographic factors with the demographic criteria,
+charging for the data provided based on correlation of the demographic factors with the demographic criteria.
+111. A method for downloading advertising to a wireless device with minimal disruption to a user's perception of the operation of an application running on the device comprising the steps of
+establishing a first thread for running the application on the wireless device having a user interface, and
+establishing a second thread for downloading of the advertising substantially without interacting with the user interface.
+112. The method of 111 wherein the advertising is configured to avoid substantial interaction with the user interface while also not altering the device's internal controls for prioritizing between the first and second threads.
+113. The method of claim 111 wherein the size or type of the advertising content is configured to avoid substantial interaction of the second thread with the user interface.
+114. The method of claim 111 wherein the frequency of the download is limited to avoid substantial interaction of the second thread with the user interface.
+115. A method for charging advertisers for ads downloaded to a wireless user device for display in conjunction with a mobile application comprising the steps of
+downloading an application to a wireless user device,
+downloading to the wireless user device an ad which is available for display to a user during the running of the application,
+storing on a server an indicia indicative of the rendering of the ad on the wireless user device where the storing is not contemporaneous with the rendering of the ad, and
+generating a charge for the rendering of the ad.
+116. The method of claim 115 further including the steps of recording, on the wireless user device, the rendering of the ad thereon and communicating to the server a signal indicating the occurrence of the rendering.
+117. The method of claim 115 wherein the indicia indicative of the rendering of the ad is generated in accordance with a statistical model of expected user behavior.
+118. A method for charging advertisers for ads displayed on a wireless device comprising
+downloading at least one ad to a wireless device,
+charging a first fee for the download of the ad,
+making the ad available to a user of the wireless device,
+storing on a server an indicia representative of the rendering of the ad by the user, and
+charging a second fee for the rendering of the ad by the user.
+119. A method for assigning charging rates for electronically distributed downloadable data comprising the steps of
+inserting into downloadable data meta-data related to at least one characteristic of the data,
+constraining display of the data in accordance with the meta-data, and
+varying the charge to the advertiser in accordance with the meta-data.
+120. The method of claim 119 wherein the at least one characteristic is selected from a group comprising: CPM, CPA, ad priority, ad sequencing information, ad placement directives, desired impressions frequency, desired maximum impressions, desired duration of each impression, desired impression time-of-day/week/month/year, desired impression geographic locations, ad expiration date.

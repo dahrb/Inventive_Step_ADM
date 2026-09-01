@@ -1,0 +1,481 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS —- AMENDED MAIN REQUEST:
+
+1. A memory buffer for processing sequential input data symbols and providing
+the input data symbols to an N-window mode Soft-In Soft-Out “SISO” turbo decoder
+having a window size of W data symbols, comprising:
+
+a control logic (330);
+
+a unidirectional shift register (310) having an input terminal and an output
+terminal, wherein the unidirectional shift register is configured to sequentially shift and
+store 2NW sequential input data symbols from the input terminal in a predetermined
+direction, and sequentially output the shifted data symbols via the output terminal; and
+
+N bidirectional shift registers (321, 322,..., 323),
+
+wherein each of the bidirectional shift registers includes first and second input
+terminals, first and second output terminals, and a select terminal,
+
+wherein the bidirectional shift registers are configured by means of the control
+logic to be sequentially activated at intervals of W data symbols of the 2NW sequential
+input data symbols received at the input terminal of the unidirectional shift register,
+
+wherein each of the bidirectional shift registers is configured by means of the
+control logic to receive first NW data symbols among the sequential input data symbols
+through its first input terminal, and shift and store the received data symbols in a
+predetermined direction, and at the same time, serially output previously stored second
+NW data symbols through its second output terminal,
+
+wherein each of the bidirectional shift registers is configured by means of the
+control logic to thereafter receive second NW data symbols among the sequential input
+data symbols through its second input terminal, shift and store the received data
+symbols in the opposite direction of the predetermined direction, and at the same time,
+serially output the previously stored first NW data symbols via its first output terminal,
+and
+
+wherein the control logic of the memory buffer is configured to provide the
+select terminal of each of the bidirectional shift registers with a select signal for
+applying the first NW data symbols to the first input terminal or the second NW data
+
+symbols to the second input terminal.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2
+2. The memory buffer of claim 1, wherein the W data symbols include a first to
+
+a W" consecutive data symbols.
+
+3. The memory buffer of claim 1, wherein each of the shift registers includes a
+
+clock input terminal and is configured to operate in response to transitions of a clock.
+
+4. The memory buffer of claim 1, wherein N is 2.
+
+5. An N-window mode Soft-In Soft-Out “SISO” turbo decoding apparatus in a
+communication system, comprising:
+
+a memory buffer according to one of claims 1 to 4, wherein the number of
+bidirectional shift registers is N;
+
+a first metric calculation section comprised of a plurality of delta metric
+calculators, one of the delta metric calculators being configured to receive the symbols
+formed by the unidirectional shift register of the memory buffer and to calculate the
+corresponding delta metric, and one or more delta metric calculators being configured
+to receive the symbols formed by one of the bidirectional shift registers of the memory
+buffer and to calculate the corresponding delta metrics;
+
+a second metric calculation section configured to receive the delta metric from
+the delta metric calculator that is configured to receive the symbols formed by the
+unidirectional shift register, and calculating an alpha metric;
+
+a third metric calculation section configured to receive the delta metrics from
+the delta metric calculators that are configured to receive the symbols formed by one of
+the bidirectional shift registers, and calculate beta metrics;
+
+a fourth metric calculation section configured to receive the alpha metric, also
+receive a multiplexing result of the beta metrics, and calculate Log Likelihood Ratio
+(LLR) values corresponding to the respective shift registers of the memory buffer; and
+
+a window-mode Soft-In Soft-Out (SISO) decoder including a subtraction
+section configured to subtract an output of the unidirectional shift register of the
+memory buffer from the respective LLR values, and output the subtraction result for
+
+interleaving/deinterleaving.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3
+6. The turbo decoding apparatus of claim 5, wherein the memory buffer is
+
+configured to receive the input data symbols at a clock rate of a turbo decoder.
+
+7. A memory buffer for processing sequential input data symbols and providing
+the sequential input data symbols to an N-window mode Soft-In Soft-Out “SISO” turbo
+decoder having a window size of W data symbols, comprising:
+
+a control logic (530);
+
+N first stage’s bidirectional shift registers (521; 522) having NW storage areas,
+a first terminal and a second terminal for data input/output, the sequential input data
+symbols being divided into groups each comprised of a sequence of symbols of a
+predetermined length NW, wherein the first stage’s bidirectional shift registers are
+configured, under control of the control logic, to form symbols of the length NW by
+sequentially receiving and shifting the sequence of symbols of odd-numbered groups
+among the divided groups via the first terminal and then sequentially outputting the
+formed symbols via the first terminal; and form symbols of the length NW by
+sequentially receiving and shifting the sequence of symbols of even-numbered groups
+among the divided groups via the second terminal and then sequentially output the
+formed symbols via the second terminal, wherein the memory buffer is configured such
+that the symbols of the odd-numbered groups are sequentially output via the first
+terminal and, at the same time, the symbols of the even-numbered groups are
+sequentially received and shifted via the second terminal, wherein the N first stage’s
+bidirectional shift registers are configured by means of the control logic to be
+sequentially activated at intervals of W data symbols of sequential input data symbols
+received at the input terminal of the unidirectional shift register; and
+
+a second stage's bidirectional shift register (510) having NW storage areas, a
+third terminal for data input/output, and a fourth terminal for data input/output, wherein
+the second stage's bidirectional shift register is configured to, under control of the
+control logic, form symbols of the length NW by sequentially receiving and shifting the
+symbols sequentially output via the N first terminals, via the third terminal, and then
+sequentially output the formed symbols via the third terminal; and form symbols of the
+length NW by sequentially receiving and shifting the symbols sequentially output via
+the N second terminals, via the fourth terminal, and then sequentially outputting the
+
+formed symbols via the fourth terminal .
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+8. The memory buffer of claim 7, wherein the control logic is configured to
+determine whether the input data symbols are symbols of odd-numbered groups or
+symbols of even-numbered groups among the divided groups, and provide the first
+stage's bidirectional shift registers with select signals for applying the input data
+symbols to the first terminal or the second terminal according to the determination
+
+result.
+
+9. The memory buffer of claim 8, further comprising a demultiplexer and a
+multiplexer corresponding to each of the first stage's bidirectional shift registers;
+
+wherein the demultiplexer has an input terminal configured to receive the input
+data symbols and a first output terminal and a second output terminal connected to the
+first terminal and the second terminal, respectively, configured to apply symbols of the
+odd-numbered groups to the first terminal via the first output terminal in response to a
+corresponding select signal provided from the control logic, and apply symbols of the
+even-numbered groups to the second terminal via the second output terminal;
+
+wherein the multiplexer is configured to multiplex symbols output via the first
+terminal and symbols output via the second terminal in response to a corresponding
+
+select signal provided from the control logic, and output the multiplexed symbols.
+
+10. The memory buffer of claim 9, further comprising a multiplexer
+corresponding to the second stage's bidirectional shift register, wherein the multiplexer
+is configured to multiplex symbols output via the third terminal and symbols output via
+the fourth terminal in response to a corresponding select signal provided from the
+
+control logic, and output the multiplexed symbols.
+
+11. The memory buffer of claim 10, wherein the select signals are control
+signals for applying the sequential input data symbols to the bidirectional shift registers
+
+at different times.
+
+12. An N-window mode Soft-In Soft-Out “SISO” turbo decoding apparatus in a
+communication system, comprising:
+
+a memory buffer according to one of claims 7 to 11;
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+5
+
+a first metric calculation section comprised of a plurality of delta metric
+calculators, one of the delta metric calculators being configured to receive the symbols
+formed by the second stage’s bidirectional shift register of the memory buffer and to
+calculate the corresponding delta metric, and one or more delta metric calculators being
+configured to receive the symbols formed by one of the first stage’s bidirectional shift
+registers of the memory buffer and to calculate the corresponding delta metrics;
+
+a second metric calculation section configured to receive the delta metric from
+the delta metric calculator that is configured to receive the symbols formed by the
+second stage's bidirectional shift register, and calculate an alpha metric;
+
+a third metric calculation section configured to receive the delta metrics from
+the delta metric calculators that are configured to receive the symbols formed by one of
+the first stage's bidirectional shift registers, and calculate beta metrics;
+
+a fourth metric calculation section configured to receive the alpha metric, also
+receive a multiplexing result of the beta metrics, and calculate Log Likelihood Ratio
+(LLR) values corresponding to the respective shift registers of the memory buffer; and
+
+a window-mode Soft-In Soft-Out (SISO) decoder including a subtraction
+section configured to subtract an output of the second stage's bidirectional shift register
+of the memory buffer from the respective LLR values, and output the subtraction result
+
+for interleaving/deinterleaving.
+
+13. The turbo decoding apparatus of claim 12, wherein the memory buffer is
+configured to receive the sequential input data symbols at a clock rate of a turbo
+
+decoder.
+
+14. A method of providing a memory buffer for processing sequential input data
+symbols and providing the sequential input data symbols to an N-window mode Soft-In
+Soft-Out (SISO) turbo decoder having a window size of W data symbols, the method
+comprising the steps of:
+
+sequentially shifting and storing 2NW sequential input data symbols from an
+input terminal of a unidirectional shift register in a predetermined direction, under
+control of a control logic;
+
+sequentially outputting, under control of the control logic, the shifted data
+
+symbols via the output terminal of the unidirectional shift register; sequentially
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+6
+
+activating N bidirectional shift registers at intervals of W data symbols from sequential
+input data symbols received at the input terminal of the unidirectional shift register,
+wherein each of the bidirectional shift registers includes first and second input
+terminals, first and second output terminals, and a select terminal;
+
+receiving, under control of the control logic, at each of the bidirectional shift
+registers first NW data symbols among the sequential input data symbols through its
+first input terminal;
+
+shifting and storing, under control of the control logic, the received data
+symbols in a predetermined direction, and simultaneously, serially outputting
+previously stored second NW data symbols through its second output terminal,
+thereafter, each of the bidirectional shift registers receiving second NW data symbols
+among the sequential input data symbols through its second input terminal; and
+
+shifting and storing, under control of the control logic, the received data
+symbols in the opposite direction of the predetermined direction, and simultaneously,
+serially outputting the previously stored first NW data symbols via its first output
+terminal,
+
+wherein the control logic of the memory buffer provides the select terminal of
+each of the bidirectional shift registers with a select signal for applying the first NW
+data symbols to the first input terminal or the second NW data symbols to the second
+
+input terminal.
+
+15. The method of claim 14, wherein N is 2.
+
+16. A method of providing an N-window mode Soft-In Soft-Out “SISO” turbo
+decoding in a communication system, the method comprising:
+
+the method of providing and outputting a memory buffer according to one of
+claims 15 to 16, wherein the number of bidirectional shift registers is N;
+
+receiving the symbols formed by the unidirectional shift register of the memory
+buffer and calculating the corresponding delta metric, and receiving the symbols
+formed by the bidirectional shift registers of the memory buffer and calculating the
+
+corresponding delta metrics, at a first metric calculation section;
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+7
+
+receiving the delta metric calculated on the basis of the symbols formed by the
+unidirectional shift register of the memory buffer, and calculating an alpha metric at a
+second metric calculation section;
+
+receiving the delta metrics calculated on the basis of the symbols formed by the
+bidirectional shift registers of the memory buffer, and calculating beta metrics at a third
+metric calculation section;
+
+receiving the alpha metric, also receiving a multiplexing result of the beta
+metrics, and calculating Log Likelihood Ratio (LLR) values corresponding to the
+respective shift registers of the memory buffer at a fourth metric calculation section;
+and
+
+subtracting an output of the unidirectional shift register from the respective LLR
+values, and outputting the subtraction result for interleaving/deinterleaving at a
+
+window-mode Soft-In Soft-Out (SISO) decoder including a subtraction section.
+
+17. The method of claim 16, wherein the input data symbols are received at a
+
+clock rate of a turbo decoder.
+
+18. A method of providing buffering in a memory buffer for receiving
+sequential input data symbols, and providing the sequential input data symbols to an N-
+window mode Soft-In Soft-Out “SISO” turbo decoder having a window size of W data
+symbols, the method comprising the steps of:
+
+under control of a control logic (530), dividing the sequential input data
+symbols into groups each comprised of a sequence of symbols of a predetermined
+length NW, via N first stage's bidirectional shift registers having NW storage areas, a
+first terminal and a second terminal for data input/output, the first stage's bidirectional
+shift registers (521; 522) forming symbols of the length NW by sequentially receiving
+and shifting the sequence of symbols of odd-numbered groups among the divided
+groups via the first terminal and then sequentially outputting the formed symbols via
+the first terminal; and forming symbols of the length NW by sequentially receiving and
+shifting the sequence of symbols of even-numbered groups among the divided groups
+via the second terminal and then sequentially outputting the formed symbols via the
+second terminal, wherein the symbols of the odd-numbered groups are sequentially
+
+output via the first terminal and, at the same time, the symbols of the even-numbered
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+8
+
+groups are sequentially received and shifted via the second terminal, wherein the N first
+stage’s bidirectional shift registers are sequentially activated at intervals of W data
+symbols of sequential input data symbols received at the input terminal of the
+unidirectional shift register;
+
+under control of the control logic, forming at a second stage's bidirectional shift
+register having NW storage areas and a third terminal and a fourth terminal for data
+input/output, symbols of the length NW by sequentially receiving and shifting the
+symbols sequentially output via the N first terminals, via the third terminal, and then
+sequentially outputting the formed symbols via the third terminal; and forming symbols
+of the length NW by sequentially receiving and shifting the symbols sequentially
+output via the N second terminals, via the fourth terminal, and then sequentially
+
+outputting the formed symbols via the fourth terminal.
+
+19. The method of claim 18, further comprising:
+
+determining whether the sequential input data symbols are symbols of odd-
+numbered groups or symbols of even-numbered groups among the divided groups for a
+control logic; and
+
+providing the first stage's bidirectional shift registers with select signals for
+applying the sequential input data symbols to the first terminal or the second terminal
+
+according to the determination result.
+
+20. The method of claim 19, wherein the memory buffer further comprises a
+demultiplexer and a multiplexer corresponding to each of the first stage's bidirectional
+shift registers;
+
+wherein the demultiplexer has an input terminal for receiving the sequential
+input data symbols and a first output terminal and a second output terminal connected
+to the first terminal and the second terminal, respectively, applies symbols of the odd-
+numbered groups to the first terminal via the first output terminal in response to a
+corresponding select signal provided from the control logic, and applies symbols of the
+even-numbered groups to the second terminal via the second output terminal;
+
+wherein the multiplexer multiplexes symbols output via the first terminal and
+symbols output via the second terminal in response to a corresponding select signal
+
+provided from the control logic, and outputs the multiplexed symbols.
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+21. The method of claim 19, further comprising:
+
+multiplexing symbols output via the third terminal and symbols output via the
+fourth terminal in response to a corresponding select signal provided from the control
+logic via a multiplexer of the memory buffer corresponding to the second stage's
+bidirectional shift register; and
+
+outputting the multiplexed symbols.
+
+22. The method of claim 19, wherein the select signals comprises control
+signals for applying the sequential input data symbols to the bidirectional shift registers
+
+at different times.
+
+23. A method of providing N-window mode Soft-In Soft-Out “SISO” turbo
+decoding in a communication system, comprising: the method of providing and
+outputting a memory buffer according to one of claims 18 to 22;
+
+receiving the symbols formed by the second stage’s bidirectional shift register of
+the memory buffer and to calculating the corresponding delta metric, and receiving the
+symbols formed by the first stage's bidirectional shift registers of the memory buffer
+and calculating the corresponding delta metrics, at a first metric calculation section;
+
+receiving the delta metric calculated on the basis of the symbols formed by the
+second stage's bidirectional shift register of the memory buffer, and calculating an
+alpha metric at a second metric calculation section;
+
+receiving the delta metrics calculated on the basis of the symbols formed by the
+first stage's bidirectional shift registers of the memory buffer, and calculating beta
+metrics at a third metric calculation section; receiving the alpha metric, also receiving a
+multiplexing result of the beta metrics, and calculating Log Likelihood Ratio (LLR)
+values corresponding to the respective first stage’s shift registers of the memory buffer
+at a fourth metric calculation section; and
+
+subtracting an output of the second stage's bidirectional shift register from the
+respective LLR values, and outputting the subtraction result for
+interleaving/deinterleaving at a window-mode Soft-In Soft-Out (SISO) decoder
+
+including a subtraction section.
+
+--- PAGE 10 ---
+10
+24. The method of claim 23, further comprising:
+
+receiving the sequential input data symbols at a clock rate of a turbo decoder.

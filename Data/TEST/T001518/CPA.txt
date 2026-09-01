@@ -1,0 +1,45 @@
+TITLE:
+Randomized distributed network coding
+
+TYPE:
+US patent
+
+ABSTRACT:
+A network and a method for transmitting processes in a network are disclosed, where a randomized coding approach is provided. Network nodes transmit on each outgoing link a linear combination of incoming signals, specified by independently and randomly chosen code coefficients from a finite field. The approach allows robust, distributed transmission and compression of information in networks and is advantageous over routing-based approaches.
+
+CLAIMS:
+1. A network comprising:
+one or more source nodes, wherein source processes are observable at the source nodes;
+one or more receiver nodes, wherein receiver processes are observable at the receiver nodes; and
+coding nodes, allowing communication of the source processes to each receiver node, the coding nodes being connected with input links for communication of input signals to the coding nodes and output links for communication of output signals from the coding nodes,
+wherein the output signals are a linear combination of the input signals and wherein coefficients of the linear combination are randomly chosen.
+2. The network of claim 1, wherein the network is an acyclic delay-free network.
+3. The network of claim 1, wherein the source processes at the source nodes are independent.
+4. The network of claim 1, wherein the source processes at the source nodes are linearly correlated.
+5. The network of claim 1, wherein the network comprises cycles and delays.
+6. The network of claim 1, wherein the coefficients of the linear combination are randomly chosen from a field of coefficients.
+7. The network of claim 6, wherein the field is a finite field.
+8. The network of claim 1, wherein the source processes are arbitrarily correlated and the output signals are a random linear combination of the input signals.
+9. The network of claim 1, wherein information specifying cumulative transformation for each signal in the network resulting from transformations at individual network nodes is sent through the network and updated at intermediate nodes.
+10. The network of claim 1, wherein the overall linear combination of source processes present in each signal in the network is specified as a vector of coefficients, each coefficient corresponding to a source process.
+11. The network of claim 10, wherein the vector of coefficients is updated at each coding node by applying to the vector of coefficients linear combinations, wherein the linear combinations applied to the vector of coefficients are the same as the linear combinations applied to data transmitted through the network.
+12. The network of claim 1, wherein the network is a computer network.
+13. The network of claim 1, wherein the input signals comprise input bits and the output signals comprise output bits.
+14. A network comprising nodes allowing communication of processes, each node having input links for communication of input signals to the node and output links for communication of output signals from the node, wherein the output signals are a linear combination of the input signals, wherein coefficients at each node are randomly chosen from a finite field, and the overall linear combinations obtained by transmission through the network are polynomials in a delay variable.
+15. The network of claim 14, wherein the network performs multi-source multicast.
+16. A method for transmitting processes from one or more sources to each receiver of one or more receivers in a network, the method comprising:
+providing coding nodes between the one or more sources and the one or more receivers;
+providing, for each coding node, input links for transmitting input signals to the coding node, and output links for transmitting output signals from the coding nodes, the output signals being a linear combination of the input signals;
+randomly choosing, for each coding node, coding coefficients, the coding coefficients being the coefficients of the linear combination of the input signals.
+17. The method of claim 16, wherein the network is an acyclic delay-free network.
+18. The method of claim 16, wherein the network comprises cycles and delays.
+19. The method of claim 16, wherein the overall linear combination of the processes transmitted from the one or more sources present in each signal in the network is specified as a vector of coefficients, each coefficient corresponding to a process to be transmitted from one or more sources.
+20. The method of claim 19, wherein the vector of coefficients is updated at each coding node by applying to the vector of coefficients linear combinations, wherein the linear combinations applied to the vector of coefficients are the same as the linear combinations applied to data transmitted through the network.
+21. The method of claim 16, wherein the network is a computer network.
+22. A network comprising:
+one or more source nodes, wherein source processes are observable at the source nodes;
+one or more receiver nodes, wherein receiver processes are observable at the receiver nodes; and
+coding nodes, allowing communication of the source processes to each receiver node of the receiver nodes, the coding nodes being connected with input links for communication of input signals to the coding nodes and output links for communication of output signals from the coding nodes,
+wherein the output signals are obtained by a combination of the input signals and wherein the combination is associated with a random choice.
+23. The network of claim 22, wherein a matrix characteristics of the combination involves a random choice.
+24. The network of claim 22, wherein at least a portion of the output signal is obtained by a random linear combination of a function of the input signals.

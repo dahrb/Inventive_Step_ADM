@@ -1,0 +1,147 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+Claims:
+
+1. A method for providing an indication of an action of a given user
+consuming content on a client device (126a; 128a; 130a; 132a) transmitted from
+a TV content distribution system (102), wherein the method comprises:
+
+authenticating the given user and/or the client device;
+
+receiving an indication of a change in context for the given user, the
+context comprising information regarding an action of the given user;
+
+maintaining a user profile for the given user, the user profile comprising a
+history of the user’s context changes as a function of time;
+
+propagating the indication of the change in context for the given user to
+one or more users in a social network for the given user; and
+
+using the user profile for the given user to provide a recommendation of
+content to a user on the basis of the context change.
+
+2. The method of claim 1 wherein the user to whom the recommendation is
+provided is the given user.
+
+3. The method of claim 1 wherein propagating comprises propagating to
+users On a given user's buddy list maintained by an instant messenger client on
+
+the given user's client device.
+
+4. The method of claim 1 wherein propagating the indication of the change in
+context comprises propagating an icon representing the changed context.
+
+5. The method of claim 1 wherein propagating comprises propagating the
+indication to other users in the given user's social network with a direct
+
+relationship with the given user.
+
+6. The method of claim 1 comprising identifying one or more other users in
+
+the social network for the given user, the one or more other users consuming TV
+
+7406733; ICP; ICP - 32 -
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+content on client devices in communication with one or more TV content
+
+distribution systems.
+
+7. A system for providing an indication of an action of a given user
+consuming content on a client device transmitted from a TV content distribution
+system, wherein the system comprises:
+
+a logon component (104) for authenticating the given user and/or the client
+device;
+
+a TV application component (112) operative to receive a command
+indicating a context change from the given user and to transmit content that is
+responsive to the changed context to the client device (126a; 128a; 130a; 132a)
+of the given user;
+
+a profile component (116) operative to maintain a user profile for the given
+user, the user profile comprising a history of the user’s context changes as a
+function of time;
+
+a messenger component (110) operative to receive the changed context
+for the given user from the TV application component, identify one or more users
+in the given user's social network , and propagate an indication of the changed
+context to the one or more users in the given user's social network ; and
+
+a recommendation component (124) operative to use the user profile for
+the given user to provide a recommendation of content to a user on the basis of
+the context change.
+
+8. The system of claim 7 wherein the user to whom the recommendation
+
+component Is operative to provide a recommendation is the given user.
+9. The system of claim 7 wherein the messaging component is in
+
+communication with one or more messaging clients to which the messaging
+
+component propagates an indication of the changed context.
+
+7406733; ICP; ICP
+-33-
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+MAIN REQUEST
+
+10. The system of claim 7 wherein the profile component is operative to
+receive the changed context from the messaging component and record the
+
+context change for the given user in the user profile.
+
+11. The system of claim 10 comprising a profile data store operative to
+
+maintain one or more user profiles.
+
+12. The system of claim 10 wherein the profile component records a plurality
+
+of context changes for a given user to a user profile for the given user.
+
+13. |The system of claim 10 wherein the recommendation component is
+operative to read the context change from the user profile for the given user and
+
+generate a recommendation on the basis of the context change.
+
+14. The system of claim 13 wherein the recommendation component is
+operative to read context changes from a plurality of user profiles and generate a
+recommendation on the basis of the plurality of context changes.
+
+15. |The system of claim 7 comprising one or more other applications operative
+
+to interface with the TV application component for transmission of content from a
+
+given one of the one or more other applications.
+
+7406733; ICP; ICP - 34 -

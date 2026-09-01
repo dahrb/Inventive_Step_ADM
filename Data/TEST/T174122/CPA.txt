@@ -1,0 +1,68 @@
+Title: 
+Analysis of glucose median, variability, and hypoglycemia risk for therapy guidance
+
+Abstract: 
+A system and method to provide guidance for diabetes therapy includes determining glycemic risks based on an analysis of glucose data. The analysis includes visualization of a glucose median, the variability of glucose in a patient, and the risk of hypoglycemia. An Advanced Daily Patterns report includes a visualization of an ambulatory glucose profile and a glucose control measure. The glucose control measure provides a highly visible and understandable display of the glucose condition of a patient visually expressed in the categories of low glucose, median glucose, and glucose variability.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A system for determining glycemic risk based on analysis of glucose data, the system comprising:
+a non-volatile memory in which is stored a glucose data processing program configured to program a processor to analyze received glucose data and from the analysis, produce a display;
+an input at which glucose data is received;
+a display on which glucose data and analytics thereof may be visually presented;
+a processor connected with the nonvolatile memory, the input, and the display, the processor being configured to access the memory to load and run in the processor the program to analyze glucose data, wherein the processor is programmed to:
+analyze the received glucose data to determine a glucose median, a low range variability of glucose, and a hypoglycemia risk; and
+control the display to visually present glycemic risks of hypoglycemia and glucose variability for different times of the day, and thereby allow investigation and illustration of how changes in glucose levels could affect those risks;
+control the display to visually present a glucose control measure that includes an assessment of the glucose data in the categories of low glucose, median glucose, and glucose variability;
+whereby periods of the day needing a reduction in hypoglycemia and/or a reduction in glycemic variability can be seen.
+2. The system of claim 1 wherein the glucose processing program further programs the processor to control the display to visually present a control grid on which is shown a hypoglycemia risk curve and a glucose variability curve and also showing risk reduction distances for hypoglycemia and glucose variability.
+3. The system of claim 2 wherein the glucose processing program further programs the processor to control the display to visually present on the control grid a treatment recommendation point.
+4. The system of claim 2 wherein the glucose processing program further programs the processor to control the display to visually present on the control grid an uncertainty boundary.
+5. The system of claim 2 wherein the glucose processing program further programs the processor to control the display to visually present on the control grid a hyperglycemia curve and a risk reduction distance for hyperglycemia.
+6. The system of claim 1 wherein the glucose processing program further programs the processor to control the display to visually present a graphical representation of risk reduction showing hyperglycemia and glucose variability separately.
+7. The system of claim 1 wherein the glucose processing program further programs the processor to control the display to visually present the glucose control measure that includes an assessment of the glucose data visually expressed in terms of three categories of low, moderate, and high.
+8. The system of claim 1 wherein the system further comprises a touch screen associated with the display;
+wherein the glucose processing program further programs the processor to receive input from the touch screen and control the display to visually present changes in hypoglycemia risk resulting from input from the touch screen showing alteration in glucose median and/or glucose variability.
+9. The system of claim 1 wherein the glucose processing program further programs the processor to:
+receive HbA1c data;
+analyze the HbA1c data with the glucose data;
+determine an estimate of average glucose; and
+control the display to visually present the estimate of average glucose.
+10. The system of claim 1 wherein the glucose processing program further programs the processor to subject the glucose data to an analysis of probability distribution in determining glycemic risk.
+11. The system of claim 1 wherein the glucose processing program further programs the processor to control the display to visually present a hypoglycemic risk curve and blood glucose variability on a time period scale;
+whereby the visual presentation on a time period scale indicates how an SMBG test schedule may be tailored to obtain further desired glucose data.
+12. A method for determining glycemic risk based on analysis of glucose data, the method comprising:
+storing in a non-volatile memory a glucose data processing program configured to program a processor to analyze received glucose data and from the analysis, produce a display;
+receiving glucose data;
+accessing the non-volatile memory and loading and running the glucose data processing program;
+analyzing the received glucose data to determine a glucose median, a low range variability of glucose, and a hypoglycemia risk;
+controlling a display to visually present glycemic risks of hypoglycemia and glucose variability for different times of the day, thereby allowing investigation and illustration of how changes in glucose levels could affect those risks;
+controlling the display to visually present a glucose control measure that includes an assessment of the glucose data in the categories of low glucose, median glucose, and glucose variability;
+whereby periods of the day needing a reduction in hypoglycemia and/or a reduction in glycemic variability can be seen.
+13. The method of claim 12 wherein the glucose processing program further programs the processor for:
+controlling the display to visually present a control grid on which is shown a hypoglycemia risk curve and a glucose variability curve and also showing risk reduction distances for hypoglycemia and glucose variability.
+14. The method of claim 13 wherein the glucose processing program further programs the processor for:
+controlling the display to visually present on the control grid a treatment recommendation point.
+15. The method of claim 13 wherein the glucose processing program further programs the processor for:
+controlling the display to visually present on the control grid an uncertainty boundary.
+16. The method of claim 13 wherein the glucose processing program further programs the processor for:
+controlling the display to visually present on the control grid a hyperglycemia curve and a risk reduction distance for hyperglycemia.
+17. The method of claim 12 wherein the glucose processing program further programs the processor for:
+controlling the display to visually present a graphical representation of risk reduction showing hyperglycemia and glucose variability separately.
+18. The method of claim 12 wherein the glucose processing program further programs the processor for:
+controlling the display to visually present the glucose control measure that includes an assessment of the glucose data visually expressed in terms of three categories of low, moderate, and high.
+19. The method of claim 12 wherein the glucose processing program further programs the processor for:
+receiving input from a touch screen and controlling the display to visually present changes in hypoglycemia risk resulting from input from the touch screen showing alteration in glucose median and/or glucose variability.
+20. The method of claim 12 wherein the glucose processing program further programs the processor for:
+receiving HbA1c data;
+analyzing the HbA1c data with the glucose data;
+determining an estimate of average glucose; and
+controlling the display to visually present the estimate of average glucose.
+21. The method of claim 12 wherein the glucose processing program further programs the processor for:
+subjecting the glucose data to an analysis of probability distribution in determining glycemic risk.
+22. The method of claim 12 wherein the glucose processing program further programs the processor for:
+controlling the display to visually present a hypoglycemic risk curve and blood glucose variability on a time period scale;
+whereby the visual presentation on a time period scale indicates how an SMBG test schedule may be tailored to obtain further desired gl

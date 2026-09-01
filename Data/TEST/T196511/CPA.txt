@@ -1,0 +1,49 @@
+Title: 
+Processing precomputed views
+
+Abstract: A user database query (90) on precomputation strategy effectivenes is responded to by defining, based upon user database query history, an analysis space consisting of a subset of all possible views for the database (104), and by characterizing the views in the analysis space. A structure is imposed on an analysis space consisting of a subset of all possible views for the database based upon the capabilities of a query rewriting facility (92), and the views in the analysis space is characterized. A cost formula is applied to the analysis space based upon a user-defined subset of the data contained in the database. The analysis space includes a candidate view composed of a combination of two or more constituent views is defined. A user query on the database is analyzed, and a candidate view based upon the user query is generated. A system for answering user queries on a database stored on a server includes a query processing system (18) integrated into the server and configured to respond to user queries, and a query processing system integrated into the server and configured to process precomputed results (38) of user queries on the database.
+
+Type: WIPO
+
+Claims: 
+
+WHAT IS CLAIMED IS:
+1. A method of processing precomputed views for answering user queries on a database, comprising: in response to a user database query on precomputation strategy effectiveness, defining, based upon user database query history, an analysis space consisting of a subset of all possible views for the database, and characterizing the views in the analysis space.
+2. A method of processing precomputed views for answering user queries on a database, comprising: analyzing a user query on the database; and generating a candidate view based upon the user query.
+3. A method of processing precomputed views for answering user queries on a database, comprising: defining an analysis space consisting of a subset of all possible views for the database; and applying a cost formula to the analysis space based upon a user-defined subset of the data contained in the database.
+4. A method of processing precomputed views for answering user queries on a database, comprising: defining an analysis space that includes a candidate view composed of a combination of two or more constituent views; and characterizing the views in the analysis space.
+5. A method of processing precomputed views for answering user queries on a database, comprising: imposing a structure on an analysis space consisting of a subset of all possible views for the database based upon the capabilities of a query rewriting facility; and characterizing the views in the analysis space. 41
+6. The method of claim 1, 2, 3, 4 or 5, further comprising generating a log record for received user queries.
+7. The method of claim 6, wherein generating a log record for a user query comprises determining whether the query was rewritten to use a precomputed view.
+8. The method of claim 6, wherein generating a log record comprises determining whether rewritten user queries include aggregation.
+9. The method of claim 6, wherein generating a log record comprises identifying a candidate view that could be used to rewrite user queries.
+10. The method of claim 6, wherein the log record generated for a query comprises information about a precomputed view used to rewrite the query.
+11. The method of claim 2, wherein the candidate view is generated in SQL.
+12. The method of claim 2, wherein the candidate view is generated based upon meta data.
+13. The method of claim 12, wherein the candidate view is generated based upon functional dependencies in the database.
+14. The method of claim 12, wherein meta data includes user-specified hierarchies.
+15. The method of claim 2, wherein the candidate view is generated based upon capabilities of the query processing system. 42
+16. The method of claim 1, 3 or 4, wherein the analysis space is defined based upon capabilities of a query rewriting facility.
+17. The method of claim 16, wherein the query rewrite facility is configured to impose a structure on the analysis space.
+18. The method of claim 5 or 17, wherein the imposed structure includes a graph representative of hierarchical relationships between views in the analysis space.
+19. The method of claim 1 , 3 or 4, wherein the analysis space is defined based upon hierarchical relationships among views.
+20. The method of claim 1 , 3 or 4, wherein the defined analysis space includes candidate views generated based upon user query history.
+21. The method of claim 1 , 4 or 5, wherein characterizing the views in the analysis space comprises generating a measure of precomputed view utilization.
+23. The method of claim 1 , 4 or 5, wherein characterizing the views in the analysis space comprises generating a report that includes information about candidate views that could be created.
+24. The method of claim 1 , 4 or 5, wherein characterizing the views in the analysis space comprises generating a measure of the benefit of a candidate view relative to other views in the analysis space.
+25. The method of claim 1 , 4 or 5, wherein characterizing the views in the analysis space comprises applying a cost formula to the analysis space. 43
+26. An apparatus for processing precomputed views for answering user queries on a database, comprising: a query processor; and an advisor configured to respond to a user database query on precomputation strategy effectiveness by defining, based upon user database query history, an analysis space consisting of a subset of all possible views for the database and by characterizing the views in the analysis space.
+27. An apparatus for processing precomputed views for answering user queries on a database, comprising: a query processor; and a precomputed view processor configured to analyze a user query on the database, and to generate a candidate view based upon the user query.
+28. An apparatus for processing precomputed views for answering user queries on a database, comprising: a query processor; and an advisor configured to impose a structure on an analysis space consisting of a subset of all possible views for the database based upon the capabilities of a query rewriting facility, and to characterize the views in the analysis space.
+29. An apparatus for processing precomputed views for answering user queries on a database, comprising: a query processor; and an advisor configured to define an analysis space consisting of a subset of all possible views for the database, and to apply a cost formula to the analysis space based upon a user-defined subset of the data contained in the database.
+30. A system for answering user queries on a database stored on a server, comprising: a query processing system integrated into the server and configured to respond to user queries; and 44 a query processing system integrated into the server and configured to process precomputed results of user queries on the database.
+31. The system of claim 30, wherein the query processing system is configured to compute precomputed views.
+32. The system of claim 30, wherein the query processing system is configured to update precomputed views to reflect changes in the database.
+33. The system of claim 30, wherein the query processing system is configured to manage precomputed views.
+34. The system of claim 30, wherein the query processing system includes a rewriter configured to rewrite user queries using precomputed views.
+35. The system of claim 30, wherein the query processing system is configured to provide information to users relating to precomputed views and user query history.
+36. The system of claim 30, wherein the query processing system includes an advisor configured to analyze precomputation strategy effectiveness.
+37. The system of claim 30, wherein the query processing system is configured to define an analysis space consisting of a subset of all possible views for the database based upon user query history.
+38. The system of claim 30, wherein the query processing system is configured to generate a candidate view.
+39. The system of claim 30, wherein the query processing system is configured to utilize database meta data. 45
+40. The system of claim 30, wherein the query processing system is configured to utilize functional depen

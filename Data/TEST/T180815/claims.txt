@@ -1,0 +1,146 @@
+--- PAGE 1 ---
+20
+
+P7602EP00
+
+25 August 2011
+
+12/16
+
+Claims
+
+1.
+
+A method of reducing detectability of an encryption key used in a
+communication network (1) to encrypt a message transmitted between a
+
+base station (10) and a mobile station (2), the method comprising:
+
+determining (S31) in the message one or more selected bits (e1-e11) at
+
+random positions in the message; and
+
+generating (S3) in the message random bit errors by inverting the selected
+
+bits (e1-e11), prior to transmitting the message over the air.
+
+The method of claim 1, wherein the selected bits (e1-e11) are determined
+
+(S31) at the physical layer (110).
+
+The method of one of claims 1 or 2, wherein the message is a known control
+
+message.
+
+The method of one of claims 1 to 3, wherein the message is a physical layer
+data frame (L1) encoding a data link layer control frame (L2), and the
+selected bits (e1-e11) are determined (S31) at random positions in the
+
+physical layer data frame (L1).
+
+The method of one of claims 1 to 4, wherein the selected bits (e1-e11) are
+determined (S31) so that the message contains at least one random bit
+
+error within any sequence (S) of consecutive bits having a length N.
+
+--- PAGE 2 ---
+P7602EP00
+
+20
+
+25 August 2011
+
+13/16
+
+The method of one of claims 1 to 5, wherein reduced is the detectability of
+an encryption key used in a GSM network (1) to encrypt the message at the
+base station (10) using an A5/1 cipher protocol; and the selected bits (e1-
+e11) are determined (S31) by the base station (10) at random positions in
+a physical layer data frame (L1) encoding a data link layer control frames
+
+(L2).
+
+A communication device (2, 10) for a communication network (1), the
+
+device (2, 10) comprising:
+
+an encryption module (111) configured to encrypt a message using an
+
+encryption key, prior to transmitting the message over the air;
+
+a randomizing module (113) configured to determine in the message one
+or more selected bits (e1-e11) at one or more random positions in the
+
+message; and
+
+an error generator (112) configured to generate in the message random bit
+errors by inverting the selected bits (e1-e11), prior to transmitting the
+
+message.
+
+The device (2, 10) of claim 7, wherein the randomizing module (113) is
+
+configured to determine the selected bits (e1-e11) at the physical layer.
+
+The device (2, 10) of one of claims 7 or 8, wherein the message is a known
+
+control message.
+
+--- PAGE 3 ---
+20
+
+P7602EP00
+
+10.
+
+11.
+
+12.
+
+13.
+
+25 August 2011
+
+14/16
+
+The device (2, 10) of one of claims 7 to 9, wherein the message is a physical
+layer data frame (L1) encoding a data link layer control frame (L2), and the
+randomizing module (113) is configured to determine the selected bits (e1-
+
+e11) at random positions in the physical layer data frame (L1).
+
+The device (2, 10) of one of claims 7 to 10, wherein the randomizing
+module (113) is configured to determine the selected bits (e1-e11) so that
+the message contains at least one random bit error within any sequence (S)
+
+of consecutive bits having a length N.
+
+The device (10) of one of claims 7 to 11, wherein the device (10) is
+configured as a base transceiver station (10) for a GSM network (1); the
+encryption module (111) is configured to encrypt a message using an A5/1
+cipher protocol; and the randomizing module (113) is configured to
+determine at the base transceiver station (10) the selected bits (e1-e11) in
+
+physical layer data frames (L1) encoding data link layer control frames (L2).
+
+A computer program product comprising a computer readable medium
+having stored thereon computer program code which directs a
+
+communication device (2, 10) of acommunication network (1) to:
+
+encrypt a message using an encryption key, prior to transmitting the
+
+message;
+
+determine (S31) in the message one or more selected bits (e1-e11) at
+
+random positions in the message; and
+
+--- PAGE 4 ---
+P7602EP00 25 August 2011
+
+15/16
+
+generate (S3) in the message random bit errors by inverting (S31) the
+
+selected bits (e1-e11), prior to transmitting the message over the air.

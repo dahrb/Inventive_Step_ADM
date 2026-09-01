@@ -1,0 +1,234 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+What is claimed is:
+
+1. A method for network-based issue resolution, the method comprising, by at
+least one hardware processor:
+receiving from a user a selection of a type of audience from a plurality of
+types of audiences;
+receiving a definition of an issue;
+identifying one or more audience members appropriate to vote on the issue
+and corresponding to the selected type of audience;
+wherein the step of identifying an audience member comprises the steps of:
+generating a personality profile for each of a plurality of members,
+wherein the personality profile comprises one or more personality characteristics
+associated with the member, said step comprising:
+analyzing data collected from the member’s participation in
+and responses to issues and/or survey questions using at least one algorithm to
+determine the language used by the member;
+comparing the language and responses used to the language
+and responses used by other members with known personality characteristics;
+associating the audience member with one or more known
+personality characteristics; and
+generating a personality profile comprising the associated known
+personality characteristics; and
+selecting one or more audience members to vote on the issue from
+their personality profile;
+providing the definition of the issue to the one or more audience members;
+receiving one or more responses from the one or more audience members;
+and
+
+determining a resolution for the issue based on the one or more responses.
+
+2. The method of Claim 1, further comprising:
+inviting one or more participants; and
+receiving an acceptance from at least one of the one or more participants;
+
+wherein receiving the definition of the issue comprises
+
+50
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+receiving a first portion of the definition of the issue from the user,
+and
+receiving a second portion of the definition of the issue from the at
+
+least one participant.
+
+3. The method of Claim 2, wherein the provision of the definition of the issue
+to the one or more audience members is performed in real time while a device of each of
+the user, the at least one participant, and the one or more audience members is in
+electronic communication with one or more servers comprising the at least one hardware
+
+processor.
+
+4. The method of Claim 2, further comprising:
+inviting one or more witnesses;
+receiving an acceptance from at least one of the one or more witnesses;
+providing one or more witness questions to the at least one witness; and
+
+receiving responses to the witness questions from the at least one witness.
+
+5. The method of Claim 4, wherein both the first portion and the second
+portion of the definition comprise one or more of:
+an opening statement;
+evidence;
+one or more of the one or more witness questions; and
+
+a closing statement.
+
+6. The method of Claim 1, further comprising:
+
+updating the personality profile for each of the one or more audience
+members based on the received one or more responses from the one or more
+audience members, one or more issues received from the respective audience
+member, and one or more resolutions of the one or more issues received from the
+
+respective audience member.
+
+7. The method of Claim 1, wherein the plurality of types of audience members
+comprise a public type, a jury type, and a judge type, wherein the public type comprises
+any of a plurality of users, the jury type comprises a panel comprising a selected subset of
+two or more of the plurality of users, and the judge type comprises one or more of the
+
+plurality of users associated with an earned status or experience level.
+
+51
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+8. The method of Claim 1, further comprising receiving an indication of
+
+whether or not the determined resolution was followed.
+
+9. The method of Claim 1, further comprising:
+receiving at least one property to be escrowed; and
+
+distributing the at least one property based on the determined resolution.
+
+10. | Asystem for network-based issue resolution, the system comprising:
+at least one hardware processor; and
+at least one executable software module that, when executed by the at least
+one hardware processor,
+receives from a user a selection of a type of audience from a
+plurality of types of audiences,
+receives a definition of an issue,
+identifies one or more audience members appropriate to vote on the
+issue and corresponding to the selected type of audience, wherein
+identifying an audience member comprises:
+generating a personality profile for each of a plurality of
+members, wherein the personality profile comprises one or more personality
+characteristics associated with the member, said step comprising:
+analyzing data collected from the member’s
+participation in and responses to issues and/or survey questions using at least one
+algorithm to determine the language used by the member;
+comparing the language and responses used to the
+language and responses used by other members with known _ personality
+characteristics;
+associating the audience member with one or more
+known personality characteristics; and
+generating a personality profile comprising the
+associated known personality characteristics; and
+selecting one or more audience members to vote on the issue
+from their personality profile;
+provides the definition of the issue to the one or more audience
+
+members,
+
+52
+
+--- PAGE 4 ---
+MAIN REQUEST
+
+11.
+
+receives one or more responses from the one or more audience
+members, and
+determines a resolution for the issue based on the one or more
+
+responses.
+
+The system of Claim 10, wherein the at least one executable software
+
+module further:
+
+12.
+
+invites one or more participants; and
+receives an acceptance from at least one of the one or more participants;
+wherein receiving the definition of the issue comprises
+
+receiving a first portion of the definition of the issue from the user,
+and
+
+receiving a second portion of the definition of the issue from the at
+
+least one participant.
+
+The system of Claim 11, wherein the provision of the definition of the issue
+
+to the one or more audience members is performed in real time while a device of each of
+
+the user, the at least one participant, and the one or more audience members is in
+
+electronic communication with the system.
+
+13.
+
+The system of Claim 11, wherein the at least one executable software
+
+module further:
+
+14.
+
+invites one or more witnesses;
+receives an acceptance from at least one of the one or more witnesses;
+provides one or more witness questions to the at least one witness; and
+
+receives responses to the witness questions from the at least one witness.
+
+The system of Claim 13, wherein both the first portion and the second
+
+portion of the definition comprise one or more of:
+
+an opening statement;
+evidence;
+one or more of the one or more witness questions; and
+
+a closing statement.
+
+53
+
+--- PAGE 5 ---
+MAIN REQUEST
+
+15. The system of Claim 10, wherein the at least one executable software
+module further:
+
+updates the personality profile for each of the one or more audience
+members based on the received one or more responses from the one or more
+audience members, one or more issues received from the respective audience
+member, or one or more resolutions of the one or more issues received from the
+respective audience member;
+
+receives a plurality of comments from the one or more audience members;
+and
+
+ranks the plurality of comments based on one or more personality profiles
+
+for the one or more audience members.
+
+16. The system of Claim 10, wherein the plurality of types of audience
+members comprise a public type, a jury type, and a judge type, wherein the public type
+comprises any of a plurality of users, the jury type comprises a panel comprising a
+selected subset of two or more of the plurality of users, and the judge type comprises one
+
+or more of the plurality of users associated with an earned status.
+
+17. The system of Claim 10, wherein the at least one executable software
+module further receives an indication of whether or not the determined resolution was
+
+followed.
+
+18. The system of Claim 10, wherein the at least one executable software
+module further:
+receives at least one property to be escrowed; and
+
+distributes the at least one property based on the determined resolution.
+
+54

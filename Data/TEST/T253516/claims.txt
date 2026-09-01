@@ -1,0 +1,257 @@
+--- PAGE 1 ---
+13 172 224.1 EPAE-117517
+Kaspersky Lab, ZAO October 19, 2018
+
+CLAIMS - Main Request
+
+1. A method for processing queries from a user device (120) by a server (130), the
+method being performed by the server (130), and comprising:
+
+receiving from an antivirus software (121) deployed on the user device (120),
+system state and configuration data that is automatically and periodically collected from
+the user device (12) and indicative of use of the user device (120);
+
+receiving different queries based on the system state and configuration data
+collected by and automatically transmitted from the antivirus software (121) of the user
+device (120) directed to different cloud-based security services (140-190) provided by
+the server (130), wherein the server (130) requires a predefined procedure for
+contacting the different cloud-based security services, wherein the predefined
+procedure includes contacting the different cloud-based security services (140-190) in a
+specific order;
+
+analyzing the system state and configuration data of the user device (120) to
+
+determine a level of trust associated with the user device (120);
+
+analyzing the different queries received from the antivirus software (121) to
+determine whether the different queries are used to contact the different cloud-based
+security services (140-190) according to the specific order required by the predefined
+
+procedure;
+
+based on the determination of whether the different queries are used to contact
+the different cloud-based security services (140-190) according to the specific order
+required by the predefined procedure, determining whether to update the level of trust
+associated with the user device (120); and
+
+determining, based on the level of trust, how to process the different queries,
+wherein the determining step comprises rejecting the queries from the antivirus
+
+software (121) or processing the different queries by the different cloud-based services
+
+Main Request
+
+--- PAGE 2 ---
+2
+
+(140-190) and providing the processing results of the cloud-based security services
+(140-190) as response to the antivirus software (121).
+
+2. The method of claim 1, wherein analyzing the system state and configuration
+data of the user device (120) includes checking for one or more of:
+execution of various OS processes and services on the user device (120);
+periodic rebooting or updating of the OS of the user device (120);
+installation, execution or deletion of programs on the user device (120);
+Internet browsing activity on the user device (120);
+installations and updates of the antivirus software (121) of the user device (120);
+keystrokes, mouse clicks and mouse movements on the user device (120); and
+
+movements of a user via a webcam of the user device (120).
+
+3. The method of claim 1, wherein analyzing the different queries received from the
+antivirus software (121) to determine whether to update the level of trust of the user
+device (120) includes checking for changes in the state and configuration of the user
+device (120) in a predefined time period since the last system state and configuration
+analysis of the user device (120) to determine whether to update or not the level of
+
+trust of the user device (120).
+
+4, The method of claim 1, wherein analyzing the different queries received from the
+antivirus software (121) to determine whether to update the level of trust of the user
+device (120) includes checking for changes in the location of the user device (120) in a
+predefined time period to determine whether to update or not the level of trust of the
+
+user device (120).
+5. The method of claim 1, wherein analyzing the different queries received from the
+
+antivirus software (121) to determine whether to update the level of trust of the user
+
+device (120) includes:
+
+Main Request
+
+--- PAGE 3 ---
+3
+
+assigning a unique identifier to the user device (120) with the antivirus software
+(121) deployed thereon;
+
+checking whether a query from the antivirus software (121) includes an
+encrypted unique identifier associated with the user device (120) and a hash sum of the -
+data contained in the query;
+
+decrypting the unique identifier and verifying that the decrypted unique identifier
+is associated with the user device (120) from which the query was received;
+
+computing a hash sum of the data contained in the received query and
+comparing the computed hash sum of the received data with the hash sum included in
+the received query to determine whether the data contained in the query was modified;
+and
+
+determining based on the results of the verification of the unique identifier and
+comparison of the hash sums whether to update or not the level of trust of the user
+device (120). |
+
+6. The method of claim 1, wherein processing the different queries by the different
+cloud-based security services (140-190) and providing the processing results of the
+cloud-based security services (140-190) as response to the antivirus software (121)
+comprises at least one of: ,
+
+processing the data contained in a query using a file reputation service and
+sending a response with the results of file reputation analysis to the antivirus software
+(121);
+
+processing the data contained in a query using a whitelist service and sending a
+response with the results of whitelist analysis to the antivirus software (121);
+
+processing the data contained in a query using a statistics service and sending a
+response with the results of statistics analysis to the antivirus software (121);
+
+processing the data contained in a query using an anti-spam service and sending
+a response with the results of anti-spam analysis to the antivirus software (121); and
+
+providing an update to the antivirus software (121) of the user device (120).
+
+Main Request
+
+--- PAGE 4 ---
+4
+
+7. A server (130) for processing queries from a user device (120), the server (130)
+being configured to: |
+receive from an antivirus software (121) deployed on the user device
+(120), system state and configuration data indicative of use of the user device
+(120);
+receive different queries based on the system state and configuration data
+collected by and automatically transmitted from the antivirus software (121) of the
+user device (120) directed to different cloud-based security services (140-190)
+provided by the server (130), wherein the server (130) requires a predefined
+procedure for contacting the different cloud-based security services (140-190),
+wherein the predefined procedure includes contacting the different cloud-based
+security services (140-190) in a specific order;
+analyze the system state and configuration data of the user device (120)
+to determine a level of trust associated with the user device (120);
+characterized in that the hardware processor (15) is further configured to:
+analyze the different queries received from the antivirus software (121) to
+determine whether the different queries are used to contact the different cloud-
+based security services (140-190) according to the specific order required by the
+predefined procedure;
+based on the determination of whether the different queries are used to
+contact the different cloud-based security services (140-190) according to the
+specific order required by the predefined procedure, determine whether to update
+the level of trust associated with the user device (120); and
+determine, based on the level of trust, how to process the different
+queries, wherein the determining comprises rejecting the queries from the antivirus
+software (121) or processing the different queries by the different cloud-based
+security services (140-190) and providing the processing results of the cloud-based
+security services (140-190) as response to the antivirus software (121).
+
+Main Request
+
+--- PAGE 5 ---
+5
+
+8. The server (130) of claim 7, wherein to analyze a system state and configuration
+of the user device (120), the server (130) is configured to perform a check for one or
+more of:
+
+execution of various OS processes and services on the user device (120);
+
+periodic rebooting or updating of the OS of the user device (120);
+
+installation, execution or deletion of programs on the user device (120);
+
+Internet browsing activity on the user device (120);
+
+installations and updates of the antivirus software (121) of the user device (120);
+
+keystrokes, mouse clicks and mouse movements on the user device (120); and
+
+movements of a user via a webcam of the user device (120).
+
+9. The server (130) of claim 7, wherein to analyze the different queries received
+from the antivirus software (121) to determine whether to update the level of trust of
+the user device (120), the server (130) is further configured to check for changes in the
+state and configuration of the user device (120) in a predefined time period since the
+last system state and configuration analysis of the user device (120) to determine
+whether to update or not the level of trust of the user device (120).
+
+10. The server (130) of claim 7, wherein to analyze the different queries received
+from the antivirus software (121) to determine whether to update the level of trust of
+the user device (120), the server (130) is further configured to check for changes in the
+location of the user device (120) in a predefined time period to determine whether to
+
+update or not the level of trust of the user device (120).
+
+11. The server (130) of claim 7, wherein to analyze the different queries received
+from the antivirus software (121) to determine whether to update the level of trust of
+the user device (120), the server (130) is further configured to:
+
+assign a unique identifier to the user device (120) with the antivirus software
+(121) deployed thereon;
+
+Main Request
+
+--- PAGE 6 ---
+6
+
+check whether a query from the antivirus software (121) includes an encrypted
+unique identifier associated with the user device (120) and a hash sum of the data
+contained in the query;
+
+decrypt the unique identifier and verify that the decrypted unique identifier is
+associated with the user device (120) from which the query was received;
+
+compute a hash sum of the data contained in the received query and compare
+the computed hash sum of the received data with the hash sum included in the
+received query to determine whether the data contained in the query was modified;
+and
+
+determine based on the results of the verification of the unique identifier and
+comparison of the hash sums whether to update or not the level of trust of the user
+device (120).
+
+12. The server (130) of claim 7, wherein processing the different queries by the
+different cloud-based security services (140-190) and providing the processing results
+of the cloud-based security services (140-190) as response to the antivirus software
+(121) comprises at least one of
+
+processing the data contained in a query using a file reputation service and
+sending a response with the results of file reputation analysis to the antivirus software
+(121);
+
+processing the data contained in a query using a whitelist service and sending a
+response with the results of whitelist analysis to the antivirus software (121);
+
+processing the data contained in a query using a statistics service and sending a
+response with the results of statistics analysis to the antivirus software (121);
+
+processing the data contained in a query using an anti-spam service and sending
+a response with the results of anti-spam analysis to the antivirus software (121); and
+
+providing an update to the antivirus software (121) of the user device (120).
+
+Main Request
+
+--- PAGE 7 ---
+7
+13. A computer program product stored on a computer useable medium (23),
+comprising software code portions for performing the steps according to any one of
+
+claims 1 to 6, when said program is run on a computer (5).
+
+14. Asystem comprising:
+the server (130) according to any one of claims 7 to 12;
+at least one user device (120) being in communication with the server (130).
+
+Main Request

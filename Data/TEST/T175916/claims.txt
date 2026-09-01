@@ -1,0 +1,102 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+35
+
+Patentanwalte
+
+GEYER, FEHNERS & PARTNER
+
+Munchen — Jena
+
+Claims
+
+1. A system for designating and capturing targets of interest on a slide having a biological
+sample contained thereon, the system (200) comprising:
+
+a microscope imaging unit (202) including a microscope (110) having a stage (177) for
+positioning the slide thereon, and an image capturing apparatus (118), wherein the image
+capturing apparatus (118) generates a digital image representation of at least a portion of the
+biological sample;
+
+a visualization unit (206) including a computer having a display screen, the computer
+having a selection tool installed thereon, the selection tool being adapted to enable a user to
+select at least one area of interest from the digital image representation;
+
+a laser capture microdissection unit (208) adapted to dissect a portion from the biological
+sample, and
+
+a storage medium (204) comprising a remote server that is networked to the microscope
+imaging unit (202), the visualization unit (206) and the laser capture microdissection unit (208),
+characterized in that
+
+the microscope imaging unit (202) stores the digital image representation in a database
+on the remote server,
+
+the visualization unit (206) is remote and separate from the microscope imaging unit
+(202) and the laser capture microdissection unit (208) and is usable to access and view the
+digital image representation stored in the database, and
+
+wherein a first set of coordinates is generated and stored in the database on the remote
+server by the visualization unit (206) upon selection of the at least one area of interest, and
+wherein the first set of coordinates is transformed to a second set of coordinates corresponding
+to positions on the slide and readable by the laser capture microdissection unit (208) such that
+the dissected portion of the biological sample corresponds to the at least one area of interest
+selected from the digital image representation.
+
+2. The system of claim 1, wherein the first set of coordinates describes the at least one area
+of interest and comprises pixel coordinates and/or rectangular coordinates, and wherein the
+second set of coordinates comprises Cartesian coordinates corresponding to positions on a
+stage of the laser capture microdissection unit (208).
+
+3. A method for designating and capturing targets of interest on a slide having a biological
+sample contained thereon, the method comprising:
+
+providing a slide having a biological sample thereon;
+
+generating a digital image representation of at least a portion of the biological sample
+(12) by using a microscope imaging unit (202);
+
+--- PAGE 2 ---
+20
+
+25
+
+Patentanwalte 2
+
+GEYER, FEHNERS & PARTNER
+
+Munchen — Jena
+
+selecting at least one area of interest from the digital image representation (506,14) by
+using a visualization unit (206), thereby generating a first set of coordinates;
+placing the slide having the biological sample thereon on a laser capture microdissection
+unit (208,16) and
+dissecting a portion of the biological sample corresponding to the at least one area of
+interest selected from the digital image representation (20);
+wherein the method is characterized by
+providing the visualization unit (206) remote and separate from the microscope imaging
+unit (202) and the laser capture microdissection unit (208),
+selecting the at least one area of interest comprises
+storing the digital image representation to a remote server;
+accessing remotely the digital image representation stored on the remote server;
+viewing the digital image representation on the visualization unit (206) at a location
+remote from the microscope imaging unit (202) and the laser capture microdissection
+unit (208); and
+storing the first set of coordinates to the remote server; and
+transforming the first set of coordinates to a second set of coordinates readable by the
+laser capture microdissection unit (208,18).
+
+4. The method of claim 3, wherein the first set of coordinates describes the at least one area
+of interest and comprises pixel coordinates and/or rectangular coordinates, and wherein the
+second set of coordinates comprises Cartesian coordinates corresponding to positions on a
+stage of the laser capture microdissection unit (208).
+
+5. The method of claim 3, further comprising analyzing the dissected portion of the
+biological sample, in particular by using at least one technique selected from the group
+consisting of Polymerase Chain Reaction ("PCR"), immunoassays, microarrays, and
+combinations thereof.

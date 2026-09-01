@@ -1,0 +1,313 @@
+Title: Image recognition inventory management system
+
+Abstract: A method and system that includes a microprocessor device with memory adapted to receive input corresponding to a report at an instant of time of an amount of product in a product display in a business, and further adapted to store the data in the memory. The method and system also include a central computer for receiving and processing the data from the microprocessor device so that the computer is configured to create a planogram which optimizes the display of the product by maximizing the amount of desired product and minimizes the amount of undesired product to be displayed. The central computer further contacts product suppliers so that the quantity of supplied product always meets the requirements of the planogram.
+
+Type: US Patent
+
+Claims: 
+
+1. A method of generating a product display planogram, which method comprises the steps of:
+(a) inputting data associated with a group of products on display and quantity of specific products within a category of products into a microprocessor with an electronic memory;
+(b) processing the inputted data to create an image representation to determine a product display as a function of product placement and quantity; and
+(c) producing a planogram showing the product placement and the quantity of the product.
+2. The method of claim 1, further comprising the steps of:
+analyzing the inputted data and a product inventory to determine the quantity of the product remaining; and
+ordering the product when quantity of the product remaining reaches a predetermined value.
+3. The method of claim 1, further comprising the steps of:
+analyzing the inputted data to determine a peak purchase time and a quantity of the product sold during the peak purchase time; and
+ordering the product to arrive prior to the peak purchase time; and
+ordering a sufficient quantity of the product to satisfy the quantity of product sold at the peak purchase time.
+4. The method of claim 1, wherein the inputted data comprises a graphical representation of an amount of allocated space for the product.
+5. The method of claim 1, wherein the microprocessor and the electronic memory are located in a handheld computer device.
+6. The method of claim 5, further comprising the steps of:
+downloading the image representation from the handheld computer device into a central computer.
+7. The method of claim 1, further comprising the steps of: repeating the steps for each of the product displays to create the planogram of each of the product displays in a store.
+8. The method of claim 7, further comprising the steps of:
+repeating the all above steps for the store within a chain of the stores so that each of the stores can develop a unique planogram.
+9. The method of claim 1, wherein the data is inputted during a peak purchase time.
+10. The method of claim 1, further comprising the steps of: generating a product reorder.
+11. The method of claim 1, wherein the data is inputted by an independent field representative.
+12. A system for optimizing a product display comprising:
+a programmable microprocessor network, the programmable microprocessor network being configured to receive data of a product on a product display and a quantity of specific products within a category of the products, process the data as a function of a product geometry, a display geometry, and the amount of the product that exists at the time the data is entered into the programmable microprocessor network; and
+a microprocessor connected to the programmable microprocessor network and producing a planogram to optimize the display geometry such that the amount of allocated space for the product is inversely proportional to the relative quantity of remaining product.
+13. The system of claim 12, wherein the product geometry is the size, shape and preferred facing of the product.
+14. The system of claim 12, wherein the display geometry is the arrangement, shelf position and quantity of each product on a shelf.
+15. The system of claim 12, further comprising: a communication device connected to the programmable microprocessor network to receive product quantity information and communicate to a supplier to order the product.
+16. A system comprising:
+a microprocessor device including:
+an electronic memory adapted to receive and store an input of data corresponding to a visual report of an amount of a product in a product display in a store a; and
+a central computer for receiving and processing the data from the microprocessor device with the central computer being configured to create a planogram which optimizes the product display of the product, whereby the central computer maximizes the amount of desired product and minimizes the amount of undesired product to be displayed.
+17. A method of managing inventory comprising the steps of:
+recording an image of a shelf having of a plurality of products stored thereon;
+using an image recognition system to identify each product and a location of each product; and
+creating a planogram using the identity and the location of each product.
+18. The method of claim 17, further comprising an image recognition database stored in a central computer, the image recognition database including a plurality of images of all the products contained in a store.
+19. The method of claim 18, further comprising a video camera installed in the store such that it has a constant view of the shelf, the video camera being linked to a central computer over a Local Area Network (LAN) or a Wide Area Network (WAN).
+20. The method of claim 19, further comprising the step of transmitting real time images of the shelf over the LAN or WAN to the central computer.
+21. The method of claim 18, further comprising the steps of detecting and distinguishing between different products on the shelf by accessing the image recognition database and comparing the real time image to the images stored in the image recognition database
+22. The method of claim 21, wherein image recognition software is on the central computer and detecting and distinguishing between the different products on the shelf by referring to the image recognition database.
+23. The method of claim 18, further comprising the step of communicating over the LAN/WAN to a supplier who supplies the products to the store to order more product.
+24. The method of claim 22, further comprising the step of detecting if one product is out of stock on the shelves using the image recognition software on the central computer.
+25. The method of claim 23, wherein the central computer contacts the supplier over the LAN/WAN when one product is detected as being out of stock and places an order for an additional amount of replacement product to be delivered.
+26. The method of claim 21, further comprising the step of updating the planogram using information the central computer receives from the image recognition software and the supplier.
+27. The method of claim 26, further comprising the step of printing the new planogram on a printer.
+28. The method of claim 23, further comprising the step of wirelessly communicating product information with the central computer using a microprocessor and an electronic memory.
+29. The method of claim 24, wherein the central computer transmits the new planogram to the microprocessor to be stored in the electronic memory.
+30. A system for optimizing stocking and delivery of items sold to a store on a ‘route’ delivery system comprising:
+a central computer;
+an order report generated by the central computer when the central computer detects the missing products on the shelf, the central computer storing a running total of every the product that is out of stock, and the central computer compiling the totals into the order report.
+31. The system of claim 30, further comprising an image recognition database stored in the central computer, the image recognition database is comprised of images of all products in every store.
+32. The system of claim 31, further comprising a video camera installed in each of the stores, the video camera has a constant view of a stocked shelf, the video camera is linked to the central computer over a Wide Area Network (WAN).
+33. The system of claim 32, wherein the video camera is transmitting real time images of the shelf over the WAN to the central computer.
+34. The system of claim 32, further comprising image recognition software running on the central computer, and configured to detect and distinguish between different types of the products on the shelf by accessing the image recognition database and comparing the real time image to images stored in the image recognition database.
+35. A method of managing perishable products, comprising the steps of:
+benchmarking a current managing procedure;
+implementing a new managing procedure; and
+auditing to determine compliance with the new managing procedure.
+36. The method of claim 35, wherein the benchmarking procedure comprises the step of compiling a list of factors crucial to the proper management of the perishable products.
+37. The method of claim 36, wherein the factors include hygiene, product rotation, cold room facilities, temperature, light and product exposure.
+38. The method of claim 37, wherein the hygiene is the cleanliness of the perishable product and the cleanliness of a product display, the product display comprising a shelf or group of shelves where the perishable products are displayed.
+39. The method of claim 38, wherein the product rotation comprises the steps of:
+rotating the perishable product to be stocked on the product display so the perishable product having the closest expiration date to the current date is always in the front of the product display; and
+removing the perishable products that have expired from the product display.
+40. The method of claim 39, further comprising the step of keeping a cold room facility at a specific temperature depending on the nature of the perishable item.
+41. The method of claim 39, wherein the product exposure is how and where the perishable product is placed on the product display.
+42. The method of claim 35, further comprising an audit sheet, the audit sheet comprising a list of factors, wherein each factor comprises a corresponding point score that varies with the degree of compliance with the list of factors.
+43. The method of claim 35, further comprises the step of performing an audit prior to implementing the new managing procedure, a minimum time for the benchmark audit is one (1) week prior to implementing the new management procedure.
+44. The method of claim 37, wherein the new management procedure comprises changes to one or more of the list of factors.
+45. The method of claim 41, further comprising the step of randomly auditing the new managing system, the random audit is performed a minimum of once a day for four (4) weeks after the new managing system has been implemented.
+46. The method of claim 42, wherein the random audit uses the same the list of factors used in the benchmark audit, the random audit preformed by an independent employee not affiliated with the store.
+47. The method of claim 46, wherein the audit sheet is displayed on a microprocessor with electronic memory.
+48. The method of claim 46, further comprising the step of tallying a total point score from the audit sheet.
+49. The method of claim 48, further comprising the steps of:
+reviewing the tally sheets; and
+contacting the store on every second day with the total point score.
+50. The method of claim 49, further comprising the step of assisting the store with any of the factors the store scored low on.
+51. The method of claim 47, further comprising the step of auditing only the stores that continually receive low point scores the audit sheets.
+52. The method of claim 49, further comprising the step of daily contacting the store with the point score from the tally sheet; and
+offering to help the store improve the factors.
+53. The method of claim 49, further comprising the step of continually auditing the store receiving the low point score on the audit sheets.
+Patent Citations (8)
+Publication number	Priority date	Publication date	Assignee	Title
+US4947322A *	1987-04-20	1990-08-07	Hitachi, Ltd.	Method of managing layout of goods
+US5164992A *	1990-11-01	1992-11-17	Massachusetts Institute Of Technology	Face recognition system
+US5241467A *	1992-04-30	1993-08-31	Ers Associates Limited Partnership	Space management system
+US6292575B1 *	1998-07-20	2001-09-18	Lau Technologies	Real-time facial recognition and verification system
+US6301370B1 *	1998-04-13	2001-10-09	Eyematic Interfaces, Inc.	Face recognition from video images
+US20010049690A1 *	2000-04-07	2001-12-06	Mcconnell Theodore Van Fossen	Method and apparatus for monitoring the effective velocity of items through a store or warehouse
+Family To Family Citations				
+EP1049042A1 *	1999-04-28	2000-11-02	The Procter & Gamble Company	Storage system
+JP2001088912A *	1999-09-20	2001-04-03	Fujitsu General Ltd	Inventory management method and inventory system by image recognition
+* Cited by examiner, † Cited by third party
+Cited By (209)
+Publication number	Priority date	Publication date	Assignee	Title
+US20020016757A1 *	2000-06-16	2002-02-07	Johnson Daniel T.	Enterprise asset management system and method
+US20020027164A1 *	2000-09-07	2002-03-07	Mault James R.	Portable computing apparatus particularly useful in a weight management program
+US20030216969A1 *	2002-01-23	2003-11-20	Bauer Donald G.	Inventory management system
+US20030222762A1 *	2002-06-04	2003-12-04	Michael Beigl	Supply chain management using item detection system
+US20040002912A1 *	2002-06-27	2004-01-01	Colon Ivette S.	System and method for determining product placement in a retail environment
+US20040111697A1 *	2000-06-16	2004-06-10	Johnson Daniel T.	Refrigerant loss tracking and repair
+US20040117243A1 *	2002-04-15	2004-06-17	Anthony Chepil (Tony)	Method and system for merchandising management
+US20040151349A1 *	2003-01-16	2004-08-05	Milne Donald A.	Method and or system to perform automated facial recognition and comparison using multiple 2D facial images parsed from a captured 3D facial image
+US20040177032A1 *	2003-03-03	2004-09-09	Bradley A. (Tony) W.	System, method, and apparatus for identifying and authenticating the presence of high value assets at remote locations
+US20040210489A1 *	2002-10-21	2004-10-21	Nintendo Of America Inc.	System and method for dynamic allocation of products to retailers
+US20040225676A1 *	2003-02-03	2004-11-11	Johnson Daniel T.	Site epuipment survey tool
+US20050021710A1 *	2000-06-16	2005-01-27	Johnson Daniel T.	Notification system
+US20050033452A1 *	2003-08-07	2005-02-10	Milne Donald A.	Integrated portable identification and verification device
+US20050197850A1 *	2004-03-08	2005-09-08	Sap Aktiengesellschaft	System and method for performing assortment planning
+US20050197878A1 *	2004-03-08	2005-09-08	Sap Aktiengesellschaft	System and method for performing assortment definition
+US20050283404A1 *	2003-09-04	2005-12-22	Raymond Young	Methods and systems for collaborative demand planning and replenishment
+US20060190341A1 *	2005-01-28	2006-08-24	Target Brands, Inc.	On-line planogram system
+US20070010914A1 *	2000-06-16	2007-01-11	Johnson Daniel T	Enterprise energy management system
+US20070023510A1 *	2005-07-28	2007-02-01	Eastman Kodak Company	Automatic plan-o-gram system
+US20070043538A1 *	2000-06-16	2007-02-22	Johnson Daniel T	Method and system of asset identification and tracking for enterprise asset management
+US20070096899A1 *	2000-06-16	2007-05-03	Johnson Daniel T	System and method for tracking ships and ship cargo
+US20070181681A1 *	2006-02-07	2007-08-09	Rajit Jain	Part availability business process
+US20070260405A1 *	2002-12-09	2007-11-08	Verisae, Inc.	Method and system for tracking and reporting emissions
+US20070288296A1 *	2006-05-05	2007-12-13	Graham Lewis	System and method for automatic placement of products within shelving areas using a planogram with two-dimensional sequencing
+US20080077510A1 *	2006-09-21	2008-03-27	Polymer Logistics Bv	Method And System For Providing Security Surveillance And Shelf Monitoring Functions
+US20080077511A1 *	2006-09-21	2008-03-27	International Business Machines Corporation	System and Method for Performing Inventory Using a Mobile Inventory Robot
+US20080140478A1 *	2005-08-24	2008-06-12	Bar-Giora Goldberg	Inventory or asset management system
+US7392948B2	2005-07-28	2008-07-01	Industrial Technology Research Institute	Electronic product identifier system
+WO2008107150A1 *	2007-03-02	2008-09-12	Baumer Electric Ag	Monitoring system, in particular for analyzing the fill level of shelves
+US20080255899A1 *	2003-01-31	2008-10-16	Verisae, Inc.	Method and system for tracking and managing various operating parameters of enterprise assets
+US20080306787A1 *	2005-04-13	2008-12-11	Craig Hamilton	Method and System for Automatically Measuring Retail Store Display Compliance
+WO2009027839A2	2007-08-31	2009-03-05	Accenture Global Services Gmbh	Planogram extraction based on image processing
+US20090063307A1 *	2007-08-31	2009-03-05	Groenovelt Robert Bernand Robin	Detection Of Stock Out Conditions Based On Image Processing
+EP1800199A4 *	2004-03-09	2009-05-13	Danville Systems Llc	Computerized, rule-based, store-specific retail merchandising
+US20090132176A1 *	2002-12-09	2009-05-21	Verisae, Inc.	Method and system for tracking and managing destruction, reconstitution, or reclamation of regulated substances
+US20090171975A1 *	2007-03-06	2009-07-02	Mcconnell Robert S	Method and system for tracking carbon credits and other carbon valuation units
+US20100039682A1 *	2008-08-18	2010-02-18	Waterloo Industries, Inc.	Systems And Arrangements For Object Identification
+US20100121770A1 *	2000-06-16	2010-05-13	Verisae, Inc.	System and method for tracking ships and ship cargo
+US20100179889A1 *	2009-01-09	2010-07-15	Aisle Express, Llc	Methods, systems, and computer programs for providing shopping assistance to consumers
+US20110011936A1 *	2007-08-31	2011-01-20	Accenture Global Services Gmbh	Digital point-of-sale analyzer
+US7949568B2	2007-08-31	2011-05-24	Accenture Global Services Limited	Determination of product display parameters based on image processing
+WO2011063527A1 *	2009-11-27	2011-06-03	Sentry Technology Corporation	Enterprise management system and auditing method employed thereby
+US20110157226A1 *	2009-12-29	2011-06-30	Ptucha Raymond W	Display system for personalized consumer goods
+US20110157218A1 *	2009-12-29	2011-06-30	Ptucha Raymond W	Method for interactive display
+US8009864B2	2007-08-31	2011-08-30	Accenture Global Services Limited	Determination of inventory conditions based on image processing
+US20110295764A1 *	2010-05-27	2011-12-01	Neil Cook	Generating a layout of products
+US8108270B2	2004-03-08	2012-01-31	Sap Ag	Method and system for product layout display using assortment groups
+US20120033850A1 *	2010-08-05	2012-02-09	Owens Kenneth G	Methods and systems for optical asset recognition and location tracking
+WO2012045458A1 *	2010-10-08	2012-04-12	Context Marketing Services Gmbh	System for taking inventory, arranging and/or sorting goods arranged and/or to be arranged in a sales room, in a sales area and/or on a shelf
+US8285584B2	2004-03-08	2012-10-09	Sap Ag	System and method for performing assortment planning
+US20130013403A1 *	2010-03-31	2013-01-10	Rakuten, Inc.	Information processing device, information processing method, terminal device, information processing program, and storage medium
+US8370184B2	2004-03-08	2013-02-05	Sap Aktiengesellschaft	System and method for assortment planning
+US20130238116A1 *	2012-03-07	2013-09-12	Redbox Automated Retail, Llc	System and method for optimizing utilization of inventory space for dispensable articles
+US20130235206A1 *	2012-03-12	2013-09-12	Numerex Corp.	System and Method of On-Shelf Inventory Management
+US20130238115A1 *	2012-03-07	2013-09-12	Redbox Automated Retail, Llc	System and method for optimizing utilization of inventory space for dispensable articles
+WO2013147883A1 *	2012-03-30	2013-10-03	Intel Corporation	Presentation-structure-aware display of planograms
+EP2672445A1	2012-06-04	2013-12-11	CVDM Solutions	Method, system and computer program for assigning an assortment of products to an existing planogram
+US20130329043A1 *	2012-06-11	2013-12-12	Motorola Solutions, Inc.	Transmissions of images in a remote recognition system
+US8639548B2 *	2004-03-08	2014-01-28	Sap Aktiengesellschaft	System and method for assortment planning
+US20140126829A1 *	2012-11-05	2014-05-08	Whirlpool Corporation	Interactive touch screen device for wine
+US8725573B1 *	2004-06-09	2014-05-13	Amazon Technologies, Inc.	Method and system for creating and maintaining a virtual library
+US8725595B1	2004-06-09	2014-05-13	Amazon Technologies, Inc.	Method and system for appraising a collection of products
+US8730044B2	2002-01-09	2014-05-20	Tyco Fire & Security Gmbh	Method of assigning and deducing the location of articles detected by multiple RFID antennae
+US20140358740A1 *	2008-08-08	2014-12-04	Snap-On Incorporated	Image-based inventory control system with automatic calibration and image correction
+US20150058164A1 *	2012-11-02	2015-02-26	Nant Holdings Ip, Llc	Virtual Planogram Management Systems and Methods
+US20150088701A1 *	2013-09-23	2015-03-26	Daniel Norwood Desmarais	System and method for improved planogram generation
+US8996413B2	2012-12-28	2015-03-31	Wal-Mart Stores, Inc.	Techniques for detecting depleted stock
+US9205886B1	2011-05-06	2015-12-08	Google Inc.	Systems and methods for inventorying objects
+US9234276B2	2013-05-31	2016-01-12	Novellus Systems, Inc.	Method to obtain SiC class of films of desired composition and film properties
+US20160019622A1 *	2014-07-18	2016-01-21	Collectors Universe, Inc.	System for aggregating, comparing and acquiring collectibles, methods and uses thereof
+US9286617B2	2011-08-12	2016-03-15	Redbox Automated Retail, Llc	System and method for applying parental control limits from content providers to media content
+US9371579B2	2013-10-24	2016-06-21	Lam Research Corporation	Ground state hydrogen radical sources for chemical vapor deposition of silicon-carbon-containing films
+US20160307149A1 *	2015-04-14	2016-10-20	Wal-Mart Stores, Inc.	Overstock inventory management system
+US9489691B2	2009-09-05	2016-11-08	Redbox Automated Retail, Llc	Article vending machine and method for exchanging an inoperable article for an operable article
+US9524485B1 *	2005-01-31	2016-12-20	Amazon Technologies, Inc.	System and method for pattern assignment for pattern-based item identification in a materials handling facility
+US9524368B2	2004-04-15	2016-12-20	Redbox Automated Retail, Llc	System and method for communicating vending information
+WO2016205629A1 *	2015-06-17	2016-12-22	Panasonic Intellectual Property Management Co., Ltd.	Stock management apparatus, method and system
+US9542661B2	2009-09-05	2017-01-10	Redbox Automated Retail, Llc	Article vending machine and method for exchanging an inoperable article for an operable article
+US9582954B2	2010-08-23	2017-02-28	Redbox Automated Retail, Llc	Article vending machine and method for authenticating received articles
+US20170132560A1 *	2015-11-05	2017-05-11	Wal-Mart Stores, Inc.	Methods and systems for managing stock room bin audits at retail sales facilities
+US20170147966A1 *	2015-11-24	2017-05-25	Verizon Patent And Licensing Inc.	Inventory monitoring sensor system
+US9665794B2	2012-07-19	2017-05-30	Infosys Limited	Methods and systems for enabling vision based inventory management
+US20170193434A1 *	2015-11-09	2017-07-06	Simbe Robotics, Inc	Method for tracking stock level within a store
+US9704260B2 *	2015-07-28	2017-07-11	The Nielsen Company (Us), Llc	Methods and apparatus to improve detection and false alarm rate over image segmentation
+WO2017120651A1 *	2016-01-13	2017-07-20	Up Points Serviços Empresariais S.A.	Device for creating mosaics of reconstructed images and method for creating a mosaic of reconstructed images
+WO2017120650A1 *	2016-01-13	2017-07-20	Up Points Serviços Empresariais S.A.	System and method for inventory management based on object recognition analysis
+US20170243154A1 *	2016-02-22	2017-08-24	Wal-Mart Stores, Inc.	Systems and methods for indicating worker tasks at a retail sales facility
+US20170278056A1 *	2014-09-30	2017-09-28	Nec Corporation	Information processing apparatus, control method, and program
+US9785996B2	2011-06-14	2017-10-10	Redbox Automated Retail, Llc	System and method for substituting a media article with alternative media
+US9805333B1	2010-05-04	2017-10-31	Walgreen Co.	Generating a maximum-profit solution for a merchandizing fixture
+EP3155574A4 *	2014-06-10	2017-11-01	Hussmann Corporation	System and method for interaction with a retail environment
+WO2017201483A1 *	2016-05-19	2017-11-23	Simbe Robotics Inc.	Method for tracking placement of products on shelves in a store
+US9837270B1	2016-12-16	2017-12-05	Lam Research Corporation	Densification of silicon carbide film using remote plasma treatment
+US9876886B1	2012-03-06	2018-01-23	Connectandsell, Inc.	System and method for automatic update of calls with portable device
+US9892437B2	2016-04-21	2018-02-13	International Business Machines Corporation	Digitization of a catalog of retail products
+US9922413B2	2008-08-08	2018-03-20	Snap-On Incororated	Image-based inventory control system using advanced image recognition
+US9928438B2	2016-03-10	2018-03-27	Conduent Business Services, Llc	High accuracy localization system and method for retail store profiling via product image recognition and its corresponding dimension database
+US20180107999A1 *	2016-10-17	2018-04-19	Conduent Business Services, Llc	Store shelf imaging system and method
+US9986076B1	2012-03-06	2018-05-29	Connectandsell, Inc.	Closed loop calling process in an automated communication link establishment and management system
+US10002344B2	2016-10-17	2018-06-19	Conduent Business Services, Llc	System and method for retail store promotional price tag detection
+US20180189724A1 *	2016-12-29	2018-07-05	Wal-Mart Stores, Inc.	Apparatus and method for stocking stores with mobile modular displays
+US10019803B2	2016-10-17	2018-07-10	Conduent Business Services, Llc	Store shelf imaging system and method using a vertical LIDAR
+US20180285902A1 *	2017-03-31	2018-10-04	Walmart Apollo, Llc	System and method for data-driven insight into stocking out-of-stock shelves
+US10137567B2 *	2016-09-20	2018-11-27	Toyota Motor Engineering & Manufacturing North America, Inc.	Inventory robot
+US10176452B2	2014-06-13	2019-01-08	Conduent Business Services Llc	Store shelf imaging system and method
+US10211310B2	2012-06-12	2019-02-19	Novellus Systems, Inc.	Remote plasma based deposition of SiOC class of films
+US10210603B2	2016-10-17	2019-02-19	Conduent Business Services Llc	Store shelf imaging system and method
+US10296814B1	2013-06-27	2019-05-21	Amazon Technologies, Inc.	Automated and periodic updating of item images data store
+US10325773B2	2012-06-12	2019-06-18	Novellus Systems, Inc.	Conformal deposition of silicon carbide films
+US10366306B1 *	2013-09-19	2019-07-30	Amazon Technologies, Inc.	Item identification among item variations
+US10380542B2 *	2012-10-01	2019-08-13	Stephan Hammelbacher	Method and device for process tracking of operations or services relating to at least one object
+US10417696B2 *	2015-12-18	2019-09-17	Ricoh Co., Ltd.	Suggestion generation based on planogram matching
+US10432788B2	2012-03-06	2019-10-01	Connectandsell, Inc.	Coaching in an automated communication link establishment and management system
+US10453046B2 *	2014-06-13	2019-10-22	Conduent Business Services, Llc	Store shelf imaging system
+US10489742B2	2016-08-23	2019-11-26	Walmart Apollo, Llc	System and method for managing retail products
+US10515309B1	2013-09-20	2019-12-24	Amazon Technologies, Inc.	Weight based assistance determination
+US10565549B2	2016-08-23	2020-02-18	Walmart Apollo, Llc	System and method for managing retail products
+US10592854B2	2015-12-18	2020-03-17	Ricoh Co., Ltd.	Planogram matching
+US10657411B1 *	2014-03-25	2020-05-19	Amazon Technologies, Inc.	Item identification
+US10664795B1	2013-09-20	2020-05-26	Amazon Technologies, Inc.	Weight based item tracking
+US10713614B1	2014-03-25	2020-07-14	Amazon Technologies, Inc.	Weight and vision based item tracking
+US10740994B2	2012-06-12	2020-08-11	Snap-On Incorporated	Tool training for automated tool control systems
+US10810822B2	2007-09-28	2020-10-20	Redbox Automated Retail, Llc	Article dispensing machine and method for auditing inventory while article dispensing machine remains operable
+US10832904B2	2012-06-12	2020-11-10	Lam Research Corporation	Remote plasma based deposition of oxygen doped silicon carbide films
+US10840087B2	2018-07-20	2020-11-17	Lam Research Corporation	Remote plasma based deposition of boron nitride, boron carbide, and boron carbonitride films
+US10853782B2	2017-04-14	2020-12-01	Vendekin Technologies Private Limited	System and method for vending device inventory management
+US10963657B2	2011-08-30	2021-03-30	Digimarc Corporation	Methods and arrangements for identifying objects
+US11049716B2	2015-04-21	2021-06-29	Lam Research Corporation	Gap fill using carbon-based films
+WO2021150406A1 *	2019-12-17	2021-07-29	Cooler Screens Inc.	Smart movable closure system for cooling cabinet
+US11126861B1	2018-12-14	2021-09-21	Digimarc Corporation	Ambient inventorying arrangements
+US11130239B2 *	2016-05-19	2021-09-28	Simbe Robotics, Inc.	Method for automatically generating waypoints for imaging shelves within a store
+US20210374662A1 *	2020-02-05	2021-12-02	Simbe Robotics, Inc.	Method for tracking and maintaining promotional states of slots in inventory structures within a store
+US11257141B2	2018-06-20	2022-02-22	Simbe Robotics, Inc.	Method for managing click and delivery shopping events
+US11277574B1 *	2020-04-01	2022-03-15	Sunrise R&D Holdings, Llc	Methods and systems for mapping camera location and selecting a desired view in a video management system
+US11281876B2	2011-08-30	2022-03-22	Digimarc Corporation	Retail store with sensor-fusion enhancements
+US11341456B2	2020-08-25	2022-05-24	Datalogic Usa, Inc.	Compact and low-power shelf monitoring system
+US20220188760A1 *	2017-08-07	2022-06-16	Standard Cognition, Corp	Identifying inventory items using multiple confidence levels
+US20220288962A1 *	2015-01-27	2022-09-15	Avery Dennison Retail Information Services Llc	Array of Printed Information Sheets for a Business Establishment
+CN115104115A *	2020-02-14	2022-09-23	爱尔康公司	Contact Lens Fitting Kit Components and Automatic Identification Technology
+US11516342B2	2012-03-06	2022-11-29	Connectandsell, Inc.	Calling contacts using a wireless handheld computing device in combination with a communication link establishment and management system
+US11544866B2 *	2017-08-07	2023-01-03	Standard Cognition, Corp	Directional impression analysis using deep learning
+US11698219B2	2017-08-10	2023-07-11	Cooler Screens Inc.	Smart movable closure system for cooling cabinet
+US11727353B2	2018-01-10	2023-08-15	Trax Technology Solutions Pte Ltd.	Comparing planogram compliance to checkout data
+US11743382B2	2012-03-06	2023-08-29	Connectandsell, Inc.	Coaching in an automated communication link establishment and management system
+US20230274225A1 *	2022-01-31	2023-08-31	Walmart Apollo, Llc	Methods and apparatus for generating planograms
+US11763252B2	2017-08-10	2023-09-19	Cooler Screens Inc.	Intelligent marketing and advertising platform
+US11768030B2 *	2017-08-10	2023-09-26	Cooler Screens Inc.	Smart movable closure system for cooling cabinet
+TWI820477B *	2018-12-17	2023-11-01	美商庫勒螢幕股份有限公司	Intelligent system for inventory management, marketing, and advertising, method related thereto, and apparatus for a retail cooling storage container
+US11818508B2	2020-06-26	2023-11-14	Standard Cognition, Corp.	Systems and methods for automated design of camera placement and cameras arrangements for autonomous checkout
+US11848199B2	2018-10-19	2023-12-19	Lam Research Corporation	Doped or undoped silicon carbide deposition and remote hydrogen plasma exposure for gapfill
+US20240203556A1 *	2009-12-07	2024-06-20	Meps Real-Time, Inc.	RFID Medical Article Tracking System and Method
+US12079765B2	2019-11-25	2024-09-03	Simbe Robotics, Inc.	Method for tracking and maintaining inventory in a store
+US12079769B2	2020-06-26	2024-09-03	Standard Cognition, Corp.	Automated recalibration of sensors for autonomous checkout
+US12086867B2	2022-01-31	2024-09-10	Walmart Apollo, Llc	Methods and apparatus for generating planograms
+US12118510B2	2017-08-10	2024-10-15	Cooler Screens Inc.	Intelligent marketing and advertising platform
+US12288294B2	2020-06-26	2025-04-29	Standard Cognition, Corp.	Systems and methods for extrinsic calibration of sensors for autonomous checkout
+US12334332B2	2012-06-12	2025-06-17	Lam Research Corporation	Remote plasma based deposition of silicon carbide films using silicon-containing and carbon-containing precursors
+US12333802B2	2020-10-15	2025-06-17	Delicious Ai Llc	System and method for three dimensional object counting utilizing point cloud analysis in artificial neural networks
+US12359311B2	2012-06-12	2025-07-15	Lam Research Corporation	Conformal deposition of silicon carbide films using heterogeneous precursor interaction
+US12361379B2	2022-01-31	2025-07-15	Walmart Apollo, Llc	Methods and apparatus for generating planograms
+US12373971B2	2021-09-08	2025-07-29	Standard Cognition, Corp.	Systems and methods for trigger-based updates to camograms for autonomous checkout in a cashier-less shopping
+Family To Family Citations				
+GB2386708A *	2002-03-16	2003-09-24	Galleria Software Developement	Planograms
+US8941645B2 *	2012-05-11	2015-01-27	Dassault Systemes	Comparing virtual and real images in a shopping experience
+US8923893B2	2012-08-07	2014-12-30	Symbol Technologies, Inc.	Real-time planogram generation and maintenance
+US10352689B2	2016-01-28	2019-07-16	Symbol Technologies, Llc	Methods and systems for high precision locationing with depth values
+US11042161B2	2016-11-16	2021-06-22	Symbol Technologies, Llc	Navigation control method and apparatus in a mobile automation system
+US11367092B2	2017-05-01	2022-06-21	Symbol Technologies, Llc	Method and apparatus for extracting and processing price text from an image set
+US10505057B2	2017-05-01	2019-12-10	Symbol Technologies, Llc	Device and method for operating cameras and light sources wherein parasitic reflections from a paired light source are not reflected into the paired camera
+US10949798B2	2017-05-01	2021-03-16	Symbol Technologies, Llc	Multimodal localization and mapping for a mobile automation apparatus
+US10663590B2	2017-05-01	2020-05-26	Symbol Technologies, Llc	Device and method for merging lidar data
+US10591918B2	2017-05-01	2020-03-17	Symbol Technologies, Llc	Fixed segmented lattice planning for a mobile automation apparatus
+WO2018204342A1	2017-05-01	2018-11-08	Symbol Technologies, Llc	Product status detection system
+WO2018204308A1	2017-05-01	2018-11-08	Symbol Technologies, Llc	Method and apparatus for object status detection
+US10726273B2	2017-05-01	2020-07-28	Symbol Technologies, Llc	Method and apparatus for shelf feature and object placement detection from shelf images
+US11449059B2	2017-05-01	2022-09-20	Symbol Technologies, Llc	Obstacle detection for a mobile automation apparatus
+US11600084B2	2017-05-05	2023-03-07	Symbol Technologies, Llc	Method and apparatus for detecting and interpreting price label text
+US10572763B2	2017-09-07	2020-02-25	Symbol Technologies, Llc	Method and apparatus for support surface edge detection
+US10521914B2	2017-09-07	2019-12-31	Symbol Technologies, Llc	Multi-sensor object recognition system and method
+US10823572B2	2018-04-05	2020-11-03	Symbol Technologies, Llc	Method, system and apparatus for generating navigational data
+US10740911B2	2018-04-05	2020-08-11	Symbol Technologies, Llc	Method, system and apparatus for correcting translucency artifacts in data representing a support structure
+US11327504B2	2018-04-05	2022-05-10	Symbol Technologies, Llc	Method, system and apparatus for mobile automation apparatus localization
+US10809078B2	2018-04-05	2020-10-20	Symbol Technologies, Llc	Method, system and apparatus for dynamic path generation
+US10832436B2	2018-04-05	2020-11-10	Symbol Technologies, Llc	Method, system and apparatus for recovering label positions
+US11506483B2	2018-10-05	2022-11-22	Zebra Technologies Corporation	Method, system and apparatus for support structure depth determination
+US11010920B2	2018-10-05	2021-05-18	Zebra Technologies Corporation	Method, system and apparatus for object detection in point clouds
+US11090811B2	2018-11-13	2021-08-17	Zebra Technologies Corporation	Method and apparatus for labeling of support structures
+US11003188B2	2018-11-13	2021-05-11	Zebra Technologies Corporation	Method, system and apparatus for obstacle handling in navigational path generation
+US11416000B2	2018-12-07	2022-08-16	Zebra Technologies Corporation	Method and apparatus for navigational ray tracing
+US11079240B2	2018-12-07	2021-08-03	Zebra Technologies Corporation	Method, system and apparatus for adaptive particle filter localization
+US11100303B2	2018-12-10	2021-08-24	Zebra Technologies Corporation	Method, system and apparatus for auxiliary label detection and association
+US11015938B2	2018-12-12	2021-05-25	Zebra Technologies Corporation	Method, system and apparatus for navigational assistance
+US10731970B2	2018-12-13	2020-08-04	Zebra Technologies Corporation	Method, system and apparatus for support structure detection
+US11592826B2	2018-12-28	2023-02-28	Zebra Technologies Corporation	Method, system and apparatus for dynamic loop closure in mapping trajectories
+US11200677B2	2019-06-03	2021-12-14	Zebra Technologies Corporation	Method, system and apparatus for shelf edge detection
+US11402846B2	2019-06-03	2022-08-02	Zebra Technologies Corporation	Method, system and apparatus for mitigating data capture light leakage
+US11341663B2	2019-06-03	2022-05-24	Zebra Technologies Corporation	Method, system and apparatus for detecting support structure obstructions
+US11151743B2	2019-06-03	2021-10-19	Zebra Technologies Corporation	Method, system and apparatus for end of aisle detection
+US11662739B2	2019-06-03	2023-05-30	Zebra Technologies Corporation	Method, system and apparatus for adaptive ceiling-based localization
+US11080566B2	2019-06-03	2021-08-03	Zebra Technologies Corporation	Method, system and apparatus for gap detection in support structures with peg regions
+US11960286B2	2019-06-03	2024-04-16	Zebra Technologies Corporation	Method, system and apparatus for dynamic task sequencing
+US11537985B2	2019-09-26	2022-12-27	International Business Machines Corporation	Anonymous inventory tracking system
+US11507103B2	2019-12-04	2022-11-22	Zebra Technologies Corporation	Method, system and apparatus for localization-based historical obstacle handling
+US11107238B2	2019-12-13	2021-08-31	Zebra Technologies Corporation	Method, system and apparatus for detecting item facings
+US11822333B2	2020-03-30	2023-11-21	Zebra Technologies Corporation	Method, system and apparatus for data capture illumination control
+US11450024B2	2020-07-17	2022-09-20	Zebra Technologies Corporation	Mixed depth object detection
+US11593915B2	2020-10-21	2023-02-28	Zebra Technologies Corporation	Parallax-tolerant panoramic image generation
+US11392891B2	2020-11-03	2022-07-19	Zebra Technologies Corporation	Item placement detection and optimization in material handling systems
+US11847832B2	2020-11-11	2023-12-19	Zebra Technologies Corporation	Object classification for autonomous navigation systems
+US11954882B2	2021-06-17	2024-04-09	Zebra Technologies Corporation	Feature-based georegistration for mobile computing devices

@@ -1,0 +1,157 @@
+--- PAGE 1 ---
+European Patent Application 03012362.4
+-20-
+MAIN REQUEST
+
+New set of claims
+
+(as fair copy)
+
+1. A security rating system comprising a security rating server (100d) and a
+security rating client (200b) connected with said security rating server (100d) via a
+communication network (300), wherein said security rating server (100d) com-
+prises:
+
+a security information table storing means (171d) configured for storing a security
+information table that records security elements, i.e., data that constitute a security
+measure, for each security;
+
+a rating value calculating means (173d) configured for calculating a sum of rating
+contribution values for each security information table using a rating contribution
+value table, which stores contributing values for rating of securities belonging to
+said security elements as rating contribution values, and for recording said sum of
+rating contribution values thus calculated as a rating value in said security informa-
+tion table;
+
+a security information table transmitting means (174d) configured for transmitting
+said security information table to said security rating client (200b) when a security
+information table transmission request is received from said security rating client
+(200b); and
+
+a transmission counting means (177d) configured for incrementing by one the num-
+ber of transmissions, which is a security element recorded on said security informa-
+tion table, each time when said security information table is transmitted to said se-
+curity rating client (200b) by said security information table transmitting means,
+wherein
+
+said security rating client (200b) comprises:
+
+a security information table transmission request transmitting means configured for
+transmitting said security information table transmission request to said security
+
+rating server (100d); and
+
+--- PAGE 2 ---
+European Patent Application 03012362.4
+-21-
+
+a security information table receiving means configured for receiving said security
+
+information table from said security rating server (100d).
+
+2. The security rating system described in claim 1, further comprising a manag-
+ing client (400) connected with said security rating server (100d) via said commu-
+nication network (300), wherein said security rating server (100d) comprises:
+
+a rating contribution value table updating means (175d) configured for updating
+said rating contribution value to be recorded on said rating contribution value table
+when a rating contribution value table updating request is received from said man-
+ager (400), and wherein
+
+said managing client (400) comprises a rating contribution value table updating
+request transmitting means configured for transmitting said rating contribution
+
+value table updating request to said security rating server (100d).
+
+3. The security rating system described in claims 1 or 2, wherein said security
+rating server (100d) further comprises:
+
+a comparative security rating value information generating and transmitting means
+(176d) configured for generating comparative security rating value information
+comparing said security rating values for a plurality of securities recorded on their
+respective security information tables and for transmitting it to said security rating
+client (200b) when a comparative security rating value information transmission
+request is received from said security rating client (200b), and
+
+said security rating client (200b) further comprises:
+
+a comparative security rating value information transmission request transmitting
+means configured for transmitting said comparative security rating value informa-
+tion transmission request to said security rating server (100d); and
+
+a comparative security rating value information receiving means configured for
+receiving said comparative security rating value information from said security rat-
+
+ing server (100d).
+
+--- PAGE 3 ---
+European Patent Application 03012362.4
+
+-22-
+4. A security rating method used in a security rating system comprising a secu-
+rity rating server (100d) and a security rating client (200a) connected with said se-
+curity rating server (100d) via a communication network (300), comprising:
+a security information table storing step for said security rating server (100d) to
+store a security information table that records security elements, i.e., data that con-
+stitute a security measure, for each security;
+a rating value calculating step (S101) for said security rating server (100d) to cal-
+culate a sum of rating contribution values for each security information tabie using
+a rating contribution value table, which stores contributing values for rating of se-
+curities belonging to said security elements as rating contribution values, and to
+record said sum of rating contribution values thus calculated as a rating value in
+said security information table;
+a security information table transmission request transmitting step for said security
+rating client (200b) to transmit a security information table transmission request to
+said security rating server (100d);
+a transmission counting step (S110) for said security rating server (100d) to incre-
+ment by one the number of transmissions, which is a security element recorded on
+said transmitted security information table, each time when said security informa-
+tion table is transmitted to said security rating client (200b);
+a security information table transmitting step (S105) for said security rating server
+(100d) to transmit said security information table to said security rating client
+(200b) when said security information table transmission request is received from
+said security rating client (200b); and
+a security information table receiving step for said security rating client (200b) to
+
+receive said security information table from said security rating server (100d).
+
+5. The security rating method as described in claim 5, the security rating sys-
+tem further having a managing client (400) connected with said security rating
+server (100d) via said communication network (300), comprising:
+
+a rating contribution value table updating request transmitting step for said manag-
+ing client (400) to transmit a rating contribution value table update request to said
+
+security rating server (100d); and
+
+--- PAGE 4 ---
+European Patent Application 03012362.4
+
+-23-
+a rating contribution value table updating step (S107) for said security rating server
+(100d) to update said rating contribution value to be recorded on said rating contri-
+
+bution value table when a rating contribution value table updating request is re-
+
+ceived from said managing client (400).
+
+6. The security rating method as described in claims 5 or 6, further comprising:
+a comparative security rating value information transmission request transmitting
+step for said security rating client (200b) to transmit a comparative security rating
+value information transmission request to said security rating server (100d);
+
+a comparative security rating value information generating and transmitting step
+(S109) for said security rating server (100d) to generate comparative security rating
+value information comparing said security rating values for a plurality of securities
+recorded on their respective security information tables and to transmit it to said
+security rating client (200b) when a comparative security rating value information
+transmission request is received from said security rating client (200b); and
+
+a comparative security rating value information receiving step for said security rat-
+ing client (200b) to receive said comparative security rating value information from
+
+said security rating server (100d).
+
+7. A computer-readable recording medium storing a program which, when car-
+
+_ried out on a computer, performs the method of any of the claims 4 to 6.

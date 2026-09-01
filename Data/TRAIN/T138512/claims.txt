@@ -1,0 +1,558 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+05109296.3 June 17, 2015
+Nintendo Co., Ltd. Y124332EP CKa/Tef/bb
+
+New claims — main request
+
+1. A game apparatus (10) comprising:
+
+an operating position detecting means (22, 42, S1, S29, $51, $281, $351) for
+detecting a user's operating position on an operating surface (14, 120);
+
+a first requirement determining means (42, $3, S283) for determining whether
+or not the result of detection by said operating position detecting means satisfies a first
+requirement;
+
+a contact determining means (42, $71, $77, $483, S493, $497, $501) for
+determining contact between a slide path (142) on said operating surface (14, 120) and
+a first area (122) set on said operating surface (14, 120), wherein the slide path (142) is
+determined on the basis of operating positions detected sequentially from the detection
+of an operating position that satisfies the first requirement; and
+
+a game processing means (42, S93, $225) for performing varied game processes
+according to the result of detection by said contact determining means (42, $71, $77,
+5483, S493, S497, S501)
+
+wherein said game apparatus (10) is characterized by:
+
+said first requirement being indicative of the start of a slide operation and said
+game apparatus (10) further comprising:
+
+a first parameter setting means (42, S13, S19, S23, $319, $335, $337, $339) for
+setting at least one first parameter according to one element of the two-dimensional
+coordinates of said operating position that satisfies the first requirement and at least
+another first parameter according to another element of the two-dimensional
+coordinates of said operating position that satisfies the first requirement; and
+
+said game processing means (42, S93, S225) performing said game processes
+
+based on said first parameters.
+
+2. A game apparatus (10) according to claim 1, further comprising:
+
+a second requirement determining means (42, $53, S71, 877, $353, $483,
+$493,8497, S501) which, after an operating position that satisfies the first requirement
+has been detected, determines whether or not the result of detection by said operating
+position detecting means satisfies a second requirement indicative of the end of a slide
+operation and different from the first requirement; and
+
+a path defining means (42, S69, $363, S371) which defines said slide path (142)
+on the basis of the operating positions detected by said operating position detecting
+means (22, 42, S1, S29, S51, S281, $351) from the time when it has been determined
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+that said first requirement is satisfied until the time when it has been determined that
+
+said second requirement is satisfied.
+
+3. A game apparatus (10) according to claim 1, further comprising:
+
+a second parameter setting means (42, S529, S537) which sets a second
+parameter different from the first parameters according to the result of determination
+by said contact determining means (42, $71, 877, S483, S493, $497, $501), wherein said
+game processing means performs (42, S93, S225) a game process based on said first
+
+parameters and said second parameter.
+
+4. A game apparatus (10) according to claim 1, further comprising:
+
+a first parameter correcting means (42, S529, S537, S555, S563, S565, S571,
+$573, 8579, S581) which corrects the first parameters according the result of
+determination by said contact determining means (42, $71, $77, $483, $493, S497,
+S501), wherein said game processing means (42, S93, S225) performs a game process
+based on the first parameters corrected by said first parameter correcting means (42,
+
+S529, S537, S555, S563, S566, $571, S573, S579, $581).
+
+5. A game apparatus (10) according to claim 1, wherein
+said game processing means (42, S93, S225) performs a game process based on
+said first parameters when said slide path (142) is in contact with said first area (122),
+and does not perform a game process based on said first parameters when said
+
+slide path (142) is not in contact with said first area (122).
+
+6. A game apparatus (10) according to claim 1, wherein
+said first area (122) includes a plurality of determination areas, and
+said game processing means (42, S93, S225) performs varied game processes
+
+according to said determination area with which said slide path (142) has made contact.
+7. A game apparatus (10) according to claim 6, wherein
+according to a direction of said slide path (142), said plurality of determination
+
+areas are arranged in predetermined order so as to be orthogonal to that direction.
+
+8. A game apparatus (10) according to claim 1, wherein
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+said game processing means (42, S93, $225) performs varied game processes
+according to the position of said slide path (142) which has made contact with the first
+
+area (122).
+
+g. A game apparatus (10) according to claim 1, wherein
+said game processing means (42, S93, S225) moves an moving object (106) in
+the game world (106), and
+said first parameter setting means (42, S13, $19, S23, S319, $333, $337, $339)
+sets a parameter related to a moving distance of said moving object (106) according to
+one element of said two-dimensional coordinates, and sets a parameter related to the
+moving direction of said moving object according to the other element of said two-
+
+dimensional coordinates.
+
+10. A game apparatus (10) according to claim 1, wherein
+said game processing means (42, S93, S225) moves a moving object (106) in the
+game world, and
+said first parameter setting means (42, $13, S19, $23, S319, $333, S337, $339)
+sets a parameter related to the moving distance of said moving object (106) according
+to one element of said two-dimensional coordinates, and sets a parameter affecting the
+degree of curve of the moving path of said moving object (106) according to the other
+
+element of said two-dimensional coordinates.
+
+11. A game apparatus according to claim 8, further comprising:
+
+a game parameter storing means which stores game parameters varying with
+the state of a game, wherein
+
+said first parameter setting means changes at least one of a corresponding
+relationship between said one element and said one parameter and a corresponding
+relationship between said other element and said other first parameter, based on said
+
+game parameters.
+
+12. A game apparatus (10) according to claim 1, further comprising:
+
+a direction change accepting means (42) which accepts a change in operating
+direction on said operating surface (14, 120), and a direction change storing means (48)
+which, when said direction change accepting means (42) has accepted the change in
+operating direction, stores direction change information indicative of the direction
+
+change, wherein
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+said first parameter setting means (42, S13, S19, S23, S319, S333, S337, 8339)
+sets said another first parameter according to said one element and sets said one first
+parameter according to said another element, when said direction change storing
+
+means stores the direction change information.
+
+13. A game apparatus (10) according to claim 1, wherein
+said game processing means (42, S93, S225) moves a moving object (106) in the
+game world, and
+said first parameters include a distance parameter for the moving distance of
+said moving object (106) and a direction parameter for the moving direction of said
+
+moving object (106).
+
+14. A game apparatus (10) according to claim 13, wherein
+said direction parameter includes a spin value parameter for the spin value of
+
+said moving object (106).
+
+15. A game apparatus (10) according to claim 1, wherein
+
+said operating position detecting means (22, 42, $1, S29, $51, S281, $351)
+detects said operating positions from start to end of operation by said user in time
+sequence, and further comprising
+
+a path defining means (42, S69, S371) which, when it is not determined at the
+end of operation that said slide path (S142) defined an the basis of said operating
+positions until the end of operation has made contact with said first area (122), extends
+
+said path under a predetermined rule.
+
+16. A game apparatus (10) according to claim 15, wherein
+under said predetermined rule, the direction of extension is decided along the
+
+direction of said slide path (42).
+
+17. A game apparatus (10) according to claim 15, wherein
+under said predetermined rule, the length of the extension is decided according
+to a distance per unit of time from one time-wise anterior operating position to one
+time-wise posterior operating position, out of a plurality of operating positions until the
+
+end of operation.
+
+18. A game apparatus (10) according to claim 1, wherein
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+the coordinate system of said two-dimensional coordinates is set on the basis of
+the position of said first area (122) on said operating surface (14, 20), and
+
+said first parameter setting means (42, $13, S19, $23, S319, $333, $337, $339)
+sets said first parameters to a larger value as said operating position related to the
+
+setting of said first parameters is more distant from the position of said first area (122).
+
+19. A game apparatus (10) according to claim 1, wherein
+a second area is set on said operating surface (14, 20) in such a manner as to be
+outside said first area (122), adjacent to said first area (122), or contain a part of said
+first area (122), and
+said first requirement determining means (42, S3, $283) determines whether
+or not the operating position detected by said operating position detecting means (22,
+42, S1, S29, S51, S281, $351) exists within said second area and satisfies said first
+
+requirement.
+
+20. A game apparatus (10) according to claim 19, wherein
+
+a third area is set on said operating surface (14, 120) so as to be adjacent to said
+second area,
+
+said first area (122) is set at a center of a boundary portion between said second
+area and said third area, and
+
+said second requirement determining means (42, $53, $71, $77, $353, S483,
+S493, S497, S501) determines whether or not the slide path (142) on said operating
+surface is in contact with the third area, wherein the slide path (142) is determined on
+the basis of the operating positions detected sequentially from the detection of an
+
+operating position satisfying the first requirement.
+
+21. A game apparatus (10) according to claim 1, further comprising:
+a first area changing means (42, $261, S267) which changes at least one of the
+
+position and the size of said first area (122) according to said game parameters.
+
+22. A game apparatus (10) according to claim 21, wherein
+
+said first parameter setting means (42, $13, S19, S23, S319, $333, $337, $339)
+decides said first parameter according to the two-dimensional coordinates of said
+operating position with reference to the position of said first area (122), and, when said
+
+first area changing means (42, $261, S267) has changed the position of said first area
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+(122), decides said first parameter according to the two-dimensional coordinates of said
+
+operating position with reference to the changed position of said first area (122).
+
+23. A game apparatus (10) according to claim 21, wherein
+
+said game processing means (42, S93, S225) moves a moving object (106) in the
+game world, .
+
+said game parameters include a landform parameter for the current position of
+said moving object (106), and
+
+said first area changing means (42, $261, S267) changes at least one of the
+
+position and the size of said first area (122) according to said landform parameter.
+
+24. A game apparatus (10) according to claim 23, further comprising:
+a landform data storing means (48) which stores landform data for defining a
+landform of the game world; and
+an inclination state detecting means (42, S265) which detects the state of an
+inclination in a direction orthogonal to a reference movement direction of said moving
+object (106) in the current position, by reference to the landform data, wherein said
+first area changing means (42, $261, S267) changes the position of said first area (122)
+according to said inclination state detected by said inclination state detecting means
+(42, S265),
+said first parameter setting means (42, S13, S19, S23, $319, $333, $337, $339)
+sets a distance parameter related to the moving distance of said moving object (106)
+according to one element of said two-dimensional coordinates, and sets a degree-of-
+curve parameter affecting the degree of curve of the moving path of said moving object
+(106) according to the other element of said two-dimensional coordinates, and
+said game processing means (42, S93, $225) moves said moving object (106)
+based on at least said distance parameter, said reference moving direction and said
+
+degree-of-curve parameter.
+
+25. A game apparatus (10) according to claim 24, wherein
+
+said first area changing means (42, S261, S267) changes the position of said first
+area (122) in an axial direction of the other element as said inclination detected by said
+inclination state detecting means (42, $265) is steeper, and
+
+said game processing means (42, S93, $225) sets said degree-of-curve
+
+parameter to a larger value as a distance in an axial direction of said other element
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+between the position of said first area (122) and said two-dimensional coordinates
+
+becomes longer.
+
+26. A game apparatus (10) according to claim 25, wherein
+a reference movement direction setting means (42, S235) which sets said
+
+reference movement direction in response to said user's operation.
+
+27. A game apparatus (10) according to claim 1, further comprising:
+a third requirement determining means (42, $41, S61, S455, $457, $461) which
+determines whether or not, after it has been determined that said first requirement is
+satisfied, a result of the detection by said operating position detecting means (22, 42,
+Si, S29, S51, S281, $351) satisfies a third requirement indicative of the cancellation of a
+slide operation and different from said first requirement, and a canceling means (42,
+S63, S463) which, when said third requirement determining means has determined
+that said third requirement is satisfied, cancels the determination to the effect that the
+
+first determination is satisfied.
+
+28. A game apparatus (10) according to claim 27, wherein
+
+included in the third requirement is that, after it has been determined that said
+first requirement is satisfied, the operating position detected by said operating position
+detecting means (22, 42, $1, S29, S51, $281, $351) shall be ina resting state.
+
+29. A game apparatus (10) according to claim 27, wherein
+included in the third requirement is that, after it has been determined that said
+first requirement is satisfied, a change in the operating position detected by said
+
+operating position detecting means shall be along a predetermined direction.
+
+30. A game apparatus (10) according to claim 29, wherein
+
+said predetermined direction is a direction that moves away from the first area.
+
+31. A game apparatus (10) according to claim 1, further comprising:
+
+a time measuring means (42, $295, S429) which, after the first requirement
+determining means (42, S3, S283) has determined that said first requirement is
+satisfied, measures a time until said contact is determined by said contact determining
+
+means (42, S71, S77, S483, S493, S497, S501), wherein
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+said game processing means (42, S93, S225) performs game processes which
+may depending on whether or not the time measured by said time measuring means
+
+(42, S295, S429) is equal to or more than a predetermined time.
+
+32. A game apparatus (10) according to claim 1, further comprising:
+
+a distance determining means (42, $39, $59, $365) which determines whether
+or not a distance per unit of time between one time-wise anterior operating position
+and one time-wise posterior operating position, which are detected sequentially from
+the detection of the operating position related to the setting of said first parameter, has
+become equal to or less than a predetermined value, wherein
+
+said game processing means (42, S93, S225) performs game processes which
+
+may according to a result of determination by said distance determining means (42,
+
+$93, 5225).
+
+33. A game apparatus (10) according to claim 1, wherein said contact
+
+determining means (42, $77, S483, S493, S497, $501) determines with which of
+a plurality of areas set on said operating surface (14, 120) makes contact with said path
+(142); and
+
+said game processing means (42, S93, S225) performs varied game processes
+according to the contacted area determined by said contact determining means (42,
+
+S77, S483, 8493, S497, S501).
+
+34. A recording medium (28) storing a game program to be executed by a game
+apparatus, wherein
+
+said game program causes the processor (42) of said game apparatus (10) to
+perform:
+
+an operating position detecting step (S1, S29, S51, S281, $351) of
+detecting a position of operation by the user on the operating surface (14, 120);
+
+a first requirement determining step (S3, S283) of determining whether or not a
+result of determination in said operating position detecting step satisfies a first
+requirement;
+
+a contact determining step (S71, $77, S483, S493, 8497, S501) of
+determining whether or not a slide path (142) on the operating surface (14, 120) makes
+contact with the first area (122) provided on the operating surface (14, 120), wherein
+
+the slide path (142) is determined on the basis of operating positions detected
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+sequentially from the detection of an operating position that satisfies the first
+requirement; and
+
+a game processing step (S93, S225) of performing varied game processes
+according to a result of determination in said contact determining step (S71, S77, S483,
+S493, 8497, S501), wherein the recording medium is characterized by:
+said first requirement being indicative of the start of a slide operation and said game
+program causing the processor (42) of said game apparatus (10) to further perform:
+
+a first parameter setting step (S13, Si9, S23, $319, S333, $337, $339) of
+setting at least one first parameter according to one element of the two-
+dimensional coordinates of said operating position that satisfies the first requirement
+
+and at least another first parameter according to another element of the two-
+dimensional coordinates of said operating position that satisfies the first requirement;
+and
+
+said game processing step (S93, S225) performs said game processes based on
+
+said first parameters.
+
+35. A recording medium (28) according to claim 34, wherein said contact
+determining step (S71, $77, S483, $493, S497, $501) determines which of a plurality of
+areas set on said operating surface (14, 20) makes contact with said path; and
+
+said game processing step (S93, $225) performs varied game processes
+
+according to the contacted area determined in said contact determining step (S71, $77,
+
+$483, S493, S497, S501).
+
+36. A game control method including the following steps of:
+
+(a) detecting (S1, S29, S51, S281, $351) an operating position by a user on an
+operating surface (14, 120);
+
+(b) determining (S3, S283) whether or not the operating position detected in
+said step (a) satisfies a first requirement;
+
+(c) determining (S71, 877, S483, S493, S497, S501) whether or not a slide path
+(142) on the operating surface (14, 120) makes contact with the first area set (122) on
+the operating surface (14, 120), said path (142) being determined on the basis of
+operating positions detected sequentially from the detection of an operating position
+that satisfies the first requirement; and
+
+(d) performing (S93, S225) varied game processes depending on a result of
+
+determination in said step (c), wherein said game control method is characterized by
+
+--- PAGE 10 ---
+10
+
+15
+
+10
+
+said first requirement being indicative of the start of a slide operation and said
+game control method further comprising:
+
+a first parameter setting step (S13, S19, S23, $319, $333, S337, 8339) for setting
+at least one first parameter according to one element of the two-dimensional
+coordinates of said operating position that satisfies the first requirement and at least
+another first parameter according to another element of the two-dimensional
+coordinates of said operating position that satisfies the first requirement; and
+
+performing (S93, $225) said game processes based on said first parameters in
+step (d).
+
+37. A game control method according to claim 36 wherein:
+step (c) (S71, $77, S483, S493, S497, S501) comprises determining with which of a
+plurality of areas provided on said operation surface (14, 20) said slide path(142) makes
+contact; and
+
+performing varied game processes according to the contacted area determined
+
+in said step (c) in step (d).

@@ -1,0 +1,67 @@
+TITLE:
+Patient medication iv delivery pump with wireless communication to a hospital information management system
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A wireless communication system (9) from an IV medication infusion pump to a hospital information management system (HIMS) is disclosed. The system includes an IV pump (10) having pump operation circuitry (41) for monitoring preselected characteristics of pump operation indicative of IV administration of medication to a patient. A transmitter (45) is connected to the pump operation circuitry (41) for transmitting a wireless pump signal representing the preselected pump operation characteristics. The wireless pump transmitter (45) communicates with a hospital information management system (HIMS) (60). The HIMS (60) includes a receiver (61) capable of receiving the pump signal representing the pump operation characteristics and also includes a computer (57) capable of storing and displaying the pump operation characteristics represented by the received wireless pump signal.
+
+CLAIMS:
+1. An TV medication infusion pump for use with a hospital information management system (HIMS), said infusion pump comprising: (a) pump operation circuitry coupled with said infusion pump for monitoring preselected characteristics of infusion pumping operation;
+(b) a wireless signal transmitter connected to said pump operation circuitry for transmitting at least one wireless signal representing said preselected pumping operation characteristics ; and
+(c) a receiver capable of receiving said at least one wireless signal representing said pumping operation characteristics , said receiver connected to said hospital management system (HIMS) for receiving said pumping operation characteristics represented by said at least one wireless signal from said IN pump.
+2. The TV pump of Claim 1 wherein:
+(a) said operation circuitry comprises circuitry monitoring a plurality of operational characteristics selected from among rate of pumping, pumping pressure, start time, time of pumping, volume of pumping, dosage, size of tubing, speed of pumping motor, door closed, manual programing mode, automatic programing mode, start-up testing, dosage of infusion and bolus of infusion; and
+(b) said at least one wireless signal comprises one or more wireless signals indicative of said plurality of operational characteristics of said TV pump.
+3. The TV pump of Claim 1 wherein:
+(a) said operation circuitry comprises input drug identification circuitry; and
+(b) said at least one wireless signal comprises a signal indicative of said drug identification input into said TV pump.
+4. The TV pump of Claim 1 wherein:
+(a) said operation circuitry comprises input patient identification circuitry ; and
+(b) said at least one wireless signal comprises a signal indicative of said patient identification input into said TV pump.
+5. The TV pump of Claim 1 wherein:
+(a) said operation circuitry comprises input nurse identification circuitry ; and
+(b) said at least one wireless signal comprises a signal indicative of said nurse identification input into said TV pump.
+6. The IV pump of Claim 1 wherein:
+(a) said operation circuitry comprises alarm condition detection circuitry; and
+(b) said at least one wireless signal comprises a signal indicative of said alarm condition of said IV pump.
+7. The TV pump of Claim 1 wherein:
+(a) said pump alarm condition detection circuitry further comprises circuitry to detect at least one pump alarm condition selected from among conditions of an invalid operator ID, an invalid patient ID, a door open condition, a high pressure condition, a flow blocked condition, an air in the line condition, a low voltage condition, a pump malfunction condition, and a pump stopped condition; and
+(b) said at least one wireless signal comprises a signal indicative of said at least one selected alarm condition of said TV pump.
+8. The TV pump of Claim 1 wherein:
+(a) said operation circuitry comprises time of infusion monitoring circuitry ; and
+(b) said at least one wireless signal comprises a signal indicative of said time of infusion of said TV pump.
+9. The TV pump of Claim 1 wherein: (a) said operation circuitry comprises end of infusion warning circuitry; and
+(b) said at least one wireless signal comprises a signal indicative of said end of infusion warning of said TV pump.
+10. The TV pump of Claim 1 wherein:
+(a) said operation circuitry comprises advanced end of infusion warning circuitry; and
+(b) said at least one wireless signal comprises a signal indicative of said advanced end of infusion warning of said TV pump.
+11. The IV pump of Claim 1 wherein:
+(a) said operation circuitry comprises advanced end of infusion warning circuitry programable for providing a warning at a selected time in advance of said end of infusion; and
+(b) said at least one wireless signal comprises a signal indicative of said end of infusion warning of said TV pump transmitted said selected time in advance of the end of infusion.
+12. The TV pump of Claim 1 wherein:
+(a) said operation circuitry comprises pump operation log circuitry; and (b) said at least one wireless signal comprises a signal for downloading said operational log of said IV pump to said HIMS.
+13. The IV pump of Claim 1 wherein:
+(a) said receiver capable of receiving said at least one wireless signal from said IV pump comprises a plurality of receiving nodes positioned at predetermined locations throughout said healthcare institution for receiving said at least one wireless signal from an IV pump located within a predetermined short range of said node location;
+(b) said pump operation circuitry further comprises an individual IV pump identification signal unique to each pump in the health care institution; and (b) said at least one wireless signal comprises a signal indicative of said individual identification of said IN pump.
+14. The TV pump of Claim 13 further comprising node location detection circuitry connected to said HIMS for detecting the location of the node receiving a wireless signal from an individually identified IN pump so that the location of said IN pump within said health care institution can be determined at by said HIMS.
+15. The TV pump of Claim 1 wherein:
+(a) said wireless signal transmitter connected to said pump operation circuitry comprise a transceiver for both transmitting at least one wireless signal representing said preselected pumping operation characteristics and for receiving input signals from said HIMS; and
+(b) said receiver connected to said hospital management system (HIMS) comprises a transceiver capable of both receiving said at least one wireless signal representing said pumping operation characteristics and transmitting at least one input signal for providing at least one pumping operation parameter to said TV pump operation circuitry.
+16. A wireless communication system from an TV medication infusion pump to a hospital information management system (HIMS) comprising: (a) pump operation circuitry coupled with said TV medication infusion pump for monitoring preselected characteristics of infusion pumping operation; (b) a medication order transmitter capable of receiving input of a doctor's order for patient medication to be administered with an IV pump and capable of wireless transmission of an order signal representing said doctor' s order for said patient medication for TV administration comprising at least one pumping operation parameter corresponding to said doctor's input order; (c) a wireless signal pump transmitter connected to said pump operation circuitry for transmitting at least one wireless signal representing said preselected monitored pumping operation characteristics; (d) an HIMS receiver capable of receiving said at least one wireless signal representing said pumping operation characteristics, said receiver connected to said hospital management system (HIMS) for receiving said pumping operation characteristics represented by said at least one wireless signal from said IV pump, said HTMS receiver further capable of receiving said signal representing said doctor's order; and
+(e) wherein said HIMS further comprises programing for receiving, storing and comparing said pump signal with said signal representing said doctor's order to determine whether said medication is delivered to said patient by operation of said pump according to said doctor's order.
+17. A wireless communication system from an IV medication infusion pump to a hospital information management system (HIMS) as in Claim 16 further comprising: (a) a pharmacy receiver for receiving said doctor's order signal representing said doctor's order, said pharmacy receiver operatively connected to a program and a display to provide
+• human readable information sufficient for a pharmacist to prepare the ordered medication; (b) a pharmacy transmitter for sending a delivery signal indicating that an TV medication has been delivered to a nurses station and representing that the TV medication is to be administered to a patient according to said doctor's order; and
+(c) wherein said HIMS further comprises programing for storing said delivery signal and for comparing said delivery signal to said order signal and/or to said pump operation characteristics signal to facilitate monitoring of the timely delivery of the TV medication to the patient according to the doctor's order.
+18. A wireless communication system from an TV medication infusion pump to a hospital information management system (HIMS) as in Claim 16 further comprising:.
+(a) laboratory receiver for receiving said order signal when a blood product IV is ordered for the patient; and
+(b) a laboratory signal transmitter for signaling to said HIMS the delivery of a blood product IV for administration to a patent and including information related to the time sensitivity of the blood product; and
+(c) wherein said HIMS further comprises programing for comparing said laboratory signal to said pump parameter signal so that actual timely delivery of said blood product represented by said laboratory signal can be monitored and the results of the comparison can be displayed.
+19. A wireless communication system from an TV medication infusion pump to a hospital information management system (HIMS) as in Claim 16 wherein: (a) said transmitter connected to said pump comprises a transceiver for receiving signals corresponding to pumping operation characteristics according to said doctor's order for medication to a patient; and (b) said HIMS receiver comprises a transceiver for receiving said doctor's order and for transmitting another signal representing pumping operation characteristics a corresponding to said doctor' s ordered medication for a patient.
+20. A wireless communication system from an IN medication infusion pump to a hospital information management system (HTMS) as in Claim 16 further comprising: (a) a nurses station transmitter having an input for entry of information on TV medication received at a nurses station and for transmitting a medicine received signal representing the TV medications received for a patient upon receiving any ordered medication; and
+(b) wherein said HIMS further comprises programing for receiving and storing said TV medication received signal and for comparing said medication received signal with at least one of said order signal and said pumping characteristic signal to facilitate monitoring of preparation, delivery and administration of said IV medication and for providing the results.
+21. A wireless communication system from an TV medication infusion pump to a hospital information management system (HIMS) comprising:
+(a) a medication order transmitter capable of receiving input of a doctor's order for patient medication to be administered with an
+TV pump and capable of wireless transmission of a first signal representing the input order for said patient medication for TV administration;
+(b) an IN pump having pump operation circuitry for monitoring preselected characteristics of pump operation and a transmitter connected to said pump operation circuitry for transmitting a second wireless signal representing said preselected pump operation characteristics indicative of TV administration of medication to a patient; (c) a receiver for receiving said first signal and for providing said order for patient medication in human readable form for the preparation of said ordered patient medication for TV pump administration; and (d) a hospital information system including a receiver capable of receiving said first and said second signals and a computer processor capable of storing said information represented by said signals, capable of comparing said doctor's order for patient medication to said TV pump delivery of medication to a patient and for comparing said order to said delivery characteristics to determine whether medication delivery was as ordered by the doctor and for displaying said order and said pump operation characteristics and the results of the comparison thereof.

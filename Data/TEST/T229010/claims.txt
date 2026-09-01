@@ -1,0 +1,129 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-ll- 5698530.03
+CLAIMS:
+
+1. A flash memory system (200) comprising:
+
+a plurality of flash arrays (205) each divided into a plurality of memory
+blocks for storing data;
+
+a plurality of internal latches (210) coupled to each of the flash arrays
+(205) for temporarily holding data previously stored at a source address of a first
+flash array (205) of the plurality of flash arrays (205);
+
+an internal controller (240) coupled to the first flash array (205) and the
+plurality of internal latches (210) coupled thereto and configured to transfer the
+data previously stored at the source address of the first flash array (205) to the
+plurality of internal latches (210) and then to directly transfer the data previously
+stored at the source address of the first flash array (205) to a destination address in
+the first flash array (205); and
+
+an external controller (135) coupled to the plurality of flash arrays (205)
+and configured to initially search within the first flash array (205) for a free
+memory block for use as the destination address, said external controller (135)
+being further configured to search for a free memory block in the remaining flash
+arrays (205) of the plurality of flash arrays (205) only in response to the external
+controller (135) not finding a free memory block in the first flash array (205); and
+
+the external controller (135) also being configured to transfer the data
+previously stored at the source address of the first flash array (205) to an external
+buffer (141) and to write the data previously stored at the source address of the
+first flash array (205) from the external buffer to the free memory block in the one
+of the remaining flash arrays (205), when the external controller (135) finds a free
+
+memory block in one of the remaining flash arrays (205).
+
+2. The flash memory system according to claim 1, wherein the plurality of
+internal latches (210) are capable of simultaneously loading the data previously
+
+stored at a source address of the first flash array (205).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-12- 5698530.03
+
+3. The flash memory system according to claim 1 or 2, wherein the first flash
+array (205) comprises a first memory block configured for storing data and a
+second memory block, such that the source address comprises an address
+belonging to the first memory block and the destination address comprises the
+
+address belonging to the second memory block.
+
+4. The flash memory system (200) according to any one of claims 1 to 3,
+wherein
+
+at least one flash array (205) has a source memory block and a destination
+memory block both configured for storing data;
+
+a source address latch (260) is provided for holding a source address
+belonging to the source memory block and a destination address latch (270) for
+holding a destination address belonging to the destination memory block; and
+
+a state machine (250) is coupled to the flash array (205), the source
+address latch (260), and the destination address latch (270) for reading the data
+stored in the source memory block and then programming the data to the
+
+destination memory block.
+
+5. A method of transferring data from a first memory block to a second
+memory block within a flash memory system (200) having a plurality of flash
+arrays (205), comprising the following steps:
+
+reading the data from the first memory block that is located in a first flash
+array (205);
+
+temporarily holding data originating from the first memory block inside a
+plurality of internal latches (210), wherein the plurality of internal latches (210)
+are located within an integrated circuit;
+
+initially searching the first flash array (205) with an external controller
+(135) coupled to the flash arrays (205) for free memory for use as the second
+
+memory block;
+
+--- PAGE 3 ---
+10
+
+15
+
+- 13- 5698530.03
+
+writing the data originating from the first memory block and held in the
+plurality of internal latches (210) to the second memory block wherein the second
+memory block is located in the first flash array (205) when the first flash array
+(205) contains free memory;
+
+searching a second flash array (205) with the external controller (135)
+only when the first flash array (205) does not contain free memory;
+
+using the free memory found in the second flash array (205) for the second
+memory block so that the second memory block is located in the second flash
+array (205) when free memory is found in the second flash array (205), such that
+the first flash array (205) takes priority over the second flash array (205);
+
+reading the data originating from the first memory block from the first
+memory block to an external buffer (141) when the free memory is found in the
+second flash array (205); and
+
+writing the data originating from the first memory block from the external
+
+buffer (141) to the second memory block located in the second flash array (205). |

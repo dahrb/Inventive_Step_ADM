@@ -1,0 +1,430 @@
+--- PAGE 1 ---
+EP 09 755 851.4
+iXO 013 WO/EP
+danuary, 2017
+
+CLAIMS ACCORDING TO THE MAIN REQUEST
+
+1. A method for performing transactions on data entities in a database, each
+transaction comprises one or more query, projection, insert, update, and/or delete
+operations, wherein said database comprises an ordered set of data stores with at
+least one static data store for storing data entities and performing queries on said
+data entities, wherein said static data store uses an index structure which is based
+on a non-updatable representation of an ordered set of integers according to the
+principle of compressed inverted indices, wherein each of said data entities
+comprises an unique identifier and a plurality of fields each containing a single or
+multi valued value, the method comprises for a transaction the steps of:
+
+determining the current ordered set of data stores when said transaction is
+started;
+
+Storing information of said current ordered set of data stores as transactional
+state for said transaction;
+
+when said transaction comprises an insert, update or delete operation,
+generating a modifiable data store and adding said modifiable data store as newest
+data store to said transactional state for said transaction, wherein said modifiable
+data store is adapted to store data entities and to perform queries on said stored
+data entities;
+
+executing said one or more operations of said transaction on the data entities in
+the data stores of which information has been stored in said transactional state;
+
+when said transaction is committed and if said modifiable data store has been
+generated for said transaction, adding said modifiable data store as newest data
+store to said ordered set of data stores;
+
+wherein, when one of said one or more operations of said transaction is a query
+
+operation with a query, said step of executing comprises:
+
+--- PAGE 2 ---
+performing said query against each of said data stores of which information
+has been stored in said transactional state, wherein said query returns ordered
+identifiers of data entities for each of said data stores that match with said query;
+masking for each of said data stores those of said returned ordered
+identifiers for which a data entity with the same identifier already exists in a newer
+data store;
+uniting said masked identifiers and returning said united identifiers:
+wherein, when one of said one or more operations of said transaction is an
+insert operation for inserting a new data entity, said step of executing further
+comprises:
+writing said new data entity in said modifiable data store, wherein a new
+unique identifier is used as identifier for said new data entity;
+wherein said method further comprises:
+converting one or more selected data stores of said ordered set of data
+stores to a new static data store, wherein said converting step further comprises:
+reading all data entities from said one or more selected data stores;
+masking for each of said one or more selected data store said read
+data entities for which a data entity with the same identifier already exists in a
+newer data store of said ordered set of data stores;
+merging said masked data entities;
+building a new index structure using the identifiers of said merged
+data entities for said new static data store, wherein said new index structure is
+based on said non-updatable representation of an ordered set of integers according
+to the principle of compressed inverted indices;
+writing said merged data entities into said new static data store;
+adding said new static data store to said ordered set of data stores
+and deleting said one or more selected data stores from said ordered set of data
+stores.
+
+2. The method according to claim 1, wherein, when one of said one or more
+
+operations of said transaction is a projection operation for reading at least one field
+
+--- PAGE 3 ---
+of an existing data entity of which the identifier is one of the identifiers returned by
+said query operation, said step of executing further comprises:
+reading said single or multi valued value in said at least one field of said
+existing data entity;
+returning said single or multi valued value; and
+wherein, when one of said one or more operations is an update operation for
+updating at least one field of an existing data entity of which the identifier is one of
+the identifiers returned by said query operation, said step of executing preferably
+further comprises:
+executing said projection operation for reading at least those fields of said
+existing data entity not to be updated;
+writing a new data entity corresponding to said existing data entity in said
+modifiable data store, which comprises the fields of said existing data entity not to
+be updated, said at least one updated field and said identifier of said existing data
+entity as identifier of said new data entity.
+
+3. The method according to claim 2, wherein, when one of said one or more
+operations is a delete operation for deleting at least one field of an existing data
+entity of which the identifier is one of the identifiers returned by said query
+operation, said step of executing further comprises:
+
+executing a projection operation for reading at least those fields of said
+existing data entity not to be deleted;
+
+writing a new data entity corresponding to said existing data entity in said
+modifiable data store, which comprises the fields of said existing data entity not to
+be deleted, and said identifier of said existing data entity as identifier of said new
+data entity, and/or
+
+when one of said one or more operations is a delete operation for deleting
+an existing data entity of which the identifier is one of the identifiers returned by
+query operation, said step of executing further comprises:
+
+writing a new data entity corresponding to said existing data entity in said
+
+modifiable data store, which comprises a marker and said identifier of said existing
+
+--- PAGE 4 ---
+data entity as identifier of said new data entity, wherein said marker indicates that
+
+said corresponding existing data entity is deleted.
+
+4. The method according to one of the preceding claims, wherein the method
+further comprises:
+deleting said one or more selected data stores which have been deleted from
+said ordered set of data stores; and/or
+wherein each of said static data stores further comprises at least one mask
+containing identifiers of data entities to be used in said masking step of said query
+operation and said converting step, wherein those returned identifiers are masked
+for which the same identifier exists in said at least one mask of said newer data
+store, and wherein said converting step further comprises:
+generating said at least one mask containing at least those identifiers of the
+merged data entities which do not occur in data stores older than said one or more
+selected data stores; and/or
+wherein said database supports natural language text and at least one of said
+plurality of fields of said data entities comprises a natural language text value
+containing a plurality of words; and
+wherein said database preferably further comprises a dictionary including a
+mapping from words to word indices and said new index structure is built on a field
+of said data entities, wherein said field comprises said natural language text value,
+said step of building the new index structure further comprises:
+mapping a word of said natural language text value to a corresponding
+word index using said mapping of said dictionary;
+mapping a pair comprising said word index and an identifier of a merged
+data entity to an integer of said ordered set of integers, if said new static data store
+contains said data entity and said field containing said word or a form of said word.
+
+5. The method according to any of the preceding claims, wherein said new
+index structure further comprises blocks of consecutive integer entries of said
+
+ordered set of integers and a search tree, wherein each of said blocks contains a
+
+--- PAGE 5 ---
+predefined number of chunks each having a predefined number of integer entries,
+wherein said step of building said new index structure further comprises:
+partitioning said ordered set of integers into blocks comprising a number of N x
+M integer entries, wherein N is said predefined number of chunks and M is said
+predefined number of integer entries;
+partitioning each of said blocks into chunks of said predefined number of
+integer entries;
+computing deltas of consecutive integer entries in each of said chunks:
+determining the maximum of said deltas and computing an entry-size from said
+maximum, wherein said entry-size is the size needed to write said maximum in an
+entry;
+consecutively writing said deltas in entries having said entry-size;
+Storing the offset of each of said chunks and its starting value in the header of
+the corresponding block;
+building said search tree having a node for each of said blocks, wherein said
+node consists of a value of the first integer entry in said block and a pointer to the
+position where said block starts; and/or
+wherein the step of converting further comprises:
+storing each of said identifiers of said data entities stored in said new static
+data store and an unique subset identifier provided in said new static data store
+which is mapped to said identifier in a store subset provided in said new static data
+store;
+storing a field name for each of said fields of said data entities stored in
+said new static data store and an offset associated with each field name in a field
+map provided in said new static data store; and
+storing said single or multi valued value of each of said fields of said data
+entities stored in said new static data store which are designated by the same field
+name in a field store provided in said new static data store;
+wherein said offset defines the position of said field store in said new static data
+
+store.
+
+--- PAGE 6 ---
+6. The method according to any of the preceding claims, wherein each of said
+data stores is adapted to store relations between data entities, wherein a relation
+comprises an unique identifier and a plurality of fields each including one or more
+identifiers of said data entities which are included in said relation: and/or
+
+wherein said query operation supports full text query and/or wherein said
+query operation provides crisp and fuzzy query evaluation; and/or
+
+wherein said database comprises a query language, wherein each query
+operation uses said query language to define queries based on navigational
+expressions along relations, Boolean predicates, crisp and natural language text
+
+predicates, and combinations thereof.
+
+7. The method according to any of the preceding claims, wherein, when one
+of said one or more operations of said transaction is an insert, update or delete
+operation, said step of executing further comprises:
+
+storing said insert, update or delete operation in a transactional log provided in
+Said database, wherein said transaction log corresponds to said modifiable data
+store on which said insert, update or delete operation is executed.
+
+8. Adatabase, comprising:
+
+an ordered set of data stores with at least one read-only static data store
+adapted to store data entities and to perform queries on said data entities, wherein
+said static data store uses an index structure which is based on a non-updatable
+representation of an ordered set of integers according to the principle of
+compressed inverted indices, wherein each of said data entities comprises an
+unique identifier and a plurality of fields each including a single or multi valued
+value;
+
+means for controlling transaction, wherein each transaction comprises one or
+more query, projection, insert, update, and/or delete operations, said means for
+controlling transaction is adapted to perform for a transaction the steps of:
+
+determining the current ordered set of data stores when said transaction is
+
+started;
+
+--- PAGE 7 ---
+Storing information of said current ordered set of data stores as
+transactional state for said transaction;
+when said transaction comprises an insert, update or delete operation,
+generating a modifiable data store and adding said modifiable data store as newest
+data store to said transactional state for said transaction, wherein said modifiable
+data store is adapted to store data entities and to perform queries on said stored
+data entities;
+executing said one or more operations of said transaction on the data
+entities in the data stores of which information has been stored in said transactional
+state;
+when said transaction is committed and if said modifiable data store has
+been generated for said transaction, adding said modifiable data store as newest
+data store to said ordered set of data stores;
+wherein, when one of said one or more operations of said transaction is a
+query operation with a query, said means for controlling transaction is further
+adapted to perform said step of executing by:
+performing said query against each of said data stores of which
+information has been stored in said transactional state, wherein said query returns
+ordered identifiers of data entities for each of said data stores that match with said
+query;
+masking for each of said data stores those of said returned ordered
+identifiers for which a data entity with the same identifier already exists in a newer
+data store;
+uniting said masked identifiers and returning said united identifiers;
+wherein, when one of said one or more operations of said transaction is an
+insert operation for inserting a new data entity, said means for controlling
+transaction is further adapted to perform said step of executing by:
+writing said new data entity in said modifiable data store, wherein a
+new unique identifier is used as identifier for said new data entity;
+wherein said database further comprise means for converting one or more
+selected data stores of said ordered set of data stores to a new static data store,
+
+wherein said means for converting is adapted to perform the steps of:
+
+--- PAGE 8 ---
+reading all data entities from said one or more selected data stores;
+
+masking for each of said one or more selected data store said read data
+entities for which a data entity with the same identifier already exists in a newer
+data store of said ordered set of data stores:
+
+merging said masked data entities;
+
+building a new index structure using the identifiers of said merged data
+entities for said new static data store, wherein said new index structure is based on
+said non-updatable representation of an ordered set of integers according to the
+principle of compressed inverted indices;
+
+writing said merged data entities into said new static data store:
+
+adding said new static data store to said ordered set of data stores and
+deleting said one or more selected data stores from said ordered set of data stores.
+
+9. The database according to claim 8, wherein, when one of said one or more
+operations of said transaction is a projection operation for reading at least one field
+of an existing data entity of which the identifier is one of the identifiers returned by
+said query operation, said means for controlling transaction is further adapted to
+perform said step of executing by:
+
+reading said single or multi valued value in said at least one field of said
+existing data entity;
+
+returning said single or multi valued value; and
+
+wherein, when one of said one or more operations is an update operation for
+updating at least one field of an existing data entity of which the identifier is one of
+the identifiers returned by said query operation, said means for controlling
+transaction is preferably further adapted to perform said step of executing by:
+
+executing said projection operation for reading at least those fields of said
+existing data entity not to be updated;
+
+writing a new data entity corresponding to said existing data entity in said
+modifiable data store, which comprises the fields of said existing data entity not to
+be updated, said at least one updated field and said identifier of said existing data
+
+entity as identifier of said new data entity.
+
+--- PAGE 9 ---
+10. The database according to claim 9, wherein,
+when one of said one or more operations is a delete operation for deleting at
+least one field of an existing data entity of which the identifier is one of the
+identifiers returned by said query operation, said means for controlling transaction is
+further adapted to perform said step of executing by:
+executing a projection operation for reading at least those fields of said
+existing data entity not to be deleted;
+writing a new data entity corresponding to said existing data entity in said
+modifiable data store, which comprises the fields of said existing data entity not to
+be deleted, and said identifier of said existing data entity as identifier of said new
+data entity, and/or
+when one of said one or more operations is a delete operation for deleting an
+existing data entity of which the identifier is one of the identifiers returned by query
+operation, said means for controlling transaction is further adapted to perform said
+step of executing by:
+writing a new data entity corresponding to said existing data entity in said
+modifiable data store, which comprises a marker and said identifier of said existing
+data entity as identifier of said new data entity, wherein said marker indicates that
+said corresponding existing data entity is deleted: and/or
+wherein said database further comprises:
+means for deleting said one or more selected data stores which have been
+deleted from said ordered set of data stores.
+
+11. The database according to any of the claims 8 to 10, wherein each of said
+Static data stores further comprises at least one mask containing identifiers of data
+entities to be used by said means for controlling transaction, when performing said
+masking step of said query operation, and by said means for converting, wherein
+those returned identifiers are masked for which the same identifier exists in said at
+least one mask of said newer data store, and wherein said means for converting is
+
+further adapted to perform the step of:
+
+--- PAGE 10 ---
+generating said at least one mask containing at least those identifiers of the
+merged data entities which do not occur in data stores older than said one or more
+selected data stores; and/or
+wherein said database is adapted to supports natural language text and at least
+one of said plurality of fields of said data entities comprises a natural language text
+value containing a plurality of words: and
+wherein said database preferably further comprises a dictionary including a
+mapping from words to word indices and said new index structure is built on a field
+of said data entities, wherein said field comprises said natural language text value,
+wherein said means for converting is further adapted to perform the steps of:
+mapping a word of said natural language text value to a corresponding
+word index using said mapping of said dictionary;
+mapping a pair comprising said word index and an identifier of a merged
+data entity to an integer of said ordered set of integers, if said new static data store
+contains said data entity and said field containing said word or a form of said word.
+
+12. The database according to any of the claims 8 to 11, wherein said new
+index structure further comprises blocks of consecutive integer entries of said
+ordered set of integers and a search tree, wherein each of said blocks contains a
+predefined number of chunks each having a predefined number of integer entries,
+wherein said means for converting is further adapted to perform said step of
+building the new index structure by:
+
+partitioning said ordered set of integers into blocks comprising a number of
+N x M integer entries, wherein N is said predefined number of chunks and M is said
+predefined number of integer entries;
+
+partitioning each of said blocks into chunks of said predefined number of
+integer entries;
+
+computing deltas of consecutive integer entries in each of said chunks;
+
+determining the maximum of said deltas and computing an entry-size from
+Said maximum, wherein said entry-size is the size needed to write said maximum
+as an entry;
+
+consecutively writing said deltas in entries having said entry-size;
+
+-10-
+
+--- PAGE 11 ---
+storing the offset of each of said chunks and its starting value in the header
+of the corresponding block;
+
+building said search tree having a node for each of said blocks, wherein
+said node consists of a value of the first integer entry in said block and a pointer to
+the position where said block starts; and/or
+
+wherein the static data store comprising:
+
+a store subset for storing each of said identifiers of said data entities stored
+in said static data store and a unique subset identifier provided in said static data
+store which is mapped to said identifier;
+
+a field map for storing a field name for each of said fields of said data
+entities stored in said static data store and an offset associated with each field
+name; and
+
+a field store for storing said single or multi valued value of each of said data
+entity fields of said data entities stored in said static data store which are
+designated by the same field name in a field store provided in said static data store;
+
+wherein said offset defines the position of said field store in said static data
+store.
+
+13. The database according to any of claims 8 to 12, wherein each of said data
+Stores is adapted to store relations between data entities, wherein a relation
+comprises an unique identifier and a plurality of fields each including one or more
+identifiers of said data entities which are included in said relation; and/or
+
+wherein said query operation supports full text query and/or wherein said query
+operation provides crisp and fuzzy query evaluation; and/or
+
+wherein said database further comprises a query language, wherein each query
+operation uses said query language to define queries based on navigational
+expressions along relations, Boolean predicates, crisp and natural language text
+
+predicates, and combinations thereof.
+14. The database according to any of claims 8 to 13, wherein, when one of said
+
+one or more operations of said transaction is an insert, update or delete operation,
+
+Said database further comprises a_ transactional log corresponding to said
+
+-11-
+
+--- PAGE 12 ---
+modifiable data store on which said insert, update or delete operation is executed,
+wherein said means for controlling transaction is further adapted to perform the step
+of storing said insert, update or delete operation in said transactional log.
+
+15. Computer program which, when executed on a computer, adapts said
+
+computer to perform the method according to any of claims 1 to 7.
+
+~ {2 «

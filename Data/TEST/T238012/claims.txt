@@ -1,0 +1,175 @@
+--- PAGE 1 ---
+EP 03 746 118.3 -1-
+BPE09L0024
+October 2012 — Main Request
+
+1.
+
+Claims
+Main Request
+
+A method of computer resource management, comprising the steps of:
+receiving (302), at a management node that comprises at least one
+management computer (110), at least one ample image (104) captured from
+an existing computer (102) that is distinct from the management computer, the
+ample image comprising a copy of at least a portion of storage of the existing
+computer (102) comprising at least file names, file contents, and sector
+allocation information;
+
+mounting the ample image (104) within a management environment at the
+management node to make the ample image accessible within the
+management environment; and
+
+modifying, at the management node, the ample image, by repairing at least
+one file within the ample image;
+
+deploying the modified ample image from the management node to a
+computer that is distinct from the management node.
+
+The method of claim 1, further comprising:
+
+obtaining, at the management node, meta-data that is structurally associated
+with the ample image (102);
+
+indexing the ample image into a collection of ample images at the
+management node such that the ample image can be located by using at least
+part of the meta-data as a key.
+
+The method of claim 1, wherein mounting the ample image (104) brings the
+ample image within a virtual environment, and the virtual environment is
+
+modified to produce the modified ample image that is deployed.
+
+The method of claim 1, wherein modifying the ample image (104) further
+comprises performing at least one of the following steps on the ample image in
+the management environment: installing an application, updating an
+application, removing an application, installing a hardware driver, updating a
+
+hardware driver, removing a hardware driver, installing system software other
+
+--- PAGE 2 ---
+EP 03 746 118.3 -2-
+
+BPE09L0024
+
+October 2012 — Main Request
+than a hardware driver, updating system software other than a hardware
+driver, and removing system software other than a hardware driver, wherein
+removing of the system software comprises at least one of: uninstalling,
+
+overwriting, disabling, and deleting the system software.
+
+5. The method of claim 1, wherein modifying the ample image (104) further
+comprises performing at least one of the following steps on the ample image in
+the management environment: creating a partition, resizing a partition, resizing
+clusters of a partition, moving a partition, moving data between partitions,
+canonizing a partition, deleting a partition, merging two partitions, and
+
+manipulating a volume segment.
+
+6. The method of claim 1, wherein repairing the file within the ample image (104)
+comprises performing at least one of the following steps on the ample image in
+the management environment: defragmenting files, reclaiming directory space
+in a partition, and recovering data despite corrupted or lost file system
+information.
+
+7. The method of claim 2, further comprising modifying the meta-data to reflect a
+modification of the ample image (104).
+
+8. The method of claim 1, further comprising searching the ample image (104)
+and performing at least one of the following steps on the ample image in the
+management environment: extracting disk usage information, determining
+whether a particular file is present, determining whether at least one file of a
+
+particular type is present, and determining billing for storage usage.
+
+9. The method of claim 1, wherein the repairing the file within the ample image
+(104) comprises performing at least one of the following pairs of steps on the
+ample image in the management environment: detecting a virus and then
+quarantining or repairing an infected file, detecting a virus and then removing
+an infected file, identifying an illegal file and then removing that illegal file,
+identifying a breach of a policy that defines standardized storage locations for
+particular types of data and then moving or removing data to enforce that
+
+policy.
+
+--- PAGE 3 ---
+EP 03 746 118.3 -3-
+BPEO09L0024
+October 2012 — Main Request
+10. The method of claim 1, further comprising searching multiple ample images to
+track file propagation by at least one of: tracking propagation of a file over time
+using multiple ample images of the existing computer (102) that were created
+at different points in time, and tracking propagation of a file over multiple
+
+computers using multiple ample images of multiple existing computers.
+
+11.The method of claim 1, wherein mounting the ample image (104) within the
+management environment at the management node comprises mounting the
+
+ample image within a file system that is running on the management node.
+
+12. The method of claim 1, wherein receiving the ample image (104) captured
+from the existing computer comprises receiving an image of an entire disk of
+
+the existing computer.
+
+13. The method of claim 2, wherein indexing the ample image (104) into the
+collection of ample images comprises indexing by at least one of: a user
+name, a computer name, an image creation time, an IP address, a value
+identifying installed hardware, a value identifying installed operating system
+type, a value identifying an installed application, and a value given in a registry
+file of the imaged computer (102).
+
+14.The method of claim 1, wherein at least one step is performed in response to a
+
+script of batch-mode user commands.
+
+15. The method of claim 1, wherein at least one step is performed in response to a
+policy specified on a computer-readable medium in a computer-parseable
+
+form.
+
+16.A system for computer resource management, comprising:
+a management node that comprises at least one management computer
+(110);
+a receiving tool for receiving, at a management node, at least one ample
+image (104) captured from an existing computer (102) that is distinct from the
+management computer, the ample image comprising a copy of at least a
+portion of storage of the existing computer (102) comprising at least file
+
+--- PAGE 4 ---
+EP 03 746 118.3 -4-
+BPE09L0024
+October 2012 — Main Request
+
+names, file contents, and sector allocation information;
+
+a mounting tool for mounting the ample image (104) at the management
+environment within the management node to make the ample image
+accessible within the management environment; a modifying tool for
+modifying, at the management node, the ample image by repairing at least
+one file within the ample image;
+
+a deploying tool for deploying the modified ample image from the management
+node to a computer that is distinct from the management node.
+
+17. The method of claim 1, wherein the computer that is distinct from the management
+node comprises:
+the existing computer (102);
+another computer that is distinct from the management node.
+
+18. The method of claim 1, wherein modifying the ample image (104) further comprises
+splitting the ample image into two or more split ample images such that functionality
+originally associated with the ample image is split between the two or more split
+ample images;
+wherein deploying the modified ample image from the management node to a
+computer that is distinct from the management node comprises deploying the two or
+more split ample images from the management node to two or more computers that
+
+are distinct from the management node.
+
+19. The method of claim 1, wherein one of the two or more computers that are distinct
+from the management node comprises the existing computer (102) from which the
+
+ample image was captured.

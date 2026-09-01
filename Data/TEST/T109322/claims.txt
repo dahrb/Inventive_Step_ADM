@@ -1,0 +1,120 @@
+--- PAGE 1 ---
+MAIN REQUEST
+1. A transportation system (10) comprising:
+a transportation space (12) including destinations distributed in the transportation space (12);
+
+multiple independent automated vehicles (40) configured for free roving through the
+transportation space (12) to and between the destinations so that the vehicles (40) are
+
+dynamically distributed through the transportation space (12); and
+
+a control system (14) communicably connected via a remote communication link (200) to each
+of the vehicles (40) and having a system controller (20) that addresses each vehicle (40) to
+
+different destinations; the transportation system being characterized in that
+
+the control system (14) includes a vehicle accountant controller (22) separate and distinct from
+the system controller (20), the vehicle accountant controller (22) being connected via the remote
+communication link (200) to each of the multiple independent automated vehicles (40) and the
+vehicle accountant controller (22) is configured to independently register a dynamic location of
+each of at least one of the vehicles (40), selected from the multiple independent automated
+vehicles (40) in the transportation space (12), and command shutdown, via the remote
+communication link, to only the selected at least one vehicle (40) at the registered location if
+
+the registered location corresponds to a predetermined location.
+
+2. The transportation system of claim 1, wherein each vehicle (40) is configured so that
+
+the vehicle (40) effects independent navigation through the transportation space (12).
+
+3. The transportation system of claim 1, wherein the predetermined location defines a zone
+(100, 100a, 100b, 100c) in the transportation space (12) segregated from another zone (100,
+100a, 100b, 100c) in the transportation space (12).
+
+4, The transportation system of claim 3, wherein:
+
+the zone (100, 100a, 100b, 100c) and the other zone (100, 100a, 100b, 100c) are personnel
+access zones formed in the transportation space (12), each zone (100, 100a, 100b, 100c) having
+a transport space closure (102, 104) for closing the portion of the transport space (12) coincident
+with each zone (100, 100a, 100b, 100c) to entry of vehicles (40) from outside the zone (100,
+100a, 100b, 100c); and
+
+--- PAGE 2 ---
+the control system (14) is further configured to communicate with the vehicles (40) over a
+remote communication system (200) and, upon identification of a predetermined zone (100,
+100a, 100b, 100c) to be opened for personnel access, command evacuation of vehicles (40)
+from within the predetermined zone (100, 100a, 100b, 100c) and shutdown of each un-
+evacuated vehicle (40) in the zone (100, 100a, 100b, 100c) over the remote communication
+
+system (200) with common communication links for evacuation and shutdown commands.
+
+5. The transportation system of claim 1, wherein the transportation space (12) is three
+dimensional space with stacked levels (1-N), each level having at least one open deck (31) and
+aisles (32) for the vehicles (40) to traverse, the aisles (32) communicating with the deck (31) so
+
+that the vehicles (40) enter the aisles (32) from the deck (31).
+
+6. The transportation system of claim 1, wherein the remote communication link (200) is
+
+common to both the system controller (20) and the vehicle accountant controller (22).
+
+7. The transportation system of claim 1, wherein the remote communication link (200) is
+
+a wireless link.
+
+8. The transportation system of claim 1, wherein the vehicle accountant controller (22) is
+configured to use a black channel communication protocol over the remote communication link
+
+(200) to command shutdown of the at least one vehicle (40).
+
+9. The transportation system of claim 1, wherein the vehicle accountant controller (22)
+opens communication between the vehicle accountant controller (22) and the selected at least
+one vehicle (40) over the remote communication link (200) for transmission of the shutdown
+
+command to the selected at least one vehicle (40).
+
+10.‘ The transportation system of claim 1, wherein the communication protocol of the
+commanded shutdown effects a secure and verified command on receipt by the selected at least
+
+one vehicle (40).
+
+11. —_ The transportation system of claim 1, wherein the selected at least one vehicle (40) is
+configured to effect secure and verified shutdown upon receipt of and in response to the
+
+commanded shutdown, and confirm shutdown to the vehicle accountant controller (22).
+
+12. ‘The transportation system of claims 1 or 4, wherein the commanded shutdown as
+
+generated for communication by the vehicle accountant controller (22) and received by the
+
+2
+
+--- PAGE 3 ---
+selected at least one vehicle (40), and the system (402) of the selected at least one vehicle (40)
+responsive to the commanded shutdown define a secure and verified remote shutdown system
+
+in compliance with IEC61508, SIL 3 category criteria.
+
+13. The transportation system of claim 1, wherein a communication state between the
+vehicle accountant controller (22) and each of the multiple vehicles (40) is normally closed and
+communication is opened by the vehicle accountant controller (22) to the selected at least one
+vehicle (40) in connection and substantially coincident with the vehicle accountant controller
+(22) commanding shutdown to the selected at least one vehicle (40), where the communication
+state is closed upon confirmation of shutdown of the selected at least one vehicle (40) by the
+
+vehicle accountant controller (22).
+
+14. _—‘ The transportation system of claim 1, wherein the vehicle accountant controller (22) is
+configured to independently register, in response to being provided a predetermined location in
+the transport space (12), a dynamic location of at least one of the vehicles (40) corresponding
+to the predetermined location in the transportation space (12), and selectably commands
+shutdown, via the remote communication link, of only the at least one vehicle (40) at the
+
+registered location, and not other of the vehicles (40).
+
+15. The transportation system of claim 1, wherein a communication state between the
+vehicle accountant controller (22) and each of the multiple vehicles (40) is normally closed and
+communication is opened by the vehicle accountant controller (22) to the selected at least one
+vehicle (40) in connection and substantially coincident with the vehicle accountant controller
+
+(22) commanding activation of the selected at least one vehicle (40) previously shutdown.

@@ -1,0 +1,124 @@
+--- PAGE 1 ---
+EP 06 826 378.9 (1 952 377) October 20, 2017
+Our Ref.: 62457 Main request
+Clean version
+
+NEW CLAIMS
+
+1. Method for synchronizing haptic effects with audio information and/or video
+information, characterized by comprising:
+
+receiving a media transport stream; the media transport stream comprising
+an embedded master time code signal and a series of haptic frames including haptic
+information and a series of media frames including at least one of audio information
+or video information;
+
+extracting the master time code signal from the media transport stream;
+
+extracting the media frames and the haptic frames from the media transport
+stream;
+
+using the master time code signal to synchronize the haptic information and
+at least one of the audio information or the video information by:
+
+identifying haptic information in the haptic frames of the media transport
+stream;
+
+determining time stamps corresponding to the haptic information in
+accordance with the master time code signal;
+
+assigning a time stamp to each haptic frame; wherein the time stamps
+indicate when to activate one or more actuators to generate haptic effects according
+to the haptic information stored in the haptic frames; and
+
+determining haptic effect information for each haptic effect in response to the
+haptic information in the haptic frames.
+
+2. Method according to claim 1, further comprising:
+activating an actuator in response to the effect information; and
+maintaining haptic effect according to an associated time stamp.
+
+3. Method according to claim 1 or 2, wherein the haptic frames contain force
+
+feedback information.
+
+--- PAGE 2 ---
+EP 06 826 378.9 (1 952 377) October 20, 2017
+Our Ref.: 62457 Main request
+Clean version
+
+4. Method according to claim 3, further comprising generating a haptic effect
+including attack level and fade level.
+
+5. Method according to any of claims 1 to 4, wherein the haptic frames occupy a
+
+fixed length of time.
+
+6. Method according to any of claims 1 to 5, wherein the identifying haptic
+information in the haptic frames of the media transport stream includes analyzing
+
+the media transport stream according to the MPEG4 protocol.
+
+7. Method according to any of claims 1 to 6, further comprising:
+extracting the master time code signal from audio information included in the
+
+media frames.
+
+8. Method according to any of claims 1 to 7, wherein the master time code
+signal is a timeline with a series of time stamps.
+
+9. Method according to any of claims 1 to 8, further comprising:
+receiving the media transport stream across a network;
+playing the media frames; and
+playing each haptic frame at its assigned time stamp.
+
+10. Apparatus for synchronizing haptic effects with audio information and/or video
+information, characterized by comprising:
+
+means for receiving a media transport stream, the media transport stream
+comprising an embedded master time code signal and a series of haptic frames
+including haptic information and a series of media frames including at least one of
+audio information or video information;
+
+means for extracting the media frames and the haptic frames from the media
+
+transport stream;
+
+--- PAGE 3 ---
+EP 06 826 378.9 (1 952 377) October 20, 2017
+Our Ref.: 62457 Main request
+Clean version
+
+means for identifying haptic information in the haptic frames of the media
+transport stream;
+
+means for determining time stamps from the master time code signal of the
+media transport stream, the time stamps indicating when to activate one or more
+actuators to generate haptic effects according to the haptic information stored in the
+haptic frames;
+
+means for assigning the time stamps to the haptic frames; and
+
+means for determining effect information for each haptic effect in response to
+
+the haptic information in the haptic frames.
+
+11. Apparatus according to claim 10, further comprising:
+means for activating an actuator in response to the effect information; and
+
+means for maintaining haptic effect according to an associate time stamp.
+
+12. Apparatus according to claim 10 or 11, wherein the means for identifying
+haptic information in the haptic frames of the media transport stream includes:
+means for identifying a series of haptic frames containing force feedback
+
+information.
+
+13. | Apparatus according to any of claims 10 to 12, wherein the haptic frames
+
+occupy a fixed length of time.
+
+14. | Apparatus according to any of claims 10 to 13, further comprising:
+means for receiving the media transport stream across a network;
+means for playing the media frames; and
+means for playing each haptic frame at its assigned time stamp.

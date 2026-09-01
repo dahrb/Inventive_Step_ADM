@@ -1,0 +1,136 @@
+--- PAGE 1 ---
+11
+
+EP13832887.7 - Main Request
+
+CLAIMS:
+
+1. A virtual infrastructure (102), comprising:
+
+a plurality of hosts (110, 114) each having a virtual machine (105) executing therein and a
+
+virtual switch (130) in a virtual network (132); and
+a virtual machine management server, VMMS (125),
+characterised in that the VMMS (125) is configured to:
+
+receive a service definition from a network service (150) offered for a physical network, the
+service definition including information about the network service (150) and configuration instructions
+
+for configuring a host (110) of the plurality of hosts (110, 114) to use the network service (150);
+
+create one or more service profiles for the network service (150) based on the service definition
+of the network service (150), each of the one or more service profiles including the information about
+the network service (150) and the configuration instructions, and including parameters of the network
+
+service (150) for use on a virtual machine (105) of said plurality of virtual machines (105);
+
+register the network service (150) by adding the one or more service profiles to a directory (170)
+of network services, the directory (170) indicating whether the service profile is available to the virtual
+
+machines (105); and
+
+in response to receiving a selection of the service profile from the directory (170) and a
+selection of one of the virtual machines (105), enable the network service (150) for the selected virtual
+machine (105) by using the configuration instructions to configure the virtual switch (130) of the host
+(110) of the selected virtual machine (105) with rules and/or filters that forward packets from the
+
+selected virtual machine (105) to the network service (150) of the selected service profile.
+
+2. The virtual infrastructure of claim 1, wherein the service definition includes a reference
+to an insertion point comprising an interface between the virtual network (132) and the network service
+(150).
+
+3. The virtual infrastructure of claim 2, wherein the insertion point is the virtual switch
+(130) of the host (110) of the virtual machine (105).
+
+AQI2.EP
+
+--- PAGE 2 ---
+12
+
+4. The virtual infrastructure of claim 2, wherein the insertion point is on the virtual
+network (132).
+
+5, The virtual infrastructure of claim 2, wherein the insertion point is external to the virtual
+network (132).
+
+6. The virtual infrastructure of claim 1, wherein the service definition includes one or
+
+more service levels.
+
+7. A computer-readable storage medium having computer-executable instructions
+embodied thereon, the computer-executable instructions characterised by, when executed by at least
+one processor, causing the at least one processor of a virtual machine management server, VMMS,
+(125) in a virtual infrastructure (102) comprising a plurality of hosts (110, 114), each having a virtual
+
+machine (105) executing therein and a virtual switch (130) in a virtual network (132), to:
+
+receive a service definition from a network service (150) offered for a physical network, the
+service definition including information about the network service (150) and configuration instructions
+
+for configuring a host (110) of the plurality of hosts (110, 114) to use the network service (150);
+
+create one or more service profiles for the network service (150) based on the service definition
+of the network service (150), each of the one or more service profiles including the information about
+the network service (150) and the configuration instructions, and including parameters of the network
+
+service (150) for use on a virtual machine (105) of said plurality of virtual machines (105);
+
+register the network service (150) by adding the one or more service profiles to a directory (170)
+of network services, the directory (170) indicating whether the service profile is available to the virtual
+machine (105); and
+
+in response to receiving a selection of the service profile from the directory (170) and a
+selection of one of the virtual machines (105), enable the network service (150) for the selected virtual
+machine (105) by using the configuration instructions to configure the virtual switch (130) of the host
+(110) of the selected virtual machine (105) with rules and/or filters that forward packets from the
+
+selected virtual machine (105) to the network service (150) of the selected service profile.
+
+8. The computer-readable storage medium of claim 7, wherein the service definition
+includes a reference to an insertion point comprising an interface between the virtual network (132)
+and the network service (150).
+
+AQI2.EP
+
+--- PAGE 3 ---
+13
+
+9. The computer-readable storage medium of claim 8, wherein the insertion point is the
+virtual switch (130) of the host (110) of the virtual machine (105).
+
+10. The computer-readable storage medium of claim 8, wherein the insertion point is on
+the virtual network (132).
+
+11. A method of registering a network service (150) on a virtual network (132), the method
+characterised by a virtual machine management server, VMMS, (125) in a virtual infrastructure (102)
+comprising a plurality of hosts (110, 114), each having a virtual machine (105) executing therein and a
+virtual switch (130) in the virtual network (132), the VMMS (125) performing steps of:
+
+receiving a service definition from a network service (150) offered for a physical network, the
+service definition including information about the network service (150) and configuration instructions
+
+for configuring a host (110) of the plurality of hosts (110, 114) to use the network service (150);
+
+creating one or more service profiles for the network service (150) based on the service
+definition of the network service (150), each of the one or more service profiles including the
+information about the network service (150) and the configuration instructions, and including
+parameters of the network service (150) for use on a virtual machine (105) of said plurality of virtual
+machine (105);
+
+registering the network service (150) by adding the one or more service profiles to a directory
+(170) of network services, the directory (170) indicating whether the service profile is available to the
+
+virtual machine (105); and
+
+in response to receiving a selection of the service profile from the directory (170) and a
+selection of one of the virtual machines (105), enable the network service (150) for the selected virtual
+machine (105) by using the configuration instructions to configure the virtual switch (130) of the host
+(110) of the selected virtual machine (105) with rules and/or filters that forward packets from the
+
+selected virtual machine (105) to the network service (150) of the selected service profile.
+
+12. The method of claim 11, further comprising sending an enablement command to the
+host (110) of the virtual machine (105).
+
+AQI2.EP

@@ -1,0 +1,35 @@
+TITLE:
+Systems and methods for comprehensive alarm management
+
+TYPE:
+European patent
+
+ABSTRACT:
+Systems and methods for comprehensive alarm management can be provided. In one embodiment, a system 100 for monitoring subsystems 110 can be provided. The system 100 can include at least one memory 154 configured to store computer-executable instructions; and at least one processor 152 configured to access the at least one memory 154 and execute the computer-executable instructions. The instructions can be configured to receive alarm information or information suitable for use in generating alarms from one or more sensors, devices or computing devices associated with a respective subsystem 110 within the system 100. The instructions can be further configured to determine one or more alarm events based at least in part upon the alarm information, and generate one or more alarm messages based at least in part on the alarm events. The instructions can further be configured to display a subset of the alarm messages based at least upon a selection of one or more classifying criteria
+
+CLAIMS:
+A method (200) for monitoring a system, comprising:
+receiving (205) alarm information or information suitable for use in generating alarms from one or more sensors, devices or computing devices associated with a respective one of at least one subsystem within the system;
+determining (210) one or more alarm events for each of the at least one subsystem based at least in part upon the alarm information;
+generating (215) one or more alarm messages based at least in part on the one or more alarm events;
+classifying (220) the one or more alarm messages into one or more classifying criteria; and
+displaying (225) a subset of the one or more alarm messages based at least upon a selection of one or more classifying criteria.
+The method of claim 1, wherein the alarm information comprises at least one of (i) historic alarm information or (ii) historic alarm events.
+The method of claim 1 or claim 2, wherein the alarm information comprises real-time alarm information.
+The method of claim 1, 2 or 3 wherein determining (210) one or more alarm events for each of the at least one subsystem based at least in part upon the alarm information includes assigning one or more time-stamps to each of the one or more alarm events.
+The method of any preceding claim, further comprising:
+categorizing each of the one or more alarm messages using one or more classifying criteria.
+The method of claim 5, wherein the classifying criteria comprises at least one of (i) a type of alarm message or (ii) a type of subsystem.
+The method of any preceding claim, wherein the one or more alarm messages comprises information related to operational responsibility of at least one of (i) the at least one subsystem or (ii) the system.
+The method of any preceding claim, wherein the alarm information comprises historic alarm information and real-time alarm information.
+The method of claim 8, wherein determining (210) one or more alarm events for each of the at least one subsystem based at least in part on the alarm information comprises comparing the historic alarm information to the real-time alarm information.
+The method of any preceding claim, wherein the one or more alarm events comprises at least one of (i) a dynamic alarm event or (ii) a contextual alarm event.
+A system (100) for monitoring one or more subsystems (110), comprising:
+at least one memory (154) configured to store computer-executable instructions; and
+at least one processor (152) configured to access the at least one memory (154) and execute the computer-executable instructions to:
+receive alarm information or information suitable for use in generating alarms from one or more sensors, devices or computing devices associated with a respective one of at least one subsystem within the system;
+determine one or more alarm events for each of the at least one subsystem based at least in part upon the alarm information;
+generate one or more alarm messages based at least in part on the one or more alarm events; and
+display a subset of the one or more alarm messages based at least upon a selection of one or more classifying criteria.
+The system of claim 11, wherein the computer-executable instructions are to perform the method of any one of claims 1 to 10.
+The system of claim 11 or claim 12, wherein the computer-executable instructions to determine one or more alarm events for each of the at least one subsystem based at least in part upon the alarm includes assigning one or more time-stamps to at least one of (i) the alarm information or (ii) the one or more alarm events.

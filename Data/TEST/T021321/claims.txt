@@ -1,0 +1,200 @@
+--- PAGE 1 ---
+EP11 874 650.2
+Hewlett-Packard Development Company, L.P.
+H32114WOEP
+February 15, 2021
+CLAIMS
+
+Main Request
+
+1. A server computing device (300) for remote management of client computing devices,
+the server computing device (300) comprising:
+
+a processor to:
+
+- provide to an administrator computing device (350) an application store user
+interface (391) that identifies a plurality of applications available for
+installation on a plurality of client computing devices (375) by the
+administrator computing device (350),
+
+- displaying the application store user interface (230; 391) at the administrator
+computing device (350) and enabling a selection of a particular application to
+be installed on the plurality of client computing devices (375) within the
+application store user interface (230; 391);
+
+- receive, from the administrator computing device (350), the selection of the
+particular application to be installed on said plurality of client computing
+devices (375) managed by the administrator computing device (350), and
+
+- in response to receiving said selection, trigger installation of the particular
+application by an agent (380),
+
+wherein the agent (380) is installed and executed on each of the plurality of client
+
+computing devices (375) managed by the administrator computing device (350),
+wherein the processor provides an instruction to trigger installation of the particular
+application to a management console (330) of the server computing device (300),
+
+wherein the management console (330) communicates with each agent (380) to
+
+manage installation of the particular application on each of the plurality of client computing
+
+devices (375).
+
+2. The server computing device (300) of claim 1, wherein the plurality of client
+computing devices (375) managed by the administrator computing device (350) belong to a
+
+computing environment managed by the administrator computing device (350).
+
+3. The server computing device (300) of claim 1, wherein:
+
+one of the plurality of applications available for installation is the agent (380) to be
+executed on each of the plurality of client computing devices (375), and
+
+the processor is additionally to:
+
+- receive, from the administrator computing device (350), an instruction to
+
+--- PAGE 2 ---
+2
+
+install the agent (380) on each of the plurality of client computing devices
+(375), and transmit a message to a respective user of each of the plurality of
+client computing devices (375), the message providing instructions to the
+
+respective user for installing the agent (380).
+
+4. The server computing device (300) of claim 1, wherein the processor is additionally
+to:
+
+transmit, in response to a request from a particular client computing device (375), a
+second application store interface that identifies a plurality of applications available for
+
+installation on the particular client computing device (375).
+
+5. The server computing device (300) of claim 4, wherein the processor is additionally
+to:
+
+filter the plurality of applications that are included in the second application store
+interface based on applications purchased or authorized for installation by the administrator
+
+computing device (350).
+
+6. The server computing device (300) of claim 5, wherein the processor is additionally
+to:
+
+further filter the plurality of applications included in the second application store
+interface based on client inventory information (395) received from the particular client
+
+computing device (375).
+
+7. The server computing device (300) of claim 6, wherein the client inventory informatio
+n (395) is received from the agent (380) executing on the particular client computing device
+
+(375).
+
+8. The server computing device (300) of claim 7, wherein the client inventory
+information (395) monitored by the agent (380) specifies one or more of:
+applications installed on the particular client computing device (375), versions of the
+
+installed applications, and usage of the installed applications.
+
+9. A machine-readable storage medium encoded with instructions executable by a
+processor of an administrator computing device (350) in a computing environment including
+a plurality of clients (375) managed by the administrator computing device (350), the
+machine-readable storage medium comprising:
+
+instructions for accessing, by the administrator computing device (350), an
+
+--- PAGE 3 ---
+3
+
+application store user interface (391) from a cloud-based server computing device, the
+application store user interface (230; 391) identifying a plurality of applications available for
+installation on the plurality of clients (375); and
+
+instructions for providing an installation instruction, by the administrator computing
+device (350), to the application store user interface (230; 391), the installation instruction
+identifying a particular application to be installed on the plurality of clients (375), the
+installation instruction triggering installation of the particular application on each of the
+plurality of clients (375) by an agent (380),
+
+wherein the agent (380) is installed and executed on each of the plurality of the clients
+(375),
+
+wherein the installation instruction to trigger installation of the particular application
+is provided to a management console (330) of a server computing device (300),
+
+wherein the management console (330) communicates with each agent (380) to
+
+manage installation of the particular application on each of the plurality of clients (375).
+
+10. The machine-readable storage medium of claim 9, further comprising:
+
+instructions for providing an agent install instruction, by the administrator computing
+device (350), to the application store user interface (230; 391) to trigger transmission of a
+message to each of the plurality of clients (375), the message including instructions for
+installing a respective agent (380),
+
+wherein each respective agent (380) is to manage installation of each application to be
+
+installed from the application store user interface (230; 391).
+
+11. The machine-readable storage medium of claim 9, further comprising:
+
+instructions for providing a installation authorization instruction to the application
+store user interface (230; 391), the installation authorization instruction identifying
+particular applications that the server computing device (300) is to permit installation in
+
+response to requests from respective users of the plurality of clients (375).
+
+12. A method for enabling remote management of client computing devices (375) from a
+server computing device (300), the method comprising:
+
+providing, by the server computing device (300), to an administrator computing
+device (350) an application store user interface (230; 391) identifying a plurality of
+applications available for installation on a plurality of client computing devices (375)
+belonging to a computing environment managed by the administrator computing device
+(350) ;
+
+displaying the application store user interface (230; 391) at the administrator
+
+--- PAGE 4 ---
+4
+
+computing device (350) and enabling a selection of a particular application to be installed on
+the plurality of client computing devices (375) within the application store user interface
+(230; 391);
+
+receiving, using the application store user interface (230; 391), a selection by the
+administrator computing device (350) of an application to be installed on the plurality of
+client computing devices (375); and
+
+in response to receiving said selection, triggering, by the application store user
+interface (230; 391), installation of the application on each of the plurality of client
+computing devices (375) by an agent (380),
+
+wherein the agent (380) is installed and executed on each of the plurality of client
+computing devices (375) managed by the administrator computing device (350),
+
+wherein a processor of the server computing device (300) provides an instruction to
+trigger installation of the particular application to a management console (330) of the server
+computing device (300),
+
+wherein the management console (330) communicates with each agent (380) to
+manage installation of the particular application on each of the plurality of client computing
+devices (375).
+
+13. The method of claim 12, further comprising:
+transmitting, in response to a request from a particular client computing device (375),
+a second application store interface that identifies a plurality of applications available for
+
+installation on the particular client computing device (375).
+
+14. The method of claim 13, wherein the applications identified in the second application
+store interface are filtered based on:
+
+applications authorized for installation by the administrator computing device (350),
+and client inventory information (395) provided from the particular client computing device
+
+(375) to the server computing device (300).

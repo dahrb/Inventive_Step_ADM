@@ -1,0 +1,68 @@
+Title: Method and system for determining a three dimensional representation of a tubular organ
+
+Abstract: A method for determining a three dimensional representation of a tubular organ, the method comprising the procedures of registering a three dimensional medical positioning system (MPS) coordinate system with a two dimensional coordinate system, acquiring a plurality of MPS points within the tubular organ, the MPS points are associated with the MPS coordinated system, each of the MPS point is acquired with a respective organ timing signal reading, acquiring at least one two dimensional image of the tubular organ, the at least one two dimensional image is associated with the two dimensional coordinate system, the at least one two dimensional image is acquired from at least one perspective, each of the at least one two dimensional image is further acquired with a respective organ timing signal reading, associated each of the MPS points with the at least one two dimensional image according to the organ timing signals thereof, determining a temporal three dimensional representation of a portion of the tubular organ for each MPS point, the portion being identifiable in the respective two dimensional image.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for determining a three dimensional representation of a tubular organ, said method comprising the procedures of:
+registering a three dimensional medical positioning system (MPS) coordinate system with a two dimensional coordinate system;
+acquiring a plurality of MPS points within said tubular organ, said MPS points are associated with said MPS coordinated system, each of said MPS points is acquired with a respective organ timing signal reading;
+acquiring at least one two dimensional image of said tubular organ, said at least one two dimensional image is associated with said two dimensional coordinate system, said at least one two dimensional image is acquired from at least one perspective angle, each of said at least one two dimensional image is further acquired with a respective organ timing signal reading;
+associating each of said MPS points with said at least one two dimensional image according to the organ timing signals thereof;
+determining a temporal three dimensional representation of a portion of said tubular organ for each MPS point.
+2. The method according to claim 1 further includes injecting a dye into said tubular organ prior to said acquiring at least one two dimensional image
+3. The method according to claim 1 further includes the procedure of superimposing said three dimensional representation on a two dimensional image.
+4. The method according to claim 3, wherein said two dimensional image is a real time two dimensional image, said real time two dimensional image being associated with an organ timing signal readings.
+5. The method according to claim 3, wherein said two dimensional image is one of said at least one two dimensional image.
+6. The method according to claim 3, wherein the perspective of said two dimensional image is selected such that a foreshortening phenomenon is minimized, said foreshortening phenomenon caused due to the super position of said three dimensional representation on the plane of said two dimensional image.
+7. The method according to claim 3, wherein a two dimensional projection of said superimposed three dimensional representation serves as a virtual dye instead of injecting a dye prior to acquiring said real time two dimensional image;
+8. The method according to claim 1, wherein said plurality of MPS points are acquired by inserting a catheter, fitted with an MPS sensor into said tubular organ.
+9. The method according to claim 1, wherein said organ timing signal is an electrocardiogram signal.
+10. The method according to claim 9, wherein said electrocardiogram signal is filtered from said plurality of MPS points.
+11. The method according to claim 1, wherein said at least one two dimensional image is a type selected from the group consisting of:
+X-ray image;
+Magnetic resonance image;
+Positron emission tomography image; and
+Ultrasound image.
+12. The method according to claim 1, wherein said procedure of determining a three dimensional representation of said portion of said tubular organ is determined from said MPS points and the borders of said tubular organ, said borders being identifiable on said at least one two dimensional image.
+13. The method according to claim 1, wherein said procedure of determining a three dimensional representation further comprises the subprocedures of:
+selecting at least one two dimensional image, said at least one two dimensional image includes said tubular organ;
+projecting the trajectory of said catheter on the selected two dimensional image, said trajectory being determined by said MPS points associated with said selected two dimensional image, thereby defining a centerline of said tubular organ;
+detecting the border points of tubular organ on said selected two dimensional image; and
+generating a three dimensional closed curve around each of said MPS points, associated with said selected image; and
+14. The method according to claim 13, wherein said border points are detected according to said defined centerline and image processing techniques.
+15. The method according to claim 13, wherein a plurality of equally spaced marker points are determined on said three dimensional trajectory for providing a visual true length assessment of said tubular organ when said trajectory is projected on said two dimensional image, thereby providing a visual assessment of said foreshortening.
+16. The method according to claim 15, wherein, said markers are colored according to the level of said foreshortening.
+17. The method according to claim 15, wherein, the space between said markers is one millimeter.
+18. A system for determining a three dimensional representation of a tubular organ, said system comprising:
+An organ timing signal detector for acquiring organ timing signal reading, said organ timing signal reading represent the activity state of an organ;
+A medical imaging system, for acquiring at least one two dimensional image from at least one perspective, said medical imaging system being associated with a two dimensional coordinated system, said at least one two dimensional image being associated with a respective organ timing signal reading;
+a medical positioning system (MPS), coupled with said organ timing signal detector, said MPS being associated with a three dimensional MPS coordinate system, for acquiring a plurality of MPS points, each of said MPS points being associated with a respective organ timing signal reading;
+A catheter, fitted with an MPS sensor, for insertion into said tubular organ said MPS sensor is coupled said MPS;
+A processor, coupled with said MPS, with said organ timing signal detector and with said medical imaging system, for registering said three dimensional MPS coordinate system with said two dimensional coordinate system, for associating an organ timing signal reading with each of said MPS points and with each of said at least one two dimensional image and for determining a three dimensional representation of said tubular organ.
+19. The system according to claim 18, wherein, a dye is injected into said tubular organ prior to said acquisition of said at least one two dimensional image.
+20. The system according to claim 18, further includes a display for displaying said three dimensional representation.
+21. The system according to claim 18, wherein, said processor is further operative for superimposing said three dimensional representation on a real time two dimensional image, said real time two dimensional image being associated with an organ timing signal readings.
+22. The system according to claim 20, wherein, said display is further operative to display said three dimensional image is superimposed on a two dimensional image.
+23. The system according to claim 22, wherein, said two dimensional image is a real time two dimensional image;
+24. The system according to claim 20, wherein, a two dimensional projection of said superimposed three dimensional representation serves as a virtual dye instead of injecting a dye prior to acquiring said real time two dimensional image;
+25. The system according to claim 22, wherein, said processor is further operative to select the perspective of said two dimensional image, such that the foreshortening phenomenon is minimized, said foreshortening phenomenon is caused due to the projection of said three dimensional representation on the plane of said two dimensional image.
+26. The system according to claim 18, wherein, said organ timing signal is an electrocardiogram signal.
+27. The system according to claim 26, wherein, said processor is further operative to filters said electrocardiogram signal from said plurality of MPS points.
+28. The system according to claim 18, wherein, said at least one two dimensional image is a type selected from the group consisting of:
+X-ray image;
+Magnetic resonance image;
+Positron emission tomography image; and
+Ultrasound image.
+29. The system according to claim 18, wherein said processor is further operative for determining said three dimensional representation from said MPS points and the borders of said tubular organ, said borders being identifiable on said at least one two dimensional image.
+30. The system according to claim 18, wherein, said processor is further operative for determining said three dimensional representation by:
+selecting at least one two dimensional image, said at least one two dimensional image includes said tubular organ;
+projecting the trajectory of said catheter on the selected two dimensional image, said trajectory being determined by said MPS points associated with said selected two dimensional image, thereby defining a centerline of said tubular organ;
+detecting the borders of tubular organ on said selected two dimensional image; and
+generating a three dimensional close curve around each of said MPS points, associated with said selected image;
+31. The system according to claim 30, wherein said processor is further operative for detecting said border points according to said defined centerline and image processing techniques
+32. The system according to claim 30, wherein, said processor is further operative for determining a plurality of equally spaced marker points on said three dimensional trajectory for providing a visual true length assessment of said tubular organ when said trajectory is projected on said two dimensional image.
+33. The system according to claim 32, wherein, said markers are colored according to the level of said foreshortening.
+34. The method according to claim 32, wherein, the space between said markers is one millimeter.

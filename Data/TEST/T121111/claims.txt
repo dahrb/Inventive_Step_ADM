@@ -1,0 +1,124 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIM SET A
+
+Claims — Main Request
+
+1. A computing device for use in an electronic trading system comprising a
+plurality of trading terminals (102; 202; 310) that access an electronic exchange
+(104; 204, 208; 308), the computing device comprising:
+
+means (302) for receiving electronic market data from the electronic
+exchange, the electronic market data being associated with a tradeable object and
+comprising quantity information that is based on a unit of a first type, said unit of
+the first type being a flow-based unit;
+
+means (302) for converting the quantity information that is based on the unit
+of the first type to converted quantity information that is based on a unit of a second
+type, said unit of the second type being a contract-based unit, and said converted
+quantity information being derived from the quantity information having flow-
+based units and a delivery unit of the tradeable object;
+
+means (302) for transmitting said converted quantity information to a
+trading terminal capable of displaying the converted quantity information in a
+screen region of a graphical user interface controlled by a microprocessor on the
+trading terminal;
+
+means (306) for receiving a first trade order to buy or sell the tradeable
+object from the trading terminal, the received trade order being initiated on the
+trading terminal by a command through a user input device, the received trade order
+having an order quantity parameter that is based on the unit of the second type;
+
+means (306) for converting the order quantity parameter that is based on the
+unit of the second type to a converted order quantity parameter that is based on the
+unit of the first type, said converted order quantity parameter being derived from
+the order quantity parameter having contract-based units and the delivery unit of the
+tradeable object; and
+
+means (306) for transmitting a trade order to the electronic exchange via the
+data communications network, wherein the transmitted trade order comprises the
+
+converted order quantity parameter.
+
+33
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2. A computing device according to claim 1, wherein the electronic exchange
+
+includes the computing device.
+
+3. A computing device according to claim 1, wherein the trading terminal
+
+includes the computing device.
+
+4. A computing device according to claim 1, wherein a gateway includes the
+
+computing device.
+
+5. A computing device according to any of claims | to 4, wherein the means
+for transmitting said converted quantity information comprises means for
+transmitting bid quantities and ask quantities that are based on the unit of the
+
+second type.
+
+6. A computing device according to any of claims | to 5, comprising:
+
+means for receiving new electronic market data from the electronic
+exchange, the new electronic market data being associated with the tradeable object
+and comprising new quantity information that is based on the unit of the first type;
+
+means for converting the new quantity information that is based on the unit
+of the first type to new converted quantity information that is based on the unit of
+the second type; and
+
+means for transmitting said converted quantity information to the trading
+terminal to allow the trading terminal to update the screen region of the graphical
+
+user interface with the new converted quantity information.
+
+7. An electronic trading system comprising a computing device according to
+any of claims | to 6 and a trading terminal, wherein the received electronic market
+data comprises quantity information corresponding to a plurality of orders for the
+tradeable object, the trading terminal comprising:
+means for setting a default quantity having the unit of the second type;
+means for displaying the converted quantity information corresponding to
+
+the plurality of orders through a display of prices on the graphical user interface;
+
+34
+
+--- PAGE 3 ---
+10
+
+means for displaying an order entry region on the graphical user interface,
+the order entry region comprising a plurality of areas for receiving a command to
+send a trade order to the electronic exchange, each area corresponding to a price
+level of the display of prices; and
+
+means for receiving a command to initiate the transmission of a trade order
+to the electronic exchange by selection of an area of the plurality of areas through
+an action of the user input device, the trade order comprising a first parameter
+based on the default quantity and a second parameter based on a price level that
+
+corresponds to the selected area.
+
+35

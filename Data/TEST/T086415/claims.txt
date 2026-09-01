@@ -1,0 +1,224 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+16 January 2020 — Main Request
+18
+
+CLAIMS — Main Request
+
+1. A method of recording a program, comprising:
+
+storing (220), in response to a user request, at least one content file (510) that
+includes first and second program segments;
+
+creating and storing (230) at least one index file (530) that includes program
+specific information (540) associated with the first and second program segments,
+wherein the program specific information includes a program’s service number that is
+used to access a program map table stored in the index file, wherein the program map
+table includes packet identifiers, the index file further including an identification of a
+splice point denoting a transition between the first and second program segments; and
+
+creating and storing (240) a splice index (560) that includes timing information
+
+specifying a time at which the splice point occurs.
+
+2. The method of claim | further comprising receiving (210) the first and second
+program segments over a broadband network in the first and second program transport
+
+streams, respectively.
+
+3. The method of claim | wherein the content file (510), index file (530) and the
+splice index (560) are stored in a network digital video recorder, DVR, associated with a
+
+broadband network headend.
+
+4. The method of claim | wherein the timing information includes a timing offset to
+denote a point in time at which the splice point occurred relative to a start time of the first
+
+program segment.
+
+5. The method of claim 4 wherein creating and storing (240) the splice index further
+
+comprises:
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+16 January 2020 — Main Request
+19
+using the timing offset to create second timing index values for the second
+program segment that sequentially follow first timing index values for the first program
+segment; and
+storing the first and second timing index values for the first and second program
+
+segments in the splice index.
+
+6. The method of claim 2 wherein the identification of the splice point is located in a
+
+data packet included in the first program transport stream.
+
+7. The method of claim | wherein the splice index is included in the content file.
+
+8. The method of claim | wherein the splice index further includes at least some of
+
+the program specific information for the first and second program segments.
+
+9. A set top terminal comprising:
+
+a receiver/tuner for receiving programs over a broadband network;
+
+a DVR module (10) for coordinating storage and playback of programs received
+over the broadband network, wherein the DVR module (10) is configured to store in at
+least one content file first and second program segments associated with a single program
+received over the broadband network, and to store in at least one index file program
+specific information associated with the first and second program segments, wherein the
+program specific information includes a program’s service number that is used to access a
+program map table stored in the index file, wherein the program map table includes
+packet identifiers, wherein the DVR module (10) is further configured to store, in a
+common splice index file, timing information denoting a splice point between the first
+and second program segments;
+
+at least one storage medium (64) for storing the content file, index file, and the
+
+splice index file; and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+16 January 2020 — Main Request
+20
+a processor (39) operationally associated with the receiver/tuner, the at least one
+
+storage medium (64), and the DVR module (10).
+
+10. The set top terminal of claim 9 wherein the timing information includes a timing
+offset to denote a point in time at which the splice point occurred relative to a start time
+
+of the first program segment.
+
+11. The set top terminal of claim 10 wherein the DVR module (10) is further
+configured to use the timing offset to create second timing index values for the second
+program segment that sequentially follow first timing index values for the first program
+
+segment.
+
+12. The set top terminal of claim 9 wherein the DVR module (10) is further
+configured to:
+
+receive user input requesting rewinding of the single program back through the
+splice point;
+
+determine from the timing information in the splice index file when the splice
+point has been reached;
+
+upon reaching the splice point while rewinding the single program, cause values
+of the program specific information associated with the first program segment to be
+loaded into the processor from the splice index file; and
+
+cause the first program segment of the single program to be retrieved from the
+content file and rendered using the program specific information presently loaded in the
+
+processor.
+
+13. The set top terminal of claim 9 wherein the DVR module (10) is further
+configured to:
+receive user input that requests that the single program be rendered through the
+
+splice point in normal play mode or fast forward mode;
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+16 January 2020 — Main Request
+21
+
+determine from the timing information in the splice index file when the splice
+point has been reached;
+
+upon reaching the splice point while rendering the single program, cause values of
+the program specific information associated with the second program segment to be
+loaded into the processor from the splice index file; and
+
+cause the second program segment of the single program to be retrieved from the
+content file and rendered using the program specific information presently loaded in the
+
+processor.
+
+14. At least one non-transitory computer-readable medium encoded with instructions
+which, when executed by a processor, perform a method including:
+
+receiving user input requesting playback of a recorded program that includes first
+and second program segments that are stored in at least one content file;
+
+causing a first set of program specific information associated with the first
+segment of the recorded program to be loaded into a DVR processor, wherein the
+program specific information includes a program’s service number that is used to access a
+program map table stored in an index file, wherein the program map table includes packet
+identifiers;
+
+causing the first segment of the recorded program to be retrieved from a content
+file and rendered using the first set of program specific information;
+
+retrieving timing information from a splice index that includes a splice point
+denoting a transition time between the first and second program segments;
+
+determining from the timing information when the splice point in the recorded
+program being rendered has been reached;
+
+upon reaching the splice point, causing a second set of program specific
+information associated with the second segment of the recorded program to be loaded
+
+into the DVR processor; and
+
+--- PAGE 5 ---
+10
+
+15
+
+16 January 2020 — Main Request
+22
+causing the second segment of the recorded program to be retrieved from the
+content file and rendered using the second set of the program specific information
+
+presently loaded in the DVR processor.
+
+15. The computer-readable medium of claim 14, the method further comprising:
+
+receiving user input requesting rewinding of the recorded program back through
+the splice point;
+
+determining from the timing information in the splice index when the splice point
+has been reached;
+
+upon reaching the splice point while rewinding the recorded program, causing the
+values of the first set of program specific information to be loaded into the DVR
+processor from the splice index; and
+
+causing the first segment of the recorded program to be retrieved from the content
+file and rendered using the first set of the program specific information presently loaded
+
+in the DVR processor.

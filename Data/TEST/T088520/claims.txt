@@ -1,0 +1,116 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2nd aux request
+
+CLAIMS
+
+1. Control system (100) comprising:
+
+an input unit (110) being arranged to communicate with an airport
+surveillance system (700),
+
+a control unit (120) being arranged to receive, from the input unit (110),
+identification data for an aircraft (400a-b) on ground, position data, indicating
+a position of the aircraft, and, to provide the identification data to a data
+storage (800) and receive an identifier of a designated gate for the aircraft
+from the data storage,
+
+wherein the control unit (120) is further arranged to provide a signal to
+a gate control system (200a-c) at the designated gate for preparing the
+designated gate to receive the aircraft if the position of the aircraft is within a
+predetermined distance from the designated gate,
+
+characterized in that the control unit (120) is further arranged to delay
+the signal to the gate control system a certain amount of time based on an
+estimated travel time of the aircraft from the position of the aircraft to the
+designated gate, and
+
+in that the preparing the designated gate comprises the gate control
+system being arranged to activate a visual docking guidance system (130a-c),
+said visual guidance system being a laser docking system arranged to scan
+
+an apron of the designated gate for obstacles.
+
+2. The control system according to claims 1, wherein said
+estimated travel time is calculated based on an expected taxi time of the
+
+aircraft.
+
+3. The control system according to any one of the claims 1-2,
+wherein said estimated travel time is calculated based on one or more from
+the list of: airport size, airport design, weather conditions, performance of the
+
+aircraft, how often the aircraft needs to restart, queue on the taxiway.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4. The control system according to any one of the preceding
+claims, wherein the control system is arranged to receive a flight plan from an
+airport database system (900), wherein the control unit is arranged to
+determine an estimated time of arrival of the aircraft at the designated gate,
+and wherein the control unit is arranged to update the received flight plan with
+the estimated time of arrival.
+
+5. The control system according to any one of claims 1-4, wherein
+the airport surveillance system includes at least one of ADS-B, multilateration,
+
+primary surveillance radar, and secondary surveillance radar.
+
+6. The control system according to claim 1, wherein the visual
+docking guidance system comprises a display and the gate control system is
+arranged to activate the display when the position of the aircraft is within an
+area (310a-c) enclosing the designated gate.
+
+f. Method implemented in a control system, the method
+comprising:
+
+receiving, from an airport surveillance system, identification data for an
+aircraft on ground and position data, indicating a position of the aircraft,
+
+providing the identification data to a data storage and receiving an
+identifier of a designated gate for the aircraft,
+
+providing a signal to the designated gate for preparing the designated
+gate to receive the aircraft if the position of the aircraft is within a
+predetermined distance from the designated gate,
+
+characterized in that the method further comprises delaying the signal
+to the designated gate a certain amount of time based on an estimated travel
+time of the aircraft from the position of the aircraft to the designated gate, and
+in that the preparing of the designated gate comprises activating a visual
+docking guidance system, said visual guidance system being a laser docking
+
+system arranged to scan an apron of the designated gate for obstacles.
+
+--- PAGE 3 ---
+10
+
+8. The method according to claim 7, wherein said estimated travel
+time is calculated based on one or more from the list of: airport size, airport
+design, weather conditions, performance of the aircraft, how often the aircraft
+needs to restart, queue on the taxiway, and an expected taxi time of the
+aircraft.
+
+9. The method according to claim 7 or 8, further comprising
+receiving a flight plan from an airport database system, determining an
+estimated time of arrival of the aircraft at the designated gate, and updating
+
+the received flight plan with the estimated time of arrival.

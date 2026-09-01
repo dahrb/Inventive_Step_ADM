@@ -1,0 +1,155 @@
+--- PAGE 1 ---
+MAIN REQUEST - Claims:
+
+1. A method, comprising:
+at a computing device (100) with a tactile output generator (167):
+detecting an occurrence of a first event associated with haptic output; and
+in response to detecting the occurrence of the first event, generating haptic output
+associated with the first event, including:
+in accordance with a determination that the first event is a first type of event of
+a plurality of types of events that are affected by an alert-salience setting (2710) of the
+device, providing a first alert with the tactile output generator that includes a first haptic
+output selected based at least in part on the alert-salience setting of the device; and
+in accordance with a determination that the first event is a second type of
+event of a plurality of types of events that are not affected by the alert-salience setting,
+providing a second alert with the tactile output generator that includes a second haptic output
+
+selected without regard to the alert-salience setting of the device.
+2. The method of claim 1, wherein the first alert is different from the second alert.
+
+3. The method of claim 1, wherein providing the first alert that includes the first haptic
+output selected based at least in part on the alert-salience setting of the device includes:
+
+determining a value of the alert-salience setting;
+
+in accordance with a determination that the alert-salience setting has a first value,
+providing a first haptic component and a second haptic component; and
+
+in accordance with a determination that the alert-salience setting has a second value
+different from the first value, providing the first haptic component but not the second haptic
+
+component.
+
+4, The method of claim 3, wherein the second haptic component precedes the first haptic
+
+component.
+
+5. The method of any of claims 3-4, including, in accordance with a determination that
+the first event is a third type of event in the first plurality of event classes that are affected by
+the alert-salience setting, providing a third alert that includes a haptic output selected based at
+least in part on the alert-salience setting of the device, wherein providing the third alert that
+includes the haptic output selected based at least in part on the alert-salience setting of the
+
+device includes:
+
+183
+
+--- PAGE 2 ---
+determining a value of the alert-salience setting;
+
+in accordance with a determination that the alert-salience setting has the first value,
+providing a third haptic component and a fourth haptic component; and
+
+in accordance with a determination that the alert-salience setting has the second value
+different from the first value, providing the third haptic component but not the fourth haptic
+
+component.
+
+6. The method of claim 5, wherein the fourth haptic component is the same as the
+
+second haptic component.
+
+7. The method of any of claims 3-6, wherein:
+the occurrence of the first event is detected while the alert-salience setting of the
+device has the first value;
+the first alert provided in response to the first event includes the first haptic
+component and the second haptic component; and
+the second alert provided in response to the first event includes a second-alert haptic
+component; and
+the method further comprises:
+while the alert-salience setting of the device has the first value, receiving a
+request to change the alert-salience setting of the device to the second value; and
+in response to receiving the request to change the alert-salience setting to the
+second value, changing the alert-salience setting to the second value;
+while the alert-salience setting of the device has the second value:
+detecting the occurrence of a second event; and
+in response to detecting the occurrence of the second event:
+in accordance with a determination that the second event is the
+first type of event, providing a third alert that includes the first haptic component and does
+not include the second haptic component; and
+in accordance with a determination that the second event is the
+
+second type of event, providing the second alert that includes the second haptic output.
+
+8. The method of claim 7, wherein the first value of the alert-salience setting is on and
+
+the second value of the alert-salience setting is off.
+
+9. The method of any of claims 3-8, further comprising:
+
+184
+
+--- PAGE 3 ---
+providing an additional haptic component for alerts triggered in response to events in
+a first plurality of event classes when the alert-salience setting has the first value;
+
+forgoing providing the additional haptic component for alerts triggered in response to
+events in the first plurality of event classes when the alert-salience setting has the second
+value; and
+
+forgoing providing the additional haptic component for alerts triggered in response to
+events in a second plurality of event classes, distinct from the first plurality of event classes,
+
+without regard to whether the alert-salience setting has the first value or the second value.
+
+10. The method of any of claims 1-9, wherein:
+the device has a touch-sensitive display; and
+the haptic outputs are provided via the touch-sensitive display on the computing
+
+device.
+
+11. A device (100) comprising:
+a tactile output generator (167);
+a touch-sensitive surface; and
+memory storing one or more programs that include instructions for:
+detecting an occurrence of a first event associated with haptic output; and
+in response to detecting the occurrence of the first event, generating haptic output
+associated with the first event, including:
+in accordance with a determination that the first event is a first type of event of
+a plurality of types of events that are affected by an alert-salience setting (2710) of the
+device, providing a first alert with the tactile output generator that includes a first haptic
+output selected based at least in part on the alert-salience setting of the device; and
+in accordance with a determination that the first event is a second type of
+event of a plurality of types of events that are not affected by the alert-salience setting,
+providing a second alert with the tactile output generator that includes a second haptic output
+
+selected without regard to the alert-salience setting of the device.
+
+12. The device of claim 11, wherein the device is configured to perform the method of
+
+any of claims 2-10.
+
+185
+
+--- PAGE 4 ---
+13. A computer readable storage medium storing executable code, wherein execution of
+the code by a processor of a computing device (100) with a tactile output generator (167)
+causes the computing device to perform operations comprising:
+detecting an occurrence of a first event associated with haptic output; and
+in response to detecting the occurrence of the first event, generating haptic output
+associated with the first event, including:
+in accordance with a determination that the first event is a first type of event of
+a plurality of types of events that are affected by an alert-salience setting (2710) of the
+device, providing a first alert with the tactile output generator that includes a first haptic
+output selected based at least in part on the alert-salience setting of the device; and
+in accordance with a determination that the first event is a second type of
+event of a plurality of types of events that are not affected by the alert-salience setting,
+providing a second alert with the tactile output generator that includes a second haptic output
+
+selected without regard to the alert-salience setting of the device.
+
+14. The computer readable storage medium of claim 13, wherein the code includes
+
+instructions for causing the computing device to perform the method of any of claims 2-10.
+
+186

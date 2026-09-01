@@ -1,0 +1,165 @@
+--- PAGE 1 ---
+EP 12 805 544.9 HL-E-34268
+
+CLAIMS (Main Request):
+
+l. A scanning system (10) providing a exception correction capability,
+comprising:
+
+an image sensor for scanning a page of a hard-copy document;
+
+an input tray (20);
+
+an output tray (15);
+
+a document feeding system (43) for picking a page (300) of a multi-page
+document (12) from the input tray (20), positioning the picked page (300) to be scanned by
+the image sensor, and depositing the picked page (300) in the output tray (15);
+
+a sensing system (135) for sensing one or more attributes of the picked page
+(300) to detect an exception condition;
+
+a user interface system including an image display (50) and one or more user
+controls;
+
+an output interface (55) for transferring scanned documents to an image
+receiving system;
+
+a storage memory for storing scanned documents;
+
+a data processing system (120); and
+
+a program memory communicatively connected to the data processing system
+(120) and storing instructions configured to cause the data processing system (120) to:
+
+initiate a multi-page scanning operation to scan a multi-page document
+(12) in response to user activation of a user control;
+for each page of the multi-page document (12);
+pick the page (300) from the input tray (20);
+scan the picked page using the image sensor (30, 35) and storing
+the scanned page in the storage memory;
+sense one or more attributes of the picked page (300) using the
+sensing system (135);
+
+deposit the picked page (300) in the output tray (15);
+
+23
+
+--- PAGE 2 ---
+EP 12 805 544.9 HL-E-34268
+
+analyze the sensed one or more attributes to detect an exception
+condition (400);
+in response to detecting an exception condition:
+pause the multi-page scanning operation;
+display (420) at least one scanned page (300) associated
+with the exception condition (400) on the image display (50);
+" use the user interface system (500) to provide a plurality
+of user-selectable corrective actions (430) associated with the exception condition (400),
+wherein the user interface system includes a user control to select an option to apply the same
+corrective action (430) for future instances of the same exception condition (400);
+perform one or more corrective operations (435) in
+response to a user selecting a particular corrective action (430); and
+restart the paused multi-page scanning operation in
+response to user activation of a user control; and
+use the output interface (55) to transfer one or more pages of the
+
+scanned multi-page document (12) from the storage memory to the image receiving system.
+
+2. The scanning system (10) of claim 1 wherein at least one of the corrective
+
+operations (435) includes prompting the user to perform a manual operation.
+
+3. The scanning system (10) of claim 2 wherein the particular corrective
+action is a rescan action (455), and wherein the corrective operations (435) include prompting
+the user to manually move the picked page (300) from the output tray (15) to the input tray
+(20).
+
+4. The scanning system (10) of claim 1 wherein the sensing system (135)
+
+includes a multi-page sensor for detecting multi-page-feeds.
+
+5. The scanning system (10) of claim 4 wherein the multi-page sensor is an
+
+ultrasonic sensor or a mechanical contact sensor.
+
+24
+
+--- PAGE 3 ---
+EP 12 805 544.9 HL-E-34268
+
+6. The scanning system (10) of claim 4 wherein the image sensor is the multi-
+page sensor, and wherein the scanned page is analyzed to detect page edges or shadows cast
+
+from one page onto another to determine that a multi-page feed exists.
+
+7. The scanning system (10) of claim 1 wherein the sensing system (135)
+
+includes a skewed-page sensor for detecting skewed picked pages.
+
+8. The scanning system (10) of claim 7 wherein the image sensor is the
+skewed-page sensor, and wherein the scanned page is analyzed to detect that the page was
+
+skewed.
+
+9. The scanning system (10) of claim 1 wherein the sensing system (135)
+includes a page-size sensor, an image quality sensor, a copyrighted document sensor, a
+wrinkled page sensor or a jammed page sensor or a skewed page sensor detecting skewed
+
+picked pages.
+
+10. The scanning system (10) of claim 1 wherein the image receiving system is
+
+a storage device, a host computer, a printer or an E-mail system.
+
+11. A method for scanning multi-page documents (12), the method being
+implemented at least in part by a data processing system (120) and comprising:
+
+initiating a multi-page scanning operation on a scanning system (10) to scan a
+multi-page document (12), wherein the scanning system (10) includes:
+
+an image sensor for scanning a page (300) of a hard-copy document;
+
+a document feeding system (43) for picking a page of a multi-page.
+document (12) from an input tray (20), positioning the picked page to be scanned by the
+image sensor, and depositing the picked page in an output tray (15);
+
+a sensing system (135) for sensing one or more attributes of the picked
+page to detect an exception condition;
+
+a user interface system including an image display (50) and one or more
+user controls;
+
+a storage memory for storing scanned documents; and
+
+25
+
+--- PAGE 4 ---
+EP 12 805 544.9 HL-E-34268
+
+an output interface (55) for transferring scanned documents to an image
+receiving system;
+for each page of the multi-page document (12);
+picking the page (300) from the input tray (20);
+scanning the picked page using the image sensor (30, 35) and storing
+the scanned page in the storage memory;
+sensing one or more attributes of the picked page (300) using the
+sensing system (135);
+depositing the picked page (300) in the output tray (15),
+analyzing the sensed one or more attributes to detect an exception
+condition (400);
+in response to detecting an exception condition:
+pausing the multi-page scanning operation;
+displaying (420) at least one scanned page (300) associated with
+the exception condition (400) on the image display (50);
+using the user interface system (500) to provide a plurality of
+user-selectable corrective actions (430) associated with the exception condition (400);
+performing one or more corrective operations in response to a
+user selecting a particular corrective action (430); and
+restarting the paused multi-page scanning operation (435) in
+response to user activation of a user control; and
+using the output interface (55) to transfer one or more pages of the scanned
+
+multi-page document (12) from the storage memory to the image receiving system.
+
+26

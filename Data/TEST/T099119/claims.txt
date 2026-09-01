@@ -1,0 +1,195 @@
+--- PAGE 1 ---
+P173424.EP.01 1
+
+MAIN REQUEST
+
+1. A method for over the air (OTA) provisioning of a soft card on a device having wireless communications
+
+capabilities using a provisioning configuration server (108), the method comprising:
+
+at the provisioning configuration server (108):
+
+(a)
+
+(b)
+
+(c)
+(d)
+
+(e)
+
+(f)
+
+storing, in a database, a plurality of issuer identification numbers associated with a plurality of
+different card issuers, wherein each of the plurality of issuer identification numbers is mapped
+to a respective issuer server address;
+
+receiving, from a soft card provisioning application (102) on the device with wireless
+communications capabilities, a soft card request for provisioning a soft card on the device, the
+request including a card identifier that includes a personal account number (PAN);
+authenticating the device;
+
+in response to authenticating the device, performing a lookup in the database based on the card
+identifier to identify a card issuer associated with the soft card request from among the plurality
+of different card issuers, wherein performing the lookup in the database includes retrieving an
+issuer identification number (IIN) from the PAN and using the IIN to identify an Internet protocol
+(IP) address of a provisioning issuer server (110) associated with the card issuer, and wherein
+the database includes entries matching IINs to IP addresses of provisioning issuer servers (110)
+associated with the plurality of card issuers;
+
+in response to determining the card issuer, communicating both the IP address of the
+provisioning issuer server (110) associated with the card issuer and a challenge question to the
+device over an air interface; and
+
+sending, from the provisioning issuer server (110) associated with the card issuer, to the device
+over a secure channel established using the IP address, soft card personalization data for
+provisioning the soft card on the device in response to receiving a challenge response to the
+
+challenge question and the PAN from the device.
+
+The method of claim 1 wherein the soft card comprises a card selected from a group consisting of a
+
+payment card, loyalty card, a member card and a non-payment card.
+
+The method of claim 1 wherein receiving a soft card request including a card identifier includes receiving
+
+a soft card from the device over a connection established over the air interface without requiring a voice
+
+call, receiving the soft card request from a user over a web interface, or receiving a WAP push message
+
+from a card issuer.
+
+--- PAGE 2 ---
+P173424.EP.01 2
+
+4. The method of claim 1 wherein the device comprises a device selected from a group consisting of a
+
+mobile phone, a smart phone, a physical card, a key fob, and a personal digital assistant.
+
+5. The method of claim 1 wherein steps (a)-(e) are performed in real time.
+
+6. The method of claim 1 wherein the steps (a)-(e) are performed a plurality of times to provision a plurality
+
+of different soft cards in real time.
+
+7. The method of claim 1 wherein the step (e) includes communicating the issuer service address to the
+
+device over a TCP/IP connection implemented over the air interface.
+
+8. A system for over the air (OTA) provisioning of a soft card on a device with wireless communications
+
+capabilities, the system comprising:
+
+(a)
+
+(b)
+
+(c)
+
+a soft card provisioning application (102) configured to execute on a device with wireless
+communications capabilities, for obtaining a card identifier from a user, and for communicating
+over an air interface a soft card request for provisioning a soft card on the device, the request
+including the card identifier that further includes a personal account number (PAN);
+
+a provisioning configuration server (108) for receiving the soft card request including the card
+number from the soft card provisioning application (102), authenticating the device, and, in
+response to authenticating the device, performing a lookup in a database based on the card
+identifier to identify a card issuer associated with the soft card request from among the plurality
+of different card issuers, wherein performing the lookup in the database includes retrieving an
+issuer identification number (IIN) from the PAN and using the IIN to identify an Internet protocol
+(IP) address of a provisioning issuer server (110) associated with the card issuer, and wherein
+the database includes entries matching IINs to IP addresses of provisioning issuer servers (110)
+associated with the plurality of card issuers and for communicating both the IP address of the
+provisioning server associated with card issuer stored in the database and a challenge question
+to the soft card provisioning application over an air interface; and
+
+a provisioning issuer server that is separate from the provisioning configuration server, the
+provisioning issuer server being configured to communicate soft card personalization data to
+the soft card provisioning application for provisioning the soft card on the device in response to
+receiving a challenge response to the challenge question and the PAN from the device via a
+
+secure channel established through the provisioning configuration server using the IP address.
+
+--- PAGE 3 ---
+P173424.EP.01 3
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+The system of claim 8 wherein the provisioning issuer server (110) is integrated with a card issuer back
+
+office system (114).
+
+The system of claim 8 wherein the soft card comprises a card selected from a group consisting of a
+
+payment card, a loyalty card, a member card, and a non-payment card.
+
+The system of claim 8 wherein obtaining a card identifier includes obtaining the card identifier via a user
+
+interface associated with the device.
+
+The system of claim 8 wherein the soft card provisioning application (102), the provisioning
+configuration server (108), and the provisioning issuer server (110) are adapted to provision the soft
+
+card in real time.
+
+The system of claim 8 comprising a web provisioning application (104) for receiving provisioning
+information for a plurality of cards and for communicating the information to the provisioning
+configuration server (108), wherein the provisioning configuring server (108) is adapted to identify card
+issuers for each of the provisioning requests and to effect provisioning of a plurality of soft cards in real
+
+time.
+
+The system of claim 8 wherein the soft card provisioning application (102) is adapted to communicate
+with the provisioning configuration server (108) using a TCP/IP connection established over the air
+
+interface.
+
+A computer program product comprising computer executable instructions embodied in a computer
+
+readable medium for performing steps comprising:
+
+(a) storing, in a database, a plurality of issuer identification numbers associated with a plurality of
+different card issuers, wherein each of the plurality of issuer identification numbers is mapped
+to a respective issuer server address;
+
+(b) receiving, from a soft card provisioning application (102) on a device with wireless
+communications capabilities, a soft card request for provisioning a soft card on the device, the
+request including a card identifier that includes a personal account number (PAN);
+
+(c) authenticating the device;
+
+--- PAGE 4 ---
+P173424.EP.01 4
+
+(d)
+
+(e)
+
+(f)
+
+in response to authenticating the device, performing a lookup in the database based on the card
+identifier to identify a card issuer associated with the soft card request from among the plurality
+of different card issuers, wherein performing the lookup in the database includes retrieving an
+issuer identification number (IIN) from the PAN and using the IIN to identify an Internet protocol
+(IP) address of a provisioning issuer server (110) associated with the card issuer, and wherein
+the database includes entries matching IINs to IP addresses of provisioning issuer servers (110)
+associated with the plurality of card issuers;
+
+in response to determining the card issuer, communicating both the IP address of the
+provisioning issuer server associated with the card issuer anda challenge question to the device
+over an air interface; and
+
+sending, from the provisioning issuer server (110) to the device over a secure channel established
+using the IP address, soft card personalization data for provisioning the soft card on the device in
+
+response to receiving a challenge response to the challenge question and the PAN from the device.

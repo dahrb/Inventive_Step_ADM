@@ -1,0 +1,47 @@
+TITLE:
+Method and system of arranging configurable options in a user interface
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method (500) of arranging configurable options such as hot/soft keys in a menu can include tracking (502) a sequence of events initiated by a user on a device having a user interface and an application, tracking (504) the number of times an event occurs during a given time, and tracking (506) the time between user initiated events. The method can further include generating (509) a pattern from the tracking steps, associating (510) the pattern with a user profile, and optimizing (512) an arrangement of hot/soft keys in the menu based on the user profile. The method can optionally track (508) user habits and dynamically arrange (513) the hot/soft keys based on the dynamic user profile. Furthermore, performance enhancements for use of the user interface and applications based on the dynamic user profile can be dynamically identified (514).
+
+CLAIMS:
+1. A method of arranging configurable options on a menu, comprising the steps of:
+tracking a sequence of events initiated by a user on a device having a user interface and at least one application;
+tracking the number of times an event occurs during a given time;
+tracking the time between user initiated events;
+generating a pattern from the tracking steps;
+associating the pattern with a user profile; and
+configuring an arrangement of configurable options in the menu based on the user profile.
+2. The method of claim 1, wherein the method further comprises the step of tracking usage of the user interface at different times, dates, and locations.
+3. The method of claim 1, wherein the step of optimizing the arrangement of configurable options comprises the step of configuring an arrangement of hot/soft keys in the menu.
+4. The method of claim 1, wherein the step of configuring comprises the step of applying a weighted average to at least some information being tracked in the tracking steps.
+5. A method of arranging configurable options in a menu, comprising the steps of:
+tracking user habits;
+generating a dynamic user profile based on the user habits; and
+dynamically arranging the configurable options based on the dynamic user profile.
+6. The method of claim 5, wherein the step of dynamically arranging the configurable options comprises the step of dynamically arranging hot/soft keys in the menu.
+7. The method of claim 5, wherein the method further comprises the step of dynamically identifying performance enhancements for use of the user interface and applications based on the dynamic user profile.
+8. The method of claim 5, wherein the method further comprises the step of reducing accessibility of unused functions in at least one among the user interface and the applications.
+9. The method of claim 5, wherein the method further comprises the step of reassigning resources to a preferred application based on the dynamic user profile.
+10. A dynamically enhanced user interface having configurable options, comprising:
+an event tracker;
+an elapsed time tracker;
+a user pattern profile generator receiving inputs from the event tracker and the time tracker and generating a user pattern profile in response to said inputs; and
+a presentation device having set of configurable options that dynamically changes based on the user pattern profile.
+11. The dynamically enhanced user interface of claim 10, wherein the configurable options comprises soft/hot keys on a menu.
+12. The dynamically enhanced user interface of claim 10, wherein the user interface further comprises a configurable options manager that controls the arrangement of configurable options based on the user pattern profile generator.
+13. The user interface of claim 11, wherein the user interface further comprises a soft/hot key manager that controls the arrangement of the soft/hot keys based on the user pattern profile generator.
+14. The user interface of claim 10, wherein the user interface further comprises an advisor manager that monitors user pattern profile and suggests improvements in usage to a user.
+15. The user interface of claim 10, wherein the presentation device comprises a display.
+16. A machine readable storage, having stored thereon a computer program having a plurality of code sections executable by a machine for causing the machine to perform the steps of:
+tracking a sequence of events initiated by a user on a device having a user interface and at least one application;
+tracking the number of times an event occurs during a given time tracking the time between user initiated events;
+generating a pattern from the tracking steps;
+associating the pattern with a user profile; and
+configuring an arrangement of hot/soft keys in the menu based on the user profile.
+17. The machine readable storage of claim 16, wherein the machine readable storage is further programmed to cause the machine to track user habits, generate a dynamic user profile based on the user habits, and dynamically arrange the hot/soft keys based on the dynamic user profile.
+18. The machine readable storage of claim 17, wherein the machine readable storage is further programmed to cause the machine to dynamically identify performance enhancements for use of the user interface and applications based on the dynamic user profile.
+19. The machine readable storage of claim 16, wherein the machine readable storage is further programmed to cause the machine to reduce accessibility of unused functions in at least one among the user interface and the applications.

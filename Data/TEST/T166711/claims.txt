@@ -1,0 +1,141 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Set of amended claims filed with letter of June 21, 2011
+Application number: 02076952.7 -1243
+
+CLAIMS
+
+1. Amethod for executing a hot migrate operation from a first version of a service (511)
+using a first data model (N), to a second version of the service (512) using a second
+data model (N+1) that is modified with respect to said first data model, the service
+comprising a client application, a data manager and a data repository, said migrate
+operation being effected on a server facility (SA, SB) that accommodates multiple
+processes to be running in parallel, said method comprising the steps of:
+
+- installing second version client applications
+
+- installing a second version data manager operating according to the said second
+data model, and
+
+- installing a second version data repository arranged according to the said second
+data model and cooperating with the second version data manager;
+
+characterized in that
+
+- the second version data manager is provided with a first migration plug-in;
+
+in that, the second version service is controlled to preferentially retrieve and remove
+data from the first version data repository, and thereupon to convert and store these
+data to the second version data repository, whereafter the second version data manager
+will retrieve the converted data from the second version data repository;
+
+in that the first version service is controlled to preferentially retrieve data from the first
+version data repository, but if unsuccessful, to retrieve and convert data from the new
+version data repository without storing thereof, where said conversion takes place with a
+second migration plug-in coupled to the first data manager;
+
+and in that an incremental roll-over process is effectuated, wherein in successive steps
+data is converted from said first version data repository to said second version data
+
+repository by means of the first migration plug-in until all data will have been converted;
+
+for whic! Id vorsi ble,
+
+2. Amethod as claimed in Claim 1, characterized in that the incremental roll-over
+process is concluded by shutting down the first version service but maintaining the first
+version data available to the first plug-in for having thereby executed a forced migration
+
+to the second data repository.
+
+3. A method as claimed in Claim 1, characterized in that the incremental roll-over
+process is terminated when all data will have been migrated to the second version data
+
+repository where after the first migration plug-in is replaced by a null stub.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Set of amended claims filed with letter of June 21, 2011
+Application number: 02076952.7 -1243
+
+4. A method as claimed in Claim 1, whilst making said application is available through a
+distributed network (N).
+
+5. Amethod as claimed in Claim 1, wherein said service is a data base service, a
+computer program, an operating system, an e-service or a mixture or a combination
+
+thereof.
+
+6. A method as claimed in Claim 1, wherein said services are based on object-oriented
+
+programming.
+
+7. Amethod as claimed in Claim 1, wherein said services run on a single server.
+
+8. A method as claimed in Claim 1, wherein said services run on multiple servers (SA,
+SB) in a first pool, wherein successive servers are relieved from client sessions, get the
+new application version installed, and are entered into a second pool for running new
+application versions, until all servers will be contained in the second pool, whereupon
+
+data migration is rendered executable.
+
+9. Amethod as claimed in Claim 1, wherein said migration operation is forced.
+
+10. A method as claimed in Claim 1, wherein said migration operation is effected on
+
+demand.
+
+11. A multiprocessing system (401) being arranged for implementing a method as
+claimed in Claim 1 and comprising control means for executing a hot migrate operation
+from a first version of service (511) using a first data model (N), to a second version of
+the service (512) using a second data model (N+1) that is modified with respect to said
+first data model, said migrate operation being effected on a server facility (401) that
+accommodates multiple processes to be running in parallel, said system comprising
+installing means for installing second version client applications (506) for installing a
+second version datamanager (508) operating according to the said second version data
+model and for installing a second version data repository (507) arranged according to
+the said second data model and cooperating with the said second version data
+manager;
+
+said system being characterized by incremental roll-over control means that are
+operative for converting successive said processes from said first to said second service
+
+version comprising a first migration plug-in (509) for converting in successive steps data
+
+--- PAGE 3 ---
+Set of amended claims filed with letter of June 21, 2011
+Application number: 02076952.7 -1243
+
+from said first version data repository to said second version data repository until all
+
+processes and data will have been converted.
+
+12. Asystem as claimed in Claim 13, comprising multiple servers, that are server-wise
+taken out of service from a first pool, have their migration plug-ins installed, and
+
+subsequently entered into a new pool, until all servers will have been converted.
+
+13. A computer program implementing a method according to claim 1 on a carrier such
+
+as a storage medium or electrical signal.

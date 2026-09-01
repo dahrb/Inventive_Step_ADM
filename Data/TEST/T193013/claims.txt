@@ -1,0 +1,81 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+25 -
+
+Replacement Main Request (Request A)
+
+Claims
+
+1. A computer based method for facilitating the placement of an order for an item
+and for displaying transactional information to a user regarding the buying and selling
+of items in a system where orders comprise a bid type or an offer type, and an order
+message is generated for a quantity of the item at a specific value, the method
+comprising using a graphical user interface (312) to:
+
+display a plurality of bid indicators (300(1)...300(n); 404), each corresponding to
+at least one bid for a quantity of the item, each bid indicator at a location along a scaled
+axis (332) of prices corresponding to a price associated with the at least one bid;
+
+display a plurality of offer indicators (304(1) ... 304(n); 400), each
+corresponding to at least one offer for a quantity of the item, each offer indicator at a
+location along the scaled axis of prices corresponding to a price associated with the at
+least one offer;
+
+receive market information representing a new order to buy a quantity of the
+item for a specified bid price, and in response to the received market information,
+generate a bid indicator that corresponds to the quantity of the new order to buy and
+place the bid indicator along the scaled axis of prices according to the specified bid
+price;
+
+receive market information representing a new order to sell a quantity of the
+item for a specified offer price, and in response to the received market information,
+generate an offer indicator that corresponds to the quantity of the new order to sell and
+place the offer indicator along the scaled axis of prices according to the specified offer
+price;
+
+display an order token (320; 412) representing a particular quantity of the item;
+
+responsive to input from a user input device, select the order token and move the
+selected order token to a location associated with a price along the scaled axis of prices;
+
+responsive to release of the user input device, at the location along the scaled
+
+axis of prices, automatically formulate an order message from the selected and moved
+
+--- PAGE 2 ---
+10
+
+15
+
+_ 26 -
+
+order token, wherein the order message has a plurality of order parameters comprising a
+bid type or an offer type for the order, the particular quantity of the item, and the price
+associated with the location; and
+
+send the order message to an electronic trading exchange (100).
+
+2. The method of claim 1, wherein the order token is adjustable using the
+
+user input device to reflect the particular quantity.
+
+3. The method of any one of the preceding claims wherein the size of the
+
+order token is associated with the particular quantity.
+
+4, The method of any one of the preceding claims further comprising
+
+modifying the selected and moved order token based on a transaction.
+
+5. A computer program which, when executed by a processor, is arranged
+
+to perform a method according to claim 1.

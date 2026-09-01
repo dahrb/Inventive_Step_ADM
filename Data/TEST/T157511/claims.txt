@@ -1,0 +1,121 @@
+--- PAGE 1 ---
+EP Application No.: 04014 752.2
+
+Applicant: Microsoft Corporation
+
+Our Ref.: EP31458MHdix
+
+Date: May 12, 2011
+
+CLAIMS
+
+1. A processor-readable medium comprising processor-executable instructions configured
+for:
+
+receiving a binary signature of a vulnerable section in a binary file at a server, the binary
+signature being a bit pattern that is associated with a security vulnerability in a binary file
+
+on a client computer;
+
+receiving a security patch at the server;
+
+identifying, by the server, a vulnerable binary file on the client computer based on the
+binary signature, wherein the identifying a vulnerable binary file includes scanning, by the
+server, binary files located on the client computer and comparing, by the server, the bit
+pattern of the binary signature against the binary files located on the client computer; and
+
+updating, by the server, the vulnerable binary file on the client computer with the security
+patch.
+
+2. A processor-readable medium as recited in claim 1, wherein the updating of the
+vulnerable binary file on the computer includes installing the security patch on the client
+
+computer.
+
+3. A processor-readable medium as recited in claim 1, wherein the receiving includes
+receiving the binary signature and the security patch from a distribution server configured
+to distribute to the server, binary signatures that identify vulnerable files and security
+
+patches configured to fix the vulnerable files.
+
+4. A server comprising the processor-readable medium as recited in claim 1.
+
+--- PAGE 2 ---
+A processor-readable medium comprising processor-executable instruction configured
+for:
+
+receiving, at a client computer, a binary signature of a vulnerable section in a binary file
+pushed down from a server, the binary signature being a bit pattern that is associated
+with a security vulnerability in a binary file;
+
+searching for the binary signature in binary files on the client computer to identify a
+vulnerable binary file;
+
+sending a request from the client computer to the server for a security patch if a
+vulnerable binary file is found that includes the binary signature;
+
+receiving the security patch from the server, and
+
+updating the vulnerable binary file with the security patch.
+
+A client computer comprising the processor-readable medium as recited in claim 5.
+
+A method performed by a computer comprising:
+
+receiving a binary signature of a vulnerable section in a binary file from a server at a
+client computer, the binary signature being a bit pattern that is associated with a security
+vulnerability in a binary file;
+
+searching for a vulnerable file based on the binary signature on the client computer to
+identify a vulnerable binary file, where the searching includes comparing the binary
+signature to binary information on a storage medium of the computer;
+
+if a vulnerable file is found, sending a request from the client computer to the server for
+the security patch, receiving the security patch from the server in response to the
+request; and
+
+fixing the vulnerable file with the security patch.
+
+A method as recited in claim 7, wherein the fixing includes installing the security patch on
+the client computer.
+
+A method as recited in claim 7, wherein the binary information is selected from the group
+comprising:
+
+an operating system;
+
+--- PAGE 3 ---
+10.
+
+11.
+
+an application program file; and
+
+a data file.
+
+A method as recited in claim 7, wherein the storage medium is selected from the group
+
+comprising:
+
+a hard disk;
+
+a magnetic floppy disk;
+
+an optical disk;
+
+a flash memory card;
+
+an electrically erasable programmable read-only memory; and
+network-attached storage.
+
+A method comprising:
+
+receiving, at a scan-patch server, a binary signature of a vulnerable section in a binary
+file and a security patch from a distribution server, the binary signature being a bit pattern
+that is associated with a security vulnerability in a binary file;
+
+searching, by the scan-patch server, on a client computer for a vulnerable binary file
+associated with the binary signature, wherein the searching includes comparing a bit
+pattern of the binary signature against binary files located on the client computer, if
+a vulnerable binary file is found, fixing, by the scan-patch server, the vulnerable binary
+file with the security patch.

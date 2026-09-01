@@ -1,0 +1,43 @@
+Title: Method for writing to a flash memory array during erase suspend intervals
+
+Abstract: Abstract
+A method for writing data to an entry in a portion of a flash EEPROM memory array during a period in which that portion of the array is being erased and writing is prohibited. The method includes writing the data to a new entry position apart from the portion of the array which is being erased along with a revision number which is greater than the revision number of the original data in the original portion of the array, writing of the busy condition of the original entry to a temporary storage position apart from the portion of the array which is being erased, and invalidating entries listed in the temporary storage position when the erase operation is concluded.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for writing data to an entry in a portion of a flash EEPROM memory array during a period in which the portion of the array is being erased and writing is prohibited, the method comprising the steps of:
+writing the data to a new entry position apart from the portion of the array which is being erased along with a revision number for the new entry which is greater than a revision number of the entry holding in the original data in the portion of the array being erased,
+writing an indication of the busy condition of the original entry to a temporary storage position apart from the portion of the array which is being erased,
+invalidating entries listed in the temporary storage position when the erase operation is concluded, and
+testing for duplicate entries when power is applied to the array to determine which entry is valid.
+2. A method for writing data to an entry in a portion of a flash EEPROM memory array during a period in which the portion of the array is being erased and writing is prohibited as claimed in claim 1 in which the step of writing the data to a new entry position apart from the portion of the array which is being erased along with a revision number for the new entry which is greater than a revision number of the entry holding in the original data in the portion of the array being erased comprises a step of incrementing the value of a revision number of the entry holding in the original data in the portion of the array being erased to obtain the value of a revision number for the new entry position.
+3. A method for writing data to an entry having a header and data in a portion of a flash EEPROM memory array during a period in which the portion of the array is being erased and writing is prohibited, the method comprising the steps of:
+receiving data to be written along with a logical sector number,
+looking up an old entry having the logical sector number,
+reading a header of the old entry for header data,
+attempting to write to invalidate the old entry,
+incrementing a revision number stored in header of old entry if old entry is busy,
+allocating free space in a different portion of the array for an entry including data to be written,
+writing a header including a pointer to data for a new entry for data,
+writing incremented revision number from old entry to the header of the new entry,
+writing data to the new portion of the array at the position defined by the pointer,
+marking a lookup table with the new physical address,
+writing to a sector busy table sector number of old entry which is unavailable if the old entry is busy,
+invalidating all entries listed in sector busy table when busy condition ends,
+testing for multiple valid entries on power up,
+if multiple valid entries are detected, selecting the highest revision number as valid, and
+invalidating all entries having lesser revision numbers.
+4. A method for writing data to a storage position during a period in which writing is prohibited to that storage position, the method comprising the steps of:
+writing the data to a new storage position apart from the storage position to which writing is prohibited,
+writing an indication of the condition of the storage position to which writing is prohibited to a temporary storage position apart from the storage position to which writing is prohibited, and
+invalidating data in any storage position listed in the temporary storage position when prohibition against writing is ended.
+5. A method for writing data to a storage position during a period in which writing is prohibited to that storage position as claimed in claim 4 further comprising the steps of:
+writing an indication at the new storage position that data at the new storage position is newer than data at the storage position to which writing is prohibited, and
+testing for duplicate entries at all storage positions after prohibition against writing is ended, and
+invalidating older ones of duplicate entries.
+6. A method for writing data to a storage position during a period in which writing is prohibited to that storage position as claimed in claim 5 in which the indication at the new storage position that data at the new storage position is newer than data at the storage position to which writing is prohibited comprises a revision number, and
+further comprising the step of:
+writing a revision number with each entry, and
+in which the step of writing an indication at the new storage position that data at the new storage position is newer than data at the storage position to which writing is prohibited comprises the step of incrementing a revision number of the storage position at which writing is prohibited to determine a revision number for the new storage position.

@@ -1,0 +1,487 @@
+--- PAGE 1 ---
+-36-
+
+MAIN REQUEST
+
+CLAIMS:
+
+1. A computer-implemented method for detecting a transaction outcome, the method
+comprising:
+
+obtaining video data associated with a transaction area;
+
+analyzing at least a portion of the video data to obtain at least one video parameter
+concerning at least a portion of a transaction associated with the transaction area, wherein the
+step of analyzing comprises automatically analyzing frames of video from at least one region of
+interest in the at least a portion of the video data to identify a respective event indicating the
+presence of an item associated with the transaction;
+
+obtaining at least one transaction parameter originated from a transaction terminal
+associated with the transaction area, wherein the step of obtaining comprises analyzing at least
+a portion of transaction data from a transaction terminal to identify a sequence of items
+identified as being transacted in the transaction; and
+
+automatically comparing the at least one video parameter to the at least one transaction
+parameter to identify a transaction outcome, wherein the step of automatically comparing
+comprises analyzing the sequence of items identified as being transacted in the transaction
+from the transaction data in comparison to the events produced from analysis of the video data
+to determine if the item represented by at least one event produced from the analysis of the
+video data is indicated as an item for transacting in the at least a portion of transaction data, and
+correlating video timestamps of events from the analysis of the video data to transaction
+timestamps of items reflected as having been transacted in the transaction data to identify
+events indicating an item in the video data that does not have a corresponding record in the
+transaction data,
+
+obtaining video data further comprising:
+
+obtaining video data originating from at least one elevated video camera that monitors
+a transaction area defining the region of interest; and
+
+wherein analyzing at least a portion of the video data comprises:
+
+analyzing the video data to track items involved in the transaction in the transaction
+area; and
+
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter to identify a transaction outcome comprises:
+
+comparing the video analysis of the tracked items to transaction data produced from a
+transaction terminal to identity suspicious activity, the comparison including associating
+scanned item data with video data such that the timestamp of the scan is synchronized with the
+timestamp of the video;
+
+wherein analyzing at least a portion of the video data comprises:
+
+defining at least one region of interest within the video data;
+
+calculating an object map that identifies a change between a current image of the at least
+
+--- PAGE 2 ---
+-37-
+
+one region of interest and an updated background image of the at least one region of interest;
+
+isolating at least one operator object within the at least one region of interest;
+
+detecting if an analysis of the object map and the operator object identifies at least
+one of the removal and introduction of an object to the at least one region of interest; and
+
+applying image adjustment processing to the video data to compensate for an
+autogain characteristic across an entire area of the video data, the image adjustment
+processing restricting its application to a portion of the region of interest captured within the
+video data;
+
+wherein applying image adjustment processing comprises:
+
+restricting focus to objects in the transaction area that remain stationary and that
+exhibit at least one of acolor shift and abrightness shift.
+
+2. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+producing a set of detection events indicating detection of items by at least one detector
+within at least one region of interest of at least one portion of the video data;
+
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter comprises:
+
+for each detector, comparing the set of detection events for that detector to at least a
+portion of transaction data to identify at least one apparent discrepancy in a number of items
+detected by that detector from a number of items indicated in the at least a portion of the
+transaction data; and
+
+identifying an overall suspicion level for the transaction based on apparent discrepancies
+
+identified by the at least one detector.
+
+3. The method of claim 2 wherein each detector is a video processing algorithm
+applied to a region of interest of the video data of the transaction area, and wherein
+comparing the set of detection events comprises:
+
+concurrently comparing at least one set of detection events from at least one detector
+with the at least a portion of transaction data to identify a discrepancy in a number of items
+
+processed in the transaction area.
+
+4. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+applying an automated machine-based video analysis technique to detect a video event
+of an item associated with the transaction area;
+
+wherein obtaining at least one transaction parameter concerning a transaction that
+occurs in the transaction area comprises:
+
+identifying transaction data indicating transaction events of items associated with the
+transaction area; and
+
+wherein automatically comparing the at least one video parameter to the at least one
+
+--- PAGE 3 ---
+- 38 -
+
+transaction parameter comprises:
+determining if the video event is not identified as a transaction event in the transaction
+data, and in response, identifying a specific segment of the video data that indicates where the
+
+video event not identified as a transaction event exists.
+
+5. The method of claim 4 wherein identifying a specific segment of the video data
+comprises:
+
+transmitting the specific segment of video data that indicates where the video event
+not identified as a transaction event exists to a reviewer to review the segment of video data
+to review the suspicious activity of an operator with respect to transacting of items during the
+transaction.
+
+6. The method of claim 5 wherein automatically comparing the at least one video
+parameter to the at least one transaction parameter comprises:
+
+assigning a suspicion level to the segment of video, the suspicion level indicating a level
+of suspicion produced from automated video analysis of video data in comparison to transaction
+
+data.
+7. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+defining a region of interest within the transaction area;
+
+automatically identifying a first frame of video data that indicates a first set of items in
+the region of interest;
+
+automatically identifying a second frame of video data that indicates a second set of
+items in the region of interest, the first set of items being visually distinct from the second set of
+items; and
+
+automatically indicating the visual distinctness of the first set of items from the second
+set of items as an event indicating an item existed within the region of interest of the video
+data; and
+
+wherein obtaining at least one transaction parameter comprises:
+
+obtaining transaction data associated with the transaction terminal associated with the
+transaction area, the transaction data indicating if the item was registered as a transaction
+item with the transaction terminal; and
+
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter comprises:
+
+identifying Suspicious activity when the transaction data is missing transaction data for
+
+an item for which an event indicates the item existed within the region of interest.
+
+8. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+defining a region of interest within the transaction area;
+
+--- PAGE 4 ---
+- 39 -
+
+automatically identifying a first set of items in the region of interest at a first time;
+automatically identifying a second set of items in the region of interest at a second
+time, the first set of items being visually distinct from the second set of items; and
+automatically indicating the visual distinctness of the first set of items from the second
+set of items as an event indicating an item existed within the region of interest of the video
+data; and
+wherein obtaining at least one transaction parameter comprises:
+obtaining transaction data associated with the transaction terminal
+associated with the transaction area, the transaction data indicating if the item was registered
+as a transaction item with the transaction terminal; and
+wherein automatically comparing the at least one video parameter to the at
+least one transaction parameter comprises:
+identifying suspicious activity when the transaction data is missing transaction
+data for an item for which an event indicates the item existed within the region of interest.
+
+9. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+performing video analysis of video captured of the transaction area to automatically detect
+and produce a video count, for at least one of:
+
+activity of objects that pass through the transaction area;
+
+activity of objects within a specific region of interest within the transaction area;
+
+activity of objects within a plurality of specific regions of interest within the
+transaction area;
+
+activity of objects entering into specific regions of interest within the transaction area;
+and
+
+activity of objects exiting the specific regions of interest within transaction area.
+
+10. The method of claim 9 wherein obtaining video data comprises:
+obtaining video data from at least one region of interest of the transaction area that is
+substantially level with a scanner region in the transaction area, the video data including an
+indication of items for transacting within the transaction area;
+wherein performing video analysis of video captured of the transaction area to
+automatically detect and produce acount of activity of object comprises at least one of:
+detecting activity related to objects including at least one of a customer, an operator and
+an item within the transaction area, the activity indicating the presence of an item for transacting
+within the transaction area, and ajiter detecting the activity, keeping a record of the presence of the
+
+item detected within the transaction area.
+
+11. The method of claim 1 wherein analyzing at least a portion of the video data comprises:
+performing image recognition of an item detected within the transaction area using
+automated video analysis to produce a video identity of an item; and
+
+--- PAGE 5 ---
+- 40 -
+
+wherein obtaining at least one transaction parameter comprises:
+identifying an expected item identity of an item detected within the transaction area; and
+wherein automatically comparing the at least one video parameter to the at least
+one transaction parameter comprises:
+comparing the video identity of the item to the expected identity of the item and if the
+video identity is different from the expected identity, indicating a transaction outcome that
+
+represents Suspicious activity.
+
+12. The method of claim 1 wherein automatically comparing the at least one video
+parameter to the at least one transaction parameter comprises at least one otf:
+detecting a transaction outcome that may be indicative of fraudulent activity associated
+with the transaction area; and
+detecting a transaction outcome that may be indicative of operator error associated with
+
+the transaction area.
+
+13. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+identifying motion of an operator within a region of interest in the transaction area that
+indicates the presence of an item for transacting within the region of interest; and
+
+wherein obtaining at least one transaction parameter comprises:
+
+indicating if a record of the item occurs within transaction data corresponding to
+identifying the motion of the operator; and
+
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter comprises:
+
+identifying a situation when motion of the operator within the region of interest in the
+transaction area indicates the presence of the item for transacting but the record of the item does
+
+not occur in the transaction data, and in response, indicating suspicious activity.
+
+14. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+identifying a video count of items detected within the transaction area using video
+analysis; and
+
+wherein obtaining at least one transaction parameter concerning atleast a portion of a
+transaction that occurs in the transaction area comprises:
+
+identifying a transaction count of items within the transaction area by analyzing
+transaction data associated with at least a portion of the transaction; and
+
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter comprises:
+
+comparing the video count to the transaction count and if the video count is different from
+the transaction count, indicating a transaction outcome that represents at least one of a fraudulent
+
+transaction and operator error.
+
+--- PAGE 6 ---
+-41-
+
+15. The method of claim 14 wherein automatically comparing the at least one video
+parameter to the at least one transaction parameter comprises:
+
+adjusting a suspicion level associated with the transaction outcome, the suspicion
+level being adjusted on the basis of at least one of:
+
+i) the amount of difference between the transaction count and the video count;
+
+ii) a history of an operator processing the transaction indicates that at least one
+former transaction has been identified for that operator that is indicated in the history as
+being suspicious;
+
+iii) a number of regions of interest in which an item were detected within the video data;
+
+iv) a sequence of detection of an item in the video data within different regions of
+interest within the transaction area;
+
+v) a discrepancy between a video identification of an item within the video data in
+comparison to a transaction identification of the item obtained from the transaction data, the
+transaction identification being at least one of price of the item and identity of the item;
+
+vi) history of a terminal performing the transaction; and
+vii) history of other items identified in the transaction that may be indicative of an
+item in the transaction for which transaction data may not be required;
+
+viii) the set of items included in the transaction data.
+
+16. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+detecting removal of an item from a first region of interest in the video data;
+detecting introduction of the item into a second region of interest in the video data after
+detecting removal of the item from the first region;
+wherein obtaining at least one transaction parameter comprises:
+obtaining transaction data produced by a transaction terminal; and
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter comprises:
+comparing the transaction data to identify if the item for which removal and
+introduction was detected is present in the transaction data as an item for transacting, and if
+
+not, providing an indication of suspicious activity related to the item.
+
+17. The method of claim 16 wherein analyzing at least a portion of the video data
+comprises:
+in response to detection of removal of an item and detection of introduction of an item,
+incrementing a video count to indicate presence of the item associated with the transaction;
+and
+wherein the method comprises:
+repeating detecting removal of an item, detecting introduction of an item and
+
+incrementing a video count until a transaction is complete, the video count upon completion of
+
+--- PAGE 7 ---
+- 42 -
+
+the transaction indicating a total number of items identified in the transaction from analysis of
+
+the video data.
+
+18. The method of claim 1 wherein defining at least one region of interest comprises:
+
+defining an object input area as a first region of interest;
+
+defining an object output area as a second region of interest; and
+
+wherein detecting at least one of an object removal event and an object introduction
+event comprises:
+
+detecting an object removal event when an operator removes an object from the object
+input area;
+
+detecting an object introduction event when an operator places an object in the object
+output area; and
+
+in response to detecting a removal event followed by an introduction event, incrementing
+
+a video count as the at least one video transaction parameter.
+
+19. The method of claim 1 wherein at least one of the at least one region of interest includes a
+conveyor belt that translates a position of objects on the conveyor belt over time as captured
+within current and previous frames of video data; and
+
+wherein analyzing at least a portion of the video data comprises:
+
+correlating previous and current frames of video data within the region of interest to
+determine an amount of translation of the position of objects on the conveyor belt; and
+
+accounting for the amount of translation of the position of objects on the conveyor belt
+
+when detecting at least one of an object removal event and an object introduction event.
+
+20. The method of claim 1 wherein analyzing at least a portion of the video data comprises:
+performing image comparison to determine if an image of an item associated with at
+least one of the introduction event and the removal event substantially matches a previously
+stored image of an item;
+if the images do not substantially match, identifying the transaction as potentially including
+
+a label switching event indicating one of potential suspicious activity and potential operational
+
+error.
+21. The method of claim 1 wherein analyzing at least a portion of the video data
+comprises:
+
+dividing the transaction area into a plurality of regions through which objects move in
+sequence during at least a portion of a transaction;
+
+performing automated video detection of an item as the items move through the plurality
+of regions in a sequence to obtain a pattern represented by the at least one video parameter, the
+pattern representing video events of items that moved through the plurality of regions during at
+least a portion of the transaction;
+
+wherein obtaining at least one transaction parameter comprises:
+
+--- PAGE 8 ---
+- 43 -
+
+obtaining a transaction data identifying items detected by a transaction terminal during
+at least a portion of the transaction; and
+
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter comprises:
+
+determining if the pattern representing video events of items from at least a portion of
+the transaction indicates a discrepancy from the transaction data identifying items detected by
+the transaction terminal during the at least a portion of transaction, and if so, identifying the
+
+transaction outcome to be a suspicious transaction.
+
+22. The method of claim 21 wherein performing automated video detection of the items
+comprises:
+
+identifying a removal event in an item input region that indicates an operator has
+removed an item from the item input region; and
+
+identifying an introduction event in an item output area that indicates an operator has
+
+placed an item into the item output region.
+
+23. Asystem for identifying suspicious retail transaction activity, the system comprising:
+
+at least one elevated video source operable to capture video data of a transaction
+area;
+
+at least one transaction terminal operable to obtain transaction data from items when the
+items are placed within a proximity to the transaction terminal during a transaction; and
+
+a transaction monitor operable to obtain the video data originating from at least one
+elevated video camera and to automatically analyze the video data to track items involved in a
+transaction in the transaction area, wherein the transaction monitor is operable to automatically
+analyze frames of video from at least one region of interest in at least a portion of the video
+data to identify a respective event indicating the presence of an item associated with the
+transaction and to compare the video analysis of the tracked items to transaction data
+produced from a transaction terminal to identify suspicious activity related to items, wherein the
+transaction monitor is operable to analyze a sequence of items identified as being transacted in
+the transaction from a transaction data in comparison to events produced from analysis of the
+video data to determine if the item represented by at least one event produced from the
+analysis of the video data is indicated as an item for transacting in the at least a portion of
+transaction data, and wherein the transaction monitor is operable to correlate video timestamps
+of events from the analysis of the video data to transaction timestamps of items reflected as
+having been transacted in the transaction data to identify events indicating an item in the video
+data that does not have a corresponding record in the transaction data,
+
+obtaining video data further comprising:
+
+obtaining video data originating from at least one elevated video camera that monitors a
+transaction area defining the region of interest; and
+
+wherein analyzing at least a portion of the video data comprises:
+
+analyzing the video data to track items involved in the transaction in the transaction area;
+
+--- PAGE 9 ---
+- 44 -
+
+and
+wherein automatically comparing the at least one video parameter to the at least one
+transaction parameter to identify a transaction outcome comprises:
+comparing the video analysis of the tracked items to transaction data produced from a
+transaction terminal to identity suspicious activity, the comparison including associating
+scanned item data with video data such that the timestamp of the scan is synchronized with the
+timestamp of the video;
+wherein analyzing at least a portion of the video data comprises:
+defining at least one region of interest within the video data;
+calculating an object map that identifies a change between a current image of the
+at least one region of interest and an updated background image of the at least one region
+of interest;
+isolating at least one operator object within the at least one region of interest;
+detecting if an analysis of the object map and the operator object identifies at least
+one of the removal and introduction of an object to the at least one region of interest; and
+applying image adjustment processing to the video data to compensate for
+an autogain characteristic across an entire area of the video data, the image
+adjustment processing restricting its application to a portion of a region of interest
+captured within the video data.
+wherein applying image adjustment processing comprises:
+restricting focus to objects in the transaction area that remain stationary and
+
+that exhibit at least one of acolor shift and a brightness shift.

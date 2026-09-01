@@ -1,0 +1,75 @@
+TITLE:
+Method and system for managing execution of licensed programs
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A distributed computer system employs a license management system to account for software product usage. A management policy having a variety of alternative styles and contexts is provided. Each licensed program upon start-up makes a call to a license server to check on whether usage is permitted, and the license server checks a database of the licenses, called product use authorizations, that it administers. If the particular use requested is permitted, a grant is returned to the requesting user node. The product use authorization is structured to define a license management policy allowing a variety of license alternatives by values called "style", "context", "duration" and "usage requirements determination method". The license administration may be delegated by the license server to a subsection of the organization, by creating another license management facility duplicating the main facility. The license server must receive a license document (a product use authorization) from an issuer of licenses, where a license document generator is provided. A mechanism is provided for one user node to make a call to use a software product located on another user node; this is referred to as a "calling card", by which a user node obtains permission to make a procedure call to use a program on another node.
+
+CLAIMS:
+1. A method executed in a computer system for managing access to software items, the method comprising the steps of:
+maintaining a store of license authorizations for software items, each of said license authorizations including an identification of a corresponding software item and one or more policy components used to define a license management policy for said corresponding software item, each of said license authorizations including a number of units of license use, and wherein said policy components defining said license management policy include a policy component identifying an allocative policy and a consumptive policy, said allocative policy permitting return of units allocated to a client after the client completes a requested use making said units returned available for use by another client, and said consumptive policy not permitting return of units;
+sending a request from a client executing in said computer system to a server to obtain access to said software item, said request including data identifying said client and said software item;
+retrieving from said store, in response to said request, a license authorization corresponding to said software item;
+determining whether to grant or refuse said request in accordance with said license authorization; and
+sending a response to said client indicating whether said request has been granted or refused.
+2. The method of claim 1 wherein said store is maintained by a license server, said request is sent to said license server, and said response is produced and sent by said license server.
+3. The method of claim 2 wherein said license authorization is a data arrangement received by said license server from a license issuer.
+4. The method of claim 2 wherein said license server and said client reside on nodes on a computer network.
+5. The method according to claim 4 wherein said request is sent by said client as a remote procedure call, and said response sent to said client is in a return of said remote procedure call.
+6. The method of claim 1 wherein each of said license authorizations includes a number of units available for use, each of said units being an arbitrary quantitative measure of software item usage in said computer system, and each of said policy components includes a plurality of ways of allocating a portion of said units to a client.
+7. The method of claim 1 wherein one of said policy components is a context including one or more values identifying an environment in which said software item is used, and wherein said request includes at least one element that corresponds to one of said values identifying the environment for which said client is requesting and identifies the environment for which said client is requesting use of said software item.
+8. The method of claim 7 wherein said context further includes a platform context describing a computer platform upon which said software item is used, said platform context identifying at least one of the following: a login domain, a node in the computer system, a user name, a product name, an operating system, an execution domain, or a type of computer processor.
+9. The method of claim 8 wherein said context further includes an application context identifying an element which is supplied by said software item.
+10. The method of claim 8 wherein said context is a context name formed by concatenating a plurality of data values.
+11. The method of claim 1 wherein said policy components associated with a corresponding software item include:
+a style component providing alternate ways of allocating license units, said license units being a quantitative measure of usage of said corresponding software item;
+a context component identifying an environment in which said corresponding software item is used; and
+a usage requirement component providing alternative ways of determining a usage requirement for a client and wherein said request includes a plurality of elements associated with said style component, said context component, and said usage requirement component.
+12. The method of claim 1 wherein said step of determining whether to grant or refuse said request includes the step of:
+comparing said identification of said client and said software item included in said request with other data describing said software item included in said license authorization retrieved from said store.
+13. The method of claim 1 wherein said policy components define a plurality of licensing alternatives.
+14. The method of claim 1 further including the steps of:
+receiving a release allocation request from said client executing in said computer system to release access to an allocated software item; and
+modifying, in response to said receiving step, one of said license authorizations corresponding to said allocated software item in accordance with said release allocation request.
+15. A system for managing the execution of software products in a computer system, the system comprising:
+means for maintaining a store of license documents for software products, each of said license documents including an identification of a corresponding software product and one or more policy components used to define a license management policy for said corresponding software product, each of said license documents including a number of units of license use, and wherein said policy components defining said license management policy include a policy component identifying an allocative policy and a consumptive policy, said allocative policy permitting return of units allocated to a client after the client completes a requested use making said units returned available for use by another client, and said consumptive policy not permitting return of units;
+means for sending a request from said client executing in a computer system to a server to obtain permission to use said software product, said request including data identifying said client and said software product;
+means for retrieving, in response to said means for send a request, a license document from said store that corresponds to said software product;
+means for determining, using said license document, whether to grant or refuse said request; and
+means for sending a response to said client indicating whether said request has been granted or refused.
+16. The system of claim 15 wherein said means for maintaining, said means for retrieving and said means for sending a response to said client are included in a license server in a distributed computing environment, and said means for sending a request from a client is included in a client node in said distributed computing environment.
+17. The system of claim 16 wherein said request is a remote procedure call, and said response sent to said client is included in a return of said remote procedure call.
+18. The system of claim 16 wherein said license document is a data arrangement received by said license server from a license issuer.
+19. The system of claim 15 wherein one of said policy components is a context that includes a platform context describing a computer platform upon which said software product is used, said platform context identifying at least one of the following: a login domain, a node in the computer system, a user name, a product name, an operating system, an execution domain, or a type of computer processor.
+20. The system of claim 19 wherein said context further includes an application context identifying an element which is supplied by said software product.
+21. The system of claim 15 wherein said policy components associated with a corresponding software product include:
+a style component providing alternate ways of allocating license units, said license units being a quantitative measure of usage of said corresponding software product:
+a context component identifying an environment in which said corresponding software product is used; and
+a usage requirement component providing alternative ways of determining a usage requirement for a client, and wherein said request includes a plurality of elements associated with said style component, said context component, and said usage requirement component.
+22. The system of claim 15 further including:
+means for receiving a release allocation request from said client to release access to an allocated software item; and
+means, coupled to said receiving means, for modifying one of said license authorizations corresponding to said allocated software item in accordance with said release allocation request.
+23. A method executed in a computer system for managing licensed software comprising the steps of:
+generating, by a license issuer, a license authorization for each software product licensed software;
+sending said license authorization to a license manager;
+maintaining, by a license manager, a database of license authorizations generated by said license issuer, wherein each of said license authorizations in said database includes a first portion identifying a corresponding software product and a second portion identifying a license management policy for said corresponding software product, said second portion having multiple policy components including client characteristics one of said policy components being a context including one or more values identifying an environment in which said corresponding software product is used, said context including an application context identifying an element which is supplied by said corresponding software product;
+sending, to said license manager, a request by a client to obtain permission to use a software product, said request containing data identifying the client;
+retrieving, by said license manager in response to said request, a license authorization from said database corresponding to said software product;
+determining, using said license authorization and at least one of said policy components, whether to grant or refuse said request;
+sending, from said license manager to said client, a response indicating whether said request has been granted or refused; and
+determining, using said application context, whether the client may use said corresponding software product.
+24. The method of claim 23 wherein said license manager is a license server, said request is sent to said license server, and said client and said license server are included in a distributed computer system.
+25. The method of claim 24 wherein said request is sent by said client as a remote procedure call, and said response sent to said client is included in a return of said remote procedure call.
+26. The method of claim 23 wherein said license authorization defines a license use period having a start time and end time and said license manager uses said start time and said end time to determine whether to grant or refuse said request.
+27. A memory storing a computer program for managing access to software items comprising:
+means for maintaining a store of license authorizations for said software items, each of said license authorizations including an identification of a corresponding software item and one or more policy components used to define a license management policy for said corresponding software item, one of said policy components being a platform context describing a computer platform upon which said software product is used, said platform context identifying at least one of the following: a login domain, a node in the computer system, a user name, a product name, an operating system, an execution domain, or a type of computer processor;
+means for sending a request from said client executing in a computer system to a server to obtain permission to use said software item, said request including data identifying the client and the software item;
+means for retrieving, in response to said means for sending a request, a license authorization from said store that corresponds to said software item;
+means for determining, using said license authorization, whether to grant or refuse said request; and
+means for sending a response to said client indicating whether said request has been granted or refused.
+28. The memory of claim 27 wherein said policy components being used to define a plurality of license alternatives.
+29. The memory of claim 27 further comprising:
+means for receiving a release allocation request from said client to release access to an allocated software item; and
+means, coupled to said receiving means, for modifying one of said license authorizations corresponding to said allocated software item in accordance with said release allocation request.

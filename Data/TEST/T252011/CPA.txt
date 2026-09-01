@@ -1,0 +1,40 @@
+Title: Configuring and managing resources on a multi-purpose integrated circuit card using a personal computer
+
+Abstract: The systems and methods provide for configuring and managing resources on a multi-purpose IC card. In one aspect, a user interface (UI) for an application is presented on a display device. A user is enabled via at least one graphical dialog screen of the UI to configure a communicatively coupled IC card. Management of one or more resources on the IC card is facilitated via at least one graphical dialog screen of the UI.
+
+Type: US Patent
+
+Claims: 
+
+1. A method comprising:
+presenting a user interface (UI) for an application on a display;
+enabling a user, via at least one graphical dialog screen of the UI, to configure a communicatively coupled IC card; and
+facilitating management of one or more resources on the IC card via at least one graphical dialog screen of the UI.
+2. A method as recited in claim 1, wherein the application does not implement hardware specific code to configure or manage the IC card.
+3. A method as recited in claim 1, wherein the IC card is a smart card.
+4. A method as recited in claim 1, further comprising representing, by the application, one or more IC card resources with one or more graphical icons.
+5. A method as recited in claim 1, further comprising enabling a user to add or delete IC card resources by manipulating graphical icons associated with the IC card resources, the adding or deleting being performed independent of direct access, by the application, to the IC card resources.
+6. A method as recited in claim 5, wherein the direct access is performed by an operating system service layer that is independent of the application.
+7. A method as recited in claim 5, wherein the direct access is facilitated by a card management service layer that is independent of the application.
+8. A method as recited in claim 1, further comprising configuring, by the application, IC card resources after manufacture of the IC card.
+9. A method as recited in claim 1, further comprising providing application access via application independent cryptographic functionality based on a cryptographic key stored in a memory of the IC card.
+10. A computer-readable storage medium comprising computer-program instructions executable by a processor, the computer-program instructions comprising instructions for:
+implementing an application comprising a user interface (UI);
+presenting, by the UI, at least one graphical dialog screen on a display to enable a user to configure a communicatively coupled IC card and to manage one or more resources on the IC card.
+11. A computer-readable storage medium as recited in claim 10, wherein the IC card is a smart card.
+12. A computer-readable storage medium as recited in claim 10, wherein the instructions do not implement hardware specific code for accessing the IC card.
+13. A computer-readable storage medium as recited in claim 10, wherein the computer-program instructions further comprise instructions for representing one or more IC card resources with one or more graphical icons.
+14. A computer-readable storage medium as recited in claim 10, wherein the computer-program instructions further comprise instructions for:
+enabling a user to add or delete IC card resources by manipulating graphical icons associated with the IC card resources; and
+wherein the adding or deleting is independent of direct access, by the instructions, to the IC card resources.
+15. A computer-readable storage medium as recited in claim 10, wherein the computer-program instructions further comprise instructions for re-configuring IC card resources after manufacture of the IC card.
+16. A computer-readable storage medium as recited in claim 10, wherein at least a portion of the computer-program instructions provide a service layer for an operating system.
+17. A computer-readable storage medium as recited in claim 10, wherein at least a portion of the computer-program instructions are supported by a cryptographic function using a cryptographic key stored in a memory of the IC card.
+18. A computer-readable storage medium as recited in claim 10, wherein the cryptographic function is provided by a cryptographic services module that is independent of the computer-program instructions.
+19. A computing device comprising:
+a processor; and
+a memory comprising computer-program instructions executable by the processor for:
+presenting a user interface (UI) for an application on a display device;
+enabling a user via at least one graphical dialog screen of the UI to configure a communicatively coupled IC card; and
+facilitating management of one or more resources on the IC card via at least one graphical dialog screen of the UI.
+20. A computing device as recited in claim 19, wherein the application does not implement hardware specific code to configure or manage the IC card.

@@ -1,0 +1,146 @@
+--- PAGE 1 ---
+EP Application No.: 15 165 653.5
+
+Applicant: Samsung Electronics Co., Ltd.
+Our Ref.: EP100234-UW178
+Date: January 17, 2022
+
+NEW CLAIMS — MAIN REQUEST (clean copy)
+
+An apparatus (100, 400, 500, 600, 900) for structuring a web page access history, the
+
+apparatus comprising:
+
+a topic extractor (110, 510, 910) configured to analyze a web page (211, 212, 213, 214,
+
+215, 216) accessed by a user to extract at least one topic (220) related to the page:
+
+a mapper (120, 920) configured to map the at least one extracted topic onto a node (241,
+242, 243, 244, 245, 246, 247, 248) of an ontology-based data structure (230);
+
+characterized by
+
+a summary graph generator (130, 530) configured to extract a sub graph (240) including
+the mapped node from the data structure, and to generate a summary graph (250) in real
+time based on the extracted sub graph, wherein the summary graph generator is
+configured to generate the summary graph by storing information for accessing web
+pages, from which each topic is extracted, in each node of the sub graph onto which each
+
+topic is mapped.
+
+The apparatus (100, 400, 500, 600, 900) of claim 1, wherein the topic extractor (110, 510,
+910) is configured to extract the at least one topic from the web page (211, 212, 213, 214,
+215, 216) by using at least one of a topic word approach, a lexical chain approach, a latent
+semantic analysis, LSA, a probabilistic latent semantic analysis, PLSA, and full blown
+
+Bayesian topic models.
+
+The apparatus (100, 400, 500, 600, 900) of claim 1 or 2, wherein the ontology-based data
+
+structure is based on an ontology model generated in advance outside the apparatus.
+
+--- PAGE 2 ---
+The apparatus of one of claims 1 to 3, wherein the information for accessing web pages
+comprises at least one of a uniform resource locator, URL, a uniform resource name, URN,
+
+and a thumbnail image of a web page hyperlinked to a URL or URN.
+
+The apparatus (100, 400, 500, 600, 900) of one of claims 1 to 4, further comprising one of
+a session manager (410, 610) configured to manage the at least one web page (211, 212,
+213, 214, 215, 216) in a session to enable the summary graph to be generated in a
+session, an access history collector (420, 620) configured to collect an access history of
+the at least one web page (211, 212, 213, 214, 215, 216), and a summary graph integrator
+(430, 630) configured to integrate a plurality of summary graphs to generate an integrated
+
+summary graph.
+
+A method (700, 800) of structuring a web page access history, the method comprising:
+
+extracting (710, 810), by a topic extractor (110, 510, 910), at least one topic (220) from at
+least one web page (211, 212, 213, 214, 215, 216) accessed by a user,
+
+analyzing (820), by a semantic relations analyzer (520), semantic relations between the
+
+at least one extracted topic and other extracted topic;
+characterized by
+
+generating (740, 840), by a summary graph generator (130, 530), a Summary graph in real
+
+time based on the semantic relations, wherein the step of generating comprises:
+
+generating (830) a semantic relations graph by matching each of the topics to nodes based
+on the analyzed semantic relations between topics, and by matching the semantic
+relations between the topics to edges that connect the nodes corresponding to each of the
+
+topics; and
+
+generating the summary graph by storing information for accessing web pages, from which
+each of the topics is extracted, in the nodes of the semantic relations graph that
+
+correspond to each of the topics.
+
+--- PAGE 3 ---
+10.
+
+11.
+
+12.
+
+The method (700, 800) of claim 6, wherein the step of analyzing comprises analyzing (820)
+
+semantic relations between topics based on a pre-established ontology model.
+
+The method of claim 6 or 7, wherein the information for accessing the web page comprises
+at least one of a uniform resource locator, URL, a uniform resource name, URN, and a
+
+thumbnail image of a web page hyperlinked to a URL or URN.
+
+The method (700, 800) of one of claims 6 to 8, further comprising managing, by a session
+manager (410), the least one web page (211, 212, 213, 214, 215, 216) in a session to
+
+enable the summary graph to be generated in a session.
+
+The method of one of claims 6 to 9, further comprising collecting, by an access history
+collector (420, 620), an access history of the at least one web page (211, 212, 213, 214,
+215, 216).
+
+The method (700, 800) of one of claims 6 to 10, further comprising integrating, by a
+summary graph integrator (430, 630), a plurality of summary graphs to generate an
+
+integrated summary graph.
+
+A computer-readable medium having instructions that, when performed by a processor,
+cause the processor to operate a topic extractor (110, 510, 910) to extract a topic (220)
+from a web page (211, 212, 213, 214, 215, 216) accessed through a browser:
+
+the instructions, when performed by the processor, further cause the processor to operate
+a mapper (120, 920) to map the topic onto an ontology-based data structure; and a data
+structure update processor (930) to update the data structure with information for
+accessing the web page, and to generate a summary graph in real time based on a sub
+graph (240) of the data structure by storing information for accessing web pages in the
+
+nodes of the sub graph.
+
+--- PAGE 4 ---
+13.
+
+14.
+
+15.
+
+The computer-readable medium of claim 12, the data structure update processor
+comprising a summary graph generator (130, 530), wherein said summary graph
+generator is operated to generate a summary graph storing the information for accessing
+the web page based on a portion of the data structure including the topic mapped to the
+
+data structure, and the data structure is stored in a memory.
+
+The computer-readable medium of claim 13, further comprising instructions to cause an
+access history retrieval processor (940) to provide a user interface on a display screen for
+
+retrieving a web page access history.
+
+The computer-readable medium of claim 14, further comprising instructions to cause the
+access history retrieval processor to allow a user to select a time period and to allow the
+
+user to select a web page based one or more topic related to the web page.

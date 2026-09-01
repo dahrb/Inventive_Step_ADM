@@ -1,0 +1,52 @@
+Title: Method and apparatus for rule triggered mobile advertising
+
+Abstract: An advertising subsidized communication service is provided that can be utilized by eligible subscribers in instances designated by mobile operators or advertisers. An eligible subscriber that meets certain criteria, such as having a low pre-paid balance, can opt-in to an advertising subsidized service initiated through an SCP proxy for the advertising service platform. The subscriber receives advertising through selected channels, such as voice injection, text messaging or other media, which advertising subsidizes subscriber communication service. The subsidized service may be limited in some regard to number of calls, call duration or incoming calls, as examples. The subscriber may be automatically opted-out of the subsidized service upon payment being applied to a pre-paid for post-paid service account. The opt-in process for subsidized service occurs in real-time and may be prompted through a number of channels, such as voice or text messages.
+
+Type: US Patent
+
+Claims: 
+
+1. A system for providing an advertising subsidized communication service, comprising:
+a service control point (SCP) that is responsive to messages from a mobile operator communication network to process a call by a user for an advertising subsidized communication service;
+a business logic resource that is communicatively coupled to the SCP to provide a user status for receiving advertising subsidized communication service and to provide an advertising delivery configuration;
+an advertising delivery mechanism that is communicatively coupled to the mobile operator communication network to deliver an ad through a communication channel indicated by the advertising delivery configuration; and
+wherein the SCP is operative to cause the advertising delivery mechanism to deliver an ad associated with the call as indicated by the advertising delivery configuration when the user status indicates that the user is eligible for an advertising subsidized communication service.
+2. The system according to claim 1, wherein the communication channel is a voice channel.
+3. The system according to claim 2, wherein the ad delivery is achieved by intercepting a voice call and providing a voice message at a predetermined time in relation to when the voice call is made.
+4. The system according to claim 1, wherein the communication channel is a text messaging channel.
+5. The system according to claim 4, wherein the ad delivery is achieved by intercepting a text message and inserting the ad in the text message.
+6. The system according to claim 1, wherein the SCP provides a message to the mobile operator communication network to identify the advertising delivery mechanism as an ad source, such that the mobile operator communication network can access the advertising delivery mechanism to permit delivery of the ad.
+7. The system according to claim 1, wherein the SCP provides a message to the advertising delivery mechanism to cause the advertising delivery mechanism to deliver the ad associated with the call.
+8. The system according to claim 1, further comprising an interactive voice response (IVR) component that is responsive to messages from the mobile operator communication network to indicate to the business logic resource that the user is eligible to receive advertising subsidized communication service.
+9. The system according to claim 1, wherein the SCP is a pre-paid SCP in the mobile operator communication network.
+10. The system according to claim 1, wherein the SCP is provided in a mobile advertising platform as a secondary SCP.
+11. The system according to claim 10, further comprising a home location register (HLR) provisioning agent communicatively coupled to the business logic resource and being operative to provide a request to the mobile operator communication network to direct messages for processing the call by the user for the advertising subsidized communication service to the SCP.
+12. The system according to claim 1, further comprising a text message origination resource communicatively coupled to the business logic resource and being operative to provide a text message to the mobile operator communication network for delivery to a destination indicated by the advertising delivery configuration provided by the business logic resource.
+13. The system according to claim 1, further comprising a user interface communicatively coupled to the business logic resource to permit modification of the advertising delivery configuration.
+14. The system according to claim 1, wherein the user is associated with one or more of a pre-paid or a postpaid account on the mobile operator communication network.
+15. A computer implemented method for providing an advertising subsidized communication service, comprising:
+providing an indication to a mobile communication device related to user eligibility for receiving advertising subsidized communication service;
+receiving an indication from the mobile communication device to accept advertising subsidized communication service;
+assigning an advertising delivery configuration to the mobile communication device;
+receiving a signal related to a call involving the mobile communication device; and
+providing an ad to a destination in accordance with the advertising delivery configuration.
+16. The method according to claim 15, further comprising providing the ad via a voice channel.
+17. The method according to claim 16, further comprising:
+intercepting a voice call; and
+providing a voice message at a predetermined time in relation to when the voice call is made.
+18. The method according to claim 15, further comprising providing the ad via a text messaging channel.
+19. The method according to claim 18, further comprising:
+intercepting a text message; and
+inserting the ad in the text message.
+20. The method according to claim 15, further comprising providing a text message to the destination after the call ends.
+21. The method according to claim 15, further comprising providing a message to a mobile operator communication network to indicate a resource that can provide the ad.
+22. The method according to claim 15, further comprising providing a message to a resource that can provide the ad to deliver the ad in accordance with the advertising delivery configuration.
+23. The method according to claim 15, further comprising providing a request to a mobile operator communication network to cause the signal related to the call involving the mobile communication device to be directed to a mobile advertising platform.
+24. The method according to claim 15, wherein the mobile communication device is associated with either a pre-paid or post-paid account.
+25. The method according to claim 15, further comprising:
+receiving an indication of non-eligibility for receiving advertising subsidized communication service related to the mobile communication device; and
+modifying the advertising delivery configuration to avoid providing an ad to the destination associated with the advertising delivery configuration.
+26. A computer implemented method for providing an advertising subsidized communication service, comprising:
+receiving a signal related to a call involving a pre-paid mobile communication device that is associated with an account with a balance below a predetermined threshold;
+determining an ad to provide to a destination related to the pre-paid mobile communication device in accordance with business logic that describes advertising that is available to the pre-paid communication device; and
+providing the ad to the destination.

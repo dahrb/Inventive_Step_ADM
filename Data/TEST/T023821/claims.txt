@@ -1,0 +1,215 @@
+--- PAGE 1 ---
+Oo CO YD WB WwW BR WW YN
+
+yo NO KN FEF HF FEF HE FE HES i Ee EES El
+YY FKF& OD OO DWH DH FP WD NY KS OD
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A system, comprising:
+
+means for receiving a continuous query configured to process a stream of event
+data, the continuous query including an identifier of the stream and an identifier of
+historical data associated with the stream, and the stream comprising change notifications
+of changes in a data store;
+
+means for generating a query graph based at least in part on the continuous query,
+the query graph including at least a node representing an operator of the continuous
+query;
+
+means for executing a plurality of instructions to at least traverse the query graph
+in a topological order to identify a lowest stateful operator;
+
+means for determining historical data in a data store with which to initialize the
+continuous query based at least in part on the lowest stateful operator of the continuous
+query,
+
+means for establishing a change notification listener to listen for change
+notifications of the data store, and buffering the change notifications in a messaging
+service until the continuous query is initialized;
+
+means for initializing the continuous query with at least a portion of the historical
+data at the lowest stateful operator identified in the query graph;
+
+means for evaluating the continuous query with respect to the stream and based at
+least in part on the historical data; and
+
+means for processing the buffered change notifications of the data store after
+
+initializing the continuous query.
+
+2. The system of claim 1, wherein the data stream comprises a relation configured
+
+with a window for referencing a portion of the data stream within the window, wherein the
+
+window is configured to move along the data stream with time.
+
+3. The system of claim 1 or 2, wherein the historical data is not included in the data
+
+stream at a time after initializing the query.
+
+58
+
+--- PAGE 2 ---
+RW NY RK WwW N
+
+0 OYA WwW Rw we |
+
+S =e Se = =
+KR WH NO KS OO
+
+MAIN REQUEST
+
+4. The system of any one of claims 1 to 3, wherein the query further identifies the
+
+historical data.
+
+5. The system of any one of claims | to 4, wherein the historical data comprises
+
+business event data from the data stream at a time before initializing the query.
+
+6. The system of any one of claims | to 5, wherein at least one of the nodes
+
+identifies a window size.
+
+7. The system of claims 1 to 6, further comprising means for identifying a
+configurable window size, wherein the query is initialized based at least in part on the
+configurable window size, and wherein the evaluation of the query includes at least applying the
+
+query against the data stream based at least in part on the configurable window size.
+
+8. The system of any one of claims | to 7, wherein the data stream comprises a
+relation configured with a second configurable window size for referencing a portion of the data
+stream within a second window with a size based at least in part on second configurable window
+
+size, wherein the second window is configured to move along the data stream with time.
+
+9. A computer-readable program storing a plurality of instructions executable by one
+
+or more processors, the plurality of instructions comprising:
+
+instructions that cause the one or more processors to receive a continuous query
+configured to process a stream of event data, the continuous query including at least one of an
+identifier of the data stream and an identifier of historical data associated with the stream, and
+the stream comprising change notifications of changes in a data store;
+
+instructions that cause the one or more processors to generate a query graph based at least
+in part on the continuous query, the query graph including at least a node representing an
+operator of the continuous query;
+
+instructions that cause the one or more processors to traverse the query graph in
+topological order to identify a lowest stateful operator;
+
+instructions that cause the one or more processors to determine historical data in a data
+store with which to initialize the continuous query based at least in part on the lowest stateful
+
+operator of the continuous query;
+
+59
+
+--- PAGE 3 ---
+15
+16
+17
+18
+19
+20
+21
+22
+23
+
+NID Wn HBP WwW WN
+
+—
+
+0 © aT DW Wn FP YW WN
+
+MAIN REQUEST
+
+instructions that cause the one or more processors to establish a change notification
+listener to listen for change notifications of the data store, and buffering the change notifications
+in a messaging service until the continuous query is initialized;
+
+instructions that cause the one or more processors to initialize the continuous query with
+at least a portion of the historical data at the lowest stateful operator;
+
+instructions that cause the one or more processors to evaluate the continuous query with
+respect to the stream and based at least in part on the historical data; and
+
+instructions that cause the one or more processors to process the buffered change
+
+notifications of the data store after initializing the continuous query.
+
+10. The computer-readable program of claim 9, wherein at least one of the data
+stream or the historical data are identified by a data definition language annotation of the
+continuous query, wherein the data definition language annotation identifies at least one of a
+location of the historical data, a source of the data stream, a data object associated with the data
+stream, operation information associated with processing the continuous query, one or more
+relevant columns of a database corresponding to the historical data, a data object corresponding
+
+to output of the continuous query, or a location for providing the output of the continuous query.
+
+11. The computer-readable program of claim 9, wherein the query graph includes at
+
+least nodes representing operators of the continuous query.
+
+12. A method, comprising:
+
+receiving a continuous query configured to process a stream of event data, the continuous
+query including an identifier of the stream and an identifier of historical data associated with the
+stream, and the stream comprising change notifications of changes in a data store;
+
+generating a query graph based at least in part on the continuous query, the query graph
+including at least a node representing an operator of the continuous query;
+
+traversing the query graph in a topological order to identify a lowest stateful operator;
+
+determining historical data in a data store with which to initialize the continuous query
+
+based at least in part on the lowest stateful operator of the continuous query;
+
+60
+
+--- PAGE 4 ---
+10
+1]
+12
+13
+14
+15
+16
+17
+18
+
+MAIN REQUEST
+
+establishing a change notification listener to listen for change notifications of the data
+store, and buffering the change notifications in a messaging service until the continuous query is
+initialized;
+
+initializing the continuous query with at least a portion of the historical data at the
+identified lowest stateful operator;
+
+evaluating the continuous query with respect to the stream and based at least in part on
+the historical data; and
+
+processing the buffered change notifications of the data store after initializing the
+
+continuous query.
+
+13. The method of 12, wherein the historical data includes business event data from a
+
+previous point in time of the stream.
+
+14. The method of claim 12, further comprising determining an optimal amount of the
+historical data with which to initialize the continuous query based at least in part on the operator
+
+of the continuous query.
+
+15. The method of claim 12, wherein the lowest stateful operator is identified based at
+
+least in part on evaluating at least one node of the continuous query.
+
+61

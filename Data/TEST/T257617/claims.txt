@@ -1,0 +1,95 @@
+--- PAGE 1 ---
+Main Request
+
+1. A method for evaluating clinical acceptability of reference data in a substantially continuous
+glucose monitoring system prior to accepting the data as valid entries to be processed by the
+substantially continuous glucose monitoring system, the method including:
+
+receiving a data stream from a substantially continuous analyte sensor, including one
+or more sensor data points;
+
+receiving reference data from a reference analyte monitor, including one or more
+reference data points; and
+
+evaluating the clinical acceptability of the reference data with respect to
+substantially time corresponding sensor data points, wherein the reference
+data is evaluated for deviation from its substantially time corresponding
+sensor data, and wherein the evaluating the clinical acceptability further
+comprises using a_clinical risk associated with that deviation based on the
+glucose value indicated by the reference data.
+
+2. The method according to Claim 1, further comprising the step of providing an output
+through a user interface responsive to the clinical acceptability evaluation.
+
+3. The method according to Claim 2, wherein the step of providing the output includes
+alerting the user or the user interface based on the clinical acceptability evaluation.
+
+4. The method according to Claim 3 wherein alerting the user interface includes at least
+one of providing color-coded information, trend information, directional information and
+fail-safe information.
+
+5. The method of Claim 4, wherein the directional information is arrows or angled lines.
+
+6. The method of claim 2 further comprising the step of controlling the user interface based
+upon the clinical acceptability of the reference datareceived.
+
+7. The method of claim 6 wherein the step of controlling the user interface includes altering the
+user interface so that estimated sensor data is not displayed and/or optionally prompting the
+user to repeat the reference analyte test and provide another reference analyte value.
+
+8. The method of Claim 1, wherein the step of evaluating the clinical acceptability
+includes using one of a Clarke Error Grid, a mean absolute difference calculation, a rate
+of change calculation,a consensus grid and a standard clinical acceptance test.
+
+9. The method of Claim 1, further including requesting additional reference data if the
+clinical acceptability evaluation determines clinical unacceptability.
+
+10. The method of Claim 1, further including repeating the clinical
+acceptability evaluation step for additional reference data.
+
+11. The method of Claim 1,further includes matching reference data to substantially time
+corresponding sensor data to form a matched pair after the clinical acceptability
+
+1
+
+--- PAGE 2 ---
+evaluation step.
+
+12. Asystem for evaluating clinical acceptability of reference data in a substantially
+continuous glucose monitoring system, the system adapted to:
+
+receive a data stream from a substantially continuous analyte sensor,
+including one or more sensor data points;
+
+receive reference data from a reference analyte monitor, including one or more reference
+data points; and
+
+evaluate the clinical acceptability of the reference data with respect to substantially
+time corresponding sensor data points prior to accepting the data as valid entries to be
+processed by the substantially continuous glucose monitoring system, wherein the
+reference data is evaluated for deviation from its substantially time corresponding sensor
+data, and wherein the evaluation of the clinical acceptability further comprises use of a_
+clinical risk associated with that deviation based on the glucose value indicated by the
+reference data.
+
+13. The system according to Claim 12 further comprising means of providing an output
+through a user interface responsive to the clinical acceptability evaluation.
+
+14. The system of claim 13 wherein the means of providing an output through a user interface
+comprises a fail-safe module to control the user interface based upon the clinical acceptability
+of the reference data received.
+
+15. The system of claim 14 wherein the fail safe module controls the user interface including
+altering the user interface so that estimated sensor data is not displayed and/or optionally
+prompts the user to repeat the reference analyte test and provide another reference analyte
+value.
+
+16. The system of Claim 12, further including means for requesting additional reference
+data if the clinical acceptability evaluation determines clinical unacceptability.
+
+17. The system of Claim 12, further including means for repeating the clinical
+acceptability evaluation step for additional reference data.
+
+18. The system of Claim 12, further including means for matching reference data to
+substantially time corresponding sensor data to form a matched pair after the clinical
+acceptability evaluation step.

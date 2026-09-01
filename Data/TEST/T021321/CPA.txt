@@ -1,0 +1,41 @@
+TITLE:
+Mobile wireless communications device and system providing dynamic management of carrier applications and related methods
+
+TYPE:
+European patent
+
+ABSTRACT:
+A mobile wireless communications system may include a mobile wireless communications device(s) configured to wirelessly communicate via a carrier network, and a application storage server(s) configured to store a plurality of mobile device applications for use by the mobile wireless communications device(s). The system may further include an application catalog server configured to provide an interface for uploading at least one mobile device application identification file from the carrier network identifying approved mobile device applications. The application catalog server may be further configured to generate a list of the approved mobile device applications to be presented on the mobile wireless communications device(s) based upon the at least one mobile device application identification file, and to direct the mobile wireless communications device(s) to the at least one application storage server to download and install a mobile device application selected from the list of approved mobile device applications.
+
+CLAIMS:
+A mobile wireless communications system comprising:
+at least one mobile wireless communications device configured to wirelessly communicate via a carrier network;
+at least one application storage server configured to store a plurality of mobile device applications for use by the at least one mobile wireless communications device; and
+an application catalog server configured to
+provide an interface for uploading at least one mobile device application identification file from the carrier network identifying approved mobile device applications,
+generate a list of the approved mobile device applications to be presented on said at least one mobile wireless communications device based upon the at least one mobile device application identification file, and
+direct said at least one mobile wireless communications device to said at least one application storage server to download and install a mobile device application selected from the list of approved mobile device applications.
+The mobile wireless communications system of Claim 1 wherein the interface is also for permitting modification of the at least one mobile device application identification file by the carrier network.
+The mobile wireless communications system of Claim 1 wherein said at least one mobile wireless communications device comprises a plurality thereof having respective device types; and wherein said application catalog server is configured to generate different lists of approved mobile device applications for respective mobile wireless communications device types.
+The mobile wireless communications system of Claim 1 wherein said at least one mobile wireless communications device is configured to generate an installation report upon installation of the selected mobile device application; and wherein said application catalog server is configured to collect the installation report.
+The mobile wireless communications system of Claim 1 wherein the at least one application identification file comprises an extensible markup language (XML) file.
+The mobile wireless communications system of Claim 1 wherein the list of the approved mobile device applications comprises a Really Simple Syndication (RSS) formatted list comprising a plurality of application descriptors.
+The mobile wireless communications system of Claim 6 wherein the application descriptors comprise at least one of an application name, version, vendor, description, and size.
+An application catalog server for use with at least one mobile wireless communications device configured to wirelessly communicate via a carrier network and at least one application storage server configured to store a plurality of mobile device applications for use by the at least one mobile wireless communications device, the application catalog server comprising:
+an interface module configured to provide an interface for uploading at least one mobile device application identification file from the carrier network identifying approved mobile device applications; and
+a processing module configured to
+generate a list of the approved mobile device applications to be presented on the at least one mobile wireless communications device based upon the at least one mobile device application identification file, and
+direct the at least one mobile wireless communications device to the at least one application storage server to download and install a mobile device application selected from the list of approved mobile device applications.
+The application catalog server of Claim 8 wherein the interface is also for permitting modification of the at least one mobile device application identification file by the carrier network.
+The application catalog server of Claim 8 wherein the at least one mobile wireless communications device comprises a plurality thereof having respective device types; and wherein said processing module is configured to generate different lists of approved mobile device applications for respective mobile wireless communications device types.
+The application catalog server of Claim 8 wherein the at least one mobile wireless communications device is configured to generate an installation report upon installation of the selected mobile device application; and wherein said processing module is configured to collect the installation report.
+A mobile wireless communications method comprising:
+providing at least one mobile wireless communications device configured to wirelessly communicate via a carrier network;
+storing a plurality of mobile device applications for use by the at least one mobile wireless communications device on at least one application storage server; and
+at an application catalog server,
+providing an interface for uploading at least one mobile device application identification file from the carrier network identifying approved mobile device applications,
+generating a list of the approved mobile device applications to be presented on the at least one mobile wireless communications device based upon the at least one mobile device application identification file, and
+directing the at least one mobile wireless communications device to the at least one application storage server to download and install a mobile device application selected from the list of approved mobile device applications.
+The method of Claim 12 wherein the interface is also for permitting modification of the at least one mobile device application identification file by the carrier network.
+The method of Claim 12 wherein the at least one mobile wireless communications device comprises a plurality thereof having respective device types; and further comprising generating different lists of approved mobile device applications for respective mobile wireless communications device types at the application catalog server.
+The method of Claim 12 wherein the at least one mobile wireless communications device is configured to generate an installation report upon installation of the selected mobile device application; and further comprising collecting the installation report at the application catalog server.

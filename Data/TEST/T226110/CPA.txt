@@ -1,0 +1,21 @@
+Title: Method and apparatus for real time communication over a computer network
+
+Abstract: In a method for real time network chat, TCP/IP connections are established between a plurality of clients and a host. Respective real time communications protocol connections such as telnet or IRC are established over the TCP/IP connections, and a message is sent from one of the clients to at least one of the other clients through the host using the respective real time communications protocol connections therebetween. The message, which includes one or more instructions in a markup language such as html, for example, is parsed in the receiving chat client, which displays the message in accordance with the markup language instructions contained therein. Where the markup language instruction is a hyperlink, the telnet chat client receiving the message from the host communicates the URL associated with the hyperlink to a Web browser under user control, and the Web browser requests and receives the desired Web document.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for real time communication over a computer network comprising:
+launching a real time chat server;
+launching first and second real time chat clients;
+establishing real time communications protocol connections over respective network communications connections between the first real time chat client and the chat server and between the second real time chat client and the chat server;
+embedding a hyperlink instruction in a message using the first real time chat client; and
+sending the message via the real time communications protocol connections from the first real time chat client to the second real time chat client via the chat server.
+2. A method as in claim 1 further comprising embedding a markup language instruction in the message.
+3. A method as in claim 1 wherein the real time communications connections are TCP/IP connections.
+4. A method as in claim 1 further comprising:
+receiving the message on the second real time chat client from the chat server via the real time communications protocol connections;
+parsing the message to identify the hyperlink instruction contained therein; and
+displaying the message on at least one of the first and second real time chat clients in accordance with the hyperlink instruction contained therein.
+5. A method as in claim 4 wherein the hyperlink instruction is associated with a document address, further comprising passing the document address from at least one of the first and second real time chat clients to a document acquisition means.

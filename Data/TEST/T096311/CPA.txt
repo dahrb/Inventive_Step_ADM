@@ -1,0 +1,45 @@
+TITLE:
+Tactile, visual, and array controllers for real-time control of music signal processing, mixing, video, and lighting
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method for real-time controlling of signal processors, synthesizers, musical instruments, MIDI processors, lighting, video, and special effects in performance, recording, and composition environments using images derived from tactile sensors, pressure sensor arrays, optical transducer arrays, chemical sensor arrays, body sensor arrays, and numerical computation. The invention provides for pressure sensor arrays and body sensor arrays as tactile control interfaces, for video cameras and light sensor arrays as optical transducers, for chemical sensor arrays, and for other numerical image generation from computer processing or numeric simulation. Tactile transducers may be put on instrument keys of conventional instruments, be attached to existing instruments, or be used to create entirely new instrument or controller configurations. Chemical sensor arrays and for other numerical image generation from computer processing or numeric simulation can be used to monitor or simulate natural physical phenomenon such as self-organizing process behavior or environmental conditions. Arrays of scalar or vector values are processed to extract pattern boundaries, geometric properties of pixels within the pattern boundaries (geometric center, weighted moments, etc.), and higher-level derived information (senses of rotation, segmented regions, pattern classification, syntax, grammars, sequences, etc.) which are used to create control signals for external audio, visual, and control equipment or algorithms. The invention also provides for MIDI and non-MIDI control signals.
+
+CLAIMS
+1. A system for generating control signals to control audio, visual and control systems based on the processing of image and sensor array data, the system comprising:
+a source of at least one data array comprising pixel data, wherein each of an array of said pixel data includes at least one data value;
+at least one processor for processing said array of pixel data;
+an algorithm and/or circuitry for extracting pattern information from said array of pixel data, wherein said pattern information defines at least one pattern selected from the group consisting of:
+a pattern boundaries;
+pattern geometric coordinates;
+geometric weighted moments defined by pixel data within a pattern;
+pattern classifications,
+wherein the extracted pattern information is used to create said control signals.
+2. The system of claim 1 wherein the source of said at least one data array is a pressure sensor array.
+3. The system of claim 2 wherein said pressure sensor array is attached to the key of a musical instrument keyboard.
+4. The system of claim 1 wherein the source of said at least one data array is a video camera.
+5. The system of claim 1 wherein data comprising said at least one data array is obtained from a source selected from the group consisting of:
+a chemical sensor array;
+an environmental sensor array;
+a body sensor array.
+6. The system of claim 1 wherein the process for generating said control signals from the extracted pattern information is variably defined.
+7. The system of claim 6 wherein a plurality of variably defined generation processes are stored and recalled.
+8. The system of claim 1 wherein said control signals include note on/off events.
+9. The system of claim 1 wherein said control signals indicate a presence of said pattern classifications extracted within said at least one data array.
+10. The system of claim 1 wherein said control signals include location-tracking information for patterns extracted within said at least one data array.
+11. A method for generating control signals to control audio, visual and control systems based on the processing of image and sensor array data, said method comprising:
+detecting a source of at least one data array comprising pixel data, wherein each of an array of said pixel data includes at least one data value;
+processing said array of pixel data utilizing at least one processor;
+extracting pattern information from said array of pixel data utilizing an algorithm and/or circuitry, wherein said pattern information defines at least one pattern selected from the group consisting of:
+pattern boundaries;
+pattern geometric coordinates;
+geometric weighted moments defined by pixel data within a pattern;
+pattern classifications,
+wherein the extracted pattern information is used to create said control signals.
+12. The method of claim 11 wherein the process for generating said control signals from the extracted pattern information is variably defined.
+13. The method of claim 12 wherein a plurality of variably defined generation processes are stored and recalled.
+14. The method of claim 11 wherein said control signals include note on/off events.
+15. The method of claim 11 wherein said control signals indicate a presence of said pattern classifications extracted within said at least one data array.
+16. The method of claim 11 wherein said control signals include location-tracking information for patterns extracted within said at least one data array.

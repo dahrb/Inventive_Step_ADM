@@ -1,0 +1,8 @@
+TITLE:
+Steering in Scale Space to Optimally Detect Image Structures Conference paper
+  
+TYPE:
+Academic paper
+
+ABSTRACT:
+Detecting low-level image features such as edges and ridges with spatial filters is improved if the scale of the features are known a priori. Scale-space representations and wavelet pyramids address the problem by using filters over multiple scales. However, the scales of the filters are still fixed beforehand and the number of scales is limited by computational power. The filtering operations are thus not adapted to detect image structures at their optimal or intrinsic scales. We adopt the steering approach to obtain filter responses at arbitrary scales from a small set of filters at scales chosen to accurately sample the “scale space” within a given range. In particular, we use the Moore-Penrose inverse to learn the steering coefficients, which we then regress by polynomial function fitting to the scale parameter in order to steer the filter responses continuously across scales. We show that the extrema of the polynomial steering functions can be easily computed to detect interesting features such as phase-independent energy maxima. Such points of energy maxima in our α-scale-space correspond to the intrinsic scale of the filtered image structures. We apply the technique to several well-known images to segment image structures which are mostly characterised by their intrinsic scale.

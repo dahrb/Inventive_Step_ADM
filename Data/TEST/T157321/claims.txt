@@ -1,0 +1,168 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 12 889 778.2
+Huawei Technologies Co., Ltd.
+P47007/EP main request
+
+CLAIMS (MAIN REQUEST)
+
+1. Amethod for determining virtual machine migration, wherein the method comprises:
+
+obtaining (21), by a client in a host machine, a unique identifier of a virtual machine on the
+host machine and an address of the host machine;
+
+determining, by the client, whether the unique identifier of the virtual machine exists in a local
+record, wherein the local record of the client is stored in a cache of the host machine;
+
+if the unique identifier of the virtual machine does not exist in a local record of the client,
+sending (22), by the client, a packet to a server in a network in which the host machine is located,
+wherein the packet carries the unique identifier of the virtual machine and the address of the host
+machine, the packet enables the server to determine that the virtual machine is migrated when the
+unique identifier of the virtual machine exists in a record of the server and the address of the host
+machine carried in the packet is different from a host machine address corresponding to the unique
+identifier of the virtual machine in the record of the server; and
+
+if the unique identifier of the virtual machine does not exist in the local record of the client,
+adding, by the client, the unique identifier of the virtual machine to the local record to update the
+local record;
+
+wherein the obtaining, by a client in a host machine, a unique identifier of a virtual machine on
+the host machine comprises:
+
+intercepting, by the client in the host machine, an Address Resolution Protocol, ARP, packet
+carrying the unique identifier of the virtual machine from the virtual machine on the host machine;
+and obtaining the unique identifier of the virtual machine from the intercepted packet;
+
+Or,
+
+receiving, by the client in the host machine, an Address Resolution Protocol, ARP, packet
+carrying the unique identifier of the virtual machine from the virtual machine on the host machine
+and forwarded by a virtual switch on the host machine; and obtaining the unique identifier of the
+virtual machine from the received packet.
+
+2. The method according to claim 1, wherein:
+
+before the adding, by the client, the unique identifier of the virtual machine to the local record,
+the method further comprises: receiving, by the client, a response packet that indicates successful
+reception and is sent by the server; and
+
+when the response packet that indicates successful reception and is sent by the server is
+received, adding, by the client, the unique identifier of the virtual machine to the local record.
+
+3. An apparatus for determining virtual machine migration, wherein the apparatus comprises:
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+EP 12 889 778.2
+Huawei Technologies Co., Ltd.
+P47007/EP main request
+
+a processing unit (51), configured to obtain a unique identifier of a virtual machine on a host
+machine in which the apparatus is located and an address of the host machine;
+
+a sending unit (52), configured to: if the processing unit (51) determines that the unique
+identifier of the virtual machine does not exist in a local record of the apparatus, send a packet to a
+server in a network in which the host machine is located, wherein the local record of the client is
+stored in a cache of the host machine, the packet carries the unique identifier of the virtual machine
+and the address of the host machine, the packet enables the server to determine that the virtual
+machine is migrated when the unique identifier of the virtual machine exists in a record of the
+server and the address of the host machine carried in the packet is different from a host machine
+address corresponding to the unique identifier of the virtual machine in the record of the server; and
+
+a storing unit (53), configured to: if the processing unit (51) determines that the unique
+identifier of the virtual machine does not exist in the local record, add the unique identifier of the
+virtual machine to the local record to update the local record;
+
+wherein:
+
+the processing unit (51) is configured to intercept an Address Resolution Protocol, ARP, packet
+carrying the unique identifier of the virtual machine from the virtual machine on the host machine;
+and obtain the unique identifier of the virtual machine from the intercepted packet; or,
+
+the processing unit (51) is configured to receive an Address Resolution Protocol, ARP, packet
+carrying the unique identifier of the virtual machine from the virtual machine on the host machine
+and forwarded by a virtual switch on the host machine; and obtain the unique identifier of the
+virtual machine on the host machine from the received packet.
+
+4. The apparatus according to claim 3, wherein the apparatus further comprises:
+
+a receiving unit (54), configured to: before the storing unit adds the unique identifier of the
+virtual machine to the local record, receive a response packet that indicates successful reception and
+is sent by the server;
+
+the storing unit (53) is specifically configured to: when the receiving unit receives the response
+packet that indicates successful reception and is sent by the server, add information about the
+unique identifier of the virtual machine to the local record.
+
+5. The apparatus according to claim 3, wherein the apparatus is disposed in a secure virtual
+machine in the host machine, the virtual switch in the host machine, or a component in the host
+machine and connected to a physical network adapter.
+
+6. A client device, wherein the device comprises a processor (510), a communications interface
+(520), a memory (530), and a bus (540), wherein:
+
+the processor (510), the communications interface (520), and the memory (530) complete
+
+mutual communication by using the bus (540);
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+EP 12 889 778.2
+Huawei Technologies Co., Ltd.
+P47007/EP main request
+
+the communications interface (520) is configured to communicate with an external network
+element;
+
+the memory (530) is configured to store a program; and
+
+the processor (510) is configured to read the program in the memory (530), and perform the
+following operations: obtaining a unique identifier of a virtual machine on a host machine in which
+the client device is located and an address of the host machine;
+
+determining whether the unique identifier of the virtual machine exists in a local record,
+wherein the local record of the client device is stored in a cache of the host machine;
+
+if the unique identifier of the virtual machine does not exist in a local record of the client
+device, sending a packet to a server in a network in which the host machine is located, wherein the
+packet carries the unique identifier of the virtual machine and the address of the host machine, the
+packet enables the server to determine that the virtual machine is migrated when the unique
+identifier of the virtual machine exists in a record of the server and the address of the host machine
+carried in the packet is different from a host machine address corresponding to the unique identifier
+of the virtual machine in the record of the server; and if the unique identifier of the virtual machine
+does not exist in the local record of the client, adding the unique identifier of the virtual machine to
+the local record to update the local record;
+
+the processor (510) is further configured to intercept an Address Resolution Protocol, ARP,
+packet carrying the unique identifier of the virtual machine from the virtual machine on the host
+machine; and obtain the unique identifier of the virtual machine from the intercepted packet; or,
+
+receive an Address Resolution Protocol, ARP, packet carrying the unique identifier of the
+virtual machine from the virtual machine on the host machine and forwarded by a virtual switch on
+
+the host machine; and obtain the unique identifier of the virtual machine from the received packet.

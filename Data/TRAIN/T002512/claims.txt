@@ -1,0 +1,145 @@
+--- PAGE 1 ---
+MEISSNER BOLTE
+
+Postfach 860624
+81633 Munchen
+
+05 851 937.2 August 4, 2009
+Network Appliance, Inc. M/CES-255-PC/EP
+MB/RU/ad
+
+“Systems and Method for Proxying Data Access Commands in a Storage System
+Cluster”
+
+New Claims i to 17
+
+1. A method for proxying data access commands from a first storage system
+(200A) to a second storage system (200B) in a storage system cluster (130),
+comprising :
+
+configuring a proxy port on the first storage system (200A),
+
+wherein the proxy port of the first storage system (200A) is utilized for proxying data
+access to the second storage system (200B);
+
+receiving a data access command at the proxy port on the first storage system
+(200A),
+
+wherein the data access command is directed to the second storage system (200B)
+Cr],
+
+wherein the data access command includes a world wide port name (WWPN) and a
+logical unit number (lun) identifier;
+
+generating a file-level data access request from the received data access command by
+identifying a file handle associated with a vdisk on the second storage system (200B)
+using the WWPN and lun identifier,
+
+wherein the file handle is a temporary reference assigned by an operating system of
+the first storage system (200A) to the vdisk used through a session to access the
+vdisk ;
+
+forwarding the file-level data access request over a cluster interconnect (110) to the
+second storage system (200B) ;
+
+--- PAGE 2 ---
+MEISSNER BOLTE 05 851 937.2
+2
+
+processing the file-level data access request at the second storage system (200B);
+and
+
+returning a file-level response from the second storage system (2008) to the first
+storage system (200A),
+
+wherein the cluster interconnect (110) comprises a direct link between the first
+storage system (200A) and the second storage system (200B) .
+
+2. The method of claim 1, wherein the proxy port comprises a physica! port.
+
+3. The method of claim 1, wherein the proxy port comprises a virtual port
+associated with a physical port.
+
+4. The method of claim 1, wherein the file-level response comprises requested
+read data.
+5. The method of claim 1, wherein the file-level response comprises an
+
+acknowledgement of a write operation.
+
+6. The method of claim 1, further comprising:
+
+generating a client response from the file-level response; and
+
+sending the client response to the data access command to the client from the first
+storage system (200A).
+
+7. The method of claim 1, wherein the file-level data access request comprises a
+file-level write operation that includes a file handle, an offset, and a set of data to be
+written.
+
+8, The method of claim 1, wherein the file-level data access request comprises a
+file-level read operation that includes a file handle, an offset and a number of blocks
+to be read.
+
+9. A system configured to proxy data access commands from a first storage
+system (200A) to a second storage system (200B) connected via a cluster
+interconnect (110), the system comprising:
+
+the first storage system (200A) configured with a first port for receiving data access
+commands directed to the first storage system (200A) and a proxy port for receiving
+data access commands directed to the second storage system (200B),
+
+wherein the proxy port of the first storage system (200A) is utilized for proxying data
+access to the second storage system (2008); and
+
+wherein the data access command includes a world wide port name (WWPN) and a
+logical unit number (lun) identifier; and
+
+--- PAGE 3 ---
+MEISSNER BOLTE 05 851 937.2
+3
+
+a storage operating system (300) executing on the first storage system (200A), the
+storage operating system (300) including a virtual target module (355) configured to
+generate file-level data access operations from received data access operations,
+
+by identifying a file handle associated with a vdisk on the second storage system
+(200B) using the WWPN and lun identifier,
+
+wherein the file handle is a temporary reference assigned by an operating system of
+the first storage system (200A) to the vdisk used through a session to access the
+vdisk ;
+
+the file-level data access operations directed to a file located on the second storage
+appliance,
+
+wherein the cluster interconnect (110) comprises a direct link between the first
+storage system (200A) and the second storage system (200B) .
+
+10. The system of claim 9, wherein the storage operating system (300) further
+comprising a virtual adapter (365) that interfaces with the virtual target module (355)
+and an interconnect driver (371) for forwarding the file-level data access operations
+from the virtual target module (355) to the second partner storage via the cluster
+interconnect (110) managed by the interconnect driver (371).
+
+11. The system of claim 9, further comprising a virtual target layer interfacing with
+a virtual adapter (365) on the first storage system (200A), the virtual target module
+(355) configured to make a forwarding decision of a received data access request to
+thereby forward the request to the second storage system (200B) .
+
+12. The system of claim 11, wherein the forwarding decision is based on a port to
+which the data access request is directed.
+
+13. The system of claim 11, wherein the forwarding decision is based upon a
+logical unit address contained within the data access request.
+
+14. The system of claim 11, wherein the virtual adapter (365) interfaces with a
+virtual target module (355) to present an adapter interface.
+
+15. The system of claim 9, wherein the proxy port comprises a physical port.
+
+16. The system of claim 9, wherein the proxy port comprises a virtual port
+associated with a physical port.
+
+17. |The system of claim 9, wherein the cluster interconnect (110) comprises a fibre
+channel interconnect.

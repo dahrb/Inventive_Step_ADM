@@ -1,0 +1,202 @@
+--- PAGE 1 ---
+Main Request
+CLAIMS :
+
+1. A method, comprising:
+
+at an electronic device having a touch-sensitive surface and a display:
+
+displaying, on the display, a media affordance and a message region for
+displaying messages sent between participants in a message conversation;
+
+detecting a gesture on the touch-sensitive surface that includes detecting a
+contact at a location on the touch-sensitive surface that corresponds to a location of
+the media affordance on the display;
+
+in response to detecting the contact:
+
+displaying a send affordance on the display;
+
+detecting a continuation of the gesture that includes detecting movement of the
+contact across the touch-sensitive surface followed by detecting lift-off of the contact
+from the touch-sensitive surface;
+
+determining whether the contact moved to a location on the touch-sensitive
+surface that corresponds to a location of the send affordance; and
+
+in accordance with a determination that the contact moved to the location on
+the touch-sensitive surface that corresponds to the location of the send affordance, and
+in response to detecting the lift-off, sending a new media item captured in response to
+at least a portion of the gesture to a participant in the message conversation, wherein
+capturing the new media item in response to at least the portion of the gesture
+includes creating the new media item based on data detected by a microphone or a
+
+camera of the device during the portion of the gesture.
+
+2. The method according to claim 1, wherein the contact followed by the movement of
+
+the contact is a single, continuous contact on the touch-sensitive surface.
+
+3. The method according to any of claims 1-2, further comprising:
+in response to detecting the contact, displaying a cancel affordance on the
+display;
+determining whether the contact moved to a location on the touch-sensitive
+
+surface that corresponds to a location of the cancel affordance; and
+
+--- PAGE 2 ---
+in accordance with a determination that the contact moved to the location on
+the touch-sensitive surface that corresponds to the location of the cancel affordance,
+followed by the lift-off, forgoing sending the captured new media item to the
+participant.
+
+The method according to any of claims 1-3, further comprising:
+
+after detecting the lift-off, removing the send affordance from the display.
+
+The method according to any of claims 1-4, further comprising:
+in accordance with a determination that the contact moved to the location on
+the touch-sensitive surface that corresponds to the location of the send affordance on
+the display, and in response to detecting the lift-off:
+capturing the new media item, and
+
+sending the captured new media item to the participant.
+
+The method according to any of claims 1-4, further comprising:
+in response to detecting the contact, beginning to capture the media; and
+in accordance with a determination that the contact moved to the location on
+the touch-sensitive surface that corresponds to the location of the send affordance on
+the display, and in response to detecting the lift-off:
+ceasing to capture the new media item, and
+
+sending the captured new media item to the participant.
+
+The method according to any of claims 1-4, further comprising:
+
+in response to detecting the contact, beginning to capture the new media item;
+
+in response to detecting the movement of the contact, ceasing to capture the
+new media item; and
+
+in accordance with a determination that the contact moved to the location on
+the touch-sensitive surface that corresponds to the location of the send affordance on
+the display, and in response to detecting the lift-off while the contact is at the location
+on the touch-sensitive surface that corresponds to the send affordance, sending the
+
+new media item to the participant.
+
+--- PAGE 3 ---
+8. The method according to any of claims 1-4, wherein the new media item represents
+audio data received from the microphone, and wherein the lift-off is at the location on the
+touch-sensitive surface that corresponds to the location of the send affordance on the
+display, the method further comprising:
+in response to detecting the contact, beginning to capture the audio data; and
+in accordance with a determination that the contact moved to the location on
+the touch-sensitive surface that corresponds to the location of the send affordance on
+the display, and in response to detecting the lift-off, ceasing to capture the audio data
+
+and sending the audio data to the participant.
+
+9. The method according to any of claims 3-4, further comprising:
+displaying a message compose field; and
+in accordance with a determination that the contact did not move to the
+location on the touch-sensitive surface that corresponds to the location of the send
+affordance nor to the location on the touch-sensitive surface that corresponds to the
+location the cancel affordance, and in response to detecting the lift-off.
+displaying an image in the message compose field, the image having a
+
+waveform representing the captured new media item.
+
+10. The method according to claim 9, further comprising:
+in response to detecting the lift-off, replacing display of the media affordance
+with display of a send button for sending the captured new media item to the
+
+participant.
+
+11. The method according to claim 1, further comprising:
+in response to detecting the contact on the touch-sensitive surface, displaying a
+media preview on the display; and
+
+after detecting the lift-off, ceasing to display the media preview on the display.
+
+12. The method according to any of claims 1-11, further comprising:
+while the contact is maintained on the media affordance:
+displaying a visually distinguished region, wherein the visually
+distinguished region encloses the media affordance and the send affordance;
+
+and
+
+--- PAGE 4 ---
+in response to detecting the movement of the contact, expanding the visually
+
+distinguished region.
+
+13. The method according to claim 12, further comprising:
+displaying a virtual keyboard for entering a message to the participant; and
+displaying the media affordance along a particular edge of the display, above
+the virtual keyboard, wherein the displayed visually distinguished region is partially
+bounded by the particular edge.
+
+14. The method according to claim 12, further comprising:
+displaying the media affordance at a corner of the display, wherein the
+displayed visually distinguished region is partially bounded by two different edges of
+the display.
+
+15. | The method according to any of claims 12-14, wherein the touch-sensitive surface is
+a touch-sensitive display, the method further comprising:
+assigning a hit region to the media affordance, wherein the hit region is an
+area of the display responsive to touch input, and wherein the hit region has a larger size
+
+when a virtual keyboard is displayed than when the virtual keyboard is not displayed.
+
+16. The method according to any of claims 1-15, further comprising:
+determining a duration of the contact on the media affordance; and
+in accordance with a determination that the duration of the contact is less than
+a threshold duration, displaying a media selector user interface for selecting existing
+
+media to send to the participant.
+
+17. The method according to any of claims 1-16, further comprising:
+receiving a user designation of whether to prevent sending a set of meta-data
+
+of the captured new media item to the participant.
+
+18. The method according to claim 17, wherein the meta-data comprises a
+
+representation of the location of the electronic device.
+
+--- PAGE 5 ---
+19. The method according to any of claims 1-18, wherein the media affordance is a first
+media affordance, the method further comprising:
+
+displaying a second media affordance on the display.
+
+20. The method according to claim 19, wherein the first media affordance is an audio
+capture affordance for capturing audio data and the second media affordance is a visual-
+
+media capture affordance for capturing video or images.
+
+21. The method according to any of claims 1-20, wherein the media that is sent to the
+
+participant expires based on expiration criteria.
+
+22. An electronic device, comprising:
+
+a display;
+
+a touch-sensitive surface;
+
+one or more processors;
+
+memory; and
+
+one or more programs, wherein the one or more programs are stored in the
+memory and configured to be executed by the one or more processors, the one or more
+
+programs including instructions for performing any of the methods of any preceding claims.
+
+23. A computer readable medium comprising one or more programs, the one or more
+programs comprising instructions, which when executed by one or more processors of an
+electronic device with a display and a touch-sensitive surface, cause the device to perform
+
+any of the methods of any preceding claims.

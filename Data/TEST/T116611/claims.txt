@@ -1,0 +1,158 @@
+--- PAGE 1 ---
+MEISSNER BOLTE
+
+Postfach 860624
+81633 Munchen
+
+06789282.8 December 19, 2016
+The MathWorks, Inc. M/MATH-034-PC/EP
+Legal Department RU/IW/jl
+
+General interface with arbitrary job managers
+
+CLAIMS (Main Request)
+
+1. A method of executing a job in a distributed computing environment
+comprising a client device (121), a scheduler (131), storage (271) and a plurality
+of remote workers (141, 151, 161), wherein the client device and the plurality of
+remote workers each comprises an interface (122) and wherein the interface
+comprises a scheduler object (410) to represent the scheduler (131), a scheduler
+interface (420) for communicating with the scheduler (131) using a scheduler
+communication channel and a storage interface (430) for communicating with the
+storage (271) using a storage communication channel; the method comprising the
+steps of:
+
+creating by the client device a job in a storage location of the storage
+using the storage interface; the job including a plurality of tasks, each task
+defining a technical computing command to be executed, a number of arguments
+of the technical computing command, and any input data to the argument, and
+each task being separately accessible from the storage;
+
+transferring by the client device a reference to the storage location to the
+
+--- PAGE 2 ---
+MEISSNER BOLTE 06789282.8
+2
+
+scheduler through the scheduler interface on the client;
+
+distributing by the scheduler the tasks to the plurality of remote workers
+by transferring the reference to the storage location;
+
+retrieving the tasks from the storage location by the plurality of remote
+workers using the reference; and
+
+executing the tasks on the plurality of remote workers
+
+wherein each worker executes at least one designated task and saves the
+
+result of executing the task in the storage location of the storage.
+
+2. The method of claim 1, wherein the reference to the storage location of
+the job comprises one of a disk location or a memory location where the job is
+
+stored.
+
+3. The method of claim 1, wherein the reference to the storage location of
+the job comprises any of a machine name or an identifying address or a name
+
+where the job is stored.
+
+4. The method of claim 3, wherein the job comprises information on software
+
+components or products for which the client is licensed.
+
+5. The method of claim 1, wherein the job is stored in any of binary or text
+format.
+6. The method of claim 1, wherein the method is performed regardless of a
+
+platform type of the client device
+
+--- PAGE 3 ---
+MEISSNER BOLTE 06789282.8
+3
+7. The method of claim 1, further comprising the step of:
+
+receiving information that the job has been executed from the scheduler
+
+through the scheduler interface.
+
+8. The method of claim 1, wherein the job includes license information and
+the plurality of tasks are executed depending upon the license information in the
+
+job.
+
+9. A system comprising:
+
+a plurality of remote workers (141, 151, 161);
+
+a storage location on a storage (271) for storing a job, wherein the job
+includes plurality of tasks, each task defining a technical computing command to
+be executed, a number of arguments of the technical computing command, and
+any input data to the argument;
+
+a client device (121) for creating the job in the storage location such that
+each task is separately accessible from the storage; and
+
+a first interface for establishing a first communication channel between the
+client device and a scheduler so that the client device submits the job to the
+scheduler by transferring a reference to the storage location to the scheduler
+through the communication channel with the scheduler in order for the plurality
+of remote workers to retrieve the tasks from the storage location using the
+reference upon receiving the reference from the scheduler and to execute the
+tasks on the plurality of remote workers
+
+wherein each worker executes at least one designated task and saves the
+
+result of executing the task in the storage location of the storage.
+
+--- PAGE 4 ---
+MEISSNER BOLTE 06789282.8
+4
+
+10. The system of claim 9, wherein the first interface include an object
+
+representing the scheduler in the client.
+
+11. The system of claim 10, wherein the object includes a first group of
+
+properties generic to a plurality of schedulers.
+
+12. The system of claim 11, wherein the first group of properties include a
+
+property indicating the storage location of the job.
+
+13. The system of claim 10, wherein the object includes a second group of
+
+properties specific to the scheduler.
+
+14. The system of claim 9, further comprising:
+
+a plurality of remote workers for receiving the reference to the storage
+location from the scheduler; and
+
+a second interface for establishing a second communication channel
+between a worker and the scheduler so that the worker receives the reference to
+the storage location from the scheduler through the second communication
+
+channel.
+
+15. The system of claim 14, wherein the job includes license information and
+the plurality of tasks are executed depending upon the license information in the
+
+job.
+
+16. The system of claim 14, wherein the worker saves results of executing the
+
+plurality of tasks in the storage location and returns information that the plurality
+
+--- PAGE 5 ---
+MEISSNER BOLTE 06789282.8
+5
+of tasks have been executed to the scheduler through the second communication
+
+channel.
+
+17. |The system of claim 16, wherein the scheduler returns the information to
+
+the client through the first communication channel.

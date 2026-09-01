@@ -1,0 +1,158 @@
+--- PAGE 1 ---
+Application No.: 05 026 149.4
+
+Applicant: Samsung Electronics Co., Ltd.
+Our Ref.: EP37523RKEH
+
+Date: August 9, 2011
+
+— MAIN REQUEST —
+NEW CLAIMS
+
+A method of transmitting a maximum power ratio of an Enhanced Dedicated Physical
+Data Channel, E-DPDCH, to a Dedicated Physical Control Channel, DPCCH, whose
+power is controlled for uplink packet data transmission in a mobile communication
+system, the method comprising the steps of:
+
+generating a 16-bit user equipment identifier, UE-ID specific cyclic redundancy check,
+CRC, by combining a CRC generated for detecting errors from control information with a
+UE-ID for identifying a user equipment, UE, to receive the control information, wherein
+
+the control information comprises the maximum power ratio for uplink transmission;
+
+generating 90 coded bits by adding the UE-ID specific CRC and 8 tails bits to 6-bit
+
+control information and encoding the added bits at a coding rate of 1/3;
+
+generating a 60-bit rate-matched block by rate-matching the coded bits according to a
+rate matching pattern representing positions of bits to be punctured among the coded
+bits; and
+
+transmitting the rate-matched block to the UE,
+
+wherein the rate matching pattern comprises {1, 2, 5, 6, 7, 11, 12, 14, 15, 17, 23, 24, 31,
+37, 44, 47, 61, 63, 64, 71, 72, 75, 77, 80, 83, 84, 85, 87, 88, 90}.
+
+The method of claim 1, wherein the control information comprises said maximum power
+ratio as a 5-bit power offset equivalent to an allowed maximum data rate and a 1-bit
+validity process indicator indicating whether the control information is valid for an entire
+hybrid automatic repeat request, HARQ, process.
+
+The method of claim 1, wherein the UE-ID specific CRC generating step comprises the
+step of generating the UE-ID specific CRC by modulo-2 operating a 16-bit CRC with a
+16-bit UE ID.
+
+An apparatus of transmitting a maximum power ratio of an Enhanced Dedicated Physical
+Data Channel, E-DPDCH, to a Dedicated Physical Control Channel, DPCCH, whose
+
+--- PAGE 2 ---
+power is controlled for uplink packet data transmission in a mobile communication
+
+system, the apparatus comprising:
+
+a user equipment identifier, UE-ID, specific cyclic redundancy check, CRC, generator
+(304) for generating a 16-bit UE-ID specific CRC by combining a CRC generated for
+detecting errors from control information, with a UE-ID for identifying a UE to receive the
+control information, wherein the control information comprises the maximum power ratio
+
+for uplink transmission;
+
+a channel encoder (308) for generating 90 coded bits by adding the UE-ID specific CRC
+and 8 tails bits to 6-bit control information and encoding the added bits at a coding rate of
+1/3;
+
+a rate matcher (310) for generating a 60-bit rate-matched block by rate-matching the
+coded bits, according to a rate matching pattern, representing positions of bits to be
+
+punctured among the coded bits; and
+a physical channel mapper (312) for transmitting the rate-matched block to the UE,
+
+wherein the rate matching pattern comprises {1, 2, 5, 6, 7, 11, 12, 14, 15, 17, 23, 24, 31,
+37, 44, 47, 61, 63, 64, 71, 72, 75, 77, 80, 83, 84, 85, 87, 88, 90}.
+
+The apparatus of claim 4, wherein the control information comprises said maximum
+power ratio as a 5-bit power offset equivalent to an allowed maximum data rate and a 1-
+bit validity process indicator indicating whether the control information is valid for an
+
+entire hybrid automatic repeat request, HARQ, process.
+
+The apparatus of claim 4, wherein the UE-ID specific CRC generator (304) is adapted to
+generate the UE-ID specific CRC by modulo-2 operating a 16-bit CRC with a 16-bit UE
+ID.
+
+A method of receiving a maximum power ratio of an Enhanced Dedicated Physical Data
+Channel, E-DPDCH, to a Dedicated Physical Control Channel, DPCCH, whose power is
+controlled for uplink packet data transmission in a mobile communication system,
+
+comprising the steps of:
+extracting a 60-bit rate-matched block from a signal received from a Node B;
+
+generating 90 coded bits by rate-dematching the rate-matched block according to a rate
+matching pattern representing positions of bits to be depunctured;
+
+--- PAGE 3 ---
+10.
+
+generating 6-bit control information and a 16-bit user equipment identifier, UE-ID, specific
+
+cyclic redundancy check, CRC, by decoding the coded bits at a coding rate of 1/3; and
+outputting the control information by checking the UE-ID specific CRC,
+
+wherein the rate matching pattern comprises {1, 2, 5, 6, 7, 11, 12, 14, 15, 17, 23, 24, 31,
+37, 44, 47, 61, 63, 64, 71, 72, 75, 77, 80, 83, 84, 85, 87, 88, 90}, and
+
+wherein the control information comprises the maximum power ratio for uplink
+
+transmission.
+
+The method of claim 7, wherein the control information comprises said maximum power
+ratio as a 5-bit power offset equivalent to an allowed maximum data rate and a 1-bit
+validity process indicator indicating whether the control information is valid for an entire
+
+hybrid automatic repeat request, HARQ, process.
+
+The method of claim 7, wherein a 16-bit CRC is extracted from the UE-ID specific CRC
+by modulo-2 operating the UE-ID specific CRC with a 16-bit UE ID.
+
+An apparatus for receiving a maximum power ratio of an Enhanced Dedicated Physical
+Data Channel, E-DPDCH, to a Dedicated Physical Control Channel, DPCCH, whose
+power is controlled for uplink packet data transmission in a mobile communication
+
+system, the apparatus comprising:
+
+a physical channel demapper (404) for extracting a 60-bit rate-matched block from a
+
+signal received from a Node B;
+
+a rate dematcher (406) for generating 90 coded bits by rate-dematching the rate-matched
+block according to a rate matching pattern representing positions of bits to be
+
+depunctured;
+
+a channel decoder (408) for generating 6-bit contro! information and a 16-bit user
+equipment identifier, UE-ID, specific cyclic redundancy check, CRC, by decoding the
+coded bits at a coding rate of 1/3; and
+
+a CRC checker (414) for outputting the control information by checking the UE-ID specific
+CRC,
+
+wherein the rate matching pattern comprises {1, 2, 5, 6, 7, 11, 12, 14, 15, 17, 23, 24, 31,
+37, 44, 47, 61, 63, 64, 71, 72, 75, 77, 80, 83, 84, 85, 87, 88, 90}, and
+
+--- PAGE 4 ---
+11.
+
+12.
+
+wherein the control information comprises the maximum power ratio for uplink
+transmission.
+
+The apparatus of claim 10, wherein the control information comprises said maximum
+power ratio as a 5-bit power offset equivalent to an allowed maximum data rate and a 1-
+bit validity process indicator indicating whether the control information is valid for an
+
+entire hybrid automatic repeat request, HARQ, process.
+
+The apparatus of claim 10, wherein a UE-ID specific CRC extractor (410) is adapted to
+extract a 16-bit CRC from the UE-ID specific CRC by modulo-2 operating the UE-ID
+specific CRC with a 16-bit UE ID.

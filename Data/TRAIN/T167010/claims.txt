@@ -1,0 +1,127 @@
+--- PAGE 1 ---
+Application No.: 05 105 665.3
+
+Applicant: Palo Alto Research Center Incorporated
+
+Our Ref.: EP34942UWMHdix
+
+Date: December 23, 2008
+
+NEW CLAIMS
+
+1. A method for using a portable security token (102) to facilitate public key
+certification for a target device (104) in a network, comprising:
+bringing the portable security token in close physical proximity to the target device,
+thereby allowing the portable security token to communicate with the target device
+through a location-limited communication channel;
+receiving an authenticator for the target device at the portable security token
+through the location-limited communication channel, wherein the authenticator is a
+cryptographic token that can be used in a subsequent protocol between the target
+device and a certification authority (CA) to prove that the cryptographic token
+originated from the target device;
+forming a ticket by digitally signing the authenticator with a key previously agreed
+upon by the portable security token and the CA (106); and
+sending the ticket to the target device, whereby the target device can
+subsequently present the ticket to the CA to prove that the target device is
+authorized to receive a credential from the CA.
+
+2. The method of claim 1, wherein the authenticator can include:
+a hash of the target device’s public key;
+a hash of a secret known only by the target device;
+the target device’s public key; or
+a hash of a certificate or a piece of data belonging to the device already.
+
+3. The method of claim 1, wherein the key previously agreed upon by the portable
+security token and the CA can be:
+a secret symmetric key known by only the portable security token and the CA; or
+a private key belonging to the portable security token.
+
+4. The method of claim 1, wherein the credential is a public key certificate for the
+
+target device, which is signed by the CA.
+
+--- PAGE 2 ---
+The method of claim 1, wherein before the portable security token communicates
+with the target device, the portable security token initially communicates with the
+CA, and during this initial communication:
+
+the CA and portable security token agree upon the key which is used to sign the
+ticket:
+
+the CA communicates a hash of the CA’s public key to the portable security token;
+and
+
+the CA communicates addressing information for the CA to portable security
+token.
+
+The method of claim 1, wherein prior to receiving the authenticator at the portable
+security token, the portable security token sends a request for the authenticator to
+the target device.
+
+The method of claim 1, wherein the portable security token additionally sends to
+the target device:
+
+addressing information for the CA; and
+
+the CA’s public key (or a hash of the CA’s public key);
+
+thereby enabling the target device to communicate with and authenticate the CA.
+
+The method of claim 1, wherein in addition to the authenticator, the ticket can also
+include:
+
+an identifier for the CA;
+
+an identifier for the portable security token; and
+
+an indicator of the purpose for the ticket.
+
+An apparatus that uses a portable security token (102) to facilitate public key
+certification for a target device (104) in a network, comprising:
+
+the portable security token that can be located in close physical proximity to the
+target device, thereby allowing the portable security token to communicate with the
+target device through a location-limited communication channel, wherein the
+authenticator is a cryptographic token that can be used in a subsequent protocol
+
+--- PAGE 3 ---
+10.
+
+between the target device and a certification authority (CA) to prove that the
+cryptographic token originated from the target device;
+
+a receiving mechanism within the portable security token configured to receive an
+authenticator for the target device through the location-limited communication
+channel;
+
+a ticket forming mechanism within the portable security token configured to form a
+ticket by digitally signing the authenticator with a key previously agreed upon by
+the portable security token and the CA (106); and
+
+a sending mechanism within the portable security token configured to send the
+ticket to the target device, whereby the target device can subsequently present the
+ticket to the CA to prove that the target device is authorized to receive a credential
+from the CA.
+
+An apparatus that uses a portable security token (102) to facilitate public key
+certification for a target device (104) in a network, comprising:
+
+the target device;
+
+a receiving mechanism within the target device configured to receive a request
+from the portable security token through a location-imited communication channel;
+a response mechanism within the target device, wherein in response to the
+request, the response mechanism is configured to send an authenticator for the
+target device to the portable security token through the location-limited
+communication channel, wherein the authenticator is a cryptographic token that
+can be used in a subsequent protocol between the target device and a certification
+authority (CA) to prove that the cryptographic token originated from the target
+device; and
+
+wherein the receiving mechanism is additionally configured to receive a ticket from
+the portable security token, the portable security token having formed the ticket by
+digitally signing the authenticator with a key previously agreed upon by the
+portable security token and a certification authority (CA);
+
+whereby the target device can subsequently present the ticket to the CA to prove
+that the target device is authorized to receive a credential from the CA.

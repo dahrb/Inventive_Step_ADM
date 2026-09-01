@@ -1,0 +1,217 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+What is claimed is:
+
+1. A control method for cache coherency, comprising:
+
+transmitting, by a first electrical device, a link-connect request to a second
+electrical device when the first electrical device is coupled to the
+second electrical device by a cache coherency (CC) interface;
+
+establishing, by the CC interface, a link between the first electrical device and
+second electrical device according to the link-connect request; and
+
+operating, by a second processing unit of the second electrical device, a first
+operating system of the first electrical device after establishing the
+
+link.
+
+2. The control method of claim 1, further comprising:
+
+maintaining, by the CC interface, data coherency between he first electrical
+device and second electrical device, when the first operating system of
+the first electrical device is operated by the second processing unit of
+
+the second electrical device.
+
+3. The control method of claim 1 or 2, further comprising:
+
+performing, by the first operating system, an enumeration operation to a
+plurality of hardware elements of the second electrical device to make
+the first operating system can operate in the second electrical device,
+before the first operating system of the first electrical device is
+
+operated by the second processing unit of the second electrical device.
+
+4. The control method of claim 3, further the enumeration operation
+
+comprising:
+
+re-initiating, by a specific driver of the second electrical device, the hardware
+
+elements of the second electrical device.
+
+5. The control method of any of claims | to 4, further comprising:
+
+pre-storing, by the second electrical device, status information of a second
+operating system of the second electrical device, before the first
+operating system of the first electrical device is operated by the second
+
+processing unit of the second electrical device.
+
+19
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+6. The control method of any of claims 1 to 5, wherein a first processing unit
+of the first electrical device co-works with the second processing unit of the second
+
+electrical device or enters a sleep mode, after the link has been established.
+
+7. The control method of any of claims 1 to 6, further comprising:
+
+transmitting a link-disconnect request to the first electrical device when the
+link needs to be disconnected;
+
+synchronizing, by the CC interface, data between the first electrical device and
+the second electrical device; and
+
+recovering the first electrical device to a normal operation mode and
+recovering status information of a second operating system of the
+
+second electrical device after the link is disconnected.
+
+8. The control method of any of claims | to 7, further comprising:
+
+operating, by the second processing unit of the second electrical device and a
+first processing unit of the first electrical device, the first operating
+system of the first electrical device in a Symmetric Multi-Processors
+(SMP) mode or a Cache Coherent Non-Uniform Memory Access
+(ccNUMA) mode.
+
+9. The control method of any of claims | to 8, wherein the CC interface
+
+establishes the link by a wire communication or a wireless communication way.
+
+10. The control method of any of claims | to 9, further comprising:
+accessing, by the second processing unit of the second electrical device, a first
+cache memory unit of the first electrical device through the CC
+
+interface after establishing the link.
+
+11. The control method of claim 10, further comprising:
+
+accessing a first memory unit of the first electrical device when the first cache
+memory is missed or full, when the first cache memory unit of the first
+electrical device is accessed through the CC interface by the second
+
+processing unit of the second electrical device.
+
+20
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+12. The control method of claim 10 or 11, wherein the step of accessing, by
+the second processing unit of the second electrical device, the first cache memory unit
+of the first electrical device through the CC interface after establishing the link further
+comprises:
+
+transmitting, by the second processing unit, a memory access request to the
+
+CC interface;
+
+recording and sorting, by the CC interface, the memory access request; and
+
+determining an address of the memory access request belongs to the first
+
+electrical device or the second electrical device.
+
+13. The control method of claim 12, wherein the step of accessing, by the
+second processing unit of the second electrical device, the first cache memory unit of
+the first electrical device through the CC interface after establishing the link further
+comprises:
+
+transmitting, by the CC interface, the memory access request to the first cache
+
+memory unit, if the address of the memory access request belongs to
+the first electrical device; and
+
+transmitting the memory access request to a first memory unit of the first
+
+device, if the first cache memory unit does not have required data of
+
+the memory access request.
+
+14. The control method of claim 10, wherein the step of accessing, by the
+second processing unit of the second electrical device, the first cache memory unit of
+the first electrical device through the CC interface after establishing the link further
+comprises:
+
+transmitting, by the second processing unit, a memory access request to the
+
+CC interface;
+
+transmitting, by the first electrical device, another memory access request to
+
+the CC interface;
+
+sorting, by the CC interface, the memory access request and the another
+
+memory access request in order; and
+
+transmitting a sorting result to the first electrical device and the second
+
+electrical device.
+
+21
+
+--- PAGE 4 ---
+10
+
+15
+
+15. The control method of claim 14, wherein the CC interface sorts the
+memory access request and the another memory access request in order according to a
+order in which the memory access request and the another memory access request are
+
+required to be completed and/or
+
+wherein the another memory access request is transmitted by an external device of the
+
+first electrical device.
+
+16. A control system for cache coherency, comprising:
+
+a first electrical device, configured to transmit a link-connect request to
+establish a link;
+
+a CC interface, configured to establish the link according to the link-connect
+request; and
+
+a second electrical device, comprising a second processing unit,
+
+wherein when the first electrical device is coupled to the second electrical
+device by the CC interface, the first electrical device transmits the
+link-connect request to the second electrical device to establish the
+link, and the second processing unit operates a first operating system
+
+of the first electrical device after the link has been established.
+
+22

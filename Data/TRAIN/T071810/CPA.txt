@@ -1,0 +1,182 @@
+TITLE:
+System and method for non-uniform scaled mapping
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method for making computer-generated maps includes a different scale factor for each road in a route. The scale factors are used to optimize the route map against an objective function that considers factors such as the number of false intersections in the route and the number of roads falling below a minimum length threshold. The position of each label corresponding to a road in the map is selected from a continuous range of possible positions by refinement against a target function that minimizes the number of roads, labels and annotations the label intersects as well as the distance between the label and the center of the road corresponding to the label. A refinement technique such as simulated annealing is used to find a solution to the target function. Each road in the scaled map is rendered to provide a finished product having the appearance of a hand-drawn map.
+
+CLAIMS:
+1. A method of preparing a route map that describes a path between a start and an end, said method comprising:
+obtaining said path from said start to said end, said path comprising an initial set of elements, each said element including sufficient information to determine a direction and each said element intersecting at least one other element in said initial set of elements; a first element in said initial set of elements including said start and a second element in said initial set of elements including said end;
+independently applying a different scale factor to each of at least two elements in said initial set of elements; wherein application of said different scale factor to each of said at least two elements produces a scaled set of elements; and
+outputting a rendering of each element in said scaled set of elements.
+2. The method of claim 1, wherein a value of each said different scale factor is subject to the constraint that the relative ranking, based on length, of each element in said scaled set of elements is the same as the relative length of the corresponding element in said initial set of elements.
+3. The method of claim 1, wherein said applying step further comprises:
+associating each element in said initial set of elements with a bin, selected from a set of bins, based on a length of said element; each bin in said set of bins representing a range of element lengths that does not overlap with a range of element lengths represented by another bin in said set of bins; and
+providing each bin with a different bin scale factor;
+wherein each said different scale factor applied to each element in said initial set of elements is the bin scale factor that corresponds to the bin to which said element is associated.
+4. The method of claim 1, wherein said route map includes a bounding edge and each said different scale factor is derived by:
+(i) applying a single scale factor to each element in said initial set of elements to form said scaled set of elements; said single scale factor determined by a factor necessary to adjust a length of a shortest element in said initial set of elements so that said element has a length that exceeds a minimum length threshold;
+(ii) traversing said path until a first element in said scaled set of elements exceeds said bounding edge; wherein, when an element exceeds said bounding edge, said method further comprises:
+(a) noting each element that has been traversed in said traversing step having a length that is longer than said minimum length threshold and a direction that is within ninety degrees of the direction of said first element;
+(b) indexing the elements noted in step (a) by a length, with a longest element first;
+(c) sequentially selecting an element from said index, and for each selected element:
+(1) adjusting a different scale factor associated with said selected element to minimize the length of said element, with the proviso that the relative length of said element after application of said different scale factor is the same as the length of the corresponding element in said initial set of elements; and
+(2) determining whether said first element continues to exceed said bounding edge; wherein, when said first element no longer exceeds said bounding edge, step (ii)(c) is terminated; and
+(iii) repeating step (ii) until no element in said scaled set of elements exceeds said bounding edge.
+5. The method of claim 1 wherein the step of independently applying a different scale factor to each of at least two elements in said initial set of elements to produce said scaled set of elements comprises:
+(a) applying a single scale factor to each element in said initial set of elements to form said scaled set of elements; said single scale factor determined by a factor necessary to adjust a length of a shortest element in said initial set of elements so that said shortest element has a length that exceeds a minimum length threshold;
+(b) setting an initial temperature t;
+(c) determining a first score (E1) using an objective function that is determined by said scaled set of elements;
+(d) providing an arbitrary scale factor for a randomly selected element in said scaled set of elements;
+(e) calculating a second score (E2) using said objective function;
+(f) assigning said arbitrary scale factor to said randomly selected element:
+(1) when E2 is less than E1; and
+(2) with the probability P(ΔE), when E2 is greater than E1; where P(ΔE) is a probability function that is dependent upon temperature t;
+(g) repeating steps (c) thru (f) for a first predetermined number of times;
+(h) decreasing t by an amount; and
+(i) executing steps (c) thru (h) until a first occurrence of an exit condition.
+6. The method of claim 5 where:
+P(ΔE)=exp−[(ΔE)/(k*t)]
+ΔE=(E1)−(E2), and k is a constant.
+7. The method of claim 5, wherein said exit condition occurs when step (i) has been repeated a second predetermined number of times.
+8. The method of claim 5, wherein said objective function is a summation of:
+(i) a first weight multiplied by a number of false intersections existing between elements in said scaled set of elements;
+(ii) a second weight multiplied by a number of elements in said scaled set of elements that do not have the same relative length as a corresponding element in said initial set of elements;
+(iii) a third weight multiplied by a number of elements in said scaled set of elements having a length that is shorter than a minimum length threshold; and
+(iv) a fourth weight multiplied by the number of elements in said scaled set of elements having a vector varying by more than a predetermined number of degrees from a corresponding element in said initial set of elements.
+9. The method of claim 1, wherein said obtaining step further includes identification of a geographic marker; and said method further comprising the step of positioning said geographic marker deterministically at a position relative to said scaled set of elements; and
+said outputting step further comprises the step of presenting said geographic marker at said position.
+10. The method of claim 1, wherein said rendering of said element is determined by:
+breaking said element into a set of segments;
+shifting each said segment in said set of segments by a first amount in a direction that is normal to said segment and by a second amount in a direction that is parallel to said segment; and
+joining said segments in said set of segments with a NURB.
+11. The method of claim 1 further comprising:
+assigning a label that corresponds to an element in said scaled set of elements to a label position that is proximal to said corresponding element; and
+determining a refined label position by refining said label position against a target function; wherein
+said outputting step further comprises placing said label at said refined label position.
+12. The method of claim 11, wherein said refining in said determining step comprises a refinement of a set of labels, each label corresponding to a different element in said scaled set of elements; said refinement comprising:
+(a) setting an initial temperature t;
+(b) randomly selecting a label from said set of labels and defining a bounding box for said label, said bounding box including a center of the element corresponding to said label;
+(c) positioning said label at a first position in said bounding box;
+(d) determining a first score (S1) using said target function; wherein said target function is determined by said first position of said label;
+(e) adjusting the position of said label by an amount to yield a second position;
+(f) calculating a second score (S2) using said target function; wherein said target function is determined by said second position of said label;
+(g) accepting the new position for said label as defined in step (e):
+(1) when said second score is less than said first score; and
+(2) with the probability P(ΔS), when said second score is greater than said first score; where P(ΔE) is a probability function that is dependent upon temperature t,
+(h) repeating steps (b) thru (g) for a first predetermined number of times;
+(i) decreasing t by an amount; and
+(j) executing steps (b) thru (i) until a first occurrence of an exit condition.
+13. The method of claim 12 where:
+P(ΔS)=exp−[(ΔS)/(k*t)]
+ΔS=(S1)−(S2), and k is a constant.
+14. The method of claim 12, wherein said amount that said label is adjusted by in said adjusting step causes said label to extend beyond said bounding box.
+15. The method of claim 12, wherein said target function is determined by at least one of:
+a first weight multiplied by a number of elements said label overlaps;
+a second weight multiplied by a number of labels in said set of labels said label overlaps;
+a third weight multiplied by a number of annotations said label overlaps;
+a fourth weight multiplied by a first heavy function; said first heavy function having a value of:
+“1” when said label exceeds a dimension of a viewport, and a value of
+“0” when said label does not exceed a dimension of said viewport;
+a fifth weight multiplied by a normalized distance said label is from a center of said corresponding element; and
+a sixth weight multiplied by a second heavy function; said second heavy function having a value of:
+“1” when said label is below said corresponding element, and a value of
+“0” when said label is above said corresponding element.
+16. The method of claim 15, wherein said annotation is a geographic marker.
+17. The method of claim 16, wherein the outputting step of claim 1 further comprises drawing an arrow from said label to the corresponding element when the refined label position of said label is outside said bounding box.
+18. The method of claim 1, wherein said outputting step of claim 1 further comprises the step of extending a length of an element in said scaled set elements when the label corresponding to said element extends past said element.
+19. A computer program product for use in conjunction with a computer system to prepare a route map that describes a path between a start and an end, the computer program product comprising a computer readable storage medium and a computer program mechanism embedded therein, the computer program mechanism comprising:
+a direction parser module that includes instructions for obtaining said path from said start to said end, said path comprising an initial set of elements, each said element including sufficient information to determine a direction and each said element intersecting at least one other element in said initial set of elements; a first element in said initial set of elements including said start and a second element in said initial set of elements including said end;
+a road layout module that includes instructions for applying a different scale factor to each of at least two elements in said initial set of elements; wherein application of said different scale factor to each of said at least two elements produces a scaled set of elements; and
+a map renderer module that includes instructions for outputting a rendering of each element in said scaled set of elements.
+20. The computer program product of claim 19, wherein said road layout module further includes instructions for requiring that a value of each said different scale factor is subject to the constraint that the relative ranking, based on length, of each element in said scaled set of elements is the same as the relative length of the corresponding element in said initial set of elements.
+21. The computer program product of claim 19, wherein said road layout module further comprises:
+instructions for associating each element in said initial set of elements with a bin, selected from a set of bins, based on a length of said element; each bin in said set of bins representing a range of element lengths that does not overlap with a range of element lengths represented by another bin in said set of bins; and
+instructions for providing each bin with a different bin scale factor;
+wherein each said different scale factor applied to each element in said initial set of elements is the bin scale factor that corresponds to the bin to which said element is associated.
+22. The computer program product of claim 19, wherein said route map includes a bounding edge and said road layout module further comprises instructions for deriving each said different scale factor, said instructions including:
+(i) instructions for applying a single scale factor to each element in said initial set of elements to form said scaled set of elements; said single scale factor determined by a factor necessary to adjust a length of a shortest element in said initial set of elements so that said element has a length that exceeds a minimum length threshold;
+(ii) instructions for traversing said path until a first element in said scaled set of elements exceeds said bounding edge; wherein, when an element exceeds said bounding edge, said road layout module further comprises:
+(a) instructions for noting each element having a length that is longer than said minimum length threshold and a direction that is within ninety degrees of the direction of said first element that has been traversed by said instructions for traversing; wherein said instructions further include instructions for indexing said noted elements by a length, with a longest element first;
+(b) instructions for sequentially selecting an element from said index, and for each selected element said road layout module further includes:
+(1) instructions for adjusting a different scale factor associated with said selected element to minimize the length of the element, with the proviso that the relative length of said selected element after application of the different scale factor is the same as the corresponding element in said initial set of elements; and
+(2) instructions for determining whether said first element continues to exceed said bounding edge; wherein, when said first element no longer exceeds said bounding edge, the instructions of (ii)(b) are terminated; and
+(iii) instructions for repeating the instructions of (ii) until no element in said scaled set of elements exceeds said bounding edge.
+23. The computer program product of claim 19, wherein said computer program mechanism further comprises an objective function module for determining a quality of a route map, and said road layout module further includes:
+(a) instructions for applying a scale factor to each element in said initial set of elements to form said scaled set of elements; said single scale factor determined by a factor necessary to adjust a length of a shortest element in said initial set of elements so that said shortest element has a length that exceeds a minimum length threshold;
+(b) instructions for setting an initial temperature t;
+(c) instructions for determining a first score (E1) using said objective function module;
+(d) instructions providing an arbitrary scale factor for a randomly selected element in said scaled set of elements;
+(e) instructions calculating a second score (E2) using said objective function module;
+(f) instructions for assigning said arbitrary scale factor to said randomly selected element:
+(1) when E2 is less than E1; and
+(2) with the probability P(ΔE), when E2 is greater than E1; where P(ΔE) is a probability function that is dependent upon temperature t,
+(g) instructions for repeating the instructions of (c) thru (f) for a first predetermined number of times;
+(h) instructions for decreasing t by an amount; and
+(i) instructions for executing the instructions of (c) thru (h) until a first occurrence of an exit condition.
+24. The method of claim 23 where:
+P(ΔE)=exp−[(ΔE)/(k*t)]
+ΔE=(E1)−(E2), and k is a constant.
+25. The computer program product of claim 23, wherein said exit condition occurs when the instructions of (i) have been executed a second predetermined number of times.
+26. The computer program product of claim 23, wherein the objective function module comprises instructions for initializing a score; and the objective function module further includes:
+(i) instructions for adding, to said score, a first value determined by a first weight multiplied by a number of false intersections existing between elements in said scaled set of elements;
+(ii) instructions for adding, to said score, a second value determined by a second weight multiplied by a number of elements in said scaled set of elements that do not have the same relative length as the corresponding element in said initial set of elements;
+(iii) instructions for adding, to said score, a third value determined by a third weight multiplied by a number of elements in said scaled set of elements having a length that is shorter than a minimum length threshold; and
+(iv) instructions for adding, to said score, a fourth value determined by a fourth weight multiplied by a number of elements in said scaled set of elements having a vector that varies by more than a predetermined number of degrees from a vector of a corresponding element in said initial set of elements.
+27. The computer program product of claim 19, wherein said direction parser module further includes:
+instructions for obtaining a geographic marker;
+instructions for positioning said geographic marker deterministically at a first position relative to said scaled set of elements; and
+said map renderer module further includes instructions for outputting said geographic marker at said first position.
+28. The computer program product of claim 19, wherein said instructions for rendering each said element includes:
+instructions for breaking said element into a set of segments;
+instructions for shifting each said segment in said set of segments by a first amount in a direction that is normal to said segment and by a second amount in a direction that is parallel to said segment; and
+instructions for joining said segments in said set of segments with a NURB.
+29. The computer program product of claim 19, further including:
+a label layout module that includes instructions for assigning a label, which corresponds to an element in said scaled set of elements, to a label position that is proximal to said corresponding element; the label layout module further including instructions for determining a refined label position by refining said label position against a target function; and
+said map renderer module further includes instructions for outputting said label at said refined label position.
+30. The computer program product of claim 29, wherein:
+said computer program mechanism further comprises a target function module for evaluating a quality of a label position, and
+said label layout module further includes instructions for refining a set of labels; each label corresponding to a different element in said scaled set of elements, said instructions for refining said set of labels including:
+(a) instructions for setting an initial temperature t;
+(b) instructions for randomly selecting a label from said set of labels and defining a bounding box for said label, said bounding box including a center of the element corresponding to said selected label;
+(c) instructions for positioning said selected label at a first position in said bounding box;
+(d) instructions for determining a first score (S1) using said target function module; wherein a value of said target function module is determined by said first position;
+(e) instructions for adjusting the position of said label by an amount to yield a second position;
+(f) instructions for calculating a second score (S2) using said target function module;
+(g) instructions for accepting said second position for said label:
+(1) when S2 is less than S1; and
+(2) with the probability P(ΔS), when said second score is greater than said first score; where P(ΔE) is a probability function that is dependent upon temperature t;
+(h) instructions for repeating the instructions of (b) thru (g) for a first predetermined number of times;
+(i) instructions for decreasing t by an amount; and
+(j) instructions for executing the instructions of (b) thru (i) until a first occurrence of an exit condition.
+31. The computer program product of claim 30 wherein:
+P(ΔS)=exp−[(ΔS)/(k*t)]
+ΔS=(S1)−(S2), and k is a constant.
+32. The computer program product of claim 29, wherein when said label is positioned at said second position, said label extends beyond said bounding box.
+33. The computer program product of claim 29, wherein said target function module includes instructions for initializing a score, said target function module further including at least one of:
+instructions for adding, to said score, a first value determined a first weight multiplied by a number of elements said label overlaps;
+instructions for adding, to said score, a second value determined a second weight multiplied by a number of labels in said set of labels said label overlaps;
+instructions for adding, to said score, a third value determined a third weight multiplied by a number of annotations said label overlaps;
+instructions for adding, to said score, a fourth value determined a fourth weight multiplied by a first heavy function; said first heavy function having a value of:
+“1” when said label exceeds a dimension of a viewport, and a value of
+“0” when said label does not exceed a dimension of said viewport;
+instructions for adding, to said score, a fifth value determined a fifth weight multiplied by a normalized distance said label is from a center of said corresponding element; and
+instructions for adding, to said score, a sixth value determined a sixth weight multiplied by a second heavy function; said second heavy function having a value of:
+“1” when said label is below said corresponding element, and a value of
+“0” when said label is above said corresponding element.
+34. The computer program product of claim 33, wherein said annotation is a geographic marker.
+35. The computer program product of claim 34, wherein said map renderer module of claim 16 further comprises instructions for drawing an arrow from said label to the corresponding element when the refined label position of said label is outside said bounding box.
+36. The computer program product of claim 19, wherein said map renderer module further comprises instructions for extending the length of an element in said scaled set elements when the label corresponding to said element extends past said element.
+37. A computer system for preparing a route map that describes a path between a start and an end, the computer system comprising:
+a central processing unit;
+a memory, coupled to the central processing unit, the memory storing:
+a direction parser module that includes instructions for obtaining said path from said start to said end, said path comprising an initial set of elements, each said element including sufficient information to determine a direction and each said element intersecting at least one other element in said initial set of elements; a first element in said initial set of elements including said start and a second element in said initial set of elements including said end;
+a road layout module that includes instructions for independently applying a different scale factor to each of at least two elements in said initial set of elements; wherein application of said different scale factor to each of said at least two elements produces a scaled set of elements;
+a label layout module that includes instructions for assigning a label that corresponds to an element in said scaled set of elements to a label position that is proximal to said corresponding element; the label layout module further including instructions for determining a refined label position by refining said label position against a target function; and
+a map renderer module that includes instructions outputting a rendering of each element in said scaled set of elements.
+38. The computer system of claim 37, the memory further storing:
+a label layout module that includes instructions for assigning a label that corresponds to an element in said scaled set of elements to a label position that is proximal to said corresponding element; the label layout module further including instructions for determining a refined label position by refining said label position against a target function; and
+said map renderer module further includes instructions for outputting said label at said refined label position.

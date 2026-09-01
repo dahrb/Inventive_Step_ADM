@@ -1,0 +1,38 @@
+TITLE:
+Apparatus and method for determining mobility state in wireless communication system
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+An apparatus and method of determining a mobility state is provided. A user equipment determines a size of a cell to be reselected by performing cell reselection, and determines the mobility state on the basis of the number of cell reselections and a size of the cell. Unnecessary cell reselection can be avoided even if the user equipment enters an area where a micro cell and a macro cell coexist.
+
+CLAIMS:
+A method of determining a mobility state of a user equipment in a wireless communication system, the method comprising:
+determining a size of a cell to be reselected by performing cell reselection; and
+determining the mobility state on the basis of the number of cell reselections and a size of the cell.
+The method of claim 1, wherein the mobility state is one of a normal mobility, a medium mobility, and a high mobility.
+The method of claim 2, wherein the determining of the mobility state comprises:
+determining the mobility state to the normal mobility if the number of cell reselections during a mobility period is less than a medium mobility threshold;
+determining the mobility state to the medium mobility if the number of cell reselections during the mobility period is between the medium mobility threshold and a high mobility threshold; and
+determining the mobility state to the high mobility if the number of cell reselections during the mobility period is greater than the high mobility threshold.
+The method of claim 3, further comprising determining whether to increment a counter for indicating the number of cell reselections according to the cell size.
+The method of claim 4, wherein, if the reselected cell is a micro cell, the counter is not incremented.
+The method of claim 5, wherein the micro cell is a closed subscriber group (CSG) cell.
+The method of claim 3, further comprising regulating a reselection time on the basis of the mobility state.
+The method of claim 1, wherein the cell size is determined on the basis of a physical cell identity (PCI) of a measured cell.
+The method of claim 7, wherein the cell size is determined on the basis of a cell size indicator.
+The method of claim 7, wherein the cell size is determined on the basis of a CSG indicator.
+A user equipment for determining a mobility state, comprising:
+a radio frequency (RF) unit for transmitting and receiving a radio signal; and
+a processor, coupled to the RF unit, for determining the mobility state,
+wherein the processor is configured to
+determine a size of a cell to be reselected by performing cell reselection, and
+determine the mobility state on the basis of the number of cell reselections and a size of the cell.
+The user equipment of claim 11, wherein the mobility state is one of a normal mobility, a medium mobility, and a high mobility.
+The user equipment of claim 12, wherein the processor is configured to
+determine the mobility state to the normal mobility if the number of cell reselections during a mobility period is less than a medium mobility threshold,
+determine the mobility state to the medium mobility if the number of cell reselections during the mobility period is between the medium mobility threshold and a high mobility threshold, and
+determine the mobility state to the high mobility if the number of cell reselections during the mobility period is greater than the high mobility threshold.
+The user equipment of claim 13, wherein the processor is configured to determine whether to increment a counter for indicating the number of cell reselections according to the cell size.
+The user equipment of claim 14, wherein, if the reselected cell is a micro cell, the processor is configured no to increment the counter.

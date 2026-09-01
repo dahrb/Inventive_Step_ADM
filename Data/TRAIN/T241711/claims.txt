@@ -1,0 +1,86 @@
+--- PAGE 1 ---
+EP 06 826 464.7-2201 147 016 q8/s5/sca
+BioArray Solutions Ltd. April 20, 2015
+
+MAIN REQUEST
+
+1. A method of identifying blood product donors transfusion
+compatible with a particular recipient or multiple
+recipients on the basis of cross-matching transfusion
+
+antigen genotypes, comprising:
+
+representing candidate donor and recipient minor blood
+types as bit strings, where one value of a bit
+represents that a particular blood type antigen is
+present and another value represents that said antigen
+is not present, and where the bit strings comprise a
+unit of at least two bits representing an antigen
+
+configuration of a specific phenotype;
+
+matching the candidate donor and recipient bit strings
+by respectively forming a Boolean expression between
+corresponding bits of said candidate donor and recipient
+bit strings, said Boolean expression being given by
+{ [Bali AND NOT [Br]; } EQ 0, wherein [Bali is the candidate
+donor bit for the i-th antigen and [Pr]; is the recipient
+bit for the i-th antigen, wherein the Boolean expression
+yields a first value in the event of a match, indicating
+compatibility, and a second value in the event of a
+
+mismatch, indicating incompatibility; and
+recording results of the Boolean expression.
+
+2. The method of claim 1 wherein, in the recorded results,
+compatibility is indicated by a value of TRUE ("1") of
+the string-matching expression, and incompatibility is
+indicated by a value of FALSE ("0").
+
+3. The method of claim 1 wherein a cross-matching
+
+criterion requiring that the candidate donor not have
+
+--- PAGE 2 ---
+any antigens the recipient does not have is represented
+by said Boolean expression involving the candidate donor
+blood type bit string and the recipient blood type bit
+string, in which the recipient blood type bit string,
+[8+], serves as a mask to zero all the bits of the
+‘candidate donor blood type code [fg] for which the
+
+corresponding bit in [8] is 1.
+
+The method of claim 1 wherein, when comparing the blood.
+type of the recipient to the blood types of multiple
+candidate donors of a potentially compatible blood type,
+the results of the Boolean expression are recorded as a
+
+vector.
+
+The method of claim 1 wherein, when comparing the blood
+types of multiple recipients to the blood types of
+multiple candidate donors of potentially compatible
+blood type, the results of the Boolean expression are
+
+recorded as a matrix.
+
+The method of claim 1 wherein the method is applied to
+identify prospective matches in a registry of typed
+
+donors.
+
+The method of claim 6 wherein the identification is
+
+performed using an algorithm,
+
+The method of claim 1 wherein the representation of
+candidate donor and recipient strings is in binary,
+
+octal or hexadecimal form.
+
+The method of claim 1 wherein the bit string
+representing a recipient blood type is augmented to
+include additional antigens to which the recipient has
+
+formed antibodies.

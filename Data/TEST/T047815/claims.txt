@@ -1,0 +1,202 @@
+--- PAGE 1 ---
+20
+
+25
+
+Main Request / APPEAL — December 2018
+
+Claims
+
+1. A method, comprising:
+
+accessing (310) by a mobile station (20) a gateway (60) and
+transmitting an identification code to the gateway, wherein the gateway is
+configured to verify the identity of the mobile station by accessing an
+authentication centre and comparing variables computed by the mobile
+
+station and variables computed by the gateway;
+
+verifying (330, 340) by the mobile station the legitimacy of the gateway
+by comparing variables computed by the mobile station and variables
+
+computed by the gateway;
+
+requesting (360, 370) by the mobile station a signature verification
+address from the gateway for facilitating the mobile station to pay for a
+service provider (50);
+
+receiving (390, 400, 420) by the mobile station the requested signature
+verification address from the gateway when the identity of the mobile
+
+station has been verified by the gateway;
+
+requesting (710) by the mobile station a product or service or access or
+
+a right from the service provider;
+
+receiving (730) by the mobile station an invoice for the requested
+
+product or service or access or right from the service provider; and
+
+in response to determination (740) that the invoice is correct,
+transmitting (750) by the mobile station a digital signature accompanied
+by the signature verification address as approval of the invoice for the
+
+product or service or access or right to the service provider.
+
+2. The method recited in claim 1, wherein said verifying the legitimacy
+
+--- PAGE 2 ---
+20
+
+25
+
+Main Request / APPEAL — December 2018
+
+of the gateway by comparing the variables computed by the gateway with
+
+the variables computed by the mobile station, further comprises:
+
+transmitting a session identification and an _ international mobile
+subscriber identifier to the gateway;
+receiving a variable M1 and a random number (RAND) from the
+
+gateway;
+
+computing a variable M1'; and
+
+verifying the legitimacy of the gateway when the variable M1 equals the
+
+variable M1'.
+
+3. The method recited in claim 2, further comprising:
+
+computing an integrity key (K) as a function of RAND and Ki, where
+RAND is a random number received from the gateway, and Ki is a secret
+key contained within the mobile station.
+
+4. The method recited in any one of claims 1 to 3, further comprising:
+generating a shared signing key (SK) and transmitting the generated
+
+shared signing key to the gateway, or
+
+generating a portion of the shared signing key (SK) and exchanging the
+generated portion and another portion generated at the gateway with the
+
+gateway.
+
+5. The method recited in claim 4 when depending on claim 3, wherein
+
+the shared signing key (SK) is generated based on the integrity key (Kk).
+
+6. The method recited in any one of claims 1 to 5, further
+comprising:
+
+receiving a variable M3 from the gateway;
+
+--- PAGE 3 ---
+20
+
+25
+
+Main Request / APPEAL — December 2018
+
+computing a variable M3';
+
+verifying the legitimacy of the gateway when the variable M3 equals the
+
+variable M3'.
+
+7. The method recited in claim 6, wherein the variables M3 and M3' are
+computed using the formula M3 = M3'= MAC (K, C), where MAC is a
+message authentication code function, K is an integrity key and C is data
+contained in the message by which the signature verification address is
+
+delivered to the mobile station.
+
+8. An apparatus for a mobile station, comprising:
+
+means (1500) for accessing a gateway and transmitting an identification
+code to the gateway, wherein the gateway is configured to verify the
+identity of the mobile station by accessing an authentication centre and
+comparing variables computed by the mobile station and variables
+computed by the gateway;
+
+means (1500) for verifying the legitimacy of the gateway by comparing
+variables computed by the mobile station and variables computed by the
+
+gateway;
+
+means (1500) for requesting a signature verification address from the
+
+gateway for facilitating the mobile station to pay for a service provider;
+
+means (1500) for receiving the requested signature verification address
+from the gateway when the identity of the mobile station has been verified
+
+by the gateway;
+
+means (1700) for requesting a product or service or access or right from
+
+the service provider;
+
+means (1700) for receiving an invoice for the requested product or
+
+service or access or right from the service provider; and
+
+--- PAGE 4 ---
+20
+
+25
+
+Main Request / APPEAL — December 2018
+
+means (1700) for transmitting, in response to determination that the
+invoice is correct, a digital signature accompanied by the signature
+verification address approval of the invoice for the product or service or
+
+access or right to the service provider.
+
+9. The apparatus recited in claim 8, wherein said verifying means (1500)
+
+is configured to:
+
+transmit a session identification and an international mobile subscriber
+
+identifier to the gateway;
+receive a variable M1 and a random number (RAND) from the gateway;
+computing a variable M1'; and
+
+verify the legitimacy of the gateway when the variable M1 equals the
+
+variable M1'.
+
+10. The apparatus recited in any one of claims 8 and 9, further
+comprising:
+
+means (1500) for generating a shared signing key (SK) and transmitting
+the generated shared signing key to the gateway, or
+
+means (1500) for generating a portion of the shared signing key (SK)
+and exchanging the generated portion and another portion generated at
+
+the gateway with the gateway.
+
+11. The apparatus recited in any one of claims 8 to 10, further
+
+comprising:
+
+means (1500) for receiving a variable M3 from the gateway;
+means (1500) for computing a variable M3';
+
+means (1500) for verifying the legitimacy of the gateway when the
+
+variable M3 equals the variable M3’.
+
+--- PAGE 5 ---
+Main Request / APPEAL — December 2018
+
+12. A computer program embodied on a computer readable medium and
+executable by a mobile station, said computer program comprising code
+
+portions for performing a method according to any one of claims 1 to 7.

@@ -1,0 +1,53 @@
+TITLE:Method and system for predicting solar energy production
+
+TYPE:US Patent
+
+ABSTRACT:
+A system, method and computer program product to assist in managing the physical plant mechanisms and market finances for a deregulated electricity grid or regulated utility grid, populated with solar electric generation capacity. This system provides tools to assist grid operators in the scheduling and dispatch of generation resources in an electrical grid populated with solar electric generation capacity, a week in advance, on an hourly basis. It also provides tools to assist companies engaged in generation, distribution and energy marketing, in the electrical power industry, to manage their contractual supply obligations in the day-ahead hourly wholesale market and the spot market, in an electrical grid populated with solar electric generation capacity. This process can also be used to predict solar loading of building structures, using forecast irradiance data as inputs to common building energy modeling programs, a week in advance, on an hourly basis.
+
+CLAIMS:
+1. A method of forecasting solar energy production in a region, comprising:
+collecting meteorological data for a given area of the region;
+estimating irradiance levels using parameters collected from the meteorological data; and
+simulating solar energy production using the collected meteorological data, estimated irradiance levels, and physical characteristics of at least one solar generating system in the given area of the region.
+2. The method of claim 1, further comprising forecasting an energy demand for a solar energy generator.
+3. The method of claim 2, further comprising determining a net electrical energy from the simulated solar energy production and the forecasted energy demand.
+4. The method of claim 1, further comprising aggregating the simulating solar energy production for each solar generating system distributed over the region to produce a total solar energy production for the region.
+5. The method of claim 4, further comprising determining a net electrical energy from the aggregated solar energy production and a forecasted energy demand for facilities in the region.
+6. The method of claim 1, further comprising determining an incident solar power of a target surface using the collected meteorological data, estimated irradiance levels and physical characteristics of the target surface.
+7. The method of claim 6, wherein the physical characteristics of the target surface include surface size, orientation angles, shading obstructions, latitude, longitude, and elevation.
+8. The method of claim 1, wherein the parameters include GH irradiance, DH irradiance, and DN irradiance.
+9. The method of claim 1, wherein the meteorological data is collected on a week-ahead hourly basis.
+10. The method of claim 1, wherein the physical characteristics of the solar generating system include system size, orientation angles, equipment types, electrical characteristics, shading obstructions, latitude, longitude, and elevation.
+11. A system of forecasting solar energy production in a region, comprising:
+a weather module for collecting meteorological data for a given area of the region;
+a solar irradiance module for estimating irradiance levels using parameters collected from the weather module;
+a physical characteristics module of a solar generating system in the given area of the region; and
+a simulation module for simulating solar energy production using the collected meteorological data, estimated irradiance levels, and physical characteristics of a solar generating system.
+12. The system of claim 11, further comprising an energy demand module for forecasting an energy demand for a facility.
+13. The system of claim 12, further comprising a determination module for determining a net electrical energy from the simulated solar energy production and the forecasted energy demand.
+14. The system of claim 11, further comprising an aggregation module for aggregating the simulating solar energy production for each solar generating system distributed over the region to produce a total solar energy production for the region.
+15. The system of claim 14, further comprising a net determination module for determining a net electrical energy from the aggregated solar energy production and a forecasted energy demand for supply facilities for the region.
+16. The system of claim 11, further comprising an incident solar power module for determining an incident solar power of a target surface using the collected meteorological data, estimated irradiance levels and physical characteristics of the target surface.
+17. The system of claim 16, wherein the physical characteristics of the target surface include surface size, orientation angles, shading obstructions, latitude, longitude, and elevation.
+18. The system of claim 11, wherein the parameters include GH irradiance, DH irradiance, and DN irradiance.
+19. The system of claim 11, wherein the meteorological data is collected on a week-ahead hourly basis.
+20. The system of claim 11, wherein the physical characteristics of the solar generating system include system size, orientation angles, equipment types, electrical characteristics, shading obstructions, latitude, longitude, and elevation.
+21. A system of forecasting energy production for solar generating systems in a region having known physical characteristics, comprising:
+means for collecting meteorological data for a given area of the region;
+means for estimating irradiance levels using parameters collected from the weather module;
+means for simulating solar energy production using the collected meteorological data, estimated irradiance levels, and physical characteristics of the solar generating system.
+22. A computer program product for simulating solar energy production, the computer program product comprising:
+a computer usable medium having computer readable code therein, including program code which:
+collects meteorological data for a given area of the region;
+estimates irradiance levels using parameters collected from the meteorological data; and
+simulates solar energy production using the collected meteorological data, estimated irradiance levels, and physical characteristics of at least one solar generating system in the given area of the region.
+23. A method of anticipating a short-term demand of an energy trader's customers, comprising:
+calculating a net electrical energy for a supply facility in a geographic region;
+determining a resulting electrical energy from the net electrical energy and electrical energy purchased from long-term contracts for the supply facilities; and
+bargaining of electrical energy in a short-term market based on the resulting electrical energy.
+24. A method for hedging energy sales or purchases in a one day-ahead, short-term market against shortfalls in a spot market, comprising:
+determining a historical performance of a regional net energy for a geographical region;
+estimating a difference between the maximum cost of energy in a spot market and an energy trader's price of energy for each hour during a forward spot market;
+determining a risk factor associated with energy sales and purchases from the historical performance of a regional net energy and the estimated difference between the maximum cost of energy and the energy trader's price of energy; and
+purchasing options based on the determined risk.

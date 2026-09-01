@@ -1,0 +1,317 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+CLAIMS
+
+A video communication system for communicating a series of original video frames
+(40) from a sender (30) to a receiver (32), wherein
+
+the sender (30) has means (14, 16; 70) for separating the series of original video
+frames (40) into multiple encoded streams (54, 56), each encoded stream (54, 56)
+having a series of encoded frames (i, P) that depend from a previous encoded
+frame in the corresponding encoded stream (54, 56), and each frame of the series
+of original video frames (40) being present only in one of the multiple encoded
+streams (54, 56);
+
+the receiver (32) has means for reconstructing a stream of video frames in re-
+sponse to the multiple encoded streams (54, 56) such that errors in one or more of
+the multiple encoded streams (54, 56) do not prevent reconstruction of remaining
+ones of the multiple encoded streams (54, 56);
+
+in case a communication error caused the loss of a frame at the receiver (32), the
+receiver (32) is configured to recover the lost frame in accordance with a selected
+method to generate a recovered frame, and to signal to the sender that the com-
+
+munication error occurred and the method selected for frame recovery, and
+
+wherein the sender (30) is configured to determine a recovered frame on the basis
+of the signaled recovery method, compare the recovered frame to the lost frame,
+and, in case it is determined that the quality of the recovered frame is not suffi-
+cient, transmit to the receiver a frame that is intra for the entire recovered frame or
+for an area of the recovered frame for reinitializing a decoder (22) in the receiver
+(32).
+
+The video communication system of claim 1, wherein the means for generating
+
+multiple encoded streams (54, 56) comprises:
+
+a set of encoders (14, 16) each corresponding to one of the multiple encoded
+streams (54, 56);
+
+means (12) for separating the series of original video frames (40) into a stream
+(50, 52) of video frames for each encoder (14, 16).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+The video communication system of claim 2, wherein the means for reconstructing
+
+the stream of video frames comprises:
+
+a set of decoders (20, 22) each for generating a stream (60, 62) of reconstructed
+video frames in response to one of the multiple encoded streams (54, 56);
+
+means (24) for merging the streams (60, 62) of reconstructed video frames.
+
+The video communication system of claim 1, wherein the means for generating
+multiple encoded streams (54, 56) comprises:
+
+an encoder (70) that generates a stream (41) of encoded frames in response to
+
+the series of original video frames (40);
+
+means (74) for separating the stream (41) of encoded frames into the multiple en-
+coded streams (54, 56).
+
+The video communication system of claim 4, wherein the means for reconstructing
+the stream of video frames comprises:
+
+means (76) for merging the multiple encoded streams (54, 56) of encoded video
+
+frames;
+
+a decoder (72) for generating a stream (44) of reconstructed video frames in re-
+sponse to the merged streams.
+
+The video communication system of claim 1, wherein the receiver (32) further
+comprises means (26) for recovering a frame lost from one of the multiple encoded
+streams (54, 56) using one or more decoded frames from remaining ones of the
+multiple encoded streams (54, 56).
+
+The video communication system of claim 1, wherein the receiver (32) further
+comprises means for estimating a frame lost from one of the multiple encoded
+streams (54, 56) using one or more decoded frames from remaining ones of the
+multiple encoded streams (54, 56).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+10.
+
+11.
+
+12.
+
+The video communication system of claim 1, wherein the means for generating
+multiple encoded streams (54, 56) comprises means for decomposing each video
+frame into a set of quadrants and means for generating multiple encoded streams
+(54, 56) for each quadrant.
+
+The video communication system of claim 1, wherein the means for generating
+multiple encoded streams (54, 56) comprises means for adapting the number of
+the multiple encoded streams (54, 56) to communication conditions between the
+sender (30) and the receiver (32).
+
+The video communication system of claim 1, wherein the sender (30) further com-
+prises means for recovering a frame lost from one of the multiple encoded streams
+(54, 56) using one or more decoded frames from remaining ones of the multiple
+encoded streams (54, 56).
+
+The video communication system of claim 10, wherein the sender (30) further
+comprises means for encoding the multiple encoded streams (54, 56) in response
+to the recovered lost frame.
+
+A method for communicating a series of original video frames (40) from a sender
+(30) to a receiver (32), the method comprising the steps of:
+
+separating at the sender (30) the series of original video frames (40) into multiple
+encoded streams (54, 56), each encoded stream (54, 56) having a series of en-
+coded frames (i, P) that depend from a previous encoded frame in the correspond-
+ing encoded stream (54, 56), and each frame of the series of original video frames
+(40) being present only in one of the multiple encoded streams (54, 56);
+
+reconstructing at the receiver (32) a stream of video frames in response to the
+multiple encoded streams (54, 56) such that errors in one or more of the multiple
+encoded streams (54, 56) do not prevent reconstruction of remaining ones of the
+
+multiple encoded streams (54, 56);
+
+in case a communication error caused the loss of a frame at the receiver (32), re-
+covering at the receiver (32) the lost frame in accordance with a selected method
+to generate a recovered frame, and signaling to the sender that the communication
+error occurred and the method selected for frame recovery, and
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+13.
+
+14,
+
+15.
+
+16.
+
+at the sender (30), determining a recovered frame on the basis of the signaled re-
+covery method, comparing the recovered frame to the lost frame, and, in case it is
+determined that the quality of the recovered frame is not sufficient, transmitting to
+the receiver a frame that is intra for the entire recovered frame or for an area of the
+
+recovered frame for reinitializing a decoder (22) in the receiver (32).
+
+The method of claim 12, wherein the step of generating multiple encoded streams
+(54, 56) comprises the steps of:
+
+separating the series of original video frames (40) into a stream (50, 52) of video
+frames for each stream;
+
+encoding each stream (50, 52) separately.
+
+The method of claim 13, wherein the step of reconstructing the stream of video
+frames comprises the steps of:
+
+generating a stream (60, 62) of reconstructed video frames in response to one of
+the multiple encoded streams (54, 56);
+
+merging the streams (60, 62) of reconstructed video frames.
+
+The method of claim 12, wherein the step of generating multiple encoded streams
+(54, 56) comprises the steps of:
+
+generating a stream (41) of encoded frames in response to the series of original
+video frames (40);
+
+separating the stream (41) of encoded frames into the multiple encoded streams
+(54, 56).
+
+The method of claim 15, wherein the step of reconstructing the stream of video
+frames comprises the steps of:
+
+merging the multiple encoded streams (54, 56) of encoded video frames.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+17.
+
+18.
+
+19.
+
+20.
+
+21.
+
+22.
+
+generating a stream (44) of reconstructed video frames in response to the merged
+
+streams.
+
+The method of claim 12, wherein recovering a frame lost from one of the multiple
+encoded streams (54, 56) uses one or more decoded frames from remaining ones
+of the multiple encoded streams (54, 56).
+
+The method of claim 12, wherein recovering a frame lost from one of the multiple
+encoded streams (54, 56) comprises estimating a frame lost from one of the multi-
+ple encoded streams (54, 56) using one or more decoded frames from remaining
+
+ones of the multiple encoded streams (54, 56).
+
+The method of claim 12, wherein generating multiple encoded streams (54, 56)
+comprises the steps of decomposing each video frame into a set of quadrants and
+generating multiple encoded streams (54, 56) for each quadrant.
+
+The method of claim 12, wherein generating multiple encoded streams (54, 56)
+comprises the step of adapting the number of the multiple encoded streams (54,
+
+56) to communication conditions between a sender (30) and a receiver (32).
+
+The method of claim 12, wherein determining at the sender (30) a recovered frame
+lost from one of the multiple encoded streams (54, 56) uses one or more decoded
+frames from remaining ones of the multiple encoded streams (54, 56) and encod-
+ing the multiple encoded streams (54, 56) in response to the recovered lost frame.
+
+A sender (30) for a video communication system including a receiver (32), com-
+
+prising:
+
+means (14, 16; 70) for separating the series of original video frames (40) into mul-
+tiple encoded streams (54, 56), each encoded stream (54, 56) having a series of
+encoded frames (I, P) that depend from a previous encoded frame in the corre-
+sponding encoded stream (54, 56), and each frame of the series of original video
+frames (40) being present only in one of the multiple encoded streams (54, 56);
+and
+
+means for determining, in case a communication error caused the loss of a frame
+at the receiver (32), a recovered frame on the basis of a recovery method used by
+
+--- PAGE 6 ---
+23.
+
+10
+
+15
+
+the receiver, for comparing the recovered frame to the lost frame, and, in case it is
+determined that the quality of the recovered frame is not sufficient, for transmitting
+to the receiver a frame that is intra for the entire recovered frame or for an area of
+the recovered frame for reinitializing a decoder (22) in the receiver (32).
+
+A receiver (32) for a video communication system including a sender (30), com-
+
+prising:
+
+means for reconstructing a stream of video frames in response to the multiple en-
+coded streams (54, 56) such that errors in one or more of the multiple encoded
+streams (54, 56) do not prevent reconstruction of remaining ones of the multiple
+
+encoded streams (54, 56); and
+
+means for recovering, in case a communication error caused the loss of a frame at
+the receiver (32), the lost frame in accordance with a selected method to generate
+a recovered frame, for signaling to the sender that the communication error oc-
+curred and the method selected for frame recovery, and for receiving from the
+sender a frame that is intra for the entire recovered frame or for an area of the re-
+
+covered frame for reinitializing a decoder (22) in the receiver (32).

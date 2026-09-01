@@ -1,0 +1,185 @@
+--- PAGE 1 ---
+-16-
+CLAIMS (MAIN REQUEST):
+
+1. A computer-implemented method for predicting electrical energy production of
+a photovoltaic system included in at least one aircraft (110), said method comprising:
+
+determining a first predicted amount of solar irradiance for each of a plurality
+of geographical points (104) as a function of location and time;
+
+determining a second predicted amount of solar irradiance received by the at
+least one aircraft along a flight path of the at least one aircraft, wherein the flight path
+(112) includes a subset of the plurality of geographical points, wherein the flight path
+has a starting time and an ending time, and wherein the second predicted amount is
+based at least in part on the first predicted amount; and
+
+determining a predicted amount of electrical energy produced by the
+photovoltaic system (200) along the flight path, based at least in part on the second
+predicted amount.
+
+2. The method of Claim 1, further comprising generating an animation (426) of
+the solar irradiance over the flight path.
+
+3. The method of Claims 1 or 2, wherein determining the second predicted
+amount further comprises determining the second predicted amount based at least in
+part on a total surface area of the photovoltaic system.
+
+4. The method of any of Claims 1 to 3, wherein determining the predicted
+amount of electrical energy further comprises determining the predicted amount of
+electrical energy based at least in part on a system efficiency of the photovoltaic
+
+system.
+
+5. The method of any of Claims 1 to 4, wherein determining the second
+predicted amount further comprises determining the second predicted amount based
+at least in part on a model of the at least one aircraft, wherein the model defines at
+least one of surface angles and surface areas.
+
+7632067; PLHM; PLHM MAIN REQUEST
+
+--- PAGE 2 ---
+-17-
+
+6. The method of any of Claims 1 to 5, wherein determining the second
+predicted amount further comprises determining the second predicted amount based
+at least in part on a model of the at least one aircraft, wherein the model defines at
+least one of a cruise speed, a cruise altitude, and a takeoff speed.
+
+7. The method of any of Claims 1 to 6, further comprising determining the flight
+path of the at least one aircraft based at least in part on starting coordinates, ending
+
+coordinates, a departure time, a mean taxi time, and a mean gate time.
+
+8. The method of any of claims 1 to 7,further comprising calculating predicted
+amounts of electrical energy produced by the photovoltaic system for multiple flight
+
+paths.
+
+9. The method of any of claims 1 to 8, wherein determining the first predicted
+amount comprises:
+
+generating a weather and atmosphere attenuation model by parsing weather
+data to determine a probability of one or more weather events occurring at each of
+the plurality of geographical points;
+
+calculating solar parameters for each of the plurality of geographical points;
+and
+
+generating an irradiance model by combining the solar parameters with the
+weather and atmosphere attenuation model to determine, at each of the plurality of
+geographical points, an amount of solar irradiance attenuated due to weather
+
+conditions.
+
+10. The method of any preceding claim, wherein determining the first predicted
+amount of solar irradiance comprises generation of a time-series simulation of solar
+
+irradiance for each of a plurality of geographical points.
+11. The method of any preceding claim, further comprising translating the
+
+predicted amount of electrical energy into an estimated saving in fuel used by the at
+
+least one aircraft.
+
+7632067; PLHM; PLHM MAIN REQUEST
+
+--- PAGE 3 ---
+-18-
+
+12. A computing device for predicting electrical energy production of a
+photovoltaic system included in an aircraft (110), said computing device configured
+to:
+
+determine a first predicted amount of solar irradiance for each of a plurality of
+geographical points as a function of location and time;
+
+determine a second predicted amount of solar irradiance received by the
+aircraft along a flight path of the aircraft, wherein the flight path (112) includes a
+subset of the plurality of geographical points (104), wherein the flight path has a
+starting time and an ending time and wherein the second predicted amount is based
+at least in part on the first predicted amount; and
+
+determine a predicted amount of electrical energy produced by the
+photovoltaic system along the flight path, based at least in part on the second
+
+predicted amount.
+
+13. The computing device of Claim 12, further configured to generate an
+animation (426) of the solar irradiance over the flight path.
+
+14. |The computing device of Claims 12 or 13, further configured to generate an
+animation of the solar irradiance over the Earth from a beginning time associated
+with the flight path to an ending time associated with the flight path.
+
+15. |The computing device of any of Claims 12 to 14, further configured such that
+determining the second predicted amount further comprises determining the second
+predicted amount based at least in part on a total surface area of the photovoltaic
+
+system.
+
+16. |The computing device of any of Claims 12 to 15, further configured such that
+determining the predicted amount of electrical energy further comprises determining
+the predicted amount of electrical energy based at least in part on a system
+
+efficiency of the photovoltaic system.
+
+17. |The computing device of any of Claims 12 to 16, further configured such that
+determining the second predicted amount further comprises determining the second
+
+7632067; PLHM; PLHM MAIN REQUEST
+
+--- PAGE 4 ---
+-19-
+
+predicted amount based at least in part on a model of the aircraft, wherein the model
+defines at least one of surface angles and surface areas.
+
+18. |The computing device of any of Claims 12 to 17, further configured such that
+determining the second predicted amount further comprises determining the second
+predicted amount based at least in part on a model of the aircraft, wherein the model
+
+defines at least one of a cruise speed, a cruise altitude, and a takeoff speed.
+
+19. The computing device of any of Claims 12 to 18, further configured to
+determine the flight path of the aircraft based at least in part on starting coordinates,
+
+ending coordinates, a departure time, a mean taxi time, and a mean gate time.
+
+20. The computing device of any of claims 12 to 19, wherein the computer is
+configured to calculate predicted amounts of electrical energy produced by the
+photovoltaic system for multiple flight paths.
+
+21. The computing device of any of claims 12 to 20, further configured such that
+determining the first predicted amount comprises:
+
+generating a weather and atmosphere attenuation model by parsing weather
+data to determine a probability of one or more weather events occurring at each of
+the plurality of geographical points;
+
+calculating solar parameters for each of the plurality of geographical points;
+and
+
+generating an irradiance model by combining the solar parameters with the
+weather and atmosphere attenuation model to determine, at each of the plurality of
+geographical points, an amount of solar irradiance attenuated due to weather
+
+conditions.
+
+22. The computing device of any one of claims 12 - 21, wherein the computing
+device being configured to determine the first predicted amount of solar irradiance
+comprises the computer being configured to generation of a time-series simulation of
+
+solar irradiance for each of a plurality of geographical points
+
+7632067; PLHM; PLHM MAIN REQUEST
+
+--- PAGE 5 ---
+-20-
+
+23. The computing device of any one of claims 12 — 22, wherein the computing
+device is further configured to translate the predicted amount of electrical energy into
+
+an estimated saving in fuel used by the at least one aircraft.
+
+7632067; PLHM; PLHM MAIN REQUEST

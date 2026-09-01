@@ -1,0 +1,117 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+2006P02539WE
+
+11 23.05.2013
+MAIN REQUEST CLAIMS:
+
+1. A diagnostic imaging arrangement comprising
+
+- amagnetic resonance examination (1) system operable to acquire magnetic resonance
+
+signals;
+
+- an emission tomography system (2) operable to acquire nuclear decay signals;
+
+- an analysis module (4) operable to derive motion correction(s) from the magnetic resonance
+
+signals; and
+
+- areconstruction module (5) operable to reconstruct a motion corrected emission
+
+tomographic image from the nuclear decay signals on the basis of motion corrections,
+characterized in that
+
+- the magnetic resonance examination system (1) is configured for repeatedly
+
+sampling a centre region of k-space and
+
+- the analysis module is arranged to derive the motion corrections from
+
+variations among the repeatedly sampled centre region of k-space.
+
+2. The diagnostic imaging arrangement of claim 1, wherein the magnetic
+resonance signals are acquired using any one of the following: a propeller acquisition
+
+sequence, a 3D-TRICKS acquisition sequence, and a 4D-TRACKS acquisition sequence.
+
+3. The diagnostic imaging arrangement of claim 1 or 2, wherein the diagnostic
+imaging arrangement is operable to acquire the nuclear decay signals and the magnetic
+
+resonance signals from a volume of interest.
+
+4. The diagnostic imaging arrangement of claim 1, 2, or 3, wherein the diagnostic
+imaging arrangement comprises a computer (3), wherein the analysis module and the
+
+reconstruction module are implemented as software on the computer.
+
+5. A diagnostic imaging arrangement as claimed in any one of the preceding
+claims, including
+
+- a system controller (3) coupled to the magnetic resonance examination system
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2006P02539WE
+
+12 23.05.2013
+
+and the emission tomography system,
+
+- the system controller having the functions to control
+
+- the acquisition of magnetic resonance signals by the magnetic
+resonance examination system and
+
+- the acquisition of nuclear decay signals by the emission tomography
+system and, wherein
+- the system controller further has the function to register the time of the
+acquisitions of the magnetic resonance signals and the nuclear decay signals and
+- the magnetic resonance signals for deriving the motion corrections and the
+nuclear decay signals for reconstruction of the emission tomographic image having equal
+
+acquisition time.
+
+6. A diagnostic imaging arrangement as claimed in Claim 5 wherein the time
+registration of the system controller is implemented by controlling the magnetic resonance
+examination system and the emission tomography system for simultaneous acquisition of
+
+magnetic resonance signals and nuclear decay signals, respectively.
+
+7. A diagnostic imaging arrangement as claimed in Claim 5 wherein in the time
+registration of the system controller is implemented by assigning a time stamp to the
+
+magnetic resonance signals and to the nuclear decay signals.
+
+8. The diagnostic imaging arrangement as claims in Claim 5, wherein the
+magnetic resonance signals and the nuclear decay signals are registered by binning into
+frames with a duration determined by the length of time necessary to acquire a strip of k-
+
+space from the centre region of k-space.
+
+9. A diagnostic imaging arrangement as claimed in any one of Claims | through
+5, with the reconstruction module further operable to reconstruct a motion corrected magnetic
+
+resonance image from the magnetic resonance signals on the basis of the motion corrections.
+
+10. A therapeutic arrangement comprising a diagnostic imaging arrangement as
+defined in Claim 5 and a therapy module, wherein the system controller is further coupled to
+the therapy module and has the function to control the therapy module on the basis of the
+
+motion corrected emission tomographic image.

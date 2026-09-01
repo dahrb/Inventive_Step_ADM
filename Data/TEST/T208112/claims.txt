@@ -1,0 +1,361 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+09 155 361.0
+FELICA NETWORKS INC.
+
+NEW CLAIMS
+
+(Main Request)
+
+1. An information processing apparatus (100, 100’) on
+which an IC chip (150, 150’) in which secure information
+is recorded is mounted and which is connected to a service
+providing server (200, 200’) for providing a service toa
+user and one or a plurality of settlement operator servers
+(300, 300’a, 300’b) for executing a settlement concerning
+the service via a network (50, 50’), comprising:
+
+a content data acquisition part (108) for acquiring
+content data containing location information of one or a
+plurality of script files capable of reading secure
+information in the IC chip (150, 150’) from the service
+providing server (200, 200’);
+
+a file reading part (112) for reading the one or
+plurality of script files from the settlement operator
+servers (300, 300’a, 300’b) based on the location
+information of the one or plurality of script files
+contained in the content data- acquired by the content data
+acquisition part (108); and
+
+a secure information reading part (116) for reading
+the one or plurality of pieces of secure information from
+the IC chip (150, 150’) based on a secure information
+access description contained in the one or plurality of
+
+script files read by the file reading part (112); and
+
+wherein the information processing apparatus
+(100,100’) is configured to request settlement operation
+information from the one or plurality of settlement
+operator servers (300, 300’a, 300’b), and to receive
+settlement processing execution content notification from
+the one or plurality of settlement operator servers (300,
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2
+
+300’a,300’b), when the secure information has been written
+
+into the Ic chip (150, 150’).
+
+2. The information processing apparatus (100, 100’)
+according to claim 1, further comprising a display part
+(120) for displaying the one or plurality of pieces of
+secure information in the IC chip (150, 150’) read by the
+secure information reading part (116) in one screen in
+
+order.
+
+3. The information processing apparatus (100, 100’)
+according to claim 1 or 2, further comprising an
+interpretation part (114) for interpreting the secure
+information access description contained in the script
+file, wherein
+
+the secure information reading part (116) reads the
+secure information from the IC chip (150, 150’) based on
+an interpretation of the secure information access
+
+description by the interpretation part (114).
+
+4, The information processing apparatus (100, 100’)
+according to any of claims 1 to 3, further comprising a
+settlement operator server identification part (110) for
+identifying the settlement operator server (300, 300’a,
+300’b) on which the script file is stored from the
+location information of the script file contained in the
+content data acquired by the content data acquisition part
+
+(108).
+
+5. The information processing apparatus (100, 100’)
+according to claim 1, further comprising a location
+information selection part (122) for selecting location
+information of one or more of the script files from the
+
+location information of the plurality of script files
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3
+
+contained in the content data in accordance with a user
+entry, wherein
+
+the file reading part (112) reads one or more pieces
+of the secure information from the IC chip (150, 150’)
+based on the location information of one or more of the
+script files selected by the location information
+
+selection part (122).
+
+6. The information processing apparatus (100, 100’)
+according to claim 1 or 5, wherein the IC chip (150, 150’)
+has the plurality of pieces of secure information, each
+updatable by the plurality of settlement operator servers
+(300, 300’a, 300'b), recorded therein,
+
+the information processing apparatus (100, 100’)
+comprises a secure information selection part (124) for
+selecting one or more pieces of the secure information
+from the plurality of secure information displayed in the
+display part (120) in accordance with a user entry, and
+
+one or more pieces of the secure information selected
+by the secure information selection part (124) are updated
+
+by the settlement operator servers (300, 300’a, 300’b).
+
+7. An information processing method of an information
+processing apparatus (100, 100’) on which an IC chip (150,
+150’) in which secure information is recorded is mounted
+and which is connected to a service providing server (200)
+for providing a service to a user and one or a plurality
+of settlement operator servers (300, 300’a, 300’b) for
+executing a settlement concerning the service via a
+network (50, 50‘), comprising the steps of:
+
+acquiring content data containing location
+information of a script file capable of reading secure
+information in the IC chip (150, 150’) from the service
+
+providing server (200, 200’);
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4
+
+reading the one or plurality of script files from the
+one or plurality of settlement operator servers (300,
+300’a, 300’b) based on the location information of the one
+or plurality of script files contained in the acquired
+content data; ard
+
+reading the one or plurality of pieces of secure
+information from the IC chip (150, 150’) based on a secure
+information access description contained in the one or
+
+plurality of read script files); and
+
+requesting settlement operation information from the
+one or plurality of settlement operator servers (300,
+300’a, 300’b), and receiving settlement processing
+execution content notification from the one or plurality
+of settlement operator servers (300, 300’a,300’b), when
+
+the secure information has been written into the IC chip
+
+8. An information processing method according to claim 7,
+further comprising a step of
+displaying the plurality of pieces of secure
+
+information in one screen in order.
+
+9. A program for causing a computer to function as an
+information processing apparatus (100, 100’) on which an
+Ic chip (150, 150’) in which secure information is
+recorded is mounted and which is connected to a service
+providing server (200, 200’) for providing a service to a
+user and one or plurality of settlement operator servers
+(300, 300’a, 300’b) for executing a settlement concerning
+the service via a network (50, 50’), comprising:
+
+a content data acquisition part (108) for acquiring
+content data containing location information of a script
+file capable of reading secure information in the IC chip
+
+(150, 150’) from the service providing server (200, 200’);
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+5
+
+a file reading part (112) for reading the script file
+from the settlement operator server (300, 300’a, 300’b)
+based on the location information of the one or plurality
+of script files contained in the content data acquired by
+the content data acquisition part (108); and
+
+a secure information reading part (116) for reading
+the one or plurality of pieces of secure information from
+the IC chip (150) based on a secure information access
+description contained in the one or plurality of script
+
+files read by the file reading part (112); and
+
+wherein the information processing apparatus
+(100,100’) is configured to request settlement operation
+information from the one or plurality of settlement
+operator servers (300, 300’a, 300’b), and is configured to
+
+receive settlement processing execution content
+
+notification from the one or plurality of settlement
+
+operator servers (300, 300’a,300’b), when the secure
+
+information has been written into the IC chip (150, 150’).
+
+10. A program for causing a computer to function as an
+information processing apparatus (100, 100’) according to
+claim 9, comprising
+
+a display part (120) for displaying the plurality of
+pieces of the secure information read by the secure
+
+information reading part (116) in one screen in order.
+
+11. An information processing system (10, 20) in which an
+information processing apparatus (100, 100’) on which an
+IC chip (150, 150’) in which secure information is
+recorded is mounted, a service providing server (200,
+200’) for providing a service to a user and a settlement
+operator server (300, 300’a, 300’b) for executing a
+settlement concerning the service are connected via a
+
+network (50, 50’), wherein
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+6
+
+the service providing server (200, 200’), comprising:
+
+a content data providing part for providing content
+Gata containing location information of one or a plurality
+of script files capable of reading the secure information
+in the IC chip (150, 150’) to the information processing
+apparatus (100, 100’) in accordance with a request of the
+information processing apparatus (100, 100’),
+
+the information processing apparatus (100, 100’),
+comprising:
+
+a content data acquisition part (108) for acquiring
+the content data provided by the content data providing
+part;
+
+a file reading part (112) for reading the one or
+plurality of script files from the one or plurality of
+settlement operator servers (300, 300’a, 300’b) based on
+the location information of the one or plurality of script
+files contained in the content data acquired by the
+content data acquisition part (108); and
+
+a secure information reading part (116) for reading
+the one or plurality of secure information from the IC
+chip (150, 150’) based on a secure information access
+description contained in the one or plurality of script
+
+files read by the file reading part(112); and
+
+wherein the information processing apparatus
+(100,100') is configured to request settlement operation
+information from the one or plurality of settlement
+operator servers (300, 300'a, 300’b), and is configured to
+receive settlement processing execution content
+notification from the one or plurality of settlement
+operator servers (300, 300’a,300'b), when the secure
+information has been written into the IC chip (150, 150’);
+
+and
+
+the one or plurality of settlement operator servers
+
+(300, 300’a, 300’b), comprising:
+
+--- PAGE 7 ---
+10
+
+15
+
+7
+
+a secure information update part (304) for. updating
+one or more pieces of the secure information, read by the
+
+secure information reading part(116).
+
+12. An information processing system (10, 20) according to
+claim 11, characterised in
+
+the information processing apparatus (100, 100’)
+further comprising a display part (150, 150’) for
+displaying the plurality of pieces of secure information
+read by the secure information reading part (116) in one
+screen in order, and
+
+the settlement operator server (300, 300’a, 300’b)
+further comprising a secure information update part (304)
+for updating one or more pieces of the secure information
+selected in accordance with a user entry from secure
+
+information displayed in the display part (120).

@@ -1,0 +1,41 @@
+TITLE:
+Microcontroller having core logic power shutdown while maintaining input-output port integrity
+
+TYPE:
+European Patent
+
+ABSTRACT:
+An electronic system using an integrated circuit comprising microcontroller core logic, input-output (I/O) port logic and interface logic, wherein the microcontroller core logic may be powered down (power removed therefrom) while the I/O port logic remains in the state it was in just before the microcontroller core logic was powered down. The I/O port logic remains connected to the power source at all times so that its operation and signal output states are maintained even when the microcontroller core logic is powered down. The major power consuming portion of the integrated circuit electronic system is disconnected from the power source such as a battery, thus greatly conserving battery power and extending the useful battery operating time of the integrated circuit electronic system.
+
+CLAIMS:
+A microcontroller integrated circuit having low power standby capabilities while maintaining input-output port integrity, comprising:
+microcontroller core logic;
+input-output port logic, said input-output port logic adapted to store output logic levels;
+interface logic connected between said microcontroller core logic and said input-output port logic; and
+a power switch connected to said microcontroller core logic and adapted for connection to a power source, said power switch being controlled by said input-output port logic; wherein,
+said microcontroller core logic controls the output logic levels of said input-output port logic when the power source is connected to said microcontroller core logic, and when the power source is disconnected from said microcontroller core logic then the output logic levels of said input-output port logic remain in the same state as they were just before the power source was disconnected from said microcontroller core logic.
+The microcontroller integrated circuit of claim 1, wherein the power source is a battery.
+The microcontroller integrated circuit of claim 1, wherein said interface logic comprises signal isolation switches and clock input disable circuits, wherein logic signals and clock signals from said microcontroller core logic to said input-output port logic are disconnected and disabled, respectively, before the power source is disconnected from said microcontroller core logic.
+The microcontroller integrated circuit of claim 1, wherein the output logic levels of said input-output port are stored in a memory having a clock input and data inputs, wherein data is stored in said memory when a logic level transition occurs at the clock input.
+The microcontroller integrated circuit of claim 4, wherein a clock disable signal is sent by said microcontroller core logic to said interface logic so that the clock input is disabled.
+The microcontroller integrated circuit of claim 5, wherein said input-output logic port causes said power switch to disconnect the power source from said microcontroller core logic after the clock input is disabled.
+The microcontroller integrated circuit of claim 5, wherein the data inputs are disconnected when the clock disable signal is sent.
+The microcontroller integrated circuit of claim 7, wherein said input-output logic port causes said power switch to disconnect the power source from said microcontroller core logic after the clock input is disabled and the data inputs are disconnected.
+The microcontroller integrated circuit of claim 1, further comprising said power switch adapted for connecting said microcontroller core logic to a first voltage of the power source in a first mode and to a second voltage of the power source in a second mode.
+The microcontroller integrated circuit of claim 9, wherein the first voltage is an operating voltage and the second voltage is at a common or ground level of the power source.
+The microcontroller integrated circuit of claim 9, wherein said microcontroller core logic is operational when said power switch is in the first mode and is shutdown and drawing substantially no power from the power source when said power switch is in the second mode.
+The microcontroller integrated circuit of claim 4, wherein said microcontroller core logic performs a diagnostic self test when connected to the power source.
+The microcontroller integrated circuit of claim 1, wherein an external input signal to said input-output port logic causes said power switch to connect the power source to said microcontroller core logic.
+The microcontroller integrated circuit of claim 12, wherein a clock enable signal is sent by the microcontroller core logic so that the clock input is enabled.
+A method, in a microcontroller integrated circuit having low power standby capabilities while maintaining input-output port integrity, comprising the steps of:
+providing microcontroller core logic;
+providing input-output port logic, said input-output port logic adapted to store output logic levels;
+providing interface logic connected between said microcontroller core logic and said input-output port logic; and
+providing a power switch connected to said microcontroller core logic and adapted for connection to a power source, said power switch being controlled by said input-output port logic; whereby the steps of,
+controlling the output logic levels of said input-output port logic with said microcontroller core logic when the power source is connected to said microcontroller core logic, and
+disconnecting the power source from said microcontroller core logic while maintaining the output logic levels of said input-output port logic in the same state as they were just before the power source was disconnected from said microcontroller core logic.
+The method of claim 15, wherein the step of disconnecting the power source from said microcontroller core logic comprises the steps of:
+initiating a power shutdown in said microcontroller core logic;
+disabling clock inputs to memory registers in said input-output port logic; and
+powering down said microcontroller core logic by disconnecting the power source therefrom.
+The method of claim 16, alter the step of disabling the clock inputs further comprises the step of disconnecting signal lines between said microcontroller core logic and said input-output port logic.

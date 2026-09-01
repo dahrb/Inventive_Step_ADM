@@ -1,0 +1,88 @@
+--- PAGE 1 ---
+27.05.2014
+
+MAIN REQUEST A
+
+New Claims
+
+A method for monitoring the residence time across network
+nodes (1) of a communication network (30) including a
+transparent clock-based synchronization architecture
+according to the Precision Time Protocol release 2, PTPV2,
+said method characterized in the following steps:
+
+— configuring and generating a modified PTPV2 packet, which
+is not dedicated to a synchronization purpose;
+
+— measuring (50) the residence time of the modified PTPV2
+packet across a network node (1) by a transparent clock (3);
+— storing (60) the measured residence time;
+
+— retrieving the stored residence time by a Network protocol.
+
+The method of claim 1, wherein the traceable packet is
+parameterized with respect to at least a parameter of a
+
+delay-sensitive application packet.
+
+The method of claim 2, wherein the parameter is the quality
+
+of service.
+
+The method of claim 2, wherein the parameter is the packet
+length.
+
+The method of claim 1, wherein the PTPV2 packet is a PTPV2
+
+SYNC packet (20).
+
+The method of claim 1, wherein the PTPV2 packet is a PTPV2
+DELAY _REQ packet (40).
+
+The method of any of the preceding claims, wherein the
+
+storing step is a centralized storing step.
+
+--- PAGE 2 ---
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+The method of any of preceding claims, further comprising an
+
+analyzing step of the measured residence time.
+The method of any of the preceding claims, further comprising
+
+a multicast sending step of the traceable packet.
+
+The method of any of the preceding claims, wherein the
+
+transparent clock (3) is an IEEE 1588V2 Peer-to-Peer
+
+Transparent Clock (3).
+
+The method of any of the preceding claims, wherein the
+
+transparent clock (3) is an IEEE 1588V2 end-to-end
+
+Transparent Clock (3).
+
+A network node (1) adapted to perform the method as claimed
+
+in the preceding claims.
+
+A communication network adapted to perform the method as
+
+claimed in the preceding claims 1 to 11.
+
+A computer program including instructions stored on a memory
+of a computer and/or a dedicated system, wherein said
+computer program is adapted to perform the method as claimed
+
+in preceding claims 1 to ll.

@@ -1,0 +1,49 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+19 218 493.5 -l- 12117-912-EPQO0Mk
+
+MAIN REQUEST
+CLAIMS
+
+-clean version-
+
+1. A graphics processing unit (214, 410-413) comprising one or more multiprocessors (234,
+325),
+characterized in that at least one of the one or more multiprocessors (234, 325) including:
+a register file (258, 334A, 334B, 1606) to store operands;
+a first processing unit (700(a)) including a plurality of execution units (705(a)-705(n)) of
+a first type,
+the first type of execution units being floating point units to process, using the
+register file, deep learning matrix math operations on a first set of operands;
+and
+a second processing unit (700(b)), being different from the first processing unit (700(a)),
+the second processing unit (700(b)) including a plurality of execution units of a second type;
+the second type of execution units (706(a)-706(n)) comprising integer arithmetic
+logic units to perform general-purpose graphics processing unit operations on a second
+
+set of operands.
+
+2. The graphics processing unit (214, 410-413) of claim 1, further comprising a dispatch unit
+to dispatch first instructions for execution at the first type of execution units and dispatch
+
+second instructions to the second type of execution units.
+
+3. The graphics processing unit (214, 410-413) of claim 1, wherein the second type of
+execution units further comprise:
+
+floating point units to perform floating point operations.
+
+4. The graphics processing unit (214, 410-413) of claim 3, wherein the floating point units to
+perform floating point operations comprise:
+processing cores to perform 32-bit floating point operations; and
+
+processing cores to perform 64-bit floating point operations.

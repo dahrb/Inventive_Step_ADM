@@ -1,0 +1,8 @@
+TITLE:
+A mixed-precision fused multiply and add
+
+TYPE:
+academic paper
+
+ABSTRACT:
+The floating-point fused multiply and add, computing R=AB+C with a single rounding, is now an IEEE-754 standard operator. This article investigates variants in which the addend C and the result R are of a larger format, for instance binary64 (double precision), while the multiplier inputs A and B are of a smaller format, for instance binary32 (single precision). Like the standard FMA operator, the proposed mixed-precision operator computes AB+C with a single rounding, and fully support subnormals. With minor modifications, it is also able to perform the standard FMA in the smaller format, and the standard addition in the larger format. For sum-of-product applications, the proposed mixed-precision FMA provides the accumulation accuracy of the larger format at a cost that is shown to be only one third more than that of a classical FMA in the smaller format. Besides, we show that such a mixed-precision FMA, although not mentioned in existing standard (IEEE 754, C and Fortran), is perfectly compliant to these standards. For DSP and embedded applications, a mixed binary32/binary64 FMA will enable binary64 computing where it is most needed, at a small cost overhead with respect to current binary32 FMAs, and with fewer data transfers, hence lower power than a pure binary64 approach. In high-end processors, a mixed binary64/binary128 FMA could provide an adequate solution to the binary128 requirements of very large scale computing applications

@@ -1,0 +1,341 @@
+--- PAGE 1 ---
+10010159
+
+CLAIMS
+
+1. An image processing apparatus (100) comprising:
+
+a storage unit (140) for storing a plurality of files,
+
+and storing, in association with each other, a display item for
+
+accessing a file, anda URL for accessing the file in the storage
+
+unit, wherein it is controlled not to display a directory
+
+structure of the storage unit even in a case where an edit
+
+operation regarding the display item is received, and wherein
+
+the directory structure of the storage unit is indicated by the
+
+URL stored in association with the display item, and
+
+an obtaining unit for obtaining a URL either ona basis
+
+of receiving a URL input through a user operation or on a basis
+
+of selecting the display item displayed on a display device by
+
+a user ;
+
+a browser unit (110) for displaying, on the display
+
+device, acontent of a file whichis specified by the URL obtained
+
+by the obtaining unit and is read from the storage unit or
+
+external apparatus, and displaying the URL obtained by the
+
+obtaining unit,
+
+characterized in that the image processing apparatus
+
+further comprises:
+
+a determination unit for determining whether or not
+
+the URL obtained by the obtaining unit begins with a character
+
+string "file" and a host name or an IP address following the
+
+character string "file" indicates the image processing
+
+apparatus, and
+
+--- PAGE 2 ---
+a control
+
+de
+
+ob
+
+host name or the
+
+oO
+
+Ss
+
+the content of
+
+2.
+
+unit (102)
+
+for restricting,
+
+10010159
+
+if the
+
+IP address
+
+the obtained
+
+file" indicates the image processing apparatus,
+f the URL obtained by the obtaining unit such that
+
+tructure of the storage unit is not displayed to
+
+file is displayed.
+
+The image processing apparatus according
+
+wherein the control unit is configured to contro
+
+unit to display a
+
+de
+
+ob
+
+host name or
+
+the
+
+file" indicat
+
+3.
+
+a printing unit
+content displayed by the browser unit;
+a second control
+
+determines that the obtained URL begins with th
+
+string "file" and the host name or the
+
+character string "
+
+apparatus,
+
+IP address
+
+file name on the display device if
+
+termination unit determines that the URL obtained by the
+
+taining unit begins with the character string "file" and the
+
+following the character string
+
+the display
+a directory
+
+a user when
+
+to claim 1,
+
+1 the browser
+
+the
+
+termination unit determines that the URL obtained by the
+
+taining unit begins with the character string "file" and the
+
+following the character string
+
+tes the image processing apparatus.
+
+control]
+
+further comprising:
+
+unit
+
+and
+
+for, if
+
+fi le"
+
+IP address
+
+The image processing apparatus according to claim 1,
+
+for printing images based on the
+
+the determination unit
+
+e character
+
+following the
+indicates the image processing
+
+ling the printing unit to print the images
+
+not including an image corresponding to the directory structure
+
+32
+
+--- PAGE 3 ---
+10010159
+
+of the storage unit included in the obtained URL, and if the
+
+determination unit determines that the obtained URL begins with
+
+following the character string "
+
+the character string "file" and the host name or the IP address
+
+file" does not indicate the
+
+image processing apparatus, controlling the printing unit to
+
+print the images including information indicating the obtained
+
+URL.
+
+4. The image processing apparatus according to claim
+
+1 whereinif the determination unit determines that the obtained
+
+URL begins with a character string "http", the control unit is
+
+configured to control the browser unit to display the URL
+
+obtained by the obtaining unit together with the content of the
+
+obtained file.
+
+5. Amethod of controlling an image processing apparatus,
+
+the apparatus including a storage unit {
+
+in association with each other,
+
+for storing a plurality
+
+of files that can be displayed on a display unit, and storing,
+
+a display item
+
+for accessing
+
+a file, and a URL for accessing the file in the storage unit,
+
+wherein it is controlled not to display a directory structure
+
+regarding the display item is received,
+
+of the storage unit even in a case where an edit operation
+
+and wherein the
+
+directory structure of the storage unit is indicated by the URL
+
+stored in association with the display item,
+
+comprising:
+
+the method
+
+an obtaining step for obtaining a URL either ona basis
+
+- 33
+
+--- PAGE 4 ---
+a user;
+
+a browsing step {
+
+a content of a file
+
+the obtaining step
+
+external apparatus,
+
+characterized in that the method
+
+a determining step {
+
+M4
+
+file” anda
+
+string
+
+character string “file”
+
+apparatus, and
+
+10010159
+
+of receiving a URL input through a user operation or on a basis
+
+of selecting the display item displayed on a display device by
+
+for displaying, on the display device,
+
+which is specified by the URL obtained in
+
+and is read from the s
+
+tLorage unit or an
+
+and displaying the obtained URL,
+
+host name or an
+
+indicates th
+
+further comprises:
+
+for determining whether or not the
+
+URL obtained by the obtaining means begins with a character
+
+IP address following the
+
+e image processing
+
+a control step for, if it is determined that the URL
+
+obtained in the obta
+
+Mw“
+
+ining step begins with the character string
+
+file” and the host name or the IP address following the
+
+character string “file” indicates the image processing
+
+apparatus, restricting the display o:
+obtaining step such that a directory struc
+
+unit is not displayed to
+
+file is displayed.
+
+ture of
+
+fF the URL obtained in the
+
+the storage
+
+auser when the con
+
+tent of the obtained
+
+6. A computer program which when loaded into a computer
+
+and executed performs a method as claimed in claim 5.
+
+7. A computer-readable storage medium storing a computer
+
+program according to claim 6.
+
+- 34 -

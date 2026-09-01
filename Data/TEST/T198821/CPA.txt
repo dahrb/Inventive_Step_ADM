@@ -1,0 +1,221 @@
+Title: Methods and apparatus for communicating by vibrating or moving mobile devices
+
+Abstract: Methods and systems enable mobile devices to receive communications and inform users about received communications by vibrating based on a vibration pattern. The mobile device may inform a user about the type of communication, the identity of the communicator and the content of a message by generating vibrations according to preset vibration patterns. Vibration patterns may be implemented according to Morse code. The mobile device may also receive commands and instructions from the user in the form of accelerations (e.g., tapping or patting) of the mobile device. The mobile device may translate the accelerations into acceleration pattern data which may be compared to stored patterns or templates to determine a corresponding command. The mobile device may execute the command and verify the execution.
+
+Type: 
+US Patent
+
+Claims: 
+
+1. A method, comprising:
+receiving a communication including communication data in a mobile device;
+locating a first data record based on the received communication data;
+obtaining vibration pattern data from the located first data record; and
+activating a vibration motor based on the obtained vibration pattern data.
+2. The method of claim 1, wherein the vibration pattern data includes intervals of time during which the vibration motor vibrates.
+3. The method of claim 1, wherein the vibration pattern data is stored in a binary pattern wherein the binary digit symbol 1 corresponds to a period of vibration and the binary digit symbol 0 corresponds to a period of no vibration.
+4. The method of claim 1, further comprising:
+prompting a mobile device user to input a vibration pattern;
+receiving vibration pattern inputs in the mobile device;
+converting the vibration pattern inputs to vibration pattern data; and
+storing the vibration pattern data in a second data record.
+5. The method of claim 1, further comprising:
+displaying a Morse code menu;
+receiving a user Morse code selection;
+converting the Morse code selection to vibration pattern data; and
+storing the vibration pattern data in a second data record.
+6. The method of claim 1, wherein obtaining vibration pattern data comprises:
+translating a portion of the received communication to Morse code; and
+translating the Morse code into vibration pattern data.
+7. The method of claim 1, further comprising emitting a sound prior to activating the vibration motor.
+8. The method of claim 1, further comprising emitting a sound in addition to activating the vibration motor.
+9. A method for communicating, comprising:
+detecting a first set of accelerations versus time in a mobile device;
+comparing the detected first set of accelerations versus time to a database of accelerations versus time patterns to determine if there is a match;
+obtaining stored message data corresponding to a matched accelerations versus time pattern when it is determined that the detected first set of accelerations versus time matches a record in the database of accelerations versus time patterns; and
+transmitting a message based on the obtained message data.
+10. The method of claim 9, further comprising:
+generating vibrations according to a first vibration pattern to indicate that the message was transmitted.
+11. The method of claim 9, further comprising:
+generating vibrations according to a second vibration pattern before the message is transmitted;
+detecting a second set of accelerations versus time; and
+comparing the second set of accelerations versus time to the database of acceleration versus time to determine if there a match,
+wherein the message is transmitted if it is determined that there is a match between the second set of accelerations versus time and the database of acceleration versus time.
+12. The method of claim 11, wherein the second vibration pattern is an approximate replication of the first acceleration pattern.
+13. The method of claim 11, further comprising:
+receiving an third set of accelerations versus time;
+receiving contact data;
+receiving an action to be associated with the third set of accelerations versus time;
+receiving a message data;
+storing the third set of accelerations versus time in a data record of the database correlated to the contact data, the received action and received message data.
+14. The method of claim 13, wherein the contact data includes one of a telephone number, and an electronic mail address.
+15. The method of claim 13, wherein the received action includes performing an action selected from the group consisting of sending SMSs, sending MMSs, placing phone calls, sending electronic mails, and sending facsimiles.
+16. A mobile device comprising:
+a transceiver
+a vibration motor;
+a memory having stored therein vibration pattern data; and
+a processor coupled to the transceiver, the memory and the vibration motor, wherein the processor is configured with software to perform steps comprising:
+receiving a communication via the transceiver, the communication including communication data;
+locating a first data record in the memory based on the received communication data;
+obtaining vibration pattern data from the located first data record; and
+activating the vibration motor based on the vibration pattern data.
+17. The mobile device of claim 16, wherein the vibration pattern data includes intervals of time during which the processor activates the vibration motor.
+18. The mobile device of claim 16, wherein the vibration pattern data is stored in the memory in a binary pattern, wherein the binary digit symbol 1 corresponds to a period when the processor activates the vibration motor and the binary digit symbol 0 corresponds to a period when the processor does not activate the vibration motor.
+19. The mobile device of claim 16, further comprising:
+a display coupled to the processor; and
+a user input element coupled to the processor,
+wherein the processor is configured with software to perform further steps comprising:
+generating an image on the display prompting a user to input a vibration pattern;
+receiving vibration pattern user inputs via the user input element;
+converting the vibration pattern inputs to vibration pattern data; and
+storing the vibration pattern data in a second data record in the memory.
+20. The mobile device of claim 16, further comprising:
+a display coupled to the processor; and
+a user input element coupled to the processor,
+wherein the processor is configured with software to perform further steps comprising:
+generating an image on the display presenting a Morse code menu;
+receiving a Morse code selection user inputs via the user input element;
+converting the Morse code selection user inputs to vibration pattern data; and
+storing the vibration pattern data in a second data record in the memory.
+21. The mobile device of claim 16, wherein the processor is configured with software such that obtaining vibration pattern data includes performing steps comprising:
+translating a portion of the communication to Morse code; and
+translating the Morse code to vibration pattern data.
+22. The mobile device of claim 16, wherein the processor is configured with software to perform further steps comprising emitting a sound prior to activating the vibration motor.
+23. The method of claim 1, wherein the processor is configured with software to perform further steps comprising emitting a sound in addition to activating the vibration motor.
+24. A mobile device comprising:
+means for receiving a communication including communication data;
+means for locating a first data record based on the received communication data;
+means for obtaining vibration pattern data from the located first data record; and
+means for vibrating the mobile device based on the vibration pattern data.
+25. The mobile device of claim 24, wherein the vibration pattern data includes intervals of time during which the vibration motor vibrates.
+26. The mobile device of claim 24, wherein the vibration pattern data is stored in a binary pattern wherein the binary digit symbol 1 corresponds to a period of vibration and the binary digit symbol 0 corresponds to a period of no vibration.
+27. The mobile device of claim 24, further comprising:
+means for prompting a user to input a vibration pattern;
+means for receiving vibration pattern user inputs;
+means for converting the vibration pattern user inputs to vibration pattern data; and
+means for storing the vibration pattern data in a second data record.
+28. The mobile device of claim 24, further comprising:
+means for displaying a Morse code menu;
+means for receiving a Morse code selection user input;
+means for converting the Morse code selection user input to vibration pattern data; and
+means for storing the vibration pattern data.
+29. The mobile device of claim 24, wherein means for obtaining vibration pattern data the mobile device comprises:
+means for translating a portion of the communication to Morse code; and
+means for translating the Morse code to vibration pattern data.
+30. A processor readable storage medium having stored thereon processor executable software instructions configured to cause a mobile device processor to perform steps comprising:
+receiving a communication including communication data;
+locating a first data record based on the received communication data;
+obtaining vibration pattern data from the located first data record; and
+activating a vibration motor based on the vibration pattern data.
+31. The processor readable storage medium of claim 30, wherein the vibration pattern data includes intervals of time during which the vibration motor vibrates.
+32. The processor readable storage medium of claim 30, wherein the vibration pattern data is stored in a binary pattern wherein the binary digit symbol 1 corresponds to a period of vibration and the binary digit symbol 0 corresponds to a period of no vibration.
+33. The processor readable storage medium of claim 30, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform steps further comprising:
+prompting a user to input a vibration pattern;
+receiving vibration pattern user inputs;
+converting the vibration pattern user inputs to vibration pattern data; and
+storing the vibration pattern data in a second data record.
+34. The processor readable storage medium of claim 30, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform steps further comprising:
+displaying a Morse code menu;
+receiving a Morse code selection user input;
+converting the Morse code selection user input to vibration pattern data; and
+storing the vibration pattern data.
+35. The processor readable storage medium of claim 30, wherein the stored processor executable software instructions are configured to cause a mobile device processor to obtain vibration pattern data by performing steps further comprising:
+translating a portion of the communication to Morse code; and
+translating the Morse code to vibration pattern data.
+36. The processor readable storage medium of claim 30, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform further steps comprising emitting a sound prior to activating the vibration motor.
+37. The processor readable storage medium of claim 30, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform further steps comprising emitting a sound in addition to activating the vibration motor.
+38. A mobile device, comprising:
+an accelerometer;
+a memory having stored therein a database of accelerations versus time patterns; and
+a processor coupled to the memory and to the accelerometer, wherein the processor is configured with software to perform steps comprising:
+receiving acceleration data from the accelerometer;
+detecting a first set of accelerations versus time in the received acceleration data;
+comparing the first set of detected accelerations versus time to the database of accelerations versus time patterns to determine if there is a match;
+obtaining stored message data corresponding to a matched accelerations versus time pattern when it is determined that the detected first set of accelerations versus time matches a record in the database of accelerations versus time patterns; and
+transmitting a message based on the obtained message data.
+39. The mobile device of claim 38, further comprising a vibration motor coupled to the processor,
+wherein the processor is configured with software to perform further steps comprising activating the vibration motor to generate vibrations according to a first vibration pattern to indicate that the message was transmitted.
+40. The mobile device of claim 38, further comprising a vibration motor coupled to the processor,
+wherein the processor is configured with software to perform further steps comprising:
+activating the vibration motor according to a second vibration pattern before the message is transmitted;
+detecting a second set of acceleration versus time pattern in the received acceleration data;
+comparing the second set of acceleration versus time pattern to the database of accelerations versus time to determine if there a match; and
+transmitting the message when it is determined that there is a match between the second set of accelerations versus time and the database of acceleration versus time.
+41. The mobile device of claim 40, wherein the second vibration pattern is an approximate replication of the first set of accelerations versus time.
+42. The mobile device of claim 40, wherein the processor is configured with software to perform further steps comprising:
+detecting a third set of accelerations versus time from the received acceleration data;
+receiving contact data;
+receiving an action to be associated with the third set of accelerations versus time;
+receiving a message data;
+storing in the memory the third set of accelerations versus time in a data record in the memory correlated to the contact data, the received action and the received message data.
+43. The mobile device of claim 42, wherein the contact data includes one of a telephone number and an electronic mail address.
+44. The mobile device of claim 42, wherein the received action includes performing an action selected from the group consisting of sending SMSs, sending MMSs, placing phone calls, sending electronic mails, and sending facsimiles.
+45. A mobile device, comprising:
+means for detecting a first set of accelerations versus time;
+means for comparing the detected first set of accelerations versus time to a database of accelerations versus time patterns to determine if there is a match;
+means for obtaining stored message data corresponding to a matched accelerations versus time pattern when it is determined that the detected first set of acceleration versus time matches a record in the database of accelerations versus time patterns; and
+means for transmitting a message based on the obtained message data.
+46. The mobile device of claim 45, further comprising:
+means for generating vibrations according to a first vibration pattern to indicate that the message was transmitted.
+47. The mobile device of claim 45, further comprising:
+means for generating vibrations according to a second vibration pattern before the message is transmitted;
+means for detecting a second set of accelerations versus time pattern; and
+means for comparing the second set of accelerations versus time to the database of accelerations versus time to determine if there a match.
+48. The mobile device of claim 47, wherein the second vibration pattern is an approximate replication of the first set of accelerations versus time.
+49. The mobile device of claim 45, further comprising:
+means for receiving an third set of accelerations versus time;
+means for receiving contact data;
+means for receiving an action to be associated with the third set of accelerations versus time;
+means for receiving a message data;
+means for storing the third set of accelerations versus time in a data record correlated to the contact data, the received action and the received message data.
+50. The mobile device of claim 49, wherein the contact data includes one of a telephone number and an electronic mail address.
+51. The mobile device of claim 49, wherein the received action includes performing an action selected from the group consisting of sending SMSs, sending MMSs, placing phone calls, sending electronic mails, and sending facsimiles.
+52. A processor readable storage medium having stored thereon processor executable software instructions configured to cause a mobile device processor to perform steps comprising:
+detecting a first set of accelerations versus time;
+comparing the detected first set of accelerations to a database of accelerations versus time patterns to determine if there is a match;
+obtaining stored message data corresponding to a matched accelerations versus time pattern when it is determined that the detected first set of accelerations matches a record in the database of accelerations versus time patterns; and
+transmitting a message based on the obtained message data.
+53. The processor readable storage medium of claim 52, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform steps further comprising:
+generating vibrations according to a first vibration pattern to indicate that the message was transmitted.
+54. The processor readable storage medium of claim 52, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform steps further comprising:
+generating vibrations according to a second vibration pattern before the message is transmitted;
+detecting a second acceleration versus time pattern; and
+comparing the second acceleration pattern versus time to the database of acceleration versus time to determine if there a match; and
+transmitting the message when it is determined that there is a match between the second set of accelerations versus time and the database of acceleration versus time.
+55. The processor readable storage medium of claim 54, wherein the second vibration pattern is an approximate replication of the first set of accelerations versus time.
+56. The processor readable storage medium of claim 52, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform steps further comprising:
+receiving an third set of accelerations versus time;
+receiving contact data;
+receiving an action to be associated with the third set of accelerations versus time;
+receiving a message data;
+storing the third set of accelerations versus time in a data record correlated to the contact data, the received action and the received message data.
+57. The processor readable storage medium of claim 56, wherein the contact data includes one of a telephone number and an electronic mail address.
+58. The processor readable storage medium of claim 56, wherein the received action includes performing an action selected from the group consisting of sending SMSs, sending MMSs, placing phone calls, sending electronic mails, and sending facsimiles.
+59. A method, comprising:
+receiving a communication including communication data in a mobile device;
+locating a first data record based on the received communication data;
+obtaining vibration pattern data from the located first data record; and
+activating a speaker based on the obtained vibration pattern data.
+60. The method of claim 59, further comprising activating a vibration motor in combination with the speaker based on the obtained vibration pattern data.
+61. A mobile device, comprising:
+a transceiver
+a vibration motor;
+a memory having stored therein vibration pattern data; and
+a processor coupled to the transceiver, the memory and the vibration motor, wherein the processor is configured with software to perform steps comprising:
+receiving a communication including communication data in a mobile device;
+locating a first data record based on the received communication data;
+obtaining vibration pattern data from the located first data record; and
+activating a speaker based on the obtained vibration pattern data.
+62. The mobile device of claim 61, wherein the processor is configured with software to perform further steps comprising activating a vibration motor in combination with the speaker based on the obtained vibration pattern data.
+63. A mobile device, comprising:
+means for receiving a communication including communication data in a mobile device;
+means for locating a first data record based on the received communication data;
+means for obtaining vibration pattern data from the located first data record; and
+means for activating a speaker based on the obtained vibration pattern data.
+64. The mobile device of claim 63, further comprising means for activating a vibration motor in combination with the speaker based on the obtained vibration pattern data.
+65. A processor readable storage medium having stored thereon processor executable software instructions configured to cause a mobile device processor to perform steps comprising:
+receiving a communication including communication data in a mobile device;
+locating a first data record based on the received communication data;
+obtaining vibration pattern data from the located first data record; and
+activating a speaker based on the obtained vibration pattern data.
+66. The processor readable storage medium of claim 59, wherein the stored processor executable software instructions are configured to cause a mobile device processor to perform steps further comprising activating a vibration motor in combination with the speaker based on the obtained vibration pattern data.

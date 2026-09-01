@@ -1,0 +1,75 @@
+Title: 
+Methods, systems and computer program products for over the air (OTA) provisioning of soft cards on devices with wireless communications capabilities
+
+Abstract: Methods, systems, and computer program products for over the air provisioning of soft cards on devices with wireless communications capabilities are disclosed. According to one method, a soft card provisioning application is instantiated on a device with wireless communications capabilities. A card number for a soft card desired to be provisioned on the device is obtained from a user of the device. The card number is communicated to a provisioning configuration server over an air interface. Card-issuer-specific challenges corresponding to the card number and a provisioning issuer server network address are obtained from the provisioning configuration server. The challenges are presented to the user, and the user's responses to the challenges are received. A connection is made to the provisioning issuer server corresponding to the network address. The challenge responses are communicated to the provisioning issuer server. Soft card personalization data for activating the soft card is received from the provisioning issuer server. The soft card is provisioned for use on the device based on the personalization data.
+
+Type: 
+US Patent
+
+Claims: 
+
+1. A method for over the air (OTA) provisioning a soft card on a device having wireless communications capabilities, the method comprising:
+(a) instantiating a soft card provisioning application on a device with wireless communications capabilities;
+(b) obtain a card number for a soft card desired to be provisioned on the device;
+(c) communicating the card number to a provisioning configuration server over an air interface;
+(d) receiving at least one card-issuer-specific challenge question and a provisioning issuer server network address from the provisioning configuration server;
+(e) presenting the at least one challenge question to a user of the device and receiving at least one response to the at least one challenge question;
+(f) connecting to a provisioning issuer server corresponding to the network address and communicating the at least one response to the provisioning issuer server; and
+(g) receiving, over the air interface, soft card personalization data from the provisioning issuer server and, in response to successful receipt of the soft card personalization data, provisioning the soft card for the use on the device with wireless communication capabilities based on the personalization data.
+2. The method of claim 1 comprising sending a confirmation from provisioning and payment application to the provisioning configuration server and severing provisioning control between the provisioning and payment application and the soft card once the soft card is successfully provisioned.
+3. The method of claim 1 wherein the device with wireless communications capabilities includes at least one of general packet radio service (GPRS), global system for mobile communications (GSM), code division multiple access (CDMA), Internet, and Bluetooth communications capabilities.
+4. The method of claim 1 comprising, in response to failing to successfully receive the soft card personalization data, reading card track information from a secure chip associated with the device to obtain and display the last four digits of a card number and displaying a default card image.
+5. The method of claim 1 wherein the soft card comprises a card selected from the group consisting of a loyalty card, a member card and a non-payment card.
+6. The method of claim 1 wherein the soft card comprises a software-implemented version of a physical payment card.
+7. The method of claim 1 wherein the soft card comprises a software-implemented card for which no corresponding physical card exists.
+8. The method of claim 1 wherein obtaining a card number includes receiving a card number via a keypad associated with the device.
+9. The method of claim 1 wherein obtaining a card number includes obtaining a personal account number (PAN) from the user.
+10. The method of claim 1 wherein the device having wireless communications capabilities comprises a device selected from a group consisting of a mobile telephone, a smart phone, a key fob, a physical card, and a personal digital assistant.
+11. The method of claim 1 wherein the at least one card-issuer-specific challenge includes a request for security information from the user.
+12. The method of claim 1 wherein receiving soft card personalization data includes receiving a graphical image of the soft card to be displayed on a display associated with the device.
+13. The method of claim 1 wherein receiving a soft card request includes receiving a request for provisioning at least one soft card via a web interface.
+14. The method of claim 1 comprising initiating the provisioning application to start a provisioning process by sending a wireless application protocol (WAP) push message to the provisioning application.
+15. The method of claim 1 wherein receiving the soft card personalization data over the air interface includes receiving the soft card personalization data over a TCP/IP connection implemented over the air interface.
+16. A method for over the air (OTA) provisioning of a soft card on a device having wireless communications capabilities using a provisioning configuration server, the method comprising:
+at a provisioning configuration server:
+(a) storing issuer configuration data and challenge questions for a plurality of different card issuers;
+(b) receiving a soft card request for provisioning a soft card on a device with wireless communications capabilities, the request including a card identifier;
+(c) identifying, based on the card identifier, a card issuer for the soft card request; and
+(d) presenting at least one of the challenge questions and network identification for the card issuer to the device over the air interface.
+17. The method of claim 16 wherein the soft card comprises a card selected from a group consisting of a payment card, loyalty card, a member card and a non-payment card.
+18. The method of claim 16 wherein the soft card comprises a software-implemented version of a physical card.
+19. The method of claim 16 wherein the soft card comprises a software-implemented card for which a corresponding physical card does not exist.
+20. The method of claim 16 wherein receiving a soft card request including a card identifier includes obtaining a personal account number (PAN) number.
+21. The method of claim 16 wherein receiving a soft card request including a card identifier includes receiving a soft card from the device over a connection established over an air interface without requiring a voice call.
+22. The method of claim 16 wherein receiving a soft card request including a card identifier includes receiving a soft card request the card identifier from a user over a web interface.
+23. The method of claim 16 wherein receiving a soft card request includes receiving a wireless application protocol (WAP) push message containing card provisioning information from a card issuer.
+24. The method of claim 16 wherein the device comprises a device selected from a group consisting of a mobile phone, a smart phone, a physical card, a key fob, and a personal digital assistant.
+25. The method of claim 16 wherein steps (a)-(d) are preformed in real time.
+26. The method of claim 16 wherein the steps (a)-(d) are performed a plurality of times to provision a plurality of different soft cards in real time.
+27. The method of claim 16 wherein the step (d) includes presenting the challenge and network identification to the device over a TCP/IP connection implemented over an air interface.
+28. A system for over the air (OTA) provisioning of a soft card on a device with wireless communications capabilities, the system comprising:
+(a) a soft card provisioning application for executing on a device with wireless communications capabilities, for obtaining a card number from a user, and for communicating the card number over an air interface;
+(b) a provisioning configuration server for receiving the card number from the soft card provisioning application, for identifying a card issuer corresponding to the card number, and for communicating card issuer network identification information and at least one challenge to the soft card provisioning application over the air interface; and
+(c) a provisioning issuer server for receiving a connection from the soft card provisioning application, for receiving at least one response to the at least one challenge, and for sending personalization data to the soft card provisioning application for provisioning the soft card.
+29. The system of claim 28 wherein the provisioning issuer server is integrated with a card issuer back office system.
+30. The system of claim 28 wherein the soft card comprises a card selected from a group consisting of a payment card, a loyalty card, a member card, and a non-payment card.
+31. The system of claim 28 wherein the soft card comprises a software-implemented version of a physical card.
+32. The system of claim 28 wherein the soft card comprises a software-implemented for which a corresponding physical card does not exist.
+33. The system of claim 28 wherein obtaining a card identifier includes obtaining a physical account number (PAN) number.
+34. The system of claim 28 wherein obtaining a card identifier includes obtaining the card identifier via a user interface associated with the device.
+35. The system of claim 28 wherein the soft card provisioning application, the provisioning configuration server, and the provisioning issuer server are adapted to provision the soft card in real time.
+36. The system of claim 28 comprising a web provisioning application for receiving provisioning information for a plurality of cards and for communicating the information to the provisioning configuration server, wherein the provisioning configuring server is adapted to identify card issuers for each of the provisioning requests and to effect provisioning of a plurality of soft cards in real time.
+37. The system of claim 28 wherein the soft card provisioning application is adapted to communicate with the provisioning configuration server using a TCP/IP connection established over the air interface.
+38. A computer program product comprising computer executable instructions embodied in a computer readable medium for performing steps comprising:
+(a) instantiating a soft card provisioning application on a device with wireless communications capabilities;
+(b) obtaining a card number for a soft card desired to be provisioned on the device;
+(c) communicating the card number to a provisioning configuration server over an air interface;
+(d) receiving, over the air interface, at least one card-issuer-specific challenge and a provisioning issuer server network address from the provisioning configuration server;
+(e) presenting the at least one challenge to a user of the device and receiving at least one response to the at least one challenge;
+(f) connecting to a provisioning issuer server corresponding to the network address and communicating the at least one challenge response to the provisioning issuer server; and
+(g) receiving soft card personalization data from the provisioning issuer server and provisioning the soft card for the use on the device with wireless communications capabilities based on the personalization data.
+39. A computer program product comprising computer executable instructions embodied in a computer readable medium for performing steps comprising:
+(a) storing identification data and challenge information for a plurality of different card issuers;
+(b) receiving a soft card request for provisioning a soft card on a device with wireless communications capabilities, the request including a card identifier;
+(c) identifying, based on the card identifier, a card issuer for the soft card request; and
+(d) presenting at least one challenge and network identification for the card issuer to the network communications device over the air interface.

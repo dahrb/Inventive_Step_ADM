@@ -1,0 +1,68 @@
+Title: On-screen indentification and manipulation of sources that an object depends upon
+
+Abstract: Manipulating an object that is dependent upon one or more cells in a spreadsheet is facilitated by manipulating indicators that bound the relevant cells. The object can be a spreadsheet cell formula that contains a reference to one or more cells. The object can also be a graph object that is dependent upon one or more cells. In response to the selection of one of the objects, an indicator is displayed proximate to the cell or cells that the object is dependent upon. If the selected object is dependent upon multiple ranges of cells, then multiple indicators are displayed. Each indicator is displayed proximate to a cell or range of cells for the purpose of highlighting or identifying that the object is dependent upon that cell or range of cells. The highlighting or identifying is acceptably achieved with on-screen indicators that are color-coded. Each indicator can border a cell or a range of cells that the object is dependent upon. Each indicator can be moved, expanded or contracted so that it includes a different cell or range of cells. The selected object is updated to be dependent upon the cells currently identified by the associated indicator or indicators.
+
+Type: US Patent
+
+Claims: 
+
+1. In a computer system having an input device and a graphical user interface including a display device operable for displaying a spreadsheet application program comprising a range of cells, a method for manipulating primary objects within a spreadsheet application program, that are dependent upon one or more range of cells, the method comprising the steps of:
+receiving activation information by receiving from the input device an indication that a primary object has been activated;
+in response to receiving activation information, performing a first sequence comprising the steps of,
+displaying on the graphical user interface a movable first indicator proximate to a first range of cells that the primary object is dependent upon; and
+displaying on the graphical user interface a symbolic expression that at least partially defines the primary object and comprises a first reference that identifies the first range of cells;
+receiving first manipulation information by receiving from the input device an indication that at least a portion of the first indicator has been moved so that the first indicator is proximate to and identifies a second range of cells;
+in response to receiving first manipulation information, making the primary object dependent upon the second range of cells rather than the first range of cells and replacing the first reference in the symbolic expression with a second reference that identifies the second range of cells; and
+associating a first visual characteristic with each of the first reference, the second reference, and the first indicator, wherein the first visual characteristic provides a visual cue as to the relationship between the first reference, the first range of cells, the second reference, the second range of cells, and the first indicator.
+2. The method of claim 1, wherein the first indicator is capable of being:
+expanded to include an additional cells,
+reduced in size to include a lesser number of cells, and
+moved to include a different cell.
+3. The method of claim 1, wherein the primary object is an object in a graph displayed on the graphical user interface.
+4. The method of claim 1, wherein the primary object is a symbolic expression.
+5. The method of claim 1, wherein the primary object is a spreadsheet cell comprising a cell formula.
+6. The method of claim 1, further comprising, in response to receiving activation information, the step of displaying on the graphical user interface a second indicator proximate to a third range of cells that the primary object is additionally dependent upon.
+7. The method of claim 6, further comprising the steps of:
+receiving second manipulation information by receiving from the input device an indication that the second indicator has been at least partially moved to be proximate to and identify a fourth range of cells, wherein one of the third range of cells and the fourth range of cells comprise a secondary object not included by the other; and
+in response to receiving second manipulation information, making the primary object dependent upon the fourth range of cells rather than the third range of cells.
+8. The method of claim 1, wherein the first visual characteristic is a color.
+9. The method of claim 1, further comprising the steps of:
+in response to receiving activation information, displaying on the graphical user interface a movable second indicator proximate to a third range of cells that the primary object is additionally dependent upon, wherein the symbolic expression further comprises a third reference that identifies the third range of cell; and
+associating a second visual characteristic, which is distinct from the first visual characteristic, with each of the third reference and the second indicator, wherein the second visual characteristic provides a cue as to the relationship between the third reference, the third range of cells, and the second indicator.
+10. The method of claim 9, wherein the first visual characteristic is a first color and the second visual characteristic is a second color.
+11. In a computer system having an input device and a graphical user interface including a display device, a method for identifying a range of spreadsheet cells that a graph object is dependent upon, comprising the steps of:
+receiving activation information by receiving from the input device an indication that the graph object has been activated; and
+in response to receiving activation information, displaying on the graphical user interface a first indicator proximate the range of spreadsheet cells to identify the range of spreadsheet cells;
+displaying on the graphical user interface a symbolic expression that at least partially defines the graph object and comprises a first reference that identifies the range of spreadsheet cells; and
+associating a first visual characteristic with each of the first reference, the second reference, and the first indicator, wherein the first visual characteristic provides a visual cue as to the relationship between the first reference, the first range of cells, and the first indicator.
+12. The method of claim 11, wherein the first indicator at least partially bounds the range of spreadsheet cells.
+13. The method of claim 12, wherein the first indicator is capable of being expanded and moved to change the range of spreadsheet cells.
+14. A computer-readable medium having computer executable instructions for performing steps comprising:
+receiving activation information by receiving from an input device associated with a computer system an indication that a spreadsheet cell formula has been activated;
+in response to receiving activation information, performing a first sequence comprising the steps of;
+displaying on a graphical user interface associated with the computer system a movable and expandable first indicator proximate to a first range of spreadsheet cells that the spreadsheet cell formula is dependent upon; and
+displaying on the graphical user interface a symbolic expression that at least partially defines the primary object and comprises a first reference that identifies the first range of cells;
+receiving first manipulation information by receiving from the input device an indication that at least a portion of the first indicator has been moved so that the first indicator is proximate to and identifies a second range of spreadsheet cells, wherein one of the first range of cells and the second range of cells comprise a spreadsheet cell not included by the other; and
+in response to receiving first manipulation information, making the spreadsheet cell formula dependent upon the second range of cells rather than the first range of cells and replacing the first reference in the symbolic expression with a second reference that identifies the second range of cells; and
+associating a first visual characteristic with each of the first reference, the second reference, and the first indicator, wherein the first visual characteristic provides a visual cue as to the relationship between the first reference, the first range of cells, the second reference, the second range of cells, and the first indicator.
+15. The computer-readable medium of claim 14, further having computer-executable instructions for performing the steps of:
+in response to receiving activation information, displaying on the graphical user interface a second indicator proximate to a third range of spreadsheet cells that the spreadsheet cell formula is additionally dependent upon;
+receiving second manipulation information by receiving from the input device an indication that the second indicator has been at least partially moved to be proximate to and identify a fourth range of spreadsheet cells, wherein one of the third range and the fourth range comprise a spreadsheet cell not included by the other; and
+in response to receiving second manipulation information, making the spreadsheet cell formula dependent upon the fourth range rather than the third range, whereby the spreadsheet cell formula is changed.
+16. The computer-readable medium of claim 15, further having computer-executable instructions for performing the steps of:
+in response to receiving activation information, replacing the first reference in the spreadsheet cell formula with a second reference that identifies the second range; and
+associating a second color, which is distinct from the first color, with each of the third reference and the second indicator, wherein the second color provides a cue as to the relationship between the third reference, the third range, and the second indicator.
+17. A computer-readable medium having computer executable instructions for performing steps comprising:
+receiving activation information by receiving from an input device associated with a computer system an indication that a graph object has been activated;
+in response to receiving activation information, displaying on a graphical user interface associated with the computer system a first indicator proximate to a first range of spreadsheet cells that the graph object is dependent upon; and
+displaying on the graphical user interface a second indicator proximate to a third range of spreadsheet cells that the graph object is additionally dependent upon;
+receiving first manipulation information by receiving from the input device an indication that at least a portion of the first indicator has been moved so that the first indicator is proximate to and identifies a second range of spreadsheet cells, wherein one of the first range and the second range comprise a spreadsheet cell not included by the other; and
+in response to receiving first manipulation information, making the graph object dependent upon the second range rather than the first range and replacing the first reference in the symbolic expression with a second reference that identifies the second range of cells; and
+associating a first visual characteristic with each of the first reference, the second reference, and the first indicator, wherein the first visual characteristic provides a visual cue as to the relationship between the first reference, the first range of cells, the second reference, the second range of cells, and the first indicator.
+18. The computer-readable medium of claim 17, wherein the computer executable instructions define that the first indicator at least partially bounds the first range and the second indicator at least partially bounds the second range, and each of the first indicator and the second indicator are capable of being:
+expanded to include an additional spreadsheet cell,
+reduced in size to include a lesser number of secondary objects, and
+moved to include a different spreadsheet cell.
+19. The computer-readable medium of claim 18, further having computer-executable instructions for performing the steps of:
+in further response to receiving first manipulation information moving the second indicator to be proximate to and identify a fourth range of spreadsheet cells, wherein one of the third range and the fourth range comprise a spreadsheet cell not included by the other; and
+making the graph object dependent upon the fourth range rather than the third range, whereby the graph object is changed.

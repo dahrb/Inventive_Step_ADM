@@ -1,0 +1,161 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+1 MAIN REQUEST
+
+FURTHER AMENDED SET OF CLAIMS 1 TO 15
+
+1. A method for decoding encoded data bits of a wireless communication
+transmission, comprising:
+
+generating (2202) multiple hypotheses, each hypothesis specifying a
+set of bit values of the encoded data bits that are known or predicted based
+on a-priori information regarding the transmission or a related transmission;
+
+evaluating (2204) the multiple hypotheses by performing decoding
+(2208) for the encoded data bits, wherein the decoding involves eliminating
+(2206) sets of decoded bits that are inconsistent with the bit values specified
+by the hypotheses; and
+
+selecting (2218), as output, decoded bits corresponding to one of the
+
+hypotheses.
+
+2. The method of claim 1, wherein evaluating the multiple hypotheses
+comprises:
+
+evaluating (1830) multiple hypotheses in parallel by performing
+decoding for the encoded data bits using multiple decoders, each utilizing bit
+
+values specified by a different hypothesis.
+
+3. The method of claim 1, wherein evaluating the multiple hypotheses
+comprises:
+
+evaluating multiple hypotheses in a sequential manner (2130) by
+performing decoding for the encoded data bits using a single decoder multiple
+times to decode the encoded bits bit values specified by a different hypothesis
+
+each time.
+
+4. The method of claim 1, wherein evaluating multiple hypotheses in a
+
+sequential manner comprises evaluating some, but not all, of the hypotheses.
+
+5. The method of claim 1, further comprising:
+comparing results (2212) obtained by decoding operations utilizing bit values
+specified by the different hypotheses; and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2 MAIN REQUEST
+
+selecting (2218), as output, decoded bits corresponding to one of the
+
+hypotheses based on the comparison.
+
+6. The method of claim 5, wherein comparing results (2216) obtained by
+decoding operations utilizing bit values specified by the different hypotheses
+comprises:
+
+comparing at least one of accumulated distance values and likelihood values.
+
+7. The method of claim 5, wherein comparing results (2216) obtained by
+decoding operations utilizing bit values specified by the different hypotheses
+
+comprises a check field comparison.
+
+8. The method of claim 1, wherein eliminating sets of decoded bits that are
+inconsistent with the bit values specified by the hypotheses comprises
+removing (2206), from a set of possible decoding paths, decoding paths that
+correspond to decoded data bits that are inconsistent with the bit values
+
+specified by the hypothesis.
+
+9. An apparatus for wireless communications, comprising:
+
+means (210) for receiving a wireless transmission and generating a set
+of encoded bits:
+
+means (2160) for generating multiple hypotheses, each hypothesis
+specifying a set of bit values of the encoded data bits that are known or
+predicted based on a-priori information regarding the transmission or a related
+transmission; and
+
+means (2130) for evaluating the hypotheses by performing decoding
+operations that involve eliminating sets of decoded bits that are inconsistent
+with the bit values specified by the hypotheses and selecting, as output,
+
+decoded bits corresponding to one of the hypotheses.
+
+10. The apparatus of claim 9, wherein the means (2130) for evaluating the
+hypotheses comprises multiple means for decoding allowing for the evaluation
+
+of multiple hypotheses in parallel.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+3 MAIN REQUEST
+
+11. The apparatus of claim 9, wherein the means (2130) for evaluating the
+hypotheses comprises sequential decoding means for decoding multiple
+
+hypotheses in a sequential manner.
+
+12. The apparatus of claim 11, further comprising:
+
+means for storing quality parameters indicative of a quality of decoding
+results obtained using the different hypotheses; and
+
+means for selecting results corresponding to the highest decoding
+
+quality based on the stored quality parameters.
+
+13. The apparatus of claim 11, further comprising:
+
+means for comparing results obtained by decoding operations utilizing
+bit values specified by the different hypotheses; and
+
+means for selecting, as output, decoded bits corresponding to one of
+
+the hypotheses based on the comparison.
+
+14. The apparatus of claim 13, wherein the means for comparing results
+obtained by decoding operations utilizing bit values specified by the different
+hypotheses comprises:
+
+means for comparing at least one of accumulated distance values and
+
+likelihood values.
+
+15. A computer-program product for decoding encoded data bits of a
+wireless communication transmission comprising a computer readable
+medium having a set of instructions stored thereon, the set of instructions
+being executable by one or more processors and the set of instructions
+comprising:
+
+instructions for carrying out the steps of any of claims 1 to 8.

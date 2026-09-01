@@ -1,0 +1,193 @@
+--- PAGE 1 ---
+CLAIMS — MAIN REQUEST
+
+1. A method for utilizing optical feedback to maintain minimum optical
+transmission in an OFF state of a Mach-Zehnder electro-optic switch (706) having an
+RF input port (704) and a DC port (708), which exhibits first and second ON states
+upon respective application of positive and negative RF voltage pulses of
+substantially equal magnitude, by adjusting a DC bias voltage of the electro-optic
+switch, the method comprising the steps of:
+
+selecting an initial DC voltage level and an initial RF port voltage by
+measuring visibility over a range of predetermined DC voltages and a range of
+predetermined RF port voltages, then selecting the initial DC voltage associated with
+minimum measured visibility;
+
+determining visibility over a range of DC voltages proximate the initial DC
+voltage level in accordance with the relation:
+rena paca
+
+We" PB a
+
+where:
+
+V is applied DC voltage;
+
+Vp is applied RF voltage pulse magnitude;
+
+I, is the normalized output of the electro-optic switch (706)
+
+corresponding to its first ON state;
+
+and I, is the normalized output of the electro-optic switch (706)
+
+corresponding to its second ON state;
+computing visibility slope in accordance with the relation:
+
+SLOPE = AVIS / AV,
+
+where:
+
+AVIS is change in visibility value; and
+
+AV is change in applied DC voltage; and
+applying a correction voltage to the initial DC voltage level, where the
+correction voltage is
+
+ay _ VIS
+CORR” “SLOPE
+
+where:
+
+AV corr is the correction voltage;
+
+7153914-1-BHARRIS
+
+--- PAGE 2 ---
+VlSwm is the measured visibility; and
+SLOPE is the visibility slope.
+
+2. The method in accordance with claim 1, wherein the normalized values of the
+output of the electro-optic switch (706) are determined in accordance with the
+
+relations:
+
+¥-¥ ¥
+1 1- O F
+I (v.¥ \= rE _ F -cos 1 + 1-—
+f'P 2 2 v v
+a1 Fa > and
+
+W-¥ ¥
+1+ 1- o P
+15{¥,¥ p} = a cas - -1—
+2 2 Va V py
+
+where:
+Vo is the applied correction voltage;
+V is the applied DC voltage;
+Vp is the applied RF voltage pulse magnitude;
+€ is extinction ratio (10 log € when expressed in dB);
+V,, is the DC port voltage to go from minimum to maximum
+output; and
+Vpn is the RF port voltage to go from minimum to maximum
+
+output.
+
+3. The method in accordance with claim 2, wherein error in measured visibility is
+reduced through signal averaging by:
+
+detecting summed output values |, corresponding to a series of RF pulses at
+a positive RF voltage over a first predetermined time period, then detecting summed
+output values |, corresponding to a series of RF pulses at a negative RF voltage
+whose absolute value is approximately equal to the positive RF voltage, over a
+second predetermined time period substantially equal to the first predetermined time
+period; and
+
+determining visibility using the summed output values.
+
+4. A Mach-Zehnder electro-optic switch (706) which exhibits first and second ON
+states upon respective application of positive and negative RF voltage pulses of
+substantially equal magnitude, having an RF input port (704) and a DC port (708)
+and further comprising:
+
+means for determining an optimum DC bias point including:
+
+7153914-1-BHARRIS
+
+--- PAGE 3 ---
+means for selecting an initial DC voltage level and an initial RF port voltage
+
+by measuring visibility over a range of predetermined DC voltages and a range of
+
+predetermined RF port voltages, then selecting the initial DC voltage associated with
+
+minimum measured visibility;
+
+means for determining visibility over a range of DC voltages proximate the
+
+initial DC voltage level in accordance with the relation:
+
+5.
+
+nin
+te" PB Zit" B
+where:
+V is the applied DC voltage;
+Vp is the applied RF voltage pulse magnitude;
+|, is the normalized output of the electro-optic switch (706)
+corresponding to the first ON state; and
+I, is the normalized output of the electro-optic switch (706)
+corresponding to the second ON state;
+means for computing visibility slope in accordance with the relation:
+SLOPE = AVIS / AV,
+where:
+
+AVIS is change in the visibility value; and
+
+AV is change in the applied DC voltage; and
+means for applying a correction voltage to the initial DC voltage level, where
+the correction voltage is
+
+VIS pq
+OY CORR = Giope
+where:
+AVcorr is the correction voltage;
+VlSw is the measured visibility; and
+SLOPE is the visibility slope.
+
+The Mach-Zehnder electro-optic switch (706) of claim 4, further comprising
+
+means for determining the normalized values of the output of the electro-optic switch
+
+(706) in accordance with the relations:
+
+7153914-1-BHARRIS
+
+--- PAGE 4 ---
+2 2 Ve V pa
+v-¥ V
+1+ 1- 0 F
+14{¥.¥ p] = a = -cos| &- - 1—
+Z 2 x Vip ;
+where:
+
+Vo is the applied correction voltage;
+
+V is the applied DC voltage;
+
+Vp is the applied RF voltage pulse magnitude;
+
+€ is extinction ratio (10 log € when expressed in dB);
+
+V,, is the DC port voltage to go from minimum to maximum
+output; and
+
+Vpn is the RF port voltage to go from minimum to maximum
+
+output.
+
+6. The Mach-Zehnder electro-optic switch (706) of claim 5, further comprising
+means for reducing error in measured visibility through signal averaging comprising:
+
+means for detecting summed output values of |, corresponding to a series of
+RF pulses at a positive RF voltage over a first predetermined time period;
+
+means for detecting summed output values of lp corresponding to a series of
+RF pulses at a negative RF voltage whose absolute value is approximately equal to
+the positive RF voltage, over a second predetermined time period substantially equal
+to the first predetermined time period; and
+
+means for determining visibility using the summed output values.
+
+7153914-1-BHARRIS

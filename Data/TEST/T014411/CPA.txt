@@ -1,0 +1,22 @@
+TITLE:
+Securities trading system with latency check
+
+TYPE:
+US patent
+
+ABSTRACT:
+A securitas trading system including a node for facilitating transactions, at least one buy side computer associated with a party desiring to purchase, at least one sell side computer associated with a party desiring to sell and a communication channel coupling the node with the buy side computer and the sell side computer. The latency of the communications channel is determined in real time and parameters of a trade can be adjusted based on the latency and predetermined logic elements.
+
+CLAIMS:
+What is claimed:
+1. A computer architecture for effecting securities trades, said architecture comprising:
+a node;
+at least one buy side computer associated with a party desiring to purchase securities and capable of transmitting messages related to a trade;
+at least one sell side computer associated with a party desiring to sell securities and capable of transmitting messages related to a trade; and
+a communication channel coupling said node with said buy side computer and said sell side computer;
+means for determining the latency of said communications channel; and
+means for adjusting parameters of the trade based on the latency.
+2. An architecture as recited in claim 1, wherein said at least one buy side computer comprises a server associated with a securities broker.
+3. An architecture as recited in claim 1, wherein said at least one buy side computer comprises a server associated with an institutional investor.
+4. An architecture as recited in claim 1, wherein said at least one sell side computer comprises a server associated with an exchange.
+5. An architecture as recited in claim 1, wherein said means for adjusting comprises predetermined logic elements and means for applying the logic elements to an equities transaction.

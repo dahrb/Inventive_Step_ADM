@@ -1,0 +1,179 @@
+--- PAGE 1 ---
+EP 12 189 827.4 GGL602EP
+Appeal no. T0277/16-3.5.06 April 2018
+NEW Main Request
+
+CLAIMS
+
+1. A method, comprising:
+receiving, via an input of a portable electronic device (12), a request to access
+the electronic device (12);the electronic device (12) implementing a first security rule
+requiring a first authentication process when the electronic device (12) is physically
+located in a familiar area and a different second security rule requiring a different second
+authentication process when the electronic device (12) is located outside of the familiar
+area; and
+receiving, via an input of the portable electronic device (12), a plurality of
+successful user authentication entries,
+characterized in that the method further comprises:
+determining a location of the device (12) corresponding to each of the
+successful user authentication entries,
+wherein determining the location of the device (12) comprises one or more of:
+receiving global positioning system data (52) and determining the location
+based on the global positioning system data (52),and
+receiving a network address corresponding to a wireless communications
+network (22, 32) that the device (12) has detected, and determining the location
+based on the network address;
+saving, in a computer-readable memory, data representative of each of the
+entries and each entry's corresponding location; and
+automatically designating, by a processor without a requirement for user entry
+of location information, the familiar area for the electronic device (12),
+wherein designating the familiar area comprises designating the familiar area
+based on the data representative of each of the entries and each entry's corresponding
+location, and
+wherein designating the familiar area comprises:
+determining a set of successful user authentication entries that were
+received during a time period,
+grouping the entries from the set into a plurality of location-dependent
+subgroups,
+determining a size of the set and a size of each subgroup, identifying
+each subgroup having a size that at least equals a size threshold, wherein the
+size threshold corresponds to a portion of the set size, and
+for each subgroup having a size that at least equals the size threshold,
+classifying the location for that subgroup's entries as the familiar area.
+
+--- PAGE 2 ---
+EP 12 189 827.4 GGL602EP
+Appeal no. T0277/16-3.5.06 April 2018
+NEW Main Request
+
+2. The method of claim 1, wherein grouping the entries from the set into a plurality
+of location-dependent subgroups comprises:
+identifying entries having locations that are within a threshold distance from each
+other; and
+grouping the identified entries into one of the subgroups.
+
+3. The method of claim 1 or 2, wherein determining the familiar area comprises:
+automatically and periodically gathering location information for the device (12);
+saving the location information in a memory;
+accessing, by the processor, the saved location information and automatically
+determining a location for which the location information is saved in the memory
+
+in at least a threshold amount; and
+setting the determined location as the familiar area.
+
+4. The method of any of the preceding claims, wherein determining the familiar
+area comprises:
+
+automatically and periodically gathering location information for the device (12),
+wherein the location information includes global positioning system data (52) and
+wireless network data;
+
+identifying, by the processor, a position where the device (12) transitions from a
+global positioning system to a single wireless network (22, 32);
+
+setting the determined position as the familiar area.
+
+5. The method of any of the preceding claims, wherein the method further
+comprises:
+
+determining a current location of the device (12);
+
+determining that the current location is within the familiar area; and
+
+presenting, on a display (14) of the device (12), a user prompt to
+perform the first authentication process.
+
+6. The method of any of the preceding claims, wherein the processor and the
+computer-readable memory comprise elements of the portable electronic device (12).
+
+7. The method of any of the preceding claims, wherein:
+
+the portable electronic device (12) is in wireless communication with a server
+(60); and
+
+the processor and the computer-readable memory comprise elements of the
+server (60).
+
+8. The method of any of the preceding claims, wherein the method further
+
+--- PAGE 3 ---
+EP 12 189 827.4 GGL602EP
+Appeal no. T0277/16-3.5.06 April 2018
+NEW Main Request
+
+comprises:
+
+automatically determining, by the processor without a requirement for user entry
+of location information, a second familiar area based on the data;
+
+implementing, on the electronic device (12), a security rule requiring a third
+authentication process when the device is located in the second familiar area.
+
+9. The method of any of the preceding claims, wherein the first authentication
+process comprises entry of a first password, and the second authentication process
+comprises entry of a second passcode.
+
+10. The method of any of the preceding claims, wherein the first authentication
+process comprises receiving a touch input, and the second authentication process
+comprises entry of a second passcode.
+
+11. An electronic device (12), comprising:
+a processor,
+a user interface (16), and
+a memory having programming instructions that, when executed, instruct the
+processor to:
+receive, via the user interface (16), a user request to access the electronic
+device (12);
+determine a current location for the electronic device (12);
+implement a first authentication process if the current location corresponds
+to a familiar area and a different second authentication process if the current
+location does not correspond to the familiar area;
+receive a plurality of successful user authentication entries;
+characterized in that the memory further has programming instructions that,
+when executed, instruct the processor to:
+determine a location of the device corresponding to each of the
+successful user authentication entries,
+wherein determining the location of the device (12) comprises one or more
+of:
+receiving global positioning system data (52) and determining the
+location based on the global positioning system data (52), and
+receiving a network address corresponding to a wireless
+communications network (22, 32) that the device has detected, and
+determining the location based on the network address;
+save data representative of each of the entries and each entry's
+corresponding location;
+output, via the user interface (16), a prompt to perform the implemented
+
+--- PAGE 4 ---
+EP 12 189 827.4 GGL602EP
+Appeal no. T0277/16-3.5.06 April 2018
+NEW Main Request
+
+authentication process; and
+automatically designate, without a requirement for user entry of location
+information, the familiar area for the electronic device (12);
+wherein designating the familiar area comprises designating the familiar
+area based on the data representative of each of the entries and each entry's
+corresponding location, and
+wherein designating the familiar area comprises:
+determining a set of successful user authentication entries that
+were received during a time period,
+grouping the entries from the set into a plurality of location-dependent
+subgroups,
+determining a size of the set and a size of each subgroup,
+identifying each subgroup having a size that at least equals a size
+threshold, wherein the size threshold corresponds to a portion of the set
+size, and
+for each subgroup having a size that at least equals the size
+threshold, classifying the location for that subgroup's entries as the familiar
+area.
+
+12. The device of claim 11, wherein the first authentication process and the
+second authentication process differ from each other in at least one of the following
+ways:
+
+length of timeout periods;
+
+number of authentication actions required; and
+
+types of authentication actions required.

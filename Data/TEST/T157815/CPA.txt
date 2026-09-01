@@ -1,0 +1,108 @@
+TITLE:
+System and method for creating and playing globally relevant playlists
+
+TYPE:
+European patent
+
+ABSTRACT:
+A globally relevant playlist presented. A globally relevant playlist includes track references corresponding to a plurality of tracks. Each track reference includes a global track identifier that uniquely identifies the corresponding referenced track among any number of computers or computing devices. A method for playing tracks according to a globally relevant playlist is presented. A track referenced in the playlist is selected. It is determined whether the track is locally accessible according to the global track identifier. If the track is accessible, it is played. If the track is not locally accessible, the track is retrieved from a track source associated with the track and according to the global track identifier. A method for downloading tracks to a player device according to a globally relevant playlist is also presented.
+
+CLAIMS:
+A method for playing audio tracks on a computing device according to a globally relevant playlist, the method comprising:
+selecting a first track referenced by the globally relevant playlist;
+determining whether the first track is currently accessible to the computing device according to a global track identifier associated with the first track in the globally relevant playlist; and
+if, according to the previous determination, the first track is currently accessible to the computing device, playing the first track on the computing device.
+The method of Claim 1 further comprising if, according to the previous determination, the first track is not currently accessible to the computing device, determining whether the first track may be obtained from a remote location, and if so:
+obtaining the first track from the remote location according to the global track identifier; and
+playing the first track on the computing device.
+The method of Claim 2 further comprising obtaining the first track from the remote location according to the global track identifier and a specified track format.
+The method of Claim 2 further comprising determining whether any additional tracks are referenced by the globally relevant playlist, and if so:
+for each additional track referenced by the globally relevant playlist:
+selecting the additional track referenced by the globally relevant playlist;
+determining whether the selected additional track is currently accessible to the computing device according to a global track identifier associated with the selected additional track in the globally relevant playlist; and
+if, according to the previous determination, the selected additional track is currently accessible to the computing device, playing the selected additional track on the computing device.
+The method of Claim 4 further comprising:
+for each additional track referenced by the globally relevant playlist:
+if, according to the previous determination, the selected additional track is not currently accessible to the computing device, determining whether the selected additional track may be obtained from a remote location, and if so:
+obtaining the selected additional track from the remote location according to the global track identifier; and
+playing the selected additional track on the computing device.
+The method of Claim 5 further comprising obtaining the selected additional track, from the remote location according to the global track identifier and a specified track format.
+A computer-readable medium having computer-executable instructions which, when executed, carry out a method for playing audio tracks on a computing device, comprising:
+selecting a first track referenced by a globally relevant playlist;
+determining whether the first track is currently accessible to the computing device according to a global track identifier associated with the first track in the globally relevant playlist; and
+if, according to the previous determination, the first track is currently accessible to the computing device, playing the first track on the computing device.
+The method of Claim 7 further comprising if, according to the previous determination, the first track is not currently accessible to the computing device, determining whether the first track may be obtained from a remote location, and if so:
+obtaining the first track from the remote location according to the global track identifier; and
+playing the first track on the computing device.
+The method of Claim 8 further comprising obtaining the first track from the remote location according to the global track identifier and a specified track format.
+The method of Claim 8 further comprising determining whether any additional tracks are referenced by the globally relevant playlist, and if so:
+for each additional track referenced by the globally relevant playlist:
+selecting the additional track referenced by the globally relevant playlist;
+determining whether the selected additional track is currently accessible to the computing device according to a global track identifier associated with the selected additional track in the globally relevant playlist; and
+if, according to the previous determination, the selected additional track is currently accessible to the computing device, playing the selected additional track on the computing device.
+The method of Claim 10 further comprising:
+for each additional track referenced by the globally relevant playlist:
+if, according to the previous determination, the selected additional track is not currently accessible to the computing device, determining whether the selected additional track may be obtained from a remote location, and if so:
+obtaining the selected additional track from the remote location according to the global track identifier; and
+playing the selected additional track on the computing device.
+The method of Claim 11 further comprising obtaining the selected additional track from the remote location according to the global track identifier and a specified track format.
+A method for downloading tracks from a computing device onto a player device according to a globally relevant playlist, the method comprising:
+selecting a first track referenced by the globally relevant playlist;
+determining whether the first track is currently accessible to the computing device according to a global track identifier associated with the first track in the globally relevant playlist; and
+if, according to the previous determination, the first track is currently accessible to the computing device, downloading the first track from the computing device to the player device.
+The method of Claim 13 further comprising if, according to the previous determination, the first track is not currently accessible to the computing device, determining whether the first track may be obtained from a remote location, and if so:
+obtaining the first track from the remote location according to the global track identifier; and
+downloading the first track from the computing device to the player device.
+The method of Claim 14 further comprising obtaining the first track from the remote location according to the global track identifier and a specified track format.
+The method of Claim 14 further comprising determining whether any additional tracks are referenced by the globally relevant playlist, and if so:
+for each additional track referenced by the globally relevant playlist:
+selecting the additional track referenced by the globally relevant playlist;
+determining whether the selected additional track is currently accessible to the computing device according to a global track identifier associated with the selected additional track in the globally relevant playlist; and
+if, according to the previous determination, the selected additional track is currently accessible to the computing device, downloading the selected additional track from the computing device to the player device.
+The method of Claim 16 further comprising:
+for each additional track referenced by the globally relevant playlist:
+if, according to the previous determination, the selected additional track is not currently accessible to the computing device, determining whether the selected additional track may be obtained from a remote location, and if so:
+obtaining the selected additional track from the remote location according to the global track identifier; and
+downloading the selected additional track from the computing device to the player device.
+The method of Claim 17 further comprising obtaining the selected additional track from the remote location according to the global track identifier and a specified track format.
+The method of Claim 17, wherein determining whether the first track is currently accessible to the computing device according to a global track identifier associated with the first track in the globally relevant playlist comprises:
+determining whether the first track is currently accessible to the computing device according to the global track identifier and in a format compatible with the player device.
+The method of Claim 19 further comprising if, according to the previous determination, the first track is currently accessible to the computing device but not in a format compatible with the player device:
+on the computing device, converting the first track to a format compatible with the player device; and
+downloading the converted first track from the computing device to the player device.
+The method of Claim 20, wherein determining whether the selected additional track is currently accessible to the computing device according to a global track identifier associated with the selected additional track in the globally relevant playlist comprises:
+determining whether the selected additional track is currently accessible to the computing device according to the global track identifier and in a format compatible with the player device.
+The method of Claim 21, further comprising if, according to the previous determination, the selected additional track is currently accessible to the computing device but not in a format compatible with the player device:
+on the computing device, converting the selected additional track to a format compatible with the player device; and
+downloading the converted selected additional track from the computing device to the player device.
+A computer-readable medium having computer-executable instructions which, when executed, carry out the method for downloading tracks from a computing device onto a player device, comprising:
+selecting a first track referenced by a globally relevant playlist;
+determining whether the first track is currently accessible to the computing device according to a global track identifier associated with the first track in the globally relevant playlist; and
+if, according to the previous determination, the first track is currently accessible to the computing device, playing the first track on the computing device.
+The method of Claim 23 further comprising if, according to the previous determination, the first track is not currently accessible to the computing device, determining whether the first track may be obtained from a remote location, and if so:
+obtaining the first track from the remote location according to the global track identifier; and
+downloading the first track from the computing device to the player device.
+The method of Claim 24 further comprising obtaining the first track from the remote location according to the global track identifier and a selected track format.
+The method of Claim 24 further comprising determining whether any additional tracks are referenced by the globally relevant playlist, and if so:
+for each additional track referenced by the globally relevant playlist:
+selecting the additional track referenced by the globally relevant playlist;
+determining whether the selected additional track is currently accessible to the computing device according to a global track identifier associated with the selected additional track in the globally relevant playlist; and
+if, according to the previous determination, the selected additional track is currently accessible to the computing device, downloading the selected additional track from the computing device to the player device.
+The method of Claim 26 further comprising:
+for each additional track referenced by the globally relevant playlist:
+if, according to the previous determination, the selected additional track is not currently accessible to the computing device, determining whether the selected additional track may be obtained from a remote location, and if so:
+obtaining the selected additional track from the remote location according to the global track identifier; and
+downloading the selected additional track from the computing device to the player device.
+The method of Claim 27 further comprising obtaining the selected additional track from the remote location according to the global track identifier and a selected track format.
+A method for creating a globally relevant playlist, the method comprising:
+identifying a plurality of tracks to be referenced by the playlist, and for each identified track:
+writing track reference information into the globally relevant playlist, the track reference information including a global track identifier that uniquely identifies the track among a plurality of computing devices.
+The method of Claim 29, wherein the track reference information further includes a track source from which the identified track may be obtained over a communication network.
+The method of Claim 29, wherein the track reference information further includes the identified track's artist.
+The method of Claim 29, wherein the track reference information further includes the identified track's title.
+A globally relevant playlist for controlling the play of tracks on a computing device, comprising:
+a plurality of track references referencing a corresponding plurality of tracks, each track reference including a global track identifier that uniquely identifies the corresponding track among a plurality of computing devices.
+The globally relevant playlist of Claim 33, wherein each track reference further includes a track source from which the corresponding track may be obtained over a communication network.
+The globally relevant playlist of Claim 33, wherein each track reference further includes information identifying the corresponding track's artist.
+The globally relevant playlist of Claim 33, wherein each track reference further includes information identifying the corresponding track's title.
+The globally relevant playlist of Claim 33 further comprising information identifying the globally relevant playlist's creator.

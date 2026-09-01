@@ -1,0 +1,73 @@
+TITLE:
+Video delivery system and method for displaying indexing slider bar on the subscriber video screen
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method which displays a graphical icon, such as a slider bar, on a subscriber's television or display unit for indexing to different positions in a video stream in an interactive video delivery system. The interactive video delivery system preferably comprises at least one media server which stores one or more video streams, and one or more subscribers which each include a display device, such as a television. The television displays a slider bar or other graphical icon, and the slider bar is used to index to different locations in the video stream. During video delivery, the user may use or adjust a knob on the slider bar, preferably using a remote control device, to indicate a desire to "jump" to a different location in the movie or video stream. The media server receives the slider bar user input from the subscriber device and begins outputting the normal play stream at the desired position.
+
+CLAIMS:
+We claim:
+1. A computer implemented method for indexing to positions in a video stream in a video delivery system, wherein the video delivery system includes a media server and a subscriber device coupled to the media server, wherein the subscriber device includes a display screen, the method comprising:
+displaying on the display screen of the subscriber device a video stream received from the media server;
+displaying on the display screen of the subscriber device a graphical icon for indexing to positions within the video stream, wherein the graphical icon is adjustable to effect changes in position of the received video stream;
+receiving input from a user indicating a desired change in output position of the video stream;
+the subscriber device providing information to the media server in response to said receiving input from the user;
+the media server determining a new output position for the video stream in response to receiving said information from the subscriber device; and
+the media server outputting the video stream at the new position in response to said determining the new output position.
+2. The method of claim 1, wherein said receiving input comprises receiving an adjustment to said graphical icon.
+3. The method of claim 2, wherein said graphical icon includes an adjustable knob which is adjustable to effect changes in position of the received video stream, wherein said receiving input comprises moving the knob in the graphical icon to a new position in the graphical icon.
+4. The method of claim 1, wherein the media server stores an index table corresponding to the video stream, wherein the index table comprising a plurality of tuples, wherein each of said tuples comprises a first value and a second offset value which is an offset into a position of the video stream, wherein said media server determining a new position of the video stream in response to said received user input comprises the media server indexing into the index look-up table to obtain an offset into the video stream.
+5. The method of claim 4, wherein each of said plurality of tuples comprises a normal play time value and an offset into the video stream;
+wherein said subscriber device providing information comprises the subscriber device providing a value within a predetermined range indicating a relative position within the video stream based on said received user input; and
+wherein said media server determining a new output position for the video stream comprises the media server determining a normal play time value based on said received value in said predetermined range.
+6. The method of claim 5, wherein said predetermined range is a value from 0-100.
+7. The method of claim 1, wherein said graphical icon comprises a slider bar including a knob, wherein the knob is located at a position in the slider bar to indicate the position of the output video stream received by the subscriber device.
+8. The method of claim further comprising:
+receiving user input to pause the video stream;
+wherein said displaying on the display screen of the subscriber device said graphical icon is performed in response to said receiving user input to pause the video stream.
+9. The method of claim 8,
+wherein said graphical icon includes an adjustable knob which is adjustable to effect changes in position of the received video stream, the method further comprising:
+updating the location of the knob on the graphical icon in response to said displaying on the display screen of the subscriber device said graphical icon, wherein said updating updates the location of the knob on the graphical icon according to a current location of the output stream.
+10. The method of claim 1, wherein said subscriber device includes a television set.
+11. The method of claim 1, herein said subscriber device comprises a television set and a set top box coupled to the television set.
+12. An interactive video delivery system which enables a user to index to positions in a video stream, comprising:
+a media server which outputs a video stream, wherein the media server is capable of selectively outputting said video stream at different positions of said video stream; and
+a subscriber device coupled to the media server which receives the video stream output from the media server, wherein the subscriber device includes:
+a display screen which displays the video stream received from the media server, wherein the subscriber device display screen also displays a graphical icon for indexing to positions within the video stream, wherein the graphical icon is adjustable to effect changes in position of the received video stream;
+an input for receiving input from a user indicating a desired change in output position of the video stream; and
+means for providing information to the media server in response to receiving input from the user; and
+wherein the media server includes an input for receiving said information; wherein said media server outputs the video stream at a new position in response to receiving said information from the media server.
+13. The interactive video delivery system of claim 12, wherein the subscriber device input comprises an input for receiving an adjustment to said graphical icon.
+14. The interactive video delivery system of claim 13, wherein said graphical icon includes an adjustable knob which is adjustable to effect changes in position of the received video stream, wherein the knob in the graphical icon is movable to a new position in the graphical icon;
+wherein the subscriber device input comprises an input for receiving an adjustment to the knob in said graphical icon.
+15. The interactive video delivery system of claim 12, wherein the media server includes means for determining a new output position for the video stream in response to receiving said information from the subscriber device.
+16. The interactive video delivery system of claim 15, wherein the media server further comprises:
+a memory which stores an index table corresponding to the video stream, wherein the index table comprising a plurality of tuples, wherein each of said tuples comprises a first value and a second offset value which is an offset into a position of the video stream;
+wherein said means for determining a new output position for the video stream indexes into the index look-up table stored in said memory to obtain an offset into the video stream.
+17. The interactive video delivery system of claim 16, wherein each of said plurality of tuples comprises a normal play time value and an offset into the video stream;
+wherein said means for providing information provides a value within a predetermined range indicating a relative position within the video stream based on said received user input; and
+wherein said means for determining a new output position for the video stream determines a normal play time value based on said received value in said predetermined range.
+18. The interactive video delivery system of claim 17, wherein said predetermined range is a value from 0-100.
+19. The interactive video delivery system of claim 12, wherein said graphical icon comprises a slider bar including a knob, wherein the knob is located at a position in the slider bar to indicate the position of the output video stream received by the subscriber device.
+20. The interactive video delivery system of claim 12,
+wherein said input for receiving input from a user indicating a desired change in output position of the video stream operates in response to receiving user input to pause the video stream;
+wherein said subscriber devices displays said graphical icon on the display screen in response to said receiving user input to pause the video stream.
+21. The interactive video delivery system of claim 20,
+wherein said graphical icon includes an adjustable knob which is adjustable to effect changes in position of the received video stream;
+wherein the subscriber device further comprises:
+means for updating the location of the knob on the graphical icon in response to said subscriber device displaying on the display screen of the subscriber device said graphical icon, wherein said means for updating updates the location of the knob on the graphical icon according to a current location of the output stream.
+22. The interactive video delivery system of claim 12, wherein said subscriber device includes a television set.
+23. The interactive video delivery system of claim 12, wherein said subscriber device comprises a television set and a set top box coupled to the television set.
+24. A computer implemented method for indexing to positions in a video stream in a video delivery system, wherein the video delivery system includes a media server for providing a video stream, the method comprising:
+providing a video stream to a subscriber device;
+receiving input from the subscriber device indicating a desired change in output position of the video stream, where the received input comprises information from a subscriber device regarding a change in position of a slider bar displayed on the subscriber device;
+the media server determining a new output position for the video stream in response to receiving said information from the subscriber device; and
+the media server outputting the video stream at the new position in response to said determining the new output position.
+25. The method of claim 24, wherein the media server stores an index table corresponding to the video stream, wherein the index table comprising a plurality of tuples, wherein each of said tuples comprises a first value and a second offset value which is an offset into a position of the video stream, wherein said media server determining a new output position of the video stream in response to said received user input comprises the media server indexing into the index look-up table to obtain an offset into the video stream.
+26. An interactive video delivery system which enables a user to index to positions in a video stream, comprising:
+a media server which outputs a video stream, wherein the media server is capable of selectively outputting said video stream at different positions of said video stream, wherein the media server includes an input for receiving information from a subscriber device regarding a change in position of a slider bar displayed on the subscriber device, wherein said media server outputs the video stream at a new position in response to receiving said information from the subscriber device.
+27. The interactive video delivery system of claim 26, wherein the media server further comprises:
+a memory which stores an index table corresponding to the video stream, wherein the index table comprising a plurality of tuples, wherein each of said tuples comprises a first value and a second offset value which is an offset into a position of the video stream;
+wherein said means for determining a new output position for the video stream indexes into the index look-up table stored in said memory to obtain an offset into the video stream.

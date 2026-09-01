@@ -1,0 +1,71 @@
+TITLE:
+Data compression using a nested hierarchy of fixed phrase length dictionaries
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Exemplary embodiments are described herein whereby blocks of data are losslessly compressed and decompressed using a nested hierarchy of fixed phrase length dictionaries. The dictionaries may be built using information related to the manner in which data is commonly organized in computer systems for convenient retrieval, processing, and storage. This results in low cost designs that give significant compression. Further, the methods can be implemented very efficiently in hardware.
+
+CLAIMS:
+1. A method for compressing a stream of symbols, comprising:
+dividing the stream into fixed-length blocks;
+for each of the fixed-length blocks, searching entries in a plurality of dictionaries for fixed-length phrases obtained from the each of the fixed-length blocks;
+choosing one of a plurality of partitions of the each of the fixed-length blocks based on the results of the step of searching and on a specified plurality of allowed partitions, wherein the one of the plurality of partitions comprises a plurality of non-overlapping component phrases, and wherein a concatenation of the plurality of non-overlapping component phrases comprises the each of the fixed-length blocks; and
+for each of the non-overlapping component phrases, obtaining one of a pointer and a literal to represent the each of the non-overlapping component phrases.
+2. The method of claim 1, further comprising:
+grouping the representations of the plurality of non-overlapping component phrases; and
+outputting the group of the representations.
+3. The method of claim 2, wherein the step of choosing one of a plurality of partitions comprises choosing one of a plurality of partitions such that the size of the group is minimized.
+4. The method of claim 3, wherein the step of choosing one of a plurality of partitions such that the size of the group is minimized comprises choosing one of the plurality of partitions based on a state table.
+5. The method of claim 1, further comprising:
+for each of the representations in the group, determining whether the each of the representations is one of a literal and a pointer;
+if each of the representations is the literal, outputting the literal; and
+if the each of the representations is the pointer, using the pointer to retrieve from a data structure the each of the non-overlapping component phrases, and outputting the each of the non-overlapping component phrases.
+6. The method of claim 1, wherein the step of dividing the stream into fixed-length blocks comprises dividing the stream into 8-byte blocks.
+7. The method of claim 1, wherein the step of searching entries in a plurality of dictionaries for fixed-length phrases comprises searching entries in a 2-byte dictionary, a 4-byte dictionary, and an 8-byte dictionary for 2-byte phrases, 4-byte phrases, and 8-byte phrases, respectively.
+8. The method of claim 1, wherein the step of searching entries in a plurality of dictionaries for fixed-length phrases obtained from the each of the fixed-length blocks comprises searching entries in the plurality of dictionaries in parallel.
+9. The method of claim 1, wherein the step of searching entries in a plurality of dictionaries for fixed-length phrases obtained from the each of the fixed-length blocks comprises:
+computing a hash index for each of the fixed-length phrases to be searched using a hash function; and
+using the hash index for the each of the fixed-length phrases to restrict the number of the entries to be searched.
+10. The method of claim 1, wherein searching entries in a plurality of dictionaries for fixed-length phrases obtained from the each of the fixed-length blocks comprises retrieving pointers from the plurality of dictionaries, wherein each of the pointers selects previously processed data.
+11. The method of claim 10, wherein the each of the pointers selects previously processed data comprises the each of the pointers selects one of the entries in the plurality of dictionaries.
+12. The method of claim 10, wherein the each of the pointers selects previously processed data comprises the each of the pointers selects a phrase in a list.
+13. The method of claim 12, wherein a new fixed-length phrase is added to the list if the new fixed-length phrase is absent in one of the plurality of dictionaries corresponding to the new fixed-length phrase.
+14. The method of claim 1, further comprising using a run length counter for compressing repetitions of the fixed-length blocks.
+15. The method of claim 14, wherein the step of using a run length counter for compressing repetitive data comprises:
+incrementing the run length counter, if a current one of the fixed-length blocks is equal to a previous one of the fixed-length blocks; and
+encoding a run of identical fixed-length blocks of a length specified by the run length counter, if the current one of the fixed-length blocks is different from the previous one of the fixed-length blocks, and if the run length counter is greater than zero.
+16. The method of claim 1, further comprising:
+updating the plurality of dictionaries to reflect one of the fixed-length phrases, if the one of the fixed-length phrases is found in the plurality of dictionaries; and
+adding the one of the fixed-length phrases to the plurality of dictionaries, if the one of the fixed-length phrases is absent in the plurality of dictionaries.
+17. The method of claim 1, wherein the steps of the method are implemented in hardware for execution by a processor.
+18. The method of claim 1, wherein the steps of the method are implemented as instructions on a machine-readable medium for execution by a processor.
+19. A method for compressing a stream of symbols in parallel, comprising:
+dividing the stream into collections of fixed-length blocks, wherein each item in the collections comprises one fixed-length block;
+for the each item, searching in parallel entries in a plurality of dictionaries for fixed-length phrases obtained from the each item;
+for the each item, choosing one of a plurality of partitions based on (a) the results of the step of searching and (b) on a specified plurality of allowed partitions, wherein the one of the plurality of partitions comprises a plurality of non-overlapping component phrases, and wherein a concatenation of the plurality of non-overlapping component phrases comprises the each item; and
+for the each item and for each component phrase of the one of the plurality of partitions, obtaining one of a pointer and a literal to represent the each component phrase.
+20. The method of claim 19, further comprising:
+grouping in order the representations of the plurality of non-overlapping component phrases of the each item in the collections; and
+outputting the group of the representations.
+21. The method of claim 19, further comprising:
+for each of the representations of the each component phrase in the each item in the collections in parallel, determining whether the each of the representations is one of a literal and a pointer;
+if the representation is the literal, outputting the literal; and
+if the representation is the pointer, using the pointer to retrieve from a data structure the each component phrase, and outputting the each component phrase.
+22. The method of claim 19, wherein the steps of the method are implemented in hardware for execution by a processor.
+23. The method of claim 19, wherein the steps of the method are implemented as instructions on a machine-readable medium for execution by a processor.
+24. A method for hierarchically aligning a stream of symbols in which the length of phrases of smaller length divide the length of phrases of longer length, comprising:
+for a given length, the given length comprising each incrementally longer length starting from the smallest length, (a) maintaining separate dictionaries for different alignments associated with the given length; (b) counting the number of times a phrase is not found in each of the dictionaries and (c) choosing one of the different alignments based on the result of the step of counting.
+25. The method of claim 24, wherein the step of choosing comprises choosing one of the different alignments associated with one of the dictionaries with the highest count.
+26. The method of claim 24, wherein the steps of the method are implemented in hardware for execution by a processor.
+27. The method of claim 24, wherein the steps of the method are implemented as instructions on a machine-readable medium for execution by a processor.
+28. In a system comprising a hierarchical data structure, wherein the hierarchical data structure comprises a first dictionary and a second dictionary, wherein the first dictionary comprises at least one first phrase of a first fixed-length, wherein the second dictionary comprises at least one second phrase of a second fixed-length differing from the first phrase length, wherein each of the at least one first phrase and at least one second, phrase is associated with a unique hash key, a method for compressing a block of data using the dictionary, comprising:
+(a) segmenting the block into first plurality of subblocks, wherein the size of each of the first plurality of subblocks is the first fixed-length;
+(b) segmenting the block into a second plurality of subblocks, wherein the size of each of the second plurality of subblocks is the second fixed-length;
+(c) querying the first dictionary for each of the first plurality of subblocks to find a at least one first match;
+(d) querying the second dictionary for each of the second plurality of subblocks to find at least one second match;
+(e) if at least one of the first match is found in the dictionary, encoding the first match using a first unique pointer associated with the at least one first match; and
+(f) if at least one of the second match is found in the dictionary, encoding the at least one second match using a second unique pointer associated with the at least one second match.
+29. The method of claim 28, wherein the steps of the method are implemented in hardware for execution by a processor.
+30. The method of claim 28, wherein the steps of the method are implemented as instructions on a machine-readable medium for execution by a processor.

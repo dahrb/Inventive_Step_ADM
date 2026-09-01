@@ -1,0 +1,99 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. A power supply (14), comprising:
+
+a component (110) for receiving input voltage;
+
+a controller (190) that measures a RMS value of said input voltage and
+generates an analog signal that is proportional to said RMS value;
+
+one or more LED strings (180);
+
+a current regulator (230) that receives said analog signal and regulates the
+current flowing through each of said one or more LED strings (180) based on said
+analog signal; and
+
+a current monitor (240) that compares an aggregation of the currents flowing
+through the one or more LED strings with a predetermined threshold and transmits a
+power supply termination signal when the aggregation of the currents is less than said
+
+predetermined threshold.
+
+2. The power supply (14) as set forth in claim 1, wherein the current regulator
+(230) includes one or more voltage controlled current sources (VCCSs) in which each
+
+VCCS regulates current flowing through a different one of said LED strings.
+
+3. The power supply (14) as set forth in claim 2, wherein each VCCS includes:
+an operational amplifier (op-amp) that receives said analog signal and said
+current flowing through said associated LED string; and
+a transistor that one of increases and decrease said current based on an output
+
+voltage of said op-amp.
+
+4, The power supply (14) as set forth in claim 3, wherein said op-amp output
+
+voltage is proportional to said analog signal.
+
+5. The power supply (14) as set forth in one of the preceding claims, wherein the
+current regulator (230) includes six independent VCCSs, each of which regulates
+
+current flowing through one of said one or more LED strings.
+
+6. The power supply (14) as set forth in one of the preceding claims, wherein the
+
+current monitor (240) includes:
+
+13
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+an adder for summing said regulated current from each of said LED strings;
+
+a divider for scaling said current summation based on a number of said LED
+strings; and
+
+a comparator for comparing said scaled current summation to said
+
+predetermined threshold.
+
+7. The power supply (14) as set forth one of the preceding claims, wherein said
+
+predetermined threshold is substantially equal to said analog signal.
+
+8. The power supply (14) as set forth in one of the preceding claims, wherein
+
+said analog signal is a DC voltage in the range of about 1.25 V to about 2.5V.
+
+9. The power supply (14) as set forth in one of the preceding claims, wherein
+said analog signal is a pulse width modulation (PWM) signal with a voltage in the
+
+range of about 0 VDC to about 5 VDC and a duty cycle of about 25% to 50%.
+
+10. The power supply (14) as set forth in claim | , further including a filter (210)
+that filters AC components from said analog signal prior to sending said command
+
+signal to said current regulator.
+
+11. A method for regulating current in a LED traffic signal, comprising:
+
+measuring a RMS value of input voltage;
+
+generating an analog signal proportional to said RMS value;
+
+using said analog signal to regulate the current flowing through each of one or
+more LED strings; and
+
+comparing an aggregation of the currents flowing through the one or more
+LED strings with a predetermined threshold and transmitting a power supply
+termination signal when the aggregation of the currents is less than said
+
+predetermined threshold.
+
+12. A LED traffic signal (10) including the power supply of claim 1.
+
+14

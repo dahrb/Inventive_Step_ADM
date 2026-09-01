@@ -1,0 +1,132 @@
+--- PAGE 1 ---
+EP Application No.: 16 711 454.5
+
+Applicant: Microsoft Technology Licensing, LLC
+Our Ref.: EP106114-MH155
+Date: October 23, 2019
+
+NEW CLAIMS - Main Request
+
+1. A method executed on a computing device to provide large data management in a
+communication application through multiple mailboxes, the method comprising:
+
+detecting a predefined size threshold of a mailbox associated with a user being reached,
+wherein the mailbox is one of a primary mailbox and a first archive mailbox;
+
+upon detection that the predefined size threshold of the mailbox being reached, creating
+an additional archive mailbox for the user in chained manner connected to one of the primary
+mailbox and the first archive mailbox; and
+
+storing communication application related data in the additional archive mailbox, wherein
+data in the mailbox and in the additional archive mailbox are available for one or more
+functionalities of the communication application in a transparent manner to the user; wherein
+folders are stored in various mailboxes with pointers to those folders in other mailboxes being
+placed in the primary mailbox or the first archive mailbox, so that a user may click on a folder that
+exists in a different mailbox and open the folder and see its contents without a noticeable
+difference; and
+
+if inactivity is detected after a predefined period of time, placing the additional archive
+mailbox on hold and removing the additional archive mailbox permanently upon expiration of a
+
+hold period.
+
+2. The method of claim 1, further comprising:
+storing the primary mailbox, the first archive mailbox, and the additional archive mailbox
+in one or more data stores, wherein the data stores include one of local data stores and online
+
+data stores.
+
+3. The method of claim 1, further comprising:
+managing storage of the primary mailbox, the first archive mailbox, and the additional
+
+archive mailbox through one or more servers.
+
+4. The method of claim 1, further comprising:
+for communication application related data not stored in the primary mailbox or the first
+archive mailbox, creating one or more pointers to respective additional archive mailboxes in the
+
+primary mailbox or the first archive mailbox.
+
+--- PAGE 2 ---
+5. The method of claim 1, further comprising:
+upon detecting one of the primary mailbox, the first archive mailbox, and the additional
+archive mailbox reach a storage threshold, moving data to one or more other additional archive
+
+mailboxes through data partitioning.
+
+6. A computing device to provide large data management in a communication service
+through multiple mailboxes, the computing device comprising:
+a memory configured to store instruction associated with the communication service; and
+one or more processors configured to execute one or more applications associated with
+the communication service in conjunction with the instructions stored in the memory, wherein the
+one or more applications include:
+a communication application configured to facilitate exchange of communication in a
+plurality of modes between users; and
+a data management application configured to manage communication application
+related data through mailboxes comprising a primary mailbox and a first archive mailbox
+associated with the users and user groups, wherein the data management application is further
+configured to:
+detect a predefined size threshold of the first archive mailbox associated with a
+user being reached;
+upon detection that the predefined size threshold of the mailbox being reached,
+create an additional archive mailbox for the user in chained manner connected to one
+of the primary mailbox and the first archive mailbox;
+store the communication application related data in the additional archive
+mailbox, wherein data in the archive mailbox and in the additional archive mailbox are
+available for one or more functionalities of the communication application in a
+transparent manner to the user; wherein folders are stored in various mailboxes with
+pointers to those folders in other mailboxes being placed in the primary mailbox or the
+first archive mailbox, so that a user may click on a folder that exists in a different mailbox
+and open the folder and see its contents without a noticeable difference; and
+if inactivity is detected after a predefined period of time, place the additional
+archive mailbox on hold and remove the additional archive mailbox permanently upon
+
+expiration of a hold period.
+
+7. The computing device of claim 6, wherein the data management application is further
+configured to:
+store a folder hierarchy associated with the user in the archive mailbox and in one or more
+
+additional archive mailboxes designated as archive content mailboxes.
+
+--- PAGE 3 ---
+8. The computing device of claim 6, wherein the data management application is further
+configured to:
+
+partition data in one or more of the archive mailbox and the additional archive mailbox
+upon detecting the archive mailbox or the additional archive mailbox reach a storage threshold
+by chaining of partitions created dynamically based on one or more of a mailbox size, an item
+
+count, and an ingestion size.
+
+9. A computer-readable memory device with instructions stored thereon to provide large
+data management in a communication service through multiple mailboxes comprising a primary
+mailbox and a first archive mailbox, the instructions comprising:
+
+detecting a predefined size threshold of an archive mailbox associated with a user being
+reached;
+
+upon detection that the predefined size threshold of the mailbox being reached, creating
+an additional archive mailbox for the user in a chained manner connected to one of the primary
+mailbox and the first archive mailbox, wherein a folder hierarchy associated with the user is stored
+in the archive mailbox and in one or more additional archive mailboxes designated as archive
+content mailboxes;
+
+storing communication application related data in the additional archive mailbox, wherein
+data in the archive mailbox and in the additional archive mailbox are available for one or more
+functionalities of the communication application in a transparent manner to the user, wherein
+folders are stored in various mailboxes with pointers to those folders in other mailboxes being
+placed in the primary mailbox or the first archive mailbox, so that a user may click on a folder that
+exists in a different mailbox and open the folder and see its contents without a noticeable
+difference; and
+
+if inactivity is detected after a predefined period of time, placing the additional archive
+mailbox on hold and removing the additional archive mailbox permanently upon expiration of a
+
+hold period.
+
+10. The computer-readable memory device of claim 9, wherein the communication
+application related data includes one or more of emails, calendar items, attachments, tasks,
+contact cards, online conference recordings, audio communication recordings, video
+
+communication recordings, and text messages.

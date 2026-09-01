@@ -1,0 +1,25 @@
+Title: Display device
+
+Abstract: A display device includes a plurality of pixels, each of which has a drive transistor, an organic EL element and a writing capacitor, in which the drive transistor controls a luminous time period of the organic EL element by a writing signal voltage and a sweep signal so that the writing signal voltage is written into the writing capacitor independent from a characteristic variation caused by a deterioration due to the temperature and time lapse of using the organic EL element, thereby making a luminous time period long when the deterioration occurs with increase of an internal resistance of the organic EL element, and compensating a luminance degradation caused by the deterioration to solve a burn-in state of fixed pattern.
+
+Type: US Patent
+
+Claims: 
+
+1. A display device including a display panel having a plurality of pixels and each having a data line for inputting a signal voltage into the pixel, wherein the pixel comprises:
+a first capacitor, a one end of which is connected to the data line;
+an input voltage inverting transistor, an input of which is connected to other end of the first capacitor;
+a luminous element which is controlled by an output of the transistor;
+a first switch provided between an input end and an output end of the transistor; and
+a second switch provided between the output end of the transistor and the luminous element.
+2. The device according to claim 1, wherein a first time period for inputting a signal voltage into the data line while the first switch turns On-state and the second switch turns Off-state is alternately and repeatedly changed with a second time period for inputting a sweep signal into the data line while the first switch turns Off-state and the second switch turns On-state.
+3. The device according to claim 2, wherein the first time period plus the second time period is a one-frame time period.
+4. The device according to claim 2, wherein an inclination of the sweep signal is varied in response to a duration of use or a temperature of the luminous element.
+5. A display device including a display panel arranged with a plurality of pixels, a scanning line drive circuit for selecting the pixel arranged on the display panel, and a data line drive circuit for supplying a signal voltage to the pixel selected by the scanning line drive circuit, wherein
+the pixel comprises a luminous element, a transistor to drive the luminous element, and a capacitor to write the signal voltage in accordance with an input reference voltage of the transistor, and
+the transistor controls a luminous time period of the luminous element in accordance with the input reference voltage shifted in response to a characteristic of the luminous element.
+6. The device according to claim 5, wherein the pixel provides a reset switch to make short-circuited between an input and an output of the transistor, and a luminance control switch between the transistor and the luminous element.
+7. The device according to claim 6, wherein the reset switch turns On during a first time period in one-frame time period, and the luminance control switch turns On during a second time period in the one-frame time period.
+8. The device according to claim 7, wherein the data line drive circuit supplies a signal voltage to the pixel in the first time period, and supplies a triangular signal to the pixel in the second time period.
+9. The device according to claim 8, wherein a linear inclination portion of the sweep signal is made into a curve inclination portion.
+10. The device according to claim 5, wherein the characteristic of the luminous element is a characteristic indicating that a resistance value of the luminous element is varied by causing a deterioration due to variations of a temperature and a time lapse.

@@ -1,0 +1,66 @@
+TITLE:
+Dynamic query suggestion
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A query prefix is received from a user device. A user identifier is determined based on the user device. A user category is determined based on the user identifier. A node representing the query prefix is located in a query graph. Descendent nodes of the located node that represent queries are located. Each node has one or more user category specific frequency measures and each user category specific frequency measure is associated with a user category. The queries represented by the located nodes are ranked based on the associated user category specific frequency measure associated with the identified user category. The ranked queries are sent to the user device.
+
+CLAIMS:
+1. A computer-implemented method comprising:
+receiving a query prefix from a user device;
+determining a user identifier based on the user device;
+identifying an associated user category that is associated with the user identifier;
+locating a node representing the query prefix in a query graph;
+locating descendent nodes of the located node, the descendent nodes representing queries, wherein:
+each descendent node has one or more user category specific frequency measures;
+each user category specific frequency measure for each located descendent node is associated with a user category; and
+each user category specific frequency measure for each located descendent node is based on a number of times that the query that is represented by the descendent node was received from users that belong to the associated user category;
+ranking the queries represented by the located descendent nodes based on a user category specific frequency measure associated with the identified user category; and
+sending the ranked queries to the user device.
+2. The method of claim 1, wherein the query graph is a Patricia trie.
+3. The method of claim 1, wherein sending the ranked queries comprises sending only queries represented by located descendent nodes that have an associated user category frequency measure greater than a threshold frequency.
+4. The method of claim 1, wherein the query prefix is received from a browser executing at the user device.
+5. The method of claim 1, wherein the query prefix is received from a toolbar executing at the user device.
+6. A computer-implemented method comprising:
+receiving a query prefix from a user device;
+determining a user identifier based on the user device;
+identifying an associated user category that is associated with the user identifier;
+locating a first node representing the query prefix in a query graph, wherein:
+the query graph is a directed graph that comprises a plurality of nodes, each node representing a query, a query prefix, or both, wherein each node representing a query prefix has a directed edge that directs to one or more child nodes; and each node has one or more user category specific frequency measures,
+each user category specific frequency measure being based on a number of times that the query that is represented by the node was received from users that belong to the associated user category;
+locating descendant nodes of the first node, each descendent node being a node that represents a query;
+ranking the queries represented by the located nodes based on the user category specific frequency measure associated with the identified user category; and
+sending the ranked queries to the user device.
+7. The method of claim 6, wherein the query graph is a Patricia trie.
+8. The method of claim 6, further comprising only sending queries represented by located nodes that have an associated user category frequency measure greater than a threshold frequency.
+9. The method of claim 6, wherein the query prefix is received from a browser executing at the user device.
+10. The method of claim 6, wherein the query prefix is received from a toolbar executing at the user device.
+11. A computer-readable medium with computer-executable instructions stored thereon an executable by a processing system and operable to cause the processing system upon such execution to perform operations comprising:
+storing a query graph generated from query data, the query data comprising a plurality of queries and the query graph comprising a plurality of nodes, each node representing a portion of a query, wherein each node representing a query prefix directs to one or more child nodes, each node has an associated frequency measure that is based on a number of times that the query that is represented by the node was received from users that belong to an associated user category;
+receiving a portion of a query from a user device;
+locating a first node representing the portion of a query in the query graph;
+locating descendant nodes of the first node, each descendent node being a node that represents a query in the query graph;
+ranking the queries represented by the located descendant nodes based on the frequency measures associated with the located descendant nodes; and
+sending the portions of queries to the user device.
+12. The computer-readable medium of claim 11, wherein the query prefix is received from a browser executing at the user device.
+13. The computer-readable medium of claim 11, wherein the query graph is a Patricia trie.
+14. The computer-readable medium of claim 11, further comprising:
+receiving an identifier of a user category from the user device; and
+ranking the portions of queries represented by the located descendant nodes based on the identified user category specific frequency measures associated with the nodes.
+15. A system, comprising:
+a data store storing a query graph generated from query data, the query data comprising a plurality of queries and the query graph comprising a plurality of nodes, each node representing a portion of a query, wherein each node representing a query prefix directs to one or more child nodes, each node having an associated frequency measure that is based on a number of times that the query that is represented by the node was received from users that belong to an associated user category;
+one or more computers configured to interact with the data store and further configured to perform operations including:
+receiving a portion of a query from a user device;
+locating a first node representing the portion of a query in the query graph;
+locating descendant nodes of the first node, each descendent node being a node that represents a query in the query graph;
+ranking the queries represented by the located descendant nodes based on the frequency measures associated with the located descendant nodes; and
+sending the portions of queries to the user device.
+16. The system of claim 15, wherein the query prefix is received from a browser executing at the user device.
+17. The system of claim 15, wherein the query graph is a Patricia trie.
+18. The system of claim 15, wherein the one or more computers are further operable to perform operations including:
+receiving an identifier of a user category from the user device; and
+ranking the portions of queries represented by the located descendant nodes based on the identified user category specific frequency measures associated with the nodes.
+19. The system of claim 15, wherein the one or more computers are further operable to perform operations including only sending queries represented by located nodes that have an associated user category frequency measure greater than a threshold frequency.
+20. The system of claim 15, wherein the query prefix is received from a toolbar executing at the user device.

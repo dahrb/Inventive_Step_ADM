@@ -1,0 +1,55 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 15 724 834.5
+68354.230826 / MTI-4432.EP.0
+
+MAIN REQUEST - CLAIMS
+
+A Universal Serial Bus (USB) hub comprising:
+
+a first port (106) that is configured to be switched from a downstream port
+
+function to an upstream port function;
+
+a plurality of other ports (108); and
+a controller (102) configured to switch a function of the first port (106) from
+
+the downstream port function to the upstream port function responsive to a command from an
+
+attached device and wherein the command comprises further information, wherein the
+
+controller is further configured to, in dependence of the further information, switch at least
+
+one of the plurality of other ports (108) from a data and charge port into a port dedicated to
+
+charging.
+
+2.
+
+The USB hub according to claim 1, wherein the controller (102) is configured
+to switch the at least one of the plurality of other ports (108) into the port dedicated
+for charging if the attached device has not enumerated the at least one of the plurality
+
+of other ports.
+
+The USB hub according to claim 1, wherein all ports (108) not enumerated by
+the device are turned into ports (108) dedicated for charging by the controller (102).
+
+The USB hub according to one of the preceding claims, wherein the controller
+(102) is configured to cause a short between a DP and DM line of the at least one of
+the plurality of other ports (106) that was switched into a port dedicated for charging.
+
+The USB hub according to one of the preceding claims, wherein the controller
+(102) is configured to switch the at least one of the plurality of other ports (108) back
+when the first port (106) is switched back from an upstream port function to a
+
+downstream port function.

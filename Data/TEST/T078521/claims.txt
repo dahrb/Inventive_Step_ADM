@@ -1,0 +1,186 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Claims
+
+1. A set-top-box (501) for receiving broadcast media content and processing said
+
+content for presentation on a display, the set-top-box comprising one or more processors
+
+(304) for processing received broadcast data containing video and audio information and
+
+converting this information into video and audio streams for provision to a display;
+wherein the set-top-box further comprises:
+
+a modem circuit (718), or a connection (512) for connecting to a modem;
+
+a router circuit (719), or a connection (513) for connecting to a router; and
+
+a processor (511) configured to:
+
+- receive, from between the router circuit (718) or the connection (513) for
+connecting to the router, and the modem circuit (719) or the connection (512)
+for connecting to the modem, data packets, sent over a local network, to or
+from a local user device via the router circuit:
+
+- analyse said data packets to determine whether they contain undesired
+content; and
+
+- if undesired content is found, to overlay an indicator containing at least one
+property of the undesired content on top of received media content being output
+
+by the set-top-box to the display.
+
+2. A set-top-box according to claim 1 wherein the processor is configured to analyse
+
+said data packets by performing deep packet inspection (DPI).
+
+3. A set-top-box according to claim 2 wherein the undesired content is a
+predetermined word or set of words, or a file type, the set top box further comprising a
+memory for storing data indicative of the undesired words or file types, the processor being
+
+further configured to:
+
+- compare data contained within the data packets, extracted by performing DPI,
+with the data stored in the memory to determine whether the data packets
+contain undesired content,
+
+- the data extracted from the data packets preferably including one or more of a
+website name or URL, a word or set of words contained in a website, a file
+
+name extension or a file name.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+4. A set-top-box according to claims 1, 2 or 3 wherein the processor is operable to
+receive data from a table containing the destination and source of data packets, the
+processor being further configured to determine the target local user device to/from which
+the data packet is destined and to present, in the indicator, data indicative of the target
+local user device, the data table preferably being a NAT table maintained by the router
+
+circuit which is integral to the set-top-box.
+
+5. A set-top-box according to claim 4 further configured to:
+- receive input from a user identifying one or more user devices to be monitored;
+- store data in a memory indicative of the one or more identified user devices;
+and to
+- present an indicator containing at least one property of the detected undesired
+content only when the data stored in memory identifies the device to/from which
+
+the data packet is sent as a user device to be monitored.
+
+6. A set-top-box according to any preceding claim wherein at least the router circuit is
+integral to the set-top-box and, preferably the modem circuit is also integral to the set-top-
+box, the set-top-box preferably acting as a residential gateway, and wherein the set-top-
+
+box further comprises a connection between the router NAT table and the processor.
+
+7. A set-top-box according to any preceding claim wherein the set-top-box is
+configured to receive power status information data from the display indicative of whether
+the display is activated or in standby mode, the set-top-box being configured to:
+- determine, based on the received data from the display, whether the display
+is activated or in standby mode;
+- wherein when the display is determined to be activated the set-top-box is
+configured to send the indicators containing at least one property of the undesired
+content to the display for presentation to a user; and
+- wherein when the display is determined to be in standby mode the set-top-
+
+box is configured to undertake a second action.
+
+8. A set-top-box according to claim 7 wherein the second action comprises sending
+the indicator to a further user device via a network connection, preferably in the form of a
+
+Multimedia Messaging Service message or an email.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+9. A set-top-box according to claim 7 or 8 wherein the second action comprises, or
+further comprises, storing in a memory data representing the at least one property of the
+detected undesired content and controlling the display to present the indicator, containing
+
+the at least one property, when the display is next determined to be activated.
+
+10. A set-top-box according to claim 7, 8 or 9 wherein the set-top-box is configured to
+send a request message to the display requesting power status information when
+undesired content is found or when an indicator containing at least one property of the
+
+undesired content is to be displayed.
+
+11. A set-top-box according to any of claims 7 to 10 wherein the set-top-box is coupled
+
+to the display by HDMI and the power status information request and data is sent by CEC.
+
+12. A set-top-box according to any preceding claim wherein the processor is:
+- a separate processor to that used to process the broadcast media content
+for display, and is preferably a DSP; and/or
+- the processor is further configured to filter data packets containing undesired
+
+content such that they do not reach the destination user device.
+
+13. A set-top-box according to any preceding claim wherein the display is directly
+
+coupled to the set-top-box, preferably by a cable such as an HDMI cable.
+
+14. A method of indicating when a user device on a local network is accessing
+undesired content, the method comprising:
+
+- providing a set-top-box (501) for receiving and processing broadcast media
+content for presentation on a display, the set-top-box comprising: one or more
+processors (304) for processing received broadcast data containing video and
+audio information and converting this information into video and audio streams
+for provision to a display; a modem circuit (718), or a connection (512) for
+connecting to a modem; and a router circuit (719), or a connection (513) for
+connecting to a router:
+
+characterised in that the method further comprises:
+
+- receiving (801), at a processor of the set-top-box, data packets, from between
+
+(i) the router circuit (718) or the connection (513) for connecting to the router
+
+and (ii) the modem circuit (719) or the connection (512) for connecting to the
+
+--- PAGE 4 ---
+modem, sent over a local network to or from a local user device via the router
+circuit;
+- analysing (803) said data packets using the processor to determine whether
+they contain undesired context; and
+5 - if undesired content is found, overlaying an indicator containing at least one
+property of the undesired content on top of received media content being output
+
+by the set-top-box to the display.
+
+15. A computer program which when operated on a set-top-box causes it to carry out
+10 the method of claim 14.

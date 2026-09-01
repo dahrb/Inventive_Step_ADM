@@ -1,0 +1,745 @@
+TITLE:
+Substitution calculation system, calculation apparatus, capability providing apparatus, substitution calculation method, capability providing method, program, and recording medium
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A computing apparatus outputs τ1 and τ2 corresponding to a ciphertext x, a capability providing apparatus uses τ1 to correctly compute f(τ1) with a probability greater than a certain probability and sets the result of the computation as z1, uses τ2 to correctly compute f(τ2) with a probability greater than a certain probability and sets the result of the computation as z2, the computing apparatus generates a computation result u = f(x)bx1 from z1, generates a computation result v = f(x)ax2 from z2, and outputs ub'va' if the computation results u and v satisfy a particular relation, where G and H are groups, f(x) is a function for obtaining an element of the group G for x ∈ H, X1 and X2 are random variables having values in the group G, x1 is a realization of the random variable X1, and x2 is a realization of the random variable X2.
+
+CLAIMS:
+A proxy computing system comprising a computing apparatus and a capability providing apparatus,
+wherein G and H are groups, f(x) is a decryption function for decrypting a certain ciphertext x which is an element of the group H with a particular decryption key to obtain an element of the group G, X1 and X2 are random variables having values in the group G, x1 is a realization of the random variable X1, x2 is a realization of the random variable X2, a and b are natural numbers that are relatively prime to each other;
+the computing apparatus comprises an input information providing unit outputting first input information τ1 and second input information τ2 that correspond to the ciphertext x and are elements of the group H;
+the capability providing apparatus comprises:
+a first output information computing unit using the first input information τ1 to correctly compute f(τ1) with a probability greater than a certain probability and sets an obtained result of the computation as first output information z1; and
+a second output information computing unit using the second input information τ2 to correctly compute f(τ2) with a probability greater than a certain probability and sets an obtained result of the computation as second output information z2; and
+the computing apparatus further comprises:
+a first computing unit generating a computation result u = f(x)bx1 from the first output information z1;
+a second computing unit generating a computation result v = f(x)ax2 from the second output information z2; and
+a final output unit outputting ub'va' for integers a' and b' that satisfy a'a + b'b = 1 when the computation results u and v satisfy ua = vb.
+The proxy computing system according to claim 1,
+wherein the computing apparatus comprises a natural number selecting unit selecting at least one of the natural numbers a and b; and
+the first input information τ1 further corresponds to the natural number b and the second input information τ2 further corresponds to the natural number a.
+The proxy computing system according to claim 2,
+wherein the input information providing unit sets pieces of information whose relation with the ciphertext x is scrambled as the first input information τ1 and the second input information τ2.
+The proxy computing system according to claim 1,
+wherein the input information providing unit sets pieces of information whose relation with the ciphertext x is scrambled as the first input information τ1 and the second input information τ2.
+The proxy computing system according to any one of claims 1 to 4;
+wherein the decryption function f(x) is a homomorphic function, the group H is a cyclic group, a generator of the cyclic group H is µh, the order of the cyclic group H is KH, and ν = f(µh);
+the input information providing unit comprises:
+a first random number generator generating a random number r1 that is a natural number greater than or equal to 0;
+a first input information computing unit computing µh r1xb as the first input information τ1;
+a second random number generator generating a random number r2 that is a natural number greater than or equal to 0; and
+a second input information computing unit computing µh r2xa as the second input information τ2;
+the first output information computing unit uses the first input information µh r1xb to correctly compute f(µh r1xb) with a probability greater than a certain probability and sets an obtained result of the computation as the first output information z1; and
+the second output information computing unit uses the second input information µh r2xa to correctly compute f(µh r2 X a) with a probability greater than a certain probability and sets an obtained result of the computation as the second output information z2;
+the first computing unit computes z1ν-r1 to obtain the computation result u; and
+the second computing unit computes z2ν-r2 to obtain the computation result v.
+The proxy computing system according to claim 5,
+wherein the first random number generator generates the random number r1 when b ≠ 1;
+the first input information computing unit computes the µh r1xb as the first input information τ1 when b ≠ 1;
+the first output information computing unit sets the computation result obtained by using the first input information µh r1xb as the first output information z1 when b ≠ 1;
+the first computing unit computes z1ν-r1 to obtain the computation result u when b ≠ 1;
+the second random number generator generates the random number r2 when a ≠ 1;
+the second input information computing unit computes µh r2xa as the second input information τ2 when a ≠ 1;
+the second output information computing unit sets the computation result obtained by using the second input information µh r2xa as the second output information z2 when a ≠ 1;
+the second computing unit computes z2ν-r2 to obtain the computation result v when a ≠ 1;
+the input information providing unit comprises:
+a third random number generator generating a random number r3 that is a natural number greater than or equal to 0; and
+a third input information computing unit setting xr3 as the first input information τ1 when b = 1 and sets xr3 as the second input information τ2 when a = 1;
+the capability providing apparatus comprises:
+a third output information computing unit using the xr3 to correctly compute f(xr3) with a probability greater than a certain probability and sets an obtained result of the computation as third output information z3; and
+a third computing unit setting z3 1/r3 as the computation result u when b = 1 and sets z3 1/r3 as the computation result v when a = 1.
+The proxy computing system according to any one of claims 1 to 4,
+wherein the group H is a direct product group G x G of the group G, the decryption function f(x) is a homomorphic function, the group G is a cyclic group, a generator of the cyclic group G is µg, the order of the cyclic group G is KG, x = (c1, c2), (V, W) is an element of the group H, and f(V, W) = Y;
+the input information providing unit comprises:
+a fourth random number generator generating a random number r4 that is a natural number greater than or equal to 0;
+a fifth random number generator generating a random number r5 that is a natural number greater than or equal to 0;
+a first input information computing unit computing c2 bWr4 and c1 bVr4µgr5 as the first input information τ1;
+a sixth random number generator generating a random number r6 that is a natural number greater than or equal to 0;
+a seventh random number generator generating a random number r7 that is a natural number greater than or equal to 0; and
+a second input information computing unit computing c2 aWr6 and c1 aVr6µg r7 as the second input information τ2;
+the first output information computing unit uses the first input information c1 bVr4µgr5 and c2 bWr4 to correctly compute f(c1 bVr4µg r5, c2 bWr4) with a probability greater than a certain probability and sets an obtained result of the computation as the first output information z1;
+the second output information computing unit uses the second input information c1 aVr6µg r7 and c2 aWr6 to correctly compute f(c1 aVr6µg r7, c2 aWr6) with a probability greater than a certain probability and sets an obtained result of the computation as the second output information z2;
+the first computing unit computes z1Y-r4µg -r5 to obtain the computation result u; and
+the second computing unit computes z2Y-r6µg-r7' to obtain the computation result v.
+The proxy computing system according to any one of claims 1 to 4,
+wherein a probability distribution of an error of the computation result u for f(x)b does not depend on the natural number b and/or a probability distribution of an error of the computation result v for f(x)a does not depend on the natural number a, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result u for f(x)b and does not depend on the natural number b, and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result v for f(x)a and does not depend on the natural number a.
+The proxy computing system according to claim 5,
+wherein a probability distribution of an error of the computation result u for f(x)b does not depend on the natural number b and/or a probability distribution of an error of the computation result v for f(x)a does not depend on the natural number a, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result u for f(x)b and does not depend on the natural number b, and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result v for f(x)a and does not depends on the natural number a.
+The proxy computing system according to claim 7,
+wherein a probability distribution of an error of the computation result u for f(x)b does not depend on the natural number b and/or a probability distribution of an error of the computation result v for f(x)a does not depend on the natural number a, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result u for f(x)b and does not depend on the natural number b, and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result v for f(x)a and does not depends on the natural number a.
+The proxy computing system according to any one of claims 1 to 4, wherein the natural number a or the natural number b is a constant.
+The proxy computing system according to claim 5, wherein the natural number a or the natural number b is a constant.
+The proxy computing system according to claim 7, wherein the natural number a or the natural number b is a constant.
+The proxy computing system according to any one of the claims 1 to 4, further comprising a decryption control apparatus,
+wherein the decryption control apparatus comprises an output unit outputting a decryption control instruction controlling a decryption process of the computing apparatus to the capability providing apparatus; and
+the capability providing apparatus comprises a controller controlling, in accordance with the decryption control instruction, whether or not to output both of the first output information z1 and the second output information z2 from the first output information computing unit and the second output information computing unit.
+The proxy computing system according to claim 5, further comprising a decryption control apparatus,
+wherein the decryption control apparatus comprises an output unit outputting a decryption control instruction controlling a decryption process of the computing apparatus to the capability providing apparatus; and
+the capability providing apparatus comprises a controller controlling, in accordance with the decryption control instruction, whether or not to output both of the first output information z1 and the second output information z2 from the first output information computing unit and the second output information computing unit.
+The proxy computing system according to claim 7 further comprising a decryption control apparatus,
+wherein the decryption control apparatus comprises an output unit outputting a decryption control instruction controlling a decryption process of the computing apparatus to the capability providing apparatus; and
+the capability providing apparatus comprises a controller controlling, in accordance with the decryption control instruction, whether or not to output both of the first output information z1 and the second output information z2 from the first output information computing unit and the second output information computing unit.
+The proxy computing system according to claim 1, further comprising a decryption control apparatus,
+wherein
+Figure imgb0959
+and
+Figure imgb0960
+are groups, ω is an integer greater than or equal to 2, (τ1,ℓ) = 1, ..., ω,
+Figure imgb0961
+is a decryption function for decrypting a cipher text
+Figure imgb0962
+which is an element of the group
+Figure imgb0960
+with a particular decryption key Figure imgb0964to obtain an element of the group
+Figure imgb0965
+Figure imgb0966
+and
+Figure imgb0967
+are random variables having values in the group
+Figure imgb0965
+Figure imgb0969
+is a realization of the random variable
+Figure imgb0970
+,
+Figure imgb0967
+is a realization of the random variable
+Figure imgb0967
+,
+Figure imgb0973
+and
+Figure imgb0974
+are natural numbers that are relatively prime to each other, the group G is a group G1, the group H is a group H1, the ciphertext x is a ciphertext λ1, the decryption function f(x) is a decryption function f1(λ1), the random variable X1 is a random variable X1,1, the random variable X2 is a random variable X1,2, the realization x1 is a realization x1,1, the realization x2 is a realization x1,2, the natural number a is a natural number a(1), and the natural number b is a natural number b(1);
+the computing apparatus comprises an input information providing unit outputting first input information τℓ,1 and second input information
+Figure imgb0975
+that correspond to the ciphertext
+Figure imgb0962
+and are elements of the group
+Figure imgb0960
+
+; the capability providing apparatus comprises:
+a first output information computing unit using the first input information
+Figure imgb0978
+τ to correctly compute
+Figure imgb0979
+with a probability greater than a certain provability and outputting an obtained result of the computation as first output information
+Figure imgb0980
+and
+a second output information computing unit using the second input information
+Figure imgb0975
+to correctly compute
+Figure imgb0982
+with a probability greater than a certain provability and outputting an obtained result of the computation as second output information
+Figure imgb0983
+;
+the first computing unit generates a computation result Figure imgb0984 =
+Figure imgb0985
+from the first output information
+Figure imgb0983
+;
+the second computing unit generates a computation result Figure imgb0987 =
+Figure imgb0988
+from the second output information
+Figure imgb0983
+;
+the final output unit outputs
+Figure imgb0990
+for integers
+Figure imgb0991
+and
+Figure imgb0992
+when the computation results Figure imgb0984 and Figure imgb0987 satisfy
+Figure imgb0995
+the integers
+Figure imgb0991
+and
+Figure imgb0992
+satisfying
+Figure imgb0991
+Figure imgb0973
++
+Figure imgb0992
+Figure imgb0974
+= 1;
+the decryption control apparatus comprises an output unit outputting a decryption control instruction controlling a decryption process of the computing apparatus to the capability providing apparatus;
+the capability providing apparatus further comprises a controller controlling, in accordance with the decryption control instruction, whether or not to output both of the first output information
+Figure imgb0980
+z,1 and the second output information
+Figure imgb1003
+from the first output information computing unit and the second output information computing unit.
+The proxy computing system according to claim 17,
+wherein the decryption control instruction corresponds to any one of the decryption functions Figure imgb1004; and
+the controller controls whether or not to output both of the first output information
+Figure imgb0980
+z,1 and the second output information zℓ,2 that correspond to the decryption function Figure imgb1004 corresponding to the decryption control instruction.
+The proxy computing system according to claim 17,
+wherein the computing apparatus further comprises a recovering unit using
+Figure imgb1007
+for each Figure imgb1008(τ1,ℓ) = 1, ..., ω output from the final output unit to perform a recovering process for generating a recovered value that is recoverable only if all of decryption values that are obtainable by decrypting the ciphertext
+Figure imgb0962
+, for each of Figure imgb1008(τ1,ℓ) = 1, ..., ω with the decryption key Figure imgb0964sℓ are obtained.
+The proxy computing system according to claim 18,
+wherein the computing apparatus further comprises a recovering unit using
+Figure imgb1012
+for each Figure imgb1008(τ1,ℓ) = 1, ..., ω output from the final output unit to perform a recovering process for generating a recovered value that is recoverable only if all of decryption values that are obtainable by decrypting the ciphertext
+Figure imgb0962
+for each of Figure imgb1008(τ1,ℓ) = 1, ..., ω with the decryption key Figure imgb0964sℓ are obtained.
+The proxy computing system according to any one of claims 17 to 20,
+wherein the computing apparatus comprises a natural number selecting unit selecting at least part of the natural numbers
+Figure imgb0973
+and
+Figure imgb0974
+; and
+the first input information
+Figure imgb1019
+τℓ,1 further corresponds to the natural number
+Figure imgb0974
+, the second input information
+Figure imgb1021
+further corresponds to the natural number
+Figure imgb0973
+.
+The proxy computing system according to claim 21,
+wherein the input information providing unit sets pieces of information whose relation with the ciphertext is scrambled as the first input information τℓ,1 and the second input information
+Figure imgb1021
+.
+The proxy computing system according to any one of claims 17 to 20,
+wherein the input information providing unit sets pieces of information whose relation with the ciphertext is scrambled as the first input information τℓ,1 and the second input information
+Figure imgb1021
+.
+The proxy computing system according to any one of claims 17 to 20,
+wherein the decryption function Figure imgb1004 is a homomorphic function, the group
+Figure imgb0960
+Hℓ is a cyclic group, a generator of the cyclic group
+Figure imgb0960
+Hℓ is
+Figure imgb1028
+the order of the cyclic group
+Figure imgb0960
+Hℓ is
+Figure imgb1030
+and Figure imgb0987 =
+Figure imgb1032
+;
+the input information providing unit comprises:
+a first random number generator generating a random number r(Figure imgb1008 ,l) that is a natural number greater than or equal to 0;
+a first input information computing unit computing
+Figure imgb1034
+as the first input information
+Figure imgb0978
+;
+a second random number generator generating a random number (Figure imgb1008, 2) that is a natural number greater than or equal to 0; and
+a second input information computing unit computing
+Figure imgb1037
+as the second input information
+Figure imgb1021
+;
+the first output information computing unit uses the first input information
+Figure imgb1034
+to correctly compute
+Figure imgb1040
+with a probability greater than a certain probability and sets an obtained result of the computation as the first output information
+Figure imgb0980
+;
+the second output information computing unit uses the second input information
+Figure imgb1042
+to correctly compute
+Figure imgb1043
+with a probability greater than a certain probability and sets an obtained result of the computation as the second output information
+Figure imgb1003
+;
+the first computing unit computes
+Figure imgb1045
+to obtain the computation result Figure imgb0984; and
+the second computing unit computes
+Figure imgb1047
+to obtain the computation result Figure imgb0987.
+The proxy computing system according to claim 24,
+wherein the first random number generator generates the random number r(Figure imgb1008, 1) when
+Figure imgb0974
+≠ 1;
+the first input information computing unit computes the
+Figure imgb1034
+as the first input information
+Figure imgb1019
+τℓ,1 when
+Figure imgb0974
+≠ 1;
+the first output information computing unit sets, as the first output information
+Figure imgb0980
+, the computation result obtained by using the first input information
+Figure imgb1034
+when
+Figure imgb0974
+≠ 1;
+the first computing unit computes
+Figure imgb1045
+to obtain the computation result uℓ when
+Figure imgb0974
+≠ 1;
+the second random number generator generates the random number r(Figure imgb1008, 2) when
+Figure imgb0973
+≠ 1;
+the second input information computing unit computes
+Figure imgb1037
+as the second input information
+Figure imgb1021
+when
+Figure imgb0973
+≠ 1;
+the second output information computing unit sets, as the second output information
+Figure imgb0983
+, the computation result obtained by using the second input information
+Figure imgb1037
+when
+Figure imgb0973
+≠ 1;
+the second computing unit computes
+Figure imgb1047
+to obtain the computation result Figure imgb0987 when
+Figure imgb0973
+≠ 1;
+the input information providing unit comprises:
+a third random number generator generating a random number r(t, 3) that is a natural number greater than or equal to 0; and
+a third input information computing unit setting
+Figure imgb1070
+as the first input information τℓ,1 when
+Figure imgb0974
+= 1 and sets
+Figure imgb1070
+as the second input information
+Figure imgb1021
+when
+Figure imgb0973
+= 1;
+the capability providing apparatus comprises a third output information computing unit using the
+Figure imgb1075
+to correctly compute
+Figure imgb1076
+with a probability greater than a certain probability and sets an obtained result of the computation as third output information
+Figure imgb1077
+; and
+the computing apparatus comprises a third computing unit setting
+Figure imgb1078
+as the computation result uℓ when
+Figure imgb0974
+= 1 and setting
+Figure imgb1078
+as the computation result Figure imgb0987 when
+Figure imgb0973
+= 1.
+The proxy computing system according to claim 21,
+wherein the decryption function Figure imgb1004 is a homomorphic function, the group
+Figure imgb0960
+Hℓ is a cyclic group, a generator of the cyclic group
+Figure imgb0960
+Hℓ is
+Figure imgb1028
+the order of the cyclic group
+Figure imgb0960
+Hℓ is
+Figure imgb1030
+and Figure imgb0987 =
+Figure imgb1090
+
+the input information providing unit comprises:
+a first random number generator generating a random number r(Figure imgb1008, 1) that is a natural number greater than or equal to 0;
+a first input information computing unit computing
+Figure imgb1034
+as the first input information
+Figure imgb1019
+;
+a second random number generator generating a random number r(t, 2) that is a natural number greater than or equal to 0; and
+a second input information computing unit computing
+Figure imgb1037
+as the second input information
+Figure imgb1021
+;
+the first output information computing unit uses the first input information
+Figure imgb1034
+to correctly compute Figure imgb1004(
+Figure imgb1034
+) with a probability greater than a certain probability and sets an obtained result of the computation as the first output information
+Figure imgb0980
+;
+the second output information computing unit uses the second input information
+Figure imgb1037
+to correctly compute
+Figure imgb1043
+with a probability greater than a certain probability and sets an obtained result of the computation as the second output information
+Figure imgb1003
+;
+the first computing unit computes
+Figure imgb1103
+to obtain the computation result Figure imgb0984; and
+the second computing unit computes
+Figure imgb1047
+to obtain the computation result
+Figure imgb1106
+The proxy computing system according to claim 26, wherein the first random number generator generates a random number r(Figure imgb1008, 1) when
+Figure imgb0974
+≠ 1;
+the first input information computing unit computes the
+Figure imgb1034
+as the first input information τℓ,1 when
+Figure imgb0974
+≠ 1;
+the first output information computing unit sets, as the first output information
+Figure imgb0980
+, the computation result obtained by using the first input information
+Figure imgb1034
+when
+Figure imgb0974
+≠ 1;
+the first computing unit computes
+Figure imgb1114
+to obtain the computation result uℓ when
+Figure imgb0974
+≠ 1;
+the second random number generator generates the random number r(t, 2) when
+Figure imgb0973
+≠ 1;
+the second input information computing unit computes
+Figure imgb1042
+as the second input information
+Figure imgb1021
+when
+Figure imgb0973
+≠ 1;
+the second output information computing unit sets, as second output information
+Figure imgb1003
+, the computation result obtained by using the second input information
+Figure imgb1042
+when
+Figure imgb0973
+≠ 1;
+the second computing unit computes
+Figure imgb1047
+to obtain the computation result Figure imgb0987 when ≠ 1;
+the input information providing unit comprises:
+a third random number generator generating a random number r(t, 3) that is a natural number greater than or equal to 0; and
+a third input information computing unit setting
+Figure imgb1070
+as the first input information
+Figure imgb0978
+τℓ,1 when
+Figure imgb0974
+= 1 and sets
+Figure imgb1070
+as the second input information
+Figure imgb1021
+when
+Figure imgb0973
+= 1;
+the capability providing apparatus comprises:
+a third output information computing unit using the
+Figure imgb1075
+to correctly compute
+Figure imgb1070
+with a probability greater than a certain probability and setting an obtained result of the computation as third output information
+Figure imgb1077
+; and
+the computing apparatus comprises a third computing unit setting
+Figure imgb1078
+as the computation result uℓ Figure imgb0984 when
+Figure imgb0974
+= 1 and sets
+Figure imgb1078
+as the computation result Figure imgb0987 when
+Figure imgb0973
+= 1.
+The proxy computing system according to any one of claims 17 to 20,
+wherein the group
+Figure imgb0960
+Hℓ is a direct product group
+Figure imgb0959
+x
+Figure imgb0959
+, the decryption function Figure imgb1004 is a homomorphic function, the group
+Figure imgb0959
+is a cyclic group, a generator of the cyclic group
+Figure imgb0959
+is
+Figure imgb1146
+the order of the cyclic group
+Figure imgb0959
+Figure imgb0962
+=
+Figure imgb1149
+is
+Figure imgb1150
+Figure imgb1151
+, is an element of the group
+Figure imgb0960
+, andFigure imgb1004
+Figure imgb1151
+=
+Figure imgb1155
+;
+the input information providing unit comprises:
+a fourth random number generator generating a random number r(t, 4) that is a natural number greater than or equal to 0;
+a fifth random number generator generating a random number r(t, 5) that is a natural number greater than or equal to 0;
+a first input information computing unit computing
+Figure imgb1156
+and
+Figure imgb1157
+(τ1,ℓ) as the first input information
+Figure imgb0978
+;
+a sixth random number generator generating a random number r(t, 6) that is a natural number greater than or equal to 0;
+a seventh random number generator generating a random number r(Figure imgb1008, 7) that is a natural number greater than or equal to 0; and
+a second input information computing unit computing
+Figure imgb1160
+and
+Figure imgb1161
+(τ1,ℓ) as the second input information
+Figure imgb1021
+;
+the first output information computing unit uses the first input information
+Figure imgb1156
+(τ1,ℓ) and
+Figure imgb1156
+to correctly compute
+Figure imgb1165
+(τ1,ℓ) with a probability greater than a certain probability and sets an obtained result of the computation as the first output information
+Figure imgb0980
+;
+the second output information computing unit uses the second input information
+Figure imgb1161
+(τ1,ℓ) and
+Figure imgb1160
+to correctly compute
+Figure imgb1169
+(τ1,ℓ) with a probability greater than a certain probability and sets an obtained result of the computation as the second output information
+Figure imgb1003
+;
+the first computing unit computes
+Figure imgb1171
+(τ1,ℓ) to obtain the computation result Figure imgb0984; and
+the second computing unit computes
+Figure imgb1173
+to obtain the computation result Figure imgb0987.
+The proxy computing system according to claim 21,
+wherein the group
+Figure imgb0960
+Hℓ is a direct product group
+Figure imgb0959
+×
+Figure imgb0959
+, the decryption function Figure imgb1004 is a homomorphic function, the group
+Figure imgb0959
+is a cyclic group, a generator of the cyclic group
+Figure imgb0959
+is
+Figure imgb1181
+, the order of the cyclic group
+Figure imgb0959
+is
+Figure imgb1150
+(τ1,ℓ)
+Figure imgb0962
+=
+Figure imgb1149
+Figure imgb1151
+is an element of the group
+Figure imgb0960
+, andFigure imgb1004
+Figure imgb1151
+=
+Figure imgb1155
+,
+the input information providing unit comprises:
+a fourth random number generator generating a random number r(Figure imgb1008 , 4) that is a natural number greater than or equal to 0;
+a fifth random number generator generating a random number r(Figure imgb1008, 5) that is a natural number greater than or equal to 0;
+a first input information computing unit computing
+Figure imgb1156
+and
+Figure imgb0990
+(τ1,ℓ) as the first input information
+Figure imgb1019
+;
+a sixth random number generator generating a sixth random number r(Figure imgb1008, 6) that is a natural number greater than or equal to 0;
+a seventh random number generator generating a random number r(Figure imgb1008, 7) that is a natural number greater than or equal to 0; and
+a second input information computing unit computing
+Figure imgb1160
+and (τ1,ℓ) as the second input information
+Figure imgb1021
+;
+the first output information computing unit uses the first input information (τ1,ℓ)
+Figure imgb1157
+and
+Figure imgb1156
+to correctly compute
+Figure imgb1202
+with a probability greater than a certain probability and sets an obtained result of the computation as the first output information
+Figure imgb0980
+;
+the second output information computing unit uses the second input information
+Figure imgb1161
+(τ1,ℓ) and
+Figure imgb1160
+(τ1,ℓ) to correctly compute
+Figure imgb1206
+with a probability greater than a certain probability and sets an obtained result of the computation as the second output information
+Figure imgb1003
+;
+the first computing unit computes
+Figure imgb1171
+(τ1,ℓ) to obtain the computation result Figure imgb0984; and
+the second computing unit computes
+Figure imgb1173
+(τ1,ℓ) to obtain the computation result
+Figure imgb1106
+The proxy computing system according to any one of claims 17 to 20,
+wherein a probability distribution of an error of the computation result Figure imgb0984uℓ for
+Figure imgb1213
+(τ1,ℓ) does not depend on the natural number
+Figure imgb0974
+and/or a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+does not depend on the natural number
+Figure imgb0973
+, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result uℓ Figure imgb0984 for
+Figure imgb1213
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0974
+, and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0973
+.
+The proxy computing system according to claim 24,
+wherein a probability distribution of an error of the computation result Figure imgb0984 for
+Figure imgb1213
+(τ1,ℓ) does not depend on the natural number
+Figure imgb0974
+and/or a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+does not depend on the natural number
+Figure imgb0973
+, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result uℓ Figure imgb0984 for
+Figure imgb1213
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0974
+, and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0973
+.
+The proxy computing system according to claim 26,
+wherein a probability distribution of an error of the computation result Figure imgb0984 for Figure imgb0984uℓ (τ1,ℓ) does not depend on the natural number
+Figure imgb0974
+and/or a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+does not depend on the natural number
+Figure imgb0973
+, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result uℓ Figure imgb0984 for
+Figure imgb1213
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0974
+, and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0973
+.
+The proxy computing system according to claim 28,
+wherein a probability distribution of an error of the computation result Figure imgb0984uℓ for
+Figure imgb1213
+(τ1,ℓ) does not depend on the natural number
+Figure imgb0974
+and/or a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+does not depend on the natural number
+Figure imgb0973
+, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result uℓ Figure imgb0984 for
+Figure imgb1213
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0974
+., and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0973
+.
+The proxy computing system according to claim 29,
+wherein a probability distribution of an error of the computation result Figure imgb0984uℓ for
+Figure imgb1213
+(τ1,ℓ) does not depend on the natural number
+Figure imgb0974
+and/or a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+does not depend on the natural number
+Figure imgb0973
+, or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result uℓ Figure imgb0984 for
+Figure imgb1213
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0974
+., and/or there is a probability distribution that is indistinguishable from a probability distribution of an error of the computation result Figure imgb0987 for
+Figure imgb1216
+(τ1,ℓ) and does not depend on the natural number
+Figure imgb0973
+.
+The proxy computing system according to any one of claims 17 to 20,
+wherein the natural number
+Figure imgb0973
+or the natural number
+Figure imgb0974
+is a constant.
+The proxy computing system according to claim 24,
+wherein the natural number
+Figure imgb0973
+or the natural number
+Figure imgb0974
+is a constant.
+The proxy computing system according to claim 26,
+wherein the natural number
+Figure imgb0973
+or the natural number
+Figure imgb0974
+is a constant.
+The proxy computing system according to claim 28,
+wherein the natural number
+Figure imgb0973
+or the natural number
+Figure imgb0974
+is a constant.
+The proxy computing system according to claim 29,
+wherein the natural number
+Figure imgb0973
+or the natural number
+Figure imgb0974
+is a constant.
+A proxy computing system comprising a computing apparatus and a capability providing apparatus,
+wherein GM and HM are sets of matrices, fM(xM) is a decryption function for decrypting a ciphertext xM which is an element of a set HM with a particular decryption key to obtain an element of the set GM, MX1, and MX2 are random variables having values in the set GM, Mx1 is a realization of the random variable MX1, Mx2 is a realization of the random variable MX2, and aM is an element of the set HM;
+the computing apparatus comprises an input information providing unit outputting first input information Mτ1 and second input information Mτ2 that correspond to the ciphertext xM and are elements of the set HM;
+the capability providing apparatus comprises:
+a first output information computing unit using the first input information Mτ1 to correctly compute fM(Mτ1) with a probability greater than a certain provability and setting an obtained result of the computation as first output information Mz1; and
+a second output information computing unit using the second input information Mτ2 to correctly compute fM(Mτ2) with a probability greater than a certain provability and setting an obtained result of the computation as second output information Mz2;
+the computing apparatus further comprises:
+a first computing unit generating a computation result uM = fM(xM) + Mx1 from the first output information Mz1;
+a second computing unit generating a computation result vM = fM(xM)aM + Mx2 from the second output information Mz2; and
+a final output unit outputting uM when the computation results uM and vM satisfy uM · aM = VM.
+The proxy computing system according to claim 40,
+wherein the computing apparatus comprises a matrix selecting unit selecting an element aM of the set HM;
+the second input information Mτ2 further corresponds to the element aM.
+The proxy computing system according to claim 41,
+wherein the input information providing unit sets pieces of information whose relation with the ciphertext xM is scrambled as the first input information Mτ1 and the second input information Mτ2.
+The proxy computing system according to claim 40,
+wherein the input information providing unit sets pieces of information whose relation with the ciphertext xM is scrambled as the first input information Mτ1 and the second input information Mτ2.
+The proxy computing system according to any one of claims 40 to 43,
+wherein κ, (τ1,ℓ) and q are positive integers, · T is a transposed matrix of ·, GM is a set of (τ1,ℓ) matrices, HM is a set of (τ1,ℓ) matrices, PK is an (τ1,ℓ) × κ matrix which is an encryption key, SK is the decryption key which is an (τ1,ℓ) matrix that satisfies PK · SK = 0, CM is a κ × (τ1,ℓ) matrix, NM is an (τ1,ℓ) matrix, UM is an (τ1,ℓ) unit matrix, the decryption function fM is SK-1 {SK · xM · SKT(mod q)}(SKT)-1(mod 2);
+the input information providing unit comprises:
+a first random matrix selecting unit randomly selecting an element MR1 of the set GM;
+a second random matrix selecting unit selecting random matrices CM11 and CM12 of κ × Figure imgb1008;
+a first encryption unit generating a first ciphertext CR1 = PK · CM + 2 · NM + MR1(mod q);
+a second encryption unit generating a second ciphertext CUM = PK · CM + 2 · NM + UM(mod q);
+a first input information computing unit obtaining (xM · CUM + CR1) + PK · CM11 + 2 · NM + CM12 T · PKT as the first input information Mτ1;
+a third random matrix selecting unit randomly selecting an element MR2 of the set GM;
+a fourth random matrix selecting unit selecting random matrices CM21 and CM22 of κ × Figure imgb1008;
+a third encryption unit generating a third ciphertext CR2 = PK · CM + 2 · NM + MR2(mod q);
+a fourth encryption unit generating a fourth ciphertext Ca = PK · CM + 2 · NM + aM(mod q); and
+a second input information computing unit obtaining (xM · Ca + CR2) + PK · CM21 + 2 · NM + CM22 T · PKT as the second input information Mτ2;
+the first computing unit generates Mz1 - MR1 as the computation result uM; and
+the second computing unit generates Mz2 - MR2 as the computation result vM.
+The proxy computing system according to any one of claims 40 to

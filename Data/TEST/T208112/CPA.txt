@@ -1,0 +1,45 @@
+Title: Device coordination with Web applications
+
+Type: Website
+
+Content:
+Introduction:
+In this paper we explain our position regarding device coordination with Web applications with special attention to network addressable security devices. First we motivate the problem in the context of a classical security device such as smart card. Then we outline the technology issues that arise from this context. Finally we present our position by suggesting what must be worked on by the community to address device coordination vis-à-vis Web applications.
+
+Axalto, formerly known as Schlumberger Smart Cards & Terminals, is the world's leading provider of microprocessor cards. In all, the company has manufactured over 3 billion smart cards and 1 million smart card enabled terminals. The company’s range of smart cards, readers and development tools incorporate public key infrastructure (PKI) and other cryptography technologies to provide access solutions - everything from secure ID credentials to authentication solutions for network and information security functions on a single smart card platform.
+
+Problem Description:
+Security devices such as smart cards address security requirements like secure access to a computer (e.g. smart card logon), data encryption, digital signature (e.g. email encryption and signature using Outlook/Eudora plug-ins), and user attributes storage and delivery (e.g. PocketServer™). The widespread use of such devices has prompted development of an open framework to allow strong authentication solutions such as, hardware and software tokens, smart cards, SMS-based systems and biometrics to interoperate across organizations, networks and vertical market segments.
+
+Web applications are typically accessed via pages containing HTML and scripts that are rendered and executed by the browser. JavaScript is one of the most common scripting languages in use with browsers today.
+
+Just out of the box, Web applications cannot make use the above mentioned security devices because browsers execute in the sandbox which means that they do not let a rendered page and scripts therein access computer resources such as the file system or connected devices such as smart cards.
+
+Enabling access to smart cards from Web applications
+Browser extensions are the prescribed way to enable access to computer resources from Web applications. These extensions need to be installed separately requiring explicit user permission.  ActiveX controls in Internet Explorer and  XPCOM scriptable objects in Mozilla based browsers such as Firefox are the technologies used to develop these browser extensions.
+
+A smart card is a slave device which communicates with the master application using a  transport/application protocol standardized by ISO 7816-4. All operating systems provide drivers to access the smart card connected to the computer. An example of such a driver is the Microsoft Resource Manager which implements the PC/SC specification. This implementation runs as a service in all Windows based operating systems. Client programs use these drivers to communicate with smart cards. 
+
+Inspired by the XMLHttpRequest object provided by all browsers, we developed a browser extension to access the resource manager on Windows and establish a channel for communication with smartcards. Instead of making remote calls (as done by the XMLHttpRequest) to the Web server our browser extension makes calls to the smart card connected to the machine.
+
+Technology Issues:
+The notable difference between the XMLHttpRequest object and our browser extension is that the former comes built into browsers whereas our browser extension needs to be installed. Additionally, the following issues pose significant adoption road blocks to our browser extension.
+
+Native browser extensions (such as ActiveX objects) have been notoriously known for security breaches and thus have lost the user's trust.
+Browser settings in users' computer may prohibit the execution of extensions.
+Frameworks for writing extensions are not consistent across all browsers. 
+All browsers do not provide the capability to write extensions.
+Browsers lack a user friendly policy framework to configure/enable/disable extensions and their capabilities.
+Extension developers have to worry about platform homogeneity in addition to browser variety.
+Next generation smart cards are being built to use standard networking protocols such as TCP/IP and application level protocols such as SOAP over a physical carrier such as USB [1]. Once equipped with classical networking connectivity, smart cards will be discovered via device discovery protocols such as  UPnP on Windows and Bonjour on the Mac. These next generation smart cards however are still not accessible to Web applications. 
+
+In fact, this limitation exists for any network addressable device that is accessible via discovery mechanisms such as UPnP and Bonjour.
+
+Position:
+Ideally we would like to see access to classical smart cards built into Web browsers so that Web applications can have support for them out of the box. However since such smart cards are one of the many candidates in the security device ecosystem we understand that browser manufacturers cannot realistically add device connectivity support for the wide range of security devices available. Hence we would like to address our position to the class of network addressable devices which are discoverable via classical discovery protocols such as UPnP.
+
+To enable Web applications to make use of services in locally connected network addressable devices it is our position that browsers must be built with the support for standard discovery protocols such as UPnP. This support would be similar to the widely used XMLHttpRequest object that is used for connection to remote Web servers. Analogously we could propose a similar interface to connect to local network addressable devices.
+
+We would like our position to be explored within a committee at the W3C along the lines of the W3C Web APIs where the interface for accessing network addressable devices can be standardized. Browsers could then implement this standardized interface taking into consideration platforms and discovery technologies used in practice. 
+
+This paper has positioned on the broader issues related to enhancing Web based applications to access devices attached to the computer. It has established that while browser extensions provide a way to access these devices they rely heavily on the security and policy settings of the browser in addition to a host of user installation issues known to be non-trivial for the average user. Building support into browsers is the way to facilitate device connectivity to Web applications which in turn bring security and user customization to the Ubiquitous Web.

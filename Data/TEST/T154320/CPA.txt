@@ -1,0 +1,62 @@
+TITLE:
+Quota-Based Archiving
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A determination of whether to archive email messages in a user mailbox is made each time an email message is received at a server computer. A storage quota, a first threshold and a second threshold are obtained for the user mailbox. The first threshold is a first percentage of the storage quota. The second threshold is a second percentage of the storage quota. When it is determined that the size of the received email message plus the current size of the user mailbox exceeds the first threshold for the user mailbox, one or more email messages in the user mailbox are archived. The archiving of the one or more email messages reduces the current size of the user mailbox such that the current size of the user mailbox becomes less than the number of bytes corresponding to the second threshold for the user mailbox.
+
+CLAIMS:
+1. A method for archiving email messages on a server computer, the method comprising:
+receiving an email message at the server computer;
+determining a user mailbox to which the email message is to be directed;
+obtaining a storage quota for the user mailbox;
+obtaining a first threshold for the user mailbox, the first threshold being a first percentage of the storage quota;
+obtaining a second threshold for the user mailbox, the second threshold being a second percentage of the storage quota, the second threshold being lower than the first threshold;
+obtaining a current size of the user mailbox, the current size comprising the size in bytes of all email messages and attachments to email messages currently in the user mailbox;
+determining a size of the received email message;
+determining whether the size of the received email message plus the current size of the user mailbox exceeds the first threshold for the user mailbox; and
+when it is determined that the size of the received email message plus the current size of the user mailbox exceeds the first threshold for the user mailbox, archiving one or more email messages in the user mailbox, the archiving of the one or more email messages reducing the current size of the user mailbox such that the current size of the user mailbox becomes less than the number of bytes corresponding to the second threshold for the user mailbox,
+wherein a determination of whether to archive one or more email messages in the user mailbox is made each time an email message is received at the server computer.
+2. The method of claim 1, further comprising: when it is determined that the size of the received email message plus the size of all attachments to the email received message plus the current size of the user mailbox exceeds the first threshold for the user mailbox, copying the received email message to the user mailbox when the current size of the user mailbox becomes less than the number of bytes corresponding to the second threshold for the user mailbox.
+3. The method of claim 1, wherein the received email message is not delivered to the user mailbox until the determination is made as to whether the size of the received email message plus the current size of the user mailbox exceeds the first threshold for the user mailbox.
+4. The method of claim 1, wherein the storage quota, the current size of the user mailbox, the first threshold and the second threshold comprise metadata associated with the user mailbox.
+5. The method of claim 4, wherein the storage quota, the current size of the user mailbox, the first threshold and the second threshold are obtained from a mailbox table on the server computer.
+6. The method of claim 1, wherein archiving the one or more email messages comprises storing the one or more email messages on one or more storage devices external to the server computer.
+7. The method of claim 6, further comprising deleting the one or more email messages from the server computer after the one or more email messages are stored on the one or more storage devices.
+8. The method of claim 1, wherein the one or more email messages to be archived are selected based on rules set by an administrator of the server computer.
+9. The method of claim 8, wherein the rules set by the administrator are modified by instructions received from a client computer.
+10. The method of claim 1, wherein the one or more email messages to be archived are selected based on metadata associated with the user mailbox.
+11. The method of claim 1, wherein the one or more email messages to be archived are determined by a date and time that the one or more email messages were received in the user mailbox, the oldest email messages being archived first.
+12. The method of claim 1, wherein the one or more email messages are archived based on a priority of email messages in the user mailbox, email messages having the lowest priority being archived first.
+13. The method of claim 1, wherein the one or more email messages are archived based on a date and time that the one or more email messages were last accessed, the least recently accessed mail messages being archived first.
+14. The method of claim 1, wherein the one or more email messages are archived based on one or more folders that store the one or more email messages, the user mailbox including rules specifying a priority of folders from which stored email messages are to be archived.
+15. A method for archiving email messages on a first server computer, the method comprising:
+receiving an email message at the first server computer;
+determining a user mailbox to which the email message is to be directed;
+obtaining a storage quota for the user mailbox;
+obtaining a first threshold for the user mailbox, the first threshold being a first percentage of the storage quota;
+obtaining a current size of the user mailbox, the current size being the size in bytes of all email messages and attachments to email messages currently in the user mailbox;
+determining the size of the email message plus the size of all attachments to the email message;
+determining whether the size of the email message plus the size of all attachments to the email message plus the current size exceeds the first threshold for the user mailbox;
+when it is determined that the size of the email message plus the size of all attachments to the email message plus the current size exceeds the first threshold for the user mailbox, sending a message to a second server computer to initiate an archive process for the user mailbox;
+receiving a notification from the second server computer that the archive process is completed; and
+after receiving a notification from the second server computer that the archive process is completed, sending the received email message to the second server computer.
+16. The method of claim 15, wherein the storage quota, the first threshold and the current size are obtained from the second server computer.
+17. The method of claim 15, wherein determining a user mailbox to which the email message is to be directed further comprises using a directory service to obtain the user mailbox.
+18. A computer-readable data storage medium comprising instructions that, when executed by a processing unit of a server computer, cause the processing unit to:
+receiving an email message at the server computer;
+receive an email message at the server computer;
+determine the size of the email message plus the size of all attachments to the email message;
+determine a user mailbox to which the email message is to be directed;
+obtain a storage quota for the user mailbox;
+obtain a first threshold for the user mailbox, the first threshold being a first percentage of the storage quota;
+obtain a second threshold for the user mailbox, the second threshold being a second percentage of the storage quota, the second threshold being lower than the first threshold;
+obtain a current size of the user mailbox, the current size being the size in bytes of all email messages and attachments to email messages currently in the user mailbox;
+determine whether the size of the email message plus the size of all attachments to the email message plus the current size exceeds the first threshold for the user mailbox;
+when it is determined that the size of the email message plus the size of all attachments to the email message plus the current size exceeds the first threshold for the user mailbox, archive one or more email messages in the user mailbox, the archiving of the one or more email messages reducing the current size of the user mailbox such that the current size becomes less than the second threshold for the user mailbox; and
+when it is determined that the size of the email message plus the size of all attachments to the email message plus the current size exceeds the first threshold for the user mailbox, deliver the email message to the user mailbox when the current size of the user mailbox becomes less than the second threshold for the user mailbox,
+wherein the storage quota, the first threshold and the second threshold are obtained from metadata for the user mailbox.
+19. The method of claim 18, wherein the one or more email messages to be archived are selected based on rules set by an administrator of the server computer.
+20. The method of claim 18, wherein the one or more email messages to be archived are selected based on a priority of the one or more email messages.

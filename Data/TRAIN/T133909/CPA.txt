@@ -1,0 +1,28 @@
+TITLE:
+Method and system for facilitating networked information exchange
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A method and system for facilitating information exchange between individuals and entities interacting on a shared project are provided, and more particularly to a method and system for horizontal, i.e., non-hierarchical, participation in and/or contribution to a spreadsheet-based project. The method and system is Web-based and utilizes conventional browser and spreadsheet technology to achieve collaborative exchanges of information on an enterprise-wide basis. The method and system also facilitate efficacious remote information access and exchange, e.g., over a computer network such as the Internet and/or the World Wide Web, through a caching function that combines individual queries initiated by a spreadsheet program before transmitting across a network to a server for consideration.
+
+CLAIMS:
+A system for facilitating efficient database-related information exchanges across a network, comprising:
+(a) a server that includes at least one database; and
+(b) a client that includes a spreadsheet program and a cache, and that communicates with said server across a network, said spreadsheet program generating at least one spreadsheet having a plurality of data cells;
+   wherein said cache stores data for use by said spreadsheet program in rendering said at least one spreadsheet, and
+   wherein, in response to said spreadsheet program attempting to render said at least one spreadsheet, said cache determines whether data required to render said at least one spreadsheet has been previously stored by said cache; and
+   wherein, to the extent data required to render said at least one spreadsheet has not been previously stored by said cache, said cache formulates a single query for transmission from said client across said network to said server requesting all required data.
+A system according to claim 1, wherein said cache provides data previously stored by said cache to said spreadsheet program for use in rendering said at least one spreadsheet prior to transmitting said single query across said network to said server.
+A system according to claim 1, wherein said cache receives a response from said server across said network that includes data not previously stored by said cache.
+A system according to claim 3, wherein said cache stores said data received in said response from said server before providing said data received in said response to said spreadsheet program for use in rendering said at least one spreadsheet.
+A system according to claim 1, wherein said spreadsheet program associated with said client is operable in the absence of communication with said server across said network.
+A system according to claim 5, wherein, in the absence of communication with said server across said network, said spreadsheet program uses data stored in said cache to render said at least one spreadsheet.
+A system according to claim 5, wherein, in the absence of communication with said server across said network, said spreadsheet program accesses data from a medium associated with an auxiliary drive to said client.
+A system according to claim 5, wherein said client communicates with said server across said network to update data transmissions therebetween based on operations of said spreadsheet program at said client in the absence of communication with said server across said network.
+A system according to claim 1, wherein said network is selected from a group consisting of an intranet, Internet, World Wide Web, local area network, wide area network, and combinations thereof.
+A system according to claim 1, wherein said server restricts access to data contained within said at least one database based upon a user's access clearance.
+A system according to claim 10, wherein a user is a member of at least one collaborative group and each member within said at least one collaborative group is provided with access clearance to access equivalent data within said at least one database.
+A system according to claim 1, wherein said cache stores data that is both numeric and non-numeric.
+A system according to claim 1, wherein data stored within said cache derives from a group consisting of data input to at said client, data retrieved from said server across said network, and combinations thereof.

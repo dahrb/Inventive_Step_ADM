@@ -1,0 +1,77 @@
+TITLE:
+Method and apparatus for partitioned environment for web application servers
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method, apparatus, and computer instructions for managing access to a set of applications associated with a universal resource locator in a data processing system. A request is received, wherein the request includes the universal resource locator and a user identification. The request is directed to a selected application within the set of applications using the universal resource locator and the user identification.
+
+CLAIMS:
+1. A method in a data processing system for managing access to a set of applications associated with a universal resource locator, the method comprising:
+receiving a request, wherein the request includes the universal resource locator and a user identification; and
+directing the request to a selected application within the set of applications using the universal resource locator and the user identification.
+2. The method of claim 1, wherein the user identification is an Internet Protocol address of a node originating the request.
+3. The method of claim 1, wherein the user identification is a user name located within the request.
+4. The method of claim 1 further comprising:
+replacing the selected application with a new selected application.
+5. The method of claim 4, wherein the new selected application is a new version of the selected application.
+6. The method of claim 1, wherein each application within the set of applications is assigned to a different universal resource locator and wherein the directing step comprises:
+identifying the set of applications using the universal resource locator;
+identifying the selected application based on the user identification; and
+sending the request to the selected application using an assigned universal resource locator assigned to the selected applications.
+7. A method in a data processing system for managing access to a plurality of applications, the method comprising:
+associating the plurality of applications with a first universal resource locator;
+assigning the plurality of applications with plurality of universal resource locators excluding the first universal resource locator;
+receiving a request including the first universal resource locator and an identification of a user; and
+redirecting the request using the first universal resource locator to a particular application within the plurality of applications using a particular universal resource locator associated with the particular application based on the identification.
+8. The method of claim 7, wherein the identification is an Internet Protocol address.
+9. The method of claim 7, wherein the identification is a user name.
+10. A data processing system comprising:
+a bus system;
+a communications unit connected to the bus system;
+a memory connected to the bus system, wherein the memory includes a set of instructions; and
+a processing unit connected to the bus system, wherein the processing unit executes the set of instructions to receive a request in which the request includes the universal resource locator and a user identification; and direct the request to a selected application within the set of applications using the universal resource locator and the user identification.
+11. A data processing system comprising:
+a bus system;
+a communications unit connected to the bus system;
+a memory connected to the bus system, wherein the memory includes a set of instructions; and
+a processing unit connected to the bus system, wherein the processing unit executes the set of instructions to associate the plurality of applications with a first universal resource locator; assign the plurality of applications with plurality of universal resource locators excluding the first universal resource locator; receive a request including the first universal resource locator and an identification of a user; and redirect the request using the first universal resource locator to a particular application within the plurality of applications using a particular universal resource locator associated with the particular application based on the identification.
+12. A data processing system for managing access to a set of applications associated with a universal resource locator, the data processing system comprising:
+receiving means for receiving a request, wherein the request includes the universal resource locator and a user identification; and
+directing means for directing the request to a selected application within the set of applications using the universal resource locator and the user identification.
+13. The data processing system of claim 12, wherein the user identification is an Internet Protocol address of a node originating the request.
+14. The data processing system of claim 12, wherein the user identification is a user name located within the request.
+15. The data processing system of claim 12 further comprising:
+replacing means for replacing the selected application with a new selected application.
+16. The data processing system of claim 15, wherein the new selected application is a new version of the selected application.
+17. The data processing system of claim 12, wherein each application within the set of applications is assigned to a different universal resource locator and wherein the directing means comprises:
+first identifying means for identifying the set of applications using the universal resource locator;
+second identifying means for identifying the selected application based on the user identification; and
+sending means for sending the request to the selected application using an assigned universal resource locator assigned to the selected applications.
+18. A data processing system for managing access to a plurality of applications, the data processing system comprising:
+associating means for associating the plurality of applications with a first universal resource locator;
+assigning means for assigning the plurality of applications with plurality of universal resource locators excluding the first universal resource locator;
+receiving means for receiving a request including the first universal resource locator and an identification of a user; and
+redirecting means for redirecting the request using the first universal resource locator to a particular application within the plurality of applications using a particular universal resource locator associated with the particular application based on the identification.
+19. The data processing system of claim 18, wherein the identification is an Internet Protocol address.
+20. The data processing system of claim 18, wherein the identification is a user name.
+21. A computer program product in a computer readable medium for managing access to a set of applications associated with a universal resource locator, the computer program product comprising:
+first instructions for receiving a request, wherein the request includes the universal resource locator and a user identification; and
+second instructions for directing the request to a selected application within the set of applications using the universal resource locator and the user identification.
+22. The computer program product of claim 21, wherein the user identification is an Internet Protocol address of a node originating the request.
+23. The computer program product of claim 21, wherein the user identification is a user name located within the request.
+24. The computer program product of claim 21 further comprising:
+third instructions for replacing the selected application with a new selected application.
+25. The computer program product of claim 24, wherein the new selected application is a new version of the selected application.
+26. The computer program product of claim 21, wherein each application within the set of applications is assigned to a different universal resource locator and wherein the second instructions comprises:
+first sub-instructions for identifying the set of applications using the universal resource locator;
+second sub-instructions for identifying the selected application based on the user identification; and
+third sub-instructions for sending the request to the selected application using an assigned universal resource locator assigned to the selected applications.
+27. A computer program product in a computer readable medium for managing access to a plurality of applications, the computer program product comprising:
+first instructions for associating the plurality of applications with a first universal resource locator;
+second instructions for assigning the plurality of applications with plurality of universal resource locators excluding the first universal resource locator;
+third instructions for receiving a request including the first universal resource locator and an identification of a user; and
+fourth instructions for redirecting the request using the first universal resource locator to a particular application within the plurality of applications using a particular universal resource locator associated with the particular application based on the identification.
+28. The computer program product of claim 27, wherein the identification is an Internet Protocol address.
+29. The computer program product of claim 27, wherein the identification is a user name.

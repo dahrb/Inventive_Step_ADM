@@ -1,0 +1,250 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+From: Witte, Weller & Partner To: 08923994465 Page: 9/50 Date: 02.11.2015 16:23:18
+
+November 2, 2015
+
+97 927 446.1
+SONY CORPORATION
+
+Claims (main request)
+(markings show amendments compared to pending “claims
+
+according to the main petition”)
+
+1. An information processing method comprising the steps
+of:
+
+receiving (S3) a command from an provider apparatus
+(1) providing a service by provider;
+
+processing (S84) the command by utilizing a memory
+section (66) including a first area and a second area,
+wherein the first area including a plurality of provider
+area definition blocks each of which stores information
+relating to a provider area (BN y..BN,) of a plurality of
+provider areas (BNo..BNi) in the second area and access
+right data which define access rights to said provider
+area (BNo..BN;) so that the provider area (BNO..BN1)
+associated with one provider of a plurality of providers
+can be accessed by said one provider; and
+
+transmitting (S5) results of the processing to the
+provider apparatus (1),
+characterized in that
+
+the memory section (66) is formed from a plurality of
+physical blocks each of which has a predetermined size;
+
+the first area size being based on the number of the
+providers, wherein the number of the providers corresponds
+to the number of the provider area definition blocks and
+each of the provider area definition blocks has said
+predetermined size; and
+
+the second area size being equal to the difference
+between the size of the memory section and the first area
+size, wherein the second area is formed from a plurality
+of user blocks each of which has said predetermined size
+and each of said provider areas (BNo..BN;) is formed from
+
+a plurality of said user blocks.
+
+Duration: 02.11.2015 16:23:39 - 02.11.2015 16:56:33. This page 9 of 50 was completed at 02.11.2015 16:29:24
+Received at the EPO on Nov 02, 2015 16:56:33. Page 9 of 50
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+From: Witte, Weller & Partner To: 08923994465 Page: 10/50 Date: 02.11.2015 16:23:18
+
+November 2, 2015
+
+2. The information processing method claimed in claim l,
+wherein
+
+the first area includes a system ID block which
+stores identification information of said memory section
+(66) and a common area definition block which stores
+information relating to a common area (BNo..BNi) in the
+second area and access right data which define access
+rights to said common area (BNo..BN,) so that the common
+area (BNyg..BN,) can be accessed by all the providers,
+wherein said common area (BNy..BN,) is formed from a
+plurality of said user blocks and each of said system ID
+block and said common area definition block has said
+predetermined size; and
+
+the first area size being based on the total number
+of said system ID block, said common area definition block
+and said area-provider area definition blocks.
+
+3. The information processing method claimed in claim 2,
+wherein
+
+said provider areas (BNo..BNi) and/or said common
+area (BNo..BNi) include a purse block, the purse block
+being reserved for storing data that are subtracted and
+added and has a plurality of access levels associated with
+
+the providers.
+
+4. The information processing method claimed in anyone of
+claims 1 to 3, wherein
+said provider area definition blocks define different
+
+access right each other.
+
+5. The information processing method claimed in anyone of
+claims 1 to 4, further comprising the steps of:
+demodulating (81, 62) a modulated input signal
+received in said receiving step (S3); and
+modulating (84, 68) said result to be transmitted in
+
+said transmitting step (S5).
+
+6. An information processing apparatus comprising:
+
+Duration: 02.11.2015 16:23:39 - 02.11.2015 16:56:33. This page 10 of 50 was completed at 02.11.2015 16:30:01
+Received at the EPO on Nov 02, 2015 16:56:33. Page 10 of 50
+
+--- PAGE 3 ---
+15
+
+20
+
+25
+
+30
+
+35
+
+From: Witte, Weller & Partner To: 08923994465 Page: 11/50 Date: 02.11.2015 16:23:18
+
+November 2, 2015
+
+receiving means (53) for receiving a command from an
+provider apparatus (1) providing a service by provider;
+
+processing means (64) for processing the command;
+
+memory section (66) including a first area and a
+second area, wherein the first area including a plurality
+of provider area definition blocks each of which stores
+information relating to a provider area (BNo..BN;) of a
+plurality of provider areas (BNo..BNi) in the second area
+and access right data which define access rights to said
+provider area (BNo..BN;) so that the provider area
+(BNO..BN1) associated with one provider of a plurality of
+providers can be accessed by said one provider; and
+
+transmitting means (53) for transmitting results of
+the processing to the provider apparatus (1),
+characterized in that
+
+the memory section (66) is formed from a plurality of
+physical blocks each of which has a predetermined size;
+
+the first area size being based on the number of the
+providers, wherein the number of the providers corresponds
+to the number of the provider area definition blocks and
+each of the provider area definition blocks has said
+predetermined size; and
+
+the second area size being equal to the difference
+between the size of the memory section and the first area
+size, wherein the second area is formed from a plurality
+of user blocks each of which has said predetermined size
+and each of said provider areas (BNo..BN;) is formed from
+
+a plurality of said user blocks.
+
+7. The information processing apparatus claimed in claim
+6, wherein
+
+the first area includes a system ID block which
+stores identification information of said memory section
+(66) and a common area definition block which stores
+information relating to a common area (BNo..BNi) in the
+second area and access right data which define access
+rights to said common area (BNo..BN,) so that the common
+area (BNo..BNi) can be accessed by all the providers,
+
+Duration: 02.11.2015 16:23:39 - 02.11.2015 16:56:33. This page 11 of 50 was completed at 02.11.2015 16:30:52
+Received at the EPO on Nov 02, 2015 16:56:33. Page 11 of 50
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+Duration: 02.11.2015 16:23:39 - 02.11.2015 16:56:33. This page 12 of 50 was completed at 02.11.2015 16:31:22
+
+From: Witte, Weller & Partner To: 08923994465 Page: 12/50 Date: 02.11.2015 16:23:18
+
+November 2, 2015
+
+wherein said common area (BNy..BNi) is formed from a
+
+plurality of said user blocks and each of said system ID
+block and said common area definition block has said
+predetermined size; and
+
+the first area size being based on the total number
+of said system ID block, said common area definition block
+
+and said area provider definition blocks.
+
+8. The information processing apparatus claimed in claim
+7, wherein
+
+said provider areas (BNo..BN;) and/or said common
+area (BNo..BNi) include a purse block, the purse block
+being reserved for storing data that are subtracted and
+added and has a plurality of access levels associated with
+
+the providers.
+
+9. The information processing apparatus claimed in anyone
+of claims 6 to 8, wherein
+said provider area definition blocks define different
+
+access right each other.
+
+10. The information processing apparatus claimed in anyone
+of claims 6 to 9, further comprising
+
+a demodulating means (81, 62) for demodulating a
+modulated input signal received by said receiving means
+(53); and
+
+a modulating means (84, 68) for modulating said result
+
+to be transmitted in said transmitting step (S5).
+
+Received at the EPO on Nov 02, 2015 16:56:33. Page 12 of 50

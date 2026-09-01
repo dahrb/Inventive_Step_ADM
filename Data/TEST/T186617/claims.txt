@@ -1,0 +1,536 @@
+--- PAGE 1 ---
+Main Request
+EP 13 158 933.5
+K.K.Toshiba
+
+Claims
+
+163 549 q8/r40
+13 October 2020
+
+(Main Request; Amendments based on the Main Request filed
+on 12 June 2017.)
+
+1. An IC Card (2), comprising:
+
+a communication unit (25) which performs data
+communication with an external device (1);
+
+a controller (21) which performs the data
+
+communication of
+ted
+
+channel selec
+
+from a plurality of
+
+the communication unit by using a logical
+
+logical channels; and
+
+da
+
+a data s
+
+ta as a target
+
+torage unit
+
+CO access,
+
+(22)
+
+which stores data in
+
+according to a command
+
+units of
+
+from the
+
+external device,
+un-shareable,
+
+characterized by
+
+a command processor
+
+data
+
+communication unit
+
+-F
+
+unit of
+
+command; and
+
+to th
+
+a respons
+
+outputs e
+
+command,
+
+at least some of
+
+specified by the
+
+external device
+
+(21) which
+
+on a logical channel
+
+e message comprising:
+
+firs in
+
+including
+
+Formation (
+
+DATA1)
+
+as a result of
+(DATA2
+data
+
+identifier of
+
+indicatin
+
+g an
+third
+
+a
+
+and
+
+identifier of
+
+executing the command,
+
+in
+
+logical
+
+shareable unit of
+or indicating an
+
+data indicated by
+
+part
+
+unused state of
+
+the second ini
+
+formation (
+
+channel used
+
+OL
+
+the command.
+
+2. The
+
+further comprising:
+
+IC Card according to Claim 1,
+
+the units of
+
+command
+
+an un-shareable uni
+DATA3)
+
+the un-shareable unit of
+
+Formation;
+
+data being
+
+further comprising:
+
+performs access to a
+the
+the
+
+received by
+
+specified by
+
+to the
+a data part
+
+in response
+
+(1)
+
+storing any data read
+
+tion
+
+second informa
+
+t of
+
+indicating an
+
+for accessing the un-
+
+data indicated by the second information
+
+and (ii) a status
+
+including information representing an execution result
+
+characterized by
+
+--- PAGE 2 ---
+Main Request
+EP 13 158 933.5 163 549 q8/r40
+K.K.Toshiba 2 13 October 2020
+
+a first storage part (26) which stores a use status of
+
+each piece of data stored in the data storage unit; and
+
+a second storage part (27) which stores the
+
+information indicating the data which has been made
+
+inaccessible for each of the logical channels, wherein
+
+the response unit specifies the data which has been
+
+made inaccessible on the logical channel of the command,
+
+from the information stored in the second storage part, and
+
+determines information indicating a use status of the data
+
+specified, from the information stored in the first storage
+part.
+
+3. The IC Card according to Claim 2, characterized in
+that
+
+the first storage part stores either information
+
+indicating a used logical channel or information indicating
+
+nonuse, in association with each piece of the data.
+
+4, The IC Card according to Claim 2 or 3,
+
+Characterized in that
+
+the second storage part stores information indicating
+
+data which has been made inaccessible and information
+
+indicating a logical channel using the data.
+
+5. The IC Card according to one of Claims 2 to 4,
+
+Characterized in that
+
+if access to the data which has been made inaccessible
+
+on the logical channel succeeds, the second storage part
+
+overwrites the information indicating the data which has
+been made inaccessible, with the information indicating the
+
+data which has been made inaccessible.
+
+6. The IC Card according to Claim 1, characterized in
+that
+
+if the response unit adds, to the data part, the
+
+information indicating a use status of the data which has
+
+--- PAGE 3 ---
+Main Request
+
+EP 13 158
+K.K.Toshi
+
+been made inaccessible,
+status part,
+
+data together wilt
+
+7.
+
+fur
+
+controlle
+
+and the response unit;
+
+a body comprising
+
+8.
+any one
+external
+
+933.5
+ba
+
+in
+
+The
+
+ther comprising:
+
+c,
+
+Sys
+
+of
+
+device
+
+formation
+
+the data storage unit,
+
+tem comprising the
+the preceding claims
+(1),
+
+3
+
+IC Card according to Claim 1,
+
+and
+
+the module.
+
+IC card
+
+the external device
+
+to read the response message.
+
+the response unit stores,
+
+indicating a use
+
+(2)
+
+(1)
+
+163 549 q8/r40
+13 October 2020
+
+into
+
+the
+
+status of
+
+th a command processing result.
+
+a module which comprises the communication unit,
+
+the
+
+characterized by
+
+the
+
+the command processor,
+
+according to
+
+further comprising
+
+the
+
+being adapted
+
+9. A portable electronic apparatus (2), comprising:
+
+a communication unit (25) which performs data
+communication with an external device (1);
+
+a controller (21) which performs the data
+communication of the communication unit by using a logical
+channel selected from a plurality of logical channels; and
+
+a data storage unit (22) which stores data in units of
+data as a target to access, according to a command from the
+external device, at least some of the units of data being
+
+un-shareable,
+
+characterized by
+
+a command processor
+
+unit of
+communica
+
+command;
+
+outputs
+
+command,
+
+including
+
+data
+tion unit
+
+-F
+
+and
+
+to
+
+a respons
+
+specified by the
+
+th
+
+further comprising:
+
+(21) which pert
+
+command
+on a logical channel
+in
+
+e external device
+
+e message comprising:
+
+firs in
+
+Formation (DATA1)
+
+as a result of
+
+indicatin
+
+executing the command,
+
+g an iden
+
+ifier of
+
+forms access to a
+
+received by
+
+specified by
+
+response
+
+(1)
+
+second init
+
+an un-shareable unit of
+
+to
+
+the
+the
+
+the
+
+a data part
+
+storing any data read
+formation
+data
+
+--- PAGE 4 ---
+Main Request
+EP 13 158 933.5 163 549 q8/r40
+K.K.Toshiba 4 13 October 2020
+
+and third information indicating an identifier of a logical
+
+channel used for accessing the un-shareable unit of data
+
+indicated by the second information or indicating an unused
+
+state of the un-shareable unit of data indicated by the
+
+second information; and (ii) a status part including
+information representing an execution result of the
+command.
+
+10. System comprising the portable electronic
+
+apparatus (2) according to claim 9 further comprising the
+
+external device (1), the external device (1) being adapted
+
+to read the response message.
+
+11. A command processing method for an IC Card (2),
+comprising:
+receiving a command from an external device (1)
+
+specifying a unit of data to be accessed by using a logical
+channel selected (S70); and
+
+storing, in a data storage unit (22) of the IC Card
+
+(2), data in units of data as a target to access, according
+
+to a command from the external device, at least some of the
+
+units of data being un-shareable, characterized by further
+
+comprising:
+
+in a case where the unit data specified by the command
+
+is accessible, performing (S76) access to a unit of data
+
+specified by the command on a logical channel specified by
+
+the command; and
+
+outputting to the external device in response to the
+
+command, a response message comprising: (1) a data part
+
+including first information (DATA1) storing any data read
+
+as a result of executing the command, second information
+
+indicating an identifier of an un-shareable unit of data
+and third information indicating an identifier of a logical
+channel used for accessing the un-shareable unit of data
+
+indicated by the second information or indicating an unused
+
+state of the un-shareable unit of data indicated by the
+
+--- PAGE 5 ---
+Main Request
+EP 13 158 933.5
+K.K.Toshiba 5
+
+163 549 q8/r40
+13 October 2020
+
+second information; and (ii) a status part including
+
+information representing an execution result of the command
+(S88, S89, S81).

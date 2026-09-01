@@ -1,0 +1,267 @@
+--- PAGE 1 ---
+10
+
+20
+
+25
+
+4 Miller-Boré & Partner
+
+Main Request
+
+Application No.: 04 742 932.9-1241
+
+Applicant: Accenture Global Services Limited
+
+"Method And System For Selectively Distributing Data To A Set Of Network Devices"
+Our Ref: A6087EU -hy/ad
+
+Claims
+
+1. A method of selectively distributing data to a set of devices (18) linked by a
+network, each said device having at least one unique identifier comprising a string of
+bits or characters, the method comprising the steps of:
+
+selecting devices (18) to be members of the set, the set of devices being
+selected to receive the data based on the at least one unique identifier, wnerein the
+set of devices comprises one of a plurality of substantially arbitrarily partitioned
+subsets of a population of devices; and
+
+distributing data to at least the selected devices, the data including at least
+one matching key for matching at least a portion of the unique identifier of the
+selected devices, wherein distributing the data comprises making the data available
+to the set of devices and subsequently making the data available to further subsets
+of the population of devices;
+
+wherein the unique identifier is a string of a first length and the set of devices
+is determined from a shorter length subset of the string of the first length;
+
+the shorter length subset of the string is of a selectable length; and
+
+the selectable length of the shorter length subset of the string is larger or
+smailer depending on the size of the set of devices; the method further comprising
+the steps of:
+
+monitoring the response following making the data available to the set of
+devices, and
+
+setting the size of the further subsets and/or the rate of making the data
+available to the further subsets based on the response;
+
+wherein the set of devices and the further subsets are defined by specifying
+the matching key to match the portion of the unique identifier of each device;
+
+wherein the size of the set of devices and the size of each of the further
+subsets are determined by setting the length of the matching key to match; and
+
+wherein a shorter length will match a larger number of devices.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2 Muller-Boré & Partner
+Main Request
+2. A method according to claim 1 wherein the data is broadcast to a plurality of
+
+the devices over the network but wherein only selected devices selectively install the
+
+data.
+
+3. The method of any preceding claim wherein the unique identifier is
+
+independent of the content of the data.
+
+4. The method of any preceding claim wherein the unique identifier is a device
+
+hardware identifier.
+
+5. The method of any of claims 1 to 3 wherein the set of devices is selected by
+
+one or more predetermined geographic regions common to the set devices.
+
+6 The method of any preceding claim wherein the data comprises instruction
+
+code or a software update.
+
+7. The method of any preceding claim wherein the first length is at least about 32
+bits.
+8. The method of claim 2 or any claim dependent thereon wherein the step of
+
+installing the data is performed after performing one or more predetermined action
+
+steps (56) to determine whether or not to install the data.
+
+9. The method of claim 8 wherein the one or more action steps include
+
+determining whether the data includes the key corresponding to the device.
+
+10. |The method of any preceding claim wherein the key corresponds to the
+
+shorter length subset.
+
+11. The method of any one of claims 8 to 10 wherein the one or more action steps
+are performed when a device initialisation instruction is performed by the device
+when the device is switched to a power on state or when the device is switched to a
+
+standby state.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3 Muller-Boré & Partner
+Main Request
+
+12. The method of any one of claims 8 to 10 wherein the one or more action steps
+are performed periodically or at regular intervals while the device is in communication
+
+with the network.
+
+13. | The method of any one of claims 8 to 12 wherein the one or more
+predetermined action steps include the steps of:
+
+determining the version of a device data of a set device;
+
+comparing the version of the device data with the version of the data to be
+distributed; and
+
+determining whether or not to perform the step of downloading the data to be
+distributed, based on the outcome of the step of comparing the versions of the
+
+device data and the data to be distributed.
+
+14. |The method of any one of claims 8 to 13 wherein the predetermined action
+
+steps are performed by the device.
+
+15. |The method of any one of the preceding claims wherein each device is
+arranged to run a manual update routine for allowing a user to decide whether to
+download data flagged as user selectable from the network,
+
+wherein the manual update routine is modified so that, in place of user
+decision, the routine runs a test routine to determine whether to download data
+
+flagged as user selectable.
+
+16. |The method according to claim 15 wherein the test routine comprises
+
+comparing the matching key to the unique identifier.
+
+17. |The method of claim 1 wherein the size of the further subsets is increased in
+
+the event of a low level of response.
+
+18. |The method of claim 1 wherein a longer matching key is used to define the set
+of devices and a shorter matching key is used to define at least one larger further
+
+subset.
+
+19. |The method of claim 1 wherein monitoring the response comprises obtaining a
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4 Miuller-Boré & Partner
+Main Request
+
+measure of response based on user feedback.
+
+20. The method of any one of claims 1 to 19 wherein the devices are set top
+
+boxes.
+
+21. The method of any one of claims 1 to 19 wherein the network is a subscription
+
+television service.
+
+22. The method of claim 20 or 21 wherein the set of devices is selected by
+determining one or more channels subscribed by and common to users of the
+
+respective set devices.
+
+23. |The method of any one of claims 1 to 19 wherein the devices are:
+mobile telephones and the network is a mobile telephone network; or
+telephone base stations and the network is a telephone network; or
+computers and the network is a computer network; or
+
+back to base home security devices and the network is a back to base security
+
+network.
+
+24. Asystem for selectively distributing data to of a set of devices (18) linked by a
+network, each said device having at least one unique identifier, comprising a string of
+bits or characters, the system comprising:
+
+means for selecting devices (18) to be members of the set, the set of devices
+being selected to receive the data based on respective unique identifiers of the
+devices, wherein the set of devices comprises one of a plurality of substantially
+arbitrarily partitioned subsets of a population of devices;
+
+means for distributing data (10, 12) to at least each selected device, the data
+including at least one matching key for matching at least a portion of the unique
+identifier of selected devices; wherein distributing the data comprises making the
+data available to the set of devices and subsequently making the data available to
+further subsets of the population of devices; and
+
+means for running the data on each respective selected device;
+
+wherein the unique identifier is a string of a first length and the at least a
+portion of the unique identifier is determined from a shorter length subset of the
+
+--- PAGE 5 ---
+10
+
+15
+
+5 Muller-Boré & Partner
+
+Main Request
+
+string of the first length,
+
+the shorter length subset of the string is of a selectable length;
+
+the selectable length of the shorter length subset of the string is larger or
+smaller depending on the size of the set of devices; and wherein the system further
+comprises:
+
+means for monitoring the response following making the data available to the
+set of devices, and
+
+means for setting the size of the further subsets and/or the rate of making the
+data available to the further subsets based on the response;
+
+wherein the set of devices and the further subsets are defined by specifying
+the matching key to match the portion of the unique identifier of each device;
+
+wherein the size of the set of devices and the size of each of the further
+subsets are determined by setting the length of the matching key to match; and
+
+wherein a shorter length will match a larger number of devices.
+
+25. Acomputer program product comprising means for performing the method of
+
+any of claims 1 to 23.

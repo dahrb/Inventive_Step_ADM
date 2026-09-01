@@ -1,0 +1,156 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 17851913.8 MAIN REQUEST
+AB Initio Technology LLC
+
+A33050WOEP
+
+March 10, 2022
+
+MAIN REQUEST - CLAIMS
+
+1. A method performed by a data processing apparatus, the method including:
+receiving a portion of metadata (106, 112A, 112B, 112C, 128) from a data source
+(110A, 110B, 110C), the portion of metadata (106, 112A, 112B, 112C, 128) describing
+nodes and edges, wherein each node represents a metadata object and at least some of the
+edges each represent a one-way effect of one node upon another node, each edge having a
+single direction, and wherein a metadata object is a data element (202A) or a
+transformation (204A);
+generating instances of a data structure (134, 300) representing the portion of
+metadata (106, 112A, 112B, 112C, 128) and storing the instances of the data structure
+(134, 300) in random access memory;
+at least a first instance of the instances of the data structure (134, 300) including:
+an identification value that identifies a node that corresponds to the first
+instance of the instances of the data structure (134, 300),
+one or more property values representing respective properties of the
+corresponding node, and
+a pointer (320A, 320B) that includes a reference to a memory location
+(322A, 322B) associated with a portion of the random access memory, the portion of the
+random access memory storing a second instance of the instances of the data structure
+(134, 300) that corresponds to another node, the pointer (320A, 320B) representing an
+edge (316A-316D) associated with the other node that corresponds to the second
+instance of the instances of the data structure (134, 300), wherein the edge represents an
+effect the node that corresponds to the first instance has on the other node that
+corresponds to the second instance, or an effect the other node that corresponds to the
+second instance has on the node that corresponds to the first instance;
+receiving a query (114, 126) for lineage metadata, said query including an
+identification of at least one particular element of data; and
+in response to receiving the query (114, 126):
+accessing data stored using the data structure (134, 300), including accessing the
+first instance of the instances of the data structure (134, 300), the first instance of the
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 17851913.8 MAIN REQUEST
+AB Initio Technology LLC
+
+A33050WOEP
+
+March 10, 2022
+
+instances of the data structure (134, 300) identified by a first identifier that corresponds to
+the particular element of data identified by the query (114, 126);
+
+based on the data stored using the data structure (134, 300), generating a response
+to the query (114, 126), the response including lineage metadata (106, 112A, 112B,
+112C, 122, 128), the lineage metadata (106, 112A, 112B, 112C, 122, 128) describing a
+sequence of nodes and edges, wherein one of the nodes of the sequence represents the
+particular element of data; and
+
+sending the response containing the lineage metadata (106, 112A, 112B, 112C,
+122, 128) to a computer system (116) for causing a display of the computer system (116)
+to display a representation of lineage of the particular element of data in form of a lineage
+diagram (200A-200E) generated based on the lineage metadata,
+
+wherein the relationship among the nodes shown in the lineage diagram (200A-
+200E) corresponds to the edge (316A-316D) represented by the pointer (320A, 320B).
+
+2. The method of claim 1, wherein the query (114, 126) includes an identification
+of a type of lineage and a walk plan (130, 132, 400) that identifies which types of nodes
+
+and edges are relevant to the identified type of lineage.
+
+3. The method of claim 2, wherein the walk plan (130, 132, 400) includes
+conditions for following or collecting an edge based on one or more property values
+
+representing respective properties of a corresponding node.
+
+4. The method of any of claims 1 to 3, wherein the metadata (106, 112A, 112B,
+112C, 128) includes text strings associated with respective nodes, wherein the data
+
+structure (134, 300) omits at least one of the text strings.
+
+5. The method of any of claims 1 to 4, wherein generating the instances of the
+data structures (134, 300) includes identifying metadata (106, 112A, 112B, 112C, 128)
+that is relevant to lineage and storing the identified metadata (106, 112A, 112B, 112C,
+128) in a format defined by the data structure (134, 300).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+EP 17851913.8 MAIN REQUEST
+AB Initio Technology LLC
+
+A33050WOEP
+
+March 10, 2022
+
+6. The method of any of claims 1 to 5, including
+
+accessing the pointer (320A, 320B) of the first instance;
+
+accessing the second instance of the instances of the data structure (134, 300), the
+second instance of the instances of the data structure (134, 300) identified by a second
+identifier, the second identifier being stored at the memory location (322A, 322B)
+referenced by the pointer (320A, 320B) of the first instance; and
+
+collecting data of the second instance of the instances of the data structure (134,
+300);
+
+wherein the lineage metadata further includes data representing the other node
+
+that is associated with the second identifier.
+
+7. The method of any of claims 1 to 6, including transmitting requests to the data
+source (110A, 110B, 110C) on scheduled intervals, wherein the portion of metadata (106,
+112A, 112B, 112C, 128) is received from the data source (110A, 110B, 110C) in
+
+response to one of the requests.
+
+8. A system including:
+
+at least one non-transitory computer-readable storage medium storing executable
+instructions; and
+
+one or more processors configured to execute the instructions, wherein execution
+of the instructions causes the system to perform the operations of the method of any one
+
+of claims | to 7.
+
+9. A non-transitory computer readable storage device storing instructions that,
+
+when executed, carry out the operations of the method of any one of claims | to 7.

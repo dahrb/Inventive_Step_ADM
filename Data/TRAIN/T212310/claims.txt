@@ -1,0 +1,258 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+1 Muller-Boré
+
+Application No.: 03 814 149.5-2218
+Appeal No.: T2123/10-3.5.04
+
+Applicant: Snap-On Technologies, Inc.
+"Gradient Calculating Camera Board"
+Our Ref.: S10146EU - ro/msc
+
+Main Request
+Claims:
+
+1. A wheel alignment system, comprising:
+at least one imaging module (110, 112), each imaging module comprising:
+(a) animage sensor (203), for imaging a field of view encom-
+passing a target (118, 120, 122, 124) attached to a wheel of a
+subject vehicle and generating representative image data;
+(b) | adata communication interface (205), and
+(c) | aprocessor (221), coupled to receive the image data from the
+image sensor, for performing at least one of a background
+subtraction and a gradient calculation on the image data from
+the image sensor, to form pre-processed image information;
+the data communication interface (205) being configured for transmitting said
+pre-processed image information from the processor (221); and
+a computer (111) coupled to receive the pre-processed image information
+transmitted from each imaging module and configured to act as a host computer of
+the wheel alignment system for processing the pre-processed image information to
+
+determine wheel alignment parameters of the vehicle.
+
+2. The wheel alignment system of claim 1, wherein the processor
+comprises
+
+pipelined image processing circuitry.
+
+3. The wheel alignment system of claim 2, wherein the pipelined im-
+age
+processing circuitry comprises a field programmable gate array (FPGA), which
+can be
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2 Muller-Boré
+
+dynamically reconfigured to meet alternate image processing requirements.
+
+4. The wheel alignment system of claim 2, wherein the pipelined
+image
+processing circuitry performs a background image subtraction, calculates a gradi-
+ent
+magnitude for each respective pixel of data from a result of the background image
+subtraction
+to produce gradient information, and performs run length encoding on the gradient
+information to form compressed pre-processed image information for transmission to
+the host
+computer (111).
+
+5. The wheel alignment system of claim 4, wherein the pipelined
+image
+processing circuitry also performs at least one threshold operation to remove data
+
+below a threshold value.
+
+6. The wheel alignment system of claim 5, -wherein each imaging module
+further
+comprises a contro! (209) coupled to the image sensor (203), the processor (221):
+and the data
+communication interface (205) for controlling operations of the module.
+
+7. The wheel alignment system of claim 6, wherein each imaging module _
+further
+comprises an illumination source coupled for selective activation by the con-
+trol, for
+
+illuminating the target.
+8. The wheel alignment system of claim 7, wherein the illumination
+source
+
+comprises a strobe comprising a light emitting diode (LED) array.
+
+9. The wheel alignment system of claim 7, wherein:
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+3 Miller-Boré
+
+the control selectively activates the image sensor to generate data repre-
+senting a background image without illumination by the source and to generate data
+representing a foreground image of the field of view illuminated by the source; and
+
+the processor performs the background subtraction by subtracting the
+data representing the background image without illumination from the data repre-
+senting the illuminated foreground image.
+
+10. The wheel alignment system of claim 1, wherein the processor per-
+forms the
+
+background subtraction on the image data from the image sensor.
+
+11. | The wheel alignment system of claim 1, wherein the processor per-
+forms both
+a background subtraction on the image data from the image sensor and a gradient
+calculation
+based on a result of the background subtraction, to form the pre-processed image in-
+
+formation.
+
+12. |The wheel alignment system of claim 11, wherein the processor com-
+presses
+the pre-processed image information, and the data communication interface trans-
+mits the pre-
+
+processed image information to the host computer in compressed form.
+
+13. |The wheel alignment system of claim 1, wherein:
+the processor compresses the pre-processed image information; and the data
+communication interface transmits the pre-processed image information to the
+
+computer in compressed form.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4 Miller-Boré
+
+14. | The wheel alignment system of claim 11, wherein:
+
+each imaging module further comprises a strobe for selectively illuminating
+the at least one optical target when mounted on a vehicle;
+
+the image sensor selectively images the field of view encompassing the at
+least one target and generates data representing a background image without illu-
+mination from the strobe and generates data representing a foreground image con-
+taining the at least one target illuminated by the strobe; and
+
+the processor performs a background subtraction by subtracting the data rep-
+resenting the background image without illumination from the data representing the
+
+illuminated foreground image.
+
+15. |Amethod of image processing, for an alignment measurement of one
+or more
+wheels of a vehicle, comprising steps of:
+
+capturing an image of a field of view encompassing one or more targets at-
+tached to the one or more wheels of the vehicle;
+
+generating image data representing the captured image;
+
+performing at least one of a background subtraction and a gradient calcula-
+tion on the image data from the image sensor to form pre-processed image informa-
+tion;
+
+transmitting the pre-processed image information to a host computer; and
+
+further processing the pre-processed image information in the host com-
+
+puter, to determine wheel alignment parameters of the vehicle.
+
+16. |The method of claim 15, wherein the step of transmitting the pre-
+processed
+image information to a host computer comprises:
+
+compressing the pre-processed image information; and
+
+transmitting the compressed information to the host proc-
+
+essor.
+
+17. The method of claim 15,
+
+wherein:
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+the step of capturing the image com-
+prises:
+capturing a background image without illumination;
+illuminating the field of view encompassing the one or more targets;
+and
+forming a foreground image of the illuminated field of view;
+the step of generating image data comprises:
+generating image data representing the background image with-
+out illumination; and
+generating image data representing the illuminated foreground image
+of the one or more targets; and
+the step of performing comprises subtracting the data representing
+the background image without illumination from the data representing the illuminated
+
+foreground image of the target subject.
+
+18. |The method of claim 17, wherein the step of performing further
+comprises
+calculating gradient information responsive to a result of the subtracting step.
+
+19. |The method of claim 18, wherein the step of transmitting the pre-
+processed
+image information to a host computer comprises:
+
+compressing the gradient information; and
+
+transmitting the compressed information to the host processor.
+
+20. The method of claim 19, wherein further processing the pre-processed
+image
+information in the host computer further comprises:
+
+receiving the compressed information in the host computer;
+
+decompressing the received information to obtain the gradient information;
+
+processing the gradient information to derive positional data regarding posi-
+tion of the one or more visible targets: and
+
+processing the positional data, in the host computer, to determine wheel
+alignment parameters of the vehicle.

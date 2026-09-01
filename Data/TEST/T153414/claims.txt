@@ -1,0 +1,42 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Claims_Main request
+
+1. An electronic device (20), comprising:
+- anative contact book application (30);
+characterized by further comprising:
+- at least one Java application (38) for providing one or more functions relating to
+information included in the native contact book application (30); and
+- accontent handler (36) serving as an interface between operations of the native
+contact book application (80) and operations of the at least one Java application (38),
+- wherein the at least one Java application (88) provides additional user interface
+information relating to corresponding contacts included in the native contact book
+application (30) to the native contact book application (30) via the content handler
+(36), the additional user interface information including presence information and
+being displayed with the corresponding contacts in the native contact book application
+(30).
+
+2. The electronic device (20) of claim 1, wherein the content handler (36) is a JSR-211
+content handler.
+
+3. The electronic device (20) of claim 1, wherein the at least one Java application (38)
+provides at least one command relating to contact information included in the native contact
+book application (30) to the native contact book application (30) via the content handler (36).
+
+4. The electronic device (20) of claim 3, wherein the at least one command calls a function
+carried out by the at least one Java application (38).
+
+5. The electronic device (20) of claim 4, wherein the at least one command serves to initiate
+a chat session with a contact identified in the native contact book application (80).
+
+6. The electronic device (20) of claim 5, wherein the chat session is initiated with the
+identified contact from within the native contact book application (30).

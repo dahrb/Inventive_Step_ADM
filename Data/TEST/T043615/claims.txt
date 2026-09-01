@@ -1,0 +1,346 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+44
+
+CLAIMS
+
+1. A method of modifying a user interface, the method comprising:
+receiving user interface data (20, 21) comprising at least one function called to
+affect operation of said user interface, at a client (7, 9) from a first server (12, 13, 14);
+receiving modification computer program code (22) at said client (7, 9); and
+executing said modification computer program code (22) at said client (7, 9) to
+modify said user interface data (20, 21) to generate modified user interface data (20,
+
+21), said modifying comprising modifying said at least one function.
+
+2. A method according to claim 1, wherein receiving said modification computer
+program code (22) comprises receiving said modification computer program code (22)
+
+from said first server (12, 13, 14).
+
+3. A method according to claim 1, wherein receiving said modification computer
+program code (22) comprises receiving said modification computer program code (22)
+
+from a further server (6).
+
+4. A method according to any preceding claim, wherein said user interface data
+
+(20, 21) comprises user interface computer program code.
+
+5. A method according to claim 4, wherein executing said modification computer
+
+program code (22) causes modification of said user interface computer program code.
+
+6. A method according to any preceding claim, the method comprising receiving
+a single computer readable file (19’) referencing said user interface data (20, 21) and
+
+said modification computer program code (22).
+7. A method according to claim 6, wherein said computer readable file (19’)
+
+comprises two portions, a first portion referencing said user interface data (20, 21),
+
+and a second portion referencing said modification computer program code (22).
+
+66680488-1-MWILLIAMS
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+45
+8. A method according to claim 7, further comprising interpreting said computer
+readable file (19’).
+9. A method according to claim 7, wherein said interpreting said computer
+
+readable file (19’) comprises:
+
+interpreting said reference of said first portion of said computer readable file
+(19’) to cause display of said user interface; and
+
+interpreting said reference of said second portion of said computer readable file
+
+(19’) to monitor operation of said user interface.
+
+10. A method according to claim 9, wherein interpreting said reference of said
+second portion of said computer readable file (19’) further comprises:
+
+monitoring operation of said user interface for occurrence of at least one
+predetermined event; and
+
+modifying said user interface in response to detection of occurrence of said at
+
+least one predetermined event.
+
+11. A method according to claim 10, wherein modifying said user interface
+comprises:
+modifying said at least one function in response to detection of occurrence of
+
+said at least one predetermined event.
+
+12. A method according to claim any preceding claim, wherein modifying said at
+
+least one function comprises redefining said at least one function.
+
+13. A method according to claim any preceding claim, wherein said at least on
+function causes display of at least part of said user interface, and modifying said at
+least one function comprises:
+
+modifying said at least one function to affect display of said at least part of
+
+said user interface.
+
+66680488-1-MWILLIAMS
+
+--- PAGE 3 ---
+MAIN REQUEST
+46
+
+14. A method according to claim 13, wherein affecting display of said at least part
+of said user interface comprises:
+modifying said at least one function to display an additional user interface
+
+element.
+
+15. A method according to claim 13 or 14, wherein affecting display of said at
+least part of said user interface comprises:
+modifying said at least one function to prevent display of at least one user
+
+interface element specified by said user interface data (20, 21).
+
+16. A method according to any one of claims 1 to 12, wherein said at least one
+
+function is a function for submitting form values.
+
+17. A method according to any one of claims 6 to 16, wherein said computer
+readable file (19) is a HTML file (19’), and each of said first and second portions are
+respective first and second frames within said HTML file (19’).
+
+18. A method according to claim 17, wherein said second frame of said HTML file
+
+(19’) is not displayed to a user of said user interface.
+
+19. A method according to claim 17 or 18, wherein said computer readable file
+
+(19’) is a HTML Application (HTA) file.
+
+20. A method according to claim 17, 18 or 19, further comprising:
+interpreting said HTML file (19’) in a web-browser, to cause display of said
+
+user interface under control of said web-browser.
+
+21. A method according to any preceding claim, wherein said user interface data
+(20, 21) and said modification computer program code (22) are provided in a
+computer readable file (19’), and the method further comprises:
+
+interpreting said computer readable file (19’) to modify said user interface data
+
+(20, 21) so as to generate modified user interface data; and
+
+66680488-1-MWILLIAMS
+
+--- PAGE 4 ---
+MAIN REQUEST
+47
+
+displaying a user interface based upon said modified user interface data (20,
+
+21).
+
+22. A method according to claim 21, wherein said computer readable file (19’)
+comprises at least one instruction configured to be executed when said user interface
+data (20, 21) is loaded, said instruction being configured to generate said modified
+
+user interface data..
+
+23. A method according to claim 21, wherein said user interface data (20, 21)
+defines at least one function, and execution of said at least one instruction causes
+
+modification of said at least one function.
+
+24. A method according to any preceding claim, wherein said user interface data
+(20, 21) comprises a plurality of instructions, including at least one first instruction
+configured so as to prevent its execution by the client (7, 9), and said modification
+computer program code (22) comprises at least one second instruction configured to
+modify said user interface data (20, 21), the method further comprising:
+
+executing said at least one second instruction to cause modification of said at
+least one first instruction; and
+
+executing said at least one first instruction after modification.
+
+25. A computer readable medium carrying computer readable program code
+configured to cause a computer to carry out a method according to any preceding
+
+claim.
+
+26. A computer apparatus for modifying a user interface, the apparatus
+comprising:
+
+a program memory containing processor readable instructions; and
+
+a processor configured to read and execute instructions stored in said program
+memory;
+
+wherein said processor readable instructions comprise instructions controlling
+
+the computer to carry out a method according to any one of claims 1 to 24.
+
+66680488-1-MWILLIAMS
+
+--- PAGE 5 ---
+MAIN REQUEST
+
+48
+
+27. A method of modifying operation of a user interface, the method comprising:
+providing user interface data (20, 21) comprising at least one function called to
+affect operation of said user interface to a client (7, 9);
+providing modification computer program code (22) to said client (7, 9), said
+modification computer program code (22) being executable at said client (7, 9) to
+modify said user interface data (20, 21) to generate modified user interface data, said
+
+modifying including modifying said at least on function.
+
+28. | A method according to claim 27, wherein providing user interface data (20, 21)
+
+comprises providing user interface computer program code.
+
+29. A method according to claim 27 or 28, the method comprising providing a
+single computer readable file (19’) referencing said user interface data (20, 21) and
+
+said modification computer program code (22).
+
+30. A method according to claim 29, wherein said computer readable file (19’)
+comprises two portions, a first portion referencing said user interface data (20, 21),
+
+and a second portion referencing said modification computer program code (22).
+31. A method according to claim 30, wherein said computer readable file (19’) is
+an HTML file (19’), and each of said first and second portions are first and second
+
+frames respectively within said HTML file (19’).
+
+32. A method according to claim 31, wherein said second frame of said HTML file
+
+(19’) is invisible to a user of said user interface.
+
+33. A method according to claim 31 or 32, wherein said computer readable file
+
+(19’) is a HTML Application (HTA) file.
+
+34. | A method according to any one of claims 27 to 33, further comprising:
+
+receiving said user interface data (20, 21); and
+
+66680488-1-MWILLIAMS
+
+--- PAGE 6 ---
+MAIN REQUEST
+49
+
+processing said user interface data (20, 21) to generate said modification
+
+computer program code (22).
+
+35. | A method according to claim 34, wherein processing said user interface data
+(20, 21) to generate said modification computer program code (22) comprises:
+
+identifying a predetermined location within said user interface data (20, 21);
+
+and
+
+adding modification computer program code (22) at said predetermined
+location.
+36. A method according to claim 35, wherein said predetermined location is
+
+identified by reference to a particular instruction within said user interface data (20,
+
+21).
+
+37. | A method according to claim 34, 35 or 36, wherein said modification computer
+
+program code (22) comprises a function executable at said client (7, 9).
+
+38. A method according to any one of claims 34 to 37, wherein processing said
+user interface data (20, 21) comprises:
+
+identifying a predetermined instruction within said user interface data (20, 21);
+and
+
+modifying said user interface data (20, 21) such that said predetermined
+
+instruction is configured so as not to be executed by said client (7, 9).
+
+39. A method according to claim 38, further comprising adding a further
+instruction to said user interface data (20, 21), said predetermined instruction being
+executable at said client (7, 9) to modify said predetermined instruction prior to
+
+execution at said client (7, 9).
+
+40. A method according to claim 39, further comprising:
+
+identifying at least one instruction within said user interface data (20, 21); and
+
+66680488-1-MWILLIAMS
+
+--- PAGE 7 ---
+MAIN REQUEST
+50
+
+adding said further instruction to said user interface data (20, 21) at a location
+within said user interface data (20, 21) based upon location of said at least one
+
+identified instruction.
+
+41. A method according to any one of claims 34 to 40, further comprising:
+identifying at least one instruction within said user interface data (20, 21), said
+instruction identifying a first location; and
+
+replacing said location with a predetermined an alternative location.
+
+42. A method according to claim 41, wherein said first location is specified using a
+universal resource identifier, and said alternative location is specified using a universal
+
+resource identifier.
+
+43. A computer readable medium carrying computer readable program code
+configured to cause a computer to carry out a method according to any one of claims
+
+27 to 42.
+
+44. A computer apparatus for modifying a user interface, the apparatus
+comprising:
+
+a program memory containing processor readable instructions; and
+
+a processor configured to read and execute instructions stored in said program
+memory;
+
+wherein said processor readable instructions comprise instructions controlling
+
+the computer to carry out a method according to any one of claims 27 to 42.
+
+45. A computer readable file (19’) configured to provide a user interface, the
+computer readable file (19’) comprising:
+
+a first portion referencing computer program code (20, 21) defining a user
+interface comprising at least one function called to affect operation of said user
+
+interface;
+
+66680488-1-MWILLIAMS
+
+--- PAGE 8 ---
+MAIN REQUEST
+51
+
+a second portion referencing computer program code (22) configured to
+monitor operation of said user interface, and to modify said user interface, said
+
+modifying including modifying said at least one function.
+46. A computer readable file (19’) according to claim 45, wherein said file is a
+
+HTML application (HTA) file, said first portion is a first frame within said HTA file,
+
+and said second portion is a second frame within said HTA file.
+
+66680488-1-MWILLIAMS

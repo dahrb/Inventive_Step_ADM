@@ -1,0 +1,77 @@
+TITLE:
+Hierarchical data-driven search and navigation system and method for information retrieval
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A data-driven, hierarchical information search and navigation system and method enable search and navigation of sets of documents or other materials by certain common attributes that characterize the materials. The invention includes several aspects of a data-driven, hierarchical search and navigation system that employs this search and navigation mode. The search and navigation system of the present invention includes features of an navigation interface, a search interface, a knowledge base and a taxonomy definition process and a classification process for generating the knowledge base, a graph-based navigable data structure and method for generating the data structure, World Wide Web-based applications of the system, and methods of implementing the system. Users are able to search or browse a particular collection of documents by selecting desired values for the attributes or by searching the attribute-value pairs. A data-driven, hierarchical information search and navigation system and method enable this navigation mode by associating terms with the materials, defining a set of hierarchical relationships among the terms, providing a guided navigation mechanism based on the relationship between the terms, and providing a search mechanism that can respond to free-text queries with single-term or multi-term interpretations. In another aspect of the invention, implementations of the invention may be scalable through parallel or distributed computation.
+
+CLAIMS:
+ A search and navigation system for a set of materials, comprising:
+a plurality of attributes characterizing the materials;
+a plurality of values describing the materials, wherein each of the values has an association with at least one of the attributes and each association defines an attribute-value pair;
+a plurality of navigation states, wherein each navigation state corresponds to a particular expression of attribute-value pairs and to a particular subset of the materials; and
+a search interface, the search interface including a free-text search tool for accepting free-text queries, the search interface being adapted to generate multi-term interpretations of free-text queries, a multi-term interpretation including a conjunction of attribute-value pairs that corresponds to a navigation state,the search interface providing a display of a set of search results for a query, the set of search results including multi-term interpretations.
+2. The search and navigation system of claim 1, wherein the multi-term interpretations of the free-text query are minimal.
+3. The search and navigation system of claim 1, wherein the search interface supports conjunctive query semantics.
+4. The search and navigation system of claim 1, wherein the search interface supports disjunctive query semantics.
+5. The search and navigation system of claim 1, wherein the search interface supports customized query semantics.
+6. The search and navigation system of claim 1, wherein the search interface ignores stop words in the free-text query.
+7. The search and navigation system of claim 1, wherein the search interface treats syntactically related words as equivalent.
+8. The search and navigation system of claim 1, wherein the search interface treats semantically related words as equivalent.
+9. The search and navigation system of claim 1, wherein the search interface performs automatic spelling corrections.
+10. The search and navigation system of claim 1, wherein the search interface supports the specification of delimited phrases.
+11. The search and navigation system of claim 1, wherein the search interface supports constraining the set of search results to the subset of materials in the current navigation state where the free-text query is accepted.
+12. The search and navigation system of claim 1, further including a profile for each of the materials in the set of materials, the profile including descriptive information, the free-text search tool enabling searching the descriptive information in the profiles.
+13. The search and navigation system of claim 1, the search interface further including a full-text search tool for searching the set of materials.
+14. The search and navigation system of claim 1, wherein the set of search results is organized by attribute.
+15. The search and navigation system of claim 1, wherein the set of search results further includes navigation options to the navigation states corresponding to the set of search results.
+16. The search and navigation system of claim 1, further including a first inverted index relating words to attribute-value pairs and a second inverted index relating attribute-value pairs to materials.
+17. The search and navigation system of claim 1, further comprising a navigation interface, the navigation interface including a guided navigation tool providing a set of navigation options from the current navigation state to other navigation states, each navigation option providing a direct path to one of the other navigation states.
+18. A search and navigation system for a set of materials, comprising:
+a plurality of attributes characterizing the materials;
+a plurality of values describing the materials, wherein each of the values has an association with at least one of the attributes and each association defines an attribute-value pair;
+a plurality of navigation states, wherein each navigation state corresponds to a particular expression of attribute-value pairs and to a particular subset of the materials; and
+a search interface, the search interface including a free-text search tool for accepting free-text queries, the search interface being adapted to generate single-term and multi-term interpretations of free-text queries, a single-term interpretation including an attribute-value pair that corresponds to a navigation state, and a multi-term interpretation including a conjunction of attribute-value pairs that corresponds to a navigation state, the search interface providing a display of a set of search results for a query, the set of search results including single-term interpretations or multi-term interpretations or both.
+19. The search and navigation system of claim 1, wherein the multi-term interpretations of the free-text query are minimal.
+20. The search and navigation system of claim 18, wherein the search interface supports conjunctive query semantics.
+21. The search and navigation system of claim 18, wherein the search interface supports disjunctive query semantics.
+22. The search and navigation system of claim 18, wherein the search interface supports customized query semantics.
+23. The search and navigation system of claim 18, wherein the search interface ignores stop words in the free-text query.
+24. The search and navigation system of claim 18, wherein the search interface treats syntactically related words as equivalent.
+25. The search and navigation system of claim 18, wherein the search interface treats semantically related words as equivalent.
+26. The search and navigation system of claim 18, wherein the search interface performs automatic spelling corrections.
+27. The search and navigation system of claim 18, wherein the search interface supports the specification of delimited phrases.
+28. The search and navigation system of claim 18, wherein the search interface supports constraining the set of search results to the subset of materials in the current navigation state where the free-text query is accepted.
+29. The search and navigation system of claim 18, wherein the set of search results is organized by attribute.
+30. The search and navigation system of claim 18, wherein the set of search results further includes navigation options to the navigation states corresponding to the set of search results.
+31. The search and navigation system of claim 18, further including a first inverted index relating words to attribute-value pairs and a second inverted index relating attribute-value pairs to materials.
+32. The search and navigation system of claim 18, further comprising a navigation interface, the navigation interface including a guided navigation tool providing a set of navigation options from the current navigation state to other navigation states, each navigation option providing a direct path to one of the other navigation states.
+33. A search and navigation system for a set of materials, comprising:
+a plurality of attributes characterizing the materials;
+a plurality of values describing the materials, wherein each of the values has an association with at least one of the attributes and each association defines an attribute-value pair, and wherein some of the attribute-value pairs refine other of the attribute-value pairs;
+a plurality of navigation states, wherein each navigation state corresponds to a particular expression of attribute-value pairs and to a particular subset of the materials;
+a navigation interface, the interface providing a plurality of transitions, each transition providing a direct path between two of the navigation states, wherein each transition represents a change from the expression of attribute-value pairs corresponding to an originating navigation state to the expression of attribute-value pairs corresponding to a destination navigation state, wherein a series of one or more transitions provides a path between any two navigation states, there being more than one path between at least a first of the navigation states and a second of the navigation states; and
+a search interface, the interface including a free-text search tool for accepting free-text queries, the interface being adapted to generate multi-term interpretations for free-text queries, a multi-term interpretation including a conjunction of attribute-value pairs that corresponds to a navigation state, the interface providing a set of search results including multi-term interpretations for a free-text query.
+34. A method for enabling a user to search a set of materials, a plurality of attributes characterizing the materials, a plurality of values describing the materials, each of the values having an association with at least one of the attributes, each association defining an attribute-value pair, comprising the steps of:
+defining a plurality of navigation states, each navigation state corresponding to a particular expression of attribute-value pairs and to a particular subset of the materials;
+receiving a free-text query;
+generating a result set for the free-text query, including computing multi-term interpretations of the free-text query; and
+providing a display of the result set.
+35. The method of claim 34, wherein the multi-term interpretations are minimal.
+36. The method of claim 34, the step of generating the result set further including computing single-term interpretations of the free-text query.
+37. The method of claim 34, wherein the step of generating a result set uses conjunctive query semantics.
+38. The method of claim 34, wherein the step of generating a result set uses disjunctive query semantics.
+39. The method of claim 34, wherein the step of generating a result set uses partial match query semantics.
+40. The method of claim 34, wherein the step of generating a result set treats syntactically related words as equivalent.
+41. The method of claim 34, wherein the step of generating a result set treats semantically related words as equivalent.
+42. A method determining results for a query including a plurality of words directed to a set of materials, a plurality of attributes characterizing the materials, a plurality of values describing the materials, each of the values having an association with at least one of the attributes, each association defining an attribute value pair, the materials and the attribute-value pairs defining navigation states, each navigation state corresponding to a particular expression of attribute-value pairs and to a particular subset of the materials, comprising the steps of:
+computing the set of corresponding attribute value-pairs containing at least one of the plurality of words;
+computing the set of equivalence classes of the set of corresponding attribute-value-pairs;
+computing the set of minimal conjunctions of the equivalence classes; and
+computing for each conjunction of the equivalence classes in the set of minimal conjunctions the set of corresponding single-term or multi-term interpretations that contain exactly one attribute-value pair from each equivalence class in the conjunction of equivalence classes and that correspond to non-empty navigation states.
+43. A computer program product, residing on a computer readable medium, for use in searching a set of materials, in which the materials are characterized by a plurality of attributes, and the materials are described by a plurality of values, each of the values having an association with at least one of the attributes, each association defining an attribute-value pair, and in which a plurality of navigation states are defined, each navigation state corresponding to a particular expression of attribute-value pairs and to a particular subset of the materials, the computer program product comprising instructions for causing a computer to:
+receive a free-text query;
+generate single-term and multi-term interpretations of the query, a single term interpretation including an attribute-value pair that corresponds to a navigation state, a multi-term interpretation including a conjunction of attribute-value pairs that corresponds to a navigation state;
+return a set of search results for the query, the set of search results including single-term interpretations or multi-term interpretations or both.

@@ -1,0 +1,72 @@
+Title: Condensation control for internal combustion engines using EGR
+
+Abstract: 
+A system and method for controlling an internal combustion engine to reduce or eliminate formation of EGR condensate monitor current ambient and operating conditions to determine whether conditions are favorable for condensation of EGR gases, and control the engine accordingly to avoid condensation, preferably by increasing the intake manifold temperature. The intake manifold temperature may be increased by redirecting some or all of the EGR flow to avoid the EGR cooler. Alternatively, or in combination, some or all of the charge air may be redirected to bypass the charge air cooler and/or redirected from the outlet of the turbocharger compressor to the intake, effectively increasing the intake air temperature and resulting in a corresponding increase of the intake manifold temperature. Conditions favorable for condensation may be determined based on engine speed and load, ambient temperature, manifold pressure, scheduled or actual EGR flow rate and scheduled or actual air/fuel ratio.
+
+Type: US Patent 
+
+Claims: 
+
+What is claimed is:
+1. A method for controlling a multi-cylinder internal combustion engine having an EGR circuit to reduce or eliminate condensation of EGR gases in an intake manifold, the method comprising:
+determining current ambient conditions;
+determining current engine operating conditions including at least an intake manifold temperature;
+determining a dew point based on the current ambient conditions and engine operating conditions;
+comparing the intake manifold temperature to the dew point; and
+controlling the engine to avoid condensation if the intake manifold temperature is within a specified range of the dew point.
+2. The method of claim 1 wherein the step of determining current ambient conditions comprises determining ambient air temperature and humidity.
+3. The method of claim 1 wherein the step of determining current engine operating conditions comprises determining en gine speed, turbo boost pressure, EGR flow, and air/fuel ratio.
+4. The method of claim 1 wherein the step of controlling the engine comprises increasing intake manifold temperature.
+5. The method of claim 1 wherein the step of controlling the engine comprises redirecting at least a portion of EGR flow to bypass an EGR cooler.
+6. The method of claim 1 wherein the step of controlling the engine comprises redirecting at least a portion of charge air to bypass a charge air cooler.
+7. The method of claim 1 wherein the step of determining a dew point comprises determining the dew point based on current ambient temperature and a predetermined stored value for humidity.
+8. The method of claim 1 wherein the specified range of the dew point comprises an adaptable range.
+9. The method of claim 1 wherein the specified range of the dew point is determined based on current engine operating conditions.
+10. The method of claim 9 wherein the current engine operating conditions include engine speed and load.
+11. A method for controlling a multiple cylinder compression ignition internal combustion engine having an EGR circuit including an EGR cooler and a charge air circuit including a charge air cooler, the method comprising:
+determining current ambient temperature;
+determining current engine speed;
+determining current engine load;
+determining current intake manifold pressure and temperature;
+determining EGR flow;
+determining air/fuel ratio;
+determining a threshold indicative of potential formation of EGR condensation based on the current ambient temperature, engine speed, engine load, intake manifold pressure, EGR flow, and air/fuel ratio;
+comparing the current intake manifold temperature to the threshold; and
+redirecting at least a portion of the EGR or charge air around the EGR cooler or charge air cooler, respectively, when the current intake manifold temperature crosses the threshold.
+12. The method of claim 11 wherein the step of determining a threshold further comprises determining the threshold based on a predetermined fixed value for relative humidity.
+13. The method of claim 11 wherein determining intake manifold pressure comprises determining turbo boost pressure.
+14. The method of claim 11 wherein the step of redirecting comprises redirecting both EGR flow and charge air flow around the EGR cooler and charge air cooler, respectively.
+15. A method for controlling a multiple cylinder compression ignition internal combustion engine having an EGR circuit including an EGR cooler for cooling EGR gases and a charge air circuit including a charge air cooler, the method comprising:
+determining current ambient temperature, engine speed, engine load, and intake manifold temperature;
+retrieving a previously stored intake manifold temperature threshold value based on the current ambient temperature, engine speed, and engine load;
+comparing the current intake manifold temperature to the retrieved intake manifold temperature threshold value; and
+modifying EGR flow or charge air flow based on the current intake manifold temperature being less than the threshold.
+16. The method of claim 15 wherein the step of modifying comprises increasing temperature of the EGR flow or charge air flow to increase the intake manifold temperature.
+17. A computer readable storage medium having stored data representing instructions executable by a computer to control a multi-cylinder internal combustion engine having an EGR circuit to reduce or eliminate formation of condensation of EGR gases, the computer readable storage medium comprising:
+instructions for determining current ambient conditions;
+instructions for determining current engine operating conditions including at least an intake manifold temperature;
+instructions for determining a dew point based on the current ambient conditions and engine operating conditions;
+instructions for comparing the intake manifold temperature to the dew point; and
+instructions for controlling the engine to avoid condensation if the intake manifold temperature is within a specified range of the dew point.
+18. The computer readable storage medium of claim 17 wherein the instructions for determining current ambient conditions comprise instructions for determining ambient air temperature and humidity.
+19. The computer readable storage medium of claim 17 wherein the instructions for determining current engine operating conditions comprise instructions for determining engine speed, turbo boost pressure, EGR flow, and air/fuel ratio.
+20. The computer readable storage medium of claim 17 wherein the instructions for controlling the engine comprise instructions for increasing intake manifold temperature.
+21. The computer readable storage medium of claim 17 wherein the instructions for controlling the engine comprise instructions for redirecting at least a portion of EGR flow to bypass an EGR cooler.
+22. The computer readable storage medium of claim 17 wherein the instructions for controlling the engine comprise instructions for redirecting at least a portion of charge air to bypass a charge air cooler.
+23. The computer readable storage medium of claim 17 wherein the instructions for determining a dew point comprise instructions for determining the dew point based on current ambient temperature and a predetermined stored value for humidity.
+24. The computer readable storage medium of claim 17 wherein the specified range of the dew point comprises an adaptable range.
+25. The computer readable storage medium of claim 17 wherein the specified range of the dew is determined based on current engine operating conditions.
+26. The computer readable storage medium of claim 25 wherein the current engine operating conditions include engine speed and load.
+27. A system for reducing or eliminating EGR condensation within an intake manifold of an internal combustion engine having an EGR circuit for recirculating exhaust gas to be combined with charge air upstream of the intake manifold, the engine including a charge air circuit having a turbocharger with a compressor for compressing intake air and having a charge air cooler positioned downstream from the turbocharger compressor, the system comprising:
+a bypass valve disposed within the charge air circuit upstream of the charge air cooler and downstream of the turbocharger compressor, the bypass valve selectively diverting at least a portion of the charge air in response to a command signal to increase charge air temperature prior to combining with the recirculated exhaust gas; and
+a controller in communication with the bypass valve, the controller monitoring current ambient and engine operating conditions and generating the command signal when the current ambient and engine operating conditions are favorable for condensation.
+28. The system of claim 27 wherein the EGR circuit includes an EGR cooler for cooling recirculated exhaust gas prior to combining with the charge air, the system further comprising:
+a bypass valve disposed within the EGR circuit upstream of the EGR cooler for selectively diverting at least a portion of the recirculated exhaust gas in response to a command signal from the controller to increase recirculated exhaust gas temperature prior to combining with the charge air.
+29. The system of claim 27 wherein the bypass valve selectively diverts a portion of the charge air from the turbocharger compressor to an intake of the turbocharger compressor.
+30. The system of claim 27 wherein the controller retrieves a previously stored threshold value using current engine speed, load, and ambient temperature and compares the threshold value to current intake manifold temperature to determine if conditions are favorable for condensation.
+31. The system of claim 27 wherein the controller calculates a dew point for the combined recirculated exhaust gas and charge air, and compares the dew point to current intake manifold temperature to determine if conditions are favorable for condensation.
+32. A system for reducing or eliminating EGR condensation within an intake manifold of an internal combustion engine having an EGR circuit for recirculating exhaust gas to be combined with charge air upstream of the intake manifold, the engine including a charge air circuit having a turbocharger with a compressor for compressing intake air and having a charge air cooler positioned downstream from the turbocharger compressor, the system comprising:
+means for selectively increasing charge air temperature prior to combining the charge air with recirculated exhaust gas in response to a command signal; and
+a controller in communication with the means for selectively increasing charge air temperature, the controller monitoring current ambient and engine operating conditions and generating the command signal when the current ambient and engine operating conditions are favorable for condensation.
+33. The system of claim 32 further comprising:
+means for selectively increasing temperature of the recirculated exhaust gas in response to a command signal, the means for selectively increasing temperature being in communication with the controller.

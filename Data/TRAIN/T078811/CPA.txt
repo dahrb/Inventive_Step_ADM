@@ -1,0 +1,194 @@
+TITLE:
+Method and apparatus for terahertz imaging
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+In an apparatus and method for imaging a sample: a) the sample to be imaged is irradiated with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 50 GHz to 84 THz; b) an area of the sample is subdivided into a two dimensional array of pixels, and radiation from each pixel is detected over a plurality of frequencies; and c) an image is generated from the radiation detected in step (b) preferably using a frequency or a selection of frequencies from the plurality of frequencies in the pulsed electro-magnetic radiation. The method can be used as a medical imaging technique and can be used to image cancer tumours.
+
+CLAIMS:
+1. A method of imaging a sample, the method comprising the steps of:
+a) irradiating the sample to be imaged with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 50 GHz to 84 THz;
+b) subdividing an area of the sample which is to be imaged into a two dimensional array of pixels, and detecting radiation from each pixel over a plurality of frequencies; and
+c) generating an image of the area of the sample from the radiation detected in step (b) using a frequency or a selection of frequencies from the plurality of frequencies in the pulsed electro-magnetic radiation.
+2 A method according to claim 1 , wherein the sample to be imaged is irradiated with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 100 GHz to 20 THz
+3 A method according to claim 2, wherein the sample to be imaged is irradiated with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 500 GHz to 10 THz.
+4. A method according to any preceding claim, wherein the input radiation is transmitted through the sample.
+5. A method according to any of claims 1 to 3, wherein the input radiation is reflected from the sample.
+6. A method according to any preceding claim, wherein the image is generated from a single frequency.
+7. A method according to any of claims 1 to 5. wherein a single image is generated using a selected frequency range..
+8. A method according to claim 7. wherein the selected frequency range is less than a third of the frequency range of the pulsed electro-magnetic radiation which irradiates the sample.
+9. A method according to any preceding claim, wherein a plurality of images is generated from a corresponding plurality of different frequencies.
+10. A method according to any preceding claims, wherein, in step (b), the radiation is detected in the time domain and is Fourier transformed to obtain frequency dependent data.
+11. A method according to any preceding claim, wherein a fraction of the input pulsed radiation does not irradiate the area of the sample, which is to be imaged, and is detected as a reference signal.
+12. A method according to any of claims 1 to 10 . wherein the method further comprises the step of detecting a reference signal when the area of the sample to be imaged is absent from the path of the pulsed electro magnetic radiation.
+13. A method according to either of claims 11 or 12, wherein step (c) comprises the steps of deriving frequency dependent image data from the detected radiation and plotting the frequency dependent image data for each pixel to obtain an image of the sample.
+14. A method according to claim 13. wherein step (c) further comprises the steps of calculating the Power Spectmm for the radiation detected in step (b) and calculating the Power Spectmm of the reference signal.
+15. A method according to claim 14, wherein the frequency dependent image data is calculated by subtracting the Power Spectmm of the reference signal from the Power Spectmm of the radiation detected in step (b).
+16. A method according to claim 14. wherein the frequency dependent image data is calculated by dividing the Power Spectrum of the radiation detected in step (b) by the Power Spectrum of the reference signal.
+17. A method according to claim 13 . wherein the frequency dependent image data is calculated by deriving the frequency dependent absoφtion coefficient from a Fourier transform of the radiation detected in step (b) and a Fourier transform of the reference signal.
+18. A method according to claim 13. wherein the frequency dependent image data is calculated by deriving the frequency dependent refractive index from a Fourier transform of the radiation detected in step (b) and a Fourier transform of the reference signal.
+19. A method according to any of claims 13 to 18, wherein the frequency dependent image data is derived for two or more frequencies.
+20 A method according to claim 19, wherein the frequency dependent image data for the two frequencies is added, subtracted, multiplied or divided for each pixel.
+21. A method according to any preceding claim, wherein the frequency dependent image data is obtained for a narrow range of frequencies and the image data is integrated over this narrow range.
+22. A method according to any of claims 13 to 21. wherein the frequency dependent image data is processed by subdividing the data into a plurality of bands, wherein each band represent a range of magnitudes of the image data for a single frequency or narrow frequency range and each band is assigned a single value or colour.
+23. A method according to claim 22. wherein the bands are not of equal widths in magnitude.
+24. A method according to either of claims 22 or 23, wherein the image data is derived for more than one frequency.
+25. A method according to claim 24, wherein the image data for two frequencies is combined according to a predetermined rule.
+26. A method according to claim 24. wherein there are two bands assigned the values '0' and ' 1 ' and the predetermined mle is a BOOLEAN algebraic rule.
+27. A method according to any preceding claim, the method further comprising the step of displaying a sequence of images generated in step (c) for a plurality of different frequencies.
+28. A method according to claim 27, wherein the image generated in step (c) is scanable through a continuum of frequencies.
+29. A method according to claim 27, wherein the image generated in step (c) can be stepped through a plurality of discrete frequencies.
+30. A method of imaging a sample, the method comprising the steps of :
+a) irradiating the sample to be imaged with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 50 GHz to 84 THz; b) subdividing an area of the sample into a two dimensional array of pixels, and detecting radiation from each pixel over a plurality of frequencies; and
+c) generating an image of the area of the sample from the radiation detected in step (b) by calculating the difference between the temporal positions of a maxima and a minima of the radiation detected in step (b) for each pixel.
+31 A method according to claim 30, wherein the sample to be imaged is irradiated with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 100 GHz to 20 THz.
+32. A method according to claim 31 , wherein the image is generated by calculating the difference between the temporal positions of the main minimum and maximum peaks.
+33. A method according to any of claims 30 to 32, wherein step (c) further comprises the step of multiplying the difference between the temporal position of the maxima and minima, by a magnitude of the radiation.
+34. A method according to claim 33, wherein the magnitude of the radiation is the difference in magnitude between the minimum and maxima of the detected radiation.
+35. A method according to claim 33, wherein the magnitude of the radiation is the minimum or maximum of the detected radiation.
+36. A method of imaging a sample, the method comprising the steps of :
+a) irradiating the sample to be imaged with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 50 GHz to 84 THz; b) subdividing an area of the sample into a two dimensional array of pixels, and detecting radiation from each pixel over a plurality of frequencies; and
+c) generating an image of the area of the sample from the radiation detected in step (b) by calculating the difference between the magnitude of a maxima and a minima of the radiation detected in step (b) for each pixel.
+37. A method according to claim 36. wherein the sample to be imaged is irradiated with pulsed electro-magnetic radiation with a plurality of frequencies in the range from 100 GHz to 20 THz
+38. A method for imaging a sample, according to either of claims 36 or 37, wherein the peak minima and maxima are the main minimum and maximum.
+39. A method of imaging according to any preceding claim, configured to image the difference between ordinary and diseased tissue.
+40. A method according to claim 39, wherein the difference between diseased tissue and non diseased tissue is determined by the different and/or absoφtion reflectance and/or dispersion of THz light which is irradiated to organisms on living tissue in-vivo or in- vitro.
+41. A method according to any preceding claim, wherein the sample to be imaged is a human or animal.
+42. A method according to any preceding claim, wherein the method is configured to distinguish differences in bone density of the imaged sample.
+43. A method according to any preceding claim, wherein the method is configured to distinguish between the different types of tissue which comprise human or animal teeth.
+44. A method according to any preceding claim, wherein the method is configured to image Breast cancer.
+45. A method for detecting cancer in a sample, the method comprising the steps of:
+a) irradiating the sample with pulsed electromagnetic radiation with a plurality of frequencies in the range from 50GHz to 84THz;
+b) subdividing an area of the sample into a two dimensional array of pixels, and detecting radiation from each pixel over a plurality of frequencies;
+c) generating an image of the area of the sample from the radiation detected in step (b).
+46. A method according to claim 45. wherein step (c) comprises the step of plotting the refractive index of the sample for each pixel to generate the image.
+47. A method according to claim 45, wherein step (c) comprises the step of plotting the absoφtion coefficient of the sample to generate the image.
+48. A method according to claim 45, wherein step (c) comprises the step of plotting the maxima or minima of the electric field for each pixel.
+49. A method according to claim 45, wherein step (c) comprises the step of plotting the time of flight of the THz pulse through the sample for each pixel.
+50. A method according to any of claims 45 to 49, the method further comprising the step of analysing the detected radiation for the presence of lime in the sample.
+51. A method according to any of claims 45 to 50, wherein the method further comprises the step of analysing the water content in the sample.
+52. A method according to any of claims 45 to 51. wherein the sample is a human or animal breast.
+53. A method according to any of claims 45 to 51. wherein the sample comprises human or animal skin.
+54. A method according to any of claims 45 to 53. wherein the said area of the sample comprises an area where there is a suspected tumour and a healthy area of the sample.
+55. An apparatus for imaging a sample, the apparatus comprising:
+a) means for irradiating the sample with pulsed electro-magnetic radiation having a plurality of frequencies in the range from 50 GHz to 84 THz;
+b) means for subdividing an area of the sample into a two dimensional array of pixels;
+c) means for detecting radiation from each pixel over a plurality of frequencies; and
+d) means for generating an image of the area of the sample from the detected radiation by using a frequency or a selection of frequencies from the plurality of frequencies in the pulsed electro-magnetic radiation.
+56. An apparatus for imaging a sample, the apparatus comprising:
+a) means irradiating the sample with pulsed electro-magnetic radiation having a plurality of frequencies in the range form 50 GHz to 84 THz; b) means for subdividing an area of the sample into a two dimensional array of pixels;
+c) means for detecting radiation from each pixel over a plurality of frequencies; and
+d) means generating an image of the area of the sample from the detected radiation by calculating the difference between the temporal positions of a maximum and a minimum of the detected radiation detected for each pixel.
+57. An apparatus for imaging a sample, the apparatus comprising:
+a) means for irradiating the sample with pulsed electro-magnetic radiation having a plurality of frequencies in the range from 50 GHz to 84 THz;
+b) means for subdividing an area of the sample into a two dimensional array of pixels;
+c) means for detecting radiation from each pixel over a plurality of frequencies; and
+d) means for generating an image of the area of the sample from the detected radiation by calculating the difference between the magnitude of a maximum and a minimum of the detected radiation for each pixel.
+58. An apparatus according to any of claims 55 to 57, wherein the sample to be imaged is a human or animal breast.
+59. An apparatus according to claim 58, comprising means for holding the breast to be imaged.
+60. An apparatus according to any of claims 55 to 59. wherein the apparatus further comprises means for detecting the time of flight of a pulse of radiation through the sample.
+61. An apparatus according to any of claims 55 to 60 wherein the apparatus comprises means for collecting both transmitted and reflected radiation.
+62. An apparatus for detecting cancer in a sample, the apparatus comprising:
+a) means of irradiating the sample with pulsed electromagnetic radiation with a plurality of frequencies in the range from 50GHz to 84THz:
+b) means of subdividing an area of the sample into a two dimensional array of pixels, and detecting radiation from each pixel over a plurality of frequencies;
+c) means of generating an image of the area of the sample from the radiation detected in step (b).
+
+TITLE:
+Systems and methods for millimeter and sub-millimeter wave imaging
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+In one aspect, the present invention provides an apparatus (10) for imaging. At least one source (12) (or 12/14) of composite radiation illuminates a field of view which includes object (3). The radiation includes a set of multiple phase-independent partials that are independently controllable and exhibit distinct physical features. A quasi-optical element (21) is disposed between the field of view and a multi-element receiver (18). The multi-element receiver (18) is disposed to receive image radiation (28) from the quasi-optical element (21). Particular ones of the receiver elements transform the image radiation (28) into a set of electrical signals that include information relating to features of the partials
+
+CLAIMS:
+1. An apparatus for imaging, the comprising: at least one source of composite radiation illuminating a field of view, the radiation comprising a set of multiple phase-independent partials being independently controllable and exhibiting distinct physical features; a quasi-optical element disposed between the field of view and a multi-element receiver; and the multi-element receiver disposed to receive image radiation from the quasi- optical element, wherein particular ones ofthe receiver elements transform the image radiation into a set of electrical signals including information relating to features ofthe partials.
+2. The apparatus of claim 1 wherein the at least one source of composite radiation includes an encoder configured to label each ofthe partials with a unique code.
+3. The apparatus of claim 2 wherein each distinct partial is labeled with a distinct unique code.
+4. The apparatus of claim 2 and further comprising decoder to extract the information relating to the features ofthe partials from the electrical signals.
+5. The apparatus of claim 1 and further comprising a processor coupled to receive the electrical signals from the receiver, the processor to generate a resultant image from the electrical signals.
+6. The apparatus of claim 1 wherein the partials within the set of partials differ from each other by angles of propagation in the field of view.
+7. The apparatus of claim 6 wherein partials ofthe set exhibit first characteristic polarization.
+8. The apparatus of claim 1 and further comprising a polarizer coupled between the at least one source of composite radiation and the multi-element receiver.
+9. The apparatus of claim 1 wherein the at least one source of composite radiation generates radiation having a wavelength between about 0.1mm and about 10mm.
+10. . An apparatus for imaging, the apparatus comprising: means for illuminating a field of view with composite radiation, the radiation comprising a set of multiple phase-independent partials being independently controllable and exhibiting distinct physical features; quasi-optical means for forming images ofthe field of view; and multi-element receiving means for receiving image radiation from the quasi- optical means, wherein the receiving means including means for transforming the image radiation into a set of electrical signals including information relating to features ofthe partials.
+11. An s-mmw imaging system, comprising a non-rotating diffuser destroying a spatial coherence of radiation incident on the diffuser and directing the radiation towards a field of view; at least one radiation source disposed to illuminate the diffuser, the at least one radiation source generating radiation having a wavelength between about OJmm and about 10mm; a quasi-optical element disposed between the field of view and a multi-element receiver, the quasi-optical element directly radiation from the field of view toward an imaging plane; and a multi-element receiver disposed in the imaging plane, wherein particular ones ofthe receiver elements transfonn radiation into a set of electrical signals.
+12. The system of claim 11 wherein the diffuser comprises a spatially distributed diffuser.
+13. The system of claim 12 wherein the diffuser comprises a plurality of spatially distributed point scatterers.
+14. The system of claim 13 wherein the diffuser comprises a two-dimensional array of point scatterers, each ofthe point scatterers having a position and orientation which can be independently changed in time relative to a reference plane.
+15. The system of claim 13 wherein the point scatterers comprise conductive structures being loaded by impedances.
+16. The system of claim 13 and further comprising a processor coupled to receive the electrical signals from the receiver, the processor causing the point scatterers to be controlled based on information determined from the electrical signals.
+17. The system of claim 1 1 and further comprising a processor coupled to receive the electrical signals from the receiver, the processor generating resultant images from the electrical signals.
+18. The system of claim 11 wherein the radiation directed from the diffuser toward the field of view comprises a set of multiple phase-independent partials being independently controllable and exhibiting distinct physical features and wherein the electrical signals include information relating to features ofthe partials.
+19. The system of claim 11 wherein the radiation incident on the diffuser includes doublet spectral components.
+20. The system of claim 19 wherein the radiation incident on the diffuser is modulated by modulating a spectral shift between doublet spectral components.
+21. An imaging system comprising at least one source of partially coherent radiation for illuminating a field of view; an electronic device coupled providing electrical control signals to the at least one source, the electrical control signals controlling the level of coherence ofthe partially coherent radiation; a quasi-optical element disposed between the field of view and an imaging plane; and a multi-element receiver disposed in the imaging plane to receive image radiation from the quasi-optical element, wherein particular ones ofthe receiver elements transform the image radiation into a set of electrical signals.
+22. The system of claim 21 wherein the electrical control signals control the level of spatial coherence ofthe partially coherent radiation.
+23. The system of claim 21 wherein the electrical control signals control the level of temporal coherence ofthe partially coherent radiation.
+24. The system of claim 21 wherein the at least one source comprises a radiation source and a diffuser disposed to received radiation from the radiation source, the diffuser including a plurality of spatially-distributed and electronically-controllable point scatterers.
+25. The system of claim 24 wherein the point scatterers comprise conductive structures that are loaded by impedances and wherein the magnitudes ofthe impedances are time-varied due to modulation.
+26. The system of claim 25 wherein the point scatterers are divided into sets and wherein each point scatterer within a set of point scatterers is modulated in the same manner.
+27. A method of illuminating a field of view, the method comprising: generating radiation with a wavelength greater than about OJmm, the radiation including multiple phase-independent partial components exhibiting distinguishable physical features; encoding the radiation to label different ones ofthe multiple partial components; directing the radiation toward a field of view; focusing the radiation on an imaging plane; detecting the radiation from the imaging plane; converting the radiation into electrical signals; and extracting information relating to features ofthe multiple partial components from the electrical signals.
+28. The method of claim 27 wherein the multiple partial components comprises radiation components with different angles of incidence relative to the field of view.
+29. The method of claim 27 wherein the multiple partial components comprises radiation components with different central frequencies.
+30. The method of claim 27 wherein the multiple partial components comprises radiation components with different polarization characteristics.
+31. The method of claim 27 wherein the step of encoding comprises modulating to label different ones ofthe multiple partial components.
+32. The method of claim 27 wherein the radiation comprises at least one spectral doublet.
+33. The method of claim 27 and further comprising modifying the electrical signals based upon the information extracted relating to the features ofthe multiple partial components.
+34. The method of claim 27 wherein extracting includes decomposing the electrical signals based on the partial components.
+35. A source of partially coherent radiation for illuminating a field of view, the source comprising: at least one non-movable diffuser destroying a spatial coherence of radiation being incident on the diffuser and directing the radiation towards a field of view; and at least one radiation emitting source being arranged to illuminate said diffuser with radiation having a wavelength between about OJmm and about 10mm.
+36. The source of partially coherent radiation of claim 35 wherein said non-movable diffuser comprises a spatially distributed diffuser.
+37. The source of partially coherent radiation of claim 35 wherein the diffuser includes an array of independently controllable radiation scatterers.
+38. The source of partially coherent radiation of claim 37 wherein each ofthe radiation scatterers is electronically controllable by a time-varying modulation signal.
+39. A source of partially coherent radiation for illuminating a field of view , the source comprising: at least one non-movable diffuser destroying a spatial coherence of radiation being incident on the diffuser and directing the radiation towards a field of view, the diffuser including an array of spatially distributed antennae; and at least one radiation emitting source being arranged to illuminate said diffuser with radiation.
+40. The source of partially coherent radiation of claim 39 wherein the diffuser includes an array of independently controllable radiation scatterers.
+41. The source of partially coherent radiation of claim 40 wherein each ofthe radiation scatterers is electronically controllable by a time-varying modulation signal.
+42. The source of partially coherent radiation of claim 39 wherein the at least one radiation emitting source arranged to illuminate the diffuser with radiation having a wavelength between about OJmm to about 10mm.
+43. The source of partially coherent radiation of claim 39 wherein the diffuser includes an array of spatially distributed point scatterers, each point scatterer comprising a conductive structure loaded by an impedance.
+44. A source of partially coherent radiation for illuminating a field of view, the source comprising: at least one non-movable diffuser destroying a spatial coherence of radiation being incident on the diffuser and directing the radiation towards a field of view, the diffuser including an array of independently controllable radiation scatterers; and at least one radiation emitting source being arranged to illuminate said diffuser with radiation.
+45. The radiation source of claim 44 wherein each ofthe radiation scatterers is electronically controllable.
+46. The radiation source claim 45 wherein each ofthe radiation scatterers is controllable by a time-varying modulation signal.
+47. The radiation source of claim 46 wherein radiation scatterers are assigned into sets and wherein each radiation scatterer within a set of radiation scatterers is modulated in the same manner.
+48. The radiation source of claim 44 wherein the radiation scatterers can be independently controlled by physically moving the point scatterers with respect to a reference plane.
+49. The radiation source of claim 44 wherein each radiation scatterer comprises a conductive structure loaded by an impedance.
+50. The radiation source of claim 44 wherein each radiation scatterer comprises a static high-Q resonant scatterer exhibiting frequency resonance belonging to a particular frequency band and wherein the radiation emitting source comprises a radiation source that sweeps over the particular frequency band.
+51. The radiation source of claim 44 wherein the at least one radiation em itting source is arranged to illuminate the diffuser with radiation having a wavelength between about OJmm to about 10mm.
+52. A millimeter wave system comprising: a source of radiation, the radiation comprising a set of independently controllable radiation components, each radiation component comprising a doublet that includes two spectral lines, and each radiation component being labeled by a given frequency shift between the two spectral lines; a receiver including an array of receiver elements disposed to receive the radiation emitted by the source, the receiver transforming the received radiation into an array of electrical signals; and a processing system coupled to receive the array of electrical signals and for decoding the array of electrical signals based on the labels ofthe radiation components.
+53. The system of claim 52 wherein the processing system is coupled to the source of radiation to provide instructions on how to control the radiation components.
+54. The system of claim 52 wherein the frequency difference between the two spectral lines is modulated.
+55. The system of claim 52 wherein the central frequency ofthe two spectral lines is swept in time.
+56. The system of claim 52 wherein the two spectral lines comprise a co-polarized doublet and wherein the source of radiation comprises: a pair of voltage controlled oscillators operating at a s-mmw frequency and having a first characteristic polarization state; a set of load-modulated point scatterers that are illuminated by the voltage controlled oscillators, the set of load-modulated point scatterers being preferentially sensitive to the first characteristic polarization state; wherein the load of each point scatterer is modulated with a time varying signal; and wherein the scattered radiation is directed to an object being imaged.
+57. The system of claim 52 wherein the source of radiation is in a substrate configuration, the source further comprising means to combine the radiation ofthe two spectral lines of each component.
+58. The system of claim 52 wherein the source of radiation is in a waveguide configuration, the source further comprising means to combine the radiation ofthe two spectral lines of each component.
+59. A method for creating radiation that includes a polarized doublet, the method including: emitting radiation at a first s-mmw frequency; emitting radiation at a second s-mmw frequency, wherein the difference between the first s-mmw frequency and the second s-mmw frequency is much smaller than the average ofthe first s-mmw frequency and the second s-mmw frequency; polarizing the radiation at the first s-mmw frequency into a first characteristic polarization; polarizing the radiation at the s-mmw frequency into a second characteristic polarization; and combining the radiation at the first s-mmw frequency and the radiation at the second s-mmw frequency; and directing the combined radiation to a destination.
+60. The method of claim 59 wherein the first polarization is essentially equal to the second polarization.
+61. The method of claim 59 wherein the first polarization is essentially orthogonal to the second polarization.
+62. The method of claim 59 and further comprising controlling the difference between the first s-mmw frequency and the second s-mmw frequency.
+63. The method of claim 62 wherein the combined radiation is divided into two unequal parts, a major part being directed to the destination and a minor part being used to control the difference frequency.
+64. The method of claim 59 and further comprising changing average ofthe first s- mmw frequency and the second s-mmw frequency.
+65. The method of claim 59 and further comprising modulating the difference between the first s-mmw frequency and the second s-mmw frequency.
+66. The method of claim 59 wherein the method is performed in a waveguide configuration.
+67. The method of claim 59 wherein the method is performed in a planar substrate configuration.
+68. A method of creating radiation that includes a cross-polarized doublet, the method comprising: providing a voltage controlled oscillator operating at a first s-mmw frequency; directing energy ofthe oscillator to uniformly illuminate first and second sets of load-modulated point scatterers, the first set exhibiting a first polarization state and the second set exhibiting a second polarization state, wherein the first polarization state is orthogonal to the second polarization state; polarizing the oscillator in a third characteristic polarization state; positioning the first and second sets of point scatterers such that the first and second polarization state substantially differs from the third characteristic polarization state; modulating the load ofthe first scatterer with a first time varying signal; modulating the load ofthe second scatterer with a second time varying signal, wherein the ground harmonic of first time varying signal essentially differs from any harmonic of the second harmonic time varying signal; and scattering radiation from the first and second sets of point scatterers.
+69. The method of claim 68 wherein the first and second time varying signals are periodic signals.
+70. The method of claim 69 wherein the sum ofthe ground harmonics ofthe first periodic signal and the second periodic signal is equal to a doublet frequency difference.
+71. The method of claim 69 wherein the difference ofthe ground harmonics ofthe first periodic signal and the second periodic signal is equal to a doublet frequency difference.
+72. The method of claim 69 wherein the periodic signals are binary signals.
+73. The method of claim 69 wherein the periodic signals are harmonic signals.
+74. The method of claim 69 and further comprising controlling the difference frequency between the periodic signals by dividing the energy of both periodic signals in unequal parts, a major part being used to drive first and second loads and the minor part being used to control the difference frequency.
+75. A method of creating radiation that includes a co-polarized doublet, the method comprising: providing a voltage controlled oscillator operating at a first s-mmw frequency; polarizing the oscillator in a first characteristic polarization state; directing energy ofthe oscillator to illuminate a modulated point scatterer, the point scatterer being preferentially sensitive to the first characteristic polarization; modulating the load ofthe scatterer with a time varying signal; and scattered radiation form the point scatterer.
+76. The method of claim 75 wherein the point scatterer is an antenna.
+77. The method of claim 75 wherein the point scatterer includes a complex impedance.
+78. The method of claim 75 wherein the time varying signal is a periodic signal.
+79. The method of claim 78 wherein the periodic signal has a ground harmonic frequency equal to half of a doublet frequency difference.
+80. The method of claim 78 wherein the periodic signal has a ground harmonic frequency equal to a doublet frequency difference.
+81. The method of claim 78 wherein the periodic signal is a binary signal.
+82. The method of claim 78 wherein the periodic signal is a harmonic signal.
+83. A millimeter wave transmitter-receiver apparatus for transmitting and receiving image or communication data comprising: a source of radiation, the radiation comprising a set of independently controllable radiation components, each radiation component comprising a doublet that includes two spectral lines, and each radiation component being labeled by a given frequency shift between the two spectral lines; a receiver including an array of receiver elements disposed to receive the radiation emitted by the source, the receiver transforming the received radiation into an array of electrical signals; and a processing system coupled to receive the array of electrical signals and for decoding the array of electrical signals based on the labels ofthe radiation components.
+84. The system of claim 82 wherein the processing system is coupled to the source of radiation to provide instructions on how to control the radiation components.
+85. The system of claim 82 wherein the frequency difference between the two spectral lines is modulated.
+86. The system of claim 82 wherein the central frequency ofthe two spectral lines is swept in time.
+87. The system of claim 82 wherein the two spectral lines comprise a doublet and wherein the source of radiation comprises: at least one pair of voltage controlled oscillators operating at different s-mmw frequencies; a plurality of paired couplers each of which is individually coupled to an output of one ofthe voltage-controlled oscillators (VCOs) for dividing VCO radiation into a major portion for transmitting in free space and a minor portion for mixing; a first mixer for mixing the minor radiation portion the VCO radiation to produce a first beat signal ; a phase locked loop (PLL) circuit providing phase-locking ofthe first beat signal by the reference signal, wherein one input ofthe PLL circuit is supplied by the first beat signal, another PLL circuit input is supplied by the the reference signal and an output correction voltage produced by the PLL circuits is provided to a frequency correcting driving voltage input of one ofthe VCOs; and an antenna system to transmit the major radiation portions produced by the VCOs in free space.

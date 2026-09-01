@@ -1,0 +1,243 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+14 Mulier-Boré
+
+Application No.: 04 014 443.8-1225
+
+Applicant: SAP SE
+
+"Accessing Data Tags Using Database Queries"
+Our Ref.: S$10415EU-ds/yma
+
+Claims
+
+(Main Request)
+
+1. A computer-implemented method for mapping data between a wirelessly
+
+accessible data carrier, and a database application using a mapping interface,
+
+‘comprising:
+
+- exchanging messages compliant to a data carrier query protocol with the
+data carrier via a wireless interface;
+
+- exchanging queries compliant to a database query protocol with a database
+application via a database interface, the database query protocol being a structured
+query language (SQL) protocol;
+
+- reading a mapping definition;
+
+- exchanging data between the wireless interface and the database interface
+by mapping between the queries and the messages within the mapping. interface
+using the mapping definition; and,
+
+- storing the mapping definition separately from the mapping interface thus
+providing separation between the mapping interface and the mapping definition,
+
+wherein said exchanging data between the wireless interface ‘and the
+database interface including: |
+
+providing the data of a data carrier to the database interface formatted
+as database data;
+
+providing data of the data carrier as one row of a database to the
+database interface; and
+
+providing a defined byte area of the data carrier as one column of a
+
+respective row to the database interface.
+
+2. The computer-implemented method of claim 1, characterized by storing the
+
+mapping definition within the data carrier.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+24 . Muller-Boré
+
+3. The computer-implemented method of claim 2, characterized by storing the
+
+mapping definition in a separate memory area of the data carrier.
+
+4. The computer-implemented method of claim 1, characterized by storing the
+
+mapping definition in a file.
+
+5. The computer-implemented method of claim 4, characterized by storing
+various mapping definitions representing different types of data carriers within the
+
+file.
+
+6. The computer-implemented method of claim 1, characterized by providing
+
+management of memory within the data carrier using the mapping definition.
+
+7. The computer-implemented method of claim 1, characterized by defining un-
+
+clustered memory areas for data within the data carrier.
+
+8. The computer-implemented method of claim 1, characterized by.updating the
+mapping definition and storing data within the data carrier from a previous format into
+
+a new format according to the updated mapping definition.
+
+9. The computer-implemented method of claim 1, characterized by dynamically
+
+adapting memory usage of the data carrier using the mapping definition.
+
+10.. The computer-implemented method of claim 1, characterized by storing the
+
+mapping definition in the file in a device-independent format.
+
+11. The computer-implemented method of claim 1, characterized by providing a
+description of accessible data within the data carrier to an application via the
+
+database interface. |
+
+12. The computer-implemented method of claim 1, characterized by receiving a
+database query protocol request from an application to determine a description of
+accessible data via the database interface, obtaining the description of accessible —
+
+data from the mapping definition, and providing the description of accessible data to
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+34 Mulier-Boré
+
+the requesting application via the database interface.
+
+13. The computer-implemented method of claim 1, characterized by receiving a
+database query protocol request from an application to determine data from a data
+carrier, mapping the database query protocol request onto a. data carrier query
+protocol request, and providing the data carrier query protocol request to the wireless
+
+interface to interrogate the data carrier.
+
+14. The computer-implemented method of claim 1, characterized by receiving
+
+data from a data carrier as data carrier query protocol message via the wireless
+
+interface, mapping the data from the data carrier query protocol message into a
+
+database query protocol message, and providing the data as a database query
+protocol message to the database interface.
+
+15. The computer-implemented method of claim 1, characterized by storing byte-
+
+oriented data on the data carrier.
+
+16. The computer-implemented method of claim 1, characterized by providing
+
+field-oriented data to the database interface application.
+
+17. . The computer-implemented method of claim 1, characterized by providing a
+physical layer access interface for accessing the data carrier via the wireless
+
+interface.
+
+18. The computer-implemented method of claim 1, characterized by scanning
+
+substantially permanently for availabie data carriers.
+
+19. | The computer-implemented method of claim 1, characterized by providing
+data of a data carrier via the database interface to an application, once a data carrier
+
+is accessible.
+
+20. The computer-implemented method of claim 1, characterized by scanning for
+available data carriers upon receiving a request from an application via the database
+
+interface.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+44 . - Miiller-Boré
+
+21. The computer-implemented method of claim 1, characterized by write-
+protecting memory blocks within the data carrier, such that, by using database query |
+
+protocol messages, memory areas within the data carrier are write-protectable.
+
+22. The computer-implemented method of claim 1, characterized by implementing
+
+the mapping definition in a device-independent format.
+
+23. The computer-implemented method of claim 10 or 22, characterized by
+
+. implementing the mapping between the data carrier query protocol and the database
+
+query protocol within the mapping interface in a device-independent format.
+
+24. The computer-implemented method of claim 1, characterized by writing data,
+
+which is received via the database interface, to the data carrier.
+
+25. The computer-implemented method of claim 1, characterized by providing
+
+byte converting when mapping the data between the data carrier query protocol and
+
+the database query protocol.
+
+26. A computer system for mapping data between a wirelessly accessible data
+carrier and a database application for implementing a method of any one of claims 1
+to 25, comprising: |
+
+- awirelessly accessible data carrier;
+
+- a mapping device with a mapping interface, a wireless interface for
+communicating with the data stored on the data carrier using a data carrier query
+protocoi, and a database interface for communicating with a database application
+using database query protocol; and,
+
+| - a storage separated from said mapping interface for storing a mapping
+definition separately from the mapping interface providing separation between
+
+mapping interface and mapping definition.
+
+27. A computer program product readable by a computer and embodying a
+
+program of instructions capable of mapping data between a wirelessly accessible
+
+data stored on a data carrier, and a database application using a mapping interface,
+
+--- PAGE 5 ---
+54 . Muller-Boré
+
+the program comprising instructions operable to cause the computer to perform the
+
+method according to any one of claims 1 to 25.

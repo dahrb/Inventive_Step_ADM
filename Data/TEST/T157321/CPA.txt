@@ -1,0 +1,73 @@
+TITLE:
+Moving security for virtual machines
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method of maintaining multiple firewalls on multiple host nodes. Each host node runs one or more virtual machines. For at least a first host node, the method maintains multiple sets of policies for multiple virtual machines that run on the first host node. The method, upon detecting that a particular virtual machine has been moved from the first host node to a second host node, removes a set of policies associated with the particular virtual machine from the first host node and supplies the set of policies to the second host node.
+
+CLAIMS:
+1. A method of maintaining a plurality of firewalls on a plurality of host nodes, each host node for running at least one virtual machine, the method comprising:
+for at least a first host node,
+a) maintaining a plurality of sets of policies for a plurality of virtual machines running on the first host node, and
+b) upon detecting that a particular virtual machine has been moved from the first host node to a second host node:
+i) removing a set of policies associated with the particular virtual machine from a firewall of the first host node; and
+ii) supplying the set of policies to a firewall of the second host node.
+2. The method of claim 1, wherein the sets of policies comprise policies for determining whether to allow data packets to pass the firewalls or block the data packets from passing the firewalls.
+3. The method of claim 1, wherein detecting that the particular virtual machine has been moved from the first host node to the second host node comprises receiving a notice at the firewall of the first host node that the virtual machine has sent or received a data packet while on the second host node.
+4. The method of claim 3, wherein the notice is from the firewall of the second host node.
+5. The method of claim 1 further comprising receiving a notice at the firewall of the first host node that the policies have been received at the firewall of the second host node before removing the set of policies from the firewall of the first host node.
+6. The method of claim 5, wherein the notice is received at the firewall of the first host node from a firewall coordinator that tracks movements of virtual machines on the host nodes.
+7. The method of claim 5, wherein the notice is received at the firewall of the first host node from the firewall of the second host node.
+8. The method of claim 1 further comprising, upon detecting that the particular virtual machine has been moved from the first host node to the second host node, removing a set of records of connections from the firewall of the first host node, wherein the set of records of connections comprise records of connections, allowed by the set of policies, to and from the particular virtual machine.
+9. The method of claim 1 further comprising, upon a second particular virtual machine beginning to run on the first host node without moving from another host node, retrieving a set of policies for the second particular virtual machine from a firewall coordinator that stores sets of policies.
+10. A firewall coordinator for coordinating security for a plurality of virtual machines on a plurality of host nodes, the firewall coordinator comprising:
+a) a virtual machine tracker for maintaining records of the host node of each virtual machine of the plurality of virtual machines;
+b) a policy manager for receiving and storing a set of policies for each virtual machine of the plurality of virtual machines; and
+c) a coordination manager for, when a particular virtual machine moves from a first host node to a second host node, sending an identification of the first host node to a firewall of the second host node to command the firewall of the second host node to retrieve a set of policies for the particular virtual machine from a firewall of the first host node.
+11. The firewall coordinator of claim 10, wherein the coordination manager is further for receiving a request from the firewall of the second host node for the identification.
+12. The firewall coordinator of claim 11, wherein the request comprises an identifier of the particular virtual machine.
+13. The firewall coordinator of claim 10, wherein the virtual machine tracker is further for sending the identification to the coordination manager.
+14. The firewall coordinator of claim 10 further comprising a policy update controller for determining whether policy updates should be sent to firewalls on the plurality of host nodes.
+15. The firewall coordinator of claim 14, wherein the policy update controller determines that a policy update should be sent to a firewall on a particular host node when the policy manager receives an updated policy for a virtual machine on the particular host node.
+16. The firewall coordinator of claim 15, wherein the virtual machine tracker identifies the particular host node to the policy update controller.
+17. The firewall coordinator of claim 10, wherein the policy manager is for receiving the sets of policies from at least one user.
+18. A computer readable storage medium storing a computer program which when executed on at least one processor implements a firewall coordinator for coordinating security for virtual machines on a plurality of host nodes, the computer program comprising:
+a) a set of instructions for receiving an identification of particular virtual machine from a firewall of a first host node;
+b) a set of instructions for determining whether the particular virtual machine had been moved to the first host node from a second host node on which a set of policies for the virtual machine are stored;
+c) a set of instructions for, when the particular virtual machine had been moved from the second host node to the first host node, sending an identifier of the second host node to the firewall of the first host node to command the firewall of the first host node to retrieve the set of policies from a firewall of the second host node; and
+d) a set of instructions for, when the particular virtual machine had not been moved from any host node to the first host node, sending the set of policies for the particular virtual machine to the firewall of the first host node.
+19. The computer readable storage medium of claim 18, wherein the computer program further comprises:
+a) a set of instructions for receiving a confirmation from the firewall of the first host node that the set of policies has been received; and
+b) a set of instructions for storing a record that the particular virtual machine is on the first host node.
+20. The computer readable storage medium of claim 19, wherein the computer program further comprises a set of instructions for, upon receiving the confirmation at the firewall coordinator, sending a command to the firewall of the second host node to delete the set of policies.
+21. The computer readable storage medium of claim 18, wherein the computer program further comprises:
+a) a set of instructions for, from a firewall on each host node of the plurality of host nodes, receiving an identification of the virtual machines running on that host node, and
+b) a set of instructions for updating records of the locations of the set of virtual machines based on the received identifications.
+22. A firewall comprising:
+a) a virtual machine detector for determining that a received packet on a first host node is for a previously undetected virtual machine;
+b) a migration coordinator for:
+i) requesting an identity of a second host node on which the previously undetected virtual machine previously ran; and
+ii) retrieving policies for the previously undetected virtual machine from a second firewall of the second host node, the policies for determining whether to allow or block the received packet.
+23. The firewall of claim 22, wherein the migration coordinator requests said identity from a firewall coordinator that tracks the locations of virtual machines.
+24. The firewall of claim 22 further comprising a policy editor for:
+receiving the policies from the migration coordinator;
+translating the policies into a form usable by a packet filter;
+and supplying the policies to a packet filter.
+25. The firewall of claim 22, wherein the policy editor is further for storing an untranslated copy of the policies in a policy table of the firewall.
+26. The firewall of claim 22, wherein the migration coordinator is also for retrieving connection data from the second firewall of the second host node, the firewall further comprising a connection table editor for:
+receiving said connection data; and
+supplying the connection data to a packet filter.
+27. A computer readable storage medium storing a computer program which when executed on at least one processor implements a firewall, the computer program comprising:
+a) a set of instructions for determining that a received packet on a first host node is for a previously undetected virtual machine;
+b) a set of instructions for requesting an identity of a second host node on which the previously undetected virtual machine previously ran; and
+c) a set of instructions for retrieving policies for the previously undetected virtual machine from a second firewall of the second host node, the policies for determining whether to allow or block the received packet.
+28. The computer readable medium of claim 27, wherein the set of instructions for requesting said identity further comprises a set of instructions for requesting said identity from a firewall coordinator that tracks the locations of virtual machines.
+29. The computer readable medium of claim 27, wherein the computer program further comprises:
+a) a set of instructions for translating the policies into a form usable by a packet filter; and
+b) a set of instructions for supplying the policies to a packet filter.
+30. The computer readable medium of claim 27, wherein the computer program further comprises a set of instructions for storing an untranslated copy of the policies in a policy table of the firewall.
+31. The computer readable medium of claim 27, wherein the computer program further comprises:
+a) a set of instructions for retrieving connection data from the second firewall of the second host node; and
+b) a set of instructions for supplying the connection data to a packet filter.

@@ -1,0 +1,125 @@
+--- PAGE 1 ---
+SR 37131 JP/VS
+
+10
+
+15
+
+20
+
+29
+MAIN REQUEST
+
+CLAIMS
+
+1. A video encoding apparatus for applying orthogonal transformation to a
+prediction error signal between a video signal of an encoding target area and a predicted
+signal for the video signal, and quantizing an obtained orthogonal transformation
+coefficient by using a preset quantization step size so as to encode the coefficient, the
+apparatus comprising:
+
+a computation device that computes a prediction error power which is a power of
+the prediction error signal;
+
+a determination device that receives the prediction error power computed by the
+computation device, the preset quantization step size, and an upper limit of an amount of
+code generated for the encoding target area, and determines whether or not an amount of
+code generated when performing quantization using the preset quantization step size
+exceeds the upper limit; and
+
+a change device that changes an encoding process based on a result of the
+determination by the determination device,
+
+wherein the determination device computes a permissive power for the prediction
+error power based on the upper limit and the preset quantization step size, and compares
+the permissive power with the prediction error power computed so as to determine
+whether or not the amount of code generated when performing the quantization using the
+preset quantization step size exceeds the upper limit; and
+
+when it is determined that the amount of code generated when performing the
+quantization using the preset quantization step size exceeds the upper limit, the change
+
+device changes the quantization step size of the quantization for the encoding target area
+
+--- PAGE 2 ---
+SR 37131 JP/VS
+
+10
+
+15
+
+20
+
+30
+MAIN REQUEST
+from the preset quantization step size to a quantization step size by which the amount of
+
+code generated for the encoding target area does not exceed the upper limit.
+
+2. The video encoding apparatus in accordance with claim 1, wherein:
+
+the determination device computes the permissive power for the prediction error
+power by setting variables of a function, which are the upper limit and the quantization
+step size, to the values of the upper limit and the quantization step size, where the value
+
+of the function is the permissive power.
+
+3. The video encoding apparatus in accordance with claim 1, wherein:
+the determination device computes the permissive power for the prediction error
+power by referring to a table in which a relationship between data values of the upper
+
+limit, the quantization step size, and the permissive power is defined.
+
+4. A video encoding method for applying orthogonal transformation to a prediction
+error signal between a video signal of an encoding target area and a predicted signal for
+the video signal, and quantizing an obtained orthogonal transformation coefficient by
+using a preset quantization step size so as to encode the coefficient, the method
+comprising:
+
+a computation step that computes a prediction error power which is a power of
+the prediction error signal;
+
+a determination step that receives the computed prediction error power, the preset
+quantization step size, and an upper limit of an amount of code generated for the
+
+encoding target area, and determines whether or not an amount of code generated when
+
+--- PAGE 3 ---
+SR 37131 JP/VS
+
+10
+
+15
+
+20
+
+31
+MAIN REQUEST
+
+performing quantization using the preset quantization step size exceeds the upper limit;
+and
+
+a change step that changes an encoding process based on a result of the
+determination,
+
+wherein the determination step computes a permissive power for the prediction
+error power based on the upper limit and the preset quantization step size, and compares
+the permissive power with the prediction error power so as to determine whether or not
+the amount of code generated when performing the quantization using the preset
+quantization step size exceeds the upper limit; and
+
+when it is determined that the amount of code generated when performing the
+quantization using the preset quantization step size exceeds the upper limit, the change
+step changes the quantization step size of the quantization for the encoding target area
+from the preset quantization step size to a quantization step size by which the amount of
+
+code generated for the encoding target area does not exceed the upper limit.
+
+5. A video encoding program by which a computer executes an operation for
+
+implementing the video encoding apparatus in accordance with claim 1.
+
+6. A computer-readable storage medium which stores a video encoding program by
+which a computer executes an operation for implementing the video encoding apparatus
+
+in accordance with claim 1.

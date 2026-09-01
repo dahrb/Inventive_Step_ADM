@@ -1,0 +1,67 @@
+--- PAGE 1 ---
+EP 08 825 892.6 137855 q8
+Abbott Medical Optics Inc.
+
+Claims (Main request)
+
+1. A phacoemulsification/vitrectomy system configured to be used in
+association with an external Universal Serial Bus, USB, memory storage
+device (107) comprising a USB compliant file system, the system
+comprising:
+an input/output data port (106) configured to receive the external USB
+memory storage device (107); and
+an operating system capable of reading system data from and writing
+system data to said USB memory storage device (107);
+wherein files (201) in the file system of the external USB memory storage
+device (107) are all associated with a signature value (203) readable by the
+system to determine whether each file (201) is permitted to be used in the
+system.
+
+2. The system of claim 1, wherein the system is arranged for calculating at
+least one signature value (203).
+
+3. The system of claim 1 or 2, wherein each signature value (203) is
+computable using at least one Federal Information Processing Standard
+approved cryptographic hashing algorithm.
+
+4. The system of one of claims 1 to 3, wherein each signature value (203) is
+collected within at least one signature file (204; 206).
+
+5. The system of claim 4, wherein each signature file (206) is encrypted using
+one from a group comprising at least one variant of the Data Encryption
+Standard (DES) and at least one variant of the Advanced Data Encryption
+Standard (AES).
+
+6. |Amethod for protecting system resources of a
+phacoemulsification/vitrectomy system from access by unauthorized files
+stored in an external Universal Serial Bus, USB, memory storage device
+(107), the method comprising:
+
+--- PAGE 2 ---
+10.
+
+inspecting (304, 305) at least one signature value (203) associated with one
+system file (201) located on said external USB memory storage device
+(107); and
+
+verifying (306, 307, 308) at least one system file (201) stored within the
+external USB memory storage device (107) is a known software application
+asset by assessing at least one signature value (203) associated with at
+least one system file (201).
+
+The method of claim 6, wherein at least one signature value (203) is
+encrypted and contains a digital signature.
+
+The method of claim 6 or 7, wherein said verifying comprises comparing
+(306) a verification signature value to a signature value (203) within at least
+one signature file (204, 206).
+
+The method of claim 8, further comprising employing (307) an evaluated
+system file on the system when the verification signature value matches the
+signature value within at least one signature file associated with the
+evaluated system file.
+
+The method of claim 8 or 9, further comprising preventing (308) system
+usage of an evaluated system file on the system when the verification
+signature value does not match the signature value within at least one
+signature file associated with the evaluated system file.

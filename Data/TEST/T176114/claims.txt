@@ -1,0 +1,160 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+58
+
+Claims:
+
+1. A method of protecting a payment instrument in non-face-to-face transactions, the
+payment instrument being issued by an issuing entity (20) and associated with an
+authorized instrument holder (1), the authorized instrument holder being subject to
+authentication by a trusted third party (15) with whom the payment instrument holder has
+previously registered by submitting personal information, the method comprising:
+
+the authorized instrument holder (1) communicating with the issuing entity (20) to
+block, on a default basis, authorization of the payment instrument for non-face-to-face
+transactions unless authorized to unblock the payment instrument by the trusted third party
+(15);
+
+prior to a non-face-to-face transaction (S5), the authorized instrument holder (1)
+communicating (S2) with the trusted third party (15) to subject him or herself to
+authentication based on the personal information and to request that the payment instrument
+be unblocked for the non-face-to-face transaction (S5); and
+
+the trusted third party (15) authenticating the authorized instrument holder (1), and
+if the authentication result is positive, communicating (S4) with the issuing entity (20) to
+
+request unblocking of the payment instrument for the non-face-to-face transaction (S5).
+
+2. A method according to claim 1, wherein said communicating step is made by the
+authorized instrument holder (1) registering with the trusted third party and the trusted third
+party (15) sending a block request to the issuing entity.
+
+3. A method according to claim 1, wherein the non-face-to-face transaction is a
+transaction with a merchant (10) and further comprising the step of the issuing entity (20)
+forwarding a payment authorization (S8) to the merchant in response to receipt of a request
+
+for authorization from the merchant and the unblocking request from the trusted third party
+
+(15).
+
+4. A system for strongly authenticating that a customer (1) attempting to effect a
+payment transaction with a merchant (10) using a payment instrument is an authorized user
+of the payment instrument, the payment instrument being issued by an issuing entity (20)
+
+and associated with the customer (1), wherein the customer has previously blocked use of
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+59
+
+the payment instrument on a default basis by the issuing entity (20) for non-face-to-face
+transactions, the system comprising:
+
+a storage medium (40) storing encrypted personal information relating to the
+customer and information relating to the payment instrument; and
+
+a trusted third party computer system (15) adapted to:
+
+(a) receive requests from the customer (1) to unblock use of the payment instrument
+in a face-to-face transaction;
+
+(b) decrypt (18) the stored personal and payment instrument data; and
+
+(c) authenticate (19) the identity of the customer (1) as an authorized user of the
+payment instrument by requesting input of personal information from among the stored
+
+personal information.
+
+5. A system according to claim 4, wherein:
+
+the customer operates a client computer adapted to communicate with the trusted
+third party (15) over a network (5), and
+
+the storage medium is a portable storage medium (3) in the possession of the
+
+customer but which cannot be decrypted by the client computer of the customer.
+
+6. A system according to Claim 4, further comprising:
+
+a satellite computer system (25), associated with the trusted third party (15) and
+located in proximity to an issuing entity (20) of the payment instrument, the satellite
+computer system (25) being adapted to communicate with the issuing entity (20) to unblock
+use of the payment instrument in response to a request from the trusted third party
+computer system to unblock the payment instrument, the request being made by the trusted
+third party computer system upon successful authentication by the trusted third party
+computer system of the identity of the customer as an authorized user of the payment
+
+instrument.
+
+7. A system according to Claim 6, wherein the payment instrument is associated with a
+
+ghost account.
+
+8. A system according to Claim 7, wherein the name associated with the ghost account
+
+is a pseudonym.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+MAIN REQUEST
+
+60
+
+9. A system according to claim 4, wherein: the customer operates a client computer
+
+adapted to communicate with the trusted third party over a network (5).
+
+10. A system according to Claim 4, further comprising a customer client application
+adapted to run on a computer of the customer (1) and to display to the customer a virtual
+wallet graphical user interface to facilitate the customer sending the requests to the trusted
+third party computer system (15) and communicating with a merchant server (10) over the
+
+network (5).
+
+11. A portable memory medium (3) operable to be read by a client terminal of a
+customer (1), the portable memory medium having encryptively stored thereon
+identification and payment instrument information of the customer, the payment instrument
+information relating to a payment instrument issued by an issuing entity (20) and associated
+with the customer, the payment instrument being blocked on a default basis for non-face-to-
+face transactions by the issuing entity, the client terminal having software thereon operable
+to cause the client terminal to initiate communication over a network (5) with at least one
+merchant Web site (10) and a central server (15) operated by a trusted third party;
+
+the central server (15) being operable to decrypt the identification and payment
+instrument information and to authenticate the customer by requiring the customer to input
+identifying indicia corresponding to the stored identification information; and
+
+the central server (15), in response to receipt of correct identifying indicia, causing
+to display on the client terminal a virtual wallet, the virtual wallet allowing the customer to
+complete payment with a payment instrument from the wallet to the merchant Web site (10)
+
+to effect payment of goods or services from the merchant.

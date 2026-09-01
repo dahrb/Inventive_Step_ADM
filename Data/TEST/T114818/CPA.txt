@@ -1,0 +1,62 @@
+TITLE:
+System and method for electronic article surveillance
+
+TYPE:
+US Patent
+
+ABSTRACT:
+There is disclosed a system and method for electronic article surveillance wherein the time taken for articles to move from a starting point to a destination point by way of a series of zones is monitored in real time, taking into account bottleneck and non-bottleneck zones. A set of simple rules is applied so as to give estimated times of arrival for any given article. When it is calculated that an article will arrive after a predetermined critical time, an alert is triggered and remedial action may be taken. Various attributes of each zone may additionally be monitored, for example the number of articles in the zone or the temperature of the zone. The system and method may be applied to passengers in an airport, a warehouse or distribution centre, or any other application where articles are being moved from one place to another.
+
+CLAIMS:
+1. A system for monitoring the movement of entities from a first location to a second location via a plurality of zones, the system including:
+means for detecting passage of an entity from one zone to another zone;
+data storage means for storing, in real-time, data comprising an identity of each zone a particular entity has occupied, a sequence in which each zone has been occupied, and a time at which the entity moves from one zone to another;
+means for calculating and storing an average transit time of entities through bottleneck zones based on the stored data;
+means for inputting and storing an average transit time of entities through non-bottleneck zones;
+means for calculating, based on the stored data, an estimated completion time of an entity, which is the time to travel between the zone in which an entity is located and the second location of the entity;
+means for calculating, based on said estimated completion time, an estimated time of arrival of an entity at the second location of the entity;
+means for periodically recalculating the estimated completion time of an entity;
+and means for providing an alert in the event an entity is predicted to arrive at the second location of the entity beyond a predetermined critical arrival time of the entity.
+2. A system as claimed in claim 1, wherein the means for detecting the passage of an entity from one zone to another zone comprises a plurality of tags, at least one tag being carried by each entity, and a plurality of electronic tag readers located between the zones.
+3. A system as claimed in claim 2, wherein the tags and electronic tag readers have means for inter-communication via RFID technology
+4. A system as claimed in claim 1, wherein the system further comprises a portable detector, the portable detector having means for inputting the identity of a particular tag to be detected, and means for detecting the presence of that tag within a range of the portable detector.
+5. A system as claimed in claim 4, wherein the portable detector further provides a display identifying the zone in which a tag to be located is present based on the stored data, and the estimated distance between the portable detector and the tag, thereby facilitating the location of the passenger carrying that tag.
+6. A system as claimed in claim 1, further comprising means for monitoring a predetermined attribute of at least one zone, and means for generating an alert in the event that the predetermined attribute moves beyond a predetermined threshold.
+7. A system as claimed in claim 6, wherein the means for monitoring a predetermined attribute is configured to monitor the number of entities within the at least one zone.
+8. A system as claimed in claim 6, wherein the means for monitoring a predetermined attribute is configured to monitor a temperature within the at least one zone.
+9. A system as claimed in claim 1, further comprising at least one software agent adapted to process and display information relating to a particular subset of entities.
+10. A system as claimed in claim 9, further comprising at least one software sub-agent adapted to process and display information relating to a particular subset of the subset of entities.
+11. A system as claimed in claim 9, wherein the agent is adapted to provide an indication of which entities in the subset are expected to reach the second location before the predetermined critical arrival time and which entities in the subset are expected to reach the second location after the predetermined critical arrival time.
+12. A system as claimed in claim 11, wherein the agent is further adapted to provide an indication of which entities in the subset are expected to reach the second location at or close to the critical arrival time.
+13. A system as claimed in claim 1, wherein the entities comprise components of a production line and the zones comprise areas of the production line.
+14. A system as claimed in claim 1, wherein the entities comprise supplies of a supply chain and the zones comprise sections of a supply chain.
+15. A system as claimed in claim 1, wherein the entities comprise airline passengers and the zones comprise areas of an airport.
+16. A system as claimed in claim 15, wherein the system has means for alerting a passenger whose predicted arrival time at the second location is close to or beyond a critical arrival time.
+17. A system as claimed in claim 16, wherein said means for alerting a passenger comprises transmitting an alert to a mobile telephone carried by the passenger.
+18. A system as claimed in claim 16, wherein said means for alerting a passenger comprises an audible broadcast via an audible broadcast system of the airport.
+19. A system as claimed in claim 18, wherein said audible broadcast is confined to the zone in which it is determined, from the stored data, that the passenger is located.
+20. A system as claimed in claim 15, further comprising means for displaying the location of passengers in real-time with reference to the stored data.
+21. A method for monitoring the movement of entities from a first location to a second location via a plurality of zones, the method including the steps of:
+detecting passage of an entity from one zone to another zone;
+storing, in real-time, data comprising an identity of each zone a particular entity has occupied, a sequence in which each zone has been occupied, and a time at which the entity moves from one zone to another;
+calculating and storing an average transit time of entities through bottleneck zones based on the stored data;
+inputting and storing an average transit time of entities through non-bottleneck zones;
+calculating, based on the stored data, an estimated completion time of an entity, which is the time to travel between the zone in which an entity is located and the second location of the entity;
+calculating, based on said estimated completion time, an estimated time of arrival of an entity at the second location of the entity;
+periodically recalculating the estimated completion time of an entity;
+and providing an alert in the event an entity is predicted to arrive at the second location of the entity beyond a predetermined critical arrival time of the entity.
+22. A method according to claim 21, further comprising the step of monitoring a predetermined attribute of at least one zone, and generating an alert in the event that the predetermined attribute moves beyond a predetermined threshold
+23. A method according to claim 22, wherein the attribute is the number of entities within the at least one zone.
+24. A method according to claim 22, wherein the attribute is a temperature within the at least one zone.
+25. A method according to claim 21, wherein there is provided at least one software agent that processes and displays information relating to a particular subset of entities.
+26. A method according to claim 25, wherein there is provided at least one software sub-agent that processes and displays information relating to a particular subset of the subset of entities.
+27. A method according to claim 25, wherein the agent provides an indication of which entities in the subset are expected to reach the second location before the predetermined critical arrival time and which entities in the subset are expected to reach the second location after the predetermined critical arrival time.
+28. A method according to claim 27, wherein the agent provides an indication of which entities in the subset are expected to reach the second location at or close to the critical arrival time.
+29. A method according to claim 21, wherein the entities comprise components of a production line and the zones comprise areas of the production line.
+30. A method according to claim 21, wherein the entities comprise supplies of a supply chain and the zones comprise sections of a supply chain.
+31. A method according to claim 21, wherein the entities comprise air line passengers and the zones comprise areas of an airport.
+32. A method according to claim 31, further comprising the step of alerting a passenger whose predicted arrival time at the second location is close to or beyond a critical arrival time.
+33. A method according to claim 32, wherein an alert is transmitted to a mobile telephone carried by the passenger.
+34. A method according to claim 32, wherein an audible broadcast is made via an audible broadcast system of the airport.
+35. A method according to claim 34, wherein said audible broadcast is confined to the zone in which it is determined, from the stored data, that the passenger is located.
+36. A method according to claim 31, wherein locations of passenger's are displayed in real-time with reference to the stored data.

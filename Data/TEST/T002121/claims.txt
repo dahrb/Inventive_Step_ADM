@@ -1,0 +1,167 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. A Point-Of-Sale, POS, system, comprising:
+
+a first POS device (207, 301) associated with a first merchant system to process a first sale
+transaction at a first point-of-sale, to process a first reward associated with the first sale transaction, and
+to monetize the first reward at the point of sale as a first gift card issued through the first POS device
+(207, 301),
+
+wherein the first merchant system is part of a specified network and the first gift card is usable
+through other POS devices within the specified network;
+
+the POS system having a first formatter module (303), running on a computer associated with the
+first POS device, and configured to receive gift card purchase data from the first POS device (207, 301)
+via a driver (307) and to use the gift card purchase data to build and send a transaction message to a gift
+card management server (313) of the specified network over an authorization route, the transaction
+message being to activate a gift card and set an initial balance;
+
+a gateway kernel (309) on a gateway server of a gift card network, the gateway kernel configured
+to receive the transaction message and establish the authorization route based on a card Bank
+Identification Number, BIN, of the gift card, comprising a gift card message formatter (311) and another
+driver (312), the gateway server being connected to a credit card formatter;
+
+the gift card management server being configured to send a response message to the gateway
+kernel (809); and
+
+the gateway kernel (309) configured to match the transaction message and route the response
+message back to the originating POS station, being the first POS device.
+
+2. The POS system of claim 1, further comprising a second POS device associated with a second
+merchant system to process a second sale transaction at a second point-of-sale, to process a second
+reward associated with the second sale transaction at a second point-of-sale, to process a second reward
+associated with the second sale transaction, and to monetize the second reward at the point of sale as at
+least one of a second gift card issued through the second POS device and a balance increase to another
+pre-existing gift card,
+
+wherein the second merchant system is part of the specified network and the second git card is
+
+usable through other POS devices within the specified network.
+
+3. The POS system of claim 2, wherein the first gift card is used during the second sale transaction,
+
+and the second reward is monetized as a balance increase to the first gift cash.
+
+4. The POS system of claim 1, wherein the monetization of the first reward comprises:
+
+assessing a reward account through the first POS device corresponding to the customer in the
+first sale transaction;
+
+determining a value of the first reward associated with the first sale transaction according to first
+monetization criteria;
+
+modifying a balance of the reward account according to the value of the first reward; and
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+wherein the monetization of the first reward comprises monetizing up to the balance of the reward
+account according to the first monetization criteria,
+
+wherein, if the customer does not have a pre-existing reward account, a reward account for the
+customer is set up through the first POS device.
+
+5. The POS system of claim 4, wherein the monetization of the second reward comprises:
+
+assessing a reward account through the second POS device corresponding to the customer in
+the second sale transaction;
+
+determining a value of the second reward associated with the second sale transaction according
+to second monetization criteria;
+
+modifying a balance of the reward account according to the value of the second reward; and
+
+wherein the monetization of the second reward comprises monetizing up to the balance of the
+reward account according to the second monetizing criteria,
+
+wherein, if the customer does not have a pre-existing reward account, a reward account for the
+
+customer is set up through the second POS device.
+
+6. The POS system of claim 1 comprising:
+
+a member database storing data identifying registered members of a gift card network which is
+the specified network;
+
+a gift card and transaction database storing data identifying gift cards and transactions;
+
+a gift card management system comprising at least one computer configured to run:
+
+a member management module configured to register members of the gift card network and store
+registration data in the member database;
+
+a gift card management module configured to check a monetary value associated with a network
+gift card in the gift card and transaction database, report back the monetary value to a point-of-sale
+station processing a transaction, and decrease the monetary value in the gift card and transaction
+database in an amount that has been redeemed by a customer; and
+
+wherein the first POS device comprises means for reading a gift card, input means, and display
+means, and wherein the first POS device is configured to perform a lookup in a loyalty system database
+to determine a number of loyalty points existing in the customer’s account, to use a loyalty point
+conversion table to convert the customer’s loyalty points to a monetary value, and to save issued prepaid
+card information to the gift card and transaction database and update the store’s loyalty point system to
+reflect an appropriate reduction in points;
+
+wherein the formatter module is configured to receive gift card purchase data from the POS
+device and use the data to build and send a gift card purchase message to the gift card network to
+activate the card and set an initial balance for the card; and
+
+a gift card management server associated with the gift card network, configured to receive the gift
+
+card purchase message and send an authorize/decline response message.
+
+7. A method of monetizing a reward associated with a sale transaction at a point-of-sale, the
+
+method comprising: processing a sale transaction at the point of sale through a POS device (207, 301)
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+associated with a merchant system;
+
+determining a reward associated with the sale transaction; and
+
+monetizing the reward as a gift card issued through the POS device (207, 301),
+
+wherein the merchant system is part of a specified network and the gift card is usable through
+other POS devices within the specified network;
+
+receiving, at a formatter module (303) running on a computer associated with the first POS
+device, gift card purchase data from the first POS device (207, 301) via a driver (307); and
+
+using the gift card purchase data to build and send a transaction message to a gift card
+management server (313) of the specified network over an authorization route the transaction message
+being to activate a gift card and set an initial balance;
+
+at a gateway kernel (309) on a gateway server of a gift card network connected to a credit card
+formatter, receiving the transaction message and establishing the authorization route based on a card
+bank identification number BIN of the gift card, comprising a gift card message formatter (811) and
+another driver (312);
+
+using the gift card management server to send a response message to the gateway kernel (309);
+
+using the gateway kernel (309) to match the transaction message and route the response
+
+message back to the originating POS station, being the POS device.
+
+8. The method of claim 7, wherein the gift card is issued to bearer and readily transferable.
+
+9. The method of claim 7, wherein the specified network is a closed network and the gift card is
+usable only with a predetermined group of merchant systems within the specified network.
+
+10. The method of claim 7, wherein:
+
+the determining of the reward associated with the sale transaction comprises: assessing a reward
+account through the POS device corresponding to the customer in the sale transaction, determining a
+value of the reward associated with the sale transaction according to monetization criteria, and modifying
+a balance of the reward account according to the value of the reward, and
+
+wherein the monetizing of the reward comprises monetizing up to the balance of the reward
+account according to the monetizing criteria,
+
+wherein, if the customer does not have a pre-existing reward account, a reward account for the
+
+customer is set up through the POS device.

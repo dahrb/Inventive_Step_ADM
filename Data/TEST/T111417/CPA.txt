@@ -1,0 +1,54 @@
+TITLE:
+Profile measuring apparatus, method for manufacturing structure, and structure manufacturing system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+There is provided a profile measuring apparatus which measures a profile of an object including: a projection unit which projects a pattern on the object from a projection direction; a measurement unit, which is displaced at a difference position for the projection unit and takes an image of the pattern from a direction different from the projection direction to measure a position on a surface of the object based on an image data obtained with the taken image; an object-rotation unit which rotates the object in two directions; and a pattern-rotation unit which is connected to the projection unit so as to be able to rotate the pattern relative to the object-rotation unit.
+
+CLAIMS:
+1. A profile measuring apparatus which measures a profile of an object comprising:
+a projection unit which projects a pattern on the object from a projection direction;
+a measurement unit, which is displaced at a difference position for the projection unit and takes an image of the pattern from a direction different from the projection direction to measure a position on a surface of the object based on an image data obtained with the taken image;
+an object-rotation unit which rotates the object in two directions; and
+a pattern-rotation unit which is connected to the projection unit so as to be able to rotate the pattern relative to the object-rotation unit.
+2. The profile measuring apparatus according to claim 1, further comprising a tilting mechanism which is provided with the object-rotation unit and changes a tilt angle of the object with respect to the projected direction of the pattern about a tilting axis set in a predetermined direction, and a rotating mechanism which is provided with the object-rotation unit, has a rotational axis intersecting with the tilting axis, and rotates the object about the rotational axis with respect to the projection section.
+3. The profile measuring apparatus according to claim 2 further comprising a movement unit which is connected to the projection unit and moves a projected position of the pattern projected from the projection section,
+wherein the measurement unit takes the image of the pattern from the direction different from the projected direction of the pattern by the projection unit each time the projected position of the pattern changes so that the measurement unit measures the position of the object with respect to a portion of the object on which the pattern is projected, based on the image data.
+4. The profile measuring apparatus according to claim 1, wherein the pattern-rotation unit rotates the projection unit so that a direction of the pattern is changed, upon retaining a part of irradiated position of the pattern projected on the object.
+5. The profile measuring apparatus according to claim 1, further comprising a detection portion which is provided with the measurement unit and takes the image of the pattern to obtain the image data for detecting the pattern irradiated on the object, and a computation processing portion which is provided with the measurement unit and measures the profile of the object based on the image data obtained from the detection portion,
+wherein the pattern-rotation unit rotates the pattern by rotating the projection unit and the detection portion as a unit.
+6. The profile measuring apparatus according to claim 1, wherein the pattern projected from the projection unit is a linear pattern, and the pattern-rotation unit rotates the projection unit with a central axis of the linear pattern as a rotation center.
+7. The profile measuring apparatus according to claim 1, further comprising a rotation indicator which is provided with the pattern-rotation unit and indicates a rotation angle of the pattern.
+8. The profile measuring apparatus according to claim 4, further comprising a rotation restriction portion which is provided with the pattern-rotation unit and latches a rotation of the projection section at each predetermined angular interval.
+9. The profile measuring apparatus according to claim 5, further comprising a rotation restriction portion which is provided with the pattern-rotation unit and latches a rotation of the projection section at each predetermined angular interval.
+10. The profile measuring apparatus according to claim 3, wherein the movement unit has a movement mechanism of a gate-shaped structure which is arranged to stride over the tilting mechanism and the rotating mechanism.
+11. The profile measuring apparatus according to claim 5, further comprising a lock which is provided with the pattern-rotation unit and locks a rotation of the projection unit and the detection unit.
+12. The profile measuring apparatus according to claim 8, further comprising a lock which is provided with the pattern-rotation unit and locks a rotation of the projection unit and the detection unit.
+13. The profile measuring apparatus according to claim 9, further comprising a lock which is provided with the pattern-rotation unit and locks a rotation of the projection unit and the detection unit.
+14. The profile measuring apparatus according to claim 11, further comprising a determination portion which is provided with the pattern-rotation unit and determines a locking state of the lock.
+15. The profile measuring apparatus according to claim 12, further comprising a determination portion which is provided with the pattern-rotation unit and determines a locking state of the lock.
+16. The profile measuring apparatus according to claim 13, further comprising a determination portion which is provided with the pattern-rotation unit and determines a locking state of the lock.
+17. A method for manufacturing a structure, comprising; producing the structure based on design information;
+obtaining profile information of the structure by arranging the produced structure onto a rotation unit which is rotatable in two directions, and by taking an image of a pattern from a direction different from a projection direction of the pattern, upon projecting the pattern onto the structure; and
+comparing the obtained profile information with the design information,
+wherein upon obtaining the profile information of the structure, the profile of the structure is measured by rotating a direction of the pattern projected onto the structure depending on the profile of the structure.
+18. The method for manufacturing the structure according to claim 17, wherein upon rotating the direction of the pattern, a projection unit which projects the pattern and a detection unit which is displaced at a difference position for the projection unit and takes an image of the pattern to obtain an image data for detecting the pattern irradiated on the structure are rotated as a unit.
+19. The method for manufacturing the structure according to claim 18 further comprising reprocessing the structure based on the comparison result.
+20. The method for manufacturing the structure according to claim 19, wherein reprocessing the structure includes producing the structure over again.
+21. A structure manufacturing system which manufactures a structure, comprising:
+a processing apparatus which produces the structure; and
+the profile measuring apparatus according to claim 1 which measures a profile of the structure produced by the processing apparatus to obtain profile information of the structure.
+22. The structure manufacturing system according to claim 21 further comprising a controller having a memory which stores the profile information of the structure measured by the profile measuring apparatus.
+23. The structure manufacturing system according to claim 22 further comprising a designing apparatus which creates design information with respect to the structure,
+wherein the processing apparatus produces the structure based on the design information created by the designing apparatus, and the controller has an inspection portion which compares the design information with the profile information to determine whether or not the structure is produced in accordance with the design information.
+24. The structure manufacturing system according to claim 23 further comprising a repairing apparatus, wherein the inspection portion further determines whether or not the structure is repairable after determining the structure to be not produced in accordance with the design information, and the repairing apparatus repairs the structure under a condition that the inspection portion has determined the structure to be repairable.
+25. The structure manufacturing system according to claim 24, wherein the inspection portion creates repair information indicating a defective portion and repairing amount of the structure based on the comparison between the design information and the profile information after determining the structure to be repairable, and the repairing apparatus repairs the structure based on the repair information.
+26. A profile measuring apparatus which measures a profile of an object comprising:
+a projection unit which projects a pattern on the object from a projection direction;
+a measurement unit, which is displaced at a different position for the projection unit and takes an image of the pattern from a direction different from the projection direction to measure a position on a surface of the object based on an image data obtained with the taken image;
+an object-rotation unit which rotates the object in two directions;
+a pattern-rotation unit which is connected to the projection unit so as to be able to rotate the pattern relative to the object-rotation unit; and
+a profile information acquisition unit which is connected to the pattern-rotation unit and acquires a profile information of the object,
+wherein the pattern-rotation unit is configured to rotate the pattern relative to the object-rotation unit based on the profile information acquired by the profile information acquisition unit.

@@ -1,0 +1,155 @@
+--- PAGE 1 ---
+38
+
+CLAIMS
+
+1. A channel quality measurement apparatus characterized by being adapted to indirectly
+measure a quality of a channel over which has been transmitted a sequence of symbols produced
+by encoding and constellation mapping a source data element sequence (213), the apparatus
+comprising:
+
+a symbol de-mapper (236), receiving as input a sequence of received symbols over the
+channel whose quality is to be measured, said symbol de-mapper (236) being adapted to perform
+symbol de-mapping on said sequence of received symbols to produce a sequence of soft data
+element decisions;
+
+a soft decoder (238), receiving as input the sequence of soft data element decisions
+produced by the symbol de-mapper (236), said soft decoder (238) being adapted to decode the
+sequence of soft data element decisions to produce a decoded output sequence;
+
+an encoder (240), receiving as input the decoded output sequence produced by the soft
+decoder (238), said encoder (240) being adapted to re-encode the decoded output sequence with
+an identical code to a code used in encoding the source data element sequence to produce a re-
+encoded output sequence; and
+
+a correlator (250), receiving as input the sequence of soft data element decisions
+produced by the symbol de-mapper (236), and the re- encoded output sequence produced by the
+encoder (240), said correlator (250) being adapted to produce a channel quality indicator output
+by determining a correlation between the sequence of soft data element decisions and the re-
+encoded output sequence, the channel quality indicator output of the correlator being
+
+independent of a rate at which a symbol is repeated in the sequence of received symbols;
+
+-38-
+
+--- PAGE 2 ---
+39
+
+the correlator feeding the channel quality indicator output back to a transmitter
+(200,240,220) for use in determining and applying an appropriate coding rate and modulation to
+
+the source data element sequence (213).
+
+2. A channel quality measurement apparatus according to claim | wherein the symbol de-
+
+mapper (236) is adapted to perform QPSK symbol de-mapping.
+
+3. A channel quality measurement apparatus according to claim | wherein the symbol de-
+
+mapper (236) is adapted to perform Euclidean distance conditional LLR symbol de-mapping.
+
+4. A method of indirectly measuring channel quality of a channel characterised by
+transmitting over the channel a sequence of symbols produced by encoding and constellation
+mapping a source data element sequence (243), the method comprising:
+
+receiving a sequence of received symbols over the channel whose quality is to be
+measured;
+
+symbol de-mapping said sequence of received symbols to produce a sequence of soft data
+element decisions;
+
+decoding said sequence of soft data element decisions to produce a decoded output
+sequence;
+
+re-encoding said decoded output sequence to produce a re-encoded output sequence using
+a code identical to a code used in encoding the source data element sequence; and
+
+correlating said re-encoded output sequence, and said sequence of soft data element
+
+decisions to produce a channel quality indicator output, the channel quality indicator output of
+
+-39-
+
+--- PAGE 3 ---
+40
+
+the correlation being independent of a rate at which a symbol is repeated in the sequence of
+
+received symbols.
+
+5. A method of channel quality measurement according to claim 4 wherein the symbol de-
+
+mapping of said sequence of received symbols is QPSK symbol de-mapping.
+
+6. A method of channel quality measurement according to claim 4 wherein the symbol de-
+mapping of said sequence of received symbols comprises Euclidean distance conditional LLR
+
+de-mapping.
+
+7. A method of channel quality measurement according to claim 4, wherein the channel is
+an OFDM channel, the symbols are OFDM symbols and measuring channel quality includes
+
+measuring OFDM channel quality.
+
+8. A method of OFDM channel quality measurement according to claim 7 wherein the
+
+symbol de-mapping of said sequence of received symbols is QPSK symbol de-mapping.
+
+9. A method of OFDM channel quality measurement according to claim 7 wherein the
+
+symbol de-mapping of said sequence of received symbols comprises Euclidean distance
+
+conditional LLR de-mapping.
+
+10. A method of OFDM channel quality measurement according to claim 7 wherein the
+
+decoding of said sequence of soft data element decisions to produce a decoded output sequence
+
+-40-
+
+--- PAGE 4 ---
+Al
+
+further comprises using a history of the soft data element decisions, and using information about
+
+encoding of the sequence of symbols transmitted over the channel.
+
+11. A method of channel quality measurement according to claim 4, further comprising :
+transmitting over the channel a sequence of symbols produced by encoding and
+
+constellation mapping a source data element sequence (213).
+
+12. A method of channel quality measurement according to claim 4 wherein the symbol de-
+
+mapping of said sequence of received symbols is QPSK symbol de-mapping.
+
+13. A method of channel quality measurement according to claim 4 wherein the symbol de-
+mapping of said sequence of received symbols comprises Euclidean distance conditional LLR
+
+de-mapping.
+
+14. A communication system comprising:
+a channel quality measurement apparatus according to claim | and
+a transmitter (200,210,220) adapted to transmit a sequence of symbols produced by
+
+encoding and constellation mapping a source data element sequence (213) over a channel.
+
+15. A communication system according to claim 14 wherein the symbol de-mapper (236) is
+
+adapted to perform QPSK symbol de-mapping.
+
+-4|-
+
+--- PAGE 5 ---
+42
+
+16. A communication system according to claim 14 wherein the symbol de-mapper (236) is
+
+adapted to perform Euclidean distance conditional LLR symbol de-mapping.
+17. An article of manufacture comprising a computer-readable storage medium, the
+
+computer-readable storage medium including instructions for implementing the method of claim
+
+4.
+
+-42-

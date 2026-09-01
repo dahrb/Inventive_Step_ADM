@@ -1,0 +1,48 @@
+TITLE:
+Fault tolerant and load sharing processing system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Incoming data messages to a system having a plurality of channels are assigned for processing to one of the channels to share the processing load more or less equally among all the channels of the system. Each channel receives messages by means of a communications link for processing. Included in each channel is a disk drive for a storage medium, a disk controller and peripheral controllers for input/output equipment as required. Each channel of the system also includes a data processor. A message is received from the communication link of any of the channels, which message is identified by the data processor of that channel. The processor then evaluates the number of messages waiting to be processed in each of the other channels for assignment to a channel having the least number of messages on the processing list. The processor considers only on-line channels in this assignment selection. Upon the failure of a channel that has messages assigned thereto, these messages will be reassigned to other on-line channels by a back-up channel that has been previously identified with the failed channel. Thus, messages are processed as expeditiously as possible by load sharing.
+
+CLAIMS:
+1. A method of allocating incoming messages for processing in one channel of a multi-channel fault tolerant, load sharing data processing system and for reassigning message upon the malfunctioning of a channel, comprising the steps of:
+identifying each incoming message at each channel of the data processing system containing data to be processed for assignment to one of the channels of the systems for processing;
+assigning the identified message to the channel having the smallest number of messages waiting to be processed;
+transmitting the identified message to the assigned channel for processing in the order assigned;
+transmitting the assigned message to at least one other channel of the system for back-up storage;
+monitoring each of the channels of the system for a malfunction condition;
+identifying each message in all functioning channels that remains unprocessed and assigned to the malfunctioning channel;
+reassigning each of the identified messages to the remaining functioning channels on the basis of the smallest number of messages waiting to be processed; and
+in response to a reassignment of a message, processing the message in the reassigned channel.
+2. A method of allocating incoming messages as set forth in claim 1 wherein the step of identifying a message includes adding a source communication line number to the message to permit a processed response to be routed to the correct channel.
+3. A method of allocating incoming messages as set forth in claim 1 wherein the step of identifying a message includes adding the received channel number to the message prior to assignment to a channel for processing.
+4. A method of allocating incoming messages as set forth in claim 1 wherein the step of identifying a message includes adding a sequence number to the received message.
+5. A method of allocating incoming messages as set forth in claim 1 including the step of incrementing by one the number of messages waiting to be processed in the channel assigned the last transmitted message.
+6. A method of allocating incoming messages as set forth in claim 1 including repeating the step of reassigning each of the messages waiting to be processed in the malfunctioning channel until all messages have been reassigned to other functioning channels of the systems.
+7. A method of allocating including messages as set forth in claim 1 including the step of updating the list of functioning channels and deleting from the list channels that have malfunctioning and identifying channels available for message processing.
+8. A method of allocating incoming messages for processing as set forth in claim 1 including the step of identifying in each back-up channel the completion of the processing of a message in the assigned channel.
+9. A method of allocating incoming messages as set forth in claim 8 including the step of updating the queue of messages to be processed in each functioning channel upon completion of the processing of an assigned message.
+10. A method of allocating incoming message for processing in one channel of a multi-channel fault tolerant, load sharing data processing system and for reassigning message upon the malfunctioning of a channel, comprising the steps of:
+identifying each message at each channel of the data processing system containing data to be processed for assignment to one of the channels of the system for processing, said identification including adding the clock time of arrival to the message;
+assigning a message to the channel having the smallest number of messages waiting to be processed;
+transmitting the identified message to the assigned channel for processing in the order assigned;
+processing the message identified in the channel having the earliest clock time assigned thereto;
+monitoring the assigned channel for a malfunction condition;
+in response to a malfunction condition in the assigned channel, reassigning each of the messages in the fault condition channel to other channels of the system for processing in accordance with the clock time of arrival of the message to the system; and
+in response to the reassignment of a message, processing the message in the reassigned channel.
+11. A method of allocating incoming messages for processing as set forth in claim 10 including the step of transmitting the processed message from the system through the channel that originally received the message.
+12. A method of allocating incoming messages as set forth in claim 10 including the step of listing in each channel of the system the number of messages to be processed by each of the other channels of the system.
+13. A method of allocating incoming messages as set forth in claim 10 including the step of identifying each message in a channel with the channel originally receiving the message.
+14. A method of allocating incoming messages as set forth in claim 10 including the step of placing each message assigned to a channel on a queue of work to be processed on the basis of the clock time the message entered the system.
+15. A method of allocating incoming messages for processing as set forth in claim 10 including the step of transmitting each received message to all of the channels of the system for back-up storage.
+16. A method of allocating incoming message for processing as set forth in claim 15 including the step of removing from storage after completion of the processing thereof in the assigned channel each back-up of the message stored in each of the other channels of the system.
+17. A method of allocating incoming messages for processing in one channel of a multi-channel fault tolerant, loading sharing data processing system, comprising the steps of:
+transmitting an incoming message to more than one channel of the system;
+generating a channel fail message for any channel that has malfunctioned;
+identifying each message in all functioning channels that remains unprocessed and assigned to the failed channel; and
+reassigning each of the identified messages to the remaining functioning channels on the basis of the smallest number of messages waiting to be processed.
+18. A method of allocating incoming messages for processing as set forth in claim 17 including the step of reassigning each of the messages waiting to be processed in the failed channel until all such messages have been reassigned to other functioning channels of the system.
+19. A method of allocating incoming messages for processing as set forth in claim 17 including the step of transmitting a transaction request message to each of the channels identifying a reassignment of each message from the failed channel.

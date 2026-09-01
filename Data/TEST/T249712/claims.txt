@@ -1,0 +1,173 @@
+--- PAGE 1 ---
+15
+
+20
+
+25
+
+30
+
+CLAIMS
+
+1. In a network including RMI (Remote Method Invocation) services, a method
+comprising:
+providing a configuration file processed by an RMI activation system daemon,
+the configuration file identifying at least one non-Java application;
+altering the non-Java application such that the non-Java application:
+starts a Java Virtual Machine (JVM) inside the identified non-Java
+application using Java Native Interface (JNI),
+disables automatic reading from standard input (STDIN) as direct
+input, and
+locates classes required by the non-Java application on a classpath of
+the JVM;
+configuring the non-Java application to accept incoming RMI calls via a Java
+Native Interface (JNJ) so that the non-Java application communicates with Java
+applications using the RMI services, the non-Java application being managed by the
+RMI activation system daemon; and
+registering the non-Java application with the RMI activation system daemon
+
+as part of a startup sequence for the non-Java application.
+
+2. The method of claim 1, wherein the non-Java application is MATLAB.
+
+3. The method of claim 2 whereby MATLAB sets a property passed to MATLAB
+and read from STDIN with a Java method.
+
+4. The method of claim 1 wherein the RMI activation system daemon is one of
+
+RMID and PHOENIX.
+
+5. The method of claim 1, further comprising:
+establishing at least one remote session performing a task for the non-Java
+
+application, the remote session managed with the RMI activation system daemon.
+
+6. The method of claim 5, further comprising:
+
+detecting a break in the remote session; and
+
+--- PAGE 2 ---
+15
+
+20
+
+25
+
+30
+
+re-establishing the remote session at the point of the break using the RMI
+
+activation system daemon.
+
+7. The method of claim 1 wherein the non-Java application communicates with other
+
+Java-based applications using RMI.
+
+8. The method of claim] wherein the non-Java application is one of aC, C++
+
+application.
+
+9. The method of claim 1 wherein the non-Java application is used in distributed
+
+technical computing.
+
+10. A system in a network providing RMI (Remote Method Invocation) services, the
+system comprising:
+
+a configuration file processed by an RMI activation system daemon, the
+configuration file identifying at least one non-Java application, the identified non-Java
+application being managed by the RMI daemon;
+
+a Java Virtual Machine (JVM), the JVM executing inside the identified non-
+Java application, the non-Java application configured:
+
+to avoid reading from standard input (STDIN) as direct input,
+
+to locate classes required by the non-Java application on a classpath of
+the JVM, and
+
+to accept RMI calls via a JNI (Java Native Interface) so that the non-
+Java application communicates with Java applications using the RMI services; and
+
+an RMI activation system daemon, the RMI activation system daemon
+accepting a registration from the non-Java application as part of a startup sequence for
+
+the non-Java application.
+11. The system of claim 10 wherein the non-Java application is MATLAB.
+12. The system of claim 10 wherein the RMI activation system daemon detects a
+
+break in a remote session performing a task for the non-Java application and
+
+reestablishes the remote session at the point of the break.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+13. The system of claim 10 wherein the RMI activation system daemon is one of
+
+RMID and PHOENIX.
+
+14. The system of claim 10 wherein the RMI activation system daemon manages at
+
+least one remote session.
+
+15. In a network including RMI (Remote Method Invocation) services, a medium
+holding computer-executable steps for a method, comprising:
+providing a configuration file processed by an RMI activation system daemon,
+the configuration file identifying at least one non-Java application;
+altering the non-Java application such that the non-Java application:
+starts a Java Virtual Machine (JVM) inside the identified non-Java
+application using Java Native Interface (JNI),
+disables automatic reading from standard input (STDIN) as direct
+input, and
+locates classes required by the non-Java application on a classpath of
+the JVM:
+configuring the non-Java application to accept RMI calls via a JNI (Java
+Native Interface) so that the non-Java application communicates with Java
+applications using the RMI services, the non-Java application being managed by the
+RMI activation system daemon; and
+registering the non-Java application with the RMI activation system daemon
+
+as part of a startup sequence for the non-Java application.
+
+16. The medium of claim 15, wherein the non-Java application is MATLAB.
+
+17. The medium of claim 15 wherein the RMI activation system daemon is one of
+RMID and PHOENIX.
+
+18. The medium of claim 15, further comprising:
+at least one remote session performing a task for the non-Java application, the
+
+remote session managed with the RMI activation system daemon.
+
+19. The medium of claim 18, further comprising:
+
+-3-
+
+--- PAGE 4 ---
+10
+
+detecting a break in the remote session; and
+wherein establishing the remote session at the point of the break using the
+
+RMI activation system daemon.
+
+20. The medium of claim 15 wherein the non-Java application communicates with
+
+other Java-based applications using RMI.
+
+21. The medium of claim 15 wherein the non-Java application is one of aC, C++
+
+application.
+
+22. The medium of claim 15 wherein the non-Java application is used in distributed
+
+technical computing.

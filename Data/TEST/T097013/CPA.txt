@@ -1,0 +1,100 @@
+TITLE:
+Server-side control objects for processing client-side user interface elements
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A server-side control object processes and generates a client-side user interface element for display on a web page. Multiple server- side control objects may be combined into a hierarchy of server-side control objects that cooperate to generate the resulting authoring language code, such as HTML, for display of a web page on a client. The operation of processing the client-side user interface element may include at least one of an event handling operation, a postback data handling operation, a data binding operation, and a state management operation. The state management operation relates to the state of a server-side control object.
+
+CLAIMS:
+A method for processing a client-side user interface element incorporated in a web page displayed on a client, the method comprising:
+receiving a request referencing a resource;
+reading a declaration from the resource;
+generating a server-side control object programmed based on the declaration to provide functionality of the client-side user interface element;
+processing the client-side user interface element using the server-side control object; and
+generating authoring language data from the server-side control object for incorporating the client-side user interface element in the web page, subsequent to the processing operation.
+The method of claim 1 wherein the resource is a server-side declaration datastore.
+The method of claim 1 or 2, in particular claim 1 further comprising:
+transmitting the authoring language data to the client; and
+terminating the server-side control object, subsequent to the operation of generating authoring language data.
+The method of any of claims 1 to 3, in particular claim 1 wherein the processing operation comprises:
+   handling postback data received from the user interface element using the server-side control object.
+The method of any of claims 1 to 4, in particular claim 1 wherein the processing operation comprises:
+   handling postback events received from the user interface element using the server-side control object.
+The method of any of claims 1 to 5, in particular claim 1 wherein the processing operation comprises:
+saving a viewstate of the server-side control object; and
+transmitting the viewstate to the client.
+The method of any of claims 1 to 6, in particular claim 1 wherein the processing operation comprises:
+receiving a viewstate of the server-side control object from the client, the viewstate corresponding to the state of the server-side control object from a previous request; and
+loading the viewstate to the server-side control object.
+A computer data signal embodied in a carrier wave by a computing system and encoding a computer program for executing a computer process processing a client-side user interface element incorporated in a web page displayed on a client, the computer process comprising:
+receiving a request referencing a resource;
+reading a declaration from the resource;
+generating a server-side control object programmed based on the declaration to provide functionality of the client-side user interface element;
+processing the client-side user interface element using the server-side control object; and
+generating authoring language data from the server-side control object for incorporating the client-side user interface element in the web page, subsequent to the processing operation.
+A computer program storage medium readable by a computer system and encoding a computer program for executing a computer process processing a client-side user interface element incorporated in a web page displayed on a client, the computer process comprising:
+receiving a request referencing a resource;
+reading a declaration from the resource;
+generating a server-side control object programmed based on the declaration to provide functionality of the client-side user interface element;
+processing the client-side user interface element using the server-side control object; and
+generating authoring language data from the server-side control object for incorporating the client-side user interface element in the web page, subsequent to the processing operation.
+A hierarchy of server-side control objects, executable by a computer, for processing one or more client-side user interface elements incorporated in a web page displayed on a client, the hierarchy of server-side control objects comprising:
+one or more server-side child objects corresponding to the one or more client-side user interface elements, each server-side child object being adapted to handle postback input received from the client and being adapted to generate authoring language data for display of the client-side user interface element on the client;
+at least one hierarchical identifier received from the client in association with the postback input specifying one of the server-side child objects; and
+a server-side page object hierarchically related to the one or more server-side child objects and receiving the postback input for distribution to the one of the server-side child objects based on the hierarchical identifier.
+The hierarchy of server-side control objects of claim 10 wherein the page object hierarchically contains the one or more server-side child objects.
+The hierarchy of server-side control objects of claim 10 or 11, in particular claim 10 wherein the page object is created responsive to a request from the client and remains in existence until after generation of the authoring language data for the web page.
+The hierarchy of server-side control objects of any of claims 10 to 12, in particular claim 10 wherein each server-side child object is created responsive to an access to the server-side control object specified by the hierarchical identifier and remains in existence until after generation of the authoring language data for a corresponding client-side user interface element on the client.
+A computer program storage medium readable by a computing system and encoding a computer program for executing a computer process that processes one or more client-side user interface elements incorporated in a web page on a client, the computer process comprising:
+inputting one or more declarations from a server-side declaration datastore;
+generating a hierarchy of server-side control objects programmed based on the declarations to provide functionality of the client-side user interface elements;
+processing the client-side user interface elements using the hierarchy of server-side control objects; and
+generating authoring language data from the hierarchy of server-side control objects for incorporating the client-side user interface elements in the web page.
+The computer program storage medium of claim 14 wherein the operation of generating a hierarchy of server-side control objects comprises:
+generating a server-side container control object corresponding to a client-side user interface container element on the web page; and
+generating one or more server-side children control objects corresponding to one or more client-side user interface child elements contained in the client-side user interface container element.
+The computer program storage medium of claims 14 or 15, in particular claim 15 wherein the operation of processing the client-side user interface elements comprises:
+receiving a unique hierarchical identifier referencing one or more of the server-side control objects in the hierarchy of server-side control objects;
+receiving postback input information associated with the unique hierarchical identifier;
+resolving the unique hierarchical identifier to identify a referenced server-side control object;
+passing the postback input information to the referenced server-side control object; and
+processing the postback input information using the referenced server-side control object.
+The computer program storage medium of any of claims 14 to 16, in particular claim 14 wherein the operation of processing the client-side user interface elements comprises:
+   traversing the hierarchy of the server-side control objects to invoke individual processing by one or more of the server-side control objects.
+The computer program storage medium of any of claims 14 to 17, in particular claim 14 wherein the operation of processing the client-side user interface elements comprises:
+registering one or more of the server -side control objects to handle a control object event generated by one of the server-side control objects;
+generating the control object event from one or more of the server-side control objects; and
+handling the control object event using one or more of the server-side control objects registered to handle the control object event.
+The computer program storage medium of any of claims 14 to 18, in particular claim 14 wherein the operation of processing the client-side user interface elements comprises:
+loading a first viewstate to one or more of the server-side control objects;
+handling postback data using one or more of the server-side control objects, subsequent to the operation of loading the first viewstate;
+handling postback events using one of more of the server-side control objects, subsequent to the operation of handling postback data; and
+saving a second viewstate from one or more of the server-side control objects, subsequent to the operation of handling postback events.
+The computer program storage medium of any of claims 14 to 19, in particular claim 19 wherein the operation of processing the client-side user interface elements further comprises:
+   resolving a databinding relationship established between a server-side control objects and a server-side datastore, subsequent to the operation of handling postback events.
+A method for processing at least one client-side user interface element incorporated in a web page displayed on a client, the method comprising:
+reading a declaration from a resource;
+generating a plurality of concurrently existing server-side control objects that logically correspond to the client-side user interface element, based on the declaration;
+processing the client-side user interface element using the concurrently existing server-side control objects; and
+generating authoring language data from the concurrently existing server-side control objects for incorporating the client-side user interface element in the web page, subsequent to the processing operation.
+The method of claim 21 wherein the operation of generating a plurality of concurrently existing server-side control objects comprises:
+generating a first server-side control object that corresponds to a first client-side user interface element; and
+generating a second server-side control object that corresponds to a first client-side user interface element, such that the first and the second server-side control objects exist concurrently.
+The method of claims 21 or 22, in particular claim 21 wherein the processing operation comprises: raising a server-side event associated with a first server-side control object.
+The method of any of claims 21 to 23, in particular claim 23 wherein the processing operation further comprises: handling the server-side event using a second server-side control object.
+The method of any of claims 21 to 24, in particular claim 23 wherein the processing operation further comprises: handling the server-side event using a non-user-interface server component.
+The method of any of claims 21 to 25, in particular claim 21 wherein the operation of generating a plurality of concurrently existing server-side control objects comprises:
+generating a first server-side control object that corresponds to a client-side user interface element; and
+generating a second server-side control object that corresponds to the client-side user interface element, such that the first and the second server-side control objects exist concurrently.
+A computer data signal embodied in a carrier wave by a computing system and encoding a computer program for executing a computer process processing at least one client-side user interface element incorporated in a web page displayed on a client, the computer process comprising:
+reading a declaration from a resource;
+generating a plurality of concurrently existing server-side control objects that logically correspond to the client-side user interface element, based on the declaration;
+processing the client-side user interface element using the concurrently existing server-side control objects; and
+generating authoring language data from the concurrently existing server-side control objects for incorporating the client-side user interface element in the web page, subsequent to the processing operation.
+A computer program storage medium readable by a computing system and encoding a computer program for executing a computer process processing at least one client-side user interface element incorporated in a web page displayed on a client, the computer process comprising:
+reading a declaration from a resource;
+generating a plurality of concurrently existing server-side control objects that logically correspond to the client-side user interface element, based on the declaration;
+processing the client-side user interface element using the concurrently existing server-side control objects; and
+generating authoring language data from the concurrently existing server-side control objects for incorporating the client-side user interface element in the web page, subsequent to the processing operation.

@@ -1,0 +1,238 @@
+--- PAGE 1 ---
+EP 11 775 122.2-1952 159 955 q9
+Rakuten, Inc. May 30, 2016
+
+Main Request
+
+1. An information providing device (2) that a terminal
+device (1-k, k=1,2,3..,n) can access through a network,
+
+the information providing device comprising:
+
+a receiving means (21) arranged to receive arrangement
+information indicating a type of a subject and an
+arrangement of the subject in a frame, from the terminal
+
+device through the network; and
+
+a searching means (23) arranged to compare the
+arrangement information stored in an image data memory
+means (22) that stores the image data and the
+arrangement information indicating the type of the
+subject and the arrangement of the subject included in
+the image data, with the arrangement information
+received by the receiving means, and arranged to search
+
+for image data based on a result of the comparison,
+
+wherein the image data memory means is arranged to store
+position information of the image data, indicating the
+
+shooting spot of the image data; and
+
+the type of the subject matches a tab selected among
+
+tabs (311) provided per genre of object information;
+further comprising a transmitting means (21) arranged to
+transmit the position information of the image data
+
+searched by the searching means, to the terminal device.
+
+2. The information providing device according to claim 1,
+
+--- PAGE 2 ---
+EP 11 775 122.2-1952 159 955 q9
+Rakuten, Inc. May 30, 2016
+
+further comprising a display control means arranged to
+display a candidate representing the subject arranged in
+the frame on a display screen of the terminal device
+
+such that the user can select the object candidate,
+
+wherein the receiving means is arranged to receive
+arrangement information which indicates a type of the
+candidate and an arrangement of the candidate which are
+selected by the user and which are allocated in the
+frame, as the arrangement information indicating the
+type of the subject and the arrangement of the subject
+
+in the frame.
+
+3. The information providing device according to claim 1 or
+2,
+
+wherein the receiving means is further arranged to
+receive specific area information indicating a specific
+
+area in the frame; and
+
+the searching means is arranged to compare the type of
+the subject and the arrangement of the subject in the
+specific area indicated by the received specific area
+information, with the type of the subject and the
+arrangement of the subject included in an area
+
+corresponding to the specific area in the image data.
+
+4. The information providing device according to any one of
+
+claims 1 to 3,
+
+wherein the receiving means is further arranged to
+receive color information indicating a color of the
+
+subject in the frame; and
+
+--- PAGE 3 ---
+EP 11 775 122.2-1952 159 955 q9
+Rakuten, Inc. May 30, 2016
+
+the searching means is further arranged to compare a
+color of the subject indicated by the received color
+information, with a color of the subject included in the
+
+image data.
+
+5. The information providing device according to any one of
+
+claims 1 to 4,
+
+wherein the image data memory means is arranged to store
+
+position information of the image data;
+
+the receiving means is further arranged to receive
+condition information indicating a condition related to
+
+the position information; and
+
+the searching means is arranged to perform the
+comparison of the image data matching position
+information which satisfies the condition indicated by
+
+the received condition information.
+
+6. The information providing device according to any one of
+claims 1 to S, further comprising a transmitting means
+(21) arranged to transmit the image data searched by the
+
+searching means, to the terminal device.
+
+7. The information providing device according to claim 5,
+further comprising a transmitting means (21) arranged to
+transmit the position information of the image data
+
+searched by the searching means, to the terminal device.
+
+8. An information providing method executed by a computer
+
+comprising:
+
+--- PAGE 4 ---
+EP 11 775 122.2-1952 159 955 q9
+Rakuten, Inc. May 30, 2016
+
+a step of receiving arrangement information indicating a
+type of a subject and an arrangement of the subject ina
+frame, from the terminal device (1-k, k=1,2,3..,n)
+
+through the network; and
+
+a step of comparing arrangement information included in
+image data stored in an image data memory means (22)
+that stores the image data and the arrangement
+information indicating the type of the subject and the
+arrangement of the subject included in the image data,
+with the received arrangement information, and searching
+
+for image data based on a result of the comparison,
+
+wherein the image data memory means stores position
+information of the image data, indicating the shooting
+
+spot of the image data; and
+
+the type of the subject matches a tab selected among
+
+tabs (311) provided per genre of object information;
+
+further comprising a step of transmitting the position
+information of the image data searched by the searching
+
+means, to the terminal device.
+
+9. An information providing processing program causing a
+
+computer to function as:
+
+a receiving means (21) arranged to receive arrangement
+information indicating a type of a subject and an
+arrangement of the subject ina frame, from the terminal
+device (1-k, k=1,2,3..,n) through the network; and
+
+a searching means (23) arranged to compare arrangement
+information indicating in image data stored in an image
+
+data memory means (22) that stores the image data and
+
+--- PAGE 5 ---
+EP 11 775 122.2-1952 159 955 q9
+Rakuten, Inc. May 30, 2016
+
+10.
+
+the arrangement information indicating the type of the
+subject and the arrangement of the subject included in
+the image data, with the received arrangement
+information, and arranged to search for image data based
+
+on a result of the comparison,
+
+wherein the image data memory means is arranged to store
+position information of the image data, indicating the
+
+shooting spot of the image data; and
+
+the type of the subject matches a tab selected among
+
+tabs (311) provided per genre of object information;
+
+further comprising a transmitting means (21) arranged to
+transmit the position information of the image data
+
+searched by the searching means, to the terminal device.
+
+An information providing processing program causing a
+
+computer to execute:
+
+a step of acquiring arrangement information indicating a
+type of a subject and an arrangement of the subject ina
+
+frame according to a user’s operation; and
+
+a step of comparing arrangement information included in
+image data stored in an image data memory means (22)
+that stores the image data and the arrangement
+information indicating the type of the subject and the
+arrangement of the subject included in the image data,
+with the acquired arrangement information, and searching
+
+for image data based on a result of the comparison,
+
+wherein the image data memory means stores position
+information of the image data, indicating the shooting
+
+spot of the image data; and
+
+--- PAGE 6 ---
+EP 11 775 122.2-1952 159 955 q9
+Rakuten, Inc. May 30, 2016
+
+the type of the subject matches a tab selected among
+tabs (311) provided per genre of object information;
+further comprising a step of transmitting the position
+information of the image data searched by the searching
+
+means, to the terminal device.

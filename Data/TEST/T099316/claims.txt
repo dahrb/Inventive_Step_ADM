@@ -1,0 +1,154 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request -26-
+
+CLAIMS
+
+1. A method for generating an output data set representing a fluorescence image
+of a sample (6), the method comprising the steps of:
+
+(a) obtaining an input data set representing fluorescence images of the sample
+for a plurality of different focal plane depths in the sample and different exposure
+times, wherein the respective fluorescence images comprise image signal values for an
+array of pixel locations; and
+
+(b) combining the image signal values for the fluorescence images from the
+different focal plane depths and different exposure times to form an output data set
+
+representing a single resultant planar fluorescence image of the sample.
+
+2. The method of claim 1, wherein step (b) comprises determining for each pixel
+location a weighted average of the corresponding image signal values in the different
+images and using the weighted averages to form the output data set representing the
+single resultant planar fluorescence image of the sample, and wherein the weightings
+for each image signal value are based on a measure of a variation in image signal
+values among neighbouring pixel locations with image signal values for pixel
+locations associated with relatively high variation weighted more than image signal
+
+values for pixel locations associated with relatively low variation.
+
+3. The method of claim 1, wherein step (b) comprises determining for each pixel
+location an image signal value from one of the images from the different focal plane
+depths and exposure times to be used for that pixel location in the single resultant
+
+image.
+
+4. The method of any one of claims | to 3, wherein step (b) comprises the steps
+of:
+
+(b1) deriving an intermediate image for each of the different exposure times
+from the images for the different focal plane depths for the respective different
+
+exposure times, and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request -27-
+
+(b2) combining the intermediate images for the different exposure times to
+
+form the single resultant image.
+
+5. The method of claim 4, wherein step (b1) comprises selecting, for each of the
+different exposure times, one of the images from the different focal plane depths as the
+derived intermediate image for that exposure time, wherein the selection of the image
+as the derived intermediate image for each exposure time is based on a characteristic
+
+quality-of-focus measurement for the images at the different focal plane depths.
+
+6. The method of claim 5, wherein the characteristic quality-of-focus
+measurement is based on a measure of variations in image signal value among pixels
+
+in the respective images.
+
+7. The method of claim 4, wherein the intermediate image for each of the
+different exposure times is derived by performing a maximum intensity projection
+analysis of the images for the different focal plane depths for the respective exposure
+
+times.
+
+8. The method of claim 4, wherein step (b1) comprises selecting, for each of the
+different exposure times, a subset of the images from the different focal plane depths
+for that exposure time, and deriving the intermediate image for each exposure time by
+combining the corresponding subset of the images, wherein the selection of the subset
+of the images is based on a characteristic quality-of-focus measurement for the images
+
+at the different focal plane depths.
+
+9. The method of claim 8, wherein the characteristic quality-of-focus
+measurement is based on a measure of variations in image signal value among pixels
+
+in the respective images.
+
+10. The method of claim 8, wherein the intermediate image for each of the
+different exposure times is derived by performing a maximum intensity projection
+
+analysis of the subset of the images for the respective exposure times.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request - 28 -
+
+11. The method of any one of claims 4 to 10, wherein step (b2) comprises
+determining for each pixel location in the intermediate images a weighted average of
+the corresponding image signal values in the different intermediate images and using
+the weighted averages to form the output data set representing the single resultant
+planar fluorescence image of the sample, and wherein the weightings for each image
+signal value in the intermediate images are based on a measure of a variation in the
+image signal values among neighbouring pixel locations with image signal values for
+pixel locations associated with relatively high variation weighted more than image
+
+signal values for pixel locations associated with relatively low variation.
+
+12. An apparatus (30) for generating an output data set representing a fluorescence
+image of a sample (6), the apparatus comprising a source of an input data set, the input
+data set representing fluorescence images of the sample obtained for a plurality of
+different focal plane depths in the sample and different exposure times, wherein the
+respective fluorescence images comprise image signal values for an array of pixel
+locations; the apparatus further comprising a processor operable to combine the image
+signal values for the fluorescence images from the different focal plane depths and
+different exposure times to form an output data set representing a single resultant
+
+planar fluorescence image of the sample.
+
+13. A computer program product comprising a computer readable medium storing
+a plurality of instructions for controlling a processor to perform an operation for
+generating an output data set representing a fluorescence image of a sample (6), the
+instructions comprising:
+
+(a) obtaining an input data set representing fluorescence images of the sample
+for a plurality of different focal plane depths in the sample and different exposure
+times, wherein the respective fluorescence images comprise image signal values for an
+array of pixel locations; and
+
+(b) combining the image signal values for the fluorescence images from the
+different focal plane depths and different exposure times to form an output data set
+
+representing a single resultant planar fluorescence image of the sample.

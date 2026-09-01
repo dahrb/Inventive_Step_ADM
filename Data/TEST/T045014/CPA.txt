@@ -1,0 +1,25 @@
+TITLE:
+Remote diagnostics for a medical imaging system
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A remote diagnostics system for a medical imaging system is described comprising a laptop computer for a serviceperson which can diagnose, test, modify or upgrade a medical imaging system either on-site or from a remote location. Diagnostic information obtained by the laptop computer is thereafter uploaded to the manufacturer where the information is used to understand and repair error conditions and to design future products.
+
+CLAIMS:
+1. A distributed medical imaging diagnostics network comprising: a plurality of diagnostics computers containing medical imaging system diagnostics software which are operated by servicepersons to download diagnostic information from medical imaging systems; and a central diagnostics location with which said diagnostics computers periodically communicate to transfer said medical imaging system diagnostic information, whereby said central diagnostic location is a repository for diagnostic information obtained by said diagnostic computers from a plurality of medical imaging systems.
+2. The distributed medical imaging diagnostics network of Claim 1, wherein said diagnostics computers download said diagnostic information over a network from locations remote from said medical imaging systems.
+3. The distributed medical imaging diagnostics network of Claim 2, wherein said diagnostics computers further act to download diagnostic information over a direct connection at the site of said medical imaging systems.
+4. The distributed medical imaging diagnostics network of one of Claims 1 to 3, wherein said diagnostics computers comprise portable computers.
+5. The distributed medical imaging diagnostics network of one of Claims 1 to 4, wherein said medical imaging system diagnostic information comprises information concerning medical imaging system error conditions; and wherein said central diagnostics location operates on said medical imaging system diagnostic information by performing at least one of the following operations: determining root causes of errors; statistically analyzing error conditions; utilizing said diagnostic information to eliminate error conditions from a medical imaging system; and utilizing said diagnostic information to develop a new medical imaging system.
+6. A diagnostics computer which is operable by a serviceperson when connected to a medical imaging system either at the site of said medical imaging system or over a network to perform at least one of the following operations on the medical imaging system: rebooting the medical imaging system; performing temperature or voltage measurements of the medical imaging system; placing banner messages on the display of the medical imaging system; enabling a capability of the medical imaging system; correcting corrupted files of the medical imaging system; and flashing the firmware of the medical imaging system.
+7. The diagnostics computer of Claim 6, wherein said diagnostics computer is operable to perform at least two of said operations.
+8. A diagnostics computer which is operable by a serviceperson to remotely diagnose a medical imaging system over a network comprising: a download utility which downloads error event information from a medical imaging system including substantially concurrent user event information.
+9. The diagnostics computer of Claim 8, wherein said user event information comprises an event which either precedes or succeeds the time of occurrence of an error event.
+10. The diagnostics computer of one of Claims 8 to 9, further comprising an upload utility which uploads downloaded error event information to a central diagnostics location.
+11. The diagnostics computer of Claim 10. wherein said upload utility acts to upload said downloaded error event information by use of an electronic mail protocol, or to upload said downloaded error event information by use of a file transfer protocol.
+12. A method for enabling a medical imaging system capability comprising: establishing a communications link between a diagnostics computer and a medical imaging system; sending a command to said medical imaging system to activate a new function on said medical imaging system; and disconnecting said communications link.
+13. The method of Claim 12, wherein said new function is activated for a predetermined period of time.
+14. The method of one of Claims 12 or 13, wherein said diagnostics computer is at a location remote from said medical imaging system, and said communications link is established over a communications network.
+15. The method of one of Claims 12 to 14. wherein software for said new function is resident on said medical imaging system but not enabled prior to said step of establishing, or is loaded into said medical imaging system subsequent to said step of establishing.

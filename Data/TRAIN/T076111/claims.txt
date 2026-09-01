@@ -1,0 +1,802 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+05 750 094.4-2211
+National Instruments Corporation
+
+Claims according to the main request
+
+A memory medium that stores program instructions for creating a
+graphical program, wherein the program instructions are
+executable to perform:
+
+assembling (502, 602) a first plurality of graphical program
+elements in a graphical program in response to first input, wherein
+the assembled first plurality of graphical program elements
+comprise a plurality of interconnected graphical program
+elements, wherein the assembled first plurality of graphical
+program elements have a first model of computation, and wherein
+the first model of computation specifies a homogenous data flow
+model of computation;
+
+displaying (504, 604) a structure in the graphical program in
+response to second input, wherein the structure comprises an
+interior portion, wherein the structure indicates use of a second
+model of computation for graphical program elements comprised
+within the interior portion of the structure; and
+
+assembling (506, 606) a second plurality of graphical program
+elements within the interior portion of the structure in response to
+third input, wherein the assembled second plurality of graphical
+program elements comprised within the interior portion of the
+structure have the second model of computation and wherein the
+structure serves to demarcate between the first plurality of
+graphical program elements and the second plurality of graphical
+program elements;
+
+wherein the graphical program is executable to perform a function.
+
+The memory medium of claim 1, wherein the program instructions
+are further executable to perform:
+
+executing (508) the graphical program, wherein said executing
+
+comprises:
+
+executing the assembled first plurality of graphical program
+
+elements in accordance with the first model of computation; and
+
+January 25, 2011
+M108033WOEP JH/Wg/Smf/scp
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+executing the assembled second plurality of graphical program
+
+elements in accordance with the second model of computation.
+
+The memory medium of claim 2, wherein the program instructions
+are further executable to perform:
+
+converting (608) the assembled second plurality of graphical
+program elements having the second model of computation into a
+third plurality of graphical program elements having the first
+model of computation;
+
+wherein said executing the assembled second plurality of graphical
+program elements in accordance with the second model of
+computation comprises executing the third plurality of graphical
+program elements in accordance with the first model of
+
+computation.
+
+The memory medium of claim 2, wherein the program instructions
+are further executable to perform:
+
+converting the assembled first plurality of graphical program
+elements having the first model of computation into a third
+plurality of graphical program elements having the second model
+of computation;
+
+wherein said executing the assembled first plurality of graphical
+program elements in accordance with the first model of
+computation comprises executing the third plurality of graphical
+program elements in accordance with the second model of
+
+computation.
+
+The memory medium of claim 1, wherein the first model of
+computation specifies a single rate execution of graphical program
+
+elements.
+
+The memory medium of claim 1, wherein the first model of
+computation does not include explicit feedback connections to
+
+implement looping.
+
+--- PAGE 3 ---
+15
+
+20
+
+25
+
+30
+
+35
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+The memory medium of claim 1, wherein the first model of
+computation enables specification of parallelism of graphical
+
+program elements.
+
+The memory medium of claim 1, wherein the first model of
+computation specifies a single rate execution of graphical program
+elements; and wherein the first model of computation does not
+
+include explicit feedback connections to implement looping.
+
+The memory medium of claim 1, wherein the first model of
+computation comprises graphical structure nodes that specify
+looping, wherein the graphical structure nodes do not include
+
+explicit feedback connections to implement looping.
+
+The memory medium of claim 1, wherein the first model of
+computation comprises graphical structure nodes that specify
+
+conditional branching of operations.
+
+The memory medium of claim 1, wherein the first model of
+computation comprises graphical structure nodes that specify
+
+sequencing of operations.
+
+The memory medium of claim 1,
+
+wherein the graphical program comprises a data flow diagram;
+wherein the first model of computation comprises a first data flow
+semantics; and
+
+wherein the second model of computation comprises a second data
+
+flow semantics.
+
+The memory medium of claim 1, wherein the first model of
+computation comprises a basis model of computation operable to
+
+implement the second model of computation.
+
+The memory medium of claim 1, wherein the second model of
+computation comprises a basis model of computation operable to
+
+implement the first model of computation.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+21.
+
+The memory medium of claim 1, wherein the second model of
+computation supports a multi-rate execution of graphical program
+
+elements.
+
+The memory medium of claim 1, wherein the second model of
+computation includes explicit feedback connections to implement
+
+looping.
+
+The memory medium of claim 1, wherein the second model of
+computation specifies a multi-rate execution of graphical program
+elements; and
+
+wherein the second model of computation includes explicit
+
+feedback connections to implement looping.
+
+The memory medium of claim 1, wherein the second plurality of
+graphical program elements comprises a control block diagram
+
+utilizing control block notation.
+
+The memory medium of claim 1, wherein the second plurality of
+graphical program elements comprises a simulation diagram,
+wherein at least a subset of the second plurality of graphical
+program elements comprise simulation nodes, and wherein the
+
+simulation diagram implements a simulation.
+
+The memory medium of claim 19, wherein the simulation nodes
+support direct feed-through and indirect feed-through for inputs
+
+and outputs of the simulation nodes.
+
+The memory medium of claim 19,
+wherein at least one of the simulation nodes comprises a plurality
+of inputs and a plurality of outputs;
+
+wherein a first output of the plurality of outputs requires only a
+
+. subset of the plurality of inputs; and
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+22.
+
+23.
+
+24.
+
+25.
+
+26.
+
+27.
+
+wherein the least one of the simulation nodes is operable to fire
+upon reception of the subset of the plurality of inputs to generate
+
+the first output.
+
+The memory medium of claim 19, wherein at least one simulation
+node of the simulation nodes supports a feedback cycle between an
+
+output of the simulation node and an input of the simulation node.
+
+The memory medium of claim 22, wherein at least one simulation
+node of the simulation nodes supports a feedback cycle between an
+output of the simulation node and an input of the simulation node
+if:
+
+the input of the simulation node has indirect feed-through to the
+
+output of the simulation node.
+
+The memory medium of claim 19, wherein at least one of the
+simulation nodes executes two or more times per execution of the
+
+simulation diagram.
+
+The memory medium of claim 19, wherein the program
+instructions are further executable to perform:
+
+computing a feed-through mapping of inputs to outputs for the
+simulation nodes; and
+
+storing the feed-through mapping.
+
+The memory medium of claim 19, wherein the program
+instructions are further executable to perform:
+
+configuring one or more simulation parameters for the simulation
+diagram; and
+
+storing the configured one or more simulation parameters;
+wherein the configured one or more simulation parameters specify
+
+operation of the simulation diagram.
+
+The memory medium of claim 19, wherein at least one of the
+
+simulation nodes represents a subsimulation diagram, wherein the
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+28.
+
+29.
+
+30.
+
+31.
+
+32.
+
+sub-simulation diagram comprises two or more additional
+
+simulation nodes.
+
+The memory medium of claim 27, wherein the program
+instructions are further executable to perform:
+
+configuring one or more simulation parameters for the sub-
+simulation diagram; and
+
+storing the configured one or more simulation parameters;
+wherein the configured one or more simulation parameters specify
+
+operation of the sub-simulation diagram.
+
+The memory medium of claim 27, wherein the two or more
+additional simulation nodes are operable to execute in the
+
+simulation diagram in an inlined manner.
+
+The memory medium of claim 19, wherein the structure comprises
+a simulation loop structure enclosing the second plurality of
+graphical program elements, and wherein the simulation loop is
+operable to execute the simulation diagram one or more times to
+
+advance the simulation one time step.
+
+The memory medium of claim 30,
+
+wherein the simulation loop structure comprises a loop iterator
+terminal and a stop terminal;
+
+wherein the loop iteration terminal is incremented upon the
+beginning of a time step;
+
+wherein the stop terminal is evaluated at the end of a time step;
+and
+
+wherein the simulation is operable to stop at a specified stop time
+or when the evaluation of the stop terminal indicates that the
+
+simulation is to stop.
+
+The memory medium of claim 30,
+wherein the simulation loop structure comprises one or more
+
+terminals comprising:
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+33-
+
+34.
+
+35-
+
+36.
+
+an input terminal for inputting one or more simulation
+parameters;
+
+an error input terminal for inputting error information to the
+simulation diagram; and
+
+an error output terminal for outputting error information from the
+
+simulation diagram.
+
+The memory medium of claim 32, wherein the one or more
+simulation parameters comprises one or more of:
+
+iteration memory medium;
+
+start time;
+
+stop time;
+
+time step for the simulation;
+
+minimum and maximum time step sizes; and
+
+integrator tolerance.
+
+The memory medium of claim 19,
+
+wherein the simulation diagram corresponds to a companion
+diagram in accordance with the first model of computation; and
+wherein executing the simulation diagram comprises executing the
+
+companion diagram.
+
+The memory medium of claim 1, wherein the program instructions
+are further executable to perform:
+
+providing debug information for the assembled first plurality of
+graphical program elements in accordance with the first model of
+computation; and
+
+providing debug information for the assembled second plurality of
+graphical program elements in accordance with the second model
+
+of computation.
+
+The memory medium of claim 1, wherein the program instructions
+are further executable to perform:
+
+receiving debug input for the assembled first plurality of graphical
+program elements in accordance with the first model of
+
+computation; and
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+37-
+
+38.
+
+39.
+
+40.
+
+41.
+
+42.
+
+43.
+
+receiving debug input for the assembled second plurality of
+graphical program elements in accordance with the second model
+
+of computation.
+
+The memory medium of claim 1, wherein the second model of
+computation specifies a synchronous data flow (SDF) model of
+
+computation.
+
+The memory medium of claim 31, wherein the structure comprises
+a multi-rate loop structure enclosing the second plurality of
+graphical program elements, and wherein at least two of the
+second plurality of graphical program elements have different
+
+execution rates.
+
+The memory medium of claim 38, wherein the second plurality of
+
+graphical program elements comprise an SDF diagram.
+
+The memory medium of claim 39, wherein the second plurality of
+graphical program elements comprise SDF nodes interconnected
+via one or more edges, and wherein each edge specifies a first-in,
+first-out (FIFO) buffer and a delay.
+
+The memory medium of claim 40, wherein each SDF node is
+specified to consume a respective first number of tokens, and is
+further specified to produce a respective second number of tokens,
+and wherein the delay for each edge specifies an initial number of
+
+tokens residing on that edge.
+
+The memory medium of claim 41, wherein the program
+instructions are further executable to perform:
+
+computing a repetitions vector for the SDF diagram, wherein the
+repetitions vector specifies a respective number of times each SDF
+
+node should fire to consume all tokens.
+
+The memory medium of claim 40, wherein the program
+
+instructions are further executable to perform:
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+44.
+
+45.
+
+46.
+
+47.
+
+48.
+
+49.
+
+computing a valid periodic schedule for the SDF diagram based on
+
+the repetitions vector.
+
+The memory medium of claim 43, wherein said computing the
+valid periodic schedule for the SDF diagram is performed at
+
+compile time.
+
+The memory medium of claim 43, wherein the program
+instructions are further executable to perform:
+optimizing the periodic schedule regarding one or more of:
+program memory;
+buffer memory;
+context switch overhead; and
+
+performance.
+
+The memory medium of claim 39, wherein the program
+instructions are further executable to perform:
+
+configuring one or more parameters for the SDF diagram; and
+storing the configured one or more parameters;
+
+wherein the configured one or more parameters specify operation
+of the SDF diagram.
+
+The memory medium of claim 39,
+
+wherein the SDF diagram corresponds to a companion diagram in
+accordance with the first model of computation; and
+
+wherein executing the SDF comprises executing the companion
+
+diagram.
+
+The memory medium of claim 1, wherein the program instructions
+are further executable to perform:
+converting at least a portion of the graphical program into a form
+
+suitable for deployment on a programmable hardware element.
+
+The memory medium of claim 48, wherein the program
+
+instructions are further executable to perform:
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+50.
+
+51.
+
+52.
+
+53-
+
+54.
+
+55-
+
+56.
+
+10
+
+deploying the converted at least a portion of the graphical program
+onto the programmable hardware element; and
+
+executing the graphical program, wherein said executing
+comprises executing the converted at least a portion of the
+
+graphical program on the programmable hardware element.
+
+The memory medium of claim 1, wherein the second model of
+computation specifies one or more of:
+cyclostatic data flow; and
+
+parameterized data flow.
+
+The memory medium of claim 1,
+wherein the graphical program comprises a plurality of
+interconnected nodes that visually indicate functionality of the
+
+graphical program.
+
+The memory medium of claim 1,
+
+wherein said including a first plurality of graphical program
+elements in a graphical program in response to first input
+comprises: arranging a plurality of nodes on a display; and
+
+interconnecting the plurality of nodes.
+
+The memory medium of claim 1, wherein the graphical program
+
+comprises a block diagram portion and a user interface portion.
+
+The memory medium of claim 1, wherein the graphical program
+
+comprises a heterogeneous graphical data flow program.
+
+The memory medium of claim 1, wherein the graphical program is
+operable to perform one or more of:
+
+an industrial automation function;
+
+a process control function;
+
+a test and measurement function.
+
+The memory medium of claim 1, wherein, during execution of the
+
+graphical program, the graphical user interface is displayed on a
+
+--- PAGE 11 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+57.
+
+58.
+
+59-
+
+11
+
+display of a first computer system and the block diagram executes
+
+on a second computer system.
+
+The memory medium of claim 1, wherein said executing the
+graphical program comprises highlighting each graphical program
+element in the graphical program while the graphical program
+
+element is executing.
+
+A computer-implemented method for creating a graphical
+program, the method comprising:
+
+assembling (502, 602) a first plurality of graphical program
+elements in a graphical program in response to first input, wherein
+the assembled first plurality of graphical program elements
+comprise a plurality of interconnected graphical program
+elements, wherein the assembled first plurality of graphical
+program elements have a first model of computation, and wherein
+the first model of computation specifies a homogenous data flow
+model of computation;
+
+displaying (504, 604) a structure in the graphical program in
+response to second input, wherein the structure comprises an
+interior portion, wherein the structure indicates use of a second
+model of computation for graphical program elements comprised
+within the interior portion of the structure; and
+
+assembling (506, 606) a second plurality of graphical program
+elements within the interior portion of the structure in response to
+third input, wherein the assembled second plurality of graphical
+program elements comprised within the interior portion of the
+structure have the second model of computation and wherein the
+structure serves to demarcate between the first plurality of
+graphical program elements and the second plurality of graphical
+program elements;
+
+wherein the graphical program is executable to perform a function.
+
+A system for creating a graphical program, the system comprising:
+a processor;
+
+a memory medium, coupled to the processor;
+
+--- PAGE 12 ---
+10
+
+15
+
+20
+
+25
+
+12
+
+and an input, coupled to the memory medium and the processor,
+and operable to receive input;
+
+wherein the memory medium stores program instructions
+implementing a graphical data flow programming environment,
+wherein the program instructions are executable by the processor
+to:
+
+assemble (502, 602) a first plurality of graphical program elements
+in a graphical program in response to first input, wherein the
+assembled first plurality of graphical program elements comprise a
+plurality of interconnected graphical program elements, wherein
+the assembled first plurality of graphical program elements have a
+first model of computation, and wherein the first model of
+computation specifies a homogenous data flow model of
+computation;
+
+display (504, 604) a structure in the graphical program in response
+to second input, wherein the structure comprises an interior
+portion, wherein the structure indicates use of a second model of
+computation for graphical program elements comprised within the
+interior portion of the structure; and
+
+assemble (506, 606) a second plurality of graphical program
+elements within the interior portion of the structure in response to
+third input, wherein the assembled second plurality of graphical
+program elements comprised within the interior portion of the
+structure have the second model of computation and wherein the
+structure serves to demarcate between the first plurality of
+graphical program elements and the second plurality of graphical
+program elements;
+
+wherein the graphical program is executable to perform a function.

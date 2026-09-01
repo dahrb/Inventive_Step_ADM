@@ -1,0 +1,66 @@
+TITLE:
+Display driver circuit
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A display driver circuit configured to be shared by three grey-scale voltage generators to be respectively used with red (R), green (G) and blue (B) colors. In particular, two of the three grey-scale voltage generators share first and second resistor strings, gamma voltage selectors, and gamma adjustment buffers provided in the other grey-scale voltage generator, thereby reducing the size and power consumption of the display driver circuit. Also, when only a single grey-scale voltage is output, it is possible to deactivate the grey-scale voltages provided by two of the grey-scale generators and further reduce power consumption.
+
+CLAIMS:
+1. A display driver circuit, comprising:
+a grey-scale voltage generation unit having first to third grey-scale voltage generators each to generate n (wherein n is a natural number larger than 2) grey-scale voltages by selecting a maximum reference voltage and a minimum reference voltage from among first distribution voltages, selecting a predetermined number of voltages from among second distribution voltages, and distributing the predetermined number of voltages,
+wherein the first grey-scale voltage generator includes:
+a first resistor string configured to generate the first distribution voltages by receiving and distributing first and second power supply voltages, and
+a second resistor string configured to generate the second distribution voltages by receiving and distributing the maximum and minimum reference voltages selected by the first grey-scale voltage generator.
+2. The display driver circuit according to claim 1, wherein each of the first to third grey-scale voltage generators comprises:
+a reference voltage selection register configured to output a maximum reference voltage selection signal and a minimum reference voltage selection signal;
+a gamma selection register configured to output a plurality of gamma selection signals; and
+a reference voltage selection unit having a maximum reference voltage selector to select the maximum reference voltage and output the maximum reference voltage as a first grey-scale voltage in response to the maximum reference voltage selection signal, and a minimum reference voltage selector to select the minimum reference voltage and output the minimum reference voltage as an nth grey-scale voltage in response to the minimum reference voltage selection signal.
+3. The display driver circuit according to claim 2, wherein the first grey-scale voltage generator further includes a gamma adjustment register configured to output a plurality of gamma adjustment signals.
+4. The display driver circuit according to claim 3, wherein the first grey-scale voltage generator further comprises:
+a first gamma selection unit having m (wherein m is a natural number smaller than n) first gamma selectors each to select and output one of voltages distributed by the second resistor string as a first gamma voltage in response to a corresponding one of the gamma selection signals;
+a third resistor string configured to generate second to (n−1)th grey-scale voltages by distributing gamma voltages applied from first and mth first gamma selectors among the m first gamma selectors; and
+a first gamma buffer unit having p (wherein p is a natural number equal to or smaller than m) first fixed buffers to receive, buffer and output corresponding first gamma voltages among the m first gamma voltages to designated nodes among a plurality of nodes in the third resistor string, and (m−p) gamma adjustment buffers to select specific nodes among the nodes in the third resistor string in response to corresponding gamma adjustment signals among the gamma adjustment signals, and to receive, buffer and output corresponding first gamma voltages among the m first gamma voltages to the selected nodes.
+5. The display driver circuit according to claim 4, wherein each of the second and third grey-scale voltage generators further comprises:
+a second gamma selection unit having p second gamma selectors each to select and output one of the voltages distributed by the second resistor string as a second gamma voltage in response to a corresponding one of the gamma selection signals;
+a fourth resistor string configured to generate second to (n−1)th grey-scale voltages by distributing gamma voltages applied from first and pth second gamma selectors among the p second gamma selectors; and
+a second gamma buffer unit having p second fixed buffers to receive, buffer and output corresponding second gamma voltages among the p second gamma voltages to designated nodes among the nodes in the third resistor string.
+6. The display driver circuit according to claim 5, wherein each of the (m−p) gamma adjustment buffers selects a specific node among a plurality of nodes in the fourth resistor string in response to the corresponding one of the gamma adjustment signals, and receives, buffers and outputs the corresponding first gamma voltage among the m first gamma voltages to the selected node.
+7. The display driver circuit according to claim 6, wherein each of the (m−p) gamma adjustment buffers includes:
+a first amplifier configured to receive the corresponding first gamma voltage and a feedback voltage, and sense, amplify and output a voltage difference;
+a plurality of second amplifiers configured to receive, amplify and output the output of the first amplifier to a corresponding node in the third or fourth resistor string, and apply the voltage output to the corresponding node to the first amplifier as the feedback voltage; and
+a switch configured to select at least one of the second amplifiers in response to the corresponding gamma adjustment signal, and transfer the output of the first amplifier to the selected second amplifier.
+8. The display driver circuit according to claim 7, wherein the grey-scale voltage generation unit further includes:
+a first grey-scale voltage selection multiplexer (MUX) configured to select and output one of a first grey-scale voltage group of the n grey-scale voltages output from the first grey-scale voltage generator and a second grey-scale voltage group of the n grey-scale voltages output from the second grey-scale voltage generator in response to a single grey-scale voltage selection signal; and
+a second grey-scale voltage selection MUX configured to select and output one of the first grey-scale voltage group and a third grey-scale voltage group of the n grey-scale voltages output from the third grey-scale voltage generator in response to the single grey-scale voltage selection signal.
+9. The display driver circuit according to claim 8, wherein the second and third grey-scale voltage generators are deactivated in response to the single grey-scale voltage selection signal.
+10. The display driver circuit according to claim 9, further comprising:
+a controller configured to output a source driver control signal, a gate driver control signal, and the single grey-scale voltage selection signal in response to image data and a command applied from outside;
+a source driver configured to receive the first to third grey-scale voltage groups and apply a display data voltage to data lines of a display panel in response to the source driver control signal; and
+a gate driver configured to apply a gate-on voltage to gate lines of the display panel in response to the gate driver control signal.
+11. A grey-scale voltage generator to generate grey-scale voltages used in a display driver circuit, comprising:
+a maximum reference voltage selector to select a maximum grey-scale voltage from a power supplied first resistor string;
+a minimum reference voltage selector to select a minimum grey-scale voltage from the first resistor string; and
+a plurality of gamma selectors to select gamma voltages from a second resistor string provided in the other grey-scale voltage generator;
+wherein the first resistor string is provided in another grey-scale voltage generator.
+12. The grey-scale voltage generator according to claim 11, further comprising a plurality of buffers fixed to respective points on a third resistor string provided in the grey-scale voltage generator;
+wherein the buffers respectively receive the selected gamma voltages from corresponding ones of the gamma selectors, buffer the gamma voltages, and output the buffered gamma voltages to the respective points on the third resistor string to be output as grey-scale voltages.
+13. The grey-scale voltage generator according to claim 12, wherein the third resistor string has variable connection points coupled to corresponding variable connection points on a fourth resistor string provided in the other grey-scale voltage generator, to receive adjusted gamma voltages from the other grey-scale voltage generator to be output as grey-scale voltages.
+14. A gamma voltage adjustment unit of a grey-scale voltage generator used in a display driver circuit, comprising:
+a plurality of gamma adjustment buffers to connect to variable points on a first resistor string according to a desired adjustment so as to adjust received gamma voltages and output the adjusted gamma voltages to the first resistor string to be output as grey-scale voltages;
+wherein the gamma adjustment buffers also connect to variable points on a corresponding second resistor string in a second grey-scale voltage generator to supply the same adjusted gamma voltages to the corresponding second resistor string to output second grey-scale voltages from the second grey-scale voltage generator.
+15. The gamma voltage adjustment unit according to claim 14, further comprising:
+a maximum reference voltage selector to select a maximum grey-scale voltage from a third resistor string; and
+a minimum reference voltage selector to select a minimum grey-scale voltage from the third resistor string;
+wherein the second grey-scale voltage generator is also connected to the third resistor string to select second maximum and minimum grey-scale voltages.
+16. The gamma voltage adjustment unit according to claim 15, further comprising:
+a plurality of gamma selectors to select gamma voltages from a fourth resistor string to output to the gamma adjustment buffers;
+wherein the second grey-scale voltage generator is also connected to the fourth resistor string to select second gamma voltages.
+17. A method of generating different sets of grey-scale voltages corresponding to different colors to be displayed on a display device, the method comprising:
+selecting respective maximum and minimum grey-scale voltages to be used with each of the colors through a plurality of corresponding grey-scale voltage generators;
+processing adjusted gamma voltage values in a first one of the grey-scale voltage generators to be output as grey-scale voltages between the maximum and minimum grey-scale voltages; and
+transmitting the adjusted gamma voltage values from the first grey-scale voltage generator to at least a second one of the grey-scale voltage generators to be used in generating the grey-scale voltages regarding the color associated with the second grey-scale voltage generator.
+18. The method of claim 17, wherein the second grey-scale voltage generator selects the corresponding maximum and minimum grey-scale voltages from a first resistor string provided in the first grey-scale voltage generator.
+19. The method of claim 18, further comprising the second grey-scale voltage generator selecting gamma voltages from a second resistor string provided in the first grey-scale voltage generator.
+20. The method of claim 17, wherein the output grey-scale voltages of the first grey-scale voltage generator are used in place of the output grey-scale voltages of the second grey-scale voltage generator in response to both sets of output grey-scale voltages having the same values.

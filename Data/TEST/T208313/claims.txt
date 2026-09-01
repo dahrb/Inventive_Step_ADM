@@ -1,0 +1,141 @@
+--- PAGE 1 ---
+ARC920030087EP 1
+
+1. Amethod o accessing at least one target file in a computer system with an
+operating system with file locking implemented at file-open time, the method
+comprising: obtaining (210) a set of handles that corresponds to a set of all
+files that are open in the computer system; determining (212) within the
+kernel of the operating system a set of file identifiers that corresponds to the
+set of handles; identifying (214) from the set of file identifiers a file identifier
+that corresponds to the target file; and sending (216) within the kernel to the
+file system driver of the operating system a read request packet that
+corresponds to the identified file identifier.
+
+2. The method of claim 1, further comprising the step of: receiving (218) from
+the file system driver data that corresponds to the target file.
+
+3. The method of claim 1 or claim 2 wherein the obtaining comprises: issuing
+(310) an NtQuerySystemInformation to the kernel, wherein the
+NtQuerySystemInformation asks for all information about each handle in the
+set of handles; and _ obtaining (312) from the kernel an array of
+SYSTEM_HANDLE_INFORMATION for each handle in the set of handles,
+wherein the SYSTEM_HANDLE_INFORMATION comprises a pointer to a
+FILE_OBJECT, wherein the FILE_OBJECT comprises file identifier
+information.
+
+4. The method of claim 3 wherein the determining (212) comprises: for each
+handle in the set of handles, passing (412) a pointer to the FILE_OBJECT
+corresponding to the each handle to the kernel.
+
+5. The method of claim 4 wherein the determining (212) further comprises: for the
+each handle in the set of handles, outputting (422) from within the kernel a file
+identifier corresponding to the passed FILE_OBJECT.
+
+6. The method of claim 5 wherein the identifying (214) comprises: identifying
+(512) the FILE OBJECT corresponding to the identified file identifier that
+corresponds to the target file.
+
+7. The method of claim 6 wherein the sending comprises: passing (612) the
+identified FILE_OBJECT to the kernel; and requesting (614) from the kernel
+
+a reading of data from the target file corresponding to the identified
+
+--- PAGE 2 ---
+10.
+
+12.
+
+11 ARC920030087EP1
+
+FILE_OBJECT via the read request packet, wherein the read request packet
+
+comprises an Interrupt Request Packet (IRP).
+
+. The method of claim 7 wherein the requesting (614) comprises: generating
+
+(622) within the kernel an IRP corresponding to the identified FILE_OBJECT at
+a certain offset and a certain length; and passing (624) the IRP to the file
+system driver of the operating system.
+
+The method of claim 8 wherein the receiving (218) comprises: receiving
+(712) within the kernel from the file system driver the data from the target file
+corresponding to the identified FILE_OBJECT; and obtaining (714) the data
+from the target file corresponding to the identified FILE_OBJECT from the
+kernel.
+
+A system of accessing at least one target file in a computer system with an
+operating system with file locking implemented at file-open time, the system
+comprising: an obtaining module configured to obtain (210) a set of handles
+that corresponds to a set of all files that are open in the computer system; a
+determining module configured to determine (212) within the kernel of the
+operating system a set of file identifiers that corresponds to the set of handles;
+an identifying module configured to identify (214) from the set of file identifiers
+a file identifier that corresponds to the target file; and asending module
+configured to send (216) within the kernel to the file system driver of the
+operating system a read request packet that corresponds to the identified file
+
+identifier.
+
+. The system of claim 10, further comprising: a receiving module configured to
+
+receive (218) from the file system driver data that corresponds to the target file.
+The system of claim 10 or claim 11 wherein the obtaining module comprises:
+an issuing module configured to issue (310) an NtQuerySysteminformation to
+the kernel, wherein the NtQuerySystemInformation asks for all information
+about each handle in the set of handles; and —_an obtaining module
+configured to obtain (312) from the kernel an array of
+SYSTEM_HANDLE_INFORMATION for each handle in the set of handles,
+wherein the SYSTEM_HANDLE_INFORMATION comprises a pointer to a
+FILE_OBJECT, wherein the FILE_OBJECT comprises file identifier
+
+information.
+
+--- PAGE 3 ---
+14.
+
+16.
+
+17.
+
+18.
+
+19.
+
+12 ARC920030087EP1
+
+. The system of claim 12 wherein the determining module comprises: for each
+
+handle in the set of handles, a passing module configured to pass (412) a
+pointer to the FILE_OBJECT corresponding to the each handle to the kernel.
+The system of claim 13 wherein the determining module further comprises:
+for the each handle in the set of handles, an outputting module configured to
+output (422) from within the kernel a file identifier corresponding to the passed
+FILE_OBJECT.
+
+. The system of claim 13 wherein the identifying module comprises: an
+
+identifying module configured to identify (512) the FILE OBJECT
+corresponding to the identified file identifier that corresponds to the target file.
+The system of claim 15 wherein the sending module comprises: a passing
+module configured to pass (612) the identified FILE_OBJECT to the kernel;
+and arequesting module configured to request (614) from the kernel a
+reading of data from the target file corresponding to the identified
+
+FILE OBJECT via the read request packet, wherein the read request packet
+comprises an Interrupt Request Packet (IRP).
+
+The system of claim 16 wherein the requesting module comprises: a
+generating module configured to generate (622) within the kernel an IRP
+corresponding to the identified FILE_OBJECT at a certain offset and a certain
+length; and a passing module configured to pass (624) the IRP to the file
+system driver of the operating system.
+
+The system of claim 17 wherein the receiving module comprises: a receiving
+module configured to receive (712) within the kernel from the file system driver
+the data from the target file corresponding to the identified FILE_OBJECT; and
+an obtaining module configured to obtain (714) the data from the target file
+corresponding to the identified FILE_OBJECT from the kernel.
+
+A computer program comprising computer program code means adapted to
+
+perform the steps of any one of claim 1 to claim 9.

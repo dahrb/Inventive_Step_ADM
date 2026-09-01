@@ -1,0 +1,1233 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+MAIN REQUEST 13
+
+CLAIMS :
+
+1. A method for ultrasound imaging comprising at least
+
+the following successive steps:
+
+a) a transmission step in which a plurality of N
+
+ultrasonic plane waves having different propagation
+
+directions are transmitted into an imaged region (1) and a
+
+respective set of raw data is acquired by an array of
+
+transducers (2) in response to each ultrasonic wave, for
+
+each of a plurality of imaged locations in the region (1),
+each set of raw data representing the time signals received
+by the transducers (2) in response to the corresponding
+ultrasonic plane wave;
+
+b) a coherence enhancing step in which, for each of
+a plurality of virtual dynamic transmit focusing lines in
+the imaged region (1), at least one set of coherent data is
+synthesized from the plurality of N sets of raw data
+acquired in response to the plurality of N transmitted
+plane ultrasonic waves having different propagation
+directions, each set of coherent data corresponding to the
+backscattered echoes resulting from a given virtual dynamic
+transmit focusing line;
+
+Cc) a beamforming step in which, for each of a
+plurality of locations included in each of the virtual
+dynamic transmit focusing lines, an image pixel is computed
+by receive beamforming, using said at least one set of
+coherent data, thus computing an image of the imaged
+region.
+
+2. The method according to claim 1, wherein the
+coherence enhancing step is performed using a fixed sound
+
+speed value.
+
+3. The method according to claim 1, wherein the
+coherence enhancing step includes a global sound speed
+value estimation of the imaged region (1).
+
+4. The method according to claim 1, wherein the
+
+coherence enhancing step includes global sound speed
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+MAIN REQUEST 14
+
+estimation for each imaged location of the imaged region
+(1).
+
+5. The method according to claim 1, wherein the
+coherence enhancing step includes phase aberration
+corrections.
+
+6. The method according to claim 1, wherein in the
+coherence enhancing step, each virtual transmit focal zone
+is a straight line perpendicular to the transducer array.
+
+7. The method according to claim 1, wherein the
+coherence enhancing step includes:
+
+- a first substep of computing a coherent data set
+for each virtual dynamic transmit focusing line by applying
+delays to the raw data for performing a virtual dynamic
+transmit focusing on said virtual dynamic transmit focusing
+line, assuming that the speed of sound is homogeneous in
+the imaged region (1);
+
+- a second substep in which said delays are
+corrected by an estimation of aberrations in the imaged
+region (1) based on the coherent data set calculated at the
+first substep, and the corrected delays are used to compute
+a new coherent data set by performing a virtual dynamic
+transmit focusing on said virtual dynamic transmit focusing
+line.
+
+8. The method according to claim 7, wherein at least
+
+said second substep is performed several times.
+
+9, The method according to claim 7, wherein in said
+second substep, the estimation of aberrations is done by
+cross correlating the coherent data corresponding to
+different transducers (2) in each coherent data set.
+
+10. An apparatus for ultrasound imaging, comprising:
+
+- means (2, 3, 4) for transmitting a plurality of N
+
+ultrasonic plane waves having different propagation
+
+directions into a region (1), for each of a plurality of
+
+imaged locations in the region (1);
+
+- means (2, 3, 4) for acquiring a respective set of
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+MAIN REQUEST 15
+
+raw data by an array (2) of transducers (T1-Tn) in response
+
+to each ultrasonic plane wave, each set of raw data
+representing the time signals received by the transducers
+(Tl-Tn) in response to the corresponding ultrasonic plane
+wave;
+
+- means (4, 8, 9, 10) for synthesizing at least one
+
+-
+
+set of coherent data from the plurality of N sets of raw
+
+data acquired in response to the plurality of N transmitted
+
+ultrasonic plane waves of different propagation directions,
+
+- -
+
+for each of a plurality of virtual dynamic transmit
+
+-
+
+focusing lines in the imaged region (1), each set of
+coherent data corresponding to the backscattered echoes
+resulting from a given virtual dynamic transmit focusing
+line;
+
+- receive beamforming means (4, 8, 9, 10) for
+computing an image pixel by receive beamforming using said
+at least one set of coherent data, for each of a plurality
+of locations included in each of the virtual dynamic
+focusing lines, thus computing an image of the imaged
+
+region.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+AUXILIARY REQUEST 1 13
+
+CLAIMS :
+
+1. A method for ultrasound imaging comprising at least
+
+the following successive steps:
+
+a) a transmission step in which a plurality of N
+
+ultrasonic plane waves having different propagation
+
+directions are transmitted into an imaged region (1) and a
+
+respective set of raw data is acquired by an array of
+
+transducers (2) in response to each ultrasonic wave, for
+
+each of a plurality of imaged locations in the region (1),
+
+the array of transducers (2) being a linear array, and each
+
+set of raw data representing the time signals received by
+the transducers (2) in response to the corresponding
+ultrasonic plane wave;
+
+b) a coherence enhancing step in which, for each of
+a plurality of virtual dynamic transmit focusing lines in
+the imaged region (1), at least one set of coherent data is
+synthesized from the plurality of N sets of raw data
+acquired in response to the plurality of N transmitted
+plane ultrasonic waves having different propagation
+directions, each set of coherent data corresponding to the
+backscattered echoes resulting from a given virtual dynamic
+transmit focusing line, and
+
+wherein the set of coherent data RFcoherent for each
+of said virtual dynamic transmit focusing lines is computed
+by applying delays to the raw data for performing a virtual
+dynamic transmit focusing on said virtual dynamic transmit
+
+focusing line, assuming that the speed of sound c is
+
+homogeneous in the imaged region (1), each set of coherent
+
+data being computed by the following formula:
+RF coheren{x, ,X,Z) = > B(a)RFran(x,t( a, X;,X,Z),0), where
+
+xX, Z are coordinates, respectively along an axis X of
+the linear transducer array (2) and along an axis Z@
+perpendicular to the axis X,
+
+xl is a lateral position of each virtual dynamic
+
+transmit focusing line along axis X,
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 1 14
+
+a ar the respective angles of inclination of the
+
+direction propagation of the plane waves with regard to
+
+axis Z,
+RFcoherent (x1,x, Z) is a set of coherent data
+corresponding to one virtual dynamic transmit focusing line
+
+of lateral position xl,
+
+RFraw(x, t(a, xl, X, Zz), a) are data from the sets of
+raw data RFraw,
+
+B (a) is a weighting function for each angle
+contribution,
+
+t(a, xl, x, Zz) is a travel time computed according to
+
+the following formula
+
+1 .
+r(a.x,%,2) = + {zcosar+ x, sina) +2 +(e—m) |;
+c
+
+Cc) a beamforming step in which, for each of a
+plurality of locations included in each of the virtual
+dynamic transmit focusing lines, an image pixel is computed
+by receive beamforming, using said at least one set of
+coherent data, thus computing an image of the imaged
+region.
+
+2. The method according to claim 1, wherein the
+coherence enhancing step is performed using a fixed sound
+speed value.
+
+3. The method according to claim 1, wherein the
+coherence enhancing step includes a global sound speed
+value estimation of the imaged region (1).
+
+4. The method according to claim 1, wherein the
+coherence enhancing step includes global sound speed
+estimation for each imaged location of the imaged region
+(1).
+
+5. The method according to claim 1, wherein the
+coherence enhancing step includes phase aberration
+corrections.
+
+6. The method according to claim 1, wherein in the
+
+coherence enhancing step, each virtual dynamic transmit
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 1 15
+
+focusing line is a straight line perpendicular to the
+
+transducer array (2).
+7. The method according to claim 1, wherein the
+coherence enhancing step includes:
+
+- a first substep of computing a coherent data set
+
+for each virtual dynamic transmit focusing line by applying
+delays to the raw data for performing a virtual dynamic
+transmit focusing on said virtual dynamic transmit focusing
+line, assuming that the speed of sound is homogeneous in
+the imaged region (1);
+
+- a second substep in which said delays are
+corrected by an estimation of aberrations in the imaged
+region (1) based on the coherent data set calculated at the
+first substep, and the corrected delays are used to compute
+a new coherent data set by performing a virtual dynamic
+transmit focusing on said virtual dynamic transmit focusing
+line.
+
+8. The method according to claim 7, wherein at least
+said second substep is performed several times.
+
+9. The method according to claim 7, wherein in said
+second substep, the estimation of aberrations is done by
+cross correlating the coherent data corresponding to
+different transducers (2) in each coherent data set.
+
+10. An apparatus for ultrasound imaging, comprising:
+
+- means (2, 3, 4) for transmitting a plurality of N
+ultrasonic plane waves having different propagation
+directions into a region (1), for each of a plurality of
+
+imaged locations in the region (1);
+
+- means (2, 3, 4) for acquiring a respective set of
+raw data by an array (2) of transducers (T1-Tn) in response
+to each ultrasonic plane wave, the array of transducers (2)
+
+being a linear array, and each set of raw data representing
+
+the time signals received by the transducers (T1-Tn) in
+
+response to the corresponding ultrasonic plane wave;
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 1 16
+
+- means (4, 8, 9, 10) for synthesizing at least one
+
+set of coherent data from the plurality of N sets of raw
+
+data acquired in response to the plurality of N transmitted
+
+ultrasonic plane waves of different propagation directions,
+
+-
+
+for each of
+
+a plurality of virtual dynamic transmit
+
+focusing lines in the imaged region (1), each set of
+coherent data corresponding to the backscattered echoes
+resulting from a given virtual dynamic transmit focusing
+line,
+
+wherein the set of coherent data RFcoherent for each
+
+of said virtual dynamic transmit focusing lines is computed
+
+-
+
+by applying delays to the raw data for performing a virtual
+dynamic transmit focusing on said virtual dynamic transmit
+focusing line, assuming that the speed of sound c is
+homogeneous in the imaged region (1), each set of coherent
+
+data being computed by the following formula:
+RF coherent x, ,X,Z)= >) B(a)RFraw( x00, x,,X,Z),a), where
+
+X, Z are coordinates, respectively along an axis X of
+the linear transducer array (2) and along an axis Z
+perpendicular to the axis X,
+
+x1 is a lateral position of each virtual dynamic
+
+transmit focusing line along axis X,
+
+a are the respective angles of inclination of the
+direction propagation of the plane waves with regard to
+axis Z,
+
+RFcoherent (x1,xX, Z) is a set of coherent data
+corresponding to one virtual dynamic transmit focusing line
+
+of lateral position xl,
+
+RFraw(x, t(a, Xl, X, Zz), a) are data from the sets of
+
+raw data RFraw,
+
+B(a) is a weighting function for each angle
+contribution,
+
+tT(a, Xl, xX, Zz) is a travel time computed according to
+
+the following formula
+
+--- PAGE 8 ---
+AUXILIARY REQUEST 1 17
+
+1 .
+T(a,xX,,xX,z)=—|(zcosat+ x, sina) + [2° +(x-x,) |;
+Cc
+
+- receive beamforming means (4, 8, 9, 10) for
+
+computing an image pixel by receive beamforming using said
+
+at least one set of coherent data, for each of a plurality
+
+of locations included in each of the virtual dynamic
+
+focusing lines, thus computing an image of the imaged
+
+region.
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 2 14
+
+CLAIMS:
+
+1. Method for ultrasound imaging comprising at least
+
+the following steps:
+
+a) a transmission step in which a plurality of N
+
+ultrasonic plane waves having different propagation
+
+directions are transmitted into an imaged region (1) and a
+
+respective set of raw data is acquired by a linear array of
+
+transducers (2) in response to each ultrasonic wave, for
+
+each of a plurality of imaged locations in the region (1),
+each set of raw data representing the time signals received
+by the transducers (2) in response to the corresponding
+ultrasonic plane wave;
+
+b) a coherence enhancing step in which, for each of
+a plurality of M virtual dynamic transmit focusing lines
+in the imaged region, a set of coherent data is synthesized
+from the N sets of raw data acquired in response to the
+plurality of N transmitted plane ultrasonic waves having
+different propagation directions, each set of coherent data
+corresponding to the backscattered echoes resulting from a
+given virtual dynamic transmit focusing line, each virtual
+dynamic transmit focusing line being a straight line
+perpendicular to the array of transducers (2), the
+coherence enhancing step including:
+
+- a first substep of computing a set of coherent
+
+data RFcoherent for each of said virtual dynamic transmit
+
+focusing lines by applying delays to the raw data for
+
+performing a virtual dynamic transmit focusing on said
+
+virtual dynamic transmit focusing line, assuming that the
+
+speed of sound c is homogeneous in the imaged region (1),
+
+each set of coherent data being computed by the following
+
+formula:
+
+RF coherenx, ,X,Z)= > B(a)RFraw(x,0 ,xX,,x,Z),0), where:
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 2 15
+
+xX, Z are coordinates, respectively along an axis X of
+the linear transducer array (2) and along an axis 2Z
+perpendicular to the axis X,
+
+xl is a lateral position of each virtual dynamic
+
+transmit focusing line along axis X,
+
+a are the respective angles of inclination of the
+
+direction propagation of the plane waves with regard to
+
+axis Z,
+RFcoherent (x1,x, Zz) is a set of coherent data
+corresponding to one virtual dynamic transmit focusing line
+
+of lateral position xl,
+
+RFraw(x, t(a, Xl, xX, Zz), a) are data from the sets of
+raw data RFraw,
+
+B(a) is a weighting function for each angle
+contribution,
+
+t(a, Xl, xX, z) is a travel time computed according to
+
+the following formula
+
+1 .
+T(a,X,,xX,Z) =—\(zcosa@ + x, sina) + [2° +(x-x,)’ |,
+c
+
+- a second substep in which said delays are
+corrected by an estimation of aberrations in the imaged
+region (1) based on the coherent data set calculated at the
+first substep, wherein said travel times t(a,xl,x,z) are
+corrected by said estimation of aberrations, and _ the
+corrected travel times Thew(a,x1,x,z) are used to compute a
+new set of coherent data by using Tnew(O,xX1,xX,Z) aS a new
+
+value of t(a,xl,x,z) in the formula of the first substep;
+
+Cc) a beamforming step in which, for each of a
+plurality of locations included in each of said virtual
+
+dynamic transmit focusing lines, an image pixel is computed
+
+by receive beamforming, using said at least one set of
+coherent data, thus computing an image of the imaged region
+
+(1).
+
+2. Method according to anyone of the preceding
+
+--- PAGE 11 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 2 16
+
+claims, wherein the coherence enhancing step is performed
+
+using a fixed sound speed value.
+
+3. Method according to anyone of the preceding
+claims, wherein the coherence enhancing step includes a
+global sound speed value estimation of the imaged region
+
+(1).
+
+4, Method according to anyone of claims 1-3, wherein
+the coherence enhancing step includes global sound speed
+estimation for each imaged location of the imaged region.
+
+5. Method according to anyone of the preceding
+claims, wherein the coherence enhancing step includes phase
+
+aberration corrections.
+
+6. Method according to any one of the preceding
+claims, wherein at least said second substep is performed
+several times.
+
+7. Method according to any one of the preceding
+claims, wherein in said second substep, the estimation of
+aberrations is done by cross correlating the coherent data
+corresponding to different transducers in each coherent
+data set.
+
+8. Apparatus for ultrasound imaging, comprising:
+
+- means for transmitting a plurality of N
+ultrasonic plane waves having different propagation
+directions into a region, for each of a plurality of imaged
+
+locations in the region;
+
+- means (2, 3, 4) for acquiring a respective set of
+
+raw data by a linear array (2) of transducers (T1-Tn) in
+
+response to each ultrasonic plane wave, each set of raw
+data representing the time signals received by the
+transducers (T1-Tn) in response to the corresponding
+
+ultrasonic plane wave;
+
+- means (4, 8, 9, 10) for synthesizing a set of
+
+--- PAGE 12 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 2 17
+
+coherent data from the plurality of N sets of raw data
+
+acquired in response to the plurality of N transmitted
+ultrasonic plane waves of different propagation directions
+
+for each of a plurality of M virtual dynamic transmit
+
+focusing lines in the imaged region (1), each set of
+
+coherent data corresponding to the backscattered echoes
+
+resulting from a given virtual dynamic transmit focusing
+
+line, each virtual transmit focal zone being a straight
+
+line perpendicular to the array of transducers (2), said
+means for synthesizing a set of coherent data being adapted
+to carry out:
+
+- a first substep of computing a set of coherent
+data RFcoherent for each of said virtual dynamic transmit
+focusing straight lines by applying delays to the raw data
+for performing a virtual dynamic transmit focusing on said
+virtual dynamic transmit focusing line, assuming that the
+speed of sound c is homogeneous in the imaged region (1),
+each set of coherent data being computed by the following
+
+formula:
+
+RE coherent x,,xX,z)= > B(a)RFraw(x.t(a, x,,X,Z),4), where:
+1 1
+
+xX, Z are coordinates, respectively along an axis X of
+the linear transducer array (2) and along an axis @
+perpendicular to the axis X,
+
+xl is a lateral position of each virtual dynamic
+
+transmit focusing line along axis X,
+
+a are the respective angles of inclination of the
+direction propagation of the plane waves with regard to
+axis Z,
+
+RFcoherent (x1,xX, Z) is a set of coherent data
+
+corresponding to one virtual dynamic transmit focusing line
+
+of lateral position xl,
+
+RFraw(x, t(a, Xl, xX, Zz), &) are data from the sets of
+
+raw data RFraw,
+
+--- PAGE 13 ---
+10
+
+15
+
+20
+
+AUXILIARY REQUEST 2 18
+
+B (a) is a weighting function for each angle
+contribution,
+
+t(a, xl, xX, z) is a travel time computed according to
+
+the following formula
+
+1 .
+7(a,xX,,xX,z)=—|(zcosat+ x, sina) +z? +(x-x,)? |
+c
+
+- a second substep in which said delays are
+corrected by an estimation of aberrations in the imaged
+region (1) based on the coherent data set calculated at the
+first substep, wherein said travel times t(a,xl,x,z) are
+corrected by said estimation of aberrations, and the
+corrected travel times The,(a,x1l,x,z) are used to compute a
+new set of coherent data by using Tpew(Q&,X1,X%,Z) aS a new
+value of t(a,xl,x,z) in the formula of the first substep;
+
+- receive beamforming means (4, 8, 9, 10) for
+computing an image pixel by receive beamforming using said
+at least one set of coherent data for each of a plurality
+of locations included in each of the virtual dynamic
+transmit focusing lines, thus computing an image of the
+
+region.
+
+--- PAGE 14 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+AUXILIARY REQUEST 3 13
+
+CLAIMS :
+
+1. A method for ultrasound imaging comprising at least
+
+the following successive steps:
+
+a) a transmission step in which a plurality of N
+
+ultrasonic plane waves having different propagation
+
+directions are transmitted into an imaged region (1) and a
+
+respective set of raw data is acquired by an array of
+
+transducers (2) in response to each ultrasonic wave, for
+
+each of a plurality of imaged locations in the region (1),
+
+each set of raw data representing the time signals received
+by the transducers (2) in response to the corresponding
+ultrasonic plane wave;
+
+b) a coherence enhancing step in which, for each of
+a plurality of virtual dynamic transmit focusing lines in
+the imaged region (1), at least one set of coherent data is
+synthesized from the plurality of N sets of raw data
+acquired in response to the plurality of N transmitted
+plane ultrasonic waves having different propagation
+directions, each set of coherent data corresponding to the
+backscattered echoes resulting from a given virtual dynamic
+transmit focusing line;
+
+Cc) a beamforming step in which, for each of a
+plurality of locations included in each of the virtual
+transmit focusing lines, an image pixel is computed by
+receive beamforming, using the set of coherent data, thus
+computing an image of the imaged region.
+
+2. The method according to claim 1, wherein the
+
+ultrasonic waves are spatio-temporal coded excitations.
+
+3. The method according to claim 1, wherein the
+coherence enhancing step is performed using a fixed sound
+
+speed value.
+
+4, The method according to claim 1, wherein the
+coherence enhancing step includes a global sound speed
+value estimation of the imaged region (1).
+
+5. The method according to claim 1, wherein the
+
+--- PAGE 15 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+AUXILIARY REQUEST 3 14
+
+coherence enhancing step includes global sound speed
+estimation for each imaged location of the imaged region
+(1).
+
+6. The method according to claim 1, wherein the
+coherence enhancing step includes phase aberration
+corrections.
+
+7. The method according to claim 1, wherein in the
+
+coherence enhancing step, each virtual dynamic transmit
+
+focusing line is a straight line perpendicular to the
+transducer array (2).
+
+8. The method according to claim 1, wherein the
+coherence enhancing step includes:
+
+- a first substep of computing a coherent data set
+for each virtual dynamic transmit focusing line by applying
+delays to the raw data for performing a virtual dynamic
+transmit focusing on said virtual dynamic transmit focusing
+line, assuming that the speed of sound is homogeneous in
+the imaged region (1);
+
+- a second substep in which said delays are
+corrected by an estimation of aberrations in the imaged
+region (1) based on the coherent data set calculated at the
+first substep, and the corrected delays are used to compute
+a new coherent data set by performing a virtual dynamic
+transmit focusing on said virtual dynamic transmit focusing
+line.
+
+9, The method according to claim 8, wherein at least
+
+said second substep is performed several times.
+
+10. The method according to claim 8, wherein in said
+second substep, the estimation of aberrations is done by
+
+cross correlating the coherent data corresponding to
+
+different transducers (2) in each coherent data set.
+
+11. An apparatus for ultrasound imaging, comprising:
+
+- means (2, 3, 4) for transmitting a plurality of N
+
+ultrasonic plane waves having different propagation
+
+directions into a region (1), for each of a plurality of
+
+--- PAGE 16 ---
+10
+
+15
+
+20
+
+AUXILIARY REQUEST 3 15
+
+imaged locations in the region (1);
+
+- means (2, 3, 4) for acquiring a respective set of
+
+raw data by an array (2) of transducers (T1-Tn) in response
+
+to each ultrasonic plane wave, each set of raw data
+representing the time signals received by the transducers
+(Tl-Tn) in response to the corresponding ultrasonic plane
+wave;
+
+- means (4, 8, 9, 10) for synthesizing at least one
+
+set of coherent data from the plurality of N sets of raw
+
+data acquired in response to the plurality of N transmitted
+
+ultrasonic plane waves of different propagation directions,
+
+- -
+
+for each of a plurality of virtual dynamic transmit
+
+-
+
+focusing lines in the imaged region (1), each set of
+coherent data corresponding to the backscattered echoes
+resulting from a given virtual dynamic transmit focusing
+line;
+
+- receive beamforming means (4, 8, 9, 10) for
+computing an image pixel by receive beamforming using the
+set of coherent data, for each of a plurality of locations
+included in each of the virtual focusing lines, thus
+
+computing an image of the imaged region.
+
+--- PAGE 17 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 4 14
+
+CLAIMS:
+
+1. Method for ultrasound imaging comprising at least
+
+the following steps:
+
+a) a transmission step in which a plurality of N
+
+ultrasonic plane waves having different propagation
+
+directions are transmitted into an imaged region (1) and a
+
+respective set of raw data is acquired by a linear array of
+
+transducers (2) in response to each ultrasonic wave, for
+
+each of a plurality of imaged locations in the region (1),
+each set of raw data representing the time signals received
+by the transducers (2) in response to the corresponding
+ultrasonic plane wave;
+
+b) a coherence enhancing step in which, for each of
+a plurality of M virtual dynamic transmit focusing lines
+in the imaged region, a set of coherent data is synthesized
+from the N sets of raw data acquired in response to the
+plurality of N transmitted plane ultrasonic waves having
+different propagation directions, each set of coherent data
+corresponding to the backscattered echoes resulting from a
+given virtual dynamic transmit focusing line, each virtual
+dynamic transmit focusing line being a straight line
+perpendicular to the array of transducers (2), the
+coherence enhancing step including:
+
+- a first substep of computing a set of coherent
+
+data RFcoherent for each of said virtual dynamic transmit
+
+focusing lines by applying delays to the raw data for
+
+performing a virtual dynamic transmit focusing on said
+
+virtual dynamic transmit focusing line, assuming that the
+
+speed of sound c is homogeneous in the imaged region (1),
+
+each set of coherent data being computed by the following
+
+formula:
+
+RF coherent x,,X,Z) = SS B(a)RFraw(xt(0, X,,xX,Z),a), where:
+
+--- PAGE 18 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 4 15
+
+xX, Z are coordinates, respectively along an axis X of
+the linear transducer array (2) and along an axis 2Z
+perpendicular to the axis X,
+
+xl is a lateral position of each virtual dynamic
+
+transmit focusing line along axis X,
+
+a are the respective angles of inclination of the
+
+direction propagation of the plane waves with regard to
+
+axis Z,
+RFcoherent (x1,x, Zz) is a set of coherent data
+corresponding to one virtual dynamic transmit focusing line
+
+of lateral position xl,
+
+RFraw(x, t(a, Xl, xX, Zz), a) are data from the sets of
+raw data RFraw,
+
+B(a) is a weighting function for each angle
+contribution,
+
+t(a, Xl, xX, z) is a travel time computed according to
+
+the following formula
+
+1 .
+1(a,%,,%,2)=4(zcosa +x, sina) +2" Fem) |,
+c
+
+- a second substep in which said delays are
+corrected by an estimation of aberrations in the imaged
+region (1) based on the coherent data set calculated at the
+first substep, wherein said travel times t(a,x1,x,z) are
+corrected by said estimation of aberrations, and _ the
+corrected travel times The(a,x1,x,z) are used to compute a
+new set of coherent data by using Thew(O,xX1,xX,Z) aS a new
+
+value of t(a,xl,x,z) in the formula of the first substep;
+
+Cc) a beamforming step in which, for each of a
+plurality of locations included in each of said virtual
+
+dynamic transmit focusing lines, an image pixel is computed
+
+by receive beamforming, using the set of coherent data,
+thus computing an image of the imaged region (1).
+2. Method according to claim 1, wherein the
+
+ultrasonic waves are spatio-temporal coded excitations.
+
+--- PAGE 19 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 4 16
+
+3. Method according to anyone of the preceding
+
+claims, wherein the coherence enhancing step is performed
+using a fixed sound speed value.
+
+4. Method according to anyone of the preceding
+claims, wherein the coherence enhancing step includes a
+global sound speed value estimation of the imaged region
+
+(1).
+
+5. Method according to anyone of claims 1-3, wherein
+the coherence enhancing step includes global sound speed
+estimation for each imaged location of the imaged region.
+
+6. Method according to anyone of the preceding
+claims, wherein the coherence enhancing step includes phase
+
+aberration corrections.
+
+7. Method according to any one of the preceding
+claims, wherein at least said second substep is performed
+several times.
+
+8. Method according to any one of the preceding
+claims, wherein in said second substep, the estimation of
+aberrations is done by cross correlating the coherent data
+corresponding to different transducers in each coherent
+data set.
+
+9. Apparatus for ultrasound imaging, comprising:
+
+- means for transmitting a plurality of N
+ultrasonic plane waves having different propagation
+directions into a region, for each of a plurality of imaged
+
+locations in the region;
+
+- means (2, 3, 4) for acquiring a respective set of
+
+raw data by a linear array (2) of transducers (T1-Tn) in
+
+response to each ultrasonic plane wave, each set of raw
+data representing the time signals received by the
+transducers (T1-Tn) in response to the corresponding
+
+ultrasonic plane wave;
+
+--- PAGE 20 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+AUXILIARY REQUEST 4 17
+
+- means (4, 8, 9, 10) for synthesizing a set of
+
+coherent data from the plurality of N sets of raw data
+
+acquired in response to the plurality of N transmitted
+ultrasonic plane waves of different propagation directions
+
+for each of a plurality of M dynamic virtual transmit
+
+focusing lines in the imaged region (1), each set of
+coherent data corresponding to the backscattered echoes
+resulting from a given virtual dynamic transmit focusing
+
+line, each virtual transmit focal zone being a straight
+
+line perpendicular to the array of transducers (2), said
+means for synthesizing a set of coherent data being adapted
+to carry out:
+
+- a first substep of computing a set of coherent
+data RFcoherent for each of said virtual dynamic transmit
+focusing straight lines by applying delays to the raw data
+for performing a virtual dynamic transmit focusing on said
+virtual dynamic transmit focusing line, assuming that the
+speed of sound c is homogeneous in the imaged region (1),
+each set of coherent data being computed by the following
+
+formula:
+
+RF coherenx,,X,Z) = Sy B(a)RFraw(x.t( 0, X,,X,Z),0), where:
+
+xX, Z are coordinates, respectively along an axis X of
+the linear transducer array (2) and along an axis Z@
+perpendicular to the axis X,
+
+xl is a lateral position of each virtual dynamic
+
+transmit focusing line along axis X,
+
+a are the respective angles of inclination of the
+direction propagation of the plane waves with regard to
+axis Z,
+
+RFcoherent (x1,x, Z) is a set of coherent data
+
+corresponding to one virtual dynamic transmit focusing line
+
+of lateral position xl,
+
+--- PAGE 21 ---
+10
+
+15
+
+20
+
+AUXILIARY REQUEST 4 18
+
+RFraw(xX, t(a, Xl, xX, Zz), &) are data from the sets of
+
+raw data RFraw,
+
+B (a) is a weighting function for each angle
+contribution,
+t(a, xl, x, z) is a travel time computed according to
+
+the following formula
+
+1 .
+T(Q,X,,X, Z) = Ve cosar+ x, sin@)+4)z° +(x-x,) |
+c
+
+- a second substep in which said delays are
+corrected by an estimation of aberrations in the imaged
+region (1) based on the coherent data set calculated at the
+first substep, wherein said travel times t(a,xl,x,z) are
+corrected by said estimation of aberrations, and _ the
+corrected travel times Thew(Q,X1,x%,zZ) are used to compute a
+new set of coherent data by using Thew(Q,X1,xX%,Z) aS a new
+value of t(a,xl,x,z) in the formula of the first substep;
+
+- receive beamforming means (4, 8, 9, 10) for
+computing an image pixel by receive beamforming using the
+set of coherent data for each of a plurality of locations
+included in each of the virtual dynamic transmit focusing
+
+lines, thus computing an image of the region.

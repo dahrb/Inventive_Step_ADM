@@ -1,0 +1,35 @@
+Title: 
+Information network interrogation of an implanted device
+
+Abstract: 
+A communication system is provided which permits of communication between a deployed implantable medical device (IMD) and a computing resource capable of storing and distributing patient and device data. A deployed IMD may be polled by a network interface external to the host patient, and data may be received by wireless communication. This data may be transmitted to a computer for storage and distribution, and changes to a treatment or instruction regimen, or firmware or software upgrades, may then be transmitted to the network interface for immediate or eventual loading into the IMD via wireless communication. The system is adapted to provide communication service between multiple IMDs deployed in a patient or a number of patients.
+
+Type: WIPO
+
+Claims: 
+What is claimed is:
+1. A computerized method of obtaining and distributing data from one or more IMDs deployed in one or more patients, said IMDs having firmware or software, comprising the steps of: transmitting via a network communication link IMD-accessible data gathered from at least one of the IMDs to a external device capable of communicating with a computing resource external to any patient; routing the IMD data to a computer; determining instructions comprising an IMD treatment regimen based on data gathered by or stored in the IMD; and transmitting via the network communication link the instructions to the appropriate IMD which may be executed by the IMD in accordance with its firmware or software.
+2. The computerized method of claim 1, wherein the IMD-accessible data comprises physiologic data from the patient.
+3. The computerized method of claim 1, wherein the IMD-accessible data comprises device information.
+4. The computerized method of claim 3, wherein the device information includes hardware, firmware, or software identification information.
+5. The method of claim 1 , wherein the network communication link comprises a radio frequency link.
+6. The method of claim 2, wherein the network communication link comprises a hybrid link.
+7. The method of claim 3 wherein the hybrid link comprises a radio frequency link from an IMD to a network interface, and a secondary network link from the network interface to the computer.
+8. The method of claim 7 wherein the secondary network link is a direct dial up connection.
+9. The method of claim 7 wherein the secondary network link is an area network.
+10. The method of claim 9 wherein the area network is a LAN.
+11. The method of claim 9 wherein the area network is a WAN.
+12. The method of claim 7, wherein the secondary network communication link comprises an asynchronous link.
+13. The method of claim 7, wherein the secondary network communications link comprises a synchronous link.
+14. The system of claim 1, wherein the one or more IMDs comprises one or more of a pacemaker, a PCD pacemaker/cardioverter/defibrillator, an oxygen sensing device, a nerve stimulator, a muscle stimulator, a drug pump, or an implantable monitoring device.
+15. The computerized method of claim 1 , comprising the further step of transmitting from the computer to one or more IMDs an upgrade to the IMD firmware or software.
+16. The computerized method of claim 1, further comprising the step of distributing the IMD data from the computer to one or more remote data interface devices.
+17. The computerized method of claim 16 wherein the remote data interface device comprises one or more network computers, facsimile machine, telephone, voice mail systems, cellular devices, pagers, PDAs, printers, or broadcast reception devices.
+18. A computerized information network system linking one or more IMDs deployed in one or more patients to a computer via a data communication network, said network comprising: a first computer accessible by the network, said central computer capable of storing patient data recorded by an IMD; at least one network interface capable of wireless communication with at least one IMD deployed in a patient, said network interface being capable of communication with the network.
+19. The computerized network of claim 18, wherein the network comprises a direct link between the at least one network interface and the computer.
+20. The computerized network of claim 18, wherein the first computer comprises a supercomputer.
+21. The computerized network of claim 18, wherein the first computer comprises a multi-processor workstation.
+22. The computerized network of claim 18, wherein the first computer comprises a networked or parallel cluster of computers.
+23. The computerized network of claim 18, wherein the data communication is asynchronous.
+24. The computerized network of claim 18, where the data communication is synchronous.
+25. The computerized network of claim 18, further comprising a second computer on which device instructions or device operation and control software may be accessed by the first computer.

@@ -1,0 +1,41 @@
+TITLE:
+Integrated rule network management system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A network service administration system including a plurality of service objects, a plurality of address objects; and a service configuration application for a multifunction appliance running on a client computer coupled to the appliance via a network. The service configuration application includes an interface allowing subscribers to configure at least a subset of application content services provided by the appliance and including a rule set implementing rules in ones of said application content services in said subset based on changes to configurations of any other of said application content services. Each of said service objects may comprise an individual network service definition.
+
+CLAIMS:
+1. A network service administration system, comprising:
+a plurality of service objects;
+a plurality of address objects; and
+a service configuration application for a multifunction appliance running on a client computer coupled to the appliance via a network, including an interface allowing subscribers to configure at least a subset of application content services provided by the appliance and including a rule set implementing rules in ones of said application content services in said subset based on changes to configurations of any other of said application content services.
+2. The network service administration system of claim 1 wherein said content service application includes at least one of the following: Network address translation; virtual private networking; OSPF routing; Load balancing; or Firewall.
+3. The network service administration system of claim 1 wherein the configuration application includes a default rule set allowing administrative management of the multifunction appliance.
+4. The network service administration system of claim 1 wherein said subset of content application services are applied to subscriber data.
+5. The network service administration system of claim 1 wherein each of said service objects comprises an individual network service definition.
+6. The network service administration system of claim 5 wherein each of said services defined by said objects may be configured by the service configuration application.
+7. The network service administration system of claim 5 wherein each of said service definitions may be edited.
+8. The network service administration system of claim 1 wherein said subset of content services are applied only to individual subscriber data for which they are configured.
+9. The network service administration system of claim 1 wherein said content services includes a point-to-point VPN.
+10. The network service administration system of claim 9 wherein said content services include a mesh VPN rule allowing definition of a plurality of point-to-point VPNs based on specification of a plurality of address objects.
+11. A rule based network administration system for a multi-function content service appliance serving at least one subscriber coupled to a network, comprising:
+a service policy associated with said at least one subscriber;
+a plurality of service definition objects;
+a configuration engine including a plurality of content service application rule sets, each rule set installing one or more of said plurality service objects to provide a content service application such that said application and said rule set are compatible with said policy.
+12. The rule based network administration system of claim 11 wherein the configuration engine operates in a subscriber context to apply rules for network data associated with one subscriber.
+13. The rule based network administration system of claim 12 wherein the configuration validates configured service applications based on each rule set with said service policy associated with said subscriber.
+14. The rule based network administration system of claim 11 wherein said content service application rule sets include sets for at least one of the following: Network address translation; virtual private networking; OSPF routing; Load balancing; or Firewall.
+15. The rule based network administration system of claim 11 further including a plurality of address objects.
+16. The rule based network administration system of claim 15 wherein said rule sets utilize said address objects in defining said content service applications.
+17. The rule based network administration system of claim 11 wherein said address object comprises at least one of: a system address, an address range, an address group, a network and a network range.
+18. The rule based network administration system of claim 11 wherein said appliance is coupled to process data traffic for a plurality of subscribers and said rule sets are applied to individual ones of said subscribers.
+19. An implied rule network management system for a content service application appliance coupled to manipulate subscriber data via a network, comprising:
+a plurality of service definitions; and
+means for installing rules utilizing said service definitions to the appliance to provide content service applications on data for a subscriber.
+20. The implied rule network management system for a content service application appliance of claim 19 wherein said content service applications comprises at least one of the following: Network address translation; virtual private networking; OSPF routing; Load balancing; or Firewall.
+20. The implied rule network management system for a content service application appliance of claim 19 wherein the means for installing includes a default rule set allowing administrative management of the multifunction appliance.
+21. The implied rule network management system for a content service application appliance of claim 19 wherein the means for installing is provided on a client computer coupled via said network to said content service application appliance.
+22. The implied rule network management system for a content service application appliance of claim 21 further including an intermediary network management server coupled between the means for installing and the appliance, and including subscriber policies.

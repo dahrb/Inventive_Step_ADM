@@ -1,0 +1,124 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+11 82 6676.6 20 Vossius & Partner
+
+NEC Corporation Patentanwalte Rechtsanwalte mbB
+Our ref.: W1005 EP Siebertstrabe 3
+81675 Miinchen
+MAIN REQUEST August 25, 2020
+Claims
+1. A display device comprising:
+
+a plurality of display units that are equipped with a touch panel function and that
+display an image that is information;
+
+a coordinate conversion unit that judges whether an application that is currently
+operating is displaying said image straddling said plurality of display units,
+
+wherein the coordinate conversion unit, when the application is displaying said
+image straddling said plurality of display units, uses a predetermined operation to convert
+physical coordinates that indicate the position at which said display unit senses contact to virtual
+coordinates; and
+
+a coordinate notification unit that, when the application is displaying said image on
+one display unit among said plurality of display units, reports the physical coordinates at which
+said display unit senses contact to the application and, when the application is displaying said
+
+image straddling said plurality of display units, reports said virtual coordinates to the application.
+
+2. The display device as set forth in claim 1, wherein said coordinate conversion unit
+converts to said virtual coordinates the physical coordinates on, from among said plurality of
+display units, a display unit other than a primary display unit that includes the coordinates of the
+
+origin that said application recognizes.
+
+3. The display device as set forth in claim 2, wherein said coordinate conversion unit
+converts, from among said physical coordinates, the coordinate of the direction along which said
+
+primary display unit and a display unit other than the primary display unit are aligned.
+
+4. The display device as set forth in claim 3, wherein said coordinate conversion unit
+cafries out conversion to said virtual coordinates by adding a coordinate portion that accords
+with the size of said primary display unit to the physical coordinates on display units other than
+
+said primary display unit.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+21
+
+5. The display device as set forth in claim 1, wherein said coordinate conversion unit
+carries out conversion of said physical coordinates to said virtual coordinates according to
+movement of physical coordinates with respect to the origin that said application recognizes that
+
+is caused by rotation of the length and width of the display device.
+
+6. A coordinate notification method in a device that is equipped with a plurality of
+displays having a touch panel function, comprising:
+
+a step of sensing contact to said plurality of displays;
+
+a step of judging whether an application that is currently operating is displaying said
+image straddling said plurality of displays;
+
+a conversion step of, when the application is displaying said image straddling said
+plurality of displays, using a predetermined operation to convert the physical coordinates that
+indicate the position at which said contact is sensed to virtual coordinates;
+
+a step of, when the application is displaying said image on one display among said
+plurality of displays, reporting the physical coordinates at which said contact is sensed to the
+application; and
+
+a step of, when the application is displaying said image straddling said plurality of
+
+displays, reporting said virtual coordinates to said application.
+
+7. The coordinate notification method as set forth in claim 6, wherein, in said
+conversion step, physical coordinates on, from among said plurality of displays, a display other
+than a primary display that includes the coordinates of an origin that said application recognizes
+
+are converted to said virtual coordinates.
+
+8. The coordinate notification method as set forth in claim 7, wherein, in said
+conversion step, from among said physical coordinates, coordinates of the direction along which
+
+said primary display and a display other than the primary display are aligned are converted.
+
+9. The coordinate notification method as set forth in claim 8, wherein, in said
+conversion step, conversion to said virtual coordinates is carried out by adding to physical
+coordinates on a display other than said primary display a coordinate portion that accords with
+
+the size of said primary display.
+
+--- PAGE 3 ---
+22
+
+10. The coordinate notification method as set forth in claim 6, wherein, in said
+conversion step, said physical coordinates are converted to said virtual coordinates in accordance
+with movement of physical coordinates that correspond to the origin that said application
+
+recognizes that results from rotation of the length and width of the device.
+
+11. A recording medium storing a program for causing a device that is equipped with a
+plurality of displays that have a touch panel function and that display an image that is
+information to execute the steps of the coordinate notification method as set forth in any one of
+
+claims 6 to 10.

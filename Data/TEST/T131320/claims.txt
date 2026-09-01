@@ -1,0 +1,210 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main
+
+Claims:
+
+1. A method of providing information relating to a digital photograph on an
+electronic device (100), the method comprising:
+
+detecting (302), by a processor of the electronic device, a digital photograph
+sharing event for sharing the digital photograph, the sharing event comprising
+attaching the digital photograph to a message;
+
+in response to detecting the digital photograph sharing event, monitoring for
+text input in a message field related to the digital photograph sharing event
+and identifying a text input related to the digital photograph, wherein
+identifying the text input comprises receiving (304), by the processor, the text
+input related to the digital photograph sharing event, the text input
+comprising text entered, at the electronic device, into the message field of the
+
+message to which the digital photograph is attached;
+
+in response to detecting the sharing event and identifying the text input
+related to the digital photograph sharing event, extracting (306), by the
+processor, the information relating to the digital photograph from the text
+related to the digital photograph utilizing natural language processing;
+
+storing (308) the information that is extracted in association with the digital
+photograph by writing the extracted information as tags, into a digital
+photograph file stored in memory of the electronic device coupled to the
+processor, wherein the information that is extracted and stored in association
+
+with the digital photograph is searchable;
+
+sharing the digital photograph with a third party device; and
+
+-13-
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main
+subsequently receiving a search term, and in response to determining an at
+
+least partial match between the search term and the information that is
+extracted and stored in association with the digital photograph, displaying a
+thumbnail image of the digital photograph on a display of the electronic
+
+device.
+
+2. The method according to claim 1, wherein storing (308) the information
+that is extracted comprises writing the information into a digital photograph
+
+file stored on the electronic device (100).
+
+3. The method according to claim 2, wherein the storing (308) the
+information that is extracted comprises storing the information along with
+other metadata, into the digital photograph file stored on the electronic device
+(100).
+
+4. The method according to any preceding claim, wherein detecting (302) the
+digital photograph sharing event comprises at least one of:
+
+detecting selection of an option to attach the digital photograph to a
+message in a messaging application;
+
+detecting selection of an option to upload the digital photograph to a
+social media website or file sharing website;
+
+detecting receipt of a comment related to the digital photograph via a
+social media website or messaging application;
+
+detecting the digital photograph sharing event comprises detecting
+selection of an option to download the digital photograph for storage on the
+electronic device (100).
+
+5. The method according to any preceding claim, wherein storing (308) the
+
+information that is extracted comprises tagging the digital photograph file
+based on the information extracted.
+
+-14-
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main
+6. A computer program which when executed by at least one processor (102)
+
+of a portable electronic device (100) is configured to perform the method
+according to any preceding claim.
+
+7. An electronic device (100) comprising:
+
+a camera (122) for obtaining digital photographs;
+
+a memory (108, 110) for storing digital photographs in a database thereon;
+
+a communication system (104) for coupling the electronic device to a network
+(150); and
+
+a processor (102) coupled to the memory and to the communication system
+to:
+
+detect (302) a digital photograph sharing event for sharing a digital
+photograph of the digital photographs, the sharing event comprises
+attaching the digital photograph to a message;
+
+in response to detecting the digital photograph sharing event,
+monitoring for text input in a message field related to the digital
+photograph sharing event and identify a text input related to the digital
+photograph, wherein identifying the text input comprises receiving
+(304), by the processor, the text input related to the digital photograph
+sharing event, the text input comprising text entered at the electronic
+
+device;
+
+in response to detecting the sharing event and identifying the text input
+related to the digital photograph sharing event, extract (306), by the
+processor, the information relating to the digital photograph from the
+text related to the digital photograph utilizing natural language
+
+processing;
+
+-15-
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main
+
+store (308) the information that is extracted in association with the
+digital photograph by writing the extracted information as tags, into a
+digital photograph file stored in memory of the electronic device
+coupled to the processor, wherein the information that is extracted and
+stored in association with the digital photograph is searchable;
+
+share the digital photograph with a third party device; and
+
+subsequently receiving a search term, and in response to determining
+an at least partial match between the search term and the information
+that is extracted and stored in association with the digital photograph,
+display a thumbnail image of the digital photograph on a display of the
+
+electronic device.
+
+8. The electronic device (100) according to claim 7, wherein the information
+is stored by writing the information into a digital photograph file stored in the
+database, optionally wherein the information is stored along with other
+metadata, in the digital photograph file stored in the database.
+
+9. The electronic device (100) according to claim 7, wherein the digital
+photograph sharing event is detected (302) by at least one of:
+
+detecting selection of an option to attach the digital photograph to a
+message in a messaging application;
+
+detecting selection of an option to upload the digital photograph to a
+social media website or file sharing website;
+
+detecting receipt of a comment related to the digital photograph via a
+social media website or messaging application;
+
+detecting selection of an option to download the digital photograph for
+
+storage on the electronic device.
+
+-16-
+
+--- PAGE 5 ---
+Main
+10. The electronic device according to any one of claims 7 to 9, wherein the
+
+information is stored (308) by tagging the digital photograph file based on the
+information extracted.
+
+-1i7-

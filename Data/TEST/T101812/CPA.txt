@@ -1,0 +1,58 @@
+TITLE:
+System and method for measuring channel quality information in a communication system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method to measure channel quality in terms of signal to interference plus noise ratio for the transmission of coded signals over fading channels in a communication system. A Viterbi decoder metric for the Maximum Likelihood path is used as a channel quality measure for coherent and non-coherent transmission schemes. This Euclidean distance metric is filtered in order to smooth out short term variations. The filtered or averaged metric is a reliable channel quality measure which remains consistent across different coded modulation schemes speeds. The filtered metric is mapped to the signal to interference plus noise ratio per symbol using a threshold based scheme. Use of this implicit signal to interference plus noise ratio estimate is used for the mobile assisted handoff in a cellular system, power control and data rate adaptation in the transmitter.
+
+CLAIMS:
+1. A method for determining a signal to interference plus noise ratio, comprising the steps of:
+establishing a set of path metrics corresponding to a set of predetermined signal to interference plus noise rations;
+receiving a digital signal;
+determining a path metric for said digital signal by establishing a set of signal to interference plus noise ratio values that correspond to a set of predetermined short term average of metric values and averaging a decoded path metric; and
+mapping said path metric to said signal to interference plus noise ratio in said set of predetermined signal to interference plus noise ratios.
+2. The method of claim 1, wherein said digital signal is a coded signal.
+3. The method of claim 1 wherein said digital signal is a trellis coded signal.
+4. The method of claim 1 wherein the step of determining a path metric for said digital signal, further comprises the steps of:
+establishing a set of signal to interference plus noise ratio values corresponding to a set of predetermined short term average of metric values, said short term average of metric values defined as M/μ;
+determining a decoded path metric from said received digital signal using a decoder, said decoded path metric defined as mi;
+averaging mi;
+storing in a memory unit said average decoded path metric, said average decoded path metric defined as μ; and
+determining an estimated Euclidean distance metric defined as Mi.
+5. The method of claim 4 wherein the step of determining the estimated Euclidean distance metric is performed using the following equation:
+Mi =aMi-1+(1-a)m l
+Where said estimated Euclidean distance metric is defined as Mi and α is a predetermined filter coefficient which is greater than zero and less than 1.0.
+6. The method of claim 5 including the steps of:
+determining a standard deviation of Mi;
+determining average metric thresholds defined as σlow and σhigh based on said standard deviation of Mi;
+determining a value for Mi/μ by dividing said value of Mi by said value of μ;
+mapping said value of Mi/μ to a minimum value of said corresponding signal to interference plus noise ratio if Mi/μ is less than σlow;
+mapping said value of Mi/μ to a maximum value of said corresponding signal to interference plus noise ratio if Mi/μ is greater than σhigh; and
+mapping said value of Mi/μ to said corresponding signal to interference plus noise ratio.
+7. The method of claim 4 wherein said decoder is a Viterbi decoder for the maximum likelihood path.
+8. A system for determining a signal to interference plus noise ratio, comprising:
+means for establishing a set of path metrics corresponding to a set of predetermined signal to interference plus noise ratios;
+means for receiving a digital signal;
+means for determining a path metric for said digital signal by establishing a set of signal to interference plus noise ratio values that correspond to a set of predetermined short term average of metric values and averaging a decoded path metric; and
+means for mapping said path metric to said signal to interference plus noise ratio in said set of predetermined signal to interference plus noise ratios.
+9. The system of claim 8, wherein said digital signal is a coded signal.
+10. The system of claim 8 wherein said digital signal is a trellis coded signal.
+11. The system of claim 8 wherein the means for determining a path metric for said digital signal, further comprises:
+means for establishing a set of signal to interference plus noise ratio values corresponding to a set of predetermined short term average of metric values, said short term average of metric values defined as Mi/μ;
+means for determining a decoded path metric from said received digital signal using a decoder; said decoded path metric defined as mi;
+means for averaging mi; and
+means for storing in a second memory unit said average decoded path metric, said average decoded path metric defined as μ; and
+means for determining an estimated Euclidean distance metric defined as Mi.
+12. The system of claim 11 wherein the means for determining the estimated Euclidean distance metric is performed using the following equation:
+Mi =aMi-1+(1-a)m l
+where said estimated Euclidean distance metric is defined as Ml and α is a predetermined filter coefficient which is greater than zero and less than 1.0.
+13. The system of claim 12 further comprising:
+means for determining a standard deviation of Mi;
+means for determining average metric thresholds defined as σlow and σhigh based on said standard deviation of Mi;
+means for determining a value for Mi/μ by dividing said value of Mi by said value of μ;
+means for mapping said value of Mi/μ to a minimum value of said corresponding signal to interference plus noise ratio if Mi/μ is less than σlow;
+means for mapping said value of Mi/μ to a minimum value of said corresponding signal to interference plus noise ratio if Mi/μ is less than σhigh; and
+means for mapping said value of Mi/μ to said corresponding signal to interference plus noise ratio.
+14. The system of claim 11 wherein said decoder is a Viterbi decoder for the maximum likelihood path.

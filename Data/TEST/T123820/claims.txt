@@ -1,0 +1,170 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+415015EP VRD 5 Nov 2019
+
+NEW MAIN REQUEST
+
+1. An apparatus comprising:
+
+a processor [108] configured to execute instructions stored in memory [110] to:
+
+represent [1202] a region of interest with one or more polygons;
+
+determine [1204] a plurality of sub-polygons that are contained within the one
+or more polygons, wherein each of the sub-polygons is associated with a unique code
+comprising a geohash code; and
+
+generate [1206] a first index system based on at least a subset of the plurality of
+sub-polygons,
+
+wherein the processor is further configured to:
+
+receive a location query from a client device, wherein the location query
+includes a location identifier providing geolocation of the client device;
+
+determine a query identifier corresponding to the location identifier and
+comprising a geohash code;
+
+compare the query identifier with the index system to determine that the
+location identifier provided by the client device is within the region of interest; and
+
+provide a service associated with the region of interest to the client device over a
+
+communication network.
+
+2. The apparatus of claim 1, wherein the processor [108] is further configured to
+determine a tree structure corresponding to the region of interest and to generate the
+
+first index system based on the tree structure,
+
+wherein the tree structure includes a branch node corresponding to a first set of bits in
+the geohash code of a sub-polygon and a leaf node corresponding to a second set of bits
+in the geohash code of a sub-polygon and the branch node is associated with a
+geographic area that is larger than that of the leaf node, and wherein the processor [108]
+is further configured to generate indices for the index system by traversing the tree
+
+structure from the branch node to the leaf node.
+
+3. The apparatus of claim 2, wherein the processor [108] is further configured to:
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+415015EP VRD 5 Nov 2019
+determine a list of polygons that includes a particular sub-polygon, and
+associate the list of polygons with a leaf node of the tree structure corresponding to the
+
+particular sub-polygon.
+
+4. The apparatus of claim 2, wherein the processor is further configured to merge
+the tree structure corresponding to the region of interest, with a second tree structure
+corresponding to a second region of interest, thereby providing a single index system
+
+modeling both the tree structure and the second structure.
+
+5. The apparatus of claim 1, wherein the processor [108] is further configured to
+remove one or more sub-polygons corresponding to a particular polygon from the index
+
+system.
+
+6. The apparatus of claim 1, wherein the processor [108] is further configured to
+remove one or more sub-polygons from the plurality of sub-polygons to provide a
+reduced set of sub-polygons and generate the index system from the reduced set of sub-
+
+polygons, thereby reducing the size of the index system.
+
+7. A method for providing an index system for a region of interest, the method
+comprising:
+
+representing [1202] the region of interest with one or more polygons;
+
+determining [1204] a plurality of sub-polygons that are contained within the one
+or more polygons, wherein each of the sub-polygons is associated with a unique code
+comprising a geohash code;
+
+generating [1206] a first index system based on at least a subset of the plurality
+of sub-polygons;
+
+wherein the method further comprises:
+
+receiving a location query from a client device, wherein the location query
+includes a location identifier providing geolocation of the client device;
+
+determining a query identifier corresponding to the location identifier and
+comprising a geohash code;
+
+comparing the query identifier with the index system to determine that the
+
+location identifier provided by the client device is within the region of interest; and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+415015EP VRD 5 Nov 2019
+providing a service associated with the region of interest to the client device
+
+over a communication network.
+
+8. The method of claim 7, further comprising:
+
+determining a difference between the index system and a previously-generated
+index system; and
+
+providing the difference to a computing device [102] to update the previously-
+
+generated index system in the computing device.
+
+9. The method of claim 7, further comprising identifying a tree structure
+corresponding to the region of interest and generating the first index system based on
+
+the tree structure,
+
+wherein the tree structure includes a branch node corresponding to a first set of bits in
+the geohash code of a sub-polygon and a leaf node corresponding to a second set of bits
+in the geohash code of a sub-polygon, and the branch node is associated with a
+geographic area that is larger than that of the leaf node, and wherein the method further
+comprises generating, at the index generation module, indices for the index system by
+
+traversing the tree structure from the branch node to the leaf node.
+
+10. The method of claim 9, further comprising merging the tree structure,
+corresponding to the region of interest, with a second tree structure corresponding to a
+second region of interest, to generate a single index system modeling both the tree
+
+structure and the second tree structure.
+
+11. | The method of claim 7, further comprising receiving a second index system
+from another computing device [102] and merging the first index system and the second
+index system by considering an overlap of sub-polygons corresponding to the first
+
+index system and the second index system.
+
+12. A non-transitory computer readable medium [110] having executable
+instructions operable to cause a data processing apparatus to perform the method of any
+
+of claims 7 - 11.

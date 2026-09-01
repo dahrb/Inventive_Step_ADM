@@ -1,0 +1,303 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Claims:
+
+19
+
+Terminal for instructing payment transactions comprising:
+
+a) a visual communication unit
+
+b) an input unit for receiving identification comprising account
+information of a customer and a confirmation of requesting entry of the
+customer to a lottery game
+
+C) a remote communication unit; and
+d) a processing unit for controlling operations of elements of the
+terminal:
+
+wherein the processing unit is arranged to:
+
+2.
+
+e) display a first transaction amount for goods or services to be
+purchased by the customer by means of the visual communication unit;
+f) propose entry in a lottery game to the customer by means of
+the visual communication unit;
+g) upon receiving a confirmation of requesting entry of the user to
+a lottery game by means of the input unit, display a second transaction
+amount being the first amount plus an amount for entry in the lottery game;
+h) control the remote communication unit to
+i) send out an instruction for executing payment of
+the second amount to a banking server;
+il) communicate the request of entry in a lottery game
+to a lottery server, the request comprising the account
+information; and
+iil) receive lottery information sent by the lottery server
+in response to the request;
+i) upon receiving the lottery information, display at least part of
+the lottery information to the customer by means of the visual
+communication unit.
+
+Terminal according to claim 1, wherein the visual communication unit
+
+comprises at least one of the following:
+
+3.
+
+a) a printer; and
+b) a display
+
+Terminal according to claim 1, wherein the processing unit is further
+
+arranged to include terminal identification code in the request of entry in a lottery game
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+20
+
+4. Terminal according to claim 3, wherein the country of residence of the
+terminal can be identified by means of the terminal identification code.
+
+5. Terminal according to claim 1, wherein the processing unit is further
+arranged to extract from the lottery information at least one of the following data:
+
+a) the customer has won a prize;
+
+b) the customer has not won a prize;
+
+C) a string of characters representing an entry to a draw.
+6. Terminal according to claim 5, wherein the processing unit is further
+
+arranged to control the remote communication unit to send out an instruction to a
+further banking server for executing payment of a prize amount to an account identified
+by the account information of the customer.
+
+7. Terminal according to claim 1, wherein the processing unit is arranged to
+control the remote communication unit to communicate the request of entry in a lottery
+game to a lottery server via a lottery brokerage server.
+
+8. Lottery brokerage server comprising:
+a) a communication unit:
+b) a storage unit; and
+C) a processing unit for controlling elements of the lottery
+
+brokerage server:
+wherein the communication unit is arranged to communicate with a customer terminal
+for receiving customer lottery entry requests comprising account information of a
+customer and with a lottery server for sending server lottery entry requests, wherein the
+storage unit has validation data stored on it and wherein the processing unit is arranged
+
+to:
+d) extract identification data and account information of the
+customer from a customer lottery entry request received from the customer
+terminal:
+e) if the identification data corresponds to at least part of the
+
+validation data, control the communication unit to send a server lottery entry
+request to the lottery server, the server lottery entry request corresponding
+to the customer lottery entry request:
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+21
+
+f) in response to receiving server lottery information sent by the
+lottery server in response to receiving the server lottery entry request,
+sending customer lottery information to the customer terminal, the customer
+lottery information corresponding to the server lottery information; and
+
+g) if the server lottery information indicates that the lottery entry
+request resulted in winning a prize, instruct, via the communication server,
+a banking server to pay a prize amount to an account of the customer
+identified by the account information.
+
+Lottery brokerage server according to claim 8, wherein:
+
+a) the processing unit is further arranged to extract geographical
+data from the customer lottery entry request;
+
+b) the storage unit has a lookup table stored in it
+
+and wherein the processing unit is arranged to:
+
+10.
+
+11.
+
+C) identify a country of origin of a first lottery entry request
+received from the customer terminal from the extracted geographical data;
+d) look up in the lookup table a lottery server that operable for the
+country of origin; and
+
+e) control the communication unit to send a server lottery entry
+request to the lottery server looked up previously, the server lottery entry
+request corresponding to the customer lottery entry request.
+
+Lottery brokerage server according to claim 8, wherein:
+
+a) the processing unit is further arranged to extract lottery game
+information from the customer lottery entry request;
+
+b) identify a lottery server related to the lottery game information;
+and:
+
+C) control the communication unit to send the server lottery entry
+
+request to the lottery server identified.
+
+System for providing a lottery game, comprising:
+
+a) the terminal according to claim 1;
+b) the lottery brokerage server according to claim 8; and
+C) a lottery server operatively to the lottery brokerage server;
+
+wherein the terminal is arranged to communicate with the lottery server via the lottery
+
+brokerage server.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+12.
+
+22
+
+System according to claim 11, further comprising a transaction routing
+
+server comprising
+
+a) a communication unit; and
+b) a processing unit
+
+wherein the communication unit is arranged to receive a communication from the
+
+terminal; and the processing unit is arranged to:
+
+13.
+comprising:
+
+14.
+
+C) determine whether the communication from the terminal is a
+lottery instruction or a banking transaction instruction;
+
+d) upon determining that the communication is a_ lottery
+instruction, instruct the communication unit to route the communication to
+the lottery brokerage server; and
+
+e) upon determining that the communication is a _ banking
+transaction instruction, instruct the communication unit to route the
+communication to a banking server.
+
+Method of operating a terminal for instructing payment transactions
+
+a) display a first transaction amount for goods or services taken
+by a customer by means of a visual communication unit;
+
+b) propose entry in a lottery game to the customer by means of
+the visual communication unit;
+
+C) upon receiving a confirmation of requesting entry of the user to
+a lottery game from the customer, display a second transaction amount
+being the first amount plus an amount for entry in the lottery game;
+
+d) send out an instruction for executing payment of the second
+amount to a banking server:
+
+e) communicate the request of entry in a lottery game to a lottery
+server;
+
+f) receive lottery information sent by the lottery server in
+
+response to the request; and
+
+g) upon receiving the lottery information, display at least part of
+the lottery information to the customer by means of the visual
+communication unit.
+
+Method of operating a lottery brokerage server comprising:
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+15.
+comprising:
+
+23
+
+a) extracting identification data from a customer lottery entry
+request received from the customer terminal;
+
+b) if the identification data corresponds to at least part of the
+validation data, controlling the communication unit to send a server lottery
+entry request to the lottery server, the server lottery entry request
+corresponding to the customer lottery entry request:
+
+C) in response to receiving server lottery information sent by the
+lottery server in response to receiving the server lottery entry request,
+sending customer lottery information to the customer terminal, the customer
+lottery information corresponding to the server lottery information.
+
+Method of operating a lottery brokerage server according to claim 14,
+
+a) extracting geographical data from the customer lottery entry
+request;
+b) identifying a country of origin of a first lottery entry request
+
+received from the customer terminal from the extracted geographical data
+C) looking up in a lookup file a lottery server that operable for the
+country of origin; and
+
+d) sending a server lottery entry request to the lottery server
+looked up previously, the server lottery entry request corresponding to the
+customer lottery entry request.

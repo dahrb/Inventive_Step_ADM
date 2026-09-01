@@ -1,0 +1,52 @@
+Title: System, method and computer program product for automatically selecting, suggesting and playing music media files
+
+Abstract: 
+System, method and computer program product to intelligently correlate ambient sensor signals, chronographic information, daily life schedule information, and/or external meteorological information with a user's previous music media file selection patterns for predicting future music media file play recommendations to a user of a portable media player. The sensors include but are not limited to a meteorological sensor, a physiological sensor, a geo-spatial sensor, a motion sensor, an inclination sensor, an environmental sensor, and a combination thereof. Music media file selection information includes user spontaneous selections of music media files and/or user acceptances or rejections of software suggested music media files. Various embodiments of the invention provide for gait matching and/or tempo adjustment in dependence on the received sensor signals and the selection, suggestion and/or automatic play of music media files.
+
+Type: US Patent
+
+Claims: 
+
+1. A predictive music media selection system for a portable media player comprising:
+a processor;
+a main memory coupled to said processor;
+a communications infrastructure coupled to said processor;
+a secondary memory coupled to said communications infrastructure having retrievably stored therein;
+a plurality of music media files playable by said processor; and,
+a store of ambient influence information relationally associated with each of said plurality of music media files;
+an ambient factors providing circuit operatively coupled to said communications infrastructure for determining current ambient factors; and,
+at least one predictive program stored in at least a portion of said main memory having instructions executable by said processor to;
+select and suggest or automatically play at least one of said plurality of music media files retrieved from said secondary memory in at least partial dependence on an assessment of correlation between said current ambient factors and said store of ambient influence information.
+2. The system according to claim 1 wherein said at least one predictive program further includes instructions executable by said processor to select and suggest or automatically play at least one of said plurality of music media files using a weighted random selection process.
+3. The system according to claim 1 wherein said at least one predictive program further includes instructions executable by said processor to monitor and store a representation of user's interactions with said portable media player in said ambient influence information.
+4. The system according to claim 1 wherein said current ambient factors includes at least one of chronographic information, external downloadable information and sensor information.
+5. The system according to claim 4 wherein said sensor information includes at least one of; meteorological information, physiological information, geo-spatial information, motion information, inclination information, environmental information, and a combination thereof.
+6. The system according to claim 1 wherein said at least one predictive program further includes instructions executable by said processor to;
+generate an array in another portion of said main memory;
+populate said array with unique indicia associated with each of said plurality of music media files; said indicia being weighted in said array according to at least said assessment of correlation;
+randomly select an element of said array; and
+retrieve at least one of said plurality of music media files using said unique indicia contained in said array element as an index.
+7. The system according to claim 1 wherein said weighting is derived at least in part from a correlation between said current ambient factors and said store of ambient influence information.
+8. The system according to claim 1 wherein said at least one predictive program further includes instructions executable by said processor to alter a tempo or to perform gait matching on a playing music media file in dependence on said sensor signals.
+9. A method for predictive music media selection for a portable media player comprising:
+providing at least one predictive program operatively loaded into a main memory of said portable media player;
+monitoring user music media file selections associated with a plurality of music media files playable by said portable media player;
+monitoring current ambient factors received by said portable media player;
+accumulating said user music media file selections and said ambient factors in an ambient influence datastore;
+retrievably associating said ambient influence datastore with said plurality music media files; and,
+determining correlated weighting factors in at least partial dependence on said current ambient factors and said ambient influence datastore.
+10. The method according to claim 9 further including;
+generating an array in another portion of said main memory;
+populating said array with unique indicia associated with said plurality of music media files; said indicia being weighted in said array according to said correlated weighting factors;
+randomly selecting an element of said array; and
+retrieving at least one music media file using said unique indicia contained in said array element as an index.
+11. The method according to claim 10 further including suggesting or automatically play said at least one music media file.
+12. The method according to claim 9 further including altering a tempo or performing gait matching of a playing music media file in dependence on at least one sensor value.
+13. The method according to claim 9 wherein said weighting is derived at least in part from a correlation between said current ambient factors and said ambient influence information.
+14. The method according to claim 9 wherein said current ambient factors includes at least one of chronographic information, external downloadable information and sensor information.
+15. A computer program product for a portable media player embodied in a tangible form having instructions executable by a processor to select and suggest or automatically play at least one music file from a plurality of music media files stored in datastore in dependence on a determined correlation between current ambient factors and accumulated ambient influence information.
+16. The computer program product according to claim 15 wherein said instructions further includes instructions executable by said processor to monitor a user's media selections upon said portable media player and said current ambient factors to determine said correlation.
+17. The computer program product according to claim 16 wherein said instructions further includes instructions executable by said processor to retrievably store said correlation in a relational association with said accumulated ambient influence information.
+18. The computer program product according to claim 15 wherein said instructions further includes instructions executable by said processor to alter a tempo or to perform gait matching of a playing music media file in dependence on at least said ambient factors.
+19. The computer program product according to claim 15 wherein said accumulated ambient influence information includes established relationships between a user's music preferences and at least said current ambient factors.
+20. The computer program product according to claim 15 wherein said tangible form comprises magnetic media, optical media or logical media.

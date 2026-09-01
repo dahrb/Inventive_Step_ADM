@@ -1,0 +1,64 @@
+TITLE:
+System and methods for optimized access in a multi-user environment
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A client/server system providing methods of utilizing information stored locally on a client even after the client has modified data on the server is described. A client stores data from the server in a local "read-only" buffer(s), to speed up access to the data and reduce network traffic. Since the buffer is treated as a "read only" buffer, no locks are taken out at the server by the client. Accesses to particular data records are satisfied by looking first to the local buffer or cache. The client may proceed to modify the data records and commit changes back to the server. Moreover, the client updates or "writes through" the "read-only" buffer(s) with the changes so that the local buffer remains valid. The methods of updating data stored locally on the client provide significant performance increases as the client does not have to refresh data from the server.
+
+CLAIMS:
+1. In a system comprising a computer network comprising a server for storing information records which may be shared among a plurality of client workstations, each of said client workstations having a processor and a memory, a method for providing a client access to information records stored on the server, the method comprising the steps of:
+receiving from a process executing at the client a request for access to particular records stored on the server;
+allocating a buffer in the memory of the client, said buffer for storing copies of said particular records;
+transferring copies of said particular records from the server into the buffer of the client, said transferring step being performed with shared access to said particular records;
+satisfying said request by providing said process access to said copies of said particular records from said buffer;
+receiving at the client input for modifying at least one of said particular records;
+transferring said modified at least one of said particular records from the client to the server;
+updating copies of records in the buffer which correspond to said modified at least one of said particular records so that said step of transferring said modified at least one of said particular records from the client to the server does not render the buffer invalid; and
+periodically marking the buffer as invalid regardless of whether modifications have been posted from clients to the server, upon expiration of a pre-selected time interval.
+2. The method of claim 1, wherein said particular records on the server includes database records stored in at least one record block on the server.
+3. The method of claim 2, wherein said step of transferring said modified at least one of said particular records from the client to the server includes transferring said at least one record block to the client.
+4. The method of claim 1, further comprising the step of marking the buffer as valid upon completion of said updating step.
+5. The method of claim 1, further comprising:
+receiving a subsequent request from a process executing at the client for access to records stored on the server; and
+if the records of the subsequent request are in the buffer, satisfying said request by providing access to said copies of said particular records from said buffer.
+6. The method of claim 1, further comprising:
+receiving a query condition for selecting particular records;
+creating a filter bitmap of those records which meet the query condition; and
+upon occurrence of said step of transferring said modified at least one of said particular records from the client to the server, updating portions of said bitmap which correspond to said modified at least one of said particular records so that said transfer step does not render the bitmap invalid.
+7. The method of claim 6, wherein said step of creating a filter bitmap of those records which meet the query condition comprises setting a bit for each record which meets the query condition and resetting the bit for each record which does not meet the query condition.
+8. The method of claim 7, wherein said step of updating portions of said bitmap comprises:
+re-applying the query condition to each modified record, and setting a bit for each record which now meets the query condition and resetting the bit for each record which no longer meets the query condition.
+9. The method of claim 1, wherein said satisfying step includes:
+providing said process executing at the client access to said copies of said particular records from said buffer by copying the records to a region in the memory of the client other than the buffer.
+10. A server-based networking system with improved data access, comprising:
+a server having a storage device for storing records in blocks;
+at least one client operably coupled to said server through a communication line, each said at least one client having a processor and a memory;
+means for copying at least one of the blocks from the server into a local buffer in the memory of a client;
+means for accessing records from said local buffer;
+means, responsive to input at said client, for modifying records which are accessed from said local buffer;
+means for posting modified records to said server;
+means for determining whether any modified records posted to said server exist in said local buffer;
+means for updating copies of records in the local buffer which correspond to said records posted to said server from said client; and
+means for periodically marking said local buffer as invalid regardless of whether modifications have been posted from clients to the server, upon expiration of a preselected time interval.
+11. The system of claim 10, further comprising means for marking the buffer as valid when the buffer is updated.
+12. The system of claim 10, further comprising:
+means for receiving a query condition for selecting particular records;
+means for creating a filter bitmap of those records which meet the query condition; and
+means for updating portions of said bitmap which correspond to said modified at least one of said particular records so that said transfer step does not render the bitmap invalid, upon occurrence of said step of transferring said modified at least one of said particular records from the client to the server.
+13. The system of claim 10, wherein said means for copying at least one of the blocks from the server into a local buffer in the memory of the client includes:
+means for copying without exclusive access at least one of the blocks from the server into a local buffer in the memory of the client.
+14. A server-based networking system with improved data access comprising:
+(a) a server having a storage device;
+(b) at least one client operably coupled to said server through a communication line, each said at least one client having a processor and a memory;
+(c) means for transferring a valid copy of data from the storage device of the server to memory of a client;
+(d) means, responsive to a request for data, for providing access to the valid copy of the data in the memory of the client;
+(e) time-based means for periodically marking the copy as invalid regardless of whether modifications have been posted from clients to the server;
+(f) modification means for creating a modified copy of the data and posting the modified copy to the server; and
+(g) update means for updating the copy of the data in the memory of the client, upon posting the modified copy to the server.
+15. The system of claim 14, wherein said processor is an Intel® 80×86 class microprocessor and wherein said time-based means includes a real-time clock (RTC) capable of generating preemptive interrupts.
+16. The system of claim 15, wherein said time-based means includes means responsive to interrupts from the RTC for transferring a new copy of the data from the storage device of the server to the memory of the client.
+17. The system of claim 14, wherein said time interval is empirically selected to optimize data access.
+18. The system of claim 14, wherein the time interval is selected from a range of about 1 to 4 seconds.
+19. The system of claim 14, wherein the time interval substantially equals about 2 seconds.

@@ -1,0 +1,191 @@
+--- PAGE 1 ---
+MAIN REQUEST
+CLAIMS
+
+1. A method of delivering and reporting delivery of targeted assets to
+viewers of a broadcast network, the method comprising the steps of operating a
+processor at a subscriber device (10):
+to determine, in real-time, an audience gender value representative of
+the likelihood that a current audience at the subscriber device has a given
+gender by, at regular intervals,
+determining a program being watched,
+determining, from a table at the subscriber device, an audience
+composition value for the program being watched, wherein the table lists
+programs and, for each entry in the table, an audience composition value
+determined from ratings data of the gender composition of the viewers for
+a given program, and
+updating an audience gender value from a previous audience
+gender value, the audience composition value and a decay constant
+based on sampling period;
+to receive broadcast information directed to network viewers, the
+broadcast information including a plurality of assets and asset-related
+information including target criteria for each of the assets, a said target criterion
+being a gender constraint based on whether the audience gender value is
+greater or less than a given value;
+to select when to deliver an asset from the plurality of assets at the
+subscriber device based on a comparison, conducted at the subscriber device,
+of the updated audience gender value and the target criteria for the assets,
+wherein the asset played at the subscriber device is determined by matching
+the updated audience gender value to the gender constraint; and
+to transmit report information from the subscriber device to a platform of
+said broadcast network, said report information identifying the asset delivered
+by the subscriber device.
+
+33
+
+--- PAGE 2 ---
+2. The method of Claim 1, comprising determining by the processor in real-
+time a female audience gender value and a male audience gender value,
+wherein updating an audience gender value comprises updating the female
+audience gender value and the male audience gender value according to the
+equations
+
+F’ = (k*F) + (1-k)*C’,
+
+M’ = (k*M) + (1-k)*(1-C’),
+
+where F’ is an updated female audience gender value, F is a previous
+female audience gender value, M’ is an updated male audience gender value,
+M is a previous male audience gender value, C’ is audience composition value,
+
+and k is a decay constant based on sampling period.
+
+3. The method of Claim 1 or Claim 2, wherein the table lists programs,
+categories and genres, each entry in the table providing a said audience
+composition value, and wherein, where the processor cannot find the program
+being watched in the table, the processor attempts to lookup the program
+category or genre in the table to determine the audience composition value, the
+processor being operable to derive the category and genre information from an
+electronic program guide at the subscriber device.
+
+4. The method of any one of the preceding claims, further comprising the
+step of storing the asset for a period of time at the subscriber device between
+
+the receipt of the asset and the delivery of the asset.
+
+5. The method of any one of the preceding claims, in which the step of
+transmitting report information comprises the step of forwarding an asset
+delivery notification from the subscriber device to a privacy manager system
+component (16) of a service provider, in which the asset delivery notification
+contains information specific to the subscriber, the method further comprising
+forwarding, by the privacy manager system component of the service
+
+provider, information from the asset delivery notification to an information
+
+34
+
+--- PAGE 3 ---
+manager system component (20) of the service provider after removing the
+information specific to the subscriber.
+
+6. The method of Claim 5, further comprising a step of compiling, by the
+information manager system component of the service provider, information on
+
+asset delivery from plural subscribers.
+
+7. The method of Claim 6, further comprising a step of delivering, by the
+information manager system component of the service provider, compiled
+
+information on asset delivery to a user.
+
+8. The method of any one of the preceding claims, wherein said asset and
+
+said target criteria are received at different times.
+
+9. A subscriber device (10) for use in delivery and reporting of the delivery
+of targeted assets to viewers of a broadcast network, the subscriber device
+being connected to a broadcast network and configured:
+to include a real-time profiler (12), said real-time profiler being operative
+to determine, in real-time, an audience gender value representative of the
+likelihood that a current audience at the subscriber device has a given gender
+by, at regular intervals,
+determining a program being watched,
+determining, from a table at the subscriber device, an audience
+composition value for the program being watched, wherein the table lists
+programs and, for each entry in the table, an audience composition value
+determined from ratings data of the gender composition of the viewers for
+a given program, and
+updating an audience gender value from a previous audience
+gender value, the audience composition value and a decay constant
+based on sampling period; and;
+the subscriber device further being configured to include a targeter (14)
+
+configured
+
+35
+
+--- PAGE 4 ---
+to receive broadcast information directed to network viewers, the
+broadcast information including a plurality of assets and asset-related
+information including target criteria for each of the assets, a said target
+criterion being a gender constraint based on whether the audience
+gender value is greater or less than a given value;
+
+to select when to deliver an asset from the plurality of assets at the
+subscriber device based on a comparison, conducted at the subscriber
+device, of the updated audience gender value and the target criteria for
+the assets, wherein the asset played at the subscriber device is
+determined by matching the updated audience gender value to the
+gender constraint; and
+
+to transmit report information from the subscriber device to a
+platform of said broadcast network, said report information identifying the
+asset delivered by the subscriber device.
+
+10. The subscriber device of Claim 9, wherein the real-time profiler is
+operable to determine in real-time a female audience gender value and a male
+audience gender value and is operable to update the female audience gender
+value and the male audience gender value according to the equations
+
+F’ = (k*F) + (1-k)*C’,
+
+M’ = (k*M) + (1-k)*(1-C’),
+
+where F’ is an updated female audience gender value, F is a previous
+female audience gender value, M’ is an updated male audience gender value,
+M is a previous male audience gender value, C’ is audience composition value,
+
+and k is a decay constant based on sampling period.
+
+11. The subscriber device of Claim 9 or Claim 10, wherein the table lists
+programs, categories and genres, each entry in the table providing a said
+audience composition value, and wherein, where the real time profiler cannot
+find the program being watched in the table, the real-time profiler is operable to
+look up the program category or genre in the table to determine the audience
+composition value, the real-time profiler being operable to derive the category
+
+36
+
+--- PAGE 5 ---
+and genre information from an electronic program guide at the subscriber
+device.
+
+12. |The subscriber device of any one of Claims 9 to 11, wherein the targeter
+is configured to store the asset for a period of time at the subscriber device
+between the receipt of the asset and the delivery of the asset.
+
+13. A system comprising the subscriber device of any one of Claims 9 to 12,
+a privacy manager system component (16) of a service provider and an
+information manager component (20) of the service provider, wherein:
+
+the subscriber device is configured to forward an asset delivery
+notification from the subscriber device to the privacy manager system
+component of the service provider in which the asset delivery notification
+contains information specific to the subscriber and
+
+the privacy manager system component of the service provider is
+configured to forward information from the asset delivery notification to the
+information manager system component of the service provider after removing
+the information specific to the subscriber.
+
+14. The system of Claim 13, wherein the information manager system
+component of the service provider is configured to compile information on asset
+
+delivery from plural subscriber devices.
+15. The system of Claim 14, wherein the information manager system
+
+component of the service provider delivers compiled information on asset
+
+delivery to a user.
+
+37

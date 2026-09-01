@@ -1,0 +1,74 @@
+TITLE:
+System and Method for Providing Local IP Breakout Services Employing Access Point Names
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method, apparatus and system are provided for acquiring an access point name for an application employing a local Internet protocol breakout service. In one embodiment, the apparatus includes a user management subsystem (820) configured to initiate an Internet protocol application. The apparatus also includes a local breakout service monitoring subsystem (810) configured to monitor availability of a local Internet protocol local breakout service and to obtain an access point name from the local Internet protocol local breakout service when the local Internet protocol local breakout service is available. The apparatus also includes an access point name selection control subsystem (830) configured to bind the access point name to the Internet protocol application.
+
+CLAIMS:
+1. An apparatus, comprising:
+a user management subsystem configured to initiate an Internet protocol application;
+a local breakout service monitoring subsystem configured to monitor availability of a local Internet protocol local breakout service and to obtain an access point name from said local Internet protocol local breakout service when said local Internet protocol local breakout service is available; and
+an access point name selection control subsystem configured to bind said access point name to said Internet protocol application.
+2. The apparatus as recited in claim 1 wherein said access point name is obtained using a network entry procedure for said local Internet protocol local breakout service.
+3. The apparatus as recited in claim 1 wherein said access point name obtained from said local Internet protocol local breakout service is stored in memory.
+4. The apparatus as recited in claim 1 wherein said access point name obtained from said local Internet protocol local breakout service is stored in memory for a time period less than a dynamic host configuration protocol lease time for an Internet protocol address associated with said Internet protocol application or for a duration of said apparatus registration in a local authentication, authorization, and accounting server.
+5. The apparatus as recited in claim 1 wherein said access point name selection control subsystem is configured to put on hold an access point name for a gateway capable of providing access from a cellular communication system to an external packet switch network when said access point name is bound to said Internet protocol application.
+6. The apparatus as recited in claim 5 wherein said gateway is a system architecture evolution gateway.
+7. The apparatus as recited in claim 1 wherein said local breakout service monitoring subsystem is configured to detect a loss of availability of said local Internet protocol local breakout service, and said access point name selection control subsystem is configured to place on hold and store in memory said access point name for said Internet protocol application for said local Internet protocol local breakout service and to use said access point name for said Internet protocol application from a gateway.
+8. The apparatus as recited in claim 7 wherein said local breakout service monitoring subsystem is configured to detect restored availability of said local Internet protocol local breakout service and to regain an Internet protocol address from said local Internet protocol local breakout service, said access point name selection control subsystem being configured to set as a default access point name said access point name obtained from said local Internet protocol local breakout service.
+9. The apparatus as recited in claim 1 wherein said access point name selection control subsystem is configured to obtain an access point name from a gateway capable of providing access from a cellular communication system to an external packet switch network when said local Internet protocol local breakout service is not available.
+10. The apparatus as recited in claim 1 wherein said initiation of an Internet protocol application is in response to a network-originated or an apparatus-originated session.
+11. An apparatus, comprising:
+means for initiating an Internet protocol application;
+means for monitoring availability of a local Internet protocol local breakout service;
+means for obtaining an access point name from said local Internet protocol local breakout service when said local Internet protocol local breakout service is available; and
+means for binding said access point name to said Internet protocol application.
+12. The apparatus as recited in claim 11, further comprising:
+means for detecting a loss of availability of said local Internet protocol local breakout service;
+means for placing on hold and storing said access point name for said Internet protocol application for said local Internet protocol local breakout service;
+means for using said access point name for said Internet protocol application from a gateway;
+means for detecting restored availability of said local Internet protocol local breakout service;
+means for regaining an Internet protocol address from said local Internet protocol local breakout service;
+means for setting as a default access point name said access point name obtained from said local Internet protocol local breakout service.
+13. A computer program product comprising program code stored in a computer readable medium configured to initiate an Internet protocol application, monitor availability of a local Internet protocol local breakout service, obtain an access point name from said local Internet protocol local breakout service when said local Internet protocol local breakout service is available, and bind said access point name to said Internet protocol application.
+14. The computer program product as recited in claim 13 wherein said program code stored in said computer readable medium is configured to detect a loss of availability of said local Internet protocol local breakout service, place on hold and store said access point name for said Internet protocol application for said local Internet protocol local breakout service, use said access point name for said Internet protocol application from a gateway, detect restored availability of said local Internet protocol local breakout service, regain an Internet protocol address from said local Internet protocol local breakout service, and set as a default access point name said access point name obtained from said local Internet protocol local breakout service.
+15. A method, comprising:
+initiating an Internet protocol application;
+monitoring availability of a local Internet protocol local breakout service;
+obtaining an access point name from said local Internet protocol local breakout service when said local Internet protocol local breakout service is available; and
+binding said access point name to said Internet protocol application.
+16. The method as recited in claim 15 wherein said access point name obtained from said local Internet protocol local breakout service is stored in memory for a time period less than a dynamic host configuration protocol lease time for an Internet protocol address associated with said Internet protocol application or for a duration of said apparatus registration in a local authentication, authorization, and accounting server.
+17. The method as recited in claim 15 further comprising putting on hold an access point name for a gateway capable of providing access from a cellular communication system to an external packet switch network when said access point name is bound to said Internet protocol application.
+18. The method as recited in claim 15, further comprising:
+detecting a loss of availability of said local Internet protocol local breakout service;
+placing on hold and storing in memory said access point name for said Internet protocol application for said local Internet protocol local breakout service; and
+using said access point name for said Internet protocol application from a gateway.
+19. The method as recited in claim 18, further comprising:
+detecting restored availability of said local Internet protocol local breakout service;
+regaining an Internet protocol address from said local Internet protocol local breakout service; and
+setting as a default access point name said access point name obtained from said local Internet protocol local breakout service.
+20. The method as recited in claim 15 further comprising obtaining an access point name from a gateway capable of providing access from a cellular communication system to an external packet switch network when said local Internet protocol local breakout service is not available.
+21. An apparatus, comprising:
+a session control subsystem configured to initiate a network-originated application;
+a link layer control subsystem configured to determine a radio bearer through which said network-originated application is invited; and
+an access point name selection control subsystem configured to obtain an access point name from a network-originated service inviting said network-originated application and bind said access point name to said network-originated application system.
+22. The apparatus as recited in claim 21 further comprising a session control subsystem configured to release said access point name from said network-originated application upon termination of said network-originated application.
+23. The apparatus as recited in claim 21 wherein said apparatus is user equipment in a cellular communication system.
+24. An apparatus, comprising:
+means for initiating a network-originated application;
+means for determining a radio bearer through which said network-originated application is invited;
+means for obtaining an access point name from a network-originated service inviting said network-originated application; and
+means for binding said access point name to said network-originated application system.
+25. The apparatus as recited in claim 24 further comprising means for releasing said access point name from said network-originated application upon termination of said network-originated application.
+26. A computer program product comprising program code stored in a computer readable medium configured to initiate a network-originated application, determine a radio bearer through which said network-originated application is invited, obtain an access point name from a network-originated service inviting said network-originated application, and bind said access point name to said network-originated application system.
+27. The computer program product as recited in claim 26 wherein said program code stored in said computer readable medium is configured to release said access point name from said network-originated application upon termination of said network-originated application.
+28. A method, comprising:
+initiating a network-originated application;
+determining a radio bearer through which said network-originated application is invited;
+obtaining an access point name from a network-originated service inviting said network-originated application; and
+binding said access point name to said network-originated application system.
+29. The method as recited in claim 28 further comprising releasing said access point name from said network-originated application upon termination of said network-originated application.
+30. The method as recited in claim 28 wherein said method is performed by user equipment in a cellular communication system.

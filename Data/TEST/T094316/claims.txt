@@ -1,0 +1,167 @@
+--- PAGE 1 ---
+EP Application No.: 08 868 759.5
+
+Applicant: Microsoft Technology Licensing, LLC
+Our Ref.: EP70519MHTK
+Date: August 28, 2015
+
+NEW CLAIMS — MAIN REQUEST
+
+A computer implemented method, comprising:
+
+receiving user history data including queries that were issued by users and search
+
+results provided to the users in response to the queries; and
+
+generating an indication of quality of a tier assignment used to store searchable digital
+items in a tiered storage system, wherein higher tiers have faster access and retrieval
+times when compared to lower tiers, and wherein the indication is based at least in part
+
+upon a subset of the user history data:
+
+wherein the tier assignment indicates to which of several tiers the searchable digital
+
+items are assigned;
+wherein the tiered storage system is a search engine index; and
+
+wherein the method further comprises generating an improved tier assignment based at
+least in part upon the indication of quality, and assigning digital items to the tiered
+
+storage system based at least in part upon the improved tier assignment.
+
+The computer implemented method of claim 1, wherein the user history data further
+
+comprises:
+digital items in the search results selected by one or more users; and/or
+a sequence of digital items accessed by a user after the user submits the queries.
+
+The computer implemented method of claim 1, wherein generating the improved tier
+assignment is further based at least in part upon the user history data, and wherein
+generating the improved tier assignment comprises optimizing or substantially optimizing
+
+the improved tier assignment with respect to a tier assignment quality metric.
+
+The computer implemented method of claim 3, further comprising updating a tiering
+policy used to assign digital items to tiers of the tiered storage system based at least in
+part upon the improved tier assignment, and using machine learning techniques to
+parameterize the tiering policy.
+
+--- PAGE 2 ---
+The computer implemented method of claim 1, wherein generating the indication
+
+comprises:
+
+determining a weight assigned to a query, wherein the weight is indicative of frequency
+
+of issuance of the query;
+determining a system load background for the query; and
+
+determining a probability that a certain tier will be a lowest tier visited when searching
+using the query when a search engine used to execute the query is under the system
+
+load.
+
+The computer implemented method of claim 1, wherein generating the indication
+
+comprises using the following algorithm:
+
+TO(T(D),L,0')= > wg) > P(t| .T(D),L)x Utility(t, Rg), T(P)),
+
+geQ’ t=l>k
+where TO(T(D),L,Q') is a measure of quality of the tier assignment, 7 represents a set
+of k available tiers, D is the set of digital items stored in the & tiers, L is a system load
+observed during processing of a query q in a set of queries Q’, w is a weight assigned
+to the query gq, P(t | q,T(D), L) is a probability that the f-th tier of the & tiers will be a
+lowest tier visited during retrieval under the system load L, Utility(t, R(q),T(D) is a
+
+quality measure for the query g, and R(q) is a result set of digital items corresponding
+
+to the query q.
+A system, comprising:
+
+a receiver component (106) that is configured to receive user history data (104) including
+queries that were issued by users and search results provided to the users in response
+
+to the queries; and
+
+a quality indicator component (108) that is configured to determine an indication of
+quality of a tier assignment used to store digital items that are searchable, wherein the
+quality indicator component (108) is configured to generate the indication based at least
+in part upon a subset of the user history data (104) and the tier assignment indicates
+where digital items are to be stored in a tiered storage system, wherein higher tiers have
+
+faster access and retrieval times when compared to lower tiers;
+
+--- PAGE 3 ---
+10.
+
+11.
+
+12.
+
+wherein the indication is indicative of the quality of a tier assignment for a search engine
+
+- index;
+
+wherein the system further comprises an update component that is configured to
+generate an improved tier assignment based at least in part upon the indication of
+quality; and
+
+wherein the system is configured to assign digital items to the tiered storage system
+based at least in part upon the improved tier assignment.
+
+The system of claim 7, further comprising a utility determiner component that is
+configured to determine a measure of search quality when search retrieval ends in a
+particular tier.
+
+The system of claim 7, wherein the update component is configured to generate an
+
+improved tier assignment based at least in part upon the user history data.
+
+The system of claim 9, wherein the update component is configured to combine a
+
+plurality of tier assignments to generate the improved tier assignment, or wherein the
+
+‘update component is configured to optimize or substantially optimize a tier assignment
+
+with respect to a tier quality metric to generate the improved tier assignment.
+
+The system of claim 9, wherein the update component is configured to update a tiering
+policy that is used to assign digital items to tiers of the tiered storage system based at
+least in part upon the improved tier assignment, and wherein the update component is
+
+configured to use machine learning techniques to update the tiering policy.
+The system of claim 7, wherein the quality indicator component comprises:
+
+a weight determiner component that is configured to determine weights assigned to one
+or more queries, wherein the weights are indicative of frequency of issuance of the one
+
+or more queries;
+
+a load determiner component that is configured to determine a system load on a search
+
+engine; and
+
+a tier determiner component that is configured to determine a probability that a certain
+tier will be a lowest tier visited in the tiered storage system when using the one or more
+
+queries when the search engine is under the system load.
+
+--- PAGE 4 ---
+13.
+
+The system of claim 7, wherein the system comprises a search engine that is configured
+to use a current tiering policy to assign digital items to tiers of the search engine index,
+the current tiering policy created by a plurality of acts, the acts comprising:
+
+receiving the user history data;
+outputting the indication of quality of a tier assignment;
+
+determining an improved tier assignment based at least in part upon the received user
+
+history data and the indication of quality of the tier assignment; and
+
+updating a tiering policy used to assign digital items to tiers of the search engine index to
+create the current tiering policy, wherein the updating is based at least in part upon the
+
+improved tier assignment.

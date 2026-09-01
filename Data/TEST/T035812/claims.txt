@@ -1,0 +1,161 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+-17-
+CLAIMS
+
+1. A method of making a special presentation of digital multimedia
+programming stored on a hard disk, which programming had not been indexed
+prior to its storage, the method comprising:
+
+receiving (610) a seek input;
+
+determining the read size of a portion of the stored multimedia
+programming and loading (660) the portion of the stored multimedia
+programming of determined read size into a read buffer from a starting position
+based on the seek input;
+
+analyzing (680) the loaded portion of the programming to determine if a
+complete |-frame of data is present; and
+
+if a complete I-frame is located, forwarding (690) the loaded portion of
+the programming for display to make (690) the special presentation;
+
+characterised in that statistical information including an average group
+of picture (GOP) size and an average frame size is provided, and in that,
+where the special presentation is to be non-contiguous, the method further
+comprises:
+
+calculating (630) the read size of the portion of the stored multimedia
+programming to be loaded, the read size being twice the average group of
+picture (GOP) size but less than the maximum read buffer size; and
+
+calculating a starting read or seek position (640) by calculating a seek
+vector equal to the product of the number of frames to be skipped (610) and
+the average frame size (600), adding the calculated seek vector to the current
+file pointer position, and adjusting the result by subtracting half of the average
+group of picture (GOP) size.
+
+2. A method as claimed in Claim 1, wherein the average group of picture
+size and the average frame size are either generated during normal
+presentation or have been pre-generated.
+
+3. A method as claimed in Claim 2, wherein the average group of picture
+size and the average frame size are included in the statistical information
+provided by:
+
+outputting data in a stream sequentially at the broadcast frame rate, and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+-18-
+
+generating the statistical information based on the normal presentation
+rate of the multimedia programming.
+
+4. A method as claimed in any preceding claim, wherein, when the loaded
+portion does not include a complete I-frame (680), the method further
+comprises loading (660) a second portion of the stored stream.
+
+5. A method as claimed in Claim 1, wherein the multimedia programming
+is provided in an MPEG stream comprising video packets of data,
+
+the method further comprising:
+
+determining (630, 640) a data read size and a starting read position in
+the stored MPEG stream based on the seek input,
+
+loading (660) a portion of the stored MPEG stream, the size of the
+loaded portion being based on the data read size, and the position of the
+loaded portion being based on the starting read position,
+
+analyzing (670) the loaded portion to determine if the loaded portion
+includes a complete MPEG intra-coded frame, and
+
+if the loaded portion includes a complete MPEG intra-coded frame
+(680), decoding (690) the MPEG intra-coded frame to provide a video frame
+for presentation.
+
+6. A method as claimed in any preceding claim, wherein the programming
+has been stored by receiving the programming into an input buffer, and storing
+(530) the programming from the input buffer in a storage device without, prior
+to storage, analyzing data in the programming to generate indexing
+information.
+
+7. A digital video recorder (100) arranged to make a special presentation
+of stored digital multimedia programming, the recorder (100) comprising:
+
+a hard disk (150) for storing the programming without indexing;
+
+processing means (160) for determining the read size of a portion of the
+stored multimedia programming;
+
+a user interface at which a seek input is received;
+
+a read buffer (220) for receiving the portion of the stored multimedia
+programming of determined read size, from a starting position based on the
+seek input; and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+-19-
+
+presentation means (130) for making the special presentation of the
+programming loaded into the read buffer (220) if analysis indicates that the
+loaded portion of the programming includes a complete I-frame of data;
+
+wherein if a complete I-frame is located, the loaded portion of the
+programming is forwarded (680) by the processing means (160) to the
+presentation means (130);
+
+characterised in that the processing means (160) receives statistical
+information including an average group of picture (GOP) size and an average
+frame size, and in that where the special presentation is to be non-contiguous,
+the processing means (160) is arranged to:
+
+calculate (630) the read size of the portion of the stored multimedia
+programming to be loaded, the read size being twice the average group of
+picture (GOP) size, but less than the maximum read buffer size; and
+
+calculate a starting read or seek position (640) by calculating a seek
+vector equal to the product of the number of frames to be skipped (610) and
+the average frame size (600), adding the calculated seek vector to the current
+file pointer position, and adjusting the result by subtracting half of the average
+group of picture (GOP) size.
+
+8. A digital video recorder (100) as claimed in Claim 7, further comprising
+a tuner (121) for receiving the multimedia programming, the tuner (121) being
+arranged to output the programming to a display device (130) and/or to the
+storage device (150).
+
+9. A digital video recorder (100) as claimed in Claim 8, wherein the display
+device (130) comprises a video decoder (131), an audio decoder (132), and
+outputs for connection to a television (140) or other presentation device.

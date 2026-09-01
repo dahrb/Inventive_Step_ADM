@@ -1,0 +1,128 @@
+Title: System and method for identifying data streams associated with medical equipment
+
+
+Abstract: A system and method for uniquely identifying data streams associated with medical equipment are described. The system may be implemented in a variety of ways, including as a combination of a medical device, a data stream identifier, and a medical device identifier. The medical device generates a plurality of data streams. The data streams are uninterrupted transmissions of data from the medical device. The data streams include information regarding the operation of the medical device. The data stream identifier attaches a unique data tag to the data streams. The medical device identifier is configured to generate a medical device tag. The medical device tag includes information to uniquely identify the medical device and is accessible from an external computer. The data stream identifier and the medical device identifier are secured to the medical device.
+
+
+Type: US Patent
+
+Claims: 
+What is claimed is:
+1. A system for identifying data streams, comprising:
+a medical device generating data streams, the data streams being transmissions of data from the medical device, the data streams including information regarding the operation of the medical device;
+a data stream identifier generating a unique data tag;
+a medical device identifier configured to generate a medical device tag upon receipt of a request from an external computer, the medical device tag including information to uniquely identify the medical device; and,
+a bridge configured to attach the unique data tag to the data stream, the bridge configured to provide the medical device tag to the external computer, wherein the data stream identifier and the medical device identifier are secured to the medical device.
+2. The system of claim 1, wherein the medical device is an infusion pump.
+3. The system of claim 1, wherein the medical device is a ventilator.
+4. The system of claim 1, wherein the medical device is a monitor of patient status.
+5. The system of claim 4, wherein the monitor is an electrocardiogram.
+6. The system of claim 4, wherein the monitor is an oxygen monitor.
+7. The system of claim 1, wherein the medical device is therapeutic.
+8. The system of claim 1, wherein the medical device is diagnostic.
+9. The system of claim 1, wherein the medical device is a medical treatment cart.
+10. The system of claim 1, wherein the medical device is a digital assistant.
+11. The system of claim 1, wherein the data streams include data regarding the operation of an infusion pump.
+12. The system of claim 1, wherein the data streams include data regarding the status of a patient.
+13. The system of claim 1, wherein the unique data tag is randomly generated after the data stream identifier is secured to the medical device.
+14. The system of claim 1, wherein the medical device tag includes the medical equipment identifier.
+15. The system of claim 1, wherein the external computer is at a central location.
+16. The system of claim 1, wherein the external computer is a pharmacy computer.
+17. The system of claim 1, wherein the bridge includes a plurality of ports.
+18. A method for identifying data streams, comprising:
+providing for generating data streams with a medical device, the data streams being transmissions of data from the medical device, the data streams including information regarding the operation of the medical device;
+providing for generating a unique data tag using a data stream identifier;
+providing for attaching the unique data tag to the data streams; and,
+providing for generating, upon request from an external computer, a medical device tag using a medical device identifier, the medical device tag including information to uniquely identify the medical device, wherein the data stream identifier and the medical device identifier are secured to the medical device.
+19. The method of claim 18, wherein the medical device is an infusion pump.
+20. The method of claim 18, wherein the medical device is a ventilator.
+21. The method of claim 18, wherein the medical device is a monitor of patient status.
+22. The method of claim 21, wherein the monitor is an electrocardiogram.
+23. The method of claim 21, wherein the monitor is an oxygen monitor.
+24. The method of claim 18, wherein the medical device is therapeutic.
+25. The method of claim 18, wherein the medical device is diagnostic.
+26. The method of claim 18, wherein the medical device is a medical treatment cart.
+27. The method of claim 18, wherein the medical device is a digital assistant.
+28. The method of claim 18, wherein the data streams include data regarding the operation of an infusion pump.
+29. The method of claim 18, wherein the data streams include data regarding the status of a patient.
+30. The method of claim 18, wherein the unique data tag is randomly generated after the data stream identifier is secured to the medical device.
+31. The method of claim 18, wherein the medical device tag includes the medical equipment identifier.
+32. The method of claim 18, wherein the external computer is at a central location.
+33. The method of claim 18, wherein the external computer is a pharmacy computer.
+34. The method of claim 18, wherein the plurality of data streams are transmitted in a network using Bluetooth technology.
+35. A method for identifying data streams, the method comprising the steps of:
+providing for accessing information related to the identity of a patient;
+providing for accessing information regarding the identity of a medical treatment, the medical treatment having a treatment type;
+providing for determining whether the medical treatment has been previously associated with the patient;
+providing for providing a first error signal if the medical treatment has not been previously identified with the patient;
+providing for generating a medical device tag to identify a medical device, the medical device configured to administer the medical treatment type, the medical device tag including information to uniquely identify the medical device, the medical device generating a plurality of data streams, the data streams including information regarding the operation of the medical device;
+providing for generating a unique data tag using a data stream identifier;
+providing for attaching the unique data tag to the data streams generated by the medical device;
+providing for determining whether a plurality of operating parameters for the medical device are consistent with the medical treatment, the operating parameters having been provided from a central computer, the operating parameters having been provided to the medical device without passing through a remote computer;
+providing for providing a second error signal if the operating parameters for the medical device are not consistent with the medical treatment;
+providing for enabling the medical device to provide the medical treatment to the patient; and,
+providing for verifying that the medical device is providing the medical treatment to the patient.
+36. The method of claim 35, wherein the medical device is an infusion pump.
+37. The method of claim 35, wherein the medical device is a ventilator.
+38. The method of claim 35, wherein the medical device is a monitor of patient status.
+39. The method of claim 38, wherein the monitor is an electrocardiogram.
+40. The method of claim 38, wherein the monitor is an oxygen monitor.
+41. The method of claim 35, wherein the medical device is therapeutic.
+42. The method of claim 35, wherein the medical device is diagnostic.
+43. The method of claim 35, wherein the medical device is a medical treatment cart.
+44. The method of claim 35, wherein the medical device is a digital assistant.
+45. The method of claim 35, wherein the data streams include data regarding the operation of an infusion pump.
+46. The method of claim 35, wherein the data streams include data regarding the status of a patient.
+47. The method of claim 35, wherein the unique data tag is randomly generated after the data stream identifier is secured to the medical device.
+48. The method of claim 35, wherein the medical device tag includes the medical equipment identifier.
+49. The method of claim 35, wherein the central computer is at a central location.
+50. The method of claim 35, wherein the central computer is a pharmacy computer.
+51. The method of claim 35, wherein the data streams are transmitted in a network using Bluetooth technology.
+52. The method of claim 35, wherein the central computer determines whether a plurality of operating parameters for the medical device are consistent with the medical treatment.
+53. The method of claim 35, wherein accessing information related to the identity of a patient includes creating a digital photograph of the patient to compare to a stored digital photograph of the patient.
+54. The method of claim 35, wherein the medical treatment includes the use of anesthesiology supplies.
+55. The method of claim 35, wherein the medical treatment includes the administration of a medication and the medication container includes a machine readable label.
+56. The method of claim 35, wherein the central computer determines inventory reorder set points for supplies used for the medical treatment.
+57. The method of claim 35, wherein the medical device is a medication treatment cart and the central computer provides a signal to access medication.
+58. At least one computer program for identifying data streams, the at least one computer program including logic for:
+accessing information related to the identity of a patient;
+accessing information regarding the identity of a medical treatment, the medical treatment having a treatment type;
+determining whether the medical treatment has been previously associated with the patient;
+providing a first error signal if the medical treatment has not been previously identified with the patient;
+generating a medical device tag to identify a medical device, the medical device configured to administer the medical treatment type, the medical device tag including information to uniquely identify the medical device, the medical device generating a plurality of data streams, the data streams including information regarding the operation of the medical device;
+generating a unique data tag using a data stream identifier;
+attaching the unique data tag to the data streams generated by the medical device;
+determining whether a plurality of operating parameters for the medical device are consistent with the medical treatment, the operating parameters having been provided from a central computer, the operating parameters having been provided to the medical device without passing through a remote computer;
+providing a second error signal if the operating parameters for the medical device are not consistent with the medical treatment;
+enabling the medical device to provide the medical treatment to the patient; and
+verifying that the medical device is providing the medical treatment to the patient.
+59. The at least one computer program of claim 58, wherein the medical device is an infusion pump.
+60. The at least one computer program of claim 58, wherein the medical device is a ventilator.
+61. The at least one computer program of claim 58, wherein the medical device is a monitor of patient status.
+62. The at least one computer program of claim 61, wherein the monitor is an electrocardiogram.
+63. The at least one computer program of claim 61, wherein the monitor is an oxygen monitor.
+64. The at least one computer program of claim 58, wherein the medical device is therapeutic.
+65. The at least one computer program of claim 58, wherein the medical device is diagnostic.
+66. The at least one computer program of claim 58, wherein the medical device is a medical treatment cart.
+67. The at least one computer program of claim 58, wherein the medical device is a digital assistant.
+68. The at least one computer program of claim 58, wherein the data streams include data regarding the operation of an infusion pump.
+69. The at least one computer program of claim 58, wherein the data streams include data regarding the status of a patient.
+70. The at least one computer program of claim 58, wherein the unique data tag is randomly generated after the data stream identifier is secured to the medical device.
+71. The at least one computer program of claim 58, wherein the medical device tag includes the medical equipment identifier.
+72. The at least one computer program of claim 58, wherein the central computer is at a central location.
+73. The at least one computer program of claim 58, wherein the central computer is a pharmacy computer.
+74. The at least one computer program of claim 58, wherein the data streams are transmitted in a network using Bluetooth technology.
+75. The at least one computer program of claim 58, wherein the central computer determines whether a plurality of operating parameters for the medical device are consistent with the medical treatment.
+76. The at least one computer program of claim 58, wherein accessing information related to the identity of a patient includes creating a digital photograph of the patient to compare to a stored digital photograph of the patient.
+77. The at least one computer program of claim 58, wherein the medical treatment includes the use of anesthesiology supplies.
+78. The at least one computer program of claim 58, wherein the medical treatment includes the administration of a medication and the medication container includes a machine readable label.
+79. The at least one computer program of claim 58, wherein the central computer determines inventory reorder set points for supplies used for the medical treatment.
+80. The at least one computer program of claim 58, wherein the medical device is a medication treatment cart and the central computer provides a signal to access medication.
+81. An apparatus comprising:
+a medical device having a data output comprising medical treatment information;
+a wireless device coupled to the data output and having a radio frequency (RF) output;
+a medical device tag associated with the medical device and comprising information to uniquely identify the medical device, the information provided upon request by an electronic device;
+a data stream identifier having an identifier output attached to the medical treatment information.
+82. The apparatus of claim 81, wherein the medical device is an infusion pump.
+83. The apparatus of claim 82, the medical treatment information comprising a fluid flow rate.
+84. The apparatus of claim 83, wherein the medical device was originally manufactured without a wireless device.

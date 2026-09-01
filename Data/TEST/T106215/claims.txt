@@ -1,0 +1,394 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+M&C PN520679EP
+
+MAIN REQUEST
+
+59
+CLAIMS:
+
+1. An orthogonal frequency division multiplexing (OFDM) apparatus configured to
+generate OFDM signals, the OFDM signals comprising a first OFDM signal for
+transmission by a first antenna (101a) and a second OFDM signal for transmission by a
+second antenna (101b), the apparatus comprising:
+
+a subcarrier setting device (106) configured to generate data signals and pilot
+signals to be transmitted using at least one of a plurality of subcarriers, the plurality of
+subcarriers including data subcarriers and pilot subcarriers,
+
+the subcarrier setting device being configured to generate first to fourth pilot
+signals, by multiplying first to fourth complex numbers by a sequence,
+
+wherein the first complex number and the third complex number provide a first
+vector, the second complex number and the fourth complex number provide a second
+vector and the first vector and the second vector are orthogonal,
+
+the first complex number being used to generate the first pilot signal to be
+transmitted using a first pilot subcarrier, the second complex number being used to
+generate the second pilot signal to be transmitted using the first pilot subcarrier, the third
+complex number being used to generate the third pilot signal to be transmitted using a
+second pilot subcarrier, the fourth complex number being used to generate the fourth
+pilot signal to be transmitted using the second pilot subcarrier,
+
+wherein the first OFDM signal comprises the first pilot signal and the third pilot
+signal and the second OFDM signal comprises the second pilot signal and the fourth
+
+pilot signal.
+
+2. The apparatus according to claim 1, wherein the first complex number is made equal
+to the second complex number, the third complex number is made different from the
+fourth complex number, a fifth complex number being used to generate a fifth pilot signal
+to be transmitted using a third pilot subcarrier is made equal to a sixth complex number
+being used to generate a sixth pilot signal to be transmitted using the third pilot
+subcarrier, and a seventh complex number being used to generate a seventh pilot signal
+to be transmitted using a fourth pilot subcarrier is made different from and eighth complex
+number being used to generate an eighth pilot signal to be transmitted using the fourth
+
+pilot subcarrier.
+
+8956986-1
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+M&C PN520679EP
+
+MAIN REQUEST
+
+60
+
+3. The apparatus according to claim 1, wherein the first complex number is made equal
+to the second complex number, the second complex number is made different from a
+fifth complex number being used to generate a fifth pilot signal to be transmitted using
+the first pilot subcarrier, the third complex number is made different from the fourth
+complex number, the fourth complex number is made different from a sixth complex
+number being used to generate a sixth pilot signal to be transmitted using the second
+pilot subcarrier, a seventh complex number being used to generate a seventh pilot signal
+to be transmitted using a third pilot subcarrier is made different from an eighth complex
+number being used to generate an eighth pilot signal to be transmitted using the third
+pilot subcarrier, the eighth complex number is made equal to a ninth complex number
+being used to generate a ninth pilot signal to be transmitted using the third pilot
+subcarrier, a tenth complex number being used to generate a tenth pilot signal to be
+transmitted using a fourth pilot subcarrier is made equal to an eleventh complex number
+being used to generate an eleventh pilot signal to be transmitted using the fourth pilot
+subcarrier, and the eleventh complex number is made equal to a_ twelfth complex
+number being used to generate a twelfth pilot signal to be transmitted using the fourth
+
+pilot subcarrier.
+
+4. The apparatus according to claim 1, wherein the subcarrier setting device (106)
+causes a direction of a first directional beam formed by the first pilot signal in a first
+frequency transmitted from the first antenna and the second pilot signal in the first
+frequency transmitted from the second antenna, to differ from a direction of a second
+directional beam formed by the third pilot signal in a second frequency transmitted from
+the first antenna and the fourth pilot signal in the second frequency transmitted from the
+
+second antenna.
+
+5. The apparatus according to claim 1, wherein the subcarrier setting device (106) is
+configured to generate first to i-th complex numbers and the subcarrier setting device is
+configured to generate first to i-th pilot signals using a result of multiplication of the first
+to i-th complex numbers by the sequence, the each of the first to i-th complex numbers
+
+is given by
+
+si(i) = exp G (k- iF
+
+8956986-1
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+M&C PN520679EP
+
+MAIN REQUEST
+
+61
+
+Where Sx(i) represents the each of the first to i-th complex numbers, j represents an
+imaginary unit, | represents a number of each of the pilot subcarriers, and k represents
+
+an antenna number of each of transmission antennas transmitting the pilot subcarriers.
+
+6. The apparatus according to claim 1, wherein the subcarrier setting device (106)
+comprises a sequence generator (110, 110a, 110b) which is configured to generate the
+sequence, a first memory (121a) which stores the first complex number and the second
+complex number, a second memory (121b) which stores the third complex number and
+the fourth complex number, a first multiplying unit (111a, 111b) which is configured to
+multiply the first and the second complex numbers by the sequence respectively to
+generate the first pilot signal and the second pilot signal, and a second multiplying unit
+(121a, 121b) which is configured to multiply the third complex number and the fourth
+complex number by the sequence respectively to generate the third pilot signal and the
+
+fourth pilot signal.
+
+7. The apparatus according to claim 1, wherein the first complex number and the second
+complex number correspond to a first pattern, the third complex number and the fourth
+complex number correspond to a second pattern, the subcarrier setting device (106)
+comprises a subcarrier pattern controller (122) which is configured to change the first
+
+pattern and the second pattern for each of the packets of the data signals.
+
+8. The apparatus according to claim 1, wherein the first complex number and the second
+complex number correspond to a first pattern, the third complex number and the fourth
+complex number correspond to a second pattern, the subcarrier setting device comprises
+(106) a subcarrier pattern controller (122) which is configured to change the first pattern
+
+and the second pattern when the data signals are a retransmission packet.
+
+9. The apparatus according to any of claims 1-8, each of the first to fourth complex
+
+numbers is 1 or -1.
+10. An orthogonal frequency division multiplexing (OFDM) transmission apparatus
+
+comprising:
+
+the apparatus according to any preceeding claim;
+
+8956986-1
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+M&C PN520679EP
+
+MAIN REQUEST
+
+62
+
+the first antenna configured to transmit the first OFDM signal; and
+
+the second antenna configured to transmit the second OFDM signal.
+
+11. An orthogonal frequency division multiplexing (OFDM) signal generation method
+of generating OFDM signals, the OFDM signals comprising a first OFDM signal for
+transmission by a first antenna (101a) and a second OFDM signal for transmission by a
+second antenna (101b), the method comprising:
+
+generating data signals and pilot signals to be transmitted using at least one of a
+plurality of subcarriers,
+
+the plurality of subcarriers including data subcarriers and pilot subcarriers,
+
+generating first to fourth pilot signals, by multiplication of first to fourth complex
+numbers by a sequence,
+
+wherein the first complex number and the third complex number provide a first
+vector, the second complex number and the fourth complex number provide a second
+vector, and the first vector and the second vector are orthogonal,
+
+the first complex number being used to generate the first pilot signal to be
+transmitted using a first pilot subcarrier, the second complex number being used to
+generate the second pilot signal to be transmitted using the first pilot subcarrier, the third
+complex number being used to generate the third pilot signal to be transmitted using a
+second pilot subcarrier, the fourth complex number being used to generate the fourth
+pilot signal to be transmitted using the second pilot subcarrier, wherein the first OFDM
+signal comprises the first pilot signal and the third pilot signal and the second OFDM
+
+signal comprises the second pilot signal and the fourth pilot signal.
+
+12. The method according to claim 11, wherein the first complex number is made
+equal to the second complex number, the third complex number is made different from
+the fourth complex number, a fifth complex number being used to generate a fifth pilot
+signal to be transmitted using a third pilot subcarrier is made equal to a sixth complex
+number being used to generate a sixth pilot signal to be transmitted using the third pilot
+subcarrier, and a seventh complex number being used to generate a seventh pilot signal
+to be transmitted using a fourth pilot subcarrier is made different from an eighth complex
+number being used to generate an eighth pilot signal to be transmitted using the fourth
+
+pilot subcarrier.
+
+8956986-1
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+M&C PN520679EP
+
+MAIN REQUEST
+
+63
+
+13. The method according to claim 11, wherein the first complex number is made
+equal to the second complex number, the second complex number is made different
+from a fifth complex number being used to generate a fifth pilot signal to be transmitted
+using the first pilot subcarrier, the third complex number is made different from the fourth
+complex number, the fourth complex number is made different from a sixth complex
+number being used to generate a sixth pilot signal to be transmitted using the second
+pilot subcarrier, a seventh complex number being used to generate a seventh pilot signal
+to be transmitted using a third pilot subcarrier is made different from an eighth complex
+number being used to generate an eighth pilot signal to be transmitted using the third
+pilot subcarrier, the eighth complex number is made equal to a ninth complex number
+being used to generate a ninth pilot signal to be transmitted using the third pilot
+subcarrier, a tenth complex number being used to generate a tenth pilot signal to be
+transmitted using a fourth pilot subcarrier is made equal to an eleventh complex number
+being used to generate an eleventh pilot signal to be transmitted using the fourth pilot
+subcarrier, and the eleventh complex number is made equal to a twelfth complex number
+being used to generate a twelfth pilot signal to be transmitted using the fourth pilot
+
+subcarrier.
+
+14. The method according to claim 11, further comprising causing a direction of a
+first directional beam formed by the first pilot signal in a first frequency transmitted from
+a first transmission antenna and the second pilot signal in the first frequency transmitted
+from a second transmission antenna, to differ from a direction of a second directional
+beam formed by the third pilot signal in a second frequency transmitted from the first
+transmission antenna and the fourth pilot signal in the second frequency transmitted from
+
+the second transmission antenna.
+15. The method according to claim 11, wherein the generating data signals and pilot
+signals generates first to i-th complex numbers and the generating data signals and pilot
+
+signals generates first to i-th pilot signals using a result of multiplication of first to i-th
+
+complex number by the sequence, each of the first to i-th complex number is given by
+
+si(i) = exp G (k- iF
+
+8956986-1
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+M&C PN520679EP
+
+MAIN REQUEST
+
+64
+
+where Sx(i) represents the each of the first to i-th complex number, j represents an
+imaginary unit, i represents number of each of the pilot subcarriers, and k represents an
+
+antenna number of each of transmission antennas transmitting pilot subcarriers.
+
+16. The method according to claim 11, wherein the generating data signals and pilot
+signals comprises generating the sequence, storing in a first memory (121a) the first
+complex number and the second complex number, storing in a second memory (121b)
+the third complex number and the fourth complex number, multiplying the first complex
+number and the second complex number by the sequence respectively to generate the
+first pilot signal and the second pilot signal, and multiplying the third complex number
+and the fourth complex number by the sequence respectively to generate the third pilot
+
+signal and the fourth pilot signal.
+
+17. The method according to claim 11, wherein the first complex number and the
+second complex number correspond to a first pattern, the third complex number and the
+fourth complex number correspond to a second pattern, the generating data signals and
+pilot signals comprises changing the first pattern and the second pattern for each of the
+
+packets of the data signals.
+
+18. The method according to claim 11, wherein the first complex number and the
+second complex number correspond to a first pattern, the third complex number and the
+fourth complex number correspond to a second pattern, the generating data signals and
+pilot signals comprises changing the first pattern and the second pattern when the data
+
+signals are a retransmission packet.
+
+19. The method according to any of claims 11 — 18, wherein each of the first to fourth
+
+complex numbers is 1 or -1.
+
+20. The method according to claim 11, further comprising:
+generating first to i-th pilot signals using a result of multiplication of first to i-th
+complex numbers by the sequence, the each of the first to i-th complex numbers being
+
+given by
+
+8956986-1
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+M&C PN520679EP
+
+MAIN REQUEST
+
+65
+
+Sk(i) = enol E(k 1) (I)
+or
+
+si(i) = - enol E(k 1) (II)
+
+where si(i) represents the each of the first to i-th complex number, j is an
+imaginary unit, i represents a number of each of the pilot subcarriers, and k is an antenna
+
+number of each transmission antenna.
+
+21. The method of claim 11, further comprising:
+
+generating first to i-th pilot signals by using a result of multiplication of first to i-th
+complex numbers by a sequence and by executing inverse Fourier transform for the pilot
+subcarriers and data subcarriers, the each of first to i-th complex numbers being given
+by
+
+; joak—- i)
+S(i) = exp | ——-——— HT
+K(i) o( N (Ill)
+where sx(i) represents the each of the first to i-th complex numbers, | represents
+an imaginary unit, i represents a frequency of each of the pilot subcarriers, k represents
+
+an antenna number of each of transmission antennas, and N represents an integer.
+
+22. An orthogonal frequency division multiplexing (OFDM) signal transmission
+method comprising the method of any of claims 11 to 21 and further comprising
+transmitting the first OFDM signal by the first antenna (101a); and
+transmitting the second OFDM by the second antenna (101b).
+
+8956986-1

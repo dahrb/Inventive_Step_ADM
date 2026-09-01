@@ -1,0 +1,91 @@
+--- PAGE 1 ---
+CLAIMS — Main Request
+
+1. A method comprising:
+at a multi-touch capable device (400) with a touch sensitive display (402):
+
+receiving (302), at the touch sensitive display (402), concurrent touch
+input signals associated with a respective region of a web page (100), wherein
+the respective region of the web page is associated with a plurality of event
+handlers or event listeners including an event handler or listener for a touch
+event and an event handler or listener for a gesture event;
+
+determining (304) two or more touch events based on the concurrent
+touch input signals;
+
+determining a gesture event by combining the touch events;
+
+sending the gesture event to the web page;
+
+dynamically rotating an element associated with the respective region
+of the web page with the event handler or listener for the gesture event based
+on a rotation value associated with the gesture event; and
+
+sending the touch events to the web page for processing.
+
+2. The method of claim 1, wherein the rotation value is a relative delta in
+
+degrees.
+
+3. A method comprising:
+at a multi-touch capable device (400) with a touch sensitive display (402):
+receiving (302), at the touch sensitive display (402), concurrent touch
+input signals associated with a respective region of a web page, wherein the
+respective region of the web page is associated with a plurality of event
+handlers or event listeners including an event handler or listener for a touch
+event and an event handler or listener for a gesture event;
+determining (304) two or more touch events based on the concurrent
+touch input signals;
+
+determining a gesture event by combining the touch events;
+
+26
+
+--- PAGE 2 ---
+sending the gesture event to the web page;
+
+dynamically resizing an element associated with the respective region
+of the web page with the event handler or listener for the gesture event based
+on a scaling value associated with the gesture event; and
+
+sending the touch events to the web page for processing.
+
+4. The method of claim 1 or 3, wherein the respective region is associated
+
+with a node (152-160) in a document object model (150).
+
+5, The method of claim 1 or 3, wherein the processing includes moving
+
+the element associated with the respective region of the web page.
+
+6. The method of claim 1 or 3, wherein the touch events are sent to the
+web page in a touch list, the touch list including touch event data to identify
+the touch events, wherein the touch event data includes a touch identifier and
+at least one set of touch location coordinates, wherein the at least one set of
+touch location coordinates includes at least one of client coordinates, page
+
+coordinates, and screen coordinates.
+
+7. The method of claim 6, wherein the touch event data identifies one or
+
+more changed touches.
+
+8. The method of any of claims 1-7, further comprising processing the
+
+gesture event and the touch events with code in the web page.
+
+9. A computer-readable medium having instructions stored thereon,
+which, when executed by a processor (604) of a multi-touch capable device
+(400) with a touch sensitive display (402), causes the processor to perform the
+
+method of any one of claims 1 to 8.
+
+27
+
+--- PAGE 3 ---
+10. A multi-touch capable device (400) comprising a touch sensitive
+display (402) and one or more computer processors configured for performing
+
+the method of any of claims 1 to 8.
+
+28

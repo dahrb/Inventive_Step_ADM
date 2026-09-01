@@ -1,0 +1,149 @@
+Title: Light emission guidance
+
+Abstract: A visible-light based display system may be used to project visual guidance to picking and/or stowing agents in a materials handling facility dependent on their current location. The system may comprise a plurality of fixed-location display devices and/or mobile display devices coupled to a control system. The control system may send messages to particular ones of the display devices for projection of visual guidance usable to direct an agent to a particular inventory area in which an item is to be stowed or from which an item is to be picked, to identify a particular position within an inventory area, and/or to identify a particular item stored within an inventory area. The messages may include location, position, and/or descriptive information associated with an item to be stowed or picked. The projected visual guidance may include light or laser beams, text, graphics and/or images, and may be agent-specific, item-specific, and/or order-specific.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A system, comprising:
+one or more laser-based display devices located in a materials handling facility; and
+a control system configured to communicate with the one or more laser-based display devices;
+wherein the control system is further configured to provide data to at least one of the one or more laser-based display devices, wherein the at least one of the one or more laser-based display devices is distinct from the control system,
+wherein the at least one of the one or more laser-based display devices is configured to utilize the data to project visual guidance onto a surface of the materials handling facility,
+the visual guidance comprising path information directing the movement of an agent in the materials handling facility toward a targeted location within the materials handling facility along a particular path through the materials handling facility to the targeted location,
+the path information including an indication of at least a portion of the path to the targeted location, and
+wherein the surface onto which the visual guidance is projected is visible to the agent and is not at the targeted location.
+2. The system of claim 1, wherein the targeted location is an inventory area within the materials handling facility at which the agent is to perform one or more inventory management operations.
+3. The system of claim 2, wherein the one or more inventory management operations comprises stowing a given item or picking a given item.
+4. The system of claim 1, wherein the control system is further configured to determine a current location of the agent within the materials handling facility, and wherein the data sent to the at least one of the one or more laser-based display devices is dependent on the current location of the agent.
+5. The system of claim 1, wherein the path comprises a shortest path from a current location of the agent to the targeted location.
+6. The system of claim 1, wherein the control system is further configured to provide item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a given item stored at the targeted location.
+7. The system of claim 1, wherein the control system is further configured to provide item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a position at which a given item should be stowed at the targeted location.
+8. The system of claim 1, wherein the control system is further configured to provide projection instructions to at least one of the one or more laser-based display devices configured to effect one or more of:
+selection of the at least one of the laser-based display devices to project the visual guidance,
+orientation of the at least one of the laser-based display devices when projecting the visual guidance,
+a projection angle of the at least one of the laser-based display devices when projecting the visual guidance,
+selection of one or more mirrors toward which to direct the visual guidance,
+a format of the projected visual guidance,
+a duration of the projection of the visual guidance,
+initiation of the projection of the visual guidance, or
+cessation of the projection of the visual guidance.
+9. The system of claim 1,
+wherein the visual guidance projected by the at least one of the one or more laser-based display devices is visible to a plurality of agents who are performing different inventory management operations in the materials handling facility;
+wherein the control system is further configured to provide agent-specific data to the at least one of the one or more laser-based display devices; and
+wherein the visual guidance includes agent-specific visual guidance usable to direct the agent to the targeted location.
+10. The system of claim 1, wherein the control system is further configured to provide additional data to the at least one of the one or more laser-based display devices, wherein the additional data is for projection of additional visual guidance usable to direct a second agent to a second location within the materials handling facility concurrently with the at least one of the one or more laser-based display devices projecting the visual guidance.
+11. The system of claim 1, wherein the one or more laser-based display devices are configured to project the visual guidance on one or more of: a reflective element, a refractive element, a floor, a wall, a shelving unit, a container, a bin, an item, or a ceiling of the materials handling facility.
+12. The system of claim 1, wherein the one or more laser-based display devices are configured to utilize one or more of: a vector-based laser display technology, a raster-based laser display technology, or a MicroElectroMechanical Systems (MEMS) technology.
+13. The system of claim 1, wherein the one or more laser-based display devices comprise at least one device that is movable to different locations within the materials handling facility during use.
+14. The system of claim 1, further comprising one or more reflective or refractive elements located in the materials handling facility;
+wherein the one or more reflective or refractive elements are configured to receive instructions from the control system; and
+wherein the control system is further configured to:
+provide instructions to the at least one of the one or more laser-based display devices to direct light projected therefrom to at least one of the one or more reflective or refractive elements as part of said projection of the visual guidance; and
+provide instructions to the at least one of the one or more reflective or refractive elements to effect one or more of:
+selection of the at least one of the reflective or refractive elements to which the projected light is directed,
+orientation of the at least one of the reflective or refractive elements when reflecting or refracting the projected light,
+an angle of the at least one of the reflective or refractive elements when reflecting or refracting the projected light,
+a sequence of positions assumed by the at least one of the reflective or refractive elements when reflecting or refracting the projected light, or
+an amount of light reflected by the at least one of the reflective or refractive elements when reflecting or refracting the projected light.
+15. The system of claim 1, wherein the control system is further configured to provide item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a position at which a given item is stored at the targeted location.
+16. The system of claim 1, wherein the control system is further configured to:
+store, in a database, respective location information associated with each of a plurality of items handled in the facility, wherein the respective location information associated with each of the plurality of items indicates one or more of: a location at which the item was stowed or a location at which the item is to be stowed; and
+access the database to determine the data to provide to the at least one of the one or more laser-based display devices.
+17. The system of claim 1, wherein the one or more laser-based display devices are mounted at fixed locations in the materials handling facility.
+18. The system of claim 1, wherein the control system is further configured to, prior to said providing data, calibrate a location of the at least one of the one or more laser-based display devices with respect to one or more references in the materials handling facility whose locations are known.
+19. The system of claim 1, wherein the control system is further configured to, prior to said providing data, calibrate a location of the agent with respect to one or more references in the materials handling facility whose locations are known.
+20. A method, comprising:
+providing, by a computer, data to at least one of one or more laser-based display devices located in a materials handling facility, wherein the at least one of the one or more laser-based display devices is distinct from the computer; and
+utilizing the data, by the at least one of the one or more laser-based display devices, the data to project visual guidance onto a surface of the materials handling facility,
+the visual guidance comprising path information directing the movement of an agent in the materials handling facility toward a targeted location within the materials handling facility along a particular path through the materials handling facility to the targeted location,
+the path information including an indication of at least a portion of the path to the targeted location, and
+wherein the surface onto which the visual guidance is projected is visible to the agent and is not at the targeted location.
+21. The method of claim 20, wherein the targeted location is an inventory area within the materials handling facility at which the agent is to perform one or more inventory management operations.
+22. The method of claim 21, wherein the one or more inventory management operations comprises stowing a given item or picking a given item.
+23. The method of claim 20,
+wherein the method further comprises determining a current location of the agent within the materials handling facility; and
+wherein the data sent to the at least one of the one or more laser-based display devices is dependent on the current location of the agent.
+24. The method of claim 20, wherein the path comprises a shortest path from a current location of the agent to the targeted location.
+25. The method of claim 20, further comprising providing item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a given item stored at the targeted location.
+26. The method of claim 20, further comprising providing item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a position at which a given item should be stowed at the targeted location.
+27. The method of claim 20, further comprising providing projection instructions to at least one of the one or more laser-based display devices configured to effect one or more of:
+selection of the at least one of the laser-based display devices to project the visual guidance,
+orientation of the at least one of the laser-based display devices when projecting the visual guidance,
+a projection angle of the at least one of the laser-based display devices when projecting the visual guidance,
+selection of one or more mirrors toward which to direct the visual guidance,
+a format of the projected visual guidance,
+a duration of the projection of the visual guidance,
+initiation of the projection of the visual guidance, or
+cessation of the projection of the visual guidance.
+28. The method of claim 20,
+wherein the visual guidance projected by the at least one of the one or more laser-based display devices is visible to a plurality of agents who are performing different inventory management operations in the materials handling facility;
+wherein the method further comprises providing agent-specific data to the at least one of the one or more laser-based display devices; and
+wherein the visual guidance includes agent-specific visual guidance usable to direct the agent to the targeted location.
+29. The method of claim 20, further comprising providing additional data to the at least one of the one or more laser-based display devices, wherein the additional data is for projection of additional visual guidance usable to direct a second agent to a second location within the materials handling facility concurrently with the at least one of the one or more laser-based display devices projecting the visual guidance.
+30. The method of claim 20, wherein the one or more laser-based display devices are configured to project the visual guidance on one or more of: a reflective element, a refractive element, a floor, a wall, a shelving unit, a container, a bin, an item, or a ceiling of the materials handling facility.
+31. The method of claim 20, wherein the one or more laser-based display devices are configured to utilize one or more of: a vector-based laser display technology, a raster-based laser display technology, or a MicroElectroMechanical Systems (MEMS) technology.
+32. The method of claim 20, wherein the one or more laser-based display devices comprise at least one device that is movable to different locations within the materials handling facility during use.
+33. The method of claim 20, further comprising:
+providing instructions to the at least one of the one or more laser-based display devices to direct light projected therefrom to at least one of one or more reflective or refractive elements located in the materials handling facility as part of said projection of the visual guidance; and
+providing instructions to the at least one of the one or more reflective or refractive elements to effect one or more of:
+selection of the at least one of the reflective or refractive elements to which the projected light is directed,
+orientation of the at least one of the reflective or refractive elements when reflecting or refracting the projected light,
+an angle of the at least one of the reflective or refractive elements when reflecting or refracting the projected light,
+a sequence of positions assumed by the at least one of the reflective or refractive elements when reflecting or refracting the projected light, or
+an amount of light reflected by the at least one of the reflective or refractive elements when reflecting or refracting the projected light.
+34. The method of claim 20, further comprising providing item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a position at which a given item is stored at the targeted location.
+35. The method of claim 20, further comprising:
+storing, in a database, respective location information associated with each of a plurality of items handled in the facility, wherein the respective location information associated with each of the plurality of items indicates one or more of: a location at which the item was stowed or a location at which the item is to be stowed; and
+accessing the database to determine the data to provide to the at least one of the one or more laser-based display devices.
+36. The method of claim 20, wherein the one or more laser-based display devices are mounted at fixed locations in the materials handling facility.
+37. The method of claim 20, further comprising, prior to said providing data, calibrating a location of the at least one of the one or more laser-based display devices with respect to one or more references in the materials handling facility whose locations are known.
+38. The method of claim 20, further comprising, prior to said providing data, calibrating a location of the agent with respect to one or more references in the materials handling facility whose locations are known.
+39. A non-transitory, computer readable storage medium, storing program instructions that when executed on one or more computers cause the one or more computers to perform:
+providing data to at least one of one or more laser-based display devices located in a materials handling facility, wherein the at least one of the one or more laser-based display devices is distinct from the one of the one or more computers;
+wherein the at least one of the one or more laser-based display devices is configured to utilize the data is to project visual guidance onto a surface of the materials handling facility,
+the visual guidance comprising path information directing the movement of an agent in the materials handling facility toward a targeted location within the materials handling facility along a particular path through the materials handling facility to the targeted location,
+the path information including an indication of at least a portion of the path to the targeted location, and
+wherein the surface onto which the visual guidance is projected is visible to the agent and is not at the targeted location.
+40. The storage medium of claim 39, wherein the targeted location is an inventory area within the materials handling facility at which the agent is to perform one or more inventory management operations.
+41. The storage medium of claim 40, wherein the one or more inventory management operations comprises stowing a given item or picking a given item.
+42. The storage medium of claim 39,
+wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform determining a current location of the agent within the materials handling facility; and
+wherein the data sent to the at least one of the one or more laser-based display devices is dependent on the current location of the agent.
+43. The storage medium of claim 39, wherein the path comprises a shortest path from a current location of the agent to the targeted location.
+44. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform providing item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a given item stored at the targeted location.
+45. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform providing item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a position at which a given item should be stowed at the targeted location.
+46. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform providing projection instructions to at least one of the one or more laser-based display devices configured to effect one or more of:
+selection of the at least one of the laser-based display devices to project the visual guidance,
+orientation of the at least one of the laser-based display devices when projecting the visual guidance,
+a projection angle of the at least one of the laser-based display devices when projecting the visual guidance,
+selection of one or more mirrors toward which to direct the visual guidance,
+a format of the projected visual guidance,
+a duration of the projection of the visual guidance,
+initiation of the projection of the visual guidance, or
+cessation of the projection of the visual guidance.
+47. The storage medium of claim 39,
+wherein the visual guidance projected by the at least one of the one or more laser-based display devices is visible to a plurality of agents who are performing different inventory management operations in the materials handling facility;
+wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform providing agent-specific data to the at least one of the one or more laser-based display devices; and
+wherein the visual guidance includes agent-specific visual guidance usable to direct the agent to the targeted location.
+48. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform providing additional data to the at least one of the one or more laser-based display devices, wherein the additional data is for projection of additional visual guidance usable to direct a second agent to a second location within the materials handling facility concurrently with the at least one of the one or more laser-based display devices projecting the visual guidance.
+49. The storage medium of claim 39, wherein the one or more laser-based display devices are configured to project the visual guidance on one or more of: a reflective element, a refractive element, a floor, a wall, a shelving unit, a container, a bin, an item, or a ceiling of the materials handling facility.
+50. The storage medium of claim 39, wherein the one or more laser-based display devices are configured to utilize one or more of: a vector-based laser display technology, a raster-based laser display technology, or a MicroElectroMechanical Systems (MEMS) technology.
+51. The storage medium of claim 39, wherein the one or more laser-based display devices comprise at least one device that is movable to different locations within the materials handling facility during use.
+52. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform:
+providing instructions to the at least one of the one or more laser-based display devices to direct light projected therefrom to at least one of one or more reflective or refractive elements located in the materials handling facility as part of said projection of the visual guidance; and
+providing instructions to the at least one of the one or more reflective or refractive elements to effect one or more of:
+selection of the at least one of the reflective or refractive elements to which the projected light is directed,
+orientation of the at least one of the reflective or refractive elements when reflecting or refracting the projected light,
+an angle of the at least one of the reflective or refractive elements when reflecting or refracting the projected light,
+a sequence of positions assumed by the at least one of the reflective or refractive elements when reflecting or refracting the projected light, or
+an amount of light reflected by the at least one of the reflective or refractive elements when reflecting or refracting the projected light.
+53. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform providing item-specific data to at least one of the one or more laser-based display devices, wherein the item-specific data is for projection of additional visual guidance to the agent comprising information usable by the agent to identify a position at which a given item is stored at the targeted location.
+54. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform:
+storing, in a database, respective location information associated with each of a plurality of items handled in the facility, wherein the respective location information associated with each of the plurality of items indicates one or more of: a location at which the item was stowed or a location at which the item is to be stowed; and
+accessing the database to determine the data to provide to the at least one of the one or more laser-based display devices.
+55. The storage medium of claim 39, wherein the one or more laser-based display devices are mounted at fixed locations in the materials handling facility.
+56. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform, prior to said providing data, calibrating a location of the at least one of the one or more laser-based display devices with respect to one or more references in the materials handling facility whose locations are known.
+57. The storage medium of claim 39, wherein when executed on the one or more computers, the program instructions further cause the one or more computers to perform, prior to said providing data, calibrating a location of the agent with respect to one or more references in the materials handling facility whose locations are known.

@@ -1,0 +1,143 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request — 19 November 2018
+
+CLAIMS
+
+1. A method of processing cell culture data for identifying effective protocols, said data
+comprising results from a large number of samples, the results being obtained by performing
+multiple stages of cell culture in succession on each sample, where each stage represents a
+cell culture treatment having a particular set of conditions, such that each sample follows a
+protocol specified by the identity and order of the treatments applied to the cell culture, said
+method comprising:
+
+specifying a subset of the samples that yielded a desired cell culture outcome, and
+providing cell culture data specifying, for each of the samples in the subset, the protocol
+followed by that sample, including the identity and order of the treatments applied to the
+sample;
+
+performing a computer-implemented analysis of the cell culture data from the
+samples in the subset to produce an ordering or grouping of the samples in the subset based
+on: (i) the number of samples from the subset that followed each respective protocol, and (ii)
+similarities between the protocols for respective samples, wherein the similarity between
+different protocols is determined based on the identity and order of the treatments applied to
+the cell culture for the respective protocols, and wherein said analysis is performed on a data
+set comprising a record for each sample in the subset, each record comprising an identifier of
+the sample and information on the protocol applied to the sample;
+
+wherein said ordering or grouping may be used to help to identify one or more
+
+protocols that are effective for obtaining the desired cell culture outcome.
+
+2. The method of claim 1, wherein assessing the similarity between different protocols
+
+includes determining a distance measurement between the different protocols.
+
+3: The method of claim 2, wherein determining a distance measurement between the
+different protocols includes counting the number of stages in common for the protocols
+
+concerned.
+
+4. The method of claim 2, wherein the distance measurement provides a measure of
+
+treatment similarity within individual stages of the protocols.
+5. The method of any preceding claim, wherein the information on the protocol applied
+
+to the sample comprises an ordered listing of the treatments applied to the sample, wherein
+
+said ordered listing is represented as a binary string, wherein each bit in the binary string
+
+30
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request — 19 November 2018
+
+corresponds to a different treatment in a different stage, and the value of the bit indicates
+
+whether or not the treatment was applied to the sample for that particular stage.
+
+6. The method of any preceding claim, wherein the grouping or ordering the results
+
+comprises clustering the results.
+
+7. The method of claim 6, wherein said clustering comprises hierarchical clustering.
+
+8. The method of any preceding claim, wherein using said ordering or grouping to help
+to identify one or more protocols that are effective for obtaining the desired cell culture
+outcome comprises using the grouping or ordering to identify cell culture treatments for
+further investigation, and the method further comprises performing said further investigations
+
+into the identified cell culture treatments.
+
+9. The method of any preceding claim, wherein said method further comprises analysing
+measurements of at least the subset of samples that yielded a desired cell culture outcome to
+
+determine the protocol for each sample in said subset.
+
+10. The method of claim 9, wherein said measurements are performed by flow or
+scanning cytometry to identify fluorescent tags associated with said samples, wherein
+
+different treatments impart different fluorescent tags to the samples.
+
+11. The method of any preceding claim, wherein said desired cell culture outcome is
+determined by passing one or more tests, and said method further comprises analysing the
+grouping of results to identify different groups of samples that pass said one or more tests,
+
+wherein said different groups have different cell culture properties.
+
+12, The method of any preceding claim, wherein performing a computer-implemented
+analysis of the cell culture data from the samples in the subset to produce an ordering or
+grouping of the samples in the subset determines a score based on: (i) the number of samples
+from the subset that followed each respective protocol, and (ii) similarities between the
+protocols for respective samples, wherein a protocol scores more highly if it is more similar to
+
+other protocols that gave positive results.
+13. The method of any preceding claim, wherein performing a computer-implemented
+analysis of the cell culture data from the samples in the subset to produce an ordering or
+
+grouping of the samples in the subset determines a score (S) for a given protocol (P(i)) as:
+
+31
+
+--- PAGE 3 ---
+10
+
+Main Request — 19 November 2018
+
+S(PO) = V(x WT(PO, PH)
+
+k=l
+
+where J is the number of protocols that gave at least one positive result, /(n) is the number of
+samples that gave a positive result for the nth protocol, and WT(P(i),P(k)) is a weighting
+factor based on the similarity between protocol P(i) and protocol P(k), whereby the higher the
+similarity, the higher the weighting factor.
+
+14, A computer program for implementing the method of any preceding claim.
+
+15. Apparatus configured to implement the method of any of claims 1 to 13.
+
+32

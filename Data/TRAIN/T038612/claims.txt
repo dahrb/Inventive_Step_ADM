@@ -1,0 +1,198 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request
+
+Claims
+
+1. A method of execution-instruction delegation among multiple elemental
+processing resources of at least two different types, the multiple elemental
+processing resources comprising two or more elemental processing resources of a
+first type each sharing two or more elemental processing resources of a second type
+with at least one other of the two or more processing resources of the first type,
+and multiple program threads stored in memory accessible by the multiple elemental
+processing resources of the first type, the elemental processing resources of the first
+type each being configured to receive a program instruction from a thread in
+memory, the elemental processing resources of the second type having pipelines
+associated therewith and being configured to only receive and execute instructions
+that were delegated to their pipeline for execution by processing resources of the
+first type and by being shared by at least two elemental processing resources of the
+first type, the method comprising:
+
+obtaining an execution instruction from the thread, wherein the execution
+instruction is obtained at one of the at least two elemental processing resources of
+the first type;
+
+determining whether an operation-code within the execution instruction is
+incapable of being executed by the one elemental processing resource of the first
+type and thus should be delegated to an other elemental processing resource of the
+second type shared by the at least two processing resources of the first type;
+
+executing the execution instruction within the first elemental processing
+resources of the first type, 1f the operation-code within the execution instruction
+should not be delegated to any other elemental processing resource;
+
+if the execution instruction should be delegated, providing a specific
+elemental processing resource of the first type access to a specific elemental
+processing resource of the second type that it shares with another of the elemental
+processing resources of the first type based upon an arbitration request by the
+
+specific elemental processing resource of the first type; and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+routing the execution instruction and an identifier for the specific elemental
+processing resource of the first type that delegated the execution instruction to a
+pipeline of the shared specific elemental processing resource of the second type that
+is capable of executing the operation code, if the operation-code within the
+
+execution instruction is to be delegated.
+
+2. The method of claim 1, wherein the method is completed within a single
+
+processing cycle.
+
+3. The method of any one of the preceding claims, wherein the operation-code
+
+indicates a type of elemental processing resource on which to execute.
+
+4. The method of claim 1, wherein the at least two elemental processing
+resources of the first type are integer processing units (102, 104, 106, 108), and the
+other elemental processing resource of a second type is a mathematical processing
+unit (114), a memory management unit, a vector processing unit, a digital signal
+processing unit, a graphics processing unit, an input/output controller processing
+
+unit, of an execution-instruction processing cache.
+
+5. A method according to claim 4, wherein:
+
+the obtained execution instruction is a first one of multiple execution-
+instructions from a thread received and executed at a first one of the elemental
+processing resources of the first type; and
+
+a second execution instruction from the thread cannot be processed by the
+first elemental processing resource of the first-type;
+
+the method comprising:
+
+maintaining the thread in the first elemental processing resource of the first
+type in a sleep state until an indicator that the second execution instruction has
+
+been processed 1s returned from the other elemental processing resource.
+
+6. The method of claim 1, further comprising routing the execution instruction
+
+through an execution-instruction signal router (110).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+7. The method of claim 6, wherein the execution-instruction signal router (110)
+
+is a cross-point switch.
+
+8. The method of claim 1, wherein the first specific elemental processing
+resource of the first type, executing a first individual thread sleeps while the specific
+elemental processing resource of the second type executes delegated execution-
+
+instructions from the first individual thread.
+
+9. The method of any one of the preceding claims, further comprising,
+generating an execution-instruction signal, wherein the execution-instruction signal
+causes at least one of the elemental processing resources dynamically to turn on
+and off to maintain a desired level of power draw while maximizing processing
+
+throughput.
+
+10. The method of claim 1 further comprising generating an execution-
+instruction signal, wherein the execution-instruction signal causes at least one of the
+
+elemental processing resources to shut off while idling.
+
+11. The method of claim 1 further comprising generating an execution-
+instruction signal, wherein the execution-instruction signal causes at least one of the
+elemental processing resources to turn on when execution-instruction signal
+
+processing is required.
+
+12. The method of claim 1, wherein the elemental processing resources are
+
+communicatively disposed on a same die.
+
+13. The method of claim 12, wherein an execution-instruction signal router (110)
+
+is on the same die with the elemental processing resources.
+
+14. | Asystem for execution-instruction delegation between elemental processing
+resources of at least two different types, comprising:
+a multithreaded configuration including at least two elemental processing
+
+resources of a first type and at least one elemental processing resource of a second
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+type, the at least one elemental processing resource of the second type having an
+input pipeline for only receiving delegated instructions from the elemental
+processing resources of the first type, the elemental processing resources of the
+second type being different from, and shared by, the elemental processing resources
+of the first type;
+
+means to obtain an execution instruction from a thread of a multithreaded
+program stored in a memory, wherein the execution instruction is obtained at one
+of at least two elemental processing resources of the first type;
+
+means to determine whether an operation-code within the execution
+instruction from the thread should be delegated to a pipeline of an other elemental
+processing resource of the second type because 1s cannot be executed by the
+elemental processing resource of the first type;
+
+means to execute the execution instruction from the thread within the
+elemental processing resources of the first type, if the operation-code within the
+execution instruction should not be delegated;
+
+means to route the execution instruction from the thread to a pipeline of the
+other elemental processing resource of the second type, if the operation-code within
+the execution instruction is for the other processing resource;
+
+means to cause the delegating elemental processing resource of the first type
+to sleep until the elemental processing resource of the second type has indicated it
+has completed execution of the delegated execution instruction from the pipeline
+and to cause the elemental processing resource of the first type to wake when
+execution of the delegated execution instruction by the elemental processing
+resource of the second type 1s complete; and
+
+means to return a result of executing the delegated execution to the
+
+delegating elemental processing resource of the first type.

@@ -1,0 +1,67 @@
+TITLE:
+Inverter drive system having changeable configurations
+
+TYPE:
+European patent
+
+ABSTRACT:
+Systems and methods are provided for dynamically changing configurations of multi-inverter drive systems. By changing configurations during operation, a multi-inverter system of the present invention can provide greater than half of full output power during failure of a power cell and can provide efficient braking torque during regeneration. The inverter drive system includes a plurality of single pole inverter cells and a configuration switch system connecting the single pole inverter cells in a star configuration and for changing the connection configuration of the single pole inverter cells. In one embodiment, the configuration switch system is adapted to dynamically change the star configuration of the inverter system to a mesh configuration during operation of the load. In another embodiment, the configuration switch system is adapted to dynamically change the star configuration of the single pole inverter cells to form a polyphase inverter.
+
+CLAIMS:
+A method of driving a motor load using an inverter drive system, the inverter drive system comprising a plurality of single pole NPC inverters connected to each other via a plurality of contactor switches adapted to connect the single pole NPC inverters in a plurality of configurations, the method comprising:
+switching some of the contactor switches to connect the single pole NPC inverters in a star configuration;
+driving the motor load using the inverter drive system in the star configuration; and
+switching some of the contactor switches to connect the single pole NPC inverters in a second configuration.
+The method of claim 1, wherein for the step of switching some of the contactor switches to connect the single pole NPC inverters in a second configuration, the second configuration comprises a mesh V connection.
+The method of claim 2, wherein the step of switching some of the contactor switches to connect the single pole NPC inverters in a second configuration comprises:
+sensing a failure in one of the single pole NPC inverters of the inverter drive system in a star configuration;
+switching some of the contactor switches to disable a common neutral between phases of the inverter drive system in the star configuration;
+switching some of the contactor switches to connect the single pole NPC inverters in a mesh configuration that by-passes the failed inverter.
+The method of claim 1, wherein for the step of switching some of the contactor switches to connect the single pole NPC inverters in a second configuration, the second configuration comprises a polyphase inverter formed from the single pole NPC inverters.
+The method of claim 4, wherein the step of switching some of the contactor switches to connect the single pole NPC inverters in a second configuration comprises:
+detecting a deceleration mode for the motor;
+switching some of the contactor switches to disable a common neutral between phases of the inverter drive system in the star configuration; and
+switching some of the contactor switches to connect together DC buses of the single pole NPC inverters for forming a polyphase inverter.
+A method for conducting regenerative braking for a motor load using an inverter drive system, the inverter drive system comprising a plurality of single pole inverters connected in a star configuration, the method comprising:
+detecting deceleration of the motor load;
+changing connections between the plurality of single pole inverters to form a polyphase inverter;
+connecting the polyphase inverter to at least one braking resistor; and
+dissipating over-voltage in the polyphase inverter through the at least one braking resistor.
+The method of claim 6, wherein the single pole inverter cells comprise NPC cells having main transistors and auxiliary transistors, and the step of dissipating over-voltage comprises:
+detecting over-voltage across DC buses of the polyphase inverter; and
+switching some of the auxiliary transistors to control dissipation of over-voltage through the at least one resistor.
+An inverter drive system for providing polyphase power to a load, the inverter drive system comprising:
+a plurality of single pole inverter cells; and
+a configuration switch system comprising a plurality of switches, the plurality of switches connecting the single pole inverter cells in a star configuration for providing polyphase power to the load, the plurality of switches for dynamically changing connections between the single pole inverter cells to form a mesh configuration.
+The inverter drive system of claim 8, wherein the single pole inverter cells comprise NPC inverters.
+The inverter drive system of claim 8, wherein the configuration switch system comprises common neutral contactor switches connecting together a second terminal of the single pole inverter cells to form a common neutral.
+The inverter drive system of claim 10, the configuration switch system further comprising star/mesh contactor switches, each star/mesh contactor switch connecting a first terminal of a first cell of the single pole inverter cells with an opposing second terminal of a second cell of the single pole inverter cells, wherein when the common neutral contactor switches are closed the star/mesh contactor switches are open to form a star configuration inverter drive system, and when the common neutral contactor switches are open at least some of the star/mesh contactor switches are closed to form a mesh configuration inverter drive system.
+The inverter drive system of claim 11, wherein the star/mesh contactor switches are adapted to connect two operable ones of the single pole inverter cells with an inoperable one of the single pole inverter cells in a mesh V configuration for providing three-phase power to the load.
+The inverter drive system of claim 10, the configuration switch system further comprising DC bus contactor switches comprising:
+a positive switch set connecting a positive DC bus of each single pole inverter cell together; and
+a negative switch set connecting a negative DC bus of each single pole inverter cell together;
+   wherein when the common neutral contactor switches are closed and the positive and negative switch sets are open, a star configuration inverter drive system is formed, and when the common neutral contactor switches are open and the positive and negative switch sets are closed, a polyphase inverter is formed.
+The inverter drive system of claim 13, wherein the DC bus contactor switches are adapted to close during deceleration of a motor load connected to the inverter drive system for forming a polyphase inverter during deceleration of the motor load.
+The inverter drive system of claim 13, wherein the single pole inverter cells are NPC inverters and the DC bus contactor switches further comprise a neutral switch set connecting a neutral point of each NPC cell together.
+An inverter drive system adapted to continually provide three-phase power to a load in the event an inverter cell becomes inoperable, the inverter drive system comprising:
+a first NPC inverter cell having a first terminal and a second terminal;
+a second NPC inverter cell having a first terminal and a second terminal;
+a third NPC inverter cell having a first terminal and a second terminal;
+a common neutral contactor switch set connecting together the second terminals of the first, second and third NPC inverter;
+a first-to-second star/mesh contactor switch connecting the second terminal of the first NPC inverter cell to first terminal of the second NPC inverter cell;
+a second-to-third cell star/mesh contactor switch connecting the second terminal of the second NPC inverter cell to first terminal of the third NPC inverter cell; and
+a third-to-first cell star/mesh contactor switch connecting the second terminal of the third NPC inverter cell to first terminal of the first NPC inverter cell;
+   wherein, when the common neutral contactor switch is closed and the star/mesh contactor switches are open, the inverter drive system is connected in a wye configuration, and when the common neutral contactor switch is open and at least two of the wye/mesh contactor switches are closed, the inverter drive system is connected in a mesh configuration.
+An inverter drive system adapted to change configurations from a plurality of single pole inverter cells configured in a three-phase delta or mesh configuration into a three-phase inverter cell, the inverter drive system comprising:
+a first NPC inverter cell having a positive DC bus, a negative DC bus, and a neutral point;
+a second NPC inverter cell having a positive DC bus, a negative DC bus, and a neutral point;
+a third NPC inverter cell having a positive DC bus, a negative DC bus, and a neutral point;
+a positive DC bus contactor switch set connecting together the positive DC buses of the NPC inverter cells;
+a negative DC bus contactor switch set connecting together the negative DC buses of the NPC inverter cells;
+a neutral point contactor switch set connecting together the neutral points of the NPC inverter cells;
+   wherein, when the neutral point contactor switch set and the DC bus contactor switch sets are closed, the inverter drive system is configured to be a polyphase inverter.
+The inverter drive system of claim 17, further comprising:
+at least one braking resistor connected to a second terminal of each NPC inverter cell at one end and the neutral point contactor switch set at a second end; and
+a voltage detector connected across the positive and negative DC buses of the NPC inverter cells for detecting over-voltage in the DC buses of the polyphase inverter.
+The inverter drive system of claim 18, wherein each NPC inverter cell further comprises a plurality of main transistors and a plurality of auxiliary transistors, and wherein the plurality of auxiliary transistors are adapted to switch on and off to control dissipation of the over-voltage in the DC buses through the at least one braking resistor when the inverter drive system is configured as a polyphase inverter and the voltage detector detects over-voltage.
+The inverter drive system of claim 18, wherein the at least one braking resistor comprises a plurality of braking resistors connected in parallel.

@@ -1,0 +1,56 @@
+TITLE:
+Bill handling machine
+
+TYPE:
+European Patent
+
+ABSTRACT:
+The object of this invention is providing a bill handling machine in which the delivery order can be flexibly changed. A delivery order setting table 108 which stores the delivery order for each bill-cassette is installed in a bill handling machine 10. The bill handling machine 10 receives a withdrawal instruction including the number of bills to be delivered for each denomination from an upper apparatus ATM. The bill handling machine 10 specifies the delivery order and the number of bills by referring to the delivery order setting table 108 and a bill-cassette setting table 107, which stores the denomination of each bill-cassette, according to the withdrawal instruction, and delivers the bills. The delivery order can be easily changed by changing the setting of the delivery order setting table 108. <IMAGE>
+
+CLAIMS:
+A bill handling machine for delivering bills comprising;
+   a plurality of bill-cassettes each configured to store bills of same denomination;
+   a bill-cassette setting memory configured to store a bill-cassette setting relating denominations to the bill-cassettes;
+   a delivery order setting unit configured to receive an external command or operation and set a relation between the bill-cassettes and a delivery order of bills through the external command or operation;
+   a withdrawal instruction input unit configured to receive an input of a withdrawal instruction; and
+   a delivery controller configured to execute delivery of bills according to the withdrawal instruction and the relation between the bill-cassettes and the delivery order of bills.
+The machine of claim 1, wherein
+   the relation between the bill-cassettes and the delivery order of bills is defined by a delivery denomination setting which relates the delivery order to the denominations; and
+   the delivery denomination setting can be set in the delivery order setting unit through an external command or operation.
+The machine of claim 1, wherein the delivery order setting unit comprises:
+a rule setting unit configured to set a rule for determining the delivery order based on a predetermined parameter related to bills;
+a parameter acquisition unit configured to acquire the parameter with respect to each bill-cassette; and
+a relation generation unit configured to generate the relation between the bill-cassettes and the delivery order of bills based on the rule.
+The machine of claim 3, wherein the parameter has denomination or size of bill.
+The machine of claim 3, further comprising a discrimination unit configured to discriminate bills, wherein the parameter acquisition unit acquires the parameter from the discrimination unit.
+A bill handling machine which delivers bills comprising;
+   a plural bill-cassettes configured to store bills of each denomination;
+   a bill-cassette setting storage configured to store a bill-cassette setting relating each denomination to one of the bill-cassettes;
+   a withdrawal instruction input unit configured to input a withdrawal instruction which instructs the denomination and the number of bills to be withdrawn associated to its delivery order;
+   a delivery controller configured to execute the delivery of the bills based on the relation according to the withdrawal instruction.
+The machine of claim 1 or 6 comprising:
+a discrimination unit configured to discriminate the bill; and
+a detection unit configured to detect an inconsistency between the withdrawal instruction and an actual delivery based on the result of the discrimination.
+The machine of claim 7 comprising a correction unit configured to adjust the bill-cassette setting such that the bill-cassette delivering the inconsistent bill is associated to the denomination of the bill.
+A teller machine executing transactions of bills by controlling a bill handling machine which delivers bills according to an instruction which instructs denomination and the number of bills to be withdrawn associated with a delivery order of bills, the teller machine comprising:
+an amount input unit configured to receive an input of an amount of money to be withdrawn;
+a bill setting unit configured to set the denomination and the number of bills to be withdrawn based on the withdrawal amount; and
+an instruction unit configured to instruct the bill handling machine to deliver the denomination and the number of bills to be withdrawn associated with a delivery order of bills.
+A control method of controlling delivery of bills in a bill handling machine for dispensing bills, the control method comprising the steps of:
+storing a bill-cassette setting which relates denominations to bill-cassettes each storing bills of same denomination;
+receiving a setting of a relation between the bill-cassettes and a delivery order of bills through an external command or operation;
+inputting a withdrawal instruction which instructs bills to be withdrawn; and
+delivering bills according to the withdrawal instruction and the relation between the bill-cassettes and the delivery order of bills.
+A control method to control delivery of bills in a bill handling machine which dispenses bills, the control method comprising the steps of:
+storing a bill-cassette setting which relates each denomination to one of bill-cassettes storing bills of each denomination;
+inputting a withdrawal instruction which instructs which instructs the denomination and the number of bills to be withdrawn associated to its delivery order; and
+delivering the bills based on the relation according to the withdrawal instruction.
+A computer readable medium on which a computer program is stored, the computer program causing a computer to control delivery of bills in a bill handling machine and to effect the functions of:
+storing a bill-cassette setting which relates each denomination to one of bill-cassettes storing bills of each denomination;
+inputting a setting of a relation between the bill-cassettes and a delivery order of the bills through an external command or operation;
+inputting a withdrawal instruction which instructs the bills to be withdrawn; and
+controlling the delivery of the bills based on the relation according to the withdrawal instruction.
+A computer readable recording media in which a computer program is stored, the computer program causing a computer to control delivery of bills in a bill handling machine and to execute the functions of:
+storing a bill-cassette setting which relates each denomination to one of bill-cassettes storing bills of each denomination;
+inputting a withdrawal instruction which instructs which instructs the denomination and the number of bills to be withdrawn associated to its delivery order; and
+controlling the delivery of the bills based on the relation according to the withdrawal instruction.

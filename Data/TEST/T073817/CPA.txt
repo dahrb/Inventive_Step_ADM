@@ -1,0 +1,48 @@
+TITLE:
+Cluster-based business process management through eager displacement and on-demand recovery
+
+TYPE:
+European patent
+
+ABSTRACT:
+Methods and apparatus, including computer program products, are provided for transporting processes within a distributed computing system, such as a cluster. In one aspect, the computer-implemented method receives an event at a first node. The event corresponds to a process instance for handling the received event. The process instance is transported from a second node to the first node. The process instance is transported from a persistence when the process instance is inactive and, when the process instance is active, the process instance is persisted to enable transport to the first node. Related apparatus, systems, methods, and articles are also described.
+
+CLAIMS:
+A computer-implemented method comprising:
+receiving (210) an event at a first node (130), the event corresponding to a process instance (SG1) for handling the received event; and
+transporting (220) the process instance (SG1) to the first node (130) from a second node (135), the process instance (SG1) transported from a persistence when the process instance (SG1) is inactive and, when the process instance (SG1) is active, waiting to persist the process instance (SG1) to enable transport to the first node (130).
+The computer-implemented method of claim 1, further comprising:
+committing (225) to a database (112) a transaction when the transported process instance (SG1) is received at the first node (130) and the received event is delivered to the transported process instance (SG1).
+The computer-implemented method of claim 1 or 2, further comprising:
+responding, when the process instance (SG1) is inactive, to a request to release the process instance (SG1) at the second node (135) to change an owner node of the process instance (SG1) from the second node (135) to the first node (130).
+The computer-implemented method of any one of claims 1 to 3, further comprising:
+receiving, at the second node (135), a request to release the process instance (SG1) for transport to the first node (130), the process instance (SG1) active at the second node (135).
+The computer-implemented method of claim 4, further comprising:
+persisting, in response to request, the process instance (SG1), when the process instance (SG1) becomes inactive at the second node; and/or
+responding, when the process instance (SG1) is inactive, to the request to release the process instance (SG1) at the second node (135).
+A computer-readable medium containing instructions to configure a processor to perform a method, the method comprising:
+receiving (210) an event at a first node (130), the event corresponding to a process instance (SG1) for handling the received event; and
+transporting (220) the process instance (SG1) to the first node (130) from a second node (135), the process instance (SG1) transported from a persistence when the process instance (SG1) is inactive and, when the process instance (SG1) is active, waiting to persist the process instance (SG1) to enable transport to the first node (130).
+The computer-readable medium of claim 6, further comprising:
+committing (225) to a database (112) a transaction when the transported process instance (SG1) is received at the first node (130) and the received event is delivered to the transported process instance (SG1).
+The computer-readable medium of claim 6 or 7, further comprising:
+responding, when the process instance (SG1) is inactive, to a request to release the process instance (SG1) at the second node (135) to change an owner node of the process instance (SG1) from the second node (135) to the first node (130).
+The computer-readable medium of any one of claims 6 to 8, further comprising:
+receiving, at the second node (135), a request to release the process instance (SG1) for transport to the first node (130), the process instance (SG1) active at the second node (135).
+The computer-readable medium of claim 9, further comprising:
+persisting, in response to request, the process instance (SG1), when the process instance (SG1) becomes inactive at the second node (135); and/or
+responding, when the process instance (SG1) is inactive, to the request to release the process instance (SG1) at the second node (135).
+A system comprising:
+a processor; and
+a memory, the processor and memory configured to perform a method comprising:
+receiving (210) an event at a first node (130), the event corresponding to a process instance (SG1) for handling the received event; and
+transporting (220) the process instance (SG1) to the first node (130) from a second node (135), the process instance (SG1) transported from a persistence when the process instance (SG1) is inactive and, when the process instance (SG1) is active, waiting to persist the process instance (SG1) to enable transport to the first node (130).
+The system of claim 11, further comprising:
+committing (225) to a database (112) a transaction when the transported process instance (SG1) is received at the first node (130) and the received event is delivered to the transported process instance (SG1).
+The system of claim 11 or 12 , further comprising:
+responding, when the process instance (SG1) is inactive, to a request to release the process instance (SG1) at the second node (135) to change an owner node of the process instance (SG1) from the second node (135) to the first node (130).
+The system of any one of claims 11 to 13, further comprising:
+receiving, at the second node (135), a request to release the process instance (SG1) for transport to the first node (130), the process instance (SG1) active at the second node (135).
+The system of claim 14, further comprising:
+persisting, in response to request, the process instance (SG1), when the process instance (SG1) becomes inactive at the second node (135); and/or
+responding, when the process instance (SG1) is inactive, to the request to release the process instance (SG1) at the second node (135).

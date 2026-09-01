@@ -1,0 +1,105 @@
+--- PAGE 1 ---
+EP Application No.: 19163 018.5
+
+Applicant: Rockwell Automation Technologies, Inc.
+Our Ref.: EP121872-EH300
+Date: March 30, 2021
+
+MAIN REQUEST — CLAIMS
+
+1.
+
+A method (200) for managing device lifecycles within an industrial automation
+environment comprising a plurality of industrial machines, each machine comprising one
+
+or more industrial devices, the method comprising:
+
+receiving (202) a request for lifecycle management data and a scanning configuration
+through a user interface, wherein the scanning configuration is selected from different
+types of scanning configurations in order to specify which of the industrial devices within
+
+the industrial automation environment are to be scanned;
+
+based on the selected scanning configuration, scanning (204) a plurality of industrial
+devices within the industrial automation environment using a protocol of the selected
+scanning configuration to produce configuration data for the industrial automation
+
+environment,
+
+transferring (206) the configuration data and the request for lifecycle management data to
+
+a product compatibility and download center (180) through a communication interface;
+
+receiving (208) lifecycle management data from the product compatibility and download
+center through the communication interface, wherein the lifecycle management data is
+
+determined based on the configuration data; and
+displaying (210) the lifecycle management data to a user through the user interface.
+
+The method (200) of claim 1, wherein the configuration data comprises a product name,
+
+a firmware revision number, and a serial number for each industrial device.
+
+The method (200) of claim 1 or 2, wherein the scanning configuration requests a scan
+using one of CIP, SNMP and WMI.
+
+The method (200) of claim 1, 2 or 3, wherein the lifecycle management data includes
+replacement data for one or more industrial device found to be “discontinued” or “end of
+
+life.”
+
+The method (200) of one of claims 1 to 4, wherein the request for lifecycle management
+
+data is a recurring request including an interval of time between requests.
+
+--- PAGE 2 ---
+6.
+
+10.
+
+One or more non-transitory computer-readable media having stored thereon program
+instructions to facilitate managing device lifecycles within an industrial automation
+environment comprising a plurality of industrial machines, each machine comprising one
+or more industrial devices, wherein the program instructions, when executed by a
+
+computing system, direct the computing system to at least:
+
+receive (202) a scanning configuration and a request for lifecycle management data
+through a user interface, wherein the scanning configuration is selected from different
+types of scanning configurations in order to specify which of the industrial devices within
+
+the industrial automation environment are to be scanned;
+
+based on the selected scanning configuration, scan (204) a plurality of industrial devices
+within the industrial automation environment using a protocol of the selected scanning
+
+configuration to produce configuration data for the industrial automation environment:
+
+transfer (206) the configuration data and the request for lifecycle management data to a
+
+product compatibility and download center (180) through a communication interface;
+
+receive (208) lifecycle management data from the product compatibility and download
+center through the communication interface, wherein the lifecycle management data is
+
+determined based on the configuration data; and
+
+display (210) the lifecycle management data to a user through the user interface.
+
+The one or more non-transitory computer-readable media of claim 6, wherein the
+configuration data comprises a product name, a firmware revision number, and a serial
+number for each industrial device.
+
+The one or more non-transitory computer-readable media of claim 6 or 7,
+
+wherein the scanning configuration specifies a scan using one of CIP, SNMP and WMI.
+The one or more non-transitory computer-readable media of claim 6, 7, or 8, wherein the
+
+lifecycle management data includes replacement data for one or more industrial device
+
+found to be “discontinued” or “end of life.”
+
+The one or more non-transitory computer-readable media of one of claims 6 to 9, wherein
+the request for lifecycle management data is a recurring request including an interval of
+
+time between requests.

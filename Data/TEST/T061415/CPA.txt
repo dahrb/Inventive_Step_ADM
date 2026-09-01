@@ -1,0 +1,101 @@
+TITLE:
+Method and apparatus for forming medical ultrasound images
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A pulse echo beamforming system generates high spatial bandwidth ultrasound images using only a few transmit/receive events per frame. Each transmit/receive event consists of firing an unfocused or weakly focused wave and receiving and storing the echo on every receive channel. Each set of stored echoes is delayed and apodized to form component beams for each desired image point in the region insonified by that particular wave. The final images are synthesized by adding two or more of the component beams for each image point.
+
+CLAIM:
+1. A medical ultrasonic imaging method comprising:
+(a) transmitting a plurality of ultrasonic waves into a region, said ultrasonic waves characterized by different wavefront angles for each of a plurality of image locations in the region;
+(b) acquiring a respective set of receive signals in response to each of the ultrasonic waves;
+(c) for the plurality of image locations, forming a plurality of component beams, each component beam formed from a respective one of the sets of receive signals, where receive apodization functions for the component beams vary as a function of at least the respective wavefront angles at the respective image locations; and
+(d) for each image location combining the corresponding component beams.
+2. A medical ultrasonic imaging method comprising:
+(a) transmitting a plurality of substantially planar ultrasonic waves into a region, said ultrasonic waves characterized by different steering angles;
+(b) acquiring a respective set of receive signals in response to each of the ultrasonic waves;
+(c) for a plurality of image locations, forming a plurality of component beams, each component beam formed from a respective one of the sets of receive signals, where receive apodization functions for the component beams vary as a function of at least the plane wave steering angles at the respective image locations; and
+(d) for each image location combining the corresponding component beams.
+3. A medical ultrasonic imaging method comprising:
+(a) transmitting first and second ultrasonic waves into a region, said first and second ultrasonic waves characterized by different wavefront angles for each of a plurality of image locations in the region;
+(b) acquiring sets of first and second receive signals in response to the first and second ultrasonic waves, respectively;
+(c) for the plurality of image locations, forming first and second component beams from the sets of first and second receive signals, respectively, where receive apodization functions for the component beams vary as a function of at least the respective wavefront angles at the respective image locations; and
+(d) for each image location combining the corresponding component beams.
+4. A medical ultrasonic imaging method comprising:
+(a) transmitting first and second substantially planar ultrasonic waves into a region, said first and second ultrasonic waves characterized by different steering angles;
+(b) acquiring sets of first and second receive signals in response to the first and second ultrasonic waves, respectively;
+(c) for a plurality of image locations, forming first and second component beams from the sets of first and second receive signals, respectively, where receive apodization functions for the component beams vary as a function of at least the steering angles of the respective substantially planar waves; and
+(d) for each image location, combining the corresponding component beams.
+5. The method of claim 1 or 2 or 3 or 4 wherein the ultrasonic waves in (a) are transmitted sequentially.
+6. The method of claim 1 or 2 or 3 or 4 wherein the ultrasonic waves in (a) are characterized by different codes.
+7. The method of claim 1 or 2 or 3 or 4 wherein the ultrasonic waves in (a) are characterized by substantially orthogonal codes, and wherein the ultrasonic waves are transmitted substantially simultaneously.
+8. The method of claim 1 or 2 or 3 or 4 wherein (a) comprises varying at least one of the following transmit filter parameters with transmit channel: envelope modulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+9. The method of claim 1 or 2 or 3 or 4 wherein (a) comprises varying at least one of the following transmit filter parameters with transmit firing: envelope modulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+10. The method of claim 1 or 2 or 3 or 4 wherein (c) comprises varying at least one of the following receive filter parameters with component beams: demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+11. The method of claim 1 or 2 or 3 or 4 wherein (c) comprises varying at least one of the following receive filter parameters with image location: demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+12. The method of claim 1 or 3 wherein (c) comprises varying at least one of the following receive filter parameters as a function of the respective wavefront angles at the respective image locations: demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+13. The method of claim 2 or 4 wherein (c) comprises varying at least one of the following receive filter parameters as a function of the respective steering angles at the respective image locations: demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+14. The method of claim 1 or 2 or 3 or 4 wherein at least one of (a) and (b) uses a two-dimensional transducer array, and wherein the image locations of (c) are distributed in a three-dimensional space.
+15. The method of claim 1 or 2 or 3 or 4 wherein the image locations of (c) are distributed in a two-dimensional plane.
+16. The method of claim 1 or 2 or 3 or 4 wherein the component beams of (c) are distributed along a plurality of scan lines.
+17. The method of claim 1 or 2 or 3 or 4 wherein the component beams of (c) are distributed along a single scan line.
+18. The method of claim 1 or 2 or 3 or 4 wherein the combining act of (d) forms a coherent sum.
+19. The method of claim 1 or 2 or 3 or 4 wherein the combining act of (d) forms a partially coherent sum.
+20. The method of claim 1 or 2 or 3 or 4 further comprising: (e) forming an image from the combined beams of (d).
+21. The method of claim 20 further comprising: (f) repeating acts (c)-(e) to form a second image, wherein at least one of the following receive parameters vary between the first and second images: apodization function, demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+22. The method of claim 1 or 2 or 3 or 4 wherein the component beam forming act of (c) is performed in a frequency domain.
+23. The method of claim 1, 2, 3, or 4 further comprising:
+(e) repeating (a)-(d) at least once, thereby forming at least two combined component beams for each image location, wherein at least one of the following transmit parameters is varied between two sets of repeated acts (a)-(d): envelope modulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile;
+(f) forming an image from the combined component beams of each act (d).
+24. The method of claim 23 further comprising:
+(g) introducing a contrast agent into the region prior to (a) such that the contrast agent is present during (a).
+25. The method of claim 1, 2, 3, or 4 further comprising:
+(e) repeating (a)-(d) at least once, thereby forming at least two combined component beams for each image location, wherein at least one of the following receive parameters is varied between two sets of repeated acts (a)-(d): apodization function, demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile;
+(f) forming an image from the combined component beams of each act (d).
+26. The method of claim 25 further comprising:
+(g) introducing a contrast agent into the region prior to (a) such that the contrast agent is present during (a).
+27. The method of claim 1, 2, 3, or 4 further comprising:
+(e) repeating (a)-(d) at least once, thereby forming at least two combined component beams for each image location, wherein at least one of the following transmit parameters is varied between two sets of repeated acts (a)-(d): envelope modulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile; and wherein at least one of the following receive parameters is varied between two sets of repeated acts (a)-(d): apodization function, demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile; and
+(f) forming an image from the combined component beams of each act (d).
+28. The method of claim 27 further comprising:
+(g) introducing a contrast agent into the region prior to (a) such that the contrast agent is present during (a).
+29. A medical ultrasonic imaging method comprising:
+(a) simultaneously transmitting a plurality of ultrasonic waves into a region, said ultrasonic waves characterized by different wavefront angles for each of a plurality of image locations in the region;
+(b) acquiring a set of receive signals in response to the simultaneously transmitted ultrasonic waves;
+(c) for a plurality of image locations forming a beam from the set of receive signals, wherein the image locations are substantially along the locus of intersection points of the ultrasonic waves as the waves propagate into the region, and where the receive apodization function varies as a function of at least the respective wavefront angles at the respective image locations.
+30. The method of claim 29 where (a) comprises simultaneously transmitting two ultrasonic waves into a region, said ultrasonic waves characterized by different wavefront angles for each of the plurality of image locations.
+31. The method of claim 29 where (a) comprises simultaneously transmitting a plurality of ultrasonic plane waves into a region, said ultrasonic plane waves characterized by different steering angles for the image locations.
+32. The method of claim 29 where (a) comprises simultaneously transmitting two ultrasonic plane waves into a region, said ultrasonic plane waves characterized by different steering angles for the image locations.
+33. The method of claim 29 wherein (a) comprises varying at least one of the following transmit filter parameters with transmit channel: envelope modulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+34. The method of claim 29 wherein (c) comprises varying at least one of the following receive filter parameters with image location: demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+35. The method of claim 29 wherein (c) comprises varying at least one of the following receive filter parameters as a function of the respective wavefront angles at the respective image locations: demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase and envelope phase profile.
+36. The method of claim 29 further comprising:
+(d) repeating (a)-(c) at least once, thereby forming at least two combined component beams for each image location, wherein at least one of the following transmit parameters is varied between two sets of repeated acts (a)-(c): envelope modulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile;
+(e) forming an image from the combined component beams of each act (c).
+37. The method of claim 29 further comprising:
+(d) repeating (a)-(c) at least once, thereby forming at least two combined component beams for each image location, wherein at least one of the following receive parameters is varied between two sets of repeated acts (a)-(c): apodization function, demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile;
+(e) forming an image from the combined component beams of each act (c).
+38. The method of claim 29 further comprising:
+(d) repeating (a)-(c) at least once, thereby forming at least two combined component beams for each image location, wherein at least one of the following transmit parameters is varied between two sets of repeated acts (a)-(c): envelope modulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile; and wherein at least one of the following receive parameters is varied between two sets of repeated acts (a)-(c): apodization function, demodulation frequency, envelope amplitude, envelope amplitude profile, envelope phase, and envelope phase profile; and
+(e) forming an image from the combined component beams of each act (c).
+39. The method of claim 36, 37, or 38 further comprising:
+(f) introducing a contrast agent into the region prior to (a) such that the contrast agent is present during (a).
+40. The method of claim 1, 2, 3, 4, or 29 further comprising:
+(e) introducing a contrast agent into the region prior to (a), such that the contrast agent is present during (a).
+41. A medical diagnostic ultrasonic imaging system comprising:
+(a) means for transmitting a plurality of ultrasonic waves into a region, said ultrasonic waves characterized by different wavefront angles for each of a plurality of image locations in the region;
+(b) means of acquiring a respective set of receive signals in response to each of the ultrasonic waves;
+(c) at least one beamformer operative to form, for a plurality of image locations, a plurality of component beams, each component beam formed from a respective one of the sets of receive signals, where receive apodization functions for the component beams vary as a function of at least the respective wavefront angles at the respective image locations; and
+(d) a processor operative for each image location to combine the respective plurality of component beams.
+42. The invention of claim 41 wherein the transmitting means is operative to transmit the ultrasonic waves sequentially.
+43. The invention of claim 41 wherein the transmitting means is operative to transmit the ultrasonic waves with different codes.
+44. The invention of claim 43 wherein the transmitting means is operative to transmit the ultrasonic waves substantially simultaneously with substantially orthogonal codes.
+45. The invention of claim 41 wherein at least one of the transmitting means and receiving means comprises a two-dimensional transducer array.
+46. The invention of claim 45 wherein the image locations are distributed in a three-dimensional space.
+47. The invention of claim 41 wherein the image locations are distributed in a two-dimensional plane.
+48. The invention of claim 41 wherein the image locations are distributed along a plurality of scan lines.
+49. The invention of claim 41 wherein the image locations are distributed along a scan line.
+50. The invention of claim 41 wherein the beamformer operates in a time domain.
+51. The invention of claim 41 wherein the beamformer operates in a frequency domain.

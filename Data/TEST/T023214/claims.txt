@@ -1,0 +1,164 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+17
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A method for identifying manufactured items in containers, each container
+suitable for containing two or more units, the method comprising the steps of:
+
+at a production line, uniquely identifying each unit by marking each unit with
+a unique unit identifier;
+
+at the production line, allocating two or more units to be contained in each
+container;
+
+at the production line, uniquely identifying each container by marking each
+container with a unique container identifier;
+
+for each container, determining one or more ranges of unit identifiers of the
+two or more units allocated to the container; and
+
+storing, in a database, a container identifier for each container, each
+container identifier being coupled, in the database, to the one or more ranges of
+unit identifiers of the two or more units allocated to the container.
+
+2. A method according to claim 1, wherein each unit identifier is an encrypted
+version of production details associated with the respective unit.
+
+3. A method according to claim 2, wherein the production details for each unit
+comprise one or more of: production location, production date, production time, and
+
+a counter value of an incremental counter.
+
+4. A method for tracking a unit contained or formerly contained within a
+container for manufactured items identified according to any of claims 1 to 3, the
+method comprising the steps of:
+
+reading with a reader a unit identifier marked on the unit; and
+
+sending details of the unit identifier via a transmitter to a host including the
+
+database.
+
+5. A method for tracking according to claim 4, wherein the host is arranged to
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+18
+
+store the location of the unit determined from the reading of the unit identifier
+
+marked on the unit.
+
+6. A method for tracking according to claim 4 or claim 5, wherein the host is
+arranged to determine, from the received unit identifier, the range in which falls the
+unit identifier marked on the unit and, hence, the container containing or formerly
+containing the unit, and wherein the host is arranged to store at least one location
+
+of the container containing or formerly containing the unit.
+
+f. A method for authenticating a unit contained or formerly contained within a
+container for manufactured items identified according to any of claims 1 to 3, the
+method comprising the steps of:
+
+reading with a reader a unit identifier marked on the unit; and
+
+sending details of the unit identifier via a transmitter to a host including the
+database.
+
+8. A method for authenticating according to claim 7, wherein the host is
+arranged to determine, from the received unit identifier, the range in which falls the
+unit identifier marked on the unit and, hence, the container containing or formerly
+
+containing the unit.
+
+9. A method for tracing units contained within a container for manufactured
+items identified according to any of claims 1 to 3, the method comprising the steps
+of:
+
+determining the unit identifiers of the units to be traced;
+
+determining, from those unit identifiers, the one or more ranges of unit
+identifiers in which fall those unit identifiers;
+
+determining, from those ranges, the container or containers containing the
+units to be traced; and
+
+locating the determined container or containers.
+
+10. Apparatus for identifying manufactured items in containers, each container
+
+suitable for containing two or more units, each unit being marked with a unique unit
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+19
+
+identifier, the apparatus comprising:
+
+marking means at a production line for uniquely identifying each unit by
+marking each unit with a unique unit identifier;
+
+means for allocating at the production line two or more units to be contained
+in each container; and
+
+marking means at the production line for uniquely identifying each container
+by marking each container with a unique container identifier;
+
+means for determining one or more ranges of unit identifiers of the two or
+more units allocated to the container; and
+
+a database for storing a container identifier for each container, each
+container identifier being coupled, in the database, to the one or more ranges of
+unit identifiers of the two or more units allocated to the container.
+
+11. Apparatus for tracking and authenticating a unit contained or formerly
+contained within a container for manufactured items identified according to any of
+claims 1 to 3, the apparatus comprising:
+
+a reader for reading a unit identifier on the unit; and
+
+a transmitter for sending details of the unit identifier to a host including the
+database.
+
+12. |Acontainer for manufactured items identified according to the method of any
+
+of claims 1 to 3.
+
+13. A container identifier for the container of claim 12.
+
+14. A unit contained or formerly contained within a container for manufactured
+
+items identified according to the method of any of claims 1 to 3.
+
+15. A unit identifier for the unit of claim 14.

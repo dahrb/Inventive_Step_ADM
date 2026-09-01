@@ -1,0 +1,31 @@
+TITLE:
+Methods, systems and computer readable media for electronically delivering a prepaid card to a mobile device
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+Methods, systems, and computer readable media for electronically delivering a prepaid card to a mobile device are disclosed. According to one aspect, the method includes receiving, at a merchant server, purchase information related to the purchase of an electronic prepaid card. The method further includes receiving, from the merchant server, electronic prepaid card information derived from the purchase information. The method further includes establishing a communications link with a mobile device associated with address data included in the electronic prepaid card information. The method also includes provisioning the electronic prepaid card information on the mobile device via over the air (OTA) communications.
+
+CLAIMS:
+What is claimed is: 1. A method for electronically delivering a prepaid card to a mobile device, the method comprising: receiving, at a merchant server, purchase information related to the purchase of an electronic prepaid card; receiving, from the merchant server, electronic prepaid card information derived from the purchase information; establishing a communications link with a mobile device associated with address data included in the electronic prepaid card information; and provisioning the electronic prepaid card information on the mobile device over the communications link via over the air (OTA) communications.
+2. The method of claim 1 wherein the electronic prepaid card information includes personalization data that is used to generate a softcard prepaid card in the mobile device.
+3. The method of claim 1 wherein the electronic prepaid card information comprises a prepaid card authorization code.
+4. The method of claim 1 wherein establishing a communications link with a mobile device comprises: sending a control short message service (SMS) message to the mobile device associated with the address data included in the prepaid card information; and receiving, from the mobile device, an electronic prepaid card download request for the electronic prepaid card information.
+5. The method of claim 1 further comprising: storing the electronic prepaid card information on the mobile device as a prepaid softcard and personalization data.
+6. The method of claim 5 further comprising: storing the personalization data within a secure element in the mobile device.
+7. The method of claim 1 further comprising: sending a message to the merchant server indicating the successful delivery of the electronic prepaid information to the mobile device.
+8. The method of claim 7 further comprising: sending a message to the original purchaser of the prepaid card from the merchant server indicating a successful delivery of the electronic prepaid information to the mobile device.
+9. The method of claim 1 further comprising: transferring the personalization data to a wireless device reader in order to conduct a payment transaction.
+10. A system for electronically delivering a prepaid card to a mobile device, the system comprising: a merchant server for receiving purchase information related to the purchase of an electronic prepaid card and generating electronic prepaid card information; and an over the air (OTA) provisioning server for receiving the electronic prepaid card information from the merchant server, establishing a communications link with a mobile device associated with address data included in the prepaid card information, and provisioning the electronic prepaid card information to the mobile device over the communications link via over the air (OTA) communications.
+11. The system of claim 10 wherein the electronic prepaid card information includes personalization data that is used to generate a softcard prepaid card in the mobile device.
+12. The system of claim 10 wherein the electronic prepaid card information comprises a prepaid card authorization code.
+13. The system of claim 10 wherein the OTA provisioning server is further configured to send a control short message service (SMS) message to the mobile device associated with the address data included in the prepaid card information, and receive, from the mobile device, an electronic prepaid card download request for the electronic prepaid card information.
+14. The system of claim 10 wherein the OTA provisioning server is further configured to upload the electronic prepaid card information to the mobile device as a prepaid softcard and personalization data.
+15. The system of claim 14 wherein the personalization data is uploaded to a secure element in the mobile device.
+16. The system of claim 10 wherein the OTA provisioning server is further adapted to send a message to the merchant server indicating the successful delivery of the electronic prepaid information to the mobile device.
+17. The system of claim 16 wherein the merchant server is further adapted to send a message to the original purchaser of the prepaid card from the merchant server indicating a successful delivery of the electronic prepaid information to the mobile device.
+18. The system of claim 1 wherein the mobile device is adapted to transfer the personalization data to a wireless device reader in order to conduct a payment transaction.
+19. The system of claim 16 wherein the confirmation message includes at least one of an SMS message and an email message.
+20. The system of claim 17 wherein the confirmation message includes a purchase receipt.
+21. A computer readable medium having stored thereon comprising computer executable instructions that when executed by a processor of a computer performs steps comprising: receiving, at a merchant server, purchase information related to the purchase of an electronic prepaid card; receiving, from the merchant server, electronic prepaid card information derived from the purchase information; establishing a communications link with a mobile device associated with address data included in the electronic prepaid card information; and provisioning the electronic prepaid card information on the mobile device over the communications link via over the air (OTA) communications.

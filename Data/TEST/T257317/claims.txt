@@ -1,0 +1,153 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-1l1-
+
+Claims
+
+1. Acomputer-implemented method comprising:
+
+¢ linking first and second objects (9:1, 92) stored in first and second respective
+databases (41, 42) wherein the first object (9,) is created by a first user (61) having read-
+and-write access to the first database and read-only access to the second database and
+the second object is created by a second, different user (62) having read-only access to
+the first database and read-and-write access to the second database, the first object
+comprising a plurality of attributes (10) including a reference (14) identifying the first
+object (91),
+wherein the linking comprises a database engine (7), under the control of the second
+user (62):
+receiving a selection linking the first and second objects (9,, 92); and
+creating an entry (21,) for the first object (9,) in a look up table (17) in the second
+database (42) using the reference, the entry including, as a first reference (221)
+identifying the first object (9.), the reference, and a second reference (23) identifying
+the second object (92);
+so as to indicate that the second object is linked to the first object when the first
+
+object is queried, even though the second user cannot update the first object;
+wherein the method further comprises:
+
+* database querying,
+wherein the querying comprises a database engine (7), under the control of a user
+(61, 62):
+querying the first object (9,) stored in the first database;
+obtaining the reference (14) for the first object; and
+searching for entries in look up tables in all available databases using the
+reference and retrieving objects linked to the first object by:
+for each available database, searching for the entry in a look up table stored in
+the database using the reference (14) and, in response to finding an entry in the
+look up table which includes the reference, retrieving a corresponding reference
+identifying a corresponding object stored in the database, retrieving the
+corresponding object from the database, and displaying the first object and the
+corresponding object on a display (20) so as to indicate that the corresponding
+object is linked to the first object.
+
+Second auxiliary request
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+-12-
+
+2. A method according to claim 1, further comprising setting a pointer (18) in the
+
+second object (92) to point to the first object (9,).
+
+3. Amethod according to claim 1 or 2, further comprising:
+downloading, from remote storage, the first and second objects and the look up
+table;
+
+storing, in local storage (37), the first and second objects and the look up table.
+
+4. _Amethod according to claim 3, when dependent on claim 2, further comprising:
+after setting the pointer (18) in the second object and creating the entry (21,) in
+the look up table, uploading, to the remote storage an updated portion of the second
+
+object and an updated portion of the look up table.
+
+5. | Amethod according to any preceding claim, wherein the first and second
+databases (41, 42) are comprised in a multiple database comprising plural databases
+arranged hierarchically.
+
+6. |Amethod according to any preceding claim, wherein the first and second objects
+(91, 92) correspond to first and second real-world elements and the linking of the first
+
+and second objects corresponds to connecting the real-world elements.
+
+7. Amethod according to claim 6, wherein the first and second objects (91, 92)
+correspond to first and second structural elements, equipment elements or pipe
+
+elements.
+
+8. |Amethod according to any preceding claim, wherein the first object (91)
+
+comprises an object type (12) for identifying the first object as being of the given object
+type.
+
+9. |Acomputer program which when executed by a data processing apparatus causes
+
+the data processing apparatus to perform a method according to any preceding claim.
+
+10. Acomputer readable medium storing a computer program according to claim 9.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+-13-
+
+11. Acomputer system for linking first and second objects (91, 92) stored in first and
+second respective databases (4, 42) and for database querying, wherein the first object
+(9,) is created by a first user (6,) having read-and-write access to the first database and
+read-only access to the second database and the second object is created by a second,
+different user (62) having read-only access to the first database and read-and-write
+access to the second database, the system comprising:
+
+a database engine (7) configured,
+
+when under the control of the second user (6:):
+
+in response to receiving a selection linking the first and second objects (91, 92), to
+create an entry (21,) in a look up table (17) stored in the second database, the entry
+including, as a first reference (22,) identifying the first object (91) and a second
+reference (23,) identifying the second object (92) so as to indicate that the second object
+is linked to the first object when the first object is queried, even though the second user
+cannot update the first object; and
+
+when under the control of a user (61, 62):
+
+in response to querying the first object (91) stored in the first database, to obtain
+the reference (14) for the first object, to search for entries using the reference (14) in
+look up tables in all available databases, to search for the entry (21,) in the look up table
+(17) using the reference (14) and, in response to finding the entry in the look up table,
+to retrieve, the second reference (23,) identifying the second object (92), to retrieve the
+second object (92); and to display the first and second objects (9:1, 92) on a display (20)
+
+so as to indicate that the second object is linked to the first object
+
+12. Adatabase system (1) comprising:
+storage (2) storing the first and second databases (41, 42); and
+
+a computer system (5) according to claim 11.

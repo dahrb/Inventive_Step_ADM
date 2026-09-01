@@ -1,0 +1,205 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P119685.EP.01
+
+17
+
+MAIN REQUEST
+
+1. A method for electronically delivering a prepaid card to a mobile device
+(114, 116), the method comprising:
+
+receiving, at a merchant server (108) from a sender device (102, 104, 106),
+purchase information related to the purchase of an electronic prepaid card, wherein
+the purchase information includes recipient information associated with a mobile
+device (114, 116) intended to receive the electronic prepaid card;
+
+receiving, at an over the air (OTA) provisioning server (112) and from the merchant
+server (108), a provisioning request including electronic prepaid card information
+derived from the purchase information;
+
+requesting, at the OTA provisioning server (112) and from a telecommunications
+operations server (110), the type of mobile device (114, 116) associated with the
+recipients mobile device number;
+
+determining, using the mobile device type information provided by the
+telecommunications operations server (110), whether the mobile device (114, 116)
+is near field communications (NFC) enabled;
+
+in response to determining that the mobile device (114,116) is NFC enabled:
+establishing a communications link with a mobile device (114) associated with
+address data included in the electronic prepaid card information; and
+
+provisioning the electronic prepaid card information on the mobile device (114)
+over the communications link via over the air (OTA) communications; and
+
+in response to determining that the mobile device (114,116) is not NFC enabled:
+sending a prepaid card authorization code associated with the electronic prepaid
+card to a short message service (SMS) gateway (113); and
+
+sending the prepaid card authorization code from the SMS gateway (113) to the
+non-NFC enabled mobile device (116).
+
+2. The method of claim 1 wherein the electronic prepaid card information
+
+includes personalization data that is used to generate a softcard prepaid card in the
+
+mobile device (114).
+
+24 July 2014
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P119685.EP.01
+
+18
+
+3. The method of claim 1 wherein the electronic prepaid card information
+
+comprises a prepaid card authorization code.
+
+4. The method of claim 1 wherein establishing a communications link with a
+mobile device (114) comprises:
+
+sending at the OTA provisioning server (112) a control short message service (SMS)
+message to the mobile device (114) associated with the address data included in the
+prepaid card information; and
+
+receiving, at the OTA provisioning server (112) from the mobile device (114), an
+electronic prepaid card download request for the electronic prepaid card
+
+information.
+
+5. The method of claim 1 further comprising:
+storing the electronic prepaid card information on the mobile device (114) as a
+
+prepaid softcard and personalization data.
+
+6. The method of claim 5 further comprising:
+
+storing the personalization data within a secure element in the mobile device (114).
+
+7. The method of claim 1 further comprising:
+transferring the personalization data to a wireless device reader 118) in order to
+
+conduct a payment transaction.
+
+8. A system (100) for electronically delivering a prepaid card to a mobile device
+(114, 116), the system comprising:
+
+a merchant server (108) for receiving purchase information from a sender device
+(102, 104, 106) related to the purchase of an electronic prepaid card and generating
+electronic prepaid card information, wherein the purchase information includes
+recipient information associated with a mobile device (114, 116) intended to
+receive the electronic prepaid card; and
+
+an over the air (OTA) provisioning server (112) for receiving the electronic prepaid
+
+card information from the merchant server, communicating with a
+
+24 July 2014
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P119685.EP.01
+
+19
+
+telecommunications operations server (110) to determine whether the mobile
+device (114, 116) associated with the recipients mobile device number is near field
+communications (NFC) enabled, and, in response to determining that the mobile
+device (114,116) is NFC enabled, establishing a communications link with a mobile
+device (114) associated with address data included in the prepaid card information,
+and provisioning the electronic prepaid card information to the mobile device (114,)
+over the communications link via over the air (OTA) communications and, in
+response to determining that the mobile device (114, 116) is not NFC enabled,
+sending a prepaid card authorization code associated with the electronic prepaid
+card to a short message service (SMS) gateway (113) and sending the prepaid card
+authorization code from the SMS gateway (113) to the non-NFC enabled mobile
+device (116).
+
+9. The system (100) of claim 8 wherein the electronic prepaid card information
+includes personalization data that is used to generate a softcard prepaid card in the
+
+mobile device (114).
+
+10. The system (100) of claim 8 wherein the electronic prepaid card information
+
+comprises a the prepaid card authorization code.
+
+11. The system (100) of claim 8 wherein the OTA provisioning server (112) is
+further configured to send a control short message service (SMS) message to the
+mobile device (114) associated with the address data included in the prepaid card
+information, and receive, from the mobile device (114), an electronic prepaid card
+
+download request for the electronic prepaid card information.
+12. The system (100) of claim 8 wherein the OTA provisioning server (112) is
+further configured to upload the electronic prepaid card information to the mobile
+
+device (114) as a prepaid softcard and personalization data.
+
+13. The system (100) of claim 12 wherein the personalization data is uploaded
+
+to a secure element in the mobile device (114).
+
+24 July 2014
+
+--- PAGE 4 ---
+10
+
+15
+
+P119685.EP.01
+
+20
+
+14. The system (100) of claim 8 wherein the mobile device (114) is adapted to
+transfer the personalization data to a wireless device reader (118) in order to
+
+conduct a payment transaction.
+
+15. A computer readable medium having stored thereon comprising computer
+executable instructions that when executed by a processor of a computer
+performing the method of any of steps 1 to 7performs steps comprising:
+
+receiving, at a merchant server, purchase information related to the purchase of an
+electronic prepaid card;
+
+receiving, from the merchant server, electronic prepaid card information derived
+from the purchase information;
+
+establishing a communications link with a mobile device associated with address
+data included in the electronic prepaid card information; and
+
+provisioning the electronic prepaid card information on the mobile device over the
+
+communications link via over the air (OTA) communications.
+
+24 July 2014

@@ -1,0 +1,363 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+$2 PSPCTEP04, 14.04.2021
+CLAIMS
+
+1. A food self-service arrangement monitoring and controlling system (800) comprising a number
+of food self-service arrangements (100;100’), each food self-service arrangement (100;100’)
+comprising a functional product station which comprises a number of functional product holding
+stations (830;830A,830B,830C, 830D,830E) for holding food products at a plurality of different
+product holding locations and a station serving unit (840), each food self-service arrangement
+(100;100’) comprises a station serving unit server (841) associated with or arranged in the station
+serving unit (840),
+
+characterized in
+
+that it comprises:
+
+a plurality of food self-service arrangements (100;100’) arranged in different stores and held by
+different users, each user holding one or more food self-service arrangements and comprising a
+store and involved staff,
+
+that each food self-service arrangement (100;100’) is a food bar arrangement comprising a salad
+bar holding fresh food, salads, fruit, vegetables, cooked and prepared food,
+
+that the food self-service arrangement monitoring and controlling system (800) further comprises
+product holding means (104) comprising pans or canteens containing said fresh food comprising
+salad, fruit, vegetables, cooked and prepared food,
+
+that each functional product holding station (830;830A,830B,830C, 830D,830E) comprises one or
+more holding arrangements (102,103;103A,103B) for holding said product holding means (104),
+
+allowing an end user to pick and compose a meal from the content in said product holding means
+(104),
+
+that each food bar arrangement (100;100’) further comprises a portable unit (804),
+
+that the food bar arrangement monitoring and controlling system (800) further comprises a central
+server (880) located at a service provider premises,
+
+that each station serving unit server (841) is adapted to be in communication with the central server
+(880) comprising or being in communication with a number of databases (881) holding
+information about all food products in all the food bar arrangements (100;100’), and about the food
+
+bar arrangements (100;100’) and alarm information, the integration, or the communication, taking
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+place over the Internet based on customized or specially adapted APIs (Application Programming
+Interfaces),
+
+that the central server (880) is adapted to provide each station serving unit (840) at least with
+product information and user information, and to communicate eventual food alarms concerning
+a certain product, a certain trademark or specific batches to the food bar arrangements (100;100’),
+that each station serving unit (840) is adapted to be in communication with the functional product
+holding stations (830;830A,830B,830C,830D,830E) of the respective food bar arrangement via a
+local network for receiving, from the functional product holding _ stations
+(830;830A,830B,830C,830D,830E), technical information concerning the operational status of the
+respective functional product holding stations (830;830A,830B,830C,830D,830E), said technical
+information comprising temperature data collected via temperature sensors in the functional
+product holding stations (830;830A,830B,830C,830D,830E) and operational data of electrical or
+mechanical elements, and for communicating information to the functional product holding stations
+(830;830A,830B,830C,830D,830E) for changing operational status of the functional product
+holding stations (830;830A,830B,830C,830D,830E),
+
+digital displaying means (805) for each of said product holding locations being provided for each
+functional product holding station (830;830A,830B,830C,830D,830E), each digital displaying
+means (805) being located such that it unambiguously can be associated with a product holding
+means (104) holding a fresh food product,
+
+that each station serving unit (840) of a food bar arrangement (100;100’) further is adapted to be in
+communication with the portable unit (804) of the food bar arrangement by means of a wireless local
+network,
+
+said portable unit (804) comprising a display and a scanner or a scanning functionality for scanning
+product label codes provided on the product holding means (104), said product codes comprising
+information relating to the product and its service life, product supplier, one or more of product
+identification, product batch number, shelf time or remaining shelf time, best before date, product
+label number,
+
+that each station serving unit server (841) is adapted to hold information about all products held in
+the functional product holding stations (830;830A,830B,830C,830D,830E) in the respective food
+bar arrangement (100;100’), and about the product holding locations in the functional product
+
+holding stations (830;830A,830B,830C,830D,830E) at which said products are held, and in that
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+said information, dynamically or continuously, and at occurrence of predetermined events, is
+updated through scanned product label code information and/or instructions received from said
+portable unit (804) and through information about the operation state or measured technical
+parameters from the functional product holding stations (830;830A,830B,830C, 830D,830E) of
+the food bar arrangement,
+
+that each station serving unit server (841) is adapted to provide the central server (880) at least with
+current status product related information received from the station serving unit (840), current
+status information relating to the operation of the food bar arrangement regarding cooling capacity,
+sensed temperatures, fan rotation speed and alarm information concerning temperature deviation
+from a predetermined interval, operation disorder and disruption, substantially in real time, and in
+that the portable unit (804) is adapted to receive and hold at least part of the information held in, and
+provided to, the station serving unit (840), said portable unit (804) comprising an interactive user
+interface, allowing handling, control and monitoring of at least the food products by means of the
+
+portable unit (804).
+
+2. A food self-service arrangement monitoring and controlling system (800) according to claim 1,
+characterized in
+that the portable unit (804) comprises a touch screen, and e.g. comprises an iPod, an iPad, a portable
+
+computer.
+
+3. A food self-service arrangement monitoring and controlling system (800) according to claim 1
+or 2,
+
+characterized in
+
+that each food bar arrangement (100;100’) comprises a wireless router (842) for external Internet
+connection and internal connection with the portable unit (804) arranged in or associated with the
+
+station serving unit (840).
+
+4. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+characterized in
+
+that the digital displaying means comprise digital labels (805).
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+5. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that the product label codes for scanning comprise QR codes comprising information about product
+supplier, one or more of product identification, product batch number, shelf time or remaining shelf
+
+time, best before date, product label number.
+
+6. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that each food bar arrangement (100;100’) further comprises a product display (845) which is in
+communication with the station serving unit server (841) via the router (842), arranged at the station
+serving unit (840) and which is adapted to display up to date information relating to selectable
+products to an end user, comprising product information, comprising information at least about one
+or more of ingredients, nutrition value, allergens and information about current product holding
+
+location in the functional product holding station (830;830A,830B, 830C,830D,830E).
+
+7. A food self-service arrangement monitoring and controlling system (800) according to claim 6,
+characterized in
+
+that the product display (845) is interactive, comprising a touch screen, and in that it comprises
+means for displaying different menus, and in that it is adapted to provide a recipe option, such that
+if a product is selected, a number of recipes are displayed to the end user, and in that further, by
+means of communication between the product display (845) and the station serving unit server (841),
+and the station serving unit server (841) and the digital labels (804) adjacent or in connection to the
+respective products, indications on the digital displaying means, 1.e. the digital labels, of products
+
+involved in a selected recipe dynamically can be provided.
+
+8. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+characterized in
+
+that the central server (880) is adapted to provide the station serving units (840) with planograms.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+9. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+characterized in
+that central server (880) is adapted to be in communication with a service provider information
+handling and storing means (885) providing at least said product information, user information,
+and preferably planograms, exchange of information taking place by means of text files using FTP
+
+(File Transfer Protocol).
+
+10. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that each functional product holding station (830;830A,830B,830C,830D,830E) comprises a
+control unit (580), that the station serving unit server (841) of a food bar arrangement (100; 100’) is
+adapted to communicate with the control units (580) of each functional product holding station
+(830;830A,830B,830C,830D,830E) of the food bar arrangement (100;100’) over the local network
+using the TCP/IP protocol, said functional product holding stations
+(830;830A,830B,830C,830D,830E) continuously or with predetermined time intervals collecting
+the technical information concerning the operational status of the respective functional product
+holding stations (830;830A,830B,830C,830D,830E), said technical information being provided to
+the station serving unit server (841) continuously or with regular time intervals, and preferably alarm
+information in case of a detected state or measurement value deviating from a predefined normal
+interval, and in that station serving unit server (841) further is adapted to communicate images for
+the digital displaying means (805) to the functional product holding © stations
+(830;830A,830B,830C,830D,830E) of the food bar arrangement (100;100’).
+
+11. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that the central server (880) is arranged to be in communication with a dashboard (882) accessible
+via a web portal to which can be logged in and access to relevant information be provided
+
+depending on user access criteria which are different at least for the service provider and users,
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+said dashboard comprising a monitoring and alarm function allowing remote control by a service
+provider of all functional product holding stations (830;830A,830B,830C,830D,830E) and/or
+station serving units (840) managed by the service provider, and in that it further comprises a
+reporting tool for receiving and displaying up to date information relating to one or more of
+deviations from check lists, alarms, quality rounds, product deliveries to the functional product
+holding stations (830;830A,830B,830C,830D,830E) and information concerning planograms and
+
+planogram fulfilment and other compulsory or optional data.
+
+12. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that the portable unit (804) is adapted to, upon selection of a function or option on the portable unit,
+display all product holding locations of a selected functional product holding station
+(830;830A,830B,830C,830D,830E) of a food bar arrangement (100;100’) and current data about
+all products and the current product holding location thereof, and product information of a scanned
+
+product.
+
+13. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that the portable unit (804) of a food bar arrangement (100;100’) is adapted to, via a monitoring and
+controlling application, display a menu from which a product holding location can be selected by
+clicking on a layout showing all product holding locations of a functional product holding station
+(830;830A,830B,830C,830D,830E), when a product holding location is selected, by touching a
+selected product holding location, display current status of the food product currently located at said
+product holding location including information related to shelf time, or remaining shelf time, and
+best before date, if applicable, and one or more of at least ingredients, weight, applicable storing
+temperature, production date, date of placing into the functional product holding station
+(830;830A,830B,830C,830D,830E), supplier; provide a proposition of a food product for a selected
+product holding location according to a planogram; display different selectable alternatives
+
+concerning adding a new food product, removing food product, adding food product to a location
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+with a food product without removing old food product; display information concerning a scanned
+food product, propose a product holding location for a scanned food product; options for accepting
+or rejecting a proposed food product and/or product holding location; display a planogram menu, an
+alarm menu, a checklist menu, a menu for displaying status of a functional product holding station
+(830;830A,830B,830C, 830D,830E) based on technical data from said functional product holding
+station (830;830A,830B,830C,830D,830E).
+
+14. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that each station serving unit (840) is disposed in a service station of a respective food bar
+arrangement (100) holding food bar arrangement accessories, and in that the digital displaying means
+(805) are disposed on tray slides (16A,16B) of the food bar arrangement (100), for each of a number
+of canteen or pan (104) positions provided in a number of functional product holding stations
+(830;830A,830B,830C,830D,830E) of the food bar arrangement, each said functional product
+holding station (830;830A,830B,830C,830D,830E) comprising a cooling unit or module.
+
+15. A food self-service arrangement monitoring and controlling system (800) according to any one
+of the preceding claims,
+
+characterized in
+
+that each food bar arrangement (100;100’) comprises a cooling system (500) with a refrigerating
+arrangement (550) for cooling the food bar arrangement, wherein the holding arrangement
+(103;103A,103B) comprises or is arranged in association with a functional product holding station
+(830;830A,830B,830C,830D,830E) and is adapted to comprise at least one cold well, wherein the
+cooling system (500) is adapted for cooling the food bar arrangement (100;100’) such that at least
+two different climate zones are provided, that the cooling system comprising a cooling arrangement
+(200) being adapted to allow separate controlling of the cooling of said at least two climate zones
+comprising a first and a second climate zone (61,62), and in that it comprises a control unit (580)
+adapted to control the cooling of the different zones by controlling shunting fans
+(511A,511B,512,513,514) provided on respective climate zone conduits (501,502,503,504) for the
+
+respective climate zones, that each climate zone (61,62,63,64) comprises at least one climate zone
+
+--- PAGE 8 ---
+temperature sensor (71A,71B,72A,72B, 73,74) for sensing the temperature in the respective zone,
+each zone temperature sensor being in communication with the control unit (580), hence allowing
+separate control of the cooling of the respective climate zones depending on sensed temperature
+in the zone by separate shunting of cooled air by the respective shunting fans
+(511A,511B,512,513,514), by controlling injection of cooled air or controlling the flow of cooled
+air to a climate zone, wherein the control unit (580) is adapted to separately control the shunting
+fans (511A,511B,512,513,514) of the different climate zones at least depending on sensed
+temperatures in the respective zones by controlling speeds of the shunting fans
+
+(511A,511B,512,513,514).

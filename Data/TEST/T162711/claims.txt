@@ -1,0 +1,125 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request
+
+Claims
+
+1. A method of operating a client device to search for articles, the method
+comprising:
+
+storing a local index of client articles comprising articles of a plurality of
+different types previously accessed or referenced by a user in a local data store (140);
+
+outputting a first search query (204) for web search over a network to a remote
+web search engine (170) for querying a global index of network articles, said articles
+available on the World Wide Web, said first search query (204) being an HTTP GET
+request;
+
+intercepting said first search query and generating a second search query (206)
+to search said local data store (140), wherein intercepting said first search query
+comprises recognising, at a network monitor, an HTTP GET request for a web search,
+
+receiving a first result set (210) as a result of the querying of said global index;
+
+receiving a second result set (208) as a result of the querying of said local index;
+and
+
+displaying (216) the first and second results in combination.
+
+2. The method of claim 1, further comprising modifying said first search query to
+
+generate the second search query.
+
+3. The method of any preceding claim, wherein said second result set is displayed
+
+separately by article type.
+
+4. The method of claim 3, wherein the first and second result sets are displayed
+separately.
+5. The method of any preceding claim, further comprising generating said first
+
+search query in response to a user input.
+
+6. The method of any preceding claim, further comprising generating said first
+
+query is an implicit query based on events within the client device.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+7. The method of any preceding claim, wherein the intercepting is performed by a
+
+search engine, a proxy server, a browser plug-in, or a a firewall.
+
+8. A computer readable medium carrying computer readable code for controlling a
+
+computer to carry out the method of any previous claim.
+
+9 A client device for searching for articles, the client device comprising:
+
+a local data store (140) storing a local index of client articles comprising articles
+of a plurality of different types previously accessed or referenced by a user;
+
+means for outputting a first search query for web search over a network to a
+remote web search engine (170) for querying a global index of network articles, said
+articles available on the World Wide Web, said first search query being an HTTP GET
+request;
+
+means (122) for intercepting said first search query, for generating a second
+search query to search said local data store (140), for receiving a first results set (210)
+as a result of the querying of the global index, and for receiving a second result set
+(208) as a result of the querying of the local index, wherein intercepting said first
+search query comprises recognising, at a network monitor, an HTTP GET request for a
+web search; and
+
+a display processor (128) for displaying the first and second results in
+
+combination.
+
+10. The client device of claim 9, wherein said means (122) for intercepting said first
+
+search query is adapted to modify said first search query to generate said second search
+
+query.
+
+11. The client device of any one of claims 9 to 10, wherein said display processor
+
+(128) is adapted to display said second result set separately by article type.
+
+12. The client device of claim 11, wherein said display processor (128) is adapted to
+
+display said first and second result sets separately.
+
+13. The client device of any one of claims 10 to 12, further comprising means for
+
+generating said first search query in response to a user input.
+
+--- PAGE 3 ---
+14. The client device of any one of claims 10 to 12, further means for generating said
+
+first search query is an implicit query based on events within the client device.
+
+15. The client device of any one of claims 10 to 14, wherein said intercepting means
+
+comprises a search engine, a proxy server, a browser plug-in, or a firewall.

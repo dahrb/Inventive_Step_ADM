@@ -1,0 +1,161 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+03 028 668.6-1527 December 18, 2017
+Software AG $100883EP Wg/Beb/mel
+
+Claims — Main Request
+
+1. Method for searching within elements on the same level of a hierarchically
+structured database (10), wherein each of the elements has hierarchically
+structured nodes for defining attributes and respective sub-attributes of said
+element, and wherein one or more nodes of the searched element must fulfill
+two or more search conditions (co,ci,..), the method comprising the following
+
+steps:
+
+a. _ selecting a plurality of nodes and assigning a unique identifier (EID)
+
+to each of the selected nodes;
+
+b. creating a reference index (20), that allows to derive for each unique
+identifier (EID) of a selected node the corresponding element of the
+
+database (10);
+
+c. creating search indexes (31, 32) which correlate the values of nodes,
+which can be the subject of the respective search conditions (Co,¢i....),
+
+with the unique identifiers (EID) of ancestors of these nodes;
+
+d. _ investigating the search index (31) corresponding to the first search
+condition (co) to retrieve (101) a set Z of unique identifiers (EID) of
+
+ancestor nodes for nodes, which fulfill the first search condition (co);
+
+e. for each further search condition (ci) of the two or more search condi-
+tions (Co,ci,...):
+
+- investigating the search index (32) corresponding to the further
+
+search condition (cj) to retrieve (103) a further set EZ; of unique
+
+identifiers (EID) of ancestor nodes for nodes, which fulfill the re-
+
+spective search condition; and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-2-
+
+- intersecting (104) the set Z with the further set £; and assigning the
+result to the set ZL of unique identifiers (EID), thereby obtaining L =
+LONE:
+
+and if there are no further search conditions (cj) to be satisfied:
+
+retrieving (105) the searched elements based on the set Z of unique
+
+identifiers (EID) and the reference index (20).
+
+Method according to claim 1, wherein the reference index (20) points for
+each unique identifier (EID) either directly to its related database element
+or to a unique identifier (EID) of a node, which is an ancestor to the node
+
+of the originating unique identifier (EID).
+Method according to one of the claims 1] - 2, wherein a unique identifier
+(EID) is only assigned to a node, if there are several nodes on the same hi-
+
+erarchy level.
+
+Method according to one of the preceding claims, wherein the unique iden-
+
+tifier (EID) is a unique number.
+
+Method according to one of the preceding claims, wherein the database is
+
+an XML based database (10).
+
+Database (10) with a plurality of elements comprising:
+
+a. a plurality of hierarchically structured nodes describing attributes
+
+and respective sub-attributes of the elements of the database (10);
+
+b. a plurality of unique identifiers (EID) assigned to selected nodes;
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+-3-
+
+C. a reference index (20), that allows to derive for each unique identifi-
+er (EID) of a selected node the corresponding element of the data-
+base (10);
+
+d. search indexes (31, 32), which correlate the values of nodes, which
+
+genes
+
+unique identifiers (EID) of ancestors of these nodes;
+
+e. wherein the elements of the database (10) can be searched by investi-
+gating the search index (31) corresponding to the first search condition
+(co) to retrieve (101) a set L of unique identifiers (EID) of ancestor
+nodes for nodes, which fulfill the first search condition (co), and for
+each further search condition (ci) of the two or more search conditions
+(co,ci,...), investigating the search index (32) corresponding to the fur-
+ther search condition (cj) to retrieve (103) a further set Z; of unique
+identifiers (EID) of ancestor nodes for nodes, which fulfill the respec-
+tive search condition; and by intersecting (104) the set LZ with the fur-
+ther set £; and assigning the result to the set L of unique identifiers
+(EID), thereby obtaining L = L M £;; and if there are no further search
+conditions (cj) to be satisfied, by retrieving (105) the searched ele-
+ments based on the set L of unique identifiers (EID) and the reference
+
+index (20).
+
+Database (10) according to claim 6, wherein the reference index (20)
+points for each unique identifier (EID) either directly to its element or to a
+unique identifier (EID) of a node, which is an ancestor to the node of the
+
+originating unique identifier (EID).
+
+Database (10) according to claim 6 or 7, wherein a unique identifier (EID)
+is only assigned to a node, if there are several nodes on the same hierarchy
+
+level of the data base (10).
+
+--- PAGE 4 ---
+10.
+
+-4-
+
+Database (10) according to one of the claims 6-8, wherein the unique iden-
+
+tifier (EID) is a unique number.
+
+Database (10) according to one of the claims 6-9, wherein the database
+
+(10) is an XML based database.

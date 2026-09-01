@@ -1,0 +1,128 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+appeal main request PO36822EPA / 11181543.7
+
+CLAIMS
+
+1. An image capturing apparatus, comprising:
+
+an image sensor (101) for outputting first raw data having a first frame rate;
+
+conversion means (201) for converting the first raw data into second raw data having a
+second frame rate which is lower than the first frame rate;
+
+camera signal processing means (202, 203) for performing a camera signal processing
+operation on the second raw data so as to output an image signal on which the camera signal
+processing operation has been performed, the camera signal processing means comprising: a pre-
+processing circuit (202) comprising a shading correction circuit (231); and a camera signal
+processing circuit (203) connected to receive an image signal output from the pre-processing circuit
+(202) and comprising in sequence a simultaneously forming circuit (241), a white balance
+correction circuit (242), an aperture correction circuit (243), a gamma correction circuit (244) and a
+YC generation circuit (245);
+
+recording device control means (210) for controlling recording of the first raw data onto a
+recording device (111) and for controlling reading of the first raw data from the recording device;
+and
+
+control means (213) for controlling at least the recording device control means and the
+camera signal processing means so as to record the first raw data to the recording device without
+processing by the camera signal processing means,
+
+in which:
+
+the conversion means is operable to convert the first raw data into the second frame rate
+and the camera signal processing means is operable to process the second raw data at the second
+frame rate so as to output processed second raw data for display when the first raw data is to be
+recorded; and
+
+the recording device control means is operable to cause the first raw data recorded on the
+recording device to be read at the second frame rate so as to output third raw data and the camera
+signal processing means is operable to process the third raw data at the second frame rate so as to
+output processed third raw data for display when the first raw data is to be read.
+
+2. The image capturing apparatus according to claim 1, further comprising compression and
+decompression (301) means for compressing and decoding the raw data,
+
+wherein:
+
+the compression and decompression means is operable to compress the first raw data in
+advance of recording to the recording device when recording; and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+appeal main request PO36822EPA / 11181543.7
+
+the compression and decompression means is operable to decompress the raw data
+reproduced from the recording device to obtain the third raw data so as to output the third raw data
+to be processed by the camera signal processing means.
+
+3. An image capturing method comprising:
+
+outputting first raw data having a first frame rate from an image sensor;
+
+converting the first raw data having the first frame rate into second raw data having a
+second frame rate which is lower than the first frame rate;
+
+performing, using camera signal processing means (202, 203), a camera signal processing
+operation on the second raw data so as to output an image signal on which the camera signal
+processing operation has been performed, the camera signal processing operation comprising an
+optical correction process performed by a pre-processing circuit (202) comprising a shading
+correction circuit (231) and an image creation process performed by a camera signal processing
+circuit (203) for an image signal output from the pre-processing circuit (202); , the camera signal
+processing circuit comprising in sequence a simultaneously forming circuit (241), a white balance
+correction circuit (242), an aperture correction circuit (243), a gamma correction circuit (244) and a
+YC generation circuit (245)
+
+controlling, using a recording device control means (210), recording of the first raw data
+onto a recording device (111) and controlling reading of the first raw data from the recording device;
+and
+
+controlling at least the recording device control means and the camera signal processing
+means so as to record that the first raw data of the first frame rate on to the recording device
+without processing by the camera signal processing means,
+
+converting the first raw data of the first frame rate from the image sensor into the second
+frame rate and processing the second raw data of the second frame rate at the second frame rate
+so as to output processed second raw data for display when the first raw data is to be recorded;
+and
+
+causing the first raw data recorded on the recording device to be read at the second frame
+rate so as to output third raw data, and processing the third raw data at the second frame rate using
+the camera signal processing means so as to output the processed third raw data for display when
+the first raw data is to be read.
+
+4. A method according to claim 3, comprising:
+compressing the first raw data in advance of recording to the recording device when
+recording; and
+
+--- PAGE 3 ---
+appeal main request PO36822EPA / 11181543.7
+
+decompressing the raw data reproduced from the recording device to obtain the third raw
+data so as to output the third raw data to be processed by the camera signal processing means.
+
+5. A program which, when executed by an image capturing apparatus, causes the image
+
+capturing apparatus to carry out a method according to claim 3 or claim 4.

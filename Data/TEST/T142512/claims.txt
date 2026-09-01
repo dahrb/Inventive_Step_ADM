@@ -1,0 +1,159 @@
+--- PAGE 1 ---
+21/10 2011 FRI 16:46 FAX 449 EPO Munich | Wo05/013
+
+CLAIMS
+
+1. A register file, comprising:
+a plurality of registers (200), each register comprising a plurality of memory cells,
+each repister including a first one of the plurality of memory cells of the register to store
+
+a ready signal indicating whether data in the register is valid or invalid;
+
+logic (204) configured to receive a first address of a target register selected from
+the plurality of registers, the logic responsive to a signal stored in a first memory cell of
+ihe target register to selectively disable the target register output when the stored signal in
+the first memory cell of the target cell is a ready signal indicating that the data in the
+register is invalid and to enable the target register output when the signal stored in the
+first memory cell of the target register is a ready signal indicating that the data in the
+
+register is valid.
+
+2. The register file of claim ] wherein the logic (204) is further configured to generate an
+cnable signal in response to the received first address, and to gate the enable signal with
+the signal stored in the first memory cell of the target register to produce a signal to
+disable or enable the target register output according to whether the signal stored in the
+
+first memory cell of the target register indicates that the data is valid or invalid.
+
+3. The register file of claim | or claim 2 whercin the logic (204) is further configured to
+use an AND function to gate the enable signal with the signal from the first memory ccll
+
+of the target register.
+
+4. The register file of any preceding claim wherein the logic (204) is further configured
+to receive a second address associated with a second target register, and to provide
+
+access to second dala stored in the second target register when the second data is valid.
+
+Duration: 21.10.2011 17:41:18 - 21.10.2011 17:44:56. This page 5 of 13 was completed at 21.10.2011 17:42:47
+
+Received at the EPO on Oct 21, 2011 17:44:56. Page 5 of 13
+
+--- PAGE 2 ---
+21/10 2011 FRI 16:46 FAX 434 EFO Munich joos/o13
+
+5. The register file of any preceding claim, wherein when a write instruction is
+detected in a pipeline coupled to the register file, prior to execution of the write
+
+instruction, the data stored in the target register is dctermined to be invalid.
+
+6. The register file of any of claims ] to 4, wherein data in the target register is
+invalid when a result of execution of an instruction to be written to the target
+
+register has not yet been stored in the target register,
+
+7. The register file of any preceding claim, further comprising a plurality of sensing
+amplifiers (208), whercin cach of the plurality of sensing amplificrs is configured to
+sense an output provided by a corresponding pair of differential bit lines, wherein each
+
+of the differential bit lines is coupled to each of the plurality of memory cells via a
+
+8. The register file of claim 7, wherein at least two of the plurality of registers (200)
+
+share a common sense amplifier (208).
+
+corresponding switch (210). |
+9. The register file of any preceding claim further comprising a second decoder |
+(222) configured to provide a ready signal indicating that data in the register is :
+valid to the first ready cell of each register (200) when data in the register is valid
+and to provide a ready signal indicating that data in the register is invalid to the
+
+first ready cel] when data in the register is not valid,
+
+10. The register file of claim 9 wherein the second decoder (222) is configured to
+provide the ready signal indicating that data in the register is invalid to the first ready
+cell of the target register when a write instruction to the first register is in an
+instruction pipeline associated with the register file, and whercin the second
+decoder is configured to provide the ready signal indicating that data in the register
+
+is valid after the write instruction to the target register has been executed.
+
+11. The register file of any preceding claim, wherein the logic (204) is further configured
+to receive a clock signal, wherein the clock signal activates the logic during a clock
+
+cycle.
+
+Duration: 21 .10.2011 17:41:18 - 21.10.2011 17:44:56. This page 6 of 13 was completed at 21.10.2011 17:43:05
+Received at the EPO on Oct 21, 2011 17:44:56. Page 6 of 13
+
+--- PAGE 3 ---
+21/10 2011 FRI 16:47 FAX 434 EPO Muni¢h 007/013
+
+12. A method of accessing a register file having a plurality of registers (200), comprising:
+
+receiving an address of a first register of a plurality of registers, the first register
+having a first memory cell to store a ready signal and a plurality of remaining memory
+cells to store data; and
+
+storing a ready signal indicating that data in the register is valid in the first
+memory cell of the first register when data stored in the first register is valid and
+having the ready signal indicating that data in the register is not valid in the first
+memory cell of the first register when the data stored in the first register is invalid;
+
+disabling a read operation to the first register when a ready signal indicating
+that data in the register is invalid is stored in the first memory cell of the first register;
+and
+
+enabling the read operation to the first register when a ready signal indicating
+
+that data in the register is valid is stored in the first memory cell of the first register.
+
+13. The method of claim 12 wherein each of the plurality of registers (200) includes
+a corresponding first memory cell configured to store the ready signal indicating
+
+whether the data stored in the corresponding register is valid or invalid.
+
+14. The method of claim 12 further comprising changing the ready signal stored in the
+first memory cell of the first register from a state indicating that data stored in the register
+is invalid to a state indicating that data stored in the register is valid after a write
+
+instruction to the first register has been executed.
+
+15, The method of claim 14 wherein the ready signal value stored in the first memory cell
+of the first register is changed before the address for the addressed first register is
+
+received.
+
+16. The method of claim 15 further comprising changing the ready signal in the
+addressed register to indicate the data is valid after the read operation to the addressed
+
+register is disabled.
+
+Duration: 21 10.2011 17:41:18 - 21.10.2011 17:44:56. This page 7 of 13 was completed at 21.10.2011 17:43:21
+Received at the EPO on Oct 21, 2011 17:44:56. Page 7 of 13
+
+--- PAGE 4 ---
+21/10 2011 FRI 16:47 FAX 444 EPO Munich oos/o13
+
+12
+
+17. The method of any of claims 12 to 16, further comprising providing the data
+stored in the first register to a forwarding network for further processing when the
+
+data stored in the first register is valid.
+
+18. The method of claim 12, wherein the data is invalid when a write instruction to
+write new data to the first register is in an instruction pipeline associated with the
+
+register file.
+
+19. The method of any of claims 12 to 18, wherein the method furthcr comprises
+generating 2 register enable signal in response to receiving a register address and
+gating the register enable signal with the signal stored in the first memory cell of the
+
+first register.
+
+retp4783
+
+Duration: 21.10.2011 17:41:18 - 21.10.2011 17:44:56. This page 8 of 13 was completed at 21.10.2011 17:43:31
+Received at the EPO on Oct 21, 2011 17:44:56. Page 8 of 13

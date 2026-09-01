@@ -1,0 +1,47 @@
+Title: 
+Resource conflict avoidance system and method
+
+Abstract: 
+A diskless workstation and method avoids resource conflict when the diskless workstation is booted by a server. The diskless workstation downloads a boot program, a kernel, an image file and a configuration file from a server to a memory of the diskless workstation. The kernel is stated and a temporary file directory is created in the memory. The created temporary file directory is mounted to a default temporary file directory of the root directory. A subdirectory in the created temporary directory is created and a record file in the subdirectory is created for recording information during the running of the operating system.
+
+Type: US Patent
+
+Claims: 
+1. A diskless workstation, comprising:
+a memory;
+at least one processor; and
+a resource conflict avoidance unit being executable by the at least one processor, the resource conflict avoidance unit comprising:
+a sending module operable to send broadcasting packets to communicate with a server;
+a downloading module operable to download a boot program, a kernel, an image file, and a configuration file of an operating system from the server to a memory of the diskless workstation;
+an execution module operable to execute the boot program to start the kernel according to the image file and the configuration file, and create a temporary file directory in the memory of the diskless workstation;
+a mounting module operable to mount a file system of the operating system in the server to a root directory of the operating system, and mount the created temporary file directory to a default temporary file directory of the root directory; and
+a creating module operable to create a subdirectory in the created temporary directory and a record file in the subdirectory for recording information generated during the running of the operating system.
+2. The diskless workstation of claim 1, wherein the broadcasting packets comprise an IP address assigned to the diskless workstation by the server.
+3. The diskless workstation of claim 1, wherein the boot program is a boot loader of the LINUX operating system, the image file is an initrd file of the LINUX operating system and the configuration file includes a name of the kernel, a position of the kernel, a name of the image file, a position of the image file and parameters for starting the kernel.
+4. The diskless workstation of claim 1, wherein the kernel is started by executing the boot loader to invoke the configuration file and the intrid file.
+5. The diskless workstation of claim 1, wherein the execution module further switches a permission to operate the diskless workstation from a kernel layer to a user layer.
+6. The diskless workstation of claim 1, wherein the creating module creates a subdirectory in the created temporary directory and the record file in a user interface.
+7. A computer-based resource conflict avoidance method being performed by execution of computer readable program code by a processor of a diskless workstation that transmits data to a server, the method comprising:
+sending broadcasting packets to communicate with the server;
+downloading a boot program, a kernel, an image file, and a configuration file of an operating system from the server to a memory of the diskless workstation;
+executing the boot program to start the kernel according to the image file and the configuration file, and creating a temporary file directory in the memory of the diskless workstation;
+mounting a file system of the operating system in the server to a root directory of the operating system, and mounting the created temporary file directory to a default temporary file directory of the root directory; and
+creating a subdirectory in the created temporary directory and a record file in the subdirectory for recording information during the running generated of the operating system.
+8. The method of claim 7, wherein the broadcasting packets comprise an IP address assigned to the diskless workstation by the server.
+9. The method of claim 7, wherein the boot program is a boot loader of the LINUX operating system, the image file is an initrd file of the LINUX operating system and the configuration file includes a name of the kernel, a position of the kernel, a name of the image file, a position of the image file and parameters for starting the kernel.
+10. The method of claim 7, wherein the kernel is started by executing the boot loader to invoke the configuration file and the intrid file.
+11. The method of claim 7, wherein the executing step further comprises:
+switching a permission to operate the diskless workstation from a kernel layer to a user layer.
+12. The method of claim 7, wherein the subdirectory in the created temporary directory and the record file are created in a user interface.
+13. A non-transitory computer-readable medium having stored thereon instructions that, when executed by a diskless workstation, causing the diskless workstation to perform a resource conflict avoidance method, the method comprising:
+sending broadcasting packets to communicate with a server;
+downloading a boot program, a kernel, an image file, and a configuration file of an operating system from the server to a memory of the diskless workstation;
+executing the boot program to start the kernel according to the image file and the configuration file, and creating a temporary file directory in the memory of the diskless workstation;
+mounting a file system of the operating system in the server to a root directory of the operating system, and mounting the created temporary file directory to a default temporary file directory of the root directory; and
+creating a subdirectory in the created temporary directory and a record file in the subdirectory for recording information generated during the running of the operating system.
+14. The medium of claim 13, wherein the broadcasting packets comprise an IP address assigned to the diskless workstation by the server.
+15. The medium of claim 13, wherein the boot program is a boot loader of the LINUX operating system, the image file is an initrd file of the LINUX operating system and the configuration file includes a name of the kernel, a position of the kernel, a name of the image file, a position of the image file and parameters for starting the kernel.
+16. The medium of claim 13, wherein the kernel is started by executing the boot loader to invoke the configuration file and the intrid file.
+17. The medium of claim 13, wherein the executing step further comprises:
+switching a permission to operate the diskless workstation from a kernel layer to a user layer.
+18. The medium of claim 13, wherein the subdirectory in the created temporary directory and the record file are created in a user interface.

@@ -1,0 +1,152 @@
+--- PAGE 1 ---
+EP 10 195 472.5
+SGR 023 EP DIV
+December, 2020
+
+New Claims (Main Request)
+
+1. A method of playing back movies in a distributed network (100) environment,
+comprising:
+
+applying, by a software program executing on a computer at a first location, a
+predetermined function to each frame of a movie, which comprises frames stored in a
+linear sequence, te-generate texture _data_and use the texture datato produce a
+texture strip (720) that_is a navigation bar and that_haswaAg a sequence of frame
+representations (725) of the frames of the movie, wherein each of the frame
+representations represents a corresponding frame as a column of the texture strip, is
+a result of the predetermined function, and corresponds to a temporal position of a
+the corresponding frame relative to an entirety of the movie, wherein the texture strip
+is produced as a strip, which presents the sequence of frame representations as a
+sequence of columns, and is provided to a user device at a second location, wherein
+a positioner (730) and a deep tag marker (735) are displayed over the texture strip
+(720) on the user device, wherein the positioner (730) indicates in the texture strip
+where a currently displayed frame is located relative to entirety of the movie and
+enables a user to use the texture strip (720) to seek frames in the movie in a random
+access manner, and wherein the deep tag marker (735) enables the user to use the
+texture strip (720) to select a segment of the movie_and has a left edge and _a right
+edge that are adjustable by the user for selecting the segment:
+
+at the computer at the first location, receiving, via the positioner, a selection of
+a frame representation in the sequence of frame representations of the texture strip
+from the user device at the second location, wherein the user device is connected to
+the computer at the first location over a network connection;
+
+at the computer at the first location, utilizing the selected frame representation
+in the sequence of frame representations of the texture strip to locate a temporal
+position of a frame of the movie relative to the entirety of the movie, wherein the
+frame of the movie corresponds to the selected frame representation in the texture
+strip provided to the user device at the second location; and
+
+playing, on the user device at the second location, the frame of the movie
+corresponding to the selected frame representation in the texture strip.
+
+1
+
+--- PAGE 2 ---
+2. The method according to claim 1, wherein the mevie-comprises frames_stored
+ip-ea-tnearseaquense—and wherein the selected frame is played back from the first
+
+location to the second location without prior provision of the frames of the movie
+
+preceding the selected frame in the linear sequence.
+
+3. The method according to claim 1, wherein the texture strip is provided to the
+
+user device at the second location prior to the receiving step.
+
+4. The method according to claim 1, wherein the predetermined function
+
+comprises a special effect.
+
+5. The method according to claim 1, wherein the texture strip further comprises
+
+information indicating special effects applied to the movie.
+
+6. The method according to claim 1, wherein the predetermined function
+
+comprises ad placement.
+
+f. The method according to claim 1, wherein the texture strip further comprises
+
+information indicating advertising inserted in the movie.
+
+8. The method according to any preceding claims 1-7, further comprising:
+distributing the texture strip to network enabled client devices associated with
+
+one or more users in the distributed network (100)environment.
+
+9. A method of playing back an original movie, which comprises frames stored in
+a linear sequence, comprising:
+
+applying, by a software program executing on a computer at a first location, a
+predetermined function to each frame of the original movie te-gereratetexture-data
+andusethetexture-datato produce a texture strip (720) that is a navigation bar and
+that hasMiag a sequence of frame representations (725) _of the frames of the original
+movie, wherein each of the frame representations represents a corresponding frame
+
+as_a_ column of the texture strip, is a _result_of the predetermined function, and
+corresponds to a temporal position of athe corresponding frame relative to an
+
+2
+
+--- PAGE 3 ---
+entirety of the original movie, wherein the texture strip_is produced as a strip, which
+presents the sequence of frame representations as a sequence of columns, and is
+provided to a user device at a second location, wherein a positioner (730) and a deep
+
+tag marker (735) are displayed over the texture strip (720) on the user device,
+
+wherein the positioner (730) indicates in the texture strip where a currently displayed
+
+frame is located relative to entirety of the movie and enables a user to use the texture
+strip (720) to seek frames in the movie in a random access manner, and wherein the
+
+deep tag marker (735) enables the user to use the texture strip (720) to select a
+
+segment of the movie_and has a left edge and a right edge that are adjustable by the
+
+user for selecting the segment:
+at the computer at the first location, receiving, via the positioner, a selection of
+
+frame representations of the texture strip from the user device at the second location,
+wherein the selected frame representations correspond to a sequential group of
+frames of the original movie, wherein the user device is connected to the computer at
+the first location over a network connection; and
+
+at the computer at the first location, storing information about the selection of
+the sequential group of frames in association with the original movie as a deep tag,
+wherein the deep tag indicates that the sequential group of frames are to be treated
+
+as a separately addressable segment of the original movie.
+
+10. |The method according to claim 9, further comprising:
+displaying the texture strip on a display device at the second location; and
+displaying the deep tag marker over the texture strip on the display device at
+the second location, the deep tag marker having adjustable left and right edges,
+wherein the selection of the frames is determined by the left and right edges of the
+
+deep tag marker.
+
+11. |The method according to claim 9, further comprising:
+
+identifying one or more special effects to be applied to one or more frames in
+the selection of the sequential group of frames; and
+
+storing information about the one or more special effects in association with
+
+the deep tag.
+
+12. |The method according to claim 9, further comprising:
+
+3
+
+--- PAGE 4 ---
+identifying ads to be included in one or more frames in the selection of the
+sequential group of frames; and
+
+storing information about the ads in association with the deep tag.
+
+13. | The method according to any preceding claims 9-12, further comprising:
+distributing the texture strip to network enabled client devices associated with
+
+one or more users in a distributed network (100) environment.

@@ -1,0 +1,247 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+2014P01106EP
+
+(Main request)
+
+Claims
+
+1.
+
+A computer-implemented method (600) comprising:
+
+requesting (602), by a mobile application (120) executed by a processor of a mobile
+computing device (802), at least a portion of a business service context (168) regarding
+a business server (106) being a computing device executing a business application
+
+(180) and including a plurality of attributes associated with a business service (188);
+
+receiving (604) in a single database transaction, by a network interface (116) of the
+mobile computing device (802) and from an at least partially virtual database (304), an
+aggregated database result (166) including the business service context (168), the at
+least partially virtual database (304) including a storage portion (350) having non-
+virtual fields (352) and a cache having virtual fields (354) associated with the plurality
+of attributes, the aggregated database result (166) being an aggregation of virtual
+values from the virtual fields (354) and non-virtual values from the non-virtual fields
+(352), wherein the virtual values are received from at least one respective business
+application data repository (182) of at least one of a plurality of business applications
+(180) remote from the mobile application (120) and are temporally stored in the cache
+(360) of the at least partially virtual database (304) to be aggregated with the non-
+
+virtual values to form the aggregated database result; and
+
+displaying (606), via the mobile computing device (802) and within a context of the
+mobile application (120), at least a portion of the business service context (168)
+related to the performance status of the business service including the virtual values
+and non-virtual values of the aggregated database result (166) associated with the
+
+plurality of attributes.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+2014P01106EP
+(Main request)
+
+The method of claim 1, wherein displaying (606) includes displaying a first portion of
+
+the information included by the business service context; and further including:
+
+receiving a request to display more information regarding at least one aspect of the
+
+business service context; and
+
+displaying a second portion of information included by the business service context.
+
+The method of any one of the previous claims, further including: transmitting a
+
+message to a remote computing device to associate the mobile computing device
+
+(802) with the business service (188); and
+
+receiving a notification from the remote computing device when at least one
+
+predefined event regarding the business service has occurred.
+
+The method of claim 3, wherein receiving a notification includes:
+
+receiving, from a database, an aggregated database result regarding the business
+service, wherein the aggregated database result includes a second business service
+
+context.
+
+The method of claim 3, wherein transmitting a message to a remote computing device
+
+includes:
+
+transmitting a message to the remote computing device that associates a user of the
+mobile computing device with a group of users, wherein the group of users is
+
+associated with at least one business service.
+
+The method of any one of the previous claims, further including:
+
+transmitting at least a portion of the information included by the business service
+
+context from the mobile computing device to a second mobile computing device.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+10.
+
+2014P01106EP
+(Main request)
+
+The method of claim 6, wherein transmitting the portion of the information included
+
+by the business service context to a second mobile computing device includes:
+
+instructing a remote computing device to provide the portion of the information
+included by the business service context to a user, and wherein the user is associated
+
+with the second computing device.
+
+The method of any one of the previous claims, wherein displaying a graphical user
+
+interface element includes:
+
+displaying a business service linking user interface element that when selected causes
+a second business service context to be created and displayed, wherein the second
+business service context is associated with a second business service indicated by the
+
+business service linking user interface element.
+
+A computer program product being tangibly embodied on a computer-readable
+medium and including executable code that, when executed by at least one processor
+of a mobile computing apparatus, is configured to cause the mobile computing
+apparatus to execute the computer implemented method according to any one of the
+
+claims 1-8.
+
+A mobile computing device (802) comprising:
+
+a microprocessor configured to execute a mobile application (120);
+
+a network interface (116) configured to:
+
+request at least a portion of a business service context (186) regarding a business
+server (106) being a computing device executing a business application (180) and
+
+including a plurality of attributes associated with a business service (188), and
+
+receive in a single database transaction, from an at least partially virtual database
+
+(304), an aggregated database result (166) including the business service context (168),
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+11.
+
+12.
+
+2014P01106EP
+(Main request)
+
+the at least partially virtual database (304) including a storage portion (350) having
+non-virtual fields (352) and a cache having virtual fields (354) associated with the
+plurality of attributes, the aggregated database result (166) being an aggregation of
+virtual values from the virtual fields (354) and non-virtual values from the non-virtual
+fields (352), wherein the virtual values are received from at least one respective
+business application data repository (182) of at least one of a plurality of business
+applications (180) remote from the mobile application (120) and are temporally stored
+in the cache (360) of the at least partially virtual database (304) to be aggregated with
+
+the non-virtual values to form the aggregated database result; and
+
+a display component (817) configured to:
+
+display within a context of the mobile application (120) at least a portion of the
+business service context (168) related to the performance status of the business
+service including the virtual values and non-virtual values of the aggregated database
+
+result (166) associated with the plurality of attributes.
+
+The mobile computing device of claim 10, wherein the network interface is configured
+
+to:
+
+transmit a message to a remote computing device that associates the mobile
+
+computing device with the business service; and
+
+receive a notification message from the remote computing device when at least one
+
+predefined event regarding the business service has occurred.
+
+The mobile computing device of claim 11, wherein the network interface is configured
+
+to:
+
+receive, from a database, an aggregated database result regarding the business service,
+wherein the aggregated database result includes an unrequested business service
+
+context.
+
+--- PAGE 5 ---
+10
+
+15
+
+13.
+
+14.
+
+15.
+
+2014P01106EP
+(Main request)
+
+The mobile computing device of any one of claims 10 to 12, wherein the at least
+partially virtual database (304) comprises a service context adapter (356) configured
+
+to:
+
+to access data delivered from provider applications (306), and to adapt or convert this
+data received in a standardized format into the virtual fields (354) or non-virtual fields
+
+(352).
+
+The mobile computing device of any one of claims 10 to 13, wherein the at least
+
+partially virtual database (304) is further configured to:
+
+to filter data received from provider applications (306) based on one or more security
+credentials associated with the application (120, 302) or a user wherein the security
+
+credentials dictate what data are accessible and/or displayable.
+
+The mobile computing device of any one of claims 10 to 14, wherein the at least
+
+partially virtual database (304) is further configured to:
+
+to filter data received from provider applications (306) including a multi-tenancy
+architecture by tenant, wherein the mobile application (120, 302) receives information
+of the filtered data only if the business service context (186) is associated with the
+
+same tenant as the mobile application (120, 302).

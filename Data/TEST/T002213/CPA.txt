@@ -1,0 +1,87 @@
+TITLE:
+Collaborative recommendations using item-to-item similarity mappings
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A recommendations service recommends items to individual users based on a set of items that are known to be of interest to the user, such as a set of items previously purchased by the user. In the disclosed embodiments, the service is used to recommend products to users of a merchant's Web site. The service generates the recommendations using a previously-generated table which maps items to lists of “similar” items. The similarities reflected by the table are based on the collective interests of the community of users. For example, in one embodiment, the similarities are based on correlations between the purchases of items by users (e.g., items A and B are similar because a relatively large portion of the users that purchased item A also bought item B). The table also includes scores which indicate degrees of similarity between individual items. To generate personal recommendations, the service retrieves from the table the similar items lists corresponding to the items known to be of interest to the user. These similar items lists are appropriately combined into a single list, which is then sorted (based on combined similarity scores) and filtered to generate a list of recommended items. Also disclosed are various methods for using the current and/or past contents of a user's electronic shopping cart to generate recommendations. In one embodiment, the user can create multiple shopping carts, and can use the recommendation service to obtain recommendations that are specific to a designated shopping cart. In another embodiment, the recommendations are generated based on the current contents of a user's shopping cart, so that the recommendations tend to correspond to the current shopping task being performed by the user.
+
+CLAIMS:
+What is claimed is:
+1. In a multi-user computer system that provides user access to a database of items, a method of recommending items to a user, the method comprising the computer-implemented steps of:
+(a) generating a non-user-specific data structure which maps individual items of the database to corresponding sets of similar items in which similarities between items are based at least upon the collective item interests of a community of users;
+(b) identifying items that are known to be of interest to the user;
+(c) for each of a plurality of the items identified in step (b), accessing the data structure to identify a corresponding set of similar items;
+(d) combining the sets of similar items identified in step (c) to generate a combined set of additionally similar items; and
+(e) recommending at least some of the similar items of the combined set generated in step (d) to the user;
+wherein step (a) is performed in an off-line mode, and steps (b)-(e) are performed substantially in real time in response to an online action by the user.
+2. The method of claim 1, wherein step (a) comprises analyzing purchase histories of users to identify correlations between purchases of items.
+3. The method of claim 2, wherein step (a) comprises, for each of a plurality of popular items, identifying other items for which a relatively large portion of users that purchased the popular item also purchased the other item.
+4. The method of claim 3, wherein step (a) comprises calculating, for each (popular item, other item) pair, a similarity score which reflects a number of users that purchased both the popular item and the other item relative to a number of users that purchased at least one of the popular item and the other item.
+5. The method of claim 1, wherein step (a) comprises calculating, for each of a plurality of item pairs (item_A, item_B), a similarity score which reflects a number of users that indicated an interest in both item_A and item_B relative to a number of users that indicated an interest in at least one of item_A and item_B.
+6. The method of claim 5, wherein step (a) comprises storing the similarity scores within the data structure, and step (d) comprises using the similarity scores to combine sets of similar items.
+7. The method of claim 1, wherein step (a) is repeated periodically, so that item similarities reflected in the data structure reflect current preferences of the community of users.
+8. The method of claim 1, wherein the computer system implements online shopping carts for allowing users to select and hold items for possible purchase, and step (b) comprises selecting items that are currently in the user's shopping cart.
+9. The method of claim 1, wherein step (b) comprises identifying a plurality of items that were previously purchased by the user.
+10. The method of claim 1, wherein step (b) comprises selecting only items that have been placed within a designated shopping cart of a plurality of shopping carts of the user, the method thereby generating recommendations that are specific to a role of the designated shopping cart.
+11. The method of claim 1, wherein step (d) comprises weighting at least some of the similar items sets identified in step (c) based on information about the user's affinity for corresponding items of known interest.
+12. The method of claim 1, wherein the computer system implements online shopping carts for allowing users to select and hold items for possible purchase, and keeps track of deletions of items from shopping carts, and wherein step (e) further comprises selecting to recommend to the user an item that was previously removed from the user's shopping cart.
+13. The method of claim 1, wherein step (a)-(e) are performed without requiring any users to have rated items.
+14. The method of claim 1, further comprising filtering out similar items identified in step (c) to remove items already purchased by the user.
+15. The method of claim 1, further comprising filtering out similar items identified in step (c) to remove items that do not fall within an item category designated by the user.
+16. In a multi-user computer system that provides access to a database of items, a system for recommending items to users, comprising:
+a first process which determines similarities between items by at least analyzing historical data that reflects item interests of a community of users, the first process generating a non-user-specific data structure which maps items to sets of similar items; and
+a second process which generates personal recommendations for a user by accessing the data structure to identify similar items sets that correspond to items known to be of interest to the user, and by combining the identified similar items sets to generate a list of recommended items;
+wherein the first process generates the data structure in an off-line mode, and the second process generates and displays the personal recommendations substantially in real time in response to online actions of users.
+17. The system of claim 16, wherein the first process determines a similarity between a pair of items, item_A and item_B, by at least calculating a similarity score which reflects a number of users that are interested in both item_A and item_B relative to a number of users that are interested in item_A or item_B.
+18. The system of claim 17, wherein the first process determines a similarity between a pair of items, item_A and item_B, by at least calculating a score value which reflects a number of users that purchased both item_A and item_B relative to a number of users that purchased item_A or item_B.
+19. The system of claim 16, wherein the first process generates and stores within the data structure similarity scores that indicate degrees of similarity between items, and the second process uses the similarity scores to combine sets of similar items.
+20. The system of claim 16, wherein the first process is an off-line process which executes separately from the second process, and the second process generates recommendations substantially in real-time in response to requests from users.
+21. The system of claim 16, wherein the first process is executed periodically to generate a new data structure, so that item similarities reflected in the data structure reflect current preferences of the community of users.
+22. The system of claim 16, wherein the computer system implements online shopping carts for allowing users to select and hold items for possible purchase, and wherein the second process generates recommendations for the user based on items that are currently in the user's shopping cart.
+23. The system of claim 16, wherein the second process weights at least some of the identified similar items sets based on information about the user's affinity for corresponding items of known interest.
+24. The system of claim 16, wherein the computer system allows a user to create multiple shopping carts within a single account, and the second process generates shopping cart specific recommendations to allow a user with multiple shopping carts to obtain recommendations specific to a role of a particular shopping cart.
+25. The system of claim 16, wherein the system generates personal recommendations without requiring users to rate items.
+26. The system of claim 16, wherein the second process filters out items already purchased by the user from the similar items sets identified from the data structure.
+27. The system of claim 16, wherein the second process filters out items from the similar items sets identified from the data structure based on item categories specified by users.
+28. In a system for generating personalized recommendations of items from a database of items that are accessed by a community of users, a method of recommending items to users, the method comprising:
+in an off-line mode, for each of a plurality of first items:
+(a) for each of a plurality of other items of the database, generating a respective score which indicates a degree of similarity between the first item and the other item such that the score is based on at least (i) a number of users that are interested in both the first item and the other item, and (ii) a number of users that are interested in the other item;
+(b) sorting the plurality of other items according to the score values generated in step (a);
+(c) truncating a list of items which results from step (b); and
+(d) storing the truncated list generated in step (c) (“similar items list”) together with corresponding scores generated in step (a) in a non-user-specific data structure for subsequent look-up;
+subsequently, in response to an action performed by a user, performing the following steps substantially in real time:
+(e) for each of a plurality of items that are known to be of interest to the user, accessing the data structure to identify a corresponding similar items list;
+(f) combining the similar items lists identified in (e) to generate a combined list of similar items, wherein combining the similar items lists comprises combining scores of like items; and
+(g) recommending at least some of the items from the combined list generated in (f) to the user.
+29. The method of claim 28, wherein step (a) comprises calculating a score which is further based on the number of users that are interested in the first item.
+30. The method as in claim 1, wherein the items are products that are available for online purchase.
+31. The system as in claim 16, wherein the items are products that are available for online purchase.
+32. The system as in claim 28, wherein the items are products that are available for online purchase.
+33. A method of generating instant product recommendations for online users, comprising:
+in an off-line mode, generating a data structure which maps each of a plurality of products directly to a corresponding set of similar products in which product similarities are indicated by similarity scores stored within the non-user-specific data structure; and
+subsequently, in response to an action by an online user, immediately generating and displaying personal product recommendations for the user by at least (a) accessing the data structure to look up a respective set of similar products and associated similarity scores for each of multiple products known to be of interest to the user, (b) combining the sets of similar products identified in (a) into a ranked set in which rankings are based at least in-part on the similarity scores, and (c) selecting at least some of the products in the ranked set to display to the online user.
+34. The method as in claim 33, wherein generating the data structure comprises using customer purchase histories to predict similarities between products.
+35. The method as in claim 34, wherein generating the data structure further comprises generating, for each of multiple pairs of products, a similarity score which is based at least on a number of users that purchased both products in the pair.
+36. The method as in claim 35, wherein generating the data structure further comprises using the purchase histories to determine popularity levels of products, and using said popularity levels to select the plurality of products for which to identify and store corresponding sets of similar products.
+37. The method as in claim 33, wherein the action by the online user is a request to view a personal shopping cart, and the method comprises looking up from the data structure respective similar products sets for each of multiple products represented within the shopping cart.
+38. The method as in claim 33, wherein the method comprises inhibiting selection in (c) of products already purchased by the user.
+39. The method as in claim 33, wherein the data structure is a B-tree.
+40. The method as in claim 33, further comprising replicating the data structure across multiple machines to accommodate heavy loads.
+41. The method as in claim 1, wherein (d) comprises generating a ranked set of similar items in which a similar item's ranking reflects whether that similar item appears within more than one of the sets identified in step (c).
+42. The system of claim 16, wherein the list of recommended items is a ranked list in which an item's ranking reflects whether that item appears within more than one of said similar items sets.
+43. A computer-implemented method of recommending products to users, comprising:
+generating, for each of a plurality of pairs of products, a respective score indicating a degree to which the products of the pair are deemed related to one another, wherein the score reflects a frequency with which the products of the pair co-occur within purchase histories of users;
+storing the scores in a non-user-specific data structure that maps products to sets of related products; and
+using the data structure and the scores to provide personalized product recommendations to each of multiple users.
+44. The method as in claim 43, wherein using the data structure and scores to provide personalized product recommendations comprises:
+identifying multiple products that are of interest to a user;
+for each of the multiple products, accessing the data structure to identify a set of related products, to thereby identify multiple sets of related products;
+combining the multiple sets of related products to generate a ranked set of related products in which product rankings reflect corresponding scores within the data structure; and
+recommending products to the user from the ranked set.
+45. The method as in claim 44, wherein combining the multiple sets comprises combining scores of like products, so that a product's ranking reflects whether or not that product appears within more than one of the multiple sets.
+46. The method as in claim 44, wherein identifying multiple products that are of interest to the user comprises identifying products that are currently in a shopping cart of the user.
+47. The method as in claim 46, wherein recommending products to the user from the ranked set comprises displaying recommended products within a web page that displays current contents of the shopping cart.
+48. The method as in claim 43, wherein using the data structure and scores to provide personalized product recommendations comprises generating and displaying personal recommendations substantially in real time in response to online actions of users.
+49. The method as in claim 43, wherein the scores are generated and stored within the data structure in an off-line processing mode.

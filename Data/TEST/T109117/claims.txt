@@ -1,0 +1,133 @@
+--- PAGE 1 ---
+2007P01827WE 02.08.2016
+
+CLAIMS (Main Request)
+
+l. A method of searching cases in a database, said method comprising:
+
+-a first step of performing similarity matching between an input case and
+cases in the database by using a first matching criterion that includes at least one image-
+based feature to identify a set of cases similar to said input case, the at least one image-
+based feature including at least one of a shape of a tumor, texture of the tumor, and size
+change of the tumor;
+
+- calculating statistics on features associated with the set of similar cases,
+wherein the statistics describe non-image-based clinical information and wherein the
+features associated with the set of similar cases are image-based and/or non-image-based
+features;
+
+- presenting the set of similar cases and the statistics to a user;
+
+- receiving a user input including a second matching criterion that includes
+at least one non-image-based feature derived from clinical information and is based on
+said statistics, said clinical information including at least one of relevant previous or
+current diseases, lifestyle facts, genetic profiles, family medical history, a physician’s
+particular knowledge and information of the patient to be diagnosed or treated, weight,
+allergies, and vital statistics; and
+
+- a second step of performing similarity matching between the input case
+
+and the set of similar cases by using said second matching criterion.
+
+2. A method as claimed in claim |, wherein the cases in the database include
+a plurality of images classified according to different imaging modalities, said first step
+of performing similarity matching comprising:
+
+- performing similarity matching between an input case and cases in the
+database for each imaging modality to identify a plurality of respective sets of similar
+cases by using said first matching criterion; and
+
+- selecting cases that appear in at least two sets of said sets of similar cases,
+
+and to be used by said step of calculating statistics;
+
+--- PAGE 2 ---
+2007P01827WE 02.08.2016
+
+wherein said second step of performing similarity matching is performed between the
+
+input case and the selected similar cases.
+
+3. A method as claimed in claim | wherein the steps of performing similarity
+matching include calculating a similarity value for each case to be compared, for
+
+indicating the degree of similarity between the input case and the case to be compared.
+
+4. A method as claimed in claim 3, wherein the similarity value is Euclidean
+
+distance, Mahalanobis distance or weighted combination of these two distances.
+
+5. A method as claimed in claim | further comprising an iterative step of
+performing similarity matching between the input case and an updated set of similar
+cases by using an updated similarity matching criterion based on a further user input to
+
+retrieve cases similar to the user.
+
+6. A method as claimed in claim |, wherein the user input further comprises
+a numerical value given to each feature in the criterion, and the second step of performing
+
+similarity matching includes calculating a similarity metric by using the numerical values.
+
+7. A method as claimed in claim 1, wherein the user input further comprises
+any one of image-based features and non-image-based features presented in the similar
+
+cases that are the most similar cases to the input case.
+
+8. An apparatus (300) of searching cases in a database (303), said apparatus
+(300) comprising:
+
+a first matching unit (310) for performing similarity matching between an
+input case and cases in the database by using a first matching criterion that includes at
+least one image-based feature to identify a set of cases similar to said input case, the at
+least one image-based feature including at least one of a shape of a tumor, texture of the
+
+tumor, and size change of the tumor;
+
+--- PAGE 3 ---
+2007P01827WE 02.08.2016
+
+a calculating unit (320) for calculating statistics on features associated
+with the set of similar cases, wherein the statistics describe non-image-based clinical
+information and wherein the features associated with the set of similar cases are image-
+based and/or non-image-based features;
+
+a presenting unit (330) for presenting the set of similar cases and the
+statistics to a user;
+
+a receiving unit (340) for receiving a user input including a second
+matching criterion that includes at least one non-image-based feature derived from
+clinical information and is based on said statistics, said clinical information including at
+least one of relevant previous or current diseases, lifestyle facts, genetic profiles, family
+medical history, a physician’s particular knowledge and information of the patient to be
+diagnosed or treated, weight, allergies, and vital statistics; and
+
+a second matching unit (350) for performing similarity matching between
+
+the input case and the set of similar cases by using said second matching criterion.
+
+9. An apparatus as claimed in claim 8, wherein the cases in the database
+include a plurality of images classified according to different modalities, wherein the first
+matching unit (310) is further arranged for performing similarity matching between an
+input case and cases in the database for each imaging modality to identify a plurality of
+respective sets of similar cases by using said first matching criterion and selecting cases
+that appear in at least two sets of said sets of similar cases, and to be used by said step of
+calculating statistics; and the second matching unit (350) is further arranged for
+
+performing similarity matching between the input case and the selected similar cases.
+
+10. An apparatus as claimed in claim 8, wherein any one of the first and
+second matching units is further arranged for calculating a similarity value for each case
+to be compared, for indicating the degree of similarity between the input case and the
+
+case to be compared.
+
+11. An apparatus as claimed in claim 8 further comprising a controller (360)
+
+for controlling an iterative step of performing similarity matching between the input case
+
+--- PAGE 4 ---
+2007P01827WE 02.08.2016
+
+and an updated set of similar cases by using an updated similarity matching criterion
+
+based on a further user input to retrieve cases similar to the user.

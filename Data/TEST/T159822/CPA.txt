@@ -1,0 +1,66 @@
+TITLE:
+Dental apparatus, medical apparatus and calculation method
+
+TYPE:
+US Patent
+
+ABSTRACT:
+There is provided a dental apparatus including a light source for emitting a light to irradiate at least one of a tooth, a gum, a plaque and a calculus of an oral cavity, a light detector for detecting fluorescence from the oral cavity emitted to the light irradiated from the light source, and a control unit for outputting first data for visualizing a temporal change in a fluorescence intensity based on the fluorescence detected by the light detector. Also, there is provided a calculation method including irradiating an excited light, detecting a fluorescence intensity, and calculating a temporal change in the fluorescence intensity in a depth direction.
+
+CLAIMS:
+1. A dental apparatus, comprising:
+a light source for emitting a light to irradiate at least one of a tooth, a gum, a plaque and a calculus of an oral cavity;
+a light detector for detecting fluorescence from the oral cavity emitted to the light irradiated from the light source; and
+a control unit for outputting first data for visualizing a temporal change in a fluorescence intensity based on the fluorescence detected by the light detector.
+2. The dental apparatus according to claim 1, wherein
+a photosensitizer that is excited by irradiating the light is distributed in a depth direction of the gum such that the photosensitizer is bonded to or incorporated into periodontitis bacteria, and
+the control unit outputs the first data based on a fluorescence intensity distribution in the depth direction of the gum from the photosensitizer emitted to the light irradiation.
+3. The dental apparatus according to claim 2, wherein
+the control unit calculates a temporal change in the fluorescence intensity in the depth direction based on a calculated temporal change in the distribution of the photosensitizer in a ground state in the depth direction, a calculated temporal change in an intensity distribution of the light in the depth direction, and a fluorescence intensity on a surface of the gum detected by the light detector.
+4. The dental apparatus according to claim 3, wherein
+the temporal change in the fluorescence intensity shows a disinfection progress of the periodontitis bacteria.
+5. The dental apparatus according to claim 1, wherein
+a photosensitizer that is excited by irradiating the light is distributed in a depth direction of one of a plaque and a calculus attached to one of the tooth and the gum such that the photosensitizer is bonded to or incorporated into periodontitis bacteria, and
+the control unit outputs the first data based on a fluorescence intensity distribution in the depth direction of one of the plaque and the calculus attached to the gum from the photosensitizer emitted to the light irradiation.
+6. The dental apparatus according to claim 1, further comprising:
+an image receiving unit for receiving an image of an oral cavity having the tooth and the gum;
+a positional information receiving unit for receiving positional information about the oral cavity as absolute positional information from a reference position set on an arbitrary position; and
+an image processing unit for linking image data received at the image receiving unit with positional information received at the positional information receiving unit, wherein
+the control unit correlates a light irradiated site of the oral cavity with the positional information, and outputs second data for showing the light irradiated site to the image of the oral cavity.
+7. The dental apparatus according to claim 1, wherein
+a photosensitizer is administered into the oral cavity having the tooth and the gum, the photosensitizer being excited by the light irradiation and bonded to or incorporated into periodontitis bacteria, and
+the control unit outputs the first data based on a fluorescence intensity distribution on a surface of one of the tooth and the gum from the photosensitizer around the surface of one of the tooth and the gum emitted to the light irradiation.
+8. The dental apparatus according to claim 1, wherein
+the light is one of a laser light and a light-emitting diode light.
+9. The dental apparatus according to claim 1, wherein
+the light is a light having a wavelength belonging to an absorption band of the photosensitizer.
+10. The dental apparatus according to claim 9, wherein
+the light detector detects at least one of fluorescence, a reflected light and a diffused light from the oral cavity emitted to the light having the wavelength.
+11. The dental apparatus according to claim 1, further comprising:
+a blood flow volume detector for detecting a blood flow volume of the gum.
+12. The dental apparatus according to claim 1, further comprising:
+an oxygen saturation meter for detecting oxygen saturation of the gum.
+13. The dental apparatus according to claim 1, further comprising:
+an air blowing unit for blowing air to the tooth or the gum.
+14. A calculation method comprising:
+irradiating a gum of an oral cavity into which a photosensitize is administered with an excited light to the photosensitizer;
+detecting a fluorescence intensity on a surface of the gum; and
+calculating a temporal change in the fluorescence intensity in a depth direction based on a calculated temporal change in a distribution of the photosensitizer in the ground state to the depth direction of the gum, a calculated temporal change in the intensity distribution of the excited light in the depth direction, and the fluorescence intensity on the surface of the gum detected.
+15. A medical apparatus, comprising:
+a light source for emitting a light to a treatment site where at least one of treatment and prevention of an infectious disease is implemented,
+a light detector for detecting fluorescence from the treatment site emitted to the light irradiated from the light source; and
+a control unit for outputting data for visualizing a temporal change in a fluorescence intensity based on the fluorescence detected by the light detector.
+16. The dental apparatus according to claim 15, wherein
+the treatment site is at least one of joint synovium, an abdominal cavity, a choledoch, a tooth root and a salivary gland.
+17. The dental apparatus according to claim 15, wherein
+the temporal change in the fluorescence intensity shows a disinfection progress of infectious microorganisms at the treatment site.
+18. The dental apparatus according to claim 15, wherein
+a photosensitizer that is excited by irradiating the light irradiation is distributed to the treatment site, and
+the control unit outputs the data based on a fluorescence intensity distribution at the treatment site from the photosensitizer emitted to the light irradiation.
+19. The dental apparatus according to claim 15, further comprising:
+a blood flow volume detector for detecting a blood flow volume of the treatment site.
+20. A calculation method, comprising:
+administering a photosensitizer to a treatment site where at least one of treatment and prevention of an infectious disease is implemented;
+irradiating the treatment site with an excited light to the photosensitizer;
+detecting a fluorescence intensity at the treatment site; and
+calculating a temporal change in the fluorescence intensity at the treatment site based on the fluorescence intensity at the treatment site from the photosensitizer emitted to the light irradiation.

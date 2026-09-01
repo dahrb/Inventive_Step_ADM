@@ -1,0 +1,197 @@
+--- PAGE 1 ---
+10
+
+20
+
+25
+
+New Claims (Main Request)
+
+1. A method for compressing an input string (102) of symbols comprising the steps of
+searching an encoder dictionary (108) for each symbol received in the input string (102), the
+symbol width being selected dependent on a type of data in the input string; and
+upon detecting the symbol is not stored in the encoder dictionary (108), learning the
+symbol by storing the symbol at a next sequential index in the encoder dictionary (108) and
+transmitting the symbol in a code word to a decoder (112);
+upon detecting that the symbol is stored in the dictionary (108):
+concatenating the symbol with a next symbol in the input string until the
+concatenated symbols are not found in the encoder dictionary,
+transmitting in the code word an index at which a longest prefix match, identified
+by the concatenating, is stored in the encoder dictionary (108), and
+learning the concatenated symbols, not found in the encoder dictionary, by
+storing the concatenated symbols in the encoder dictionary;
+wherein the code word includes a prefix field (404) identifying the contents of the
+code word, a state of the prefix field (404) indicating whether the code word is a plain symbol
+(406) to be learned or is an index (408),
+the method further comprising:
+upon detecting a compression ratio based on the current symbol width is low relative to a
+threshold which determines the compression ratio at which to change the width,
+modifying the symbol width and communicating a new symbol width to the decoder in order to
+
+increase the compression ratio.
+
+2. The method of Claim 1 wherein the symbol width is modified by including a symbol
+width change notification in the code word.
+
+3. The method of Claim 2 further comprising the steps of initialising the encoder dictionary
+after the symbol width is modified; and learning the symbols of the modified width.
+
+--- PAGE 2 ---
+15
+
+20
+
+25
+
+4, The method of Claim 2 further comprising: flushing all symbols and strings stored in the
+encoder dictionary having widths which are not multiples of the modified width; and learning
+symbols of the modified width.
+
+5. The method as claimed in Claim 1 wherein the step of searching searches for a sequence of
+symbols, the step of learning learns the sequence of symbols by storing the sequence of symbols
+at a next sequential index in the encoder dictionary (108), and the step of transmitting transmits
+
+in the code word an index at which a longest prefix match for the sequence of symbols is stored.
+
+6. The method as claimed in Claim 1 wherein the index is a variable width.
+
+7. The method as claimed in Claim 6 wherein the width of the index is dependent on a
+
+number of learned items stored in the dictionary.
+
+8. An apparatus (I 10) for compressing an input string (102) of symbols comprising:
+an encoder dictionary (108) for storing each symbol received in the string of symbols, a
+symbol width selected dependent on a type of data in the input string; and
+control logic adapted to:
+search the encoder dictionary (108) for each symbol;
+transmit each symbol in a code word upon detecting the symbol is not stored in the
+encoder dictionary (108) and learning the symbol! by storing the symbol in the encoder
+dictionary (108); and
+upon detecting the symbol is stored in the encoder dictionary:
+concatenating the symbol with a next symbol in the input string until the
+concatenated symbols are not found in the encoder dictionary,
+transmitting in the code word an index at which a longest prefix match,
+identified by the concatenating, is stored in the encoder dictionary (108), and
+learning the concatenated symbols, not found in the encoder dictionary, by
+
+storing the concatenated symbols in the encoder dictionary;
+
+--- PAGE 3 ---
+15
+
+20
+
+23
+
+wherein the code word includes a prefix field (404) identifying the contents of the code
+word, a state of the prefix field (404) indicating whether the code word is a plain symbol (406) to
+be learned or is an index (408),
+
+the control logic being further adapted to modify the symbol width and communicate a new
+symbol width to a decoder (112) upon detecting a compression ratio based on the current symbol
+width is low relative to a threshold which determines the compression ratio at which to change the
+
+width in order to increase the compression ratio.
+
+9. The apparatus as claimed in Claim 8 wherein the control logic transmits in the code word,
+the index at which the longest prefix of a sequence of symbols is stored, upon detecting the
+sequence of symbols is not stored in the dictionary.
+
+10. The apparatus as claimed in Claim 8 wherein the index is a variable width.
+
+11. The apparatus as claimed in Claim 10 wherein the width of the index is dependent on a
+
+number of learned items stored in the dictionary.
+
+12. The apparatus as claimed in Claim 11 wherein the control logic searches the encoder
+dictionary (108) for a sequence of symbols, transmits in the code word an index at which a
+longest prefix match for the sequence of symbols is stored and learns the sequence of symbols by
+storing the sequence of symbols in the dictionary.
+
+13. A method for decompressing a sequence of code words comprising the steps of:
+
+receiving a code word including a prefix field (404) identifying the contents of the code
+word, the state of the prefix field indicating whether the code word is a plain symbol (406) to be
+learned or is an index (408);
+
+upon detecting from the state of the prefix field (404) that a symbol is stored in the code
+word, learning the symbol by storing the symbol in a next sequential index in a decoder dictionary
+(108) and providing the symbol as decoded data; and
+
+--- PAGE 4 ---
+Fi)
+
+10
+
+20
+
+25
+
+upon detecting from the state of the prefix field (404) that an index is stored in the code
+word, accessing the symbol at the index position in the decoder dictionary (108) and providing the
+symbol as decoded data,
+
+wherein the width of the symbol is variable, the method further comprising:
+
+modifying the symbol width in response to a notification from an encoder (110).
+
+14. The method as claimed in Claim 13 wherein the step of learning further comprises the
+steps of:
+
+learning a sequence of symbols by concatenating a previously learned symbol with the
+symbol; and
+
+storing the sequence of symbols in the dictionary.
+
+15. The method as claimed in Claim 13 further comprising the step of:
+upon detecting a dictionary index stored in the code word, providing a translation of the
+index by accessing the decoder dictionary.
+
+16. The method as claimed in Claim 15 wherein the translation of the index is a symbol.
+
+17. The method as claimed in Claim 15 wherein the translation of the index is a sequence of
+
+symbols.
+
+18. The method as claimed in Claim 13 wherein the index is a variable width.
+
+19. A decoder apparatus (112) for decompressing a sequence of code words comprising:
+
+a decoder dictionary (108) for storing at a next sequential index a plain symbol received in a
+code word, the code word including a prefix field (404) identifying the contents of the code word,
+the state of the prefix field (404) indicating whether the code word is a plain symbol (406) to be
+learned or is an index (408), and
+
+logic adapted to:
+
+--- PAGE 5 ---
+15
+
+20
+
+receive a code word; detect a plain symbol (406) stored in the code word; store the
+symbol (406) in the decoder dictionary (108); and provide the symbol as decoded data,
+
+receive a code word; detect an index (408) stored in the code word; access the symbol
+at the index location in the decoder dictionary (108); and provide the symbol as decoded
+data; and
+
+modify the symbol width in the decoder apparatus in response to a notification from
+an encoder (110).
+
+20. The apparatus as claimed in Claim 19 wherein the logic learns a sequence of symbols by
+concatenating a previously learned symbol with the plain symbol stored in the code word and
+
+stores the sequence of symbols in the dictionary.
+
+21. The apparatus as claimed in Claim 19 wherein upon detecting an index stored in the code
+
+word the logic provides a translation of the index by accessing the decoder dictionary.
+
+22. The apparatus as claimed in Claim 21 wherein the translation of the index is a symbol.
+
+23. The apparatus as claimed in Claim 21 wherein the translation of the index is a sequence of
+
+symbols.
+
+24. The apparatus as claimed in Claim 19 wherein the index is a variable width.

@@ -1,0 +1,309 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+New request 32
+
+Claims:
+
+1. A method for service provisioning in telecommunications networks (1), the
+
+method comprising steps for
+
+receiving at least one provisioning request form a client system
+(11, 30) of a service operator (3, 4) through an Application
+Program Interface (API, 12, 13) to a provisioning system (15)
+hosted by network operator (1, 2) for defining measures relating to
+customers,
+
+processing (14) each provisioning request in functional layers (80,
+81, 82, 83) of the provisioning system (15) hosted by network
+operator (1, 2),
+
+executing tasks according to the results of the processing step,
+and
+
+reporting the results to the requesting entity,
+
+characterized in
+
+allowing multiple service operators (3, 4) to use the provisioning
+system (15) through authenticated Application Program Interface
+API (40, 50), and Management User Interface (48, 49, 58, 59, 93)
+and authorisation function (43, 53) after the provisioning rules
+processing (94) where the rights for the use of the network
+elements (18, 19, 20, 21, 72) are controlled by the network
+operator, whereby the network operator is able to present and
+utilize one physical network in many logical views, each
+representing the portion accessible for virtual operator, and in this
+way controllable by network operator with limitations,
+
+authentication and authorization rules.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+New request 33
+
+2. Amethod according to claim 1, characterized in receiving at least
+one provisioning request form a client system (11, 30) of a service operator
+(3, 4) through an Application Program Interface (API, 12, 13) to a
+provisioning system (15) hosted by network operator (1, 2) for defining
+measures relating to customers and/or services and/or network elements (18,
+19, 20, 21, 72).
+
+3. Amethod according to claim 1 or2, characterized in that
+Authentication (40, 50) and authorisation (43, 53) are performed separately in
+different functional layers (80, 81, 82, 83).
+
+4. A method according to claim 1, 2 or 3, characterized in that
+authorization (43, 53) is performed after authentication (40, 50) and request
+
+processing functions (49, 59).
+
+5. Amethod according to claim 4, characterized in that authorization
+is performed in authorization module (43, 53) or network element interface
+(71).
+
+6. A method in accordance with any previous claim characterized in
+that for the service operator is created a virtual model (45, 55) of the enabled
+
+network elements.
+
+7. Amethod according to any previous claim, characterized in that
+the functions of the service layer (82) are performed by functional modules
+(94).
+
+8. A method according to any previous claim, characterized in that
+the processing steps are performed in client system layer (80), request
+processing layer (81), service module layer (82) and task execution layer
+(83).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+New request 34
+
+9. A method according to any previous claim, characterized in that at
+least one layer (82) includes independently mountable and dismountable
+
+functional modules (94).
+
+10. A system for service provisioning in telecommunications networks (1),
+
+the system comprising
+
+- means for receiving at least one provisioning request form a client
+system (11, 30) of a service operator (3, 4) through an Application
+Program Interface (API, 12, 13) to a provisioning system (15)
+hosted by network operator (1, 2) for defining measures relating to
+customers,
+
+- means for processing (14) each provisioning request in functional
+layers (80, 81, 82, 83) of the provisioning system (15) hosted by
+network operator (1, 2),
+
+- means for executing tasks according to the results of the
+processing step, and
+
+- means for reporting the results to the requesting entity,
+
+characterized in that the system further includes
+
+— means for allowing to use the provisioning system (15) for multiple
+service operators (3, 4) through authenticated Application Program
+Interface API (40, 50), and Management User Interface (48, 49,
+58, 59, 93) and authorisation function (43, 53) after the
+provisioning rules processing (94), and
+
+- means for controlling the rights for the use of the network
+elements (18, 19, 20, 21, 72) by the network operator, whereby the
+network operator is able to present and utilize one physical
+network in many logical views, each representing the portion
+accessible for virtual operator, and in this way controllable by
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+New request 35
+
+network operator with limitations, authentication and authorization
+
+rules.
+
+11. A system according to claim 10, characterized in that includes
+means for receiving at least one provisioning request form a client system
+(11, 30) of a service operator (3, 4) through an Application Program Interface
+(API, 12, 13) to a provisioning system (15) hosted by network operator (1, 2)
+for defining measures relating to customers and/or services and/or network
+elements (18, 19, 20, 21, 72).
+
+12. A system according to claim 10 or 11,characterized in that it
+includes means for performing authentication (40, 50) and authorization (43,
+
+53) separately in different functional layers (80-83).
+
+13. Asystem according to claim 10, 11 or 112, characterized in thatit
+includes means for performing authorisation (40, 50) after authentication (43,
+
+53) and request processing functions (49, 59).
+
+14. Asystem according to any previous claim, characterized in that it
+includes means _ for performing authorisation in a different step after
+
+authentication.
+
+15. Asystem in accordance with any previous claim characterized in
+that it includes means for creating for the service operator a virtual model
+(45, 55) of the enabled network elements.
+
+16. Asystem in accordance with any previous claim characterized in
+that at least one layer (80-83) includes independently mountable and
+
+dismountable functional modules (94).
+
+17. A computer program product for service provisioning in a
+
+telecommunications network comprising
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+New request 36
+
+computer readable program code means for receiving at least one
+provisioning request from a client system (11, 30) of a service
+operator (3, 4) through an Application Program Interface (API, 12,
+13) to a provisioning system (15) hosted by network operator (1,
+2) for defining measures relating to customers,
+
+computer readable program code means for processing (14) each
+request in functional layers (80, 81, 82, 83) of the provisioning
+system (15) hosted by network operator (1, 2),
+
+computer readable program code means for executing tasks
+according to the results of the processing step, and
+
+computer readable program code means for reporting the results
+
+to the requesting entity,
+
+characterized in that the computer program product further includes
+
+computer readable program code means for allowing to use the
+provisioning system (15) for multiple service operators (3, 4)
+through authenticated Application Program Interface API ( 40, 50),
+and Management User Interface (48, 49, 58, 59, 93) and
+authorisation function (43, 53) after the provisioning rules
+processing (94), and
+
+computer readable program code means for controlling the rights
+for the use of the network elements (18, 19, 20, 21, 72) by the
+network operator, whereby the network operator is able to present
+and utilize one physical network in many logical views, each
+representing the portion accessible for virtual operator, and in this
+way controllable by network operator’ with _ limitations,
+
+authentication and authorization rules.
+
+18. A computer program product according to claim 17, characterized
+
+in that it includes computer readable program code means for receiving at
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+New request 37
+
+least one provisioning request from a client system (11, 30) of a service
+operator (3, 4) through an Application Program Interface (API, 12, 13) to a
+provisioning system (15) hosted by network operator (1, 2) for defining
+measures relating to customers and/or services and/or network elements (18,
+19, 20, 21, 72).
+
+19. Acomputer program product according to claim 17 or 18, character-
+ized_ in that it includes computer readable program code means for
+performing authentication and authorization separately in different functional
+layers (80-83).
+
+20. A computer program product according to claim 17 or 18 or 19, char-
+acterized in that it includes computer readable program code means for
+
+performing authorization after authentication.
+
+21. Acomputer program product according to claim 20, characterized
+in that it includes computer readable program code means for performing
+
+authorization in service module layer (82).
+
+22. A computer program product in accordance with any previous claim
+characterized _ in that it includes computer readable program code
+means for creating for the service operator a virtual model (45, 55) of the
+
+enabled network elements.
+
+22. A computer program product in accordance with any previous claim
+characterized in that at least one layer (82) includes independently
+mountable and dismountable functional computer readable program code
+modules (94).
+
+23. A computer program product according to any previous claim,
+characterized in that the functions of the service module layer (82)
+
+are performed by functional modules (94).
+
+--- PAGE 7 ---
+New request 38
+
+24. A computer program product according to any previous claim,
+characterized in that the processing steps are performed in client
+system layer (80), request processing layer (81), service module layer (82)
+
+and task execution layer (83).

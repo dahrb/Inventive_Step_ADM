@@ -1,0 +1,52 @@
+TITLE:Aircraft identification
+
+TYPE: EPO Patent
+
+ABSTRACT:The present invention relates to a method and system for identifying an aircraft in connection to a stand. The method comprises: receiving identification data and position data transmitted from an aircraft, comparing said received position data with at least one position within a predetermined area in connection to said stand. If said received position data correspond to said at least one position within said predetermined area: determining, based on said identification data, if said aircraft is expected at the stand, and if said aircraft is not expected at the stand: displaying a notification on a display.
+
+CLAIMS:
+Method for identifying an aircraft in connection to a stand comprising:
+receiving identification data and position data transmitted from an aircraft,
+comparing said received position data with at least one position within a predetermined area in connection to said stand,
+if said received position data correspond to said at least one position within said predetermined area:
+determining, based on said identification data, if said aircraft is expected or not at the stand, and
+if said aircraft is not expected at the stand:
+displaying a notification on a display.
+Method according to claim 1, wherein determining if said aircraft is expected at the stand comprises:
+comparing identification data of an aircraft expected at the stand with the identification data of said aircraft.
+Method according to claim 1 or 2, wherein determining if said aircraft is expected at the stand comprises:
+requesting a type and/or version of said aircraft from a translation database based on said identification data and
+comparing aircraft type and/or version of an aircraft expected at the stand with the type and/or version of said aircraft.
+Method according to claim 3, wherein said translation database is operatively coupled to an airport operational database.
+Method according to any one of the preceding claims, wherein the displaying a notification on a display includes displaying any one of:
+an indication to stop said aircraft,
+an indication to approach the stand, and
+an indication to relocate said aircraft to another location.
+Method according to claim 5, further comprising if an indication to approach the stand is displayed:
+moving a bridge at the stand to a safe position, or
+setting a bridge at the stand to the type and/or version of said aircraft.
+Method according to any one of claims 5-6, further comprising if an indication to stop said aircraft, or if an indication to approach the stand is displayed:
+conveying relocation data to an aircraft expected at the stand.
+Method according to any one of claims 3-7, further comprising:
+verifying the type and/or version of said aircraft using a laser verification system.
+Aircraft identification system (100) for identifying an aircraft (200) in connection to a stand (300) comprising:
+a receiver (110) being arranged to receive identification data and position data transmitted from an aircraft,
+a processor (120) being arranged to compare said received position data with at least one position within a predetermined area in connection to said stand and determine if said received position data correspond to said at least one position within said predetermined area,
+the processor being arranged to determine, if said received position data correspond to said at least one position within said predetermined area, if said aircraft is expected or not at the stand based on said identification data, and
+the processor being arranged to instruct a display (130) to display a notification if said aircraft is not expected at the stand.
+Aircraft identification system according to claim 9, further comprising:
+the processor being arranged to compare identification data of an aircraft expected at the stand with the identification data of said aircraft in order to determine if said aircraft is expected at the stand.
+Aircraft identification system according to any one of claims 9-10, wherein said processor being arranged to determine if said aircraft is expected further comprises:
+said processor being arranged to request a type and/or version of said aircraft from a translation database based on said identification data, and
+said processor being arranged to compare aircraft type and/or version of an aircraft expected at the stand with the type and/or version of said aircraft.
+Aircraft identification system according to claim 11, wherein the translation database is operatively coupled to an airport operational database.
+Aircraft identification system according to any one of claims 9-12, wherein the processor being arranged to instruct the display to display a notification further comprises instructing the display to display any one of:
+an indication to stop said aircraft,
+an indication to approach the stand, and
+an indication to relocate said aircraft to another location.
+Aircraft identification system according to claim 13, further comprising:
+the processor being arranged to instruct a bridge control to move a bridge at the stand to a safe position, or the processor being arranged to set the bridge to the type and/or version of said aircraft, if an indication to approach the stand is displayed.
+Aircraft identification system according to any one of claims 13-14, further comprising:
+the processor being arranged to convey relocation data to the expected aircraft, if an indication to stop said aircraft or if an indication to approach the stand is displayed.
+Aircraft identification system according to any one of claims 11-15, further comprising:
+a laser verification system being arranged to verify the type and/or a version of said aircraft.

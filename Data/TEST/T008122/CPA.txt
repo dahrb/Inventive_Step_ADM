@@ -1,0 +1,26 @@
+TITLE:
+Transaction terminal device and transaction terminal control method
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A transaction terminal device executing a customer transaction includes a tamper-proof secured module detachably incorporated in a main unit, and an unsecured module that is not tamper-proof and is embedded in the main unit. The secured module notifies secure information to a user, obtains customer related unique information required for executing the customer transaction, encrypts the unique information obtained, and sends the encrypted unique information to the unsecured module. The unsecured module executes the customer transaction using the encrypted unique information.
+
+CLAIMS:
+1. A transaction terminal device that executes a customer transaction, comprising:
+a tamper-proof secured module detachably incorporated in a main unit;
+an unsecured module that is not tamper-proof and is embedded in the main unit; wherein
+the secured module includes a secure information notifying unit, an obtaining unit, and an encrypting unit, wherein at the time of obtaining customer related unique information required for executing the customer transaction, the secure information notifying unit notifies secure information to a user, the obtaining unit obtains the unique information, and the encrypting unit encrypts the unique information obtained; and
+the unsecured module includes a controller that provides control to receive the unique information encrypted, and to execute the customer transaction using the encrypted unique information received.
+2. The transaction terminal device according to claim 1, wherein at the time of obtaining the unique information, the secure information notifying unit notifies the secure information to the user by switching ON a lighting unit provided in the secured module.
+3. The transaction terminal device according to claim 1, wherein at the time of obtaining the unique information, the secure information notifying unit notifies the secure information to the user by displaying the secure information on a display provided in the secured module.
+4. The transaction terminal device according to claim 1, wherein at the time of obtaining the unique information, the secure information notifying unit notifies the secure information to the user by outputting the secure information as audio guidance from an audio output unit that is provided in the secured module.
+5. A transaction terminal control method for executing a customer transaction, and applied to a transaction terminal device including a tamper-proof secured module detachably incorporated in a main unit, and an unsecured module that is not tamper-proof and is embedded in the main unit, the transaction terminal control method comprising:
+notifying secure information to a user;
+obtaining customer related unique information required for executing the customer transaction;
+encrypting the unique information obtained;
+providing control to send the unique information encrypted to the unsecured module, and to execute the customer transaction using the encrypted unique information received.
+6. The transaction terminal control method according to claim 5, wherein at the time of obtaining the unique information, the secure information notifying unit notifies the secure information to the user by switching ON a lighting unit provided in the secured module.
+7. The transaction terminal control method according to claim 5, wherein the notifying includes notifying the secure information to the user by displaying the secure information on a display provided in the secured module.
+8. The transaction terminal control method according to claim 5, wherein the notifying includes notifying the secure information to the user by outputting the secure information as audio guidance from an audio output unit that is provided in the secured module.

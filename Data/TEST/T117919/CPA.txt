@@ -1,0 +1,55 @@
+TITLE:
+System and method for cooperative client/server customization of web pages
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system, method, and computer-usable medium for customizing and displaying a network file distributes customization tasks between a client and a server. A client sends a request for a network file, such as a Web page, to a server. The request may include information regarding the client machine type, browser, and customization options (i.e. preferences). Customization options may include personal (i.e. user) options and group (i.e. department, corporate, etc.) options. These options, along with the client machine type and browser, are used by the server to determine how to customize the requested network file. The server obtains the requested network file, and a server-side customization program customizes the file. The server-side customization program may also analyze the network file, and may embed return customization information in the customized network file. The client receives the customized network file, including the return customization information, from the server. A client-side customization program then performs further customization on the network file. This customization may be based on the return customization information from the server, other user preferences known by the client, and/or current conditions at the client. After the client-side customization is complete, the final customized file is displayed by the client.
+
+CLAIMS:
+1. A method for customizing a file for a requesting client; comprising:
+sending a file request, from the requesting client to a server, wherein the file request includes client device data and one or more-user specified viewing options;
+at a server, performing a first set of adjustments to the file to produce a modified form of the file, wherein said performing includes modifying the file in accordance with the client device data and the user specified viewing options;
+at the server, analyzing the file and determining return customization information;
+sending the modified form of the file and the return customization information to the requesting client;
+at the requesting client, performing a second set of adjustments to the modified form of the file to produce a final form of the file; and
+displaying the final form of the file on a display device.
+2. A method according to claim 1, wherein said performing a first set of adjustments further comprises customizing the file for a class of devices to which the requesting client belongs.
+3. A method according to claim 1, wherein said performing a second set of adjustments further comprises customizing the modified form of the file according to one or more user preferences at the requesting client.
+4. A method according to claim 1, wherein said performing a second set of adjustments further comprises customizing the modified form of the file according to one or more current conditions at the requesting client.
+5. A method according to claim 1, wherein said performing a second set of adjustments further comprises customizing the modified form of the file according to the return customization information.
+6. A method according to claim 1, wherein said determining return customization information further comprises determining a complexity level of at least one element of the file.
+7. A method according to claim 6, wherein said sending return customization information further comprises sending the determined complexity level, along with the modified form of the file, to the requesting client.
+8. A method according to claim 7, wherein said performing a second set of adjustments to the modified form of the file further comprises displaying a selected element of the modified form of the file based on a corresponding complexity level associated with the selected element.
+9. An information handling system, comprising:
+a server;
+a client, wherein said client sends a file request to said server, wherein said file request includes client device data and one or more user specified viewing options;
+a display device connected to said client;
+a network for connecting said server to said client;
+means for performing a first set of adjustments to the file at said server, to produce a modified form of the file, wherein the first set of adjustments includes modifying the file in accordance with the client device data and the user specified viewing options;
+means for analyzing the file at the server and determining return customization information;
+means for sending the modified form of the file and the return customization information to said client;
+means for performing a second set of adjustments to the modified form of the file at said client, to produce a final form of the file; and
+means for displaying the final form of the file on said display device.
+10. An information handling system according to claim 9, wherein said means for performing a first set of adjustments further comprises means for customizing the file for a class of devices to which said client belongs.
+11. An information handling system according to claim 9, wherein said means for performing a second set of adjustments further comprises means for customizing the modified form of the file according to one or more user preferences at said client.
+12. An information handling system according to claim 9, wherein said means for performing a second set of adjustments further comprises means for customizing the modified form of the file according to one or more current conditions at said client.
+13. An information handling system according to claim 9, wherein said means for performing a second set of adjustments further comprises means for customizing the modified form of the file according to the return customization information.
+14. An information handling system according to claim 9, wherein said means for determining return customization information further comprises means for determining a complexity level of at least one element of the file.
+15. An information handling system according to claim 14, wherein said means for sending return customization information further comprises means for sending the determined complexity level, along with the modified form of the file, to said client.
+16. An information handling system according to claim 15, wherein said means for performing a second set of adjustments to the modified form of the file further comprises means for displaying a selected element of the modified form of the file based on a corresponding complexity level associated with the selected element.
+17. A computer program product in computer-usable media for use in customizing a file for a requesting client, comprising:
+means for sending a file request, from the requesting client to a server, wherein the file request includes client device data and one or more user specified viewing options;
+means for performing a first set of adjustments to the file at a server, to produce a modified form of the file, wherein said performing includes modifying the file in accordance with the client device data and the user specified viewing options;
+means for analyzing the file at the server and determining return customization information;
+means for sending the modified form of the file and the return customization information to the requesting client;
+means for performing a second set of adjustments to the modified form of the file at the client, to produce a final form of the file; and
+means for displaying the final form of the file on a display device.
+18. A computer program product according to claim 17, wherein said means for performing a first set of adjustments further comprises means for customizing the file for a class of devices to which the requesting client belongs.
+19. A computer program product according to claim 17, wherein said means for performing a second set of adjustments further comprises means for customizing the modified form of the file according to one or more user preferences at the requesting client.
+20. A computer program product according to claim 17, wherein said means for performing a second set of adjustments further comprises means for customizing the modified form of the file according to one or more current conditions at the requesting client.
+21. A computer program product according to claim 17, wherein said means for performing a second set of adjustments further comprises means for customizing the modified form of the file according to the return customization information.
+22. A computer program product according to claim 17, wherein said means for determining return customization information further comprises means for determining a complexity level of at least one element of the file.
+23. A computer program product according to claim 22, wherein said means for sending return customization information further comprises means for sending the determined complexity level, along with the modified form of the file, to the requesting client.
+24. A computer program product according to claim 23, wherein said means for performing a second set of adjustments to the modified form of the file further comprises means for displaying a selected element of the modified form of the file based on a corresponding complexity level associated with the selected element.

@@ -1,0 +1,328 @@
+--- PAGE 1 ---
+« 7 SEP. 2010 15:58 NO. 162) P11
+
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS;
+
+1, A method of determining content for a response to a
+query (636) in a system for searching and navigating a set
+of materials, the method comprising:
+
+accepting a query;
+
+generating a result (632) for the query;
+
+determining dynamically desired content for the
+response to the query, said determining comprising
+processing a set of rules (660) using the query and the
+result; and
+
+providing the response with the desired content (630);
+
+characterised in that the set of rules is specified in
+a rules engine and each rule in the set of rules is composed
+of a respective trigger (668) for activating the rule and a
+respective action (670) for determining the content for the
+response to the query, the trigger being defined in relation
+to one or more of the query and the result, wherein
+processing the set of rules comprises determining the
+content for the response to include only content due to the
+
+action of the rules whose trigger is satisfied.
+
+2. The method of claim 1, wherein:
+
+a plurality of attributes (22) characterize the
+materials;
+
+a plurality of values (28) describe the materials;
+
+each of the values has an association with at least one
+of the attributes and each assoclation defines an attribute-
+value pair;
+
+soma of said attribute-value pairs refine other of the
+attribute-value pairs;
+
+the materials and attribute-value pairs define a
+
+plurality of navigation states;
+
+402231; ABO; ABQ 61
+
+Duration: 07.09.2010 17:58:35 - 07.09.2010 18:00:16. This page 11 of 16 was completed at 07.09.2010 17:59:49
+Received at the EPO on Sep 07, 2010 18:00:16. Page 11 of 16
+
+--- PAGE 2 ---
+TS=P. 2010 15:58 NC. 1620 °F 12
+
+10
+
+15
+
+20
+
+25
+
+30
+
+ee
+
+each navigation state corresponds to a particular
+expression of attribute-value pairs and to a particular
+subset of the materials; and
+
+the trigger of at least one rule is defined using at
+
+least one attribute-value pair.
+
+3. The method of claim 2, wherein the at least one
+attribute-value pair used to define the trigger of the at
+least one rule is included in an expression of one or more
+
+attribute-value pairs.
+
+4. The method of claim 3, wherein the expression of one or
+
+more attribute-value pairs identifies a navigation state.
+
+5. The method of claim 2, wherein the at least one
+attribute-value pair is included in a Boolean combination of
+
+navigation states.
+
+6. The method of claim 4, wherein the trigger of the at
+least one rule is defined te include descendants of the
+
+navigation state.
+
+7. The method of claim 4, wherein the trigger of the at
+least one rule is defined to include ancestors of the
+
+navigation state.
+8. The methed of claim 4, wherein the trigger of the at
+least one rulé is defined using a funetion that measures a
+
+distance between navigation states.
+
+9. The method of claim 2, wherein the trigger of the at
+
+least one rule is further defined with a keyword.
+
+40251, ARQ) ABQ 62
+
+Duration: 07.09.2010 17:58:35 - 07.09.2010 18:00:16. This page 12 of 16 was completed at 07.09.2010 17:59:55
+Received at the EPO on Sep 07, 2010 18:00:16. Page 12 of 16
+
+--- PAGE 3 ---
+TSEP. 2010 15:58 NC. 1620 P13
+
+10
+
+15
+
+20
+
+25
+
+30
+
+10, The method of claim 2, wherein the trigger of the at
+
+least one rule incorporates randomization.
+
+ll. The method of claim 2, wherein processing a set of
+rules includes applying a script that provides logic for
+
+processing the rules.
+
+12. The method of claim 2, wherein the action of the at
+least one rule uses the query for determining the content of
+
+the response,
+
+13. The method of claim 2, wherein the action of the at
+least one rule includes generating a suggested query to be
+
+included in the response,
+
+14. The method of claim 2, wherein the action of the at
+least one rule includes rendering the desired content in a
+
+particular format,
+
+15. The method of claim 2, wherein the step of displaying
+the response includes providing previews of navigation
+
+states.
+
+16, The method of claim 2, wherein the rule specifies one
+or more variables that are populated by the evaluation of
+
+the trigger of the at least one rule.
+
+17. The method of claim 2, further including obtaining a
+current expression of attribute-value pairs from the query
+and using the currant expression of attribute-value pairs
+
+for processing the set of rules.
+
+18. The method of claim 17, wherein the query includes
+
+refinement options selected by the user,
+
+492201; AG; AEQ 63
+
+Duration: 07.09.2010 17:58:35 - 07.09.2010 18:00:16. This page 13 of 16 was completed at 07.09.2010 18:00:00
+Received at the EPO on Sep 07, 2010 18:00:16. Page 13 of 16
+
+--- PAGE 4 ---
+7 SEP. 2010 15:58 NO. 1620 P. 14
+
+10
+
+LS
+
+20
+
+25
+
+30
+
+19. The method of claim 17, wherein the current expression
+of attribute-value pairs corresponds to a result navigation
+
+state.
+
+20. The method of claim 2, further including the step of
+
+defining the set of rules.
+
+21. The method of claim 2, further including the step of
+
+generating a script to process the set of rules.
+
+22, The method of claim 2, further comprising specifying an
+
+action for manipulating content.
+
+23. The method of claim 22, wherein a trigger is defined by
+identifying an attribute-value pair and specifying a
+
+relationship between the attribute-value pair and a query,
+
+24. The method of claim 1, wherein the materials are
+partitioned between one or more slave servers (530,540), the
+method comprising:
+
+forwarding the query to the one or more slave servers;
+
+wherein the set of rules is processed in parallel on
+the one or more slave servers and wherein providing the
+response comprises returning the desired content from the
+one or more slavé servers to a master server and combining
+the desired content from the one or more slave servers to
+
+generate the response to the query.
+
+25, A system for searching and navigating a set of
+materials, the system comprising:
+an interface for aacepting a query (636) and providing
+
+a response with desired content (630); and
+
+402231; REQ; AEQ 64
+
+Duration: 07.09.2010 17:58:35 - 07.09.2010 18:00:16. This page 14 of 16 was completed at 07.09.2010 18:00:06
+Received at the EPO on Sep 07, 2010 18:00:16. Page 14 of 16
+
+--- PAGE 5 ---
+7 SEP, 2010 15:53 NC. 1620 P15
+
+10
+
+15
+
+20
+
+25
+
+30
+
+one or more servers (520,530,540) adapted to generate a
+result (632) for the query and to determine dynamically
+desired content for the response to the query, said
+determining comprising processing a set of rules (660) using
+the query and the result, said one or more servers further
+adapted to provide the response with the desired content;
+
+characterised in that the set of rules is specified in
+a rules engine and each rule (664) in the set of rules is
+composed of a respective trigger (668) for activating the
+rule and a respective action (670) for determining the
+content for the response to the query, the trigger being
+defined in relation to one or more of the query and the
+result, wherein the one or more servers are adapted to
+process the set of rules by determining the content for the
+response to include only content due to the action of the
+
+rules whose trigger is satisfied.
+
+26. The system of claim 25, comprising:
+
+a plurality of attributes (22) characterizing the
+haterials;
+
+a plurality of values (28) describing the materials;
+
+wherein each of the values has an association with at
+least one of the attributes and each association defines an
+attribute-value pair;
+
+wherein some of said attribute-value pairs refine other
+of the attribute-value pairs;
+
+a plurality of navigation states, wherein each
+Navigation state corresponds to a particular expression of
+attribute-value pairs and to a particular subset of
+MaterLals;
+
+the trigger of at least one rule being defined using at
+
+least one attribute-value pair.
+
+402231; AEQ; AEQ 65
+
+Duration: 07.09.2010 17:58:35 - 07.09.2010 18:00:16. This page 15 of 16 was completed at 07.09.2010 18:00:13
+Received at the EPO on Sep 07, 2010 18:00:16. Page 15 of 16
+
+--- PAGE 6 ---
+« 7, SEP. 2010 15:58 NO.1620 P. 16
+
+27. The system of claim 25, wherein the materials are
+partitioned between one or more slave servers (530,540), the
+system being arranged to forward the query to the one or
+more slave servers that process the set of rules in parallel
+5 and return the desired content to a master server (520) that
+combines the desired content from the one or more slave
+
+Servers to generate the response to the query.
+
+28. A computer program product, residing on a computer
+10 readable medium and which, when executed by 4 computer
+
+carries out a method according to any one of claims 1 to 24.
+
+402231; AEQ; AEQ 66
+
+Duration: 07.09.2010 17:58:35 - 07.09.2010 18:00:16. This page 16 of 16 was completed at 07.09.2010 18:00:16
+Received at the EPO on Sep 07, 2010 18:00:16. Page 16 of 16

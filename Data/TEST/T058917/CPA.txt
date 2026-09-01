@@ -1,0 +1,71 @@
+TITLE:
+Identity verification systems and methods
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Systems and methods are disclosed for verifying customer identifications. In one embodiment, the method comprises receiving, at a transaction gateway, a communication associated with a transaction initiated by a customer; determining the communication includes an identity verification request to verify encoded data obtained from an identification presented by the customer; routing the identity verification request to an identity verification service; receiving, from the identity verification service, a result including one or more identification values obtained from the encoded data; and transmitting the result to a requester associated with the communication.
+
+CLAIMS:
+A method comprising:
+receiving, at a transaction gateway, a communication associated with a transaction initiated by a customer, the communication including one or more requests, each of the requests associated with a transaction service;
+determining, at the transaction gateway, the communication includes an identity verification request to verify encoded data obtained from an identification presented by the customer;
+routing the identity verification request to an identity verification service;
+receiving, at the transaction gateway, a result from the identity verification service, the result including one or more identification values obtained from the encoded data; and
+transmitting the result to a requester associated with the communication.
+2. The method of claim 1, wherein receiving the result comprises receiving a status indicating an outcome of the identity verification.
+3. The method of claim 2, wherein the status indicates the identification is expired.
+4. The method of claim 2, wherein the status indicates the identification may be falsified.
+5. The method of claim 2, wherein the status indicates a format associated with the encoded data is invalid.
+6. The method of claim 1, further comprising parsing, at the identity verification service, the encoded data to obtain the one or more identification values.
+7. The method of claim 6, further comprising:
+determining, at the identity verification service, a criteria is satisfied indicating the identification may be fraudulent; and
+transmitting, from the identity verification service, the result, the result indicating the identification may be fraudulent.
+8. The method of claim 7, wherein determining the criteria is satisfied comprises determining the identification has been presented a predetermined number of times within a predetermined time period.
+9. The method of claim 6, wherein parsing the encoded data comprises obtaining an identification type from the encoded data.
+10. The method of claim 9, wherein the identification type is one of a driver's license, a state issued identification, a passport, and a military identification.
+11. The method of claim 6, wherein parsing the encoded data comprises obtaining, from the encoded data, at least one of a name, a birth date, an address, a gender, a hair color, a height, an eye color, and a weight.
+12. The method of claim 6, wherein parsing the encoded data comprises determining a format associated with the encoded data.
+13. The method of claim 12, wherein determining the format comprises determining the format is one of magnetic stripe data, two-dimensional bar code data, or smart card data.
+14. The method of claim 6, wherein the communication is associated with a requester, the method further comprising:
+authenticating the requester before parsing the encoded data.
+15. The method of claim 1 further comprising:
+determining the communication includes an identity validation request to assess validity of the identification;
+routing the identity validation request to an identity validation service; and
+receiving a validation result indicating an identification validity status assessed by the identity validation service.
+16. The method of claim 15, further comprising:
+at the identity validation service, comparing at least one of the identification values to a database including suspicious data values; and
+if the identification value matches a suspicious data value, setting the validation status to an alert status.
+17. The method of claim 15, further comprising:
+at the identity validation service, matching a first one of the identification values to a first stored value;
+retrieving a second stored value associated with the first stored value, the second stored value and a second one of the identification values both associated with a first identity attribute; and
+if the second identification value does not match the second stored database value, setting the validation status to an alert status.
+18. The method of claim 1, further comprising:
+determining the communication include a check validation request to analyze a loss potential associated with a check presented for payment for the transaction; and
+routing, at the transaction gateway, the check validation request to a check validation service.
+19. The method of claim 1, wherein the communication includes a plurality of requests, and wherein transmitting the result comprises transmitting a result message having a plurality of results, each result associated with one of the requests.
+20. The method of claim 1, wherein transmitting the result comprises transmitting the result to a point-of-sale device.
+21. The method of claim 1, wherein transmitting the result comprises transmitting the result to a financial institution system.
+22. The method of claim 1, wherein receiving a communication comprises receiving one of a Simple Object Access Protocol (SOAP) message or an Extended Markup Language (XML) message.
+23. A method comprising:
+receiving a communication at a transaction gateway, the communication associated with a transaction initiated by a customer;
+determining the communication includes a plurality of transaction service requests;
+determining a first one of the transaction service requests included in the communication is an identity verification request to verify encoded data obtained from an identification presented by the customer;
+transmitting, from the transaction gateway, the first transaction service request to an identity verification service;
+transmitting, from the transaction gateway, a second transaction service request included in the communication to a second transaction service;
+receiving, at the transaction gateway, a first result from the identity verification service;
+receiving, at the transaction gateway, a second result from the second transaction service; and
+transmitting, from the transaction gateway, a response to a requester associated with the communication, the response including the first result and the second result.
+24. The method of claim 23, further comprising:
+at the identity verification service, attempting to obtain one or more identification values from the encoded data;
+if the attempt is unsuccessful, transmitting, from the identity verification service, the first result to the transaction gateway, the first result including an error status; and
+if the attempt is successful, transmitting, from the identity verification service, the first result to the transaction gateway, the first result message including the one or more identification values.
+25. The method of claim 24, wherein if the attempt is successful, the transmitting the first result message further includes transmitting a status associated with the identity verification.
+26. A system comprising:
+a communications interface, to receive a communication associated with a transaction initiated by a customer and to receive an identity verification result from an identity verification service and one or more additional results; and
+logic, communicatively coupled with the communications interface, to determine the communication includes an identity verification request to verify encoded data obtained from an identification presented by the customer, to transmit the identity verification request to the identity verification service, to determine the communication includes one or more additional transaction service requests for the transaction, to transmit each of the additional transaction service requests to a transaction service associated with the respective additional transaction service request, and to transmit a response to a requester associated with the communication, the response including the identity verification result and the one or more additional results.
+27. The system of claim 26, further comprising the identity verification service to obtain one or more identification values from the encoded data and to transmit the identity verification result to the communications interface, the identity verification result including the one or more identification values.
+28. The system of claim 27, further comprising:
+a data store, communicatively coupled with the identity verification service, to store identity information for a plurality of identifications;
+and wherein the identity verification service is further to compare the one or more identity values obtained from the encoded data to information in the data store to determine if the identification may be fraudulent and to include a status indicator in the identity verification result based at least in part on the comparison.

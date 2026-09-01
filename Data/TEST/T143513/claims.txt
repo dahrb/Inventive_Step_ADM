@@ -1,0 +1,163 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 07 872 357.4
+MTIT-2408.EP.0 / 68354.118106
+
+MAIN REQUEST
+
+1. An interrupt controller comprising:
+
+a first group interrupt controller (100a) to which first interrupt sources are
+
+assigned, comprising:
+
+a group interrupt register unit (120) receiving a plurality of interrupt
+source signals from said first interrupt sources;
+
+an interrupt detector (130) coupled to the group interrupt register unit
+(120),
+
+a counter unit coupled to the interrupt detector (130), wherein on the
+first occurrence of any received interrupt source signal the counter unit (130) defines
+a time window during which the interrupt register stores further interrupt source
+signals; and
+
+a group interrupt request unit (170) coupled to the counter unit for
+generating a first group interrupt request signal;
+
+a second group interrupt controller (100b) to which second interrupt sources
+are assigned and generating a second group interrupt request signal whenever it
+occurs;
+
+a group interrupt arbiter (210) receiving the group interrupt signals from the
+plurality of interrupt group controllers (100a, 100b, 100n); and
+
+an interrupt request unit (220) coupled to the group interrupt arbiter (210) for
+
+generating an interrupt request signal.
+
+2. The interrupt controller according to Claim 1, wherein the counter unit
+comprises:
+
+a counter (150),
+
+a latency value register (140) coupled to the counter (150), wherein the latency
+value register (140) stores a latency value;
+
+a time-out unit (160) coupled to the counter (150);
+
+wherein on the first occurrence of the interrupt source signal the counter (150)
+is preloaded with the latency value and decremented by a clock signal and the time-
+
+out unit (160) detects when the counter (150) reaches zero.
+
+19687444
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 07 872 357.4
+MTIT-2408.EP.0 / 68354.118106
+
+3. The interrupt controller according to Claim 1, wherein the counter unit
+comprises:
+
+a counter (150);
+
+a comparator (210) coupled to the counter,
+
+a latency value register (230) coupled to the comparator (210), wherein the
+latency value register (230) stores a latency value;
+
+wherein on the first occurrence of the interrupt source signal the counter (150)
+is reset and incremented by a clock signal and the comparator (210) detects when the
+
+counter (150) reaches or exceeds the latency value.
+
+4. The interrupt controller according to Claim 1, wherein the interrupt register
+
+(120) comprises a plurality of latches.
+
+5. The interrupt controller according to Claim 1, wherein the interrupt register
+(120) comprises a register having a plurality of bits wherein each interrupt source signal is
+
+assigned to one of the plurality of bits.
+
+6. The interrupt controller according to Claim 1, wherein the interrupt request
+unit (170) further receives an interrupt acknowledge signal and generates a reset signal for the
+
+interrupt register unit (120).
+
+7. A method for handling a plurality of interrupts comprising the steps of:
+assigning a first interrupt source signals to a first interrupt group (100a);
+for the first interrupt group (100a), performing the steps of:
+receiving a first interrupt source signal;
+storing the first interrupt source signal;
+defining a time window upon receipt of any of the first
+interrupt source signal;
+storing any further interrupt source signals occurring during the
+time window; and
+generating a first group interrupt signal after expiration of the
+
+time window;
+
+19687444
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+EP 07 872 357.4
+MTIT-2408.EP.0 / 68354.118106
+
+assigning at least another interrupt source signal to a second interrupt group
+(100b) and generating a second group interrupt signal whenever it occurs;
+arbitrating any group interrupt signal from the interrupt groups; and
+
+generating an interrupt request.
+
+8. The method according to Claim 7, wherein each group is assigned a priority
+
+level.
+
+9. The method according to Claim 7, further comprising the step of servicing a
+plurality of interrupt source signals collected during the time window in a single service
+
+routine.
+
+10. The method according to Claim 7, further comprising the step of servicing a
+plurality of interrupt source signals collected during the time window using tail-chained
+
+interrupt service routines.
+
+11. The method according to Claim 7, wherein the time window is created by a
+counter (150) which on the first occurrence of an interrupt source signal is preloaded with a
+
+latency value and decremented by a clock signal until the counter reaches zero.
+12. The method according to Claim 7, wherein the time window is created by a
+
+counter (150) which on the first occurrence of an interrupt source signal is reset and
+
+incremented by a clock signal until the counter reaches a predetermined latency value.
+
+19687444

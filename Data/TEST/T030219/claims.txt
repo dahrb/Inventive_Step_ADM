@@ -1,0 +1,145 @@
+--- PAGE 1 ---
+EP11733297.3 JH/cwi
+Bio-Rad Laboratories, Inc. 9 November 2023
+Claims
+
+1. A method of characterizing cells, the method comprising:
+
+tagging cells in a sample with Trypan blue dye such that live cells have a
+different appearance than dead cells;
+
+forming, using a camera, a series of digital images of the sample containing the
+cells, each digital image taken at a different focus plane in relation to the
+sample;
+
+automatically identifying, using a specially programmed computer, a digital
+image of the series of digital images taken at a plane of best focus, wherein
+identifying the digital image taken at a plane of best focus comprises evaluating
+a contrast metric for each of the digital images to identify the digital image
+having the highest measured contrast;
+
+automatically identifying, using a specially programmed computer, a cell in the
+image taken at the plane of best focus; and
+
+automatically analyzing, using a specially programmed computer, at least the
+digital image taken at the plane of best focus to characterize the cell either live
+or dead, by performing the following steps:
+
+- determining whether the cell can be classified as live on the basis of the digital
+image taken at the plane of best focus; if the cell can be classified as live on the
+basis of this digital image, characterizing the cell as live;
+
+- if the cell cannot be classified as live on the basis of this digital image, locating
+the cell in a second digital image of the series of digital images, taken at another
+focus location, and determining whether the cell can be classified as live on the
+basis of the second digital image; if the cell can be classified as live on the basis
+of the second digital image, characterizing the cell as live; otherwise repeating
+the locating and determining steps on the basis of further digital images of the
+series of digital images, taken at other focus locations, until either the cell can be
+classified as live on the basis of one of the further digital images, and then
+characterizing the cell as live, or a predetermined maximum number of digital
+images to be analyzed is reached without having determined that the cell can be
+classified as live on the basis of any of the further digital images, and then
+characterizing the cell as dead;
+
+--- PAGE 2 ---
+wherein determining whether the cell can be classified as live on the basis of a
+digital image comprises comparing a ratio of a number of pixels significantly
+lighter than a background value to a number of pixels significantly darker than
+the background value to a predetermined threshold;
+
+and wherein locating the cell in the second or a further digital image comprises
+generating a respective score for each object found in a region of the second or
+the further digital image corresponding to a region containing the cell in the
+previously analyzed digital image, each score indicating a likelihood that the
+respective object is the cell; and selecting as the cell the object having the
+highest score.
+
+2. The method of claim 1, wherein the method further comprises automatically
+counting, using the specially programmed computer, the cells in the digital image
+identified as having been taken at the plane of best focus.
+
+3. The method of claim 1, wherein the score includes:
+(i) a component relating to the size of the object; or
+
+(ii) a component relating to the location of the object.
+
+4. The method of claim 1, wherein the score includes a component relating to the
+drift of objects between the taking of the previously analyzed digital image and
+the second or the further digital image.
+
+5. A system for characterizing cells in a sample, wherein the cells in the sample
+are tagged with Trypan blue dye such that the live cells have a different
+appearance than dead cells, the system comprising:
+
+an electronic image sensor;
+
+an optical system for forming on the electronic image sensor an image of a
+sample containing the cells;
+
+a mechanism for adjusting the focus location of the optical system; and
+
+a computer coupled to the electronic image sensor;
+
+wherein the computer is configured to control the system to
+
+form a series of digital images of the sample, each digital image taken at a
+different focus plane in relation to the sample;
+
+automatically identify a digital image of the series of digital images taken at a
+plane of best focus, wherein identifying the digital image taken at a plane of best
+focus comprises evaluating a contrast metric for each of the digital images to
+
+identify the digital image having the highest measured contrast;
+
+--- PAGE 3 ---
+automatically identify a cell in the digital image taken at the plane of best focus;
+and
+
+automatically analyze at least the digital image taken at the plane of best focus
+to characterize the cell as either live or dead, by performing the following steps:
+
+- determining whether the cell can be classified as live on the basis of the digital
+image taken at the plane of best focus; if the cell can be classified as live on the
+basis of this digital image, characterizing the cell as live;
+
+- if the cell cannot be classified as live on the basis of this digital image, locating
+the cell in a second digital image of the series of digital images, taken at another
+focus location, and determining whether the cell can be classified as live on the
+basis of the second digital image; if the cell can be classified as live on the basis
+of the second digital image, characterizing the cell as live; otherwise repeating
+the locating and determining steps on the basis of further digital images of the
+series of digital images, taken at other focus locations, until either the cell can be
+classified as live on the basis of one of the further digital images, and then
+characterizing the cell as live, or a predetermined maximum number of digital
+images to be analyzed is reached without having determined that the cell can be
+classified as live on the basis of any of the further digital images, and then
+characterizing the cell as dead;
+
+wherein determining whether the cell can be classified as live on the basis of a
+digital image comprises comparing a ratio of a number of pixels significantly
+lighter than a background value to a number of pixels significantly darker than
+the background value to a predetermined threshold;
+
+and wherein locating the cell in the second or a further digital image comprises
+generating a respective score for each object found in a region of the second or
+the further digital image corresponding to a region containing the cell in the
+previously analyzed digital image, each score indicating a likelihood that the
+respective object is the cell; and selecting as the cell the object having the
+
+highest score.
+
+6. The system of claim 5, wherein the computer is further configured to control
+the system to count the cells appearing in the digital image identified as having
+
+been taken at the plane of best focus.
+
+7. The system of claim 5, wherein the score includes:
+(i) a component relating to the size of the object; or
+(ii) a component relating to the location of the object.
+
+--- PAGE 4 ---
+8. The system of claim 5, wherein the score includes a component relating to the
+drift of objects between the taking of the previously analyzed digital image and
+
+the second or the further digital image.

@@ -1,0 +1,54 @@
+Title: Method for automatic production of laser cutting lines in laser micro-dissection
+
+Abstract: 
+A laser microdissection method includes capturing an electronic image of an image detail of a specimen. The image detail is processed using image analysis so as to automatically ascertain an object to be cut out. A nominal cutting line around the object to be cut out is automatically defined. Subsequently, the object is cut out in response to a relative motion between a laser beam and the specimen.
+
+Type: US Patent
+
+Claims: 
+1-24. (canceled)
+25. A method for laser microdissection comprising:
+capturing an electronic image of at least one image detail of a specimen;
+processing the at least one image detail using image analysis so as to automatically ascertain at least one object to be cut out;
+automatically defining a nominal cutting line around the at least one object to be cut out; and
+subsequently cutting out the at least one object in response to a relative motion between a laser beam and the specimen.
+26. The method as recited in claim 25 further comprising preparing the electronic image for the processing using a contrasting method based on camera or microscope technology.
+27. The method as recited in claim 25 wherein the processing the image detail is performed using a segmenting of the electronic image:
+defining a grayscale threshold value on the basis of the electronic image; and
+converting, by making a comparison with the grayscale value threshold, the electronic image to a binary image including only the at least one object segmented.
+28. The method as recited in claim 27 wherein the defining a grayscale threshold value is performed by manually setting the threshold value or automatically defining the threshold value in an entropy maximization process.
+29. The method as recited in claim 25 wherein the electronic image is either a grayscale image or a color image.
+30. The method as recited in claim 27 wherein the processing the image detail includes:
+defining specific classification features characterizing the at least one object so as to ascertain the at least one object;
+classifying the at least one object using image analysis by determining from the image actually existing object features of the at least one object segmented and comparing the existing object features to the defined specific classification features.
+31. The method as recited in claim 30 wherein the comparing is performed so as to determine whether the actually existing object features conform with the defined specific classification features.
+32. The method as recited in claim 30 wherein the defining specific classification features includes defining, in each instance for different object types, individual feature data records including the specific classification features.
+33. The method as recited in claim 30 wherein the defining specific classification features is performed automatically or manually in a learning process including inputting the classification features interactively or automatically by suitably marking the at least one object.
+34. The method as recited in claim 33 wherein the marking is performed using a mouse click.
+35. The method as recited in claim 30 wherein automatically defining the nominal cutting line is performed so as to exclude unclassified objects.
+36. The method as recited in claim 30 wherein the defining specific classification features includes defining a range of values for at least one of the specific classification features.
+37. The method as recited in claim 30 further comprising excluding from the nominal cutting line objects, identified by the comparing the existing object features to the defined specific classification features, that border on an edge of the image detail or that are only partially visible in the image detail.
+38. The method as recited in claim 25 wherein the at least one object includes a plurality of objects disposed in close proximity to one another, and further comprising combining the plurality of objects into a cluster, and wherein the automatically defining a nominal cutting line is performed so as to define a single shared nominal cutting line surrounding the cluster.
+39. The method as recited in claim 25 further comprising:
+applying a mathematical transformation so as to automatically map the nominal cutting line onto a laser cutting line; and
+converting the laser cutting line into the relative motion between the laser beam and the specimen so as to provide a laser cut.
+40. The method as recited in claim 39 further comprising initiating, by a user or automatically, the relative motion between the laser beam and the specimen.
+41. The method as recited in claim 39 further comprising:
+determining an outer contour of the at least one object using image analysis; and
+converting the outer contour into a numerical code specifying the automatically defined nominal cutting line.
+42. The method as recited in claim 41 wherein the numerical code is a Freeman code or a chain code.
+43. The method as recited in claim 25 further comprising performing an automatic shading correction including:
+recording an empty image without a specimen;
+storing the empty image as a shading correction image; and
+applying an offset correction to the captured electronic image using the shading correction image.
+44. The method as recited in claim 27 further comprising removing a specific unwanted object of the at least one object from the binary image using image analysis morphology, the unwanted object being not designated for microdissection.
+45. The method as recited in claim 25 further comprising providing a defined clearance distance in the specimen so as to prevent a neighboring object from being sliced through.
+46. The method as recited in claim 38 further comprising separately cutting out at least one region enclosed by the cluster and not belonging to the cluster.
+47. The method as recited in claim 25 further comprising superimposing, by an imaging device, the nominal cutting line onto the electronic image so as to control results of the cutting out.
+48. The method as recited in claim 25 further comprising:
+applying a mathematical transformation so as to automatically map the nominal cutting line onto a laser cutting line; and
+scaling the laser cutting line as a function of the image magnification.
+49. The method as recited in claim 25 further comprising:
+applying a mathematical transformation so as to automatically map the nominal cutting line onto a laser cutting line: and
+setting a defined clearance distance of the laser cutting line from the at least one so as to protect the object from damage caused by laser irradiation.
+50. The method as recited in claim 25 further comprising modifying the nominal cutting line so as to compensate for imprecise repositioning of the microscope stage.

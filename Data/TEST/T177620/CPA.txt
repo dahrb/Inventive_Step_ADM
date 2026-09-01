@@ -1,0 +1,48 @@
+Title: Operating m-phy based communications over universal serial bus (usb) interface, and related cables, connectors, systems and methods
+
+Abstract: Operating M-PHY communications protocol over a USB interface and related devices, systems, and methods are disclosed. In one embodiment, an electronic device is configured to operate using a M-PHY standard. The device comprises a communications interface having a plurality of data paths conforming to the M-PHY standard and a USB connector having a plurality of pins. The plurality of pins comprises a first receive pin electrically coupled to a M-PHY RXDN data path of the communications interface. The plurality of pins comprises a second receive pin electrically coupled to a M-PHY RXDP data path of the communications interface. The plurality of pins comprises a first transmit pin electrically coupled to a M-PHY TXDN data path of the communications interface and a second transmit pin electrically coupled to a M-PITY TXDP data path of the communications interface. Additionally, various methods of insertion detection and power delivery are disclosed.
+
+Type: 
+US Patent
+
+Claims: 
+
+What is claimed is:
+1. An electronic device configured to operate using a M-PHY standard, comprising:
+a communications interface having a plurality of data paths conforming to a M-PHY standard;
+a USB connector having a plurality of pins comprising:
+a first receive pin electrically coupled to a M-PHY RXDN data path of the communications interface;
+a second receive pin electrically coupled to a M-PHY RXDP data path of the communications interface;
+a first transmit pin electrically coupled to a M-PHY TXDN data path of the communications interface; and
+a second transmit pin electrically coupled to a M-PHY TXDP data path of the communications interface.
+2. The device of claim 1 wherein other pins of the plurality of pins are configured to allow insertion detection.
+3. The device of claim 2 wherein a VBUS pin and a D+ pin are electrically coupled to facilitate insertion detection.
+4. The device of claim 2 wherein a GND pin and a D− pin are electrically coupled to facilitate insertion detection.
+5. The device of claim 2 wherein a D− pin and a D+ pin are electrically coupled to facilitate insertion detection.
+6. The device of claim 1 wherein other pins of the plurality of pins are configured to provide power therethrough.
+7. The device of claim 1 wherein other pins of the plurality of pins are configured to provide an additional data channel therethrough.
+8. The device of claim 7 wherein a D+ pin and a D− pin of the other pins are configured to provide the additional data channel therethrough.
+9. The device of claim 1 wherein the USB connector conforms to a USB 3.0 standard.
+10. The device of claim 1 wherein the connector comprises an element selected from the group consisting of: a plug, a receptacle, and a plug with cable.
+11. The device of claim 1 integrated into a semiconductor die.
+12. The device of claim 1, further comprising a device selected from the group consisting of a set top box, an entertainment unit, a navigation device, a communications device, a fixed location data unit, a mobile location data unit, a mobile phone, a cellular phone, a computer, a portable computer, a desktop computer, a personal digital assistant (PDA), a monitor, a computer monitor, a television, a tuner, a radio, a satellite radio, a music player, a digital music player, a portable music player, a digital video player, a video player, a digital video disc (DVD) player, and a portable digital video player, into which the electronic device is integrated.
+13. An electronic device configured to operate using a M-PHY standard, comprising:
+means for interfacing the electronic device to another device, the interfacing means having a plurality of data paths conforming to the M-PHY standard;
+a universal serial bus (USB) connecting means for connecting the interfacing means to the another device, the USB connecting means having a plurality of pins comprising:
+a first receive pin electrically coupled to a M-PHY RXDN data path of the interfacing means;
+a second receive pin electrically coupled to a M-PHY RXDP data path of the interfacing means;
+a first transmit pin electrically coupled to a M-PHY TXDN data path of the interfacing means; and
+a second transmit pin electrically coupled to a M-PHY TXDP data path of the interfacing means.
+14. The device of claim 13 wherein the interfacing means comprises a communications interface.
+15. The device of claim 13 wherein the means for connecting comprises a USB connector.
+16. A method of connecting an electronic device configured to operate using a M PHY standard to a second device, comprising:
+providing a plurality of data paths conforming to the M-PHY standard;
+providing a USB connector having a plurality of pins;
+electrically coupling a first receive pin to a M-PHY RXDN data path;
+electrically coupling a second receive pin to a M-PHY RXDP data path;
+electrically coupling a first transmit pin to a M-PHY TXDN data path of a communications interface; and
+electrically coupling a second transmit pin to a M-PHY TXDP data path of the communications interface.
+17. The method of claim 16 further comprising detecting insertion of the USB connector.
+18. The method of claim 16 further comprising providing power through the USB connector.
+19. The method of claim 16 further comprising providing an additional data channel over a D+ and a D− pin on the USB connector.
+20. The method of claim 16 wherein providing the USB connector comprises providing a USB connector conforming to a USB 3.0 protocol.

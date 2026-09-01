@@ -1,0 +1,8 @@
+Title: Eye and gaze tracking for interactive graphic display
+
+Abstract: This paper describes a computer vision system based on active IR illumination for real-time gaze tracking for interactive graphic display. Unlike most of the existing gaze tracking techniques, which often require assuming a static head to work well and require a cumbersome calibration process for each person, our gaze tracker can perform robust and accurate gaze estimation without calibration and under rather significant head movement. This is made possible by a new gaze calibration procedure that identifies the mapping from pupil parameters to screen coordinates using generalized regression neural networks (GRNNs). With GRNNs, the mapping does not have to be an analytical function and head movement is explicitly accounted for by the gaze mapping function. Furthermore, the mapping function can generalize to other individuals not used in the training. To further improve the gaze estimation accuracy, we employ a hierarchical classification scheme that deals with the classes that tend to be misclassified. This leads to a 
+ improvement in classification error. The angular gaze accuracy is about 
+ horizontally and 
+ vertically. The effectiveness of our gaze tracker is demonstrated by experiments that involve gaze-contingent interactive graphic display.
+
+Type: Academic Paper

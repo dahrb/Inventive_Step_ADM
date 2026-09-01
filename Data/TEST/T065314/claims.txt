@@ -1,0 +1,344 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+1 091826EPD4
+
+Claims 1 to 15 for Divisional Application
+
+1. A computer-readable medium for use with electronics capable of executing
+instructions read from the computer-readable medium in order to implement
+encoding data for transmission from a source to a destination over a
+communications channel, the computer-readable medium having stored thereon:
+
+program code for generating a plurality of redundant symbols from an
+ordered set of input symbols representing the data to be encoded for transmission;
+and
+
+program code for generating a plurality of output symbols derived from a
+combined set of symbols including the ordered set of input symbols and the
+plurality of redundant symbols, wherein the number of possible output symbols is
+independent of the number of input symbols in the ordered set of input symbols,
+each output symbol having a weight representing the number of symbols from the
+combined set used to generate that output symbol, wherein weights of output
+symbols include at least two distinct values at least one of which is greater than
+one and less than the number of symbols in the combined set, such that the input
+symbols in the ordered set of input symbols can be regenerated to a desired
+degree of accuracy from N of the output symbols that are determined to be
+
+possible output symbols, wherein N is an integer.
+
+2. The computer-readable medium of claim 1, further comprising program
+code for transmitting the plurality of output symbols over the communications
+
+channel.
+
+3. The computer-readable medium of claim 1, wherein the computer-readable
+medium further comprises program code for generating a key for each of at least
+some of the redundant symbols to be generated; and
+
+the program code for generating the plurality of redundant symbols includes
+program code for generating each of the at least some redundant symbols based
+
+on the corresponding key.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2 091826EPD4
+
+4. The computer-readable medium of claim 1, wherein the program code
+for generating the plurality of redundant symbols includes program code for
+implementing a static encoder having a Low Density Parity Check (LDPC)
+
+encoder.
+
+5. A computer-readable medium for use with electronics capable of
+executing instructions read from the computer-readable medium in order to
+implement encoding data for transmission from a source to a destination over
+a communications channel, the computer-readable medium having stored
+thereon:
+
+program code for generating a plurality of redundant symbols from an
+ordered set of input symbols representing the data to be encoded for
+transmission;
+
+program code for generating a plurality of output symbols derived from
+a combined set of symbols including the ordered set of input symbols and the
+plurality of redundant symbols, wherein the number of possible output
+symbols is independent of the number of input symbols in the ordered set of
+input symbols, wherein at least one output symbol is generated from more than
+one symbol from the combined set and from less than all of the symbols in the
+combined set, such that the ordered set of input symbols can be regenerated
+to a desired degree of accuracy from any N of the output symbols, wherein N
+is an integer; and
+
+wherein the program code for generating the plurality of redundant
+symbols includes program code for implementing a first static encoder having
+a first redundant symbol generator, and program code for implementing a
+second static encoder having a second redundant symbol generator;
+
+wherein the plurality of redundant symbols includes a plurality of first
+redundant symbols and a plurality of second redundant symbols;
+
+wherein the program code for implementing the first static encoder
+having the first redundant symbol generator includes program code for
+generating the plurality of first redundant symbols based on the input symbols
+
+in the ordered set of input symbols; and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3 091826EPD4
+
+wherein the program code for implementing the second static encoder
+having the second redundant symbol generator includes program code for
+generating the plurality of second redundant symbols based on the input
+symbols in the ordered set of input symbols and the plurality of first redundant
+
+symbols.
+6. The computer-readable medium of claim 5, wherein the program code for
+implementing the first static encoder includes program code for implementing a
+Hamming encoder; and
+
+the program code for implementing the second static encoder includes
+program code for implementing a Low Density Parity Check (LDPC) encoder.
+7. A system for encoding data for transmission from a source to a destination
+
+over a communications channel, the system comprising:
+
+a static encoder coupled to receive a plurality of input symbols, the plurality
+of input symbols generated from data to be transmitted, the static encoder
+including a redundant symbol generator that generates a plurality of redundant
+symbols based on the input symbols;
+
+a dynamic encoder coupled to receive the plurality of input symbols and the
+plurality of redundant symbols, the dynamic encoder including an output symbol
+generator that generates a plurality of output symbols from a combined set of
+symbols including the plurality of input symbols and the plurality of redundant
+symbols, wherein the number of possible output symbols is independent of the
+number of input symbols in the plurality of input symbols, wherein at least one
+output symbol is generated from more than one symbol in the combined set of
+symbols and from less than all of the symbols in the combined set of symbols,
+such that the plurality of input symbols can be regenerated to a desired degree of
+accuracy from any N of the output symbols, wherein N is an integer; and
+
+wherein at most G input symbols can be regenerated from any number of
+output symbols, wherein G is less than the number of input symbols in the plurality
+
+of input symbols.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4 091826EPD4
+
+8. A computer-readable medium for use with electronics capable of executing
+instructions read from the computer-readable medium in order to implement
+encoding data for transmission from a source to a destination over a
+communications channel, the computer-readable medium having stored thereon:
+
+program code for generating a plurality of redundant symbols from an
+ordered set of input symbols representing the data to be encoded for transmission;
+
+program code for generating a plurality of output symbols derived from a
+combined set of symbols including the ordered set of input symbols and the
+plurality of redundant symbols, wherein the number of possible output symbols is
+independent of the number of input symbols in the ordered set of input symbols,
+wherein at least one output symbol is generated from more than one symbol in the
+combined set of symbols and from less than all of the symbols in the combined set
+of symbols, such that the ordered set of input symbols can be regenerated to a
+desired degree of accuracy from any N of the output symbols, wherein N is an
+integer; and
+
+wherein at most G input symbols can be regenerated from any number of
+output symbols, wherein G is less than the number of input symbols in the ordered
+
+set of input symbols.
+
+9. A computer-readable medium for use with electronics capable of executing
+instructions read from the computer-readable medium in order to implement
+receiving data transmitted from a source over a communications channel, the
+computer-readable medium having stored thereon:
+
+program code for receiving output symbols transmitted over the
+communications channel, wherein each output symbol is generated from at least
+one symbol in a combined set of input symbols and redundant symbols, wherein at
+least one output symbol is generated from more than one symbol in the combined
+set and less than all of the symbols in the combined set, wherein the input
+symbols are from an ordered set of input symbols, wherein the redundant symbols
+are generated from the input symbols, wherein the number of possible output
+symbols is independent of the number of input symbols in the ordered set of
+
+input symbols;
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+5 091826EPD4
+
+program code for decoding, upon receiving N output symbols, wherein N is
+an integer, a subset of the symbols in the combined set from the N output
+symbols, the subset including a plurality of decoded input symbols and a plurality
+of decoded redundant symbols; and
+
+program code for decoding at least some undecoded input symbols, if any,
+
+from the plurality of decoded redundant symbols.
+
+10. The computer-readable medium of claim 9, wherein the program code
+for decoding at least some undecoded input symbols includes program code
+for implementing a static decoder having a Low Density Parity Check (LDPC)
+
+decoder.
+
+11. | The computer-readable medium of claim 9, wherein the redundant symbols
+include a plurality of first redundant symbols and a plurality of second redundant
+symbols, wherein the program code for decoding at least some undecoded input
+symbols includes:
+
+program code for implementing a first static decoder, including program
+code for implementing a Low Density Parity Check (LDPC) decoder, for
+decoding, from the decoded redundant symbols of the plurality of first redundant
+symbols and the plurality of decoded input symbols, at least one of the undecoded
+input symbols and undecoded redundant symbols of the plurality of second
+redundant symbols; and
+
+program code for implementing a second static decoder, including program
+code for implementing a Hamming decoder, for decoding at least one
+undecoded input symbol from redundant symbols of the plurality of second
+
+redundant symbols and the plurality of decoded input symbols.
+
+12. The computer-readable medium of claim 9, wherein the program code for
+decoding the subset of the symbols in the combined set includes:
+
+program code for forming a first matrix that indicates, for each received
+output symbol, the symbols in the combined set associated with the output
+
+symbol;
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+6 091826EPD4
+
+program code for augmenting the first matrix with information that indicates,
+for each redundant symbol, the input symbols associated with the redundant
+symbol; and
+
+program code for decoding at least some of the input symbols as a solution
+
+to a system of equations indicated by the augmented first matrix.
+
+13. A method of employing two or more stages of encoding to encode data for
+transmission from a transmitter to at least one receiver over a communication
+channel, the method comprising:
+
+generating, during a first encoding stage, a plurality of redundant symbols
+from an ordered set of input symbols representing the data to be encoded for
+transmission;
+
+generating, during a second encoding stage, a set of output symbols
+derived from a combination of the plurality of redundant symbols and the ordered
+set of input symbols, wherein the number of possible output symbols that could be
+used in the set of output symbols is independent of the number of input symbols in
+the ordered set of input symbols; and
+
+transmitting at least some of the set of output symbols over the
+communications channel! to at least one receiver such that the ordered set of input
+symbols can be regenerated to adesired degree of accuracy from a
+predetermined number of output symbols received by the at least one receiver,
+
+wherein generating the set of output symbols is done using a dynamic
+encoder, wherein the dynamic encoder generates the set of output symbols using
+
+chain-reaction encoding.
+
+14. Amethod of employing two or more stages of encoding to encode data for
+transmission from a transmitter to at least one receiver over a communication
+channel, the method comprising:
+
+generating, during a first encoding stage, a plurality of redundant symbols
+from an ordered set of input symbols representing the data to be encoded for
+transmission;
+
+generating, during a second encoding stage, a set of output symbols
+
+derived from a combination of the plurality of redundant symbols and the ordered
+
+--- PAGE 7 ---
+10
+
+15
+
+7 091826EPD4
+
+set of input symbols, wherein the number of possible output symbols that could be
+used in the set of output symbols is independent of the number of input symbols in
+the ordered set of input symbols; and
+
+transmitting at least some of the set of output symbols over the
+communications channel to at least one receiver such that the ordered set of input
+symbols can be regenerated to a desired degree of accuracy from a
+predetermined number of output symbols received by the at least one receiver,
+
+wherein generating the set of output symbols comprises employing a
+dynamic encoder to generate the set of output symbols using the set of redundant
+symbols generated from the input symbols, the ordered set of input symbols, and
+
+a plurality of dynamic keys.
+
+15. Acomputer-readable medium for use with electronics capable of executing
+instructions read from the computer-readable medium, the computer-readable
+medium having stored thereon:
+
+program code for carrying out the method of any of claims 13 to 14.

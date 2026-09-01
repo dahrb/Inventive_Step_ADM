@@ -1,0 +1,33 @@
+TITLE:
+Mouse performance identification
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Methods and system for facilitating authentication of users of a mouse device. Different individuals have different ways of manipulating a mouse to enter mouse-clicks requested via an on-screen image or other software programs. An individual's characteristic way of manipulating the mouse is determined and stored and later retrieved to facilitate verification of a user's identification.
+
+CLAIMS:
+1. A method of human authentication in a system comprising a computer and a mouse, said method comprising
+a: detecting mouse movements of a user;
+b: obtaining at least one metric of mouse movement information characterizing the user;
+c: comparing the metric against a database; and
+d: authenticating the user.
+2. A method according to claim 1 wherein the method provides information regarding the user's class identity.
+3. A method according claim 1 wherein the step of detecting the mouse movements of the user is executed without the user's awareness.
+4. A method according to claim 1 wherein the database comprises an aggregated representation of previously detected mouse movement information.
+5. A method according to claim 1 wherein the comparison between the metrics and the database uses at least one eigenvector derived from the metrics.
+6. A method according to claim 1 wherein the user's mouse movements are in response to a display on the computer's screen.
+7. An information processing system for identifying its users, the system comprising:
+an arrangement of sensors for detecting a user's mouse movements;
+a memory unit for storing the detected user's mouse movements;
+a computational element for obtaining at least one metric from the user's mouse movements and manipulating the metric; and
+a database.
+8. A system according to claim 7 wherein a target pattern is used to elicit information known only to an authorized user.
+9. A system according to claim 8 wherein a target pattern that changes from a session to session is used to elicit the user's mouse movements.
+10. A system according to claim 7 wherein said information processing system is distributed over a plurality of networked devices.
+11. A system according to claim 7 is used for online commercial transactions.
+12. A system according to claim 7 is used for online voting.
+13. A system according to claim 7 is used for network access.
+14. A system according to claim 7 is used to authorize the release of sensitive personal records.
+15. A system according to claim 7 wherein said information processing system is a single computer.

@@ -1,0 +1,228 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+25 5563730
+
+CLAIMS:
+
+1. An electronic trading network comprising a
+plurality of computers and a communications network
+interconnecting said computers, said computers
+including at least one trading system (26), a
+Plurality of trader terminals (14) operable by
+traders, and a plurality of broker terminals (16)
+operable by brokers for enabling brokers to effect
+trading in said trading system (26) on behalf of said
+traders;
+characterised by a proxy server (24) for managing
+messages in the trading network, the proxy server (24)
+being connectable to the trading system (26) via a
+plurality of connections (30g),
+and characterised in that:
+(a) said broker terminals (16) are operable for
+generating and transmitting to said proxy server
+
+(24) via said communication network (30)
+
+i) attachment requests for conditioning the
+proxy server (24) for trading by the broker
+on behalf of traders identified in the
+attachment requests respectively, and
+
+ii) carrier messages comprising trading commands
+
+for effecting trading by the broker on
+
+--- PAGE 2 ---
+(b)
+
+10
+
+15
+
+20
+
+25
+
+26 5563730
+
+behalf of traders identified in the
+
+carrier messages respectively;
+
+said proxy server (24) is operable, in response
+
+to a
+
+said attachment request, to perform an
+
+attachment process comprising
+
+i)
+
+ii)
+
+storing relationship data (62) identifying
+the broker From which said attachment
+request is received and the trader
+identified in said attachment request, and
+assigning to said relationship data (62) a
+said connection (30g) between the proxy
+server (24) and the trading system (26) for
+the communication therebetween of data
+relating to the trader, wherein
+
+if any previously stored relationship data
+(62) identifies the same trader, the same
+connection (30g) as assigned to the
+previously stored relationship data (62) is
+assigned to the new relationship data (62),
+thereby to assign the same connection (30g)
+to all relationship data (62) identifying
+the same trader and different connections
+(30g) to relationship data (62) identifying
+
+different traders;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+27 5563730
+
+(c) said proxy server (24) is operable, in response
+to a said carrier message, to separate the
+trading command from the carrier message and
+route the trading command to the trading system
+(26) via the connection (30g) assigned to the
+relationship data (62) associated with the trader
+identified in the respective carrier message and
+the broker from which the respective carrier
+message is received, whereby a plurality of said
+brokers may simultaneously act on behalf of the
+same trader utilising the same connection (30g)
+between the proxy server (24) and the trading
+system (26); and
+
+(ad) said trading system (26) is operable for
+executing trading commands received from _ the
+proxy server (24) via said assigned connections
+
+(30g).
+
+2. Apparatus according to claim 1, wherein said
+proxy server (24) is operable, in response to a trader
+logging on to the system subsequent to said proxy
+server (24) having stored relationship data (62)
+identifying said trader, to assign to said trader the
+same said connection (30g) as assigned to said
+
+respective relationship data (62) to enable the trader
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+28 5563730
+
+to trade on its own behalf utilising the same
+
+connection (30g) as brokers trading on its behalf.
+
+3. Apparatus according to claim 1 or 2, wherein said
+proxy server (24) is operable so that, if a trader
+logs on to the system at a time when no relationship
+data (62) identifying that trader is stored, the proxy
+server (24) assigns a said connection (30g) to said
+trader and, in carrying out a subsequent attachment
+process relating to said trader, assigns the same
+connection (30g) to the relationship data (62) stored
+
+in said subsequent attachment process.
+
+4. Apparatus according to claim 1, 2 or 3, wherein
+said trading system (26) is operable for generating
+trading data relating to said traders and to route
+said trading data to the proxy server (24) via the
+assigned connection (30g) associated with the
+respective trader, and said proxy server (24) is
+operable to transmit said trading data to the
+respective trader, if logged onto the system, and to
+each broker identified in stored relationship data
+
+(62) which also identifies the respective trader.
+
+5. Apparatus according to any preceding claim,
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+29 5563730
+
+including an authentication manager (20) operable for
+storing data (56) defining which of said brokers are
+permitted to act on behalf of which of said traders,
+said proxy server (24) being responsive to said
+authentication manager (20) so as to perform said
+attachment process only if said authentication manager
+(20) indicates that the broker identified in said
+attachment request is permitted to act on behalf of
+
+the trader identified in said attachment request.
+
+6. Apparatus according to claim 5, wherein said
+authentication manager (20) is operable for storing
+profile data relating to said brokers and to said
+
+traders.
+
+7. Apparatus according to claim 6, wherein said
+profile data defines the extent to which respective
+
+brokers may act on behalf of respective traders.
+
+8. Apparatus according to claim 6 or 7, wherein said
+profile data includes data defining each trader as an
+active trader or a passive trader, said proxy server
+(24) being operable to prevent brokers acting on
+behalf of an active trader unless the active trader is
+
+logged onto the system.
+
+--- PAGE 6 ---
+10
+
+30 5563730
+
+9. Apparatus according to any preceding claim,
+wherein said proxy server (24) is operable for storing
+logon status data identifying which traders are logged
+
+on to the system.
+
+10. Apparatus according to any preceding claim,
+wherein said connections (30g) comprise administration
+
+channels.

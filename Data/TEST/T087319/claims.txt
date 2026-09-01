@@ -1,0 +1,151 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+25
+
+Applicant: Hasso-Plattner-Institut flr Softwaresystemtechnik GmbH
+Our Reference: HP1I13581EP
+Date: February 23, 2011
+
+Patent Claims
+
+A method for operating a relational database for storing a business object instance, wherein
+the business object instance has at least one attribute, wherein the relational database
+comprises multiple tables, wherein one table of the multiple tables is a root table, wherein
+the method comprises the following steps:
+
+(A) storing at least one attribute of the business object instance and/or at least one
+
+reference to at least one attribute of the business object instance in a subset of the multiple
+
+tables;
+(B) determining the tables of the multiple tables that contain:
+at least one attribute of the business object instance, and/or
+at least one reference to at least one attribute of the business object
+instance;
+
+(C) generating a vector identifying the tables determined in step (B); and
+
+(D) storing the generated vector in the root table.
+
+The method of claim 1, wherein attributes of the business object instance are stored in
+attribute records of the multiple tables, references to one or more attributes of the business
+object instance are stored in reference records of the multiple tables, and the generated
+
+vector is stored in a root record of the root table.
+
+The method of one of the previous claims, wherein the vector is a bit vector comprising
+
+multiple bits, wherein each bit of the multiple bits refers to one table of the multiple tables.
+
+The method of one of the previous claims, wherein the vector comprises a data type
+
+suitable for identifying any subset of the multiple tables.
+
+The method of one of the previous claims, wherein the stored business object instance is
+identifiable by a root key, wherein the method further comprises the step:
+
+(A1) storing the root key in the root table, preferably in the root record.
+
+The method of one of the previous claims, wherein the method further comprises the step:
+reading out, in parallel, each record that comprises the root key and that contains one or
+more attributes of the at least one attribute and/or one or more references to one or more
+
+attributes of the at least one attribute.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+26
+
+Applicant: Hasso-Plattner-Institut flr Softwaresystemtechnik GmbH
+
+Our Reference: HP1I13581EP
+
+Date: February 23, 2011
+
+7. The method of one of the previous claims, wherein the method further comprises the step:
+
+10.
+
+11.
+
+12.
+
+(A2) storing the root key in each record comprising an attribute of the at least one
+
+attribute or a reference to an attribute of the at least one attribute.
+
+The method of one of the previous claims, wherein the method further comprises the
+following steps:
+
+(E) receiving a query for the stored business object instance from a client, wherein
+the query preferably identifies the root key;
+
+(F) identifying the root record in the root table, preferably via the root key;
+
+(G) reading out the vector from the root record; and
+
+(H) identifying the tables determined in step (B) from the read out vector.
+
+The method of one of the previous claims, wherein a metadata identifies the multiple tables,
+wherein the metadata identifies a key type stored in each table of the multiple tables,
+wherein the method further comprises the step:
+
+(A1.1) storing metadata in the root table, preferably in the root record.
+
+The method of one of the previous claims, wherein the relational database is an in-memory
+
+database.
+
+The method of one of the previous claims, wherein the relational database is a column store
+database, and wherein, preferably, each column storing the root key is compressed using a
+
+single dictionary.
+
+A relational database for storing a business object instance, wherein the business object
+instance has at least one attribute, wherein the relational database comprises multiple
+tables, wherein one table of the multiple tables is a root table, wherein the relational
+database comprises:
+a storage component comprising multiple tables; and
+a relational database management system comprising a relational database
+management system logic for:
+storing at least one attribute of the business object instance and/or at least
+one reference to at least one attribute of the business object instance in a subset of the
+multiple tables;
+determining the tables of the multiple tables that contain:
+
+at least one attribute of the business object instance, and/or
+
+--- PAGE 3 ---
+27
+
+Applicant: Hasso-Plattner-Institut flr Softwaresystemtechnik GmbH
+Our Reference: HP1I13581EP
+Date: February 23, 2011
+
+at least one reference to at least one attribute of the business
+object instance;
+generating a vector identifying the tables determined in step (B); and
+
+storing the generated vector in the root table.

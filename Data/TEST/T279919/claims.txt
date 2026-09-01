@@ -1,0 +1,123 @@
+--- PAGE 1 ---
+European Patent Application No: 13 741 036.1 Our ref: DHP74775P.EPP
+Amouris, Konstantinos
+
+Corrected MAIN/AUX-1 Claim Sets (Changes Accepted)
+
+1. REPLACEMENT MAIN REQUEST
+
+1. A web-to-mobile, communication messaging system comprising:
+
+a)
+
+b)
+
+c)
+
+at least one web server (160) computing device providing Internet access (190) to a website
+(120) that is comprising a web-based user interface (180) configured to accept a plurality
+of (126) targeting records created by a plurality of website users, wherein each targeting
+record (138) from the plurality of targeting records comprises: 1) message data uniquely
+associated with one advertising message (156) from a plurality of advertising messages
+published on the website (110), and 2) a target mobile subscriber identifier (152);
+
+a database (128) configured to perform:
+
+bl) storing (124), identifying, and retrieving (146) of said plurality (126a) of targeting
+records; and
+
+b2) on receiving (136), from an application software element (154), a query (134)
+requesting message data from at least one stored targeting record (138b) satisfying the
+received query, identify at least one stored targeting record (138b) satisfying the received
+query, and send (146) at least the message data (156a) included in the at least one identified
+stored targeting record to the application software element (154); and
+
+the application software element (154), wherein the application software element is
+configured to perform at least the following steps:
+
+cl) mtercept (132) a data communication transmission, wherein the intercepted data
+communication transmission (130) is originated by a source mobile communication device
+(102) and 1s addressed to a destination mobile communication device (152);
+
+c2) obtain (132) the communication identifier (122) identifying the destination mobile
+communication device (152) to which the intercepted data communication transmission
+(130) is addressed to;
+
+c3) send (136) to the database (128a) a query (134) requesting message data from at least
+one stored targeting record (138b) satisfying the sent query (134), wherein the sent query
+1) comprises a first identifier (122) identifying the destination mobile communication
+
+device (152), and 2) requires that the target mobile subscriber identifier in the at least one
+
+10
+
+--- PAGE 2 ---
+European Patent Application No: 13 741 036.1 Our ref: DHP74775P.EPP
+Amouris, Konstantinos
+
+Corrected MAIN/AUX-1 Claim Sets (Changes Accepted)
+
+stored targeting record (138b) satisfying the sent query matches the first identifier (122)
+provided in the sent query; and,
+
+c4) on receiving (142), from the database (128a), the message data (156a) included in the
+at least one identified stored targeting record (138b) satisfying the sent query (134), add
+the message data received (156a) from the database to the content of the intercepted data
+communication transmission, and send the intercepted data communication transmission
+to the destination mobile communication device (152);
+
+wherein the system is characterized in that:
+
+d) said each targeting record (138) further comprises a source communication identifier
+identifying a mobile communication device uniquely associated with the website user
+creating said each targeting record (106);
+
+e) the application software element (154) is further configured to obtain (132) the
+communication identifier (122) identifying the source mobile communication device
+(102); and,
+
+f) the sent query 1) comprises a second identifier (122) identifying the source mobile
+communication device (102), and 2) further requires that the source communication
+identifier in the at least one stored targeting record satisfying the sent query matches the
+second identifier provided in the sent query.
+
+2. The system of claim 1, wherein the web-based user interface (180) is further configured to
+accept, from each website user (106) from said plurality of website users, input causing: a) the
+database retrieval and display, through the web-based user interface, of at least one targeting
+record created by said each website user, and b) the removal, from the database, of at least one
+targeting record from the at least one targeting record displayed through the web-based user
+interface.
+
+3. The system of claim 1, wherein the intercepted data communication transmission is an SMS
+message (130).
+
+4. The system of claim 1, wherein the intercepted data communication transmission (130) is
+transmitted over a mobile communication network.
+
+5. The system of claim 4, wherein the application software element (154) is hosted by a
+
+communication network element (108) of the mobile communication network.
+
+11
+
+--- PAGE 3 ---
+European Patent Application No: 13 741 036.1 Our ref: DHP74775P.EPP
+Amouris, Konstantinos
+
+Corrected MAIN/AUX-1 Claim Sets (Changes Accepted)
+
+6. The system of claim 1, or claim 2, wherein said at least one web server computing device further
+comprises application software for creating and associating a personalized advertisement profile
+with the website user based on a targeting record set comprising: a) at least one targeting record
+previously created by the website user, and b) at least one previously created targeting record
+having a target mobile subscriber identifier matching the source communication identifier
+associated with the website user.
+
+7. The system of claim 6, wherein said at least one web server computing device further comprises
+application software for selecting advertising content based on the personalized advertisement
+profile associated with the website user, and wherein the website further comprises a user interface
+for displaying the selected advertising content at least once while the website user is accessing the
+
+website.
+
+12

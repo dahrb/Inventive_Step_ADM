@@ -1,0 +1,212 @@
+--- PAGE 1 ---
+in
+
+10
+
+15
+
+20
+
+1 Miller-Boré
+
+Application No.: 12 002 449.2-2211
+Applicant: SAP SE
+
+"High-Load Business Process Scalability
+Our Ref.. S11240EU - hy/ yma
+
+Main Request
+(Set of claims underlying the decision of the Examining Division
+= claims as filed with letter of May 18, 2015)
+
+Claims
+
+1. A computer implemented method performed by one or more processors for
+dispatching an event as a message to a business process instance, the method
+comprising the following operations: .
+
+receiving a message at a first computer node (110, 202, 320) executing a
+first business process instance;
+
+identifying a second business process instance associated with the
+message, the second business process instance being assigned to process the
+message;
+
+sending the message, if the second business process instance is not located
+
+-at the first computer node (110, 202, 320) but at a second computer node (120, 202,
+340) other than the first computer node (110, 202, 320), to a centralized messaging
+
+queue (132, 223) for retrieval by the second business process instance, the
+centralized messaging queue (132, 223) being stored in a memory (221) of a
+messaging system (222) that is communicably coupled .with the first computer node
+(110, 202, 320) and the second computer node (120, 202, 340);
+
+sending a notification message to the second computer node (120, 202, 340)
+hosting the second business process instance, the notification message indicating
+that the message can be retrieved from the centralized messaging queue (132, 223);
+and
+
+immediately delivering the message, if the second business process instance
+is located at the first computer node (110, 202, 320), to the second business process
+
+instance, bypassing the centralized messaging queue (132, 223).
+
+--- PAGE 2 ---
+iz
+
+10
+
+15
+
+20
+
+- 25
+
+30
+
+2 Muller-Boré
+
+2. The method of Claim 1, wherein the first computer node (110, 202, 320) and
+
+the second computer node (120, 202, 340) are computing devices utilized in a
+
+business process management suite.
+
+3. ‘The method of Claims 1 or 2, wherein the centralized messaging queue
+(132, 223) is identified based on a process instance identifier of the second business
+
+process instance.
+
+4. The method of any of the preceding claims, wherein receiving the message
+at the first computer node (110, 202, 320) comprises receiving the message from a
+
+load balancer (150) distributing messages received at a cloud network (105).
+
+5. The method of any of the preceding claims further comprising determining
+whether the message indicates a change to a shared state variable; and
+
+optionally obtaining a lock on the shared state variable if the message
+indicates a change to the shared state variable,
+
+wherein obtaining the lock on the shared state variable optionally comprises
+
+- preventing other components and business process instances other than the second
+
+business process instance from accessing the shared state variable.
+6. The method of any of the preceding claims, further comprising:
+
+initiating a polling request from the second computer node (120, 202, 340) to
+the centralized messaging queue (132, 223); a
+
+identifying a message in the centralized messaging queue (132, 223) for
+retrieval based on the polling request;
+
+retrieving and dequeueing the message from the centralized messaging
+queue (132, 223); and .
+
+processing the message at the second computer node (120, 202, 340) using
+
+a business process instance associated with the message.
+
+7. The method of Claim 6, wherein a plurality of the polling requests to the
+centralized messaging queue (132, 223) are initiated at a particular time interval to
+
+determine whether an incoming message assigned for processing by the second
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3 Miller-Bore
+
+computer node (120, 202, 340) has been received.
+
+8. The method of Claim 7, wherein the particular interval is operable to be
+
+adjusted based on a context associated with the business process instance.
+
+9. The method of Claim 7, wherein an immediate polling request is sent to the
+centralized messaging queue (132, 223) if a notification is received indicating
+availability of the message in the centralized messaging queue (132, 223), wherein
+the immediate polling request is sent before a subsequent periodic request is to be
+
+sent at the particular interval.
+
+10. The method of any of claims 6 to 9, further comprising obtaining a lock ona
+shared state variable associated with the business process instance before retrieving
+the message from the centralized messaging queue (132, 223),
+
+wherein obtaining the lock on the shared state variable optionally comprises
+preventing other components or business process instances other than the business
+process instance associated with the message from accessing the shared state
+
+variable.
+
+11.. A computer program product encoded on a non-transitory, tangible storage
+medium, the product comprising computer readable instructions for causing one or
+
+more processors to perform the method according to any one of claims 1 to 11.
+
+12. A system, comprising:
+
+memory operable to store a message received at the system, the system
+
+_being a first computer node (110, 202, 320) executing a first business process
+
+instance; and
+~ one or more processors operable to:
+identify a second business process instance associated with the message,
+the second business process instance being assigned to process the message;
+send the message, if the second business process instance is not located at
+the first computer node (110, 202, 320) but at a second computer node (120, 202,
+340) other than the first computer node (110, 202, 320), to a centralized messaging
+
+queue (132, 223) for retrieval by the second business process instance, the
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+4 Muller-Boré
+
+centralized messaging queue (132, 223) being stored in a memory (221) of a
+messaging system (222) that is communicably coupled with the first computer node
+(110, 202, 320) and the second computer node (120, 202, 340); .
+
+send a notification message to the second computer node (120, 202, 340)
+hosting the second business process instance, the notification message indicating
+that the message can be retrieved from the centralized messaging queue (132, 223);
+and |
+
+immediately deliver the message, if the second business process instance is
+located at the first computer node (110, 202, 320), to the second business process
+
+instance, bypassing the centralized messaging queue (132, 223).
+
+13. The system of Claim 12, wherein identifying the second business process
+instance associated with the message further comprises identifying a plurality of
+
+business process instances associated with the message.
+
+14. The system of claim 12 or 13, wherein the one or more processors are
+
+further operable to obtain a lock on a shared state variable associated with the
+
+’ second business process instance, wherein obtaining the lock on the shared state
+
+variable comprises preventing other components and business process instances
+
+other than the second business process instance from accessing the shared state
+
+variable.

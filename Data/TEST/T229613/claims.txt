@@ -1,0 +1,203 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+11 193 638.1-1957 EPAB-112622.3
+
+Kaspersky Lab, ZAO October 28, 2013
+MAIN REQUEST
+CLAIMS
+1. A method for detection of computer malware, the method comprising:
+
+monitoring execution of processes or threads (201, 202) of one or more software
+objects (101);
+
+determining if the one or more objects (101) are trusted objects or non-trusted objects;
+
+creating for each non-trusted object a separate object context (203, 204);
+
+storing in a plurality of separate object contexts (203, 204) events of execution of the
+monitored processes or threads (201, 202) of each non-trusted object;
+
+determining if the processes or threads (201, 202), whose events of execution are
+stored in separate object contexts (203, 204), are related to each other, wherein processes are
+related when a process initiates another process, a process creates a new object from which a
+new process is initiated, or a process embeds a thread in another process;
+
+creating for two or more related processes or threads (201, 202) a new separate
+common context (205);
+
+merging events stored in the separate object contexts (203, 204) of the two or more
+related processes or threads (201, 202) into the separate common context (205);
+
+independently analyzing events of the processes or threads (201, 202) stored in each of
+the plurality of separate object contexts (203, 204) using malware behavior rules (107) to
+identify one or more malicious software objects having malicious behavior patterns; and
+
+independently analyzing merged events of the related processes or threads (201, 202)
+stored in the separate common context (205) using malware behavior rules (107) to identify
+
+one or more malicious software objects having complex malicious behavior patterns.
+
+2. The method of claim 1 further comprising:
+terminating execution of all processes and threads (201, 202) associated with a
+malicious object; and
+
+deleting, quarantining or repairing the malicious object.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+main request 2
+
+3. The method of claim 1 further comprising:
+
+determining if the one or more objects (101) are trusted objects by computing digital
+signatures of the objects and checking if the digital signatures are associated with a trusted
+object; and
+
+discontinuing monitoring of one or more processes or threads of a trusted object.
+
+4, The method of claim 1, wherein determining if an object (101) is trusted comprises:
+comparing the digital signature of the object with a local trusted object storage (109);
+and
+if the digital signature of the object is not found in the local trusted object storage
+(109), sending a query to a remote antivirus server containing a comprehensive database of
+
+signatures of known malicious and trusted objects.
+
+5. The method of claim 1, wherein determining if the object (101) is trusted comprises:
+computing a checksum of the object; and
+querying a remote antivirus server to determine if the checksum associated with a
+
+malicious or trusted object.
+
+6. The method of claim 1 further comprising:
+transmitting a context of an object (203,204) to a remote antivirus server; and
+receiving from the server new mal ware behavior rules based on the transmitted
+
+context (203,204).
+
+7. The method of claim 3 further comprising:
+continuing monitoring a trusted object if a process of said trusted object embedded a
+thread in a system process; and
+
+storing in a separate object context events of execution of said system process.
+
+8. A system for detection of computer malware, comprising:
+a memory being configured to store a list of trusted software objects (109) and
+malware behavior rules (107); and
+
+a processor coupled to the memory, the processor being configured to:
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+main request 3
+
+monitor execution of processes or threads (201, 202) of one or more software objects
+(101);
+
+determine if the one or more objects (101) are trusted objects or non-trusted objects;
+
+create for each non-trusted object a separate object context (203, 204);
+
+store in a plurality of separate object contexts (203, 204) events of execution of the
+monitored processes or threads (201, 202) of each non-trusted object;
+
+characterized in that the processor is configured to:
+
+determine if the processes or threads (201, 202), whose events of execution are stored
+in separate object contexts (203, 204), are related to each other, wherein processes are related
+when a process initiates another process, a process creates a new object from which a new
+process is initiated, or a process embeds a thread in another process;
+
+create for two or more related processes or threads (201, 202) anew separate common
+context (205);
+
+merge events stored in the separate object contexts (203, 204) of the two or more
+related processes or threads (201, 202) into the separate common context (205);
+
+independently analyze events of the processes or threads (201, 202) in each of the
+plurality of separate object contexts (203, 204) using malware behavior rules (107) to identify
+one or more malicious software objects having malicious behavior patterns; and
+
+independently analyze events of related processes or threads (201, 202) stored in the
+separate common context (205) using malware behavior rules (107) to identify one or more
+
+malicious software objects having complex malicious behavior patterns.
+
+9. The system of claim 8, wherein the processor being further configured to:
+terminating execution of all processes and threads (201, 202) associated with a
+malicious object; and
+
+deleting, quarantining or repairing the malicious object.
+
+10. | The system of claim 8, wherein the processor being further configured to:
+
+determine if the one or more objects (101) are trusted objects by computing digital
+signatures of the objects and comparing the digital signatures with the list of trusted software
+objects (109) stored in the memory; and
+
+discontinue monitoring of one or more processes or threads of a trusted object.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+main request 4
+
+11. The system of claim 8, wherein if the digital signature of the object is not found in the
+list of trusted software objects (109), the processor being further configured to:
+send a query to a remote antivirus server containing a comprehensive database of
+
+signatures of known malicious and trusted objects.
+
+12. The system of claim 8, wherein to determine if the object (101) is trusted, the
+computer being further configured to:
+
+compute a checksum of the object; and
+
+query a remote antivirus server to determine if the checksum associated with a
+
+malicious or trusted object.
+
+13. The system of claim 8, wherein the processor being further configured to:
+transmit a context of an object (203,204) to a remote antivirus server; and
+receive from the server new malware behavior rules based on the transmitted context
+
+(203,204).
+
+14. | The system of claim 10, wherein the processor being further configured to:
+continue monitoring a trusted object if a process of said trusted object embedded a
+thread in a system process; and
+
+store in a separate object context events of execution of said system process.

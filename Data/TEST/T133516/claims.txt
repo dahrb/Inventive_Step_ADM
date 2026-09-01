@@ -1,0 +1,150 @@
+--- PAGE 1 ---
+25/04 2016 MO 15:34 FAX +49 89 223915 Strehl & P. +4989223915 +++ EPA Muenchen jo15/063
+
+Main Request
+
+Claims
+
+l. A method for acecssing a memory (600) associated with a multithreaded processor
+
+(102), the incihod comprising:
+
+determining a thread identifier assoctaled with a corresponding processor thread of
+
+the mullithreaded processor (102); and
+selecting a particular portion of the memory (600) to be accessed by the corre-
+sponding processor thread,
+characterized in thal:
+selecling the particular portion of the memory (600) compriscs utilizing at least a
+portion of the thread identifier to sclect the particular portion of the memory (600) to be
+accessed by the corresponding processor thread,
+wherein utilizing at Icast a portion of the thread identifier comprises:
+utilizing a first portion (604) of the thread identificr to select one of a
+plurality of multiple-bank memory elements (M0-~M3) within the memory (600), and
+utilizing a second portion (606) of the thread identifier to select one of a
+plurality of memory banks (B0, B1) within the sclected one of the multiplc-bank memory
+
+elements (M0-'M3).
+
+2. The method of claim 1 wherein utilizing the first portion (604) of the thread identi-
+
+ficr comprises ulilizing one or more most significant bits of the thread identilicr.
+
+3. ‘he method of claim | wherein ulilizing the sccond portion (606) of the thread
+
+identifier comprises utilizing one or more lcast significant bits of the thread identifier.
+
+4, The method of claim 1 wherein utilizing the second portion (606) of the thread
+
+identificr comprises utilizing a least significant bit of the second portion (606) to select a
+
+1
+
+Duration: 25.04.2016 15:43:09 - 25.04.2016 15:49:36. This page 15 of 63 was completed at 25.04.2016 15:44:56
+Received at the EPO on Apr 25, 2016 15:49:36. Page 15 of 63
+
+--- PAGE 2 ---
+25/04 2016 MO 15:34 FAX +49 89 223915 Strehl & FP. +4989223915 34-4 EPA Muenchen Wjo16/063
+
+first or a second memory bank (BO, 131) of the mulliple bank memory element (M0-M3))
+
+to be accessed by the corresponding processor thread.
+
+5. ‘The method of claim | whercin accessing the memory (600) comprises accessing a
+
+portion of a main memory coupled Lo the multithreaded processor (102).
+
+6, The method of claim 1 wherein accessing the memory (600) comprises accessing a
+
+portion of a data memory of the multithreaded processor (102).
+
+7. The method of claim 1 wherein accessing the memory (600) comprises accessing a
+
+portion of a cache memory of the multithreaded processor (102).
+
+8. ‘The method of claim 7 wherein the acecssing cache memory compriscs accessing 4
+plurality of thread caches, at least a given one of the plurality of thread caches comprising a
+
+memory array having one or more sels of memory locations.
+
+9, The method of claim 8 wherein the given thread cache further comprises a thread
+
+identifier register for sloring the thread ideniilier.
+
+10. ‘he method of claim | wherein the multithreaded processor (102) is configured to
+
+utilive token iriggered threading.
+
+1]. The method of claim 10 wherein the token triggered threading utilizes a token Lo
+identify in association with a current processor clock cycle a particular context that will be
+permitted to issue an instruction for a subsequent clock cycle.
+
+1?
+
+‘Vhe method of claim | further comprising processing pipelined instructions for a
+
+plurality of threads of the multithreaded processor (102).
+
+2
+
+Duration: 25.04.2016 15:43:09 - 25.04.2016 15:49:36. This page 16 of 63 was completed at 25.04.2016 15:45:03
+Received at the EPO on Apr 25, 2016 15:49:36. Page 16 of 63
+
+--- PAGE 3 ---
+25/04 2016 MO 15:34 FAX +49 89 223915 Gtrehl & P. +4989223915 +++ EPA Muenchen Wjo17/063
+
+13. A. processor system comprising:
+
+a multithreaded processor (102); and
+
+a memory (600) associated with the multithreaded processor (102);
+
+the multithreaded processor (102) being operative to determine a thread identifier
+associated with a corresponding processor thread of the multithreaded processor (102),
+
+characterized in that:
+
+the multithreaded processor (102) is operative to utilize al Icast a portion of the
+thread identificr to select a particular portion of the memory (600) to be accessed by
+the corresponding processor thread,
+
+wherein a first portion (604) of the thread identifier is utilized to select onc of a
+plurality of mulliple-bank memory elements (MQ~-M3) within the memory (600) and a
+second portion (606) of the thread identifier is utilized to select one of a plurality of
+memory hanks (BO, B1) within the selectcd onc of the multiple-bank mcmory elements
+
+(M0--M3).
+
+14. ‘The method of claim 1, further comprising performing at least two memory
+accesses per processor clock cycle with a single memory port per multiple bank
+
+memory elemenl.
+
+15. ‘The method of claim 1, wherein the plurality of mulliple-bank mcmory clements
+comprises two muttiple-bank memory clements, wherein cach of the two multiple-bank
+memory clements comprises four memory banks, whercin the first portion of the thread
+identifier compriscs one bit, and wherein the second portion of the thread idenuhicr
+
+comprises two bits.
+
+16. The method of claim 1, whercin the multiple-bank memory elements each do not
+
+have the same number of incmory banks.
+
+3
+
+Duration: 25.04.2016 15:43:09 - 25.04.2016 15:49:36. This page 17 of 63 was completed at 25.04.2016 15:45:09
+Received at the EPO on Apr 25, 2016 15:49:36. Page 17 of 63
+
+--- PAGE 4 ---
+25/04 2016 MO 15:34 Fax +49 89 223915 Strehl & P. +4989223915 +--+ EPA Muenchen 018/063
+
+17. A machine-readable storage medium comprising program code which, when
+executed by a multithreaded processor (102), causes the processor lo execute all steps
+
+of the ethod for accessing a memory (600) in accordance with claim |.
+
+4
+
+Duration: 25.04.2016 15:43:09 - 25.04.2016 15:49:36. This page 18 of 63 was completed at 25.04.2016 15:45:12
+Received at the EPO on Apr 25, 2016 15:49:36. Page 18 of 63

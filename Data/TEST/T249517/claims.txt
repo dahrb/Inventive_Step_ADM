@@ -1,0 +1,139 @@
+--- PAGE 1 ---
+EP Application No.: 17 382 523.3
+
+Applicant: Zhilabs $.L.
+
+Our Ref.: EP113648AN290
+Date: May 9, 2019
+CLAIMS
+
+A method (40) for determining quality of experience parameters of an encrypted video
+stream received at a client device, the method comprising:
+
+extracting (410), from one or more encrypted video streams sent over a network from a
+content server to a plurality of client devices, at least one stream-related feature, wherein
+strearn-related features comprise at least one of a volume timeline, a mean throughput,
+an effective throughput, a quartile of throughput, a video state estimate, a video duration,
+a total number of high, mid and/or low bitrate peaks, a high, mid and/or low peak density,
+and a total number of the one or more encrypted video streams; and
+
+determining (430) at least one quality-related label based at least in part on applying (420)
+a trained classifier to the at least one stream-related feature, wherein quality-related labels
+correspond to quality of experience parameters of an encrypted video stream received at
+a client device.
+
+The method of claim 1, further comprising:
+changing one or more parameters associated with the network;
+
+extracting, from the one or more encrypted video streams, at least one stream-related
+
+feature after changing the one or more parameters;
+
+determining at least one quality-related label based at least in part on applying the trained
+classifier to the at least one stream-related feature extracted after changing the one or
+
+more parameters; and
+
+analyzing the at least one quality-related label determined before and after changing the
+one or more parameters to obtain a measure of an impact of changing the one or more
+parameters on the quality of experience parameters of an encrypted video stream received
+at a client device.
+
+A method (30) of obtaining a trained classifier for determining quality of experience
+parameters of an encrypted video stream received at a client device, the method
+comprising:
+
+--- PAGE 2 ---
+extracting (300), from one or more encrypted video streams sent over a network from a
+content server to a plurality of client devices, a set of stream-related features, wherein
+stream-related features comprise at least one of a volume timeline, a mean throughput,
+an effective throughput, a quartile of throughput, a video state estimate, a video duration,
+
+a total number of high, mid and/or low bitrate peaks, a high, mid and/or low peak density,
+and a total number of the one or more encrypted video streams;
+
+extracting (310), from one or more client devices, a set of quality-related labels
+corresponding to quality of experience parameters of an encrypted video stream received
+
+at a client device; and
+
+training (320) a classifier using a training dataset to obtain a trained classifier, wherein the
+
+training dataset comprises the set of stream-related features and the set of quality-related
+
+labels.
+
+The method of claim 3, further comprising validating (330) and testing (340) the trained
+classifier using a validation dataset and a test dataset, respectively, wherein the validation
+
+dataset and the test dataset each comprise a respective set of stream-related features
+and a respective set of quality-related labels.
+
+The method of claims 3 or 4, wherein the one or more client devices comprise controlled
+
+user equipments, UEs, and/or UE simulators.
+
+The method of one of claims 1 to 5, wherein quality-related labels comprise one or more
+of video quality parameters, video resolution parameters, a rebuffering time, a rebuffering
+time percentage, a number of stalls, an average stall duration, a time to stream start, and
+a streaming reproduction cut-off ratio.
+
+A system (10) for determining quality of experience parameters of an encrypted video
+stream received at a client device, the system comprising:
+
+a plurality of client devices (100) configured to receive, from a content server (110), over
+a network (120), one or more encrypted video streams (130); and
+
+a classifier (140) trained using a supervised machine learning algorithm (150), wherein
+the classifier is configured to be applied to at least one stream-related feature (160),
+extracted from the one or more encrypted video streams, to determine at least one quality-
+related label (170) corresponding to quality of experience parameters of an encrypted
+
+video stream received at a client device, and
+
+--- PAGE 3 ---
+10.
+
+11.
+
+12.
+
+13.
+
+wherein stream-related features comprise at least one of a volume timeline, a mean
+throughput, an effective throughput, a quartile of throughput, a video state estimate, a
+video duration, a total number of high, mid and/or low bitrate peaks, a high, mid and/or low
+peak density, and a total number of the one or more encrypted video streams.
+
+The system of claim 7, wherein the classifier is trained using a training data set comprising
+a set of stream-related features (180) extracted from the one or more encrypted video
+streams and a set of quality-related labels (190) received fram one or more client devices
+(105) of the plurality of client devices (100).
+
+The system of claim 8, wherein the one or more client devices (105) comprise controlled
+user equipments, UEs, and/or UE simulators.
+
+The system of one of claims 7 to 9, wherein quality-related labels comprise one or more
+of video quality parameters, video resolution parameters, a rebuffering time, a rebuffering
+time percentage, a number of stalls, an average stall duration, a time to stream start, and
+a streaming reproduction cut-off ratio.
+
+The system of one of claims 7 to 10, further comprising a feature extraction module
+configured te extract stream-related features from the one or more encrypted video
+streams.
+
+The system of one of claims 7 to 11, further comprising a network operator component
+
+configured to:
+receive the at least one quality-related label (170) from the classifier (140);
+change one or more parameters associated with the network (120); and
+
+analyze the at least one quality-related labe! determined before (170A) and after (170B)
+changing the one or more parameters to obtain a measure of an impact of changing the
+one or more parameters on the quality of experience parameters of an encrypted video
+
+strearn received at a client device.
+
+One or more computer-readable storage media having computer-readable instructions
+stored thereon, which, when executed by a processor, perform the method of one of claims
+1 to 6.

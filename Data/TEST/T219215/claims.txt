@@ -1,0 +1,172 @@
+--- PAGE 1 ---
+19-OKT-2020 10:16 EPPING HERMANN FISCHER +49 89 560032999 3.005
+
+P2017,0597 EP N / 122354-5254 ; October 19, 2020
+08853918.4 / Appeal No. T2192/15-3.4.03 t Main request
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A method of sensing dispensation of a product from a storage device having an
+
+antenna, the method comprising the steps of: :
+
+3 providing a first product with a first wirclcess tag within a service area of the antenna;
+establishing wireless communication between the first wireless tag and the antenna,
+
+wherein the step of establishing wireless communication includes: |
+
+establishing a mesh nctwork (340) of wireless links amongst a plurality of
+
+wireless tags; and
+10 establishing a first wireless link between the first wireless tag of the first
+product and a first one of the plurality of wireless tags; and |
+establishing a second wircless link between a second one of the plurality of
+wireless tags and the antenna: :
+monitoring the wireless communication and a network topology of the mesh network,
+15 wherein monitoring the wireless communication comprises monitorin g the first wireless link;
+and
+determining whether the first wireless tag of the first product was removed and
+returned to the storage device when the location of the first wireless tag in the topology has
+changed, while maintaining topology information in a way that temporarily removing the first
+20 wireless tag of the first product causes the links of the first wireless tag to be removed from
+the mesh network and replaced elsewhere in the topology such that spoofing the systern by
+
+removing the first product, but not the first wireless tag, from the system can be detected.
+
+2. The method of claim 1, wherein the mesh network of wireless links utilize a first
+25 power level, and wherein the second wireless link utilizes a second power level higher than
+the first power levcl and wherein the mesh network of wircless links utilize a first frequency,
+
+and wherein the second wireless link utilizes a second frequency. :
+
+3. The method of claim 1, wherein the service area is located within the storage
+30 ~— device.
+
+S
+
+Received at the EPO on Oct 19, 2020 10:38:17. Page 5 of 34
+Duration: 10.19.2020 10:24:57 AM - 10.19.2020 10:38:17 AM. This page 5 of 34 was completed at 10.19.2020 10:26:16 AM
+
+--- PAGE 2 ---
+19-OKT-2020 10:16 EPPING HERMANN FISCHER +49 89 50032999 8.006
+
+20
+
+25
+
+30
+
+P2017,0597 EP N / 122354-5254 October 19, 2020
+08853918.4 / Appeal No. T2192/15-3.4.03 Main request
+2 L
+
+4. The method of claim |, wherein the first wircless tag is an active RFID tag.
+
+5. The method of claim 1, wherein the first wireless tag includes a memory configured
+
+to store environmental information associated with the first product.
+
+6. The method of claim 5, wherein the environmental information includes one or
+more of: a dispensation history of the first product, a temperature history of the first product,
+
+and a connectivity history of the first product to the first wireless ‘a8.
+
+7. The method of claim 1, further comprising the steps of:
+authenticating a user;
+
+permitting the user access to the storage device; and
+associating the user with the first product after the first product has been dispensed
+
+from the storage device.
+
+8. A dispensation-sensing system, comprising:
+a sccurable storage area;
+an antenna operable to receive and transmit signals within the securable storage area;
+and
+a processor configured to: :
+establish wireless communication between the antenna and a first wireless tag
+ofa first product disposed within the securable storage areal and
+monitor the wireless communication; 3
+wherein the processor is configured to establish wireless communication by
+establishing a mesh network (340) of wireless links amongst a plurdlity of wircless tags,
+establishing a first wireless link between the first wireless tag of the first product and a first
+one of the plurality of wireless tags, and establishing a sccond wireless link between a second
+one of the plurality of wireless tags-and the antenna;
+wherein the processor is configured to monitor the wireless bom munication by
+monitoring the first wireless link and a network topology of the mesh network: and
+wherein the processor is further configured to determine whither the first wireless tag
+of the first product was removed and returned to the storage device hwhen the location of the
+
+first wireless tag in the topology has changed, while maintaining topology information ina
+
+Received at the EPO on Oct 19, 2020 10:38:17. Page 6 of 34
+Duration: 10.19.2020 10:24:57 AM - 10.19.2020 10:38:17 AM. This page 6 of 34 was completed at 10.19.2020 10:26:33 AM
+
+--- PAGE 3 ---
+19-OKT-2020 10:16 EPPING HERMANN FISCHER +49 89 50032999 8.007
+
+10
+
+15
+
+20
+
+25
+
+30
+
+P2017,0597 EP N / 122354-5254 October 19, 2020
+
+08853918.4 / Appeal No. T2192/15-3.4.03 : Main request
+3 ,
+
+way that temporarily removing the first wireless tag of the first prodluct causes the links of the
+
+first wireless tag to be removed from the mesh network and replaced elsewhere in the
+
+topology such that spoofing the system by removing the first product, but not the first
+
+wircless tag, from the system can be detected.
+
+9, The dispensation-sensing system of claim 8, whercin the processor is further
+configured to collect environmental information about the first product from the first wireless
+tag and wherein the mesh network of wireless links utilizes a first frequency, and wherein the
+
+second wireless link utilizes a second frequency.
+
+10. The dispensation-sensing system of claim 8, wherein the processor is further
+configured to:
+
+authenticate a user;
+
+permit the user access to the storage device; and
+
+associate the user with the first product after the first product has been dispensed from
+
+the storage device.
+
+11. The dispensation-sensing system of claim 8, wherein the processor is configured
+
+to monitor the network topology of the mesh network of wireless links to detect user activity,
+
+12. The dispensation-sensing system of claim 8, wherein the mesh network of
+wireless links utilize a first power level, and wherein the second wireless link utilizes a
+
+second power level higher than the first power level.
+
+13. The method of claim 1, further comprising the step of:
+causing the antenna (320) to periodically operate at a higher broadcast power, to
+temporarily form separate wireless links with each of the wireless lags to verify that the mesh
+
+network is accurately reporting the presence of all wireless tags therein,
+
+14. The dispensation-sensing system of claim 8, wherein the processor is further
+configured to cause the antenna (320) to periodically operate at a higher broadcast power, to
+temporarily form separate wireless links with each of the wireless hags to verify that the mesh
+
+network is accurately reporting the presence of all wircless tags therein.
+
+Received at the EPO on Oct 19, 2020 10:38:17. Page 7 of 34
+Duration: 10.19.2020 10:24:57 AM - 10.19.2020 10:38:17 AM. This page 7 of 34 was completed at 10.19.2020 10:26:50 AM

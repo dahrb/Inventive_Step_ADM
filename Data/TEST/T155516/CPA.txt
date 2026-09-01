@@ -1,0 +1,61 @@
+TITLE:
+Integrated controls design optimization
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A control system (207) for optimizing a chemical looping process of a power plant includes an optimizer (420), an income algorithm (230) and a cost algorithm (225) and a chemical looping process models. The process models are used to predict the process outputs from process input variables. Some of the process in puts and output variables are related to the income of the plant; and some others are related to the cost of the plant operations. The income algorithm (230) provides an income input to the optimizer (420) based on a plurality of input parameters (215) of the power plant. The cost algorithm (225) provides a cost input to the optimizer (420) based on a plurality of output parameters (220) of the power plant. The optimizer (420) determines an optimized operating parameter solution based on at least one of the income input and the cost input, and supplies the optimized operating parameter solution to the power plant.
+
+CLAIMS:
+1. A system for optimizing a power plant, the system comprising:
+a chemical loop having an input for receiving an input parameter and an output for outputting an output parameter; and
+a nonlinear model predictive controls controller operably connected to the chemical loop,
+wherein the nonlinear model predictive controls controller receives the output parameter, optimizes the input parameter based on the received output parameter, and outputs the optimized input parameter to the input of the chemical loop.
+2. The system of claim 1, wherein the nonlinear model predictive controls controller comprises:
+a model part;
+a simulator part operably connected to the model part; and
+an optimizer part operably connected to the model part.
+3. The system of claim 2, wherein
+the model part comprises at least one of a steady state model, a dynamic model, an adaptive model, a fuzzy model and a neural network model,
+the simulator part comprises a reduced order modeling simulator, and
+the optimizer part comprises at least one of a multivariable optimizer and a genetic algorithm optimizer.
+4. The system of claim 1, wherein
+the input parameter comprises at least one of a solids transport inventory control variable, a reactor temperature control variable, a loop temperature control variable, a bed temperature control variable, a load ramping control variable, a plant start-up control logic algorithm, a reactor pressure variable, a reactor differential pressure variable, a plant shut-down control logic algorithm and a ratio of at least two of a fuel flow, an air flow, a limestone flow and a steam flow, and
+the output parameter comprises at least one of a load demand, a power generation rate, a hydrogen flow rate, a nitrogen flow rate, a carbon dioxide flow rate and a synthesis gas flow rate.
+5. The system of claim 1, wherein
+the chemical loop comprises one of a calcium-based chemical loop and a metal oxide-based chemical loop, and
+the power plant comprises one of a single loop chemical looping plant, a multiple loop chemical looping plant, a chemical looping-based plant with CO2 capture for utilization or sequestration and a chemical looping-based CO2-ready plant.
+6. The system of claim 1, wherein the nonlinear model predictive controls controller optimizes an overall efficiency of an operation of the power plant.
+7. The system of claim 2, wherein the nonlinear model predictive controls controller further comprises a soft sensor module operably connected to the optimizer part.
+8. A control system for optimizing a chemical looping process of a power plant, the control system comprising:
+an optimizer;
+an income algorithm which provides an income input to the optimizer based on a plurality of input parameters of the power plant; and
+a cost algorithm which provides a cost input to the optimizer based on a plurality of output parameters of the power plant,
+wherein the optimizer determines an optimized operating parameter solution based upon at least one of the income input and the cost input, and supplies the optimized operating parameter solution to the power plant.
+9. The control system of claim 8, wherein the power plant comprises one of a single loop chemical loop, a multiple loop chemical loop, a chemical looping-based plant with CO2 capture for utilization or sequestration and a chemical looping based CO2-ready plant.
+10. The control system of claim 9, wherein the power plant further comprises one of a calcium-based chemical loop and a metal oxide-based chemical loop.
+11. The control system of claim 8, wherein
+the plurality of input parameters comprises at least one of a fuel flow, a sorbent flow, an air flow, a water flow, a limestone flow and a solids circulation rate, and
+the plurality of output parameters comprises at least one of a power generation rate, CO2 utilization, CO2 capture, CO2 storage, H2 utilization, H2 capture, H2 storage, synthesis gas utilization, synthesis gas capture and synthesis gas storage.
+12. The control system of claim 8, wherein
+the income algorithm provides the income input to the optimizer further based on at least one of an emissions credit and a life extension credit.
+13. The control system of claim 8, wherein
+the cost algorithm provides the cost input to the optimizer further based on at least one of an auxiliary power cost, limestone cost and fuel cost.
+14. A system for optimizing a power plant, the system comprising:
+a chemical loop having an input for receiving an input parameter and an output for outputting an output parameter; and
+a nonlinear controller which receives the output parameter, optimizes the input parameter based on the received output parameter, and outputs the optimized input parameter to the input of the chemical loop.
+15. The system of claim 14, wherein the nonlinear controller comprises a model predictive controls controller.
+16. The system of claim 14, wherein the nonlinear controller comprises:
+a model part;
+a simulator part operably connected to the model part; and
+an optimizer part operably connected to the model part.
+17. The system of claim 16, wherein
+the model part comprises at least one of a steady state model, a dynamic model, an adaptive model, a fuzzy model and a neural network model,
+the simulator part comprises a reduced order modeling simulator, and
+the optimizer part comprises at least one of a multivariable optimizer and a genetic algorithm optimizer.
+18. The system of claim 14, wherein
+the input parameter comprises at least one of a solids transport inventory control variable, a reactor temperature control variable, a loop temperature control variable, a bed temperature control variable, a load ramping control variable, a plant start-up control logic algorithm, a reactor pressure variable, a reactor differential pressure variable, a plant shut-down control logic algorithm and a ratio of at least two of fuel flow, air flow, limestone flow and steam flow, and
+the output parameter comprises at least one of a load demand, a power generation rate, a hydrogen flow rate, a nitrogen flow rate, a carbon dioxide flow rate and a synthesis gas flow rate.
+19. The system of claim 14, wherein the chemical loop comprises one of a calcium-based chemical loop and a metal oxide-based chemical loop.
+20. The system of claim 19, wherein the power plant comprises one of a single loop chemical looping plant, a multiple loop chemical looping plant, a chemical looping-based plant with CO2 capture for utilization or sequestration and a chemical looping-based CO2-ready plant.

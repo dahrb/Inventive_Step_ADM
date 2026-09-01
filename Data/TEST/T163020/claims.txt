@@ -1,0 +1,130 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+1. A method of encoding or decoding video data, the method comprising:
+
+storing, by a video coder and in a reference picture buffer, previously coded
+blocks of a current picture of the video data, the reference picture buffer also storing one
+of more blocks of pictures other than the current picture available for inter-prediction;
+
+including the current picture in a reference picture list used during prediction of
+blocks of the current picture, wherein the reference picture list also includes an
+indication of one or more pictures other than the current picture available for inter-
+prediction; and
+
+coding, by the video coder and based on the reference picture list, a first block of
+video data in the current picture based on a predictor block of video data, wherein the
+predictor block is one of the previously coded blocks of the current picture stored in the
+
+reference picture buffer.
+
+2. The method of claim 1, further comprising:
+updating, by the video coder and after coding the first block, the previously
+coded blocks of the current picture in the reference picture buffer with an updated
+previously coded blocks of the current picture that includes the coded first block; and
+coding, by the video coder and based on the reference picture list, a second
+block of video data in the current picture based on a predictor block included in the
+
+updated version of the current picture stored in the reference picture buffer.
+
+3. The method of claim 1, further comprising:
+
+coding, by the video coder, a syntax element that indicates whether pictures of
+the video data may be present in reference picture lists used to predict the pictures
+themselves; and
+
+determining to include the current picture of the video data in the reference
+
+picture list used to predict the current picture based on the syntax element.
+
+4. The method of claim 3, wherein coding the syntax element comprises coding the
+syntax element in a video parameter set, VPS, referred to by the current picture, a
+sequence parameter set, SPS, referred to by the current picture, or a picture parameter
+
+set, PPS, referred to by the current picture.
+
+--- PAGE 2 ---
+5. The method of claim 4, wherein the method does not include coding a syntax
+
+element that indicates whether the first block is coded using Intra Block Copy, Intra BC.
+
+6. The method of claim 1, wherein the block is included in a current slice of the
+current picture, and wherein a syntax element indicating a collocated reference index for
+
+the current slice indicates a picture that is not the current picture.
+
+7. The method of claim 1, wherein the block is included in a current slice of the
+
+current picture, and wherein the predictor block is included in the current slice.
+
+8. The method of claim 1, wherein each entry in the reference picture list has an
+index value, wherein inserting the current picture in the reference picture list used to
+predict the current picture comprises constructing the reference picture list used to
+predict the current picture based on one or more reference picture sets by at least:
+
+inserting the current picture in the reference picture list with an index value less
+than index values of pictures in a long-term reference picture set;
+
+inserting the current picture in the reference picture list with an index value
+greater than index values of pictures in a long-term reference picture set; or
+
+inserting the current picture in the reference picture list with a fixed index value.
+
+9. The method of claim 1, wherein the block is included in a current slice of the
+current picture, wherein the current slice is an intra slice, and wherein inserting the
+current picture in the reference picture list used to predict the current picture comprises
+constructing the reference picture list used to predict the current picture such that the
+
+reference picture list used to predict the current picture only includes the current picture.
+
+10. The method of claim 1, wherein the block is included in a current slice of the
+current picture, wherein the current slice is an inter slice, and wherein inserting the
+current picture in the reference picture list used to predict the current picture comprises
+constructing the reference picture list used to predict the current picture such that the
+reference picture list used to predict the current picture includes the current picture and
+
+one or more other pictures of video data.
+
+--- PAGE 3 ---
+11. The method of claim 1, further comprising:
+
+marking, by the video coder and before coding the block of the current picture,
+the current picture of the video data as a long-term reference picture; and
+
+marking, by the video coder and after coding the block of the current picture, the
+
+current picture of the video data as a short-term reference picture.
+
+12. The method of claim 1, wherein coding the block comprises encoding the block,
+the method further comprising encoding, in an encoded video bitstream, a representation
+of a vector that represents a displacement between the block of video data and the
+
+predictor block of video data.
+
+13. The method of claim 1, wherein coding the block comprises decoding the block,
+the method further comprising determining, based on an encoded video bitstream, a
+vector that represents a displacement between the block of video data and the predictor
+
+block of video data.
+
+14. A device for encoding or decoding video data comprising:
+
+means for storing, in a reference picture buffer, a previously coded blocks of a
+current picture of the video data, the reference picture buffer also storing one of more
+blocks of pictures other than the current picture available for inter-prediction;
+
+means for including the current picture in a reference picture list used during
+prediction of blocks of the current picture, wherein the reference picture list also
+includes an indication of one or more pictures other than the current picture available
+for inter-prediction; and
+
+means for coding, based on the reference picture list, a first block of video data
+in the current picture based on a predictor block of video data , wherein the predictor
+block is one of the previously coded blocks of the current picture stored in the reference
+
+picture buffer.
+
+15. A computer-readable storage medium storing instructions that, when executed,
+cause one or more processors of a video coder to perform the method according to any
+
+one of claims 1 to 13.

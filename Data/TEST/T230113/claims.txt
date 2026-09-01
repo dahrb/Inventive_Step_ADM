@@ -1,0 +1,112 @@
+--- PAGE 1 ---
+From:VJP Dresden To0:008923994465 01/11/2013 15:56 #631 P.010/017
+
+Application No. 06 025 840.7 P37777
+
+WHAT IS CLAIMED IS:
+
+1. A circuit driving device for driving a panel (300) having a plurality of pixels
+formed (E11, ..., E44) in cross areas of data lines (D1, D2, D3, D4) and scan lines (S1, S2,
+$3, 84), comprising:
+
+a voltage adjusting circuit (316) configured to boost a battery voltage outputted
+from a battery (314), and output a driving voltage (Vcc);
+
+a data driving circuit (312) configured to provide data currents to the data lines
+(D1, D2, D3, D4) using the driving voltage (Vcc) outputted from the voltage adjusting
+circuit (316);
+
+a discharging circuit (308) configured to discharge the data lines (D1, D2, D3, D4)
+during a first sub-discharge time (T1; T3) of a discharge time (dchal; dcha2), and further
+discharge the data lines via a zener diode (ZD) during a second sub-discharge time (T2; T4)
+of the discharge time (dchal; dcha2), wherein the second sub-discharge time (T2; T4)
+succeeds the first sub-discharge time (T1; T3);
+
+a charge storing circuit (320) including a capacitor (C) configured to be coupled to
+the data lines (D1, D2, D3, D4) to store charges discharged from the data lines (D1, D2,
+D3, D4) during the first sub-discharge time (T1; T3), and to be disconnected from the data
+lines (D1, D2, D3, D4) to provide the charges stored in the capacitor (C) to the battery
+(314) during the second sub-discharge time (T2; T4);
+
+a precharging circuit (310) configured to provide precharge currents to the
+discharged data lines during a precharge time (pchal; pcha2) to precharge the discharged
+data lines, wherein the precharge time (pchal; pcha2) succeeds the second sub-discharge
+
+time (T2; T4);
+
+Duration: 01.11.2013 15:48:58 - 01.11.2013 15:57:39. This page 10 of 17 was completed at 01.11.2013 15:53:59
+Received at the EPO on Nov 01, 2013 15:57:39. Page 10 of 17
+
+--- PAGE 2 ---
+From:VJP Dresden To0:008923994465 01/11/2013 15:56 #631 P.011/017
+
+Application No. 06 025 840.7 P37777
+
+2
+
+a comparing circuit (322) configured to compare the battery voltage with a
+charging voltage (Vc) corresponding to the charges stored in the capacitor (C) of the charge
+storing circuit (320); and
+
+a switching circuit (SW7) configured to turn on or off a coupling between the
+battery (314) and the charge storing circuit (320) in accordance with a comparison result of
+the comparing circuit (322),
+
+wherein the switching circuit (SW7) turns off the coupling between the battery
+(314) and the charge storing circuit (320) when the battery voltage is the same as, or higher
+than the charging voltage (Vc), and the switching circuit (SW7) turns on the coupling
+between the battery (314) and the charge storing circuit (320) to supply the charges stored
+in the capacitor (C) to the battery when the battery voltage is less than the charging voltage
+
+(Vc).
+
+2. The circuit driving device of claim 1, wherein the comparing circuit (322)
+
+includes an OP amplifier.
+
+3. The circuit driving device of claim 1, wherein the discharging circuit (308)
+
+includes the zener diode (ZD).
+
+4, A display device, comprising:
+
+a panel (300) having data lines (D1, D2, D3, D4) disposed in a first direction, scan
+lines (S1, $2, S3, $4) disposed in a second direction different from the first direction, and a
+plurality of pixels (E11, ..., E44) formed in cross areas of the data lines (Di, D2, D3, D4)
+and the scan lines (S1, $2, $3, S4), and configured to drive on the basis of a driving
+
+2
+
+Duration: 01.11.2013 15:48:58 - 01.11.2013 15:57:39. This page 11 of 17 was completed at 01.11.2013 15:54:29
+Received at the EPO on Nov 01, 2013 15:57:39. Page 11 of 17
+
+--- PAGE 3 ---
+From:VJP Dresden To0:008923994465 01/11/2013 15:57 #631 P.012/017
+
+Application No. 06 025 840.7 P37777
+
+voltage;
+a circuit driving device as claimed in one of claims 1 to 3; and
+the battery (314) providing the battery voltage;
+wherein the comparing circuit (322) of the circuit driving device is coupled to the
+
+battery (314) and the charge storing circuit (320).
+
+5. The display device of claim 4, wherein the discharging circuit (308) is
+configured to couple the zener diode (ZD) to the data lines during the second sub-discharge
+
+time (T2; T4).
+
+6. The display device of claim 4, wherein one or more of the pixels (E11, ...,
+E44) include:
+
+a first electrode as positive electrode;
+
+a second electrode as negative electrode; and
+
+an organic layer disposed between the first electrode and the second electrode, and
+
+made up of organic material.
+
+Duration: 01.11.2013 15:48:58 - 01.11.2013 15:57:39. This page 12 of 17 was completed at 01.11.2013 15:54:52
+Received at the EPO on Nov 01, 2013 15:57:39. Page 12 of 17

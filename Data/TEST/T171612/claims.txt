@@ -1,0 +1,77 @@
+--- PAGE 1 ---
+Claims
+
+1. A computer system (100), comprising:
+
+a processor (134); and
+
+a Basic Input/Output System (BIOS) module (110) coupled to the processor (100) ,
+
+wherein the BIOS module (110) comprises a boot block (112) storing instructions
+executed during a boot process of the computer system (100) and a signature domain (116)
+storing a signature, wherein the boot block (112) and the signature domain (116) are used as a
+Core Root of Trust for Measurement (CRTM) (118) that specifies predefined policies and is
+configured to perform integrity measurements to establish whether the computer system (100)
+can be trusted, wherein the CRTM is configured to conditionally unlock itself, wherein the
+boot block (112) comprises a lock function (114);
+
+wherein the computer system is configured to execute the lock function (114) during
+each boot process of the computer system (100) before the boot block (112) transfers control
+to an operating system of the computer system, wherein the lock function (114) is configured
+to search a predetermined location (119) of the BIOS module (110) for a signature, to unlock
+the CRTM (118) and to delete the signature in the predetermined location if the signature
+stored in the signature domain (116) and the signature in the predetermined location (119)
+match, and to lock the CRTM (118) if the signatures do not match; and
+
+a CRTM update utility (152) configured to update the CRTM (118) during the
+computer system’s runtime once the computer system has booted if the CRTM (118) is
+
+unlocked.
+
+2. The computer system (100) of claim 1 further comprising a Trusted Platform
+Module (TPM) (120) coupled to the processor (100), wherein the TPM (120) is configured to
+generate a secret used for updating the CRTM (118).
+
+3. The computer system (100) of claim 1 further comprising a memory (150) coupled
+to the processor (134), the memory (134) storing the CRTM update utility (152) that is
+configured to, when executed, enable the CRTM (118) to unlock itself.
+
+4, The computer system (100) of claim 3 wherein the CRTM update utility (152) is
+
+configured to, when executed, enable the signature to be written to the predetermined location
+
+--- PAGE 2 ---
+(119) of the BIOS (110) and wherein the CRTM (118) is configured to attempt to authenticate
+
+the signature during a subsequent boot cycle.
+
+5. A method, comprising:
+
+configuring at least part of a Basic Input/Output System (BIOS) (110) to provide Core
+Root of Trust for Measurement (CRTM) (118) functions that specify predefined policies and
+are configured to perform integrity measurements to establish whether a computer system
+(100) can be trusted;
+
+during each boot process of the computer system and before transferring control to an
+operating system of the computer system, unlocking the CRTM if a signature stored in a
+signature domain of the CRTM (118) and a signature in a predetermined location of the BIOS
+(110) match, deleting the signature in the predetermined location of the BIOS 8110) if the
+signatures match, and locking the CRTM (118) if the signatures do not match; and
+
+if the CRTM (118) is successfully unlocked, updating the CRTM (118) during the
+
+computer’s runtime once the computer associated with the CRTM (118) has booted.
+
+6. The method of claim 5 further comprising establishing a secure session between the
+
+CRTM (118) and a CRTM update utility (152) before unlocking the CRTM (118).
+
+7. The method of claim 5 further comprising writing the signature to the
+predetermined location (119) of the BIOS (110) and rebooting the computer system before
+comparing the signature stored in the signature domain (116) of the CRTM (118) and the
+signature in the predetermined location of the BIOS (110).
+
+8. The method of claim 5 further comprising comparing at least two signatures during
+a subsequent boot process and, if the signatures do not match, preventing the CRTM (118)
+
+from transferring control of the computer (100).

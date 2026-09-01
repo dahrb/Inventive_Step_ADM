@@ -1,0 +1,43 @@
+Title: Systems and methods for event driven baggage management
+
+Abstract: 
+Systems and methods for event driven baggage management are disclosed. Readers are used to detect and monitor the location of tags attached to baggage as the baggage moves from the point at which a traveler drops of the baggage at the origin of a trip to the point at which the traveler picks up the baggage at a destination location. Methods and systems that are capable of detecting when a bag has been lost or misdirected and searching for the lost or misdirected bag are also disclosed. Notification may be sent directly to a traveler or the carrier when specified baggage events occur. Additionally, systems and methods for communicating a destination of an object to a wireless earphone device worn by an object handler are also disclosed.
+
+Type: US Patent
+
+Claims: 
+
+1-59. (canceled)
+60. A method for managing objects comprising:
+associating a tag with an object;
+providing at least a first and second reader, wherein each reader is configured for detecting the tag;
+determining a location status of the object based on whether or not the tag is detected by a reader other than the first reader within a predefined period of time; and
+providing a server configured for automatically initiating a tracer routine to locate the object if the tag is not detected by the reader other than the first reader within the predefined period of time, wherein the server is configured for interfacing with at least one baggage management system for performing the tracer routine, and wherein at least one baggage management system is configured for communicating information associated with the tag to at least one transportation entity such that the at least one transportation entity is configured for locating the tag based at least partially on the information associated with the tag.
+61. The method for managing objects of claim 60, wherein the object is an article of baggage.
+62. The method for managing objects of claim 60, wherein the tag is a wireless device configured for detecting and communicating with other devices.
+63. The method for managing objects of claim 60, wherein the tag is configured for detecting and communicating with each reader.
+64. The method for managing objects of claim 60, further comprising determining an expected travel path of the object in consideration of airport specific baggage transit configurations.
+65. The method for managing objects of claim 64, further comprising determining the object is misdirected if the tag is detected by a reader not located along the expected travel path.
+66. The method for managing objects of claim 60, wherein the predefined time is a predicted time for the tag to travel to a reader other than the first reader.
+67. The method for managing objects of claim 66, wherein the predefined time is determined in consideration of airport specific baggage transit configurations.
+68. The method for managing objects of claim 60, wherein the at least one baggage management system is configured for notifying the at least one transportation entity that the tag was not detected by the reader other than the first reader within the predefined period of time.
+69. The method for managing objects of claim 68, wherein the tracer routine further comprises notifying at least one transportation entity when the object has been located.
+70. The method for managing objects of claim 60, wherein the server is further configured for sending a message to a communication device associated with a traveler when a specified event occurs.
+71. The method for managing objects of claim 70, wherein the specified event is a failure to detect the tag within the predefined period of time.
+72. The method for managing objects of claim 70, wherein the specified event is locating the tag after a failure to detect the tag within the predefined period of time.
+73. The method for managing objects of claim 70, wherein the specified event is detection of the tag by a specified reader.
+74. The method for managing objects of claim 70, wherein the message comprises the location status of the object.
+75. The method for managing objects of claim 60, wherein the at least one baggage management system is configured for communicating with the at least one transportation entity when a specified event occurs.
+76. The method for managing objects of claim 75, wherein the specified event is a failure of a reader to detect the tag within the predefined period of time.
+77. The method for managing objects of claim 75, wherein the specified event is locating the tag after a failure to detect the tag within the predefined period of time.
+78. The method for managing objects of claim 75, wherein the specified event is the detection of the tag by a specified reader.
+79. The method for managing objects of claim 75, further comprising a representative of the transportation carrier conveying the location status of the object to the traveler.
+80. The method for managing objects of claim 60, wherein the at least one transportation entity is configured to search for the tag based on a last detected location of the tag.
+81. A system for managing objects comprising:
+a tag associated with an object;
+at least a first and second reader configured for detecting the tag, wherein the first and second readers are located along a travel path of the object; and
+a server adapted to determine a location status of the object based on whether or not the tag is detected by a reader other than the first reader within a predefined period of time, wherein the server is configured for automatically initiating a tracer routine to locate the object if the tag is not detected by the reader other than the first reader within the predefined period of time, wherein the server is configured for interfacing with at least one baggage management system for performing the tracer routine, and wherein the at least one baggage management system is configured for communicating information associated with the tag to at least one transportation entity such that the at least one transportation entity is configured for locating the tag based on the information associated with the tag.
+82. The system of claim 81, wherein the server is adapted to send a message to a communication device associated with the traveler when a specified event occurs.
+83. The system of claim 81, wherein the at least one baggage management system is configured for notifying the at least one transportation entity when the tag has been located.
+84. The system of claim 81, wherein the at least one transportation entity is configured to search for the tag based on a last detected location of the tag.
+85. The system of claim 81, wherein the at least one baggage management system is configured for notifying the at least one transportation entity that the tag was not detected by the reader other than the first reader within the predefined period of time.

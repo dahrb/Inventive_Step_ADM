@@ -1,0 +1,226 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+EP Application No.: 17 848 363.2
+
+Applicant: Sato Holdings Kabushiki Kaisha
+Our Ref.: EP119142-AK108
+Date: April 29, 2020
+
+NEW CLAIMS — Main Request
+
+A warehousing/shipping-operation support system (1) for warehousing a plurality of
+articles to a storage area (6) or shipping a plurality of articles from a storage area (6), the
+
+system (1) comprising:
+
+a map-information saving unit (59, 59A) configured such that map information of the
+
+storage area (6) is saved in the map-information saving unit (59, 59A);
+
+a storage-location information saving unit (69, 59B) configured such that storage-location
+information indicating a storage location of each of the articles in the storage area (6) are
+
+saved in the storage-location information saving unit (59, 59B);
+
+a positional information acquisition unit (3, 4) configured to acquire positional information
+
+of a start position of an operator (W) in a warehousing/shipping operation; and
+
+a processing unit (55);
+
+characterized in that
+
+the map-information saving unit (59, 59A) is further configured such that positional
+information of a plurality of signs (M) set in the storage area (6) is saved in the map-
+
+information saving unit (59, 59A);
+
+the processing unit (55) is configured to select, based on storage-location information of
+a specific article among the plurality of articles and positional information of the operator
+(VW), a sign positioned on the operator (VW) side among the signs (M) in a vicinity of a
+
+storage location of the article from the plurality of signs, wherein
+
+the processing unit (55) is configured to use, for a first article at a time of the
+warehousing/shipping operation, the positional information of the start position of the
+operator (VW) acquired by the positional information acquisition unit (3, 4) as said positional
+
+information of the operator (VV) on which said selecting is based,
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+the processing unit (55) is configured to set, for a second and following articles at the time
+of the warehousing/shipping operation, the storage location information of the immediately
+preceding article that has been warehoused or shipped as said positional information of
+
+the operator (VV) on which said selecting is based, and
+
+the processing unit (55) is configured to calculate a shortest path from the positional
+
+information of the operator (VV) to the selected sign (M) and to present the shortest path.
+
+The warehousing/shipping-operation support system (1) according to claim 1, wherein the
+processing unit (55) is configured to, in a state in which the operator (VV) moves through
+the shortest path and faces the sign before reaching the sign (M), calculate a direction of
+
+the storage location of the article from the sign and to present the direction.
+
+The warehousing/shipping-operation support system (1) according to claim 1or 2, wherein
+a plurality of operation aisles are formed so as to intersect with each other in the storage
+area (6), and the intersection is set as the sign, the operation aisles being configured to
+
+allow movement of the operator.
+
+The warehousing/shipping-operation support system (1) according to claims 3, wherein
+
+the operation aisles are formed as a grid shape.
+
+The warehousing/shipping-operation support system (1) according to claim 4, wherein an
+unique direction name is defined in the storage area (6), and the processing unit (55)
+
+presents a direction from the sign (M) based on the direction name.
+
+The warehousing/shipping-operation support system (1) according to any one of claims 1
+
+to 5 further comprising
+
+an operator communication terminal (2), wherein
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+operation information including the sign (M) is presented on the operator communication
+terminal (2), the sign being positioned on the operator side among the signs (M) in a vicinity
+
+of the storage location of the article and being selected by the processing unit (55).
+
+A warehousing/shipping-operation support method for supporting a warehousing/shipping
+operation in which a plurality of articles are warehoused to a storage area (6) or the
+
+plurality of articles are shipped from the storage area (6),
+
+characterized in that
+
+the warehousing/shipping-operation support method comprises:
+
+a positional information acquisition step (S4) of acquiring positional information of a start
+
+position of an operator (WV) in the warehousing/shipping operation; and
+
+a processing step (S5, S8) of selecting, based on storage-location information indicating
+a storage location of a specific article among the plurality of articles and based on
+positional information of the operator (VV), map information of the storage area (6) anda
+sign (M) positioned on the operator side among signs (M) in a vicinity of the storage
+
+location of the article from a plurality of signs (M) set in the storage area (6),
+
+wherein in the processing step (S5), for a first article in the warehousing/shipping
+operation, using the positional information of the start position of the operator (W) acquired
+in the positional information acquisition step (S4), as said positional information of the
+
+operator (VV) on which said selecting is based,
+
+a setting step (S7) of setting, for a second and following articles in the
+warehousing/shipping operation, the storage-location information of the immediately
+preceding article that has been warehoused or shipped as said positional information of
+
+the operator (W) on which said selecting in said processing step (S8) is based, and
+
+a first calculating step of calculating a shortest path from the positional information of the
+
+operator (VV) to the selected sign (M) and presenting the shortest path.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+A method according to claim 7, further comprising a second calculating step of calculating,
+in a state in which the operator (VW) moves through the shortest path and faces the sign
+before reaching the sign (M), a direction of the storage location of the article from the sign
+
+and presenting the direction.
+
+A program for causing a computer to execute:
+
+a step (S4) of acquiring positional information of a start position of an operator (W) in
+
+warehousing/shipping operation;
+
+a step (S5, S8) of executing a process of selecting, based on storage-location information
+indicating a storage location of a specific article among the plurality of articles and
+positional information of the operator (VV), map information of the storage area (6) and a
+sign (M) positioned on the operator side among signs (M) in a vicinity of the storage
+
+location of the article from a plurality of signs (M) set in the storage area (6):
+
+in the step (S5) of processing, for a first article in the warehousing/shipping operation,
+using the positional information of the start position of the operator (VW) acquired in the
+step of acquiring positional information, as said positional information of the operator (W)
+
+on which said selecting is based;
+
+a step (S7) of setting ), for a next article in the warehousing/shipping operation, the
+storage-location information of the immediately preceding article that has been
+warehoused or shipped as said positional information of the operator (WV) on which said
+
+selecting in said step (S8) of processing is based, and
+
+a step of calculating a shortest path from the positional information of the operator (VV) to
+
+the selected sign (M) and presenting the shortest path, wherein
+
+the computer being configured to function as a warehousing/shipping-operation support
+device supporting the warehousing/shipping operation in which the plurality of articles are
+warehoused to the storage area (6) or the plurality of articles are shipped from the storage
+
+area (6).
+
+--- PAGE 5 ---
+10.
+
+A program according to claim 9, further causing the computer to execute a step of
+calculating, in a state in which the operator (WV) moves through the shortest path and faces
+the sign before reaching the sign (M), a direction of the storage location of the article from
+
+the sign and presenting the direction.

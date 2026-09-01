@@ -1,0 +1,207 @@
+--- PAGE 1 ---
+A32318 Main Request
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+39
+
+CLAIMS
+
+1. A recommender controller (16, 22) arranged to control the operation of a
+recommender system (18) in a communications system, the communications system
+including a client device associated with a user to which the recommendations are
+provided, the recommender controller (16) comprising:
+
+a reference receiver for receiving a predetermined reference performance
+metric (Yret) for said recommender system (18);
+
+a measurement receiver for receiving a measured performance metric for said
+recommender system derived from a combination of one or more recommendations
+previously provided by said recommender system (18) to the user and usage data from
+the client device associated with the user to which the recommendations were
+provided;
+
+a processor operable to iteratively compare the received measured
+performance metric of a previous iteration (y(ti-1)) with the received predetermined
+reference performance metric (Yrer) to determine a difference value of the previous
+iteration (e(ti-1)), and being further operable to generate a value or values of a control
+parameter or parameters (u(ti)), using a closed loop control algorithm having the
+difference value of the previous iteration (e(ti1)) as an input, for controlling the operation
+of the recommender system (18) in such a way as to cause the difference value in a
+subsequent iteration to tend towards zero by specifying an amount of training data to
+be provided to the recommender system (18) in the subsequent iteration, wherein there
+is a positive correlation between the amount of training data specified by the control
+parameter and the measured performance metric received in the subsequent iteration
+(y(ti)), such that the measured performance metric of the recommendation system in
+the subsequent iteration (y(t)) tends towards the predetermined reference performance
+metric (ret);
+
+wherein the processor is further operable to derive, in the subsequent iteration
+and based on the generated value or values of the control parameter or parameters
+(u(ti)), the amount of training data from the usage data from the client device associated
+with a user to which the recommendations are provided; and
+
+a transmitter adapted to, in the subsequent iteration and following the
+derivation of the amount of training data, provide the amount of training data to the
+
+recommender system (18) via the communications system.
+
+--- PAGE 2 ---
+A32318 Main Request
+
+10
+
+15
+
+20
+
+25
+
+30
+
+40
+
+2. A recommender controller (16, 22) as claimed in claim 1, wherein the specified
+amount of training data to be provided includes a component which is proportional to
+the difference value obtained from the comparison between the measured performance
+
+metric and the predetermined reference performance metric.
+
+3. A recommender controller (16, 22) as claimed in any preceding claim, wherein
+the specified amount of training data to be provided includes a component which is
+dependent on an integral of the difference value obtained from the comparison between
+
+the measured performance metric and the predetermined performance metric.
+
+4. A recommender controller (16, 22) as claimed in any one of the preceding
+claims, wherein the specified amount of training data to be provided includes a
+component which is dependent on either: a difference between two error
+measurements each of which is an error measurement comprising the difference
+between a measured performance metric and the predetermined reference
+performance metric, but associated with measurements of the measured performance
+metric associated with different times, the difference between error measurements
+being divided by the time between the associated different times; or on some other
+
+estimate of the current rate of change of such error measurements.
+
+5. A recommender controller (16, 22) as claimed in any one of claims 1 to 4,
+wherein the or each value of a control parameter or parameters is determined using a
+proportional, integral, derivative differential equation in which proportional gain, integral
+gain, and differential gain constants are used to control the manner in which the
+recommender’s measured performance is driven towards the received reference
+
+performance metric.
+
+6. A recommender controller (16, 22) according to claim 5 in which the
+proportional gain, integral gain, and differential gain constants are derived from a
+damped harmonic oscillator model of the recommender.
+
+7. A recommender controller (16, 22) as claimed in any one of claims 1 to 6,
+wherein the training data comprises a partial sub-set of the available user interaction
+data records, and wherein the number of such records to provide to the recommender
+
+--- PAGE 3 ---
+A32318 Main Request
+
+10
+
+15
+
+20
+
+25
+
+30
+
+At
+
+system is determined by the recommender controller in dependence upon the
+
+determined value or values of the control parameter or parameters.
+
+8. A recommender controller (16, 22) as claimed in claim 7, wherein each user
+interaction data record is assigned a ranking and wherein the records provided to said
+recommender system making up the so-determined number of training records are
+determined in dependence on said ranking together with the determined value or
+
+values of the control parameter or parameters.
+
+9. A recommender controller (16, 22) as claimed in claim 8, wherein said ranking
+indicates a determined usefulness of the data record in training the recommender
+system.
+
+10. A method of automatically controlling the performance of a recommender
+system (18) in a communications system, the communications system including a client
+device associated with a user to which the recommendations are provided, the method
+comprising:
+
+iteratively receiving a measured performance metric of the recommender
+system derived from a combination of one or more recommendations previously
+provided by said recommender system (18) to a user and usage data from the client
+device associated with the user to which the recommendations were provided;
+
+comparing the received measured performance metric of a previous iteration
+(y(ti1)) with a predetermined reference performance metric (Yret) of the recommender
+system to determine a difference value of the previous iteration (e(ti-1)); and
+
+generating a value or values of a control parameter or parameters (u(ti)), using
+a closed loop control algorithm having the difference value of the previous iteration (e(t..
+1)) as an input, for controlling the operation of the recommender system (18) in such a
+way as to cause the difference value in a subsequent iteration to tend towards zero by
+specifying an amount of training data to be provided to the recommender system (18)
+in the subsequent iteration, wherein there is a positive correlation between the amount
+of training data specified by the control parameter and the measured performance
+metric received in the subsequent iteration (y(ti)), such that the measured performance
+metric of the recommendation system in the subsequent iteration (y(ti)) tends towards
+the predetermined reference performance metric (yrer);
+
+--- PAGE 4 ---
+A32318 Main Request
+
+10
+
+15
+
+20
+
+25
+
+42
+
+deriving, in the subsequent iteration and based on the generated value or
+values of the control parameter or parameters (u(ti)), the amount of training data from
+usage data from the client device associated with a user to which the recommendations
+are provided; and then
+
+providing, in the subsequent iteration, the amount of training data to the
+
+recommender system (18) via the communications system.
+
+11. A method as claimed in claim 10, wherein an amount of training data is
+provided which is determined using a proportional integral derivative differential
+equation in respect of an error signal dependent upon the difference between the
+measured performance metric and the predetermined reference performance metric,
+in which at least one of the proportional, integral and derivative differential components
+is scaled by a non-zero factor and most preferably at least two of the components is
+scaled by a non-zero factor.
+
+12. A method as claimed in Claim 10 or Claim 11, implemented on a recommender
+input controller (16) and further comprising the step of receiving the usage data from
+the client device.
+
+13. A method as claimed in Claim 10 or Claim 11, implemented on the client
+device (22).
+14. A carrier medium or media carrying processor executable instructions for
+
+causing a processor or processors to carry out the method of any one of claims 10 to
+13 during execution of the instructions.

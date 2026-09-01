@@ -1,0 +1,125 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+APPEAL NO T 1241/17
+EP08717870.3
+MAIN REQUEST
+
+Claims
+
+1. A processor having an instruction for storing data in block form, the processor
+comprising a circuit responsive to the instruction, the circuit comprising:
+a) a data memory for storing a first data structure comprising individual
+data values, the first data structure corresponding to the data in block form
+to be stored,
+
+b) amap memory for storing a map, the map representing the locations of
+individual non-zero data values within the first data structure,
+
+c) a data output for outputting to a memory for storage,
+
+wherein the circuit is configured to retrieve the non-zero data values from
+the first data structure of the data memory using the map and to provide
+the retrieved data as a second data structure in combination with data
+
+representing the map on the data output.
+
+2. A processor according to claim 1, wherein the data memory comprises a
+
+plurality of registers or a register file.
+
+3. A processor according to claim 1, wherein the map memory comprises a
+
+register.
+
+4. A processor according to claim 3, wherein the locations are stored as a bit
+map, with each bit in the bit map corresponding to an individual data value
+
+in the stored structure.
+
+5. A processor according to claim 1, further comprising a plurality of
+comparators, each comparator identifying whether a data value is non-
+zero, the output of each comparator being provided as an input to the map
+
+memory.
+
+6. A processor according to claim 5, wherein the comparator inputs are
+provided by read ports of the data memory or by write ports of the data
+memory.
+
+22
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+7. Aprocessor according to claim 5, wherein the comparator inputs are
+
+provided by load/store ports of the processor.
+
+8. A processor according to claim 2, wherein the data output comprises a data
+bus and the circuit is configured to sequentially output the compressed
+
+structure from the memory onto the data bus.
+
+9. A processor according to claim 2, further comprising at least one adder for
+
+calculating the number of non-zero values from the map.
+
+10. A processor according to claim 2, further comprising logic for sequentially
+
+enabling the writing of non-zero data from the memory to the data output.
+
+11. A processor according to claim 10, wherein the logic comprises an
+
+arrangement of adders.
+
+12. A processor having an instruction for retrieving data in block form, the
+processor comprising a decompression circuit responsive to the instruction
+for decompressing a compressed data structure containing the data in
+block form to be retrieved, the circuit comprising:
+
+a) an input for accepting a compressed data structure comprising
+individual non-trivial data values, where the non-trivial values are non-zero
+values;
+
+b) amap register for receiving a map identifying locations, the locations
+being the locations of the non-trivial data values within a decompressed
+data structure,
+
+c) amemory for storing the decompressed data structure, wherein the
+circuit is configured to decompress the compressed data structure by
+populating the locations of an unpopulated uncompressed data structure
+
+which are specified in map register as being locations of non-trivial data
+
+23
+
+--- PAGE 3 ---
+with individual inputted non-trivial data values to provide a uncompressed
+
+and populated data structure.
+
+12. A processor according to claim 11, wherein the map is a bit map and each
+5 bit in the bit map corresponds to an individual data value in the
+
+decompressed structure.
+
+10
+
+24

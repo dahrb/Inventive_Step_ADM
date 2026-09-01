@@ -1,0 +1,47 @@
+TITLE:
+Unified Collector Structure for Multi-Bank Register File
+
+TYPE:
+
+ABSTRACT:
+One embodiment of the present invention sets forth a technique for collecting operands specified by an instruction. As a sequence of instructions is received the operands specified by the instructions are assigned to ports, so that each one of the operands specified by a single instruction is assigned to a different port. Reading of the operands from a multi-bank register file is scheduled by selecting an operand from each one of the different ports to produce an operand read request and ensuring that two or more of the selected operands are not stored in the same bank of the multi-bank register file. The operands specified by the operand read request are read from the multi-bank register file in a single clock cycle. Each instruction is then executed as the operands specified by the instruction are read from the multi-bank register file and collected over one or more clock cycles.
+
+CLAIMS:
+1. A method for collecting operands specified by instructions, comprising:
+storing a sequence of instructions that specify operands in a queue;
+assigning each operand specified by an instruction in the queue to a different read request port to produce a set of assigned operands for each one of the read request ports, wherein each read request ports is associated with a read port of a multi-bank register file;
+reordering the assigned operands within each set of assigned operands to avoid bank conflicts between different banks of the multi-bank register file; and
+reading the multi-bank register file to obtain one operand from each set of assigned operands in an access cycle.
+2. The method of claim 1, wherein the multi-bank register file comprises four banks and each one of the four banks corresponds to one of four sets of the assigned operands.
+3. The method of claim 1, wherein the assigning of each operand is based on age of the corresponding instructions with older instructions given higher priority than younger instructions.
+4. The method of claim 1, further comprising dispatching an instruction and the collected operands specified by the instruction for execution.
+5. The method of claim 4, further comprising selecting the instruction from multiple instructions based on the instruction being older than other instructions of the multiple instructions.
+6. The method of claim 1, wherein the reading of the reading the multi-bank register file further comprises receiving a texture read request and delaying reading of one of the operands to read texture data from the multi-bank register file.
+7. The method of claim 1, further comprising dispatching the instructions and collected operands in an order that is different than the sequence of instructions order.
+8. The method of claim 1, further comprising:
+determining that the queue is empty;
+receiving a new instruction that specifies new operands; and
+assigning each one of the new operands to a different read request port before the new instruction is stored in the queue.
+9. The method of claim 1, further comprising the step of determining that space is available in an assignment buffer to store all of the operands specified by an instruction before assigning any of the operands specified by the instruction.
+10. A computer-readable storage medium storing instructions that, when executed by a processor, cause the processor to collect operands specified by instructions, by performing the steps of:
+storing a sequence of instructions in a queue;
+assigning each operand specified by an instruction to a different read request port to produce a set of assigned operands for each one of the read request ports, wherein each read request ports is associated with a read port of a multi-bank register file;
+reordering the assigned operands within each set of assigned operands to avoid bank conflicts between different banks of the multi-bank register file; and
+reading the multi-bank register file to obtain one operand from each set of assigned operands in an access cycle.
+11. A system for collecting operands specified by instructions, the system comprising:
+a streaming multi-processor including a local register file that is configured to:
+store a sequence of instructions in a queue;
+assign each operand specified by an instruction to a different read request port to produce a set of assigned operands for each one of the read request ports, wherein each read request ports is associated with a read port of a multi-bank register file;
+reorder the assigned operands within each set of assigned operands to avoid bank conflicts between different banks of the multi-bank register file; and
+read the multi-bank register file to obtain one operand from each set of assigned operands in an access cycle.
+12. The system of claim 11, wherein the multi-bank register file comprises four banks and each one of the four banks corresponds to one of four sets of the assigned operands.
+13. The system of claim 11, wherein the local register file is further configured to assign each operand based on age of the corresponding instructions, giving older instructions higher priority than younger instructions.
+14. The system of claim 11, wherein the local register file is further configured to dispatch an instruction and the collected operands specified by the instruction for execution.
+15. The system of claim 14, wherein the local register file is further configured to select the instruction from multiple instructions based on the instruction being older than other instructions of the multiple instructions.
+16. The system of claim 11, wherein the local register file is further configured to receive a texture read request and delay reading of one of the operands to read texture data from the multi-bank register file.
+17. The system of claim 11, wherein the local register file is further configured to dispatch the instructions and collected operands in an order that is different than the sequence of instructions order.
+18. The system of claim 11, wherein the local register file is further configured to:
+determine that the queue is empty;
+receive a new instruction that specifies new operands; and
+assign each one of the new operands to a different read request port before the new instruction is stored in the queue.
+19. The system of claim 11, wherein the local register file is further configured to determine that space is available in an assignment buffer to store all of the operands specified by an instruction before assigning any of the operands specified by the instruction.

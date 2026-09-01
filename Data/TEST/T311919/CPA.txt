@@ -1,0 +1,65 @@
+Title: Systems and methods for optimizing insulin dosage
+
+
+Abstract: Embodiments of a testing method suitable for diabetic persons to optimize their administered insulin dosage comprise collecting one or more sampling sets of biomarker data, wherein each sampling set comprises a sufficient plurality of non-adverse sampling instances and wherein each sampling instance comprises an acceptable biomarker reading at a single point in time recorded upon compliance with adherence criteria, determining a biomarker sampling parameter from each sampling set, comparing the biomarker sampling parameter to a target biomarker range, calculating an insulin adjustment parameter associated with the biomarker sampling parameter if the biomarker sampling parameter falls outside the target biomarker range, adjusting the insulin dosage by the insulin adjustment parameter if the biomarker sampling parameter falls outside the target biomarker range and if the insulin dosage does not exceed maximum dosage, and exiting the testing method if the adjusted insulin dosage is optimized. The insulin dosage is optimized when one or more biomarker sampling parameters fall within a target biomarker range.
+
+Type: US Patent
+
+Claims: 
+
+1. A testing method suitable for diabetic persons to optimize their administered insulin dosage comprising:
+collecting one or more sampling sets of biomarker data, wherein each sampling set comprises a sufficient plurality of sampling instances recorded over a collection period and each sampling instance comprises an acceptable biomarker reading recorded upon compliance with an acceptance criterion;
+determining a biomarker sampling parameter from the sampling set whereby only these biomarker data are considered which are in compliance with the acceptance criterion;
+comparing the biomarker sampling parameter to a target biomarker range;
+calculating an insulin adjustment parameter associated with the biomarker sampling parameter if the biomarker sampling parameter falls outside the target biomarker range;
+adjusting the insulin dosage by an amount of the insulin adjustment parameter if the biomarker sampling parameter falls outside the target biomarker range and if the insulin dosage does not exceed maximum dosage; and
+exiting the testing method if the adjusted insulin dosage is optimized, the optimized insulin dosage being achieved when one or more biomarker sampling parameters fall within the target biomarker range.
+2. The testing method of claim 1 wherein the insulin dosage is optimized when at least two consecutive biomarker sampling parameters fall within a target biomarker range.
+3. The testing method of claim 1 further comprising conducting a new testing method after achieving an optimized dosage.
+4. The testing method of claim 1 wherein the collection period for the sampling set is defined as multiple sampling instances within a day, multiple sampling instances within a week, multiple sampling instances within consecutive weeks, or multiple sampling instances on consecutive days within a week.
+5. The testing method of claim 1 wherein each sampling instance comprises the biomarker reading and other contextual data associated with the biomarker reading, wherein the contextual data is selected from the group consisting of the time of collection, the date of collection, the time when the last meal was consumed, and combinations thereof.
+6. The testing method of claim 1 further comprising collecting one or more additional sampling sets of biomarker data when the biomarker sampling parameter falls outside of the target biomarker range.
+7. The testing method of claim 1 further comprising informing a healthcare provider of any biomarker readings indicative of an adverse event.
+8. The testing method of claim 7 further comprising reducing the insulin dosage for any biomarker readings indicative of an adverse event.
+9. The testing method of claim 7 wherein the adverse event is a hypoglycemic event.
+10. The testing method of claim 1 wherein a biomarker reading below a lower threshold is indicative of an adverse event.
+11. The testing method of claim 1 further comprising contacting a healthcare provider for any biomarker readings indicative of an adverse event.
+12. The testing method of claim 1 wherein the insulin dosage is decreased for any biomarker readings indicative of an adverse event.
+13. The testing method of claim 1 further comprising meeting entry criteria required for beginning to collect one or more sampling sets.
+14. The testing method of claim 1 wherein the adherence criteria requires that the prescribed dosage be administered throughout the collection period.
+15. The testing method of claim 1 wherein the adherence criteria requires a fasting period before collection of the sampling set of biomarker data.
+16. The testing method of claim 13 wherein the entry criteria requires that the diabetic person be afflicted with type 2 diabetes.
+17. The testing method of claim 13 wherein the entry criteria requires that the diabetic patient be limited to oral diabetes medication prior to conducting the testing method.
+18. The testing method of claim 1 wherein the maximum insulin dosage is set by a healthcare provider.
+19. The testing method of claim 1 wherein the biomarker sampling parameter is determined by averaging sampling instances, summing the sampling instances, performing a graphical analysis on the sampling instances, performing a mathematical algorithm on the sampling set, or combinations thereof.
+20. The testing method of claim 1 wherein the biomarker sampling parameter is determined by averaging sampling instances.
+21. The testing method of claim 1 wherein the computation of the insulin adjustment parameter comprises locating the insulin adjustment parameter associated with the biomarker parameter in an insulin adjustment parameter lookup table, utilizing an algorithm, and combinations thereof.
+22. The testing method of claim 1 wherein the biomarker reading includes information concerning a biomarker type selected from glucose, triglycerides, low density lipids, and high density lipids.
+23. The testing method of claim 1 wherein the biomarker reading is a blood glucose reading.
+24. The testing method of claim 1 wherein the insulin is basal insulin.
+25. The testing method of claim 1 further comprising exiting the testing method for the occurrence of a violation event.
+26. A method for guiding a diabetic person through a testing method directed to optimizing an administration dosage of insulin, the method utilizing a data processing system and comprising:
+instructing the diabetic person via a display unit to collect one or more sampling sets of biomarker data, wherein each sampling set comprises a sufficient plurality of sampling instances recorded over a collection period, each sampling instance comprising an acceptable biomarker reading recorded upon compliance with acceptance criterion;
+computing
+a biomarker sampling parameter from each sampling set of biomarker data,
+an insulin adjustment parameter associated with the biomarker sampling parameter, if the biomarker sampling parameter falls outside the target biomarker range, and
+an adjusted insulin dosage from a present insulin dosage and the insulin adjustment parameter if the biomarker sampling parameter falls outside the target biomarker range and if the insulin dosage does not exceed maximum dosage; and
+informing a diabetic person to continue the testing method at the adjusted insulin dosage, or exit the testing method if the optimized insulin dosage is achieved, the optimized insulin dosage being achieved when one or more biomarker sampling parameters fall within a target biomarker range.
+27. The method of claim 26 further comprising prompting the diabetic person to answer medical questions, wherein the answers to the medical questions are used to determine compliance with entry criteria or adherence criteria.
+28. The method of claim 26 further comprising automatically notifying a healthcare provider of the adverse event.
+29. The method of claim 26 further comprising automatically reducing the insulin dosage and instructing the diabetic person of the reduced insulin dosage.
+30. The method of claim 26 further comprising informing a diabetic person if subsequent sampling instances are not taken around the same time as an initial sampling instance.
+31. A collection device configured to guide a diabetic person through a testing method directed to optimizing the administration dosage of insulin, comprising:
+a meter configured to measure one or more selected biomarkers;
+a processor disposed inside the meter and coupled to memory, wherein the memory comprises collection procedures; and
+software having instructions that when executed by the processor causes the processor to:
+instruct the diabetic person to collect one or more sampling sets of biomarker data in accordance with the collection procedures, wherein each sampling set comprises a sufficient plurality of sampling instances recorded over a collection period, and each sampling instance comprises an acceptable biomarker reading recorded upon compliance with acceptance criterion; and
+compute
+a biomarker sampling parameter from each sampling set of biomarker data,
+an insulin adjustment parameter associated with the biomarker sampling parameter, if the biomarker sampling parameter falls outside the target biomarker range, and
+an adjusted insulin dosage from a present insulin dosage and the insulin adjustment parameter if the biomarker sampling parameter falls outside the target biomarker range and if the insulin dosage does not exceed maximum dosage; and
+inform a diabetic person to continue the testing method at the adjusted insulin dosage.
+32. The collection device of claim 31 wherein the collection device is a continuous glucose monitor to obtain time-resolved glucose information that is provided as biomarker data to the processor.
+33. The collection device of claim 31 further comprising a lancet operable to pierce the skin of the diabetic person to obtain a blood glucose biomarker.
+34. The collection device of claim 31 further comprising a therapy device configured to administer insulin to a diabetic person.
+35. The collection device of claim 34 wherein the therapy device is an insulin pen.

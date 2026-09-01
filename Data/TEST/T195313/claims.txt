@@ -1,0 +1,342 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+MAIN REQUEST
+CLAIMS
+
+1. A method for performing cryptographic data communication in an
+apparatus which performs the cryptographic data communication with a customer
+replaceable unit monitoring, CRUM, unit mounted in a replaceable unit of an image
+forming apparatus, the method comprising:
+
+encrypting data to update information stored in the CRUM unit using data;
+
+generating a communication message by combining a message authentication
+code, MAC, and the encrypted data; and
+
+transmitting the communication message to the CRUM unit through a serial
+interface to update the information stored in the CRUM unit,
+
+wherein the CRUM unit comprises a central processing unit, CPU, and a
+memory unit to store an operating system, OS, of the CPU, and the CPU is coupled to
+the memory unit,
+
+and the OS of the CPU executes an initialization operation to independently
+initialize the state of the CRUM unit.
+
+2. The method as claimed in claim 1, wherein the data includes information
+regarding consumables used in the image forming apparatus,
+
+and the communication message includes a command to update status
+information on use of the consumables stored in the CRUM unit based on the
+information regarding the consumables.
+
+3. The method as claimed in claim 2, wherein the communication message is
+encrypted using the encryption algorithm stored in the apparatus.
+
+4. The method as claimed in claim 3, wherein the apparatus stores a plurality
+of encryption algorithms and uses an encryption algorithm corresponding to an
+encryption algorithm used in the CRUM unit from among the plurality of encryption
+algorithms.
+
+5. The method as claimed in one of claim 1 to claim 4, wherein the apparatus
+uses an RSA asymmetric key algorithm and one of ARIA, TDES, SEED and AES
+symmetric key algorithms.
+
+6. An apparatus operable to perform cryptographic data communication with
+a customer replaceable unit monitoring, CRUM, unit mounted in a replaceable unit of
+an image forming apparatus, the apparatus comprising:
+
+a controller operable to encrypt data to update information stored in the CRUM
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+unit using the data and to generate a communication message by combining a message
+authentication code, MAC, and the encrypted data; and
+
+an interface unit operable to transmit the communication message to the
+CRUM unit through a serial interface to update the information stored in the CRUM
+unit,
+
+wherein the CRUM unit comprises a memory unit operable to store an
+operating system, OS, and a central processing unit, CPU, which is coupled to the
+memory unit,
+
+and the CPU is operable to execute an initialization operation to independently
+initialize the state of the CRUM unit.
+
+7. The apparatus as claimed in claim 6, wherein the data includes information
+regarding consumables used in the image forming apparatus,
+
+and the communication message includes a command to update status
+information on use of the consumables stored in the CRUM unit based on the
+information regarding the consumables.
+
+8. The apparatus as claimed in claim 7, wherein the communication message
+is encrypted using the encryption algorithm stored in the apparatus.
+
+9. The apparatus as claimed in claim 8, wherein the apparatus is operable to
+store a plurality of encryption algorithms and the controller is operable to use an
+encryption algorithm corresponding to an encryption algorithm used in the CRUM unit
+from among the plurality of encryption algorithms.
+
+10. The apparatus as claimed in one of claim 6 to claim 9, wherein the
+apparatus is operable to use an RSA asymmetric key algorithm and one of ARIA,
+TDES, SEED and AES symmetric key algorithms.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+FIRST AUXILIARY REQUEST
+
+CLAIMS
+
+1. A method for performing cryptographic data communication in an
+apparatus which performs the cryptographic data communication with a customer
+replaceable unit monitoring, CRUM, unit mounted in a replaceable unit of an image
+forming apparatus, the method comprising:
+
+encrypting data to update information stored in the CRUM unit using data;
+
+generating a communication message by combining a message authentication
+code, MAC, and the encrypted data; and
+
+transmitting the communication message to the CRUM unit through a serial
+interface to update the information stored in the CRUM unit,
+
+wherein the CRUM unit comprises a central processing unit, CPU, and a
+memory unit to store an operating system, OS, of the CPU, and the CPU is coupled to
+the memory unit,
+
+and the OS of the CPU executes an initialization operation to independently
+initialize the state of the CRUM unit, the initialization including initial driving of
+application programs used in the CRUM unit, secret calculation information, needed
+for data communications with the image forming apparatus after initialization, setup of
+a communication channel, initialization of a memory value, confirmation of a
+replacement time, setting of register values in the CRUM unit, and setting of internal
+and external clock signals.
+
+2. The method as claimed in claim 1, wherein the data includes information
+regarding consumables used in the image forming apparatus,
+
+and the communication message includes a command to update status
+information on use of the consumables stored in the CRUM unit based on the
+information regarding the consumables.
+
+3. The method as claimed in claim 2, wherein the communication message is
+encrypted using the encryption algorithm stored in the apparatus.
+
+4. The method as claimed in claim 3, wherein the apparatus stores a plurality
+of encryption algorithms and uses an encryption algorithm corresponding to an
+encryption algorithm used in the CRUM unit from among the plurality of encryption
+algorithms.
+
+5. The method as claimed in one of claim 1 to claim 4, wherein the apparatus
+uses an RSA asymmetric key algorithm and one of ARIA, TDES, SEED and AES
+symmetric key algorithms.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+6. An apparatus for performing cryptographic data communication with a
+customer replaceable unit monitoring, CRUM, unit mounted in a replaceable unit of an
+image forming apparatus, the apparatus comprising:
+
+a controller operable to encrypt data to update information stored in the CRUM
+unit using the data and to generate a communication message by combining a message
+authentication code, MAC, and the encrypted data; and
+
+an interface unit operable to transmit the communication message to the
+CRUM unit through a serial interface to update the information stored in the CRUM
+unit,
+
+wherein the CRUM unit comprises a memory unit to store an operating system,
+OS, and a central processing unit, CPU, which is coupled to the memory unit,
+
+and the CPU is operable to execute an initialization operation to independently
+initialize the state of the CRUM unit,
+
+wherein the initialization includes initial driving of application programs used
+in the CRUM unit, secret calculation information, needed for data communications
+with the image forming apparatus after initialization, setup of a communication
+channel, initialization of a memory value, confirmation of a replacement time, setting
+of register values in the CRUM unit, and setting of internal and external clock signals.
+
+7. The apparatus as claimed in claim 6, wherein the data includes information
+regarding consumables used in the image forming apparatus,
+
+and the communication message includes a command to update status
+information on use of the consumables stored in the CRUM unit based on the
+information regarding the consumables.
+
+8. The apparatus as claimed in claim 7, wherein the communication message
+is encrypted using the encryption algorithm stored in the apparatus.
+
+9. The apparatus as claimed in claim 8, wherein the apparatus is operable to
+store a plurality of encryption algorithms and the controller is operable to use an
+encryption algorithm corresponding to an encryption algorithm used in the CRUM unit
+from among the plurality of encryption algorithms.
+
+10. The apparatus as claimed in one of claim 6 to claim 9, wherein the
+apparatus is operable to use an RSA asymmetric key algorithm and one of ARIA,
+TDES, SEED and AES symmetric key algorithms.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+SECOND AUXILIARY REQUEST
+
+CLAIMS
+
+1. A method for performing cryptographic data communication in an
+apparatus which performs the cryptographic data communication with a customer
+replaceable unit monitoring, CRUM, unit mounted in a replaceable unit of an image
+
+forming apparatus, the method comprising:
+encrypting data to update information stored in the CRUM unit using data;
+
+generating a communication message by combining a message authentication
+code, MAC, and the encrypted data; and
+
+transmitting the communication message to the CRUM unit through a serial
+interface to update the information stored in the CRUM unit,
+
+wherein the CRUM unit comprises a central processing unit, CPU, and a
+memory unit to store an operating system, OS, of the CPU, and the CPU is coupled to
+the memory unit,
+
+and the OS of the CPU executes an initialization operation to independently
+initialize the state of the CRUM unit, the initialization including initial driving of
+application programs used in the CRUM unit, secret calculation information, needed
+for data communications with the image forming apparatus after initialization, setup of
+a communication channel, initialization of a memory value, confirmation of a
+replacement time, setting of register values in the CRUM unit, and setting of internal
+and external clock signals,
+
+wherein the data includes information regarding consumables used in the image
+forming apparatus,
+
+and the communication message includes a command to update status
+information on use of the consumables stored in the CRUM unit based on the
+information regarding the consumables,
+
+wherein the communication message is encrypted using the encryption
+algorithm stored in the apparatus,
+
+wherein the apparatus stores a plurality of encryption algorithms and uses an
+encryption algorithm corresponding to an encryption algorithm used in the CRUM unit
+from among the plurality of encryption algorithms.
+
+2. The method as claimed in claim 1, wherein the apparatus uses an RSA
+asymmetric key algorithm and one of ARIA, TDES, SEED and AES symmetric key
+algorithms.
+
+3. An apparatus for performing cryptographic data communication with a
+customer replaceable unit monitoring, CRUM, unit mounted in a replaceable unit of an
+image forming apparatus, the apparatus comprising:
+
+a controller operable to encrypt data to update information stored in the CRUM
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+unit using the data and to generate a communication message by combining a message
+authentication code, MAC, and the encrypted data; and
+
+an interface unit operable to transmit the communication message to the
+CRUM unit through a serial interface to update the information stored in the CRUM
+unit,
+
+wherein the CRUM unit comprises a memory unit to store an operating system,
+OS, and a central processing unit, CPU, which is coupled to the memory unit,
+
+and the CPU is operable to execute an initialization operation to independently
+initialize the state of the CRUM unit,
+
+wherein the initialization includes initial driving of application programs used
+in the CRUM unit, secret calculation information, needed for data communications
+with the image forming apparatus after initialization, setup of a communication
+channel, initialization of a memory value, confirmation of a replacement time, setting
+of register values in the CRUM unit, and setting of internal and external clock signals,
+
+wherein the data includes information regarding consumables used in the image
+forming apparatus,
+
+and the communication message includes a command to update status
+information on use of the consumables stored in the CRUM unit based on the
+information regarding the consumables,
+
+wherein the communication message is encrypted using the encryption
+algorithm stored in the apparatus,
+
+wherein the apparatus is operable to store a plurality of encryption algorithms
+and the controller is operable to use an encryption algorithm corresponding to an
+encryption algorithm used in the CRUM unit from among the plurality of encryption
+algorithms.
+
+4. The apparatus as claimed in claim 3, wherein the apparatus is operable to
+use an RSA asymmetric key algorithm and one of ARIA, TDES, SEED and AES
+symmetric key algorithms.

@@ -1,0 +1,63 @@
+Title: Automatic audio transducer adjustments based upon orientation of a mobile communication device
+
+Abstract: 
+A solution for automatically activating different audio transducers of a mobile communication device based upon an orientation of the device. In the solution, a series of speaker/microphone assemblies can be positioned on the device, such as positioned near an earpiece and positioned near a mouthpiece. Different speaker/microphone assemblies can also be positioned on the front of the device and on the back of the device. The solution can automatically determine an orientation for the device, based upon a detected direction of a speech emitting source and/or based upon one or more sensors, such as a tilt sensor and an accelerometer. For example, when a device is in an upside down orientation, an earpiece microphone and a mouthpiece speaker can be activated. In another example, an otherwise deactivated rear facing speaker can be activated when the device is oriented in a rear facing orientation.
+
+Type: 
+US Patent
+
+Claims: 
+
+1. A method for automatically configuring audio transducers of a mobile device comprising:
+automatically ascertaining an orientation of a mobile device;
+determining a previously stored configuration associated with the ascertained orientation; and
+changing an activation state of at least one audio transducer of the mobile device in accordance with the ascertained configuration.
+2. The method of claim 1, wherein the ascertained orientation state is selected from a group of states comprising a right-side-up state and an upside-down state, said method further comprising:
+identifying a speaker/microphone assembly associated with each of an earpiece and a mouthpiece; and
+toggling activation states of the speaker/microphone assembly so that an upward facing assembly has a speaker activated and a microphone deactivated and so that a downward facing assembly has a speaker deactivated and a microphone activated.
+3. The method of claim 2, wherein the ascertaining step uses at least one of an accelerometer and a tilt sensor.
+4. The method of claim 1, wherein the determined orientation state is a sideways state, wherein the changing state further comprises:
+determining two speakers that are included within speaker/microphone assemblies that are horizontally opposed;
+activating the two speakers; and
+establishing one of the two speakers as a right channel speaker and the other as a left channel speaker for purposes of producing stereo output.
+5. The method of claim 4, wherein the ascertaining step is determined using at least one of an accelerometer and a tilt sensor.
+6. The method of claim 1, wherein the determined orientation state is selected from a group of states comprising a forward-facing state and a rearward-facing state, said ascertaining step further comprising:
+detecting incoming speech; and
+determining the orientation state based upon a direction from which the incoming speech was produced.
+7. The method of claim 6, further comprising:
+automatically enabling speakers on a side of the mobile device corresponding to the orientation state; and
+automatically disabling at least one speaker on a side of the mobile device opposite to the orientation state.
+8. A mobile device comprising:
+a plurality of audio transducers;
+a device memory configured to store a plurality of orientation states and related configurations, each configuration specifying which of the audio transducers are activated and which are deactivated; and
+an orientation detector that automatically detects an orientation of the device, which results in an activation state of the audio transducers being dynamically and automatically altered in accordance with a stored configuration associated with the detected orientation.
+9. The mobile device of claim 8, wherein the plurality of audio transducers include at least two speaker/microphone assemblies, one corresponding to an earpiece and another to a mouthpiece, wherein the orientation states include a right-side-up state and an upside-down state, wherein the configuration file corresponding to the right-side-up state activates an earpiece speaker and a mouthpiece microphone and deactivates a mouthpiece microphone and an earpiece speaker, and wherein the configuration file corresponding to the upside-down state deactivates an earpiece speaker and a mouthpiece microphone and actives a mouthpiece microphone and an earpiece speaker.
+10. The mobile device of claim 8, wherein the plurality of audio transducers include at least one front facing speaker and microphone and at least one rear facing speaker and microphone, wherein the orientation states include a forward-facing state and a rearward-facing state, and wherein configuration files specify that speakers on a same side as the orientation state are activated and that speakers on an opposing side are deactivated.
+11. A mobile communication device comprising:
+a plurality of audio transducers positioned in various different positions of a mobile communications device;
+an orientation detection mechanism configured to automatically determine an orientation of the mobile communication device; and
+a configuration control mechanism configured to selectively and automatically activate particular ones of the audio transducers depending upon the determined orientation.
+12. The device of claim 11, wherein the orientation detection mechanism is configured to determine a position of the mobile communication device relative to a direction of gravity.
+13. The device of claim 11, wherein the orientation detection mechanism is configured to determine a position of the mobile device relative to a direction from which user speech originates.
+14. The device of claim 11, wherein the orientation detection mechanism includes at least one of an accelerometer and a tilt sensor.
+15. The device of claim 11, wherein the orientation detection mechanism utilizes a voice activity detection algorithm to determine an orientation of the mobile communication device relative to a user.
+16. The device of claim 11, further comprising a data store including information for a plurality of different device orientations, each device orientation being associated with an orientation specific configuration, each configuration specifying a set of the audio transducers that are to be automatically activated by the configuration control mechanism and a set of the audio transducers that are to be automatically deactivated by the configuration control mechanism.
+17. The device of claim 11, further comprising:
+a user selector for changing an enablement state of a dynamic orientation capability of the device depending upon user provided input.
+18. The device of claim 11, wherein the plurality of audio transducers includes a first speaker/microphone assembly positioned proximate to an earpiece section of the mobile communication device and includes a second speaker/microphone assembly positioned proximate to a mouthpiece section of the mobile communication device,
+wherein when the orientation detection mechanism determines a user's mouth is positioned proximate to the mouthpiece section:
+the configuration control mechanism automatically adjusts the first speaker/microphone assembly to activate the speaker and to deactivate the microphone; and
+the configuration control mechanism automatically adjusts the second speaker/microphone assembly to activate the microphone and to deactivate the speaker,
+and wherein when the orientation detection mechanism determines a user's mouth is positioned proximate to the earpiece section:
+the configuration control mechanism automatically adjusts the first speaker/microphone assembly to activate the microphone and to deactivate the speaker, and
+the configuration control mechanism automatically adjusts the second speaker/microphone assembly to activate the speaker and to deactivate the microphone.
+19. The device of claim 11, wherein the plurality of audio transducers includes a first speaker/microphone assembly positioned proximate to an earpiece section of the mobile communication device and includes a second speaker/microphone assembly positioned proximate to a mouthpiece section of the mobile communication device,
+wherein when the orientation detection mechanism determines the device is positioned so that the earpiece section and the mouthpiece section are approximately horizontal to each other:
+the configuration control mechanism automatically adjusts the first speaker/microphone assembly to activate the speaker; and
+the configuration control mechanism automatically adjusts the second speaker/microphone assembly to activate the speaker.
+20. The device claim 11, wherein the plurality of audio transducers includes a first speaker/microphone assembly positioned on a front of the mobile communication device and includes a second speaker/microphone assembly positioned on a back of the mobile communication device, wherein when the orientation detection mechanism determines a user's mouth faces the front of the mobile communication device:
+the configuration control mechanism automatically adjusts the first speaker/microphone assembly to activate the speaker and the microphone; and
+the configuration control mechanism automatically adjusts the second speaker-microphone assembly to deactivate the speaker,
+and wherein when the orientation detection mechanism determines a user's mouth faces the back of the mobile communication device:
+the configuration control mechanism automatically adjusts the first speaker/microphone assembly to deactivate the speaker; and
+the configuration control mechanism automatically adjusts the second speaker/microphone assembly to activate the speaker and the microp

@@ -1,0 +1,30 @@
+TITLE:
+Dynamically varying interrupt bundle size
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A system (10) generates interrupts in response to events and dynamically accommodates for changing rates of event generation. A number of events (80) may be bundled together to generate one or more interrupts instead of generating an interrupt for each event. For example, in connection with network controllers, each time a frame is received, it may be stored and bundled with a predetermined number of other frame receipt events to decrease the number of interrupts which must be handled. If a timer times out before all of the predetermined events have occurred, the ensuing bundle size may be decreased. Conversely, if all of the events occur before the timer times out, the ensuing bundle (82) may be increased in size. In this way, the system dynamically accommodates for increased or decreased event activity, optimizing the number of interrupts that may be necessary.
+
+CLAIMS:
+1. A method of generating interrupts comprising: detecting a plurality of events that trigger interrupts; determining information about the number of said events; and based on said information, automatically varying the number of events which result in one or more interrupts being generated.
+2. The method of claim 1 further including setting a number of events that make up a bundle, and triggering a first interrupt proximate to the first event of the bundle and a second interrupt proximate to the last event of the bundle.
+3. The method of claim 1 wherein detecting a plurality of events includes detecting the receipt of frames.
+4. The method of claim 1 further including changing the number of events that make a bundle based on the number of events that occur in a pre-determined time period.
+5. The method of claim 1 wherein determining information includes determining the number of events that occur within a pre-determined time period.
+6. The method of claim 5 wherein the varying includes decreasing the number of events in the ensuing bundle if the number of events that occur within the pre-determined time period is less than the number of events making up a bundle.
+7. The method of claim 1 further including defining a number of events which make up a bundle, determining if after a predetermined time, the number of events have occurred, and if not, decrementing the number of events which make up a bundle.
+8. An article comprising a medium, readable by a processor-based system, storing instructions that cause a processor-based system to: detect a plurality of events that trigger interrupts; determine information about the number of said events; and based on said information, automatically vary the number of events which result in one or more interrupts being generated.
+9. The article of claim 8 including instructions that cause a processor-based system to set a number of events that make up a bundle, and trigger a first interrupt proximate to the first event of the bundle and a second interrupt proximate to the last event of the bundle.
+10. The article of claim 8 including instructions that cause a processor-based system to detect the receipt of frames.
+11. The article of claim 9 including instructions that cause a processor-based system to change the number of events that make a bundle based on the number of events that occur in a pre-determined time period.
+12. The article of claim 9 including instructions that cause a processor-based system to determine the number of events that occur within a pre-determined time period.
+13. The article of claim 12 including instructions that cause a processor-based system to, if the number of events that occur within the pre-determined time period is less than the number of events making up a bundle, decrease the number of events that occur in a given time period in the ensuing bundle.
+14. The article of claim 8 including instructions that cause a processor-based system to define a number of events which make up a bundle, determine if after a predetermined number of time, the number of events have occurred, and if not, decrement the number of events which make up a bundle.
+15. An interrupt controller comprising: an interrupt generator that generates interrupts in response to events; and a controller that programmably varies the number of events that gives rise to the generation of one or more interrupts.
+16. The interrupt controller of claim 15 further including a timer and a detector that detects whether a given number of events occur within a pre-determined time period.
+17. The interrupt controller of claim 15 wherein said controller changes the number of events that occur before an interrupt is generated based on whether or not a given number of events occur in said pre-determined time period.
+18. The interrupt controller of claim 16 wherein said detector detects receipt of frames.
+19. The interrupt controller of claim 15 wherein said controller is part of a network controller.
+20. The interrupt controller of claim 15 wherein said controller selectively increases or decreases the number of events that give rise to the generation of one or more interrupts.

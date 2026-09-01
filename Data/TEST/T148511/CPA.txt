@@ -1,0 +1,46 @@
+TITLE:
+Multi-bit digital input using a single pin
+
+TYPE:
+European patent
+
+ABSTRACT:
+Electronic devices, and methods, for transmitting, transferring and/or conveying a multi-bit digital signal as a voltage signal via a single pin. Devices and methods according to the invention substantially reduce the pin count of a device because inputting of a multi-bit digital signal preferably does not use more than one input pin. In addition, the speed of transmission is improved because the multi-bit digital signal is transmitted as a voltage signal substantially at one time as opposed to serially.
+
+CLAIMS:
+A method of configuring an electronic device using a first multi-bit digital address, the first multi-bit digital address being encoded as a first voltage signal, the method comprising:
+receiving the first voltage signal at a single input pin of the electronic device;
+after the first voltage signal is received at the single input pin, converting the first voltage signal received at the input pin into the first multi-bit digital address; and
+configuring the electronic device using the first multi-bit digital address.
+The method of claim 1 further comprising maintaining the device as responsive to a bus communication signal following a transmission of a bus address signal including the first multi-bit digital address.
+The method of claim 1 or 2 further comprising:
+receiving a second multi-bit digital address that has been encoded as a second voltage signal at the first input pin or at a second input pin;
+converting the second voltage signal to obtain a verification address; and
+verifying the verification address by comparing the first multi-bit digital address to the verification address.
+The method of claim 1, 2, or 3, further comprising:
+receiving a second voltage signal at the first input pin or a second input pin;
+converting the second voltage signal into a verification voltage range; and
+determining whether the first voltage signal is within the verification voltage range.
+The method of claim 1, 2, 3, or 4, the converting further comprising converting integrally to the electronic device.
+The method of claim 1, 2, 3, 4, or 5, the configuring further comprising configuring the electronic device as a voltage monitor using the first digital address.
+The method of claim 5 or 6, the configuring further comprising configuring the trip points of the voltage monitor using the first digital address.
+The method of any one of claims 1 to 7, further comprising referencing the converting to a reference value that is substantially equal to a reference value used to encode the first multi-bit digital signal as the first voltage signal.
+A method of configuring an electronic device to receive communication signals from a serial bus, the configuring using a first multi-bit digital signal, the first multi-bit digital signal being encoded as a first voltage signal, the method comprising:
+receiving the first voltage signal at a single pin of the electronic device;
+after the first voltage signal is received at the single input pin, converting the first voltage signal into the first multi-bit digital signal; and
+maintaining the device as responsive to the communications signals from the serial bus that follow transmission of the first multi-bit digital signal on the bus.
+The method of claim 9 further comprising encoding the first multi-bit digital signal as a pre-determined portion of a supply voltage of the electronic device.
+The method of claim 9 or 10, further comprising providing a reference voltage on the electronic device, and encoding the first multi-bit digital signal as a pre-determined portion of the reference voltage.
+The method of claim 9, 10, or 11, the converting further comprising maintaining the accuracy of the converting with respect to changes in a supply voltage of the device across the operational range of the electronic device.
+A voltage monitor comprising:
+an input pin that receives a first input voltage signal;
+a first converter circuit coupled to the input pin, the first converter circuit that converts the first voltage signal into a first digital address;
+a storage circuit coupled to the first converter circuit, the storage circuit that stores the first digital address;
+a second converter circuit that reconverts the first digital address into the first voltage;
+a comparator circuit coupled to the input pin and to the storage circuit, the comparator circuit that compares the first voltage to a second input voltage and configures the voltage monitor based on the comparison.
+The electronic device of claim 13 wherein the first converter circuit comprises an analog-to-digital converter circuit.
+The electronic device of claim 13 or 14, wherein the second converter circuit comprises a digital-to-analog converter circuit.
+The electronic device of claim 13, 14, or 15, wherein the storage circuit comprises a register.
+The electronic device of claim 13, 14, 15, or 16, wherein the comparator circuit comprises a window comparator circuit.
+The electronic device of claim 17 wherein the window comparator circuit is adapted to have an acceptance level that is narrower than the separation between adjacent input levels.
+The electronic device of claim 17 or 18, wherein the window comparator is adapted to compare the first voltage signal to the second voltage signal with a level of greater accuracy than the accuracy of the least significant bit of the first multi-bit digital signal.

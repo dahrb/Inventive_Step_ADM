@@ -1,0 +1,54 @@
+TITLE:
+Flat panel display device and driving method thereof
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A flat panel display device and a driving method thereof wherein an input data is modulated to realize accurate color with a single gamma voltage. The flat panel display device includes a data converter having a look-up table and inputted with Red, Green and Blue N-bit digital data signals, the data converter converting the Red, Green and Blue N-bit digital data signals into Red, Green and Blue M-bit digital data signals, respectively, referring to the look-up table, wherein each of N and M is an integer, M is greater than N, and each of the Red, Green and Blue M-bit digital data signals corresponds to a gray scale number; a gamma voltage generator generating a plurality of gamma voltages corresponding to the gray scale numbers; and a data driving circuit inputted with the gamma voltages, the data driving circuit converting the Red, Green and Blue M-bit digital data signals into Red, Green and Blue analog video signals, respectively, and applying the Red, Green and Blue analog video signals to respective Red, Green and Blue pixels.
+
+CLAIMS:
+1. A flat panel display device, comprising:
+a data converter having a look-up table and inputted with Red, Green and Blue N-bit digital data signals, the data converter converting the Red, Green and Blue N-bit digital data signals into Red, Green and Blue M-bit digital data signals, respectively, referring to the look-up table, wherein each of N and M is an integer, M is greater than N, and each of the Red, Green and Blue M-bit digital data signals corresponds to a gray scale number;
+a gamma voltage generator generating a plurality of gamma voltages corresponding to the gray scale numbers; and
+a data driving circuit inputted with the gamma voltages, the data driving circuit converting the Red, Green and Blue M-bit digital data signals into Red, Green and Blue analog video signals, respectively, and applying the Red, Green and Blue analog video signals to respective Red, Green and Blue pixels.
+2. The flat panel display device according to claim 2, further includes a timing controller outputting the Red, Green and Blue N-bit digital data signals to the data converter.
+3. The flat panel display device according to claim 1, wherein the data driving circuit includes the gamma voltage generator.
+4. The flat panel display device according to claim 1, wherein the gray scale numbers of the Red, Green and Blue M-bit digital data signals are different from each other.
+5. The flat panel display device according to claim 4, wherein the gray scale number of the Red M-bit digital data signal is greater than the gray scale numbers of the Green and Blue digital data signals.
+6. The flat panel display device according to claim 5, wherein the gray scale number of the Green M-bit digital data signal is greater than the gray scale number of the Blue digital data signal.
+7. The flat panel display device according to claim 3, wherein the Red analog data signal applied to the respective pixel has a voltage level ranged in about 0V to about 5V.
+8. The flat panel display device according to claim 7, wherein the Green analog video signal applied to the respective pixel has a voltage level ranged in about 0V to about 2.5V.
+9. The flat panel display device according to claim 7, wherein the Blue analog video signal applied to the respective pixel has a voltage level ranged in about 0V to about 1.9V.
+10. The flat panel display device according to claim 1, wherein each of the pixels is an electro-luminescence cell.
+11. A method of driving a flat panel display device, comprising:
+receiving Red, Green and Blue N-bit digital data signals;
+converting the Red, Green and Blue N-bit digital data signal into Red, Green and Blue M-bit digital data signals, respectively, wherein each of N and M is an integer, M is greater than N, and each of the Red, Green and Blue M-bit digital data signals corresponds to a gray scale number;
+converting the Red, Green and Blue M-bit digital data signals into Red, Green and Blue analog video signals, respectively; and
+applying the Red, Green and Blue analog video signals to respective Red, Green and Blue pixels.
+12. The method according to claim 11, wherein the gray scale numbers of the Red, Green and Blue M-bit digital data signals are different from each other.
+13. The method according to claim 12, wherein the gray scale number of the Red M-bit digital data signal is greater than the gray scale numbers of the Green and Blue digital data signals.
+14. The method according to claim 13, wherein the gray scale number of the Green M-bit digital data signal is greater than the gray scale number of the Blue digital data signal.
+15. The method according to claim 11, the step of converting the Red, Green and Blue M-bit digital data signals into Red, Green and Blue analog video signals further includes:
+generating a plurality of different gamma voltages corresponding to the gray scale numbers using a gamma voltage generator.
+16. The method according to claim 15, wherein the Red analog video signal applied to the respective pixel has a voltage level ranged in about 0V to about 5V.
+17. The method according to claim 15, wherein the Green analog video signal applied to the respective pixel has a voltage level ranged in about 0V to about 2.5V.
+18. The method according to claim 15, wherein the Blue analog video signal applied to the respective pixel has a voltage level ranged in about 0V to about 1.9V.
+19. The method according to claim 11, wherein each of the pixels is an electro-luminescence cell.
+20. The method according to claim 11, wherein each of the pixels is a liquid crystal display cell.
+21. A method of driving a flat panel display device having a pixel, comprising:
+receiving a N-bit digital data signal;
+converting the N-bit digital data signal into a M-bit digital data signal, wherein each of N and M is an integer and M is greater than N;
+converting the M-bit digital data signal into an analog video signal; and
+applying the analog video signal to the pixel.
+22. The method according to claim 21, converting the N-bit digital data signal into a M-bit digital data signal further includes referring to a look-up table.
+23. The method according to claim 22, converting the M-bit digital data signal into an analog video signal further includes generating a gamma voltage using a gamma voltage generator.
+24. A flat panel display device having a pixel, comprising:
+a data converter inputted with a N-bit digital data signal for converting the N-bit digital data signal into a M-bit digital data signal, wherein each of N and M is an integer and M is greater than N; and
+a data driving circuit inputted with the M-bit digital data signal for generating an analog video signal and applying the analog video signal to the pixel.
+25. The flat panel display device according to claim 24, wherein the data converter further includes a look-up table.
+26. The flat panel display device according to claim 25, wherein the data converter converters the N-bit digital data signal into the M-bit digital data signal using the look-up table, wherein the M-bit digital data signal corresponds to a gray scale number.
+27. The flat panel display device according to claim 26, further includes a gamma voltage generator for generating a gamma voltage corresponding to the gray scale number and outputting the gamma voltage to the data driving circuit.
+28. The flat panel display device according to claim 24, further includes a timing controller for outputting the N-bit digital data signal to the data converter.
+29. The flat panel display device according to claim 27, wherein the pixel is an electro-luminescence cell.
+30. The flat panel display device according to claim 27, wherein the pixel is a liquid crystal display cell.

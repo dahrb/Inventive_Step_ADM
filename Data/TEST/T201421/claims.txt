@@ -1,0 +1,324 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+17 192 593.6 200 389 s3/rko
+Yokogawa Electric Corporation April 16, 2021
+
+Amended set of claims (main request)
+
+1. A plant simulation device (1) comprising:
+
+a first storage (14) storing a model (M) which models a
+
+state of a facility in a plant (PL), a first parameter (FP)
+
+which is adjusted at the start operation of the plant (PL),
+
+and a second parameter (VP) which is varied during the
+
+operation of the plant (PL), the first parameter (FP) and the
+
+second parameter (VP) being set in the model (M); and
+
+a simulator (10) configured to compare a process value
+
+Lu.
+
+of the facility with a simulated value which is calculated
+
+using the model (M) and to adjust the first parameter (FP) at
+
+the start operation of the plant (PL), and then, to compare
+
+the process value of the facility with the simulated value
+
+which is calculated using the model (M) in which the adjusted
+
+first parameter is set and to adjust the second parameter
+
+(VP) during the operation of the plant (PL).
+
+2. The plant simulation device (1) according to Claim 1,
+
+further comprising:
+
+a diagnoser (18) configured to diagnose the facility
+
+using change information of at least one of the first
+
+parameter (FP) and the second parameter (VP) which are
+
+adjusted by the simulator (10).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+3. The plant simulation device (1) according to Claim 1 or
+
+2, wherein
+
+the simulator (10) is configured to adjust the first
+
+parameter (FP) and the second parameter (VP) to make a
+
+difference between the process value of the facility and the
+
+simulated value calculated using the model (M) being equal to
+
+or less than a first threshold value.
+
+4, The plant simulation device (1) according to any one of
+Claims 1 to 3, wherein
+
+the simulator (10) is configured to prevent the
+
+adjustment of the second parameter (VP) if an operating
+
+status of the facility does not satisfy adjustment
+
+conditions.
+
+5. The plant simulation device (1) according to any one of
+
+Claims 1 to 4, further comprising:
+
+a second storage (16) storing change information of the
+
+first parameter (FP) and the second parameter (VP) adjusted
+
+by the simulator (10), and operating conditions of the
+
+facility and time information at the time of adjustment.
+
+6. The plant simulation device (1) according to any one of
+
+Claims 1 to 5, wherein
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+3
+
+the facility is a heat exchanger, and
+
+the first parameter (FP) is a value indicating flow rate
+
+dependency of
+
+exchanger and the second parameter
+
+transfer coefficient at a ret
+
+a heat
+
+exchanger.
+
+7. The plant
+
+wherein
+
+transfer coef
+
+Ficient of
+
+simulation device
+
+ference
+
+(VP) is a
+
+the heat
+
+reference heat
+
+flow rate of the heat
+
+(1) according to Claim 2,
+
+the facility is a heat exchanger,
+
+the first parameter (FP) is a value indicating flow rate
+
+dependency of
+
+exchanger and the second parameter
+
+transfer coefficient at a ret
+
+a heat
+
+exchanger, and
+
+the diagnoser
+
+data of the re
+
+transfer coef
+
+ference
+
+ference heat transi
+
+Fer coef
+
+Ficient of
+
+(VP) is a
+
+the heat
+
+reference heat
+
+flow rate of the heat
+
+(18) is configured to generate time-series
+
+Ficient and to
+
+diagnose the heat exchanger based on the generated time-
+
+series data.
+
+8. The plant simulation device
+
+7, wherein
+
+the simu
+
+lator
+
+adjustment of
+
+the ref
+
+ference hea
+
+10) is conti
+
+(1) according to Claim 6 or
+
+trans
+
+Fer coef
+
+figured to prevent the
+
+Ficient if the
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+4
+
+flow rate of the heat exchanger is less than a second
+
+threshold value.
+
+9. A plant simulation method comprising:
+
+comparing a simulated value which is calculated using a
+
+model (M) modeling a state of a facility in a plant (PL) with
+
+a process value of the facility and adjusting a first
+
+parameter (FP) which is set in the model (M) at the start of
+
+operation of the plant (PL), and then,
+
+comparing the process value of the facility with the
+
+simulated value which is calculated using the model (M) in
+
+which the adjusted first parameter is set and adjusting a
+
+second parameter (VP) which is varied during the operation of
+
+the plant (PL) and is set in the model (M) during the
+
+operation of the plant (PL).
+
+10. The plant simulation method according to Claim 9,
+
+further comprising:
+
+diagnosing the facility using change information of at
+
+least one of the first parameter (FP) and the second
+
+parameter (VP) which are adjusted.
+
+11. The plant simulation method according to Claim 9 or 10,
+
+wherein
+
+--- PAGE 5 ---
+10
+
+the adjustment of
+second parameter
+between the process value of
+
+value calculated using the model
+
+5
+
+the
+
+(VP)
+
+the
+
+(M)
+
+first parameter
+
+is performed to make a di
+
+(FP)
+
+and the
+
+fference
+
+facility and the simulated
+
+being equal to or less
+
+than a first threshold value.
+12. The plant simulation method according to any one of
+Claims 9 to 11, wherein
+
+the facility is a heat exchanger, and
+
+the first parameter (FP) is a value indicating flow rate
+dependency of a heat transfer coefficient of the heat
+exchanger and the second parameter (VP) is a reference heat
+
+transfer coef
+
+exchanger.
+
+Ficient at a reference
+
+flow rate of!
+
+fF the heat

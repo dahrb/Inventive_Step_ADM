@@ -1,0 +1,104 @@
+--- PAGE 1 ---
+EP Application No.: 06 821 115.0
+
+Applicant: NXP B.V.
+Our Ref.: EP108224DKekr
+Date: December 5, 2016
+
+NEW CLAIMS (clean)
+
+A device supporting error correction, comprising: a receiver (120) configured to receive
+data over a communication link; a decapsulator (122) coupled to the receiver and
+configured to create datagrams: a decoder (124} coupled to the decapsulator and
+configured to store the datagrams in a table and to create codewords, the decoder
+storing the datagrams in table columns to create codewords in table rows; and a user
+interface (126) coupled to the cecoder and configured to render images corresponding
+with the datagrams on the user interface; wherein the decapsulator (122) is configured
+
+to:
+
+generate erasure atiributes which describe the error likelihood of each symbol in the
+codeword derived from the associated datagrams; and
+
+the decoder (124) is configured to:
+store the erasure attributes in an erasure table:
+determining for each codeword whether decoding is required for a given codeword;
+
+if the erasure table identifies the given codeword as correct, the given codeword is left in
+
+the datagram table as correct;
+
+if the erasure table identifies the given codeword as having too many errors to be
+corrected, the codeword is not corrected and is identified in the datagram table as
+
+uncorrectable,
+
+otherwise, the given codeword is corrected and stored in the datagram table as
+
+corrected.
+
+The device of claim 1 wherein the decapsulator is configured to generate at least three
+levels of erasure attributes associated with the datagrams.
+
+The device of claim 1 or 2, wherein the decapsulator sets the following soft erasure
+values for describing the likelihood of a symbol of one of the codewords being
+
+erroneous:
+
+--- PAGE 2 ---
+0 (00), wherein the probability of the symbol being erroneous is 0,
+
+1 (01), wherein the probability of the symbol being erroneous is less than 0.5,
+
+2 (10), wherein the probability of the symbol being erroneous is more than 0.5, and
+3 (11), wherein the probability of the symbol being erroneous is 1.
+
+The device of one of claims 1-3, wherein the communications link is a wireless link and
+
+the data is digital television data.
+
+A method of processing error correction, comprising: receiving data over a
+communications link; decapsulating the data to create datagrams; decoding the
+datagrams by storing the datagrams in a table and to create codewords, including the
+
+steps of storing the datagrams in table columns to create codewords in table rows; and
+rendering images on a user interface corresponding with the datagrams on the user
+interface, wherein the decapsulating step including the step of generating erasure
+attributes which describe the error likelihood of each symbol in the codeword derived
+
+from the associated datagrams; and
+
+wherein the decoding step further includes the steps of:
+
+storing the erasure attributes in an erasure table;
+
+determining for each codeword whether decoding is required for a given codeword;
+
+if the erasure table identifies the given codeword as correct, the given codeword is left in
+
+the datagram table as correct;
+
+if the erasure table identifies the given codeword as having too many errors to be
+corrected, the codeword is not corrected and is identified in the datagram table as
+
+uncorrectable,
+
+otherwise, the given codeword is corrected and stored in the datagram table as
+
+corrected.
+
+The method of claim 5 wherein the step of generating erasure attributes associated with
+the datagrams comprises generating at least three levels of erasure attributes
+
+associated with the datagrams.
+
+--- PAGE 3 ---
+The method of claim 5 or 6, wherein the decapsulating step sets the following soft
+erasure values for describing the likelincod of a symbol of one of the codewords being
+erroneous:
+
+0 (00), wherein the probability of the symbol being erroneous is 0,
+1 (01), wherein the probability of the symbol being erroneous is less than 0.5,
+2 (10), wherein the probability of the symbol being erroneous is more than 0.5, and
+
+3 (11), wherein the probability of the symbol being erroneous is 1.

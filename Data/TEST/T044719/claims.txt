@@ -1,0 +1,59 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+93
+
+Claims:
+
+1. A method of controlling the distribution of electronic assets to a test application
+(116b) in a manufacturing process, said method comprising:
+
+providing a daemon application programming interface (API) (23) on an instance of
+said test application to provide assets upon detecting a request therefor, and to
+obtain log data from said instance of said test application during testing;
+
+initiating a daemon (25) in connection with said daemon API to obtain said log data
+from said daemon API (23) and to provide said assets to said daemon API, said
+daemon hosting an agent API (21) for communicating with an appliance (18) remote
+to said instance of said test application;
+
+utilizing said agent API to obtain a batch comprising a plurality of assets and to
+provide one or more log reports containing said log data separately from said
+instance of said test application; and
+
+said daemon: caching said assets to provide a quantity of said assets to said
+daemon API upon request therefrom to enable said daemon API to provide said
+assets to said instance of said test application thereby avoiding session
+establishment between said instance of said test application and said appliance for
+obtaining said electronic assets; and maintaining a record of assets not used when
+said instance of said test application terminates for a next instance of the test
+
+application.
+
+2. The method according to claim 1, further comprising said daemon: caching said
+log reports; and providing said log reports to said appliance.
+
+3. The method according to claim 1, wherein said daemon API comprises a resource
+management system (27) for implementing resource management processes and
+registering said processes with said daemon to indicate when to fetch said assets
+
+and send back log data.
+
+4. The method according to claim 3, wherein said resource management system
+associates said processes by name with a particular product profile.
+
+--- PAGE 2 ---
+94
+
+5. A computer readable medium comprising computer executable instructions that
+when executed cause a computing device to perform the method of any one of
+
+claims 7 to 4.

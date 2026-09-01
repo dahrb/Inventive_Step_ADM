@@ -1,0 +1,156 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST - STATEMENT OF GROUNDS OF APPEAL
+
+1
+
+CLAIMS
+
+1. A method of authenticating financial transactions comprising acquiring
+biometric data from a person, calculating probability of liveness, Pp, of the person
+and probability of a match, Pm, between the person and known biometric
+information, and providing an authentication decision, D, based on a combination of
+
+Pp and Pm.
+
+2. The method of claim 1 wherein authentication decision D is calculated as a
+function of Pm and Pp according to the formula D = P(p) * (K + P(m)), wherein K is a
+
+number between 0.5 and 1.5.
+
+3. The method of claim 1 wherein the biometric data is stored and is used for
+
+manual verification.
+
+4. The method of claim 1 wherein Pp is determined by steps comprising
+presenting a first image on a computer screen, wherein the computer screen is
+oriented to face a user; positioning at least one camera proximate the computer
+screen, wherein the at least one camera is oriented to face the user so that light
+emitted by the computer screen as the first image is reflected by the user and
+captured by the at least one camera; obtaining a second image through the at least
+one camera; and determining whether at least a portion of the second image
+includes a representation of the first image on the computer screen reflected by a
+
+curved surface consistent with a human eye.
+
+5. The method of claim 1 wherein Pp is calculated by steps comprising
+presenting a first image on a computer screen positioned in front of a user;
+capturing a first reflection of the first image off of the user through a camera;
+presenting a second image on the computer screen positioned in front of the user;
+capturing a second reflection of the second image off of the user through the
+
+camera; comparing the first reflection of the first image with the second reflection of
+
+2014
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST - STATEMENT OF GROUNDS OF APPEAL
+
+2
+
+the second image to determine whether the first reflection and the second reflection
+
+were formed by a curved surface consistent with a human eye.
+
+6. The method of claim 1 wherein Pp is calculated by steps comprising
+obtaining a first image of a user positioned in front of a computer screen from a first
+perspective; obtaining a second image of the user positioned in front of the
+computer screen from a second perspective; identifying a first portion of the first
+image and a second portion of the second image containing a representation of a
+human eye; and detecting a human eye when the first portion of the first image
+
+differs from the second portion of the second image.
+
+7. The method of claim 1 wherein Pp is calculated by steps comprising
+presenting one or more illuminators, wherein the illuminators are oriented to face a
+user; positioning at least one camera proximate the illuminators, wherein the at
+least one camera is oriented to face the user so that light emitted by the illuminators
+is reflected by the user and captured by the at least one camera as a first image;
+obtaining a second image through the at least one camera at a different time than
+the first image; detecting a first position of a reflection in the first image and a
+second position of a reflection in the second image; normalizing a positional change
+of the user in the first image and the second image based upon the first position and
+the second position, wherein the step of normalizing comprises compensating for
+motion during the time between the first image and the second image by using at
+least a translation motion model to detect residual motion of the position of the
+reflection; and determining whether a change between at least a portion of the first
+image and the second image is consistent with reflection by a curved surface
+
+consistent with that of a human eye.
+8. The method of claim 1 wherein Pp is calculated by steps comprising
+
+measuring finger or palm temperature and comparing the resultant measured
+
+temperature to expected temperature for a human.
+
+2014
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+MAIN REQUEST - STATEMENT OF GROUNDS OF APPEAL
+
+3
+
+9. The method of claim 1 wherein Pm is calculated by steps comprising iris
+recognition, fingerprint image recognition, finger vein image recognition, or palm
+
+vein image recognition.
+
+10. The method of claim 1 wherein the accuracy of authentication of an
+
+authentic person is improved using Pp.
+
+11. The method of claim 1 wherein biometric data used to calculate Pp is
+
+obtained from a web camera connected to a computer.
+
+12. The method of claim 1 wherein biometric data used to calculate Pp is
+
+obtained from a cell phone camera.
+
+13. A system for authenticating financial transactions comprising means to
+acquire biometric data from a person and calculate probability of liveness, Pp, of the
+person and probability of a match, Pm, between the person and known biometric
+information and means for providing an authentication decision, D, based on a
+
+combination of Pp and Pm.
+
+14. The system of claim 13 wherein the means to calculate comprises a
+computer programmed to determine Pp, Pm, and to authenticate if the value of D
+exceeds a predetermined value according to a formula D = P(p) * (K + P(m)) ,
+
+wherein K is a number between 0.1 and 100.
+
+15. The system of claim 13 wherein the means to calculate comprises a
+computer programmed to determine Pp, Pm, and to authenticate if the value of D
+exceeds a predetermined value according to a formula D = P(p) * (K + P(m)) ,
+
+wherein K is a number between 0.5 and 1.5.
+
+2014

@@ -1,0 +1,406 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+0713222EP Amended Clean Version July 25, 2013
+
+CLAIMS
+
+1. A method for controlling a push message, comprising:
+
+comparing (801) of the push message with a matching condition in a preset push
+message control policy, and processing (802) of the push message according to a processing
+mode corresponding to the matching condition that is satisfied by the push message;
+characterized in that
+
+the matching condition in the push message control policy comprises: a service control
+condition adapted to indicate a service identifier, ID, corresponding to a type of push
+message that a terminal is allowed, not allowed, or currently not allowed to receive,
+wherein the type of push message comprises an e-mail service; and
+
+wherein the push message control policy is set and stored by a push receiving agent in
+a terminal, and the comparing of the push message with the matching condition in the push
+message control policy is performed by the push receiving agent, before the comparing of
+the push message with the matching condition in the push message control policy, the
+method further comprises: receiving, by the push receiving agent, the push message sent by
+a push sending agent;
+
+when the matching condition satisfied by the push message is a matching condition of
+a push content that the terminal is allowed to receive, the processing of the push message
+comprises: sending, by the push receiving agent, the push message to an application
+module in the terminal;
+
+when the matching condition satisfied by the push message is a matching condition of
+a push content that the terminal is not allowed to receive, the processing of the push
+message comprises: dropping, by the push receiving agent, the push message or forwarding
+the push message to other terminals;
+
+when the matching condition satisfied by the push message is a matching condition of
+a push content that the terminal is currently not allowed to receive, the processing of the
+push message comprises: temporarily storing, by the push receiving agent, the push
+message;
+
+or, the push message control policy is set by a push receiving agent in a terminal and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+0713222EP Amended Clean Version July 25, 2013
+
+sent to a push sending agent in a server for storage, and the comparing of the push message
+with the matching condition in the push message control policy is performed by the push
+sending agent, before the comparing of the push message with the matching condition in
+the push message control policy, the method further comprises: receiving (1201), by the
+push sending agent, the push message sent by a push message initiator, PI;
+
+when the matching condition satisfied by the push message is a matching condition of
+a push content that the terminal is allowed to receive, the processing of the push message
+comprises: sending (1203), by the push sending agent, the push message to the push
+receiving agent in the terminal;
+
+when the matching condition satisfied by the push message is a matching condition of
+a push content that the terminal is not allowed to receive, the processing of the push
+message comprises: dropping, by the push sending agent, the push message or forwarding
+the push message to other terminals; and
+
+when the matching condition satisfied by the push message is a matching condition of
+a push content that the terminal is currently not allowed to receive, the processing of the
+push message comprises: temporarily storing, by the push sending agent, the push message.
+
+2. The method according to claim 1, wherein the sending the push message control
+policy to the push sending agent is performed by carrying the push message control policy
+in a session initiation protocol, SIP, message.
+
+3. The method according to claim 2, wherein the carrying the push message control
+policy in the SIP message comprises: carrying the push message control policy in a
+ua-profile header field or an accept header field and a Content-type of the SIP message; or
+
+carrying the push message control policy in an extended header field of the SIP
+message, that is, SIP-Push-Trusted-List, and/or SIP-Push-Block-List, and/or
+SIP-Push-Permit-List.
+
+4. The method according to claim 1, wherein after the sending, by the push sending
+agent, the push message to the push receiving agent in the terminal, the method further
+comprises: retuming, by the push sending agent, a success message to the PI; and
+
+after the dropping, by the push sending agent, the push message, forwarding the push
+
+message to other terminals, or temporarily storing the push message, the method further
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+0713222EP Amended Clean Version July 25, 2013
+
+comprises: retuming, by the push sending agent, a failure message to the PI.
+
+5. The method according to claim 1, wherein after the sending, by the push receiving
+agent, the push message to the application module in the terminal, the method further
+comprises: retuming, by the push receiving agent, a success message to the push sending
+agent; and
+
+after the dropping, by the push receiving agent, the push message, forwarding the push
+message to other terminals, or temporarily storing the push message, the method further
+comprises: retuming, by the push receiving agent, a failure message to the push sending
+agent.
+
+6. The method according to claim 1, wherein the push message control policy further
+comprises a valid time of the matching condition.
+
+7. A push message sending agent, comprising:
+
+a push message processing module, adapted to receive a push message sent by a push
+initiator, PI, compare the received push message with a matching condition in a push
+message control policy stored by a policy storage module, and process the received push
+message according to a processing mode corresponding to the matching condition that is
+satisfied by the push message;
+
+wherein the policy storage module adapted to store the push message control policy
+containing the matching condition and the corresponding processing mode that is set by a
+terminal; and
+
+the matching condition in the push message control policy comprises: a service control
+condition adapted to indicate a service identifier, ID, corresponding to a type of push
+message that a terminal is allowed, not allowed, or currently not allowed to receive,
+wherein the type of push message comprises an e-mail service;
+
+wherein the push message processing module comprises:
+
+a processing execution module, adapted to receive the push message sent by the PI,
+send the received push message to a push receiving agent in the terminal when the
+matching condition satisfied by the push message is a matching condition ofa push content
+that the terminal is allowed to receive, drop the push message or forward the push message
+
+to other terminals when the matching condition satisfied by the push message is a matching
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+0713222EP Amended Clean Version July 25, 2013
+
+condition of a push content that the terminal is not allowed to receive, and temporarily store
+the push message when the matching condition satisfied by the push message is a matching
+condition of a push content that the terminal is currently not allowed to receive according to
+a resolution control result obtained by a resolution control module; and
+
+the resolution control module, adapted to resolve the push message control policy
+stored by the policy storage module, and compare the push message received by the
+processing execution module with the matching condition in the push message control
+policy to determine the matching condition that is satisfied by the push message, so as to
+obtain the resolution control result.
+
+8. The sending agent according to claim 7, wherein the push message processing
+module further comprises:
+
+a feedback module, adapted to feed back a success message to the PI when the
+processing execution module sends the push message to the push receiving agent in the
+terminal; and feed back a failure message to the PI when the processing execution module
+drops the push message, forwards the push message to other terminals, or temporarily
+stores the push message.
+
+9. A push message sending agent, comprising:
+
+a push message processing module, adapted to receive a push message sent by a push
+initiator, PI, compare the received push message with a matching condition in a push
+message control policy read by a policy reading module, and process the received push
+message according to a processing mode corresponding to the matching condition that is
+satisfied by the push message, wherein the policy reading module adapted to read the push
+message control policy containing the matching condition and the corresponding processing
+mode from a terminal; and
+
+the matching condition in the push message control policy comprises: a service control
+condition adapted to indicate a service identifier, ID, corresponding to a type of push
+message that a terminal is allowed, not allowed, or currently not allowed to receive,
+wherein the type of push message comprises an e-mail service;
+
+wherein the push message processing module comprises:
+
+a processing execution module, adapted to receive the push message sent by the PI,
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+0713222EP Amended Clean Version July 25, 2013
+
+send the received push message to a push receiving agent in the terminal when the
+matching condition satisfied by the push message is a matching condition ofa push content
+that the terminal is allowed to receive, drop the push message or forward the push message
+to other terminals when the matching condition satisfied by the push message is a matching
+condition of a push content that the terminal is not allowed to receive, and temporarily store
+the push message when the matching condition satisfied by the push message is a matching
+condition of a push content that the terminal is currently not allowed to receive according to
+a resolution control result obtained by a resolution control module; and
+
+the resolution control module, adapted to resolve the push message control policy read
+by the policy reading module, and compare the push message received by the processing
+execution module with the matching condition in the push message control policy to
+determine the matching condition that is satisfied by the push message, so as to obtain the
+resolution control result.
+
+10. The sending agent according to claim 9, wherein the push message processing
+module further comprises:
+
+a feedback module, adapted to feed back a success message to the PI when the
+processing execution module sends the push message to the push receiving agent in the
+terminal; and feed back a failure message to the PI when the processing execution module
+drops the push message, forwards the push message to other terminals, or temporarily
+stores the push message.
+
+11. A terminal, comprising:
+
+a policy setting module, adapted to set a push message control policy containing a
+matching condition and a corresponding processing mode; and
+
+a policy storage module, adapted to store the push message control policy set by the
+policy setting module; and
+
+a push message processing module, adapted to receive a push message sent by a push
+sending agent, compare the received push message with the matching condition in the push
+message control policy stored by the policy storage module, and process the received push
+message according to the processing mode corresponding to the matching condition that is
+
+satisfied by the received push message; and
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+0713222EP Amended Clean Version July 25, 2013
+
+the matching condition in the push message control policy comprises: a service control
+condition adapted to indicate a service identifier, ID, corresponding to a type of push
+message that a terminal is allowed, not allowed, or currently not allowed to receive,
+wherein the type of push message comprises an e-mail service,
+
+wherein the terminal further comprising: an application module, adapted to perform
+corresponding service processing according to the push message;
+
+wherein the push message processing module comprises a processing execution
+module and a resolution control module,
+
+the processing execution module is adapted to receive the push message sent by the
+push sending agent, send the push message to the application module in the terminal when
+the matching condition satisfied by the push message is a matching condition of a push
+content that the terminal is allowed to receive, drop the push message or forward the push
+message to other terminals when the matching condition satisfied by the push message is a
+matching condition ofa push content that the terminal is not allowed to receive, and
+temporarily store the push message when the matching condition satisfied by the push
+message is a matching condition of a push content that the terminal is currently not allowed
+to receive according to a resolution control result obtained by the resolution control module;
+and
+
+the resolution control module is adapted to resolve the push message control policy in
+the policy storage module, and compare the push message received by the processing
+execution module with the matching condition in the push message control policy stored by
+the policy storage module to determine the matching condition that is satisfied by the push
+message, so as to obtain the resolution control result.
+
+12. The terminal according to claim 11, wherein the push message processing module
+further comprises a feedback module adapted to feed back a success message to the push
+sending agent when the processing execution module sends the push message to the
+application module; and feed back a failure message to the push sending agent when the
+processing execution module drops the push message, forwards the push message to other
+terminals, or temporarily stores the push message.
+
+13. Asystem for controlling a push message, comprising:
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+0713222EP Amended Clean Version July 25, 2013
+
+a push sending agent, adapted to store a push message control policy containing a
+matching condition and a corresponding processing mode that is set by a terminal, receive
+the push message sent by a push initiator, PI, compare the received push message with the
+matching condition in the stored push message control policy, and process the received
+push message according to the processing mode corresponding to the matching condition
+that is satisfied by the push message, send the received push message to a push receiving
+agent in the terminal when the matching condition satisfied by the push message is a
+matching condition of a push content that the terminal is allowed to receive, drop the push
+message or forward the push message to other terminals when the matching condition
+satisfied by the push message is a matching condition of a push content that the terminal is
+not allowed to receive, and temporarily store the push message when the matching
+condition satisfied by the push message is a matching condition of a push content that the
+terminal is currently not allowed to receive; and
+
+the terminal, adapted to set the push message control policy containing the matching
+condition and the corresponding processing mode and send the push message control policy
+to the push sending agent; and
+
+the matching condition in the push message control policy comprises: a service control
+condition adapted to indicate a service identifier, ID, corresponding to a type of push
+message that a terminal is allowed, not allowed, or currently not allowed to receive,
+wherein the type of push message comprises an e-mail service.
+
+14. Asystem for controlling a push message, comprising:
+
+a terminal, adapted to set and store a push message control policy containing a
+matching condition and a corresponding processing mode, receive the push message sent
+by a push sending agent, compare the received push message with the matching condition
+in the stored push message control policy, and process the received push message according
+to the processing mode corresponding to the matching condition that is satisfied by the
+received push message, send the push message to a application module in the terminal
+when the matching condition satisfied by the push message is a matching condition of a
+push content that the terminal is allowed to receive, drop the push message or forward the
+
+push message to other terminals when the matching condition satisfied by the push message
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+0713222EP Amended Clean Version July 25, 2013
+
+is a matching condition of a push content that the terminal is not allowed to receive, and
+temporarily store the push message when the matching condition satisfied by the push
+message is a matching condition of a push content that the terminal is currently not allowed
+to receive; and
+
+the push sending agent, adapted to send the push message to the terminal; and
+
+the matching condition in the push message control policy comprises: a service control
+condition adapted to indicate a service identifier, ID, corresponding to a type of push
+message that a terminal is allowed, not allowed, or currently not allowed to receive,
+wherein the type of push message comprises an e-mail service.
+
+15. Asystem for controlling a push message, comprising:
+
+a terminal, adapted to set a push message control policy containing a matching
+condition and a corresponding processing mode; and
+
+a push sending agent, adapted to read the push message control policy containing the
+matching condition and the corresponding processing mode from the terminal, receive the
+push message sent by a push initiator, PI, compare the received push message with the
+matching condition in the read push message control policy, and process the received push
+message according to the processing mode corresponding to the matching condition that is
+satisfied by the push message, send the received push message to a push receiving agent in
+the terminal when the matching condition satisfied by the push message is a matching
+condition of a push content that the terminal is allowed to receive, drop the push message or
+forward the push message to other terminals when the matching condition satisfied by the
+push message is a matching condition of a push content that the terminal is not allowed to
+receive, and temporarily store the push message when the matching condition satisfied by
+the push message is a matching condition ofa push content that the terminal is currently not
+allowed to receive; and
+
+the matching condition in the push message control policy comprises: a service control
+condition adapted to indicate a service identifier, ID, corresponding to a type of push
+message that a terminal is allowed, not allowed, or currently not allowed to receive,
+
+wherein the type of push message comprises an e-mail service.

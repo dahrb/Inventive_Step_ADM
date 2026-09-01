@@ -1,0 +1,102 @@
+--- PAGE 1 ---
+Rambus Inc. 14 August 2019
+09167223.8 RA 1445-02EP JOE/rbu/hma
+
+New claims according to “Main Request”
+(clean version)
+1. ©Amemory module (300), comprising:
+5 a first set of memory devices (301);
+a second set of memory devices ( 303);
+
+an interface for a single chip-select line (CS) coupled to the first set of
+memory devices (301) and to the second set of memory devices (303);
+
+an interface for a command/address path (CA) coupled to the first set of
+10 memory devices (301) and the second set of memory devices (303);
+
+an interface for a clock line (CLK) coupled to the first set of memory devices
+(301) and the second set of memory devices (303);
+
+an interface for a data path (DQ) with a first component path (DQ-A) of a first
+width coupled to the first set of memory devices (301) and a second component
+
+15 path (DQ-B) of a second width coupled to the second set of memory devices (303),
+the interface for the data path (DQ) having a third width; wherein
+
+each memory device of the first set of memory devices (301) comprises
+first signal receiver circuits, and
+
+a first sampling-latency control circuit (315) to control command/address
+
+20 sampling latencies, wherein
+
+the first sampling-latency control circuit (315) comprises a first configuration
+register (317) and a first multiplexer (321),
+
+AQ A ATA A
+*2019579027*
+
+--- PAGE 2 ---
+20
+
+a first sampling-latency value (318) is programmed within the first configura-
+tion register (317) to select either an incoming chip-select signal (316) or a
+two-cycle delayed instance of the chip-select signal (320) to be output from
+the first multiplexer (321) as a first sample-enable signal (SE(A)), wherein
+the chip-select signal is present on the chip-select line;
+
+the first sample-enable signal (SE(A)) enables the first signal receiver circuits
+to sample row activation and column access commands (ACT, RD) present
+on the command/address path, wherein
+
+each memory device of the second set of memory devices (301 ;) comprises
+
+second signal receiver circuits, and
+
+a second sampling-latency control circuit (315) to control command/address
+
+sampling latencies, wherein
+
+the second sampling-latency control circuit (315) comprises a second con-
+figuration register (317) and a second multiplexer (321),
+
+a second sampling-latency value (318) is programmed within the second
+configuration register (317) to select either the incoming chip-select signal
+(316) or the two-cycle delayed instance of the chip-select signal (320) to be
+output from the second multiplexer (8321) as a second sample-enable signal
+(SE(B)), wherein the chip-select signal is present on the chip-select line;
+
+the second sample-enable signal (SE(B)) enables the second signal receiver
+circuits to sample row activation and column access commands (ACT, RD)
+
+present on the command/address path, wherein
+
+the memory module (300) being configured that either the sampling-latency
+
+value is equal or unequal in both sets of memory devices,
+
+--- PAGE 3 ---
+15
+
+2.
+
+devices (301) and the second set of memory devices (303) are discrete memory
+
+in the case the sampling-latency values in both sets of memory devices
+are the same , memory access commands are interpreted as simultaneously
+directed to both of the first set of memory devices (301;) and the second set
+of memory devices (303) to concurrently process data for transfer via the first
+component path (DQ-A) and the second component path (DQ-B) using the
+third width, and
+
+in the case the sampling-latency values in both sets of memory devices
+are different, the memory access commands are interpreted as directed to
+exactly one of the first set of memory devices (301; 381) or the second set of
+memory devices (303) to process data for transfer via the respective first
+component path (DQ-A) or the second component path (DQ-B) at a given
+
+instant in time.
+
+The memory module (300) of claim 1, where each of the first set of memory
+
+devices.

@@ -1,0 +1,132 @@
+Title: Structured testing method for diagnostic or therapy support of a patient with a chronic disease and devices thereof
+
+Abstract: A structured testing method for diagnostic or therapy support of a patient with a chronic disease and devices thereof are disclosed which implement a structured collection procedure based on a medical use case and/or question which provides at least one or more parameters defining entry criterion, a schedule of events, adherence criterion, and exit criterion. The entry criterion establish conditions needed to be met prior to obtaining biomarker data from the patient. Each event can include one or more of a performance time, patient guidance to perform the event, a request for information from the patient a request for patient action, and a request for collection of biomarker data from the patient. The adherence criterion can be used to assess whether an event performed is acceptable to addressing the medical use case and/or question, and the exit criterion establishes conditions needed to be met prior to exiting the collection procedure.
+
+Type: US Patent
+
+Claims: 
+
+1. A device for diagnostic or therapy support of a patient with a chronic disease, comprising:
+a display;
+a user interface; and
+a processor coupled to the display and the user interface; and
+program instructions that when executed by the processor causes the processor to:
+prompt a plurality of medical use cases or questions related to the chronic disease for selection on the display,
+receive a selected medical use case or question via the user interface,
+select automatically a structured collection procedure for the diagnostic or therapy support of the patient with the chronic disease based on the selected medical use case or question from a plurality of structured collection procedures stored in a memory, and
+implement the selected structured collection procedure,
+said structured collection procedure having parameters defining a schedule of events, each of said events comprising at least one or more of a performance time, guidance to perform the event, a request for patient action, a request for information, and a request for collection of at least one type of biomarker data.
+2. A device for diagnostic or therapy support according to claim 1 wherein the parameters of the structured collection procedure further define at least one entry criterion which establishes one or more conditions needed to be met in order for a processor to perform the schedule of events.
+3. A device for diagnostic or therapy support according to claim 2 wherein the entry criterion is defined as a particular medical question so that the structured collection procedure is automatically selected and the schedule of events started upon meeting the entry criterion.
+4. A device for diagnostic or therapy support according to claim 1 wherein the parameters of the structured collection procedure further define at least one adherence criterion which establishes one or more conditions used to qualitatively assess whether an event performed according to the schedule of events provided data which is acceptable to addressing the selected medical use case or question.
+5. A device for diagnostic or therapy support according to claim 4 wherein the adherence criterion is assessed and the structured collection procedure is dynamically adapted based on the assessment.
+6. A device for diagnostic or therapy support according to claim 1 wherein the parameters of the structured collection procedure further define at least one exit criterion which establishes one or more conditions needed to be met prior to exiting the structured collection procedure.
+7. A device for diagnostic or therapy support according to claim 1 wherein the processor implements the selected structure collection procedure as output.
+8. A device for diagnostic or therapy support according to claim 1 wherein the device is one of a clinician computer and a hand-held collection device.
+9. A device for diagnostic or therapy support according to claim 7 wherein the output of the selected structured collection procedure is provided to a hand-held blood glucose meter.
+10. A device for diagnostic or therapy support according to claim 7 wherein the output is one of a printed paper tool, software to be operated by a collection device, software sent to a collection device, software download from a server by a collection device, a display of clinician computer, and a display of a hand-held collection device.
+11. A device for diagnostic or therapy support according to claim 1 wherein the memory one of provided to the device, provided with the device, and remotely accessed by the device.
+12. A device for diagnostic or therapy support according to claim 1 wherein the plurality of medical use cases or questions comprises optimizing an insulin-to-carbohydrate ratio, determining bolus timing in regard to a meal start, and determining an exercise equivalent.
+13. A device for diagnostic or therapy support according to claim 1 wherein the plurality of medical use cases or questions include one or more questions concerning controlling the biomarker in a predefined context, therapy onset, type of therapy, oral mono-therapy, oral combination therapy, insulin therapy, lifestyle therapy, adherence to therapy, and therapy efficacy.
+14. A device for diagnostic or therapy support according to claim 13 wherein the oral mono-therapy is selected from the group consisting of, sulfonylureas, biguanides, thiazolidinediones, alpha-glucosidase inhibitors, meglitinides, dipeptidyl peptidase IV inhibitors, GLP-1 analogs, taspoglutide, PPAR dual alpha/gamma agonists, and aleglitazar.
+15. A device for diagnostic or therapy support according to claim 13 wherein the oral combination therapy is one or more selected from the group consisting of, sulfonylureas, biguanides, thiazolidinediones, alpha-glucosidase inhibitors, meglitinides, dipeptidyl peptidase IV inhibitors, GLP-1 analogs, taspoglutide, PPAR dual alpha/gamma agonists, and aleglitazar.
+16. A device for diagnostic or therapy support according to claim 13 wherein the insulin therapy is one or more selected from the group consisting of, insulin injection or inhalation, type of insulin, and split of insulin in basal and bolus.
+17. A device for diagnostic or therapy support of a patient with a chronic disease, comprising:
+a processor; and
+program instructions that when executed by the processor causes the processor to:
+retrieve automatically from memory a structured collection procedure, said structured collection procedure being based on a medical use case or question of and having parameters defining:
+entry criterion which establishes conditions needed to be met prior to obtaining biomarker data, and
+a schedule of events, each of said events comprising at least one or more of a performance time, guidance to perform the event,
+a request for patient action, a request for information, and a request for collection of at least one type of biomarker data, and
+implement automatically the schedule of events of the structured collection procedure upon the entry criterion being met at some unknown time.
+18. A device for diagnostic or therapy support according to claim 17 wherein the parameters of the structured collection procedure further define adherence criterion which establishes one or more conditions used to qualitatively assess whether an event performed according to the schedule of events provided data which is acceptable to addressing a medical use case or question upon which the structured collection procedure is based.
+19. A device for diagnostic or therapy support according to claim 18 wherein the adherence criterion is assessed and the structured collection procedure is dynamically adapted based on the assessment.
+20. A device for diagnostic or therapy support according to claim 18 wherein the adherence criterion is assessed based on a group of data collected during the collection procedure.
+21. A device for diagnostic or therapy support according to claim 17 wherein the structured collection procedure is authorized for retrieval by a clinician.
+22. A device for diagnostic or therapy support according to claim 21 wherein the structured collection procedure until authorized remains hidden from viewing on a display of the device.
+23. A device for diagnostic or therapy support according to claim 17 wherein the processor implements automatically a schedule of events of a second structured collection procedure upon entry criterion of the second structured collection procedure being met at some unknown time.
+24. A device for diagnostic or therapy support according to claim 17 wherein the retrieved structured collection procedure further includes exit criterion which establishes the conditions needed to be met prior to exiting the structured collection procedure, and the processor ends the structured collection procedure automatically upon the exit criterion being met at some unknown time.
+25. A device for diagnostic or therapy support according to claim 24 wherein the exit criterion of the retrieved structured collection procedure meets entry criterion of a second structured collection procedure such that the processor implements automatically a schedule of events of the second structured collection procedure upon meeting the exit criterion of the retrieved structured collection procedure at some unknown time.
+26. A device for diagnostic or therapy support according to claim 24 wherein the exit criterion of the retrieved structured collection procedure and the entry criterion of the second structured collection procedure are based on one or more contraindications.
+27. A device for diagnostic or therapy support according to claim 24 wherein the retrieved structured collection procedure further includes a check provided between the entry and exit criterions and which the processor runs after a predetermined sampling grouping of the schedule of events, said check is run by the processor to determine one or more of whether a parameter needs adjustment and whether to re-run the sampling grouping.
+28. A device for diagnostic or therapy support according to claim 18 wherein the adherence criterion is defined as the exit criterion.
+29. A device for diagnostic or therapy support according to claim 17 wherein the program instructions further causes the processor to permit adjustment of the parameters of the selected structured collection procedure.
+30. A device for diagnostic or therapy support of a patient with a chronic disease, comprising:
+a processor; and
+program instructions that when executed by the processor causes the processor to:
+retrieve automatically from memory a structured collection procedure, said structured collection procedure being based on a medical use case or question of and having parameters defining:
+a schedule of events, each of said events comprising at least one or more of a performance time, guidance to perform the event, a request for patient action, a request for information, and a request for collection of at least one type of biomarker data, and
+adherence criterion which is used to assess whether an event is performed according to the schedule of events, or whether data provided according to the event is acceptable to addressing the medical use case, and
+implement automatically the schedule of events of the structured collection procedure, and
+take one or more additional actions if the adherence criterion is not met.
+31. A device for diagnostic or therapy support according to claim 30 wherein the processor provides on a display information about the one or more additional actions.
+32. A device for diagnostic or therapy support according to claim 30 wherein the program instructions further causes the processor to delay the schedule of event upon not meeting the adherence criterion.
+33. A device for diagnostic or therapy support according to claim 30 wherein the structured collection procedure further includes exit criterion which establishes the conditions needed to be met prior to exiting the structured collection procedure, wherein the processor ends the structured collection procedure automatically upon the exit criterion being met at some unknown time, and wherein the exit criterion is one or more of a particular value, a mean average, a particular event, a condition which has occurred, a condition which has not occurred, and expiration of a predetermined timeout.
+34. A device for diagnostic or therapy support according to claim 30 wherein the processor ends the structured collection procedure automatically when the event is not performed according to the schedule of events, or when the data provided according to the event is not acceptable to addressing the medical use case.
+35. A device for diagnostic or therapy support of a patient with a chronic disease, comprising:
+a processor; and
+program instructions that when executed by the processor causes the processor to:
+retrieve automatically from memory a structured collection procedure, said structured collection procedure being based on a medical use case or question of and having parameters defining a schedule of events, each of said events comprising at least one or more of a performance time, guidance to perform the event, a request (240) for patient action, a request for information, and a request for collection of at least one type of biomarker data,
+receive biomarker data according to the structured collection procedure,
+store the biomarker data together with data of the schedule of events as contextualized biomarker data, and
+calculate measured noise from the contextualized biomarker data by applying a noise function, wherein the noise function comprises one or more of measured noise, procedure noise, and system noise.
+36. A device for diagnostic or therapy support according to claim 35 wherein the program instructions further causes the processor to permit adjustment of the parameters of the selected structured collection procedure to adjust for the noise.
+37. A device for diagnostic or therapy support according to claim 35 wherein the program instructions further causes the processor to use the noise function to adjust the structure collection protocol.
+38. A device for diagnostic or therapy support according to claim 35 wherein the program instructions further causes the processor to validate the noise function by calculating total noise using a quantity of contextualized biomarker data points and the noise function, and to compare a calculated noise estimate against a measured noise of the contextualized biomarker data to determine whether the calculated noise estimate and measured noise are equal within a given confidence interval.
+39. A device for diagnostic or therapy support according to claim 35 wherein the program instructions further causes the processor to use the noise function to identify non-conformance of contextualized biomarker values.
+40. A device for diagnostic or therapy support according to claim 35 wherein the program instructions further causes the processor to contextualize biomarker data by associating each date event request with an associated data event value; evaluating the contextualized biomarker data with adherence criterion; and accepting contextualized biomarker data that meets the adherence criterion.
+41. A structured testing method for diagnostic or therapy support of a patient with a chronic disease, comprising:
+selecting a structured collection procedure on a computer for the diagnostic or therapy support;
+having a processor of the computer retrieve automatically from memory the structured collection procedure, said structured collection procedure being based on a medical use case and having parameters defining:
+entry criterion which establishes conditions needed to be met prior to obtaining biomarker data,
+a schedule of events, each of said events comprising at least one or more of a performance time, guidance to perform the event, a request (240) for patient action, a request for information, and a request for collection of at least one type of biomarker data,
+adherence criterion which is used to qualitatively assess whether an event performed according to the schedule of events provided data which is acceptable to addressing the medical use case, and
+exit criterion which establishes the conditions needed to be met prior to exiting the structured collection procedure; and
+prescribing the selected structured collection procedure to the patient, wherein the processor of the computer provides as output the selected structured collection procedure to the patient to perform when prescribed.
+42. The method in claim 41 wherein the selection of the structured collection procedure is automatically chosen from a plurality of a plurality of structured collection procedures based upon the processor receiving a defined medical question.
+43. The method in claim 41 wherein the selection of the structured collection procedure is automatically chosen from a plurality of structured collection procedures when a defined entry criterion of one of the plurality of structured collection procedures is met.
+44. The method in claim 41 wherein the selected structured collection procedure is prescribed to the patient on a collection device, and wherein the structured collection procedure starts automatically when the entry criterion is met.
+45. The method in claim 41 wherein the selected structured collection procedure is prescribed to the patient on a collection device, and wherein the structured collection procedure ends automatically when the exit criterion is met.
+46. The method in claim 41 wherein the selected structured collection procedure is prescribed to the patient on a collection device, and wherein the schedule of event can dynamic adapt based upon not meeting the adherence criterion.
+47. The method in claim 41 wherein the selected structured collection procedure is prescribed to the patient on a collection device, and wherein the exit criterion is met when a group of data has satisfied the adherence criterion.
+48. The method in claim 41 wherein the selected structured collection procedure further comprises an adherence event which causes the processor to additional actions as a consequence of an event in the schedule of events failing to met the adherence criterion.
+49. The method in claim 41 wherein the adherence criterion is used to validate event values against event requests within a give tolerance of time or value.
+50. The method in claim 41 further comprising permitting on the computer adjustment of the parameters of the selected structured collection procedure.
+51. The method in claim 41 further comprising permitting on the computer adjustment of the parameters of the selected structured collection procedure to adjust for noise.
+52. The method in claim 41 wherein the request for information provides contextual information to the biomarker data.
+53. The method in claim 52 wherein the medical use case is selected from optimizing an insulin-to-carbohydrate ratio, determining bolus timing in regard to a meal start, and determining an exercise equivalent.
+54. The method in claim 52 wherein the medical question is one of to control the biomarker in a predefined context, and to optimize the biomarker in a predefined context.
+55. The method in claim 52 wherein the medical question is selected from the group consisting of, therapy onset, type of therapy, oral mono-therapy, oral combination therapy, insulin therapy, lifestyle therapy, adherence to therapy, and therapy efficacy.
+56. The method in claim 55 wherein the oral mono-therapy is selected from the group consisting of, sulfonylureas, biguanides, thiazolidinediones, alpha-glucosidase inhibitors, meglitinides, dipeptidyl peptidase IV inhibitors, GLP-1 analogs, taspoglutide, PPAR dual alpha/gamma agonists, and aleglitazar.
+57. The method in claim 55 wherein the oral combination therapy is one or more selected from the group consisting of, sulfonylureas, biguanides, thiazolidinediones, alpha-glucosidase inhibitors, meglitinides, dipeptidyl peptidase IV inhibitors, GLP-1 analogs, taspoglutide, PPAR dual alpha/gamma agonists, and aleglitazar.
+58. The method in claim 55 wherein the insulin therapy is one or more selected from the group consisting of, insulin injection or inhalation, type of insulin, and split of insulin in basal and bolus.
+59. The method in claim 41 wherein the schedule of event can be delay upon not meeting the adherence criterion due to sickness, stress, or unable to take meal or exercise.
+60. The method in claim 41 further comprising creating a noise function and using the noise function to adjust the structure collection protocol for the biomarker.
+61. The method in claim 60 wherein the noise function comprises, selecting contextualized biomarker data; calculating measured noise from the contextualized biomarker data; and creating a noise modeling function based on an algorithm using contextualized biomarker data, measurement noise, procedural noise, system noise, and a number of biomarker value data points.
+62. The method in claim 61, further comprising, validating the noise function by calculating total noise using a quantity of contextualized biomarker data points and the noise modeling function, and comparing a calculated noise estimate against a measured noise of the contextualized biomarker data to determine whether the calculated noise estimate and measured noise are equal within a given confidence interval.
+63. The method in claim 62 wherein the noise validating function is validated to identify non-conformance of contextualized biomarker values using a technique selected from the group consisting of statistical based algorithm, model based algorithm.
+64. The method in claim 41 further comprises contextualizing the biomarker data by associating the date event request with the data event values; evaluating the contextualized biomarker data for the at least one adherence criterion; and accepting contextualized biomarker data that meets the at least one adherence criterion.
+65. A collection device for performing a prescribed structured collection procedure, said device comprising:
+memory storing a structured collection procedure and for storing patient data,
+said patient data comprising collected biomarker data and other data associated with each instance of the collected biomarker data, said other data comprising contextualized data which characterizes the associated collected biomarker, and
+said structured collection procedure comprising entry criterion to begin the structured collection procedure, exit criterion to end the structured collection procedure, a schedule of events in which each of said events comprising at least one or more of guidance to perform the collection event, a request for information, a request for patient action, a request for at least one type of biomarker data, and adherence criterion to qualitatively assess whether an event performed according to the schedule of events provided data which is acceptable to addressing the medical use case;
+a user interface for selecting the structured collection procedure;
+at least one biomarker reader to provide the at least one type of biomarker data specified in the structured collection procedure;
+a processor coupled to the memory, the display, the user interface, and the biomarker reader; and
+a program having instructions that when executed by the processor causes the processor to:
+receive input from the user interface indicating selection of the structured collection procedure,
+implement automatically the schedule of events if after the selection the entry criterion is met,
+store in memory the patient data resulting from each of the events when performed,
+associate automatically a unique identifier in memory with the data if a performed event met the adherence criterion, and
+end automatically the selected structured collection procedure when the exit criterion is met.
+66. A method of performing a structured collection procedure, comprising:
+providing a collection device according to any one of claims 1, 17, 30, 35, or 65; and
+authorizing the structured collection procedure on the collection device.
+67. A computer readable storage medium storing instruction that, when executed by a processor of a computer, causes the processor to perform a structured testing method to obtain contextualized biomarker data from a patient, said method comprising:
+retrieving automatically from an electronic component a structured collection procedure, said structured collection procedure being based on a medical use case and having parameters defining:
+entry criterion which establishes conditions needed to be met prior to obtaining biomarker data,
+a schedule of events, each of said events comprising a performance time, guidance to perform the event, a request for patient action, a request for information, a request for collection of at least one type of biomarker data, and combinations thereof,
+adherence criterion which is used to qualitatively assess whether an event performed according to the schedule of events provided data which is acceptable to addressing the medical use case, and
+exit criterion which establishes the conditions needed to be met prior to exiting the structured collection procedure;
+permitting adjustment of the parameters of the selected structured collection procedure; and
+prescribing the selected structured collection procedure to the patient, wherein the processor of the computer provides as output the selected structured collection procedure to the patient to perform when prescribed.

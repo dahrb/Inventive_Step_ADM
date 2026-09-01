@@ -1,0 +1,191 @@
+--- PAGE 1 ---
+MAIN REQUEST
+43
+
+CLAIMS
+
+1. A secure content delivery system (1100), comprising:
+
+a set-top box (1140) to initiate a request (1111) for program data, the request
+including a unique identifier of the set-top box, the set-top box having a memory storing a
+unique key of the set-top box; and
+
+a conditional access (CA) control system (1120) in communication with the set-top
+box and a mating key server (1130), the CA control system configured:
+
+to transmit information including the unique identifier and a mating key generator
+(1121) to the mating key server,
+
+to receive from the mating key server a mating key (1122) being based on the
+transmitted unique identifier and mating key generator, the mating key being used to encrypt
+a control word used for scrambling the program data prior to transmission to the set-top box
+the mating key obtained by the mating key server accessing a copy of the unique key stored
+in the mating key server, and encrypting all or part of the mating key generator with the copy
+of the unique key, and
+
+to transmit the mating key generator and the encrypted control word to the set-top
+box;
+
+the set-top box configured to encrypt the received mating key generator using the
+unique key to obtain a key identical to the mating key, to use the obtained mating key to
+decrypt the encrypted control word, and to use the decrypted contro! word to descramble
+scrambled program data.
+
+2. The secure content delivery system of claim 1, wherein the mating key server
+is a plurality of servers (1130, 11302... 1130y) each associated with a manufacturer of set-
+
+top boxes.
+
+3. The secure content delivery system of claim 2, wherein the transmitted
+information includes a manufacturer identifier (1123) that identifies one of the plurality of
+servers associated with the manufacturer of the set-top box in order to retrieve the mating
+key therefrom.
+
+4, The secure content delivery system of claim 1, wherein the transmitted
+information comprises a mating key sequence number (1126) being used for aging the
+
+mating key.
+
+--- PAGE 2 ---
+MAIN REQUEST
+44
+
+5. The secure content delivery system of claim 1, wherein the transmitted
+information comprises an identifier that identifies a supplier (1124) of the program data, the
+supplier being one of a cable provider, a satellite-based provider, a terrestrial-based
+provider, and an Internet service provider.
+
+6. The secure content delivery system of claim 1, wherein the transmitted
+information comprises an identifier (1125) that indicates a provider of the CA control system.
+
+7. The secure content delivery system of claim 1, wherein the mating key server
+is a trusted third party (1135) including a plurality of databases (db) accessible by the CA
+control system.
+
+8. The secure content delivery system of claim 1, wherein the CA control system
+generates and provides an entitlement control message (ECM) (1142) and an entitlement
+management message (EMM) (1148) to the set-top box after receipt of the mating key, the
+EMM comprises at least one global key (1345) to decrypt the ECM and a corresponding key
+identifier (1344) being a value that is digitally signed for use in checking whether the global
+key has been illicitly altered.
+
+9. The secure content delivery system of claim 1, wherein CA control system
+generates and provides an entitlement control message (ECM) (1142) and an entitlement
+management message (EMM) (1148) to the set-top box after receipt of the mating key, the
+ECM comprises the control word in an encrypted format and the EMM comprises the mating
+key generator.
+
+10. The secure content delivery system of claim 9, wherein the set-top box
+comprises a smart card (1150) and a descrambler component (1160).
+
+11. The secure content delivery system of claim 10, wherein the smart card of the
+set-top box receives the EMM and forwards the mating key generator from the EMM and the
+encrypted contro! word recovered from the ECM to the descrambler component of the set-
+top box.
+
+12. |The secure content delivery system of claim 11, wherein the descrambler
+component comprises a first process block (1161) that performs an encryption operation on
+
+--- PAGE 3 ---
+MAIN REQUEST
+45
+
+the mating key generator message using the unique key (1162) previously stored in the
+descrambler component to produce the key identical to the mating key, the key being loaded
+into a second process block (1164) that is used to decrypt the encrypted control word to
+produce the control word used for descrambling the scrambled program data.
+
+13. | Amethod comprising:
+
+receiving a unique identifier of a set-top box having a memory storing a unique key of
+the set-top box and a mating key generator message (1121) including a manufacturer
+identifier of the set-top box (1140);
+
+transmitting the mating key generator message and the unique identifier of the set-
+top box to a mating key server (1130) associated with the manufacturer identifier;
+
+transmitting a mating key (1122) from the mating key server, the mating key being
+based on the transmitted unique identifier and mating key generator message such that the
+mating key is obtained by the mating key server accessing a copy of the unique key stored
+in the mating key server and encrypting all or part of the mating key generator with the copy
+of the unique key;
+
+supplying the mating key to a conditional access control system (1120), the mating
+key being subsequently used to encrypt a service key used for scrambling program data;
+
+supplying the encrypted service key and the mating key generator message to a
+descrambler component (1160) of the set-top box; and
+
+in the set-top box, encrypting the mating key generator message using the unique
+key to obtain a key identical to the mating key, decrypting the service key with the mating
+key, and descrambling scrambled program data using the decrypted service key.
+
+14. | The method of claim 13, wherein the mating key generator message further
+comprises a mating key sequence number (1126) being used to update the mating key.
+
+15. The method of claim 13, wherein the mating key generator message further
+comprises an identifier that identifies a supplier (1124) of the program data, the supplier
+being one of a cable provider, a satellite-based provider, a terrestrial-based provider, and an
+Internet service provider.
+
+16. |The method of claim 14 further comprising:
+producing an entitlement management message (EMM) (1148) that comprises the
+mating key generator message, the encrypted service key and a key identifier (1344) being a
+
+--- PAGE 4 ---
+MAIN REQUEST
+
+46
+
+value that indicates a tier of service of the program data associated with the encrypted
+service key; and
+providing the EMM to the set-top box.
+
+17. The method of claim 14 further comprising:
+
+providing meta-data (1400) with an electronic program guide in an unscrambled
+format from the CA control system to the set-top box, the meta-data comprises a plurality of
+tag entries each comprising a channel name (1420,), a name of the program data (1430,),
+and an identifier for the service key required for access to the channel; and
+
+providing the mating key generator message from the CA control system to the set-
+top box.
+
+18. The method of claim 17, wherein the meta-data comprises further comprises
+the mating key generator message.
+
+19. A mating key gateway (1350) adapted for communication with a plurality of
+subscriber management systems (1510) each associated with a different content provider,
+comprising:
+
+means for routing a mating key generator and a unique identifier of a set-top box
+having a memory storing a unique key of the set-top box to a selected mating key server
+(1130);
+
+means for retrieving a mating key (1530) from the mating key server, the mating key
+based on the unique identifier of the set-top box (1140) targeted to receive program data and
+the mating key generator by the mating key server accessing a copy of the unique key
+stored in the mating key server and encrypting all or part of the mating key generator with
+the copy of the unique key;
+
+means for transmitting the mating key to one of the plurality of subscriber
+management systems (1510), the mating key being used to encrypt at least one service key
+provided to the set-top box; and
+
+means for transmitting the mating key generator and the encrypted service key to the
+set-top box so that the set-top box can encrypt the mating key generator using the unique
+key to obtain a key identical to the mating key, decrypt the encrypted service key with the
+mating key, and descramble scrambled program data using the decrypted service key.
+
+--- PAGE 5 ---
+MAIN REQUEST
+
+47
+
+20. The mating key gateway of claim 19 supporting operations from at least two
+
+subscriber management systems concurrently.
+
+21. The mating key gateway of claim 20, wherein the at least two subscriber
+management systems include at least two of a group consisting of cable provider, a satellite-
+based provider and an Internet service provider.

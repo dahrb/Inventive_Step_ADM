@@ -1,0 +1,54 @@
+TITLE:
+Contextual tagging of recorded data
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Embodiments are disclosed that relate to the automatic tagging of recorded content. For example, one disclosed embodiment provides a computing device comprising a processor and memory having instructions executable by the processor to receive input data comprising one or more of a depth data, video data, and directional audio data, identify a content-based input signal in the input data, and apply one or more filters to the input signal to determine whether the input signal comprises a recognized input. Further, if the input signal comprises a recognized input, then the instructions are executable to tag the input data with the contextual tag associated with the recognized input and record the contextual tag with the input data.
+
+CLAIMS:
+1. A computing device, comprising:
+a processor; and
+memory comprising instructions executable by the processor to:
+receive input data comprising one or more of depth data, video data, and directional audio data;
+identify a content-based input signal in the input data;
+determine whether the input signal comprises a recognized input; and
+if the input signal comprises a recognized input, then tag the input data with a contextual tag associated with the recognized input and record the contextual tag with the input data to form recorded tagged data.
+2. The computing device of claim 1, wherein the instructions are executable to receive input data in the form of video data and depth data, wherein the input signal comprises motion of a person identified in the depth data, and wherein the recognized input comprises a recognized motion.
+3. The computing device of claim 2, wherein the contextual tag comprises text related to the recognized motion to be displayed during playback of the recorded tagged data.
+4. The computing device of claim 2, wherein the contextual tag comprises searchable metadata configured not to be displayed on display during playback of the recorded tagged data.
+5. The computing device of claim 1, wherein the instructions are executable to receive input data in the form of directional audio data, wherein the input signal comprises a speech input, and wherein the recognized input comprises a recognized speech segment.
+6. The computing device of claim 5, wherein the instructions are executable to receive input data in the form of video data, depth data, and directional audio data, to identify one or more persons in the video data and depth data, and to identify in the video data and depth data a person from whom the speech input was received, and
+wherein the contextual tag comprises an identity of the person from whom the speech input was received.
+7. The computing device of claim 1, wherein the instructions are executable to receive input data in the form of video data and depth data, to identify an input signal in the form of motions by a plurality of persons located in the video data and the depth data, and to apply one or more group motion filters to determine whether the plurality of persons performed a recognized group motion.
+8. The computing device of claim 7, wherein the instructions are executable to apply one or more individual motion filters to determine whether each person identified in the video data and the depth data performed a recognized individual motion, and then apply one or more group motion filters to determine that the recognized individual motions taken together comprise the recognized group motion.
+9. The computing device of claim 1, wherein the instructions are further executable to form the recorded tagged data by forming an animated representation of the recorded tagged data for playback.
+10. A computing device comprising:
+a processor; and
+memory comprising instructions executable by the processor to:
+receive an input of image data from an image sensor, the input of image data comprising a plurality of images of a scene;
+receive an input of depth data from a depth sensing camera, the input of depth data comprising a plurality of depth images of the scene;
+from the image data and depth data, identify a person in the scene;
+identify a motion of the person;
+apply one or more filters to determine whether the motion is a recognized motion;
+record the input data; and
+if the motion is a recognized motion, then tag the input data with a contextual tag related to the recognized motion to form recorded tagged data.
+11. The computing device of claim 10, wherein the instructions are executable to identify motions by a plurality of persons located in the scene, and to apply one or more group motion filters to determine whether the plurality of persons performed a recognized group motion, and
+wherein the contextual tag is related to the recognized group motion.
+12. The computing device of claim 11, wherein the instructions are executable to apply one or more motion filters to determine whether each person identified image data and the depth data performed a recognized individual motion, and then to apply one or more group motion filters to determine whether the recognized individual motions taken together comprise the recognized group motion.
+13. The computing device of claim 10, wherein the instructions are further executable to receive directional audio data from a directional microphone array, to identify a speech input signal in the directional audio data, to determine an identity of a selected person in the scene from whom the speech input was received, and wherein the contextual identifies the selected person as the person from whom the speech input was received.
+14. The computing device of claim 10, wherein the instructions are further executable to form an animated representation of the recorded tagged data for playback.
+15. A computing-readable medium comprising instructions stored thereon that are executable by a computing device to perform a method of automatically tagging recorded media content, the method comprising:
+receiving input data, the input data comprising
+image data from an image sensor, the image data comprising a plurality of images of a scene,
+depth data from a depth sensing camera, and
+directional audio data from a directional microphone, the directional audio data comprising a speech input;
+locating one or more persons in the scene via the depth data;
+identifying via the directional audio data a selected person from whom the speech input is received; and
+tagging and recording the input data with a contextual tag comprising information associating the selected person with the speech input to form recorded tagged data.
+16. The computer-readable medium of claim 15, wherein the instructions are further executable to form an animated representation of the recorded tagged data for playback in which movements and speech inputs for a characterization of the selected person are coordinated based upon the information associating the speech input with the selected person.
+17. The computer-readable medium of claim 16, wherein the instructions are executable to identify a recognized motion of a person in the scene, and to tag the input data with a second contextual tag comprising text related to the recognized motion.
+18. The computer-readable medium of claim 17, wherein the instructions are further executable to display the second contextual tag during playback of the recorded tagged data.
+19. The computer-readable medium of claim 15, wherein the instructions are executable to identify motions by the plurality of persons located in the scene, to apply one or more group motion filters to determine whether the plurality of persons performed a recognized group motion, and to tag the image data with a group motion contextual tag if the plurality of persons performed the recognized group motion.
+20. The computer-readable medium of claim 19, wherein the instructions are executable to apply one or more motion filters to determine whether each person identified image data and the depth data performed a recognized individual motion, and then to apply one or more group motion filters to determine whether the recognized individual motions taken together comprise the recognized group motion

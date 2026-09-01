@@ -1,0 +1,126 @@
+--- PAGE 1 ---
+EP 05 744 089.3-1245 // H10309-EP Page 1 of 26
+
+Main Request
+
+1. A method for identifying a current user who is currently holding a
+handheld free space pointing device from a plurality of users of the
+
+handheld free space pointing device,
+
+wherein the handheld free space pointing device is configured so that
+motions of the handheld free space pointing device in free space are
+
+translatable by a user interface into user interface commands;
+wherein the method comprises the steps of:
+
+(a) obtaining, for each of the plurality of users, a tremor data set
+based on tremor associated with the respective user's holding of
+
+the handheld free space pointing device;
+(b) identifying a class for each of the plurality of users, comprising:
+
+(i) extracting features from each of said tremor data sets to
+generate an extracted feature set for each of said plurality
+
+of users,
+
+(ii) removing features from each of said extracted feature sets
+to generate a reduced feature set for each of said plurality
+
+of users, and
+
+1140257 doc
+
+--- PAGE 2 ---
+“EP 05 744 089.3-1245 // H10309-EP Page 2 of 26
+
+(iii) identifying clusters associated with said reduced feature
+
+sets, and
+
+(c) identifying the current user from the plurality of users by means of
+gathering current hand tremor data of the current user and comparing the
+
+current hand tremor data to the identified classes.
+
+2. The method according to claim 1, wherein said step (a) of obtaining the
+tremor data sets comprises performing a training process wherein each of
+said plurality of users holds said handheld free space pointing device
+without introducing intentional motion for a predetermined period of
+
+time.
+
+3. The method of claim 1 or 2, wherein the reduced feature set does not
+
+include DC values associated with said tremor data set.
+
+4, The method of any one of the preceding claims,-wherein said reduced
+
+feature set includes 9Hz values associated with said tremor data set.
+
+5. A handheld free space pointing device, for identifying a current user who
+is currently holding the handheld free space pointing device from a
+
+plurality of users of the handheld free space pointing device,
+
+1140257.doc
+
+--- PAGE 3 ---
+EP 05 744 089.3-1245 // H10309-EP . Page 3 of 26
+
+wherein the handheld free space pointing device is configured so that
+motions of the handheld free space pointing device in free space are
+
+translatable by a user interface into user interface commands;
+wherein the device comprises:
+
+at least one motion sensor capable of generating data associated with
+
+movement of the handheld free space pointing device; and
+
+a processing unit configured for detecting current hand tremor data based
+on said movement data and further configured for identifying the current
+user of said handheld free space pointing device based on said current
+
+hand tremor data by performing operations. comprising:
+
+(a) obtaining a plurality of tremor data sets, each of which associated
+
+with a different user of the plurality of users;
+(b) identifying a class for each of the plurality of users, comprising:
+
+(i) extracting features from each of said tremor data sets to
+generate an extracted feature set for each of said plurality of
+
+users,
+
+(ii) | removing features from each of said extracted feature sets to
+generate a reduced feature set for each of said plurality of
+
+users,
+
+1140257.doc
+
+--- PAGE 4 ---
+EP 05 744 089.3-1245 // H10309-EP , Page 4 of 26
+
+(iii) identifying clusters associated with said reduced feature
+
+sets, and
+
+(c) identifying the current user from the plurality of users by means
+of comparing the current hand tremor data to the identified
+
+_ Classes.
+
+6. The handheld free space pointing device of claim 5, wherein said reduced
+
+feature set does not include DC values associated with said tremor data set.
+
+7. The handheld free space pointing device of claim 5 or 6, wherein said
+reduced feature set includes 9Hz values associated with said tremor data
+
+set.
+
+1140257.doc

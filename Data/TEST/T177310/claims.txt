@@ -1,0 +1,309 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+EP 03 738 745.3 - 1247
+LG Electronics Inc.
+L9442-EP
+
+July 2010 ME/v™
+
+Claims for Main Request
+
+1. A computer readable medium having a data structure for
+
+managing data, comprising:
+
+- a picture data which is formed of an image of a menu
+page, the menu page being a page for selecting a
+reproducible data recorded on the recording medium;
+
+and
+- a menu management information including:
+
+- a menu page information for managing the menu
+
+page; and
+
+~ a number of pages field indicating the number of
+menu pages managed by the menu management
+
+information,
+the menu page information including:
+
+- a menu item information for managing a menu item,
+the menu item being an object contributing to the
+menu page;
+
+- a default selected item number field indicating a
+menu item which is selected by default at the
+
+initial display of the menu page; and
+
+- a number of menu items field indicating the
+
+number of menu items contained in the menu page,
+
+characterized in that
+
+the menu item information includes:
+
+1021691.DOC
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+- a display-state control information including
+information related to the display of the menu
+item within the menu page and which is used to
+display one menu item differently from others in
+
+the menu page, and
+
+- a neighboring item information indicating a
+neighbor menu item displayed adjacent to the menu
+
+item.
+
+The computer readable medium of claim 1, wherein the
+display-state control information includes a position
+
+information of the menu item within the menu page.
+
+The computer readable medium of claim 1, wherein the
+display-state control information includes a color
+
+information of the menu item.
+
+The computer readable medium of claim 1, wherein the
+display-state control information includes ae time
+
+information of the menu item.
+
+A method of reproducing a data structure from a
+
+recording medium, the method comprising:
+
+- reading a picture data which is formed of an image
+of a menu page and a menu management information
+recorded on the recording medium, the menu page
+being a page for selecting a reproducible data
+
+recorded on the recording medium; and
+
+- presenting the menu page, including the menu item
+according to the menu management information and the
+picture data, the menu item being an object
+contributing to the menu page;
+
+the menu management information including:
+
+1021691.D0C
+
+--- PAGE 3 ---
+10
+
+is
+
+20
+
+25
+
+30
+
+35
+
+- a menu page information for managing the menu
+
+page; and
+
+- a number of pages field indicating the number of
+menu pages managed by the menu management
+
+information,
+the menu page information including:
+- a menu item information for managing a menu item;
+
+- a default selected item number field indicating a
+menu item which is selected by default at an
+
+initial display of the menu page; and
+
+- a number of menu items field indicating the number
+
+of menu items contained in the menu page;
+
+characterized in that
+
+the menu item information includes:
+
+- a display-state control information including
+information related to the display of the menu item
+within the menu page and which is used to display
+one menu item differently from others in the menu
+
+page, and
+
+- a neighboring item information indicating a neighbor
+
+menu item displayed adjacent to the menu item.
+
+The method of claim 5, wherein the presenting step
+includes presenting the menu item within the menu page
+using a position information of the menu item within
+the menu page, included in the display-state control
+
+information.
+
+1021691 .DOC
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+The method of claim 5, wherein the presenting step
+includes presenting the menu item within the menu page
+using a color information of the menu item, included
+
+in the display-state control information.
+
+The method of claim 5, wherein the presenting step
+includes presenting the menu item within the menu page
+using a time information of the menu item, included in
+
+the display-state control information.
+
+An apparatus of reproducing a data structure from a
+
+recording medium, the apparatus comprising:
+
+- a pickup configured to read data from the recording
+
+medium; and
+
+- a controller configured to control the pickup to
+read a picture data which is formed of an image of a
+menu page and a menu management information, the
+menu page is a page for selecting a reproducible
+data recoded on the recording medium,
+the controller configured to control the apparatus
+to present of the menu page including the menu item
+according to the menu management information and the
+picture data, the menu item is an object
+
+contributing to the menu page,
+the menu management information including:
+
+- a menu page information for managing the menu
+
+page; and
+- a number of pages field indicating the number of
+menu pages managed by the menu | management
+
+information,
+
+the menu page information including:
+
+1021691.D0C
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+10.
+
+li.
+
+12.
+
+- a menu item information for managing a menu item;
+
+- a default selected item number field indicating a
+menu item which is selected by default at initial
+
+display of the menu page; and
+
+- a number of menu items field indicating the number
+
+of menu items contained in the menu page,
+
+characterized in that
+
+the menu item information includes:
+
+- a display-state control information including
+information related to the display of the menu
+item within the menu page and which is used to
+display one menu item differently from others in
+
+the menu page, and
+
+- a neighboring item information indicating a
+neighbor menu item displayed adjacent to the menu
+
+item.
+
+The apparatus of claim 9, wherein the controller is
+configured to control the apparatus to present the
+menu item within the menu page using a position
+information of the menu item within the menu page,
+
+included in the display-state control information.
+
+The apparatus of claim 9, wherein the controller is
+configured to control the apparatus to present the
+menu item within the menu page using a color
+information of the menu item, included in the display-
+
+state control information.
+The apparatus of claim 9, wherein the controller is
+
+configured to control the apparatus to present the
+
+menu item within the menu page using ae time
+
+1021691.DO0C
+
+--- PAGE 6 ---
+information of the menu item, included in the display-
+
+state control information.
+
+1021691.D0C

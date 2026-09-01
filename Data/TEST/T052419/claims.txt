@@ -1,0 +1,305 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+27
+
+CLAIMS
+
+1. Automated, self-sufficient resource-pooling system (1) for self-adaptive
+risk sharing of airspace risks related to natural disaster events of a variable number of
+risk exposed aircraft fleets (81,...,84) by pooling resources of the risk exposed aircraft
+fleets (81,...,84) and by providing a self-sufficient risk protection based on the pooled
+resources for the risk exposed aircraft fleets (81,...,84) by means of the resource-pooling
+system (1), wherein risk exposed aircraft fleets (81,...,84) are connected to the system
+{1} by means of a plurality of payment-receiving modules configured to receive and
+store payments from the risk exposed aircraft fleets (81,...,84) for the pooling of their risks
+and resources, and wherein an automated transfer of risk exposure associated to the
+
+aircraft fleets is provided by the resource-pooling system (1), characterized,
+
+in that the system (1) comprises capturing means to receive transmitted
+fight plan parameters (102, 202) of the pooled risk exposed aircraft fleets (81,...,84),
+wherein by means of a filter module the transmitted fight plan parameters (102, 202)
+are filtered for the detection of airport indicators indicating flown to airports (91,...,94)
+by the corresponding pooled risk exposed aircraft fleet (81,...,84), and wherein by
+means of the filtered airport indicators (1012, 2012) detected airports (91,....94) are
+stored to a table element (101, 201) of a selectable trigger-table (103, 203) assigned to
+an aircraft fleet identifier of the corresponding pooled risk exposed aircraft fleet,
+
+in that the system (1) comprises a trigger module (4) dynamically triggering
+on an airport data flow pathway of ground stations (911,...,914) situated at said flown
+to airports (91,....94) based on the stored airport indicators of the trigger-table (103,203),
+wherein the ground stations (911,...,914) are linked via a communication network
+(50,51) to the core engine (2), wherein the trigger module (4) is dynamically triggering
+on the airport data flow pathway of ground stations (911,...,914) via said
+communication network (50,51), and wherein in case of a triggering of an occurrence
+of an airport closing of one of the airports (91,...,.94) comprised in the selectable trigger-
+table (103, 203), operational parameters of the triggered airport (91,...94) comprising at
+least time interval parameters (1011, 2011) of the airport closing are captured and
+
+stored assigned to the corresponding table element (101, 201),
+
+in that for each triggered occurrence of an airport closing of one of the
+airports (91,...,94) assigned to a table element (101, 201) of the selectable trigger-table
+
+{103, 203), the captured operational parameters of the airport closing are matched
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+28
+
+with natural disaster event data comprised in a predefined searchable table of natural
+disaster events in order to relate the airport closing to an occurrence of a natural
+disaster event comprised in the searchable table of natural disaster events by means of
+the core engine (2), wherein the resource pooling system (1) further comprises means
+for dynamically detecting occurrences of natural disaster events and set appropriate
+indicator flags in the table element of the corresponding risk together with storing
+related natural disaster event data and/or measuring parameters indicating at least
+time of occurrence and/or affected region of the natural disaster event, and wherein
+the system (1) is connected to appropriate sensors or measuring devices for the
+
+detection of the occurrence of such natural disaster events,
+
+in that the predefined searchable table of natural disaster events comprises
+table elements for each of the predefined risk transferred to the resource-pooling
+system (1), wherein each risk is related to parameters of a table element, defining the
+natural disaster events, and wherein the resource pooling system (1) further comprises
+means for dynamically detect occurrences of such natural disaster events and set
+appropriate indicator flags in the table element of the corresponding risk together with
+storing related natural disaster event data and/or measuring parameters indicating at
+least time of occurrence and/or affected region of the natural disaster event,
+
+in that in case that a match is established by the core engine (2), a
+corresponding trigger-flag is set by means of the core engine (2) to the assigned risk
+exposed aircraft fleets (81,...,84) of the airport indicator (1012, 2012), and a parametric
+
+transfer of payments is assigned to this corresponding trigger-flag,
+
+in that said assignment of the parametric transfer of payments to the
+corresponding trigger-flag is automated activated by means of the system (1) fora
+dynamically scalable loss covering of the aircraft fleet (41,...,44) with an definable
+upper coverage limit, wherein the payments are automated scaled based on the
+likelinood of said risk exposure of a specific aircraft fleet (41,...,44), wherein the number
+of pooled risk exposed aircraft fleets (81, ... 84) is variable and self-adapted by the
+system 1 to a range where not-covariant occurring risks covered by the system 1 affect
+only a relatively small proportion of the totally pooled risk exposure of the aircraft fleets
+81, ... ,84 at a given time, and wherein said assignment of the parametric transfer of
+payments is automatedly activated only, if said transmission comprises a definable
+minimum number of airport identifications assigned to airport closings thus creating an
+
+implicit geographic spread of the closed airports of the flight plan, and wherein said
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+29
+
+core engine (2) comprises an additional filter module (5) for dynamically incrementing
+
+a time-based stack with the transmitted time interval parameters (1011, 2011) based on
+the selectable trigger-table (103, 203) and activating the assignment of the parametric
+transfer of payments to the corresponding trigger-flag by means of the filter module (5)
+
+if a threshold, triggered on the incremented stack value, is reached, and
+
+in that a loss associated with the triggered airport closing is distinctly
+covered by the system (1) based on the respective trigger-flag and based on the
+received and stored payment parameters from the pooled risk exposed aircraft fleets
+({81,...,84) by the parametric payment transfer from the system (1) to the corresponding
+risk exposed aircraft fleets (81,...,84) by means of an automated activated damage
+recovering system {7) operated or steered by a generated output signal of an failure
+deployment device (6) of the system (1).
+
+2. Self-sufficient system (1) according to claim 1, wherein said threshold,
+triggered on the incremented stack value, is set to bigger-equal 5 and smaller-equal 10
+days.
+
+3. Self-sufficient system (1) according to one of the claims 1 to 2, wherein
+the risk-pooling system (1) comprises an assembly module to process risk related aircraft
+fleet data and to provide the likelinood for said risk exposure a pooled aircraft fleet
+{41,...,44} based on the risk related aircraft fleet data, wherein the aircraft fleets
+{41,...,44}) are connected to the resource-pooling system by means of the plurality of
+payment receiving modules configured to receive and store payments from the
+pooled aircraft fleets (41,...,44) for the pooling of their risks and wherein the payments
+are automated scaled based on the likelinood of said risk exposure of a specific aircraft
+fleet (41,...,44).
+
+A, Self-sufficient system (1) according to one of the claims 1 to 3, wherein
+the filter module (5) of said core engine (2) comprises an additional trigger device for
+triggering if said transmission from the trigger module (4) is induced by an applicable
+third party, wherein the transmission of the parameters includes said time interval
+parameter (1011, 2011) of an airport closing and an airport identification (1012, 2012),
+and wherein, if the airport closing is third-party induced, the stack is dynamically
+incrementable with the transmitted time interval parameters (1011, 2011}, while
+
+otherwise the stack is not incrementable.
+
+5. Amethod for self-adaptive risk sharing of airspace risks related to natural
+
+disaster events of a variable number of risk exposed aircraft fleets (81,...,84) by means
+
+--- PAGE 4 ---
+20
+
+25
+
+30
+
+30
+
+of an automated self-sufficient system (1) related to airspace risks by pooling resources
+of the risk exposed aircraft fleets (81,....84) and by providing a self-sufficient risk
+protection for the risk exposed aircraft fleets (81,...,84) by means of the system (1)
+preventing imminent grounding or damages following natural disaster events, wherein
+risk exposed aircraft fleets (81,...,84) are connected to the system (1) by means of a
+plurality of payment-receiving modules, and wherein payments from the risk exposed
+aircraft fleets (81,...,84) are received and stored by means of the plurality of payment-
+receiving modules for the pooling of the risks and resources of the risk exposed aircraft
+fleets (81,...,84), and wherein an automated transfer of risk exposure associated to the
+
+aircraft fleets is provided by the resource-pooling system (1), characterized,
+
+in that transmitted fight plan parameters (102, 202) of the pooled risk
+exposed aircraft fleets (81,...,84) are received by means of capturing means, wherein
+by means of a filter module the transmitted fight plan parameters (102, 202) are filtered
+for airport indicators indicating flown to airports (91,...,94) by the corresponding pooled
+risk exposed aircraft fleet (81,...,84), and wherein by means of the filtered airport
+indicators (1012, 2012) detected airports (91,...,94) are stored to a table element (101,
+201) of a selectable trigger-table (103, 203) assigned to an aircraft fleet identifier of the
+corresponding pooled risk exposed aircraft fleet,
+
+in that a trigger module (4) dynamically triggers on an airport data flow
+pathway of ground stations (911,...,914) situated at said flown to airports (91,...,94) of
+the fight plans (102,202), wherein the ground stations (911,...,914) are linked via a
+communication network (50,51) to the core engine (2), wherein the trigger module (4)
+dynamically triggers on the airport data flow pathway of ground stations (911,...,914)
+via said communication network (50,51), and wherein in case of a triggering of an
+occurrence of an airport closing of one of the airports (91,...,94) comprised in the
+selectable trigger-table (103, 203), operational parameters of the triggered airport
+(91,...94) comprising at least time interval parameters (1011, 2011) of the airport closing
+are stored assigned to the corresponding table element (101, 201) of the selectable
+
+trigger-table (103, 203) based on the triggered airport indicator (1012, 2012),
+
+in that each triggered occurrence of an airport closing of one of the
+airports (91,...,94) of the selectable trigger-table (103, 203), the operational parameters
+of the corresponding table element (101, 201) are matched with natural disaster event
+data comprised in a predefined searchable table of natural disaster events in order to
+
+determine a possible relation of the airport closing to an occurrence of a natural
+
+--- PAGE 5 ---
+20
+
+25
+
+30
+
+31
+
+disaster event comprised in the searchable table of natural disaster events by means of
+the core engine (2), wherein the resource pooling system {1) further dynamically
+detects occurrences of natural disaster events and sets appropriate indicator flags in
+the table element of the corresponding risk together with storing related natural disaster
+event data and/or measuring parameters indicating at least time of occurrence
+and/or affected region of the natural disaster event, and wherein the system (1) is
+connected to appropriate sensors or measuring devices for the detection of the
+
+occurrence of such natural disaster events,
+
+in that the predefined searchable table of natural disaster events comprises
+table elements for each of the predefined risk transferred to the resource-pooling
+system (1), wherein each risk is related to parameters of a table element, defining the
+natural disaster events, and wherein the resource pooling system (1) further comprises
+means for dynamically detect occurrences of such natural disaster events and set
+appropriate indicator flags in the table element of the corresponding risk together with
+storing related natural disaster event data and/or measuring parameters indicating at
+least time of occurrence and/or affected region of the natural disaster event,
+
+in that in case that said relation is established by the core engine (2), a
+corresponding trigger-flag is set by means of the core engine (2) to the assigned risk
+exposed aircraft fleets (81,...,84) of the airport indicator (1012, 2012) of the triggered
+airport closing, and a parametric transfer of payments is assigned to this corresponding
+trigger-flag,
+
+in that said assignment of the parametric transfer of payments to the
+corresponding trigger-flag is automated activated by means of the system (1) fora
+dynamically scalable loss covering of the aircraft fleet (41,...,44) with an definable
+upper coverage limit, wherein the payments are automated scaled based on the
+likelinood of said risk exposure of a specific aircraft fleet (41,...,44), wherein the number
+of pooled risk exposed aircraft fleets (81, ... 84) is variable and self-adapted by the
+system 1 to a range where not-covariant occurring risks covered by the system 1 affect
+only a relatively small proportion of the totally pooled risk exposure of the aircraft fleets
+81, ... ,84 at a given time, and wherein said assignment of the parametric transfer of
+payments only, if said transmission comprises a definable minimum number of airport
+identifications assigned to airport closings thus creating an implicit geographic spread
+of the closed airports of the flight plan, and wherein said core engine (2) comprises an
+
+additional filter module (5) for dynamically incrementing a time-based stack with the
+
+--- PAGE 6 ---
+20
+
+25
+
+30
+
+32
+
+transmitted time interval parameters (1011, 2011) based on the selectable trigger-table
+(103, 203) and activating the assignment of the parametric transfer of payments to the
+corresponding trigger-flag by means of the filter module (5) if a threshold, triggered on
+
+the incremented stack value, is reached, and
+
+in that a loss associated with the triggered airport closing is distinctly
+covered by the system (1) based on the respective trigger-flag and based on the
+received and stored payment parameters from the pooled risk exposed aircraft fleets
+(81,...,84) by the parametric transfer from the system (1) to the corresponding risk
+exposed aircraft fleets (81,...,84) by means of an automated activated damage
+recovering system (7) operated or steered by a generated output signal of an failure
+
+deployment device (6) of the system (1).
+
+6. Method according to claim 5, wherein said threshold, triggered on the
+
+incremented stack value, is set to bigger-equal 5 and smaller-equal 10 days.
+
+7. Method according to one of the claims 5 or 6, wherein said assignment of
+the parametric transfer of payments to the corresponding trigger-flag is only activated,
+if said transmission comprises a definable minimum number of airport identifications
+assigned to airport closings thus creating an implicit geographic spread of the closed
+airports of the flight plan.
+
+8. Method according to one of the claims 5 to 7, wherein risk related aircraft
+fleet data is processed by means of an assembly module and the likelihood for said risk
+exposure of an aircraft fleet (41,...,44) is provided based on the risk related aircraft fleet
+data, wherein the aircraft fleets (41,...,44) are connected to the resource-pooling
+system by means of the plurality of payment receiving modules configured to receive
+and store payments from the pooled aircraft fleets (41,....44) for the pooling of their risks
+and wherein the payments are automated scaled based on the likelinood of said risk
+
+exposure of a specific aircraft fleet (41,...,44).
+
+9. Method according to one of the claims 5 to 8, wherein the filter module
+(5) of said core engine (2) comprises an additional trigger device for triggering if said
+transmission from the trigger module (4) is induced by an applicable third party,
+wherein the transmission of the parameters includes said time interval parameter (1011,
+2011) of an airport closing and an airport identification (1012, 2012), and wherein, if the
+airport closing is third-party induced, the stack is dynamically incremented with the
+transmitted time interval parameters (1011, 2011), while otherwise the stack is left
+
+unchanged.

@@ -1,0 +1,42 @@
+TITLE:
+Television delivery system
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A system for delivering broadcast television over the Internet Protocol is described. A broadcast provider obtains television signals from traditional sources such as satellite or cable and encodes the signals for delivery to a subscriber/user over an IP enabled broadband network. An IP multicast protocol is used for conventional TV programming and near video on demand movie selections. An IP unicast protocol is used for video on demand services. A user/subscriber has a television/set top box or a PC with appropriate software to decode the IP format for program viewing. An interactive electronic program guide, viewable on the subscriber's monitor, provides the subscriber with access to a range of viewing features and system management functions.
+
+CLAIMS:
+1. A system for the delivery of broadcast television from a broadcast provider to a subscriber via the Internet protocol (IP) said system comprising: means at said broadcast provider's location for retrieving broadcast television signals; means at said broadcast provider's location for configuring said television signals into IP format for transmission over a broadband backbone network; and a management system for managing a subscriber's access to said television signals.
+2. A system as defined m claim 1 wherein said IP format is a multicast transmission originating from a single point of access.
+3. A system as defined in claim 2 further including conversion means at said subscriber's location for converting said IP multicast into a format for display on a monitor.
+4. A system as defined in claim 3 wherein said conversion means includes a decoder m a set top box and said monitor is a television.
+5. A system as defined m claim 3 wherein said conversion means includes a decoder m a computer and said monitor is a computer monitor or television.
+6. A system as defined in claim 3 wherein said management system includes an interactive program guide (IPG) containing schedule information relating to programs available for viewing by said subscriber, said schedule being available for display on said monitor.
+7. A system as defined in claim 6 wherein said subscriber has means to interface with said IPG displayed on said monitor.
+8. A system as defined in claim 7 wherein said means to interface is a remote control or a keyboard.
+9. A system as defined in claim 1 wherein said broadband backbone network includes an xDSL link.
+10. A system as defined in claim 9 wherein said broadband backbone network includes a local multipoint delivery system (LMDS) wireless link.
+11. A system as defined in claim 4 wherein said means to configure includes means to encode said television signal into a MPEG format.
+12. A system as defined in claim 11 having means to provide concurrent transmission of MPEG-1 and MPEG-2 encoded television signals.
+13. A system as defined in claim 12 wherein said concurrent transmission increases availability of television signals to said subscriber by recognizing a signal delivery failure through one transmission form and switching to the alternate concurrent transmission.
+14. A system as defined m claim 12 wherein said concurrent transmission permits multiple set top boxes at said subscriber's location.
+15. A system as defined m claim 3 having remote diagnostic means for remotely managing said conversion means including; resetting and reinitializing said conversion means and notifying said conversion means of new data or software to be retrieved.
+16. A system as defined m claim 7 including means to script, send and display messages m real time on said monitor.
+17. A system as defined m claim 16 wherein said messages include calling line identification notifications and message waiting indications.
+18. A system as defined m claim 11 including means to provide a pay per view event m real time on a self- serve basis.
+19. A system as defined in claim 11 including means to provide games on demand on a self serve basis.
+20. A system as defined in claim 7 wherein said IPG displays Uniform Resource Locators (URLs) assigned to a channel location.
+21. A system as defined in claim 20 wherein selection of one of said URLs provides a subscriber access to a web browser.
+22. A system as defined in claim 20 wherein said IPG includes a background process whereby URLs are attached to broadcast programs such that a subscriber has access to underlying links respecting a viewed program.
+23. A system as defined in claim 7 including means to remotely record broadcast programs for access by a subscriber on a self-serve basis.
+24. A system as defined in claim 7 including means to record selected broadcast programs and to make said recorded programs available to subscribers on a self-serve basis.
+25. A system as defined in claim 7 including subscription management means whereby a subscriber is able to self-manage selection and connection of channel packages.
+26. A system as defined in claim 7 including banner service means for insertion of information banners in said IPG.
+27. A method of delivering TV broadcast from a broadcast provider to a subscriber over a broadband, IP enabled network, the method comprising: obtaining broadcast TV signals for said broadcast provider; converting said broadcast signals to IP format; transmitting said converted signals over said network; and providing management means to control a subscriber's access to said signals.
+28. A method as defined m claim 27 further comprising the step of providing an interactive program guide viewable by a subscriber on a subscriber's viewing monitor.
+29. A method as defined m claim 28 wherein said subscriber is provided with means to access said interactive program guide m order to implement service related features provided by said service provider.
+30. A method as defined m claim 29 wherein said service related features include the ability to self -configure service options.
+31. A method as defined in claim 27 wherein boot information is delivered by a server at said broadcast provider location to a client device at said subscriber's location by a multicast protocol.
+32. A method as defined in claim 31 wherein encryption and compression are used in said multicast protocol .

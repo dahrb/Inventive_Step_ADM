@@ -1,0 +1,50 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+15
+Claims
+
+1. A computer implemented method for improving image classification of a digital
+image comprising the steps of:
+
+(a) providing an exemplar color image;
+
+(b) systematically altering the exemplar color image to generate an
+expanded set of images, wherein systematically altering the exemplar color image
+comprises:
+
+spatially altering the exemplar color image to generate an expanded set
+of spatially altered images, wherein spatially altering the exemplar color image
+comprises:
+horizontally mirroring the exemplar color image, thereby doubling
+the number of images in the expanded set of images, or
+systematically cropping the edges of the exemplar color image
+from one or more sides of the exemplar color image, thereby increasing
+the number of images in the expanded set of images; and/or
+temporally altering the exemplar color image to generate an expanded
+set of temporally altered images, whereby the images in the expanded set
+simulate the appearance of capturing an image earlier or later in time, wherein
+temporally altering the exemplar color image comprises:
+systematically shifting the color distribution of the exemplar color
+image, thereby increasing the number of images in the expanded set of
+images, or
+systematically shifting the illuminant quality of the exemplar color
+image, thereby increasing the number of images in the expanded set of
+images; and
+
+(c) using a semantic classifier and the expanded set of images to determine
+an image classification for the exemplar color image;
+
+wherein the expanded set of images are used to train the classifier in step (c),
+
+thereby providing an improved classifier.

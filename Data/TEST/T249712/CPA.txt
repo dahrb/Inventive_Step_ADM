@@ -1,0 +1,22 @@
+Title: Java™ Remote Method Invocation
+Specification
+
+Abstract: The goals for supporting distributed objects in the Java language are:
+• Support seamless remote invocation on objects in different virtual machines.
+• Support callbacks from servers to applets.
+• Integrate the distributed object model into the Java language in a natural
+way while retaining most of the Java language’s object semantics.
+• Make differences between the distributed object model and local Java object
+model apparent.
+• Make writing reliable distributed applications as simple as possible.
+• Preserve the type-safety provided by the Java runtime environment.
+• Various reference semantics for remote objects; for example live
+(nonpersistent) references, persistent references, and lazy activation.
+• The safe Java environment provided by security managers and class loaders.
+Underlying all these goals is a general requirement that the RMI model be both
+simple (easy to use) and natural (fits well in the language).
+The first two chapters in this specification describe the distributed object model
+for the Java language and the system overview. The remaining chapters
+describe the RMI client and server visible APIs which are part of JDK 1.2
+
+Type: Specification Book

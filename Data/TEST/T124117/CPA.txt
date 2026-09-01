@@ -1,0 +1,14 @@
+TITLE:
+3d transformation matrix compression and decompression
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+Compressing and decompressing techniques for transformation matrices 3D computer graphics systems use to animate objects achieve high compression ratios by taking advantage of common characteristics of homogenous 3D transformation matrices. The techniques use a bitmap to encode information on locations of ones and zeros of the matrix - bypassing the penchant of compilers to represent such information as high-precision numbers. Since most video game processors and display hardware are constrained by their resolutions and since an original transformation matrix often stores data that is more accurate than necessary, the techniques convert some real numbers in the matrix (e.g., those within the range of -1 and 1) into integers by scaling them by a constant. The resulting compressed matrices occupy much less storage space than their non-compressed counterparts, and can be efficiently decompressed in real time for use in interactive real time 3D animations.
+
+CLAIMS:	
+1. A method of encoding a transformation matrix comprising: providing a first data structure having elements corresponding to a transformation matrix, said first data structure encoding integer " 1 " and "0" matrix values using non-numerical value representations; and providing a second data structure that contains numerical matrix values other than integer " 1 " and "0" matrix values.
+2. A method as in claim 1 wherein at least some of said second data structure values are scaled integer values.
+3. A method of decoding a transformation matrix comprising: reading a first data structure to determine which values of said matrix are integer " 1" and "0"; and reading a second data structure that contains numerical matrix values other than inte -sge" r "1 " and "0" matrix values.
+4. A method as in claim 1 wherein at least some of said second data structure values are scaled.

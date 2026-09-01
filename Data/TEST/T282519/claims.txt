@@ -1,0 +1,247 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+M&C PN584601EP
+
+NEW MAIN REQUEST
+
+Claims:
+
+1. A computer system comprising software for translating natural language into a
+formal language executable on a programmable device, wherein said system
+includes:
+
+processing means;
+
+input means (3.1.1) for presenting natural language text to said system;
+
+a lexicon of terms (3.2.0);
+
+a text parser operative to partition natural language text presented by the input
+means (3.1.1) into sequences of sequences of pretokens;
+
+a type assignment processor (3.2.1.3) configured to assign syntactic types to
+pretokens provided by the text parser by comparison to lexical terms in the lexicon
+and determining their status as tokens;
+
+a type contextualization processor (3.2.1.4) configured to generate a sequence
+of expressions by reassigning lexical types to tokens received from the type
+assignment processor (3.2.1.3) based on syntactic context;
+
+a term correlation processor (3.2.2.1) configured to correlate terms occurring in
+a set of expressions provided by the type contextualization processor (3.2.1.4) in
+order to replace indirect references by direct references:
+
+characterised by:
+
+a type reduction matrix to map sequences of tokens into a relative reduction
+ordering that represents syntactic dependencies between tokens;
+
+a term reduction processor (3.2.2.2) configured to use the type reduction matrix
+to determine syntactic dependencies between tokens in an expression provided by the
+term correlation processor (3.2.2.1);
+
+a term inversion processor (3.2.2.3) configured to construct chains of syntactic
+dependencies among lexical terms in an expression provided by the term reduction
+processor (3.2.2.2) and to determine the dependencies between those chains;
+
+syntactic trees representing the syntactic structures of the expressions;
+
+a syntactic algebra comprising syntactic terms formally representing processed
+expressions;
+
+a syntactic representation processor (3.2.3) configured to construct syntactic
+algebraic terms representing processed expressions on the basis of the syntactic trees;
+
+a semantic object algebra comprising semantic objects as internal references of
+
+terms in the syntactic algebra:
+
+26
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+M&C PN584601EP
+NEW MAIN REQUEST
+
+a semantic tensor algebra comprising correlated syntactic terms and semantic
+objects;
+
+a semantic representation processor (3.3.1) configured to construct internal
+semantic algebraic objects representing terms in the syntactic algebra;
+
+a semantic product processor configured to combine objects in the semantic
+object algebra to form more complex semantic objects;
+
+a formal representation processor (3.3.2) configured to associate internal formal
+models with terms in the semantic tensor algebra;
+
+a formal interpretation processor (3.3.3) configured to transform syntactic
+algebraic terms into equivalent expressions in an internal formal language;
+
+an external representation processor (3.4.1) configured to associate appropriate
+external operational environments with internal formal models; and
+
+an external interpretation processor (3.4.2) configured to translate expressions in
+an internal formal language into equivalent formal expressions executable in an external
+operational environment using the external operational environments associated with
+
+internal formal models by the external representation processor (3.4.1).
+
+2. Asystem as in claim 1, further including a protocol by means of which
+
+a) selected ones of said internal formal models are associated with terms in said
+
+semantic tensor algebra:
+
+b) syntactic algebraic terms are transformed into equivalent expressions in the
+
+internal formal language;
+
+c) selected external operational environments are associated with selected formal
+
+models; and
+
+d) expressions in the internal formal language are translated into equivalent formal
+
+expressions executable in an external operational environment.
+
+3. A system as in claim 1, further comprising
+
+a) a lexical insertion processor for inserting lexical terms into the lexicon under user
+
+control whereby said lexicon can be expanded and refined; and
+
+27
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+M&C PN584601EP
+NEW MAIN REQUEST
+
+b) a controller for invoking lexical insertions under the condition that a pretoken is
+
+not recognized as a lexical token.
+4. Asystem as in claim 3, further including a process control for inserting external
+lexical information to said lexicon to enable the system to learn new lexical information
+
+including vocabulary and associated lexical type and reference relations.
+
+5. A computer-implemented method for translating natural language into a formal
+
+language executable on a programmable device, said method comprising the steps of:
+
+a) receiving (3.1.1) natural language text:
+
+characterised by:
+
+b) parsing (3.1.2) said text into a sequence of sequences of pretokens;
+
+c) recognizing (3.2.0) the pretokens as tokens in a lexicon of terms;
+
+d) inserting new terms into the lexicon under specific control:
+
+e) assigning syntactic types to pretokens by comparison to lexical terms in the
+
+lexicon for further syntactic processing;
+
+f) generating a sequence of expressions by reassigning lexical types to tokens
+
+based on syntactic context based on the assigned types;
+
+g) correlating terms occurring in the set of expressions in order to replace indirect
+
+references by direct references;
+
+h) performing a process of term reduction, using a type reduction matrix, to establish
+syntactic dependencies between terms in an expression created by said correlating of
+terms, wherein the type reduction matrix maps sequences of tokens into a relative
+
+reduction ordering that represents syntactic dependencies between tokens;
+i) constructing in a process of term inversion chains of syntactic dependencies
+
+among lexical terms in an expression provided by the term reduction process and
+
+determining dependencies;
+
+28
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+M&C PN584601EP
+
+NEW MAIN REQUEST
+
+j) generating (3.2.3) syntactic trees which represent the syntactic structures of
+
+said processed expressions provided by the term reduction process;
+
+k) representing said processed expressions as terms in a syntactic algebra on
+the basis of the syntactic trees, the syntactic algebra comprising syntactic terms formally
+representing processed expressions;
+
+l) representing terms in the syntactic algebra as objects in a semantic algebra,
+the semantic object algebra comprising semantic objects as internal references of terms
+
+in the syntactic algebra;
+
+m) combining objects in a semantic object algebra by means of a semantic
+
+product on pairs of semantic objects to form more complex semantic objects;
+
+n) representing (3.3.1) correlated syntactic algebraic terms and semantic objects
+as terms in a semantic tensor algebra, the semantic tensor algebra comprising correlated
+syntactic terms and semantic objects;
+
+0) representing terms in the semantic tensor algebra as internal formal models;
+
+p) transforming terms in the syntactic algebra into equivalent expressions in an
+
+internal formal language;
+
+q) associating external operation environments with internal formal models; and
+
+r) translating expressions of the internal formal language into equivalent formal
+
+expressions executable in an external operational environment.
+
+29

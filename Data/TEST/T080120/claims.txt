@@ -1,0 +1,170 @@
+--- PAGE 1 ---
+Main Request
+
+What is claimed is
+
+1. A transaction management system, TMS, comprising:
+
+a processor; and
+
+a memory in communication with the processor and storing program
+instructions, the processor operative with the program instructions to:
+
+receive, from a mobile device operated by a user, a request to initiate
+
+transaction processing associated with a transaction involving said user; and
+
+transmit, to said mobile device, a checkout token for use with said
+transaction, said checkout token formatted for near field communication ("NFC")
+transmission from said mobile device to an NFC reader of a merchant system
+associated with said transaction;
+
+create a pending transaction record associated with the checkout token,
+which includes information identifying the user, in a transaction queue;
+
+receive, from said merchant system, a message containing (i) the checkout
+token received from the mobile device via an NFC communication session
+between the mobile device and the NFC reader, and (ii) details of a transaction
+involving said merchant and said user including a merchant identifier but not a
+transaction amount;
+
+update the pending transaction record with the details of the transaction by
+matching the message from the merchant and the pending transaction record using
+the checkout token;
+
+transmitting payment accounts and information identifying the merchant for
+display by the mobile device;
+
+receive a transaction amount from said merchant system;
+
+update the pending transaction record using the transaction amount;
+
+transmit a message to the mobile device so that the display of the mobile
+device is updated to include the transaction amount as well as a list of available
+payment accounts that can be used in the transaction and information identifying
+
+the merchant;
+
+--- PAGE 2 ---
+receive, from said mobile device, a transaction confirmation
+request message including a user selection of one of the
+available payment accounts; and
+
+identify, based on information from said transaction
+confirmation request message, an actual payment account
+corresponding to said user selection for use in completing said
+
+transaction.
+
+The TMS of claim 1, wherein said checkout token 1s or includes an identifier
+usable by said merchant system to route an authorization request message to at
+least one of said transaction management system and an entity associated with
+
+said transaction management system.
+
+The TMS of claim 1, wherein said checkout token is formatted as a payment
+account number ("PAN"), said PAN usable to identify at least one of said
+transaction management system and an entity associated with said transaction
+
+management system.
+
+The TMS of claim 1, wherein said checkout token is formatted to include at least
+one of a bank identification number ("BIN") and an issuer identification number
+("IIN") usable to identify at least one of said transaction management system and
+
+an entity associated with said transaction management system.
+
+The system of claim 1, wherein the processor is further operative with
+the program instruction to:
+
+determine that said checkout token received from said merchant is a valid checkout
+
+token.
+
+The TMS of claim 1, comprising at least one of: (1) generating the transaction
+
+token, and (ii) retrieving a stored token.
+
+The TMS of claim 1, comprising receiving, from the transaction management
+
+system, and displaying, a transaction complete message.
+
+--- PAGE 3 ---
+A method executed by a transaction management system, TMS, comprising:
+receiving, from a mobile device operated by a user, a request to initiate
+transaction processing associated with a transaction involving said user; and
+transmitting, to said mobile device, a checkout token for use with said
+transaction, said checkout token formatted for near field communication ("NFC")
+transmission from said mobile device to an NFC reader of a merchant system
+associated with said transaction;
+creating a pending transaction record associated with the checkout token,
+which includes information identifying the user, in a transaction queue;
+receiving, from said merchant system, a message containing (i) the checkout
+token received from the mobile device via an NFC communication session
+between the mobile device and the NFC reader, and (ii) details of a transaction
+involving said merchant and said user including a merchant identifier but not a
+transaction amount;
+updating the pending transaction record with the details of the transaction by
+matching the message from the merchant and the pending transaction record using
+the checkout token;
+transmitting payment accounts and information identifying the merchant for
+display by the mobile device;
+receiving a transaction amount from said merchant system;
+updating the pending transaction record using the transaction amount;
+transmitting a message to the mobile device so that the display of the mobile
+device is updated to include the transaction amount as well as a list of available
+payment accounts that can be used in the transaction and information identifying
+the merchant;
+receiving, from said mobile device, a transaction confirmation
+request message including a user selection of one of the
+available payment accounts; and
+identifying, based on information from said transaction
+confirmation request message, an actual payment account
+corresponding to said user selection for use in completing said
+
+transaction.
+
+--- PAGE 4 ---
+10.
+
+11.
+
+12.
+
+The method of claim 8, wherein said checkout token is or
+includes an identifier usable by said merchant system to route
+an authorization request message to at least one of said
+transaction management system and an entity associated with
+
+said transaction management system.
+
+The method of claim 8, wherein said checkout token is formatted as a
+payment account number ("PAN"), said PAN usable to identify at least one of
+said transaction management system and an entity associated with said
+
+transaction management system.
+
+The method of claim 8, wherein said checkout token is formatted to include at least
+one of a bank identification number ("BIN") and an issuer identification number
+("IIN") usable to identify at least one of said transaction management system and
+
+an entity associated with said transaction management system.
+
+The method of claim 8, wherein the processor is further operative with
+the program instruction to:
+
+determine that said checkout token received from said merchant is a valid checkout
+
+token.
+
+13.
+
+14.
+
+The method of claim 8, comprising at least one of: (1) generating the
+
+transaction token, and (ii) retrieving a stored token.
+
+The method of claim 8, comprising receiving, from the transaction management
+
+system, and displaying, a transaction complete message.

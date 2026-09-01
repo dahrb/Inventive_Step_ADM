@@ -1,0 +1,176 @@
+--- PAGE 1 ---
+20
+
+25
+
+MAIN REQUEST
+
+CLAIMS:
+
+1. A DC-DC converter (540) comprising:
+
+a first switch (M1);
+
+a second switch (M2) connected to the first switch (M1);
+
+a mode selecting circuit (MSC) configured to select a converting mode from one
+of at least a first mode and a second mode based on an input voltage (VIN); and
+
+a controller (PC) configured to generate a first switching control signal (CONS1)
+for controlling the first switch (M1) based on the converting mode, and a second
+switching control signal (CONS2) for controlling the second switch (M2) based on the
+converting mode, wherein the mode selecting circuit (MSC) is configured to select the
+converting mode from one of at least the first mode, the second mode, and a third mode,
+wherein, in the third mode, the first switch (M1) is configured to be repeatedly turned on
+and off in response to the first switching control signal (CONS1), and the second switch
+(M2) is configured to maintain a turned on state in response to the second switching
+control signal (CONS2), and wherein in the third mode, the second switching control
+
+signal is the input voltage (VIN).
+
+2. A DC-DC converter (540) according to claim 1, wherein, in the first mode,
+the first switch (M1) is configured to be repeatedly turned on and off in response to the
+first switching control signal (CONS1), and the second switch (M2) is configured to be
+
+repeatedly turned on and off in response to the second switching control signal (M2).
+
+3. A DC-DC converter (540) according to claim 1, wherein, in the second
+
+mode, the first switch (M1) is configured to be repeatedly turned on and off in response
+
+36
+
+9629025-1
+
+--- PAGE 2 ---
+20
+
+25
+
+MAIN REQUEST
+
+to the first switching control signal (CONS1), and the second switch (M2) is configured to
+
+maintain a turned off state in response to the second switching control signal (CONS2).
+
+4. A DC-DC converter (540) according to claim 1, wherein the mode selecting
+circuit (MSC) is configured to change the converting mode from the first mode to the
+second mode when the input voltage (VIN) increases from below a first reference
+
+voltage (VDEN) to be equal to or greater than the first reference voltage (VDEN).
+
+5. A DC-DC converter (540) according to claim 4, wherein the mode selecting
+circuit (MSC) is configured to change the converting mode from the second mode to the
+first mode when the input voltage (VIN) decreases from above a second reference
+voltage (VDEX) to be less than the second reference voltage (VDEX), and
+
+wherein the second reference voltage (VDEX) has a level different from that of the
+
+first reference voltage (VDEN).
+
+6. A DC-DC converter (540) according to claim 1, wherein the mode selecting
+circuit (MSC) is configured to change the converting mode from the first mode to the
+second mode when the input voltage (VIN) increases from below a first reference
+
+voltage (VDEN) to be equal to or greater than the first reference voltage (VDEN).
+
+t. A DC-DC converter (540) according to claim 6, wherein the mode selecting
+circuit (MSC) is configured to change the converting mode from the second mode to the
+first mode when the input voltage (VIN) decreases from above a second reference
+voltage (VDEX) to be less than the second reference voltage (VDEX), and
+
+wherein the second reference voltage (VDEX) has a level different from that of the
+
+first reference voltage (VDEN).
+
+3/
+
+9629025-1
+
+--- PAGE 3 ---
+20
+
+25
+
+MAIN REQUEST
+
+8. A DC-DC converter (540) according to claim 7, wherein the mode selecting
+circuit (MSC) is configured to change the converting mode from the second mode to the
+third mode when the input voltage (VIN) increases from below a third reference voltage
+(VVEN) to be equal to or greater than the third reference voltage (VVEN), and
+
+wherein the third reference voltage (VVEN) has a level that is greater than that of
+
+the first reference voltage (VDEN).
+
+9. A DC-DC converter (540) according to claim 8, wherein the mode selecting
+circuit (MSC) is configured to change the converting mode from the third mode to the
+second mode when the input voltage (VIN) decreases from above a fourth reference
+voltage (VVEX) to be less than the fourth reference voltage (VVEX), and
+
+wherein the fourth reference voltage (VVEX) has a level that is greater than that of
+the second reference voltage (VDEX), and is different from that of the third reference
+
+voltage (VVEN).
+
+10. ADC-DC converter (540)according to claim 1, wherein the DC-DC
+converter (540) is configured to output an output voltage (VOUT) in a current mode of a
+continuous conduction mode (CCM) when the converting mode is the first mode, and
+
+wherein the DC-DC converter (540) is configured to output the output voltage
+(VOUT) in the current mode of one of a pulse skip mode (PSM), a discontinuous
+conduction mode (DCM), and the continuous conduction mode (CCM), when the
+
+converting mode is the second mode.
+
+11. ADC-DC converter (540) according to claim 10, further comprising an
+adaptive loader circuit (ALC),
+
+38
+
+9629025-1
+
+--- PAGE 4 ---
+20
+
+25
+
+MAIN REQUEST
+
+wherein the adaptive loader circuit (ALC) is configured to sequentially change the
+current mode from the pulse skip mode (PSM) to the discontinuous conduction mode
+(DCM) and from the discontinuous conduction mode (DCM) to the continuous
+conduction mode (CCM) when the converting mode is changed from the second mode to
+
+the first mode and the current mode is the pulse skip mode (PSM).
+
+12. ADC-DC converter (540) according to claim 11, wherein the adaptive
+loader circuit (ALC) comprises a third switch (M3), a load resistor (RL) connected to the
+third switch (M1), and a mode detector (MD) configured to control switching of the third
+switch (M3),
+
+wherein the third switch (M3) is configured to be turned on so that the current
+mode is sequentially changed from the pulse skip mode (PSM) to the discontinuous
+conduction mode (DCM) when the converting mode is changed from the second mode to
+the first mode and the current mode is the pulse skip mode (PSM), and
+
+wherein the third switch (M3) is configured to be turned off when the converting
+
+mode is the first mode.
+
+13. Adisplay apparatus comprising:
+
+a display panel (100) comprising a plurality of scan lines (SL1-SLN), a plurality of
+data lines (DL1-DLN), and a plurality of subpixels (P), the subpixels (P) being connected
+to the scan lines (SL1-SLN) and the data lines (DL1-DLN);
+
+a scan driver (300) configured to output scan signals to the scan lines (SL1-SLN);
+
+a data driver (400) configured to output data voltages to the data lines (DL1-DLN);
+and
+
+a DC-DC (540) according to any preceding claim.
+
+39
+
+9629025-1

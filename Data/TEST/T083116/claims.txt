@@ -1,0 +1,177 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Application No.: 07 843 693.8
+
+Appeal No.: T0831/16-3.4.03
+
+Applicant: Microsoft Technology Licensing, LLC
+Our Ref.: EP63697-EH
+
+Date: October 28, 2020
+
+CLAIMS
+
+2.
+
+A data structure stored on a computer readable medium (108) and arranged for a
+networked computing environment comprising federations, wherein a_ federation
+comprises two or more organizations coupled in a fashion such that authentication and
+
+authorization statements span the organizations in accordance with a pre-defined policy,
+
+the data structure (108) comprising fields including at least one or more grouping of
+metadata about a first federation or about an organization (104, 106, 110, 112) within the
+
+first federation, wherein
+
+the metadata comprises information about the organization and structure of the
+
+first federation or the organization within the first federation,
+
+the data structure (108) further comprising a reference to explicitly defined metadata in a
+
+block of federation metadata in a different data structure (102, 114), wherein
+
+at least one of the one or more groupings of metadata about the first federation or
+about an organization within the first federation is included in the data structure by
+the reference to the explicitly defined metadata in the block of federation
+
+metadata in the different data structure (102, 114), and
+
+the block of federation metadata being used for storing metadata including
+explicitly defined information about the organization and structure of at least one
+
+other federation or organization;
+
+the data structure (108) further comprising inherited federation metadata for the first
+
+federation, wherein
+
+the inherited federation metadata for the first federation is included in the data
+structure by virtue of the first federation being hierarchically below a second
+federation to which the inherited federation metadata also applies such that the
+inherited federation metadata is inherited from the second federation by the first
+
+federation.
+
+The data structure of claim 1, wherein the federation metadata included by reference is
+
+included by virtue of a reference to a federation identifier identifying a second federation,
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+such that federation metadata of the second federation is applicable to the first
+
+federation.
+
+The data structure of claim 1, wherein the federation metadata included by reference is
+
+included by virtue of a reference to a name structure.
+
+The data structure of claim 1, wherein the federation metadata included by reference is
+
+included by virtue of a reference to a physical location.
+
+The data structure of claim 1, wherein explicit federation metadata included in the
+federation metadata included by reference is obtained from a service endpoint reference,
+and wherein the explicit federation metadata included in the federation metadata included
+
+by reference is embedded within the service endpoint.
+
+The data structure of claim 1, wherein explicit federation metadata included in the
+federation metadata included by reference is fetched from a well known address given a
+
+target service address.
+
+The data structure of claim 1, wherein explicit federation metadata included in the
+federation metadata included by reference is obtained by reference to attributes in a
+directory including at least one of UDDI, DNS, or LDAP.
+
+The data structure of claim 1, wherein the reference to a block of federation metadata
+
+comprises a reference to one or more existing federations.
+
+A method for obtaining metadata in a networked computing environment comprising
+federations, wherein a federation comprises two or more organizations coupled in a
+fashion such that authentication and authorization statements span the organizations in
+
+accordance with a pre-defined policy, the method comprising:
+
+referencing federation metadata for a first federation in a data structure, the data
+structure comprising one or more fields including at least one or more grouping of
+metadata about a first federation or about an organization within the first federation, the
+data structure further comprising a reference to explicitly defined metadata in a block of
+
+federation metadata in a different data structure (102, 114),
+
+wherein the metadata comprises information about the organization and structure
+
+of the first federation or the organization within the first federation,
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+10.
+
+wherein at least one of the one or more groupings of metadata about the first
+federation or about an organization within the first federation is included in the
+data structure by the reference to the explicitly defined metadata in the block of
+federation metadata in the different data structure (102, 108), the block of
+federation metadata being used for storing metadata including explicitly defined
+information about the organization and structure of at least one other federation or
+
+organization at a location specified by a pointer; and
+applying the federation metadata to the first federation;
+
+wherein the federation metadata further comprises inherited federation metadata for the
+first federation, wherein the inherited federation metadata for the first federation is
+included by virtue of the first federation being hierarchically below a second federation to
+which the inherited federation metadata also applies such that the inherited federation
+
+metadata is inherited from the second federation by the first federation.
+
+The method of claim 9, wherein the federation metadata included by reference is
+included by virtue of a reference to a federation identifier identifying a second federation,
+such that federation metadata of the second federation is applicable to the first
+
+federation, or
+
+wherein the federation metadata included by reference is included by virtue of a
+
+reference to at least one of a name structure or a physical location, or
+
+wherein explicit federation metadata included in the federation metadata included by
+reference is obtained from a service endpoint reference, and wherein the explicit
+federation metadata included in the federation metadata included by reference is
+
+embedded within the service endpoint, or
+
+wherein explicit federation metadata included in the federation metadata included by
+
+reference is fetched from a well Known address given a target service address, or
+
+wherein explicit federation metadata included in the federation metadata included by
+reference is obtained by reference to attributes in a directory including at least one of
+UDDI, DNS, or LDAP.

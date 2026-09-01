@@ -1,0 +1,206 @@
+--- PAGE 1 ---
+European Patent Application Savant Systems LLC
+No. 06 847 852.8 M/CES-279-PC/EP
+March 3, 2014 © RU/PA/cd
+
+10
+
+15
+
+20
+
+25
+
+30
+
+NEW CLAIMS - MAIN REQUEST
+
+An integrated multimedia, entertainment, communications and control
+system having an environment for creating programmable services to be
+
+performed by said system comprising:
+
+at least one component profile which includes information regarding a
+physical characteristic of a predetermined component which may be
+interfaced with said system, one or more commands that said component
+recognizes, and one or more functions that said component is capable of
+
+performing;
+
+at least one zone configuration which includes information regarding an
+identification of a plurality of components that are present in one or more
+predetermined zones and one or more types of controllers available to the
+
+user in said predetermined zones;
+
+a connection configuration which includes information regarding how
+
+components are interconnected;
+
+at least one service rule which includes information regarding what
+component functions are needed to implement a predetermined
+programmable service and how a particular group of components providing
+
+said functions will interact to provide said predetermined service;
+
+a configuration compiler, that is configured to receive as an input said at
+least one component profile, zone configuration, connection configuration
+and service rule, and which is configured to generate as an output a
+service implementation that describes in machine-readable markup
+language how to utilize a particular group of components to provide said
+
+predetermined service; and
+
+a workflow generator that is configured to generate, responsive to said
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EPO No. 06847852.8 M/CES-279-PC/EP
+
+service implementation, a graphical workflow that graphically represents
+said service implementation, and an executable program, said graphical
+workflow viewable by a user in an application and including a plurality of
+panels that represent discrete actions that are executed consecutively to
+provide said predetermined service, said executable program being ©
+
+executable to provide said predetermined service.
+
+The system as in claim 1 wherein said at least one component profile
+includes a description of one or more physical inputs or outputs of a
+
+component.
+
+The system as in claim 2 wherein said description of one or more physical
+
+inputs or outputs includes information regarding connector type and signal
+
+type.
+
+The system as in claim 1 wherein said at least one component profile
+includes a description of one or more messages which said component may
+
+generate to report an action or status.
+
+The system as in claim 1 wherein said at least one component profile
+includes information regarding removable modules which may be contained
+
+within said component.
+
+The system as in claim 1 wherein said at least one component profile
+includes information regarding a plurality of functions which said
+
+component is capable of performing.
+
+The system as in claim 1 wherein said at least one zone configuration
+includes a description of user-assigned options for components present in
+
+said predetermined zone.
+
+The system as in claim 1 wherein said connection configuration includes a
+
+description of one or more physical connections between one or more
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+EPO No. 06847852.8 M/CES-279-PC/EP
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+inputs or outputs of at least one component and one or more inputs or
+
+outputs of a programmable multimedia controller.
+
+The system as in claim 1 wherein said connection configuration includes a
+description of one or more physical connections between one or more
+
+inputs or outputs of at least two components.
+
+The system as in claim 1 wherein said at least one component profile
+
+comprises an Extensible Markup Language (XML) file.
+
+The system as in claim 1 wherein said at least one zone configuration
+
+comprises an XML file.
+
+The system as in claim 1 wherein said connection configuration comprises
+an XML file.
+
+The system as in claim 1 wherein said at least one service rule comprises
+an XML file.
+
+(NEW) The system as in claim 1 wherein said workflow generator also
+generates an executable program corresponding to said service
+
+implementation.
+
+(ORIGINAL CLAIM 18) A method of graphically programming a multimedia
+controller which may be interconnected with a plurality of components
+
+comprising the steps of:
+
+using an on-screen display to create one or more user profiles which
+
+specify one or more user preferences;
+
+providing a graphical programming environment which includes a library of
+one or more component profiles each of which represents a component
+
+that may be interconnected with said programmable multimedia controller;
+
+--- PAGE 4 ---
+10
+
+15
+
+EPO No. 06847852.8 M/CES-279-PC/EP
+
+using said graphical programming environment to logically interconnect a
+plurality of selected components with said programmable multimedia
+
+controller in a configuration;
+
+applying one or more service rules to said configuration to determine
+which one or ones of a plurality of programmable services are capable of
+being performed by said plurality of selected components of said
+
+configuration; and
+
+creating a graphical workflow corresponding to each service which is
+capable of being performed by said plurality of selected components of
+said configuration, said graphical workflow for each service viewable by a
+user in an application and including a plurality of panels that represent
+discrete actions that are executed consecutively to provide said service;
+
+and
+
+generating an executable program corresponding to each said graphical
+workflow, said executable program being executable to provide a
+
+respective service graphically shown in a corresponding workflow.

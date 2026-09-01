@@ -1,0 +1,59 @@
+TITLE:
+Upgrading of electronic files including automatic recovery from failures and errors occurring during the upgrade
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A portable communication device is provided that receives upgrade files via at least one wireless coupling. The contents of the upgrade file include information to repair errors in software components of the portable communication device and/or information to upgrade functions of the portable communication device. The portable communication device automatically upgrades the software components using the upgrade file contents. The portable communication device automatically recovers to an operational state when detecting an error or failure during the automatic upgrade. Further, the portable communication device resumes or reinitiates the automatic upgrade following the error or failure.
+
+CLAIMS:
+1. A portable communication device comprising at least one processor and at least one electronic file, wherein the processor receives upgrade files over at least one wireless coupling, wherein the processor automatically upgrades the electronic files using contents of the upgrade files, wherein the upgrades include at least one of repairing errors in the electronic files and providing additional electronic files, wherein the processor automatically recovers the portable communication device to at least one operational state in response to a failure during the automatic upgrade of the electronic files.
+2. The device of claim 1, wherein the portable communication device is at least one of a cellular telephone, a portable computing device, and a personal digital assistant.
+3. The device of claim 1, wherein the at least one operational state includes a cellular telephony state.
+4. A method comprising:
+receiving upgrade files in a portable communication device via at least one wireless coupling, wherein upgrade file contents include at least one of information to repair errors in software components of the portable communication device and information to upgrade functions of the portable communication device;
+automatically upgrading the software components using the upgrade file contents; and
+automatically recovering the portable communication device to at least one operational state in response to a failure during the automatic upgrade.
+5. The method of claim 4, wherein automatically recovering further includes resuming the automatic upgrade.
+6. The method of claim 4, wherein automatically recovering further includes re-initiating the automatic upgrade.
+7. The method of claim 4, wherein the upgrade file contents include at least one of difference files and embedded software components.
+8. The method of claim 4, wherein the at least one operational state includes a cellular telephony state.
+9. The method of claim 4, wherein automatically recovering further comprises:
+determining availability of backup configuration data in the portable communication device, wherein the backup configuration data includes a pre-upgrade version of configuration data of the portable communication device;
+verifying accuracy of the backup configuration data; and
+replacing configuration data of the portable communication device with the backup configuration data.
+10. The method of claim 9, wherein automatically upgrading includes automatically upgrading at least one critical software component by generating an upgraded software component corresponding to an original version of the critical software component and writing the upgraded software component to program memory of the portable communication device, wherein automatically recovering in response to a failure during the automatic upgrade of the critical software component further comprises:
+determining availability of a backup upgraded software component in the portable communication device, wherein the backup upgraded software component includes a pre-upgrade version of the upgraded software component;
+verifying accuracy of the backup upgraded software component; and
+writing the backup upgraded software component to program memory of the portable communication device.
+11. The method of claim 9, wherein automatically upgrading includes automatically upgrading at least one critical software component by writing an upgraded software component corresponding to an original version of the critical software component to program memory of the portable communication device, wherein automatically recovering in response to a failure during the automatic upgrade of the critical software component further comprises:
+determining availability of a backup upgraded software component in the portable communication device, wherein the backup upgraded software component includes a pre-upgrade version of the upgraded software component;
+verifying accuracy of the backup upgraded software component; and
+writing the backup upgraded software component to program memory of the portable communication device.
+12. The method of claim 9, wherein automatically upgrading includes automatically upgrading at least one non-critical software component by generating an upgraded software component corresponding to an original version of the non-critical software component and writing the upgraded software component to program memory of the portable communication device, wherein automatically recovering in response to a failure during the automatic upgrade of the non-critical software component further comprises:
+receiving the upgraded software component via the wireless coupling; and
+writing the upgraded software component to program memory of the portable communication device.
+13. The method of claim 4, further comprising determining whether the portable communication device is recovering from a failure during the automatic upgrade.
+14. The method of claim 4, further comprising applying at least one error checking and correction process to at least one of the upgrade file contents, contents of the software component to be upgraded, contents of an upgraded software component, and configuration data of the portable communication device.
+15. The method of claim 14, wherein the at least one error checking and correction process includes use of at least one of cyclic redundancy codes (CRC) and checksum values.
+16. A system for upgrading electronic files, comprising:
+a first device including a first upgrade component that generates upgrade files, wherein the upgrade files include at least one of information to repair errors in electronic files and information to add functionality to the electronic files; and
+a mobile communication device including a second upgrade component that receives the upgrade files via a wireless coupling with the first device, wherein the second upgrade component automatically upgrades the electronic files of the mobile communication device using the upgrade file contents, wherein the second upgrade component automatically recovers the mobile communication device to at least one operational state in response to a failure during the automatic upgrade.
+17. The system of claim 16, wherein the first device is a processor-based device accessible by at least one provider of software components hosted on the second device.
+18. The system of claim 16, wherein the mobile communication device is a cellular telephone.
+19. The system of claim 16, wherein the electronic files comprise software files including dynamic link library files, shared object files, embedded software components (EBSCs), firmware files, executable files, data files including hex data files, system configuration files, and files including personal use data.
+20. A method for performing fail-safe software upgrades in a portable device, comprising:
+receiving upgrade files in a portable communication device via at least one wireless coupling, wherein upgrade file contents include at least one of information to repair errors in software components of the portable communication device and information to upgrade functions of the portable communication device;
+automatically upgrading the software components using the upgrade file contents;
+detecting a failure during the automatic upgrading; and
+automatically recovering the portable communication device to at least one operational state in response to the detected failure, wherein recovering includes determining availability of backup configuration data in the portable communication device, wherein the backup configuration data includes a pre-upgrade version of configuration data of the portable communication device, wherein recovering further includes verifying accuracy of the backup configuration data and replacing the configuration data with the verified backup configuration data.
+21. A mobile communication device comprising:
+means for receiving upgrade files in a portable communication device via at least one wireless coupling, wherein upgrade file contents include at least one of information to repair errors in software components of the portable communication device and information to upgrade functions of the portable communication device;
+means for automatically upgrading the software components using the upgrade file contents; and
+means for automatically recovering the portable communication device to at least one operational state in response to a failure during the automatic upgrade.
+22. A computer readable medium including executable instructions which, when executed in a processing system, upgrade software in a portable communication device by:
+receiving upgrade files in the portable communication device via at least one wireless coupling, wherein upgrade file contents include at least one of information to repair errors in software components of the portable communication device and information to upgrade functions of the portable communication device;
+automatically upgrading the software components using the upgrade file contents;
+detecting a failure during the automatic upgrading; and
+automatically recovering the portable communication device to at least one operational state in response to the detected failure, wherein recovering includes determining availability of backup configuration data in the portable communication device, verifying accuracy of the backup configuration data, and replacing the configuration data with the verified backup configuration data.

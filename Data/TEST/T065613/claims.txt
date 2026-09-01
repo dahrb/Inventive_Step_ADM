@@ -1,0 +1,193 @@
+--- PAGE 1 ---
+5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+MAIN REQUEST
+CLAIMS:
+
+1. A data processing apparatus comprising:
+
+a processor constructed to operate under control of a stored program comprising
+a sequence of program instructions selected from a predetermined processor instruction
+set;
+
+a master processor provided on the same integrated circuit as said processor
+operable to request access to storage locations of said processor, wherein said
+processor is configured to function as a slave with respect to the master processor;
+
+an interface circuit provided on the same integrated circuit as said processor
+which is operable to provide a common interface for both an external master apparatus
+and said master processor to signal requests for access to storage locations of said
+processor and/or its associated memory, wherein said processor is also configured to
+function as a slave with respect to the external master apparatus; and
+
+control means operable to provide access between the storage locations and the
+interface circuit in response to the requests only at predetermined points in the execution
+of the stored program by said processor, wherein said control means comprises a
+generic communication instruction of the processor instruction set, the generic
+communication instruction being available for execution only at said predetermined
+points by said processor in dependence upon the position of the generic communication
+instructions within the sequence of stored processor instructions as specified at program
+time such that execution timing of the stored processor instructions is independent of
+whether or not a request is actually supplied by said external master apparatus or said
+master processor at run time to said interface circuit;
+
+whereby the master processor and the external master apparatus are operable to
+access storage locations of said processor and/or its associated memory during real time
+operation of said processor without altering the timing or functionality of said processor,
+and are further adapted to control and/or debug said processor.
+
+2. An apparatus according to Claim 1, wherein the control means is operable to
+selectively transmit a request from either the external master apparatus or the master
+processor to the interface circuit thereby selectively to enable the master processor or
+the external master apparatus to access storage locations of said processor and to
+control and/or debug said processor.
+
+3. An apparatus according to Claim 1 or 2, wherein the control means is operable to
+implement a ping-pong arbitration scheme between the external master apparatus and
+the master processor, thereby to prevent either the external master apparatus or the
+
+223
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+master processor from hogging the interface circuit, and wherein the master processor
+and the external master apparatus operate independently and asynchronously of one
+another
+
+4. An apparatus according to Claim 2 or 3, wherein a request for access received
+from the external master apparatus takes precedence over a request for access
+received from the master processor.
+
+5. An apparatus according to Claim 4, wherein the control means is operable to
+cancel a request for access received from the master processor upon receipt of a
+request for access received from the external master apparatus.
+
+6. An apparatus according to any of the preceding claims, wherein said master
+processor comprises a hardware state machine.
+
+7. An apparatus according to any of the preceding claims, wherein a_ parallel
+interface is provided between said master processor and said interface circuit and a
+serial interface is provided for connecting the interface circuit to said external master
+apparatus.
+
+8. An apparatus according to any of the preceding claims, wherein the integrated
+circuit is in the form of an Application Specific Integrated Circuit (ASIC) or a Field
+Programmable Gate Array (FPGA).
+
+9. An apparatus according to any of the preceding claims, wherein the access
+request includes a specific interface communication instruction loaded by the external
+master apparatus or said master processor at run time into an interface register of the
+interface circuit, and wherein the control means is operable to provide access between a
+specified storage location and the interface register under control of the specific interface
+communication instruction.
+
+10. An apparatus according to Claim 9, wherein the control means is responsive to
+the specific interface communication instruction at the predetermined points during the
+execution of the sequence of stored processor instructions to allow reading, writing or a
+selection of reading and writing to be performed between the interface circuit and the
+specified storage location in dependence upon the specific interface communication
+instruction issued by said external master apparatus or said master processor at run time
+to said interface circuit.
+
+11. An apparatus according to any of the preceding claims, which comprises a
+
+224
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+plurality of processors provided on the integrated circuit each processor being
+constructed to operate under control of a respective stored program comprising a
+sequence of program instructions selected from a predetermined instruction set, and
+wherein the interface circuit is provided in common to said plurality of processors and is
+operable to provide an interface for the external master apparatus or said master
+processor to signal a request for access to storage locations of said plurality of
+processors and/or their associated memories during real time operation of said plurality
+of processors without altering the timing or functionality of said processors, and to enable
+the external master apparatus and the master processor to control and/or debug any of
+the processors, wherein each of said processors are configured to function as slaves
+with respect to the master processor and the external master apparatus.
+
+12. An apparatus according to Claim 11 in so far as it is dependent on Claims 9 and
+10, wherein said specific interface communication instruction includes: an address field
+which is interpreted by the or each processor as specifying a storage location of a
+storage space of that processor; a control field for selecting a processor and/or
+specifying the nature of the instruction; a data field for the input and output of data; and a
+status field, wherein said interface circuit is operable to use said status field for reporting
+status information to said master circuitry or said external apparatus.
+
+13. | An apparatus according to Claim 12, wherein a portion of the address field is
+adapted to specify whether the interface communication instruction is a debug
+instruction.
+
+14. An apparatus according to Claim 12 or 13, wherein the specific interface
+communication instruction includes a field for specifying the length of the data access.
+
+15. | An apparatus according to any of Claims 12 to 14, wherein said storage space
+comprises data space, register space, and/or program memory of the or each processor.
+
+16. An apparatus according to any of the preceding claims, further comprising a
+controller operable to control input and output to and from the interface circuit and
+operable to generate odd parity over an even number of bits to allow the identification by
+said external master apparatus or said master processor if an input or an output of said
+interface circuit is stuck at a logic low or a logic high signal, and/or whether there has
+been an interference error
+
+17. | An apparatus according to any of the preceding claims, wherein the interface
+circuit is operable to provide an interface for the external master apparatus or the master
+processor to signal a request for data from a storage location of the processor, and
+
+225
+
+--- PAGE 4 ---
+wherein the apparatus further comprises a controller operable to cause the data to be
+read from or written to the storage location, the controller being further operable to
+generate a time stamp indicating a time at which the data was read from or written to said
+storage location and operable to cause said data and said time stamp to be output to
+said external master apparatus or said master processor.
+
+18. An apparatus according to any of the preceding claims, wherein the control
+
+means is further adapted to provide access between the storage locations and the
+interface circuit in response to the requests at any time.
+
+226

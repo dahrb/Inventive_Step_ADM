@@ -1,0 +1,56 @@
+--- PAGE 1 ---
+08 012 420.9 SUZ848-14450E
+KABUSHIKI KAISHA TOSHIBA et al.
+
+Claims
+
+1. An X-ray computed tomography imaging method comprising:
+
+scanning a subject with cone beam X-ray using an X-ray tube (13) and an X-ray detector
+(14),
+
+reconstructing input image data based on output data from the X-ray detector;
+
+extracting a cone beam artifact component contained in the input image data based on a
+typical shape and typical direction of the cone beam artifact such that an intermediate image data
+is generated that comprises an edge component in a body axis direction of the subject as the cone
+beam artifact component based on at least one of the output data and the input image data, by
+performing high-pass filtering for the input image data in the body axis direction as the typical
+direction of the cone beam artifact;
+
+performing weighting with a distribution of weights changing in accordance with posi-
+tions in the body axis direction for the cone beam artifact component; and
+
+subtracting the weighted cone beam artifact component from the input image data to gen-
+
+erate output image data in which the cone beam artifact is reduced.
+
+2. The method according to claim 1, wherein the reconstructing step reconstructs the input
+
+image data by performing Feldkamp reconstruction of the output data.
+
+3. The method according to any of claims 1 to 2, wherein the extracting step extracts the
+cone beam artifact component by performing low-pass filtering in a plane substantially perpen-
+dicular to the body axis direction of the subject for intermediate image data comprising an edge
+
+component in the body axis direction of the subject.
+
+4. The method according to any of claims 1 to 2, wherein the extracting step extracts the
+cone beam artifact component by performing threshold processing for intermediate image data
+comprising an edge component in the body axis direction of the subject on the basis of a pixel
+
+value which the cone beam artifact component has.
+
+5. The method according to claim 1, wherein the weighting performing step performs the
+weighting with the distribution of weights gradually increasing from a center to edges in the
+
+body axis direction.
+
+--- PAGE 2 ---
+08 012 420.9 SUZ848-14450E
+KABUSHIKI KAISHA TOSHIBA et al.
+
+6. The method according to any of claims | to 5, wherein the X-ray detector (14) includes
+not less than 64 X-ray detection element rows (14R) arrayed along the body axis direction of the
+
+subject.

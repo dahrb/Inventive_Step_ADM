@@ -1,0 +1,216 @@
+--- PAGE 1 ---
+M&C Ref: PG444368EP Main Request
+26
+
+1. A multichip module (500), comprising:
+
+a first transceiver die (501-1) having first transceivers (511);
+
+a second transceiver die (501-2) having second transceivers (511);
+
+a crossbar switch die (503) having at least one crossbar switch (513);
+
+a first protocol logic blocks die (502-1) having first protocol logic blocks (512);
+
+a second protocol logic blocks die (502-2) having second protocol logic blocks
+(512); and
+
+a silicon interposer (510) to which the first transceiver die, the second transceiver
+die, the crossbar switch die, the first protocol logic blocks die, and the second protocol
+logic blocks die are coupled;
+
+wherein the first and second transceiver dice, the first and second protocol logic
+blocks dice, and the crossbar switch die are mounted on the interposer; and
+
+wherein the interposer interconnects the first transceivers and the first protocol
+logic blocks to one another, interconnects the second transceivers and the second
+protocol logic blocks to one another, interconnects the first protocol logic blocks and the
+at least one crossbar switch to one another, and further interconnects the second
+
+protocol logic blocks and the at least one crossbar switch to one another.
+
+2. The multichip module according to claim 1, wherein:
+
+the first transceiver die, the first protocol logic blocks die, the second transceiver
+die, and the second protocol logic blocks die are all rectangular dice mounted to the
+interposer with a first orientation;
+
+the first transceiver die and the first protocol logic blocks die are positioned on a
+left side of the crossbar switch die;
+
+the second transceiver die and the second protocol logic blocks die are
+positioned on a right side of the crossbar switch die;
+
+the first transceiver die is a leftmost outer die; and
+
+the second transceiver die is a rightmost outer die.
+
+52480522-1-GMCGLASHAN
+
+--- PAGE 2 ---
+M&C Ref: PG444368EP Main Request
+2?
+
+3. The multichip module according to claim 2, further comprising:
+
+a third transceiver die (501-3) having third transceivers (511); and
+
+a third protocol logic blocks die (502-3) having third protocol logic blocks (512);
+
+wherein the third transceiver die and the third protocol logic blocks die are
+coupled to the interposer; and
+
+wherein the interposer interconnects the third transceivers and the third protocol
+logic blocks, and further interconnects the third protocol logic blocks and the at least
+
+one crossbar switch.
+
+4. The multichip module according to claim 3, further comprising:
+
+a fourth transceiver die (501-4) having fourth transceivers (511); and
+
+a fourth protocol logic blocks die (502-4) having fourth protocol logic blocks
+(512);
+
+wherein the fourth transceiver die and the fourth protocol logic blocks die are
+coupled to the interposer; and
+
+wherein the interposer interconnects the fourth transceivers and the fourth
+protocol logic blocks, and further interconnects the fourth protocol logic blocks and the
+
+at least one crossbar switch.
+5. The multichip module according to claim 4, wherein the first protocol logic blocks, the
+
+second protocol logic blocks, the third protocol logic blocks, and the fourth protocol logic
+
+blocks are all field programmable.
+
+52480522-1-GMCGLASHAN
+
+--- PAGE 3 ---
+M&C Ref: PG444368EP Main Request
+28
+
+6. The multichip module according to claim 5, wherein:
+
+the third transceiver die, the fourth transceiver die, the third protocol logic blocks
+die, and the fourth protocol logic blocks die are all rectangular dice mounted to the
+interposer with a second orientation;
+
+the second orientation is at least substantially perpendicular to the first
+orientation;
+
+the third transceiver die and the third protocol logic blocks die are positioned ona
+top side of the crossbar switch die;
+
+the fourth transceiver die and the fourth protocol logic blocks die are positioned
+on a bottom side of the crossbar switch die;
+
+the third transceiver die is a topmost outer die; and
+
+the fourth transceiver die is a bottommost outer die.
+
+7. The multichip module according to claim 6, wherein the first transceiver die, the
+second transceiver die, the third transceiver die, and the fourth transceiver die are
+respectively substantially longer than the first protocol logic blocks die, the second
+protocol logic blocks die, the third protocol logic blocks die, and the fourth protocol logic
+
+blocks die.
+
+8. Asystem including the multichip module of any of claims 1-7, wherein:
+
+the system includes a network switch (300) having a backplane (302), a line card
+(301), and a switch card (303); and
+
+the multichip module is mounted on either the line card or the switch card.
+
+52480522-1-GMCGLASHAN
+
+--- PAGE 4 ---
+M&C Ref: PG444368EP Main Request
+29
+
+9. A method (1200) for communication, comprising:
+
+receiving (1201) a packet (1125) by a first transceiver die (501-1) of a multichip
+module (500);
+
+providing (1202) the packet from the first transceiver die to a first protocol logic
+blocks die (502-1) of the multichip module via a silicon interposer (510);
+
+wherein the interposer interconnects the first transceiver die and the first protocol
+logic blocks die to one another;
+
+providing (1203) the packet from the first protocol logic blocks die to a crossbar
+switch die (503) of the multichip module via the interposer;
+
+wherein the interposer interconnects the first protocol logic blocks die and the
+crossbar switch die to one another;
+
+providing (1204) the packet from the crossbar switch die to a second protocol
+logic blocks die (502-2) of the multichip module via the interposer;
+
+wherein the interposer interconnects the second protocol logic blocks die and the
+crossbar switch die to one another;
+
+providing (1205) the packet from the second protocol logic blocks die to a second
+transceiver die (501-2) of the multichip module via the interposer;
+
+wherein the interposer interconnects the second protocol logic blocks die and the
+second transceiver die to one another; and
+
+sending (1206) the packet from the second transceiver die out of the multichip
+
+module.
+
+10. The method according to claim 9, further comprising:
+instantiating (1301) in the first protocol logic blocks die (502-1) a first ingress
+processing block (1130) to ingress process the packet according to a first protocol; and
+instantiating (1302) in the second protocol logic blocks die (502-2) a first egress
+
+processing block (1131) to egress process the packet according to the first protocol.
+
+52480522-1-GMCGLASHAN
+
+--- PAGE 5 ---
+M&C Ref: PG444368EP Main Request
+30
+
+11. The method according to claim 10, further comprising:
+
+instantiating (1303) in the first protocol logic blocks die (502-2) a second ingress
+processing block (1132) to ingress process another packet according to a second
+protocol; and
+
+instantiating (1304) in the second protocol logic blocks die (502-1) a second
+egress processing block (1133) to egress process the other packet according to the
+second protocol;
+
+wherein the first protocol and the second protocol are different protocols.
+
+12. The method according to claim 11, wherein:
+
+the first ingress processing block is instantiated in first programmable resources
+responsive to a first ingress processing block configuration bitstream;
+
+the second ingress processing block is instantiated in second programmable
+resources responsive to a second ingress processing block configuration bitstream;
+
+the first egress processing block is instantiated in third programmable resources
+responsive to a first egress processing block configuration bitstream; and
+
+the second egress processing block is instantiated in fourth programmable
+
+resources responsive to a second egress processing block configuration bitstream.
+
+13. The method according to any of claims 9-12, further comprising:
+
+providing the packet from the crossbar switch die back to the first protocol logic
+blocks die of the multichip module via the interposer;
+
+providing the packet from the first protocol logic blocks die back to the first
+transceiver die of the multichip module via the interposer; and
+
+sending the packet from the first transceiver die out of the multichip module.
+
+52480522-1-GMCGLASHAN

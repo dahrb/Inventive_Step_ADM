@@ -1,0 +1,129 @@
+Title: System and method for automatically correcting multi-word data entry errors
+
+Abstract: 
+An editing system operable for automatically detecting and correcting multi-word data entry errors. A standard list including a plurality of source-target pairs is provided as an integral part of an editing program suitable of operation on a conventional personal computer. Each source term is a common multi word data entry error, and each target term is a correction for a corresponding source term. Each user may create a customized substitution list by adding user-defined source-target pairs to the list, and deleting source-target pairs from the list. In addition to correcting common multi-word spelling and grammatical errors, the substitution list may be used to perform other functions such as substituting a symbol for a multi-word alias typed with a standard keyboard. The substitution list may optionally be implemented in connection with an "AUTOCORRECT" engine that implements multi word substitutions as they are typed by a user. In this case, automatically substitutions arc highlighted in the document displayed to the user. The user my easily reverse an undesired automatic substitution by selecting an "undo" menu item from a tool bar. A convenient user interface is also provided for accessing the substitution list. Convenient tool bars and menu items for activating the user interface.
+
+Type: US Patent
+
+Claims: 
+
+1. In a computer system comprising a processing unit, a memory storage device, a user input/output system including a monitor, and an editing program module including instructions which, when executed by the processing unit, cause the computer system to edit a current file, a method for altering the content of the file comprising the steps of:
+receiving a plurality of characters from the user input/output system;
+detecting among the plurality of characters an internal delimiter character indicating that the plurality of character includes more than one word; and
+in response to detecting the delimiter character,
+retrieving from the memory storage device a multi-word source term of a source-target pair comprising the source term and a target term,
+comparing the source term to a multi-word set of characters immediately preceding the delimiter character, and
+if the source term matches the set of characters immediately preceding the delimiter character, then
+retrieving the target term from the memory storage device, and
+in the current file, replacing the set of characters immediately preceding the delimiter character with the target term.
+2. The method of claim 1, further comprising the steps of:
+displaying on the monitor a portion of the current file including the plurality of characters received from the user input/output system; and
+within the display,
+replacing the set of characters immediately preceding the delimiter character with the target term, and
+highlighting the target term.
+3. The method of claim 1, wherein the source term is a first source term relating to a first common data entry error, and the target term is a first target term comprising a correction for the first common data entry error, further comprising the steps of:
+if the first source term does not match the multi-word set of characters immediately preceding the delimiter character, then
+retrieving a second source term from the memory storage device relating to a second common data entry error;
+comparing the second source term to the multi-word set of characters immediately preceding the delimiter character, and
+if the second source term matches the multi-word set of characters immediately preceding the delimiter character, then
+retrieving a second target term associated with the second source term from the memory storage device, the second target term comprising a correction for the second common data entry error, and
+in the current file, replacing the multi-word set of characters immediately preceding the delimiter character with the second target term.
+4. The method of claim 1, wherein the target term comprises a multi-word set of characters.
+5. The method of claim 1, wherein the target term comprises a symbol.
+6. The method of claim 1, wherein:
+the source term comprises a common spelling or grammatical error; and
+the target term comprises a correction for the common spelling or grammatical error.
+7. The method of claim 1, wherein:
+the source term comprises a common contextual error; and
+the target term comprises a correction for the common context error.
+8. The method of claim 1, wherein:
+the source term comprises a common possessive form error; and
+the target term comprises a correction for the common possessive form error.
+9. The method of claim 1, wherein:
+the source term comprises a common inadvertent data entry error; and
+the target term comprises a correction for the common inadvertent data entry error.
+10. The method of claim 1, wherein:
+the source term comprises a common three word grammatical error; and
+the target term comprises a correction for the common three word grammatical error.
+11. The method of claim 1, wherein:
+the source term comprises a word requiring an omitted accent symbol; and
+the target term comprises a correction for the word including the accent symbol.
+12. A computer-readable medium storing an editing program module comprising instructions which, when executed by a computer system comprising a processing unit, a memory storage device, and a user input/output system including a monitor, cause the computer system to perform the steps of:
+editing a current file by receiving a plurality of characters from the user input/output system;
+receiving a command from the user input/output system to focus a multi-word set of the characters including an internal delimiter character indicating that the multi-word set of the characters includes more than one word;
+receiving a command from the user input/output system to activate a multi-word correction user interface;
+displaying a multi-word correction user interface on the monitor;
+defining the focused set of the characters to be a source term of a source-target pair comprising the source term and a target term;
+displaying the focused set of the characters in the source field of the source-target pair;
+receiving data from the user input/output system defining the target term;
+displaying the target term in the target field of the source-target pair;
+receiving an indication from the user input/output system that the source-target pair is complete; and
+in response to the indication,
+replacing the focused set of the characters with the target term in the current file, and
+storing the source-target pair in the memory storage device in a file comprising a substitution list comprising a plurality of source-target pairs.
+13. The computer-readable medium of claim 12, wherein the step of receiving a command from the user input/output system to activate a multi-word correction user interface further comprises the steps of:
+receiving a command from the user input/output system to activate a symbols user interface;
+displaying the symbols user interface including a menu item for activating the multi-word correction user interface; and
+receiving a command from the user input/output selecting the menu item from the symbols user interface for activating the multi-word correction user interface.
+14. The computer readable medium of claim 12, further comprising the steps of:
+after the step of storing the source-target pair in the substitution list,
+receiving a plurality of characters from the user input/output system;
+receiving from the user input/output system an internal delimiter character indicating that the plurality of characters includes more than one word; and
+in response to detecting the delimiter character,
+retrieving the source tern from the memory storage device;
+comparing the source term to a multi-word set of characters immediately preceding the delimiter character, and
+if the source term matches the multi-word set of characters immediately preceding the delimiter character, then
+retrieving the target term from the memory storage device, and
+in the current file, replacing the multi-word set of characters immediately preceding the delimiter character with the target term.
+15. The computer readable medium of claim 12, further comprising the steps of:
+after the step of storing the source-target pair in the substitution list,
+receiving a plurality of characters from the user input/output system;
+receiving from the user input/output system an internal delimiter character indicating that the plurality of characters includes more than one word;
+in response to detecting the delimiter character,
+retrieving the source term from the memory storage device,
+comparing the source term to a multi-word set of characters immediately preceding the delimiter character,
+determining that the source term matches the multi-word set of characters immediately preceding the delimiter character,
+retrieving the target term from the memory storage device, and
+in the current file, replacing the multi-word set of characters immediately preceding the delimiter character with the target ten;
+receiving a command from the user input/output system to focus the target term;
+receiving a command from the user input/output system to activate the multi-word correction user interface;
+displaying the multi-word correction user interface on the monitor;
+displaying the target term in the target field of the source-target pair;
+displaying the source term in the target field of the source-target pair;
+receiving data from the user input/output system altering the target term;
+receiving a indication from the user input/output system that the source-target pair is complete; and
+in response to the indication,
+replacing the focused multi-word set of the characters with the altered target term in the current file, and
+replacing the target term with the altered target term in the substitution list.
+16. An editing system comprising:
+a computer system including a processing unit, a memory storage device, and a user input/ output system including a monitor; and
+an editing program module including instructions which, when executed by the processing unit, cause the computer system to perform the steps of:
+editing a current file by receiving a plurality of characters from the user input/output system;
+receiving from the user input/output system an internal delimiter character indicating that the plurality of characters includes more than one word; and
+in response to detecting the delimiter character,
+retrieving the source term of a source-target pair comprising the source term and a target term from a substitution list of source-target pairs within the memory storage device;
+comparing the source term to a multi-word set of characters immediately preceding the delimiter character, and
+if the source term matches the multi-word set of characters immediately preceding the delimiter character, then
+retrieving the target term of the source-target pair from the memory storage device, and
+replacing the multi-word set of characters immediately preceding the delimiter character with the target term in the current file;
+receiving an undo command from the user input/output system; and
+in response to the undo command,
+replacing the target term with the source term in the current file; and
+deleting the source-target pair from the substitution list.
+17. A editing system, comprising:
+a program module including computer executable instructions for causing a computer system to receive a plurality of characters; and
+means for automatically correcting a predefined set of multi-word data entry errors in the plurality of characters, each multi-word data entry error including an internal delimiter character indicating that the multi-word data entry error includes more than one word.
+18. The editing system of claim 17, wherein the means for automatically correcting a predefined set of multi-word data entry errors further comprises:
+a pre-programmed substitution list comprising a set of source-target pairs wherein the source term of a source-target pair defines a predefined multi-word data entry error, and wherein the target term of the source-target pair defines a predefined correction for the multi-word data entry error; and
+means for augmenting the pre-programmed substitution list with a user-defined multi-word data entry error.
+19. The editing system of claim 18, wherein the pre-programmed substitution list comprises at least one source-target pair selected from each of the following classes of data entry errors:
+common contextual errors;
+possessive form errors;
+common inadvertent data entry errors;
+common three word grammatical errors; and
+omitted accent symbols.
+20. The editing system of claim 19, further comprising:
+means for receiving a command to undo the step of automatically replacing the detected set of characters with a corrected set of characters; and
+in response to the undo command,
+undoing the step of automatically replacing the detected set of characters with a corrected set of characters; and
+deleting the detected set of characters from the predefined set of multi-word data entry errors.

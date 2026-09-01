@@ -1,0 +1,1456 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+What is claimed is:
+
+1. A method, comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100); and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+
+and forwarding the gesture event to the webpage (100) for further processing.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+5. The method of claim 2, where the application (212) is a browser.
+
+27
+
+--- PAGE 2 ---
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100); and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+
+and forwarding the gesture event to the webpage (100) for further processing.
+
+28
+
+--- PAGE 3 ---
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+
+29
+
+--- PAGE 4 ---
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 5 ---
+AUXILIARY REQUEST A
+
+What is claimed is:
+
+1. A method, comprising:
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100); and
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing;
+wherein the gesture event is one of a gesture start event, a gesture
+
+change event and a gesture end event.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+5. The method of claim 2, where the application (212) is a browser.
+
+27
+
+--- PAGE 6 ---
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100); and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+
+and forwarding the gesture event to the webpage (100) for further processing;
+
+28
+
+--- PAGE 7 ---
+wherein the gesture event is one of gesture start event, a gesture
+
+change event and a gesture end event.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+29
+
+--- PAGE 8 ---
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 9 ---
+AUXILIARY REQUEST B
+
+What is claimed is:
+
+1. A method, comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100), wherein processing the touch
+input signals includes determining a plurality of touch events based on the
+touch input signals; and
+
+if the touch input signals are associated with a touch gesture,
+processing a plurality of the touch events into a gesture event using a touch
+model and forwarding the gesture event to the webpage (100) for further
+
+processing.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+5. The method of claim 2, where the application (212) is a browser.
+
+27
+
+--- PAGE 10 ---
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100), wherein processing the touch
+input signals includes determining a plurality of touch events based on the
+
+touch input signals; and
+
+28
+
+--- PAGE 11 ---
+if the touch input signals are associated with a touch gesture,
+processing a plurality of the touch events into a gesture event using a touch
+model and forwarding the gesture event to the webpage (100) for further
+
+processing.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+29
+
+--- PAGE 12 ---
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 13 ---
+AUXILIARY REQUEST C
+
+What is claimed is:
+
+1. A method, comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100), wherein processing the touch
+input signals includes determining a plurality of touch events based on the
+touch input signals, the plurality of touch events including a touch start event,
+one or more touch move events, and a touch end event; and
+
+if the touch input signals are associated with a touch gesture,
+processing a plurality of the touch events into a gesture event using a touch
+model and forwarding the gesture event to the webpage (100) for further
+
+processing.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+27
+
+--- PAGE 14 ---
+5. The method of claim 2, where the application (212) is a browser.
+
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100), wherein processing the touch
+
+input signals includes determining a plurality of touch events based on the
+
+28
+
+--- PAGE 15 ---
+touch input signals, the plurality of touch events including a touch start event,
+one or more touch move events, and a touch end event; and
+
+if the touch input signals are associated with a touch gesture,
+processing a plurality of the touch events into a gesture event using a touch
+model and forwarding the gesture event to the webpage (100) for further
+
+processing.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+29
+
+--- PAGE 16 ---
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 17 ---
+AUXILIARY REQUEST D
+
+What is claimed is:
+
+1. A method, comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100), wherein processing the touch
+input signals includes determining touch events based on the touch input
+signals, the touch events including a start touch event, one or more touch
+move events, and a touch end or touch cancel event; and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch events into gesture events using a touch model, said
+processing of the touch events including combining a plurality of the touch
+events into a respective gesture event, and forwarding the gesture events to
+
+the webpage (100) for further processing.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+27
+
+--- PAGE 18 ---
+5. The method of claim 2, where the application (212) is a browser.
+
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+
+more elements (102-108) of the web page (100), wherein processing the touch
+
+28
+
+--- PAGE 19 ---
+input signals includes determining touch events based on the touch input
+signals, the touch events including a start touch event, one or more touch
+move events, and a touch end or touch cancel event; and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch events into gesture events using a touch model, said
+processing of the touch events including combining a plurality of the touch
+events into a respective gesture event, and forwarding the gesture events to
+
+the webpage (100) for further processing.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+29
+
+--- PAGE 20 ---
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 21 ---
+FIRST AUXILIARY REQUEST
+
+What is claimed is:
+
+1. A method, comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100);
+
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing;
+
+receiving a further touch input signal not associated with an
+element of a web page;
+
+processing the further touch input signal into a touch event using
+the touch model; and
+
+processing the touch event with a browser.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+27
+
+--- PAGE 22 ---
+5. The method of claim 2, where the application (212) is a browser.
+
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+
+more elements (102-108) of the web page (100);
+
+28
+
+--- PAGE 23 ---
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing;
+
+receiving a further touch input signal not associated with an
+element of a web page;
+
+processing the further touch input signal into a touch event using
+the touch model; and
+
+processing the touch event with a browser.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+29
+
+--- PAGE 24 ---
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 25 ---
+SECOND AUXILIARY REQUEST
+
+What is claimed is:
+
+1. A method, comprising:
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100);
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing;
+receiving a further touch input signal on a region of the web page; and
+if the region does not correspond to an event handler, processing the
+
+further touch input signal with a browser.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+5. The method of claim 2, where the application (212) is a browser.
+
+27
+
+--- PAGE 26 ---
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+
+more elements (102-108) of the web page (100);
+
+28
+
+--- PAGE 27 ---
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing;
+receiving a further touch input signal on a region of the web page; and
+if the region does not correspond to an event handler, processing the
+
+further touch input signal with a browser.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+29
+
+--- PAGE 28 ---
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 29 ---
+THIRD AUXILIARY REQUEST
+
+What is claimed is:
+
+1. A method, comprising:
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100);
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing;
+and
+providing access to the gesture event through an application
+
+programming interface.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+5. The method of claim 2, where the application (212) is a browser.
+
+27
+
+--- PAGE 30 ---
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100);
+
+if the touch input signals are associated with a touch gesture,
+
+processing the touch input signals into a gesture event using a touch model
+
+28
+
+--- PAGE 31 ---
+and forwarding the gesture event to the webpage (100) for further processing
+and
+providing access to the gesture event through an application
+
+programming interface.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+29
+
+--- PAGE 32 ---
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 33 ---
+FOURTH AUXILIARY REQUEST
+
+What is claimed is:
+
+1. A method, comprising:
+
+receiving touch input signals, for multiple touches sensed
+simultaneously by a touch sensitive device, associated with one or more
+elements (102-108) of a web page (100) displayed on the touch sensitive
+device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100); and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+
+and forwarding the gesture event to the webpage (100) for further processing.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+
+hierarchical levels of the DOM (150).
+
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+5. The method of claim 2, where the application (212) is a browser.
+
+27
+
+--- PAGE 34 ---
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals, for multiple touches sensed
+simultaneously by a touch sensitive device, associated with one or more
+elements (102-108) of a web page (100) displayed on the touch sensitive
+device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+
+more elements (102-108) of the web page (100); and
+
+28
+
+--- PAGE 35 ---
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+
+and forwarding the gesture event to the webpage (100) for further processing.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+29
+
+--- PAGE 36 ---
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30
+
+--- PAGE 37 ---
+AUXILIARY REQUEST E
+
+What is claimed is:
+
+1. A method, comprising:
+
+receiving touch input signals associated with one or more elements
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100), wherein processing the touch
+input signals includes determining first and second touch events based on the
+touch input signals; and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing,
+wherein processing the touch input signals into a gesture event comprises
+combining the first and second touch events into a gesture event and the first
+and second touch events are detected by the touch sensitive device
+
+contemporaneously for respective first and second touches on the device.
+
+2. The method of claim 1, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+3. The method of claim 1, where the one or more elements (102-108) of
+the web page are associated with one or more nodes (152-160) in a document
+object model (DOM) (150) and the nodes are at a same or different
+hierarchical levels of the DOM (150).
+
+27
+
+--- PAGE 38 ---
+4, The method of claim 1, where the gesture event comprises two or
+
+more touch events.
+
+5. The method of claim 2, where the application (212) is a browser.
+
+6. The method of claim 1, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+7. The method of claim 6, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+8. The method of claim 7, where processing the gesture event
+associated with the one or more elements of the web page comprises:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+
+9. The method of claim 1, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+10. The method of claim 1, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+11. A computer-readable medium having instructions stored thereon,
+which, when executed by at least one processor (604), causes the processor to
+perform operations comprising:
+
+receiving touch input signals associated with one or more elements
+
+(102-108) of a web page (100) displayed on a touch sensitive device (400);
+
+28
+
+--- PAGE 39 ---
+processing the touch input signals to determine if the touch input
+signals are associated with a touch gesture made with respect to the one or
+more elements (102-108) of the web page (100), wherein processing the touch
+input signals includes determining first and second touch events based on the
+touch input signals; and
+
+if the touch input signals are associated with a touch gesture,
+processing the touch input signals into a gesture event using a touch model
+and forwarding the gesture event to the webpage (100) for further processing,
+wherein processing the touch input signals into a gesture event comprises
+combining the first and second touch events into a gesture event and the first
+and second touch events are detected by the touch sensitive device
+
+contemporaneously for respective first and second touches on the device.
+
+12. The computer-readable medium of claim 11, further comprising:
+if the touch input signals are not associated with a touch gesture,
+processing the touch input signals with an application (212) associated with
+
+the touch sensitive device.
+
+13. A system comprising:
+a processor (604); and
+a computer-readable medium according to claim 11 or 12, coupled
+
+to the processor.
+
+14. The system of claim 13, where the one or more elements (102-108)
+of the web page (100) are associated with one or more nodes (152-160) ina
+document object model (DOM) (150) and the nodes are at the same or
+different hierarchical levels of the DOM.
+
+15. The system of claim 13, where the gesture event comprises two or
+
+more touch events.
+
+29
+
+--- PAGE 40 ---
+16. The system of claim 13 when dependent on claim 12, where the
+
+application is a browser.
+
+17. The system of claim 13, where the gesture event is associated with
+
+attributes that can be inserted in documents to define event actions in the web
+
+page.
+
+18. The system of claim 17, where the attributes are inserted in one or
+more HyperText Markup Language (“HTML”) tags in an HTML document
+
+for generating the web page displayed on the touch sensitive device.
+
+19. The system of claim 18, further comprising operations including:
+processing the gesture event based on the HTML tag associated
+
+with the one or more elements of a web page.
+20. The system of claim 13, where the gesture includes a sequence of
+touch events that include a touch start event, one or more touch move events
+
+and a touch end or touch cancel event.
+
+21. The system of claim 13, where the gesture event includes at least
+
+two or more touch events that occur at substantially a same time.
+
+30

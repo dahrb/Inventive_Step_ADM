@@ -1,0 +1,71 @@
+TITLE:
+Oscillator with increased reliability startup
+
+TYPE:
+European Patent
+
+ABSTRACT:
+Oscillation is easily and reliably initiated in an oscillator by increasing the gain of the circuit at startup time. For example, the gain of an oscillator circuit may be increased at startup by reducing (by means of 18,20) the value of a user controlled impedance (14) until oscillation commences. Alternatively, or in combination, the input impedance of an amplifier (10) used in the oscillator may be reduced (by means of 44,40) at startup to facilitate the initiation of oscillation.
+
+CLAIMS:
+An oscillator, comprising;
+at least one controllable element which sets the operating frequency of the oscillator in response to a control signal;
+a means for detecting onset of oscillation of the oscillator;
+a means responsive to the detecting means for setting a value of the control signal which insures that the oscillator will oscillate when it is turned on.
+The oscillator of claim 1, in which the controllable element comprises a impedance in a resonator section.
+The oscillator of claim 1, in which the controllable element comprises an element which determines an amplifier input impedance.
+The oscillator of claim 1 in which the controllable element comprises a impedance in a resonator section and an element in an amplifier section which determines an input impedance.
+An oscillator, comprising:
+a resonator section comprising a user controlled impedance;
+an amplifier section having an input impedance, the amplifier being responsive to the resonator section for producing an oscillatory output signal of a predetermined frequency;
+an input for receiving a frequency control signal which determines the predetermined frequency by varying the user controlled impedance in accordance with the magnitude of the frequency control signal;
+an input for receiving a reference signal representing a level of gain which will insure initiation of oscillation;
+a circuit for detecting an oscillatory output signal from the amplifier section; and
+a signal selection element responsive to the frequency control input, the reference signal input, and the detecting circuit for enabling the reference signal to control the user controlled impedance during oscillator startup and for enabling the frequency control signal to control the user controlled impedance once an oscillatory output is detected by the detecting circuit.
+The oscillator of claim 5, further comprising:
+another input for receiving a frequency control signal which determines the predetermined frequency by varying the input impedance of the amplifier in accordance with the magnitude of the frequency control signal;
+another input for receiving a reference signal representing a level of input impedance which will insure initiation of oscillation; and
+a signal selection element responsive to the another frequency control input, the another reference signal input, and the detecting circuit for enabling the reference signal to control the input impedance of the amplifier section during oscillator startup and for enabling the frequency control signal to control the input impedance of the amplifier section once an oscillatory output is detected by the detecting circuit.
+An oscillator, comprising:
+a resonator section comprising a user controlled impedance;
+an amplifier section having an input impedance, the amplifier section being responsive to the resonator section for producing an oscillatory output of predetermined frequency;
+an input for receiving a frequency control signal which determines the predetermined frequency by varying the input impedance of the amplifier section in accordance with the magnitude of the frequency control signal;
+an input for receiving a reference signal representing a level of input impedance which will insure initiation of oscillation;
+a circuit for detecting an oscillatory output signal from the amplifier; and
+a signal selection element responsive to the frequency control input, the reference signal input, and the detecting circuit for enabling the reference signal to control the input impedance of the amplifier during oscillator startup and for enabling the frequency control signal to control the input impedance of the amplifier once an oscillatory output is detected by the detecting circuit.
+A method of controlling an oscillator, comprising the step of:
+substituting a reference signal for a frequency control signal at oscillator startup, the reference signal representing an oscillator gain of a sufficient magnitude to reliably initiate oscillation and the frequency control signal representing a user commanded frequency of oscillation.
+The method of claim 8, further comprising the step of:
+substituting the frequency control signal for the reference signal when oscillation has commenced.
+A method of controlling an oscillator, comprising the steps of:
+detecting oscillation;
+applying a user defined frequency control signal to the oscillator when oscillation is detected to control an oscillation frequency as a function of the frequency control signal; and
+applying a reference signal to the oscillator when no oscillation is detected to increase a gain parameter of the oscillator to facilitate initiation of oscillation.
+The method of claim 10, in which the gain parameter is determined by an impedance value of a resonator circuit.
+The method of claim 11, in which the impedance value is associated with a varactor.
+The method of claim 11, in which the impedance value is associated with an input impedance of an amplifier in the oscillator.
+The method of claim 12 in which the impedance value is associated with an input impedance of an amplifier in the oscillator in addition to the impedance of the varactor.
+A voltage controlled oscillator, comprising:
+an amplifier section;
+a resonator section comprising a crystal resonator in series with a varactor, the resonator section being connected to an input of the amplifier section;
+a first input for receiving a frequency control voltage representing a commanded oscillation frequency;
+a second input for receiving a voltage reference signal representing a predetermined gain associated with the oscillator insuring reliable initiation of oscillation;
+a detector of oscillation in the oscillator;
+a switching element responsive to the detector for connecting the first input to the varactor when oscillation is detected and for connecting the second input to the varactor when no substantial oscillation is detected by the detector.
+A voltage controlled oscillator, comprising:
+an amplifier section having an element defining an input impedance of the amplifier section;
+a resonator section connected to an input of the amplifier section;
+a first input for receiving a frequency control voltage representing a commanded oscillation frequency;
+a second input for receiving a voltage reference signal representing a predetermined gain associated with the oscillator insuring reliable initiation of oscillation;
+a detector of oscillation in the oscillator;
+a switching element responsive to the detector for connecting the first input to the input impedance defining element in the amplifier section when oscillation is detected and for connecting the second input to the input impedance defining element when no substantial oscillation is detected.
+A voltage controlled oscillator, comprising:
+an amplifier section having an element defining an input impedance of the amplifier section;
+a resonator section comprising a crystal resonator in series with a varactor, the resonator section being connected to an input of the amplifier section;
+a first input for receiving a first frequency control signal representing a commanded oscillation frequency;
+a second input for receiving a first voltage reference signal representing a first predetermined gain associated with the oscillator;
+a detector of oscillation in the oscillator;
+a first switching element responsive to the detector for connecting the first input to the input impedance defining element in the amplifier section when substantial oscillation is detected and for connecting the second input to the input impedance defining element when no substantial oscillation is detected;
+a third input for receiving a second frequency control signal representing a commanded oscillation frequency;
+a fourth input for receiving a second voltage reference signal representing a second predetermined gain associated with the oscillator; and
+a second switching element responsive to the detector for connecting the third input to the varactor when substantial oscillation is detected and for connecting the fourth input to the varactor when no substantial oscillation is detected.

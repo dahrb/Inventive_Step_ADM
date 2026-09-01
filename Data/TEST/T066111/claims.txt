@@ -1,0 +1,98 @@
+--- PAGE 1 ---
+Application No.: 04 014 741.5
+
+Appeal No.: T0661/11-3.5.07
+
+Applicant: Microsoft Technology Licensing, LLC
+Our Ret: EP13716ITE
+
+Date: August 11, 2016
+
+CLAIMS - MAIN REQUEST
+
+A directory service system adapted to provide uniform access to a plurality of various
+different directory services (409, 412, 415), each directory service having information
+relating to the information for each object (410, 413, 416) being defined by an object
+class, each object class having properties defined by a schema object, a schema
+object for each object class being contained in a schema container object for each
+directory service, the schema container object being assigned a pre-defined name
+within the namespace of the respective directory service, the definition of the various
+object classes being determinable at run time by enumerating the schema objects
+contained in the schema container object, additional object classes being definable by
+adding schema objects to the schema container object, each property having a
+property name and property type, the information for each object being a property
+value for each property of its object class, comprising:
+
+a schema browsing component adapted to retrieve the property name and property
+type of each property of each object class of each directory service, wherein the
+schema browsing component is adapted to be used by a client (406, 407) of the
+directory service system to retrieve property names and property types of the object
+
+classes;
+
+a name resolving component adapted to receive a unique identifier of an object within
+a directory service and locate the object within the directory service;
+
+a binding component adapted to bind to an in-memory object representing a located
+object within the identified directory service; and
+
+an extending component adapted to define new object classes and new properties for
+each directory service, wherein the extending component is adapted to be used by a
+client of the directory service system to define new object classes and new properties.
+
+--- PAGE 2 ---
+2
+
+The directory service system of claim 1 wherein the in-memory object provides a pre-
+defined interface for retrieving the property values of the object to which the in-
+memory object is bound.
+
+The directory service system of claim 1 wherein when the in-memory object is bound
+to an object that contains objects, the in-memory object provides a pre-defined
+
+interface for retrieving references to the contained objects.
+
+The directory service system of claim 1 wherein the client uses the binding component
+to instantiate in-memory objects for access of the definition of an object class.
+
+The directory service system of claim 1 including a namespaces in-memory object for
+
+enumerating each of the directory services.
+
+The directory service system of claim 1 wherein each directory service is represented
+by a namespace in-memory object.
+
+A directory service method to provide uniform access to a plurality of various different
+directory services, each directory service having information relating to the information
+for each object being defined by an object class, each object class having properties
+defined by a schema object, a schema object for each object class being contained in
+a schema container object for each directory service, the schema container object
+being assigned a pre-defined name within the namespace of the respective directory
+service, the definition of the various object classes being determinable at run time by
+enumerating the schema objects contained in the schema container object, additional
+object classes being definable by adding schema objects to the schema container
+object, each property having a property name and property type, the information for
+each object being a property value for each property of its object class, comprising:
+
+operating a schema browsing component (601-604, 701, 801-812, 1001-1008) for
+retrieving the property name and property type of each property of each object class of
+each directory service by a client of the directory service system;
+
+operating a name resolving component (501-504) for receiving a unique identifier of an
+object within a directory service and for locating the object within the directory service;
+
+--- PAGE 3 ---
+3
+
+operating a binding component (505) for binding to an in-memory object representing
+
+a located object within the identified directory service; and
+
+operating an extending component (901) for defining new object classes and new
+properties for each directory service by a client of the directory service system.
+
+The directory service method of claim 7, adapted to be performed in the directory
+service system of one of claims 1 to 6.
+
+A computer-readable medium having instructions to cause a computer system to
+perform the method of claim 7 or 8.

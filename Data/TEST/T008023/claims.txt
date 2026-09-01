@@ -1,0 +1,431 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS
+
+1. A model parameter combination method, wherein the method includes: the
+model parameter training platform perform model parameter combination on data sets
+carrying data labels, to obtain a total model parameter, and the total model parameter
+is used to identify a data type of new data, wherein the model parameter training
+platform includes: the calculation server for iteration calculation; wherein the method
+is applied to a machine learning system, the machine learning system comprises at
+least one parameter collection group and at least one parameter delivery group, each
+parameter collection group is corresponding to at least one parameter delivery group,
+each parameter collection group comprises at least one node, each parameter delivery
+group comprises at least one node, a node comprised in the at least one parameter
+collection group is different from a node comprised in a corresponding parameter
+delivery group, and the method comprises:
+
+when any parameter collection group meets an intra-group combination
+condition, combining model parameters of M nodes in the parameter collection group
+that meets the condition, to obtain a first model parameter of the parameter collection
+group that meets the condition, wherein a smallest quantity s of combination nodes in
+the parameter collection group that meets the condition < M < a total quantity of
+nodes comprised in the parameter collection group that meets the condition; and
+
+sending, to N nodes in a parameter delivery group corresponding to the
+parameter collection group that meets the condition, the first model parameter of the
+parameter collection group that meets the condition, wherein 1 < N < a total quantity
+of nodes comprised in the parameter delivery group corresponding to the parameter
+collection group that meets the condition.
+
+2. The method according to claim 1, wherein:
+
+the combining model parameters of M nodes in the parameter collection group
+that meets the condition, to obtain a first model parameter of the parameter collection
+group that meets the condition comprises:
+
+receiving the model parameters of the M nodes that are sent by the M nodes
+completing iteration in the parameter collection group that meets the condition; and
+
+combining the received model parameters of the M nodes to obtain the first
+
+model parameter of the parameter collection group that meets the condition.
+56
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3. The method according to claim 1, wherein:
+
+the combining model parameters of M nodes in the parameter collection group
+that meets the condition, to obtain a first model parameter of the parameter collection
+group that meets the condition comprises:
+
+obtaining node status information of the parameter collection group that meets
+the condition; and
+
+instructing, according to the node status information of the parameter collection
+group that meets the condition, the M nodes completing iteration in the parameter
+collection group that meets the condition, to combine the model parameters to obtain
+the first model parameter of the parameter collection group that meets the condition.
+
+4. The method according to claim 3, wherein the instructing, according to the
+node status information of the parameter collection group that meets the condition, the
+M nodes completing iteration in the parameter collection group that meets the
+condition, to combine the model parameters comprises:
+
+determining, according to the node status information of the parameter collection
+group that meets the condition, s nodes completing iteration from the parameter
+collection group that meets the condition;
+
+instructing one node of the s nodes completing iteration, to combine model
+parameters of the s nodes; and
+
+if x new nodes complete iteration in a process in which the model parameters of
+the s nodes completing iteration are combined, instructing one node of the x new
+nodes to combine model parameters of the x new nodes with a combined model
+parameter of the s nodes, wherein x < s; or if y new nodes complete iteration in a
+process in which the model parameters of the s nodes completing iteration are
+combined, instructing one node of the y new nodes to combine model parameters of
+the y nodes, and then combine a combined model parameter of the y nodes with a
+combined model parameter of the s nodes, wherein y > s.
+
+5. The method according to any one of claims 1 to 4, wherein the method further
+comprises:
+
+when W parameter collection groups meet an inter-group combination condition,
+separately combining model parameters of nodes in each parameter collection group
+in the W parameter collection groups to obtain a second model parameter of each
+parameter collection group in the W parameter collection groups;
+
+combining second model parameters of all parameter collection groups in the W
+57
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+parameter collection groups to obtain a third model parameter; and
+
+sending the third model parameter to nodes in the W parameter collection groups
+or to nodes in upper-layer parameter delivery groups of the W parameter collection
+groups.
+
+6. The method according to claim 5, wherein the combining second model
+parameters of all parameter collection groups in the W parameter collection groups to
+obtain a third model parameter comprises:
+
+determining, from the W parameter collection groups, one node as an inter-group
+combination node; and
+
+separately selecting one node from another parameter collection group in the W
+parameter collection groups except a parameter collection group in which the
+inter-group combination node is located, to send a second model parameter of the
+corresponding parameter collection group to the inter-group combination node, so that
+the inter-group combination node combines the second model parameters of the W
+parameter collection groups to obtain the third model parameter;
+
+Or,
+
+separately determining one node from each parameter collection group in the W
+parameter collection groups, and determining the determined nodes as a new
+parameter collection group; and
+
+when the new parameter collection group meets an intra-group combination
+condition, combining the second model parameters of the W parameter collection
+groups that meet the intra-group combination condition, to obtain the third model
+parameter.
+
+7. The method according to claim 1, wherein the sending, to N nodes in a
+parameter delivery group corresponding to the parameter collection group that meets
+the condition, the first model parameter of the parameter collection group that meets
+the condition comprises:
+
+sending, in a broadcast manner to the nodes in the parameter delivery group
+corresponding to the parameter collection group that meets the condition, the first
+model parameter of the parameter collection group that meets the condition; or
+sending, to a first node in the parameter delivery group corresponding to the
+parameter collection group that meets the condition, the first model parameter of the
+parameter collection group that meets the condition, so that the first node sequentially
+
+sends, in an iteration manner to another node in the N nodes except the first node, the
+58
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+first model parameter of the parameter collection group that meets the condition.
+
+8. The method according to claim 1 or 2, wherein the machine learning system
+further comprises a parameter server, one parameter collection group and a
+corresponding parameter delivery group are corresponding to a same parameter server,
+and different parameter collection groups and corresponding parameter delivery
+groups are corresponding to different parameter servers.
+
+9. The method according to claim 8, wherein the parameter server comprises Y
+layers, one parameter server of the (j+1)™ layer is corresponding to at least one
+parameter server of the j'" layer, the parameter collection group and the parameter
+delivery group corresponding to the parameter collection group are corresponding to a
+parameter server of the first layer, and 1 <j <j+1<Y.
+
+10. The method according to any one of claims 1 to 9, wherein the method
+further comprises:
+
+when a preset condition is met, regrouping nodes comprised in the parameter
+collection group and the parameter delivery group.
+
+11. The method according to claim 10, wherein the regrouping nodes comprised
+in the parameter collection group and the parameter delivery group comprises:
+
+dividing, based on a preset correspondence between a node identifier and a node
+number, a quantity of parameter collection groups, and a quantity of parameter
+delivery groups, a node number corresponding to a node identifier by the quantity of
+parameter collection groups, to obtain a collection group remainder of a node;
+
+dividing the node number corresponding to the node identifier by the quantity of
+parameter delivery groups, to obtain a delivery group remainder of the node; and
+
+determining nodes having a same collection group remainder as a same
+parameter collection group, and determining nodes having a same delivery group
+remainder as a same parameter delivery group.
+
+12. A model parameter combination apparatus, wherein the model parameter
+combination apparatus perform model parameter combination on data sets carrying
+data labels, to obtain a total model parameter, and the total model parameter is used to
+identify a data type of new data, wherein the model parameter combination apparatus
+includes: the calculation server for iteration calculation; wherein the apparatus is
+applied to a machine learning system, the machine learning system comprises at least
+
+one parameter collection group and at least one parameter delivery group, each
+
+59
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+parameter collection group is corresponding to at least one parameter delivery group,
+each parameter collection group comprises at least one node, each parameter delivery
+group comprises at least one node, a node comprised in the at least one parameter
+collection group is different from a node comprised in a corresponding parameter
+delivery group, and the apparatus comprises:
+
+a first combination unit, configured to: when any parameter collection group
+meets an intra-group combination condition, combine model parameters of M nodes
+in the parameter collection group that meets the condition, to obtain a first model
+parameter of the parameter collection group that meets the condition, wherein a
+smallest quantity s of combination nodes in the parameter collection group that meets
+the condition < M < a total quantity of nodes comprised in the parameter collection
+group that meets the condition; and
+
+a first sending unit, configured to send, to N nodes in a parameter delivery group
+corresponding to the parameter collection group that meets the condition, the first
+model parameter of the parameter collection group that meets the condition, wherein
+1 < N < a total quantity of nodes comprised in the parameter delivery group
+corresponding to the parameter collection group that meets the condition.
+
+13. The apparatus according to claim 12, wherein the first combination unit
+comprises:
+
+a receiving module, configured to receive the model parameters of the M nodes
+that are sent by the M nodes completing iteration in the parameter collection group
+that meets the condition; and
+
+a combination module, configured to combine the received model parameters
+sent by the M nodes, to obtain the first model parameter of the parameter collection
+group that meets the condition.
+
+14. The apparatus according to claim 12, wherein the first combination unit
+comprises:
+
+an obtaining module, configured to obtain node status information of the
+parameter collection group that meets the condition; and
+
+an instruction module, configured to instruct, according to the node status
+information of the parameter collection group that meets the condition, the M nodes
+completing iteration in the parameter collection group that meets the condition, to
+combine the model parameters to obtain the first model parameter of the parameter
+
+collection group.
+60
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+15. The apparatus according to claim 14, wherein the instruction module is
+specifically configured to:
+
+determine, according to the node status information of the parameter collection
+group, s nodes completing iteration in the parameter collection group;
+
+instruct one node of the s nodes completing iteration, to combine model
+parameters of the s nodes; and
+
+if x new nodes complete iteration in a process in which the model parameters of
+the s nodes completing iteration are combined, instruct one node of the x new nodes
+to combine model parameters of the x new nodes with a combined model parameter
+of the s nodes, wherein x < s; or if y new nodes complete iteration in a process in
+which the model parameters of the s nodes completing iteration are combined, instruct
+one node of the y new nodes to combine model parameters of the y nodes, and then
+combine a combined model parameter of the y nodes with a combined model
+parameter of the s nodes, wherein y > s.
+
+16. The apparatus according to any one of claims 12 to 15, wherein the apparatus
+further comprises:
+
+a second combination unit, configured to: when W parameter collection groups
+meet an inter-group combination condition, separately combine all model parameters
+of nodes in each parameter collection group in the W parameter collection groups to
+obtain a second model parameter of each parameter collection group in the W
+parameter collection groups;
+
+a third combination unit, configured to combine second model parameters of all
+parameter collection groups in the W parameter collection groups to obtain a third
+model parameter; and
+
+a second sending unit, configured to send the third model parameter to nodes in
+the W parameter collection groups or to nodes in upper-layer parameter delivery
+groups of the W parameter collection groups.
+
+17. The apparatus according to claim 16, wherein the third combination unit is
+specifically configured to:
+
+determine, from the W parameter collection groups, one node as an inter-group
+combination node; and
+
+separately select one node from another parameter collection group in the W
+parameter collection groups except a parameter collection group in which the
+
+inter-group combination node is located, to send a second model parameter of the
+61
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+corresponding parameter collection group to the inter-group combination node, so that
+the inter-group combination node combines the second model parameters of the W
+parameter collection groups to obtain the third model parameter;
+
+Or,
+
+separately determine one node from each parameter collection group comprised
+in the W parameter collection groups, and determine the determined nodes as a new
+parameter collection group; and
+
+when the new parameter collection group meets an intra-group combination
+condition, combine the second model parameters of the W parameter collection
+groups that meet the intra-group combination condition, to obtain the third model
+parameter.
+
+18. The apparatus according to claim 12, wherein the first sending unit is
+specifically configured to:
+
+send, in a broadcast manner, the first model parameter of the parameter
+collection group to the nodes in the parameter delivery group corresponding to the
+parameter collection group that meets the condition; or
+
+send, to a first node in the parameter delivery group corresponding to the
+parameter collection group that meets the condition, the first model parameter of the
+parameter collection group that meets the condition, so that the first node sequentially
+sends, in an iteration manner to another node in the N nodes except the first node, the
+first model parameter of the parameter collection group that meets the condition.
+
+19. The apparatus according to claim 12 or 13, wherein the machine learning
+system further comprises a parameter server, one parameter collection group and a
+corresponding parameter delivery group are corresponding to a same parameter server,
+and different parameter collection groups and corresponding parameter delivery
+groups are corresponding to different parameter servers.
+
+20. The apparatus according to claim 19, wherein the parameter server comprises
+Y layers, one parameter server of the (j+1)" layer is corresponding to at least one
+parameter server of the j'" layer, the parameter collection group and the parameter
+delivery group corresponding to the parameter collection group are corresponding to a
+parameter server of the first layer, and 1 <j <j+1<Y.
+
+21. The apparatus according to any one of claims 12 to 20, wherein the apparatus
+further comprises:
+
+a first grouping unit, configured to: when a preset condition is met, regroup
+62
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+nodes comprised in the parameter collection group and the parameter delivery group.
+
+22. The apparatus according to claim 21, wherein the first grouping unit is
+specifically configured to:
+
+divide, based on a preset correspondence between a node identifier and a node
+number, a quantity of parameter collection groups, and a quantity of parameter
+delivery groups, a node number corresponding to a node identifier by the quantity of
+parameter collection groups, to obtain a collection group remainder of a node;
+
+divide the node number corresponding to the node identifier by the quantity of
+parameter delivery groups, to obtain a delivery group remainder of the node; and
+
+determine nodes having a same collection group remainder as a same parameter
+collection group, and determine nodes having a same delivery group remainder as a
+same parameter delivery group.
+
+23. A model parameter combination apparatus, wherein the model parameter
+combination apparatus comprises a processor and a memory, the memory stores code
+and data, the processor can run the code in the memory, and the processor is
+configured to perform the model parameter combination method according to any one
+of the foregoing claims 1 to 11.
+
+24. The apparatus according to claim 23, wherein the model parameter
+combination apparatus is a parameter server, and the parameter server is disposed
+
+independently of the node or is configured on the node.
+
+63

@@ -1,0 +1,45 @@
+Title: Visualizing relationships between data elements
+
+Abstract: In general, a specification of multiple contexts that are related according to a hierarchy is received. Relationships are determined among three or more metadata objects, and at least some of the metadata objects are grouped into one or more respective groups. Each of at least some of the groups is based on a selected one of the contexts and is represented by a node in a diagram. Relationships among the nodes are determined based on the relationships among the metadata objects in the groups represented by the nodes, and a visual representation is generated of the diagram including the nodes and the relationships among the nodes.
+
+Type: US Patent
+
+Claims: 
+
+1. A method including:
+receiving a specification of multiple contexts that are related according to a hierarchy;
+determining relationships among three or more metadata objects;
+grouping at least some of the metadata objects into one or more respective groups, each of at least some of the groups being based on a selected one of the contexts and being represented by a node in a diagram;
+determining relationships among the nodes based on the relationships among the metadata objects in the groups represented by the nodes; and
+generating a visual representation of the diagram including the nodes and the relationships among the nodes.
+2. The method of claim 1 wherein the metadata objects represent data elements or transformations of data.
+3. The method of claim 2 wherein the data elements are grouped in contexts including data sets, applications, or systems.
+4. The method of claim 2 wherein the transformations of data are grouped in contexts including executables, applications, or systems.
+5. The method of claim 1 wherein the nodes are configured to be expanded or collapsed to display different levels of resolution.
+6. The method of claim 5 wherein a user selects the level of resolution to display.
+7. The method of claim 5 wherein a user selects a particular node for which to calculate relationships.
+8. The method of claim 7 wherein each node not containing the selected data node are collapsed to a least detailed level of resolution according to an algorithm.
+9. The method of claim 1 wherein nodes meeting a preselected condition are filtered out of the visual representation.
+10. A system including:
+means for receiving a specification of multiple contexts that are related according to a hierarchy;
+means for determining relationships among three or more metadata objects;
+means for grouping at least some of the metadata objects into one or more respective groups, each of at least some of the groups being based on a selected one of the contexts and being represented by a node in a diagram;
+means for determining relationships among the nodes based on the relationships among the metadata objects in the groups represented by the nodes; and
+means for generating a visual representation of the diagram including the nodes and the relationships among the nodes.
+11. A computer system configured to:
+receive a specification of multiple contexts that are related according to a hierarchy;
+determine relationships among three or more metadata objects;
+group at least some of the metadata objects into one or more respective groups, each of at least some of the groups being based on a selected one of the contexts and being represented by a node in a diagram;
+determine relationships among the nodes based on the relationships among the metadata objects in the groups represented by the nodes; and
+generate a visual representation of the diagram including the nodes and the relationships among the nodes.
+12. A computer-readable medium storing a computer program, the computer program including instructions for causing a computer to:
+receive a specification of multiple contexts that are related according to a hierarchy;
+determine relationships among three or more metadata objects;
+group at least some of the metadata objects into one or more respective groups, each of at least some of the groups being based on a selected one of the contexts and being represented by a node in a diagram;
+determine relationships among the nodes based on the relationships among the metadata objects in the groups represented by the nodes; and
+generate a visual representation of the diagram including the nodes and the relationships among the nodes.
+13. The method of claim 1, wherein the relationships among the metadata objects are based on dependencies among the metadata objects.
+14. The method of claim 13, wherein, for a given metadata object of the metadata objects, the relationships among the metadata objects include one or more of:
+relationships between the given metadata object and one or more metadata objects on which the given metadata object depends; and
+relationships between the given metadata object and one or more metadata objects that depend on the given metadata object.
+15. The method of claim 1, wherein the visual representation of the diagram includes a visual representation of a data lineage diagram.

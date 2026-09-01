@@ -1,0 +1,96 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+Claims
+
+1. A storage area network associated data library partitioning system (200)
+characterised by:
+
+a plurality of partitions (215-217) comprising at least one secured partition,
+each of said plurality of partitions comprising at least one set of at least one
+storage element slots (205) adapted to store data storage media and at least
+one set of at least one data transfer elements (201-204) that are adapted to
+receive said data storage media and transfer data to and from said data
+storage media; and
+
+a library controller (213) that assigns a different logical element designation
+(LUN1, LUN2, LUNS3) to a virtual controller for each of said plurality of
+partitions, said virtual controllers directing movement of said media to and
+from said at least one set of slots and at least one set of data transfer
+elements assigned to a same of said plurality of partitions,
+
+wherein access to the or each said secured partition is restricted to users of
+said storage area network having a unique host device identifier that is listed
+in a list of unique host device identifiers for access to a particular secured
+partition.
+
+2. The system of claim 1, wherein a blank listing of unique host device
+identifiers for a secured partition (215-217) results in said partition being
+
+secured from access by any users.
+
+3. The system of claim 1 or 2, wherein at least one of said plurality of
+partitions (215-217) is unsecured allowing access to said unsecured partitions
+by any user of said storage area network.
+
+4. The system of claim 1, 2 or 3, wherein at least one of said elements is
+
+disabled and said at least one disabled element may not be accessed by any
+
+users.
+
+19
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+MAIN REQUEST
+
+5. The system of any preceding claim, wherein at least one of said plurality of
+partitions has at least one storage element slot that is defined as an
+import/export slot.
+
+6. The system of any preceding claim, wherein at least one of said plurality of
+partitions (215-217) has at least two of said data transfer elements assigned
+to it that are connected to different SCSI buses.
+
+7. The system of any preceding claim, comprising a library management
+interface cooperating with said library controller (213) to implement selected
+partitioning in response to user input.
+
+8. A method for partitioning a storage area network associated data library
+(200) characterised by:
+
+establishing a plurality of partitions (215-217) comprising at least one secured
+partition in said data library, each of said plurality of partitions comprising at
+least one storage element slot (205) and at least one data transfer element
+(201-204), each of said slots adapted to store media, and each of said data
+transfer elements adapted to receive said media and transfer data to and from
+said media;
+
+assigning a different logical element designation (LUN1, LUN2, LUN3) to each
+of said plurality of partitions (215-217);
+
+controlling movement of said media to and from said at least one slot and at
+least one data transfer element assigned to a same partition; and
+
+securing the or each said secured partition by assigning a list of unique host
+device identifiers that may access a particular secured partition.
+
+20

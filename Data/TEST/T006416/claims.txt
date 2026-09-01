@@ -1,0 +1,446 @@
+--- PAGE 1 ---
+DSY.00052.EP1 1
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+MAIN REQUEST
+CLAIMS
+
+1. A computer-implemented method for navigating in a relational database of a
+product lifecycle management system, the database storing modeled objects and
+relations between said objects, the PLM system comprising a graphical user interface
+suitable for displaying to a user a graphical 3D representation of a hierarchy of stored
+objects, the method comprising the steps of:
+
+- selecting a first object, a first relation and a first layout;
+
+- finding descendants of said first object in the hierarchy, which
+descendants comprise second objects related to the first object according to the first
+relation;
+
+- displaying a 3D representation of the first object to the user as a set of
+a 3D representations of the second objects that are laid out in 3D space and distributed
+on the first layout;
+
+- selecting one of the displayed second objects, a second relation and a
+second layout;
+
+- finding descendants of the selected second object, which descendants
+comprise third objects related to the selected second object through the second relation;
+
+- displaying a 3D representation of the first object, comprising the second
+and third objects, the selected second object is replaced by 3D representations of the
+third objects being laid out in 3D space and distributed on the second layout, wherein
+the second objects displayed are redistributed on the second layout in the graphical 3D
+representation according to a respective relative weight of said second objects, the
+relative weight of an object depends on the number of descendants of said object in
+
+the hierarchy, which are displayed in said graphical representation.
+
+2. The method of claim 1, wherein the graphical user interface is further
+adapted to display to the user a graphical cue representative of a hierarchy of a
+displayed object and the descendants of said object in the hierarchy, which are
+
+displayed to the user in said graphical representation.
+
+3. The method of claim | or 2, wherein the objects displayed further have a
+
+rendering size depending on their respective relative weight.
+
+4. The method of one of claims | to 3, wherein the relative weight of an object
+further depends on the size of descendants of said object in the hierarchy, which are
+
+displayed in said graphical representation.
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 1/9
+
+--- PAGE 2 ---
+DSY.00052.EP1 2
+
+10
+
+15
+
+20
+
+25
+
+30
+
+5. The method of one of claims | to 4, wherein the graphical user interface is
+
+further adapted to display the objects using a unique scale for all objects.
+
+6. The method of one of claims | to 5, wherein the graphical user interface
+is further adapted, upon selection of a displayed object, for morphing from a first
+representation of the displayed object to a representation of objects related to the
+
+displayed object.
+
+7. The method of one of claims | to 6, wherein objects are displayed to the
+
+user as 3D objects.
+
+8. The method of claim | or 7, wherein the layout is selected among :
+- linear layout, with objects represented in perspective view exploded
+along a line;
+- in-place layout;
+- circular layout, with objects represented in exploded perspective
+distributed on a disk;
+
+- 2D layout of 3D miniature representations.
+
+9. The method of claim 8, wherein, after selecting a circular layout with
+objects represented in exploded perspective distributed on a disk, the disk links
+objects which belong to a same level in the hierarchy, and the intersection of two
+disks defines a cue representative of a hierarchy of the displayed object and its
+
+displayed descendants in the hierarchy.
+
+10. The method of claim 9, wherein the descendant objects are arranged on a
+
+smaller disk.
+
+11. The method according to one of claims | to 10, wherein the layouts are
+
+animated.
+
+12. The method of one of claims | to 11, wherein the relations comprise at
+least two of the following relations:
+- arelation "is comprised of",
+- arelation "where used",
+- arelation "in contact with";
+- arelation "in clash with";
+
+- arelation "impact with",
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 2/9
+
+--- PAGE 3 ---
+DSY.00052.EP1 3
+
+13. The method of one of claims | to 12, further comprising a step of
+
+computing and storing 3D representations of objects.
+14. A computer program implementing the method of one of claims 1 to 13.
+15. A product lifecycle management system, comprising:
+5 - a database (560) storing modeled objects and relations between said
+objects;
+- a graphical user interface (500) suitable for displaying to a user a
+graphical representation of a hierarchy of stored objects;
+
+- a central processing unit (900) for executing the computer program of
+10 claim 14.
+
+15
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 3/9
+
+--- PAGE 4 ---
+DSY.00052.EP1 4
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+FIRST AUXILIARY REQUEST
+CLAIMS
+
+1. A computer-implemented method for navigating in a relational database of a
+product lifecycle management system, the database storing modeled objects and
+relations between said objects, the PLM system comprising a graphical user interface
+suitable for displaying to a user a graphical 3D representation of a hierarchy of stored
+objects, the method comprising the steps of:
+
+- selecting a first object, a first relation and a first layout;
+
+- finding descendants of said first object in the hierarchy, which
+descendants comprise second objects related to the first object according to the first
+relation;
+
+- displaying a 3D representation of the first object comprising the second
+objects, wherein the selected first object is represented to the user as a set of its
+descendants that comprises the 3D representations of the second objects that are laid
+out in 3D space and distributed on the first layout;
+
+- selecting one of the displayed second objects, a second relation and a
+second layout;
+
+- finding descendants of the selected second object, which descendants
+comprise third objects related to the selected second object through the second relation;
+
+- displaying a 3D representation of the first object, comprising the second
+and third objects, the selected second object is represented to the user as a set of its
+descendants that comprises the 3D representations of the third objects being laid out
+in 3D space and distributed on the second layout, wherein the second objects displayed
+are redistributed on the second layout in the graphical 3D representation according to
+a respective relative weight of said second objects, the relative weight of an object
+depends on the number of descendants of said object in the hierarchy, which are
+
+displayed in said graphical representation.
+
+2. The method of claim 1, wherein the graphical user interface is further
+adapted to display to the user a graphical cue representative of a hierarchy of a
+displayed object and the descendants of said object in the hierarchy, which are
+
+displayed to the user in said graphical representation.
+
+3. The method of claim | or 2, wherein the objects displayed further have a
+
+rendering size depending on their respective relative weight.
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 4/9
+
+--- PAGE 5 ---
+DSY.00052.EP1 5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+4. The method of one of claims | to 3, wherein the relative weight of an object
+further depends on the size of descendants of said object in the hierarchy, which are
+
+displayed in said graphical representation.
+
+5. The method of one of claims | to 4, wherein the graphical user interface is
+
+further adapted to display the objects using a unique scale for all objects.
+
+6. The method of one of claims | to 5, wherein the graphical user interface
+is further adapted, upon selection of a displayed object, for morphing from a first
+representation of the displayed object to a representation of objects related to the
+
+displayed object.
+
+7. The method of one of claims | to 6, wherein objects are displayed to the
+
+user as 3D objects.
+
+8. The method of claim | or 7, wherein the layout is selected among :
+- linear layout, with objects represented in perspective view exploded
+along a line;
+- in-place layout;
+- circular layout, with objects represented in exploded perspective
+distributed on a disk;
+
+- 2D layout of 3D miniature representations.
+
+9. The method of claim 8, wherein, after selecting a circular layout with
+objects represented in exploded perspective distributed on a disk, the disk links
+objects which belong to a same level in the hierarchy, and the intersection of two
+disks defines a cue representative of a hierarchy of the displayed object and its
+
+displayed descendants in the hierarchy.
+
+10. The method of claim 9, wherein the descendant objects are arranged on a
+
+smaller disk.
+
+11. The method according to one of claims | to 10, wherein the layouts are
+
+animated.
+
+12. The method of one of claims | to 11, wherein the relations comprise at
+least two of the following relations:
+
+- arelation "is comprised of",
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 5/9
+
+--- PAGE 6 ---
+DSY.00052.EP1 6
+
+- arelation "where used",
+- arelation "in contact with";
+- arelation "in clash with";
+
+- arelation "impact with".
+
+5 13. The method of one of claims | to 12, further comprising a step of
+
+computing and storing 3D representations of objects.
+
+14. A computer program implementing the method of one of claims 1 to 13.
+
+15. A product lifecycle management system, comprising:
+
+- a database (560) storing modeled objects and relations between said
+10 objects;
+- a graphical user interface (500) suitable for displaying to a user a
+graphical representation of a hierarchy of stored objects;
+- accentral processing unit (900) for executing the computer program of
+
+claim 14.
+15
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 6/9
+
+--- PAGE 7 ---
+DSY.00052.EP1 7
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+SECOND AUXILIARY REQUEST
+CLAIMS
+
+1. A computer-implemented method for navigating in a relational database of a
+product lifecycle management system, the database storing modeled objects and
+relations between said objects, the PLM system comprising a graphical user interface
+suitable for displaying to a user a graphical 3D representation of a hierarchy of stored
+objects, the method comprising the steps of:
+
+- selecting a first object, a first relation and a first layout;
+
+- finding descendants of said first object in the hierarchy, which
+descendants comprise second objects related to the first object according to the first
+relation;
+
+- displaying a 3D representation of the first object comprising the second
+objects, wherein the selected first object is represented to the user as a set of its
+descendants that comprises the 3D representations of the second objects that are laid
+out in 3D space and distributed on the first layout;
+
+- selecting one of the displayed second objects, a second relation and a
+second layout;
+
+- finding descendants of the selected second object, which descendants
+comprise third objects related to the selected second object through the second relation;
+
+- displaying a 3D representation of the first object, comprising the second
+and third objects, the selected second object is represented to the user as a set of its
+descendants that comprises the 3D representations of the third objects being laid out
+in 3D space and distributed on the second layout, wherein the second objects displayed
+are redistributed on the second layout in the graphical 3D representation according to
+a respective relative weight of said second objects, the relative weight of an object
+depends on the number of descendants of said object in the hierarchy, which are
+displayed in said graphical representation;
+
+wherein the first and second layout are a circular layout, with objects
+represented in exploded perspective distributed on a disk;
+
+wherein after selecting a circular layout, the disk links objects which
+belong to a same level in the hierarchy, and the intersection of two disks defines a cue
+representative of a hierarchy of the displayed object and its displayed descendants in
+the hierarchy;
+
+wherein the disk is configured to be rotated, independently of any other
+
+disk, upon user action.
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 7/9
+
+--- PAGE 8 ---
+DSY.00052.EP1 8
+
+10
+
+15
+
+20
+
+25
+
+30
+
+2. The method of claim 1, wherein the graphical user interface is further
+adapted to display to the user a graphical cue representative of a hierarchy of a
+displayed object and the descendants of said object in the hierarchy, which are
+
+displayed to the user in said graphical representation.
+
+3. The method of claim | or 2, wherein the objects displayed further have a
+
+rendering size depending on their respective relative weight.
+
+4. The method of one of claims | to 3, wherein the relative weight of an object
+further depends on the size of descendants of said object in the hierarchy, which are
+
+displayed in said graphical representation.
+
+5. The method of one of claims | to 4, wherein the graphical user interface is
+
+further adapted to display the objects using a unique scale for all objects.
+
+6. The method of one of claims | to 5, wherein the graphical user interface
+is further adapted, upon selection of a displayed object, for morphing from a first
+representation of the displayed object to a representation of objects related to the
+
+displayed object.
+
+7. The method of one of claims | to 6, wherein objects are displayed to the
+
+user as 3D objects.
+
+8. The method of one of claims 1 to 7, wherein the descendant objects are
+
+arranged on a smaller disk.
+
+9. The method according to one of claims | to 8, wherein the layouts are
+
+animated.
+
+10. The method of one of claims | to 9, wherein the relations comprise at least
+two of the following relations:
+- arelation "is comprised of",
+- arelation "where used",
+- arelation "in contact with";
+- arelation "in clash with";
+
+- arelation "impact with",
+
+11. The method of one of claims 1 to 10, further comprising a step of
+
+computing and storing 3D representations of objects.
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 8/9
+
+--- PAGE 9 ---
+DSY.00052.EP1 9
+
+12. A computer program implementing the method of one of claims 1 to 11.
+13. A product lifecycle management system, comprising:
+
+- a database (560) storing modeled objects and relations between said
+objects;
+5 - a graphical user interface (500) suitable for displaying to a user a
+graphical representation of a hierarchy of stored objects;
+- a central processing unit (900) for executing the computer program of
+
+claim 12.
+
+DSY.00052.EP1-2019.05.15-Appeal-LastSubmission-CLMS - 9/9

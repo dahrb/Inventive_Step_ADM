@@ -1,0 +1,40 @@
+TITLE:
+Usb charging module
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An apparatus is provided for charging a Universal Serial Bus (USB) device according to an optimal charging mode. The apparatus includes a charging module that is configured to obtain a descriptor from the USB device upon detection of the USB device on a USB bus. The charging module includes one or more descriptor entries disposed in a memory and a controller. The one or more descriptor entries include descriptor data, for matching the descriptor to a specific descriptor entry, and charging data, that specifies the optimal charging mode for the USB device. The controller is coupled to the memory, and is configured to match the descriptor to the specific descriptor entry, and is configured to initiate the optimal charging mode on the USB bus according to the charging data.
+
+CLAIMS:
+1. An apparatus for charging a Universal Serial Bus (USB) device according to an optimal charging mode, the apparatus comprising:
+a charging module, configured to obtain a descriptor of the USB device upon detection of the USB device on a USB bus, the charging module comprising:
+a memory, storing one or more descriptor entries, the one or more descriptor entries comprising:
+descriptor data, being arranged for matching the descriptor to a specific descriptor entry; and
+charging data, being arranged specifying the optimal charging mode for the USB device; and
+a controller, coupled to said memory, configured to compare the descriptor to the specific descriptor entry, and configured to initiate the optimal charging mode on the USB bus according to the charging data.
+2. The apparatus as recited in claim 1, wherein the charging module obtains the descriptor by causing a descriptor read command to be transmitted to the USB device over the USB bus.
+3. The apparatus as recited in claim 1, wherein the charging module is disposed within a USB hub.
+4. The apparatus as recited in claim 3, wherein the charging module obtains the descriptor when the USB hub is not coupled to a USB host.
+5. The apparatus as recited in claim 3, wherein the USB hub is coupled to a USB host, and the charging module issues a reset command to be transmitted to the USB device after obtaining the descriptor, thereby allowing for normal enumeration procedures by the USB host.
+6. The apparatus as recited in claim 5, wherein during the normal enumeration procedures, the USB host causing a descriptor read command to be transmitted to the USB device over the USB bus.
+7. The apparatus as recited in claim 3, wherein the charging module initiates the optimal charging mode to charge the USB device when a USB host coupled to the USB hub is operated in a power saving state.
+8. The apparatus as recited in claim 1, wherein the charging module is disposed within a USB host.
+9. The apparatus as recited in claim 8, wherein the charging module obtains the descriptor by monitoring enumeration of the USB device by the USB host.
+10. The apparatus as recited in claim 1, wherein the charging data comprises one or more fields that specify one or more voltages and a current to apply to associated signals on the USB bus.
+11. The apparatus as recited in claim 1, wherein the specific descriptor entry further comprises remote wakeup capability corresponding to the USB device, or commands to be transmitted to the USB device to control hardware states of the USB device.
+12. A method for charging a Universal Serial Bus (USB) device according to an optimal charging mode, the method comprising:
+via a charging module, obtaining a descriptor of the USB device upon detection of the USB device on a USB bus;
+matching the descriptor with one of a plurality of descriptor entries stored in a memory of a charging module, wherein the one of a plurality of descriptor entries comprises:
+descriptor data, being arranged for matching the descriptor to a specific descriptor entry; and
+charging data, being arranged for specifying the optimal charging mode for the USB device; and
+initiating the optimal charging mode on the USB bus to charge the USB device according to the charging data.
+13. The method as recited in claim 12, wherein the charging module is disposed within a USB hub, and the charging module obtains the descriptor by causing a descriptor read command to be transmitted to the USB device over the USB bus.
+14. The method as recited in claim 13, wherein the charging module obtains the descriptor when the USB hub is not coupled to a USB host.
+15. The method as recited in claim 13, further comprising:
+when the USB hub is coupled to a USB host, issuing a reset command to be transmitted to the USB device after obtaining the descriptor, thereby allowing for normal enumeration procedures by the said USB host.
+16. The method as recited in claim 15, further comprising:
+during the normal enumeration procedures, causing a second descriptor read command to be transmitted to the USB device over the USB bus.
+17. The method as recited in claim 12, wherein the charging module is disposed within a USB host.
+18. The method as recited in claim 17, wherein the charging module obtains the descriptor by monitoring enumeration of the USB device by the USB host.

@@ -1,0 +1,404 @@
+--- PAGE 1 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+CLAIMS
+
+Claim 1
+
+Auser identity verification method for verifying the identity of a user (101) by a
+
+verifier (301) in the course of an electronic transaction, said user identity verification
+
+method comprising the steps of:
+
+(a) sending (702), by a verification requestor (201) a verification initiating request
+to the verifier (301);
+
+(b) upon receiving the verification initiating request, retrieving by the verifier (301)
+a user access number for a user communications device (2303);
+
+(c) establishing communications (1503) between the verifier (301) and the user
+communications device (2303) by using the user access number retrieved at
+Step (b);
+
+(d) sending an identity verification request (IVR) from the verifier (301) to the user
+communications device (2303) through communications (1503) established at
+Step (c);
+
+(e) inputting (1802) by the user (101) a putative secure identifier:
+
+(f) sending (1602) to the verifier through communications (1503) established at
+Step (c) a response to the IVR of Step (d):
+
+(g) retrieving a bona fide secure identifier by the verifier (301):
+
+(h) comparing (1502) the putative secure identifier input at Step (e) with the bona
+fide secure identifier retrieved at Step (g):
+
+(i) communicating (2402, 2302) the result of the comparison of Step (h) to the
+verification requestor (201), to verify the identity of the user (101) to the
+verification requestor 201); and
+
+(j) the verification requestor (201) allowing the transaction to proceed only if the
+comparison of Step (h) results in a match between the putative secure
+identifier and the bona fide secure identifier:
+
+wherein:
+said communications between the verifier (301) and the user communications
+
+device (2303) are conducted over a communications link (1503) between a first
+
+verifier communications device (2403) of the verifier (301) and the user
+
+Page 35
+
+--- PAGE 2 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+communications device (2303), opened by the verifier (301) based on the user
+access number:
+
+said verification initiation request is sent from the verification requestor (201)
+
+to the verifier (301) through a communications link (1803) between the verification
+requestor (201) and a second verifier communications device (803) of the verifier
+(301); characterised in that:
+
+the verification requestor (201) is an entity, or group of entities that interact,
+
+for providing financial services related to the transaction;
+
+the verifier (301) is a distinct entity from the verification requestor; and in that
+
+the method further comprises:
+
+(k) pre-enrolling the user (101) with the verifier, comprising the steps of:
+
+(K1) assigning to the user (101) the bona fide secure identifier; and
+
+(K2) storing the bona fide secure identifier in a verifier database (701) that is
+directly accessible only by the verifier (301);
+
+(I) pre-enrolling the user communications device (2303) with the verifier, wherein
+pre-enrolling the user communications device comprises the steps of:
+
+(11) | obtaining the user access number for the user communications device
+(2303), wherein the user access number can be used to open a
+communications link with the user communications device (2303); and,
+
+(12) storing the user access number in the verifier database (701); and
+
+(m) — pre-enrolling an account of the user, wherein pre-enrolling the account
+comprises setting a flag, at the verification requestor, that indicates whether or not
+
+Steps (a) through (h) and (i) through (j) are to be performed.
+
+Claim 2
+The method of Claim 1 wherein the response sent at Step (f) includes the putative
+
+secure identifier input at Step (e), and wherein Step (h) is performed by the verifier.
+
+Claim 3
+The method of Claim 1 or 2 wherein Step (I) further comprises the step of:
+
+(I3) | downloading local software to the user communications device.
+
+Page 36
+
+--- PAGE 3 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+Claim 4
+
+The method of Claim 3 wherein the IVR sent at Step (d) includes the bona fide
+secure identifier retrieved at Step (g), and wherein Step (h) is performed by the local
+software downloaded at Step (I3), and wherein the response sent at Step (f) includes
+
+the results of the comparison done at Step (h).
+
+Claim 5
+The method of Claim 3 or 4 wherein the local software downloaded at Step (13)
+
+performs at least one of: Step (f) and Step (h).
+
+Claim 6
+
+The method of any one of Claims 3 to 5 wherein the local software downloaded at
+Step (13) performs the steps of:
+
+(n) receiving the IVR sent at Step (qd);
+
+(0) formatting the IVR for display; and,
+
+(p) displaying the IVR formatted at Step (0) on an input/output (110) device of the
+
+user communications device.
+
+Claim 7
+
+The method of any one of Claims 3 to 6 wherein the local software downloaded at
+Step (13) performs at least one of: (i) decrypting information received by the user
+communications device, and (ii) encrypting information sent by the user
+
+communications device.
+
+Claim 8
+The method of any preceding Claim wherein at least one of the IVR of Step (c) and
+
+the response of Step (e) are encrypted when sent.
+
+Claim 9
+The method of any preceding Claim further comprising the steps of
+
+(q) sending a transaction authorization request to the user,
+
+Page 37
+
+--- PAGE 4 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+(r) receiving a response to the transaction authorization request from the user, and
+(s) allowing the transaction to proceed only if the response to the transaction
+
+authorization request is to authorize the transaction.
+
+Claim 10
+The method of any Claim 9 further comprising pre-enrolling an account of the user,
+wherein pre-enrolling the account comprises setting a flag that indicates whether or
+
+not Steps (q) through (s) are to be performed.
+
+Claim 11
+
+The method of any one of Claims 1 to 8 further comprising pre-enrolling at least one
+account of the user, wherein pre-enrolling the account comprises the steps of:
+
+(q) acquiring access information for the account; and
+
+(r) storing the account access information on a database that is accessible to the
+
+verifier.
+
+Claim 12
+
+The method of Claim 11 further comprising the step of issuing to the user a proxy
+transaction card wherein the proxy transaction card can be used by the user to
+authorize the verifier to access the pre-enrolled account by utilizing the access
+
+information stored at Step (r).
+
+Claim 13
+
+The method of Claim 12 further comprising the steps of:
+
+(s) using the information contained on the proxy transaction card to open a
+communications link with the verifier:
+
+(t) displaying to the user the pre-enrolled accounts that the verifier is authorized
+to access;
+
+(u) selecting, by the user, which of the accounts displayed at Step (r) the verifier
+is to access:
+
+(v) accessing, by the verifier, the account selected at Step (u) using the stored
+
+account access information; and,
+
+Page 38
+
+--- PAGE 5 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+(w) — passing the transaction through to the account accessed at Step (v) if the
+
+transaction is allowed to proceed at Step (I).
+
+Claim 14
+
+The method of any preceding Claim wherein Step (I) further comprises the steps of:
+(14) acquiring a device identifier of the user communications device; and,
+(I5) storing the device identifier in a database that is accessible to the
+
+verifier, and wherein the method further comprises the steps of:
+
+(x) retrieving the device identifier stored at Step (j5);
+
+(y) obtaining the device identifier of the user communications device;
+
+(Z) comparing the device identifier retrieved at Step (w) with the device identifier
+
+obtained at Step (y); and,
+
+(aa) terminating the transaction if the device identifiers compared at Step (z) do
+
+not match.
+
+Claim 15
+
+A system for verifying the identity of a user by a verifier (301) in the course of an
+
+electronic transaction, said system comprising:
+
+a. a verifier-database (703);
+
+b. a verifier-computer (903), wherein said verifier-computer is adapted to write
+data to and retrieve data from said verifier-database:
+
+C. a verification requestor-computer (1203) and a verification requestor
+communications device (1103) accessible to said verification requestor-
+computer;
+
+d. a user communications device (2303) for receiving communications from the
+
+verifier and transmitting communications to the verifier, wherein said user
+
+communications device is accessible to the user,
+
+e. an input/output (I/O) device (503) that accepts input from the user and
+displays output to the user; and,
+
+f. a user-computer (603) coupled to said user communication device and
+
+coupled to said I/O device;
+
+Page 39
+
+--- PAGE 6 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+wherein said verifier-computer is adapted to send an identity verification
+
+request (IVR) to said user-computer upon said verifier-computer receiving the
+
+verification initiating request from said verification requestor-computer, and
+wherein said user-computer is adapted to:
+
+i) display on said I/O device the incoming IVR sent to said user
+communications device by the verifier-computer through said verifier
+communications device;
+
+il) acquire the user's input to said I/O device, wherein the user's input
+includes a putative secure identifier; and,
+
+iil) send a response to the IVR from said user communications device to
+
+said first verifier communications device,
+
+wherein at least one of said user-computer and said verifier-computer is adapted to:
+
+iv) receive as a first input a bona fide secure identifier retrieved from said
+verifier-database;
+
+v) receive as a second input the putative secure identifier;
+
+vi) compare the first input with the second input; and,
+
+vil) | produce a confirmation output that indicates whether the first input
+
+matches the second input,
+
+wherein the system is adapted to:
+
+viii).
+
+send by said first verifier communications device a transaction authorization
+request to at least one of said user communications device and a second
+communications device; and,
+
+send by said at least one of said user communications device and said
+second communications device a response to the transaction authorization
+
+request,
+
+wherein:
+
+said system further comprises:
+
+a first verifier communications device (2403) for receiving communications
+from the user and transmitting communications to the user, wherein said first
+verifier communications device is accessible to said verifier-computer; and
+
+a second verifier communications device (803) for receiving communications
+
+from the verification requestor communications device and transmitting
+
+Page 40
+
+--- PAGE 7 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+Xl).
+
+xii).
+
+communications to the verification requestor communications device, wherein
+said second verifier communications device is accessible to said verifier-
+computer;
+
+characterised in that said verification-requestor computer and said verification
+requestor communications device are comprised in a verification requestor
+(201), wherein the verification requestor (201) is an entity, or group of entities
+that interact, for providing financial services related to the transaction and the
+verifier (301) is a distinct entity from the verification requestor, and in that said
+system is further adapted to:
+
+pre-enrol the user with the verifier (301) by said verifier-computer assigning to
+the user the bona fide secure identifier and storing the bona fide secure
+identifier in said verifier-database, wherein said verifier-database is directly
+accessible only be said verifier computer;
+
+pre-enrol a user communications device with the verifier (301) by said verifier-
+computer obtaining the user access number for the user communications
+device, said first verifier communications device being operable to use the
+user access number to open a communications link with the user
+communications device, and said verifier-computer storing the user access
+number in said verifier-database; and
+
+pre-enrol an account of the user, wherein pre-enrolling the account comprises
+setting a flag, at the verification requestor, that indicates whether or not Steps
+
+(i) through (vii) are to be performed,
+
+wherein the electronic transaction is blocked unless the confirmation output indicates
+
+the first input and second input match and the response to the transaction
+
+authorization request is to authorize the transaction.
+
+Claim 16
+
+The system of Claim 15 wherein the user-computer is adapted to decrypt an
+
+encrypted incoming IVR sent by the verifier.
+
+Claim 17
+
+Page 41
+
+--- PAGE 8 ---
+European Patent Application No. 07815833.4
+SCAMMELL, Dan
+
+The system of Claim 15 or 16 wherein the user-computer is adapted to encrypt the
+
+response.
+
+Claim 18
+The system of any one of Claims 15 to 17 wherein said user communications device
+
+is a personal communications device.
+
+Claim 19
+The system of any one of Claims 15 to 18 wherein the second verifier
+communications device (803) transmits the confirmation output to the verification
+
+requestor-computer.
+
+Page 42

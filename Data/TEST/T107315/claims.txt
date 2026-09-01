@@ -1,0 +1,200 @@
+--- PAGE 1 ---
+12 188 083.5-1870 EPAB-115240.5
+
+Kaspersky Lab, ZAO May 11, 2015
+Claims
+
+1. A method for controlling user’s access to a protected resource, the method
+
+comprising:
+
+detecting a plug-in token (111, 112) connected to a device (100, 200) that
+controls user access to the protected resource, wherein the token (111, 112) is
+associated with one or more authorized users;
+
+identifying one or more authorized users associated with the detected token
+(111, 112) who are authorized to access the protected resource, including at least one
+supervising user;
+
+authenticating whether a first user requesting access to the protected resource is
+associated with the detected token (111, 112) and authorized to access the protected
+resource;
+
+detecting one or more wireless transponders (121, 122) of one or more
+authorized users associated with the token (111, 112), including at least a transponder
+(121) of the first user and a transponder (121, 122) of the supervising user of the first
+user;
+
+applying different combinations of rules to grant or deny the first user to access
+different types of protected resources based at least on a current system state including
+tokens (111, 112) connected to the device (100, 200) and the transponders (121, 122)
+tied to the tokens (111, 112), and a detected change of a number of transponders
+accessing the protected resources within a token reception area, the different types of
+protected resources include at least protected applications, protected data and
+protected devices, and the rules are determined based on at least authentication of the
+first user associated with the detected token (111, 112), detection of the transponder
+(121, 122) of the first user, and detection of the transponder (121, 122) of the
+
+supervising user; and
+
+--- PAGE 2 ---
+providing access to the protected resource to the first user when an applicable
+
+combination of rules allows the first user to access the protected resource.
+
+2. The method of claim 1, wherein the wireless transponder (121, 122) is operable
+to communicate wirelessly with one of the token (111, 112) and the device (100, 200),
+and wherein detecting one or more wireless transponders (121, 122) of one or more
+authorized users associated with the token (111, 112), includes detecting wireless
+
+signal transmissions from one or more transponders (121, 122).
+
+3. The method of claim 2, wherein the wireless signal transmissions from the
+
+transponder (121, 122) are encrypted.
+
+4. The method of claim 2, further comprising:
+
+measuring signal strength or transmission delay of the wireless signal
+transmission from the transponder (121, 122); and
+
+determining approximate location of the wireless transponder (121, 122) based
+
+on the measured signal strength or transmission delay.
+
+5. The method of claim 1, wherein providing access to the protected resource to
+the first user further includes:
+
+determining whether at least one of the transponder (121, 122) of the first user
+and the transponder (121, 122) of the supervising user was active for less or more than
+a predetermined period of time; and
+
+blocking access to the protected resource to the first user when at least one of
+the transponder (121, 122) of the first user and the transponder (121, 122) of the
+
+supervising user was active for less or more than a predetermined period of time.
+
+6. The method of claim 1, wherein providing access to the protected resource to
+
+the first user further includes:
+
+--- PAGE 3 ---
+determining whether at least one of the transponder (121, 122) of the first user
+and the transponder (121, 122) of the supervising user was inactive for less or more
+than a predetermined period of time; and |
+
+blocking access to the protected resources to the first user when at least one of
+the transponder (121, 122) of the first user and the transponder (121, 122) of the
+
+supervising user was inactive for less or more than the predetermined period of time.
+
+7. The method of claim 1, further comprising:
+
+determining a priority hierarchy for each of the rules to grant or deny a user to
+access at least a portion of each of the different types of the protected resources, each
+of the rules corresponding to one or more conditions;
+
+in response to authenticating the user requesting to access at least a portion of a
+type of the protected resources, sequentially detecting the one or more conditions
+associated with each of the rules determined for accessing the type of the protected
+resources in an order of the priority hierarchy; and
+
+applying one of the rules upon detecting the one or more conditions associated
+
+with the one of the plurality of rules.
+
+8, A system for controlling user’s access to a protected resource, the system
+comprising:
+a communication interface (55); and
+a hardware processor (15) coupled to the communication interface (55), and being
+configured to:
+detect a plug-in token (111, 112) connected to the communication interface
+(55), wherein the token (111, 112) is associated with one or more authorized users;
+identify one or more authorized users associated with the detected token (111,
+112) who are authorized to access the protected resource, including at least one
+
+supervising user;
+
+--- PAGE 4 ---
+authenticate whether a first user requesting access to the protected resource is
+associated with the detected token (111, 112) and authorized to access the protected
+resource;
+
+detect one or more wireless transponders (121, 122) of one or more authorized
+users associated with the token (111, 112), including at least a transponder (121, 122)
+of the first user and a transponder (121, 122) of the supervising user of the first user;
+
+apply different combinations of rules to grant or deny the first user to access
+different types of protected resources based at least on a current system state including
+tokens (111, 112) already connected to the device (100, 200) and the transponders
+(121, 122) tied to the tokens (111, 112), and a detected change of a number of
+transponders accessing the protected resources within the token reception area, the
+different types of protected resources include at least protected applications, protected
+data and protected devices, and the rules are determined based on at least
+authentication of the first user associated with the detected token (111, 112), detection
+of the transponder (121, 122) of the first user, and detection of the transponder (121,
+122) of the supervising user; and
+
+provide access to the protected resource to the first user when an applicable
+
+combination of rules allows the first user to access the protected resource.
+
+9. The system of claim 8, wherein the wireless transponder (121, 122) is operable
+to communicate wirelessly with one of the token (111, 112) and the device (100, 200),
+and wherein detecting one or more wireless transponders (121, 122) of one or more
+authorized users associated with the token (111, 112), includes detecting wireless
+
+signal transmissions from one or more transponders (121, 122).
+
+10. The system of claim 9, wherein the wireless signal transmissions from the
+
+transponder (121, 122) are encrypted.
+
+--- PAGE 5 ---
+11. |The system of claim 9, wherein the processor (15) is further configured to:
+measure signal strength or transmission delay of the wireless signal transmission
+from the transponder (121, 122); and
+determine approximate location of the wireless transponder (121, 122) based on
+
+the measured signal strength or transmission delay.
+
+12. The system of claim 8, wherein to provide access to the protected resource to
+the first user, the processor (15) is further configured to:
+
+determine whether at least one of the transponder (121, 122) of the first user
+and the transponder (121, 122) of the supervising user was active for less or more than
+a predetermined period of time; and
+
+block access to the protected resource to the first user when at least one of the
+transponder (121, 122) of the first user and the transponder (121, 122) of the
+
+supervising user was active for less or more than a predetermined period of time.
+
+13. The system of claim 8, wherein to provide access to the protected resource to
+the first user, the processor (15) is further configured to:
+
+determine whether at least one of the transponder (121, 122) of the first user
+and the transponder (121, 122) of the supervising user was inactive for less or more
+than a predetermined period of time; and
+
+block access to the protected resources to the first user when at least one of the
+transponder (121, 122) of the first user and the transponder (121, 122) of the
+
+supervising user was inactive for less or more than the predetermined period of time.
+
+14. | The system of claim 8, wherein the processor (15) is further configured to:
+determine a priority hierarchy for each of the rules to grant or deny a user to
+access at least a portion of each of the different types of the protected resources, each
+of the rules corresponding to one or more conditions;
+in response to authenticating the user requesting to access at least a portion of a
+
+type of the protected resources, sequentially detect the one or more conditions
+
+5
+
+--- PAGE 6 ---
+associated with each of the rules determined for accessing the type of the protected
+resources in an order of the priority hierarchy; and
+apply one of the rules upon detecting the one or more conditions associated with
+
+the one of the plurality of rules.

@@ -1,0 +1,58 @@
+--- PAGE 1 ---
+03 023 441.3 1/2
+BPO2P356EP
+
+New Claims of Main request (clear copy)
+
+1. Amethod of transmitting data using a bus (612) in a network comprising:
+transmitting (710) the data over the bus (612) at a first rate, wherein a sender
+module (610) is transmitting said data in response to an incoming accept signal (611);
+receiving (712) the data at a processing module (630) in the network;
+storing (714) the data in a storage module (632) in said processing module (630);
+preventing data overrun of said storage module (632) by monitoring a state of said
+storage module and stalling the data flow by shutting off said accept signal (611); and
+
+processing the data stored in said storage module (632) at a second rate.
+2. The method of claim 1, wherein said first rate is greater than said second rate.
+
+3. The method of any preceding claim wherein the accept signal (611) is deasserted when
+
+the storage module (632) of the processing module (630) is full.
+4. The method of any preceding claim wherein the storage module (632) is a FIFO.
+
+5. The method of any preceding claim wherein the step of monitoring a state of said
+storage module (632) comprises determining if the second rate is less than the first rate.
+
+6. Asystem for transmitting data in a network from a sender module (610) to a processing
+module (630), wherein
+
+the sender module (610) is adapted and configured for transmitting (710) the data over a
+bus (612) at a first rate in response to an incoming accept signal (611), and wherein
+
+the processing module (630) is adapted and configured for receiving (712) the data and for
+storing (714) the data in a storage module (632) in said processing module (630), and
+
+for preventing (716) data overrun of said storage module by monitoring a state of said.
+storage module (632) and stalling the data flow by shutting off said accept signal (611);
+
+and for processing the data stored in said storage module at a second rate.
+
+7. The system of claim 6 wherein said first rate is greater than said second rate.
+
+1/2
+
+--- PAGE 2 ---
+03 023 441.3 2/2
+BPO2P356EP
+
+8. The system of any preceding claim 6 to 7 wherein the processing module (630) is
+further configured and adapted for deasserting the accept signal (611) when the storage
+module (632) of the processing module (630) is full.
+
+9. The system of any preceding claim 6 to 8 wherein the storage module (632) is a FIFO.
+
+10. The system of any preceding claim 6 to 9 wherein the step of monitoring a state of said
+
+storage module (632) comprises determining if the second rate is less than the first rate.
+
+2/2

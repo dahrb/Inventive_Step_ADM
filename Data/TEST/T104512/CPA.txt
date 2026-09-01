@@ -1,0 +1,56 @@
+TUTLE:
+Image processing system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An image processing system including an image processing device and a control device which controls data transfer to said image processing device is provided. When the control device is connected to the image processing device via the network, the control device encrypts the decrypted data and transfers the encrypted data to the image processing device via the network, and when the control device is connected to the image processing device via a leased cable, the control device transfers the decrypted data to the image processing device via the cable.
+
+CLAIMS:
+1. An image processing system including an image processing device and a control device which controls data transfer to said image processing device,
+said control device comprising:
+a first connection unit configured to connect a network, and
+a second connection unit configured to connect a cable designed for data transfer, wherein the cable is different from the network,
+said image processing device comprising at least one of a first connection unit configured to connect the network and a second connection unit configured to connect the cable,
+said control device further comprising:
+means for receiving encrypted data from an external device via the network,
+means for decrypting the received/encrypted data, and
+means for, when the connection to said image processing device uses the network, encrypting the decrypted data and transferring the encrypted data to said image processing device via the network, and when the connection to said image processing device uses the cable, transferring the decrypted data to said image processing device via the cable, and
+said image processing device further comprising means for decrypting the encrypted data received via the network.
+2. The system according to claim 1, wherein said control device further comprising means for performing user authentication, wherein when the user authentication is successful, said control device performs the transfer to said image processing device.
+3. A control device which controls data transfer to an image processing device, comprising:
+a first connection unit configured to connect a network;
+a second connection unit configured to connect a cable designed for data transfer, wherein the cable is different from the network;
+means for receiving encrypted data from an external device via the network;
+means for decrypting the received/encrypted data; and
+means for, when the connection to the image processing device uses the network, encrypting the decrypted data and transferring the encrypted data to the image processing device via the network, and when the connection to the image processing device uses the cable, transferring the decrypted data to the image processing device via the cable.
+4. The device according to claim 3, further comprising means for performing user authentication,
+wherein when the user authentication is successful, the device performs the transfer to the image processing device.
+5. The device according to claim 3, further comprising:
+means for receiving an encrypted first encryption key; and
+means for decrypting the encrypted first encryption key with an input key,
+wherein said means for receiving data receives data encrypted with the first encryption key, and
+said means for decrypting data decrypts the received/encrypted data with the decrypted first encryption key.
+6. The device according to claim 5, wherein when the connection to the image processing device uses the network, said means for transferring data encrypts by using a second encryption key the data decrypted with the first encryption key, and transfers the data encrypted with the second encryption key to the image processing device via the network.
+7. The device according to claim 3, further comprising means for displaying a list of jobs on the basis of identification information stored in a card,
+wherein said means for decrypting data decrypts encrypted data corresponding to a job selected from the list.
+8. A control device which controls data transfer to an image processing device, comprising:
+a first connection unit configured to connect a network;
+a second connection unit configured to connect the image processing device and the control device physically in a one-to-one correspondence;
+means for receiving encrypted data from an external device via the network;
+means for decrypting the received/encrypted data; and
+means for, when the connection to the image processing device uses the network, encrypting the decrypted data and transferring the encrypted data to the image processing device via the network, and when the connection to the image processing device uses said second connection portion, transferring the decrypted data to the image processing device via said second connection portion.
+9. A method for controlling a control device having a first connection unit for connecting a network and a second connection unit for connecting a cable different from the network, and controls data transfer to an image processing device, comprising the steps of:
+receiving encrypted data from an external device via the network;
+decrypting the received/encrypted data; and
+when the connection to the image processing device uses the network, encrypting the decrypted data and transferring the encrypted data to the image processing device via the network, and when the connection to the image processing device uses the cable, transferring the decrypted data to the image processing device via the cable.
+10. A method for controlling a control device having a first connection unit for connecting a network and a second connection unit for connecting an image processing device and the control device physically one to one, and controls data transfer to the image processing device, comprising the steps of:
+receiving encrypted data from an external device via the network;
+decrypting the received/encrypted data; and
+when the connection to the image processing device uses the network, encrypting the decrypted data and transferring the encrypted data to the image processing device via the network, and when the connection to the image processing device uses the second connection portion, transferring the decrypted data to the image processing device via the second connection portion.
+11. A program for controlling a control device having a first connection unit for connecting a network and a second connection unit for connecting a data transfer cable different from the network, and controls data transfer to an image processing device, comprising the codes for:
+receiving encrypted data from an external device via the network;
+decrypting the received/encrypted data; and
+when the connection to the image processing device uses the network, encrypting the decrypted data and transferring the encrypted data to the image processing device via the network, and when the connection to the image processing device uses the cable, transferring the decrypted data to the image processing device via the cable.
+12. A computer-readable storage medium which stores a program defined in claim 11.

@@ -1,0 +1,51 @@
+Title: Apparatus and method for distributing a load across a trunk group
+
+Abstract: A network switch for network communications includes at least one first data port interface, wherein the at least one first data port interface supports a plurality of first data ports transmitting and receiving data at a first data rate. At least one second data port interface is provided, wherein the at least one second data port interface supports a plurality of second data ports transmitting and receiving data at a second data rate. A flow control unit is provided, wherein at least one of the first data ports and at least one of the second data ports are linked together with a plurality of ports on a second network switch forming a trunk group that is configured by the flow control unit to statistically distribute a data load transmitted across the trunk group.
+
+Type: WIPO
+
+Claims: 
+
+1. A network switch for network communications, said network switch comprising: at least one first data port interface, said at least one first data port interface supporting a plurality of first data ports transmitting and receiving data at a first data rate; at least one second data port interface, said at least one second data port interface supporting a plurality of second data ports transmitting and receiving data at a second data rate; a flow control unit; wherein at least one of said first data ports and at least one of said second data ports are linked together with a plurality of ports on a second network switch forming a trunk group that is configured by the flow control unit to statistically distribute a data load transmitted across said trunk group.
+2. A network switch as recite in claim 1 , wherein said switch further comprises: a CPU interface, said CPU interface configured to communicate with a CPU; and a communication channel, said communication channel for communicating data and messaging information between said at least one first data port interface, said at least one second data port interface, and said CPU interface.
+3. A network switch as recited in claim 1 , wherein said at least one first data port interface is an Ethernet data port interface.
+4. A network switch as recited in claim 1 , wherein said at least one second data port interface is a Gigabit Ethernet data port interface.
+5. A network switch as recited in claim 2, wherein said at least one first data port interface, said at least one second data port interface, said CPU interface, and said communication channel are integrated on a single application specific integrated circuit (ASIC) chip.
+6. A network switch as recited in claim 2, wherein said at least one first data port interface, said at least one second data port interface, said CPU interface, and said communication channel are configured to perform layer two switching at linespeed.
+7. A network switch as recited in claim 2, wherein said at least one first data port interface, said at least one second data port interface, said CPU interface, and said communication channel are configured to perform layer three switching at linespeed.
+8. A network switch as recited in claim 2, wherein said CPU interface is configured to provide communication between said CPU and the communication channel, wherein said CPU is configured to program the operation of said network switch.
+9. A network switch as recited in claim 8, wherein said flow control unit is configured to statistically distribute a load across said trunk group through control over said trunk group.
+10. A network switch as recited in claim 1 , wherein said first data rate is a maximum of 100 Mbps.
+11. A network switch as recited in claim 10, wherein said first data rate is a maximum of 10 Mbps.
+12. A network switch as recited in claim 1 , wherein said second data rate is a maximum of 1000 Mbps.
+13. A network switch as recited in claim 1 , wherein said flow control unit is configured to determine a trunk port index from a number of address bits and a number of effective ports.
+14. A network switch as recited in claim 13, wherein said trunk port index is represented by:
+TPI = (# Ab) mod(#EP) ; wherein,
+TPI represents said trunk port index;
+#Ab represents said number of address bits; and
+#EP represents said number of effective ports.
+15. A network switch as recited in claim 13 wherein said number of effective ports is represented by:
+N = nl+ l0- n2 ; wherein,
+N = said number of effective ports; n1 = a number of said at least one first data port interface; and n2 = a number of said at least one second data port interface.
+16. A method for switching links within a trunk group in a communications network, said method comprising the steps of: determining an effective number of a first type of links in a trunk group in a communications network; selecting a predetermined number of address bits from an address on the communications network; determining a trunk port index, wherein said trunk port index is determined by a mathematical equation; switching a data flow within said trunk group based upon said trunk port index.
+17. A method as recited in claim 16, wherein said mathematical equation comprises:
+T I = (β Ab)mod(#EP) ; wherein,
+TPI represents said trunk port index;
+#Ab represents said predetermined number of address bits in decimal form; and
+#EP represents said effective number of said first type of links .
+18. A method as recited in claim 16, wherein said effective number of said first type of links is represented by:
+#EP = nl+ lO-n2 wherein,
+#EP = said effective number of said first type of links; n1 = a number of said first type links in the trunk group; and n2 = a number of a second type of links in the trunk group.
+19. A method as recited in claim 16, wherein said step of determining an effective number of a first type of link further comprises the steps of: determining a number of a first type of link in the communications network; determining a number of a second type of link in the communications network; calculating the effective number of the first type of link, said effective number of the first type of link being represented by the number of the first type of link added to the number of the second type of link multiplied by ten.
+20. The method as recited in claim 16, wherein said step of selecting a predetermined number of address bits from an address on the communications network further comprises selecting a predetermined number of bits from a source MAC address or a destination MAC address.
+21. The method as recited in claim 16, wherein said step of selecting a predetermined number of address bits from an address on the communications network further comprises selecting a predetermined number of most significant bits of the address.
+22. The method as recited in claim 16, wherein said step of selecting a predetermined number of address bits from an address on the communications network further comprises selecting a predetermined number of least significant bits of the address.
+23. The method as recited in claim 16, wherein said predetermined number of address bits is five.
+24. A method for distributing a data transmission load across a differential trunk group, said method comprising the steps of; determining an effective number of a first type of link within a trunk group; selecting a predetermined number of address bits from a data packet traveling through said trunk group; determining a trunk port index based upon said effective number of said first type of link and said predetermined number of address bits; switching a data flow from a first link in said trunk group to a second link in said trunk group, wherein said second link is represented by said trunk port index.
+25. A method as recited in claim 24, wherein said step of determining an effective number of a first type of link further comprises the steps of: determining a number of a first type of link within said trunk group; determining a number of a second type of link within said trunk group; and determining the effective number of said first type of link, wherein said effective number of said first type of link is represented by the number of said first type of link added to said number of said second type of link multiplied by ten.
+26. A method as recited in claim 24, wherein said step of determining a trunk port index further comprises the step of conducting the mathematical operation represented by:
+Trunk Port Index = (said predetermined number of address bits) modulo
+(said effective number of a first type of port).
+27. A method as recited in claim 24, wherein said step of selecting a predetermined number of address bits from a data packet further comprises selecting a predetermined number of most significant bits from said data packet.
+28. A method as recited in claim 24, wherein said step of selecting a predetermined number of address bits from a data packet further comprises selecting a predetermined number of least significant bits from said data packet.
+29. A method as recited in claim 24, wherein said predetermined number of bits is 5.

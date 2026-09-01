@@ -1,0 +1,118 @@
+--- PAGE 1 ---
+10 176 515.4 EPAD-106656
+Kaspersky Lab, ZAO May 16, 2018
+
+CLAIMS
+
+1. A method for asynchronous processing of system events (210) on a computer system,
+the method comprising:
+
+(a) detecting a system event (210) on the computer system and intercepting the system
+event for filtering, wherein the system event (210) comprises a system call;
+
+(b) filtering the system event (210) through at least one filter (240) to determine if the
+system event (210) matches a security criteria;
+
+(c) if the system event (210) does not pass through the at least one filter (240), sending
+the system event for further processing; and
+
+if the system event (210) passes through the at least one filter (240), creating a copy of
+the system event (210) which is passed through the at least one filter (240) for asynchronous
+anti-virus processing the copy of the system event (210), and releasing the original system
+event (210) so that the process which caused the event continues its uninterrupted execution;
+
+(d) placing the copy of the system event (210) into a queue for asynchronous anti-virus
+processing;
+
+(e) creating a control record based on the event copy;
+
+(f) deleting the copy of the system event (210) from the queue;
+
+(g) performing asynchronous anti-virus processing on the control record of the system
+event (210), wherein the asynchronous anti-virus processing of the control record comprises a
+signature scanning of the control record of the system event (210) and analysis of the process
+that caused the system event and terminating the process that caused the system event (210),
+if the anti-virus processing reveals a malicious nature of the system event (210); and
+
+(h) for a process that behaves similar to a previous known non-malicious version of
+the process but also has new functionality, classifying the process as non-malicious if the anti-
+virus processing of the control record reveals a non-malicious nature of the system event
+
+(210).
+
+2. The method of claim 1, further comprising generating a behavior log for the object
+
+that caused the system event (210).
+
+--- PAGE 2 ---
+3. The method of claim 2, wherein the behavior log is used for the anti-virus check of:
+network configurations;
+
+a web site.
+
+4, The method of claim 2, wherein the processing of the behavior log comprises any of:
+a signature detection;
+an system event (210) emulation; and
+
+a heuristic detection.
+
+5. The method of claim 1, wherein the processing of the copy of the system event (210)
+further comprises adding the object, which caused the system event (210), to a white list or to
+
+a black list, based on the degree of similarity to a previously known object.
+
+6. The method of claim 5, wherein the white list and the black list are analyzed to detect
+
+collisions between the white list and the black list.
+
+7. A system for asynchronous processing of system events (210), the system comprising
+a processor, a memory coupled to the processor, and computer code loaded into the memory
+
+for implementing the steps of claim 1.
+
+8. The system of claim 7, wherein processing of a process that caused the system event
+(210) by an application module determines if the process that caused the system event (210) is
+
+malicious.
+
+9. The system of claim 8, wherein if the process that caused the system event (210) is
+
+deemed malicious, activity of the process that caused the system event (210) is terminated.
+
+10. The system of claim 8, wherein if the process that caused the system event (210) is
+deemed malicious, functionality of the process that caused the system event (210) is
+
+restricted.
+
+--- PAGE 3 ---
+11.
+
+12.
+(210).
+
+13.
+
+The system of claim 8, wherein the application modules are any of:
+a firewall;
+
+an anti-virus module;
+
+a HIPS (host intrusion protection system);
+
+a web anti-virus;
+
+a mail anti-virus;
+
+a traffic anti-virus;
+
+a script anti-virus;
+
+an emulator; and
+
+a PDM (proactive defense module).
+
+The system of claim 7, wherein the filters (240) allow through the core system events
+
+The system of claim 7, wherein the system events (210) are anti-virus-checked if they
+
+pass through the filters (240).

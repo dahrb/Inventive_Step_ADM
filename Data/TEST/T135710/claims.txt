@@ -1,0 +1,58 @@
+--- PAGE 1 ---
+Application No.: 03 003 931.7-1527
+
+Applicant: Microsoft ‘Technelogy Licensing, LLC
+Our Ref.: EP26713RK066kmu
+Date: February 16, 2016
+
+MAIN REQUEST: CLAIMS
+
+A method for a glyph generation module executing as a part of an operating system, the
+method comprising:
+
+receiving, from the operating system, a code indicating what character is required by a
+computer program;
+
+receiving, from the operating system, language information corresponding to a keyboard
+
+locality setting;
+
+referencing a mark-up language document, wherein the mark-up language document is
+linked to a plurality of font files; and
+
+determining, based on the received language information and the contents of the mark-
+up language document, which of a plurality of fonts is needed by the computer program
+to display the character required by the computer program, wherein if the needed font is
+not available, a default font specified by the mark-up language document is used.
+
+A computer-readable medium having stored thereon computer-executable instructions for
+performing the method of claim 1.
+
+The method of claim 1, further comprising:
+
+retrieving a glyph from the font that is determined to be needed, wherein the glyph is
+
+displayable to represent the character.
+
+The method of claim 1, further comprising:
+
+retrieving a glyph from the font that is determined to be needed; and
+providing the glyph to the computer program.
+
+The method of claim 1, wherein the computer program executing on a computer, the
+
+method further comprising:
+
+--- PAGE 2 ---
+wherein the step of determining which of a plurality of fonts is needed by the computer
+program comprises determining, based on the determined language, which of the
+
+plurality of fonts is needed by the computer.
+
+The method of claim 1, further comprising sending information regarding the determined
+font to a printer.
+
+The method of claim 3, further comprising:
+
+resizing the glyph based on scaling information contained in the extensible mark-up
+language document.

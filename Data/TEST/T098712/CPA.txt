@@ -1,0 +1,30 @@
+TITLE:
+Method and apparatus for downloading content
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Methods and apparatus for managing download of content to a client device are disclosed. In one aspect, the download process is optimized for bandwidth usage by using criteria such as time of day, level of network activity and priority of download. In another aspect, download of content is prioritized based on certain rules, user inputs and pre-emptive events on the client device. A computer program embodying these methods and a multimedia client device adapted to run this program are also disclosed.
+
+CLAIMS:
+1. A computer-implemented method, comprising automatically downloading Internet content at a time and from a source chosen according to content viewer-defined selections and content provider-defined resource availability criteria.
+2. The computer implemented method of claim 1, wherein the content provider-defined resource availability criteria comprise time windows during which the Internet content can be downloaded from a specified host.
+3. The computer-implemented method of claim 1, further comprising automatically downloading the Internet content according to whether or not a content viewer-defined timer is in a state that permits said downloading.
+4. The computer-implemented method of claim 3, further comprising automatically downloading the Internet content according to whether or not other network devices are making use of network bandwidth over which said downloading will occur.
+5. The computer-implemented method of claim 4, wherein an indication of whether or not other network devices are making use of network bandwidth over which said downloading will occur is determined by a state of screensavers associated with said other network devices.
+6. The computer-implemented method of claim 1, wherein the downloading of the Internet content takes into account priorities of the content viewer-defined selections.
+7. The method of claim 6, further comprising, prior to automatically downloading the Internet content, selecting from a prioritized list of the content viewer defined selections, a target host having favorable content provider-defined resource availability criteria.
+8. The method of claim 7, wherein the favorable content provider-defined resource availability criteria comprises a time window during which the Internet content can be downloaded that includes a current time.
+9. The method of claim 1, wherein the automatic downloading is performed at a time when other computer resources are not using network bandwidth over which said downloading will be performed.
+10. The method of claim 1, wherein the automatic downloading is performed such that higher priority content viewer-defined selections are permitted to preempt downloads of lower priority content viewer-defined selections.
+11. The method of claim 10, wherein the automatic downloading is performed such that higher priority content viewer-defined selections are permitted to preempt downloads of lower priority content viewer-defined selections even during said downloads of lower priority content viewer-defined selections.
+12. The method of claim 1, wherein the downloading is performed over multiple network interfaces.
+13. A computer-implemented method, comprising choosing, from a work list made up of content viewer-defined selections of Internet content to be downloaded to a computer readable medium, a first one of the content viewer-defined selections according to (i) a priority of said first one of the content viewer-defined selections, and (ii) availability criteria for a corresponding host from which said first one of the content viewer-defined selections can be downloaded.
+14. The computer-implemented method of claim 13, further comprising downloading at least a portion of content associated with said first one of the content viewer-defined selections if a content viewer-defined timer is in a state that permits said downloading.
+15. The computer-implemented method of claim 14, wherein said choosing is performed only if a content viewer-defined timer is in a state that permits said downloading.
+16. The computer-implemented method of claim 14, further comprising preempting the downloading of content associated with said first one of the content viewer-defined selections in favor of downloading content associated with a second one of the content viewer-defined selections having a higher priority than said first one of the content viewer-defined selections.
+17. The computer-implemented method of claim 14, further comprising stopping the downloading of content associated with said first one of the content viewer-defined selections in response to an indication that another network device requires access to network bandwidth being used for said downloading.
+18. The computer-implemented method of claim 17, wherein the indication that another network device requires access to network bandwidth being used for said downloading comprises a setting of a timer.
+19. The computer-implemented method of claim 17, wherein the indication that another network device requires access to network bandwidth being used for said downloading comprises an indication that a screensaver associated with said network device is no longer active.
+20. A video-on-demand system comprising: a content acquisition system configured to automatically download Internet content at a time and from a source chosen according to content viewer-defined selections and content provider-defined resource availability criteria; and a content storage system configured to store said Internet content so downloaded.

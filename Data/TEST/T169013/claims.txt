@@ -1,0 +1,565 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Claims (MAIN REQUEST)
+
+1. A method for encoding video information, comprising:
+- defining (401) a certain number of available macroblock segmentations (70, 71,
+72, 83, 84, 85) that specify possible ways in which a macroblock can be segmented
+into blocks,
+- defining a certain finite number of available macroblock-segmentation —
+prediction-method pairs (7OA, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A,
+72B, 72C, 72D, 83, 84, 85) by defining (402) for each available macroblock
+segmentations (70, 71, 72, 83, 84, 85) at least one available prediction method as a
+predetermined subset of possible prediction methods (60A, 60B, 60C, 60D) in
+dependence of a respective available macroblock segmentation (70, 71, 72, 83, 84,
+85), wherein a prediction method (60A, 60B, 60C, 60D) defines for each block of a
+macroblock
+
+one or more prediction blocks used in producing a prediction motion
+coefficient for a certain block within the macroblock, and
+
+a method for deriving the prediction motion coefficient for said certain block
+from motion coefficients of said one or more prediction blocks,
+- segmenting (403) a frame of video information into macroblocks,
+- selecting (411) for a macroblock one of the available macroblock-segmentation —
+prediction-method pairs(70A, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B,
+72C, 72D, 83, 84, 85), wherein the selection of the macroblock-segmentation —
+prediction-method pair is based on minimizing a cost function and
+- segmenting the macroblock into blocks and deriving prediction motion
+coefficients for the blocks within said macroblock using the selected macroblock-
+segmentation — prediction-method pair(70A, 70B, 70C, 70D, 71A, 71B, 71C, 71D,
+TLE, 72A, 72B, 72C, 72D, 83, 84, 85).
+
+2. A method for encoding video information according to claim 1, characterized
+in that the prediction block is a neighboring block of a block to be encoded within
+said macroblock.
+
+3. A method for encoding video information according to claim | or 2, charac-
+terized in that at least one of the available macroblock-segmentation — prediction-
+method pairs defines the prediction motion coefficients for a block within said
+macroblock to be derived from the motion coefficients of only one prediction block.
+
+4. A method for encoding video information according to claim 1, 2 or 3,
+characterized in that at least one of the available macroblock-segmentation —
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+prediction-method pairs defines that the prediction motion coefficients for a block
+within said macroblock are derived from the motion coefficients of at least a first
+prediction block and a second prediction block.
+
+5. A method for encoding video information according to claim 4, characterized
+in that the prediction motion coefficients for a block are derived from a median of
+the motion coefficients of at least a first prediction block and a second prediction
+block.
+
+6. A method for encoding video information according to claim 1, 2, 3 or 4,
+characterized in that at least one of the available macroblock-segmentation —
+prediction-method pairs specifies that the prediction motion coefficients for a block
+within said macroblock are derived from motion coefficients of prediction blocks
+within said macroblock.
+
+7. A method for encoding video information according to claim 1, 2, 3, 4 or 6,
+characterized in that a prediction block to be used in producing prediction motion
+coefficients for a block is defined as a block comprising a certain predetermined
+pixel, whose location is defined relative to said block.
+
+8. A method for encoding video information according to claim 7, characterized
+in that the location of a predetermined pixel for a first block is different from the
+location of a predetermined pixel for a second block.
+
+9. A method for encoding video information according to claim 1, 2, 3, 4, 6 or 7,
+characterized in that the number of prediction blocks per block is at most a certain
+number in any of the macroblock-segmentation — prediction-method pairs.
+
+10. A method for encoding video information according to claim 9, characterized
+in that the number of prediction blocks per block is at most three.
+
+11. A method for encoding video information according to claim 10, character-
+ized in that a prediction block to be used in producing prediction motion
+coefficients for a block is defined as a block comprising a certain predetermined
+pixel, whose location is defined relative to said block.
+
+12. A method for encoding video information according to claim 11, character-
+ized in that at least for certain first blocks relating to certain first macroblock-
+segmentation — prediction-method pairs the predetermined pixels comprise the
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+uppermost pixel adjacent to the block from the left, the leftmost pixel superjacent to
+the block and the pixel corner to corner with the upper right-hand pixel of the block.
+
+13. A method for encoding video information according to claim 1, 2, 3, 4, 6, 7 or
+9, characterized in that the macroblocks and the blocks resulting from the macro-
+block segmentations are quadrilateral.
+
+14. A method for encoding video information according to claim 13, character-
+ized in that the macroblocks and the blocks resulting from the macroblock
+segmentations are rectangular.
+
+15. A method for encoding video information according to claim 14, character-
+ized in that the available macroblock segmentations comprise a first macroblock
+segmentation resulting in one block, a second macroblock segmentation dividing a
+macroblock once with a vertical line, a third macroblock segmentation dividing a
+macroblock once with a horizontal line, a fourth macroblock segmentation dividing
+a macroblock once with a vertical line and once with a horizontal line, a fifth
+macroblock segmentation dividing a macroblock once with a vertical line and thrice
+with a horizontal line, and a sixth macroblock segmentation dividing a macroblock
+thrice with a vertical line and once with a horizontal line.
+
+16. A method for encoding video information according to claim 14, character-
+ized in that one prediction method is defined for each available macroblock
+segmentation, a prediction block for a block is defined as a block comprising a
+certain predetermined pixel, whose location is defined relative to said block,
+prediction coefficients for certain first blocks are derived from the motion
+coefficients of only one block-specific prediction block and prediction coefficients
+for certain second blocks are derived from the motion coefficients of more than one
+block-specific prediction blocks.
+
+17. A method for encoding video information according to claim 1, 2, 3, 4, 6, 7, 9
+or 13, characterized in that the macroblock segmentation of neighboring macro-
+blocks affects the selection of the available macroblock-segmentation — prediction-
+method pairs for a macroblock.
+
+18. A method for encoding video information according to claim 1, 2, 3, 4, 6, 7, 9,
+13 or 17, characterized in that one macroblock-segmentation — prediction-method
+pair is defined for each available macroblock segmentation.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+19. A method for encoding video information according to claim 18, character-
+ized in that it comprises:
+
+- transmitting information indicating the selected macroblock segmentation to a
+decoder or storing information indicating the selected macroblock-segmentation —
+prediction-method pair in a storage medium.
+
+20. A method for encoding video information according to claim 1, 2, 3, 4, 6, 7, 9,
+13, 17 or 18, characterized in that it comprises:
+
+- transmitting information indicating the selected macroblock-segmentation —
+prediction-method pair to a decoder or storing information indicating the selected
+macroblock-segmentation — prediction-method pair in a storage medium.
+
+21. A method for encoding video information according to claim 1, 2, 3, 4, 6, 7, 9,
+13, 17, 18 or 20, characterized in that it comprises:
+
+- estimating the motion of blocks within the macroblock with respect to a reference
+video frame,
+
+- representing the motion of the blocks within the macroblock with a model
+comprising a set of basis functions and motion coefficients, and
+
+- representing the motion coefficients thus obtained as a sum of the prediction
+motion coefficients and difference motion coefficients.
+
+22. A method for encoding video information according to claim 21, character-
+ized in that the model used to represent the motion of a block is a translational
+motion model.
+
+23. A method for encoding video information according to claim 21, character-
+ized in that the selection of the macroblock-segmentation — prediction-method pair
+is based on minimizing a cost function which includes at least a measure of a
+reconstruction error relating to a macroblock-segmentation — prediction-method pair
+and a measure of an amount of information required to indicate the macroblock-
+segmentation — prediction-method pair and to represent the difference motion
+coefficients of the blocks within said macroblock.
+
+24. A method for encoding video information according to claim 21, character-
+ized in that it further comprises:
+
+- transmitting information indicating the selected macroblock-segmentation —
+prediction-method pair to a decoder or storing information indicating the selected
+macroblock-segmentation — prediction-method pair in a storage medium, and
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+- transmitting information about the difference motion coefficients to a decoder or
+storing information about the difference motion coefficients in a storage means.
+
+25. A method for encoding video information according to claim 21, character-
+ized in that it further comprises:
+
+- reconstructing the motion of the blocks within the macroblock using the motion
+coefficients, basis functions and information about the macroblock segmentation,
+
+- determining predicted video information using the reference video frame and the
+reconstructed motion of the blocks,
+
+- determining corresponding prediction error video information based on a
+difference between the predicted video information and the video information of the
+macroblock,
+
+- coding the prediction error video information and representing it with prediction
+error coefficients, and
+
+- transmitting information about the prediction error coefficients to a decoder or
+storing information about the prediction error coefficients in a storage means.
+
+26. A method for decoding encoded video information, characterized in that it
+comprises:
+- defining (501) a certain number of available macroblock segmentations(70, 71, 72,
+83, 84, 85) that specify possible ways in which a macroblock can be segmented into
+blocks,
+- defining a certain finite number of available macroblock-segmentation -
+prediction-method pairs (JOA, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A,
+72B, 72C, 72D, 83, 84, 85) by defining (502) for each available macroblock
+segmentation (70, 71, 72, 83, 84, 85) at least one available prediction method as a
+predetermined subset of possible prediction methods (60A, 60B, 60C, 60D) in
+dependence of a respective available macroblock segmentation (70, 71, 72, 83, 84,
+85), wherein a prediction method (60A, 60B, 60C, 60D) defines for each block of a
+macroblock
+
+one or more prediction blocks used in producing a prediction motion
+coefficient for a certain block within the macroblock, and
+
+a method for deriving the prediction motion coefficient for said certain block
+from motion coefficients of said one or more prediction blocks,
+- receiving (503) information indicating at least a macroblock segmentation (70, 71,
+72, 83, 84, 85) selected for a macroblock in said encoded video information, and
+-determining (505) a _ prediction method relating to the macroblock
+segmentation(70, 71, 72, 83, 84, 85) of said macroblock with reference to the
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+defined macroblock-segmentation — prediction-method pairs (7OA, 70B, 70C, 70D,
+T1A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85) and deriving prediction
+motion coefficients for blocks within said macroblock using the determined
+prediction method.
+
+27. A method for decoding encoded video information according to claim 26,
+characterized in that said receiving of information indicating at least a macroblock
+segmentation comprises receiving an indication of a selected macroblock-
+segmentation — prediction-method pair.
+
+28. A method for decoding encoded video information according to claim 26,
+characterized in that at least two prediction methods relating to a certain available
+macroblock segmentation are defined.
+
+29. A method for decoding encoded video information according to claim 26,
+characterized in that only one prediction method is defined for each available
+macroblock segmentation.
+
+30. A method for decoding encoded video information according to claim 26,
+characterized in that it comprises:
+
+- receiving information about difference motion coefficients describing motion of
+blocks within a macroblock, and
+
+- reconstructing motion coefficients for the blocks within said macroblock as a sum
+of the derived prediction motion coefficients and the difference motion coefficients.
+
+31. A method for decoding encoded video information according to claim 30,
+characterized in that it comprises:
+
+- receiving information about prediction error coefficients describing prediction
+error video information, and
+
+- determining a decoded frame of video information using at least the motion
+coefficients and the prediction error video information.
+
+32. An encoder for performing motion compensated encoding of video
+information, comprising:
+
+- means for receiving a frame of video information,
+
+- means (111) for segmenting the frame of video information into macroblocks,
+-means (112) for specifying a certain number of available macroblock
+segmentations(70, 71, 72, 83, 84, 85) that define possible ways in which a macro-
+block can be segmented into blocks,
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+-means (122) for specifying a certain finite number of available macroblock-
+segmentation — prediction-method pairs (7OA, 70B, 70C, 70D, 71A, 71B, 71C,
+71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85) by defining at least one available
+prediction method for each available macroblock segmentation (70, 71, 72, 83, 84,
+85) as a predetermined subset of possible prediction methods (60A, 60B, 60C, 60D)
+in dependence of a respective available macroblock segmentation (70, 71, 72, 83,
+84, 85), wherein a prediction method (60A, 60B, 60C, 60D) defines for each block
+of a macroblock
+
+one or more prediction blocks used in producing a prediction motion
+coefficient for a certain block within the macroblock, and
+
+a method for deriving the prediction motion coefficient for said certain block
+from motion coefficients of said one or more prediction blocks,
+- means (125) for selecting one macroblock-segmentation — prediction method pair
+(70A, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85)
+among the available macroblock-segmentation — prediction method pairs (70A,
+70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85) ,
+wherein the selection of the macroblock-segmentation — prediction-method pair is
+based on minimizing a cost function,
+- means for segmenting a macroblock using the macroblock segmentation(70, 71,
+72, 83, 84, 85) specified by the selected macroblock-segmentation — prediction-
+method pair (70A, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D,
+83, 84, 85), and
+- means (123) for deriving macroblock-segmentation-specific prediction motion
+coefficients for blocks within said macroblock using the prediction method
+specified by the selected macroblock-segmentation — prediction-method pair (70A,
+70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85).
+
+33. An encoder for performing motion compensated encoding of video
+information according to claim 32, characterized in that it further comprises:
+
+- memory means for storing a reference video frame,
+
+- means for estimating a motion field of blocks in the frame of video information
+using at least the reference video frame,
+
+- means for producing motion coefficients describing the estimated motion fields,
+and
+
+- means for producing difference motion coefficients using the motion coefficients
+and the prediction motion coefficients.
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+34. A decoder for performing motion compensated decoding of encoded video
+information, comprising:
+- input means for receiving encoded video information,
+- means for defining a certain number of available macroblock segmentations (70,
+71, 72, 83, 84, 85) that specify possible ways in which a which a macroblock can be
+segmented into blocks,
+-means for specifying a certain finite number of available macroblock-
+segmentation — prediction-method pairs (7OA, 70B, 70C, 70D, 71A, 71B, 71C,
+71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85) by defining at least one available
+prediction method for each available macroblock segmentation (70, 71, 72, 83, 84,
+85) as a predetermined subset of possible prediction methods (60A, 60B, 60C, 60D)
+in dependence of a respective available macroblock segmentation (70, 71, 72, 83,
+84, 85), wherein a prediction method (60A, 60B, 60C, 60D) defines for each block
+of a macroblock
+
+one or more prediction blocks used in producing a prediction motion
+coefficient for a certain block within the macroblock, and
+
+a method for deriving the prediction motion coefficient for said certain block
+from motion coefficients of said one or more prediction blocks,
+- input means for receiving information indicating at least the macroblock
+segmentation (70, 71, 72, 83, 84, 85) selected for a macroblock,
+- means (132) for determining the prediction-method relating to the segmentation of
+the macroblock with reference to the defined macroblock-segmentation —
+prediction-method pairs (7OA, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A,
+72B, 72C, 72D, 83, 84, 85), and
+- means (131) for deriving prediction motion coefficients for blocks within said
+macroblock using the determined prediction method.
+
+35. A decoder for performing decoding of encoded video information according to
+claim 34, characterized in that the decoder is configured to receive an indication of
+a selected macroblock-segmentation — prediction-method pair.
+
+36. A decoder for performing decoding of encoded video information according to
+claim 34, characterized in that it further comprises:
+
+- means for determining difference motion coefficients of the blocks within said
+macroblock based on the received encoded video information, and
+
+-means for reconstructing motion coefficients for the blocks within said
+macroblock using the derived prediction motion coefficients and the difference
+motion coefficients.
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+37. A decoder for performing decoding of encoded video information according to
+claim 34, characterized in that the decoder is configured to define at least two
+prediction methods relating to a certain available macroblock segmentation.
+
+38. A decoder for performing decoding of encoded video information according to
+claim 34, characterized in that the decoder is configured to define only one
+prediction method for each available macroblock segmentation.
+
+39. A computer program element for performing motion compensated encoding of
+video information, comprising:
+- means for receiving a frame of video information,
+- means (111) for segmenting the frame of video information into macroblocks,
+-means (112) for specifying a certain number of available macroblock
+segmentations (70, 71, 72, 83, 84, 85) that define possible ways in which a
+macroblock can be segmented into blocks,
+-means (122) for specifying a certain finite number of available macroblock-
+segmentation — prediction-method pairs (JOA, 70B, 70C, 70D, 71A, 71B, 71IC,
+71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85) by defining at least one available
+prediction method for each available macroblock segmentation (70, 71, 72, 83, 84,
+85) as a predetermined subset of possible prediction methods (60A, 60B, 60C, 60D)
+in dependence of a given available macroblock segmentation (70, 71, 72, 83, 84,
+85), wherein a prediction method (60A, 60B, 60C, 60D) defines for each block of a
+macroblock
+
+one or more prediction blocks used in producing a prediction motion
+coefficient for a certain block within the macroblock, and
+
+a method for deriving the prediction motion coefficient for said certain block
+from the motion coefficients of said one or more prediction blocks,
+- means (125) for selecting one macroblock-segmentation — prediction method pair
+(70A, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85)
+among the available macroblock-segmentation — prediction method pairs (70A,
+70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85)
+wherein the selection of the macroblock-segmentation — prediction-method pair is
+based on minimizing a cost function,
+- means for segmenting a macroblock using the macroblock segmentation (70, 71,
+72, 83, 84, 85) specified by the selected macroblock-segmentation — prediction-
+method pair (70A, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D,
+83, 84, 85), and
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+-means (125) for deriving macroblock-segmentation-specific prediction motion
+coefficients for blocks within said macroblock using the prediction method
+specified by the selected macroblock-segmentation — prediction-method pair (70A,
+70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85).
+
+40. A computer program element as specified in claim 39, embodied on a
+computer readable medium.
+
+41. A computer program element for performing motion compensated decoding of
+encoded video information, comprising:
+- input means for receiving encoded video information,
+- means for defining a certain number of available macroblock segmentations (70,
+71, 72, 83, 84, 85) that specify possible ways in which a which a macroblock can be
+segmented into blocks,
+-means for specifying a certain finite number of available macroblock-
+segmentation — prediction-method pairs (7OA, 70B, 70C, 70D, 71A, 71B, 71C,
+71D, 71E, 72A, 72B, 72C, 72D, 83, 84, 85) by defining at least one available
+prediction method for each available macroblock segmentation (70, 71, 72, 83, 84,
+85) as a predetermined subset of possible prediction methods (60A, 60B, 60C, 60D)
+in dependence of a given available macroblock segmentation (70, 71, 72, 83, 84,
+85), wherein a prediction method (60A, 60B, 60C, 60D) defines for each block of a
+macroblock
+
+one or more prediction blocks used in producing a prediction motion
+coefficient for a certain block within the macroblock, and
+
+a method for deriving the prediction motion coefficient for said certain block
+from the motion coefficients of said one or more prediction blocks,
+- input means for receiving information indicating at least the macroblock
+segmentation (70, 71, 72, 83, 84, 85) selected for a macroblock,
+- means (132) for determining the prediction-method relating to the segmentation of
+the macroblock with reference to the defined macroblock-segmentation —
+prediction-method pairs (7OA, 70B, 70C, 70D, 71A, 71B, 71C, 71D, 71E, 72A,
+72B, 72C, 72D, 83, 84, 85), and
+- means (131) for deriving prediction motion coefficients for blocks within said
+macroblock using the determined prediction method.
+
+42. A computer program element for performing motion compensated decoding of
+encoded video information according to claim 41, wherein at least two prediction
+methods relating to a certain available macroblock segmentation are defined.
+
+--- PAGE 11 ---
+10
+
+43. A computer program element for performing motion compensated decoding of
+encoded video information according to claim 41, wherein only one prediction
+method for each available macroblock segmentation is defined.
+
+44. A computer program element as specified in claim 41, 42 or 43, embodied on
+a computer readable medium.
+
+45. A storage device comprising an encoder according to claim 32.
+46. A mobile station comprising an encoder according to claim 32.
+47. A mobile station comprising a decoder according to claim 34.
+
+48. A network element comprising an encoder according to claim 32.
+
+49. A network element according to claim 48, wherein the network element is a
+network element of a mobile telecommunication network.

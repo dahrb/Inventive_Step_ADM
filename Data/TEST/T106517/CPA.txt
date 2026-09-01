@@ -1,0 +1,70 @@
+TITLE:
+Interface for Building a Print Container
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method is provided for creating a print container with a series of resident fixed documents. The method opens a user interface (UI). Using the UI, a first plurality of elements stored in memory is selected and a print container is created. The print container preserves a second plurality of elements as separate entities in the print container. For example, a print container may have an element hierarchy of jobs in the print container, fixed documents in a job, and fixed pages in a fixed document may be created. Elements are defined as print containers, fixed documents, application-specific documents, page description language (PDL) documents, extensible markup language (XML) paper specification (XPS) fixed documents, or combinations of the above-mentioned elements. In one aspect, the selected elements are extensible markup language (XML) paper specification (XPS) fixed documents, which are preserved as separate entities in an XPS container.
+
+CLAIMS:
+1. A method for creating a print container with a series of resident fixed documents, the method comprising:
+opening a user interface (UI);
+using the UI, selecting a first plurality of elements stored in memory;
+creating a print container; and,
+preserving a second plurality of elements as separate entities in the print container.
+2. The method of claim 1 wherein preserving each element as a separate entity in the print container includes creating a print container element hierarchy of jobs in the print container, fixed documents in a job, and fixed pages in a fixed document.
+3. The method of claim 2 further comprising:
+modifying the print container element hierarchy.
+4. The method of claim 1 wherein selecting the plurality of elements stored in memory includes selecting elements from a group consisting of print containers, fixed documents, application-specific documents, page description language (PDL) documents, extensible markup language (XML) paper specification (XPS) fixed documents, and combinations of the above-mentioned elements.
+5. The method of claim 1 further comprising:
+subsequent to selecting an application-specific document in a first format, automatically calling an application to which the first format is native; and,
+using the called application to convert the application-specific document to a fixed document.
+6. The method of claim 1 further comprising:
+the UI converting an application-specific document into a fixed document.
+7. The method of claim 1 further comprising:
+subsequent to selecting a first element, converting the first element into a series of raster images; and,
+converting the series of raster images to a fixed document.
+8. The method of claim 1 further comprising:
+subsequent to selecting a first element, converting the first element into a multi-page raster image; and,
+converting the multi-page raster image into a fixed page in a fixed document.
+9. The method of claim 1 further comprising:
+creating a print container resource; and,
+creating a pointer associated with an element in the print container, associating the element with the resource.
+10. The method of claim 1 wherein selecting the plurality of elements includes selecting elements, where each element has a print ticket (PT) disposition; and,
+the method further comprising:
+selectively preserving the PT disposition of the elements in the print container.
+11. The method of claim 10 wherein selectively preserving the PT disposition of the elements in the print container includes creating a PT hierarchy of job PTs in the print container, fixed document PTs in a job, and fixed page PTs in a fixed document.
+12. The method of claim 10 wherein selectively preserving the PT disposition includes modifying a PT hierarchy of job PTs in the print container, fixed document PTs in a job, and fixed page PTs in a fixed document.
+13. The method of claim 1 wherein selecting the plurality of elements includes selecting extensible markup language (XML) paper specification (XPS) fixed documents; and,
+wherein preserving each element as a separate entity in the print container includes preserving the selected XPS fixed documents as separate entities in an XPS container.
+14. The method of claim 13 wherein selecting the plurality of elements includes:
+selecting a first document;
+converting the first document into a raster image;
+wherein preserving each element as a separate entity in the print container includes preserving the raster image as a separate entity in the XPS container.
+15. The method of claim 1 further comprising:
+performing an action selected from a group consisting of saving the print container in memory and sending the print container to a printer for printing.
+16. The method of claim 1 wherein creating the print container includes creating the print container at a node selected from a group consisting of an application embedded with a client computer, a print driver embedded with a client computer, and a printer document management system installed in a printer.
+17. A method for creating an extensible markup language (XML) paper specification (XPS) container with a series of resident fixed documents, the method comprising:
+opening a user interface (UI);
+using the UI, selecting a plurality of elements stored in memory;
+creating an XPS container; and,
+preserving each element as a separate entity in the XPS container.
+18. The method of claim 17 wherein selecting the plurality of elements stored in memory includes selecting elements chosen from the group consisting of XPS containers, XPS fixed documents, application-specific documents, page description language (PDL) documents, and combinations of the above-mentioned elements.
+19. The method of claim 17 wherein selecting the plurality of elements stored in memory includes selecting an application-specific document; and,
+the method further comprising:
+converting the application-specific document to an XPS fixed document.
+20. The method of claim 17 wherein selecting the plurality of elements includes selecting elements, where each element has a print ticket (PT) disposition; and,
+the method further comprising:
+selectively preserving the PT disposition of the elements in the XPS container.
+21. The method of claim 17 further comprising:
+creating an XPS container resource; and,
+creating a pointer associated with an element in the print container, associating the element with the resource.
+22. A graphical user interface (GUI) for creating a print container with a series of resident fixed documents, the GUI comprising:
+a first graphical icon for selecting a container builder option; and,
+a second graphical icon for selecting a first plurality of elements stored in memory, preserving a second plurality of elements as separate entities in the print container.
+23. The GUI of claim 22 wherein the second graphical icon selects elements from a group consisting of print containers, fixed documents, application-specific documents, page description language (PDL) documents, extensible markup language (XML) paper specification (XPS) fixed documents, and combinations of the above-mentioned elements.
+24. The GUI of claim 22 wherein the second graphical icon selects an application-specific document;
+the GUI further comprising:
+a third graphical icon for converting the application-specific document to a fixed document.
+25. The GUI of claim 22 wherein the UI is embedded at a node selected from a group consisting of an application embedded with a client computer, a print driver embedded with a client computer, and a printer document management system installed in a printer.

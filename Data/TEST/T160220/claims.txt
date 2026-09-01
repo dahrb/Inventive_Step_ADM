@@ -1,0 +1,173 @@
+--- PAGE 1 ---
+EP 11 808 415.1
+MTT-3223.EP.0 / 68354.227292
+
+NEW MAIN REQUEST — CLAIMS FOR APPEAL - MARKUP
+
+1. A switch-mode power supply (SMPS), comprising:
+at least one power switch (316; 318) coupled to a voltage source;
+a power inductor (312) coupled to the at least one power switch (316; 318);
+
+a filter capacitor (310) coupled to a load side of the power inductor (316; 318)
+that provides a regulated voltage output (Vour) of the SMPS;
+
+at least one driver (464) coupled to the at least one power switch (316; 318);
+
+a pulse width modulation (PWM) generator (326; 458) having at least one output
+coupled to and controlling the at least one driver (464), the at least one output of the
+PWM generator (326; 458) providing at least one PWM signal comprising a plurality
+
+of pulses;
+
+a digital processor (462) having a memory, the digital processor (462) is coupled
+to and provides operating parameters to the PWM generator (326; 458) during operation
+thereof;
+
+characterized by
+
+a voltage comparison circuit (322) for comparing the regulated output voltage
+(Vout) to a reference voltage (Vrer), wherein the voltage comparison circuit (322) has
+an error signal output representative of a difference between the regulated output voltage
+
+(Vout) and the reference voltage (Vrzr);
+
+a comparator (324) having a first input coupled to the error signal output from
+the voltage comparison circuit (322), a second input coupled to a ramp signal (Isensz;
+
+Vramp), and an output coupled to an input of the PWM generator (326; 458);
+
+a PWM averaging filter (328; 468), wherein the PWM averaging filter (328;
+468) receives the PWM signal and produces an analog signal representative of a relative
+
+efficiency thereof; and
+
+an analog-to-digital converter (ADC) (470) having an analog input coupled to
+the PWM averaging filter (328; 468) for receiving the analog signal representative of
+the relative efficiency of the PWM signal, and a digital output coupled to the digital
+
+processor (462) having the memory;
+
+--- PAGE 2 ---
+EP 11 808 415.1
+MTT-3223.EP.0 / 68354.227292
+
+wherein the digital processor (462) is designated for storing in the memory
+digital efficiency values from the digital output of the analog-to-digital converter (ADC)
+(470) and wherein the digital processor (462) optimizes operation of the SMPS by
+adjusting operating parameters of the PWM generator (326; 458) by using the stored
+digital efficiency values to provide the at least one PWM signal that produces a highest
+relative efficiency of the SMPS.
+
+2. The SMPS according to claim 1, wherein the highest relative efficiency is when
+
+the analog signal representative of the relative efficiency is at a lowest value.
+
+3. The SMPS according to claim 1, wherein the ramp signal represents current values
+
+of the power inductor (312).
+
+4. The SMPS according to claim 1, wherein the ramp signal represents a generated
+
+voltage ramp.
+
+5. The SMPS according to one of the preceding claims, wherein the digital processor
+(362) stores in the memory digital efficiency values from the digital output of the ADC (470),
+wherein the digital processor uses the stored digital efficiency values to adjust the operating
+parameters of the PWM generator to provide the PWM signal resulting in optimum relative
+
+efficiency of the SMPS.
+
+6. The SMPS according to one of the preceding claims, wherein the operating
+parameters of the PWM generator (326; 458) are selected from any one or more of the group
+consisting of on and off percents of the at least one power switch, drive current from the at least
+
+one driver to the at least one power switch, and PWM pulse rate per second (frequency).
+
+7. The SMPS according to one of the preceding claims, wherein the at least one power
+switch (316; 318) is at least one power transistor, in particular at least one power metal oxide
+
+semiconductor (MOS) field effect transistor (FET).
+
+8. The SMPS according to one of the preceding claims, wherein the PWM averaging
+filter (468) is coupled to the at least one driver (464) for receiving the PWM signal, wherein the
+PWM averaging filter (468) is an analog low-pass filter, in particular a resistor-capacitor low-
+
+pass filter.
+
+--- PAGE 3 ---
+EP 11 808 415.1
+MTT-3223.EP.0 / 68354.227292
+
+9. The SMPS according to one of the preceding claims, further comprising a
+
+communications interface (460) coupled to the digital processor (462).
+
+10. The SMPS according to one of the preceding claims, wherein the digital processor
+
+(462) and memory is incorporated into a microcontroller.
+
+11. A method for optimizing efficiency of a switch-mode power supply (SMPS)
+
+according to one of the preceding claims, said method comprising the steps of:
+
+driving the at least one power switch (316; 318) of the SMPS with the PWM
+
+signal;
+
+determining an average of on pulses of the PWM signal from the PWM
+generator (326; 458) with the PWM averaging filter (328; 468) by receiving the PWM
+
+signal and producing an analog signal representative of a relative efficiency thereof;
+
+receiving by the analog-to-digital converter (ADC) (470) the analog signal
+
+representative of the relative efficiency of the PWM signal;
+
+storing by the digital processor in the memory digital efficiency values from the
+
+digital output of the analog-to-digital converter (ADC) (470); and
+
+adjusting by said processor (426) operating parameters of the PWM generator
+(326; 458) by using the stored digital efficiency values to minimize the average of the
+on pulses of the PWM signal and thereby increase efficiency of the SMPS.
+
+12. The method according to claim 11, wherein the operating parameters of the PWM
+generator (326; 458) are selected from any one or more of the group consisting of percent on
+of the pulses of the PWM signal, drive current to a power switch, and PWM pulse rate per
+
+second (frequency).
+
+13. The method according to claim 11,
+
+wherein the step of determining comprises determining an average of on pulses
+
+of a first PWM signal from a PWM generator with a first PWM averaging filter;
+
+wherein the step of driving comprises driving a first power switch (316) of the
+SMPS with the first PWM signal, and driving a second power switch of the SMPS with
+a second PWM signal; and
+
+--- PAGE 4 ---
+EP 11 808 415.1
+MTT-3223.EP.0 / 68354.227292
+
+wherein the step of adjusting comprises adjusting operating parameters of the
+PWM generator to minimize the average of the on pulses of the first PWM signal and
+thereby increase efficiency of a SMPS.
+
+14. The method according to claim 13, wherein the operating parameters of the PWM
+generator are selected from any one or more of the group consisting of percent on times of the
+pulses of the PWM signal, drive current to the first power switch, drive current to the second
+power switch, off times between on times of the first and second power switches, and PWM
+
+pulse rate per second (frequency).
+
+15. The method according to claim 13 or 14, further comprising the steps of:
+
+determining an average of on pulses of the second PWM signal from the PWM
+generator (326; 458) with a second PWM averaging filter (468); and
+
+adjusting operating parameters of the PWM generator (326; 458) to minimize
+the average of the on pulses of the second PWM signal and thereby increase efficiency
+
+of the SMPS.

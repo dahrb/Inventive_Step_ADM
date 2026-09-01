@@ -1,0 +1,330 @@
+--- PAGE 1 ---
+710
+
+15
+
+20
+
+25
+
+30
+
+35
+
+_ 29-
+
+Claims - Main Request
+
+1. A system comprising:
+
+an originating node (82) located in a public network and configured to
+send a communication request to a terminating node (84), wherein the
+communication request is a non-IP-based communication request message
+(130), and
+
+a terminating node (84) for communicating with the originating node (82)
+via an IP connection, the terminating node being located in a private network
+and comprising: a processor configured to respond to receiving the
+communication request from the originating node by initiating IP-based
+
+communication with the originating node.
+
+2. The system of claim 1, wherein the non-IP-based communication request
+message uses a non-IP-based communication technique selected from the group
+comprising telephony, text messaging, radio frequency communication, short
+messaging service communication, multimedia messaging service
+
+communication, and instant messaging.
+
+3. The system of claim 1, wherein the communication request defines an
+
+internet protocol address and a port number of a socket at the originating node.
+
+4. The system of claim 1, wherein the processor is further configured to
+verify a validity of the communication request using security information defined
+
+by the communication request.
+
+5. The system of claim 1, further comprising an application layer, a
+middleware layer, and a system layer; wherein the processor is further
+configured to create a virtual server socket between the application layer and the
+middleware layer; wherein the processor is further configured to receive the
+communication request at the middleware layer, the communication request
+defining an internet protocol address and a port number of a server socket at the
+originating node; and wherein the processor is further configured to create a
+
+client socket between the middleware layer and the system layer.
+
+--- PAGE 2 ---
+710
+
+15
+
+20
+
+29
+
+30
+
+39
+
+- 30-
+
+6. The system of claim 5, wherein the processor is further configured to
+receive a connect-successful message at the client socket, convert the connect-
+successful message by the middleware layer to an accept-successful message, and
+
+receive the accept-successful message at the virtual socket.
+
+7. The system of claim 1, wherein the private network has at least one of a
+
+firewall and a network address translator.
+
+8. The system of claim 1, wherein the terminating node further comprises an
+application layer, a middleware layer, and a system layer;
+
+wherein the originating node comprises an application layer, a
+middleware layer, and a system layer;
+
+wherein the terminating node is further configured to create a virtual
+server socket between the application layer at the terminating node and the
+middleware layer at the terminating node;
+
+wherein the originating node is further configured to create a virtual
+client socket between the application layer at the originating node and the
+middleware layer at the originating node;
+
+wherein the originating node is configured to send the communication
+request from the middleware layer at the originating node to the middleware
+layer at the terminating node;
+
+wherein the terminating node is further configured to create a client
+socket between the middleware layer at the terminating node and the system
+layer at the terminating node;
+
+wherein the originating node is further configured to create a server
+socket between the middleware layer at the originating node and the system
+layer at the originating node;
+
+wherein the terminating node is further configured to receive the
+communication request at the middleware layer of the terminating node, the
+communication request defining an internet protocol address and a port number
+
+of the server socket at the originating node.
+
+9. The system of claim 8, wherein the terminating node is further configured
+to receive a connect-successful message by the client socket at the terminating
+node, convert the connect-successful message by the middleware layer at the
+
+terminating node to an accept-successful message, and receive the accept-
+
+--- PAGE 3 ---
+710
+
+15
+
+20
+
+29
+
+30
+
+39
+
+-31-
+
+successful message at the virtual socket at the terminating node; and wherein the
+originating node is further configured to receive an accept- successful message
+by the server socket at the originating node, convert the accept- successful
+message by the middleware layer at the originating node to a connect- successful
+message, and receive the connect-successful message at the virtual socket at the
+
+originating node.
+
+10. Thesystem of any of claims 1 to 9, wherein the originating node is further
+configured to translate an IP-based identifier of the terminating node into a non-
+IP-based identifier of the terminating node; and wherein the originating node is
+
+further configured to use the non-IP-based identifier to send the communication
+
+request to the terminating node.
+
+11. An originating node (82) for establishing an IP connection with a
+terminating node (84) located in a private network, the originating node being
+located in a public network and comprising: a processor configured to send a
+communication request to the terminating node, wherein the communication
+request is a non-IP-based communication request message (130), the request
+being a request for the terminating node to initiate IP-based communication
+
+with the originating node.
+
+12. The originating node of claim 11, wherein the non-IP-based
+communication request message uses a non-IP-based communication technique
+and the processor is configured to select the non-IP-based communication
+technique from the group comprising telephony, text messaging, radio frequency
+communication, short messaging service communication, multimedia messaging
+
+service communication, and instant messaging.
+
+13. The originating node of claim 11, wherein the communication request
+defines an internet protocol address and a port number of a socket at the
+
+originating node.
+
+14. The originating node of claim 11, wherein the communication request
+defines security information, such that the terminating node is configured to
+
+verify a validity of the communication request using the security information.
+
+--- PAGE 4 ---
+710
+
+15
+
+20
+
+29
+
+30
+
+39
+
+- 32.
+
+15. The originating node of claim 11, further comprising an application layer,
+a middleware layer, and a system layer; wherein the processor is further
+configured to:
+
+create a virtual client socket between the application layer and the
+middleware layer;
+
+send the communication request from the middleware layer via the non-
+IP-based communication technique; and
+
+create a server socket between the middleware layer and the system layer.
+
+16. The originating node of claim 15, wherein the processor is further
+configured to receive an accept-successful message by the server socket, convert
+the accept-successful message by the middleware layer to a connect-successful
+
+message, and receive the connect-successful message at the virtual socket.
+
+17. The originating node of claim 11, wherein the processor is further
+configured to translate an IP-based identifier of the terminating node into a non-
+IP-based identifier of the terminating node; and use the non-IP-based identifier
+
+to send the communication request to the terminating node.
+
+18. A method of establishing an IP connection between an originating node
+(82) located in a public network and a terminating node (84) located in a private
+network, the method comprising: sending a communication request from the
+originating node to the terminating mode, wherein the communication request is
+a non-IP-based communication request message (130); receiving the
+communication request at the terminating node from the originating node; and
+the terminating node initiating IP-based communication with the originating
+
+node in response to receiving the communication request.
+
+19. The method of claim 18, wherein the non-IP-based communication
+request message uses a non-IP-based communication technique selected from
+the group comprising telephony, text messaging, radio frequency
+communication, short messaging service communication, multimedia messaging
+
+service communication, and instant messaging.
+
+20. The method of claim 18, wherein the communication request defines an
+
+internet protocol address and a port number of a socket at the originating node.
+
+--- PAGE 5 ---
+710
+
+15
+
+20
+
+29
+
+30
+
+39
+
+_ 33-
+
+21. The method of claim 18, further comprising: the terminating node
+verifying a validity of the communication request using security information
+
+defined by the communication request.
+
+22. The method of claim 18, further comprising:
+
+creating a virtual server socket between an application layer at the
+terminating node and a middleware layer at the terminating node;
+
+creating a virtual client socket between an application layer at the
+originating node and a middleware layer at the originating node;
+
+creating a client socket between the middleware layer at the terminating
+node and a system layer at the terminating node; and
+
+creating a server socket between the middleware layer at the originating
+node and a system layer at the originating node;
+
+wherein sending the communication request comprises sending the
+communication request from the middleware layer at the originating node to the
+middleware layer at the terminating node;
+
+wherein the communication request is received at the terminating node by
+the middleware layer;
+
+wherein the communication request defines an internet protocol address
+and a port number of the server socket at the originating node; and
+
+wherein the IP-based communication is initiated by the middleware layer
+
+at the terminating node.
+
+23. The method of claim 22, further comprising:
+
+receiving a connect-successful message by the client socket at the
+terminating node;
+
+converting the connect-successful message by the middleware layer at the
+terminating node to an accept-successful message;
+
+receiving the accept-successful message at the virtual socket at the
+terminating node;
+
+receiving an accept-successful message by the server socket at the
+originating node;
+
+converting the accept-successful message by the middleware layer at the
+
+originating node to a connect-successful message; and
+
+--- PAGE 6 ---
+710
+
+15
+
+- 34-
+
+receiving the connect-successful message at the virtual socket at the
+
+originating node.
+
+24. The method of claim 18, wherein the private network has at least one of a
+
+firewall and a network address translator.
+
+25. The method of claim 18, further comprising:
+
+the originating node translating an IP-based identifier of the terminating
+node into a non-IP-based identifier of the terminating node, wherein the non-IP-
+based identifier is used to send the communication request to the terminating
+
+node.
+
+26. Acomputer program comprising executable portions for performing a
+
+method according to any of claims 18 to 25.

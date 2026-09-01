@@ -1,0 +1,122 @@
+--- PAGE 1 ---
+CLAIMS (MAIN REQUEST, CLEAN)
+
+1. A method for displaying, on an avionics display system (100), cues for executing an
+aircraft landing after a loss of engine thrust by the aircraft, the method comprising:
+
+(a) receiving avionics data (602);
+
+(b) responsive to detecting the loss in engine thrust, processing the avionics data (604)
+to determine a current aircraft configuration and displaying (606), on a three dimensional
+display (106) on the avionics display system (100), a unique conformal cue for each of:
+
+(i) a first potential landing site associated with not altering the current aircraft
+
+configuration (210),
+
+(i1) a second potential landing site associated with deploying only landing gear
+
+(214), and
+
+(iii) a third potential landing site associated with deploying the landing gear
+
+and flaps (218);
+
+(c) updating terrain (304) in the three dimensional display (106), indicative of aircraft
+travel (302); and
+
+repeating (a) — (c) until the aircraft has landed.
+
+2. The method of Claim 1, wherein the second potential landing site represents an altered
+
+lift-to-drag ratio based on extending landing gear.
+
+3. The method of Claim 1, wherein the third potential landing site represents an altered
+
+lift-to-drag ratio based on extending landing gear and deploying flaps.
+
+4. The method of Claim 1, further comprising, responsive to detecting the loss in engine
+thrust, processing the avionics data to:
+add to the three dimensional display (106) on the avionics display system
+(100),
+
+(iv) a unique conformal cue for altering the lift-to-drag ratio based on an aircraft maneuver.
+
+5. The method of Claim 1, wherein the step of displaying a cue comprises rendering the
+
+cue in perspective form at its predicted location on the terrain.
+
+12
+
+--- PAGE 2 ---
+6. The method of Claim 1, further comprising:
+receiving user input data; and
+
+altering, by a processor, aircraft configuration data according to the user input data.
+
+7. The method of claim 1, further comprising displaying text “clean” proximate to the
+
+cue at the first potential landing site.
+
+8. The method of claim 7, further comprising displaying text “GEAR” or “G” proximate
+
+to the cue at the second potential landing site.
+
+9. The method of Claim 8, further comprising displaying text “G+F” proximate to the
+
+cue at the third potential landing site.
+
+10. The method of Claim 9, wherein each cue is a chevron and each chevron is oriented to
+
+point at its associated predicted landing site.
+
+11. An avionics display system (100) for an aircraft, comprising:
+a flight deck display (106) coupled to receive display commands and configured,
+upon receipt thereof, to render images; and
+a processor (102) operatively coupled to the flight deck display and adapted to receive
+avionics data, the processor configured, upon detecting a loss of engine thrust, and upon
+receipt of the avionics data, to:
+(a) determine a current aircraft configuration,
+(b) predict a first potential landing site for the aircraft based on not altering the
+current aircraft configuration,
+characterized by the processor being further configured to:
+(c) predict a second potential landing site for the aircraft associated with
+altering the current aircraft configuration by deploying only landing gear (214),
+(d) predict a third potential landing site for the aircraft associated with altering
+
+the current aircraft configuration by deploying the landing gear and flaps (218),
+
+13
+
+--- PAGE 3 ---
+(e) supply display commands to the flight deck display (106) that cause the
+flight deck display to render a first cue (210) representative of the first landing site, a
+second cue (214) representative of the second landing site, and a third cue (218)
+representative of the third landing site in a three dimensional display,
+
+(f) update terrain (304) in the three dimensional display (106), indicative of
+aircraft travel (302), and
+
+repeat (a) — (f) until the aircraft has landed.
+
+12. Thesystem of Claim 11, wherein altering the current aircraft configuration comprises
+
+a modification in the lift-to-drag ratio associated with the current aircraft configuration.
+
+13. The system of Claim 12, wherein the processor is further configured to predict a
+
+fourth potential landing site for the aircraft associated with an aircraft maneuver.
+
+14. The system of Claim 11, wherein the avionics display system comprises a synthetic
+
+vision display.
+
+15. The system of Claim 11, wherein the processor is further configured to display each
+
+cue at its predicted location in perspective form on the terrain.
+
+16. The system of Claim 11, wherein each cue is a chevron and each chevron is oriented
+
+to point at the associated predicted landing site.
+
+14

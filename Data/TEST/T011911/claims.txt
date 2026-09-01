@@ -1,0 +1,144 @@
+--- PAGE 1 ---
+20
+
+25
+
+European Patent Application Yaszistra Fund III, LLC
+No. 99 955 083.3 M/MGD-037-PC/EP MB/BO/JW/cd
+April 27, 2010
+
+NEW CLAIMS (MAIN REQUEST)
+
+1. A method for managing an electronic record for compliance with a policy in a
+
+distributed computing environment, the method comprising:
+
+recording the electronic record in a central database, the central database
+adapted to be accessed by the distributed computing environment;
+
+creating an electronic tag that uniquely identifies the electronic record, the
+electronic tag being created using information associated with the policy,
+where the information is obtained by:
+
+analyzing a user profile;
+
+analyzing a workstation specification; and
+
+generating a reference code;
+
+storing the electronic tag in the distributed computing environment;
+
+sending the electronic record to a recipient device via the distributed computing
+
+environment;
+wherein the electronic record is an electronic email message, and the
+
+information used in the creation of the electronic tag enables analysis of the
+
+electronic record for compliance with the policy.
+
+2. The method of claim 1, further comprising deleting the electronic record and
+selectively deleting the electronic tag.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EPO No. No. 99 955 083.3 2
+(Main Request)
+
+The method of claim 1, wherein the distributed computing environment
+comprises a computer having a registry and a user profile, wherein the
+electronic tag is generated at least in part as a function of at least one of the
+
+registry, the user profile, and the reference code.
+
+The method of claim 1, wherein the reference code comprises a classification
+
+code and an index code.
+
+The method of claim 4, wherein the classification code is selected from a
+group comprising business email, personal email, intramail, bulletin board,
+
+minutemail, and purgemail.
+
+The method of claim 4, wherein the index code identifies the contents of an
+electronic record and at least one of the sender and the recipient of the
+
+electronic record.
+
+The method of claim 1, wherein the electronic record comprises an email
+
+message.
+The method of claim 1, wherein sending the electronic record comprises:
+reading the electronic tag; and
+
+generating a new electronic tag at least in part as a function of the read
+
+electronic tag, a computer registry, a user profile, and a reference code.
+
+An apparatus for managing an electronic record in a distributed computing
+environment for compliance with a policy, the apparatus comprising:
+
+a computer system comprising at least one processor and at least one
+memory, the computer system being operable to cause:
+
+creation of an electronic tag that uniquely identifies the electronic record, the
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EPO No. No. 99 955 083.3 3
+(Main Request)
+
+10.
+
+11.
+
+12.
+
+electronic tag being created using information associated with the policy,
+where the information is obtained by:
+
+analyzing a user profile;
+analyzing a workstation specification; and
+generating a reference code;
+storage of the electronic tag in the distributed computing environment; and
+
+transmission of the electronic record to a recipient device via the distributed
+computing environment;
+
+wherein the electronic record is an electronic mail message, and the
+information used in the creation of the electronic tag enables analysis of the
+electronic record for compliance with the policy.
+
+The apparatus of claim 9, wherein the computer system is further adapted
+and arranged for purging the electronic record by deleting the electronic
+
+record and selectively deleting the electronic tag.
+
+The apparatus of claim 9, wherein the distributed computing environment
+comprises a computer having a registry and a user profile, wherein the
+computer system is configured and arranged to generate the reference code,
+wherein the electronic tag is generated at least in part as a function of at
+least one of the registry, the user profile, and the reference code.
+
+A computer-readable medium for a computer system having computer
+executable instructions adapted to cause the computer system to perform the
+
+method of one of claims 1 to 8.

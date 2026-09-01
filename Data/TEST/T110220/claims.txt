@@ -1,0 +1,118 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. A system for provisioning and launching compute instances, the system comprising:
+one or more datacenters comprising a plurality of computing devices configured to
+communicate with each other over network connections; and
+one or more memories having stored therein computer-readable instructions that, upon
+execution on the system, cause the system at least to:
+
+determine an expected demand for a plurality of compute instances, the plurality
+of compute instances being associated with a plurality of machine images and a plurality
+of compute instance types, wherein the expected demand comprises the number and types
+of compute instances that are expected to be requested;
+
+determine one or more computing devices from the plurality of computing
+devices configured to host the plurality of compute instances based at least in part on the
+expected demand, wherein the instructions to determine an expected demand for a
+plurality of compute instances comprise instructions that, upon execution on the system,
+cause the system at least to:
+
+analyze a history of requests for compute instances to determine a target
+for the plurality of compute instances and the one or more computing devices; and
+revise the target based at least in part on statistical factors associated with
+
+the requests;
+
+prior to receiving a request from a customer node to launch a compute instance,
+launch and idle the plurality of compute instances on the one or more computing devices
+based at least in part on the plurality of machine images and the plurality of compute
+instance types; and
+
+in response to receiving the request from the customer node to launch the
+compute instance, activate the compute instance from one of the plurality of machine
+images that are idle on the one or more computing devices;
+wherein the instructions to determine one or more computing devices from the plurality
+of computing devices comprise instructions that, upon execution on the system, cause the
+system at least to:
+
+determine an expected availability of the plurality of computing devices;
+
+balance the expected demand with the expected availability to meet a constraint
+
+associated with launching and idling the plurality of compute instances; and
+
+-]-
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+determine the one or more computing devices based at least in part on the
+
+balance.
+
+2. The system of claim 1, wherein the expected demand is determined based at least in part
+on a history of requests received from customer nodes, and wherein the history of requests is
+sorted based at least in part on configuration parameters of compute instances associated with the
+
+requests.
+
+3. A method comprising:
+
+determining an expected demand for a plurality of compute instances associated with a
+plurality of machine images, wherein the expected demand comprises the number and types of
+compute instances that are expected to be requested;
+
+determining one or more compute nodes of the plurality of compute nodes configured to
+launch the plurality of compute instances from the plurality of machine images, the determining
+being based at least in part on the expected demand, wherein the expected demand is determined
+by:
+
+analyzing a history of requests for compute instances to determine a target for the
+plurality of compute instances and one or more compute nodes; and
+revising the target based at least in part on statistical factors associated with the
+
+requests;
+
+configuring the plurality of machine images on the plurality of compute nodes prior to
+receiving a request from a user node to launch a compute instance of the plurality of compute
+instances; and
+
+after receiving the request from the user node, completing a launch of a specific compute
+instance using one of the plurality of configured machine images on one of the plurality of
+compute nodes;
+
+wherein determining one or more compute nodes from the plurality of compute nodes
+comprises:
+
+determining an expected availability of the plurality of computing devices;
+
+balancing the expected demand with the expected availability to meet a constraint
+associated with launching and idling the plurality of compute instances; and
+
+determining the one or more computing devices based at least in part on the balance.
+
+-2-
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+4, The method of claim 3, wherein the constraint is based at least in part on an available
+compute capacity at the plurality of compute nodes or availabilities of compute nodes across a
+
+zone or a region.
+
+5. The method of claim 3, wherein the constraint is based at least in part on a number of
+compute instances configured to be concurrently launched on a compute node of the plurality of
+
+compute nodes.
+
+6. The method of claim 3, wherein the constraint is based at least in part on a fee associated
+with executing an application or an operating system associated with one of the plurality of
+machine images or a fee associated with launching one of the plurality of compute instances
+
+from one of the plurality of machine images on one of the plurality of compute nodes.
+
+-3-

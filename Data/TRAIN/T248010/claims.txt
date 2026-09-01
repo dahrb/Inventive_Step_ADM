@@ -1,0 +1,322 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+CLAIMS:
+
+1. A computer-implemented method for maintaining computer security,
+comprising:
+
+providing (S21) a database (303) of known good software;
+
+opening (S22, S30) a file;
+
+identifying (S23, S31) the file being opened;
+
+determining (S24, $32) whether an entry exists in the database (303)
+of known good software for the identified file; and
+
+performing (S26, S27) at least one of allowing and preventing the
+opening of the file from continuing based on the result of the determination,
+
+the method characterized by:
+
+providing a database (304) of unfamiliar software;
+
+determining (S35) whether an entry exists in the database (304) of
+unfamiliar software for the identified file if it is determined that an entry does
+not exist in the database (303) of known good software for the identified file;
+
+adding (S37) an entry to the database (304) of unfamiliar software if it
+is determined that an entry for the identified file does not exist in the database
+(304) of unfamiliar software;
+
+if it is determined that an entry for the identified file exists in the
+database (304) of unfamiliar software, determining (S38-S40), based on an
+amount of time that the entry has been in the database (304) of unfamiliar
+software or the number of times that the identified file has been opened,
+whether the entry in the database (304) of unfamiliar software can be moved
+to the database (303) of known good software; and
+
+selectively moving (S42) the entry from the database (304) of
+unfamiliar software to the database (303) of known good software based on
+the determination as to whether the entry can be moved to the database (303)
+
+of known good software.
+
+J00049156EP 13
+
+EP 04 822 016.4
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2. The method of claim 1, wherein the file comprises an executable file.
+
+3. The method of claim 2, wherein the executable file comprises an
+
+application.
+
+4. The method of claim 1, wherein identifying (S23) the file being
+opened comprises:
+
+determining a unique value of the file, the unique value being a hash
+value generated according to a hashing algorithm; and
+
+comparing the unique value to entries in the database (303) of known
+
+good software.
+
+5. The method of claim 4, wherein the performing (S26, $27) at least one
+of allowing and preventing the opening of the file from continuing comprises
+allowing the file to continue to be opened if it is determined that the
+determined unique value corresponds to an entry in the database (303) of
+
+known good software.
+
+6. The method of claim 1, further comprising providing date stamp
+information for each entry in the database (304) of unfamiliar software
+
+indicating a date on which the entry was first made.
+
+7. The method of claim 1, further comprising providing a value for each
+entry in the database (304) of unfamiliar software indicating a number of
+
+times a file corresponding to the entry was opened.
+
+8. The method of claim 7, wherein the value comprises the number of
+
+times an executable in a file has been executed.
+
+J00049156EP
+EP 04 822 016.4
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+9. The method of claim 7, further comprising moving an entry from the
+database (304) of unfamiliar software to the database (303) of known good
+software if it is determined that the number of times the file corresponding to
+
+the entry was opened is greater than a predetermined value.
+
+10. The method of claim 6, further comprising determining (S40) the
+amount of time an entry has been in the database (304) of unfamiliar software
+
+by comparing (S39) the date stamp information with a current date.
+
+11. The method of claim 10, further comprising moving (S42) an entry
+from the database (304) of unfamiliar software to the database (303) of known
+good software if it is determined that the entry has been in the database (304)
+
+of unfamiliar software for a sufficient period of time.
+
+12. The method of claim 1, further comprising placing at least one
+operating system call hook (305) if it is determined that an entry exists in the
+
+database (304) of unfamiliar software.
+
+13. The method of claim 12, wherein the operating system call hook (305)
+notifies a Trojan notification service (402) that a file corresponds to an entry
+
+in the database (304) of unfamiliar software.
+
+14. The method of claim 13, wherein the Trojan notification service (402)
+prompts (403) a user for input regarding whether the operating system call
+
+should be passed along.
+
+15. The method of claim 14, wherein opening (S22, $30) of the file is
+
+allowed to proceed if the operating system call is passed along.
+
+16. A system for maintaining computer security, comprising:
+
+a database (303) of known good software;
+
+15
+
+J00049156EP
+EP 04 822 016.4
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+means (300) for opening (S22, $30) a file;
+
+means (301) for identifying (S23, S31) the file being opened;
+
+means (302) for determining (S24, $32) whether an entry exists in the
+database (303) of known good software for the identified file; and
+
+means (300) for performing (S26, $27) at least one of allowing and
+preventing the opening of the file from continuing based on the result of the
+determination,
+
+the system characterized by:
+
+a database (304) of unfamiliar software;
+
+means for determining (S35) whether an entry exists in the database
+(304) of unfamiliar software for the identified file if it is determined that an
+entry does not exist in the database (303) of known good software for the
+identified file;
+
+means for adding an entry to the database (304) of unfamiliar software
+if it is determined that an entry for the identified file does not exist in the
+database (304) of unfamiliar software;
+
+means for determining, based on an amount of time that the entry has
+been in the database (304) of unfamiliar software or the number of times that
+the identified file has been opened, whether the entry in the database (304) of
+unfamiliar software can be moved to the database (303) of known good
+software, when it is determined that an entry for the identified file exists in the
+database (304) of unfamiliar software; and
+
+means ‘for selectively moving the entry from the database (304) of
+unfamiliar software to the database (303) of known good software based on
+the determination as to whether the entry can be moved to the database (303)
+
+of known good software.
+
+17. The system of claim 16, wherein the file comprises an executable file.
+18. The system of claim 17, wherein the executable file comprises an
+application.
+
+J00049156EP 16
+
+EP 04 822 016.4
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+19. The system of claim 16, wherein the means (301) for identifying (S23)
+the file being opened comprises:
+
+means for determining a unique value of the file, the unique value
+being a hash value generated according to a hashing algorithm; and
+
+means for comparing the unique value to entries in the database (303)
+
+of known good software.
+
+20. The system of claim 19, wherein the means (300) for performing (S26,
+S27) at least one of allowing and preventing the opening of the file from
+continuing comprises means for allowing the file to continue to be opened if it
+is determined that the determined unique value corresponds to an entry in the
+
+database (303) of known good software.
+
+21. The system of claim 16, further comprising means for providing date
+stamp information for each entry in the database (304) of unfamiliar software
+
+indicating a date on which the entry was first made.
+
+22. The system of claim 16, further comprising means for providing a
+value for each entry in the database (304) of unfamiliar software indicating a
+
+number of times a file corresponding to the entry was opened.
+
+23. The system of claim 22, wherein the value comprises the number of
+
+times an executable in a file has been executed.
+
+24. The system of claim 22, wherein the means for moving moves an
+entry from the database (304) of unfamiliar software to the database (303) of
+known good software if it is determined that the number of times the file
+
+corresponding to the entry was opened is greater than a predetermined value.
+
+25. The system of claim 21, further comprising means for determining
+
+J00049 1S56EP 17
+
+EP 04 822 016.4
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+(S40) the amount of time an entry has been in the database (304) of unfamiliar
+
+software by comparing (S39) the date stamp information with a current date.
+
+26. The system of claim 25, wherein the means for moving moves (S42)
+an entry from the database (304) of unfamiliar software to the database (303)
+of known good software if it is determined that the entry has been in the
+
+database (304) of unfamiliar software for a sufficient period of time.
+
+27. The system of claim 16, further comprising means for placing at least
+one operating system call hook (305) if it is determined that an entry exists in
+
+the database (304) of unfamiliar software.
+
+28. The system of claim 27, wherein the operating system call hook (305)
+notifies a Trojan notification service (402) that a file corresponds to an entry
+
+in the database (304) of unfamiliar software.
+
+29. The system of claim 28, wherein the Trojan notification service (402)
+prompts a user for input regarding whether the operating system call (305)
+
+should be passed along.
+
+30. The system of claim 29, wherein opening (S22, S30) of the file is
+
+allowed to proceed if the operating system call is passed along.
+
+31. A computer recording medium including computer executable code
+which, when executed on a computing device, results in performance of the
+
+steps of any one of claims | to 15.
+
+J00049156EP 18
+
+EP 04 822 016.4

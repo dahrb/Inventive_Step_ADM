@@ -1,0 +1,213 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+MULLER - HOFFMANN & PARTNER -1-
+
+Sony DADC Austria AG - EP 09 004 727.5 File: 60331 Main Req. 30.01.2020
+
+Claims (Main Request)
+
+1. A method for providing a license to a user for accessing a purchasable
+protected content on a user device (200) in a system for providing a license, the
+protected content comprising an audio file, a video file, an e-book file, a computer
+game or a computer program, the method comprising:
+
+transmitting user authentication data from the user device (200) to a user
+account server (208);
+
+if the user authentication data corresponds to a valid user account on the
+user account server (208), generating a security token at the user account server
+(208) and transmitting the security token to the user device (200), user
+identification data being retrievable from the security token for the user account
+server (208), the user identification data corresponding to the system’s internal data
+to identify a user in a user account database at the user account server (208);
+
+transmitting the security token from the user device (200) to a license server
+(220), the license server (220) being a server separate from the user account server
+(208);
+
+transmitting the security token from the license server (220) to the user
+account server (208);
+
+verifying the security token at the user account server (208);
+
+if the security token has been verified, retrieving, from the user account
+database, the user identification data, and transmitting the user identification data
+from the user account server (208) to the license server (220);
+
+checking, at the license server (220), whether the user corresponding to the
+user identification data is entitled to the license; and
+transmitting a key for decrypting the protected content from the license server (220)
+to the user device (200), if the user identification data is validated and if the user is
+
+deemed entitled to the license.
+
+2. The method for providing a license according to claim 1, further comprising:
+generating the key in the license server (220) in accordance with a digital
+
+rights management system.
+3. The method for providing a license according to claim 1 or 2, wherein
+the key is transmitted from the license server (220) to the user device (200)
+
+via the user account server (208).
+
+4. The method for providing a license according to any of claims 1 to 3, further
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+MULLER - HOFFMANN & PARTNER -2-
+
+Sony DADC Austria AG - EP 09 004 727.5 File: 60331 Main Req. 30.01.2020
+
+comprising:
+transmitting user device identification data to the license server (220); and
+transmitting the key only if the user device (200) with the user device
+
+identification data is entitled to receive the license.
+
+5. The method for providing a license according to any of claims 1 to 4, further
+comprising:
+
+de-activating a license by performing a de-activation command on the user
+device (200) and transmitting a de-activation confirmation from the user device
+
+(200) to the license server (220).
+
+6. The method for providing a license according to any of claims 1 to 5, wherein
+the user authentication data is transmitted after an application for accessing
+
+the protected content is launched on the user device (200).
+
+7. The method for providing a license according to any of claims 1 to 5, wherein
+the user authentication data is transmitted after a separate license handling
+
+application is launched on the user device (200).
+
+8. The method for providing a license according to any of claims 1 to 7, further
+comprising:
+
+purchasing the computer program by communication with an online shop
+server (300);
+
+verifying the user authentication data by the online shop server (300) at the
+user account server (208);
+
+transmitting the user identification data and game identification data from
+
+the online shop server (300) to the license server (220).
+
+9. A system for providing a license for accessing a purchasable protected
+content on a user device (200), the protected content comprising an audio file, a
+video file, an e-book file, a computer game or a computer program, the system
+comprising:
+a user account server (208) including
+a first receiver (602) configured to receive user authentication data
+from the user device (200),
+a first control unit (604) configured to check whether the user
+authentication data corresponds to a valid user account of the user on the
+
+user account server (208), the user account server (208) being configured to
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+MULLER - HOFFMANN & PARTNER -3-
+
+Sony DADC Austria AG - EP 09 004 727.5 File: 60331 Main Req. 30.01.2020
+
+generate a security token, if the user authentication data corresponds to a
+valid user account, user identification data being retrievable from the
+security token for the user account server (208), the user identification data
+corresponding to the system’s internal data to identify a user in a user
+account database at the user account server (208); and
+a first transmitter {606) configured to transmit the security token to
+the user device (200);
+the system further comprising
+a license server (220) including
+a second receiver (608) configured to receive the security token from
+the user device (200);
+a second transmitter (612) configured to transmit the security token to
+the user account server (208),
+the user account server (208) further being configured to verify the security token
+and to retrieve, from the user account database, the user identification data, if the
+security token has been verified, the first transmitter being configured to transmit
+the user identification data to the license server (220);
+the second receiver being configured to receive the user identification data from the
+user account server (208), the license server (220) further comprising
+a second control unit (610) configured to check, whether the user
+corresponding to the user identification data is entitled to the license;
+the second transmitter (612) further being configured to transmit a key for
+decrypting the protected content to the user device (200), if the user identification
+data is received and if the user is entitled to the license, the license server (220)
+
+being a server separate from the user account server (208).
+
+10. A system for providing a license according to claim 9, further comprising:
+a separate software module and a content protection application (202) within
+the user device (200), wherein the separate software module is configured
+to transmit the user authentication data to the user account server
+(208), to receive the security token from the user account server (208), and
+to transmit the security token to the content protection application
+and wherein the content protection application (202) is configured
+to transmit the security token and an unlock request to the license
+server (220) and
+
+to receive the key from the license server (220).
+
+11. A system for providing a license according to claim 9, further comprising:
+
+--- PAGE 4 ---
+MULLER - HOFFMANN & PARTNER
+
+-4-
+Sony DADC Austria AG - EP 09 004 727.5
+
+File: 60331 Main Req. 30.01.2020
+
+a separate software module and a content protection application (202) within
+
+the user device (200), wherein the separate software module is configured
+
+to transmit the user authentication data to the user account server
+(208),
+
+to receive the security token from the user account server (208),
+
+to transmit the security token and an unlock request to the license
+server (220)
+
+to receive the key from the license server (220) and
+
+to transmit the key to the content protection application (202).
+10

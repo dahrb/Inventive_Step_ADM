@@ -1,0 +1,99 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 14 814 666.5
+Huawei Technologies Co., Ltd.
+P46956/EP main request
+
+MAIN REQUEST
+
+1. A method for processing an application of a mobile terminal, the method
+comprising:
+
+e receiving a first operating command input by a user of the mobile
+terminal, and determining a first application corresponding to the
+first operating command (S20),
+
+e receiving a second operating command input by the user, and
+determining content corresponding to the second operating
+command (S21),
+
+e determining an occurrence time of the second operating command,
+determining a first user habit statistical sub-table, from at least two
+user habit statistical sub-tables, corresponding to a time span in
+which the determined occurrence time falls,
+wherein each of the at least two user habit statistical sub-tables
+corresponds to a different time span of a day and the sum of all time
+spans equals a duration of a whole day, wherein at least one piece of
+user habit information and number of use corresponding to the user
+habit information are recorded in each of the user habit statistical
+sub-tables, and the user habit information comprises first
+application information and first content information,
+
+e updating the determined first user habit statistical sub-table
+according to the first application corresponding to the first operating
+command and the content corresponding to the second operating
+command,
+
+e generating, at a preset point of time, a user habit list based on one of
+the at least two user habit statistical sub-tables, being a second user
+habit statistical sub-table, which corresponds to a time span in which
+the present point of time falls,
+
+e generating a display interface, wherein the display interface
+comprises the user habit list, the user habit list comprises at least
+
+one user habit option, and each user habit option comprises second
+
+Us\Anaqua\83754549EP04 Oral Proceedings Written Submission\Amended claims _main.doc
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+EP 14 814 666.5
+Huawei Technologies Co., Ltd.
+P46956/EP main request
+2
+application information and second content information (S10),
+wherein each user habit option is selectable by an operating
+command,
+
+e receiving a third operating command input by the user, and
+determining a user habit option corresponding to the third operating
+command (S11),
+
+e triggering a second application indicated by the second application
+information of the determined user habit option, which corresponds
+to the third operating command, to parse the second content
+information of the determined user habit option, which corresponds
+to the third operating command, so that the second application runs
+content corresponding to the second content information (S12),
+
+e updating the second user habit statistical sub-table according to the
+second application corresponding to the third operating command
+
+and the content corresponding to the second content information.
+2. The method according to claim 1, further comprising:
+clearing content of the each of the at least two user habit statistical tables in a
+
+preset time period.
+
+3. A device for processing an application of a mobile terminal, wherein the
+
+device is configured to perform any of the methods according to claims 1 — 2.
+
+Us\Anaqua\83754549EP04 Oral Proceedings Written Submission\Amended claims _main.doc

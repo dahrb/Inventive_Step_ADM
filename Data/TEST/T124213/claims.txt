@@ -1,0 +1,123 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+Claims
+
+1. A method (200, 300) for providing data storage capacity on demand
+comprising:
+
+disabling (203, 302) a set of data media storage slot elements (408-411, 416,
+417; 512-517) and data transfer elements (420, 421; 522, 523) of a data
+library disallowing access to said disabled set by end users of said data
+library;
+
+partitioning (202, 303) at least a portion of a set of active data media storage
+slot elements (404-407, 412-415; 504-509) and active data transfer elements
+(418, 419,422, 423: 518-521) of said data library, exclusive of said disabled
+set of data media storage slot elements and data transfer elements, into
+partitions for use by said end users; and
+
+redefining (204, 307) said disabled and active sets of data media storage slot
+elements and data transfer elements in response to changes in storage
+capacity rights of a said end user by:
+
+i) enabling at least one data media storage slot element and/or data transfer
+element of said set of disabled data media storage slot elements and data
+transfer elements and assigning said at least one enabled data media storage
+slot element and/or data transfer element to said set of active data media
+storage slot elements and data transfer elements, or
+
+il) disabling at least one data media storage slot element and/or data transfer
+element of said set of active data media storage slot elements and data
+transfer elements and assigning said at least one disabled data media storage
+slot element and/or data transfer element to said set of disabled data media
+
+storage slot elements and data transfer elements.
+
+2. The method of claim 1 further comprising reserving (202) at least a portion
+of said disabled set of data media storage slot elements and data transfer
+
+elements for present and future use by said end user.
+
+3. The method of claim 1 or 2 further comprising charging (204) said end user
+for the additional storage capacity provided when said redefining step
+
+comprises enabling at least one data media storage slot element and/or data
+
+10
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+transfer element of said set of disabled data media storage slot elements and
+data transfer elements and assigning said at least one enabled data media
+storage slot element and/or data transfer element to said set of active data
+
+media storage slot elements and data transfer element.
+
+4. The method of any preceding claim wherein said data library is controlled
+by a storage service provider and said end users are customers of said
+
+storage service provider.
+
+5. The method of any preceding claim further comprising keying (304) the
+number of data media storage slot elements and data transfer elements in
+said set of active data media storage slot elements and data transfer elements
+
+on a license purchased by said end user.
+
+6. A data library configured to provide storage capacity on demand, said data
+library comprising:
+
+a plurality of data transfer elements (418-423; 518-523) and a plurality of data
+media storage slot elements (404-417; 504-517),
+
+said data library being configured to define a set of said data transfer
+elements (420, 421; 522, 523) and data media storage slot elements (408-
+411, 416, 417; 512-517) that is disabled such as to disallow access to end
+users of the data library and a set of active said data transfer elements (418,
+419, 422, 423; 518-521) and data media storage slot elements (404-407, 412-
+415; 504-509) that is partitioned (401, 403; 501, 502) and
+
+being reconfigurable to enable data transfer elements (420, 421; 522, 523)
+and data media storage slot elements (408-411, 416, 417; 512-517) from said
+set of disabled data transfer elements and data media storage slot elements
+and assign said enabled data transfer elements and data media storage slot
+elements to a partition (401, 403; 501, 502) of said set of active data transfer
+
+and data media storage slot elements.
+
+7. A data library as claimed in claim 6 configured to define a plurality of said
+partitions and comprising a library controller (113) that presents respective
+
+virtual controllers (LUNO, LUN1, LUN2) assigned to control said partitions.
+
+11
+
+--- PAGE 3 ---
+10
+
+8. A data library as claimed in claim 7, wherein said library controller (113)
+is configured such that it will not accept a data media move command to move
+data media to a data transfer element or data media storage slot element in
+said set of disabled data transfer elements and data media storage slot
+
+elements.
+
+9. A data library as claimed in claim 6, 7or 8, comprising a management card
+(112) that is configured to block enabling of a data transfer element or data
+media storage slot element from said set of disabled data transfer elements
+and data media storage slot elements if enabling said data transfer element or
+data media storage slot element results in a library capacity above an allowed
+
+limit.
+
+12

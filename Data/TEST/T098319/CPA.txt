@@ -1,0 +1,45 @@
+TITLE:
+System and method for cross-platform application execution and display
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A method is provided for downloading and running a non-native application designed for a source operating system (OS) on a target device having a target OS, the method comprising: connecting the target device to a source device having the application in a paring operation; transferring a shareable provisional profile containing characteristics related to the application, including information on the source OS needed to run the application from the source device to the target device; obtaining the source OS on the target device Once the source OS is present on the target device, the method comprises downloading the application from the source device to the target device; executing the source OS as a virtual machine on the target device; and running the application within the source OS virtual machine.
+
+CLAIMS:
+A method for downloading and running a non-native application designed for a source operating system (OS) on a target device having a target OS, the method comprising:
+connecting the target device to a source device having the application in a paring operation;
+transferring a provisional profile containing characteristics related to the application, including information on the source OS needed to run the application from the source device to the target device;
+obtaining the source OS on the target device using on the provisional profile; once the source OS is present on the target device:
+downloading the application from the source device to the target device;
+executing the source OS as a virtual machine in the target OS on the target device; and
+running the application within the source OS virtual machine.
+The method of claim 1, wherein the information on the source OS includes a source OS version number or range and the obtaining of the source OS is obtaining a source OS version that matches the version number or is within the range.
+The method of one of the previous claims, wherein obtaining the source OS based using the provisioning profile comprises:
+a) preloading, prior to the connecting, the source OS on the target device;
+b) downloading the source OS from the source device via the pairing connection between the source device and the target device; or
+c) downloading the source OS from a network storage area over a network.
+The method of one of the previous claims, wherein the provisioning profile further includes application data and hardware resources.
+The method of one of the previous claims, further comprising performing, in sequence:
+checking whether the source OS has been preloaded on the target device;
+if no, then checking whether the source OS is available on the source device;
+if yes, then performing step (b);
+if no, then checking whether the source OS is available in the network storage area;
+if yes, then performing step (c).
+The method of one of the previous claims, further comprising indicating a failure to download the application if the source OS is not obtained.
+The method of one of the previous claims, further comprising repeating the steps of claim 1 with a role of the source device and the target device reversed.
+The method of one of the previous claims, wherein the source device contains a plurality of versions of its source OS, each directed to a different target device platform.
+The method of one of the previous claims, further comprising:
+performing a discovery process prior to the pairing to determine if the source device has a specified application.
+The method of the previous claim 9, further comprising:
+automatically sending out an inquiry by the target device to perform the discovery process; and
+responding to the inquiry by the source device.
+An electronic device for downloading and running a non-native application designed for a source operating system (OS), the electronic device having a target OS, the electronic device being operable to:
+connect to a source device having the application in a paring operation;
+transfer from the source device a provisional profile containing characteristics related to the application, including information on the source OS needed to run the application;
+obtain the source OS on the target device using on the provisional profile; once the source OS is present on the target device:
+download the application from the source device to the target device;
+execute the source OS as a virtual machine in the target OS on the target device; and
+run the application within the source OS virtual machine.
+A non-transitory computer program product, comprising a computer usable medium having a computer readable program code embodied therein, said computer readable program code adapted to be executed to implement the method according to claims 1 to 10.

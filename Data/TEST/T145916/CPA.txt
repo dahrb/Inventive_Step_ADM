@@ -1,0 +1,120 @@
+TITLE:
+System and method for creating trick play video streams from a compressed normal play video bitstream
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method for generating trick play video streams, such as fast forward and fast reverse video streams, from an MPEG compressed normal play bitstream. The system receives a compressed normal play bitstream and filters the bitstream by extracting and saving only portions of the bitstream. The system preferably extracts I-frames and sequence headers, including all weighting matrices, from the MPEG bitstream and stores this information in a new file. The system then assembles or collates the filtered data into the proper order to generate a single assembled bitstream. The system also ensures that the weighting matrixes properly correspond to the respective I-frames. This produces a bitstream comprised of a plurality of sequence headers and I-frames. This assembled bitstream is MPEG-2 decoded to produce a new video sequence which comprises only one out of every X pictures of the original, uncompressed normal play bitstream. This output picture stream is then re-encoded with respective MPEG parameters desired for the trickplay stream, thus producing a trickplay stream that is a valid MPEG encoded stream, but which includes only one of every X frames. The present invention thus generates compressed trick play video streams which require reduced storage and reduced data transfer bandwidth requirements.
+
+CLAIMS:
+1. A computer-implemented method for generating trickplay streams from a compressed normal play bitstream, comprising:
+receiving a compressed normal play bitstream, wherein said compressed normal play bitstream includes a plurality of intracoded frames and a plurality of intercoded frames;
+extracting said intracoded frames from said compressed normal play bitstream, wherein said extracting includes storing said intracoded frames in a storage memory;
+assembling said intracoded frames to form an assembled bitstream after said extracting;
+decoding said assembled bitstream to produce a plurality of uncompressed frames; and
+encoding said plurality of uncompressed frames after said decoding to produce a compressed trick play bitstream, wherein said compressed trick play bitstream includes only a subset of frames of said normal play bitstream.
+2. The method of claim 1, wherein said compressed normal play bitstream includes the plurality of intracoded frames at a specified frequency;
+wherein said extracting comprises extracting data bits corresponding to said intracoded frames at said specified frequency.
+3. The method of claim 1, wherein said compressed normal play bitstream includes a plurality of sequence headers which comprise information for at least a plurality of said intracoded frames;
+wherein said extracting comprises extracting said sequence headers from said compressed normal play bitstream, wherein said extracting includes storing said sequence headers in a storage memory; and
+wherein said assembling comprises assembling said sequence headers and said intracoded frames to form said assembled bitstream.
+4. The method of claim 1, wherein said method generates a trick play fast forward bitstream;
+wherein said assembling comprises assembling said intracoded frames in a forward time order.
+5. The method of claim 1, wherein said method generates a trick play fast reverse bitstream;
+wherein said assembling comprises assembling said intracoded frames in a reversed time order.
+6. The method of claim 1, wherein said compressed normal play bitstream includes a plurality of matrices which correspond to said intracoded frames;
+the method further comprising:
+locating said matrices in said compressed normal play bitstream;
+wherein said assembling said intracoded frames to form said assembled bitstream includes including said matrices in said assembled bitstream.
+7. The method of claim 6, wherein each of said plurality of matrices correspond to one of said intracoded frames;
+wherein said assembling comprises assembling respective ones of said matrices with corresponding ones of said intracoded frames.
+8. The method of claim 1, wherein said compressed normal play bitstream is an MPEG compressed bitstream;
+wherein said decoding said assembled bitstream comprises MPEG decoding said assembled bitstream to produce said plurality of uncompressed frames; and
+wherein said encoding said plurality of uncompressed frames comprises MPEG encoding said plurality of uncompressed frames to produce an MPEG compressed trick play bitstream.
+9. A system for generating trickplay streams from a compressed normal play bitstream, comprising:
+a storage media storing a compressed normal play bitstream, wherein said compressed normal play bitstream includes a plurality of intracoded frames and a plurality of interceded frames;
+a filter for extracting said intracoded frames from said compressed normal play bitstream;
+a storage memory for storing said extracted intracoded frames;
+a verifier/fixer for assembling said stored intracoded frames to form an assembled bitstream;
+a decoder which decodes said assembled bitstream to produce a plurality of uncompressed frames; and
+an encoder which encodes said plurality of uncompressed frames to produce a compressed trick play bitstream, wherein said compressed trick play bitstream includes only a subset of frames of said normal play bitstream.
+10. The system of claim 9, wherein said compressed normal play bitstream includes the plurality of intracoded frames at a specified frequency;
+wherein said filter extracts data bits corresponding to said intracoded frames at said specified frequency.
+11. The system of claim 9, wherein said compressed normal play bitstream includes a plurality of sequence headers which comprise information for at least a plurality of said intracoded frames;
+wherein said filter extracts said sequence headers from said compressed normal play bitstream, and stores said sequence header in said storage memory; and
+wherein said verifier/fixer assembles said sequence headers and said intracoded frames to form said assembled bitstream.
+12. The system of claim 9, wherein said system generates a trick play fast forward bitstream;
+wherein said verifier/fixer assembles said intracoded frames in a forward time order.
+13. The system of claim 9, wherein said system generates a trick play fast reverse bitstream;
+wherein said verifier/fixer assembles said intracoded frames in a reversed time order.
+14. The system of claim 9, wherein said compressed normal play bitstream includes a plurality of matrices which correspond to said intracoded frames;
+wherein said filter locates said matrices in said compressed normal play bitstream and stores said matrices in said storage memory;
+wherein said verifier/fixer assembles said intracoded frames and said matrices to form said assembled bitstream.
+15. The system of claim 14, wherein each of said plurality of matrices correspond to one of said intracoded frames;
+wherein said verifier/fixer assembles respective ones of said matrices with corresponding ones of said intracoded frames.
+16. The method of claim 9, wherein said compressed normal play bitstream is an MPEG compressed bitstream;
+wherein said decoder is an MPEG decoder; and
+wherein said encoder is an MPEG encoder.
+17. A method for generating trickplay streams from an MPEG compressed normal play bitstream, comprising:
+receiving a compressed normal play bitstream, wherein said compressed normal play bitstream includes a plurality of Intra frames, a plurality of Predicted frames, and a plurality of Bi-directionally predicted frames;
+extracting said Intra frames from said compressed normal play bitstream, wherein said extracting includes storing said Intra frames in a storage memory;
+assembling said Intra frames to form an assembled bitstream after said extracting;
+decoding said assembled bitstream to produce a plurality of uncompressed frames; and
+encoding said plurality of uncompressed frames after said decoding to produce a compressed trick play bitstream, wherein said compressed trick play bitstream includes only a subset of frames of said normal play bitstream.
+18. A computer-implemented method for generating trickplay streams from a compressed normal play bitstream, comprising:
+receiving a compressed normal play bitstream, wherein said compressed normal play bitstream includes a plurality of intracoded frames and a plurality of intercoded frames;
+extracting said intracoded frames from said compressed normal play bitstream, wherein said extracting includes storing said intracoded frames in a storage memory;
+assembling said intracoded frames to form an assembled bitstream after said extracting; and
+storing said assembled bitstream;
+wherein said compressed normal play bitstream includes a plurality of sequence headers which comprise information for at least a plurality of said intracoded frames; wherein said extracting comprises extracting said sequence headers from said compressed normal play bitstream, wherein said extracting includes storing said sequence headers in a storage memory; and wherein said assembling comprises assembling said sequence headers and said intracoded frames to form said assembled bitstream.
+19. The method of claim 18, wherein said method generates a trick play fast forward bitstream;
+wherein said assembling comprises assembling said intracoded frames in a forward time order.
+20. The method of claim 18, wherein said method generates a trick play fast reverse bitstream;
+wherein said assembling comprises assembling said intracoded frames in a reversed time order.
+21. A computer-implemented method for generating trickplay streams from a compressed normal play bitstream, comprising:
+receiving a compressed normal play bitstream, wherein said compressed normal play bitstream includes a plurality of intracoded frames and a plurality of interceded frames;
+extracting said intracoded frames from said compressed normal play bitstream, wherein said extracting includes storing said intracoded frames in a storage memory;
+assembling said intracoded frames to form an assembled bitstream after said extracting; and
+storing said assembled bitstream;
+wherein said compressed normal play bitstream includes a plurality of matrices which correspond to said intracoded frames; the method further comprising:
+locating said matrices in said compressed normal play bitstream;
+wherein said assembling said intracoded frames to form said assembled bitstream includes including said matrices in said assembled bitstream.
+22. The method of claim 21, wherein each of said plurality of matrices correspond to one of said intracoded frames;
+wherein said assembling comprises assembling respective ones of said matrices with corresponding ones of said intracoded frames.
+23. The method of claim 21, wherein said method generates a trick play fast forward bitstream; wherein said assembling comprises assembling said intracoded frames in a forward time order.
+24. The method of claim 23, wherein said method generates a trick play fast reverse bitstream; wherein said assembling comprises assembling said intracoded frames in a reversed time order.
+25. A computer-implemented method for generating trickplay streams from a compressed normal play bitstream, comprising:
+receiving a compressed normal play bitstream, wherein said compressed normal play bitstream includes a plurality of intracoded frames and a plurality of intercoded frames;
+extracting said intracoded frames from said compressed normal play bitstream, wherein said extracting includes storing said intracoded frames in a storage memory;
+assembling said intracoded frames to form an assembled bitstream after said extracting; and
+storing said assembled bitstream;
+decoding said assembled bitstream to produce a plurality of uncompressed frames after said storing said assembled bitstream;
+encoding said plurality of uncompressed frames after said decoding to produce a compressed trick play bitstream wherein said compressed trick play bitstream includes only a subset of frames of said normal play bitstream; and
+storing said compressed trick play bitstream.
+26. The method of claim 25, wherein said compressed normal play bitstream is an MPEG compressed bitstream;
+wherein said decoding said assembled bitstream comprises MPEG decoding said assembled bitstream to produce said plurality of uncompressed frames; and
+wherein said encoding said plurality of uncompressed frames comprises MPEG encoding said plurality of uncompressed frames to produce an MPEG compressed trick play bitstream.
+27. The method of claim 25, wherein said method generates a trick play fast forward bitstream; wherein said assembling comprises assembling said intracoded frames in a forward time order.
+28. The method of claim 27, wherein said method generates a trick play fast reverse bitstream; wherein said assembling comprises assembling said intracoded frames in a reversed time order.
+29. A computer-readable storage media for operating in a computer system, the computer system including a central processing unit and memory, wherein the computer-readable storage media includes a substrate having a physical configuration representing data, the storage media comprising:
+an extraction program comprised on the storage media for extracting intracoded frames from a compressed normal play bitstream, wherein said extraction program stores said intracoded frames in a storage memory;
+an assembling program for assembling said intracoded frames to form an assembled bitstream;
+a decoding program for decoding said assembled bitstream to produce a plurality of uncompressed frames; and
+an encoding program for encoding said plurality of uncompressed frames after operation of said decoding program to produce a compressed trick play bitstream, wherein said compressed trick play bitstream includes only a subset of frames of said normal play bitstream.
+30. The computer-readable storage media of claim 29, wherein said compressed normal play bitstream includes a plurality of sequence headers which comprise information for at least a plurality of said intracoded frames;
+wherein said extraction program extracts said sequence headers from said compressed normal play bitstream, wherein said extraction program stores said sequence headers in a storage memory; and
+wherein said assembling program assembles said sequence headers and said intracoded frames to form said assembled bitstream.
+31. A computer implemented method for generating a reverse trick play stream from a compressed normal play video stream, comprising:
+receiving a compressed normal play video stream, wherein said compressed normal play video stream includes video data;
+storing a marker onto a memory stack;
+searching for a start code in the video stream, wherein said searching comprises searching from the end to the beginning of the compressed normal play video stream;
+finding a start code in the video stream in response to said searching;
+storing coordinates of a user data block onto the memory stack if said finding finds a start code of a user data block;
+storing coordinates of an extension block onto the memory stack if said finding finds a start code for an extension block;
+popping coordinates from the memory stack until the marker is detected if said finding finds a start code of a B or P frame picture header block, wherein the marker remains on the stack;
+storing coordinates of an I-frame picture header block onto the memory stack if said finding finds a start code for an I-frame picture header;
+popping coordinates currently on the memory stack until the marker is detected after said storing coordinates of the I-frame picture header block on the memory stack, if said finding finds a start code for an I-frame picture header;
+writing data from the compressed normal play video stream indicated by said coordinates removed from the memory stack to an output reverse trick play stream as said coordinates are popped from the memory stack in said popping if said finding finds a start code for an I-frame picture header;
+searching for a first sequence header start code if said finding finds a start code for an I-frame picture header; and
+repeating said searching for a start code in the video stream and subsequent steps for a plurality of times to generate said reverse trick play stream.

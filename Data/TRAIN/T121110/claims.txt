@@ -1,0 +1,88 @@
+--- PAGE 1 ---
+20
+
+Main Claim Set
+
+. A method of authorizing a transaction in which transaction information in-
+
+dicative for the transaction is presented from a server to a user at an Inter-
+net access device (PC) in a first information set in a first format suitable for
+presentation on the Internet access device (PC), the method comprising
+steps performed by the server or a further server:
+creating a second information set in a second format suitable for
+presentation at a mobile terminal (PTD), wherein the second infor-
+mation set is representative of the first information set;
+linking the first information set and the second information set;
+sending the second information set to a public land mobile network
+(PLMN) for presentation to the user at the mobile terminal (PTD);
+receiving authentication information from the mobile terminal (PTD)
+through the PLMN; and
+requesting a verification of the received authentication information
+
+before authorizing the transaction.
+
+. The method of claim 1, wherein linking the first information set and the
+
+second information set further comprises sending a wireless application
+
+protocol (WAP) push message to the mobile terminal (PTD).
+
+. The method of claim 2, wherein the WAP push message comprises a hy-
+
+perlink to the second information set.
+
+Page 1 of 3
+
+--- PAGE 2 ---
+20
+
+. The method of claim 3, wherein the first information set is formatted in hy-
+
+pertext markup language (HTML) and the second information set is format-
+
+ted in wireless markup language (WML).
+
+. The method of claim 4, wherein the second information set is further for-
+
+matted to be signed by a user using a WAP signText script.
+
+. The method of any of the claims 1 to 5, wherein the authentication infor-
+
+mation comprises client-side public key infrastructure (PKI) information.
+
+. Server for authorizing a transaction in which transaction information indica-
+
+tive for the transaction is presented from the server or a further server to a
+user at an Internet access device (PC) in a first information set in a first
+format suitable for presentation on the Internet access device (PC), the
+server comprising:
+means operable for creating a second information set in a second for-
+mat suitable for presentation at a mobile terminal (PTD), wherein the
+second information set is representative of the first information set;
+means operable for linking the first information set and the second in-
+formation set;
+means operable for sending the second information set to a public land
+mobile network (PLMN) for presentation to the user at the mobile termi-
+
+nal (PTD);
+
+Page 2 of 3
+
+--- PAGE 3 ---
+means operable for receiving authentication information from the mobile
+terminal (PTD) through the PLMN; and
+means operable for requesting a verification of the received authentica-
+
+tion information before authorizing the transaction.
+
+5
+8. A computer program product comprising a computer program adapted to
+perform the steps of the method according to any of the claims 1 to 6.
+9. A network adapted to perform the steps of the method according to any of
+10 the claims 1 to 6.
+
+10.A system adapted to perform the steps of the method according to any of
+
+the claims 1 to 6.
+
+Page 3 of 3

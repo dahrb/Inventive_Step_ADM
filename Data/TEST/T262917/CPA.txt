@@ -1,0 +1,52 @@
+Title: 
+Data communication control
+
+Abstract: 
+A femtocell base station apparatus may sense a wireless propagation environment around the femtocell base station apparatus to obtain wireless propagation environment information, transmit first control information including the wireless propagation environment information to at least one master base station adjacent to the femtocell base station apparatus, receive second control information from the at least one master base station, and control data communication performed between the femtocell base station apparatus and a mobile terminal based on the second control information.
+
+Type: US Patent
+
+Claims: 
+1. A femtocell base station apparatus, comprising:
+a sensing unit configured to sense a wireless propagation environment around the femtocell base station apparatus to obtain wireless propagation environment information;
+a transceiver configured to transmit first control information including the wireless propagation environment information to at least one master base station adjacent to the femtocell base station apparatus, and to receive second control information from the at least one master base station; and
+a controlling unit configured to control data communication performed between the transceiver and a mobile terminal based on the second control information.
+2. The apparatus of claim 1, wherein the transceiver transmits the first control information and receives the second control information using at least one of a wired communication network and a wireless communication network.
+3. The apparatus of claim 1, wherein the wireless propagation environment information includes at least one of a channel gain of at least one frequency band and a signal-to-noise ratio (SNR) with respect to the at least one frequency band.
+4. The apparatus of claim 1, wherein the first control information further includes at least one of a frequency bandwidth used when the data communication is performed, an amount of data to be communicated during the data communication, and a minimum cell coverage of the femtocell base station apparatus.
+5. The apparatus of claim 1, wherein the second control information includes at least one of a frequency band available to the femtocell base station apparatus, maximum transmission power permitted in the frequency band, and a cell coverage of the femtocell base station apparatus.
+6. The apparatus of claim 1, wherein the second control information includes wireless propagation environment information around at least one femtocell base station apparatus adjacent to the femtocell base station apparatus.
+7. The apparatus of claim 1, wherein the transceiver transmits the first control information using a time division duplex (TDD) frame signal including a transmission frame and reception frame, receives the second control information, and performs data communication with the mobile terminal.
+8. The apparatus of claim 7, wherein the master base station and the transceiver perform data communication with the mobile terminal using the same frequency band, and the controlling unit transposes a location of the transmission frame and reception frame in the TDD frame signal to control the transceiver to transmit the first control information and receive the second control information.
+9. The apparatus of claim 7, wherein the master base station and the transceiver perform data communication with the mobile terminal using the same frequency band, and the controlling unit shifts a location of the transmission frame and reception frame in the TDD frame signal based on a predetermined value to control the transceiver to transmit the first control information and receive the second control information.
+10. The apparatus of claim 1, wherein the master base station and the transceiver perform data communication with the mobile terminal using different frequency bands from each other, and the transceiver transmits the first control information and receives the second control information using a first frequency band in a frequency band used for data communication with the mobile terminal or a third frequency band excluding the frequency bands used for the data communication with the mobile terminal.
+11. A master base station controlling a femtocell base station apparatus, the master base station comprising:
+a receiving unit configured to receive first control information including wireless propagation environment information around the femtocell base station apparatus from the femtocell base station apparatus;
+a control information generating unit configured to generate second control information controlling an operation of the femtocell base station apparatus based on the first control information; and
+a transmitting unit configured to transmit the second control information to the femtocell base station apparatus.
+12. The apparatus of claim 11, further comprising:
+a database storing at least one of the first control information and the second control information.
+13. The apparatus of claim 11, wherein the second control information includes at least one of a frequency band available to the femtocell base station apparatus and maximum transmission power permitted in the frequency band.
+14. A method for controlling a femtocell base station apparatus, the method comprising:
+sensing a wireless propagation environment around the femtocell base station apparatus to obtain wireless propagation environment information;
+transmitting first control information including the wireless propagation environment information to at least one master base station adjacent to the femtocell base station apparatus;
+receiving second control information from the at least one master base station; and
+controlling data communication performed between the femtocell base station apparatus and a mobile terminal based on the second control information.
+15. The method of claim 14, wherein the transmitting of the first control information includes transmitting the first control information via at least one of a wired communication network and a wireless communication network, and
+the receiving of the second control information includes receiving the second control information via at least one of the wired communication network and the wireless communication network.
+16. The method of claim 14, wherein the transmitting of the first control information includes transmitting the first control information using a Time Division Duplex (TDD) frame signal including a transmission frame and a reception frame, and
+the transmitting of the second control information includes transmitting the second control information using the TDD frame signal including the transmission frame and the reception frame.
+17. The method of claim 16, wherein the master base station and the femtocell base station perform data communication with the mobile terminal using the same frequency band,
+the transmitting of the first control information includes transmitting the first control information through transposing a location of the transmission frame and the reception frame in the TDD frame signal, and
+the receiving of the second control information includes receiving the second control information through transposing the location of the transmission frame and reception frame in the TDD frame signal.
+18. The method of claim 16, wherein the transmitting of the first control information includes transmitting the first control information through shifting a location of the transmission frame and reception frame in the TDD frame signal based on a predetermined value, and
+the receiving of the second control information includes receiving the second control information through shifting the location of the transmission frame and reception frame in the TDD frame signal based on the predetermined value.
+19. The method of claim 14, wherein the master base station and the femtocell base station apparatus perform data communication with the mobile terminal using different frequency bands from each other,
+the transmitting of the first control information includes transmitting the first control information using a first frequency band in a frequency band used for data communication with the mobile terminal or a third frequency band excluding the frequency band used for the data communication with the mobile terminal, and
+the receiving of the second control information includes receiving the second control information using the first frequency band in the frequency band used for data communication with the mobile terminal or the third frequency band excluding the frequency band used for the data communication with the mobile terminal.
+20. A computer readable storage medium comprising computer readable instructions causing a computer to implement the method of claim 14.
+21. A mobile terminal performing data communication with a master base station and a femtocell base station apparatus, the mobile terminal comprising:
+a sensing unit configured to sense a wireless propagation environment around the femtocell base station apparatus to obtain wireless propagation environment information; and
+a transceiver configured to transmit the sensed wireless propagation environment information to the femtocell base station apparatus, and to perform data communication with one of the master base station and the femtocell base station apparatus,
+wherein the femtocell base station apparatus transmits first control information including the wireless propagation environment information to the master base station, and receives second control information corresponding to the first control information from the master base station, and the transceiver performs data communication with one of the master base station and the femtocell base station apparatus based on the second control information.
+22. The mobile terminal of claim 21, wherein the second control information includes at least one of a frequency band available to the femtocell base station apparatus, maximum transmission power permitted in the frequency band, and cell coverage of the femtocell base station apparatus.

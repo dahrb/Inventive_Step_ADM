@@ -1,0 +1,187 @@
+--- PAGE 1 ---
+AEC16001PWOEP 26.10.2017
+
+Main request
+
+Claims
+
+1. A travel process prediction system predicting a travel process of a travel object
+traveling with transportation repeatedly operated at specific time, characterized by
+comprising:
+
+a means (2) for specifying passage time at which a travel object actually passes
+through each of a plurality of passage points at a departure/arrival facility of
+transportation:
+
+a means (2) for acquiring transportation specifying information which specifies
+transportation used by the travel object: and
+
+a travel process prediction apparatus (1) predicting a travel process of a travel
+object under a specific condition,
+
+wherein the travel process prediction apparatus (1) includes:
+
+a storage means (14) for storing explanatory data comprising an explanatory
+text, where the explanatory text which explains a calculation result of a statistical
+calculation by a means (11) is associated in advance with a feature of information used
+in the statistical calculation and a result of the statistical calculation, and for storing
+passage time specified at each passage point and the acquired transportation
+specifying information in an associated manner for each of a plurality of travel objects:
+
+a means (16) for accepting a plurality of pieces of transportation specifying
+information which specifies a plurality of pieces of transportation which is candidates
+to be used by an arbitrary travel object:
+
+a means (16) for accepting a request for comparing passage time at which the
+travel object passes through a specific passage point when the travel object uses each of
+the plurality of pieces of transportation:
+
+a means (11) for extracting, from the storage means (14), for each of the
+plurality of pieces of transportation specifying information, a plurality of pieces of
+passage time concerning the specific passage point, associated with transportation
+specifying information having a same content as the accepted transportation specifying
+information:
+
+a means (11) for calculating, for each of the plurality of pieces of
+transportation specifying information, a mean or variance of the extracted passage
+time;
+
+a means (11) for statistically testing a difference in the mean or variance of the
+
+passage time calculated for each of the plurality of pieces of transportation specifying
+
+--- PAGE 2 ---
+AEC16001PWOEP 26.10.2017
+
+information:
+
+a means (11) for extracting the explanatory text from the explanatory data in
+accordance with the feature of information used in the statistical calculation and the
+result of the statistical calculation: and
+
+a means (16) for outputting a test result and the explanatory text.
+
+2. The travel process prediction system according to claim 1,
+wherein
+the feature of information used in the statistical calculation includes a number
+
+of observations or a period spent for acquiring information.
+
+3. The travel process prediction system according to claim 1 or 2,
+wherein
+the result of the statistical calculation includes a result of a test in significant
+
+difference or a coefficient of correlation.
+
+4, The travel process prediction system according to claim 1,
+further comprising:
+
+a means (2) for issuing or obtaining identification information of a travel object
+which actually passes through one passage point or a plurality of passage points at a
+departure/arrival facility of transportation:
+
+a means (2) for acquiring the information on a passage order and passage points
+of the travel object which is associated with the identification information and which
+includes change information:
+
+a means (2) for determining whether or not a passage point the travel object
+actually passes is included in the passage points in the latest information associated
+with the identification information or whether or not a passage order the travel object
+actually passes matches with the passage order in the latest information associated with
+the identification information;
+
+a means (2) for recording an error information if the actual passage point is not
+included in the passage points in the latest information or if the actual passage order
+does not match with the passage order in the latest information: and
+
+a travel process prediction apparatus (1) predicting a travel process of a travel
+object under a specific condition,
+
+wherein the travel process prediction apparatus (1) includes:
+
+--- PAGE 3 ---
+AEC16001PWOEP 26.10.2017
+
+a means (11) for removing or masking a combination of passage time with an
+
+abnormal or missing value from the extracted plurality of pieces of the passage time.
+
+5. The travel process prediction system according to claim 1 or 4,
+
+a means (2) for acquiring change information associated with flight/service
+information including a flight/service number and departure date: and wherein the
+travel process prediction system further comprising:
+
+a means (2) for determining when a departure/arrival time of a flight/service is
+different from a scheduled time by a degree greater than a predetermined allowable
+range, whether the change information associated with flight/service information
+including the same flight/service number and departure date as those of the flight/service
+is recorded; and
+
+a means (2) for recording information indicating an abnormality in
+
+transportation if the change information is not recorded.
+
+6. The travel process prediction system according to claim 1, 4 or 5,
+
+a means (2) for acquiring a mean and standard deviation of passage time for
+each of the passage points and flights/services: and wherein the travel process prediction
+system further comprising:
+
+a means (2) for determining whether or not passage time for a passage point
+and flight/service is smaller than the mean — 4 standard deviations for the passage point
+and flight/service or is larger than the mean + 4 standard deviations for the passage
+point and flight/service: and
+
+a means (2) for recording error information if the passage time is smaller than
+
+the mean — 4 standard deviations or is larger than the mean + 4 standard deviations.
+
+7. A computer program (15) for making a computer conduct a comparison in
+passage time at which a travel object traveling with transportation repeatedly operated
+at specific time passes through a specific passage point when the travel object uses each
+of the plurality of pieces of transportation, characterized by comprising the steps of:
+making a computer extract, when data, including passage time at which a travel
+object actually passes through each of a plurality of passage points provided at a
+departure/arrival facility of transportation and including transportation specifying
+information that specifies transportation which is used by the travel object and which is
+
+specified by a plurality of items, are stored in an associated manner for each of the
+
+--- PAGE 4 ---
+AEC16001PWOEP 26.10.2017
+
+plurality of travel objects and when a plurality of pieces of transportation specifying
+information which specifies a plurality of pieces of transportation which is candidates to
+be used by an arbitrary travel object is accepted, a plurality of pieces of passage time
+which concerns the specific passage point and which is associated with transportation
+specifying information having a same content as the accepted transportation specifying
+information, from the data, for each of the plurality of pieces of transportation specifying
+information ($512);
+
+making a computer calculate, for each of the plurality of pieces of transportation
+specifying information, a mean or variance of the extracted passage time (S613, S615,
+$619, S622, $625, S627):
+
+making a computer statistically test a difference in the mean or variance of the
+passage time calculated for each of the plurality of pieces of transportation specifying
+information (S613, S615, S619, S622, S625, S627),
+
+making a computer extract an explanatory text from explanatory data
+comprising an explanatory text, where the explanatory text which explains a calculation
+result of the statistical calculation (S613, S615, S619, S622, S625, S627) is associated in
+advance with a feature of information used in the statistical calculation and a result of
+the statistical calculation, in accordance with the feature of information used in the
+statistical calculation and the result of the statistical calculation (S523); and
+
+making a computer output a test result and the explanatory text (S524).
+
+8. The computer program (15) according to claim 7,
+wherein the feature of information used in the statistical calculation includes a
+
+number of observations or a period spent for acquiring information.
+
+9. The computer program (15) according to claim 7 or 8,
+wherein the result of the statistical calculation includes a result of a test in
+
+significant difference or a coefficient of correlation.

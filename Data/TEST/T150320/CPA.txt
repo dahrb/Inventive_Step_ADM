@@ -1,0 +1,55 @@
+TITLE:
+Guided attachment of accelerators to computer systems
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method of guided attachment of hardware accelerators to slots of a computing system includes dividing a first group of hardware accelerators into a plurality of priority classes, dividing a first group of slots of the computing system into a plurality of hierarchical tiers, and attaching each hardware accelerator of the first group of hardware accelerators to a slot matched to the hardware accelerators based on comparison of a priority class of the hardware accelerator and a hierarchical tier of the slot.
+
+CLAIMS:
+1. A method of guided attachment of hardware accelerators to slots of a computing system, comprising:
+dividing a first group of hardware accelerators into a plurality of priority classes;
+dividing a first group of slots of the computing system into a plurality of hierarchical tiers; and
+attaching each hardware accelerator of the first group of hardware accelerators to a slot matched to the hardware accelerators based on comparison of a priority class of the hardware accelerator and a hierarchical tier of the slot.
+2. The method of claim 1, wherein dividing the first group of hardware accelerators includes:
+identifying a quality of service (QOS) measurement for each hardware accelerator of the first group of hardware accelerators; and
+establishing a priority class for each hardware accelerator of the first group of hardware accelerators based on the QOS measurement for each hardware accelerator.
+3. The method of claim 2, wherein the QOS measurement includes at least one of a jitter rating, a latency rating, and a bandwidth rating.
+4. The method of claim 2, wherein identifying the QOS measurement includes one of run-time profiling, user-profiling, rated specification, and expected specification of each accelerator.
+5. The method of claim 4, wherein run-time profiling includes profiling each hardware accelerator during execution of the computing system with each hardware accelerator attached to slots of the computing system across all workloads and all users of the computer system.
+6. The method of claim 4, wherein user-profiling includes profiling each hardware accelerator based on all workloads run concurrently by a single user of the computer system.
+7. The method of claim 4, wherein rated specification includes specifying each hardware accelerator based on a set of manufacturer provided ratings for each hardware accelerator.
+8. The method of claim 4, wherein expected specification includes specifying each hardware accelerator based on one of:
+request rates, data input sizes, and expected response times for a single workload; and
+an average request rate, data input sizes and expected response times across a set of concurrently running workloads.
+9. The method of claim 1, wherein dividing the first group of slots includes:
+identifying a quality of service (QOS) measurement for each slot of the first group of slots; and
+establishing a hierarchical tier for each slot of the first group of slots based on the QOS measurement for each slot and a proximity of each slot to a main component of the computing system.
+10. The method of claim 9, wherein the main component of the computing system is one of a processor, a memory, a communication bus, and a hardware accelerator.
+11. The method of claim 9, wherein the QOS measurement includes at least one of a jitter rating, a latency rating, and a bandwidth rating.
+12. The method of claim 9, wherein identifying the QOS measurement includes identifying one of a manufacture-time specification and a run-time profiling of each slot.
+13. The method of claim 12, wherein manufacture-time specification includes a QOS specification of each slot upon manufacture of of the computing system.
+14. The method of claim 12, wherein run-time profiling includes profiling each slot based on observation of performance of each slot without attachment of hardware accelerators.
+15. The method of claim 1, wherein:
+attaching each hardware accelerator includes work-load based attachment of each hardware accelerator; and
+work-load based attachment includes attachment of a hardware accelerator in relatively close proximity to a computing system component related to functions of the hardware accelerator.
+16. The method of claim 1, wherein:
+attaching each hardware accelerator includes model-based attachment of each hardware accelerator; and
+model-based attachment includes attachment of a hardware accelerator in a slot based on comparison of one of rated performance value of the hardware accelerator, an expected performance value of the hardware accelerator, and a hierarchical tier of a proposed slot.
+17. The method of claim 1, further comprising:
+attempting to match each hardware accelerator to a slot of the first group of slots;
+establishing a second group of hardware accelerators based on the attempting; and
+attaching each hardware accelerator of the second group of hardware accelerators to the lowest hierarchical tiers of the first group of slots.
+18. The method of claim 17, wherein establishing the second group of hardware accelerators includes flagging hardware accelerators not matched in the attempting as unmatched hardware accelerators.
+19. A computing system, comprising:
+a plurality of hardware accelerator attachment slots disposed in decreasing proximity to main components of the computing system;
+a plurality of interface hubs operatively connecting groups of slots of the plurality of hardware accelerator attachment slots; and
+means for executing a method of guided attachment of hardware accelerators to the plurality of hardware accelerator attachment slots of the computing system, the method including:
+dividing a first group of hardware accelerators into a plurality of priority classes;
+dividing a first group of slots of the plurality of accelerator attachment slots into a plurality of hierarchical tiers based on proximity of each slot to a main component of the computing system; and
+attaching each hardware accelerator of the first group of hardware accelerators to a slot matched to the hardware accelerators based on comparison of a priority class of the hardware accelerator and a hierarchical tier of the slot.
+20. A computer program product including a computer readable medium with program segments for, when executed on a computer device, causing the computer device to implement a method of guided attachment of hardware accelerators to slots of a computing system, the method comprising:
+dividing a first group of hardware accelerators into a plurality of priority classes;
+dividing a first group of slots of the computing system into a plurality of hierarchical tiers; and
+attaching each hardware accelerator of the first group of hardware accelerators to a slot matched to the hardware accelerators based on comparison of a priority class of the hardware accelerator and a hierarchical tier of the slot.

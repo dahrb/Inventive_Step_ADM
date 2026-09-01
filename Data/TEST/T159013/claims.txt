@@ -1,0 +1,201 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+2005P01761WE
+
+1 21.12.2012
+CLAIMS (according to main request):
+
+1. Method for managing access control in a content distribution system having
+access control according to a predefined data access format, the system comprising
+
+- at least one organization (32) for providing content data and related meta data,
+
+- arendering device (39) for rendering the content data and related meta data and executing
+the application, and
+
+- at least one application for manipulating the content data and related meta data,
+
+which method comprises the steps of
+
+- setting an access policy for the organization, called access policy of the organization,
+according to the predefined data access format, the access policy of the organization
+comprising access parameters for controlling access to resources of the rendering device and
+to content data and related meta data,
+
+- providing at least one organization application (35) complying with the access policy of the
+organization,
+
+- providing content data and related meta data complying with the access policy of the
+respective organization,
+
+- enabling the rendering device to execute the organization application while accessing the
+resources of the rendering device according to the access policy of the organization,
+
+- setting a user access policy for the user of the rendering device that restricts access to the
+resources of the rendering device relative to the access policy of the organization, when
+executing the organization application, and
+
+- adjusting the user access policy for the organization based on additional trust data for the
+organization, said additional trust data indicating if and how much an organization can be
+trusted, for selectively allowing the organization application to access the resources
+
+according to the access policy of the organization.
+
+2. Method as claimed in claim 1, wherein the method comprises
+- maintaining a set of trust data at a remote database entity, and
+
+- retrieving trust data from the set for the adjusting of the user access policy,
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2005P01761WE
+
+2 21.12.2012
+
+and in a particular case the method further comprising accessing the remote database entity
+
+via a network.
+
+3. Method as claimed in claim 1, wherein the additional trust data comprises a
+
+limited number of trust levels.
+
+4. Method as claimed in claim 3, wherein the trust levels comprise:
+
+- a fully trusted level for allowing the organization application to fully access to said
+resources according to the access policy of the organization;
+
+- a partly trusted level for allowing the organization application to access a predefined subset
+of resources; and
+
+- anon-trusted level for not allowing the organization application access to said resources.
+
+5. Method as claimed in claim 1, wherein the user access policy comprises
+initially setting a non-trusted level for organizations that are not known in the rendering
+device (39), the non-trusted level not allowing the organization application to access said
+
+resources.
+
+6. Method as claimed in claim 1, wherein the resources of the rendering device
+comprise at least one of:
+
+- a network connection;
+
+- memory locations for storing data;
+
+- system or device parameters;
+
+- personal user data, such as a name or credit card data.
+
+7. Computer program product for managing access control in a device for
+rendering data and related meta data, which program is operative to cause a processor to
+perform maintaining and adjusting the user access policy as claimed in the method in any of
+
+the claims 1 to 6.
+
+8. Device for rendering content data and related meta data for use in a content
+distribution system having access control according to a predefined data access format, the
+system further comprising
+
+- at least one organization (32) for providing content data and related meta data,
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2005P01761WE
+
+3 21.12.2012
+- at least one application for manipulating the content data and related meta data,
+and the system being arranged for
+- setting an access policy for the organization, called access policy of the organization,
+according to the predefined data access format, the access policy of the organization
+comprising access parameters for controlling access to resources of the rendering device and
+to content data and related meta data,
+- providing at least one organization application complying with the access policy of the
+organization for accessing said data,
+- providing content data and related meta data complying with the access policy of the
+respective organization,
+which device comprises
+- rendering means (30) for generating a media signal for rendering the data and related meta
+data,
+- access control means (31) for executing the organization application while accessing the
+resources of the rendering device according to the access policy of the organization,
+wherein the access control means (31) are arranged for
+- setting a user access policy for the user of the rendering device that restricts access to the
+resources of the rendering device relative to the access policy of the organization, when
+executing the organization application, and
+- adjusting the user access policy for the organization based on additional trust data for the
+organization, said additional trust data indicating if and how much an organization can be
+trusted, for selectively allowing the organization application to access the resources
+
+according to the access policy of the organization.
+
+9. Device as claimed in claim 8, wherein the access control means (31) are
+arranged for
+
+- accessing a remote database entity via a network, which entity is arranged for maintaining a
+set of trust data, and
+
+- retrieving trust data from the set for the adjusting of the user access policy.
+
+10. Database entity for use in a content distribution system having access control
+according to a predefined data access format, the system further comprising
+- at least one organization (32) for providing content data and related meta data,
+
+- arendering device (39) for rendering the content data and related meta data, and
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+2005P01761WE
+
+4 21.12.2012
+- at least one application for manipulating the content data and related meta data,
+and the system being arranged for
+- setting an access policy for the organization, called access policy of the organization,
+according to the predefined data access format, the access policy of the organization
+comprising access parameters for controlling access to resources of the rendering device and
+to content data and related meta data,
+- providing at least one organization application complying with the access policy of the
+organization for accessing said data,
+- providing said content data and related meta data according to the access policy of the
+respective organization,
+which database entity comprises
+- database means (45) for storing data,
+wherein database means (45) are arranged for
+- maintaining a set of trust data for the organization, said additional trust data indicating if
+and how much an organization can be trusted, and
+- transferring the trust data from the set to the rendering device for the adjusting of a user
+access policy for the organization, which user access policy restricts access to the resources
+of the rendering device relative to the access policy of the organization, when executing the
+organization application, based on the trust data for selectively allowing the organization
+
+application to access the resources according to the access policy of the organization.

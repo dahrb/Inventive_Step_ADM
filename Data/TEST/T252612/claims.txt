@@ -1,0 +1,243 @@
+--- PAGE 1 ---
+EP 08100389.9 STF072-15927E
+
+No
+
+Go
+
+CLAIMS
+
+Method for registering a three dimensional coordinate system with a Medical Positioning
+System coordinate system, and with a two dimensional coordinate system, the method
+comprising the procedure of:
+
+acquiring at least one two dimensional image of a volume of interest, said volume of
+interest including at least one tubular organ within the body of a patient, said two
+dimensional image being associated with said two dimensional coordinate system;
+
+acquiring a plurality of medical positioning system points, within said at least one
+tubular organ, said medical positioning system points being associated with said medical
+positioning system coordinate system, said medical positioning system coordinate system
+being registered with said two dimensional coordinate system; .
+
+[ extracting a three dimensional image model of said at least one tubular organ Eee at
+least one pre-acquired three dimensional image of said volume of interest, said at least one
+pre-acquired three dimensional image and said three dimensional image model being
+associated with said three dimensional coordinate system; ]
+
+estimating a volumetric model of said at least one tubular organ according to said at
+least one two dimensional image, and said acquired medical positioning system points; and
+
+registering said three dimensional coordinate system with said medical positioning
+system coordinate system, and with said two dimensional coordinate system,
+
+characteriza three dimensional coordinate system is registered with said
+medical positioning system coordinate system, and with said two dimensional coordinate
+system, by matching said extracted three dimensional image model with said estimated
+
+volumetric model.
+
+The method according to claim 1, further comprising a preliminary procedure of selecting
+
+said volume of interest.
+
+The method according to claim 1, further comprising the procedure of pre-acquiring said at
+least one pre-acquired three dimensional image, before performing said procedure of
+
+extracting.
+
+The method according to claim 1, further comprising the procedure of registering said two
+
+dimensional coordinate system with said medical positioning system coordinate system,
+
+--- PAGE 2 ---
+EP 08100389.9 STF072-15927E
+
+wi
+
+11.
+
+12.
+
+prior to acquiring said at least one two dimensional image and said medical positioning
+
+system points.
+
+The method according to claim 1, wherein each of said medical positioning system points,
+each of said at least one two dimensional image and each of said at least one three
+dimensional pre-acquired image, are all associated with a respective organ timing signal
+
+activity state.
+
+The method according to claim 5, wherein said organ timing signal represents an activity
+
+state in a cycle of said at least one tubular organ.
+
+The method according to claim 5, wherein said organ timing signal is an electrocardiogram
+
+signal.
+
+The method according to claim 4, wherein said procedure of registering is performed
+between said medical positioning system, said at least one two dimensional image and said
+pre-acquired three dimensional image, all associated with the same respective organ timing
+
+signal activity state.
+
+The method according to claim 1, wherein said volumetric model is estimated by detecting
+the border points of said at least one tubular organ, for each point in said at least one two
+
+dimensional image, corresponding to an medical positioning system point.
+
+The method according to claim 9, wherein said border points determine the constraints of a
+
+closed curve generated around each point on the at least on two dimensional image.
+
+The method according to claim 1, wherein said extracted three dimensional image model
+and said estimated volumetric model are three dimensional triangulated mesh
+
+representations of said at least one tubular organ.
+
+System (150) for registering a three dimensional coordinate system with a Medical
+Positioning System coordinate system, and with a two dimensional coordinate system, the
+system including a medical imaging system (168) for acquiring at least one two
+dimensional image of a volume of interest within the body of a patient, and a three
+
+dimensional medical images database (176) for storing at least one pre-acquired three
+
+-2-
+
+--- PAGE 3 ---
+EP 08 100389.9 STF072-15927E
+
+14.
+
+dimensional image of said volume of interest, the at least one two dimensional image being
+associated with the two dimensional coordinate system, the pre-acquired three dimensional
+images being associated with the three dimensional coordinate system, the volume of
+interest including at least one tubular organ, the system comprising:
+
+a medical positioning system (174) associated with said medical positioning system
+coordinate system, said medical positioning system comprising:
+
+a plurality of medical positioning system transmitters (160, 162, 164) for
+generating an electromagnetic field; and
+a medical positioning system sensor (158), for acquiring a plurality of medical
+
+positioning system points within said at least one tubular organ, said medical
+
+positioning system sensor (158) being associated with said medical positioning
+
+system coordinate system, said medical positioning system coordinate system being
+
+registered with said two dimensional coordinate system; and
+
+a coordinate systems registration processor (178) coupled with said medical
+positioning system (174), said medical imaging system (168), and with said three
+dimensional medical images database (1 76), aid coordinate systems registration processor
+(178) extracting a three dimensional image model of said at least one tubular organ from at
+least one pre-acquired three dimensional image of said tubular organ.ysaid coordinate
+systems registration processor (178) estimating a volumetric model of said at least one
+tubular organ, according to said at least one two dimensional image and according to said
+medical positioning system points, said coordinate systems registration processor (178)
+registering said three dimensional coordinate system with said medical positioning system
+coordinate system, and with said {wo imensional coordinate system,
+
+<7 ant
+
+characterized in that}said codfdinate system registration processor (178) registers
+said three dimensional coordinate system with said medical positioning system coordinate
+system, and with said two dimensional coordinate system, by matching said three
+
+dimensional image model with said volumetric model.
+
+The system (150) according to claim 12. wherein each of said medical positioning system
+points, said at least one two dimensional image, and said at least one pre-acquired three
+dimensional image, are all associated with a respective organ timing signal activity state
+
+of said tubular organ.
+
+The system (150) according to claim 13, wherein said organ timing signal represents an
+
+activity state in a cycle of said at least one tubular organ.
+
+-3-
+
+--- PAGE 4 ---
+EP 08100389.9 STF072-15927E
+
+17.
+
+19.
+
+The system (150) according to claim 13, wherein said organ timing signal is respective of
+
+the heart of said patient.
+
+The system (150) according to claim 13, wherein said organ timing signal is respective of
+
+the lungs of said patient.
+
+The system (150) according to claim 13, wherein said coordinate systems registration
+processor (178) registers said medical positioning system coordinate system with said two
+dimensional coordinate system and with said three dimensional coordinate system
+according to said medical positioning system points, said at least one two dimensional
+image and said pre-acquired three dimensional image associated with the same respective
+
+organ timing signal activity state.
+
+The system (150) according to claim 12, wherein said coordinate systems registration
+processor (178) estimates said volumetric model by detecting the border points of said at
+least one tubular organ, for each point in said at least one two dimensional image
+corresponding to an medical positioning system point, according to the registration
+between said two dimensional coordinate system and said medical positioning system
+
+coordinate system.
+
+The system (150) according to claim 18, wherein said border points determine the
+
+constraints of a closed curve generated around each medical positioning system point.
+
+The system (150) according to claim 12, wherein said extracted three dimensional image
+
+model and said estimated volumetric model are three dimensional triangulated mesh
+
+representations of said at least one the tubular organ.
+
+The system (150) according to claim 12, wherein said medical positioning system
+transmitters (160, 162, 164) are in close proximity with said medical imaging system (168)
+and move therewith, thereby maintaining registration between said medical positioning
+
+system coordinate system and said two dimensional coordinate system.
+
+The system (150) according to claim 12, wherein said medical imaging system includes an
+
+imaging radiation transmitter (170) and an imaging radiation detector (166).
+
+-4.
+
+--- PAGE 5 ---
+EP 08100389.9 STF072-15927E
+
+i)
+wa
+
+24.
+
+NO
+wa
+
+The system (150) according to claim 22, wherein said medical positioning system
+transmitters (160, 162, 164) are in close proximity with said imaging radiation detector
+(166) and move therewith, thereby maintaining registration between said medical
+
+positioning system coordinate system and said two dimensional coordinate system.
+
+The system (150) according to claim 12, wherein said medical positioning system sensor
+
+(158) is attached to the tip of a catheter (156) inserted into said tubular organ.
+
+The system (150) according to claim 12, wherein said medical positioning system (174)
+further includes a patient reference position sensor (180), coupled with said body, said
+patient reference position sensor (180) enabling said medical positioning system (174) to
+
+compensate for movement of said patient.

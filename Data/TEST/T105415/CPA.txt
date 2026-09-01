@@ -1,0 +1,61 @@
+TITLE:
+System and method for performing an action on a structure in computer-generated data
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method causes a computer to detect and perform actions on structures identified in computer data. The system provides an analyzer server, an application program interface, a user interface and an action processor. The analyzer server receives from an application running concurrently data having recognizable structures, uses a pattern analysis unit, such as a parser or fast string search function, to detect structures in the data, and links relevant actions to the detected structures. The application program interface communicates with the application running concurrently, and transmits relevant information to the user interface. Thus, the user interface can present and enable selection of the detected structures, and upon selection of a detected structure, present the linked candidate actions. Upon selection of an action, the action processor performs the action on the detected structure.
+
+CLAIMS:
+1. A computer-based system for detecting structures in data and performing actions on detected structures, comprising:
+an input device for receiving data;
+an output device for presenting the data;
+a memory storing information including program routines including
+an analyzer server for detecting structures in the data, and for linking actions to the detected structures;
+a user interface enabling the selection of a detected structure and a linked action; and
+an action processor for performing the selected action linked to the selected structure; and
+a processing unit coupled to the input device, the output device, and the memory for controlling the execution of the program routines.
+2. The system recited in claim 1, wherein the analyzer server stores detected structures in the memory.
+3. The system recited in claim 1, wherein the input device receives the data from an application running concurrently, and wherein the program routines stored in memory further comprise an application program interface for communicating with the application.
+4. The system recited in claim 1, wherein the analyzer server includes grammars and a parser for detecting structures in the data.
+5. The system recited in claim 4, wherein the analyzer server includes actions associated with each of the grammars, and wherein the analyzer server links to a detected structure the actions associated with the grammar which detects that structure.
+6. The system recited in claim 1, wherein the analyzer server includes a string library and a fast string search function for detecting string structures in the data.
+7. The system recited in claim 6, wherein the analyzer server includes actions associated with each of the strings, and wherein the analyzer server links to a detected structure the actions associated with the grammar which detects that string structure.
+8. The system recited in claim 1, wherein the user interface highlights detected structures.
+9. The system recited in claim 1, wherein the user interface enables selection of an action by causing the output device to display a pop-up menu of the linked actions.
+10. The system recited in claim 1, wherein the programs stored in the memory further comprise an application running concurrently that causes the output device to present the data received by the input device, and an application program interface that provides interrupts and communicates with the application.
+11. The system recited in claim 1, wherein the user interface enables the selection of a detected structure and a linked action using sound activation.
+12. The system recited in claim 1, wherein a first one of the actions may invoke a second one of the actions.
+13. A program storage medium storing a computer program for causing a computer to perform the steps of:
+receiving computer data;
+detecting a structure in the data;
+linking at least one action to the detected structure;
+enabling selection of the structure and a linked action; and
+executing the selected action linked to the selected structure.
+14. In a computer having a memory storing actions, a system for causing the computer to perform an action on a structure identified in computer data, comprising:
+means for receiving computer data;
+means for detecting a structure in the data;
+means for linking at least one action to the detected structure;
+means for selecting the structure and a linked action; and
+means for executing the selected action linked to the selected structure.
+15. In a computer having a memory storing actions, a method for causing the computer to perform an action on a structure identified in computer data, comprising the steps of:
+receiving computer data;
+detecting a structure in the data;
+linking at least one action to the detected structure;
+enabling selection of the structure and a linked action; and
+executing the selected action linked to the selected structure.
+16. The method recited in claim 15, wherein the computer data is received from the application running concurrently.
+17. The method recited in claim 15, wherein the memory contains grammars, and wherein the step of detecting a structure further comprises the steps of retrieving a grammar and parsing the data based on the grammar.
+18. The method recited in claim 17, wherein the grammar is associated with a particular action, and wherein the step of linking at least one action to the detected structure includes the step of linking the particular action to the detected structure.
+19. The method recited in claim 15, wherein the memory contains strings, and wherein the step of detecting a structure further comprises the steps of retrieving a string from the memory and scanning the data to identify the string.
+20. The method recited in claim 15, further comprising after the step of detecting a structure, the step of highlighting the detected structure.
+21. The method recited in claim 15, further comprising, after the step of linking at least one action to the detected structure, the step of displaying and enabling selection of an action for performance on the detected structure.
+22. A computer-based method for causing a computer to identify, select and perform an action on a structure in computer data received from a concurrently running application, said application presenting the computer data to the user, the method comprising the steps of:
+receiving computer data from the application;
+detecting a structure in the computer data;
+linking at least one action to the detected structure;
+communicating with the application to determine the location of the detected structure as presented by the application, to enable selection of the detected structure and a linked action, and to determine if the detected structure and a linked action have been selected; and
+performing a selected action linked to the detected pattern.
+23. The method recited in claim 15, wherein the step of enabling uses sound activation.
+24. The method recited in claim 15, wherein a first one of the actions may invoke a second one of the actions.

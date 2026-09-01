@@ -1,0 +1,93 @@
+TITLE:
+Dynamically extensible application program framework including message and notification routing
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Dynamically configuring an application program at run-time via one or more extension objects. The invention software implements a framework with one or more extension objects providing functionality to an application program and an application manager for integrating the functionality with the application program during execution of the application program. The framework of the invention also formulates and routes application messages between extensible objects of one application program and extensible objects of other application programs implementing a similar, dynamically extensible application program framework. On receipt of messages or notifications, the framework of the receiving application program facilitates the discovery of the intended recipient extension object and routes the message accordingly.
+
+CLAIMS:
+1. A system for a dynamically extensible application program framework, said system comprising:
+an application program having functionality; and
+one or more extension objects that modify said functionality during execution of said application program.
+2. The system of claim 1, wherein said extension objects modify said functionality by extending said functionality.
+3. The system of claim 1, wherein said extension objects modify said functionality by adding to said functionality.
+4. The system of claim 1, further comprising an application manager for managing requests by extension objects loaded within the application program for specific functionality.
+5. The system of claim 1, further comprising one or more extension object providers that provide said one or more extension objects.
+6. The system of claim 1, wherein one of said extension objects specifies a communication protocol to be used for transferring a message from said one of said extension objects to another of said extension objects.
+7. The system of claim 1, wherein said extension objects comprise a plug-in that provides a user interface component.
+8. The system of claim 1, further comprising at least one workspace representing a window, and wherein said extension objects comprise view extension objects, said view extension objects dividing the workspace to manage and place one or more user interface elements within the workspace.
+9. The system of claim 1, wherein said extension objects comprise protocol adapters for establishing and authenticating connections.
+10. The system of claim 1, wherein said extension objects comprise protocol adapters for obtaining a communication address of a peer application program.
+11. The system of claim 1, wherein said extension objects comprise protocol adapters to support a plurality of communication protocols.
+12. The system of claim 1, wherein said extension objects comprise protocol adapters for performing data transfer.
+13. One or more computer-readable media having computer-executable modules for implementing an extensible application program framework, said modules comprising:
+one or more extension objects providing functionality to an application program; and
+an application manager module for integrating said functionality with said application program during execution of said application program.
+14. The computer-readable media of claim 13, wherein said application manager module comprises a database storing information relating to said extension objects.
+15. The computer-readable media of claim 13, wherein said application manager module comprises a transfer agent for discovering, resolving, and loading extension objects used for communication.
+16. The computer-readable media of claim 13, wherein said application manager module comprises an event dispatcher for receiving and resolving at least one event from at least one of said extension objects.
+17. The computer-readable media of claim 13, wherein said application manager module and said extension objects are implemented on a single computing device.
+18. The computer-readable media of claim 13, wherein said extension objects discover one another via the application manager module.
+19. The computer-readable media of claim 13, wherein said extension objects register said functionality with said application manager module to expose said functionality to other registered extension objects.
+20. The computer-readable media of claim 13, wherein said extension objects comprise one or more protocol adapters raising at least one framework event in response to a communication port event.
+21. The computer-readable media of claim 20, wherein said protocol adapters route said framework event to an event dispatcher of said application manager module via a transfer agent of said application manager.
+22. The computer-readable media of claim 13, wherein said application manager module comprises an event dispatcher to receive events from said extension objects for routing.
+23. The computer-readable media of claim 13, wherein said application manager module comprises a router for command routing.
+24. The computer-readable media of claim 13, wherein said application manager module comprises an extension object loader for initializing said extension objects.
+25. The computer-readable media of claim 13, wherein said application manager module comprises a view selection context manager to manage user interface selections from a user.
+26. A method for dynamically configuring an application program, said method comprising:
+defining one or more extension objects to provide functionality to the application program; and
+integrating the functionality provided by the one or more extension objects with said application program during execution of said application program.
+27. The method of claim 26, wherein one or more extension object providers supply said extension objects, and wherein said integrating comprises authenticating said extension object providers.
+28. The method of claim 26, wherein said integrating comprises querying another application program to determine whether said another application program supports an extension object providing desired functionality.
+29. The method of claim 26, wherein said integrating comprises:
+receiving functionality information from one of said extension objects relating to specific functionality of said one of said extension objects; and
+storing said received functionality information in a database for access by other ones of said extension objects to integrate the specific functionality of the one of said extension objects.
+30. The method of claim 29, wherein said integrating further comprises receiving registration information from said one of said extension objects, said registration information specifying that said one of said extension objects is to be loaded responsive to a request for said specific functionality.
+31. The method of claim 29, wherein said integrating further comprises broadcasting said stored functionality information to said extension objects.
+32. The method of claim 29, wherein said receiving comprises receiving functionality information from a first one of said extension objects, and wherein said integrating further comprises:
+receiving a request from a second one of said extension objects for said functionality information; and
+identifying said first one of said extension objects to said second one of said extension objects in response to the received request.
+33. The method of claim 32, wherein said identifying comprises returning, to said second one of said extension objects, a reference to said first one of said extension objects in response to the received request.
+34. The method of claim 29, wherein said extension objects are arranged in a hierarchy, and wherein said integrating further comprises exchanging at least one message between a first one of said extension objects and a second one of said extension objects.
+35. The method of claim 34, wherein said exchanging comprises:
+receiving the message from said first one of said extension objects;
+adding a header to the received message; and
+transmitting the message with the added header to said second one of said extension objects, said first one of said extension objects being subordinate to said second one of said extension objects.
+36. The method of claim 34, wherein the message comprises first and second portions of data and a header, and wherein said exchanging comprises:
+receiving the message from said first one of said extension objects;
+removing the header from the received message;
+processing the first portion of data within the received message with the header removed; and
+transmitting the second portion of data within the received message with the header removed to said second one of said extension objects, said second one of said extension objects being subordinate to said first one of said extension objects.
+37. The method of claim 26, wherein said integrating further comprises receiving registration information from one of said extension objects, said registration information specifying that said one of said extension objects is to be loaded at startup of the application program.
+38. The method of claim 26, wherein said integrating comprises exchanging at least one message between a first one of said extension objects and a second one of said extension objects.
+39. The method of claim 38, wherein said exchanging comprises encrypting said message by said first one of said extension objects for decryption only by said second one of said extension objects.
+40. The method of claim 38, wherein said exchanging comprises:
+receiving the message from the first one of said extension object providers;
+selecting a first one of said extension objects with which to establish a connection with the second one of said extension object providers;
+establishing a connection between said first one of said extension object providers and said second one of said extension object providers with said first one of said extension objects;
+identifying a type of the established connection;
+loading a second one of said extension objects to handle transfer of the message based on the identified type of connection; and
+transferring the message to said second one of said extension object providers from said first one of said extension object providers via said second one of said extension objects.
+41. The method of claim 38, wherein said exchanging comprises:
+establishing a connection between the first one of said extension object providers and the second one of said extension object providers;
+receiving the message from said first one of said extension object providers via the established connection;
+removing a header from the received message;
+processing a first portion of data within the received message with the header removed; and
+transmitting, based on the processed first portion of data, a second portion of data within the received message with the header removed to the application program for further processing.
+42. The method of claim 41, wherein the first portion of data comprises a workspace identifier, said workspace identifier being associated with the application program.
+43. The method of claim 26, wherein one or more computer-readable media have computer-executable instructions for performing the method of claim 26.
+44. A system for switching between multiple views of a workspace in a user interface, said system comprising:
+at least one view extension object providing at least one user interface element for the user interface, said user interface being associated with a dynamically extensible application, said view extension object corresponding to a view selection service object; and
+a view selector object for managing the view selection service object to transition a view for the workspace.
+45. The system of claim 44, wherein the view selector object, in response to user input, calls the view selection service object to activate or de-activate the view.
+46. The system of claim 44, wherein said view selection service object stores a state of the view extension object.
+47. The system of claim 44, wherein the user interface element is a plug-in.
+48. The system of claim 44, wherein said view extension object comprises a chat object.
+49. A computer-readable medium having stored thereon a data structure representing a header for a message, said message being encapsulated by an extension object in an extension object hierarchy of a dynamically extensible application program, said data structure comprising:
+a type field identifying a class of the extension object; and
+a name field identifying the extension object.
+50. The computer-readable medium of claim 49, wherein said extension object relates to a workspace in a user interface, and wherein said type field corresponds to a type of said workspace in said user interface.
+51. The computer-readable medium of claim 49, wherein said extension object relates to a workspace in a user interface, and wherein said name field corresponds to an identifier of said workspace in said user interface.

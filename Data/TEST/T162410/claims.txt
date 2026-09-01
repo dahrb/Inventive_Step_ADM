@@ -1,0 +1,468 @@
+--- PAGE 1 ---
+Application No.: 03 012 830.0
+
+Applicant: Microsoft Technology Licensing, LLC
+Our Ref.: EP27605RKAN
+Date: December 11, 2015
+
+NEW CLAIMS — MAIN REQUEST
+
+A method of downloading software components from a remote source to a software
+application (100) for providing updates or additions to the functionality of the
+application (100) via which a document (110) is opened by a user for editing, the
+method comprising the steps of: ,
+
+attaching a schema to the document (110), wherein the schema defines permissible
+data content, data type and data structure for the document (110),
+
+structuring the document (110) to associate the document (110) with the schema,
+
+associating a solution with the document structure, wherein the solution comprises a
+
+plurality of software components needed to provide a functionality to the application,
+
+identifying and assembling a plurality of software components that may be utilized to
+update or add to functionality available to the application (100), the plurality of
+software components comprising the solution, at a location remote from the
+document (110),
+
+enabling the application (100), by providing a reference to the solution in the
+document (110), to request the solution to obtain the functionality provided by the
+plurality of software components comprised in the solution, and
+
+downloading the plurality of software components to the application (100) for
+provision of the functionality .
+
+The method of claim 1, whereby the step of enabling the application (100) to request
+the solution to obtain functionality provided by the plurality of software components
+includes:
+
+attaching a solution property (115) to the document (110) for pointing (110) to the
+
+solution associated with the document structure, and
+
+--- PAGE 2 ---
+attaching a solution location (1 18) to the document (110) for enabling the application
+
+(100) to locate the solution at the remote location (49).
+
+The method of claim 2, whereby the solution location (118) includes a uniform
+resource locator URL for the solution.
+
+The method of claim 2, whereby the step of attaching a solution property (115) to the
+document (110) further comprises attaching a plurality of solution properties to the
+document (110) to associate a plurality of subsets of the solution with particular
+portions of the document (110).
+
+The method of claim 4, further comprising the steps of:
+
+listing the solution and the plurality of software components in a manifest (38) of
+
+software components, and
+
+storing the manifest (38) in a remote library of software components on a remote
+server (49) accessible by the document (110).
+
+The method of claim 5, further comprising the step of:
+
+attaching a schema to the manifest (38) for defining permissible data content, data
+type and data structure of the manifest (38) and for associating the solution with the
+document (110).
+
+The method of claim 1, further comprising the following steps performed prior to the
+step of downloading the software components to the application (100):
+
+determining whether the plurality of software components for providing the solution is
+
+present in a local library of software components, and
+
+requesting a manifest (38) at the remote library of software components for obtaining
+the solution, if the plurality of software components is not present in the local library
+
+of software components.
+
+--- PAGE 3 ---
+10.
+
+11.
+
+12.
+
+13.
+
+14,
+
+15.
+
+The method of claim 7, further comprising the step of determining whether the
+document (110) includes solution properties pointing to more than one solution prior
+to determining whether the plurality of software components for providing the solution
+
+is present in a local library of software components.
+
+The method of claim 8, further comprising the step of selecting for downloading from
+the remote server (49) software components associated with one of the more than
+one solutions, if the document (110) includes solution properties pointing to more
+
+than one solution.
+
+The method of claim 7, further comprising the step of receiving a query to determine
+whether the plurality of software components should be downloaded prior to
+downloading the software components to the application (100).
+
+The method of claim 10, whereby the step of receiving a query to determine whether
+the plurality of software components should be downloaded includes receiving a
+notification that the plurality of software components have been updated at the
+
+remote server (49).
+The method of claim 11, further comprising the step of:
+
+causing the notification to be sent from the manifest (38) upon the occurrence of an
+update to any of the plurality of software components.
+
+The method of claim 12, further comprising the step of:
+causing the notification to be sent from the manifest (38) at a prescribed frequency.
+
+The method of claim 13, whereby the prescribed frequency is set by the creator of the
+manifest (38).
+
+The method of claim 11, whereby the step of receiving a query to determine whether
+the plurality of software components should be downloaded includes receiving a |
+notification that additional software components have been added to the plurality of
+software components stored at the remote server (49).
+
+--- PAGE 4 ---
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+21.
+
+22.
+
+23.
+
+24.
+
+The method of claim 11, whereby the step of receiving a query to determine whether
+the plurality of software components should be downloaded includes receiving a
+notification that a set amount of time has elapsed since the last download of the
+plurality of software components to the application (100).
+
+The method of claim 5, further comprising the step of receiving at the remote server
+(49) a command from the application (100) to download the software components to
+the application (100) prior to downloading the software components to the application
+(100).
+
+The method of claim 10, whereby a command from the application (100) to download
+the software components to the application (100) is initiated by a user of the
+application (100).
+
+The method of claim 7, further comprising the step of connecting the software
+application (100) to the remote server (49) prior to downloading the software
+components to the application (100).
+
+The method of claim 19, whereby the step of connecting the software application |
+(100) to the remote server (49) includes connecting the software application (100) to
+the remote server (49) via the Internet.
+
+The method of claim 19, whereby the step of connecting the software application
+(100) to the remote server (49) includes connecting the software application (100) to
+the remote server (49) via an intranet.
+
+The method of claim 19, whereby the step of connecting the software application
+(100) to the remote server (49) includes connecting the software application (100) to
+the remote server (49) via a distributed computing environment.
+
+The method of claim 22, whereby the distributed computing environment includes a
+wireless telecommunications network.
+
+The method of claim 19, whereby the step of connecting the software application
+(100) to the remote server (49) includes connecting the software application (100) to
+the remote server (49) via a local area network (51).
+
+--- PAGE 5 ---
+25.
+
+26.
+
+27.
+
+28.
+
+29.
+
+30.
+
+31.
+
+The method of claim 7, further comprising the step of checking the security of the
+manifest (38) prior to downloading the software components to the document (110).
+
+The method of claim 25, further comprising the step of preventing the step of
+downloading the software components to the document (110), if the security of the
+manifest (88) cannot be checked.
+
+The method of claim 26, whereby the step of checking the security of the manifest
+(38) includes determining whether the manifest (38) is located at a trusted remote
+
+site.
+
+The method of claim 26, whereby the step of checking the security of the manifest
+(38) includes determining whether the manifest (38) is from a trusted intranet.
+
+The method of claim 26, whereby the step of checking the security of the manifest
+(38) includes determining whether a digital signature applied to the manifest (38)
+
+matches a trusted digital signature.
+
+The method of claim 29, whereby the digital signature applied to the manifest (38)
+includes a digital signature applied to each of a plurality of files included in the
+
+manifest (38).
+
+The method of claim 19, further comprising the following steps performed after the
+step of connecting the software application (100) to the remote server (49):
+
+obtaining a checksum value representing the contents of the manifest (38),
+
+comparing the checksum value representing the contents of the manifest (38) with a
+checksum value representing the contents of the manifest (38) after the contents of
+the manifest (38) have been received by the application (100), but before the
+contents of the manifest (38) have been installed for use by the application (100), and
+
+if the checksum value representing the contents of the manifest (38) differs from the
+checksum value representing the manifest (38) after the manifest (38) has been
+received by the application (100), preventing the step of downloading the software
+
+components to the document.
+
+--- PAGE 6 ---
+32.
+
+33.
+
+34.
+
+35.
+
+The method of claim 19, further comprising the following step performed after
+connecting the software application (100) to the remote server (49), and before
+downloading the plurality of software components to the application (100) for
+provision of the functionality to the document:
+
+determining which components of the plurality of components are required by the
+application (100) to provide a solution pointed to by the solution property.
+
+The method of claim 32, further comprising the following steps performed after the
+step of determining which components of the plurality of components are required by
+the application (100):
+
+comparing the components present in the manifest (38) that are required by the
+application (100) with components that are present in the local library of software
+components,
+
+if the components present in the manifest (38) that are required by the application
+(100) are in addition to the components present in the local library, downloading the
+software components to the application (100), and
+
+if the components present in the manifest (38) that are required by the document
+(110) are the same as the components that are present in the local library, but the
+components that are present in the manifest (38) that are required by the document
+(110) are of a newer version than the components that are present in the local library,
+downloading the software components to the application (100).
+
+The method of claim 7, further comprising the step of installing the downloaded
+components for use by the application (100) for providing functionality to the
+document after downloading the software components to the application (100).
+
+The method of claim 1, wherein attaching a schema to a document (110) defining
+permissible data content, data type and data structure for the document (110)
+comprises:
+
+attaching an Extensible Markup Language XML schema to the document (110)
+defining permissible data content, data types and data structures for the document,
+
+--- PAGE 7 ---
+36.
+
+37.
+
+wherein structuring the document (110) to associate the document (110) with the
+schema comprises annotating particular portions of the document (110) with XML
+structure associated with the permissible data content, the permissible data types,
+and permissible data structures for the particular portions of the document (110) as
+defined by the schema, and
+
+wherein associating a solution with the document (110) structure comprises
+associating a solution with XML elements comprising the XML structure.
+
+The method of claim 1, whereby enabling the document (110) to requesting the
+solution to obtain functionality provided by the plurality of software components
+includes enabling the document (110) to request the plurality of software components
+upon initiation of editing the document (110) within an XML element associated with a
+particular solution.
+
+A computer readable medium storing instructions that, when executed by a processor
+of a computer, cause the computer to download software components from a remote
+source to a software application (100) for providing updates or additions to the
+functionality of the application (100) via which a document (110) is opened by a user
+for editing, by:
+
+attaching an Extensible Markup Language XML schema to the document (110),
+wherein the XML schema defines permissible data content, data types and data
+structures for the document,
+
+annotating particular portions of the document (110) with XML structure associated
+with the permissible data content, the permissible data types, and permissible data
+structures for the particular portions of the document (110) as defined by the schema,
+
+associating a solution with XML elements comprising the XML structure, wherein the
+solution comprises a plurality of software components needed to provide a
+functionality to the application,
+
+--- PAGE 8 ---
+38.
+
+39.
+
+40.
+
+41.
+
+42.
+
+identifying and assembling a plurality of software components that may be utilized to
+update or add to functionality available to the application (100), the plurality of
+software components comprising the solution, at a location remote from the
+document (110),
+
+enabling the application (100), by providing a reference to the solution in the
+document (110), to request the solution to obtain the functionality provided by the
+plurality of software components comprised in the solution, and
+
+downloading the plurality of software components to the application (100) for
+
+provision of the functionality .
+
+The computer readable medium of claim 37, further storing instructions that, when
+
+executed by the processor, cause the computer to perform the steps of:
+
+in the step of enabling the application (100) to request the solution to obtain
+functionality provided by the plurality of software components, attaching a solution
+property (115) to the document (110) for pointing to the solution, and
+
+attaching a solution location (118) to the document (110) for enabling the application
+(100) to locate the solution at the remote location (49).
+
+The computer readable medium of claim 38, whereby the solution location includes a
+
+uniform resource locator URL for the solution.
+
+The computer readable medium of claim 37, whereby the solution comprises a
+plurality of software components providing help content and document (110) actions
+
+to the document (110) via the application (100).
+
+The computer readable medium of claim 37, whereby enabling the document (110) to
+request the solution to obtain functionality provided by the plurality of software
+components includes enabling the document (110) to request the plurality of software
+components upon initiation of editing the document (110) within an XML element
+
+associated with a particular solution.
+
+The computer readable medium of claim 38, further storing instructions that, when
+executed by the processor, cause the computer to perform the steps of:
+
+--- PAGE 9 ---
+43.
+
+AA,
+
+45.
+
+listing the solution and the plurality of software components in a manifest (38), and
+
+storing the manifest (38) in a remote library of software components on a remote
+server (49) accessible by the document (110).
+
+The computer readable medium of claim 41, further storing instructions that, when
+executed by the processor prior to the step of downloading the software components
+to the application (100), cause the computer to perform the steps of:
+
+opening the document (110),
+placing a computer cursor in a particular portion of the document (110),
+generating a list of XML elements enclosing a position of the cursor,
+
+determining whether a solution property pointing the document (110) to the solution is
+associated with the list of XML elements, and
+
+determining whether the plurality of software components for providing the solution is
+present in a local library of software components, and ,
+
+if the plurality of software components is not present in the local library of software
+components, requesting a manifest (38) at the remote library of software components
+
+for obtaining the solution.
+
+The computer readable medium of claim 43, whereby the step of determining
+whether a solution property pointing the document (110) to the solution is associated
+with the list of XML elements, further comprises the step of parsing a look-up table of
+solutions to determine if any available help content or document (110) actions are
+
+associated with any XML element in the list of XML elements.
+
+The computer readable medium of claim 42, further storing instructions that, when
+executed by the processor prior to the step of downloading the software components
+to the application (100), cause the computer to perform the step of querying a user of
+the document (110) to determine whether the plurality of software components should
+
+be downloaded. .
+
+--- PAGE 10 ---
+46.
+
+47.
+
+10
+
+The computer readable medium of claim 42, further storing instructions that, when
+executed by the processor prior to downloading the software components to the
+document, cause the computer to perform the steps of:
+
+determining whether the manifest (38) is located at a trusted remote server site (49),
+and
+
+if the manifest (38) is not located at a trusted remote server site (49), preventing the
+step of downloading the plurality of software components to the application (100).
+
+The computer readable medium of claim 42, further storing instructions that, when
+executed by the processor prior to downloading the plurality of software components
+to the application (100) for provision of the functionality to the document, cause the
+computer to perform the steps of:
+
+connecting the software application (100) to the remote server (49),
+
+determining which components of the plurality of components are required by the
+application (100) to provide a solution pointed to by the solution property,
+
+comparing the components present in the manifest (38) that are required by the
+application (100) with components that are present in the local library of software
+components,
+
+if the components present in the manifest (38) that are required by the application
+(100) are in addition to the components present in the local library, downloading the
+software components to the application (100), and
+
+if the components present in the manifest (38) that are required by the document (110)
+are the same as the components that are present in the local library, but the components
+that are present in the manifest (38) that are required by the document (110) are of a
+newer version than the components that are present in the local library, downloading the
+software components to the application (100).

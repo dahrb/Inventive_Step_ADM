@@ -1,0 +1,72 @@
+--- PAGE 1 ---
+Application No.: 04 102 462.1
+
+Applicant: Microsoft Corporation
+Our Ref.: EP31157PM180pyn
+Date: April 30, 2010
+
+CLAIMS FOR MAIN REQUEST
+
+1. _Amethod for protecting regions within an electronic document, the method comprising:
+executing a word processing application program (30) on a computer, the word
+processing application program operative to provide an administrative mode (1506;
+1602; 1720) and an enforcement mode (1510; 1608; 1702), wherein
+
+in the administrative mode the word processing application program is operative
+
+to receive the selection of a region (62; 90; 92) within the electronic document and
+the identities of one or more users (68A; 68B) authorized to freely edit the
+selected region,
+
+and to receive the selection of a protection scheme to be applied to the entire
+electronic document, wherein said protection scheme comprises one of
+rendering the entire electronic document read-only; allowing only comments to
+be inserted into the electronic document; allowing users to only freely edit form
+fields contained in the electronic document; and allowing tracked edits to be
+freely made to the entire document;
+
+and wherein, in the enforcement mode, the word processing application program is
+operative
+
+to apply the selected protection scheme to the document,
+
+to receive requests to edit regions of the electronic document and to deny (1708)
+requests to edit regions of the electronic document made by users not
+authorized to freely edit the regions,
+
+and to dynamically displaying a message (104) to the user depending on the
+location of the insertion point (110), wherein, if the insertion point is located
+within a region that may be freely edited by the user, the message indicates that
+the user may freely edit within the region, whereas, if the insertion point is within
+a region of the electronic document that the user is not authorized to freely edit,
+the message indicates that the user is not permitted to edit in the region.
+
+2. The method of Claim 1, wherein a region comprises a subset of the entire document,
+the subset capable of being as smail as a single character or no characters.
+
+--- PAGE 2 ---
+The method of Claim 2, further comprising:
+
+identifying one or more regions within the electronic document that the current user is
+authorized to freely edit; and
+
+highlighting the identified regions.
+
+The method of Claim 3, further comprising:
+
+receiving a request from the current user to identify a next region within the electronic
+document that the current user is authorized to freely edit;
+
+in response to the request, identifying a next region within the electronic document that
+the current user is authorized to freely edit; and
+
+identifying to the current user the next region that the current user is authorized to
+
+freely edit.
+
+A computer-readable medium having stored thereon computer-readable instructions
+which, when executed by a computer, cause the computer to perform the method of
+
+Claim 1.
+
+A computer-controlled apparatus capable of performing the method of Claim 1.

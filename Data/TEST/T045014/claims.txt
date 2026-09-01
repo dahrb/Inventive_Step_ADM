@@ -1,0 +1,67 @@
+--- PAGE 1 ---
+MAIN REQUEST
+CLAIMS:
+
+1. A reproduction test service apparatus which reproduces past operations of a medical
+system, characterized by comprising:
+
+a unit (404) configured to receive a plurality of past log files directly or indirectly from the
+medical system;
+
+a unit (405) configured to store the plurality of log files;
+
+a pseudo medical system (407); and
+
+a control unit (406) configured to control the pseudo medical system based on the log
+files so as to allow a plurality of past operations of the medical system to be reproduced on the
+pseudo medical system, wherein the unit (404) configured to receive the log files is configured
+to receive pure raw data or raw data together with the log files, the pure raw data being data
+converted from signals detected by the medical system, the raw data being data processed from
+the pure raw data, and the control unit (406) is further configured to contro! the pseudo medical
+
+system based on at least one of the pure raw data and raw data.
+
+2. The apparatus according to claim 1, characterized in that the pseudo medical system
+reproduces the past operations of the medical system while retracing back through them one
+
+after another according to its operation history.
+
+3. The apparatus according to claim 2, characterized in that the pseudo medical system
+automatically stops its reproducing operation at the time when the same conditions as when a
+
+fault occurred in the medical system are reproduced.
+
+4, The apparatus according to any preceding claim, characterized in that the pseudo
+medical system differs from the medical system at least in that it has neither gantry nor bed.
+
+5. The apparatus according to any preceding claim, characterized in that the pseudo
+
+medical system reproduces operations under the same reconstruction conditions as with the
+
+past operations of the medical system.
+
+4887172-1-RGRANLEE
+
+--- PAGE 2 ---
+6. The apparatus according to any of claims 1 to 4, characterized in that the pseudo
+medical system reproduces operations under the same system operating conditions as with the
+
+past operations of the medical system.
+re The apparatus according to any preceding claim, characterized by further comprising an
+operating unit (402) configured to set up the conditions of operations to be reproduced by the
+
+pseudo medical system.
+
+8. The apparatus according to any preceding claim, characterized in that the plurality of log
+
+files are ones which have been generated since the medical system was last activated.
+
+9. The apparatus according to any preceding claim, characterized by further comprising an
+
+indication unit (463) for indicating the pseudo medical system is in reproducing operation.
+
+10. The apparatus according to claim 1, wherein the log files are based on data generated
+
+by the medical system.
+
+4687172-1-RGRANLEE

@@ -1,0 +1,8 @@
+TITLE:
+IEEE 1588 syntonization and synchronization functions completely realized in hardware
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+The Precision Time Protocol (PTP) is an application layer protocol and therefore destined to be implemented in software. Hardware functions, if present, include a high resolution clock that helps to generate precise timestamps for PTP messages. The presented paper describes an IEEE 1588 clock that realizes syntonization and synchronization functions completely in hardware. It combines a three-port bridge with peer-to-peer Transparent Clock (TC) functionality and an Ordinary Clock (OC), together with other protocol and application specific logic within an FPGA. The aim of such an implementation is to provide a high accuracy and robust system clock that can be driven by a simple crystal oscillator. It can cope with oscillator instabilities caused by environmental effects such as fast temperature changes or accelerations (shock/vibration). It may deliver synchronicity in deeply cascaded topologies.

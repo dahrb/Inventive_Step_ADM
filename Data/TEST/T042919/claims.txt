@@ -1,0 +1,70 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Main Request
+
+1. A method for resolving a Uniform Resource Identifier (URD for use in routing
+messages in or between IP Multimedia Subsystem (IMS) networks comprising the following steps:
+
+a. sending a query (201) for resolving said Uniform Resource Identifier from a device
+capable of sending messages to said IP Multimedia Subsystem networks (220), to a private name
+server (221) with a limited set of known domains, managed by an organisation and separated from
+domain name server infrastructure available to the public in the Internet; and
+
+b. resolving ( 202) said Uniform Resource Identifier by said private name server (221);
+
+characterized in that said method further comprises:
+
+c. sending a new query (203) for resolving said Uniform Resource Identifier to a
+public name server (222) in the Internet in case resolving said Uniform Resource Identifier by said
+private name server (221) fails, wherein the sending of the new query is performed by said private
+name server (221);
+
+d. resolving (204) said Uniform Resource Identifier by said public name server (222); and
+
+e. receiving a response (205) to said query (203) by said device(220).
+
+2. A method for resolving a Uniform Resource Identifier (URI) as described in claim 1,
+characterized in that said step d involves translating a domain in said Uniform Resource Identifier
+
+into a different domain using Naming Authority Pointer (NAPTR) records.
+
+3. A method for resolving a Uniform Resource Identifier (URD as described in claim 1,
+characterized in that said step d involves translating a domain in said Uniform Resource Identifier
+
+into a different domain using Service (SRV) records.
+
+4. A private name server (221) for resolving (202) a Uniform Resource Identifier (URI)
+for use in routing messages in a IP Multimedia Subsystem network, said private name server (221)
+having a limited set of known domains, being managed by an organisation and separated from
+domain name server infrastructure available to the public in the Internet, and comprising:
+
+- means for receiving a query (201) for resolving (202) a Uniform Resource Identifier
+(CURD;
+
+- means for resolving (202) said Uniform Resource Identifier (URD;
+
+- means for formulating a response (207) to said query (201); and
+
+- means for sending said response (207);
+
+characterized in that said private name server (221) is further adapted to formulate a
+
+new query (203) for resolving (204) said Uniform Resource Identifier (URD and to send said new
+
+--- PAGE 2 ---
+2
+
+query (203) to a public name server (222) in the Internet in case of failure to resolve (202) said
+
+Uniform Resource Identifier (URI) by said private name server (222).

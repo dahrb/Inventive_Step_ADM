@@ -1,0 +1,280 @@
+--- PAGE 1 ---
+EP 14 003 698.9
+A5013105EPPOOMm
+
+amended claims (clean version)
+31 January 2020
+
+CLAIMS
+
+A method for managing pre-computed search results, the method being performed in a
+database environment (1), the database environment comprising:
+
+— at least one search platform (4) for maintaining pre-computed search results, the
+pre-computed search results being subdivided into a plurality shares of related
+pre-computed search results including a first share D;
+
+— a re-computation controller (2) for controlling re-computation of the pre-
+computed search results on the basis of validity probabilities being associated
+with the pre-computed search results; and
+
+— acomputation platform (3) for re-computing the pre-computed search results;
+
+the method comprising:
+
+~ determining (12), by the re-computation controller (2), a validity trend Ai
+indicating a change rate of the validity probability of a pre-computed search
+result i over time, the pre-computed search result i being a member of the first
+share D, the validity trend 2; being derived from at least three past re-
+computations of i;
+
+~ determining (13), by the re-computation controller, an instantaneous validity
+rate Aj for the pre-computed search result i, the instantaneous validity rate Aj
+being derived from the two latest re-computations of the related pre-computed
+search results included in the first share D;
+
+— in response to determining (14) a difference between the instantaneous validity
+rate Aj and the validity trend A; exceeding a given extent, decreasing (15), by the
+re-computation controller (2), the validity probabilities associated with other
+pre-computed search results included in a second share D' being correlated to
+the first share D, wherein the amount of decrease depends on the amount of the
+difference between the instantaneous validity rate 1; and the validity trend Ai;
+
+— issuing (16), by the re-computation controller (2), re-computation orders to the
+computation platform (3) to re-compute a part of the pre-computed search
+results with lower validity probabilities than other pre-computed search results
+
+with higher validity probabilities.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 14 003 698.9
+A501310SEPPOOMm
+
+amended claims (clean version)
+31 January 2020
+
+The method of claim 1, wherein the validity probabilities being associated with the
+other pre-computed search results included in the second share D' are adjusted in
+
+dependency of a degree of correlation between the first share D and the second share
+D'.
+
+The method of claim 2, wherein the degree of correlation between the first share D and
+the second share D' is determined by a linear regression to model a relation between
+
+— the difference between a validity trend Ap and an instantaneous validity rate Xp,
+
+Ap indicating a change rate of the probability of the pre-computed search results
+
+in the first share D, Ap being an instantaneous validity rate relating to the pre-
+
+computed search results in the first share D; and
+
+- adifference between a validity trend Ap and an instantaneous validity rate Ap,
+Ap' indicating a change rate of the validity probability of the pre-computed
+search results in the second share D', Ap: being an instantaneous validity rate
+
+relating to the pre-computed search results in the second share D'.
+
+The method of claim 3, wherein the degree of correlation between the first share D and
+
+the second share D' is given by the relation
+
+eee Co / ——
+~ —PR. -
+Ap! - Ap * of, (Ap Ap);
+D
+wherein O’p a variance of the validity rate Xp over time and Opp denotes a covariance
+
+between the validity trend Ap and the instantaneous validity rate Ap: over time.
+
+The method of any of claims 1 to 4, wherein the validity trend Ai is derived from a
+
+common validity trend Apavg for the pre-computed search results of the first share D.
+
+The method of any of claims 1 to 5, wherein the validity probability associated with the
+pre-computed search result i is given by a probability that the pre-computed search
+result is still valid after a time Tn defined by e~*i™, wherein at least one of determining
+the validity trend Aj and determining the instantaneous validity rate 4; comprises a
+
+maximum likelihood estimation to estimate an expected value for A; within e717 and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+10.
+
+11.
+
+12,
+
+EP 14 003 698.9
+A501310SEPPO0Mm
+
+amended claims (clean version)
+31 January 2020
+
+di Within e7AiTn respectively, the maximum likelihood estimation being based on a
+sample series of re-computation pairs, each re-computation pair including a time since
+
+the last re-computation of i and a flag indicating whether or not i has changed since the
+
+last re-computation of i.
+
+The method of claim 6, further comprising calculating a confidence value for the
+
+estimated validity trend 4; and/or the estimated instantaneous validity rate 4; estimated
+
+by using the maximum likelihood estimation.
+
+The method of any one claims 1 to claim 5, wherein determining the validity trend Aj
+and/or determining the instantaneous validity rate 4; comprises establishing an
+empirical distribution function of the probability for the pre-computed search result i
+
+to stay valid over time and regressing the empirical distribution function to fit a model
+
+function
+
+The method of claim 8, wherein the empirical distribution function for the validity trend
+di and/or the instantaneous validity rate Ai is regressed to fit an exponential function of
+
+the form f(t) = e7*t and/or f(t) = e7**),
+
+The method of any of claims 1 to 9, wherein at least one of determining the validity
+
+trend A; and determining the instantaneous validity rate (i utilizes MapReduce
+
+processes.
+
+The method of any of claims 1 to 10, wherein the instantaneous validity rate /j for the
+pre-computed search result i is determined in response to a re-computation of the pre-
+
+computed search results included in the first share D.
+
+A re-computation controller (2) for managing pre-computed search results maintained
+by a search platform (4), the pre-computed search results being subdivided into a
+plurality shares of related pre-computed search results including a first share D, the re-
+computation controller (2) comprising one or more processors (101) and a memory
+(102, 106, 111) including instructions that, when executed by the one or more
+
+processors (101), cause the re-computation controller (2) to control re-computation of
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+13.
+
+14.
+
+EP 14 003 698.9
+A5013105EPPOOMm
+
+amended claims (clean version)
+31 January 2020
+
+the pre-computed search results on the basis of validity probabilities being associated
+
+with the pre-computed search results by:
+
+determining (12) a validity trend 4; indicating a change rate of the validity
+probability of the pre-computed search result i over time, the pre-computed
+search result i being a member of the first share D, the validity trend Ai being
+derived from at least three past re-computations of i;
+
+determining (13) an instantaneous validity rate 4; for the pre-computed search
+result i, the instantaneous validity rate 4; being derived from the two latest re-
+computations of the related pre-computed search results included in the first
+share D;
+
+in response to determining (14) a difference between the instantaneous validity
+rate A; and the validity trend A; exceeding a given extent, decreasing (15)
+validity probabilities being associated with other pre-computed search results
+included in a second share D' being correlated to the first share D, wherein the
+amount of decrease depends on the amount of the difference between the
+instantaneous validity rate 4; and the validity trend Ai;
+
+issuing (16) re-computation orders to a computation platform to re-compute a
+part of the pre-computed search results with lower validity probabilities than
+
+other pre-computed search results with higher validity probabilities .
+
+The re-computation controller of claim 12, wherein the instructions, when executed by
+
+the one or more processors, cause the re-computation controller to perform the methods
+
+of any of the claims 2 to 11.
+
+A computer program product comprising:
+
+a non-transitory computer-readable storage medium; and
+
+instructions stored on the non-transitory computer-readable storage medium that, when
+
+executed by a processor (101), cause the processor (101) to control re-computation of
+
+the pre-computed search results on the basis of validity probabilities being associated
+
+with the pre-computed search results by:
+
+— determining (12) a validity trend 4; indicating a change rate of the validity
+
+probability of a pre-computed search result i over time, the pre-computed search
+
+--- PAGE 5 ---
+EP 14 003 698.9
+A5013105EPPO0O0Mm
+
+amended claims (clean version)
+31 January 2020
+
+result i being a member of a first share D, the validity trend A; being derived
+from at least three past re-computations of i;
+
+~ determining (13) an instantaneous validity rate 4; for the pre-computed search
+result i, the instantaneous validity rate 4; being derived from the two latest re-
+computations of related pre-computed search results included in the first share
+D;
+
+~ in response to determining (14) a difference between the instantaneous validity
+rate Ai and the validity trend A; exceeding a given extent, decreasing (15)
+validity probabilities being associated with other pre-computed search results
+included in a second share D' being correlated to the first share D, wherein the
+amount of decrease depends on the amount of the difference between the
+instantaneous validity rate A; and the validity trend Ai;
+
+~ issue (16) re-computation orders to a computation platform to re-compute a part
+of the pre-computed search results with lower validity probabilities than pre-
+
+computed search results with higher validity probabilities .
+
+15. The computer program product of claim 14, wherein the instructions, when executed
+
+by the one or more processors, cause the processor to perform the methods of any of
+
+the claims 2 to 11.

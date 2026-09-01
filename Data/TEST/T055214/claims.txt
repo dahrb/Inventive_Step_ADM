@@ -1,0 +1,126 @@
+--- PAGE 1 ---
+P13858EP/En/CH, new claims, Ticketmaster
+
+1
+
+European Patent Application No. 06 739 187.0-1958
+Applicant: Ticketmaster
+
+20
+
+25
+
+30
+
+NEW CLAIMS
+
+A method of processing electronic queue data, the method comprising:
+receiving in a queue a ticket-related request for a resource from a first user;
+determining or estimating the number of ticket-related requests that are in a
+first electronic queue;
+
+based at least in part on the number of the ticket-related requests that are in
+the first electronic queue and historical queue abandonment data, selecting
+a notification-type regarding the queue to be provided to the first user that
+has a ticket-related request in the queue; and
+
+transmitting a notification corresponding to the notification-type to a terminal
+associated with the first user that has a ticket-related request in the queue,
+wherein the notification type includes an indication to the user that the
+requested resource will not be available when an estimate indicates the
+requested resource will not be available when the first user's ticket-related
+
+request is serviced.
+
+The method as defined in Claim 1, wherein the type of queue information is
+selected to reduce queue abandonment.
+
+The method as defined in Claim 1, wherein the type of queue information is
+
+selected to increase queue abandonment.
+
+The method as defined in Claim 1, wherein the selected type of queue
+information includes an estimated queue wait time rounded up to the nearest
+
+minute.
+
+The method as defined in Claim 1, wherein the notification presents a queue
+
+wait time as being less than a specified time duration.
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+P13858EP/En/CH, new claims, Ticketmaster
+
+10.
+
+11.
+
+2
+
+The method as defined in Claim 1, wherein the selected type of queue
+
+information does not include queue wait time information.
+
+The method as defined in Claim 1, wherein the type of queue information is
+selected partly based on an historical average and/or standard deviation of
+length of time one or more users were willing to wait in a queue before
+abandoning their queued ticket-related requests.
+
+The method as defined in Claim 1, wherein the ticket-related request is a
+
+request to purchase at least one ticket.
+
+The method as defined in Claim 1, wherein the ticket-related request is a
+
+request to view ticket availability.
+
+A queuing system comprising:
+
+a first queue configured to hold resource requests from a plurality of users;
+program code stored in computer readable memory configured:
+
+to determine or estimate whether a resource requested by a first resource
+request submitted by a first requester will be available when the first
+resource request will be serviced; and
+
+to transmit a message over a network to the first requester indicating that the
+requested resource will not be available when the queued request is
+serviced if it is estimated or determined that the requested resource will not
+
+be available when the first request is serviced.
+
+The system as defined in Claim 10, the system further comprising program
+code stored in computer readable memory configured to automatically
+identify to the first requester a potential alternate resource at least partly in
+response to determining or estimating the requested resource will not be
+
+available when the first request is serviced.
+
+The system as defined in Claim 10, the system further comprising program
+code stored in computer readable memory configured to automatically
+
+identify an alternate resource that may be acceptable to the first requester at
+
+--- PAGE 3 ---
+10
+
+P13858EP/En/CH, new claims, Ticketmaster
+
+13.
+
+3
+
+least partly in response to determining or estimating the requested resource
+will not be available when the queued request is serviced.
+
+The system as defined in Claim 10, the system further comprising program
+code stored in computer readable memory configured to transmit to the
+requester an estimated time period related to when the resource request will
+
+be serviced.

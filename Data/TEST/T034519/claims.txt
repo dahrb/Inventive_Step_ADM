@@ -1,0 +1,129 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+Claims
+
+1. A method for a medication dispenser (100) to obtain information from a medica-
+tion package (103), comprising:
+
+- providing an image of the medication package (103);
+characterised in that the method comprises:
+
+- analysing the image to determine positions and formats of patterns (304,
+305, 306) in the image,
+
+- selecting a layout, which has similar pattern formats in the same positions
+as the image, from a set of layouts stored in the medication dispenser
+(100), the selected layout defining the type of information for each pattern
+(304, 305, 306) in the image, and
+
+- interpreting the information contained in at least one of the patterns (304,
+305, 306) of the image by linking the content of the pattern (304, 305, 306)
+to the type of information defined in the selected layout.
+
+2. The method according to claim 1, characterised in that the step of providing an
+image of the medication package (103) comprises:
+
+- capturing with a camera (105) at least one image of the medication pack-
+age (103), and
+
+- combining the at least one image into a single image.
+
+3. The method according to claim 2, characterised in that the method comprises
+moving the medication package (103) across an imaging area of the camera (105)
+between the capturing of the images.
+
+4. The method according to claim 2 or 3, characterised in that the method com-
+prises illuminating with at least one light source (111) the medication package
+(103).
+
+5. The method according to claim 4, characterised in that the method comprises
+changing the intensity and/or the direction and/or the wavelength of the lighting.
+
+6. The method according to any of claims 2 to 5, characterised in that the method
+comprises changing the position of the camera (105).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+14
+
+7. The method according to claim 1, characterised in that the step of providing an
+image of the medication package (103) comprises receiving the image from a
+server over a communications network.
+
+8. The method according to any of the preceding claims, characterised in that, if
+an error occurs in the step of selecting a layout, the method comprises:
+
+- sending the image to a server over a communications network,
+- generating, at the server, a new layout based on the image, and
+
+- sending the new layout to the medication dispenser (100) over a communi-
+cations network.
+
+9. The method according to any of the preceding claims, characterised in that
+one or more of the steps of analysing the image, selecting a layout and interpret-
+ing the information are carried out at a server that is communicatively connected to
+the medication dispenser (100) over a communications network.
+
+10. A medication dispenser (100), comprising:
+
+- acontainer (101) for holding a medication package (103) containing medi-
+cations to be taken at a predetermined taking time,
+
+- means (109, 109’, 109”, 110, 110’) for transferring the medication package
+(103) from the container (101) to an outlet (107) of the medication dis-
+penser (100), and
+
+- means (105) for providing an image of the medication package (103);
+
+characterised in that the medication dispenser (100) comprises a control unit
+(108) that comprises:
+
+- means for analysing the image to determine positions and formats of pat-
+terns (304, 305, 306) in the image,
+
+- means for maintaining a set of layouts in the medication dispenser (100),
+
+- means for selecting a layout, which has similar pattern formats in the same
+positions as the image, from the set of layouts, the selected layout defining
+the type of information for each pattern (304, 305, 306) in the image, and
+
+--- PAGE 3 ---
+10
+
+15
+
+15
+
+- means for interpreting the information contained in at least one of the pat-
+terns (304, 305, 306) of the image by linking the content of the pattern (304,
+305, 306) to the type of information defined in the selected layout.
+
+11. The medication dispenser according to claim 10, characterised in that the
+means for providing an image of the medication package (103) comprises a cam-
+era (105).
+
+12. The medication dispenser according to claim 11, characterised in that the
+medication dispenser (100) comprises at least one light source (111) arranged to
+illuminate the medication package (103).
+
+13. The medication dispenser according to claim 10, characterised in that the
+means for providing an image of the medication package comprises a communica-
+tions unit for receiving the image from a server over a communications network.
+
+14. The medication dispenser according to any of claims 10 to 13, characterised
+in that the medication dispenser (100) comprises a detector arranged to detect the
+presence of the medication package (103) in the container (101).

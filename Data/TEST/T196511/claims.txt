@@ -1,0 +1,172 @@
+--- PAGE 1 ---
+EP Application No.: 01 123 065.3
+
+Applicant: Microsoft Corporation
+Our Ref.: EP22020RKO066joh
+Date: August 29, 2011
+
+MAIN REQUEST
+
+A method of providing an extended table of alternatives for use in execution of a
+
+relational database query, the method comprising:
+
+obtaining a table (300) of alternatives, the table (300) of alternatives comprising several
+groups, one group having a root entry representing the database query and additional
+entries representing alternative possibilities for executing the database query and the
+other groups having root entries representing sub-expressions of the database query and
+additional entries representing alternative possibilities for executing the respective sub-
+
+expression of the database query;
+
+selecting candidate views for the query from a number of materialized views; and
+for each root entry:
+
+extracting an operator tree for the root entry;
+
+extracting, for each candidate view, an operator tree from a view definition of the
+
+candidate view;
+matching the operator trees for the root entry and the candidate views; and
+
+if a match is found, extending the table (300) of alternatives with the corresponding
+candidate view by extending the group of the root entry with the corresponding candidate
+
+view.
+
+The method of claim 1 wherein extracting an operator tree (400) for an entry containing
+
+binary joins comprises collapsing operators into a query graph.
+
+The method of claim 2 wherein the collapsing of the operators into a query graph
+comprises listing underlying tables along with predicates that are applied on them.
+
+The method of claim 1 wherein extracting an operator tree (400) for a view comprises
+
+collapsing operators into a primitive graph-tree.
+
+--- PAGE 2 ---
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+The method of claim 4 wherein a primitive graph-tree is restricted to a specific set of
+
+operators and is restricted to primitive tables.
+
+The method of claim 5 wherein only join, outer join and filter operators are allowed in the
+
+operator tree (400) for join graphs.
+
+The method of claim 1 wherein the table (300) of alternatives is extended by adding a
+
+root operator.
+The method of claim 1 and further comprising:
+
+using a cost based optimizer to select an execution plan based on the extended table
+
+(300) of alternatives.
+The method of claim 1, wherein the matching step further comprises:
+for each entry and view:
+
+attempting a subsumption map from a definition of the materialized view to the operator
+
+tree.
+
+The method of claim 9, further defining residual operations if the subsumption map
+
+attempt is successful.
+
+The method of claim 10 and further comprising adding defined residual operations to the
+
+table (300) of alternatives.
+
+The method of claim 11 wherein the residual operations are selected from the group
+
+consisting of filters, group by and joins.
+
+A computer readable medium having instructions for causing a computer to perform the
+
+method of one of claims 1 to 12.
+
+A query optimizer that provides an extended table of alternatives for use in execution of a
+
+database query, the query optimizer comprising:
+
+means for obtaining a table (300) of alternatives, the table (300) of alternatives
+comprising several groups, one group having a root entry representing the database
+query and additional entries representing alternative possibilities for executing the
+
+database query and the other groups having root entries representing sub-expressions of
+
+--- PAGE 3 ---
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+21.
+
+the database query and additional entries representing alternative possibilities for
+
+executing the respective sub-expression of the database query;
+
+means for selecting candidate views for the query from a number of materialized views;
+for each root entry:
+
+means for extracting an operator tree for the root entry;
+
+means for extracting, for each candidate view, an operator tree from a view definition of
+
+the candidate view;
+means for matching the operator trees for root entry and the candidate views; and
+
+further configured to extend the table (300) of alternatives with the corresponding
+candidate view by extending the group of the root entry with the corresponding candidate
+
+view, if a match is found.
+
+The query optimizer of claim 14 wherein means for extracting an operator tree (400) for
+an entry containing binary joins and outer joins comprises means for collapsing operators
+
+into a query graph.
+
+The query optimizer of claim 15 wherein means for collapsing of the operators into a
+query graph comprises means for listing underlying tables along with predicates that are
+
+applied on them.
+
+The query optimizer of claim 14 wherein means for extracting an operator tree (400) for a
+
+view comprises means for collapsing operators into a primitive graph-tree.
+
+The query optimizer of claim 17 wherein a primitive graph-tree is restricted to a specific
+
+set of operators and is restricted to primitive tables.
+
+The query optimizer of claim 18 wherein only join, outerjoin and filter operators are
+
+allowed in the operator tree (400) for join graphs.
+
+The query optimizer of claim 14 wherein the table (300) of alternatives is extended by
+adding a root operator.
+
+The query optimizer of claim 14 and further comprising:
+
+--- PAGE 4 ---
+means for selecting an execution plan based on the extended table (300) of alternatives
+
+using a cost based optimizer.

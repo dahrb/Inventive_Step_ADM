@@ -1,0 +1,82 @@
+--- PAGE 1 ---
+CLAIMS
+
+1. A mobile device (104-1-104-N) for use with an apparatus (108-1-108-N,
+200) for generating a plurality of geo-fences to provide a notification to the
+mobile device (104-1-104-N) when the mobile device (104-1-104-N) enters or
+resides in an area encompassed by a geo-fence, the apparatus (108-1-108-N,
+200) being configured to obtain a trigger generated in response to a change in a
+geo-fence criteria, and to define one or more boundaries of each geo-fence based
+on the geo-fence criteria in response to obtaining the trigger;
+
+the mobile device (104-1-104-N) being configured to:
+
+process the plurality of geo-fences differently based on a number of
+applications that actively utilize geo-fences on the mobile device (104-1-104-N)
+to prevent the mobile device (104-1-104-N) from being overloaded with
+notifications for geo-fences, wherein, when the mobile device (104-1-104-N) is
+executing a large number of applications that are actively utilizing geo-fences
+and crosses a boundary of a geo-fence, the mobile device (104-1-104-N) is
+configured to delay recognition of the geo-fence until the mobile device (104-1-
+104-N) is closer to a center of an area defined by the geo-fence so that the
+recognized geo-fence encompasses a smaller area than the geo-fence when the
+mobile device (104-1-104-N) is executing a small number of applications that
+
+actively utilize geo-fences.
+
+2. The mobile device of claim 1, wherein the trigger is a reception of new
+
+demographic information.
+
+3. The mobile device of claim 1, wherein the geo-fence criteria are
+
+demographics of human population.
+
+4, The mobile device of claim 1, wherein
+
+a shape of the geo-fence is a circle and a radius of the circle is based on
+the geo-fence criteria; or
+
+a shape of the geo-fence is based on demographic information; or
+
+the geo-fence is activated at a start of a specified period of time and is
+
+deactivated at an end of the specified period of time.
+1
+
+--- PAGE 2 ---
+5. A method performed by a mobile device (104-1-104-N) for use with an
+apparatus (108-1-108-N, 200) for generating a plurality of geo-fences, the
+apparatus (108-1-108-N, 200) being configured to obtain a trigger generated in
+response to a change in the geo-fence criteria, and to define one or more
+boundaries of each geo-fence based on the geo-fence criteria in response to
+obtaining the trigger,
+
+the method comprising:
+
+processing the plurality of geo-fences differently based on a number of
+applications that actively utilize geo-fences on the mobile device (104-1-104-N)
+to prevent the mobile device (104-1-104-N) from being overloaded with
+notifications for geo-fences, wherein when the mobile device (104-1-104-N)
+executes a large number of applications that are actively utilizing geo-fences and
+crosses a boundary of a geo-fence, the mobile device (104-1-104-N) delays
+recognition of the geo-fence until the mobile device (104-1-104-N) is closer to a
+center of an area defined by the geo-fence so that the recognized geo-fence
+encompasses a smaller area than the geo-fence when the mobile device (104-1-
+104-N) is executing a small number of applications that actively utilize geo-
+
+fences.
+
+6. The method of claim 5, wherein the trigger is a reception of new
+
+demographic information.
+
+7. The method of claim 5, wherein:
+a shape of the geo-fence is based on demographic information; or
+the geo-fence is activated at a start of a specified period of time and is
+
+deactivated at an end of the specified period of time.
+
+8. A computer-readable medium carrying instructions that, when executed
+by a processor of a mobile device (104-1-104-N), cause the mobile device (104-
+1-104-N)to carry out the method of any one of claims 5 to 7.

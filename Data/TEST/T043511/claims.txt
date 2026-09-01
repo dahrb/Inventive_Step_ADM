@@ -1,0 +1,171 @@
+--- PAGE 1 ---
+EP application 04 733 534.4
+MB&P ref.: S§ 7941EU — hb/ael
+Claims
+(Main Request)
+
+1. A method for copying data elements and related data elements from a source
+database (20) of a source system (12) to a target database (28) of a target system (26)
+by a user, the method comprising:
+
+accessing at least one data element representing a data change from the source
+database (20) of the source system (12), the data change existing in a first collection of
+data in the source database (20);
+
+copying the at least one data element to an export data file (22);
+
+transporting the export data file (22) from the source system (12) to the target
+system (26) having the target database (28);
+
+displaying, at the target system (26), a user interface (24) that identifies ones of the
+
+at least one data element stored in the export data file (22), to prompt a user selection of
+desired ones of the at least one data element to be copied in the target database (28);
+and
+
+copying selected ones of the at least one data element to the target database (28).
+
+2. The method of claim 1 wherein copying the at least one data element to the export
+data file (22) comprises:
+
+comparing the at least one data element to a data element stored in a reference
+export data file, the reference export data file being a previously exported data file; and
+
+storing the at least one data element to the export data file (22) based on the
+comparison,
+
+wherein the method comprises the steps of
+
+decompressing reference export file (22);
+
+reading ActiveX Data Object (ADO) information for data elements and data
+elements stored in the reference export file;
+
+determining if the ADO information for data elements and related data elements is
+identical to the ADO information for data elements and related data elements accessed
+
+from the source database (20); and
+
+--- PAGE 2 ---
+EP application 04 733 534.4
+MB&P ref.: S 7941EU — hb/ael
+if the ADO information read from the reference export data file is not identical,
+converting the data elements and related data elements accessed from the source
+database (20) to ADO specific extensible markup language (XML) files; and
+once all of the ADO specific XML files are generated, compressing all XML files
+into the export data file (22).
+
+3. The method of claim 1 further comprising copying a related data element from the
+source database (20) to the export data file (22), the related data element relates to one
+
+of the at least one data element.
+
+4, The method of claim 3 wherein the at least one data element represents a report
+and the related data element represents a graphical illustration of data in the report.
+
+5. The method of claim 1 wherein copying selected ones of the at least one data
+element to the target database (28) comprises copying a related data element from the
+export data file (22) to the target database (28), the related data element relates to one of
+the at least one data element.
+
+6. The method of claim 5 wherein copying to the target database (28) comprises
+generating a restorable archive file using ones of at least one data element that exist in a
+second collection of data stored in the target database (28).
+
+7. The method of claim 6 further comprising generating the restorable archive file
+using a related data element to the at least one data element, the related data element
+
+existing in the second collection of data stored in the target database (28).
+
+8. A system for copying data elements and related data elements from a source
+database (20) of a source system (12) to a target database (28) of a target system (26)
+by a user, the system comprising:
+
+a computer network (24);
+
+--- PAGE 3 ---
+EP application 04 733 534.4
+MB&P ref.: S 7941EU — hb/ael
+the source system (12) coupled to the computer network (24), the source system
+(12) storing a first collection of data in the source database (20);
+
+the target system (26) coupled to the computer network (24), the target system (26)
+storing a second collection of data in the target database (28);
+
+a service delivery device coupled to the network (24), the service delivery device
+including a processor (13) and memory (15) storing instructions (14) that, in response to
+receiving a first type of request for access to a service, cause the processor (13) to:
+
+access at least one data element representing a data change from the source
+database (20) of the source system (12), the data change existing in the first collection of
+data in the source database (20);
+
+copy the at least one data element to an export data file (22); and
+
+transport the export data file (22) from the source system (12) to the target system
+(26) having the target database (28),
+wherein the memory (23) stores instructions (15) that, in response to receiving a second
+type of request, cause the processor (21) to:
+
+display, at the target system (26), a user interface (24) that identifies ones of the at
+least one data element stored in the export data file (22), to prompt a user selection of
+desired ones of the at least one data element to be copied in the target database (28);
+and
+
+copy selected ones of the at least one data element to the target database (28).
+
+9. The system of claim 8 wherein the memory (15) stores instructions (14) that, in
+response to receiving the first type of request, cause the processor (13) to copy a related
+data element from the source database (20) to the export data file (22), the related data
+
+element relates to one of the at least one data element.
+
+10. The system of claim 9 wherein the memory (15) stores instructions (14) that, in
+response to receiving the first type of request, cause the processor to:
+
+compare the at least one data element to a data element stored in a reference
+export data file, the reference data file being a previously exported data file; and
+
+store the at least one data element to the export data file based on the comparison,
+
+--- PAGE 4 ---
+EP application 04 733 534.4
+MB&P ref.: S 7941EU — hb/ael
+wherein the instructions (14) cause the processor (13) to
+decompress the reference export file (22);
+read ActiveX Data Object (ADO) information for data elements and data elements
+stored in the reference export file;
+determine if the ADO information for data elements and related data elements is
+identical to the ADO information for data elements and related data elements accessed
+from the source database (20); and
+if the ADO information read from the reference export data file is not identical,
+convert the data elements and related data elements accessed from the source database
+(20) to ADO specific extensible markup language (XML) files; and
+once all of the ADO specific XML files are generated, compress all XML files into
+export data file (22).
+
+11. The system of claim 8 wherein the memory (23) stores instructions (15) that, in
+response to receiving the second type of request, cause the processor (21) to copy a
+related data element from the export data file (22) to the target database (28), the related
+data element relates to one of the at least one data element.
+
+12. The system of claim 11 wherein the memory (23) stores instructions (15) that, in
+response to receiving the second type of request, cause the processor (21) to generate a
+restorable archive file using the ones of the at least one data element that exist in the
+second collection of data stored in the target database (28).
+
+13. The system of claim 12 wherein the memory (23) stores instructions (15) that, in
+response to receiving the second type of request, cause the processor (21) to generate
+the restorable archive file using the related data element to the at least one data element,
+the related data element existing in the second collection of data stored in the target
+database (28).
+
+--- PAGE 5 ---
+EP application 04 733 534.4
+
+MB&P ref.: S 7941EU — hb/ael
+
+14. An article comprising a machine-readable medium storing machine-readable
+instructions that, when applied to the machine, cause the machine to carry out a method
+
+according to one of claims 1 to 7.

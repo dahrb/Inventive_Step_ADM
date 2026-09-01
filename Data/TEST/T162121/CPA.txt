@@ -1,0 +1,51 @@
+TITLE:
+Method and apparatus for processing a video signal, method for playback of a recorded video signal and method of providing an advertising service
+
+TYPE: US Patent
+
+ABSTRACT: A method for processing a broadcast video signal includes identifying a first advertising component within the video signal; creating control information based on predetermined characteristics of the first advertising component; and recording the video signal and the control information to form an encoded video signal, which is arranged in such a manner that a second advertising component is substitutable for the first advertising component based on a playback status of the encoded video signal.
+
+CLAIMS:
+
+1. A method for processing a broadcast video signal, comprising:
+identifying a first advertising component within the video signal;
+creating control information based on predetermined characteristics of the first advertising component; and
+recording the video signal and the control information to form an encoded video signal, the encoded video signal arranged in such a manner that a second advertising component is substitutable for the first advertising component based on a playback status of the encoded video signal.
+2. A computer-readable storage medium having stored thereon one or more software programs which, when executed, implement the method of claim 1.
+3. The computer-readable storage medium according to claim 2, wherein the one or more software programs are responsive to a personal video recorder.
+4. The method according to claim 1, wherein the second advertising component is substituted for the first advertising component prior to recording the encoded video signal.
+5. The method according to claim 4, wherein a location of the second advertising component is one of a local memory; a remote memory; and a dedicated communication channel.
+6. The method according to claim 1, wherein the step of identifying the first advertising component within the video signal comprises detecting metadata within the video signal.
+7. The method according to claim 6, wherein the control information comprises metadata.
+8. The method according to claim 6, wherein the predetermined characteristics comprise one of a playback time of the first advertising component and a date indicator associated with the first advertising component.
+9. The method according to claim 1, wherein the video signal is encoded according to a moving pictures experts group (MPEG) standard.
+10. A method for playback of a recorded video signal, the recorded video signal having a first advertising component and control information based on predetermined characteristics of the first advertising component, comprising:
+detecting a playback status of the first advertising component; and
+based on the control information and the playback status, playing a second advertising component instead of playing the first advertising component.
+11. A computer-readable storage medium having stored thereon one or more software programs which, when executed, implement the method of claim 10.
+12. The method according to claim 10, further comprising:
+prior to playing the second advertising component, retrieving the second advertising component; and
+after retrieving the second advertising component, substituting the second advertising component for the first advertising component based on the playback status of the first advertising component.
+13. The method according to claim 12, wherein the second advertising component is retrieved from one of a local memory; a remote memory; and a dedicated communication channel.
+14. The method according to claim 13, further comprising:
+substituting the second advertising component for the first advertising component during playback of the encoded video signal.
+15. The method according to claim 14, wherein the predetermined characteristics comprise one of a playback time of the first advertising component and a date indicator associated with the first advertising component.
+16. The method according to claim 15, wherein the first advertising component has a first playback speed, and the second advertising component has a second playback speed.
+17. The method according to claim 16, wherein the first playback speed is faster than the second playback speed.
+18. The method according to claim 17, further comprising:
+detecting a user input requesting playback of the first advertising component at the first speed; and
+in response to detecting the user input, and based on the playback time of the first advertising component, instead of playing the first advertising component at the first speed, playing the second advertising component at the second speed, the second advertising component at the second speed having a playback time substantially equivalent to the playback time of the first advertising component at the first speed.
+19. The method according to claim 15, further comprising:
+based on the date indicator, determining that the first advertising component is date-sensitive; and
+in response to detecting that the first advertising component is date-sensitive, instead of playing the first advertising component, playing the second advertising component.
+20. An apparatus for processing a video signal, comprising:
+a computer-readable storage medium; and
+a processor responsive to the computer-readable storage medium and to a software program, the software program, when loaded into the processor, operative to:
+identify a first advertising component within the video signal;
+create control information based on predetermined characteristics of the first advertising component;
+create an encoded video signal based on the video signal and the control information; and
+cause the encoded video signal to be recorded on the computer-readable storage medium in such a manner that a second advertising component is substitutable for the first advertising component based on a playback status of the encoded video signal.
+21. A method of providing an advertising service to a user of a personal video recorder, the personal video recorder having stored thereon a broadcast video signal having an original advertising component, the method comprising:
+providing access to a plurality of replacement advertising components;
+causing at least one of the replacement advertising components to be accessed by the personal video recorder; and
+based on a playback status of the original advertising component, causing the personal video recorder to substitute the at least one of the accessed replacement advertising components for the original advertising component.

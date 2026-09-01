@@ -1,0 +1,304 @@
+--- PAGE 1 ---
+Application No.: 04 009 036.7
+
+Applicant: Kabushiki Kaisha Square Enix (also trading as Square Enix
+Co., Ltd.)
+
+Our Ref.: EP30567AK108
+
+Date: April 23. 2009
+
+NEW CLAIMS
+
+1. Amail exchange system comprising:
+
+a plurality of terminal devices (1-1, 1-2, 1-n) connected to one another via a
+communications network (2), each terminal device (1-1, 1-2, 1-n) having a member
+information storage (12, 13) for storing member information (31, 32, 3n) of
+members who belong to a group that exchanges mail via said communications
+network (2), wherein group information (GID) indicating the group exchanging the
+mail is added to the mail (41, 42, 43, 51) to be exchanged among said terminal
+devices (1-1, 1-2, 1-n) of the members, who belong to the group, the plurality of the
+terminal devices (1-1, 1-2, 1-n) comprising a specific member terminal, an existing
+
+member terminal, and a newly joining member terminal;
+said specific member terminal including:
+
+a participation mail receiver (16) for receiving a participation mail (42), including
+member information of a member who newly joins the group, from said newly
+
+joining member terminal via said communications network (2);
+
+a first member information adder (11) for extracting the member information
+included in the participation mail (42) received by said participation mail receiver
+(16) and storing the extracted member information in the member information
+
+storage (12, 13); and
+
+a new member information mail transmitter (16) for transmitting a new member mail
+
+(42), including the member information of the newly joining member, to said existing
+
+--- PAGE 2 ---
+member terminal according to information stored in said member information
+
+storage (12, 13) via said communications network (2),
+said existing member terminal including:
+
+a new member information mail receiver (16) for receiving the new member mail
+(42);
+
+a second member information adder (11) for extracting the member information
+included in the received new member mail (42) and storing the extracted member
+
+information in a member list (3) in the member information storage (12, 13); and
+
+a self-information mail transmitter (16) for transmitting an existing member mail
+(42), including self-member information, to said newly joining member terminal via
+
+said communications network (2), and
+said newly joining member terminal including:
+
+a new participation mail transmitter (16) for transmitting the new member mail (42),
+including self-member information of the newly joining member, to said specific
+
+member terminal via said communications network (2);
+
+an existing member information mail receiver (16) for receiving the existing member
+mail (42); and
+
+a member information generator (11) for generating a member list (3) stored in the
+member information storage (12, 13) based on the received existing member mail
+(42),
+
+wherein user information (UID) that uniquely specifies each user is allocated to
+
+each of said terminal devices (1-1, 1-2, 1-n);
+
+--- PAGE 3 ---
+characterized in that
+
+each of said terminal devices (1-1; 1-2; 1-n) comprises a group information
+generator (11) including an internal timer for generating said group information
+(GID), ,
+
+wherein the group information generator (11) of the terminal device (1-1, 1-2, 1-n)
+of a member forming the group generates said group information (GID) by
+combining the user information (UID) of the terminal device (1-1, 1-2, 1-n) of the
+member forming the group and the time of forming the group, measured by the
+internal timer, such that the group information (GID) uniquely specifies the group
+and is generated without involving a server apparatus and without making an
+
+inquiry to another apparatus.
+
+The mail exchange system according to claim 1, wherein each of said terminal
+
+devices (1-1, 1-2, 1-n) further comprises:
+
+a withdrawal mail transmitter (16) for transmitting withdrawal mail (43), including
+information of withdrawal from the group, to said terminal devices (1-1, 1-2, 1-n) of
+all members in a member list (3) stored in said member information storage (12,
+13);
+
+a withdrawal mail receiver (16) for receiving the withdrawal mail (43), including the
+information of a withdrawing member, transmitted from said withdrawal mail
+
+transmitter (16) of the terminal device (1-1, 1-2, 1-n) of a withdrawing member; and
+
+a member information deleter (11) for deleting the member information (31, 32, 3n)
+of the withdrawing member from the member list (3) in the mail member information
+storage (12, 13).
+
+--- PAGE 4 ---
+The mail exchange system according to claim 1 or 2, wherein said specific member
+terminal further includes an invitation mail transmitter (16) for transmitting invite
+mail (41), including information for inviting participation in the group and self-
+member information, to said newly joining member terminal via said
+
+communications network (2);
+
+wherein said newly joining member terminal further includes an invitation mail
+
+receiver (16) for receiving the invite mail (41); and
+
+wherein said member information generator (11) further generating the member list
+
+(3) in the member information storage based on the received invite mail (41).
+
+The mail exchange system according to any of claims 1 to 3, wherein said specific
+member terminal further includes a second self-information mail transmitter (16) for
+transmitting specific member mail (42), including self-member information, to said
+newly joining member terminal in response to the participation mail (42) received by
+
+said participation mail receiver (16);
+
+wherein said newly joining member terminal further includes a specific member
+information mail receiver (16) for receiving the specific member mail (42), including
+
+the self-member information of the specific member; and
+
+wherein said member information generator (11) generating the member list (3)
+stored in the member information storage (12, 13) based on the specific member
+
+mail (42) received by said specific member information mail receiver (16).
+
+The mail exchange system according to any of claims 1 to 4, wherein each of the
+
+terminal devices (1-1, 1-2, 1-n) includes a cellular phone.
+
+--- PAGE 5 ---
+The mail exchange system according to any of claims 1 to 5, wherein said member
+
+list (3) further comprising a header (30) including said group information (GID).
+
+A terminal device to be used in a mail exchange system according to any of claims
+1 to 6 for exchanging mail with other terminal devices via a communications
+network (2), wherein group information (GID) indicating the group exchanging the
+mail is added to the mail (41, 42, 43, 51) to be exchanged among said terminal
+devices (1-1, 1-2, 1-n) of the members, who belong to the group, said group
+information (GID) being generated at a terminal device (1-1, 1-2, 1-n) of a member
+forming the group and including a combination of user information (UID) of the
+terminal device of the member forming the group and the time of forming said
+group, such that the group information (GID) uniquely specifies the group and is
+generated without involving a server apparatus and without making an inquiry to
+
+another apparatus, said terminal device comprising:
+
+a group information generator (11) including an internal timer for generating said
+
+group information (GID);
+
+a member information storage (12, 13) for storing member information (31, 32, 3n)
+
+of a member, who belongs to a group exchanging mail;
+
+a mail receiver (16) for receiving a mail (42), including member information of a
+member who newly joins the group, from another terminal device via said
+
+communications network (2);
+
+a member information adder (11) for extracting the member information included in
+said received mail (42) and storing the extracted member information (31, 32, 3n) in
+
+a member list (3) stored in the member information storage (12, 13); and
+
+a mail transmitter (16) for transmitting contact mail (42), including member
+
+information to another terminal device via said communications network (2).
+
+--- PAGE 6 ---
+A method for exchanging mail among terminal devices (1-1, 1-2, 1-n) connected to
+one another via a communications network (2), each terminal device (1-1, 1-2, 1-n)
+having a member information storage (12, 13) that stores member information (31,
+
+32, 3n) of members who belong to a group for exchanging mail, comprising:
+
+transmitting (S127) participation mail (42), including member information of a
+member who newly joins the group, to a terminal device of a specific member from
+said terminal device of the newly joining member via said communications network
+
+(2);
+
+receiving (S103) the participation mail (42) at the terminal device of the specific
+
+member;
+
+extracting the member information of the newly joining member from the received
+participation mail (42) at said terminal device of the specific member and storing
+(S104) the extracted member information to said member information storage (12,
+
+13) of said terminal device of the specific member;
+
+transmitting (S105) new member mail (42), including the member information of the
+newly joining member, to terminal devices of other existing members from said
+terminal device of the specific member via said communications network (2)
+according to the member information stored in said member information storage
+
+(12, 13) of said terminal device of the specific member;
+
+receiving (S141) the new member mail (42) at said terminal devices of the other
+
+existing members;
+
+extracting the member information of the newly joining member from the new
+member mail (42) received from said terminal device of the specific member at said
+
+terminal device of the other existing members and storing (S142) the extracted
+
+--- PAGE 7 ---
+member information in said member information storages (12, 13) of said terminal
+
+devices of the existing members;
+
+transmitting (S144) contact mail (42) including the members information of the
+existing member to said terminal devices of the new members from said terminal
+
+device of the existing member via said communications network (2);
+receiving (S128) the contact mail (42)at said terminal device of the new member;
+
+extracting the member information of the existing members from the received
+contact mail at said terminal device of the new member and storing (S129) the
+extracted member information in said member information storage (12, 13) of said
+
+terminal device of the new member, and
+
+adding group information (GID) indicating the group exchanging the mail to the mail
+(41, 42, 43, 51) to be exchanged among the terminal devices (1-1, 1-2, 1-n) of the
+
+members, who belong to the group,
+characterized by the step of
+
+generating said group information (GID) at the terminal device (1-1, 1-2, 1-n) of a
+member forming the group by combining user information (UID) allocated to the
+terminal device (1-1, 1-2, 1-n) of the member forming the group and the time of
+forming the group, measured by an internal timer of the terminal device (1-1, 1-2, '1-
+n) of the member forming the group, such that the group information (GID) uniquely
+specifies the group and is generated without involving a server apparatus and
+
+without making an inquiry to another apparatus.
+
+The mail exchange method according to claim 8, further comprising transmitting
+(S202) withdrawal mail (43) including information, indicating that a member
+
+corresponding to a terminal device is withdrawing from the group, to all other
+
+--- PAGE 8 ---
+10.
+
+11.
+
+terminal devices from the withdrawing terminal device according to the stored
+
+member information (31, 32, 3n);
+
+wherein the withdrawal mail (43) is received (S221) at each of the other terminal
+
+devices; and
+
+wherein the member information corresponding to the received withdrawal mail (43)
+is deleted (S222) from said member information storage (12, 13) at each of the
+
+other terminal devices.
+
+The mail exchange method according to claim 8 or 9, further comprising
+
+transmitting (S102) an invitation mail (41) including information for inviting
+participation in the group and self-member information from said terminal device of
+said specific member to said terminal device of said newly joining member via said
+
+communications network (2), and
+
+receiving (S121) said invitation mail (41) at said terminal device of said newly
+
+joining member.
+
+A computer-readable storage medium comprising computer readable program
+means for causing a computer to execute the steps of a method according to any of
+
+claims 8 to 10.
+
+12. A carrier wave having a program data signal, comprising computer readable
+
+program means for causing a computer to execute the steps of a method according
+
+to any of claims 8 to 10.

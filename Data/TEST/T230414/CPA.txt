@@ -1,0 +1,29 @@
+Title: Mobile station telephony service applications for mobile station having integrated transponder readers
+
+Abstract: In an embodiment of the present invention, a mobile station (301) interrogates an RFID tag (305) which may be located on a desk top phone (303), or an advertising billboard, and receives data. The mobile station (301) parses the data to obtain a telephone number, which may be an IP address for VoIP devices. Another portion of the data is interpreted to determine a telephony service to be initiated by the mobile station. The telephony services may be for example, calling a telephone number advertised by the billboard, forwarding future calls to the mobile device to the desk top phone (303), or setting up a three-way call using the desk top phone (303) as one of the participants.
+
+Type: US Patent
+
+Claims: 
+
+1. A method of operating a mobile station comprising:
+receiving data from a transponder;
+parsing the data to obtain a service identifier and one of a telephone number and an Internet Protocol address; and
+initiating a telephonic service corresponding to the service identifier using one of the telephone number and the Internet Protocol address.
+2. The method of claim 1, wherein the telephonic service is one of; placing a telephone call to the telephone number, setting up call forwarding to the telephone number, and setting up a three-way call using the telephone number as one of the participants of the three-way call.
+3. The method of claim 2 wherein the step of receiving data from the transponder further comprises:
+decoding at least one bit field of the data to determine at least one decoded bit field information; and
+comparing the at least one decoded bit field information to at least one pre-defined service identifiers in a memory of the mobile station.
+4. The method of claim 3, wherein the at least one pre-defined service identifiers corresponds to at least one of; placing a telephone call to the telephone number, setting up call forwarding to the telephone number, and setting up a three-way call using the telephone number as one of the participants of the three-way call.
+5. A mobile station comprising:
+at least one wireless transceiver;
+a transponder reader integrated with a data decoder;
+at least one processor connected to the at least one wireless transceiver and to the transponder reader and configured to:
+receive data from a transponder;
+parse the data to obtain a service identifier and one of a telephone number and an Internet Protocol address; and
+initiate a telephonic service corresponding to the service identifier using one of the telephone number and the Internet Protocol address.
+6. The mobile station of claim 5, wherein the telephonic service is one of; placing a telephone call to the telephone number, setting up call forwarding to the telephone number, and setting up a three-way call using the telephone number as one of the participants of the three-way call.
+7. The mobile station of claim 6 wherein the at least one processor is further configured to:
+decode at least one bit field of the data to determine at least one decoded bit field information; and
+compare the at least one decoded bit field information to at least one pre-defined service identifiers in a memory of the mobile station.
+8. The mobile station of claim 7, wherein the at least one pre-defined service identifiers corresponds to at least one of; placing a telephone call to the telephone number, setting up call forwarding to the telephone number, and setting up a three-way call using the telephone number as one of the participants of the three-way call.

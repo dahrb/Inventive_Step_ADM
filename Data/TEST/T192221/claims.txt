@@ -1,0 +1,166 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS
+
+1. A disk access method, wherein
+
+the method is applied to a host (110),
+
+the host (110) is connected to a plurality of controllers (140 to 143) in a storage
+system, said storage system including a disk group (150), said disk group including a
+plurality of disks, each disk belonging to a controller, wherein only the controller to
+which the disk belongs can access the disk,
+
+at least one logical unit, LU is mounted to the host, each LU comprises at least
+one virtual address space, each virtual address space is corresponding to an access
+path,
+
+a controller to which the access path points, of the plurality of controllers (140 to
+143), can directly access data corresponding to each virtual address space, and
+
+the method comprises:
+
+generating (S210) an input/output, IO request, wherein the IO request carries a
+logical unit number, LUN and a virtual address of to-be-accessed data;
+
+finding (S220), based on the LUN, an LU to be accessed by using the IO request,
+and determining, based on the virtual address, a virtual address space into which the
+virtual address falls;
+
+determining (S230), based on the determined virtual address space, an access
+path corresponding to the virtual address space; and
+
+delivering (S240), along the access path, the IO request to a controller (140 to
+143) to which the access path points, so that the controller accesses, based on the
+LUN and the virtual address in the IO request, a disk belonging to the controller, to
+obtain the data requested by using the IO request.
+
+2. The method according to claim 1, wherein the method further comprises:
+
+obtaining a controller (140) corresponding to each virtual address space
+comprised in each LU, wherein a disk (150) that stores the data corresponding to each
+virtual address space belongs to the controller corresponding to each virtual address
+space;
+
+determining an access path that points to the controller corresponding to each
+virtual address space; and
+
+establishing a correspondence between the virtual address space comprised in
+
+29
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+each LU and the determined access path that points to the controller corresponding to
+each virtual address space.
+
+3. The method according to claim 2, wherein the obtaining a controller (140)
+corresponding to each virtual address space comprised in each LU comprises:
+
+sending a request message to a primary controller, wherein the request message
+is used to request to obtain the controller corresponding to each virtual address space
+comprised in each LU, and the primary controller is configured to generate the
+controller corresponding to each virtual address space; and
+
+receiving the controller that is sent by the primary controller and that is
+corresponding to each virtual address space comprised in each LU.
+
+4. The method according to claim 2, wherein the obtaining a controller (140)
+corresponding to each virtual address space comprised in each LU comprises:
+
+receiving the controller that is corresponding to each virtual address space
+comprised in each LU and that is sent by a storage management device connecting the
+storage system and the host.
+
+5. A system comprising a host (110) connected to a storage system comprising a
+plurality of controllers (140 to 143) and a disk group (150), said disk group including
+a plurality of disks, each disk belonging to a controller, wherein only the controller to
+which the disk belongs can access the disk,
+
+at least one logical unit, LU is mounted to the host, each LU comprises at least
+one virtual address space, each virtual address space is corresponding to an access
+path, a controller to which the access path points, of the plurality of controllers (140
+to 143), can directly access data corresponding to each virtual address space, and the
+host comprises:
+
+a processing unit (410), configured to: generate (S210) an input/output, IO
+request, wherein the IO request carries a logical unit number, LUN and a virtual
+address of to-be-accessed data; find (S220), based on the LUN, an LU to be accessed
+by using the IO request; determine (S220), based on the virtual address, a virtual
+address space into which the virtual address falls; and determine (S230), based on the
+determined virtual address space, an access path corresponding to the virtual address
+Space; and
+
+a sending unit (420), configured to deliver (S240), along the access path, the IO
+request to a controller to which the access path points, so that the controller accesses,
+
+based on the LUN and the virtual address in the IO request, a disk belonging to the
+
+30
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+controller, to obtain the data requested by using the IO request.
+
+6. The system according to claim 5, wherein the processing unit (410) is further
+configured to:
+
+obtain a controller (140) corresponding to each virtual address space comprised
+in each LU, wherein a disk (150) that stores the data corresponding to each virtual
+address space belongs to the controller corresponding to each virtual address space;
+
+determine an access path that points to the controller corresponding to each
+virtual address space; and
+
+establish a correspondence between the virtual address space comprised in each
+LU and the determined access path that points to the controller corresponding to each
+virtual address space.
+
+7. The system according to claim 6, wherein the sending unit (420) is specifically
+configured to:
+
+send a request message to a primary controller, wherein the request message is
+used to request to obtain the controller (140) corresponding to each virtual address
+space comprised in each LU, and the primary controller is configured to generate the
+controller corresponding to each virtual address space; and
+
+the host further comprises:
+
+a receiving unit, configured to receive the controller that is sent by the primary
+controller and that is corresponding to each virtual address space comprised in each
+LU.
+
+8. The system according to claim 6, wherein the host further comprises a
+receiving unit being configured to:
+
+receive the controller (140) that is corresponding to each virtual address space
+comprised in each LU and that is sent by a storage management device connecting the
+
+storage device (150) and the host.
+
+31

@@ -1,0 +1,33 @@
+--- PAGE 1 ---
+12 164 876.0 EPAB-113809.6
+Kaspersky Lab, ZAO November 3, 2017
+
+CLAIMS
+
+1. Acomputer system for operation in a distributed computation system in which
+security-related tasks are delegated, the computer system comprising:
+computing hardware including a processor (904), a memory device (906), a
+user interface (908, 914), and a communications interface (912);
+a distributed computing service module (110) adapted to:
+receive a request for a distribution of a security-related task for
+analyzing an unknown file for malware;
+divide the received security-related task into a plurality of distinct
+task parts for performing non-overlapping types of antivirus analysis
+using respective malware databases to achieve a common objective of
+analyzing the unknown file for malware, and delegate each of the
+plurality of distinct task parts to a different one of multiple remote agent
+computers (100) for execution in response to a suitability determination
+as to whether each of the multiple remote agent computers (100) is
+suitable to perform the execution of the respective distinct task part, and
+determine computing capacity requirements to perform each of the
+distinct task parts that are to be delegated to the respective remote agent
+computers (100) for execution,
+wherein the distributed computing service module (110) comprises:
+a result analysis module (598) adapted to:
+obtain results of each of the plurality of distinct task parts
+processed by each of the multiple remote agent computers (100),
+respectively,
+determine whether the security-related task has been completed
+based on the obtained results from each remote agent computer (100)
+
+and task parameters, which specify requirements for results of task

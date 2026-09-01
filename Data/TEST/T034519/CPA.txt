@@ -1,0 +1,36 @@
+TITLE:
+Automated pharmacy admixture system (APAS)
+
+TYPE:
+European patent
+
+ABSTRACT:
+In a preferred embodiment, an automated Pharmacy Admixture System (APAS) may include a manipulator (322) system to transport medical containers such as bags, vials, or syringes in a compounding chamber regulated to a pressure below atmospheric pressure. In a preferred implementation, the manipulator system is configured to grasp and convey syringes (1106), IV bags (1102), and vials (1104) of varying shapes and sizes from a storage system in an adjacent chamber regulated at a pressure above atmospheric pressure. Various embodiments may include a controller adapted to actuate the manipulator system to bring a fill port of an IV bag (1102), vial (1104), or syringe (1106) into register with a filling port at a fluid transfer station in the chamber. A preferred implementation includes a sanitization system that can substantially sanitize a bung on a fill port of a vial (1104) or IV bag in preparation for transport to the fluid transfer station.
+
+CLAIMS:
+A system (100) to automate pharmaceutical compounding, the system comprising:
+a robotic manipulator system (318) to convey medical containers (1102, 1104, 1106);
+a compounding system (334) to transfer medicaments between the medical containers; and
+a syringe manipulator (5200) adapted to push/pull a plunger of a syringe for transferring fluids to/from a medical container, and configured to maintain a negative pressure in the medical container to prevent aerosolizing of contents in the medical container during the transferring of the fluids.
+The system of claim 1, wherein the syringe manipulator is configured to alternate between pulling and pushing the plunger using an algorithm to calculate varying lengths and directions of plunger travel to transfer fluid to prevent aerosolizing of contents in the medical container.
+The system of claim 1, wherein the syringe manipulator is configured to limit plunger speed to account for limitations of fluid flow through a needle of the syringe by a needle diameter and a fluid viscosity or to calculate a wait time.
+The system of claim 1, wherein the syringe manipulator is configured to cycle the plunger to alternate between a transfer of air out of the medical container and a transfer of fluid into the medical container in a needle down configuration.
+The system of claim 1, wherein the syringe manipulator is configured to cycle the plunger to alternate between a transfer of fluid out of the medical container and a transfer of air into the medical container in a needle up configuration.
+The system of claim 1, wherein the syringe manipulator is configured to translate a total fluid transfer into a series of push/pull or pull/push cycles so that the negative pressure is maintained in the medical container.
+The system of claim 1, wherein the syringe manipulator is configured to initially pull the plunger so that a pressure in the medical container is a negative pressure compared to an ambient pressure, and then maintain a pressure in the medical container around the negative pressure during the transferring of the fluids.
+The system of claim 1, wherein the syringe manipulator is configured to:
+position the plunger to draw a predetermined amount of air into a barrel of the syringe prior to inserting the syringe into the medical container, and
+cycling a process of drawing a volume of fluid from the medical container,
+and pushing a volume of air into the medical container to replace the volume of fluid drawn, until a required amount of fluid is drawn into the syringe from the medical container, and so that at the end of the cycling there is a negative pressure in the medical container.
+The system of claim 8, wherein the predetermined amount of air drawn into the barrel of the syringe prior to inserting the syringe into the medical container is determined based on a required fluid volume of a prescription.
+The system of claim 8, wherein the syringe manipulator is configured to estimate or monitor a headspace in the medical container.
+The system of claim 8, wherein the syringe manipulator is configured to limit the negative pressure so that a pull does not exceed a predetermined force limit.
+The system of claim 1, wherein the syringe manipulator includes a torque sensor to detect a change in torque in manipulating the plunger.
+The system of claim 1, wherein:
+the syringe manipulator includes a needle gripper (5205), a syringe plunger gripper (5210), a syringe barrel gripper (5215), and a medical container indexer (5220);
+the needle gripper, the syringe plunger gripper, and the syringe barrel gripper are movable vertically;
+the needle gripper and the syringe barrel gripper each include adjustable grippers which vary a grip based on dimensions of the syringe; and
+the medical container indexer is movable vertically and horizontally and
+accommodates a plurality of the medical containers.
+The system of claim 1, further comprising a needle decapping station to remove a cap from a syringe with an installed needle.
+The system of claim 1, further comprising a needle-removing station to remove a needle from a syringe after the syringe has been loaded with a desired quantity of one or more of the medicaments.

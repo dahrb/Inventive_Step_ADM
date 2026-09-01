@@ -1,0 +1,408 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+EP 09 776 891.5
+
+Claims for the main request
+
+A method for encoding an original symbol comprising a
+
+plurality of values (So-Sn), the method comprising:
+
+(a) determining (S104) whether the symbol can be
+encoded by a codeword of a first codebook;
+
+(b) in case the symbol can be encoded by a codeword
+of the first codebook, selecting (S106) the
+codeword associated with the symboi from the
+
+first codebook; and
+
+(Cc) in case the symbol cannot be encoded by a
+
+codeword of the first codebook:
+
+{c.1) selecting (S114) a codeword from the first
+codebook indicating that the symbol cannot
+be encoded by a codeword of the first
+
+codebook,
+
+(c.2) splitting (S118) the symbol into a
+plurality of first sub-symbols, each of
+the first sub-symbols comprising a
+predefined number of values of the
+original symbol, and selecting a codeword
+for each of the first sub-symbols from a
+
+second codebook,
+
+wherein the encoded symbol is represented only by the
+codeword selected in step (b) from the first codebook,
+or by the codeword selected in step (c.1) from the
+first codebook and the plurality of codewords selected
+
+in step (c.2) from the second codebook.
+The method of claim 1, further comprising in case for
+one or more of the first sub-symbols a codeword was
+
+selected from the second codebook indicating that the
+
+main request
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+2 EP 09 776 891.5
+
+respective first sub-symbol cannot be encoded by a
+
+codeword of the second codebook:
+
+(d) for each first sub-symbol that cannot be encoded
+
+by a codeword from the second codebook:
+
+splitting the first sub-symbol into a plurality
+of second sub-symbols, each of the second sub-
+symbols comprising a predefined number of values
+
+of the first sub-symbol, and
+
+selecting a codeword for each of the second sub-
+
+symbols from a third codebook.
+
+The method of claim 2, wherein
+
+the second or third codebooks comprises a first code-
+word indicating that a sub-symbol cannot be encoded by
+
+a codeword of the second or third codebooks;
+
+the sub-symbol is represented by a second codeword from
+the second or third codebooks in case each value of the
+
+sub-symbol is within a predefined range of values,
+
+the sub-symbol is represented by a combination of one
+or more values of the sub-symbol and the first code-
+word, wherein those values of the sub-symbol which are
+not in the predefined range are represented by the
+
+first codeword, and
+
+the sub-symbol is represented by the first codeword on-
+ly in case none of the values of the sub-symbols is
+within the predefined range.
+
+The method of claim 3, further comprising:
+
+in case the sub-symbol or one or more values of the
+
+sub-symbol are represented by the specific codeword,
+
+main request
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+3 EP 09 776 891.5
+
+selecting for each value of the sub-symbol represented
+by the specific codeword a codeword from a further
+
+codebook.
+
+The method of one of claims 2 to 4, wherein at step (d)
+a codeword is selected from the second codebook indi-
+cating that a first sub-symbol cannot be encoded by a
+codeword of the second codebook, and a codeword is se-~-
+lected from the third codebook for each of the second
+
+sub-symbols.
+
+The method of one of claims 1 to 4, wherein
+
+at step (c) the codeword selected from the first code-
+book further indicates which of the first sub-symbols
+
+comprises a predefined combination of values, and
+
+at step (c) for those first sub-symbols not comprising
+the predefined combination of values a codeword is se-
+
+lected from the second codebook.
+
+A method for decoding from a bitstream one or more
+codewords encoding an original symbol comprising a plu-
+
+rality of values, the method comprising:
+
+(a) determining (S306) whether a first codeword can
+completely represent the symbol using a first
+codebook;
+
+{b) in case the first codeword can completely
+represent the symbol using the first codebook,
+selecting ($308) the symbol from the first
+
+codebook using the first codeword; and
+
+(c) in case the first codeword cannot completely
+
+represent the symbol using the first codebook,
+
+main request
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+4 EP 09 776 891.5
+
+selecting (S316) a second codebook for decoding
+first sub-symbols of the symbol, wherein each of
+the first sub-symbols comprises a predefined
+
+number of values the original symbol, and
+
+selecting an entry for each of the first sub-
+symbols from the second codebook using a second
+
+codeword,
+
+wherein the symbol is represented by the values
+associated only with the codeword from the first
+codebook, or associated with a combination of the
+codeword selected from the first codebook and the
+plurality of codewords selected from the second
+
+codebook, and
+
+wherein at step (c) the first codebook indicates for
+the first codeword that the symbol cannot be decoded
+from the first codebook, and for each of the first sub-
+
+symbols an entry is selected from the second codebook.
+
+The method of claim 7, further comprising:
+
+(d) in case the second codebook cannot completely
+
+represent one of the first sub-symbols:
+
+selecting a third codebook for decoding second
+sub-symbols of the one first sub-symbol, wherein
+each of the second sub-symbols comprises a
+predefined number of values of the first sub-
+
+symbol, and
+selecting an entry for each of the second sub-
+symbols from the third codebook using a third
+
+codeword.
+
+The method of claim 8, wherein
+
+main request
+
+--- PAGE 5 ---
+LO
+
+15
+
+20
+
+29
+
+30
+
+35
+
+10,
+
+il.
+
+5 EP 09 776 891.5
+
+at step (d) the second codebook indicates for a second
+codeword of a first sub-symbol that the first sub-
+symbol cannot be decoded by the second codebook, and
+for each of the second sub-symbols an entry is selected
+from the third codebook.
+
+The method of claims 7 or 8, wherein
+
+at step (c) the first codebook indicates for the first
+codeword that the symbol cannot be decoded from the
+first codebook and which of the first sub-symbols com-
+
+prises a predefined combination of values, and
+
+at step (c) for those sub-symbols not comprising the
+predefined combination of values an entry is selected
+
+from the second codebook.
+
+The method of one of claims 1 to 10, wherein the second
+codebook comprises codewords having the same dimension-~
+ality as the codewords in the first codebook, wherein
+the range of values represented by the codewords of the
+second codebook is larger than the range of values rep-
+
+resented by the first codebook, or
+
+wherein the second codebook comprises codewords being
+of lower dimensionality than the codewords of the first
+codebook, wherein the range of values represented by
+the codewords of the second codebook and the first
+
+codebook is the same, or
+
+wherein the second codebook comprises codewords being
+of lower dimensionality than the codewords of the first
+codebook, wherein the range of values represented by
+the second codebook is larger than the range of values
+
+represented by the first codebook,
+
+12. A method for transmitting a symbol from a transmitter
+
+(300) to a receiver (310), the method comprising:
+
+main request
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+13.
+
+14.
+
+15.
+
+6 EP 09 776 891.5
+
+encoding the symbol according to one of claims 1 to 6,
+
+transmitting the selected codewords from the transmit-
+ter (300) to the receiver (310),
+
+decoding the received codewords according to one of
+
+claims 7 to 11 to obtain the symbol; and
+
+providing the symbol for further processing.
+
+A computer program for performing, when running on a
+
+computer, the method of one of claims 1 to 12.
+
+An encoder, comprising:
+
+an input for receiving an input signal comprising a
+
+symbol;
+
+an encoder circuit (210, 216) for encoding the symbol
+from the input signal, wherein the encoder circuit is
+configured to encode the symbol in accordance with the
+method of one of claims 1 to 6; and
+
+an output for providing an output signal comprising the
+
+selected codewords representing the symbol.
+
+A decoder, comprising:
+
+an input for receiving an input signal comprising a
+
+plurality of codewords representing a symbol;
+
+a decoder circuit (218, 222) for decoding the codewords
+from the input signal, wherein the decoder circuit is
+configured to decode the codewords in accordance with
+
+the method of one of claims 7 to 11; and
+
+main request
+
+--- PAGE 7 ---
+10
+
+15
+
+16.
+
+7 EP 09 776 891.5
+
+an output for providing an output signal comprising the
+symbol.
+
+A system for transmitting a symbol, from a transmitter
+
+to a receiver, the system comprising:
+
+an encoder of claim 14;
+
+a transmitter (300) coupled to the encoder;
+
+a communication link (308) coupled to the transmitter
+(300);
+
+a receiver (310) coupled to the communication link
+(308); and
+
+a decoder of claim 15 coupled to the receiver (310).
+
+main request

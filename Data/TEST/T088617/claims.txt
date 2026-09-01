@@ -1,0 +1,452 @@
+--- PAGE 1 ---
+20/10 2016 11:04 FAX 02920233476
+
+57
+
+CLAIMS
+
+1. An information retrieval apparatus comprising:
+
+a searching means (4) that searches transaction targets
+stored in a first computer readable database (22), based on
+a search condition used for searching transaction targets
+designated by a user;
+
+characterized by:
+
+an acquiring means (4) that acquires review information
+regarding each of the searched transaction targets that
+includes the search condition, from a second computer
+readable database (23), different from the first computer
+readable database (22), that stores a plurality of review
+information regarding the transaction targets in association
+with each of the transaction targets;
+
+a determining means (4) that determines a priority order
+of the review information regarding the transaction targets
+with respect to each of the searched transaction targets,
+based on processing of the acquired review information
+according to a correspondence between the search condition
+and the review information, to determine a priority order of
+the review information for each of the transaction targets
+based on the search condition; and
+
+a controlling means (4) for receiving data
+representative of the review information in the determined
+priority order and indicative of the correspondence, and for
+
+generating a list comprising at least one piece of the review
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 2 of 12 was completed at 20.10.2016 12:15:49
+Received at the EPO on Oct 20, 2016 12:17:03. Page 2 of 12
+
+0002/0012
+
+--- PAGE 2 ---
+20/10 2016 11:04 FAX 02920233476
+
+58
+
+information regarding each of the searched transaction
+targets for display on a display screen, based on the
+
+determined priority order.
+
+2. The information retrieval apparatus according to claim
+
+wherein the determining means (4) determines the
+priority order, based on the number of search words that are
+input as the search condition and that are included in the
+
+review information.
+
+3. The information retrieval apparatus according to claim
+
+wherein the determining means (4) determines the
+priority order, based on the number of the search words
+included in the review information, and the number of terms
+of at least either of related words and synonyms associated
+
+with the search words.
+
+4. The information retrieval apparatus according to any
+one of claims 1 to 3,
+
+wherein evaluation scores regarding evaluation items
+with respect to the transaction targets are associated with
+the review information, and
+
+the determining means (4) determines the priority
+order, based on the evaluation scores regarding the
+
+evaluation items associated with the search words input as
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 3 of 12 was completed at 20.10.2016 12:15:56
+Received at the EPO on Oct 20, 2016 12:17:03. Page 3 of 12
+
+[I410003/0012
+
+--- PAGE 3 ---
+20/10 2016 11:05 FAX 02920233476
+
+59
+
+the search condition.
+
+5. The information retrieval apparatus according to any
+one of claims 1 to 4,
+
+wherein the determining means (4) determines the
+priority order such that a higher priority is given to the
+review information including the plurality of search words
+
+input as the search condition.
+
+6. The information retrieval apparatus according to any
+one of claims 1 to 5,
+
+wherein the determining means (4) determines the
+priority order, based on input order of the plurality of
+
+search words input as the search condition.
+
+7. The information retrieval apparatus according to any
+one of claims 1 to 6,
+
+wherein the determining means (4) determines the
+priority order such that a higher priority is given to the
+review information including the search word associated with
+an appeal component preset by a provider side of the target
+among the plurality of search words input as the search
+
+condition.
+
+8. The information retrieval apparatus according to any
+one of claims 1 to 7,
+
+wherein, among number attributes classified into a
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 4 of 12 was completed at 20.10.2016 12:16:03
+Received at the EPO on Oct 20, 2016 12:17:03. Page 4 of 12
+
+0004/0012
+
+--- PAGE 4 ---
+20/10 2016 11:05 FAX 02920233476 I410005/0012
+
+60
+
+plurality of attributes according to the number of users,
+the number attribute to which the number of users using the
+transaction target in the past belongs is associated with
+the review information, and
+
+the determining means (4) determines the priority order
+such that a higher priority is given to the review
+information associated with the number attribute to which
+
+the number of users input as the search condition belongs.
+
+9. The information retrieval apparatus according to claim
+8,
+
+wherein the number of users using the transaction
+target in the past is associated with the review information,
+and
+
+when there is a plurality of review information
+associated with the same number attribute, the priority order
+is determined such that a higher priority is given to the
+review information associated with the number of users which
+has a small difference from the number of users input as the
+
+search condition.
+
+10. The information retrieval apparatus according to any
+one of claims 1 to 39,
+
+wherein the second computer readable database (23)
+stores comment information of a provider side of the
+transaction target corresponding to the review information
+
+in association with the review information, and
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 5 of 12 was completed at 20.10.2016 12:16:11
+Received at the EPO on Oct 20, 2016 12:17:03. Page 5 of 12
+
+--- PAGE 5 ---
+20/10 2016 11:05 FAX 02920233476
+
+61
+
+the determining means (4) determines the priority order
+such that higher priority is given to the review information
+associated with the comment information including a preset
+positive term with respect to the search word input as the
+
+search condition.
+
+11. The information retrieval apparatus according to any
+one of claims 1 to 10,
+
+wherein the determining means (4) determines the
+priority order such that a higher priority is given to the
+review information including a preset positive term with
+
+respect to the search word input as the search condition.
+
+12. The information retrieval apparatus according to any
+one of claims 1 to Il,
+
+wherein a past usage period of the transaction target
+is associated with the review information, and
+
+the determining means (4) determines the priority order
+such that a higher priority is given to the review
+information associated with the same usage period as a period
+
+associated with the search condition.
+
+13. The information retrieval apparatus according to any
+one of claims 1 to 12,
+
+wherein the determining means (4) determines the
+priority order of the review information including the preset
+
+positive term with respect to the search word input as the
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 6 of 12 was completed at 20.10.2016 12:16:18
+Received at the EPO on Oct 20, 2016 12:17:03. Page 6 of 12
+
+[41 0006/0012
+
+--- PAGE 6 ---
+20/10 2016 11:05 FAX 02920233476
+
+62
+
+search condition, and the priority order of the review
+information including the preset negative term with respect
+to the search word input as the search condition,
+respectively, and
+
+the controlling means (4) displays the review
+information including the positive term and the review
+information including the negative term at different
+positions, based on the priority orders determined by the
+
+determining means (4).
+
+14. The information retrieval apparatus according to any
+one of claims 1 to 13,
+
+wherein the controlling means (4) highlights a search
+word in the review information including the search word
+
+input as the search condition.
+
+15. The information retrieval apparatus according to any one
+of claims 1 to 14 wherein,
+
+the controlling means (4)acquires transaction target
+information and transaction target identification of each of
+the searched transaction targets that satisfies the search
+condition, generates a transaction target list page
+displaying a list of the acquired transaction targets and
+transmits the generated transaction target list page toa
+user terminal; and
+
+the acquiring means acquires the review information and
+
+the determining means determines the priority order of the
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 7 of 12 was completed at 20.10.2016 12:16:26
+Received at the EPO on Oct 20, 2016 12:17:03. Page 7 of 12
+
+I410007/0012
+
+--- PAGE 7 ---
+20/10 2016 11:05 FAX 02920233476
+
+63
+
+review information after the controlling means (4) transmits
+the transaction target list page, the transaction target
+list page having links for displaying the review information
+
+in the determined priority order.
+
+16. The information retrieval apparatus according to any one
+of claims 1 to 14 wherein,
+
+the controlling means (4) acquires transaction target
+information and transaction target identification of each of
+the searched transaction targets that satisfies the search
+condition, generates a transaction target list page
+displaying a list of the acquired transaction targets and
+transmits the transaction target list page; and
+
+the acquiring means acquires the review information and
+the determining means determines a priority order of the
+review information before the controlling means (4)
+transmits the transaction target list page, the transaction
+target list page displaying at least one piece of the review
+information and having links’ for displaying review
+
+information in the determined priority order.
+
+17. An information retrieval method, which is executed by
+a computer, the information retrieval method comprising:
+
+a step of searching transaction targets stored in a
+first computer readable database (22), based on a search
+condition used for searching transaction targets designated
+
+by a user;
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 8 of 12 was completed at 20.10.2016 12:16:34
+Received at the EPO on Oct 20, 2016 12:17:03. Page 8 of 12
+
+[4] 0008/0012
+
+--- PAGE 8 ---
+20/10 2016 11:05 FAX 02920233476
+
+64
+
+characterized by:
+
+a step of acquiring review information regarding each
+of the searched transaction targets that includes the search
+condition, from a second computer readable database (23),
+different from the first computer readable database (22),
+that stores a plurality of review information regarding the
+transaction targets in association with each of the
+transaction targets;
+
+a step of determining a priority order of the review
+information regarding the transaction targets with respect
+to each of the searched transaction targets, based on
+processing of the acquired review information according to
+a correspondence between the search condition and the review
+information, to determine a priority order of the review
+information for each of the transaction targets based on the
+search condition;
+
+a step of receiving data representative of the review
+information in the determined priority order and indicative
+of the correspondence; and
+
+a step of generating a list comprising at least one
+piece of the review information regarding each of the
+searched transaction targets for display on a display screen,
+
+based on the determined priority order.
+
+18. An information retrieval program which causes a
+computer to function as:
+
+a searching means (4) that searches transaction targets
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 9 of 12 was completed at 20.10.2016 12:16:43
+Received at the EPO on Oct 20, 2016 12:17:03. Page 9 of 12
+
+I410009/0012
+
+--- PAGE 9 ---
+20/10 2016 11:05 FAX 02920233476
+
+64a
+
+stored in a first computer readable database (22), based on
+a search condition used for searching transaction targets
+designated by a user;
+
+characterized by:
+
+an acquiring means (4) that acquires review information
+regarding each of the searched transaction targets that
+includes the search condition, from a second computer
+readable database (23), different from the first computer
+readable database (22), that stores a plurality of review
+information regarding the transaction targets in association
+with each of the transaction targets;
+
+a determining means (4) that determines a priority order
+of the review information regarding the transaction targets
+with respect to each of the searched transaction targets,
+based on processing of the acquired review information
+according to a correspondence between the search condition
+and the review information, to determine a priority order of
+the review information for each of the transaction targets
+based on the search condition; and
+
+a controlling means (4) for receiving data
+representative of the review information in the determined
+priority order and indicative of the correspondence, and for
+generating a list comprising at least one piece of the review
+information regarding each of the searched transaction
+targets for display on a display screen, based on the
+
+determined priority order.
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 10 of 12 was completed at 20.10.2016 12:16:51
+Received at the EPO on Oct 20, 2016 12:17:03. Page 10 of 12
+
+[gj0010/0012
+
+--- PAGE 10 ---
+20/10 2016 11:05 FAX 02920233476
+
+64b
+
+19. A recording medium having stored therein an information
+retrieval program which causes a computer to function as:
+
+a searching means (4) that searches transaction targets
+stored in a first computer readable database (22), based on
+a search condition used for searching transaction targets
+designated by a user;
+
+characterized by:
+
+an acquiring means (4) that acquires review information
+regarding each of the searched transaction targets that
+includes the search condition, from a _ second computer
+readable database (23), different from the first computer
+readable database (22), that stores a plurality of review
+information regarding the transaction targets in association
+with each of the transaction targets;
+
+a determining means (4) that determines a priority order
+of the review information regarding the transaction targets
+with respect to each of the searched transaction targets,
+based on processing of the acquired review information
+according to a correspondence between the search condition
+and the review information, to determine a priority order of
+the review information for each of the transaction targets
+based on the search condition; and
+
+a controlling means (4) for receiving data
+representative of the review information in the determined
+priority order and indicative of the correspondence, and for
+generating a list comprising at least one piece of the review
+
+information regarding each of the searched transaction
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 11 of 12 was completed at 20.10.2016 12:17:00
+Received at the EPO on Oct 20, 2016 12:17:03. Page 11 of 12
+
+[g]0011/0012
+
+--- PAGE 11 ---
+20/10 2016 11:06 FAX 02920233476 [410012/0012
+
+64c
+
+targets for display on a display screen, based on the
+
+determined priority order.
+
+Duration: 20.10.2016 12:15:30 - 20.10.2016 12:17:03. This page 12 of 12 was completed at 20.10.2016 12:17:03
+Received at the EPO on Oct 20, 2016 12:17:03. Page 12 of 12

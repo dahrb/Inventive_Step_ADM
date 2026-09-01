@@ -1,0 +1,43 @@
+TITLE:
+Multi-service handling by a single mobile station
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A method for processing multiple data services (6) over a communications link (4) between a mobile station (2) and a base station (3) is disclosed. An RLC/MAC protocol layer (15) of the communications link (4) between a mobile station (2) and a base station (3) receives a plurality of radio bearer services (6) each including at least one service provided by the mobile station (2). The plurality of radio bearer services (6) are processed in such a manner that services (6) having substantially similar quantity of signal requirements are combined for transmission on a single logical channel (40). Data within the transmission blocks (145) may be prioritized to enable flexible control of transmission rates.
+
+CLAIMS:
+1. A method for processing multiple data services over a communications link between a mobile station and a base station, comprising the steps of: receiving a plurality of radio bearer services, each of the plurality of radio bearer services supporting at least one service; and processing the plurality of radio bearer services such that the radio bearer services having substantially similar quality of service requirements are combined into a single logical channel.
+2. The method of claim 1, wherein the step of processing further comprises: separating data within the radio bearer services into a plurality of portions; combining portions from radio bearer services having substantially similar Quality of Service requirements into transmission blocks of the single logical channel, wherein a number of the portions per transmission block is variable.
+3. The method of claim 2 further including the step of: prioritizing the portions from different radio bearer services such that high priority the portions are transmitted prior to lower priority the portions without altering a transmission rate of the single logical channel.
+4. The method of claim 3, wherein the plurality of portions comprise
+RLC/MAC PDUs.
+5. The method of claim 2 further including the step of: scheduling the transmission of transmission blocks such that an output power of a transceiver remains below a predetermined level.
+6. The method of claim 5, wherein the predetermined level may vary in time.
+7. The method of claim 3, wherein the prioritizing is done by the mobile station.
+8. The method of claim 3, wherein the prioritizing is done by the base station.
+9. The method of claim 1 further comprising the step of mapping the logical channels onto physical channels.
+10. A method for processing multiple data services over a communications link between a mobile station and a base station, comprising the steps of: receiving a plurality of radio bearer services, each of the plurality of radio bearer services supporting at least one service; separating data within the radio bearer services into a plurality of data blocks; combining data blocks from radio bearer services having substantially similar Quality of Service requirements into transmission blocks of a single logical channel, wherein the number of data blocks per transmission block is variable; prioritizing the data blocks from different radio bearer services such that high priority data blocks are transmitted prior to lower priority data blocks without altering a transmission rate of the single logical channel; and transmitting the transmission blocks on the single logical channel.
+11. The method of claim 10 further including the step of: scheduling the transmission rates of different logical channels such that an output rate of a transceiver remains below a predetermined level.
+12. The method of claim 10 further including the step of: scheduling the transmission of transmission blocks on the logical channel such that an output power of a transceiver remains below a predetermined level.
+13. The method of claim 12, wherein the predetermined level may vary in time.
+14. The method of claim 10, wherein the prioritizing is done by the mobile station.
+15. The method of claim 10, wherein the prioritizing is done by the base station.
+16. A method for processing multiple data services over a communications link between a mobile station and a base station, comprising the steps of: receiving a plurality of radio bearer services, each of the plurality of radio bearer services supporting at least one service; separating data within the radio bearer services into a plurality of data blocks; combining the data blocks from radio bearer services having substantially similar Quality of Service requirements into transmission blocks of a single logical channel, wherein the number of data blocks per transmission blocks is variable; scheduling the transmission of transmission blocks such that an output power of a transceiver remains below a predetermined level; and transmitting the transmission blocks on the single logical channel.
+17. The method of claim 16, wherein the predetermined level may vary in time.
+18. The method of claim 16 further including the step of: prioritizing RLC/MAC PDUs from different radio bearers such that high priority RLC/MAC PDUs are transmitted prior to lower priority RLC/MAC PDUs without altering a transmission rate.
+19. The method of claim 18, wherein the prioritizing is done by the mobile station.
+20. The method of claim 18, wherein the prioritizing is done by the base station.
+21. A communications protocol for providing multiple data services over a communications link between a mobile station and a base station, comprising: a first layer for mapping the logical channel onto physical channel; a second layer for processing the radio bearers such that data services having substantially similar Quality of Service requirements are combined into a same logical channel; and a third layer for providing radio bearers containing a plurality of data services of the communications link.
+22. The communications protocol of claim 21 further including a management layer for controlling functions of the second layer.
+23. The communications protocol of claim 21, wherein the second layer further includes: a logical link control layer for separating data from the radio bearers representing the services into a plurality of first units; a radio link control layer for separating the plurality of first units into a plurality of smaller second units; and a medium access control layer for combining the plurality of smaller second units from data services having similar Quality of Service requirements into a single logical channel.
+24. The communications protocol of claim 23, wherein the medium access control layer further includes a multiplexer for combining the plurality of smaller second units.
+25. The communications protocol of claim 23 , wherein the medium access control layer further comprises means for prioritizing the plurality of smaller second units such that higher priority second units are transmitted prior to lower priority second units without altering a transmission rate of a logical channel.
+26. The communications protocol of claim 22, wherein the management layer includes all algorithms and coordination functionalities for controlling the first, second and third layers.
+27. The communications protocol of claim 23, wherein the prioritizing is done by the mobile station.
+28. The communications protocol of claim 23, wherein the prioritizing is done by the base station.
+29. The communications protocol of claim 21, wherein the second layer further schedules the transmission of transmission blocks of data on the physical channels such that an output power of a transceiver remains below a predetermined level.
+30. The communications protocol of claim 29, wherein the predetermined level may vary in time.
+31. The communications protocol of claim 25, wherein the means for prioritizing is controlled by the mobile station.
+32. The communications protocol of claim 25, wherein the means for prioritizing is controlled by the base station.

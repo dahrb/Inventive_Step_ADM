@@ -1,0 +1,249 @@
+--- PAGE 1 ---
+Notarbartolo & Gervasi GmbH EP Appl. N. 09 151 028.9
+
+Amended claims
+
+1. Amethod for generating derivative words, the method comprising the steps of:
+
+1) creating a plurality of arrays of derivative grammar rule each comprising a suffix letter
+character sequence and a condition array having a part of speech corresponding to that of the base
+words as required by corresponding suffix letter character sequence;
+
+2) inputting a user character sequence;
+
+3) matching the user character sequence with each array of derivative grammar rules and
+obtaining the arrays of derivative grammar rules which match with the user character sequence;
+
+4) obtaining words meeting the requirement of the condition arrays of the obtained arrays of
+derivative grammar rules from a language database in accordance with the user character
+sequence, and generating derivative words via adding the suffix letter character sequences to the
+obtained words, the suffix letter character sequences being comprised in the arrays of derivative
+grammar rules which comprise the condition arrays as met by the obtained words; and
+
+5) outputting the generated derivative words.
+
+2. The method of claim 1, wherein the arrays of derivative grammar rules comprise suffix key
+character sequences corresponding to the suffix letter character sequences according to the
+function definition of the keys; the user character sequence is a user key character sequence; and
+in step 3, the user key character sequence is compared with the suffix key character sequence of
+each array of derivative grammar rules, if the user key character sequence comprises all or part of
+the key character of the suffix key character sequence at its end, the array of derivative grammar
+
+rule comprising the suffix key character sequence is obtained.
+
+3. The method of claim 1, wherein the arrays of derivative grammar rules comprise suffix key
+character sequences corresponding to the suffix letter character sequences according to the
+function definition of the keys; the user character sequence is a user key character sequence; and
+
+the method further comprises the step of converting the user key character sequence to a user
+
+--- PAGE 2 ---
+Notarbartolo & Gervasi GmbH EP Appl. N. 09 151 028.9
+
+letter character sequence according to the function definition of the keys; wherein in step 3, the
+user letter character sequence is compared with the suffix letter character sequence of each of the
+arrays of derivative grammar rules, if the user letter character sequence comprises all or part of
+the letter character of the suffix letter character sequence at its end, the array of derivative
+
+grammar rule comprising the suffix letter character sequence is obtained.
+
+4. The method of claim 1, wherein the user character sequence is a user letter character sequence
+and, in step 3, the user letter character sequence is compared with the suffix letter character
+sequence of each of the arrays of derivative grammar rules, if the user letter character sequence
+comprises all or part of the letter character of the suffix letter character sequence at its end, the
+
+array of derivative grammar rule comprising the suffix letter character sequence is obtained.
+
+5. The method of any of claims 2 to 4, wherein the comparison is carried out character by
+
+character in an order from back to front.
+
+6. The method of claim 1, wherein the user character sequence is a user key character sequence,
+and step 4 further comprises the step of: obtaining words matching the user key character
+sequence from the language database; comparing the part of speech of each of the obtained words
+with that in each array of derivative grammar rules, and obtaining all of the words having same
+
+part of speeches to any one of the part of arrays of derivative grammar rules.
+
+7. The method of claim 1, wherein the user character sequence is a user key character sequence,
+the user key character sequence is converted to a user letter character sequence according to the
+function definition of the keys, and step 4 further comprises the steps of: obtaining words
+matching the user letter character sequence from the language database; comparing the part of
+speech of each obtained word with that of each array of derivative grammar rules, and obtaining
+all of the words having same part of speeches to any one of the part of arrays of derivative
+
+grammar rules.
+
+--- PAGE 3 ---
+Notarbartolo & Gervasi GmbH EP Appl. N. 09 151 028.9
+
+8. The method of claim 1, wherein the user character sequence is a user letter character sequence,
+and step 4 further comprises the steps of: obtaining words matching the user letter character
+sequence from the language database; comparing the part of speech of each obtained word with
+that in each array of derivative grammar rules, and obtaining all of the words having same part of
+
+speeches to any one of the part of arrays of derivative grammar rules.
+
+9. The method of claim 1, wherein the condition array further comprises a second letter character
+sequence corresponding to that at the end of the base word as required by the suffix letter
+
+character sequence according to the grammar rules.
+
+10. The method of claim 1, wherein each of the arrays of derivative grammar rules further
+comprises a first letter character sequence which should be deleted from the ends of the base
+words as required by corresponding suffix letter character sequence according to the grammar
+rules when the derivative words are generated, step 4 further comprises a step of judging whether
+the end of one of the obtained words have the first letter character sequence in each of the
+obtained arrays of derivative grammar rules, if the judge result is yes, the first letter character
+sequence at the end of the word is deleted and the suffix letter character sequence of the array of
+derivative grammar rule is added to the end of the remainder so as to generate a derivative word;
+if the judge result is no, the suffix letter character sequence of the array of derivative grammar
+
+rule is added to the end of the word to generate a derivative word.
+
+11. Asystem for generating derivative words, the system comprising:
+an input device used for inputting user character sequences;
+
+a storage for storing a plurality of arrays of derivative grammar rules, each array of derivative
+grammar rules comprising a suffix letter character sequence and a condition array corresponding
+to the base words, the condition array comprising a part of speech corresponding to that of the
+
+base word as required by the suffix letter character sequence;
+
+--- PAGE 4 ---
+Notarbartolo & Gervasi GmbH EP Appl. N. 09 151 028.9
+
+a first match processing module, used for matching the user character sequence with each array
+of derivative grammar rules and obtaining the arrays of derivative grammar rules matching the
+
+character information;
+
+a second match processing module used to obtain words from the language database in
+accordance with the user character sequence, the obtained words meeting the requirement of the
+condition array in one of the arrays of derivative grammar rules as obtained in the first match
+
+processing module;
+
+a derivative processing module, used for adding suffix letter character sequences to the
+obtained words to generate derivative words, the suffix letter character sequences taken from the
+
+arrays of derivative grammar rules comprising the condition arrays met by the words; and
+a language database, used for storing words; and
+
+a derivative words outputting module for outputting generated derivative words.
+
+12. The system of claim 11, wherein the arrays of derivative grammar rules comprises suffix key
+character sequences corresponding to the suffix letter character sequences in accordance with the
+function definition of the keys; the input device is a key input device, and the inputting character
+information is a user key character sequence; and the first match processing module compares the
+user key character sequence with the suffix key character sequence of each array of derivative
+grammar rules, if the user key character sequence comprises all or part of the key character of the
+suffix key character sequence at its end, the first match processing module obtains the array of
+
+derivative grammar rule comprising the suffix key character sequence.
+
+13. The system of claim 11, further comprises a converting processing module used for
+converting the user key character sequences to user letter character sequences according to the
+function definition of the keys; the input device is a key input device, the inputting character
+
+information is a user key character sequence; the first match processing module compares the
+
+--- PAGE 5 ---
+Notarbartolo & Gervasi GmbH EP Appl. N. 09 151 028.9
+
+user letter character sequence with the suffix letter character sequence of each array of derivative
+grammar rules, if the user letter character sequence comprises all or part of the letter character of
+the suffix letter character sequence at its end, the first match processing module obtains the array
+
+of derivative grammar rule comprising the suffix letter character sequence.
+
+14. The system of claim 11, wherein the input device is a handwritten input device, the inputting
+character information is a user letter character sequence; and the first match processing module
+compares the user letter character sequence with the suffix letter character sequence of each array
+of derivative grammar rules, if the user letter character sequence comprises all or part of the letter
+character of the suffix letter character sequence at its end, the first match processing module
+
+obtains the array of derivative grammar rule comprising the suffix letter character sequence.
+
+15. The system of any one of claims 12 to 14, wherein the comparison of the first match
+
+processing module is carried out character by character in an order from back to front.
+
+16. The system of claim 11, wherein the input device 1s a key input device, the inputting character
+information is a user key character sequence; and the second match processing module further
+
+comprises:
+
+a word searching processing module, used for obtaining words matching the user key
+
+character sequence inputted by the key input device from the language database; and
+
+a first comparing processing module, used for comparing the part of speech of each of the
+words obtained by the searching processing module with that of each of the arrays of derivative
+grammar rules obtained by the first match processing module, and obtaining all of the words
+
+having the same part of speeches to any one of the part of the arrays of derivative grammar rules.
+
+17. The system of claim 11, further comprises a converting processing module used for
+
+--- PAGE 6 ---
+Notarbartolo & Gervasi GmbH EP Appl. N. 09 151 028.9
+
+converting the user key character sequences to user letter character sequences according to the
+function definition of the keys; the input device is a key input device, and the inputting character
+information is a user key character sequence; and the second match processing module further
+
+comprises:
+
+a word searching processing module, used for obtaining words matching the user letter
+character sequence converted by the converting processing module from the language database;
+
+and
+
+a first comparing processing module, used for comparing the part of speech of each of the
+words obtained by the searching processing module with that in each of the arrays of derivative
+grammar rules obtained by the first match processing module and obtaining all of the words
+
+having same part of speeches to any one of the part of arrays of derivative grammar rules.
+
+18. The system of claim 11, wherein the input device is a handwritten input device, the inputting
+character information is a user letter character sequence, and the second match processing
+
+module further comprises:
+
+a word searching processing module, used for obtaining words matching the user letter
+
+character sequence inputted by the handwritten input device from the language database; and
+
+a first comparing processing module, used for comparing the part of speech of each of the
+words obtained by the searching processing module with the part of speech in each of the arrays
+of derivative grammar rules obtained by the first match processing module, and obtaining all of
+the words having same part of speeches to any one of the part of arrays of derivative grammar
+
+rules.
+
+19. The system of claim 11, wherein the arrays of derivative grammar rules further each
+comprises a second letter character sequence corresponding to that at the end of the base word as
+
+required by the suffix letter character sequence according to the grammar rules.
+
+--- PAGE 7 ---
+Notarbartolo & Gervasi GmbH EP Appl. N. 09 151 028.9
+
+20. The system of claim 11, wherein each array of derivative grammar rules comprises a first
+letter character sequence which should be deleted from the ends of the base words according to
+the grammar rules when the derivative words are generated, as required by the corresponding
+
+suffix letter character sequence; and the derivative processing module further comprises:
+
+a second comparing processing module, used for comparing the ends of words obtained by
+the second match processing module with the first letter character sequences of the arrays of
+derivative grammar rules obtained by the first match processing module, if one of the words ends
+with any one of the first letter character sequences, delete the first letter character sequence at the
+
+end of the word; and
+
+a generating processing module, used for adding the suffix letter character sequences of the
+arrays of derivative grammar rules to the words which have been processed by the second
+
+comparing processing module to generate derivative words.

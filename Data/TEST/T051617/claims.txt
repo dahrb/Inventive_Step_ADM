@@ -1,0 +1,163 @@
+--- PAGE 1 ---
+MAIN REQUEST:
+
+1. A method of decoding an encoded video signal of a scalable bitstream
+
+containing an enhancement layer and a base layer, the method comprising:
+
+decoding a slice in the enhancement layer covering regions, which in
+the base layer are covered by a discardable slice not needed for inter-layer prediction
+and a non-discardable slice needed for inter-layer prediction;
+
+extending a boundary of a reference block by padding sample values
+across the boundary outside the block, the reference block belonging to the non-
+discardable slice, the boundary of the reference block being with the discardable slice;
+
+upsampling sample values of the reference block by applying filtering,
+wherein when applying the filtering across the reference block boundary with the
+discardable slice, filtering is applied at least to the padded sample values; and
+
+decoding the slice in the enhancement layer using at least prediction
+
+with reference to the upsampled sample values of the reference block.
+
+2. A method of encoding a video signal into a scalable bitstream
+
+containing an enhancement layer and a base layer, the method comprising:
+
+encoding a slice in the enhancement layer covering regions, which in
+the base layer are covered by a discardable slice not needed for inter-layer prediction
+and a non-discardable slice needed for inter-layer prediction;
+
+extending a boundary of a reference block in a picture in the base layer
+by padding sample values across the boundary outside the block, the reference block
+being in the non-discardable slice, the boundary of the reference block being with the
+discardable slice;
+
+upsampling sample values of the reference block, wherein the
+upsampling process is performed by applying the filtering across the reference block
+boundary with the discardable slice, the filtering being applied at least to the padded
+sample values; and
+
+encoding the slice in the enhancement layer using at least prediction
+
+with reference to the upsampled sample values of the reference block.
+
+-30-
+
+--- PAGE 2 ---
+3. A method according to claim 2, wherein the discardable slices are
+
+coded in different slice groups than the non-discardable slices.
+
+4. A computer program product, embodied on a computer-readable
+medium, for decoding an encoded video signal of a scalable bitstream containing an
+enhancement layer and a base layer, comprising computer code adapted to perform:
+
+decoding a slice in the enhancement layer covering regions, which in
+the base layer are covered by a discardable slice not needed for inter-layer prediction
+and a non-discardable slice needed for inter-layer prediction;
+
+extending a boundary of a reference block by padding sample values
+across the boundary outside the block, the reference block belonging to the non-
+discardable slice, the boundary of the reference block being with the non-discardable
+slice;
+
+upsampling sample values of the reference block by applying filtering,
+wherein when applying the filtering across the reference block boundary with the the
+discardable slice, filtering is applied at least to the padded sample values; and
+
+decoding the slice in the enhancement layer using at least prediction
+
+with reference to the upsampled sample values of the reference block.
+
+5. A computer program product, embodied on a computer-readable
+medium, for encoding a video signal into a scalable bitstream containing an
+enhancement layer and a base layer, comprising computer code adapted to perform:
+
+encoding a slice in the enhancement layer covering regions, which in
+the base layer are covered by a discardable slice not needed for inter-layer prediction
+and a non-discardable slice needed for inter-layer prediction;
+
+extending a boundary of a reference block in a picture in the base layer
+by padding sample values across the boundary outside the block, the reference block
+being in the non-discardable slice, the boundary of the reference block being with the
+discardable slice ;
+
+upsampling sample values of the reference block, wherein the
+
+upsampling process is performed by applying the filtering across the reference block
+
+-31-
+
+--- PAGE 3 ---
+boundary with the discardable slice, the filtering being applied at least to the padded
+sample values; and
+encoding the slice in the enhancement layer using at least prediction
+
+with reference to the upsampled sample values of the reference block.
+
+6. A computer program product according to claim 5, wherein the
+
+discardable slices are coded in different slice groups than the non-discardable slices.
+
+7. A decoder, comprising:
+
+a processor; and
+
+a memory unit operatively connected to the processor wherein the
+decoder being configured to:
+
+decode an encoded video signal of a scalable bitstream containing an
+enhancement layer and a base layer;
+
+decode a slice in the enhancement layer covering regions, which in the
+base layer are covered by a discardable slice not needed for inter-layer prediction and
+a non-discardable slice needed for inter-layer prediction;
+
+extend a boundary of a reference block by padding sample values
+across the boundary outside the block, the reference block belonging to the non-
+discardable slice, the boundary of the reference block being with the discardable slice;
+
+upsample sample values of the reference block by applying filtering,
+wherein when applying the filtering across the reference block boundary with the
+discardable slice, filtering is applied at least to the padded sample values; and
+
+decode the slice in the enhancement layer using at least prediction with
+
+reference to the upsampled sample values of the reference block.
+
+8. An encoder, comprising:
+a processor; and
+a memory unit operatively connected to the processor wherein the
+encoder being configured to:
+encode a video signal into a scalable bitstream containing an
+
+enhancement layer and a base layer;
+
+-32-
+
+--- PAGE 4 ---
+encode a slice in the enhancement layer covering regions, which in the
+base layer are covered by a discardable slice not needed for inter-layer prediction and
+a non-discardable slice needed for inter-layer prediction;
+
+extend a boundary of a reference block in a picture in the base layer by
+padding sample values across the boundary outside the block, the reference block
+being in the non-discardable slice, the boundary of the reference block being with the
+discardable slice;
+
+upsample sample values of the reference block, wherein the
+upsampling process is performed by applying the filtering across the reference block
+boundary with the discardable slice, the filtering being applied at least to the padded
+sample values; and
+
+encode the slice in the enhancement layer using at least prediction with
+
+reference to the upsampled sample values of the reference block.
+
+9. An encoder according to claim 8, wherein the discardable slices are
+
+coded in different slice groups than the non-discardable slices.
+
+-33-

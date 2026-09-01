@@ -1,0 +1,25 @@
+Title: Channel coding method
+
+Abstract: 
+Method for channel coding of data to be received with a in a communication device (UE)
+with a first subset of the data containing data symbols of a first quality class,
+with a second subset of the data containing data symbols of a second quality class,
+with a first set of correction data symbols to be used for a correction of data symbols in the first subset,
+with a second set of correction data symbols to be used for a correction of data symbols in the second subset,
+   characterised in that
+the first set of correction bits is formed by an identification number (UE-ID) of the communication device.
+
+Type: EPO Patent
+
+Claims: 
+
+Method for channel coding of data to be received with a in a communication device (UE)
+with a first subset of the data containing data symbols of a first quality class,
+with a second subset of the data containing data symbols of a second quality class,
+with a first set of correction data symbols to be used for a correction of data symbols in the first subset,
+with a second set of correction data symbols to be used for a correction of data symbols in the second subset, characterised in that
+the first set of correction bits is formed by an identification number (UE-ID) of the communication device.
+Method according to claim 1, characterised in that if the identification number (UE-ID) of the communication device (UE) is detected, the first subset of data is assumed to be correct.
+Method according to any of the previous claims, where the first and the second subset of data symbols and identification number (UE-ID) and the second subset of correction symbols are fed into a convolutional encoder with flexible rates.
+Method according to any of the previous claims, where the output of the convolutional encoder is matched to a fixed final number of data symbols.
+Method according to any of the previous claims, where the first subset of data symbols is sent with essentially the same transmission power as the second subset of data symbols.

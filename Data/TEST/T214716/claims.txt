@@ -1,0 +1,223 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+13 194 781.4 -1955 August 4, 2016
+Kaspersky Lab, ZAO EPAB-119013.2
+
+CLAIMS
+
+Main Request
+
+1. A computer-implemented method for classification of electronic messages being
+e-mail messages as spam or legitimate on a client mail server (200), the method
+comprising:
+
+receiving (510), by a computer processor (15) of the client mail server (200), all
+electronic messages (180) directed to different users who have email addresses registered
+on the client mail server (200); .
+
+classifying (515) the received electronic messages (180) as legitimate or spam
+messages;
+
+identifying (535) unknown messages that could not be classified as legitimate or
+spam;
+
+obtaining (550) metadata (860) of the unknown messages, the metadata (860)
+including at least a set of hash sums (830) for an unknown message and an IP address of a
+sender of the unknown message;
+
+placing (553) the metadata (860) of the unknown messages into one cluster of a
+plurality of clusters forming a cluster index tree based on a degree of similarity between a
+
+newly-arrived set of hash-sums {hj; ho ... hy} from the metadata (860) and existing sets in the
+
+. . ; Ww, . .
+cluster index tree in accordance with: D= d J ke? wherein the sum is formed over all
+
+weighting factors w, corresponding to hash sums in the cluster index tree that are matched
+
+by hash sums in the newly-arrived set {hi; ho ... hx};
+rating (590) each unknown message in accordance with a rating of the cluster
+where the metadata (860) of the unknown messages was assigned to, wherein the rating of
+the cluster is based, at least, on a number of similar hash sums (830) of unknown messages
+received from different IP addresses of message senders contained in said cluster; and
+classifying (560, 565) unknown messages as legitimate or spam based on
+
+message ratings.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2. The method of claim 1, wherein classifying unknown messages as legitimate or
+spam based on cluster ratings further includes: |
+classifying (565) a message (180) as spam when a cluster rating is above a first
+threshold; and
+classifying (560) a message (180) as legitimate when a cluster rating is below a
+
+second threshold.
+
+3. The method of claim 1, wherein:
+the greater is the number of messages (180) in a cluster having similar hash sums
+(830) and different IP addresses of message senders, the rating of a cluster indicates that
+the cluster contains metadata (860) of spam messages; and
+the greater is the number of messages (180) in a cluster with similar hash sums
+(830) and the same IP address of the message sender, the rating of said cluster indicates
+
+that the cluster contains metadata (860) of legitimate messages.
+
+4, The method of claim 1, wherein receiving the electronic messages (180) includes:
+receiving (710) the electronic messages (180) from one or more message traps
+(170); and
+when a message (180) is received from a message trap (170), modifying the
+rating of a cluster to which said message was assigned to indicate that the cluster contains
+
+metadata of spam messages.
+
+5. The method of claim 1, wherein placing (553) the metadata (860) of the
+unknown messages into a plurality of clusters includes:
+placing (553) the metadata (860) of the unknown messages into a plurality of
+clusters using the cluster index tree, in which each node of the cluster index tree identifies
+
+hash sums (830) common to a plurality of legitimate messages or spam messages.
+
+6. The method of claim 1, wherein obtaining (550) the metadata (860) of the
+unknown messages further includes:
+
+separating each unknown message into a plurality of fragments (820);
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+computing hash sums (830) of each of the plurality of message fragments (820);
+identifying an IP address of the message sender; and
+filtering (730) the metadata (860) by removing hash sums (830) of message
+
+fragments (820) common to a plurality of messages (180).
+
+7. The method of claim 2, wherein, when the cluster rating is between the first and
+second thresholds, placing (580) the messages (180) in said cluster in quarantine for a
+period of time or until the cluster rating changes above the first threshold or below the
+
+second threshold.
+
+8. A computer system for classification of electronic messages being e-mail
+messages as spam or legitimate, comprising:
+a processor (15) of a client mail server (200) configured to:
+receive all electronic messages (180) directed to different users who have email
+addresses registered on the client mail server (200);
+classify the received electronic messages (180) as legitimate or spam messages;
+identify unknown messages that could not be classified as legitimate or spam;
+obtain metadata (860) of the unknown messages, the metadata (860) including
+at least a set of hash sums (830) for an unknown message and an IP address of a sender of
+the unknown message,
+characterized in that
+the processor (15) is further configured to:
+place the metadata (860) of the unknown messages into one cluster of a plurality
+of clusters forming a cluster index tree based on a degree of similarity between a newly-
+
+arrived set of hash-sums {hj; h2 ... hy} from the metadata (860) and existing sets in the
+cluster index tree in accordance with: D = J I? wherein the sum is formed over all
+
+weighting factors w, corresponding to hash sums in the cluster index tree that are matched
+
+by hash sums in the newly-arrived set {ha; hz ... hx};
+rate each unknown message in accordance with a rating of the cluster where the
+
+metadata (860) of the unknown messages was assigned to, wherein the rating of the cluster
+
+--- PAGE 4 ---
+“ee :
+
+a
+
+10
+
+15
+
+20
+
+25
+
+30
+
+is based, at least, on a number of similar hash sums (830) of unknown messages received
+from different IP addresses of message senders contained in said cluster; and
+
+classify unknown messages as legitimate or spam based on message ratings.
+
+9. The system of claim 8, wherein to classify unknown messages as legitimate or
+spam based on cluster ratings, the processor (15) is further configured to:
+classify a message (180) as spam when a cluster rating is above a first threshold;
+
+and
+
+classify a cluster as legitimate when a cluster rating is below a second threshold.
+
+10. The system of claim 8, wherein:
+the greater is the number of messages in a cluster with similar hash sums (830)
+and different IP addresses of message senders, the rating of a cluster indicates that the
+cluster contains metadata (860) of spam messages; and
+the greater is the number of messages in a cluster with similar hash sums (830)
+and the same IP address of the message sender, the rating of said cluster indicates that the
+
+cluster contains metadata (860) of legitimate messages.
+
+11. The system of claim 8, wherein to receive the electronic messages (180), the
+processor (15) is further configured to:
+receive the electronic messages (180) from one or more message traps (170);
+and
+| when a message (180) is received from a message trap (170), modify the rating of
+a cluster to which said message was assigned to indicate that the cluster contains metadata
+
+(860) of spam messages.
+
+12. The system of claim 8, wherein to place the metadata (860) of the unknown
+messages into a plurality of clusters, the processor (15) is further configured to:
+place the metadata (860) of the unknown messages into a plurality of clusters
+using the cluster index tree, in which each node of the cluster index tree identifies hash
+
+sums (830) common to a plurality of legitimate messages or spam messages.
+
+--- PAGE 5 ---
+~L 'y
+
+10
+
+13. Thesystem of claim 8, wherein to obtain the metadata (860) of the unknown
+messages, the processor (15) is further configured to:
+separate each unknown message into a plurality of fragments (820);
+compute hash sums (830) of each of the plurality of message fragments (820);
+identify an IP address of the message sender; and
+filter the metadata (860) by removing hash sums (830) of message fragments
+
+(820) common to a plurality of messages (180).
+
+14. Thesystem of claim 8, wherein, when the cluster rating is between the first and
+second thresholds, the processor (15) is further configured to place the messages (180) in
+said cluster in quarantine for a period of time or until the cluster rating changes above the
+
+first threshold or below the second threshold.

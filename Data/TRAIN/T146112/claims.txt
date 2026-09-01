@@ -1,0 +1,104 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+UNL-P3267EP: Main Request 3 July 2015 (tracked)
+-16-
+Claims
+1. A method for auditing software usage, comprising:
+at an authorization authority responsible for verifying software licences:
+receiving both a serial number for software installed on a computing
+device and a unique device identifier for the device (61);
+determining whether the received serial number corresponds to one of
+recognized serial numbers;
+in response to recognizing the received serial number, calculating a copy
+count for the received serial number (62);
+in response to the copy count not exceeding a first upper limit of software
+copies, sending an unlimited unlock key to the device (64); and
+in response to the copy count being greater than the first upper limit but
+not exceeding a second upper limit, sending a first limited unlock key to the
+
+device (66).
+
+2. The method of Claim 1, wherein sending the first limited unlock key comprises
+sending a first unlock code that allows the software to run on the device for a first time
+period before requiring re-authorization to continue use of the software on the device,
+further comprising, in response to the copy count being greater than the second upper
+limit but not exceeding a third upper limit, sending a second limited unlock key to the
+device, wherein sending the second limited unlock key comprises sending a second
+unlock code that allows the software to run on the device for a second time period before
+
+requiring re-authorization to continue use of the software on the device.
+
+3. The method of Claim 1, wherein sending the first limited unlock key comprises
+sending a first unlock code that allows the software to run on the device for a defined
+number of executions before requiring re-authorization to continue use of the software
+on the device and/or wherein sending the first limited unlock key comprises sending a
+first unlock code that allows the software to run on the device with at least one feature of
+
+the software disabled.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+UNL-P3267EP: Main Request 3 July 2015 (tracked)
+
+-]7-
+4. The method of Claim 1, further comprising receiving an unlock code request for
+the software from the device and comprising switching to a limiting mode, comprising,
+in response to the copy count being greater than the first preset number, informing a user
+
+that the unlock code request has failed.
+
+5. A system (60) for auditing software usage, comprising:
+a receiver module adapted to receive a serial number for a software installed on a
+computing device and a unique device identifier for the device;
+a transmitter module;
+a processor module operatively coupled to the receiver and transmitter modules;
+and
+a memory module operatively coupled to the processor module and comprising
+executable code for the processor module to:
+determine whether the received serial number corresponds to one of
+recognized serial numbers;
+in response to determination that the received serial number corresponds
+to one of the recognized serial numbers, calculate a copy count for the received
+serial number;
+in response to the copy count not exceeding a first upper limit of software
+copies, instruct the transmitter module to send an unlimited unlock key to the
+device; and
+in response to the copy count being greater than the first upper limit but
+not exceeding a second upper limit, instruct the transmitter module to send a first
+
+limited unlock key to the device.
+
+6. The system (60) of Claim 5, wherein the first limited unlock key allows the
+software to run on the device for a first time period before requiring re-authorization to
+continue use of the software on the device, and wherein the memory module further
+comprises executable code for the processor module to, in response to the copy count
+being greater than the second upper limit but not exceeding a third upper limit, instruct
+the transmitter module to send a second limited unlock key to the device, and wherein
+
+the second limited unlock key allows the software to run on the device for a second time
+
+--- PAGE 3 ---
+UNL-P3267EP: Main Request 3 July 2015 (tracked)
+-18-
+
+period before requiring re-authorization to continue use of the software on the device,
+
+and wherein the second time period is shorter than the first time period.

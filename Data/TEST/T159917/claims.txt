@@ -1,0 +1,148 @@
+--- PAGE 1 ---
+24-DEC-24146 15:34 FROM RGC JENKINS CO TO EPO P.@8
+
+26
+CLAIMS:
+l. An apparatus that operates in a wireless communication environment, the apparatus
+comprising:
+
+means for receiving a code sequence in a primary synchronization channel, the code
+sequence facilitating orthogonal frequency division multiplexing symbol! boundary detection,
+slot boundary detection, and sub-frame boundary detection and conveying a part of a cell
+identification code; and
+
+means for receiving one or more code sequences in a secondary synchronization
+channel, the one or more code sequences conveying the remaining part of the cell
+
+identification code,
+
+2, The apparatus of claim 1, further comprising means for receiving a code sequence in a
+
+broadcast channel, the code sequence conveying wireless system bandwidth.
+
+3. The apparatus of claim 1, further comprising means for relaying the code sequences to
+a terminal in the wireless communication system that has failed to acquire cell information
+
+from a cell base station.
+
+4, The apparatus of claim 3, further comprising means for scheduling a time to trigger
+
+the relaying of the code sequences.
+
+5. An apparatus that operates in a wircless communication environment, the apparatus
+comprising:
+
+means for transmitting a code sequence in a primary synchronization channel, the code
+sequence facilitating orthogonal frequency division multiplexing symbol boundary detection,
+slot boundary detection, and sub-frame boundary detection and conveying a part of a cell
+identification code; and
+
+means for transmitting one or more code sequences in a secondary synchronization
+channel, the one or more code sequences conveying the remaining part of the cell
+
+identification code.
+
+JO00S [S9GEP 24 Doe. 10
+EP 0784t291.3
+Duration: 24.12.2010 14:34:05 - 24.12.2010 14:35:51. This page 8 of 14 was completed at 24.12.2010 14:35:09
+Received at the EPO on Dec 24, 2010 14:35:51. Page 8 of 14
+
+--- PAGE 2 ---
+24-DEC-24146 15:34 FROM RGC JENKINS CO TO EPO P.a9
+
+27
+6. The apparatus of claim 5, further comprising means for transmitting a code sequence
+
+in a broadcast channel, the code sequence conveying wireless system bandwidth.
+
+7. The apparatus of claim 5, wherein the means for transmitting is configured to transmit
+
+the code sequences over 1.25 MHz.
+
+&. The apparatus of claim 6, the processor further configured to transmit the code
+sequence in the broadcast channel over 1.25 MHz when the system bandwidth is smaller than
+
+5 MHz, and over 5 MHz when the system bandwidth is greater than or equal to 5 MHz.
+
+9, The apparatus of claim 5 or 6, further comprising means for transmitting a request to
+relay the code sequence transmitted in the primary synchronization channel, the one or more
+code sequences transmitted in the secondary synchronization channel or the code sequence
+
+transmitted in the broadcast channel.
+
+10. A method used in wireless communications system, the method comprising:
+
+receiving a code sequence in the primary synchronization channel, P-SCH, the code
+sequence facilitating orthogonal frequency division multiplexing symbol boundary detection,
+slot boundary detection, and sub-frame boundary detection and conveying a part of a cell
+identification code; and
+
+receiving one or more code sequences in a secondary synchronization channel, S-
+SCH, the one or more code sequences conveying the remaining part of the cell identification
+
+code,
+
+11. The method of claim 10, further comprising:
+
+receiving a code sequence in a broadcast channel, BCH, the code sequence conveying
+Wircless system bandwidth; and
+
+processing the P-SCH, $-SCH, and BCH code sequences and extracting the cell
+
+information conveyed by the code sequences.
+
+12. The method of claim 11, further comprising receiving the code sequences in the P-
+
+5CH, the 8-SCH, and the BCH over 1.25 MHz.
+
+1005 139GEF 24 Dec, 10
+EP 07841291.3
+
+Duration: 24.12.2010 14:34:05 - 24.12.2010 14:35:51. This page 9 of 14 was completed at 24.12.2010 14:35:17
+Received at the EPO on Dec 24, 2010 14:35:51. Page 9 of 14
+
+--- PAGE 3 ---
+24-DEC-2416 13:34 FROM RGC JENKINS CO TO EPO P.18
+
+28
+
+13. The method of claim 11, further comprising:
+storing the cell information extracted from the P-SCH, the $-SCH, and the BCH; and
+
+relaying the cell information.
+
+14, The method of claim 11, further comprising scheduling a time to relay the cell
+
+information.
+
+15. A method used in wircless communications system, the method comprising:
+transmitting a code sequence in a primary synchronization channel, the code sequence
+facilitating orthogonal frequency division multiplexing symbol boundary detection, slot
+boundary detection, and sub-frame boundary detection and conveying a part of a cell
+identification code;
+transmitting one or more code sequences in a secondary synchronization channel, the
+
+one or more code sequences conveying the remaining part of the cell identification code.
+
+16. The method of claim 15, further comprising transmitting a code sequence in a
+
+broadcast channel, the code sequence conveying wireless system bandwidth.
+
+17. The method of claim 16, further comprising transmitting the code sequences in the
+primary synchronization channel, the secondary synchronization channel and the broadcast
+
+channel employing frequency reuse.
+
+18. The apparatus of claim 1 or 5, or the method of claim 10 or 15, wherein the code
+
+sequence in the primary synchronization channel comprises a Zadoff-Chu sequence.
+
+19, A machine-readable medium comprising instructions which, when executed by a
+machine, cause the machine to perform a method in accordance with any one of claims 10 to
+
+17,
+
+JOQOS1 S9GEP 24 Des, 10
+EP 078412913
+Duration: 24.12.2010 14:34:05 - 24.12.2010 14:35:51. This page 10 of 14 was completed at 24.12.2010 14:35:23
+Received at the EPO on Dec 24, 2010 14:35:51. Page 10 of 14

@@ -1,0 +1,30 @@
+Title: A method of secure data communication
+
+Type: EPO Patent
+
+Claims: 
+
+A method of secure communication between a first server (2) and a terminal (1) remote from the first server (2), the terminal (1) including a user operated data input device (5), the secure communication method comprising the steps of:
+receiving an access request (S1) from said terminal (1) for access to the server (2);
+communicating encoding data (S6) to the terminal (1), the encoding data being specific to a communication event;
+generating positional data (S7) from data entered by a user using the data input device (5) of the terminal (1) with respect to the encoding data, the positional data consisting of identifiers for the positions of user selected characters of the data input device (5);
+communicating the positional data (S8) from the terminal (1); and
+decoding the positional data (S8) using said encoding data to generate the user entered data
+characterised in that said access request (S1) includes first authorisation data;
+said encoding data is communicated to the terminal by a security server (3);
+said positional data is communicated from the terminal to the security server (3);
+the positional data is decoded by the security server (3);
+the data decoded from the positional data is second authorisation data and is communicated from the security server (3) to the first server (2) whereby the access request communicated to the first server (2) is communicated over a different path to the path used for communicating the positional data to the security server (3), the access request and the positional data being encrypted using SSL protocol such that the risk is reduced that the data sent from the terminal (1), if intercepted, could be used to extract the user's full authorisation.
+A method as claimed in claim 1, wherein the terminal includes a display (4) and the method further comprises the step of displaying a plurality of characters on the display (4), the position of each of the characters on the display (4) being determined with respect to said encoding data.
+A method as claimed in claim 2, wherein the encoding data identifies the arrangement of characters displayed.
+A method as claimed in claim 3, wherein the plurality of characters displayed comprise a sub-group of alphanumeric characters selected from the complete set of alphanumeric characters.
+A method as claimed in claim 3, wherein the plurality of characters displayed comprises non-alphanumeric user distinguishable characters.
+A method as claimed in claim 5, wherein the encoding data includes, a sub-set of non-alphanumeric characters taken from a larger set of non-alphanumeric characters.
+A method as claimed in claim 3, wherein said encoding data comprises a string of numerals in random order.
+A method as claimed in claim 2, further comprising the step of communicating to the terminal the URL of a webpage wherein the encoding data is embodied in said webpage and the step of displaying a plurality of characters on the display (4) comprises displaying the contents of the webpage on the display.
+A method as claimed in claim 1, wherein said input device (5) is a keyboard and said encoding data comprises a virtual map assigning unique identifiers to each of the positions of a selected group of keys on the keyboard.
+A secure communication system characterised by comprising a first server and a security server (3), the first server (2) being adapted to receive an access request which includes first authorisation data from a remote terminal and the security server (3) comprising an encoder (7,8) for generating encoding data specific to a communication event; a communications interface for communicating the encoding data to a remote terminal (1) and for receiving positional data from the remote terminal (1), the positional data consisting of identifiers for the positions of user selected characters and being an encoding of user entered data; and a decoder (9) for decoding positional data received from the terminal (1), the decoder (9) using the encoding data of the encoder to decode the positional data to generate second authorisation data which is communicated from the security server (3) to the first server (2)
+whereby a different path is used to communicate the access request to the first server (2) to the path used to communicate the positional data to the security server (3), the access request and the positional data being encrypted using SSL protocol such that the risk is reduced that the data sent from a terminal to the first server and the security server, if intercepted, could be used to extract the user's full authorisation.
+A secure communication system as claimed in claim 10, further comprising at least one terminal (1) remote from and in Di-directional communication with the first server (2), each terminal (1) comprising : a mannually operated input device (5) for the entry of user data that is encoded as positional data, and a terminal communications interface.
+The secure communications system as claimed in claim 11, wherein the user entered data comprises authorisation data and the first server (2) further includes data storage (10) in which valid authorisation data is stored against which authorisation data decoded by the decoder (9) is validated.
+The secure communications system as claimed in either of claims 11 or 12, therein the security server (3) includes a user display design data storage (11) in which is stored design data specific to each user, the design data dictating features of an image to be displayed on the terminal display (4).

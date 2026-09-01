@@ -1,0 +1,176 @@
+--- PAGE 1 ---
+Main Request
+25378 WO-HIJL
+
+CLAIMS
+
+1. A device (24) for diagnostic or therapy support of a patient (12) with a chronic
+
+disease, comprising:
+
+a display (108);
+auser interface (146); and
+aprocessor (102) coupled to the display (108) and the user interface (146); and
+program (34) instructions that when executed by the processor (102) causes the
+processor (102) to:
+prompt aplurality of medical use cases or questions related to the chronic
+disease for selection on the display (108),
+
+receive a selected medical use case or question via the user interface (146),
+
+select automatically a structured collection procedure (70) for the
+diagnostic or therapy support of the patient (12) with the chronic disease
+based on the selected medical use case or question from aplurality of
+
+structured collection procedures (70) stored in amemory (110), and
+
+implement the selected structured collection procedure (70),
+
+said structured collection procedure (70) having parameters (220, 222,
+224, 226, 228, 230, 232, 237, 238, 240) defining a schedule of events
+(222), each of said events (237) comprising at least one or more of a
+performance time (238), guidance (230) to perform the event (237), a
+request (240) for patient action, arequest (240) for information, and a
+
+request (240) for collection of at least one type of biomarker data.
+
+2. A device (24) for diagnostic or therapy support according to claim 1 wherein the
+parameters (220, 222, 224, 226, 228, 230, 232, 237, 238, 240) of the structured collection
+procedure (70) further define at least one entry criterion (226) which establishes one or
+more conditions needed to be met in order for a processor (102) to perform the schedule
+
+of events (222).
+
+3. A device (24) for diagnostic or therapy support according to claim 2 wherein the
+
+entry criterion (226) is defined as aparticular medical question so that the structured
+
+--- PAGE 2 ---
+Main Request
+25378 WO-HIJL
+
+-2-
+
+collection procedure (70) is automatically selected and the schedule of events (222)
+
+started upon meeting the entry criterion (226).
+
+4, A device (24) for diagnostic or therapy support according to claim 1 wherein the
+parameters (220, 222, 224, 226, 228, 230, 232, 237, 238, 240) of the structured collection
+procedure (70) further define at least one adherence criterion (224) which establishes one
+or more conditions used to qualitatively assess whether an event (237) performed
+according to the schedule of events (222) provided data (256, 170, 145) which is
+
+acceptable to addressing the selected medical use case or question .
+
+5. A device (24) for diagnostic or therapy support according to claim 4 wherein the
+adherence criterion (224) is assessed and the structured collection procedure (70) is
+
+dynamically adapted based onthe assessment.
+
+6. A device (24) for diagnostic or therapy support according to claim 1 wherein the
+parameters (220, 222, 224, 226, 228, 230, 232, 237, 238, 240) of the structured collection
+procedure (70) further define at least one exit criterion (228) which establishes one or
+more conditions needed to be met prior to exiting the structured collection procedure
+
+(70).
+
+7. A device (24) for diagnostic or therapy support according to claim 1 wherein the
+
+processor (102) implements the selected structure collection procedure (70) as output.
+
+8. A device (24) for diagnostic or therapy support according to claim 1 wherein the
+device (24) is one of a clinician computer (25) and ahand-held collection device (26, 28,
+
+36, 48).
+
+9. A device (24) for diagnostic or therapy support according to claim 7 wherein the
+output of the selected structured collection procedure (70) is provided to a hand-held
+
+blood glucose meter (26).
+
+10. A device (24) for diagnostic or therapy support according to claim 7 wherein the
+output is one of aprinted paper tool (38), software (34) to be operated by a collection
+device (24), software (34) sent to a collection device (24), software (34) download from
+a server (52) by acollection device (24), a display (82) of clinician computer (25), anda
+display (108) of ahand-held collection device (24).
+
+--- PAGE 3 ---
+Main Request
+25378 WO-HIJL
+
+-3-
+
+11. A device (24) for diagnostic or therapy support according to claim | wherein the
+
+memory (110) is remotely accessed by the device (24).
+
+12. A device (24) for diagnostic or therapy support according to claim I wherein the
+plurality of medical use cases or questions comprises optimizing an insulin-to-
+carbohydrate ratio, determining bolus timing in regard to ameal start, and determining
+
+an exercise equivalent.
+
+13. A device (24) for diagnostic or therapy support according to claim 1 wherein the
+plurality of medical use cases or questions include one or more questions concerning
+controlling the biomarker ina predefined context, therapy onset, type of therapy, oral
+mono-therapy, oral combination therapy, insulin therapy, lifestyle therapy, adherence to
+
+therapy, and therapy efficacy.
+
+14. A device (24) for diagnostic or therapy support according to claim 13 wherein the
+oral mono-therapy is selected from the group consisting of, sulfonylureas, biguanides,
+thiazolidinediones, alpha-glucosidase inhibitors, meglitinides, dipeptidyl peptidase IV
+inhibitors, GLP-1 analogs, taspoglutide, PPAR dual alpha/gamma agonists, and
+aleglitazar.
+
+15. A method (300) of performing a structured collection procedure (70), comprising:
+providing a
+collection device (24) for diagnostic or therapy support of a patient
+(12) with a chronic disease, the collection device (24) comprising:
+
+a display (108);
+
+auser interface (146); and
+
+aprocessor (102) coupled to the display (108) and the user
+interface (146);
+
+causing the processor (102) to execute (102) program (34) instructions
+
+to:
+
+prompt aplurality of medical use cases or questions related to the chronic
+
+disease for selection on the display (108),
+
+--- PAGE 4 ---
+Main Request
+
+25378 WO-HJL
+receive a selected medical use case or question via the user interface (146),
+
+select automatically a structured collection procedure (70) for the
+diagnostic or therapy support of the patient (12) with the chronic
+disease based on the selected medical use case or question from a
+plurality of structured collection procedures (70) stored in a
+memory (110), and implement the selected structured collection
+
+procedure (70),
+
+said structured collection procedure (70) having parameters (220, 222,
+224, 226, 228, 230, 232, 237, 238, 240) defining a schedule of
+
+events (222), each of said events (237) comprising at least one
+
+or more of a performance time (238), guidance (230) to
+
+perform the event (237), a request (240) for patient action, a
+
+request (240) for information, and a request (240) for
+
+collection of at least one type of biomarker data, and
+
+authorizing the structured collection procedure (70) on the collection
+
+device (24).

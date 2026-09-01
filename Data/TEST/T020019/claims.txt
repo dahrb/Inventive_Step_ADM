@@ -1,0 +1,91 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+46
+
+Main request
+
+CLAIMS:
+
+1. A method of disambiguating a character input into a handheld electronic
+device (4), the handheld electronic device including an input apparatus (8) for
+inputting characters into the device, an output apparatus for outputting characters, and
+a processor apparatus (16) for electronically processing characters, including a
+memory (20) having a plurality of objects stored therein, the plurality of objects
+including a plurality of language objects (100) that may be constructed or identified
+from one or more linguistic characters to generate text, each of at least some of the
+language objects comprising a first linguistic character (48), the input apparatus
+including a plurality of input members (28,34), each having a plurality of linguistic
+characters assigned thereto, the method comprising the steps of:
+
+detecting an ambiguous input (204) including a number of input member
+actuations of a number of the input members, wherein the ambiguous input has an
+input case makeup of an input sequence of upper and/or lower case linguistic
+characters;
+
+generating a plurality of prefix objects, each prefix object comprising a
+permutation of linguistic characters corresponding with the ambiguous input;
+
+for a first prefix object, identifying first and second language objects
+corresponding with the first prefix object, at least a portion of the first language object
+having a first case makeup of a first sequence of upper and/or lower case linguistic
+characters, at least a portion of the second language object having a second case
+makeup of a second sequence of upper and/or lower case linguistic characters, the
+second case makeup being different to the first case makeup;
+
+determining that at least a portion of the input case makeup which is upper
+case corresponds with at least a portion of one of the first case makeup and the second
+case makeup;
+
+outputting as a relatively more preferred variant, in a predetermined quantity
+of alternative proposed interpretations of the ambiguous input, the first prefix object
+
+in accordance with the one of the first case makeup and the second case makeup; and
+
+1070200v1
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+47
+
+outputting as a relatively less preferred variant the first prefix object in
+
+accordance with the other of the first case makeup and the second case makeup.
+
+2. The method of Claim 1, further comprising the step of determining that the
+portion of the input case makeup which is determined to be upper case corresponds to
+the same upper case linguistic character in the one of the first case makeup and the
+
+second case makeup to output as the relatively more preferred variant.
+
+3. The method of Claim 2, further comprising the step of determining that
+another portion of the input case makeup includes a linguistic character that is lower
+case, and determining that a corresponding linguistic character of the one of the first
+
+case makeup and the second case makeup is a linguistic character that is upper case.
+
+4. The method of Claim 1, further comprising the steps of:
+
+associating at least a subset of the plurality of prefix objects respectively with
+a corresponding word object having a frequency object with a corresponding
+frequency value stored in the memory; and
+
+outputting the subset of the plurality of prefix objects in a list in descending
+order of frequency value except that the preferred variant is listed ahead of the
+
+relatively less preferred variant.
+
+1070200v1

@@ -1,0 +1,1287 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+AMENDED CLAIMS (main request):
+
+1. A system for estimating the power spectral density of
+acoustical background noise; the system comprises:
+
+a sensor unit for obtaining a noise signal (MIC(w)) rep-
+resentative of the background noise;
+
+a power spectral density calculation unit (6) that is
+adapted for continuously determining the current power spec-—
+
+tral density from the noise signal and is adapted for provid-
+
+ing a corresponding power spectral density output signal
+(PSdMic());
+
+a time domain signal smoothing unit (7) that is adapted
+for smoothing the power spectral density output signal
+PsdMic(@)) in the time domain and is adapted for providing a
+resulting timely smoothed signal;
+
+a frequency domain signal smoothing unit (8) that is
+adapted for smoothing the timely smoothed signal received
+from the time domain signal smoothing unit (7) in the fre-
+quency domain and is adapted for providing a resulting
+smoothed power spectral density signal (SmoothedPsdMic(@));
+
+an increment calculation unit (9) that is adapted for
+calculation of an increment (Inc((@)) depending on an esti-
+mate value of the power spectral density of the background
+noise (PsdNoise());
+
+a decrement calculation unit (10) that is adapted for
+
+calculation of a decrement (Dec(w)) depending on the estimate
+
+value of the power spectral density of the background noise;
+and
+
+an estimate signal smoothing unit (11) that is adapted
+
+for calculation of the estimate value of the power spectral
+
+density of the background noise (PsdNoise(w)) from the incre-
+
+ments (Inc(o)) and decrements (Dec(o)); where
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+for cases in which the level of the smoothed power spec-—
+
+tral density signal (SmoothedPsdMic(w)) increases and the
+
+value of the smoothed power spectral density
+
+(SmoothedPsdMic(w)) currently determined in a new calculation
+
+-
+
+cycle is larger than the estimate value of the power spectral
+
+density of the background noise (PsdNoise(w)) determined in
+the previous calculation cycle, the increment value (Inc (w))
+
+is increased, starting from a minimum increment value
+
+(Inc(®)), by a predetermined amount (AInc) until a maximum
+increment value (IncMax) is reached; and
+
+for cases in which the level of the smoothed power spec-—
+tral density (SmoothedPsdMic(w)) falls and the value of the
+smoothed power spectral density (SmoothedPsdMic(w)) currently
+determined in a new calculation cycle is smaller than the es-
+timate value of the power spectral density of the background
+noise (PsdNoise(w)) determined in the previous calculation
+cycle, the decrement value (Dec(w#)) is increased, starting
+from a minimum decrement value (DecMin), by a predetermined
+amount (ADec) until a maximum decrement value (DecMax) is
+
+reached.
+
+2. The system of claim 1, further comprising an adaptive fil-
+ter that provides an error signal (e[n]), where the power
+spectral density calculation unit (6) is adapted for deter-
+mining the current power spectral density from the error sig-
+
+nal (e[n]) of the adaptive filter deploying consecutive cal-
+
+culation cycles and the system is adapted for providing a
+corresponding power spectral density output signal
+(PsdMic(w)) and a corresponding smoothed power spectral den-
+
+sity signal (SmoothedPsdMic(w)).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+3. The system of claim 1 or 2, where the system is adapted to
+
+change the calculation for estimating the power spectral den-
+
+sity of the background noise from the mode for calculation of
+
+the increment value to the mode for calculation of the decre-
+
+ment value if the current value of the power spectral density
+
+determined in a new calculation cycle is less than the esti-
+
+mate value of the power spectral density of the background
+noise calculated in the previous calculation cycle, where the
+system is adapted for resetting the current value of the in-
+crement value to the minimum increment value, and
+
+to change the calculation for estimating the power spec-—
+tral density of the background noise from the mode for calcu-
+lation of the decrement value to the mode for calculation of
+the increment value if the current value of the power spec-—
+tral density determined in a new calculation cycle is greater
+than the estimate value of the power spectral density of the
+background noise calculated in the previous calculation cy-
+cle, where the system is adapted for resetting the current
+
+value of the decrement to the minimum decrement value.
+
+4. The system of any one of claims 1-3, where the system is
+adapted, in the event of decrementing the estimate value of
+the power spectral density of the background noise, to limit
+the reduction of the estimate value to a fixed specified
+value, such that the estimate value of the power spectral
+density of the background noise never falls below the minimum
+
+value regardless of the currently calculated value.
+
+5. The system of any one of claims 1-4, where the time domain
+
+signal smoothing unit is adapted for a smoothing of the cur-
+
+rently measured power spectral density over time utilizing
+
+two different time constants, one for the case of a rising
+
+signal and one for the case of a falling signal.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+6. The system of any one of claims 1-5, where the frequency
+domain signal smoothing unit (8) is adapted for a smoothing
+
+of the timely smoothed signal from the time domain signal
+
+smoothing unit (7), starting from a minimum frequency upward
+
+using a frequency smoothing third coefficient, and/or start-
+
+ing from a maximum frequency downward, using a frequency
+
+smoothing fourth coefficient.
+
+7. The system of any one of claims 1-6, where
+
+the first and second coefficients for smoothing over
+time of the currently measured power spectral density repre-
+sent psychoacoustic sensory properties of the human ear
+and/or
+
+the third and fourth coefficients for smoothing over
+frequency of the currently measured power spectral density
+
+represent psychoacoustic sensory properties of the human ear.
+
+8. The system of any one of claims 1-7, where the value
+(AInc) for the increase of the increment value is individu-
+ally selected with values differing for each spectral posi-
+tion in the smoothed power spectral density signal of the
+currently measured power spectral density and where the value
+(ADec) for the increase of the decrement value is individu-
+ally selected with values differing for each spectral posi-
+tion in the smoothed power spectral density signal of the
+
+currently measured power spectral density.
+
+9. The system of any one of claims 1-8, wherein the system is
+
+adapted to merge spectral components of the smoothed or non-
+
+smoothed power spectral density signal within frequency
+
+groups corresponding to the psychoacoustic sensory perception
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+into single combined signals for each frequency group prior
+
+to further processing.
+
+10. A method for estimation of the power spectral density of
+
+acoustical background noise, comprising the steps of:
+
+determining of the current power spectral density froma
+
+microphone signal (MIC(w)) by a power spectral density calcu-
+lation unit (6) and providing a corresponding power spectral
+density output signal (PsdMic(w));
+
+smoothing of the provided power spectral density output
+
+signal (PsdMic(w)) in the time domain providing a resulting
+timely smoothed signal;
+
+smoothing of the timely smoothed signal in the frequency
+domain and providing a resulting smoothed power spectral den-
+sity signal (SmoothedPsdMic(w));
+
+calculating of an increment (Inc(w)) depending on an es-
+timate value of a power spectral density of the background
+noise;
+
+calculating of a decrement (Dec(w)) depending on the es-
+timate value of the power spectral density of the background
+noise;
+
+calculating of the estimate value of the power spectral
+density of the background noise from the increments and dec-—
+rements, where
+
+for cases in which the level of the smoothed power spec-—
+tral density signal (SmoothedPsdMic(w)) increases and the
+value of the smoothed power spectral density
+
+(SmoothedPsdMic(w)) currently determined in a new calculation
+
+cycle is larger than the estimate value of the power spectral
+
+density of the background noise (PsdNoise(w)) determined in
+
+the previous calculation cycle, the increment value (Inc (w))
+
+is increased, starting from a minimum increment value
+
+(Inc(®)), by a predetermined amount (AInc) until a maximum
+
+increment value (IncMax) is reached, and
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+for cases in which the level of the smoothed power spec-—
+
+tral density (SmoothedPsdMic(w)) falls and the value of the
+
+smoothed power spectral density (SmoothedPsdMic(w)) currently
+
+determined in a new calculation cycle is smaller than the es-
+
+timate value of the power spectral density of the background
+
+noise (PsSdNoise(w)) determined in the previous calculation
+
+cycle, the decrement value (Dec(w)) is increased, starting
+
+from a minimum decrement (DecMin) value, by a predetermined
+
+amount (ADec) until a maximum decrement value (DecMax) is
+
+reached.
+
+11. The method of claim 10, further comprising the step of:
+determining of the current power spectral density from
+an error signal derived from adaptive filtering by deploying
+consecutive calculation cycles; and
+providing of a corresponding power spectral density out-
+put signal (PsdMic(w)) and a corresponding smoothed power
+
+spectral density signal (SmoothedPsdMic(@)).
+
+12. The method of claim 10 or 11, further comprising the
+steps of:
+
+changing of the calculation for estimating the power
+spectral density of the background noise from the mode for
+calculation of the increment value to the mode for calcula-
+tion of the decrement value if the current value of the power
+
+spectral density determined in a new calculation cycle is
+
+less than the estimate value of the power spectral density of
+the background noise calculated in the previous calculation
+
+cycle, where the current value of the increment value
+
+(Inc(w)) is reset to the minimum increment value (IncMin),
+and
+
+changing of the calculation for estimating the power
+
+spectral density of the background noise from the mode for
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+calculation of the decrement value to the mode for calcula-
+
+tion of the increment value if the current value of the power
+
+spectral density determined in a new calculation cycle is
+
+greater than the estimate value of the power spectral density
+
+of the background noise calculated in the previous calcula-
+
+tion cycle, where the current value of the decrement (Dec())
+
+is reset to the minimum decrement value (DecMin).
+
+13. The method of any one of claims 10-12, further comprising
+
+the step of limiting, in the event of decrementing the esti-
+
+mate value of the power spectral density of the background
+
+noise, the reduction of the estimate value to a fixed speci-
+fied value, such that the estimate value of the power spec-—
+tral density of the background noise does not fall below the
+
+minimum value regardless of the currently calculated value.
+
+14. The method of any one of claims 10-13, further comprising
+the steps of smoothing in the time domain, of the currently
+measured power spectral density over time utilizing two dif-
+ferent time constants, one for the case of a rising signal
+
+and one for the case of a falling signal.
+
+15. The method of any one of claims 10-14, further comprising
+the steps of smoothing in the frequency domain, of the timely
+smoothed signal from the time domain signal smoothing unit
+(7), starting from a minimum frequency upward using a fre-
+quency smoothing third coefficient, and/or starting froma
+
+maximum frequency downward, using a frequency smoothing
+
+fourth coefficient.
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+AMENDED CLAIMS (4ths* auxiliary request):
+
+1. A system for estimating the power spectral density of
+acoustical background noise; the system comprises:
+
+a sensor unit for obtaining a noise signal (MIC(w)) rep-
+resentative of the background noise;
+
+a power spectral density calculation unit (6) that is
+adapted for continuously determining the current power spec-—
+
+tral density from the noise signal and is adapted for provid-
+
+ing a corresponding power spectral density output signal
+(PSdMic());
+
+a time domain signal smoothing unit (7) that is adapted
+for smoothing the power spectral density output signal
+(PsdMic(#)) in the time domain and is adapted for providing a
+resulting timely smoothed signal;
+
+a frequency domain signal smoothing unit (8) that is
+adapted for smoothing the timely smoothed signal received
+form the time domain signal smoothing unit (7) in the fre-
+quency domain and is adapted for providing a resulting
+smoothed power spectral density signal (SmoothedPsdMic(@));
+
+an increment calculation unit (9) that is adapted for
+calculation of an increment (Inc((@)) depending on an esti-
+mate value of the power spectral density of the background
+noise (PsdNoise());
+
+a decrement calculation unit (10) that is adapted for
+
+calculation of a decrement (Dec(w)) depending on the estimate
+
+value of the power spectral density of the background noise
+(PsdNoise(w)); and
+
+a memoryless estimate signal smoothing unit (11) that is
+
+adapted for calculation of the estimate value of the power
+
+spectral density of the background noise (PsdNoise(w)) from
+
+the increments (Inc(@)) and decrements (Dec(o)) and from the
+
+smoothed power spectral density (SmoothedPsdNoise(w)),
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+thereby using the power spectral density of the background
+
+noise determined in the previous calculation cycle; where
+
+for cases in which the level of the smoothed power spec-—
+tral density signal (SmoothedPsdMic(w)) increases and the
+value of the smoothed power spectral density
+
+(SmoothedPsdMic(w)) currently determined in a new calculation
+
+cycle is larger than the estimate value of the power spectral
+
+density of the background noise (PsdNoise(w)) determined in
+the previous calculation cycle, the increment value (Inc (w))
+
+is increased, starting from a minimum increment value
+
+(Inc(®)), by a predetermined amount (AInc) until a maximum
+increment value (IncMax) is reached if at the same; and
+
+for cases in which the level of the smoothed power spec-—
+tral density (SmoothedPsdMic(w)) falls and the value of the
+smoothed power spectral density (SmoothedPsdMic(w)) currently
+determined in a new calculation cycle is smaller than the es-
+timate value of the power spectral density of the background
+noise (PsdNoise(w)) determined in the previous calculation
+cycle, the decrement value (Dec(w)) is increased, starting
+from a minimum decrement value (DecMin), by a predetermined
+amount (ADec) until a maximum decrement value (DecMax) is
+
+reached.
+
+2. The system of claim 1, further comprising an adaptive fil-
+ter that provides an error signal (e[n]), where the power
+spectral density calculation unit (6) is adapted for deter-
+mining the current power spectral density from the error sig-
+
+nal (e[n]) of the adaptive filter deploying consecutive cal-
+
+culation cycles and the system is adapted for providing a
+corresponding power spectral density output signal
+(PsdMic(w)) and a corresponding smoothed power spectral den-
+
+sity signal (SmoothedPsdMic(w)).
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+3. The system of claim 1 or 2, where the system is adapted to
+
+change the calculation for estimating the power spectral den-
+
+sity of the background noise from the mode for calculation of
+
+the increment value to the mode for calculation of the decre-
+
+ment value if the current value of the power spectral density
+
+determined in a new calculation cycle is less than the esti-
+
+mate value of the power spectral density of the background
+noise calculated in the previous calculation cycle, where the
+system is adapted for resetting the current value of the in-
+crement value to the minimum increment value, and
+
+to change the calculation for estimating the power spec-—
+tral density of the background noise from the mode for calcu-
+lation of the decrement value to the mode for calculation of
+the increment value if the current value of the power spec-—
+tral density determined in a new calculation cycle is greater
+than the estimate value of the power spectral density of the
+background noise calculated in the previous calculation cy-
+cle, where the system is adapted for resetting the current
+
+value of the decrement to the minimum decrement value.
+
+4. The system of any one of claims 1-3, where the system is
+adapted, in the event of decrementing the estimate value of
+the power spectral density of the background noise, to limit
+the reduction of the estimate value to a fixed specified
+value, such that the estimate value of the power spectral
+density of the background noise never falls below the minimum
+
+value regardless of the currently calculated value.
+
+5. The system of any one of claims 1-4, where the time domain
+
+signal smoothing unit is adapted for a smoothing of the cur-
+
+rently measured power spectral density over time utilizing
+
+two different time constants, one for the case of a rising
+
+signal and one for the case of a falling signal.
+
+--- PAGE 11 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+6. The system of any one of claims 1-5, where the frequency
+domain signal smoothing unit (8) is adapted for a smoothing
+
+of the timely smoothed signal from the time domain signal
+
+smoothing unit (7), starting from a minimum frequency upward
+
+using a frequency smoothing third coefficient, and/or start-
+
+ing from a maximum frequency downward, using a frequency
+
+smoothing fourth coefficient.
+
+7. The system of any one of claims 1-6, where
+
+the first and second coefficients for smoothing over
+time of the currently measured power spectral density repre-
+sent psychoacoustic sensory properties of the human ear
+and/or
+
+the third and fourth coefficients for smoothing over
+frequency of the currently measured power spectral density
+
+represent psychoacoustic sensory properties of the human ear.
+
+8. The system of any one of claims 1-7, where the value
+(AInc) for the increase of the increment value is individu-
+ally selected with values differing for each spectral posi-
+tion in the smoothed power spectral density signal of the
+currently measured power spectral density and where the value
+(ADec) for the increase of the decrement value is individu-
+ally selected with values differing for each spectral posi-
+tion in the smoothed power spectral density signal of the
+
+currently measured power spectral density.
+
+9. The system of any one of claims 1-8, wherein the system is
+
+adapted to merge spectral components of the smoothed or non-
+
+smoothed power spectral density signal within frequency
+
+groups corresponding to the psychoacoustic sensory perception
+
+--- PAGE 12 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+into single combined signals for each frequency group prior
+
+to further processing.
+
+10. A method for estimation of the power spectral density of
+
+-
+
+acoustical background noise, comprising the steps of:
+
+determining of the current power spectral density froma
+
+microphone signal (MIC(w)) by a power spectral density calcu-
+lation unit (6) and providing a corresponding power spectral
+density output signal (PsdMic(w));
+
+smoothing of the provided power spectral density output
+
+Signal (PsdMic(@)) in the time domain providing a resulting
+timely smoothed signal;
+
+smoothing of the timely smoothed signal in the frequency
+domain and providing a resulting smoothed power spectral den-
+sity signal (SmoothedPsdMic(w));
+
+calculating of an increment (Inc(w)) depending on an es-
+timate value of a power spectral density of the background
+noise;
+
+calculating of a decrement (Dec(w)) depending on the es-
+timate value of the power spectral density of the background
+noise;
+
+calculating of the estimate value of the power spectral
+density of the background noise only from the increments
+(Inc(@)) and decrements (Dec(@)) and from the power spectral
+smoothed density of the background noise
+(SmoothedPsdNoise(w)), thereby using the power spectral den-
+
+sity of the background noise determined in the previous cal-
+
+culation cycle, thus performing a memory less smoothing fil-
+
+tering step, where
+
+for cases in which the level of the smoothed power spec-—
+
+tral density signal (SmoothedPsdMic(w)) increases and the
+
+value of the smoothed power spectral density
+
+(SmoothedPsdMic(w)) currently determined in a new calculation
+
+--- PAGE 13 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+cycle is larger than the estimate value of the power spectral
+
+density of the background noise (PsdNoise(w)) determined in
+
+the previous calculation cycle, the increment value (Inc (w))
+
+is increased, starting from a minimum increment value
+
+(Inc(®)), by a predetermined amount (AInc) until a maximum
+increment value (IncMax) is reached, and
+
+for cases in which the level of the smoothed power spec-—
+tral density (SmoothedPsdMic(w)) falls and the value of the
+
+smoothed power spectral density (SmoothedPsdMic(w)) currently
+
+determined in a new calculation cycle is smaller than the es-
+
+timate value of the power spectral density of the background
+noise (PsdNoise(w)) determined in the previous calculation
+cycle, the decrement value (Dec(w)) is increased, starting
+from a minimum decrement (DecMin) value, by a predetermined
+amount (ADec) until a maximum decrement value (DecMax) is
+
+reached.
+
+11. The method of claim 10, further comprising the step of:
+determining of the current power spectral density from
+an error signal derived from adaptive filtering by deploying
+consecutive calculation cycles; and
+providing of a corresponding power spectral density out-—
+put signal (PsdMic(w)) and a corresponding smoothed power
+
+spectral density signal (SmoothedPsdMic(@)).
+
+12. The method of claim 10 or 11, further comprising the
+steps of:
+
+changing of the calculation for estimating the power
+
+spectral density of the background noise from the mode for
+
+calculation of the increment value to the mode for calcula-
+
+tion of the decrement value if the current value of the power
+
+spectral density determined in a new calculation cycle is
+
+less than the estimate value of the power spectral density of
+
+--- PAGE 14 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+the background noise calculated in the previous calculation
+
+cycle, where the current value of the increment value
+
+(Inc(w)) is reset to the minimum increment value (IncMin),
+and
+
+changing of the calculation for estimating the power
+
+spectral density of the background noise from the mode for
+calculation of the decrement value to the mode for calcula-
+
+tion of the increment value if the current value of the power
+
+spectral density determined in a new calculation cycle is
+
+greater than the estimate value of the power spectral density
+of the background noise calculated in the previous calcula-
+tion cycle, where the current value of the decrement (Dec())
+
+is reset to the minimum decrement value (DecMin).
+
+13. The method of any one of claims 10-12, further comprising
+the step of limiting, in the event of decrementing the esti-
+mate value of the power spectral density of the background
+noise, the reduction of the estimate value to a fixed speci-
+fied value, such that the estimate value of the power spec-—
+tral density of the background noise does not fall below the
+
+minimum value regardless of the currently calculated value.
+
+14. The method of any one of claims 10-13, further comprising
+the steps of smoothing in the time domain, of the currently
+
+measured power spectral density over time utilizing two dif-
+
+ferent time constants, one for the case of a rising signal
+
+and one for the case of a falling signal.
+
+15. The method of any one of claims 10-14, further comprising
+
+the steps of smoothing in the frequency domain, of the timely
+
+smoothed signal from the time domain signal smoothing unit
+
+(7), starting from a minimum frequency upward using a fre-
+
+guency smoothing third coefficient, and/or starting froma
+
+--- PAGE 15 ---
+PO6001 09 154 541.8-1224
+HBA046EP
+
+maximum frequency downward, using a frequency smoothing
+
+fourth coefficient.
+
+--- PAGE 16 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+AMENDED CLAIMS (5** auxiliary request):
+
+1. A system for estimating the power spectral density of
+acoustical background noise; the system comprises:
+
+a sensor unit for obtaining a noise signal (MIC(w)) rep-
+resentative of the background noise;
+
+a power spectral density calculation unit (6) that is
+adapted for continuously determining the current power spec-—
+
+tral density from the noise signal and is adapted for provid-
+
+ing a corresponding power spectral density output signal
+(PsdMic(a));
+
+a time domain signal smoothing unit (7) that is adapted
+for smoothing the power spectral density output signal
+PsdMic(@)) in the time domain and is adapted for providing a
+resulting timely smoothed signal, the time domain signal
+smoothing unit being adapted for a smoothing of the currently
+measured power spectral density over time utilizing two dif-
+ferent time constants, one for the case of a rising signal
+and one for the case of a falling signal, the time constants
+being dependent on psychoacoustic properties of the human
+ear;
+
+a frequency domain signal smoothing unit (8) that is
+adapted for smoothing the timely smoothed signal received
+form the time domain signal smoothing unit (7) in the fre-
+quency domain and is adapted for providing a resulting
+
+smoothed power spectral density signal (SmoothedPsdMic());
+
+an increment calculation unit (9) that is adapted for
+calculation of an increment (Inc((@)) depending on an esti-
+mate value of the power spectral density of the background
+noise (PsSdNoise(@));
+
+a decrement calculation unit (10) that is adapted for
+
+calculation of a decrement (Dec(w)) depending on the estimate
+
+--- PAGE 17 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+value of the power spectral density of the background noise;
+and
+
+an estimate signal smoothing unit (11) that is adapted
+
+for calculation of the estimate value of the power spectral
+
+density of the background noise (PsdNoise(w)) from the incre-
+ments (Inc(w)) and decrements (Dec(w)); where
+
+for cases in which the level of the smoothed power spec-—
+tral density signal (SmoothedPsdMic(w)) increases and the
+value of the smoothed power spectral density
+
+(SmoothedPsdMic(w)) currently determined in a new calculation
+
+cycle is larger than the estimate value of the power spectral
+density of the background noise (PsdNoise(w)) determined in
+the previous calculation cycle, the increment value (Inc (o))
+is increased, starting from a minimum increment value
+(Inc(w)), by a predetermined amount (AInc) until a maximum
+increment value (IncMax) is reached if at the same; and
+
+for cases in which the level of the smoothed power spec-—
+tral density (SmoothedPsdMic(w)) falls and the value of the
+smoothed power spectral density (SmoothedPsdMic(w)) currently
+determined in a new calculation cycle is smaller than the es-
+timate value of the power spectral density of the background
+noise (PsdNoise(w)) determined in the previous calculation
+cycle, the decrement value (Dec(w)) is increased, starting
+from a minimum decrement value (DecMin), by a predetermined
+amount (ADec) until a maximum decrement value (DecMax) is
+
+reached.
+
+2. The system of claim 1, further comprising an adaptive fil-
+
+ter that provides an error signal (e[n]), where the power
+
+spectral density calculation unit (6) is adapted for deter-
+
+mining the current power spectral density from the error sig-
+
+nal (e[n]) of the adaptive filter deploying consecutive cal-
+
+culation cycles and the system is adapted for providing a
+
+--- PAGE 18 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+corresponding power spectral density output signal
+(PsdMic(w)) and a corresponding smoothed power spectral den-
+
+sity signal (SmoothedPsdMic(w)).
+
+3. The system of claim 1 or 2, where the system is adapted to
+
+change the calculation for estimating the power spectral den-
+
+sity of the background noise from the mode for calculation of
+
+the increment value to the mode for calculation of the decre-
+
+ment value if the current value of the power spectral density
+
+determined in a new calculation cycle is less than the esti-
+mate value of the power spectral density of the background
+noise calculated in the previous calculation cycle, where the
+system is adapted for resetting the current value of the in-
+crement value to the minimum increment value, and
+
+to change the calculation for estimating the power spec-—
+tral density of the background noise from the mode for calcu-
+lation of the decrement value to the mode for calculation of
+the increment value if the current value of the power spec-—
+tral density determined in a new calculation cycle is greater
+than the estimate value of the power spectral density of the
+background noise calculated in the previous calculation cy-
+cle, where the system is adapted for resetting the current
+
+value of the decrement to the minimum decrement value.
+
+4. The system of any one of claims 1-3, where the system is
+
+adapted, in the event of decrementing the estimate value of
+
+the power spectral density of the background noise, to limit
+
+the reduction of the estimate value to a fixed specified
+
+value, such that the estimate value of the power spectral
+
+density of the background noise never falls below the minimum
+
+value regardless of the currently calculated value.
+
+--- PAGE 19 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+5. The system of any one of claims 1 to 4, where the fre-
+
+quency domain signal smoothing unit (8) is adapted for a
+
+-
+
+smoothing of the timely smoothed signal from the time domain
+
+signal smoothing unit (7), starting from a minimum frequency
+
+upward using a frequency smoothing third coefficient, and/or
+
+starting from a maximum frequency downward, using a frequency
+
+smoothing fourth coefficient.
+
+6. The system of any one of claims 1 to 5, where
+
+the first and second coefficients for smoothing over
+time of the currently measured power spectral density repre-
+sent psychoacoustic sensory properties of the human ear
+and/or
+
+the third and fourth coefficients for smoothing over
+frequency of the currently measured power spectral density
+
+represent psychoacoustic sensory properties of the human ear.
+
+7. The system of any one of claims 1 to 6, where the value
+(AInc) for the increase of the increment value is individu-
+ally selected with values differing for each spectral posi-
+tion in the smoothed power spectral density signal of the
+currently measured power spectral density and where the value
+(ADec) for the increase of the decrement value is individu-
+ally selected with values differing for each spectral posi-
+tion in the smoothed power spectral density signal of the
+
+currently measured power spectral density.
+
+8. The system of any one of claims 1 to 7, wherein the system
+
+is adapted to merge spectral components of the smoothed or
+
+non-smoothed power spectral density signal within frequency
+groups corresponding to the psychoacoustic sensory perception
+
+into single combined signals for each frequency group prior
+
+to further processing.
+
+--- PAGE 20 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+9. A method for estimation of the power spectral density of
+
+acoustical background noise, comprising the steps of:
+
+determining of the current power spectral density froma
+
+microphone signal (MIC(w)) by a power spectral density calcu-
+lation unit (6) and providing a corresponding power spectral
+density output signal (PsdMic(w));
+
+smoothing of the provided power spectral density output
+
+Signal (PsdMic(®)) in the time domain providing a resulting
+
+timely smoothed signal thereby utilizing two different time
+constants, one for the case of a rising signal and one for
+the case of a falling signal, the time constants being de-
+pendent on psychoacoustic properties of the human ear;
+
+smoothing of the timely smoothed signal in the frequency
+domain and providing a resulting smoothed power spectral den-
+sity signal (SmoothedPsdMic(w));
+
+calculating of an increment (Inc(w)) depending on an es-
+timate value of a power spectral density of the background
+noise;
+
+calculating of a decrement (Dec(w)) depending on the es-
+timate value of the power spectral density of the background
+noise;
+
+calculating of the estimate value of the power spectral
+density of the background noise from the increments and dec-—
+rements, where
+
+for cases in which the level of the smoothed power spec-—
+tral density signal (SmoothedPsdMic(w)) increases and the
+value of the smoothed power spectral density
+
+(SmoothedPsdMic(w)) currently determined in a new calculation
+
+cycle is larger than the estimate value of the power spectral
+
+density of the background noise (PsdNoise(w)) determined in
+
+the previous calculation cycle, the increment value (Inc (w))
+
+is increased, starting from a minimum increment value
+
+--- PAGE 21 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+(Inc(®)), by a predetermined amount (AInc) until a maximum
+
+increment value (IncMax) is reached, and
+
+for cases in which the level of the smoothed power spec-—
+
+tral density (SmoothedPsdMic(w)) falls and the value of the
+
+smoothed power spectral density (SmoothedPsdMic(w)) currently
+
+determined in a new calculation cycle is smaller than the es-
+
+timate value of the power spectral density of the background
+noise (PsdNoise(w)) determined in the previous calculation
+cycle, the decrement value (Dec(w)) is increased, starting
+
+from a minimum decrement (DecMin) value, by a predetermined
+
+amount (ADec) until a maximum decrement value (DecMax) is
+
+reached.
+
+10. The method of claim 9, further comprising the step of:
+determining of the current power spectral density from
+an error signal derived from adaptive filtering by deploying
+consecutive calculation cycles; and
+providing of a corresponding power spectral density out-
+put signal (PsdMic(w)) and a corresponding smoothed power
+
+spectral density signal (SmoothedPsdMic(@)).
+
+11. The method of claim 9 or 10, further comprising the steps
+of:
+
+changing of the calculation for estimating the power
+spectral density of the background noise from the mode for
+calculation of the increment value to the mode for calcula-
+tion of the decrement value if the current value of the power
+
+spectral density determined in a new calculation cycle is
+
+less than the estimate value of the power spectral density of
+the background noise calculated in the previous calculation
+
+cycle, where the current value of the increment value
+
+(Inc(w)) is reset to the minimum increment value (IncMin),
+
+and
+
+--- PAGE 22 ---
+10
+
+15
+
+20
+
+25
+
+PO6001 09 154 541.8-1224
+HBA046EP
+
+changing of the calculation for estimating the power
+
+spectral density of the background noise from the mode for
+
+calculation of the decrement value to the mode for calcula-
+
+tion of the increment value if the current value of the power
+
+spectral density determined in a new calculation cycle is
+
+greater than the estimate value of the power spectral density
+
+of the background noise calculated in the previous calcula-
+tion cycle, where the current value of the decrement (Dec())
+
+is reset to the minimum decrement value (DecMin).
+
+12. The method of any one of claims 9 to 11, further compris-—
+ing the step of limiting, in the event of decrementing the
+estimate value of the power spectral density of the back-
+ground noise, the reduction of the estimate value to a fixed
+specified value, such that the estimate value of the power
+spectral density of the background noise does not fall below
+the minimum value regardless of the currently calculated
+
+value.
+
+13. The method of any one of claims 9 to 12, further compris-—
+ing the steps of smoothing in the frequency domain, of the
+timely smoothed signal from the time domain signal smoothing
+unit (7), starting from a minimum frequency upward uSing a
+frequency smoothing third coefficient, and/or starting from a
+
+maximum frequency downward, using a frequency smoothing
+
+fourth coefficient.

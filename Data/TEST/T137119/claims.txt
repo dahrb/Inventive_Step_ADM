@@ -1,0 +1,209 @@
+--- PAGE 1 ---
+20
+
+25
+
+Claims
+
+- 24 -
+
+1. A method (100) of operating a personal recommender system arranged for being
+
+coupled to a computer implemented social network, the method (100) comprising
+
+the steps of:
+
+a)
+
+b)
+
+Cc)
+
+d)
+
+detecting (110) that a recommendation of a contact-genre tuple (CU1,g) has
+been filed in a user account of a user A of the social network, wherein the
+recommendation of the contact-genre tuple (CU1,g) relates to a content item
+x of a specific genre (g = g(x)) and has been initiated through a contact ac-
+
+count of a contact CU1 of user A,
+
+monitoring (120) a recommendation related reaction behaviour of user A in
+
+response to receiving the recommendation,
+
+repeating steps a) to b) for a plurality of recommendations of the same con-
+tact-genre tuple (CU1,g) and logging a plurality of monitored reaction behav-
+iours for determining (130) a user A related relevance-taste index r =
+r((CU1,g)) associated to the contact-genre tuple (CU1, g) in dependence of
+
+the plurality of monitored reaction behaviours,
+
+filtering (150) a current recommendation (112) of the same contact-genre tu-
+ple (CU1,g) by filing (152) the current recommendation in the user account
+only, if a filtering criterion is fulfilled by the relevance-taste index of the cur-
+rent recommendation and by blocking (154) the current recommendation, if
+
+the filtering criterion is not fulfilled.
+
+2. The method (100) of claim 1, comprising the additional steps of:
+
+buffering (160) current recommendations that have been sent to the user ac-
+
+count but have been blocked and therefore not been provided to user A and
+
+filing (152) at least one of the buffered recommendations in the user ac-
+
+count, if the at least one recommendation fulfils an adjusted filtering criterion.
+
+3. The method (100) of claim 1 or claim 2, comprising the additional steps of:
+
+--- PAGE 2 ---
+20
+
+25
+
+-25-
+
+- grouping (170) blocked recommendations being related to a common con-
+
+tent item y,
+
+- determining (180) an accumulated relevance-taste index by summing rele-
+
+vance-taste indices associated to each of the grouped recommendations,
+
+- filing (152) the grouped recommendations as a single combined recommen-
+dation in the user account, if the accumulated relevance-taste index fulfils
+
+the filtering criterion.
+The method (100) of claim 3, additionally comprising the steps of:
+
+- identifying senders F(A) of the grouped recommendations, wherein each of
+the senders F(A) has an associated contact account that is linked to the user
+
+account of user A,
+
+- for each of the identified senders F(A), determining a like-degree 2(B,y) for
+the common content item y, the like-degree 1(B,y) indicating the respective
+
+sender's B interest or disinterest in the common content item y,
+
+- calculating a normalized accumulated relevance-taste index in dependence
+of the determined like-degrees and the accumulated relevance-taste index,
+wherein the normalized accumulated relevance-taste index corresponds to
+an assumed like-degree 1(A,y) indicating user A’s interest or disinterest in
+
+the common content item y and
+- filing (152) a recommendation for the common content item y in the user ac-
+count, if the normalized accumulated relevance-taste index fulfils the filtering
+
+criterion.
+
+The method (100) of claim 4, wherein the normalized accumulated relevance-taste
+
+index (A, y) is calculated according to the formula
+
+MA, yy= DUB eFtA) M(B, g(y)) - 2 (B, yl user) IKB, o(y)) |;
+
+--- PAGE 3 ---
+20
+
+25
+
+10.
+
+- 26 -
+
+wherein De eF(A) (B, g(y)) is the accumulated relevance-taste index.
+
+The method (100) of claim 4 or claim 5, additionally comprising the step of:
+
+- presenting (190) filtered recommendations to user A through a display of a
+user interface coupled to the personal recommender system by employing a
+colour encoding for encoding a respective assumed like-degree of each of
+
+the presented recommendations.
+
+The method (100) of one of the preceding claims, wherein the step of determining
+the relevance-taste index includes applying a learning algorithm, such as applying
+
+a neural network, a Naive Bayes classifier, or a support vector machine.
+
+The method (100) of claim 7, wherein applying the learning algorithm includes
+taking into account a warning relating to a content item, which has been submitted
+through the contact account, the warning indicating a contact’s dislike with respect
+
+to the content item.
+
+Computer program for operating a recommender system, the computer program
+comprising program code means for causing the recommender system to carry out
+the steps of one of the methods as defined in the preceding claims, when the com-
+
+puter program is run on a computer controlling the recommender system.
+
+A filter apparatus (260) arranged for being coupled to a recommender system (200)
+for a user A of a computer implemented social network (300), the filter apparatus
+
+(260) comprising:
+
+- a detector (210) configured to detect that a recommendation (212) of a con-
+tact-genre tuple (CU1,g) has been filed in a user account of user A of the so-
+cial network (300), wherein the recommendation (212) of the contact-genre
+tuple (CU1,g) relates to a content item x of a specific genre (g = g(x)) and
+
+has been initiated through a contact account of a contact CU1 of user A,
+
+--- PAGE 4 ---
+20
+
+25
+
+11.
+
+12.
+
+13.
+
+14.
+
+-27-
+
+- a monitoring unit (220) configured to monitor a recommendation related re-
+action behaviour (222) of user A in response to receiving the recommenda-
+tion (212),
+
+- a data logger (240) configured to log a plurality of monitored reaction behav-
+iours being related to a plurality of recommendations of the same contact-
+
+genre tuple (CU1,g),
+
+- an analyser (230) configured determine a user A related relevance-taste in-
+dex r= r((CU1,g)) associated to the contact-genre tuple in dependence of
+
+the plurality of monitored reaction behaviours (242),
+
+- a recommendation filter (250) configured to filter a current recommendation
+(302) of the same contact-genre tuple (CU1,g) by filing the current recom-
+mendation (302) in the user account only, if a filtering criterion is fulfilled by
+the relevance-taste index of the current recommendation and by blocking the
+
+current recommendation, if the filtering criterion is not fulfilled.
+
+A recommender system (200) for a user A of a computer implemented social
+network (300), the recommender system (200) comprising a filtering apparatus ac-
+
+cording to claim 10.
+
+The recommender system (200) of claim 11, additionally comprising a user inter-
+
+face (270) for presenting a filtered recommendation to user A.
+
+The recommender system (200) of claim 12, additionally comprising a personal
+recommender engine (280) coupled to the user interface (270) and configured to
+
+provide an engine based recommendation.
+
+The recommender system (200) of one of the claims 11 to 13 additionally compris-
+
+ing a memory (290) configured to store blocked recommendations.

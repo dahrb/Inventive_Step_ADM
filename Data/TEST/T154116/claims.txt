@@ -1,0 +1,98 @@
+--- PAGE 1 ---
+Application No.: 06 011 756.1
+
+Applicant: Rockwell Automation Technologies, Inc.
+Our Ref.: EP58689EH
+Date: July 6, 2017
+
+New MAIN REQUEST —
+CLAIMS
+
+A configurable interface device (26) for configuring an interface screen, the device
+
+comprising:
+
+a plurality of device elements (18) resident on the configurable interface device (26),
+each device element having properties including a visual representation and a state
+engine (330) defining functionality of the respective device element, and each device
+element being an independent executable piece of software that can communicate with
+
+other elements to perform complex functions;
+
+an access module (106) configured to prompt each device element (18) to send an
+image (168) defining its visual representation to a memory space for inclusion in a user
+viewable screen for displaying the visual representations of the device elements together
+with a current view of the interface screen, the current view showing a current
+
+configuration of visual representations of device elements in the interface screen; and
+
+a server module (42) for receiving a query for the user viewable screen from a general
+purpose viewer (48), and for serving the user viewable screen to the general purpose
+viewer (48) for viewing in the general purpose viewer (48) without serving the device
+
+elements (18) to the general purpose viewer (48);
+
+wherein the configurable interface device is adapted to update the user viewable screen
+
+in response to receipt of a query to change the current view of the interface screen; and
+
+the configurable interface device (26) is adapted to communicate with the general
+
+purpose viewer (48) by receiving queries and sending responses.
+
+The interface device of claim 1, wherein the server module (42) includes an HTTP server
+
+resident on the interface device.
+The interface device of claim 1 or 2, wherein the images (168) are JPEG images.
+
+The interface device of claim 1, 2 or 3, wherein the images (168) sent to the memory
+
+space are converted to HTML tags for inclusion in the user viewable screen.
+
+--- PAGE 2 ---
+The interface device of one of claims 1 to 4, wherein the images (168) are converted to
+
+dynamic content served by the server module (42) as a dynamic HTML page.
+
+A method for configuring an interface screen performed by a configurable interface
+
+device (26), the method comprising:
+
+accessing a plurality of device elements (18) resident on the configurable interface
+device (26), each device element having properties including a visual representation
+(168) and a state engine (330) defining functionality of the respective device element,
+and each device element being an independent executable piece of software that can
+communicate with other elements to perform complex functions, the device elements
+(18) being accessed by an access module (106) that prompts each device element to
+send an image (168) defining its visual representation (168) to a memory space for
+inclusion in the user viewable screen for displaying the visual representations of the
+device elements together with a current view of an interface screen, the current view
+showing a current configuration of visual representations of device elements in the
+
+interface screen,
+
+serving the user viewable screen including the visual representations (168) and the
+current view of the interface screen to a general purpose viewer (48) for viewing in the
+general purpose viewer (48) via a server module (42) in response to receipt of a query
+for the user viewable screen from the general purpose viewer (48), without serving the
+device elements (18) to the general purpose viewer (48), wherein the configurable
+interface device (26) is adapted to communicate with the general purpose viewer (48) by
+
+receiving queries and sending responses; and
+
+updating the user viewable screen in response to receipt of a query to change the current
+
+view of the interface screen.
+
+The method of claim 6, comprising converting the images (168) sent to the memory
+
+space to HTML tags for inclusion in the user viewable screen.
+
+The method of one of claims 6 or 7, comprising converting the images (168) to dynamic
+
+content served by the server module (42) as a dynamic HTML page.
+
+The method of one of claims 6 to 8, wherein the access module (106) is configured to
+prompt collection of property data from each device element (18) defining aspects of the
+
+respective visual representation.

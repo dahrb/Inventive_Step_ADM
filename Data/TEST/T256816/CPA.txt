@@ -1,0 +1,96 @@
+Title: Multi-level user help
+
+Abstract: A method for displaying multi-level help for an element of a computer system through creating a hierarchically organized plurality of help levels for the element in which each help level includes an associated help item. The computer system then receives a help activation command for that element from the user and responds by displaying a help item for the element of an initial help level. A user may also edit the help item or create a new help item for one of the plurality of help levels or a new help level. Additionally, each user of the system may edit and create user specific help items, and these help items may be created, edited and implemented “on the fly.”
+
+Type: US Patent
+
+Claims: 
+
+The invention claimed is:
+1. A method for displaying help for an element, comprising the steps of:
+creating a hierarchically organized plurality of help levels for the element in which each help level includes an associated help item;
+receiving a help activation command associated with the element, and
+in response to the help activation command, determining an initial help level when activating help for the element for a user and displaying the help item associated with the initial help level.
+2. The method of claim 1, further comprising the step of displaying the help item within a help window.
+3. The method of claim 2, wherein the help window comprises a help level scrolling element, wherein the help level scrolling element allows for user scrolling through other help levels associated with the element.
+4. The method of claim 1, wherein the element is a screen element.
+5. The method of claim 1, wherein the step of displaying the help item further comprising the step of displaying the help item substantially adjacent to the screen element.
+6. The method of claim 1, wherein the help items include a pre-configured help item, further comprising the steps of:
+receiving user input defining a user-edited help item for the element;
+saving the user-edited help item; and
+displaying the user-edited help item in response to a subsequent help activation command for the element.
+7. The method of claim 6, wherein the user-edited help item comprises a new help item for a help level that did not previously have an associated help item.
+8. The method of claim 6, further comprising the steps of:
+retaining the pre-configured help item;
+displaying a help item selection command including a first selection item corresponding to the pre-configured help item and a second selection item corresponding to the user-edited help item;
+receiving user input selecting one of the first and second selection items; and
+displaying the selected help item.
+9. The method of claim 8, wherein the user-edited help item is a first user-edited help item, further comprising the steps of:
+receiving user input define a second user-edited help item;
+saving the second user-edited help item;
+displaying a help item selection command including a first selection item corresponding to first user-edited help item, a second selection item corresponding to the second user-edited help item, and a third selection item corresponding to the pre-configured help item;
+receiving user input selecting one of the first, second and third selection items; and
+displaying the selected help item.
+10. The method of claim 1, wherein the help items comprise text, graphics, video, sounds, links, applets or a combination thereof.
+11. The method of claim 1, wherein the help item comprises a functionality for which a host system may launch.
+12. The method of claim 1, wherein the step of determining the initial help level comprises the step of receiving user input specifying the initial help level for the element.
+13. The method of claim 1, wherein the step of determining the initial help level comprises the step of setting the initial help level based on the most recent help level viewed by the user for the element.
+14. The method of claim 1, wherein the step of determining the initial help level comprises the step of setting the initial help level based on the highest help level viewed by the user for the element during a period of interest.
+15. The method of claim 1, wherein the step of determining the initial help level comprises the step of setting the initial help level based on a weighted averaged of help levels viewed by the user level for the element during a period of interest.
+16. The method of claim 1, wherein the step of determining the initial help level comprises the step of setting the initial help level based on a group initial help level assigned to a group of related elements.
+17. The method of claim 16, further comprising the steps of:
+receiving user input defining the group of related elements; and
+receiving user input setting the group help level.
+18. The method of claim 16, further comprising the steps of:
+defining the group of related elements based on similarities in the help levels viewed by the user for the elements of the group; and
+setting the group initial help level based on an analysis of the help levels viewed by the user for the elements of the group.
+19. The method of claim 18 wherein the applicable group initial help level is based on a weighted averaged of help levels viewed by the user for the elements assigned to the help group for a period of interest.
+20. The method of claim 1 performed during an uninterrupted user session.
+21. A computer storage medium comprising computer-executable instructions for performing the method of claim 1.
+22. An apparatus configured to perform the method of claim 1.
+23. A method for displaying help associated with an element on a computer interface comprising the steps of:
+creating a plurality of pre-configured help items to provide varying degrees of help for the element;
+assigning the pre-configured help items to respective help levels based on the degree of help provided by the respective items;
+designating one of the help levels as an initial help level for a first user;
+designating a different one of the help levels as an initial help level for a second user;
+receiving a first help activation command from the first user, associated with the element, and in response, displaying the help item assigned to the initial help level for the first user; and
+receiving a second help activation command from the second user, associated with the element, and in response, displaying the help item assigned to the initial help level for the second user
+24. The method of claim 23, wherein:
+the initial help level for the first user is specified by the first user; and
+the initial help level for the second user is specified by the second user.
+25. The method of claim 23, where the step of determining the initial help level for the first user comprises the steps of:
+displaying a user help initialization screen;
+receiving through the initialization screen user input connoting proficiency information concerning first user's proficiency in using the element; and
+setting the initial help level for the first user based on the received proficiency information.
+26. The method of claim 25 wherein the proficiency information comprises a user specified level of experience with the element.
+27. The method of claim 25 wherein the proficiency information comprises information concerning the user's experience with a group of related elements.
+28. The method of claim 23, further comprising the step of:
+receiving input from the first user defining a first user-edited help item;
+saving the first user-edited help item in association with a help level for the element;
+receiving a help activation command, for the element, from the first user; and
+displaying the first user-edited help item.
+29. The method of claim 28, further comprising the step of:
+receiving input from the second user defining a second user-edited help item;
+saving the second user-edited help item in association with a help level for the element;
+receiving a help activation command, for the element, from the second user; and
+displaying the second user-edited help item.
+30. The method of claim 29, wherein the first and second user-edited help items are displayed for the same element, assigned to the same help level, and include content that is different from each other.
+31. The method of claim 30 further comprising the steps of:
+displaying a help selection utility that permits the second user to view the first user-edited help item.
+32. The method of claim 31 wherein the first user-edited help item comprises a language translation of a corresponding pre-configured help item.
+33. The method of claim 32 performed during an uninterrupted user session.
+34. A computer storage medium comprising computer-executable instructions for performing the method of claim 25.
+35. An apparatus configured to perform the method of claim 28.
+36. The method for displaying multi-user, multi-level and user-editable help for an element in an uninterrupted user session comprising the steps of:
+creating a hierarchically organized plurality of help levels for the element in which each help level includes an associated help item;
+receiving a first user input defining a first user-edited help item for the element;
+saving the first user-edited help item;
+receiving a second user input defining a second user-edited help item for the element;
+saving the second user-edited help item;
+receiving a first user help activation command, associated with the element, from a first user;
+in response to the first user help activation command, determining an initial first user help level when activating help for the element and displaying the first user help item associated with the first user initial help level;
+receiving a second user help activation command, associated with the element, from a second user; and
+in response to the second user help activation command, determining an initial second user help level when activating help for the element and displaying the second user help item associated with the second user initial help level.
+37. The method of claim 36 wherein the step of displaying the first user help item comprises the step of displaying the first user-edited help item.
+38. A computer storage medium comprising computer-executable instructions for performing the method of claim 36.
+39. An apparatus configured to perform the method of claim 37.

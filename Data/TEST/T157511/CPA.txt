@@ -1,0 +1,63 @@
+TITLE:
+Automated computer vulnerability resolution system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and process for addressing computer security vulnerabilities. The system and process generally comprise aggregating vulnerability information on a plurality of computer vulnerabilities; constructing a remediation database of said plurality of computer vulnerabilities; constructing a remediation signature to address the computer vulnerabilities; and deploying said remediation signature to a client computer. The remediation signature essentially comprises a sequence of actions to address a corresponding vulnerability. A managed automated approach to the process is contemplated in which the system is capable of selective deployment of remediation signatures; selective resolution of vulnerabilities; scheduled deployment of remediation signatures; and scheduled scanning of client computers for vulnerabilities.
+Images (7)
+
+CLAIMS:
+1. A method for resolving vulnerabilities in a computer, comprising:
+aggregating vulnerability information on a plurality of computer vulnerabilities; and
+constructing a remediation database of said plurality of computer vulnerabilities.
+2. The method of claim 1 further comprising constructing a remediation signature to address a computer vulnerability.
+3. The method of claim 2 further comprising deploying said remediation signature to a client computer.
+4. The method of claim 1 wherein said aggregating of vulnerability information comprises obtaining vulnerability information from at least one security intelligence agent.
+5. The method of claim 4 wherein said security intelligence agent comprises a database of information regarding known computer vulnerabilities.
+6. The method of claim 4 wherein said security intelligence agent comprises a scanning service which scans a client computer for vulnerabilities and records the vulnerability information.
+7. The method of claim 2 wherein a remediation signature comprises a sequence of actions to address a corresponding vulnerability.
+8. The method of claim 2 wherein said constructing a remediation database further comprises associating each remediation signature to a corresponding computer vulnerability.
+9. The method of claim 1 wherein said constructing a remediation database further comprises constructing, testing and approving a remediation signature corresponding to a vulnerability.
+10. The method of claim 3 wherein said deploying said remediation signatures comprises providing remote access to said remediation signatures.
+11. The method of claim 3 wherein said deploying said remediation signatures comprises constructing a remediation profile for a client computer to address vulnerabilities on that computer.
+12. The method of claim 3 wherein said remediation profile comprises selected remediation signatures for the client computer corresponding to vulnerabilities on the client computer.
+13. The method of claim 10 wherein said deploying said remediation signatures further comprises uploading approved remediation signatures to a flash server for remote access by client computers or client servers.
+14. The method of claim 13 wherein said deploying said remediation signatures further comprises downloading remediation signatures from said flash server to a client server.
+15. The method of claim 3 wherein said deploying said remediation signatures comprises managing vulnerability resolution.
+16. The method of claim 15 wherein said managing vulnerability resolution comprises selective deployment of remediation signatures.
+17. The method of claim 15 wherein said managing vulnerability resolution comprises selective resolution of vulnerabilities.
+18. The method of claim 15 wherein said managing vulnerability resolution comprises scheduled scanning of client computers for vulnerabilities.
+19. The method of claim 15 wherein said managing vulnerability resolution comprises scheduled deployment of remediation signatures.
+20. A system for resolving computer vulnerabilities; comprising:
+a remediation server capable of coupling to a security intelligence agent having information about computer vulnerabilities in order to aggregate said vulnerability information into a remediation database.
+21. The system of claim 20 further comprising a signature module coupled to said remediation server to construct a remediation signature for each vulnerability.
+22. The system of claim 21 further comprising a flash server coupled to said signature module to provide remote access to said remediation signatures.
+23. The system of claim 22 further comprising a client server capable of coupling to said flash server to access said remediation signatures.
+24. The system of claim 23 further comprising a deployment module coupled to said client server capable of deploying said remediation signatures to a client computer coupled to said client server.
+25. The system of claim 24 wherein said deployment module is capable of constructing a remediation profile for a client computer to address vulnerabilities on that computer.
+26. The system of claim 25 wherein said remediation profile comprises selected remediation signatures for the client computer corresponding to vulnerabilities on the client computer.
+27. The system of claim 20 wherein said security intelligence agent comprises a database of information regarding known computer vulnerabilities.
+28. The system of claim 20 wherein said security intelligence agent comprises a scanning service which scans a client computer for vulnerabilities and records the vulnerability information.
+29. The system of claim 20 wherein said remediation server assigns a remediation signature to each vulnerability.
+30. The system of claim 21 wherein said signature module is capable of constructing, testing and approving a remediation signature.
+31. The system of claim 22 wherein said flash server provides access to approved remediation signatures.
+32. The system of claim 22 wherein said remediation signatures are uploaded to said flash server.
+33. The system of claim 23 wherein said client server downloads said remediating signatures from said flash server.
+34. The system of claim 24 wherein said deployment module allows managed vulnerability resolution.
+35. The system of claim 34 wherein said managed vulnerability resolution comprises selective deployment of remediation signatures.
+36 The system of claim 34 wherein said managed vulnerability resolution comprises selective resolution of vulnerabilities.
+37. The system of claim 34 wherein said managed vulnerability resolution comprises scheduled scanning of client computers for vulnerabilities.
+38. The system of claim 34 wherein said managed vulnerability resolution comprises scheduled deployment of remediation signatures.
+39. The system of claim 24 wherein said deployment module constructs a remediation profile for each client computer.
+40. The system of claim 39 wherein said remediation profile comprises remediation signatures to resolve vulnerabilities on said client computer.
+41. The system of claim 39 wherein said remediation signatures can be selectively included in said remediation profile.
+42. The system of claim 21 wherein said remediation signature comprises a sequence of actions to address a corresponding vulnerability.
+43. The system of claim 20 further comprising an input module coupled to said remediation server which handles the interfacing of the remediation server to a security intelligence agent having information about computer vulnerabilities.
+44. The system of claim 23 further comprising a client module coupled to said client server which handles the interfacing of the client server to the flash server to access said remediation signatures.
+45. Computer-readable media tangibly embodying a program of instructions executable by a computer to perform a process for resolving vulnerabilities in a computer, comprising:
+aggregating vulnerability information on a plurality of computer vulnerabilities; and
+constructing a remediation database of said plurality of computer vulnerabilities.
+46. The media of claim 45 wherein the process further comprises constructing a remediation signature to address a computer vulnerability.
+47. The media of claim 45 wherein the process further comprises deploying said remediation signature to a client computer.

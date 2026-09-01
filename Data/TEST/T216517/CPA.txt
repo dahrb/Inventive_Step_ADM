@@ -1,0 +1,54 @@
+Title: Quad-band coupling element antenna structure
+
+Abstract: An antenna module has a substrate, first and second coupling elements, and first and second resonant circuits disposed on the substrate. The first and second coupling elements are mounted to the substrate and particularly adapted to couple respective first and second frequency bands to a ground plane through respective first and second ports. The first resonant circuit has a plurality of components having electrical values selected so as to function as a band-pass filter within the first frequency band and to present a high impedance at least in the second frequency band. The second resonant circuit is coupled to the second port and has a plurality of components that have electrical values selected so as to function as a band-pass filter within the second frequency band and to present a high impedance at least in the first frequency band.
+
+Type: US Patent
+
+Claims: 
+
+1. An antenna module comprising:
+a substrate;
+a first coupling element mounted to the substrate and particularly adapted to couple a first frequency band to a ground plane through a first port;
+a second coupling element mounted to the substrate and particularly adapted to couple a second frequency band to a ground plane through a second port;
+a first resonant matching circuit coupled to the first port and disposed on the substrate, said first matching circuit comprising a plurality of components having electrical values selected so as to function as a band-pass filter within the first frequency band and to present a high impedance at least in the second frequency band; and
+a second resonant matching circuit coupled to the second port and disposed on the substrate, said second matching circuit comprising a plurality of components having electrical values selected so as to function as a band-pass filter within the second frequency band and to present a high impedance at least in the first frequency band.
+2. The antenna module of claim 1, further comprising a common feed to which the first and second resonant matching circuits are coupled, said common feed for coupling to a transceiver.
+3. The antenna module of claim 1, where the first frequency band comprises GSM1800/1900, and the second frequency band comprises GSM 850/900.
+4. The antenna module of claim 1, where each of the first and second resonant circuits further comprise a shorted component that is shorted to a grounding segment disposed on the substrate.
+5. The antenna module of claim 4, wherein each of the first and second resonant circuits further comprise an inductor in series with a capacitor, and the shorted component disposed between said inductor and capacitor.
+6. The antenna module of claim 5, wherein each of the first and second resonant circuits further comprise a microstrip element having dimensions selected to function as the band-pass filter for its respective matching resonant circuit.
+7. The antenna module of claim 4, wherein each of the first and second resonant circuits further comprise a shorted capacitor and a shorted stripline element that are shorted to the grounded segment.
+8. The antenna module of claim 1, coupled by the first and second ports to respective first and second locations of a printed wiring board PWB, said first and second locations each exhibiting an elevated E-field intensity when in operation.
+9. The antenna module of claim 8, wherein the first and second locations are along a transverse edge of the PWB.
+10. The antenna module of claim 9, wherein the first frequency band is higher than the second frequency band, and the first location is nearer a lateral edge of the PWB than the second location.
+11. The antenna module of claim 10 in combination with a mobile station that comprises first and second major body sections that are moveable relative to one another between open and closed positions, said module disposed in a first body section such that it lies furthest from the second body section when said sections are in the open position.
+12. The antenna module of claim 8, wherein the first and second coupling elements are disposed adjacent to a transverse edge of the PWB and not overlying a major surface of the PWB.
+13. A multi-band antenna comprising:
+a ground plane;
+a first coupling element defining a first port coupled to the ground plane for exciting the ground plane with radio signals;
+a first matching circuit coupled at a first end to the first port for attenuating radio signals outside a first frequency band, and defining an opposed feed end;
+a second coupling element isolated from the first coupling element and defining a second port coupled to the ground plane for exciting the ground plane with radio signals;
+a second matching circuit coupled at a first end to the second port for attenuating radio signals outside a second frequency band, and defining an opposed feed end;
+wherein the feed ends are connected at a common feed for coupling to a transceiver, and the first and second coupling elements are disposed adjacent to a transverse edge of the ground plane and not overlying a major surface of the ground plane.
+14. The multi-band antenna of claim 13, wherein the first and second matching circuits comprise an identical topology of electrical components and vary from one another in at least one electrical parameter value.
+15. The multi-band antenna of claim 14, wherein each of the first and second matching circuit comprises series components and shorted components, and an electrical parameter value differs among the first and second matching circuits in at least one identical series component and at least one identical shorted component.
+16. The multi-band antenna of claim 13, wherein the ground plane comprises a portion of a printed wiring board PWB, and the PWB is disposed in one main body section of a mobile communications device that comprises two main body sections moveable relative to one another, and wherein the coupling elements are disposed near an end of the one main body section that is furthest from the other main body section when in the open position.
+17. A method for coupling an antenna main radiator element to a transceiver, comprising:
+providing a printed wiring board PWB;
+coupling a first coupling element to the PWB at a first port and a second coupling element to the PWB at a second port, the first and second coupling elements for exciting currents within respective first and second radiofrequency RF bands to the PWB;
+disposing a first matching circuit between the first port and a transceiver for passing currents within the first RF band and attenuating currents within the second RF band; and
+disposing a second matching circuit between the second port and a transceiver for passing currents within the second RF band and attenuating currents within the first RF band, wherein the first and second RF bands do not overlap.
+18. The method of claim 17, wherein the first and second matching circuits join in a common feed, said common feed for coupling to a transceiver.
+19. The method of claim 17, wherein the first band includes at least GSM 850/900, and the second band comprises at least GSM 1800/1900.
+20. The method of claim 17, wherein coupling the first and second coupling elements to the PWB comprises disposing the first and second coupling elements adjacent to a transverse edge of the PWB but not overlying a major surface of the PWB.
+21. A mobile terminal comprising:
+a first and a second main body section moveable relative to one another between an open and a closed position;
+a transceiver;
+a printed wiring board PWB defining a ground plane and disposed in the first main body section and defining opposed lateral edges and a transverse edge; and
+an antenna module comprising
+a first coupling element defining a first port coupled to the ground plane for exciting the ground plane with radio signals;
+a first matching circuit coupled at a first end to the first port for attenuating radio signals within a first frequency band and passing signals within a second frequency band, said first matching circuit defining an opposed feed end;
+a second coupling element defining a second port coupled to the ground plane for exciting the ground plane with radio signals; and
+a second matching circuit coupled at a first end to the second port for attenuating radio signals within the second frequency band and passing signals within the first frequency band, said second matching circuit defining an opposed feed end;
+wherein the feed ends of the first and second matching circuits couple to the transceiver by a common feed, and further wherein each of the first and second coupling elements are disposed adjacent to the transverse edge of the PWB and not overlying a major surface of the PWB.
+22. The mobile terminal of claim 21, wherein the antenna module further comprises a substrate on which the first and second matching circuits are disposed, said substrate further comprising at least one grounded segment through which the first and second matching circuits are shorted to the ground plane, and wherein each grounded segment to which a matching circuit is shorted does not extend to a line defined by either lateral edge of the PWB.

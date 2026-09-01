@@ -1,0 +1,85 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. A runtime extension framework architecture (100) for a system, comprising:
+an event manager (108) configured to coordinate between a plurality of event
+handlers and events received from a human machine interface;
+
+a plurality of external event handlers (106-106n) configured to receive and
+process events associated with implementing a protocol translation for at least one
+application program interface associated with a respective component, the protocol
+translation supporting an extension of application behavior of the human machine
+interface so that it behaves as a protocol translation layer, wherein each of the
+plurality of external event handlers is subscribed to receive a respective event or
+category of event from the event manager, and each of the plurality of external event
+handlers is configured to perform a protocol translation associated with the
+respective event or category of event to which that external event handler is
+subscribed by translating commands from the event manager that have no inherent
+meaning to the respective component into semantically equivalent commands that
+the respective component can interpret; and
+
+at least one internal event handler (110-110n) configured to receive and
+process events related to the extension of the human machine interface.
+
+2. The runtime extension framework architecture (100) of claim 1, wherein one or
+more of the plurality of external event handlers (106-106n) is subscribed to receive
+events received at the event manager from the human machine interface and one or
+more of the plurality of external event handlers (106-106n) is subscribed to receive
+events directed to the human machine interface.
+
+3. The runtime extension framework architecture (100) of claim 1, wherein each of
+the plurality of event handlers has plug-in capability.
+
+4. The runtime extension framework architecture (100) of claim 1, wherein the
+protocol translation defines an aggregate behavior for at least one application
+
+program interface.
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+5. The runtime extension framework architecture (100) of claim 1, wherein the
+runtime extension framework architecture (100) is suitable for a distributed control
+system.
+
+6. A runtime extension framework method, comprising:
+
+coordinating, by an event manager (108), between a plurality of event
+handlers and events received from a human machine interface;
+
+receiving and processing, by a plurality of external event handlers (106-106n),
+events associated with implementing a protocol translation for at least one
+application program interface associated with a respective component, the protocol
+translation supporting an extension of application behavior of the human machine
+interface so that it behaves as a protocol translation layer, wherein each of the
+plurality of external event handlers is subscribed to receive a respective event or
+category of event from the event manager, and each of the plurality of external event
+handlers is configured to perform a protocol translation associated with the
+respective event or category of event to which that external event handler is
+subscribed by translating commands from the event manager that have no inherent
+meaning to the respective component into semantically equivalent commands that
+the respective component can interpret; and
+
+receiving and processing, by at least one internal event handler (110-110n),
+
+events related to the extension of the human machine interface.
+
+7. The runtime extension framework method of claim 6, wherein one or more
+external event handlers (106-106n) is subscribed to receive events received at the
+human machine interface and one or more of the external event handlers (106-106n)
+
+is subscribed to receive events directed to human machine interface.
+
+8. The runtime extension framework method of claim 6, wherein each of the plurality
+of event handlers has plug-in capability.
+
+9. The runtime extension framework method of claim 6, wherein the protocol
+translation defines an aggregate behavior for at least one application program
+
+interface.
+
+10. The runtime extension framework method of claim 6, wherein the method is
+
+suitable for a distributed control system.

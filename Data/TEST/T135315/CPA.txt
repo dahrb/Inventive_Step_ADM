@@ -1,0 +1,24 @@
+TITLE:
+Method and system for remote user controlled manufacturing
+
+TYPE:
+US Patent
+
+ABSTRACT:
+The invention enables persons with Internet (or other similar computer network) connectivity to remotely customize a product to be manufactured. In a preferred embodiment, a customer specifies a variety songs from a stated inventory of electronic audio media stored in a variety of remote databases and a desired playing order. After verification, the customer submits the order to a server. A series of programs located on the server (either physically or virtually) processes the order and sends the order to a production mechanism for the manufacture of the final product by downloading selected songs, writing the downloaded songs to a recording media and shipping the recorded media to the customer.
+
+CLAIMS:
+1. A system for remote user controlled manufacturing, said system comprising:
+user interface means for entering user defined order data corresponding to a product to be manufactured, wherein the user defined order data includes initial sequence data that defines an initial production sequence, wherein the user interface means includes reorder means for selectively reordering the initial sequence data, in response to user defined reorder text data, to generate reordered sequence data corresponding to a desired production sequence, and wherein the reorder means includes means for entering the reorder text data, means for storing the initial sequence data in a first array, and means for generating a second array including the reordered sequence data in response to the reorder text data;
+server means for producing verified customer order data in response to the user defined order data entered via the user interface means; and
+production means for automatically producing the product to be manufactured in response to the verified customer order data produced by the server means;
+wherein the server means stores the verified customer order data in an order queue database;
+wherein the production means includes at least one production device driver and dispatching means for dispatching the verified customer order data stored in the order queue database to the production device driver;
+wherein the production device driver retrieves electronic data from at least one repository database in response to the customer order data; and
+wherein the electronic data retrieved from the repository database includes a plurality of individual data files and the production device driver arranges the individual data files in the desired production sequence based on the reorder sequence data stored in the second array.
+2. A system for remote user controlled manufacturing as claimed in claim 1, wherein the production means includes a plurality of production device drivers and the dispatching means dispatches the verified customer order data to one of the plurality of production device drivers based on a predetermined characteristic of the customer order data.
+3. A system for remote user controlled manufacturing as claimed in claim 1, wherein the product to be manufactured comprises a recording media and the production means includes a media writing device that is controlled by the production device driver to write the sequenced individual data files on the recording media.
+4. A system for remote user controlled manufacturing as claimed in claim 1, wherein the server means includes search means for searching the repository database for selected data files in response to the user defined order data.
+5. A system for remote user controlled manufacturing as claimed in claim 4, wherein the server means includes transaction means for verifying financial transaction data included in the user defined order data.
+6. A system for remote user controlled manufacturing as claimed in claim 5, wherein the server means further includes order generation means for generating the customer order data and storing the customer order data in the order queue database.
+7. A system for remote user controlled manufacturing as claimed in claim 6, wherein the order generation means includes means for transmitting electronic receipt information to a user to verify the storing of the customer order data in the order queue database.

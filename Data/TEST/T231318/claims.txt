@@ -1,0 +1,246 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+17 January 2018
+
+EP 11 770 355.3
+
+R60220EP
+
+Roche Diabetes Care GmbH, et al.
+
+New Claims
+
+A handheld diabetes management device (104) having improved updatability of entry,
+adherence, and exit criteria for a structured blood glucose test, the handheld diabetes
+management device (104) comprising:
+
+- a blood glucose (bG) measurement engine (508) that measures a bG level in a
+sample of blood of a user and that generates sample data indicative of the bG level:
+
+- memory (532);
+
+- firmware stored in a non-modifiable portion of the memory (532), the firmware
+including a subroutine for each different type of a structured bG test, wherein each
+of the subroutines is a submodule of a firmware module (536) in the non-modifiable
+portion of the memory (532);
+
+- adisplay (408); and
+
+- a processor module (504), in communication with the bG measurement engine
+(508), the display (408), and the memory (532), that:
+
+- executes the firmware for performing operations to carry out a structured bG test;
+
+- selectively retrieves entry, adherence, and exit criteria stored in a modifiable
+portion of the memory (532) for individual bG samples expected to be input for
+the structured bG test;
+
+- selectively retrieves entry, adherence, and exit criteria stored in the modifiable
+portion of the memory (532) for bG sample groups expected for the structured bG
+test; and
+
+- retrieves entry, adherence criteria, and exit criteria from the modifiable portion of
+the memory (532) for the structured bG test;
+
+wherein the subroutines point to where test configuration data associated with the
+
+structured bG test and the entry, adherence, and exit criteria associated with the
+
+structured bG test are stored in the modifiable portion of the memory (532); and
+
+wherein the test configuration data and the entry, adherence, and exit criteria associated
+with the structured bG test and stored in the modifiable portion of the memory (532) are
+changeable without changing the firmware stored in the non-modifiable portion of the
+
+memory (532).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+30
+
+-2-
+
+The handheld diabetes management device (104) of claim 1 wherein the processor
+module (504) begins collection of data for the structured bG test when the entry criteria
+
+for the structured bG test are satisfied.
+
+The handheld diabetes management device (104) of claim 1 wherein the processor
+module (504) ends data collection for the structured bG test when the adherence criteria
+
+or the exit criteria for the structured bG test-are satisfied.
+
+The handheld diabetes management device (104) of claim 3 wherein the processor
+module (504) marks data stored for the structured bG test as accepted when the
+
+adherence criteria for the structured bG test are satisfied.
+
+The handheld diabetes management device of claim 1 wherein the processor module
+(504) begins collection of data for a bG sample group when the entry criteria for the bG
+
+sample group are satisfied.
+
+The handheld diabetes management device (104) of claim 1 wherein the processor
+module (504) ends data collection for a bG sample group of the structured bG test when
+
+one of the adherence criteria and the exit criteria for the bG sample group are satisfied.
+
+A diabetes management system comprising:
+- the handheld diabetes management device (104) of claim 1; and
+- a computer that is remote to the handheld diabetes management device (104) and
+
+that selectively updates at least one of the entry, adherence, and exit criteria.
+
+A computer readable storage medium of a handheld blood glucose (bG) management
+
+device (104) that measures a user’s bG level and that includes a touchscreen display
+
+(408), the computer readable storage medium having memory (532) and comprising:
+
+- a modifiable portion of the memory (532) that includes adherence, exit, and entry
+criteria for performing a structured bG test are stored, the adherence, exit, and entry
+
+criteria provided with
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-3-
+
+- entry, adherence, and exit criteria stored in the modifiable portion of the memory
+(532) for individual bG samples expected to be input for the structured bG test;
+and
+
+- entry, adherence, and exit criteria stored in the modifiable portion of the memory
+(532) for bG sample groups expected for the structured bG test; and
+
+a non-modifiable portion of the memory (532) that includes firmware that, when
+
+executed by a processor of the handheld diabetes management device (104), causes
+
+the processor to perform the structured bG test involving obtaining measurements of
+the user’s bG level according to a predefined schedule and selectively retrieving the
+
+adherence, exit, and entry criteria from the modifiable portion of the memory (532);
+
+wherein
+
+the firmware includes a subroutine for each different type of a structured bG test,
+each of the subroutines being a submodule of a firmware module (536) in the non-
+modifiable portion of the memory (532);
+
+the subroutines point to where test configuration data associated with the structured
+bG test and the entry, adherence, and exit criteria associated with the structured bG
+test are stored in the modifiable portion of the memory (532); and
+
+the test configuration data and the entry, adherence, and exit criteria associated with
+the structured bG test and stored in the modifiable portion of the memory (532) are
+changeable without changing the firmware stored in the non-modifiable portion of
+
+the memory (532).
+
+A method of improving updatability of entry, adherence, and exit criteria stored in
+
+memory (532) of a handheld diabetes management device (104), the method
+
+comprising:
+
+providing the handheld diabetes management device (104) with a blood glucose
+(bG) measurement engine (508) that measures a bG level in a sample of blood of a
+user and that generates sample data indicative of the bG level;
+
+providing the handheld diabetes management device (104) with the memory (532)
+and a touchscreen display (408);
+
+providing the handheld diabetes management device (104) with a processor module
+(504) that is in communication with the bG measurement engine, the touchscreen
+display (408), and the memory (532);
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+10.
+
+-4-
+
+storing firmware that is executable by the processor module (504) for performing
+
+operations to carry out a structured bG test in a non-modifiable portion of the
+
+memory (532),
+
+storing the entry, adherence, and exit criteria in a modifiable portion of the memory
+
+(532), the adherence, exit, and entry criteria provided with
+
+- entry, adherence, and exit criteria stored in the modifiable portion of the memory
+(532) for individual bG samples expected to be input for the structured bG test;
+and
+
+- entry, adherence, and exit criteria stored in the modifiable portion of the memory
+(532) for bG sample groups expected for the structured bG test;
+
+providing the firmware with a subroutine for each different type of a structured bG
+
+test, each of the subroutines being a submodule of a firmware module (536) in the
+
+non-modifiable portion of the memory (532);
+
+pointing, by the subroutines, to where test configuration data associated with the
+
+structured bG test and the entry, adherence, and exit criteria associated with the
+
+structured bG test are stored in the modifiable portion of the memory (532); and
+
+changing the test configuration data and the entry, adherence, and exit criteria
+
+associated with the structured bG test and stored in the modifiable portion of the
+
+memory (532) are changeable without changing the firmware stored in the non-
+
+modifiable portion of the memory (532).
+
+The method of claim 9 wherein the storing the entry, adherence, and exit criteria
+
+comprises:
+
+storing entry, adherence, and exit criteria stored for individual bG samples expected
+to be input in the carrying out of the structured bG test in the modifiable portion of
+the memory (532);
+
+storing entry, adherence, and exit criteria for groups of the individual bG samples
+expected in the carrying out of the structured bG test; and
+
+storing entry, adherence criteria, and exit criteria for the structured bG test in the
+
+modifiable portion of the memory (532).

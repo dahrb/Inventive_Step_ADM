@@ -1,0 +1,66 @@
+TITLE:
+Optimizing backup and recovery utilizing change tracking
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Application data associated with an application program located on a storage device is restored utilizing tracked changed blocks of the storage device. The changed blocks of the storage device are tracked as the application program modifies the application data. When a system failure has occurred, file change data is generated for each file of the application data as a function of tracked changed clocks of the storage device and file system metadata of the storage device. Additionally, a file difference record for each changed file is generated to indicate changes between the application data and the last backup. The file difference record is applied to the application data such that application data corresponds to the state of last backup.
+
+CLAIMS:
+1. A method for preserving application data at the approximate time of a system failure by determining the changed blocks of a storage device since the last backup, said application data being associated with an application program and located on said storage device, comprising:
+generating file change data for each file of the application data as a function of the determined changed blocks of the storage device and file system metadata, said file change data indicating blocks including each file which have been modified on the storage device since the last backup of the application data, said file change data being generated in response to a received indication that a system failure has occurred;
+generating a first file difference record for each file of the application data as a function of the file change data, said first file difference record indicating the modifications to each file since the last backup of the application data; and
+transferring the first file difference record to a backup server, said backup server having access to the last backup of the application data, said backup server applying the first file difference record to the last backup of the application data stored on the backup server to generate a copy of the application data.
+2. The method of claim 1, wherein the determining the changed blocks of the storage device further comprises:
+tracking blocks on the storage device including application data that have been changed since the last backup of the application data; and
+receiving an indication that a system failure has occurred.
+3. The method of claim 2, wherein the indication that a system failure occurs comprises one or more of the following: the application program is completely unavailable, the application program is partially unavailable and at least part of the application data is missing.
+4. The method of claim 1, wherein the determining the changed blocks of the storage device further comprises:
+receiving an indication that a system failure has occurred; and
+determining the changed blocks of the storage device as function of the application data and the backup data.
+5. The method of claim 3, wherein the determining the changed blocks of the storage device further comprises:
+receiving an indication that a system failure has occurred;
+determining the checksum for each block of application data;
+receiving the checksum for each corresponding block of backup data from a backup server, said backup data comprising a copy of the application data at a time prior to the time the indication of a system failure was received; and
+tracking the changed blocks of the application data as function of the determined checksums of blocks of the application data and the received checksums of the blocks of backup data.
+6. The method of claim 4, wherein the indication that a system failure occurs comprises one or more of the following: the application program is completely unavailable, the application program is partially unavailable and at least part of the application data is missing.
+7. The method of claim 1, wherein the application program comprises one or more of the following: an email application and a database application.
+8. The method of claim 1, wherein the file system of the storage device comprises one or more of the following: FAT (File Allocation Table), NTFS (New Technology File System), HFS (Hierarchical File System), HFS+ (Hierarchical File System Plus), ext2 (second extended file system) and ext3 (third extended file system).
+9. The method of claim 1, further comprising:
+transferring backup data to the backup server, said backup data associated with the application program and being used by the backup server to create a replica of the application data at a point in time prior to the system failure to a backup server, said replica being a copy of the application data and representing the state of application data at a point in time;
+receiving a second file difference record for each changed file corresponding the transferred file change data, the second file difference record indicating changes between the application data and the replica and being generated as a function of the transferred file change data; and
+applying the second file difference record to the application data such that application data corresponds to the state of replica data.
+10. A method for restoring an application program located on a storage device to a state associated with replica data, said replica data accessible to a backup server, said replica data representing a state of the application data at previous point in time before a system failure, comprising:
+transferring backup data to the backup server, said backup data associated with the application program and being used by the backup server to create a replica of the application data at a point in time prior to the system failure to a backup server, said replica being a copy of the application data and representing the state of application data at a point in time;
+tracking blocks that have been changed on the storage device of the application server, said blocks being written to the storage device since the time of the last replica of the application data, said storage device containing the current state of the application data;
+receiving an indication that a system failure has occurred;
+generating file change data for each file of the application data as a function of tracked changed blocks of the storage device and file system metadata, said file change data indicating which blocks of a file associated with the application data that have been modified on the storage device since the time of the last replica of the application data, said file change data being generated in response to the received indication of a system failure;
+transferring the file change data to the backup server;
+receiving a first file difference record from the backup server for each changed file corresponding the transferred file change data, the first file difference record generated by the backup server and indicating changes between the application data and the replica and being generated as a function of the transferred file change data; and
+applying the first file difference record to the application data such that application data corresponds to the state of replica data.
+11. The method of claim 10, wherein the determining the changed blocks of the storage device further comprises:
+determining the checksum for each block of application data;
+receiving the checksum for each corresponding block of backup data from a backup server, said backup data comprising a copy of the application data at a time prior to the time the indication of a system failure was received; and
+tracking the changed blocks of the application data as function of the determined checksums of blocks of the application data and the received checksums of the blocks of backup data.
+12. The method of claim 10, wherein the indication that a system failure occurs comprises one or more of the following: the application program is completely unavailable, the application program is partially unavailable and at least part of the application data is missing.
+13. The method of claim 10, wherein the application program comprises one or more of the following: an email application and a database application.
+14. The method of claim 10, wherein the file system of the storage device comprises one or more of the following: FAT (File Allocation Table), NTFS (New Technology File System), HFS (Hierarchical File System), HFS+ (Hierarchical File System Plus), ext2 (second extended file system) and ext3 (third extended file system).
+15. The method of claim 10, further comprising:
+generating a second file difference record for each file of the application data as a function of the file change data, said second file difference record indicating the modifications to each file since the last backup of the application data; and
+transferring the second file difference record to a backup server, said backup server having access to the last backup of the application data, said backup server applying the second file difference record to the last backup of the application data stored on the backup server to generate a copy of the application data.
+16. A method for restoring application data associated with an application program and located on a storage device to a state associated with replica data, said replica data accessible to a backup server, said replica data representing a state of the application data at previous point in time before a system failure, comprising:
+receiving an indication that a system failure has occurred;
+determining the checksum for each block of application data;
+receiving the checksum for each corresponding block of backup data from a backup server, said backup data comprising a copy of the application data at a time prior to the time the indication of a system failure was received;
+tracking the changed blocks of the application data as function of the determined checksums of blocks of the application data and the received checksums of the blocks of backup data;
+generating file change data for each file of the application data as a function of tracked changed blocks of the storage device and file system metadata, said file change data indicating which blocks of a file associated with the application data that have been modified on the storage device since the time of the last replica of the application data, said file change data being generated in response to the received indication of a system failure;
+transferring the file change data to the backup server;
+receiving a first file difference record for each changed file corresponding the transferred file change data, the first file difference record indicating changes between the application data and the replica and being generated as a function of the transferred file change data; and
+applying the first file difference record to the application data such that application data corresponds to the state of replica data.
+17. The method of claim 16, wherein the indication that a system failure occurs comprises one or more of the following: the application program is completely unavailable, the application program is partially unavailable and at least part of the application data is missing.
+18. The method of claim 16, wherein the application program comprises one or more of the following: an email application and a database application.
+19. The method of claim 16, wherein the file system of the storage device comprises one or more of the following: FAT (File Allocation Table), NTFS (New Technology File System), HFS (Hierarchical File System), HFS+ (Hierarchical File System Plus), ext2 (second extended file system) and ext3 (third extended file system).
+20. The method of claim 16, further comprising:
+generating a second file for difference record for each file of the application data as a function of the file change data, said second file difference record indicating the modifications to each file since the last backup of the application data; and
+transferring the second file difference record to a backup server, said backup server having access to the last backup of the application data, said backup server applying the second file difference record to the last backup of the application data stored on the backup server to generate a copy of the application data.

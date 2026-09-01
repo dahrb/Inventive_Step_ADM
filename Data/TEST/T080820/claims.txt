@@ -1,0 +1,154 @@
+--- PAGE 1 ---
+EP 12777721.7
+
+CLAIMS
+
+1. A system for determining a user input which consists of a disturbance of a
+propagating signal in a medium with a surface, the system comprising:
+
+a communication interface (208) configured to send (402) a first signal to be used to
+propagate from a first transmitter (104), a first freely propagating signal through a
+propagating medium (102) having the surface, and configured to send (402) a second signal
+to be used to propagate from a second transmitter (106), a second freely propagating signal
+through the propagating medium (102), wherein the freely propagating signals have been
+allowed to freely propagate through the propagating medium (102) to have a first received
+signal and a second received signal, both including the first freely propagating signal and the
+second freely propagating signal that have been disturbed by the user input, be received at a
+plurality of sensors (112, 114, 116, 118) of the propagating medium (102);
+
+a processor (206) coupled to the communication interface (208) and configured to
+process (406) the first received signal to at least in part determine the user input associated
+with the disturbance;
+
+wherein the propagating signal is acoustic; and
+
+wherein the transmitter (104) and sensor (112, 114, 116, 118) comprised in the
+communication interface (208) are coupled to the medium (102);
+
+wherein determining the user input associated with the disturbance includes
+correlating with a first reference signal at least a portion of the first received signal including
+a first pseudorandom binary sequence content to determine (506) a first correlation result, the
+first reference signal includes the first pseudorandom binary sequence content and was
+determined using information determined during calibration performed using a test signal
+propagated through the propagating medium, and correlating with a second reference signal
+at least a portion of the second received signal including a second pseudorandom binary
+sequence content different from the first pseudorandom binary sequence content to determine
+
+a second correlation result.
+
+2. The system of claim 1, wherein determining the said disturbance on a surface
+associated with the disturbance includes determining (510) a location of the disturbance on
+
+the surface.
+
+--- PAGE 2 ---
+EP 12777721.7
+
+3. The system of claim 2, wherein the location of the disturbance is associated with a
+selected portion of the first received signal and processing the first received signal includes
+
+determining the selected portion.
+
+4, The system of claim 1, wherein processing the first received signal includes
+comparing at least a portion of the first received signal to a reference signal, and wherein the
+reference signal is associated with an expected version of the first received signal if the first
+
+received signal has not been disturbed by the disturbance.
+
+5. The system of claim 1, wherein processing the first received signal includes
+comparing a predetermined reference time value with a time value determined using the first
+
+correlation result.
+
+6. The system of claim 1, wherein processing the first received signal includes
+determining a delay caused on the first received signal by the disturbance, and wherein
+processing the first received signal includes comparing the delay with one or more other
+
+delays determined using other received signals disturbed by the disturbance.
+
+7. The system of claim 1, wherein the disturbance has been caused by a touch input on
+
+the surface.
+
+8. The system of claim 1, wherein determining the said disturbance on a surface includes
+determining a location coordinate associated with the said disturbance on a surface, or
+determining a gesture associated with the said disturbance on a surface, or determining a
+multi-touch input associated with the said disturbance on a surface, or includes determining a
+time associated with the said disturbance on a surface, or includes determining a direction
+associated with the said disturbance on a surface, or includes determining a velocity
+associated with the said disturbance on a surface, or includes determining a force magnitude
+associated with the said disturbance on a surface, or includes determining a proximity
+magnitude associated with the said disturbance on a surface, or includes determining a
+pressure associated with the said disturbance on a surface, or wherein determining the said
+disturbance on a surface includes determining a size associated with the said disturbance on a
+
+surface.
+
+--- PAGE 3 ---
+EP 12777721.7
+
+9. The system of claim 1, wherein the surface includes a surface of a display screen.
+
+10. The system of claim 1, wherein the propagating medium is coupled to a first
+
+transducer that transmits the freely propagating signal.
+
+11. The system of claim 10, wherein the propagating medium is coupled to a second
+
+transducer that receives the freely propagating signal.
+
+12. The system of claim 10, wherein the first transducer is a piezoelectric transducer, or
+
+wherein the first transducer has been cycled using a burn-in signal.
+
+13. The system of claim 1, wherein the signal to be used to propagate the freely
+
+propagating signal includes a pseudorandom binary sequence.
+
+14. A method of determining a user input which consists of a disturbance of a propagating
+signal in a medium with a surface on a surface, the method comprising:
+
+sending a first signal to be used to propagate from a first transmitter a first freely
+propagating signal through a propagating medium having the surface;
+
+sending (402) a second signal to be used to propagate from a second transmitter (106),
+a second freely propagating signal through the propagating medium (102),
+
+wherein the freely propagating signals have been allowed to freely propagate through
+the propagating medium (102) to be received at a plurality of sensors (112, 114, 116, 118) of
+the propagating medium (102); and
+
+using a processor (206) to process the first received signal to at least in part determine
+the user input associated with the disturbance;
+
+wherein the propagating signal is acoustic; and
+
+wherein the transmitter (104) and sensors (112, 114, 116, 118) comprised in the
+communication interface (208) are coupled to the medium (102);
+
+wherein determining the user input associated with the disturbance includes
+correlating with a first reference signal at least a portion of the first received signal including
+a first pseudorandom binary sequence content to determine (506) a first correlation result, the
+first reference signal including the first pseudorandom binary sequence content and
+determined using information determined during a calibration performed using a test signal
+
+propagated through the propagating medium, and correlating with a second reference signal
+
+14
+
+--- PAGE 4 ---
+EP 12777721.7
+
+at least a portion of the second received signal including a second pseudorandom binary
+sequence content different from the first pseudorandom binary sequence content for
+
+determining a second correlation result.
+
+15. The method of claim 14, wherein determining the disturbance on a surface associated
+
+with the disturbance includes determining (510) a location of the disturbance on the surface.
+
+16. The method of claim 14, wherein the location of the disturbance is associated with a
+selected portion of the received signal and processing the received signal includes
+
+determining the selected portion.

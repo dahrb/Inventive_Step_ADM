@@ -1,0 +1,82 @@
+TITLE:System for collaborative internet competitive sales analysis
+
+TYPE: US Patent
+
+ABSTRACT:
+A method for cataloging and reporting Internet merchant data uses a data center for receiving a plurality of site activity messages regarding two or more seller sites and provides a standardized taxonomy schema with a node for each of two or more products. The method derives from the plurality of site activity messages a sales metric for the two or more products and for a specific time period, aggregates the sales metric data for each of the two or more seller sites and the two or more products, then derives a comparative report for the sales metric for the two or more seller sites, by reference to at least one of the two or more products in the standardized taxonomy schema.
+
+CLAIMS:
+1. A method for cataloging and reporting Internet merchant data comprising:
+receiving at a data center a plurality of site activity messages regarding two or more seller sites;
+providing a standardized taxonomy schema with a node for each of two or more products;
+deriving from the plurality of site activity messages a sales metric for the two or more products;
+for a specific time period, aggregating the sales metric data for each of the two or more seller sites and the two or more products; and
+deriving a comparative report for the sales metric for the two or more seller sites, by reference to at least one of the two or more products in the standardized taxonomy schema.
+2. The method of claim 1 wherein the step of receiving at a data center a plurality of site activity messages comprises receiving messages with product identification and sales transaction data.
+3. The method of claim 1 wherein the step of providing a standardized taxonomy schema comprises providing a standardized taxonomy schema in the form of a tree having at least a specific product level with a node for each of two or more products and a product category level with at least one node that encompasses two or more products from the specific product level.
+4. The method of claim 3 wherein the step of deriving a comparative report for the sales of the two or more seller sites comprises deriving a report for a specific product or product category in the standardized taxonomy schema in response to having sufficient aggregated data for the at least one specific product or product category.
+5. The method of claim 3, further comprising:
+computing for each of the two or more seller sites and for each specific product and each product category level in the standardized taxonomy schema a sales metric.
+associating the computed sales metric with each of the nodes of the standardized taxonomy as applied to each of the two or more seller sites; and
+deriving at least one seller site profile vector by selecting at least one specific product or product category node responsive to the level of the computed sales metric for each product or product category node.
+6. The method of claim 5 wherein the step of deriving at least one seller site profile vector comprises selecting specific product or product category nodes by identifying at least one node and an associated computed sales metric for the at least one seller site that exceeds a materiality threshold M % and defining a profile vector with reference to such at least one node.
+7. The method of claim 6 wherein the step of defining a profile vector comprises deriving a profile vector in the form: {product/category1/X1%, product/category2/X2%, product/category3/X3%, . . . product/categoryN/XN%} where, product/categoryN is a product or product category node label in the standardized taxonomy and XN is a associated sales metric greater than or equal to M %.
+8. The method of claim 5 further comprising:
+defining a contribution threshold C; and
+responsive to a computed sales metric associated with one of the nodes of the standardized taxonomy exceeding contribution threshold C, applying a dampening algorithm to the computed sales metric.
+9. The method of claim 8 wherein the dampening algorithm uses a reduction factor applied iteratively to the computed sales metric until the computed sales metric value associated with the one of the nodes of the standardized taxonomy that exceeds the contribution threshold C no longer exceeds C.
+10. The method of claim 1 wherein the step of receiving at a data center from a plurality of site activity messages comprises receiving messages by a method selected from the group comprising: Javascript messages from Javascript embedded on website pages; an HTML image; a proxy server forwarder or signed browser applet; server-to-server communications in a CGI application, a SOAP call, an XML message, a Web log, spreadsheet or a proprietary protocol to convey data; and a persistent browser cookie combined with JavaScript technology.
+11. The method of claim 1 wherein the step of deriving from the plurality of site activity messages a sales metric comprises deriving a sales metric from the group comprising: sales revenue, unit sales, average order size, average shipping charges, average discount; purchase conversion rate; profit margin; profit; return on advertising spend; success of various referring channels, peak transaction days and times, most popular promotions, best selling products; distribution statistics on order size, distribution statistics on shipping charges, distribution statistics on discounts; and any pricing statistic.
+12. The method of claim 3 further comprising applying to the activity messages a fraud filter to detect transactions that are not legitimate messages from a seller site that subscribes to activities of the data center.
+13. A method for characterizing data organized in a standardized taxonomy schema in the form of a tree having a lowest level with a node for two or more categories for that lowest level and at least one higher level with at least one node that encompasses the two or more categories from the lowest level, the method comprising:
+defining a common metric for use at each node;
+for a reporting entity, computing for each of a plurality of nodes in the standardized taxonomy schema the common metric; and
+deriving a profile vector for the reporting entity by selecting at least one node from the lowest level or at least one higher level responsive to the magnitude of the computed common metric for each node.
+14. The method of claim 13 wherein the step of building a profile vector comprises selecting at least one node by identifying the at least one node with an associated computed common metric for a specified reporting entity that exceeds a materiality threshold M % and defining a profile vector with reference to such at least one node.
+15. The method of claim 13 wherein the step of defining a profile vector comprises defining a profile vector in the form: {category1/X1%, category2/X2%, category3/X3% . . . categoryN/XN%} where, categoryN is a node label in the standardized taxonomy and XN is a corresponding computed common metric greater than or equal to M %.
+16. The method of claim 13 wherein the reporting entity is an investment portfolio, the standardized taxonomy schema is a hierarchical set of investment asset categories and the computed common metric is the value of the assets in the portfolio that are in the category of any node.
+17. The method of claim 13 wherein the reporting entity is an accounting entity, the standardized taxonomy schema is a hierarchical set of accounting categories and the computed common metric is the value assigned to the accounting category of any node.
+18. The method of claim 13 further comprising limiting the number of elements in the profile vector to a value N that is at least an order of magnitude less in size that total number of nodes in the standardized taxonomy schema.
+19. The method of claim 13 further comprising limiting the number of elements in the profile vector to a value N that is 100 or less.
+20. The method of claim 13 further comprising:
+limiting the number of element in the profile vector to a value N that is 20 or less; and
+configuring the elements of the profile vector in a form selected from the group comprising a pie chart, a bar graph and a tabular listing.
+21. The method of claim 13 wherein the step of deriving a profile vector comprises selecting more than one node, whereby the profile vector has multiple elements and further comprising placing the elements in an ordered list.
+22. The method of claim 21 wherein the ordered list is based on the magnitude of the computed common metric.
+23. The method of claim 13 further comprising correcting the magnitude of the computed common metric of a parent node of a selected node by removing from the magnitude of the computed common metric of the parent node the magnitude of the computed common metric of the selected node.
+24. A method for collecting pricing data from Internet merchant data comprising:
+receiving at a data center a plurality of site activity messages regarding two or more seller sites, said messages containing pricing data from one or more channels;
+providing a standardized taxonomy schema with a node for each of two or more products;
+deriving from the plurality of site activity messages pricing data for the two or more products; and
+for a specific time period aggregating the pricing data for the two or more seller sites and deriving inferred price data report.
+25. The method of claim 24 wherein the step of receiving at a data center a plurality of site activity messages comprises receiving product view activity messages that include or reference product pricing.
+26. The method of claim 24 wherein the step of receiving at a data center a plurality of site activity messages comprises receiving sales activity messages that include or reference product pricing.
+27. The method of claim 24 wherein the step of receiving at a data center a plurality of site activity messages comprises receiving activity messages that include referring source information from two or more referring sources and sorting the pricing data responsive to the two or more referring sources.
+28. The method of claim 24 wherein the two or more referring sources are price comparison sites.
+29. The method of claim 24 wherein the step of receiving at a data center a plurality of site activity messages comprises receiving activity messages that including search string information and sorting the pricing data responsive to two or more distinguishable search strings.
+30. A computer-based system for cataloging and reporting Internet merchant data comprising:
+a software component for receiving at a data center a plurality of site activity messages regarding two or more seller sites;
+a software component for providing a standardized taxonomy schema with a node for each of two or more products;
+a software component for deriving from the plurality of site activity messages a sales metric for the two or more products;
+a software component for aggregating for a specific time period the sales metric data for each of the two or more seller sites and the two or more products; and
+a software component for deriving a comparative report for the sales metric for the two or more seller sites, by reference to at least one of the two or more products in the standardized taxonomy schema.
+31. The system of claim 30 wherein the software component for receiving at a data center a plurality of site activity messages receives messages with product identification and sales transaction data.
+32. The system of claim 30 wherein the software component for providing a standardized taxonomy schema provides a standardized taxonomy schema in the form of a tree having at least a specific product level with a node for each of two or more products and a product category level with at least one node that encompasses two or more products from the specific product level.
+33. The system of claim 32 wherein the software component for deriving a comparative report for the sales of the two or more seller sites derives a report for a specific product or product category in the standardized taxonomy schema in response to having sufficient aggregated data for the at least one specific product or product category.
+34. The system of claim 32, further comprising:
+a software component for computing for each of the two or more seller sites and for each specific product and each product category level in the standardized taxonomy schema a sales metric.
+a software component for associating the computed metric with each of the nodes of the standardized taxonomy as applied to each of the two or more seller sites; and
+a software component for deriving at least one seller site a profile vector by selecting at least one specific product or product category node responsive to the level of the computed metric for each product or product category node.
+35. The system of claim 34 wherein the software component for deriving at least one seller site profile vector selects specific product or product category nodes by identifying at least one node and an associated computed metric for the at least one seller site that exceeds a materiality threshold M % and defines a profile vector with reference to such at least one node.
+36. The system of claim 35 wherein the software component for deriving a profile vector derives a profile vector in the form: {product/category1/X1%, product/category2/X2%, product/category3/X3%, . . . product/categoryN/XN%} where, product/categoryN is a product or product category node label in the standardized taxonomy and XN is a associated sales metric greater than or equal to M %.
+37. The system of claim 30 further comprising:
+a software component for defining a contribution threshold C; and
+a software component responsive to a computed sales metric associated with one of the nodes of the standardized taxonomy exceeding contribution threshold C, for applying a dampening algorithm to the computed sales metric.
+38. The system of claim 37 wherein the dampening algorithm uses a reduction factor applied iteratively to the computed metric until the computed metric associated with the one of the nodes of the standardized taxonomy that exceeds the contribution threshold C no longer exceeds C.
+39. The system of claim 37 wherein the dampening algorithm removes from a report the identity of a seller site that exceeds the contribution threshold C.
+40. The system of claim 37 wherein the dampening algorithm reduces for reporting purposes the computed metric of a seller site that exceeds the contribution threshold C.
+41. The system of claim 30 wherein the software component receiving at a data center a plurality of site activity messages comprises a software component that receives messages by a method selected from the group comprising:
+Javascript messages from Javascript embedded on website pages; an HTML image; a proxy server forwarder or signed browser applet; server-to-server communications in a CGI application, a SOAP call, an XML message, a Web log, spreadsheet or a proprietary protocol to convey data; and a persistent browser cookie combined with JavaScript technology.
+42. The system of claim 30 wherein the software component for deriving from the plurality of site activity messages a sales metric derives a sales metric from the group comprising: sales revenue, unit sales, average order size, average shipping charges, average discount; purchase conversion rate; profit margin; profit; return on advertising spend; success of various marketing channels, peak transaction days and times, most popular promotions, best selling products; distribution statistics on order size, distribution statistics on shipping charges, distribution statistics on discounts; and any pricing statistic.
+43. The system of claim 30 further comprising a software component for applying to the activity messages a fraud filter to detect transactions that are not legitimate messages from a seller site that subscribes to activities of the data center.
+44. The system of claim 30 further comprising a code component for mapping a product and a product category schema of a seller site into and out of the standardized taxonomy schema for configuring reports using the product and a product category schema of the seller

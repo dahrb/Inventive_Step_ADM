@@ -1,0 +1,82 @@
+TITLE:
+Mobile advertising method and system
+
+TYPE:
+European Patent
+
+ABSTRACT:
+In the present invention, advertisement is presented without putting signboard for advertisement at a place hoped for. Network navigation center 10 outputs guide access information GAI to personal computer 18 of each sponsor of the ad over Internet 17 and receives registration of advertisement information ADI to present advertisement at spot for presenting advertisement from personal computer 18 of sponsor of the ad according to guide access information GAI. In addition, network navigation center 10 receives current position information API from mobile communication device 12 carried by automobile 11 viamobile telephone base station 14 and public telephone network 16. Network navigation center 10 transmits advertisement information ADI based on current position information API to mobile communication instrument 12 via public telephone network 16 and mobile telephone base station 14.
+
+CLAIMS:
+Mobile advertisement information delivering method, said method comprising delivering advertisement information from advertisement information delivery apparatus to mobile communication instrument based on current position information transmitted therefrom.
+Mobile advertisement information delivering method comprising delivering advertisement information to mobile communication instrument by computer system, said method comprising:
+step for storing advertisement information to present advertisement at a spot for presenting advertisement set by sponsor of the ad.;
+step for receiving current position information of mobile communication instrument;
+step for retrieving advertisement information relating to current position from said stored advertisement information based on current position information of said mobile communication instrument;
+step for delivering said retrieved advertisement information to said mobile communication instrument;
+step for calculating advertisement delivery charges caused by said delivery; and
+step for charging or liquidating by payment said calculated advertisement delivery charges to sponsor of the ad.
+Mobile advertisement information delivering system comprising:
+advertisement information storage means for storing advertisement information to present advertisement at spot for presenting advertisement set by sponsor of the ad;
+mobile communication instrument detecting current position and transmitting said current position information and receiving said advertisement information and outputting advertisement based on said advertisement information to output part; and
+advertisement information delivery means for receiving current position information from said mobile communication instrument and retrieving advertisement information relating to either of spot for presenting advertisement agreeing with said current position or spot for presenting advertisement lying nearby current position from said advertisement information storage means and delivering said retrieved advertisement information to said mobile communication instrument.
+Mobile advertisement information delivery system according to claim 3 wherein said advertisement information delivery means having delivery number of times storage means for storing delivery number of times of advertisement information at each time when advertisement information is delivered to mobile communication instrument.
+Mobile advertisement information delivery system according to claim 3 or 4 wherein said advertisement information delivery means having use number of times storage means for storing use number of times concerning mobile communication instrument as delivery target of advertisement information at each time when advertisement information is delivered thereto.
+Mobile advertisement information delivery system according to any of claims 3 to 5 wherein advertisement information relating to spot for presenting advertisement stored in said advertisement information storage means includes image data picturing at least one advertisement of trade name, pet name, business contents, brand name, guide map, whereby said output part of said mobile communication instrument is a display part displaying advertisement thereon based on said image data.
+Mobile advertisement information delivery system according to any of claims 3 to 6 wherein said advertisement information storage means stores location position information for retrieving a path from current position to advertising location and displaying said path from current position to advertising location on display part of said mobile communication instrument.
+Mobile advertisement information delivery system according to any of claims 3 to 7 comprising delivery condition storage means for storing delivery condition of advertisement information whereby said advertisement information delivery means determines delivery to said mobile communication instrument according to said delivery condition.
+Mobile advertisement information delivery system according to claim 8 wherein said delivery condition is at least either one of presenting time period, presenting time zone, day, age group, sex distinction.
+Mobile advertisement information delivery system according to any of claims 3 to 9 wherein said mobile communication instrument is navigation device carried by a vehicle, said navigation device comprising transmitter transmitting current position information to said advertisement information delivery means and receiver receiving advertisement information.
+Mobile advertisement information delivery system according to any of claims 3 to 9 wherein said mobile communication instrument comprises navigation device carried by a vehicle and mobile telephone, and said navigation device transmits current position information and advertisement information to and from advertisement information delivery means through said mobile telephone.
+Mobile advertisement information delivery system according to any of claims 3 to 9 wherein said mobile communication instrument is mobile telephone, and said mobile telephone is provided with current position detecting means for detecting current position of own.
+Mobile advertisement information registration system comprising:
+advertisement information delivery means for delivering advertisement information to mobile communication instrument based on current position information transmitted from said mobile communication instrument;
+advertisement information input means for setting advertisement information to present advertisement at spot for presenting advertisement by sponsor of the ad;
+advertisement information storage means for storing advertisement information; and
+management means for delivering data between said advertisement information input means over Internet or wireless Internet and writing advertisement information from said advertisement information input means in advertisement information storage means.
+Mobile advertisement information registration system according to claim 13 wherein said advertisement information input means is personal computer or mobile communication instrument.
+Mobile advertisement information registration system according to claim 13 or 14 comprising delivery condition storage means for storing delivery condition relating to said advertisement information whereby delivery condition along with said advertisement information is input by said advertisement information input means and so is stored in corresponding storage means respectively through said management means.
+Mobile advertisement information registration system according to claim 15 wherein said advertisement delivery condition is at least either one of presenting time period, presenting time zone, day, age group, sex distinction.
+Mobile advertisement information registration system according to any of claims 13 to 16 comprising price information storage means for storing delivery price relating to at least one of said advertisement information and delivery condition whereby said price information storage means outputs said delivery price to advertisement information input means through management means.
+Mobile advertisement information registration system according to any of claims 13 to 17 comprising delivery number of times storage means for storing delivery number of times at each time when advertisement information is delivered from said advertisement information delivery means to mobile communication instrument.
+Mobile advertisement information charge system comprising management means for calculating based on advertisement contents or delivery condition advertisement delivery charges of advertisement information delivered from advertisement information delivery means to mobile communication instrument according to current position information transmitted therefrom.
+Mobile advertisement information charge system comprising:
+advertisement information storage means for storing advertisement information to present advertisement at spot for presenting advertisement set by sponsor of the ad;
+advertisement information delivery means for delivering advertisement information to mobile communication instrument based on current position information transmitted from mobile communication instrument;
+advertisement delivery charge storage means for storing advertisement delivery charges caused by delivery of the advertisement information; and
+management means for calculating advertisement delivery charges based on delivery price relating to at least one of advertisement contents delivered and advertisement delivery condition, and storing the resultant in said advertisement delivery charges storage means.
+Mobile advertisement information charge system comprising management means for calculating based on delivery number of times advertisement delivery charges of advertisement information delivered from advertisement information delivery means to mobile communication instrument based on current position information transmitted therefrom.
+Mobile advertisement information charge system comprising:
+advertisement information storage means for storing advertisement information to present advertisement at spot for presenting advertisement set by sponsor of the ad;
+advertisement information delivery means for delivering advertisement information to said mobile communication instrument based on current position information transmitted therefrom;
+advertisement delivery charge storage means for storing advertisement delivery charges caused by advertisement information delivery; and
+management means for calculating advertisement delivery charges based on delivery number of times of delivered advertisement information and storing said delivery charges in said advertisement delivery charge storage means.
+Mobile advertisement information charge system comprising management means for calculating based on amount of communication data advertisement delivery charges of advertisement information delivered from advertisement information delivery means to mobile communication instrument based on current position information transmitted therefrom.
+Mobile advertisement information charge system comprising:
+advertisement information storage means storing advertisement information to present advertisement at spot for presenting advertisement set by sponsor of the ad set;
+advertisement information delivery means for delivering said advertisement information to mobile communication instrument based on current position information transmitted therefrom;
+advertisement delivery charge storage means for storing advertisement delivery charges caused by delivery of said advertisement information; and
+management means for calculating advertisement delivery charges based on amount of communication data when said advertisement information is delivered and storing delivery charges in said advertisement delivery charge storage means.
+Mobile advertisement information charge system comprising:
+advertisement information storage means for storing advertisement information to present advertisement at spot for presenting advertisement set by sponsor of the ad;
+advertisement information delivery means for delivering said advertisement information to mobile communication instrument based on current position information transmitted therefrom;
+advertisement delivery charge storage means for storing advertisement delivery charges caused by delivery of said advertisement information;
+price information storage means for storing delivery charge relating to at least either one of the advertisement information or delivery condition; and
+management means for calculating advertisement delivery charge based on delivery number of times and delivery charges of advertisement information at each time when said advertisement information is delivered, and storing said delivery charges in said advertisement delivery charge storage means.
+Mobile communication instrument having current position detecting means for detecting current position and display part displaying picture image comprising storage means for storing advertisement information beforehand relating to spot for presenting advertisement where advertisement is presented, and advertisement presenting control means for presenting advertisement information relating to spot for presenting advertisement on said display part when current position detected by said current position detecting means agrees with said spot for presenting advertisement.
+Recording medium storing advertisement information registration program for processing steps by computer, said steps comprising:
+step for making sponsor of the ad input spot for presenting advertisement;
+step for storing spot for presenting advertisement input by sponsor of the ad;
+step for making sponsor of the ad input advertisement presented at spot for presenting advertisement;
+step for storing advertisement input by sponsor of the ad and presented at spot for presenting advertisement;
+step for making sponsor of the ad input advertisement delivery condition; and
+step for storing delivery condition input by sponsor of the ad.
+Recording medium storing advertisement information delivery program for processing steps by computer, said steps comprising;
+step for inputting current position information from mobile communication instrument and retrieving advertisement information relating to either of spot for presenting advertisement relating to current position information from advertisement information storage means storing advertisement information at spot for presenting advertisement or spot for presenting advertisement nearby current position; and
+step for delivering retrieved advertisement information to said mobile communication instrument.
+Recording medium storing advertisement information charge program for processing steps by computer, said steps comprising;
+step for calculating advertisement delivery charges caused by delivery for each sponsor of the ad;
+step for preparing details of advertisement information delivered to each sponsor of the ad during a given time period and advertisement delivery charges;
+step for withdrawing advertisement delivery charges of each sponsor of the ad from their bank account; and
+step for preparing details of advertisement information delivered and advertisement delivery charges in specifications.
+Recording medium storing advertisement information presenting program for processing steps by computer, said steps comprising step for computing current position and transmitting said computed current position, and step for displaying advertisement on display part based on advertisement information received.

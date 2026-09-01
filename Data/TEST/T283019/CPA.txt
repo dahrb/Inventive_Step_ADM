@@ -1,0 +1,54 @@
+Title: Systems and methods for radial display of time based information
+
+Abstract: In certain embodiments, a radial configuration of time based information and a graphical object representative of an event are displayed together in a graphical user interface. A position of the graphical object relative to the radial configuration of time based information in the graphical user interface is configured to indicate a relationship between the event and the time based information. In certain embodiments, the radial configuration of time based information includes a visual representation of an analog clock face, and the graphical object includes a tab positioned along a perimeter of the analog clock face. In certain embodiments, the radial configuration of time based information includes a visual representation of a timeline spirally disposed about at least one axis point, and the graphical object is positioned along a section of the timeline.
+
+Type: US Patent
+
+Claims: 
+
+1. A method comprising:
+displaying by a computing system of a radial configuration of time based information in a graphical user interface of said computing system; and
+displaying by said computing system of a graphical object representative of an event together with said radial configuration of time based information in said graphical user interface;
+wherein a position of said graphical object relative to said radial configuration of time based information is configured to indicate a relationship between said event and said time based information.
+2. The method of claim 1, wherein said radial configuration of time based information comprises a visual representation of an analog clock face, and said graphical object comprises a tab positioned along a perimeter of said analog clock face.
+3. The method of claim 2, further comprising displaying by said computing system of a radial color band configured to indicate past time, present time, and future time along said perimeter of said analog clock face, wherein said color band is configured to update based on a passage of time.
+4. The method of claim 1, wherein said radial configuration of time based information comprises a timeline spirally disposed about at least one axis point, said graphical object positioned along a section of said timeline.
+5. The method of claim 1, wherein said graphical object is one of a plurality of graphical objects representative of a plurality of events of distinct types, and wherein said method further comprises:
+displaying by said computing system of said plurality of graphical objects in said graphical user interface, said plurality of graphical objects including a plurality of visual indicators indicating said distinct types.
+6. The method of claim 5, wherein said plurality of events of distinct types includes at least two of a communication event, a calendar event, a past event, a present event, and a future event.
+7. The method of claim 1, further comprising updating by said computing system of said display of said radial configuration of time based information and said graphical object in said graphical user interface based on a passage of time.
+8. The method of claim 7, wherein said passage of time comprises an artificial passage of time controlled by user input.
+9. The method of claim 1, further comprising:
+detecting by said computing system of a user selection of said graphical object; and
+displaying by said computing system of information descriptive of said event in said graphical user interface in response to said user selection of said graphical object.
+10. The method of claim 1, further comprising displaying by said computing system of a pop-up window in said graphical user interface, said pop-up window including at least one of information descriptive of said event and a plurality of selectable options associated with said event.
+11. The method of claim 1, further comprising displaying by said computing system of an extension object extending from said graphical object, said extension object displaying at least one of information descriptive of said event and at least one actionable option associated with said event.
+12. The method of claim 11, wherein said displaying by said computing system of said extension object is performed based on a proximity of said graphical object to a position representative of present time in said radial configured of time based information.
+13. The method of claim 1, further comprising visually modifying by said computing system of said graphical object based on a proximity of said graphical object to a position representative of present time in said radial configured of time based information.
+14. The method of claim 1, wherein said radial configuration of time based information comprises a timeline having a first section spirally disposed about a first axis point and a second section spirally disposed about a second axis point.
+15. The method of claim 14, wherein said first section of said timeline represents future time based information and said second section of said timeline represents past time based information, and wherein said first section and said second section of said timeline are connected together at a location representing present time based information.
+16. The method of claim 15, further comprising displaying by said computing system of graphics representative of a horizon between said first section and said second section of said timeline, said location positioned along said horizon, wherein said horizon comprises a linear timeline representative of a same time period as represented by said timeline.
+17. The method of claim 16, further comprising displaying by said computing system of a selectable object at said location, said selectable object being moveable along said horizon.
+18. The method of claim 17, further comprising:
+detecting by said computing system of movement of said selectable object along said horizon; and
+graphically scrolling by said computing system of said timeline in accordance with said movement.
+19. The method of claim 18, wherein when said movement is in a first direction along said horizon said scrolling includes graphically unwinding said timeline from about said first axis point and correspondingly graphically winding said timeline about said second axis point, and wherein when said movement is in a second direction along said horizon said scrolling includes graphically winding said timeline about said first axis point and correspondingly graphically unwinding said timeline from about said second axis point.
+20. The method of claim 18, wherein said scrolling of said timeline is representative of an artificial passage of time and is performed in response to user input causing said movement of said selectable object along said horizon, the method further comprising displaying by said computing system of a second timeline representative of actual time together with said timeline representative of said artificial passage of time in said graphical user interface.
+21. The method of claim 1, tangibly embodied as computer-executable instructions on at least one computer-readable medium.
+22. A method comprising:
+displaying by a computing system of a radial configuration of time based information in a graphical user interface of said computing system, said radial configuration of time based information including a timeline having a first section spirally coiled about a first axis point and a second section spirally coiled about a second axis point; and
+displaying by said computing system of a plurality of graphical objects representative of a plurality of events at various positions along said timeline;
+wherein said positions of said graphical objects along said timeline indicate relationships between said events and said time based information.
+23. The method of claim 22, wherein said first section of said timeline represents future time based information and said second section of said timeline represents past time based information.
+24 The method of claim 22, wherein said plurality of graphical objects representative of said plurality of events includes a first subset of said graphical objects representative of a first subset of said events and a second subset of said graphical objects representative of a second subset of said events, said first subset of said events being future events and said second subset of said events being past events.
+25. The method of claim 24, wherein said first subset of said graphical objects are visually associated with said first section of said timeline and said second subset of said graphical objects are visually associated with said second section of said timeline in said graphical user interface.
+26. A system comprising:
+a user interface facility configured to provide a graphical user interface for display; and
+a radial time facility configured to
+provide data representing a radial configuration of time based information to said user interface facility for inclusion in said graphical user interface, and
+provide data representing a graphical object representative of an event to said user interface facility for inclusion together with said radial configuration of time based information in said graphical user interface;
+wherein a position of said graphical object relative to said radial configuration of time based information in said graphical user interface is configured to indicate a relationship between said event and said time based information.
+27. The system of claim 26, wherein said radial configuration of time based information comprises one of
+a visual representation of an analog clock face, and
+a visual representation of a timeline spirally disposed about at least one axis point.
+28. The system of claim 26 implemented on a mobile phone device.

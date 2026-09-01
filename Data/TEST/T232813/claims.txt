@@ -1,0 +1,211 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+1
+
+FURTHER AMENDED SET OF CLAIMS 1 to 18
+Clean Copy
+
+1. A method (400) for registering a wireless terminal (504) with a home
+agent (510), comprising:
+
+receiving (404) identifying indicia associated with a subscriber from the
+wireless terminal when the wireless terminal requests access to a network;
+
+providing (406) the identifying indicia to a authentication server (508);
+
+receiving (408), at a base station (506), a profile associated with the
+subscriber (504), wherein there are a plurality of home agents to which
+registration information from the wireless terminal could be routed, wherein
+the plurality of home agents are associated with different mobile virtual
+network operators, wherein the profile identifies one or more home agents
+(510) that are assigned to a mobile virtual network operator associated with
+the subscriber, and wherein the profile is received from the authentication
+server (508); and
+
+routing (410) registration information from said wireless terminal (504)
+to an identified home agent, wherein routing registration information
+comprises receiving a registration request at the base station and transmitting
+
+the registration request from the base station to the identified home agent.
+
+2. The method (400) of claim 1, further comprising creating an MIP tunnel
+to the identified home agent (510).
+
+3. The method (400) of claim 1, wherein the identified home agent (510) is
+determined through identifying a network associated with the identifying
+
+indicia provided to the authentication server (508).
+4. The method (400) of claim 1, wherein the identified home agent (510) is
+determined through identifying the mobile virtual network operator associated
+
+with the identifying indicia provided to the authentication server (508).
+
+5. The method (400) of claim 1,
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2
+
+wherein the identifying indicia are included in a network access request,
+wherein the received information that identifies the at least one home agent
+comprises a hostname, further comprising resolving (522, 524) the hostname
+to one or more IP addresses before sending a response to the network access
+request to the wireless terminal, and
+
+wherein the registration request is received after the response to the
+
+network access request is sent to the wireless terminal.
+
+6. The method (400) of claim 5, wherein resolving the hostname is
+
+undertaken in connection with a DNS (512).
+
+7. The method (400) of claim 5, wherein resolving the hostname is
+
+accomplished locally.
+
+8. The method (400) of claim 1, further comprising:
+
+receiving, at said base station (506), a list of a plurality of home agents;
+and
+
+selecting, at said base station (506), one home agent from within the list
+of home agents and routing registration information to the selected home
+
+agent.
+
+9. The method (400) of claim 8, wherein the list is an ordered list.
+
+10. The method (400) of claim 1, further comprising registering the wireless
+terminal (504) with the home agent (510) through utilization of a micromobility
+protocol, MMP.
+
+11. A base station (506, 1200), comprising:
+a memory (1204) that retains instructions for:
+receiving identifying indicia associated with a subscriber from a
+wireless terminal (504) when the wireless terminal requests access to a
+network;
+
+providing the identifying indicia to a authentication server (508);
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3
+
+receiving, at said base station (506, 1200), a profile associated
+with the subscriber (504), wherein there are a plurality of home agents
+to which registration information from the wireless terminal could be
+routed, wherein the plurality of home agents are associated with
+different mobile virtual network operators, wherein the profile identifies
+one or more home agent that are assigned to a mobile virtual network
+operator associated with the subscriber (510), and wherein the profile is
+received from the authentication server; and
+
+routing registration information from said wireless terminal to an
+identified home agent, wherein routing registration information
+comprises receiving a registration request at the base station and
+transmitting the registration request from the base station to the
+identified home agent; and
+
+a processor (1202) that executes the instructions.
+
+12. The base station (506, 1200) of claim 11, wherein the authentication
+server is a mobile virtual network operators or MVNO-specific authentication
+
+server.
+
+13. A method for determining by an authentication server one or more
+home agents to associate with a wireless terminal (504), comprising:
+
+receiving identifying indicia associated with a subscriber using the
+
+wireless terminal (504);
+
+determining, at the authentication server, one or more home agents
+(510) that are assigned to a mobile virtual network operator associated with
+the subscriber using the wireless terminal based at least in part upon the
+identifying indicia wherein determining the one or more home agents
+comprises accessing a database that indexes home agents with particular
+mobile virtual network operators; and
+
+sending to a base station (506) that is communicatively coupled to the
+wireless terminal, a profile associated with the subscriber using the wireless
+terminal, wherein the profile comprises information that identifies one or more
+
+home agents (510).
+
+--- PAGE 4 ---
+15
+
+20
+
+25
+
+30
+
+14. The method of claim 13, further comprising:
+creating the profile associated with the wireless terminal, and ;
+encapsulating the information that identifies the at least one home
+
+agent (510) within the profile.
+
+15. The method of claim 13, wherein the information that identifies the at
+
+least one home agent (510) comprises a hostname.
+
+16. A authentication server (508), comprising:
+
+means for receiving identifying indicia related to a subscriber from a
+base station (506) that is communicatively coupled to the subscriber;
+
+means for determining a mobile virtual network operator associated with
+the subscriber based at least in part upon the identifying indicia;
+
+means for determining one or more home agents (510) assigned to the
+mobile virtual network operator, wherein determining the one or more home
+agents comprises accessing a database that indexes home agents with
+particular mobile virtual network operators; and
+
+means for assigning the one or more home agents (510) to the
+subscriber for utilization in registration of a wireless terminal (504) utilized by
+the subscriber; and
+
+means for sending to the base station (506) a profile associated with
+the subscriber, wherein the profile comprises information that identifies the
+
+one or more home agents (510).
+
+17. The authentication server (508) of claim 16, wherein the identifying
+
+indicia is a network address indicator, NAI.
+
+18. Amachine-readable medium having stored thereon machine-executable
+
+instructions for carrying out the method of any of claims 1 to 10.

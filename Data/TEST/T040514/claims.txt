@@ -1,0 +1,101 @@
+--- PAGE 1 ---
+42 MAIN REQUEST
+
+CLAIMS
+
+1. A self-testing speed sensor (10) comprising:
+
+a sensing element (28) configured to sense a motion parameter of an object (12), the
+sensing element (28) being a Hall-effect sensing device or a magneto resistive sensing device;
+
+a signal conditioning device (30) in communication with an output of the sensing
+element, the signal conditioning device configured to generate a motion signal related to the
+sensed motion parameter of the object;
+
+a magnetic induction device (26) configured to induce a magnetic field upon the sensing
+element (28) to simulate the motion parameter of the object (12); and
+
+a driving circuit (24) configured to supply the magnetic induction device (26) with a
+periodic signal causing the magnetic induction device to induce a periodic magnetic field upon
+the sensing element (28);
+
+wherein, when the periodic magnetic field is induced upon the sensing element (28), the
+signal conditioning device (30) is further configured to generate an operability indication signal
+indicating the operability of the sensing element; and
+
+characterised in that:
+
+the operability indication signal is generated independently of the presence of the object
+(12); and
+
+the sensing element (28), the signal conditioning device (30), the magnetic induction device
+
+(26), and the driving circuit (24) are all contained in a housing (18).
+
+2. The self-testing sensor of claim 1, wherein the signal conditioning device (30) is configured
+
+to provide the motion signal and the operability indication signal to an indicator device (16).
+
+3. The self-testing sensor of any of the preceding claims, wherein the magnetic induction device
+
+(26) comprises one or more coils positioned in proximity to the sensing element.
+
+4. The self-testing sensor of any of the preceding claims wherein the operability indication
+
+signal is further indicative of the operability of the signal conditioning device (30).
+
+5. The self-testing sensor of any of the preceding claims, wherein the operability indication
+
+signal is generated independently of the motion parameter of the object (12).
+
+--- PAGE 2 ---
+43 MAIN REQUEST
+
+6. The self-testing sensor of any of the preceding claims, further comprising a self-test enable
+switch (32) connected between the driving circuit (24) and a power supply (14), wherein, when the
+self-test enable switch is activated, the power supply supplies power to the driving circuit to cause
+
+the driving circuit to supply the periodic signal.
+
+7. The self-testing sensor of claim 6, wherein the power supply (14) is external to the housing,
+wherein the self-test enable switch is at least partially contained in the housing, and wherein the
+housing comprises a power supply terminal (20) connecting the external power supply to both the
+
+self-test enable switch and the signal conditioning device.
+
+8. The self-testing sensor of any of the preceding claims, wherein the object is a rotating object
+
+(12) comprising ferrous metal.
+
+9. The self-testing sensor of any of the preceding claims, wherein the self-testing sensor is
+configured to operate in any of three modes, a first mode being a self-test mode occurring before the
+self-testing sensor is installed near the object, a second mode being a self-test mode occurring when
+the self-testing sensor is installed near the object but when the object is stationary, and a third mode
+
+being an object-testing mode to sense the motion parameter of the object.
+
+10. A method of performing a self test, the method comprising:
+
+supplying (34) a periodic magnetic field upon a sensing element of a speed sensor that is
+configured to sense a parameter of an object, the sensing element being a Hall-effect sensing
+device or a magneto resistive sensing device, wherein supplying the periodic magnetic field
+comprises providing, via a driving circuit, a predetermined pulse train to a signal induction
+device to induce the periodic magnetic field upon the sensing element to simulate an effect of the
+parameter of the object; and
+
+receiving (36) an output from the sensing element indicating the operability of the
+sensing element;
+
+wherein the output is received independently of the parameter of the object and
+independently of the presence of the object; and
+
+wherein the sensing element, the signal induction device, and the driving circuit are all
+
+contained in a housing.
+
+--- PAGE 3 ---
+44 MAIN REQUEST
+
+11. The method ofclaim 10, wherein the method further comprises allowing a user to prompt the
+
+self test.

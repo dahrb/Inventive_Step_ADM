@@ -1,0 +1,260 @@
+--- PAGE 1 ---
+20
+
+P8273EP00 2 February 2012
+
+17/24
+
+Claims
+
+A handheld device (1) for determining the location of a physical object (21, 22,
+23) which is stored in one of a plurality of storage containers (31, 32, 33, 34), the
+
+device (1) comprising:
+
+a reader system (1.1) configured to read on the storage container (31, 32, 33,
+34) in which the physical object (21, 22, 23) is placed a visual code (31.1, 32.1,
+33.1) which is provided on each of the containers and comprises a unique
+
+container identifier (31.2):
+
+a data entry system (1.2) configured to capture in the handheld device (1) object
+data (21.2) identifying the physical object (21, 22, 23) and to store the object
+data (21.2) in a data store (1.4) linked to the container identifier (31.2) of the
+storage container (31, 32, 33, 34) in which the physical object (21, 22, 23) is
+
+placed;
+
+the data entry system (1.2) being further configured to capture in the handheld
+
+device (1) query data (21.1) which defines the physical object (21, 22, 23); and
+
+a query module (1.6) configured to determine the container identifier (31.2) of the
+storage container (31, 32, 33, 34) containing the physical object (21, 22, 23) by
+comparing the query data (21.1) to the object data (21.2) in the data store (1.4),
+and to indicate the location of the physical object (21, 22, 23) by showing on a
+display of the handheld device (1) the container identifier (31.2) of the storage
+
+container (31, 32, 33, 34) containing the physical object (21, 22, 23).
+
+--- PAGE 2 ---
+P8273EP00 2 February 2012
+
+2.
+
+5
+3.
+
+10
+
+15
+4.
+
+20
+
+18/24
+
+The handheld device (1) of claim 1, wherein the data entry system (1.2) is further
+configured to store with the container identifier (31.2) in the data store (1.4) a
+container type which is included in the visual code (31.1, 32.1, 33.1) and defines a
+visual representation of the storage container (31, 32, 33, 34); and the query
+module (1.6) is further configured to indicate the location of the physical object
+(21, 22, 23) by showing on the display the visual representation of the storage
+
+container (31, 32, 33, 34) containing the physical object (21, 22, 23).
+
+The handheld device {1} of one of claims 1 or 2, wherein the data entry system
+(1.2) comprises a camera for recording a picture of the physical object (21, 22,
+23); the data entry system (4.2) is further configured to capture the query data
+(21.1) by showing on the display pictures of physical objects (21, 22, 23) and
+receiving a user selection of one of the pictures; and the query module (1.6) is
+further configured to determine the container identifier (31.2) of the storage
+container (31, 32, 33, 34) containing the physical object (21, 22, 23) by
+comparing the picture selected by the user to pictures stored in the data store
+
+(1.4).
+
+The handheld device (1) of one of claims 1 to 3, wherein the data entry system
+(1.2) is further configured to capture location information which defines the
+location of the storage container (31, 32, 33, 34) in which the physical object (21,
+22, 23} is placed; and the query module (1.6) is further configured to indicate the
+location of the physical object (21, 22, 23) by showing on the display the location
+information of the storage container (31, 32, 33, 34) containing the physical
+
+object (21, 22, 23).
+
+--- PAGE 3 ---
+P8273EP00 2 February 2012
+
+20
+
+19/24
+
+The handheld device (1) of one of claims 7 to 4, wherein the reader system (1.1)
+comprises a camera for recording a picture of the visual code (31.1, 32.1, 33.1)
+and a code scanner configured to detect the container identifier (31.2) in the
+
+picture of the visual code (31.1, 32.1, 33.1).
+
+The handheld device (1) of one of claims 1 to 5, wherein the reader system (1.1) is
+configured to read at least one of: a QR code, a bar code, and an alphanumeric
+
+code.
+
+A method of determining the location of a physical object (21, 22, 23) which is
+stored in one of a plurality of storage containers (31, 32, 33, 34), the method
+
+comprising:
+
+reading with a handheld device (1) on the storage container (31, 32, 33, 34) in
+which the physical object (21, 22, 23) is placed a visual code (31.1, 32.1, 33.4)
+which is provided on each of the containers (31, 32, 33, 34) and comprises a
+
+unique container identifier (31.2);
+
+capturing in the handheld device (1) object data (21.2) identifying the physical
+
+object (21, 22, 23);
+
+storing by the handheld device (1) in a data store (1.4) the object data (21.2)
+linked to the container identifier (31.2) of the storage container (31, 32, 33, 34)
+
+in which the physical object (21, 22, 23) is placed;
+
+capturing in the handheld device (1) query data (21.1) which defines the physical
+
+object (21, 22, 23);
+
+--- PAGE 4 ---
+20
+
+P8273EP00 2 February 2012
+
+20/24
+
+determining by the handheld the container identifier (31.2} of the storage
+container (37, 32, 33, 34) containing the physical object (21, 22, 23) by
+comparing the query data (21.1) to the object data (21.2) in the data store (1.4);
+
+and
+
+indicating the location of the physical object (21, 22, 23) by showing on a display
+of the handheld device (1) the container identifier (31.2) of the storage container
+
+(31,32, 33, 34) containing the physical object (21, 22, 23).
+
+The method of claim 7, wherein the visual code (31.1, 32.1, 33.1) includes a
+container type defining a visual representation of a storage container (31, 32, 33,
+34), the handheld device (1) stores in the data store (1.4) the container type with
+the container identifier (31.2), and indicating the location of the physical object
+(21, 22, 23) includes showing on the display the visual representation of the
+
+storage container (31, 32, 33, 34) containing the physical object (21, 22, 23).
+
+The method of one of claims 7 or 8, wherein capturing the object data includes
+recording a picture of the physical object (27, 22, 23) using a camera of the
+handheld device (1}, capturing the query data (21.1) includes showing on the
+display of the handheld device (1) pictures of physical objects (21, 22, 23) and
+receiving at the handheld device (1) a user selection of one of the pictures, and
+determining the container identifier (31.2) of the storage container (31, 32, 33,
+34) containing the physical object (21, 22, 23) includes comparing the picture
+
+selected by the user to pictures stored in the data store (1.4).
+
+The method of one of claims 7 to 9, wherein the method further comprises
+
+capturing in the handheld device (1) location information which defines the
+
+--- PAGE 5 ---
+P8273EP00 2 February 2012
+
+21/24
+
+location of the storage container (31, 32, 33, 34) in which the physical object (21,
+22, 23) is placed; and indicating the location of the physical object (21, 22, 23)
+includes showing on the display the location information of the storage container
+
+(31, 32, 33, 34) containing the physical object (21, 22, 23).
+
+The method of one of claims 7 to 10, wherein the physical object (21, 22, 23) is
+stored in one of a plurality of plastic storage containers (31, 32, 33, 34); and the
+storage containers (31, 32, 33, 34) are provided with at least one of: a QR code, a
+
+bar code, and an alohanumeric code.
+
+A computer program product comprising a computer readable medium having
+stored thereon computer program code which directs a processor of a handheld
+
+device (1) to:
+
+read on a storage container (31, 32, 33, 34) in which at least one physical object
+(21, 22, 23) is placed a visual code (31,1, 32.1, 33.1) which is provided on the
+
+container and comprises a unique container identifier (31.2);
+
+capture object data (21.2) identifying the physical object (21, 22, 23);
+
+store in a data store (1.4) the object data (21.2) linked to the container identifier
+(31.2) of the storage container (31, 32, 33, 34) in which the physical object (21,
+
+22, 23) is placed;
+
+capture query data (21.1) which defines the physical object (21, 22, 23);
+
+--- PAGE 6 ---
+15
+
+20
+
+P8273EP00 2 February 2012
+
+13.
+
+14,
+
+22/24
+
+determine the container identifier (31.2) of the storage container (31, 32, 33, 34)
+comaining the physical object (27, 22, 23) by comparing the query data (21.1) to
+
+the object data (21.2) in the data store (1.4); and
+
+indicate the location of the physical object (21, 22, 23) by showing on a display of
+the handheld device (1) the container identifier (34.2) of the storage container
+
+(31, 32, 33, 34) containing the physical object (21, 22, 23).
+
+The computer program product of claim 12, comprising further computer program
+code which directs the processor of the handheld device (1) to store with the
+container identifier (31.2) in the data store (1.4) a container type which is included
+in the visual code (31.1, 32.1, 33.1) and defines a visual representation of a
+storage container (31, 32, 33, 34), and to indicate the location of the physical
+object (21, 22, 23) by showing on the display the visual representation of the
+
+storage container (31, 32, 33, 34) containing the physical object (21, 22, 23).
+
+The computer program product of claim 12 or 13, comprising further computer
+program code which directs the processor of the handheld device (1) to record
+with the object data (21.2) a picture of the physical object (21, 22, 23) using a
+camera of the handheld device (1), and to capture the query data (21.1) by
+showing on the display of the handheld device (1) pictures of physical objects (21,
+22, 23) and receiving a user selection of one of the pictures, and to determine the
+container identifier (37.2) of the storage container (31, 32, 33, 34) containing the
+physical object (21, 22, 23) by comparing the picture selected by the user to
+
+pictures stored in the data store (1.4).
+
+--- PAGE 7 ---
+P8273EP00 2 February 2012
+
+15.
+
+23/24
+
+The computer program product of 12 to 14, comprising further computer program
+code which directs the processor of the handheld device (1) to capture location
+information which defines the location of the storage container (31, 32, 33, 34} in
+which the object is placed, and to indicate the location of the physical object (21,
+22, 23) by showing on the display the location information of the storage
+
+container (31, 32, 33, 34) containing the physical object (21, 22, 23).

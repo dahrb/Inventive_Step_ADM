@@ -1,0 +1,75 @@
+TITLE:
+Display system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A display for providing information relating to an object relative to the display is disclosed. The display includes a plurality of pixels, and a plurality of light sensors. An individual light sensor of the plurality of light sensors is provided near an individual pixel of the plurality of pixels. An individual light sensor of the plurality of light sensors is configured to detect light. The information relating to the object relative to the display may be provided by correlating the amount of detected light from the plurality of light sensors to the information relating to the object.
+
+CLAIMS:
+1. A display for providing information relating to an object relative to the display, the display comprising:
+a plurality of pixels; and
+a plurality of light sensors, wherein an individual light sensor of the plurality of light sensors is provided near an individual pixel of the plurality of pixels, and wherein an individual light sensor of the plurality of light sensors is configured to detect light;
+wherein the information relating to the object relative to the display may be provided by correlating the amount of detected light from the plurality of light sensors to the information relating to the object.
+2. The display of claim 17 wherein the information relating to the object is a position of the object.
+3. The display of claim 1, wherein the information relating to the object is a motion of the object.
+4. The display of claim 3, wherein the motion of the object is a direction of the motion of the object.
+5. The display of claim 3, wherein the motion of the object is a speed of the motion of the object.
+6. The display of claim 1, wherein the information relating to the object is an acceleration of the object.
+7. The display of claim 1, wherein an individual light sensor of the plurality of light sensors is configured to detect light intensity.
+8. The display of claim 1, wherein an individual light sensor of the plurality of light sensors is configured to detect an amount of light.
+9. The display of claim 8, wherein the amount of light detected by an individual light sensor is an amount of light relative to the plurality of light sensors.
+10. The display of claim 8, wherein the amount of light is an amount of reflected light.
+11. The display of claim 10, wherein the reflected light is light reflected off of the object.
+12. The display of claim 1, wherein the plurality of pixels are configured to emit light.
+13. The display of claim 12, wherein the plurality of light sensors are configured to detect a portion of light emitted from the plurality of pixels, and which portion of light is reflected off of the object.
+14. The display of claim 1, further comprising a backlight provided below the plurality of pixels and the plurality of light sensors.
+15. The display of claim 1, wherein one light sensor is provided near at least one pixel.
+16. The display of claim 1, wherein one light sensor is provided near four pixels.
+17. The display of claim 1, wherein an individual pixel of the plurality of pixels further comprises at least three sub-pixels.
+18. The display of claim 1, wherein the display is a color display.
+19. The display of claim 1, wherein correlating the amount of detected light from the plurality of light sensors to the information relating to the object further comprises:
+identifying an individual light sensor having a maximum amount of reflected light; and
+correlating the location of the individual light sensor to the information relating to the object.
+20. The display of claim 19, wherein the information relating to the object is a position of the object.
+21. The display of claim 19, wherein the information relating to the object is a motion of the object.
+22. The display of claim 21, wherein the motion of the object is a direction of the motion of the object.
+23. The display of claim 21, wherein the motion of the object is a speed of the motion of the object.
+24. A handheld device having a display for providing information relating to an object relative to the display, the handheld device comprising:
+data processing electronics; and
+a display coupled to the data processing electronics, wherein the display further comprises:
+a plurality of pixels; and
+a plurality of light sensors, wherein an individual light sensor of the plurality of light sensors is provided near an individual pixel of the plurality of pixels, and wherein an individual light sensor of the plurality of light sensors is configured to detect light;
+wherein the information relating to the object relative to the display may be provided by correlating the amount of detected light from the plurality of light sensors to the information relating to the object.
+25. The handheld device of claim 24, wherein the object is at least one of a stylus, pen, pointing device, and finger.
+26. The handheld device of claim 24, wherein the information relating to the object is a position of the object.
+27. The handheld device of claim 24, wherein the information relating to the object is a motion of the object.
+28. The handheld device of claim 24, wherein the information relating to the object is an acceleration of the object.
+29. The handheld device of claim 24, wherein an individual light sensor of the plurality of light sensors is configured to detect light intensity.
+30. The handheld device of claim 24, wherein an individual light sensor of the plurality of light sensors is configured to detect an amount of light.
+31. The handheld device of claim 24, further comprising a backlight provided below the plurality of pixels and the plurality of light sensors.
+32. The handheld device of claim 24, wherein the display is a color display.
+33. A method of detecting information relating to an object near a screen, the screen having a plurality of pixels and a plurality of light sensors, the method comprising:
+receiving data corresponding to levels of light from the plurality of light sensors, wherein an individual light sensor is provided near an individual pixel; and
+correlating the information relating to the object near the screen to the received data.
+34. The method of claim 33, wherein the information relating to the object is at least one of position information, velocity information, motion information, and acceleration information.
+35. The method of claim 33, wherein receiving data corresponding to levels of light further comprises receiving data corresponding to light intensity.
+36. The method of claim 33, wherein receiving data corresponding to levels of light further comprises receiving data corresponding to light amount.
+37. The method of claim 33, wherein correlating the information relating to the object near the screen to the received data further comprises providing a coordinate position of the object relative to the screen.
+38. The method of claim 33, wherein correlating the information relating to the object near the screen to the received data further comprises removing the lighting effects of the pixels from the light sensors.
+39. The method of claim 38, wherein removing the lighting effects of the pixels from the light sensors further comprises using a comparison table of known lighting effects caused by the pixels.
+40. A display comprising:
+a plurality of pixels;
+a plurality of light sensors, wherein an individual light sensor is provided near at least one pixel of the plurality of pixels;
+a graphics controller coupled to the plurality of pixels; and
+a logic unit coupled to the plurality of light sensors.
+41. The display of claim 40, wherein the logic unit is configured to provide information relating to the object.
+42. The display of claim 41, wherein information relating to the object is a position of the object.
+43. The display of claim 41, wherein the information relating to the object is a motion of the object.
+44. The display of claim 41, wherein the information relating to the object is an acceleration of the object.
+45. The display of claim 40, wherein an individual light sensor of the plurality of light sensors is configured to detect light intensity.
+46. The display of claim 40, wherein an individual light sensor of the plurality of light sensors is configured to detect an amount of light.
+47. The display of claim 40, further comprising a backlight provided below the plurality of pixels and the plurality of light sensors.
+48. The display of claim 40, wherein the display is a color display.
+49. The display of claim 40, wherein the logic unit is part of the graphics controller.

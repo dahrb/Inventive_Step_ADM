@@ -1,0 +1,236 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+EP 08 782 367.0
+MTI-2541.EP.0 / 68354.118300
+
+1
+
+MAIN REQUEST
+
+What is claimed is:
+
+1. An integrated circuit device adapted for coupling to a serial data bus (126),
+
+comprising:
+
+16729578
+
+serial interface and control logic (114), the serial interface and control logic
+(114) having an input coupled to a first connection pin (124);
+
+an analog-to-digital converter (ADC) (110);
+
+an address register (112) having data inputs coupled to respective digital
+outputs of the ADC (110) and an address detection control input coupled to the serial
+interface and control logic (114), wherein logic levels on the respective digital outputs
+of the ADC (110) are stored in the address register (112) when the serial interface and
+control logic (114) applies an address detection signal to the address detection control
+input during an address detection operation;
+
+characterized by
+
+a second external connection pin (120) which is used in a first operation mode
+of the device for programming one of a plurality of addresses into the device (102)
+and in a second operation mode of the device (102) to perform a function other than
+said address programming function,
+
+a function unit(104) for performing said function;
+
+an internal pull-up or pull down resistor (116); and
+
+a switch (106) for switching between said first and second operation mode,
+said switch (116) being coupled to the second external connection pin (120), to an
+input of the ADC (110), to the function unit (104), to said internal pull-up or pull-
+down resistor (116) and to a control port coupled to the serial interface and control
+logic (114), wherein during the first operation mode the switch (116) is controlled to
+couple the second external connection pin (120) with the internal pull-up or pull-down
+resistor (116) and the input of the ADC (110) and during the second operation mode
+the switch (116) is controlled to disconnect the internal pull-up or pull-down resistor
+(116) and the ADC (110) from the second external connection pin (120) and couple
+
+the function unit (104) with the second external connection pin (120);
+
+--- PAGE 2 ---
+20
+
+EP 08 782 367.0
+MTI-2541.EP.0 / 68354.118300
+
+2
+
+wherein the serial interface and control logic (114) causes the switch (106) to
+operate in the first operation mode, wherein the internal pull-up or pull down resistor
+(116) forms a voltage divider with another resistor (118) connected externally to the
+second connection pin (120), and
+
+wherein the ADC converts an analog value determined by said voltage divider
+to a multi-bit digital address that is stored in the address register(112); and
+
+thereafter the serial interface and control logic (114) controls the switch (106)
+
+according to the second operation mode.
+
+2. The device according to claim 1, wherein the certain analog value is a current.
+3. The device according to claim 1, wherein the certain analog value is a voltage.
+4. The device according to claim 1, wherein an external contact, sensor or control
+
+(128) can be connected externally to said second external pin for coupling with said function
+
+unit (104).
+
+5. The device according to one of the preceding claims, further comprising a
+
+power-on-reset (POR) circuit (108) coupled to the serial interface and control logic (114),
+
+wherein:
+
+16729578
+
+when a POR event is detected by the POR circuit (108),
+
+the serial interface and control logic (114) enters into the first operating mode,
+and
+
+when a certain number of clocks are detected on the first external connection
+pin (124) by the serial interface and control logic (114), the serial interface and
+control logic (114) causes said address register (112) to latch an output value provided
+by said ADC (110) and thereafter controls said switch according to the second
+
+operation mode.
+
+--- PAGE 3 ---
+20
+
+EP 08 782 367.0
+MTI-2541.EP.0 / 68354.118300
+
+6. The device according to one of the preceding claims 1-4, wherein:
+
+when an address detection command is detected on the external serial data bus
+(126) by the serial interface and control logic (114),
+
+the serial interface and control logic (114) enters into the first operating mode,
+and
+
+when a certain number of clocks are detected on the first external connection
+pin (124) or when a latch address command is detected on the first external
+connection pin (124) by the serial interface and control logic (114), the serial interface
+and control logic (114) causes said address register (112) to latch an output value
+provided by said ADC (110) and thereafter controls said switch (106) according to the
+
+second operation mode.
+
+7. The device according to claim 5 or 6, wherein the certain number of clocks
+
+comprises eight clocks or a single clock edge.
+
+8. The device according to one of the preceding claims, wherein the ADC is a
+FLASH ADC.
+9. The device according to one of the preceding claims 5-8 in combination with
+
+claim 3 or 4, wherein the another resistor (118) is coupled to a power supply common and the
+internal pull-up or pull-down resistor (116) is coupled to a power supply voltage, or the
+another resistor (118) is coupled to a voltage reference common and the internal pull-up or
+pull-down resistor (116) is coupled to a reference voltage from the voltage reference, or the
+another resistor (118) is coupled to a power supply voltage and the internal pull-up or pull-
+down resistor (116) is coupled to a power supply common, or the another resistor (118) is
+coupled a reference voltage from a voltage reference and the internal pull-up or pull-down
+
+resistor (116) is coupled to a common of the voltage reference.
+
+16729578
+
+--- PAGE 4 ---
+EP 08 782 367.0
+MTI-2541.EP.0 / 68354.118300
+
+10. The device according to one of the preceding claims, wherein the second
+external connection pin (124) is coupled to a digital processor (130) selected from the group
+consisting of a microprocessor, microcontroller, a digital signal processor, an application
+specific integrated circuit (ASIC), and a programmable logic array (PLA) and wherein the
+second external connection pin (124) is coupled to a serial data bus (126) selected from the
+group consisting of Inter-Integrated Circuit (I’C) bus, Serial Peripheral Interface (SPI) Bus,
+
+and single connection input-output (SCIO) bus.
+
+11. The device according to claim 4, wherein the another resistor (118) has a value
+
+resistance to not affect operation of said external contact, sensor or control (128).
+
+12. The device according to one of the preceding claims 2-11, wherein the serial
+interface and control logic (114), the internal resistor (116), the ADC (110), the primary
+function (104), the switch (106), and the address register (112) are fabricated on an integrated
+circuit die, wherein the integrated circuit die is optionally enclosed in a low pin count
+
+integrated circuit package.
+
+16729578
+
+--- PAGE 5 ---
+20
+
+EP 08 782 367.0
+MTI-2541.EP.0 / 68354.118300
+
+13. A method for programming a multi-bit digital address into an integrated
+
+circuit device (102) having a first external connection pin (120) which in a first mode has an
+
+address programming function and in a second mode has a function different from said
+
+address programming function and a second external connection pin (124) for connection to a
+
+serial data bus (126), said method comprising the steps of:
+
+16729578
+
+switching a functionality provided by the first external connection pin (120) to
+said address programming function wherein the first external connection pin (120) is
+coupled within said device (102) with the input of an internal ADC (110) and an
+internal pull-up or pull down resistor (116);
+during said address programming function:
+feeding a certain analog value provided by a voltage divider formed by
+the internal pull-up or pull-down resistor (116) and another resistor (1180 externally
+connected to said first external connection pin (120) to the ADC (110);
+converting the certain analog value into a digital value;
+using the digital value to form an address value; and
+storing the address; and
+switching the functionality provided by the first external connection to the
+function different from said address programming function, wherein the internal pull-
+up or pull-down resistor (116) and the ADC (110) are disconnected from the first
+external connection pin and a function module for performing the function is coupled
+
+with the first external connection pin (120).
+
+--- PAGE 6 ---
+EP 08 782 367.0
+MTI-2541.EP.0 / 68354.118300
+
+14. The method according to claim 13, further comprising the steps of:
+
+entering the step of switching the functionality provided by the first external
+connection pin (120) into an address programming mode when a power-on-reset is
+detected or when an address detection command is detected on the second external
+connection pin (124);
+
+latching an output value provided by the ADC (110) into a register (112) upon
+detecting when a certain number of clocks has occurred on the second external
+connection pin (124) or when a latch address command is detected on the second
+external connection pin (124); and
+
+switching the functionality of the first external connection pin (120) to the
+
+function different from said address programming function.
+
+15. The method according to claim 13 or 14, further comprising the step of
+
+removing power to the ADC (110) after switching the first external connection pin (120) to
+
+the function different from said address programming function.
+
+16729578

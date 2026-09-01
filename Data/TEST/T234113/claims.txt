@@ -1,0 +1,74 @@
+--- PAGE 1 ---
+“we
+
+Application No.: 99 960 006.7-1247
+
+Applicant: Samsung Electronics Co., Ltd.
+Our Retf.: EP19406RKmle
+Date: April 28, 2017
+
+MAIN REQUEST
+
+A method for interleaving input data having a size of L, comprising the steps of:
+sequentially storing the input data in a memory;
+determining whether the input data size L is a multiple of 2", wherein m > 1;
+
+if the input data size is not a multiple of 2", determining a size N of a virtual address area
+by adding (811) an offset value, OSV, to the input data size L, wherein the size N of the
+
+virtual address area is Nox 2, wherein N, is an area number and L + OSV = Ngx2”;
+
+defining a plurality of address generation areas (N;,N2,N3...Ng) having a size of 2™ in the
+virtual address area of size N;
+
+generating N virtual random addresses including L virtual addresses indicating the input
+data of size L and OSV virtual addresses not indicating the input data;
+
+identifying, for each of the L virtual random addresses, a number of the OSV virtual
+
+addresses each of whose value is smaller than the each of the L virtual random addresses;
+
+generating random addresses by subtracting, for the each of the L virtual random
+addresses, the number of the OSV virtual addresses whose value is smaller than the each
+of the L virtual random addresses from the each of the L virtual random addresses; and
+
+reading the stored input data from the memory using the generated random addresses.
+
+The method as claimed in claim 1, wherein the random address is a pseudo noise, PN,
+
+sequence.
+
+The method as claimed in claim 1, wherein the offset value is a certain value to be added to
+a binary value obtained by converting the input data size into the binary value, such that the
+number of consecutive zero bits from the least significant bit of the binary value becomes at
+
+least more than one.
+A device for interleaving input data having a size of L, comprising:
+
+a memory (112) adapted to sequentially store input data; and
+
+--- PAGE 2 ---
+an address generator (111) adapted to if the input data size is not a multiple of 2”,
+determine whether the input data size L is a multiple of 2, wherein m > 1, determine a size
+N of a virtual address area by adding an offset value, OSV, to the input data size L wherein
+the size N of the virtual address area is Ng x 2” where m > 1, wherein Ng is an area
+number and L + OSV = N,x2™, define a -plurality of address generation areas
+(N;,No,N3...Ng) having a size of 2” in the virtual address area of size N, and generate N
+virtual random addresses including L virtual addresses indicating the input data of size L
+and OSV virtual addresses not indicating the input data; identify, for each of the L virtual
+random addresses, a number of the OSV virtual addresses each of whose value is smaller
+than the each of the L virtual random addresses; and generate random addresses by
+subtracting, for the each of the L virtual random addresses, the number of the OSV virtual
+addresses whose value is smaller than the each of the L virtual random addresses from the
+
+each of the L virtual random addresses,
+
+wherein the stored input data is read from the memory using the generated random
+
+addresses.
+
+The device as claimed in claim 4, wherein the offset value is a certain value to be added to
+a binary value obtained by converting the input data size into the binary value, such that the
+number of consecutive zero bits from the least significant bit of the binary value becomes at
+
+least more than one.

@@ -1,0 +1,52 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+35
+
+l
+
+57. 04. 10. 201
+Claims
+1. A data processor comprising:
+
+an instruction scheduler (7) for scheduling instructions to be executed
+by the data processor; and
+
+a trace unit coupled to the instruction scheduler for receiving trace data
+relating to scheduled instructions, the trace unit having a trace output for
+connection with an external device, a trace output buffer (21) connected to the
+trace output for storing trace data prior to passing it to the trace output,
+characterised by a trace impact counter (20) connected to the trace output
+buffer (21) and to the scheduler (7),
+
+wherein, in use, the trace output buffer (21) sends buffer occupancy
+data to the scheduler (7), the scheduler pauses the scheduling of instructions
+based on the buffer occupancy data and sends an indication of the pause of
+scheduling to the trace impact counter (20), and the trace impact counter (20)
+adds the number of cycles for which the scheduling of instructions has been
+
+paused to trace data sent to the trace output buffer (21).
+
+2. A data processor according to claim 1, wherein the buffer occupancy
+
+data is an indication that the trace output buffer is full.
+
+3. A method of providing trace data from a data processor, the data
+processor including a scheduler for scheduling instructions to he executed by
+the data processor and trace unit including a trace output buffer for storing
+trace data prior to output of the trace data to an external device, comprising the
+steps of:
+
+sending an indication of space available in the trace output buffer to the
+scheduler, pausing the scheduling of instructions based on the indication of
+space available, and including in the trace data the number of cycles for which
+
+the scheduling of instructions has been paused.
+
+4, A method according to claim 3, wherein the indication of space
+available in the trace output buffer is an indication that the trace output buffer is
+full.

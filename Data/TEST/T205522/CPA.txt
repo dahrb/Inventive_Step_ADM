@@ -1,0 +1,56 @@
+Title: Aircraft descent guide system and method for creating descent guidance information
+
+Abstract: An aircraft navigational system includes a digital computer, a first visual output for displaying to an aircrew a geometrical representation of an optimum descent guideslope relative to a symbol representing the location of the aircraft, and a second visual output for displaying optimum descent guideslope information, such as altitude and distance, alphanumerically. The visual display provides guidance information to the aircrew to control the descent of the aircraft along an optimum descent guideslope which is referenced to a selected end of descent waypoint such as a destination airport or to an instrument approach marker. The guideslope is calculated in accordance with predetermined airspeed and altitude requirements with define a descent profile which is fuel efficient and which complies with aviation regulations regarding maximum airspeed limitations. The navigational system includes a keypad interfaced with the computer to allow the aircrew to enter data inflight to generate the visual and alphanumerical display of the optimum descent guideslope.
+
+Type: 
+US patent
+
+Claims: 
+
+What is claimed is:
+1. A method for guiding a descent of an aircraft, the method comprising the steps of:
+a. determining a position of the aircraft and providing a first output corresponding to the position;
+b. inputting information representing a lower descent position P0 as well as first and second aircraft descent parameters for conducting said descent;
+c. generating a descent guideslope which is formed by at least upper and lower descent legs, in which the lower descent leg includes the lower descent position P0 and an upper descent position P1, and the upper descent leg includes the upper descent position P1 and a further upper descent position P2, in a manner that a location of the upper descent position P1 relative to the lower descent position P0 is calculated as a function of the first descent parameters, and a location of the further upper descent position P2 relative to the upper descent position P1 is calculated as a function of the second descent parameters; and
+d. guiding the aircraft in response to the first output and the descent guideslope.
+2. The method as set forth in claim 1 wherein the inputting step includes inputting at least one of the aircraft descent parameters as an aircraft airspeed selected for said descent.
+3. The method as set forth in claim 2 wherein the inputting step includes at least one of said aircraft descent parameters as an aircraft airspeed to be flown between position P1 and position P0.
+4. The method as set forth in claim 3 additionally comprising the step of visually displaying the aircraft position relative to the descent guideslope in response to the first output and the descent guideslope.
+5. The method as set forth in claim 1 wherein the guideslope is formed in a manner that there is a change in a slope of the lower leg relative to a slope of the upper leg due to a difference between the first descent parameters and the second descent parameters.
+6. The method as set forth in claim 1 wherein:
+a. the location of position P1 is a function of a projected distance and a projected altitude to be flown by the aircraft when descending to position P0 in accordance with the first descent parameters; and
+b. the location of position P2 is a function of a projected distance and a projected altitude to be flown by the aircraft when descending from position P2 to position P1 in accordance with the second descent parameters.
+7. The method as set forth in claim 1 wherein:
+a. at least one of the descent legs is formed by a plurality of segments having end points whose locations are functions of the first and second aircraft descent parameters;
+b. one of the segments includes a calculated vertical component which is a function of a descent occurring during a change in projected aircraft airspeed from a higher airspeed to a lower airspeed; and
+c. another one of the segments includes a calculated vertical component which is a function of a descent occurring during a constant projected aircraft airspeed.
+8. The method as set forth in claim 1 wherein:
+a. at least one of the legs is formed by a plurality of descent segments, having upper end points and lower end points whose locations are functions of the first and second aircraft descent parameters; and
+b. a vertical altitude component and horizontal distance component of at least one of the descent segments is determined by first comparing a projected aircraft airspeed at the upper and lower end points, and when the projected airspeeds at the upper and lower end points are not equivalent, generating the horizontal component and vertical component as functions of an aircraft altitude change and a distance change during deceleration from the projected airspeed at the upper end point to the projected airspeed at the lower end point.
+9. The method as set forth in claim 1 wherein:
+a. the guideslope is formed by a plurality of descent segments having end points whose locations are a function of the first and second aircraft descent parameters; and
+b. in at least one of the descent segments the projected airspeed of the aircraft decreases from a higher airspeed to a lower airspeed so that (i) an altitude component of the segment having an upper end point E1, relative to the lower descent position P0 is calculated by determining a time to decelerate from the higher airspeed to the lower airspeed to generate a deceleration time, and then by multiplying the deceleration time by a descent rate of the aircraft, and (ii) a horizontal distance component of the descent segment relative to the lower descent position P0 is calculated by multiplying the deceleration time by a ground speed of the aircraft.
+10. The method as set forth in claim 9 wherein in at least one of the descent segments, the airspeed of the aircraft is nondecelerating and (i) a vertical altitude component of said at least one segment is an altitude between end point E1 and position P1, and (ii) a horizontal distance component of said at least one segment is calculated by determining a time for the aircraft to descend the altitude between end point E1 and position P1, and then by multiplying the descent time by the aircraft ground speed.
+11. The method as set forth in claim 1 wherein the descent is characterized by an aircraft operating transition from the second descent parameters to the first descent parameters.
+12. The method as set forth in claim 1 wherein the lower descent position P0 is located relative to a fixed geographical location.
+13. The method as set forth in claim 1 wherein the first descent parameters include an aircraft first operating airspeed, and the second descent parameters include an aircraft second operating airspeed which is different from the aircraft first operating airspeed.
+14. The method as set forth in claim 6 wherein:
+a. the distance and altitude of position P1 from position P0 is equal to the projected distance and altitude to be flown to position P0 in accordance with the first descent parameters; and
+b. the distance and altitude of position P2 from position P1 is equal to the projected distance and altitude to be flown to position P1 in accordance with the second descent parameters.
+15. A method of generating an informational slope for guiding an aircraft descent, the method comprising the steps of:
+a. providing information representing a lower descent position P0 as well as first and second aircraft descent parameters;
+b. calculating a first distance and a first altitude of a position P1 from position P0 as a function of a projected distance and altitude to be flown by the aircraft when descending to position P0 in accordance with the first descent parameters;
+c. calculating a second distance and a second altitude of a position P2 from position P1 as a function of a projected distance and altitude to be flown by the aircraft when descending to position P1 in accordance with the second operating parameters;
+d. forming the informational slope from positions P0, P1, and P2 ; and
+e. guiding the aircraft in response to the informational slope.
+16. The method as set forth in claim 15 wherein at least one of the first and second aircraft descent parameters is an aircraft airspeed selected for the descent.
+17. The method as set forth in claim 16 wherein the descent is characterized by an aircraft operating transition from the second descent parameters to the first descent parameters.
+18. The method as set forth in claim 17 wherein the first and second aiarcraft descent parameters include an aircraft airspeed to be flown between position position P1 and position P0.
+19. The method as set forth in claim 15 wherein the first descent parameters include an aircraft first operating airspeed, and the second descent parameters include an aircraft second operating airspeed which is different from the aircraft first operating airspeed.
+20. A method of generating an informational slope for guiding an aircraft descent, the method comprising the steps of:
+a. providing information representing a lower descent position P0 as well as first and second aircraft descent parameters;
+b. generating upper and lower descent legs which form the informational slope, in a manner that (i) the lower descent leg includes the lower descent position P0 and an upper descent position P1, and (ii) the upper descent leg includes the upper descent position P1 and a further upper descent position P2, and so that a location of the upper descent position P1 is calculated relative to the lower descent position P0 as a function of the first descent parameters, and then a location of the position P2 is calculated relative to the upper descent position P1 as a function of the second descent parameters; and
+c. guiding the aircraft in response to the informational slope.
+21. The method as set forth in claim 20 additionally comprising the step of providing a visual display of the informational slope.
+22. The method as set forth in claim 20 additionally comprising the step of providing a visual display of the informational slope in a manner that the visual display includes an aircraft symbol and an arc having a center which corresponds to the position P0 so that a distance between the aircraft symbol and the arc is representative of a distance between the aircraft and the informational slope, and the location of the aircraft symbol relative to the arc is indicative of the location of the aircraft relative to the informational slope.
+23. The method as set forth in claim 20 additionally comprising the step of providing a visual display that includes an alphanumeric display of the informational slope.

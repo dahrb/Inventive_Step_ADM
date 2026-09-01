@@ -1,0 +1,377 @@
+--- PAGE 1 ---
+Main Request:
+Set of Claims 1 to 42
+
+1. An interleaver (16), comprising:
+
+means for writing data elements sequentially by rows to a matrix of bit
+storage locations, the matrix comprising a first plurality of rows and a second
+plurality of columns;
+
+means for permuting the rows of the matrix;
+
+means for pseudo-randomly rearranging the data elements in each row in
+the matrix of bit storage locations in accordance with a linear congruential
+sequence recursion, wherein the linear congruential sequences associated with
+two distinct rows are different_but may, in the alternative, be the same-fer-atHeast
+bwo-rows; and
+
+means for reading the data elements sequentially by columns ferm-from
+
+the matrix of bit storage locations.
+
+2. The interleaver as claimed in claim 1, wherein the linear congruential
+sequences are different for at least two rows.
+
+23. | The interleaver as claimed in claim 1_or 2, wherein said means for
+permuting the rows of the matrix comprises:
+means for permuting the rows of the matrix in accordance with a bit
+
+reversal rule.
+4934. The interleaver of claim-4+8 any of the claims 1-2 3, wherein the
+linear congruential sequence recursion is generated according to the following
+
+equation:
+
+x(n+1) = (ax(n)+c) mod M,
+
+--- PAGE 2 ---
+where rn represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+
+the following conditions are satisfied:
+
+(i) ¢ is relatively prime to M;
+
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M;
+
+(iii) when M is a multiple of 4, a-1 must be a multiple of 4; and
+
+(iv) x(0) is an integer seed column index.
+
+23 4-5. The interleaver (16) of-claim+8 any of the claims 1 4 3, wherein
+the linear congruential sequence recursion is generated according to the
+
+following equation:
+x(n) = (a2) x(n+1)-c) mod M,
+
+where n represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+
+the following conditions are satisfied:
+
+(i) c is relatively prime to M;
+
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M;
+
+(iii) when M is a multiple of 4, a-1 must be a multiple of 4; and
+
+(iv) x(0) is an integer seed column index.
+
+246 6. The interleaver (16) of-claim-23 any of the claims 3-4 4-5, wherein a
+= 1.
+
+2567. The interleaver_(16) of claim-23-any of the claims 3-4 4-5, wherein
+the period M is a power of 2.
+
+--- PAGE 3 ---
+78. The interleaver (16) of any of the claims 3-44-5, wherein x(0) equals 0 for
+every row in the matrix of bits storage locations.
+
+89. The interleaver (16) as claimed in any of the claims 1-48, wherein said
+means for permuting and said means for pseudo-randomly rearranging, and-said
+
+means-forreading the-data-elements-physically rearrange the data elements in
+
+the matrix.
+
+910. The interleaver (16) as claimed in any of the claims 1-78, wherein said
+means for permuting, said means for pseudo-randomly rearranging, and said
+means for reading the data elements provide a sequence of final row and column
+indexes identifying the data elements to be read from the matrix.
+
+411. A turbo coder_(10), comprising:
+a first coder_(12) configured to receive a plurality of input bits in
+
+succession and generate a first plurality of output symbols therefrom;
+
+rows to a matrix of bit storage locations, the matrix comprising a first plurality of
+rows and a second plurality of columns;
+
+means for permuting the rows of the matrix;
+
+means for pseudo-randomly rearranging the data-elementsbits in each
+row in the matrix of bit storage locations in accordance with a linear congruential
+sequence recursion, where in the linear congruential sequences associated with
+
+fwo-rows: and
+
+--- PAGE 4 ---
+means for reading the dais clomentepits sequentially by columns ferfrom
+
+symbols therefrom.
+
+12. The turbo coder (10) as claimed in claim 11 or 12, wherein the linear
+congruential sequences are different for at least two rows.
+
+4213. The turbo coder (10) as claimed in claim +11 or 12, wherein said means
+for permuting the rows of the matrix comprises:
+means for permuting the rows of the matrix in accordance with a bit
+
+reversal rule.
+
+49314. The interleaverturbo coder (10) of claima+8 any of the claims +23
+11-13, wherein the linear congruential sequence recursion is generated
+
+according to the following equation:
+
+x(n+1) = (ax(n)+c) mod M,
+
+where n represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+
+the following conditions are satisfied:
+
+(i) c is relatively prime to M;
+
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M;
+
+(iii) when M is a multiple of 4, a-1 must be a multiple of 4; and
+
+(iv) x(0) is an integer seed column index.
+
+--- PAGE 5 ---
+23-415. The iaterleaverturbo coder (10) of claim +8any of the claims 4-211-13,
+wherein the linear congruential sequence recursion is generated according to the
+
+following equation:
+x(n) = (a) x(n+1)-c) mod M,
+
+where n represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+
+the following conditions are satisfied:
+
+(i) c is relatively prime to M;
+
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M;
+
+(iii) when M is a multiple of 4, a-1 must be a multiple of 4; and
+
+(iv) x(0) is an integer seed column index.
+
+24-516. The intendeaverturbo coder (10) of ctaina23_any of the claims -+3-
+4414-15, wherein a = 1.
+
+25 617. The intedeaverturbo coder (10) of claim-2eany of the claims +3-
+4414-15, wherein the period M is a power of 2.
+
+718. The intedeaver(46}-turbo coder (10) of any of the claims 3-414-15,
+
+wherein x(0) equals 0 for every row in the matrix of bits storage locations.
+
+819. Theinterleaver-4416) turbo coder (10) as claimed in any of the claims +
+
+711-18, wherein said means for permuting and said means for pseudo-randomly
+
+rearranging,-and said means-forreading the-data elements physically rearrange
+the data-elementsbits in the matrix.
+
+--- PAGE 6 ---
+920. Theinterleaver46) turbo coder (10) as claimed in any of the claims +-
+
+711-18, wherein said means for permuting, said means for pseudo-randomly
+rearranging, and said means for reading the data-elementsbits provide a
+sequence of final row and column indexes identifying the data-elementsbits to be
+
+read from the matrix.
+
+21. The turbo coder (10) of claim 20, wherein said means for pseudo-randomly
+rearranging is generated on the read addressed by said second coder (14).
+
+5 4422. The turbo coder (10) of elainat-any of the claims 4011-21, further
+comprising a multiplexer_(18), coupled to the first and second coders (12, 14) and
+configured to receive, respectively, the first and second pluralities of output
+symbols therefrom.
+
+40 4223. A method of interleaving data elements, comprising the steps of:
+writing data elements sequentially by rows to a matrix of bit storage
+locations, the matrix comprising a first plurality of rows and a second plurality of
+
+columns;
+
+permuting the rows of the matrix;
+
+pseudo-randomly rearranging the data elements in each row in the matrix
+of bit storage locations in accordance with a linear congruential sequence
+recursion, wherein the linear congruential sequences associated with two distinct
+rows are different_but may, in the alternative, be the same-feratleastiwo+ows;
+and
+
+reading the data elements sequentially by columns fer-from the matrix of
+storage locations.
+
+24. The method as claimed in claim 23, wherein the linear congruential
+sequences are different for at least two rows.
+
+--- PAGE 7 ---
+4325. The method as claimed in claim 4223 or 24, wherein said permuting the
+rows of the matrix comprises:
+permuting the rows of the matrix in accordance with a bit reversal rule.
+
+44 4426. The method of elain40-any of the claims +2-4+323-25 further
+comprising the step of generating the linear congruential sequence recursion
+
+according to the following equation:
+x(n+1) = (ax(n)+c) mod M,
+
+where rn represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+
+the following conditions are satisfied:
+
+(i) c is relatively prime to M;
+
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M;
+
+(iii) when M is a multiple of 4, a-1 must be a multiple of 4; and
+
+(iv) x(0) is an integer seed column index.
+
+4527. The method of elaina40 any of the claims +2-43823-25, further comprising
+the step of generating the linear congruential sequence recursion according to
+
+the following equation:
+
+x(n) = (a2) x(n+1)-c) mod M,
+where rn represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+
+the following conditions are satisfied:
+
+(i) cis relatively prime to M;
+
+--- PAGE 8 ---
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M.;
+
+42 1628. The method of elaim-44-any of the claims +4-4526-27, wherein a =
+1.
+
+43 +729. The method of elaim44 any of the claims 4+4-4+526-27, wherein the
+period M is a power of 2.
+
+4830. The method of any of the claims 44-4526-27, wherein x(0) equals 0 for
+
+every row in the matrix of bits storage locations.
+
+4931. The method as claimed in any of the claims 4+2-4823-30, wherein said
+permuting and said pseudo-randomly rearranging physically rearranges the data
+
+elements in the matrix.
+
+2032. The method as claimed in any of the claims 42-4823-30, wherein said
+permuting, said pseudo-randomly rearranging, and said reading provide a
+sequence of final row and column indexes identifying the data elements to be
+
+read from the matrix.
+
+33. | Amethod of turbo coding, comprising the steps of:
+
+receiving a plurality of input bits in succession;
+
+generating a first plurality of output symbols therefrom.
+
+writing data-elementsthe plurality of input bits sequentially by rows to a
+matrix of bit storage locations, the matrix comprising a first plurality of rows and a
+second plurality of columns;
+
+permuting the rows of the matrix;
+
+pseudo-randomly rearranging the data-elementsbits in each row in the
+matrix of bit storage locations in accordance with a linear congruential sequence
+recursion, wherein the linear congruential sequences associated with two distinct
+
+--- PAGE 9 ---
+rows are different_but may, in the alternative, be the same foraHeasttwe+ows;
+and
+
+reading the data-elementsbits sequentially by columns form-from the
+matrix of bit storage locations-
+
+to provide a plurality of interleaved bits in succession;
+
+receiving the plurality of interleaved bits in succession; and
+
+generating a second plurality of output symbols therefrom.
+
+34. The method of claim 33, wherein the linear congruential sequences are
+
+different for at least two rows.
+
+4335. The method as claimed in claim +233 or 34, wherein said permuting the
+rows of the matrix comprises:
+permuting the rows of the matrix in accordance with a bit reversal rule.
+
++4 4436. The method of elaima+0-any of the claims +2-4333-35 further
+comprising the step of generating the linear congruential sequence recursion
+
+according to the following equation:
+
+x(n+1) = (ax(n)+c) mod M,
+
+where n represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+the following conditions are satisfied:
+
+(i) c is relatively prime to M;
+
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M;
+
+(iii) when M is a multiple of 4, a-1 must be a multiple of 4; and
+
+(iv) x(O) is an integer seed column index.
+
+--- PAGE 10 ---
+10
+
+4837. The method of claim+40-any of the claims 4+2-4333-35, further comprising
+the step of generating the linear congruential sequence recursion according to
+
+the following equation:
+x(n) = (a) x(n+1)-c) mod M,
+
+where rn represents a time index, x(n) represents a column index at the time
+index n, a, c, and M are integers, M represents the period of the sequence, and
+
+the following conditions are satisfied:
+
+(i) c is relatively prime to M;
+(ii) a-1 is a multiple of p, where p represents any prime number that
+divides M.-;
+
+42 4638. The method of claimt+-any of the claims 14-4836-37, wherein a =
+1.
+
+43 4439. The method of claim—+any of the claims +4-4636-37, wherein the
+period M is a power of 2.
+
+4840. The method of any of the claims +4-4536-37, wherein x(0) equals 0 for
+
+every row in the matrix of bits storage locations.
+
+4941. The method as claimed in any of the claims +2-4833-40, wherein said
+permuting and said pseudo-randomly rearranging physically rearranges the data
+elementsbits in the matrix.
+
+2042. The method as claimed in any of the claims 4+2-4833-40, wherein said
+permuting, said pseudo-randomly rearranging, and said reading provide a
+sequence of final row and column indexes identifying the data-elementsbits to be
+
+read from the matrix.

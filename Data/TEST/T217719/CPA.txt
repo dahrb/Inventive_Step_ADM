@@ -1,0 +1,57 @@
+Title: Online ad serving
+
+Abstract: Online ad hosting (e.g., hosting ads from one domain on a webpage from a different domain) is accomplished using a cross-domain frame (e.g., an inline frame (IFrame)), a secure inter-frame communications channel, and a source code interface (e.g., a set of application program interfaces (APIs)). That is, a cross-domain IFrame may be created in a host webpage, which can isolate an ad from the host webpage. An inter-frame communications channel may be utilized to communicate between the contents of the cross-domain frame and the host webpage. Further, a source code interface may be used to communicate a host's preferences for an ad's parameters and restrictions.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for rendering online ads on a webpage, the method comprising:
+creating a cross-domain frame in a host webpage, the frame comprising content from a different domain than the host webpage's domain;
+creating host ad space in the host webpage to accommodate an initial size of a frame ad-space, the host ad space comprising an initial height and width of the frame ad-space; and
+creating a inter-frame communication channel between the frame and the host web-page.
+2. The method of claim 1, comprising inserting additional programming code for facilitating communication over the communication channel.
+3. The method of claim 2, inserting additional programming code in the cross-domain frame.
+4. The method of claim 2, inserting additional programming code in the host webpage.
+5. The method of claim 2, the programming code comprising security programming code for providing security for the communication channel.
+6. The method of claim 2, the programming code comprising a scripting language code.
+7. The method of claim 1, securing the inter-frame communication channel comprising providing a list of allowed functionalities for content inside the cross-domain frame.
+8. The method of claim 1, comprising detecting one or more events inside the frame using the frame programming code.
+9. The method of claim 8, comprising the frame programming code communicating with the host programming code over the communication channel upon detection of the one or more events.
+10. The method of claim 8, an event comprising one or more:
+one or more user interactions; and
+one or more mouse events.
+11. The method of claim 8, comprising the host webpage resizing the frame within the host webpage in response to a request originating from inside the frame.
+12. The method of claim 8, comprising the host webpage moving the frame within the host webpage in response to a request originating from inside the frame.
+13. The method of claim 1, comprising coordinating the frame programming code with the host programming code to provide for frame functionality.
+14. The method of claim 13, frame functionality comprising one or more of:
+one or more frame display properties;
+one or more frame utilities; and
+one or more frame user interface functionalities.
+15. An source code interface configured to provide a host webpage an interface for communicating ad content parameters and restrictions to an ad syndicator, the interface comprising:
+one or more parent node property components configured to direct an ad's parameters and/or restrictions to a parent node; and
+one or more parameter set components configured to provide an ad's parameters and/or restrictions.
+16. The interface of claim 15, the source code interface comprising one or more application program interfaces (APIs).
+17. The interface of claim 15, the parent node having one or more child nodes, the child nodes comprising elements for an ad's parameters and/or restrictions.
+18. The interface of claim 15, the one or more parameter set components comprising one or more of:
+a query to a code string for loading an ad;
+the ad's parameters as configured by a host; and
+the ad's restrictions as configured by a host.
+19. The interface of claim 15, the ad's parameters comprising one or more of:
+a maximum width of the ad;
+a maximum height of the ad;
+an initial height of the ad;
+an initial width of the ad;
+a minimum height of the ad;
+a minimum width of the ad;
+a height of a space in the host webpage that the ad can occupy; and
+a width of a space in the host webpage that the ad can occupy.
+20. A method for rendering online ads on a webpage, the method comprising:
+creating a cross-domain frame in a host webpage, the frame comprising content from a different domain than the host webpage's domain;
+creating host ad space in the host webpage to accommodate an initial size of a frame ad-space, the host ad space comprising an initial height and width of the frame ad-space;
+creating a inter-frame communication channel between the frame and
+the host web-page, comprising:
+inserting additional programming code, comprising security programming code for providing security, for the communication channel for facilitating communication over the communication channel, the inserting comprising:
+inserting additional programming code in the cross-domain frame; and
+inserting additional programming code in the host webpage; and
+securing the inter-frame communication channel comprising providing a list of allowed functionalities for content inside the cross-domain frame.

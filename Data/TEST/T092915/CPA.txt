@@ -1,0 +1,152 @@
+TITLE:
+Ubiquitous companion agent
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Methods and apparatus for controlling and interacting with devices across a network using a ubiquitous companion. In one implementation, a ubiquitous companion includes: an agent interface for communicating with an agent residing on a host device accessible to the companion, and accessing host device data indicating one or more capabilities of the host device; a command interface for building one or more agent commands according to the host device data and a request selection received from a user through the host device; an output interface for providing feedback to the user through the host device in a format that is adapted according to the host device data; and a controller for controlling interaction among the agent interface, the command interface, and the output interface.
+
+CLAIMS:
+1. A ubiquitous companion, comprising:
+an agent interface for communicating with an agent residing on a host device accessible to the companion, and accessing host device data indicating one or more capabilities of the host device;
+a command interface for building one or more agent commands according to the host device data and a request selection received from a user through the host device;
+an output interface for providing feedback to the user through the host device in a format that is adapted according to the host device data; and
+a controller for controlling interaction among the agent interface, the command interface, and the output interface.
+2. The ubiquitous companion of claim 1, further comprising:
+storage for storing remote device data indicating one or more capabilities of each of one or more remote devices, and for storing the host device data.
+3. The ubiquitous companion of claim 2, wherein at least two of the remote devices are not interconnected by a network.
+4. The ubiquitous companion of claim 1, wherein the agent interface sends one or more agent commands to a remote agent residing on a remote device connected to the host device through a network.
+5. The ubiquitous companion of claim 1, wherein the agent interface sends one or more agent commands to a first remote agent residing on a first remote device connected to the host device through a network, and sends one or more agent commands to a second remote agent residing on a second remote device connected to the host device through the network.
+6. The ubiquitous companion of claim 1, wherein the ubiquitous companion is portable from on device to another device.
+7. The ubiquitous companion of claim 1, further comprising:
+a security component for conditionally limiting the operation of the companion.
+8. The ubiquitous companion of claim 7, wherein the security component authenticates the user, and when authentication fails, the command interface does not build agent commands.
+9. The ubiquitous companion of claim 7, wherein the security component provides content control.
+10. The ubiquitous companion of claim 9, wherein the security component provides content control using a digital rights management system.
+11. The ubiquitous companion of claim 1, further comprising:
+a memory device storing the agent interface, the output interface, the command interface, and the controller as executable computer instructions.
+12. A method of processing a user request, comprising:
+generating a selection list including one or more requests;
+formatting the selection list according to the output functionality and input functionality of a host device;
+providing the formatted selection list to a host agent residing on a host device to present the formatted selection list to a user through the host device;
+receiving a request selection from the host agent indicating a selection of one of the requests in the selection list by the user through the host device;
+building one or more agent commands corresponding to the request selection; and
+providing the agent commands to the host agent.
+13. The method of claim 12, further comprising:
+discovering host device data indicating output functionality, input functionality, and service functionality of the host device.
+14. The method of claim 13, wherein:
+building one or more agent commands includes using the host device data.
+15. The method of claim 13, wherein:
+generating the selection list includes using the host device data.
+16. The method of claim 13, further comprising:
+receiving output data from the host agent;
+formatting the output data using the host device data; and
+providing the formatted output data to the host agent to present the formatted selection list to the user through the host device.
+17. The method of claim 12, further comprising:
+discovering remote device data indicating service functionality of a remote device.
+18. The method of claim 17, wherein:
+building one or more agent commands includes using the remote device data.
+19. The method of claim 17, wherein:
+generating the selection list includes using the remote device data.
+20. The method of claim 17, wherein:
+generating the selection list includes using priorities received from the remote device.
+21. The method of claim 17, wherein:
+the remote device data also indicates input functionality and output functionality of the remote device.
+22. The method of claim 21, further comprising:
+generating a second selection list including one or more requests;
+formatting the selection list using the remote device data; and
+providing the formatted selection list to the remote agent residing on the remote device to present the formatted selection list to the user through the remote device.
+23. The method of claim 17, wherein:
+the remote device is a consumer electronics device.
+24. The method of claim 12, further comprising:
+generating the selection list includes using stored user preferences.
+25. The method of claim 12, further comprising:
+receiving output data from the host agent;
+formatting the output data according to the output functionality of the host device; and
+providing the formatted output data to the host agent to present the formatted selection list to the user through the host device.
+26. The method of claim 12, further comprising:
+generating a device list including devices available to receive commands;
+wherein generating the selection list includes using the device list.
+27. The method of claim 26, further comprising:
+discovering remote device data for each remote device in the device list, wherein the discovered remote device data for each remote device indicates service functionality of that remote device;
+wherein generating the selection list includes using the discovered remote device data.
+28. The method of claim 12, further comprising:
+receiving a companion request from a companion residing on a second host device, wherein the companion request indicates a request made by a second user.
+29. The method of claim 12, wherein:
+a built agent command includes a priority level for resolving a conflict between the agent command and a different command from a different source.
+30. The method of claim 12, wherein:
+a built agent command includes data for a second user.
+31. The method of claim 12, further comprising:
+storing companion restrictions limiting the agent commands that are allowed to be built.
+32. The method of claim 31, wherein:
+the companion restrictions indicate one or more remote devices to which commands are not to be sent.
+33. The method of claim 31, wherein:
+the companion restrictions indicate one or more users to which data is not to be sent.
+34. The method of claim 12, further comprising:
+sending a command to a remote device connected to the host device for directly controlling the remote device.
+35. The method of claim 12, further comprising:
+storing two or more user profiles indicating user profile information for respective users;
+accessing the user profile information for a user when the user makes a selection from a selection list.
+36. The method of claim 12, further comprising:
+receiving a password from the host agent input by the user through the host device.
+37. The method of claim 36, wherein:
+the password is a biometric signature.
+38. The method of claim 12, further comprising:
+sending a financial request to a financial server, wherein the financial request indicates a deduction to be applied to an account corresponding to the user.
+39. The method of claim 38, wherein:
+the financial request is a request to apply a charge to the user's account for accessing a content file.
+40. The method of claim 12, wherein:
+one or more of the built commands is a network search request.
+41. The method of claim 12, further comprising:
+storing history information of request selections;
+wherein generating the selection list includes adjusting the selection list according to the stored history information.
+42. The method of claim 12, further comprising:
+generating a representation of the companion for interacting with the user through the host device.
+43. The method of claim 42, wherein:
+the representation is adapted to the host device.
+44. The method of claim 42, wherein:
+the representation is adapted to the user.
+45. The method of claim 42, wherein:
+the representation is an animated graphic.
+46. The method of claim 45, wherein:
+the animated graphic is an animated image of a person.
+47. A method of processing a user request, comprising:
+discovering host device data indicating output functionality, input functionality, and service functionality of a host device on which a host agent resides;
+discovering remote device data indicating output functionality, input functionality, and service functionality of a remote device on which a remote agent resides;
+receiving a request selection from the host agent, wherein the request selection indicates a user request input by a user through the host device;
+building one or more agent commands corresponding to the request selection using the remote device data; and
+providing the agent commands to the remote agent through the host agent.
+48. The method of claim 47, further comprising:
+receiving output data from the remote agent;
+formatting the output data using the remote device data and the host device data; and
+providing the formatted output data to the host agent to present the formatted selection list to the user through the host device.
+49. A method of processing a user request, comprising:
+receiving a request from a companion for device data indicating service functionality of a device;
+retrieving device data from the device;
+providing the device data to the companion;
+receiving an agent command from the companion;
+causing the device to execute the received command;
+receiving result data from the device; and
+providing the result data to the companion.
+50. The method of claim 49, wherein:
+the device data also indicates input and output functionality of the device.
+51. The method of claim 50, further comprising:
+receiving a selection list including one or more requests;
+causing the device to present the selection list to a user; and
+receiving a request selection from the user through an input component of the device, wherein the request selection indicates a selection of one of the requests in the selection list by the user.
+52. A computer program, stored on a tangible storage medium, for use in processing a user request, the program comprising executable instructions that cause a computer to:
+generate a selection list including one or more requests;
+format the selection list according to the output functionality and input functionality of a host device;
+provide the formatted selection list to a host agent residing on a host device to present the formatted selection list to a user through the host device;
+process a request selection from the host agent indicating a selection of one of the requests in the selection list by the user through the host device;
+build one or more agent commands corresponding to the request selection; and
+provide the agent commands to the host agent.
+53. A computer program, stored on a tangible storage medium, for use in processing a user request, the program comprising executable instructions that cause a computer to:
+process a request from a companion for device data indicating service functionality of a device;
+retrieve device data from the device;
+provide the device data to the companion;
+process an agent command received from the companion;
+cause the device to execute the received command;
+process result data received from the device; and
+provide the result data to the companion.

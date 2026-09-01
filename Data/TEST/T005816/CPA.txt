@@ -1,0 +1,34 @@
+TITLE:
+Register file structure in a register window system and controlling method thereof
+
+TYPE:
+UK Patent
+
+ABSTRACT:
+In a structure of register files composed of a master register file (MRF) and a working register file (WRF), when data is read, the working register file is accessed. When data is written, both the master register file (MRF) and the working register file are updated. The MRF holds data of all the register windows. In the working register file (WRF), data of the current window, of the window preceded thereby, and of the window followed thereby are stored. Thus, even if a SAVE instruction or a RESTORE instruction are successively executed, instructions can be processed out of order. As a result, the efficiency of the process is improved.
+
+CLAIMS:
+1. A register file having a master register file and a working register file, data used for a 5 process for an instruction being transferred from the master register file and stored in the working register file, data used for a process for an instruction being read from the working register file, comprising: 10 current window pointer means for pointing a current window position for accessing the master register file; working register window current pointer means for pointing a current window position for 15 accessing working register file; and means for transferring data from the master register file to the working register file and updating data of the working register file when the current window pointer is changed so that the 20 master register file stores data of all register windows of an information processing apparatus and the working register file stores data of a window pointed by the current window pointer and data of windows followed and preceded by the window pointed 25 by the current window pointer.
+2. The register file as set forth in claim 1 wherein the updating means writes data of a window preceded by or followed by the window of the maser register file pointed by the current window 5 pointer means to the working register file when the current window pointer is varied.
+3. The register file as set forth in claim 1 or 2, 10 wherein after a window of the master register file pointed by the current window pointer means is switched, before the next window switching instruction is executed, when the window is switched, data of a window necessary for the next 15 window switching instruction is pre-transferred from the master register file to the working register file.
+4. The register file as set forth in any of 20 the preceding claims, wherein the master register file and the working register file are window registers corresponding to an overlap window system.
+-
+5. The register file as set forth in claim 4, 25 wherein when data of a window is transferred
+from the master register file to the working register file, data that overlaps is not transferred. 5
+6. The register file as set forth in any of the preceding claims, wherein data is transferred from the master register file to the working register file in two phases.
+7. The register file as set forth in any of the preceding claims, wherein the master register file is structured in a ring shape as a logical structure.
+8. The register file as set forth in any of the preceding claims, wherein when data is written to the register file, the data is written to the master register 20 file and the working register file at a time, and wherein when data is read from the register file, the data is read from only the working register file.
+25
+9. A method for controlling a register file
+having a master register file and a working register file, data used for a process for an instruction being transferred from the master register file and stored in the working register 5 file, data used for a process for an instruction being read from the working register file, comprising the steps of: providing a current window pointer for pointing a current window position for accessing
+10 the master register file and a working register window current pointer for pointing a current window position for accessing working register file; and transferring data from the master register 15 file to the working register file and updating data of the working register file when the current window pointer is changed so that the master register file stores data of all register windows of an information processing apparatus and the 20 working register file stores data of a window pointed by the current window pointer and data of windows followed and preceded by the window pointed by the current window pointer.
+25 10. The method as set forth in claim 9
+) wherein the updating step is performed by writing data of a window preceded by or followed by the window of the maser register file pointed by the current window pointer to the working register 5 file when the current window pointer is varied.
+11. The method as set forth in claim 9 or 10, wherein after a window of the master register file pointed by the current window pointer is 10 switched, before the next window switching instruction is executed, when the window is switched, data of a window necessary for the next window switching instruction is pre-transferred from the master register file to the working IS register file.
+12. The method as set forth in any of the preceding method claims, wherein the master register file and the 20 working register file are window registers corresponding to an overlap window system.
+13. The method as set forth in claim 12, wherein when data of a window is transferred 25 from the master register file to the working
+register file, data that overlaps is not transferred.
+14. The method as set forth in any of the preceding method claims, 5 wherein data is transferred from the master register file to the working register file in two phases.
+15. The method as set forth in any of the 10 preceding method claims, wherein the master register file is structured in a ring shape as a logical structure.
+16. The method as set forth in any of the 15 preceding method claims, wherein when data is written to the register file, the data is written to the master register file and the working register file at a time, and wherein when data is read from the register 20 file, the data is read from only the working register file.
+17. A register file and/or method for controlling a register file substantially according 25 to one of the embodiments described herein and/or shown in Figures 3 to 29.

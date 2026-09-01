@@ -1,0 +1,108 @@
+--- PAGE 1 ---
+21-OCT-2013 14:25 FROM ROC JENKINS & CO 335 TO 00498923994465 P.013
+
+MAIN REQUEST
+1
+
+CLAIMS
+
+1. A processing system (100), comprising:
+a translation lookaside buffer (TLB) (108) configured to map a
+contiguous block of virtual memory to physical memory (104), and provide a
+5 size attribute (206) indicating the size of the contiguous block of virtual
+memory; and
+a processor (102) configured to vary the size of the contiguous
+block of virtual memory and the corresponding physical memory, and vary
+the size attribute accordingly,
+10 characterised in that
+the processor is further configured to vary the sizc of the contiguous
+block of virtual memory by consolidating a first block of virtual memory with
+a second block of virtual memory when a translation lookaside buffer miss
+occurs and in response to a determination that both the first and second blocks
+15 of virtual memory are contiguous, and the corresponding physical memory is
+also contiguous, and
+wherein the processor is further configured to map the first and second
+blocks of virtual memory to their corresponding blocks of physical memory
+by mapping the page address (202) for the first block of virtual memory to the
+20 page address (204) for its corresponding block of physical memory, the page
+address for the first block of virtual memory being lower than the page
+
+address for the second block of virtual memory.
+
+2. The processing system of claim 1 wherein the processor
+25 includes the TLB.
+
+3, The processing system of claim 1 wherein the processor is
+further configured to consolidate the first and second blocks of virtual
+memory by varying the size attribute (206) without changing the page address
+
+30 mappings.
+
+Duration: 21.10.2013 16:26:41 - 21.10.2013 16:30:30. This page 13 of 27 was completed at 21.10.2013 16:28:44
+Received at the EPO on Oct 21, 2013 16:30:30. Page 13 of 27
+
+--- PAGE 2 ---
+21-OCT-2013 14:26 FROM RGC JENKINS & CO 3365 TO 00498923994465 P.O14
+
+MAIN REQUEST
+12
+
+-_
+
+A, The processing system of claim 1 wherein the processor is
+further configured to consolidate the first and second blocks of virtual
+memory by varying the size attribute (206) and changing the page address for
+the second block of virtual memory to the page address (202) for the first
+
+5 block of virtual memory, and changing the page address (204) for the block of
+physical memory accordingly.
+
+5. A method of storing a plurality of entries (200; 300, 302) in a
+translation lookaside buffer (TLB) (108), comprising:
+10 mapping a contiguous virtual memory block to physical
+memory (104);
+providing a size attribute (206) indicating the size of the
+contiguous block of virtual memory;
+varying the size of the contiguous block of virtual memory and
+15 the corresponding physical memory; and
+varying the size attribute (206) to reflect the change in the
+contiguous block of virtual memory and the corresponding physical memory,
+characterised in that
+said steps of varying the size of the contiguous block and varying the
+20 size attribute are performed when a translation lookaside buffer miss occurs,
+the size of the contiguous block of virtual memory and the
+corresponding physical memory is varied by consolidating a first block of
+virtual memory with a second block of virtual memory in response to a
+determination that both the first and second blocks of virtual memory are
+25 contiguous, and the corresponding physical memory is also contiguous, and
+wherein the mapping of the consolidated first and second blocks of
+virtual memory to physical memory comprises determining that the page
+address (202) for the first block of virtual memory is lower than the page
+address for the second block of virtual memory, and mapping the page
+
+Duration: 21.10.2013 16:26:41 - 21.10.2013 16:30:30. This page 14 of 27 was completed at 21.10.2013 16:28:52
+Received at the EPO on Oct 21, 2013 16:30:30. Page 14 of 27
+
+--- PAGE 3 ---
+21-OCT-2013 14:26 FROM RGC JENKINS & CO 3365 TO 00498923994465 P.O15
+
+MAIN REQUEST
+13
+address (202) for the first block of virtual memory to the page address (204)
+for its corresponding block of physical memory (104).
+
+6. The method of claim 5 wherein the first and second blocks of
+5 virtual memory are consolidated by varying the size attribute (206) without
+changing the page address mappings.
+
+7. The method of claim 5 wherein the first and second block of
+
+virtual memory are consolidated by varying the size attribute (206) and
+
+10 changing the page address for the second block of virtual memory to the page
+
+address (202) for the first block of virtual memory, and changing the page
+address (204) for corresponding physical memory accordingly.
+
+Duration: 21.10.2013 16:26:41 - 21.10.2013 16:30:30. This page 15 of 27 was completed at 21.10.2013 16:28:57
+Received at the EPO on Oct 21, 2013 16:30:30. Page 15 of 27

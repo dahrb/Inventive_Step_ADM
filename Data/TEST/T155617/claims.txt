@@ -1,0 +1,217 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+Claims (Main request)
+
+1. A method for retrieving data of a data network (1). using a personal
+proxy (9,11) associated with a user, the personal proxy (9,11) being featured by
+a cache memory (10, 12), said network (1) being of the type from which data
+can be retrieved as data pages, among others multi-level data pages, from a
+plurality of data servers (2) and by a plurality of users, said method comprising
+the steps of :
+
+using an editable navigation tool to receive requests from the user for
+retrieving (26) data pages from said network (1);
+
+retrieving, (24) data pages and data page levels stored in said
+personal proxy (9,11) with the aid of said navigation tool if the requested pages
+and data page levels are stored in said personal proxy (9,11) and retrieving the
+data pages from said network (1) if they are not stored in said personal proxy
+(9,11);
+
+providing user editable tool for filtering a data content of a data page
+to be displayed, said filtering comprising pruning a tree representing a HTML
+structure of the data page;
+
+analysing (22) data pages and data page levels retrieved by a user
+with the aid of said navigation tool to determine the tree representing a HTML
+structure of a data page and pruning the tree as defined by the tool for
+filtering;
+
+storing (26) said data pages and data page levels that have been
+retrieved from the network (1) in the personal proxy (9,11) associated with said
+user when the data pages are retrieved from said network (1);
+
+refreshing (27) stored data pages and data page levels in said cache
+memory (10, 12) by retrieving said stored data pages and data page levels from
+
+said data network (1).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2. A method according to claim 1, wherein the filtering operation
+comprises pruning to remove a pair of enclosing tags and all tags enclosed by the
+
+enclosing tags from a HTML page.
+
+3. A method according to claim 1, wherein said cache memory (10,12) is
+selected from at least one of, a group of cache memories located with a data
+network service provider, a residential or local network gateway (4,6,13) anda
+
+home computer (16).
+
+4, A method according to claim 1; or 3, wherein said analysing step
+comprises analysing data pages and data page levels retrieved by a group or
+family of users, wherein said retrieved data pages and data page levels of said
+family or group of users are stored in a family proxy (17) associated with said
+
+family or group of users.
+
+5. A method according to claim 4, wherein said family proxy (17) is
+comprised of said personal proxy (9,11) of said users associated with said group
+
+or family of users.
+
+6. A method according to any one of the preceding claims, comprising
+calculation of an average level depth and timing profile of retrieved data pages
+and, wherein said data pages and data page levels are stored and refreshed in
+
+said cache memory based on said calculated average depth and timing profiles.
+
+7. A method according to any one of the preceding claims, wherein said
+cache memory (10,12) is refreshed by randomly sampling on said data network
+
+(1) of said data pages and data page levels stored in said cache memory (10,12).
+
+8. A method according to any one of the preceding claims, wherein said
+
+analysing, storing, refreshing and retrieving steps are performed by said
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+personal and family proxy (9,11,17).
+
+9. A method according to any one of the preceding claims, wherein said
+
+navigation tool (19) takes the form of a navigation tree.
+
+10. A method according to claim 9, wherein said navigation tree
+comprises a first list (81) of data categories and each data category comprises a
+second list (32) of multi-level data pages, wherein said first and second list are
+
+user editable.
+
+11. A method according to claim 10, wherein said second list comprises
+
+icons taking the form of an arbitrary part of a data page.
+
+12. A method according to claim 1, wherein said filter tool comprises at
+least one of a plurality of a group of filters including text filters, graphic filters,
+colour filters, frame filters, background filters and page re-writing
+
+mechanisms.
+
+13. A method according to claim 1, wherein for a data page and data page
+levels thereof predetermined filters are prepared and made available for
+
+incorporating into a navigation tree of another user.
+
+14, A method according to claim 1, wherein said navigation tree and
+filters of a user are made available for incorporating into the navigation tree of
+
+another user.
+
+15. A method according to claim 1, wherein said navigation trees and
+filters of users are analyzed as to the content of and frequency by which data
+
+pages and data page levels are retrieved, and suggestions are provided to
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+individual users for enhancing or amending the content of their individual
+
+navigation tree based on said analyses.
+
+16. A method according to claim 15, wherein of suggested data pages at
+
+least two data page levels are stored in said cache memory (10,12).
+
+17. A method according to claim 8,9,10,11,12,13,14,15 or 16, wherein at a
+first start up of a user, a navigation tree is provided, optionally based on
+
+certain characteristics of said user.
+
+18. A method according to any of the previous claims, wherein said
+navigation tool (19) is provided by a network service provider.
+19. A system arranged for operating in accordance with the method of any
+of the previous claims, comprising a data network (1) of the type from which
+data can be retrieved as multi-level data pages from a plurality of data servers
+and by a plurality of users having a personal computer (16) arranged for
+connection to said data network (1), the system comprising a personal proxy (9,
+11) featured by a cache memory (10,12) and wherein the personal proxy
+(9,11,17) is configured to
+
+use an editable navigation tool to receive requests from the user for
+retrieving (26) data pages from said network (1);
+
+retrieve, (24) data pages and data page levels stored in said personal
+proxy (9,11) with the aid of said navigation tool if the requested pages and data
+page levels are stored in said personal proxy (9,11) and retrieving the data
+pages from said network (1) if they are not stored in said personal proxy (9,11);
+
+provide user editable tool for filtering a data content of a data page to
+be displayed, said filtering comprising pruning a tree representing a HTML
+structure of the data page;
+
+analyse (22) data pages and data page levels retrieved by a user with
+
+the aid of said navigation tool to determine the tree representing a HTML
+
+--- PAGE 5 ---
+10
+
+15
+
+structure of a data page and pruning the tree as defined by the tool for
+filtering;
+
+store (26) said data pages and data page levels that have been
+retrieved from the network (1) in the personal proxy (9,11) associated with said
+user when the data pages are retrieved from said network (1);
+
+refresh (27) stored data pages and data page levels in said cache
+memory (10, 12) by retrieving said stored data pages and data page levels from
+
+said data network (1).
+
+20. A system according to claim 19, wherein said personal proxy (9,11,17)
+
+is a family proxy.
+
+21. A computer readable medium comprising a computer program
+comprising computer program code that implements the method of any one of
+
+claims 1 to 18.

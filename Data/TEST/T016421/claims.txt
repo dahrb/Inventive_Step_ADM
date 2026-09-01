@@ -1,0 +1,112 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+EP 17 201 569.5 172512EP RU/ol
+National Cheng Kung University December 28, 2020
+
+MAIN REQUEST
+
+CLAIMS
+
+What is claimed is:
+
+1. A routing table building method for a network topology system comprising N
+nodes for data exchange, wherein the number of connections between the N nodes of the
+network topology system is less than N(N-1)/2, the N nodes are sequentially connected to
+form a ring communication configuration, an i-th node of the N nodes is further connected
+to [(i+m) mod N]th and [(i+p) mod N]th nodes of the N nodes according to a connection
+tule, an j-th node of the N nodes is further connected to [(j-m) mod N]th and [(Gj+p) mod
+N]th nodes of the N nodes according to the connection rule, N 1s a positive even integer, 1
+and j are less than N, m and p are not larger than N, i and m are positive odd numbers, j 1s a
+non-negative even number, and p is a positive even number, and the routing table building
+
+method comprising:
+
+for an x-th node of the N nodes in the network, obtaining a plurality of shortest routes,
+wherein each of the shortest routes is obtained from the x-th node of the N nodes to an y-th
+node of the N nodes, x and y are less than N, and x 1s not equal to y;
+
+for the x-th node of the N nodes in the network, obtaining a plurality of secondary
+shortest routes, wherein each of the secondary shortest routes 1s obtained from the x-th
+node to the y-th node, and the shortest route 1s defined to be a route passing through a
+minimum number of nodes, the secondary shortest route is defined to be another route
+passing through a secondary minimum number of nodes and the secondary minimum
+number of nodes is larger than the minimum number of nodes;
+
+for a u-th-node of the N nodes, generating a first routing table according to the
+plurality of the shortest routes and the plurality of secondary shortest routes; and
+
+for a v-th node of the N nodes, generating a second routing table according to the
+plurality of the shortest routes and the plurality of secondary shortest routes, wherein u is a
+
+positive odd number and is less than N, v is a non-negative even number and is less than N.
+
+18
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+EP 17 201 569.5 172512EP RU/ol
+National Cheng Kung University December 28, 2020
+
+MAIN REQUEST
+
+2. The routing table building method according to claim 1, wherein there 1s a first
+route defined in the first routing table of the u-th node, there is a second route defined in the
+second routing table of the v-th node, a first starting point of the first route is the u-th node
+of the N nodes, a first end point of the first route is a ul-th node of the N nodes, a second
+starting point of the second route is the v-th node of the N nodes, and a second end point of
+
+the second route is a vl-th node of the N nodes; and
+
+wherein ul is [(u+dul) mod N], vl is [(v+N-dul) mod N], ul and v1 are non-negative
+integers, and ul and v1 are less than N, dul is an integer, and the y-th node comprises the
+
+ul-th node and the v1-th node.
+
+3. The routing table building method according to claim 1, wherein there 1s a first
+route in the first routing table, there is a second route in the second routing table, a first
+starting point of the first route is the u-th node of the N nodes, a first end point of the first
+route is a u3-th node of the N nodes, the first route passes through a u2-th node of the N
+nodes, a second starting point of the second route is the v-th node of the N nodes, a second
+end point of the second route is a v3-th node of the N nodes, and the second route passes
+
+through a v2-th node of the N nodes; and
+
+wherein u2 is [(u+du2) mod N], u3 is [(u+du3) mod N], v2 1s [(v+N-du2) mod N], v3
+is [(v+N-du3) mod N], u2, u3, v2 and v3 are non-negative integers, u2, u3, v2 and v3 are
+less than N, and du2 and du3 are integers, and the y-th node comprises the u3-th node and
+
+the v3-th node.
+
+4. The routing table building method according to claim 1, wherein the secondary
+shortest route from the x-th node to the y-th node comprises a first sub route and a second
+sub route, the first sub route is a route from the x-th node to a z-th node of the N nodes, and
+
+the second sub route is a route from the z-th node to the y-th node; and
+
+19
+
+--- PAGE 3 ---
+EP 17 201 569.5 172512EP RU/ol
+National Cheng Kung University December 28, 2020
+
+MAIN REQUEST
+
+wherein the z-th node is directly connected to the y-th node, z is not equal to x, z is not
+
+equal to y, and z is less than N.
+
+20

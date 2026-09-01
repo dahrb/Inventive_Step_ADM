@@ -1,0 +1,208 @@
+--- PAGE 1 ---
+15
+
+20
+
+25
+
+May 26, 2011 1 Maller-Boré & Partner
+
+Application No.: 03 760 289.3-2221
+
+Applicant. CARDINALCOMMERCE CORPORATION
+“Universal Merchant Platform for Payment Authentication"
+Our Ref: C 4468EU - ru/ spr
+
+Claims (Main Request)
+
+1. A computer-implemented method for processing authentication of a consumer
+(50) via a computer at a centralized merchant authentication processing system,
+MAPS, (200) using one of a plurality of different types of payment instruments to
+conduct a commercial transaction over a communications network with a server
+(100) operated by an online merchant, wherein the server (100) includes a thin client
+(106) operable to link information with the MAPS (200) upon demand and operable
+to format name/value pairs to a required MAPS message format and to securely
+communicate the message to the MAPS (200), wherein the payment instrument be-
+ing used is either enrolled in or not enrolled in an authentication program conforming
+to one of a plurality of authentication protocols prescribed for the respective plurality
+of different types of payment instruments by payment networks (70, 72, 74, 76, 78)
+supporting the same, wherein the MAPS (200) comprises a connectivity layer (210)
+that sits on top a message distribution layer (220) that sits on top a plug-in layer
+(230) and an external connection layer (240), the method comprising:
+
+(a) obtaining at the server (100) payment information for the transaction from
+the consumer (50) and forwarding the payment information to the MAPS (200) using
+the thin client (106), said payment information including a number identifying the par-
+ticular payment instrument being used;
+
+(b) determining at the MAPS (200) the type of payment instrument being used
+from the payment information, wherein the plug-in layer (230) of the MAPS includes
+a plurality of individual authentication initiative plug-in components (232) operable to
+listen to the message distribution layer (220) for a specific message type, wherein a
+respective plug-in component (232) is activated by the message distribution layer
+(220) that sends messages to the specified plug-in component (232) based upon the
+type of payment instrument being used for the transaction being processed;
+
+(c) obtaining at the MAPS (200) an authentication determination from one of
+the payment networks (70, 72, 74, 76, 78) for the transaction in accordance with the
+
+authentication protocols prescribed for the determined type of payment instrument
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+May 26, 2011 2 Miuller-Boré & Partner
+
+being used; and,
+(d) the MAPS (200) returning the obtained authentication determination to the
+
+server (100) operated by the merchant.
+
+2. The method of claim 1, further comprising:
+
+formatting messages in accordance with the authentication protocols pre-
+scribed for the determined type of payment instrument being used; and,
+
+routing the messages in accordance with the authentication protocols pre-
+
+scribed for the determined type of payment instrument being used.
+
+3. The method of claim 2, wherein the formatted messages includes a first message
+that is routed to an issuing entity, said issuing entity having issued the particular
+payment instrument being used for the transaction and said first message requesting
+that the issuing entity confirm an enrollment status of the particular payment instru-
+
+ment being used for the transaction.
+
+4. The method of claim 3, further comprising obtaining a response to the first mes-
+sage from the issuing entity, wherein based upon the response, if the particular pay-
+ment instrument being used is not enrolled in the authentication program for the de-
+termined type of payment instrument, then steps (c) and (d) are omitted, otherwise if
+the particular payment instrument being used is enrolled in the authentication pro-
+gram for the determined type of payment instrument, then steps (c) and (d) are com-
+
+pleted.
+
+5. The method of claim 4, wherein the formatted messages include a second mes-
+sage that is routed to the merchant such that the consumer is redirected to the issu-
+ing entity for completing authentication directly therewith whereupon the authentica-
+tion determination is made, a response to said second message containing the
+authentication determination made by the issuing entity being returned in accordance
+with routing instructions contained in the second message so that it is obtained in
+
+step (c).
+
+6. The method of claim 5, further comprising:
+verifying that the response to the second message was obtained from the
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+May 26, 2011 3 Muller-Boré & Partner
+issuing entity.
+
+7. The method of claim 1, wherein the consumer accesses a merchant's web page
+over the communications network to conduct the commercial transaction, and step
+(c) comprises:
+
+dynamically adding one or more data fields to the merchant's web page.
+
+8. The method of claim 1, wherein the payment information is obtained in extensible
+
+Markup Language (XML) format.
+
+9. The method of claim 1, further comprising:
+
+determining from the payment information an enrollment status of the par-
+ticular payment instrument being used for the transaction, wherein if the particular
+payment instrument being used is not enrolled in the authentication program for the
+determined type of payment instrument, then steps (c) and (d) are omitted, otherwise
+if the particular payment instrument being used is enrolled in the authentication pro-
+gram for the determined type of payment instrument, then steps (c) and (d) are com-
+
+pleted.
+
+10. The method of claim 1, wherein the payment instrument is a credit or debit card.
+
+11. A system (200) for supporting authentication processing of commercial transac-
+tions conducted over a communications network between a consumer(50) via a
+computer at a centralized merchant authentication processing system, MAPS, (200)
+and a server (100) operated by an online merchant, wherein the server (100) in-
+cludes a thin client (106) operable to link information with the MAPS (200) upon de-
+mand and operable to format name/value pairs to a required MAPS message format
+and to securely communicate the message to the MAPS (200), wherein consumers
+are each using one of a plurality of different types of payment instruments, said used
+payment instrument being either enrolled or not enrolled in an authentication pro-
+gram conforming to one of a plurality of authentication protocols prescribed for the
+respective plurality of different types of payment instruments, wherein the MAPS
+(200) comprises a connectivity layer (210) that sits on top a message distribution
+
+layer (220) that sits on top a plug-in layer (230) and an external connection layer
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+May 26, 2011 4 Mialler-Boré & Partner
+
+(240), the system comprising:
+
+the connection layer (210) for connecting with the server (100) to exchange
+communications therewith, said connection layer (210) receiving payment informa-
+tion for the transactions from the server (100), said payment information for each
+transaction including a number identifying the particular payment instrument being
+used;
+
+the plug-in layer (230) including a plurality of plug-in components (232), each
+plug-in component (232) administering a different one of the authentication programs
+in accordance with the authentication protocols prescribed to obtain an authentica-
+tion determination for the transactions wherein the plug-in components (232) are op-
+erable to listen to the message distribution layer (220) for a specific message type,
+wherein a respective plug-in component (232) is activated by the message distribu-
+tion layer (220) that sends messages to the specified plug-in component (232) based
+upon the type of payment instrument being used for the transaction being processed;
+and,
+
+the distribution layer (220) residing between the connection layer (210) and
+the plug-in layer (230), said distribution layer (230) routing communications between
+the connection layer (210) and selected plug-in components (232) in the plug-in layer
+(230), wherein said payment information for each transaction is routed to the plug-in
+component (232) responsible for administering the authentication program for the
+
+particular payment instrument used for that transaction.
+
+12. The system of claim 11, wherein the connection layer (210) supports a plurality of
+connection means allowing for different types of connectivity with the server (100).
+
+13. The system of claim 12, wherein at least one of the connection means is an
+HTTPS server that communicates with the thin-client (106) installed on the server
+(100) that is supporting a web site of the server (100), said thin-client (106) providing
+
+communication with the web site.
+
+14. The system of claim 11, wherein the plug-in layer (230) is extensible so as to al-
+low selected plug-in components (232) to be added, removed and modified without
+disrupting other plug-in components (232) residing in the plug-in layer (230).

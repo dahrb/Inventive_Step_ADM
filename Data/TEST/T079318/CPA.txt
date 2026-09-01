@@ -1,0 +1,41 @@
+TITLE:
+Secure user identification
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A system (1) for secure identification of a user (2) includes a mobile terminal (10) which is operatively connected to a telecommunications network (30) and to a data network (40). The system also includes a local device (20) which is operatively connected to the data network; and a server side (50) comprising at least one server (52a-n) operatively connected to the data network and at least one server (52a-n) operatively connected to the telecommunications network. The server side (50) is configured to initiate a communication session (42) with the local device (20) over the data network (40), said communication session having a session ID, to generate a representation (24) of the session ID and to transmit the representation to the local device over said data network. The local device (20) is configured to present the representation in a user interface (22) of the local device. The mobile terminal (10) is configured to capture the presented representation so as to derive the session ID, and to send a message containing the derived session ID to the server side over the data network. The server side is further configured to determine an identity of the mobile terminal on the telecommunications network, to verify the determined mobile terminal identity against prestored reference data (56) which links the mobile terminal identity to private user information (54) pertaining to the user (2), and, upon successful verification, to associate the communication session with the private user information.
+
+CLAIMS:
+1. A system (1) for secure identification of a user (2), the system comprising: a mobile terminal (10) which is operatively connected to a telecommunications network (30) and to a data network (40);
+a local device (20) which is operatively connected to the data network; and a server side (50) comprising at least one server (52a-n) operatively connected to the data network and at least one server (52a-n) operatively connected to the telecommunications network, the system being characterized in that
+the server side (50) is configured to initiate a communication session (42) with said local device (20) over said data network (40), said communication session having a session ID, to generate a representation (24) of the session ID and to transmit the representation to the local device over said data network;
+the local device (20) is configured to present the representation in a user interface (22) of said local device;
+the mobile terminal (10) is configured to capture the presented representation so as to derive said session ID, and to send a message containing the derived session ID to the server side over said data network; and
+the server side (50) is further configured to determine an identity of the mobile terminal on the telecommunications network, to verify the determined mobile terminal identity against prestored reference data (56) which links the mobile terminal identity to private user information (54) pertaining to said user (2), and, upon successful verification, to associate said communication session with said private user information.
+2. The system according to claim 1, wherein:
+said data network (40) is comprised in the Internet or is compatible therewith; said local device (20) is a computer having a web client application; and said communication session (42) is a secure web session.
+3. The system according to claim 1 or 2, wherein:
+said telecommunications network (30) is compliant with one or more standards selected from the group consisting of: GSM, UMTS, LTE, D-AMPS, CDMA2000, FOMA or TD-SCDMA.
+4. The system according to any preceding claim, wherein: the mobile terminal (10) is configured to include, in the message which contains the derived session ID and is sent on the data network, information about the mobile terminal identity it has on the telecommunications network; and
+the server side (50) is configured to use this information which is included in said message when verifying the determined mobile terminal identity against the prestored reference data.
+5. The system according to any preceding claim, wherein:
+the server side is configured to generate the representation (24) of the session ID in the form of graphical image data which contains an encoded version of the session ID and which can be visually presented on a display (22) of the local device (20).
+6. The system according to claim 5, wherein:
+the graphical image data is a two-dimensional barcode such as a Quick
+Response (QR) code.
+7. A method of secure identification of a user (2) having access to a mobile terminal (10) operatively connected to a telecommunications network (40), and to a local device (20) operatively connected to a data network (30), the method comprising the steps, at a server side (50) operatively connected to said data network and said telecommunications network, of:
+initiating (204) a communication session (42) over the data network with the local device, said communication session having a session ID;
+generating (206) a representation (24) of the session ID in a format suitable for presentation in the user interface (22) of the local device, in turn suitable for capture by the mobile terminal (10) upon presentation in said user interface so as to derive the session ID included in said representation;
+transmitting (208) the representation to the local device over said data network; receiving (218) from the mobile terminal over said data network a message (217) containing the derived session ID;
+determining (219) an identity of the mobile terminal on the telecommunications network (40);
+verifying (220) the determined mobile terminal identity against prestored reference data (56) which links the mobile terminal identity to private user information (54) pertaining to said user (2); and upon successful verification, associating (222) said communication session, having the derived session ID, with said private user information.
+8. A computer program product comprising computer program code for performing the method according to claim 7 when said computer program code is executed by a processor (52a-52n).
+9. A method of secure identification of a user (2) having access to a mobile terminal (10) operatively connected to a telecommunications network (40), and to a local device (20) operatively connected to a data network (40), the method comprising the steps, in said mobile terminal (10), of:
+capturing (214) data presented in the user interface (22) of the local device
+(20);
+processing (214) the captured data to derive a session ID included therein, wherein the session ID represents a communication session (42) over the data network between the local device and a server side (50);
+sending (216) a message (217) containing the derived session ID to the server side over the data network; and
+cooperating (221) with the server side to allow determination of an identity of the mobile terminal on the telecommunications network (30).
+10. A computer program product comprising computer program code for performing the method according to claim 9 when said computer program code is executed by a processor (10).

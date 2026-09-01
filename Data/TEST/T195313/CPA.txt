@@ -1,0 +1,46 @@
+Title: 
+Consumable authentication protocol and system
+
+Abstract: 
+This invention concerns a consumable authentication protocol for validating the existence of an untrusted authentication chip, as well as ensuring that the Authentication Chip lasts only as long as the consumable. In a further aspect it concerns a consumable authentication system for the protocol. In this invention we are concerned not only with validating that an authentication chip is present, but writes and reads of the authentication chip's memory space must be authenticated as well. A random number is encrypted using a first key and sent to an untrusted chip. In the untrusted chip it is decrypted using a secret key and re-encrytped together with a data message read from the untrusted chip. This is decrypted so that a comparison can be with the generated random number and the read data message.
+
+Type: US Patent
+
+Claims: 
+
+1. A consumable authentication protocol for a printer consumable, the protocol comprising the steps of:
+providing a printer containing a trusted authentication chip and a printer consumable containing an untrusted authentication chip;
+generating an original random number in the trusted authentication chip;
+applying, in the trusted authentication chip, an asymmetric encrypt function to the original random number using a first key from the trusted authentication chip to produce a first encrypted outcome;
+passing the first encrypted outcome to the untrusted authentication chip;
+decrypting, in the untrusted authentication chip, the first encrypted outcome with an asymmetric decrypt function using a second secret key from the untrusted authentication chip to produce a first decrypted outcome;
+applying, in the untrusted authentication chip, an asymmetric encrypt function to the first decrypted outcome together with an original data message read from the untrusted authentication chip using the second secret key to produce a second encrypted outcome;
+passing the second encrypted outcome together with the original data message to the trusted authentication chip;
+decrypting, in the trusted authentication chip, the second encrypted outcome with an asymmetric decrypt function using the first key to produce a decrypted random number and a decrypted data message;
+comparing the decrypted random number and the decrypted data message with the original random number and the received original data message, without knowledge of the second secret key; and,
+in the event of a match, considering the printer consumable to be valid and allowing the consumption of the consumable by the printer; and
+otherwise considering the printer consumable to be invalid and thereby restricting the consumption of the printer consumable by the printer.
+2. A consumable authentication protocol according to claim 1, for validating the authenticity of an untrusted authentication chip, as well as ensuring that the authentication chip, lasts only as long as the consumable including the further steps of writing new data to the untrusted chip, performing the steps of claim 1, and in the event the untrusted chip is found to be authentic and the new data is the same as the data message read from the untrusted chip, then the write is validated.
+3. A consumable authentication protocol according to claim 1, where the first key is a public key.
+4. A consumable authentication protocol according to claim 1, where encryption outside the untrusted chip is implemented in software.
+5. A consumable authentication protocol according to claim 4, where the random number generation, encryption, passing, and final decrypting and comparing steps take place in an external system.
+6. A consumable authentication protocol according to claim 1, where the encryption outside the untrusted chip is implemented in a second authentication chip, and an external system intermediates between the two chips.
+7. A consumable authentication protocol according to claim 1, where the secret key is held only by the untrusted chip.
+8. A consumable authentication protocol according to claim 1, where the trusted authentication chip contains a random function to produce random numbers from a seed, and the function advances after every successful authentication so that the next random number will be produced from a different seed.
+9. A consumable authentication protocol according to claim 1, where the data message is a memory vector of the authentication chip, a part is different for each chip, and parts of it are constant (read only) for each consumable, or decrement only so that it can be completely downcounted only once for each consumable.
+10. A consumable authentication system for a printer consumable, where the system comprises:
+a printer containing a trusted authentication chip;
+a random number generator to generate an original random number in the trusted authentication chip;
+an asymmetric encryptor to encrypt the generated original random number with an asymmetric encryption function to produce a first encrypted outcome using a first key for the encryptor;
+a printer consumable containing an untrusted authentication chip which comprises a read function which operates to decrypt the first encrypted outcome using a second secret key and produce a first decrypted outcome, then applies the symmetric encrypt con to the first decrypted outcome together with an original data message read using the second secret key to produce a second encrypted outcome, also returning the second encrypted outcome together with the original data message; and,
+a test function, the test function opening to decrypt the second encrypted outcome using the first key to produce a decrypted random number and a decrypted data message, and compare the decrypted random number and decrypted data message with the generated original random number and the received original data message, without knowledge of the second secret key;
+whereby, in the event of a match the test function returns a value indicating the consumable to be and allowing consumption of the printer consumable by the printer valid, otherwise the test function returns a value indicating the printer consumable is invalid and thereby restricting the consumption of the printer consumable by the printer.
+11. A consumable authentication system according to claim 10, where new data written to the untrusted chip is considered valid in the event the untrusted chip is found to be authentic and the new data is the same as the data message read from the untrusted chip.
+12. A consumable authentication system according to claim 10, where the first key is a public key.
+13. A consumable authentication system according to claim 10, where encryption outside the untrusted chip is implemented in software.
+14. A consumable authentication system according to claim 10, where the random number generation, encryption, passing, and final decrypting and comparing steps take place in an external system.
+15. A consumable authentication system according to claim 10, where the encryption outside the untrusted chip is implemented in a second authentication chip, and an external system intermediates between the two chips.
+16. A consumable authentication system according to claim 10, where the secret key is held only by the untrusted chip.
+17. A consumable authentication system according to claim 10, where the random number generator of the trusted authentication chip contains a random function to produce random numbers from a seed, and the function advances after every successful authentication so that the next random number will be produced from a new seed.
+18. A consumable authentication system according to claim 17 where for a group of authentication chips, the initial seed for each chip is different from that of the others in the group so that the first random number produced by each chip in the group will be different.
+19. A consumable authentication system according to claim 10, where the data message is a memory vector of the authentication chip, a part is different for each chip, and parts of it are constant (read only) for each consumable, or decrement only so that it can be completely downcounted only once for each consumable.

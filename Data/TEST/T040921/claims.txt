@@ -1,0 +1,175 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+CLAIMS
+
+1. A storage device (112) comprising:
+
+a non-volatile memory (118; 120) configured to store data from a host (106),
+wherein the host (106) is operable in at least an active mode or a low power periodic
+update mode, the active mode comprising a longer initialization phase than the low
+power periodic update mode; and
+
+a controller (114) configured to:
+
+detect when the host (106) is in the low power periodic update mode at least in
+part by:
+
+receiving an identify drive command from the host (106);
+
+determining that an amount of time between when the storage device (112) is
+powered up and when the identify drive command is received from the host (106) is
+less than a predetermined amount of time, the predetermined amount of time being
+reflective of the difference between the shorter initialization phase of the host when it
+is in the low power periodic update mode and the longer initialization phase of the
+host when it is in the active mode;
+
+place the storage device (112) in a power up in standby mode when the host
+(106) is in the low power periodic update mode; and
+
+when the storage device (112) is in the power up in standby mode, the
+controller (114) is further configured to:
+
+receive write data from the host (106) to be written to a target location;
+
+cache the write data from the host (106) in a volatile memory (116); and
+
+write the write data from the host (106) to the target location when a cache flush
+
+command is received from the host (106).
+
+2. The storage device (112) of claim 1, wherein the non-volatile memory
+(118; 120) further comprises a rotating magnetic media, and when the storage device
+(112) is in the power up in standby mode, the controller (114) is further configured to:
+
+prevent the rotating magnetic media from spinning up, until the cache flush
+command is received from the host (106) or data stored in the rotating magnetic
+
+media is requested by the host (106) for a read command.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+10
+
+3. The storage device (112) of claim 1, wherein the target location
+
+comprises the non-volatile memory (118; 120).
+
+4. The storage device (112) of claim 1, wherein the target location
+
+comprises a host volatile memory (110).
+
+5. The storage device (112) of claim 1, wherein the controller (114) is
+further configured to:
+
+place the storage device (112) in a quick boot mode when the host (106) is not
+in the low power periodic update mode; and
+
+spin up the rotating magnetic media when the storage device (112) is in the
+
+quick boot mode.
+
+6. The storage device (112) of claim 1 further comprising a plurality of
+non-volatile memories (118, 120), the plurality of non-volatile memories (118, 120)
+
+comprising at least a rotating magnetic media and at least a solid state memory.
+
+7. A method for operating a storage device (112) connected to a host
+(106), wherein the host (106) is operable in at least an active mode or a low power
+periodic update mode, the active mode comprising a longer initialization than the low
+power periodic update mode, the method comprising:
+
+detecting when the host connected to the storage device (112) is in the low
+power periodic update mode using a controller (114) in the storage device (112) at
+least in part by:
+
+receiving an identify drive command from the host (106); and
+
+determining that an amount of time between when the storage device is
+powered up and when the identify drive command is received from the host is less
+than a predetermined amount of time, the predetermined amount of time being
+reflective of the difference between the shorter initialization phase of the host when it
+is in the low power periodic update mode and the longer initialization phase of the
+
+host when it is in the active mode;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+11
+
+placing the storage device (112) in a power up in standby mode using the
+controller (114) in response to detecting that the host (106) is in the low power
+periodic update mode;
+
+receiving write data from the host (106) to be written to a target location when
+the storage device (112) is in the power up in standby mode;
+
+caching the write data from the host (106) in a volatile memory (116) in the
+storage device (112) when the storage device (106) is in the power up in standby
+mode; and
+
+writing the write data from the host (106) to the target location when a cache
+
+flush command is received from the host (106).
+
+8. The method of claim 7 further comprising:
+
+preventing a rotating magnetic media in a non-volatile memory (118; 120) in
+the storage device (112) from spinning up when the storage device (112) is in the
+power up in standby mode, until the cache flush command is received from the host
+(106) or data stored in the rotating magnetic media is requested by the host (106) for a
+read command, wherein the non-volatile memory (118; 120) is configured to store
+
+host data.
+
+9. The method of claim 7, wherein the target location comprises a non-
+
+volatile memory (118; 120) in the storage device (112).
+
+10. The method of claim 7, wherein the target location comprises a host
+
+volatile memory (110).
+
+11. The method of claim 7 further comprising:
+
+placing the storage device (112) in a quick boot mode when the host (106) is
+not in the low power periodic update mode; and
+
+spinning up a rotating magnetic media in a non-volatile memory (118; 120) in
+
+the storage device (112) when the storage device (112) is in the quick boot mode.
+
+--- PAGE 4 ---
+12
+
+12. An electronic device (102) comprising: the storage device (112) of
+
+claim 1.
+
+13. The electronic device (102) of claim 12, further comprising:
+the host (106) of claim 1, and
+a network device (108) configured to periodically receive network data from a
+
+network (104) when the host (106) is in the low power periodic update mode.

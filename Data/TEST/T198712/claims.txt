@@ -1,0 +1,78 @@
+--- PAGE 1 ---
+Eur. pat. appln. no. 03748384.9
+Our letter of 07 August 2017
+
+P87164EP00
+New page
+Main Request
+1. A data processing apparatus, the apparatus comprising
+
+10
+
+15
+
+20
+
+25
+
+- an instruction memory system arranged to output an instruction word,
+capable of containing a plurality of instructions, respective instruction words being
+output in response to respective instruction addresses;
+
+- an instruction execution unit, comprising a plurality of functional units,
+each capable of executing a respective instruction from the instruction word in parallel
+with execution of other instructions from the instruction word by other ones of the
+functional units;
+
+- a power saving circuit arranged to switch a selectable subset of the
+functional units and/or parts of the instruction memory that supply instructions from
+the instruction word to the functional units to a power saving state during program
+execution, the power saving circuit being arranged to select the functional units and/or
+parts of the instruction memory in the subset dependent on program execution,
+characterized in that the power saving circuit is arranged to select the subset
+dependent on an instruction address in response to which the instruction memory
+
+system outputs the instruction word.
+
+2. A data processing apparatus according to claim 1, wherein clock signals to the
+functional units and/or parts of the instruction memory in the subset are disabled in
+
+said power saving state.
+
+3. A data processing apparatus according to claim 1, wherein the functional units are
+organized into groups of one or more functional units each, the functional unit or units
+in each respective group receiving instructions from a respective instruction field in
+the instruction word, each time for execution by one of the functional units in the
+group, the power saving circuit selecting the functional units that are switched to the
+
+power saving state per group.
+
+4, A data processing apparatus according to claim 2, wherein the instruction memory
+
+--- PAGE 2 ---
+10
+
+15
+
+system comprises a plurality of memory units, each for supplying a respective
+instruction field in the instruction word for an instruction for a respective functional
+unit or group of functional units, the clock gating circuit being arranged to switch
+those memory units to the power saving state that supply the instruction field that for
+
+the selectable ones of the functional units that are switched to the power saving state.
+
+5. A data processing apparatus according to claim 4, wherein the memory units each
+comprise memory locations for at least a part of each instruction words only for
+instruction words in a respective range of instruction addresses, the instruction
+memory system allowing for partial overlap of the respective ranges of different ones
+
+of the memory units.
+
+6. A method of executing a program of instructions using a data processing apparatus
+according to claim 1, the method comprising a step before execution of identifying
+combinations of (groups of) functional units that are used in respective sections of the
+program and compiling information that indicates which combinations are used in
+which sections, and subsequently during execution, using the compiled information to
+disable clock signals selectively in those (groups of) functional units that are not used
+
+in a section when instructions from the section are executed..

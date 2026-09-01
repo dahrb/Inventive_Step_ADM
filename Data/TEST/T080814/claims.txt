@@ -1,0 +1,248 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request — December 2018
+
+Applicant: Nokia Corporation
+Application No.: 05024336.9
+Claims
+1. A method of ordering, paying for, and delivering goods and services using a mobile
+
+station, comprising:
+
+accessing a gateway by the mobile station and transmitting an
+identification code for the mobile station to the gateway, the gateway being
+capable of generating variables usable in verifying the identity of the mobile
+station by accessing an authentication center and comparing the generated
+variables with variables computed by the mobile station;
+
+verifying the legitimacy of the gateway by the mobile station by
+comparing the variables computed by the gateway with the variables computed
+by the mobile station;
+
+requesting a digital certificate by the mobile station from the gateway to
+be used to order and pay for a product or service from a seller;
+
+receiving a digital certificate at the mobile station from the gateway
+when the identity of the mobile station has been verified by the gateway;
+
+requesting by the mobile station a product or service from the seller; and
+
+transmitting a digital signature by the mobile station accompanied by the
+
+digital certificate for a signature verification key as payment to said seller.
+
+The method recited in claim 1, wherein the verifying the legitimacy of the gateway
+by the mobile station by comparing the variables computed by the gateway with the
+variables computed by the mobile station, further comprises:
+transmitting from the mobile station to the gateway a session
+identification and a mobile subscriber identifier, the mobile subscriber identifier
+for transmission from the gateway to an authentication center;
+receiving a variable M1 and a computed random number from the
+gateway;
+
+computing a variable M1' by the mobile station;
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+2
+
+and verifying the legitimacy of the gateway when the variable M1 equals
+the variable M1’.
+
+The method recited in claim 2, wherein an integrity key (K) is computed by the
+mobile station as a function of RAND and Ki, where RAND is a random number
+issued by the authentication center, and Ki is a secret key contained within the
+
+authentication center and the mobile station.
+
+The method recited in claim 3, where an integrity key (K) has been transmitted by
+
+the authentication center to the gateway.
+
+The method recited in claim 1, further comprising:
+receiving a variable M3 and the digital certificate from the gateway, the
+variable M3 having been computed by the gateway, the digital certificate having
+been computed by the gateway certifying the mobile station’s public key (PK);
+computing a variable M3' by the mobile station;
+verifying the legitimacy of the gateway when the variable M3 equals the
+variable M3’.
+
+The method recited in claim 5, wherein the variables M3 and M3' are computed
+using the formula M3 = M3'= MAC (K, C), where MAC is a message
+authentication code function, K is an integrity key and C is the digital certificate
+
+created by the gateway to certify PK.
+
+The method recited in claim 1, wherein transmitting the digital signature,
+accompanied by the digital certificate for the signature verification key to said
+seller, further comprises:
+
+transmitting the certificate with a request for the product or service;
+
+receiving an invoice from the seller indicating a price for the product or
+
+service;
+computing a digital signature on the invoice;
+transmitting the digital signature to the seller; and
+
+accepting delivery of the product or service by a buyer.
+
+--- PAGE 3 ---
+3
+
+8. A mobile station configured for ordering, paying for and delivering goods and
+services, comprising:
+
+a mobile station certificate acquisition module to request a digital
+
+certificate for the mobile station from a gateway to be used to order and pay for
+5 goods or services from a seller, wherein the gateway is capable of generating
+variables usable in verifying the identity of the mobile station by accessing an
+authentication center and comparing the generated variables with variables
+computed by the mobile station, and to receive a digital certificate from the
+gateway when the identity of the mobile station has been verified by the
+10 gateway,
+
+wherein the mobile station verifies the legitimacy of the gateway by
+comparing variables calculated by the gateway with the variables computed by
+the mobile station, the mobile station requests a product or service from the
+seller and transmits a digital signature accompanied by the digital certificate for
+
+15 a signature verification key as payment to the seller.
+
+9. The mobile station recited in claim 8, wherein the mobile station certificate
+acquisition module verifies that the gateway is authorized to issue the digital
+certificate through comparing variables computed by the gateway and the mobile
+
+station.
+
+20 10. The mobile station recited in claim 9, further comprising:
+a purchase module to request the purchase of a good or service from a
+seller, present the digital certificate to the seller, receive an invoice and provide
+
+the seller with a digital signature approving the purchase of the good or service.
+
+11. The mobile station recited in claim 8, wherein the mobile station further comprises:
+25 a subscriber identification module (SIM) used to compute a signed
+response and a ciphering key based on a secret key, installed by a home network
+operator service in the subscriber identification module upon signing up for a
+service plan, and a random number obtained from an authentication center in the
+home network operator service;
+
+30 an A3 algorithm module, contained in the SIM, used to compute the
+
+--- PAGE 4 ---
+signed response; and
+
+an A8 algorithm module, contained in the SIM, used to compute the
+ciphering key, wherein through the transmission of signed responses to and from
+the mobile station a telecommunication infrastructure is able to verify that the
+mobile station is authorized to access the telecommunication infrastructure and
+
+the gateway.
+
+12. The mobile station of claim 8, wherein the verifying of the legitimacy of the
+gateway by the mobile station by comparing the variables computed by the gateway
+with the variables computed by the mobile station, comprises:
+
+transmitting from the mobile station to the gateway a session
+identification and a mobile subscriber identifier, the mobile subscriber identifier
+being for transmission from the gateway to the authentication center;
+
+receiving a variable M1 and a computed random number from the
+gateway;
+
+computing a variable M1' by the mobile station;
+
+and verifying the legitimacy of' the gateway when the variable M1 equals
+
+the variable M1’.
+
+13. A computer program embodied on a computer readable medium and executable by
+a mobile station for ordering, authorizing and delivering goods and services using
+the mobile station, comprising:
+
+a mobile station certificate acquisition code segment to request a digital
+certificate for the mobile station from a gateway to be used to order and pay for
+goods or services from a seller, wherein the gateway is capable of generating
+variables usable in verifying the identity of the mobile station by accessing an
+authentication center and comparing the generated variables with variables
+computed by the mobile station, and to receive a digital certificate from the
+gateway when the identity of the mobile station has been verified by the
+gateway; and
+
+wherein the computer program further causes the mobile station to
+
+verify the legitimacy of the gateway by comparing variables calculated by the
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+14.
+
+15.
+
+16.
+
+17.
+
+5
+
+gateway with variables computed by the mobile station, to request a product or
+service from a seller and transmit a digital signature accompanied by the digital
+
+certificate for a signature verification key as payment to the seller.
+
+The computer program recited in claim 13, wherein the mobile station certificate
+acquisition code segment verifies that the gateway is authorized to issue the digital
+certificate through comparing variables computed by the gateway and the mobile
+
+station.
+
+The computer program recited in claim 13, further comprising:
+a purchase code segment to request the purchase of a good or service
+from a seller, present the digital certificate to the seller, receive an invoice and
+provide the seller with a digital signature approval the purchase of the good or
+
+service.
+
+The computer program recited in claim 14, wherein the mobile station certificate
+acquisition code segment transmits a session identification and an international
+mobile 1 subscriber identifier to the gateway, receives a random number and a
+variable M1 from the gateway and verifies that the gateway is authentic by
+
+computing and comparing the variable M1' with M1.
+
+The computer program recited in claim 13, wherein the verifying of the legitimacy
+of the gateway by the mobile station by comparing the variables computed by the
+gateway with the variables computed by the mobile station, comprises:
+transmitting from the mobile station to the gateway a session
+identification and a mobile subscriber identifier, the mobile subscriber identifier
+for transmission from the gateway to the authentication center;
+receiving a variable M1 and a computed random number from the
+gateway;
+computing a variable M1' by the mobile station;
+and verifying the legitimacy of the gateway when the variable M1 equals the
+variable M1".

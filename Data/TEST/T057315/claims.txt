@@ -1,0 +1,182 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. A method, comprising:
+
+capturing an audio signal on a processor system (250, 450) of a specific-purpose
+embedded appliance (100, 200, 400);
+
+capturing on the processor system at least any one of a visual-capture signal or a
+digital-image signal, the specific-purpose embedded appliance being dedicated to
+capturing, processing, storing and sending a plurality of real-time media signals, the
+plurality of media signals including the audio signal and the at least one of the visual-
+capture signal or the digital-image signal, wherein the capturing of the audio signal and
+the capturing of at least any one of a visual-capture signal or a digital-image signal is
+performed at different and/or variable rates;
+
+receiving a start indicator configured to trigger the capturing of the audio signal
+on the processor system or the capturing on the processor system of the at least one of
+the visual-capture signal or the digital-image signal, the start indicator being received
+from a control server (120, 220, 390, 440) separate from the specific-purpose
+embedded appliance; and
+
+sending at least any one of the audio signal, the visual-capture signal, or the
+digital-image signal based on a send indicator received from the control server, the start
+
+indicator and send indicator being defined at the control server according to a schedule.
+
+2. The method of claim 1, further comprising:
+
+compressing on the processor system (250, 450) at least any one of the audio
+signal (300) and the at least any one of the visual-capture signal (310) or digital-image
+signal (330).
+
+3. The method of claim 1, further comprising:
+synchronizing the audio signal with the at least any one of the visual-capture
+
+signal or the digital-image signal.
+4. The method of claim 1, wherein the processor system (450) includes at least any
+
+one of a processor, an embedded processor (452) or a co-processor (454) configured to
+
+operate in an embedded environment of the embedded appliance (400).
+
+20
+
+--- PAGE 2 ---
+MAIN REQUEST
+
+5. The method of claim 1, further comprising:
+
+splitting on the specific-purpose embedded appliance (100, 200, 400) the visual-
+capture signal into a first visual-capture signal and a second visual-capture signal, the
+second visual-capture signal being a copy of the first visual-capture signal and being
+further processed such that it is synchronized and stabilized on the specific-purpose
+embedded appliance; and
+
+sending the synchronized and stabilized second visual-capture signal to an
+external device (480) configured to at least one of process or display the second visual-
+
+capture signal.
+
+6. The method of claim 1, wherein the processing includes at least one of
+compressing, indexing, encoding, decoding, synchronizing or formatting the plurality
+
+of real-time media signals, and the processing is triggered based on the schedule.
+
+7. The method of claim 1, further comprising:
+
+receiving a preferred transmission time from the control server (120, 220, 390,
+440) via a network (110); and
+
+sending at least any one of the audio signal, the visual-capture signal, or the
+
+digital-image signal based on the preferred transmission time.
+
+8. A multimedia capture device (100, 200, 400), comprising:
+
+a plurality of input ports (210, 410) dedicated to receiving real-time media
+signals, the plurality of input ports including an audio input port (202, 412) and at least
+any one of a visual-capture input port (204, 414) or a digital-image input port (208,
+418), wherein the audio input port and the at least any one of the visual-capture input
+port or the digital-image input port are configured to capture one or more media signals
+at different and/or variable rates; and
+
+a processor system (250, 450) for capturing an audio signal and at least any one
+of a visual-capture signal or a digital-image signal, the processor system defining an
+embedded environment such that the multimedia capture device is dedicated to
+capturing, processing, storing and sending a plurality of real-time media signals,
+
+the processor system configured to receive a schedule from a control server
+(120, 220, 440),
+
+21
+
+--- PAGE 3 ---
+MAIN REQUEST
+
+the processor system configured to capture the real-time media signal starting at
+a first time according to the schedule, store the real-time media signal, and send the
+real-time media signal at a second time according to the schedule; and
+
+a memory (260, 460) configured to store the schedule.
+
+9. The multimedia capture device of claim 8, wherein the processor system (450)
+is configured to operate based on a hardened operating system which allows access by
+authorized users or programs only and facilitates functions related only to the
+
+capturing, processing, storing and/or sending of the real-time media signals.
+
+10. The multimedia capture device of claim 8, further comprising a co-processor
+(454) configured to control, based on the schedule, a processor from the processor
+
+system (450).
+
+11. The multimedia capture device of claim 8, further comprising an audio output
+port (422) configured to generate a confidence monitoring signal used to determine
+whether the real-time media signal is being captured properly, based on the real-time
+
+media signal captured by the audio input port (412).
+
+12. The multimedia capture device of claim 8, further comprising at least any one of
+a visual-capture output port (424) or a digital-image output port (428) configured to
+communicate a confidence monitoring signal used to determine whether the real-time
+media signal is being captured properly, based on the real-time media signal captured
+by at least any one of the visual-capture input port (414) or the digital-image input port
+(418).
+
+13. The multimedia capture device of claim 8, further comprising:
+an alarm module (280, 380) configured to send an alarm indicator when a
+
+physical security breach associated with the multimedia capture device is detected.
+
+14. The multimedia capture device of claim 8, further comprising at least any one of
+an Ethernet switch, a power over Ethernet (PoE) port, a visual-capture signal splitter for
+generating a copy of the real-time media signal, a visual-capture signal distribution
+
+amplifier, or a visual-capture sync stabilizer.
+
+22
+
+--- PAGE 4 ---
+MAIN REQUEST
+
+15. The multimedia capture device of claim 8, wherein the real-time media signal
+includes an audio signal and at least one of a visual capture signal and a digital-image
+signal,
+
+the device further comprising:
+
+at least any one of (1) a visual-capture processor module configured to receive
+the visual-capture signal and to operate based on a hardened operating system, OS,
+allowing access by authorized users or programs only and facilitating functions related
+only to the capturing, processing, storing and/or sending of the real-time media signals,
+or (2) a digital-image processor module configured to receive the digital-image signal
+and operate based on the hardened OS; and
+
+an audio processor module configured to receive the audio signal having a
+synchronized relationship with the at least any one of the visual-capture signal or the
+digital-image signal, the audio processor module configured to operate based on the
+
+hardened OS.
+
+16. |The multimedia capture device of claim 15, wherein the hardened OS is
+configured such that access to the audio processor module and the at least any one of
+the visual-capture processor module or the digital-image processor module is limited to
+
+at least one predefined user (140).
+
+17. The multimedia capture device of claim 15, wherein the at least any of the
+visual-capture processor, the digital-image processor module or the audio processor
+module are included in at least any one of an embedded processor (452) comprising a
+
+digital signal processor dedicated to processing media signals or a co-processor.
+18. The multimedia capture device of claim 8, wherein the schedule is configured to
+
+trigger the processor system (450) to send the real-time media signal based on a
+
+network traffic condition.
+
+23

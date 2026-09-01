@@ -1,0 +1,31 @@
+Title: Design and Modelling of a
+Parallel Data Server
+for Telecom Applications
+
+Abstract: 
+Telecom databases are databases used in the operation of the telecom network and
+as parts of applications in the telecom network. The first telecom databases were
+Service Control Points (SCP) in Intelligent Networks. These provided mostly
+number translations for various services, such as Freephone. Also databases that
+keep track of the mobile phones (Home Location Registers, HLR) for mobile telecommunications were early starters. SCPs and HLRs are now becoming the platforms for service execution of telecommunication services. Other telecom databases
+are used for management of the network, especially for real-time charging information. Many information servers, such as Web Servers, Cache Servers, Mail Servers,
+File Servers are also becoming part of the telecom databases.
+These servers have in common that they all have to answer massive amounts of rather simple queries, that they have to be very reliable, and that they have requirements
+on short response times. Some of them also need large storage and some needs to
+send large amounts of data to the users.
+Given the requirements of telecom applications an architecture of a Parallel Data
+Server has been developed. This architecture contains new ideas on a replication architecture, two-phase commit protocols, and an extension of the nWAL concept
+writing into two or more main memories instead of writing to disk at commit. The
+two-phase commit protocol has been integrated with a protocol that supports network redundancy (replication between clusters).
+Some ideas are also described on linear hashing and B-trees, and a data structure for
+tuple storage that provides efficient logging. It is shown how the data server can handle all types of reconfiguration and recovery activities with the system on-line. Finally advanced support of on-line schema change has been developed. This includes
+support of splitting and merging tables without any service interruption.
+Together these ideas represent an architecture of a Parallel Data Server that provides
+non-stop operation. The distribution is transparent to the application and this will be
+important when designing load control algorithms of the applications using the data
+server. This Parallel Data Server opens up a new usage area for databases. Telecom
+applications have traditionally been seen as an area of proprietary solutions. Given
+the achieved performance, reliability and response time of the data server presented
+in this thesis it should be possible to use databases in many new telecom applications.
+
+Type: Design Requirements

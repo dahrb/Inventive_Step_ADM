@@ -1,0 +1,145 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+19
+
+MAIN REQUEST
+
+Claims:
+
+1. A method for video conferencing, comprising:
+
+receiving through one or more ports a plurality of channels for a
+communication session, the plurality of channels having at least a first
+channel having audio and video information from a first conference
+participant and at least a second channel having audio and video
+
+information from a second conference participant;
+
+identifying a channel of the plurality of channels as a primary
+speaker channel from at least some of the audio information of the
+
+plurality of channels;
+
+identifying a channel of the plurality of channels as a secondary
+speaker channel;
+
+providing video information from the primary speaker channel to at
+least one other channel of the communication session; and
+
+providing audio information from both the primary and secondary
+speaker channels to at least one other channel, comprising:
+
+mixing the audio information from the primary and secondary speaker
+
+channels to generate mixed audio information;
+
+identifying one or more audio CODECs used by the at least one other
+channel; and
+compressing the mixed audio information at least one time, once for
+
+=
+
+each of the one or more identified CODECs; and
+
+providing the mixed audio information to the at least one other channel.
+
+2. The method of Claim 1, further comprising:
+
+providing the audio and video information from the primary speaker channel
+to the secondary speaker channel; and
+
+providing the audio and video information from the secondary speaker
+
+channel to the primary speaker channel.
+
+3. The method of Claim 1, wherein:
+
+identifying the primary speaker channel comprises identifying different
+
+primary speaker channels at different times during the video corference;
+
+and
+
+providing the video information from the primary speaker channel to the
+communication session comprises switching the video information provided
+to the communication session based on a change to the identified primary
+
+speaker channel.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+20
+
+MAIN REQUEST
+
+4. The method of Claim 1, wherein:
+
+identifying the primary speaker channel comprises identifying the channel
+associated with the audio information having a first energy level; and
+identifying the secondary speaker channel comprises identifying the
+channel associated with the audio information having a second energy
+
+level, wherein the first energy level is greater than the second energy
+
+level
+
+5. The method of Claim 1, wherein identifying the primary speaker channel
+comprises:
+identifying any channel whose associated audio information has an energy
+
+level below a threshold level;
+
+ignoring any channel whose associated audio information has an energy
+
+level below the threshold level;
+
+identifying a noise floor for each channel whose associated audio
+
+information has an energy level above the threshold level; and
+using the noise floor to identify the channels associated with
+
+participants who are speaking, the primary speaker channel representing
+
+one of the channels associated with a speaking participant.
+
+6. An apparatus for video conferencing, comprising:
+one or more ports operable to receive a plurality of channels for a
+
+communication session, the plurality of channels having at least a first
+
+channel having audio and video information from a first conference
+communication session participant and at least a second channel having
+audio and video information from a second conference communication session
+
+participant; and
+
+one or more processors collectively operable to execute the steps of any
+
+one of claims 1 to 5.
+
+7. A computer program embodied on a computer readable medium and operable
+to be executed by a processor, the computer program comprising computer
+
+readable program code for executing the steps of any one of claims 1 to 5.

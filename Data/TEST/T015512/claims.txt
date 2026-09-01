@@ -1,0 +1,549 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+EP 04 090 329
+
+New Claims:
+
+An electronic ticket providing system for providing electronic ticket information
+from an electronic ticket vending apparatus to a mobile telephone through a
+
+communication network, wherein:
+
+the electronic ticket vending apparatus comprising
+
+control means for controlling distribution of electronic ticket information to a
+mobile telephone, the electronic ticket information containing: formal ticket data
+comprising authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising the ticket notation item and authentication
+
+information for acquisition of information for a ticket purchase requester; and
+
+the mobile telephone comprises: internal memory; means for reading on and
+writing to a removable storage medium; and storage control means for
+controlling storage of the formal ticket data in the storage medium and the
+
+provisional ticket data in the internal memory,
+
+wherein the electronic ticket vending apparatus comprises authentication means
+for confirming storage of the provisional ticket data in the internal memory for
+the mobile telephone in response to an acquisition request for information for the
+ticket purchase requester from the mobile telephone according to the
+authentication information about the provisional ticket data to transmit
+information for the ticket purchase requester to the mobile telephone based on
+
+the authentication check result.
+An electronic ticket providing system for providing electronic ticket information
+
+from an electronic ticket vending apparatus to a mobile telephone through a
+
+communication network, wherein:
+
+1156829
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+the electronic ticket vending apparatus comprising
+
+control means for controlling distribution of electronic ticket information to a
+mobile telephone, the electronic ticket information containing: formal ticket data
+comprising authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising the ticket notation item and authentication
+
+information for acquisition of information for a ticket purchase requester; and
+
+the mobile telephone comprises: internal memory; means for reading on and
+writing to a removable storage medium; and storage control means for
+controlling storage of the formal ticket data in the storage medium and the
+
+provisional ticket data in the internal memory,
+
+wherein the electronic ticket vending apparatus comprises authentication means
+for confirming storage of formal ticket data in the storage medium for the mobile
+telephone in response to an acquisition request for information for the ticket
+owner from the mobile telephone according to authentication information about
+the formal ticket data to transmit information for the ticket owner to the mobile
+
+telephone based on an authentication check result.
+
+The electronic ticket providing system according to claim 1 or 2, wherein:
+
+the control means of the electronic ticket vending apparatus is configured to
+transmit the formal ticket data and the provisional ticket data collectively as the
+electronic ticket information; and
+
+the storage control means of the mobile telephone is configured to store the
+formal ticket data and the provisional ticket data of the electronic ticket
+
+information separately.
+
+The electronic ticket providing system according to claim | or 2, wherein
+
+1156829
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+the control means of the electronic ticket vending apparatus is configured to
+
+transmit the formal ticket data and the provisional ticket data separately.
+
+The electronic ticket providing system according to claim | or 2, wherein
+
+the information for the ticket purchase requester is event information related to
+
+the event of the electronic ticket.
+
+The electronic ticket providing system according to claim | or 2, wherein
+
+the information for the ticket owner includes wallpaper information on a display
+
+screen of the mobile telephone and mobile phone melody information.
+
+An electronic ticket providing method for providing electronic ticket information
+from an electronic ticket vending apparatus to a mobile telephone through a
+
+communications network, comprising:
+
+in the electronic ticket vending apparatus
+
+a control step of controlling distribution of electronic ticket information to a
+mobile telephone, the electronic ticket information containing: formal ticket data
+comprising authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising the ticket notation item and authentication
+
+information for acquisition of information for a ticket purchase requester; and
+
+further comprising in the electronic ticket vending apparatus
+
+an authenticating step of confirming storage of the provisional ticket data in the
+internal memory for the mobile telephone in response to an acquisition request
+for information for the ticket purchase requester from the mobile telephone
+
+according to the authentication information about the provisional ticket data, and
+
+1156829
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+a step of transmitting the information for the ticket purchase requester to the
+
+mobile telephone based on an authentication check result; and
+
+in the mobile telephone
+
+a storage control step of controlling storage of the formal ticket data in the
+removable storage medium and the provisional ticket data in the internal
+
+memory.
+
+An electronic ticket providing method for providing electronic ticket information
+from an electronic ticket vending apparatus to a mobile telephone through a
+
+communications network, comprising:
+
+in the electronic ticket vending apparatus
+
+a control step of controlling distribution of electronic ticket information to a
+mobile telephone, the electronic ticket information containing: formal ticket data
+comprising authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising the ticket notation item and authentication
+
+information for acquisition of information for a ticket purchase requester,
+further comprising in the electronic ticket vending apparatus
+
+an authenticating step of confirming storage of the formal ticket data in the
+storage medium for the mobile telephone in response to an acquisition request
+for information for the ticket owner from the mobile telephone according to the
+
+authentication information about the formal ticket data, and
+
+a step of transmitting information for the ticket owner to the mobile telephone
+
+based on the authentication check result; and
+
+1156829
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+10.
+
+11.
+
+12.
+
+in the mobile telephone
+
+a storage control step of controlling storage of the formal ticket data in the
+
+removable storage medium and the provisional ticket data in the internal
+
+memory.
+
+The electronic ticket providing method according to claim 7 or 8, wherein:
+
+the control step in the electronic ticket vending apparatus has a step of
+
+collectively transmitting the formal ticket data and the provisional ticket data as
+
+the electronic ticket information; and
+
+the storage control step in the mobile telephone has a step of separately storing
+
+the formal ticket data and the provisional ticket data of the electronic ticket
+
+information.
+
+The electronic ticket providing method according to claim 7 or 8, wherein
+
+the control step in the electronic ticket vending apparatus has a step of separately
+
+transmitting the formal ticket data and the provisional ticket data.
+
+The electronic ticket providing method according to claim 7 or 8, wherein
+
+the information for the ticket purchase requester is event information related to
+
+an event of the electronic ticket.
+
+The electronic ticket providing method according to claim 7 or 8, wherein
+
+the information for the ticket owner includes wallpaper information on a display
+
+screen of the mobile telephone and mobile phone melody information.
+
+1156829
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+13.
+
+14.
+
+-6-
+
+An electronic ticket vending apparatus for providing electronic ticket
+information to a mobile telephone through a communication network,
+
+comprising
+
+control means for controlling distribution of electronic ticket information to a
+mobile telephone, the electronic ticket information containing: formal ticket data
+comprising authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising the ticket notation item and authentication
+
+information for acquisition of information for a ticket purchase requester
+
+authentication means for confirming storage of the provisional ticket data in the
+internal memory for the mobile telephone in response to an acquisition request
+for information for the ticket purchase requester from the mobile telephone
+according to the authentication information about the provisional ticket data,
+
+wherein
+
+the information for the ticket purchase requester is transmitted to the mobile
+
+telephone based on an authentication check result.
+
+An electronic ticket vending apparatus for providing electronic ticket
+information to a mobile telephone through a communication network,
+
+comprising
+
+control means for controlling distribution of electronic ticket information to a
+mobile telephone, the electronic ticket information containing: formal ticket data
+comprising authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising the ticket notation item and authentication
+
+information for acquisition of information for a ticket purchase requester
+
+authentication means for confirming storage of the formal ticket data in the
+
+storage medium for the mobile telephone in response to an acquisition request
+
+1156829
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+-7-
+
+for information for the ticket owner from the mobile telephone according to the
+
+authentication information about the formal ticket data, wherein
+
+the information for the ticket owner is transmitted to the mobile telephone based
+
+on an authentication check result.
+
+The electronic ticket vending apparatus according to claim 13 or 14, wherein
+
+the control means collectively transmits the formal ticket data and the
+
+provisional ticket data.
+
+The electronic ticket vending apparatus according to claim 15, wherein
+
+the control means separately transmits the formal ticket data and the provisional
+
+ticket data.
+
+The electronic ticket vending apparatus according to claim 13 or 14, wherein
+
+the information for the ticket purchase requester is event information related to
+
+an event of the electronic ticket.
+
+The electronic ticket vending apparatus according to claim 13 or 14, wherein
+
+the information for the ticket owner includes wallpaper information on a display
+
+screen of the mobile telephone and mobile phone melody information.
+
+A mobile telephone for receiving electronic ticket information from an electronic
+
+ticket vending apparatus through a communication network, comprising:
+
+internal memory;
+
+means for reading on and writing to a removable storage medium; and
+
+1156829
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+20.
+
+-8-
+
+storage control means for receiving from the electronic ticket vending apparatus
+electronic ticket information including: formal ticket data comprising
+authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising a ticket notation item and authentication
+information for acquisition of information for a ticket purchase requester, and
+controlling storage of the formal ticket data in the storage medium, and the
+
+provisional ticket data in the internal memory,
+
+wherein the mobile telephone is adapted to perform an acquisition request for
+information for the ticket purchase requester from the mobile telephone
+according to the authentication information about the provisional ticket data, in
+order to allow in response to the acquisition request in the electronic ticket
+vending apparatus an authenticating step of confirming storage of the
+
+provisional ticket data in the internal memory for the mobile telephone.
+
+A mobile telephone for receiving electronic ticket information from an electronic
+
+ticket vending apparatus through a communication network, comprising:
+
+internal memory;
+
+means for reading on and writing to a removable storage medium; and
+
+storage control means for receiving from the electronic ticket vending apparatus
+electronic ticket information including: formal ticket data comprising
+authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising a ticket notation item and authentication
+information for acquisition of information for a ticket purchase requester, and
+controlling storage of the formal ticket data in the storage medium, and the
+
+provisional ticket data in the internal memory,
+
+1156829
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+21.
+
+22.
+
+23.
+
+24.
+
+-9-
+
+wherein the mobile telephone is adapted to perform an acquisition request for
+information for the ticket owner from the mobile telephone according to the
+authentication information about the formal ticket data, in order to allow in the
+electronic ticket vending apparatus an authenticating step of confirming storage
+of the formal ticket data in the storage medium for the mobile telephone in
+
+response to the acquisition request.
+
+The mobile telephone according to claim 19 or 20, wherein
+
+the formal ticket data and provisional ticket data are transmitted collectively as
+electronic ticket information, and the storage control means is configured to
+store formal ticket data and provisional ticket data of the electronic ticket
+
+information separately.
+
+The mobile telephone according to claim 19 or 20, wherein
+
+the information for the ticket purchase requester is event information related to
+
+an event of the electronic ticket.
+
+The mobile telephone according to claim 19 or 20, wherein
+
+information for the ticket owner includes wallpaper information on a display
+
+screen and mobile phone melody information.
+
+A program used to direct a computer to perform operations of a mobile
+telephone which receives electronic ticket information from an electronic ticket
+
+vending apparatus through a communication network, comprising
+
+a storage control step of receiving from an electronic ticket vending apparatus
+electronic ticket information including: formal ticket data comprising
+authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+
+provisional ticket data comprising the ticket notation item and authentication
+
+1156829
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+25.
+
+-10-
+
+information for acquisition of information for a ticket purchase requester, and
+controlling storage of the formal ticket data in a removable storage medium, and
+
+the provisional ticket data in internal memory; and
+
+an acquisition request step for information for the ticket purchase requester from
+the mobile telephone according to the authentication information about the
+provisional ticket data, in order to allow in response to the acquisition request in
+the electronic ticket vending apparatus an authenticating step of confirming
+storage of the provisional ticket data in the internal memory for the mobile
+
+telephone.
+
+A program used to direct a computer to perform operations of a mobile
+telephone which receives electronic ticket information from an electronic ticket
+
+vending apparatus through a communication network, comprising
+
+a storage control step of receiving from an electronic ticket vending apparatus
+electronic ticket information including: formal ticket data comprising
+authentication information for admission, a ticket notation item, and
+authentication information for acquisition of information for a ticket owner; and
+provisional ticket data comprising the ticket notation item and authentication
+information for acquisition of information for a ticket purchase requester, and
+controlling storage of the formal ticket data in a removable storage medium, and
+
+the provisional ticket data in internal memory; and
+
+an acquisition request step for information for the ticket owner from the mobile
+telephone according to the authentication information about the formal ticket
+data, in order to allow in the electronic ticket vending apparatus an
+authenticating step of confirming storage of the formal ticket data in the storage
+
+medium for the mobile telephone in response to the acquisition request.
+
+1156829

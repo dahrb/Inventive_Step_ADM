@@ -1,0 +1,68 @@
+TITLE: Native XML printer
+
+TYPE: US Patent
+
+ABSTRACT:
+An XML processing system for use in a barcode printer apparatus includes a computer system operatively coupled to the barcode printer apparatus. The computer system further includes an XML processor configured to receive, parse, and process an XML input data stream and obtain schema identified in the XML data stream from a schema repository. The XML processor validates the XML data stream based upon the schema obtained. Also included is an XSLT processor configured to obtain a stylesheet identified in the XML data stream from a stylesheet repository. The XSLT processor transforms data in the XML input data stream into transformed XML data based upon the stylesheet obtained. Also, an XSLFO processor formats the transformed XML data into formatted XML data based upon XSLFO instructions contained in the stylesheet. A barcode rendering subsystem then receives the formatted XML data and generates a bit map representative of the bar code label.
+
+CLAIMS:
+What is claimed is:
+1. An XML printer system adapted to print bar code labels based upon an extensible markup language (XML) input data stream, the XML printer system including a printer apparatus having a media control system, a print head assembly, and a print head driver, the XML printer system comprising:
+a computer system operatively coupled to the printer apparatus;
+the computer system further including
+a memory subsystem;
+a communication interface operatively coupled to a network;
+an XML processor configured to receive and process the XML input data stream, and obtain schema identified in the XML data stream from a schema repository, the XML processor validating the XML data stream based upon the schema obtained;
+an extensible stylesheet language transformation (XSLT) processor configured to obtain a stylesheet identified in the XML data stream from a stylesheet repository, the XSLT processor transforming data in the XML input data stream into transformed XML data based upon the stylesheet obtained;
+an extensible stylesheet language formatting object (XSLFO) processor configured to format the transformed XML data into formatted XML data based upon XSLFO instructions contained in the stylesheet; and
+a barcode rendering subsystem configured to receive the formatted XML data and generate a bit map representative of the bar code label.
+2. The system according to claim 1 wherein the memory subsystem is selected from the group of memory components consisting of RAM, ROM, hard disk storage and database system.
+3. The system according to claim 1 wherein the memory subsystem is remote from the computer system and accessible through a network.
+4. The system according to claim 1 wherein the memory subsystem is incorporated into the computer system.
+5. The system according to claim 1 wherein the computer system includes a processor selected from the group consisting of a computer, microprocessor, RISC processor, mainframe computer, work station, single-chip computer, distributed processor, server, controller, micro-controller, discrete logic computer and internet computer.
+6. The system according to claim 1 wherein the XML schema and the XSLT stylesheet are XML documents.
+7. The system according to claim 1 wherein the computer system and the printer apparatus are housed in a common enclosure.
+8. The system according to claim 1 wherein the computer system and the printer apparatus are housed in separate enclosures.
+9. The system according to claim 1 wherein the computer system and the printer apparatus are housed in separate enclosures and communicate with each other through a network.
+10. The system according to claim 1 wherein an enterprise resource planning (ERP) system sends the XML input data stream to the XML printer system to initiate printing of the barcode label.
+11. The system according to claim 10 wherein the enterprise resource planning system is a warehouse management system.
+12. The system according to claim 10 wherein the enterprise resource planning system is coupled to the XML printer system through the network.
+13. The system according to claim 10 wherein the XML processor transmits an error indication to the enterprise resource planning system if the XML input data stream is not successfully validated in accordance with the schema.
+14. The system according to claim 1 wherein the network is selected from the group of networks consisting of a local area network, remote network, dedicated network, Ethernet, Internet, public-switched telephone network (PSTN), and plain-old telephone system (POTS).
+15. The system according to claim 1 wherein the stylesheet repository contains a plurality of stylesheets and is accessed remotely by the computer system through the network.
+16. The system according to claim 1 wherein the schema repository contains a plurality of schema and is accessed remotely by the computer system through the network.
+17. The system according to claim 1 wherein at least one of the stylesheets in the repository and at least one of the schema in the repository are updated periodically.
+18. The system according to claim 1 wherein at least one of the stylesheets obtained from the stylesheet repository and at least one of the schema obtained from the schema repository are temporarily stored in the memory subsystem after retrieval from the respective repositories.
+19. The system according to claim 1 wherein the barcode rendering subsystem processes an in-stream foreign object defined in the stylesheet.
+20. The system according to claim 19 wherein the in-stream foreign object is a barcode-type object.
+21. The system according to claim 20 wherein the XSLFO processor cannot process an in-stream foreign object of the barcode type.
+22. The system according to claim 1 wherein the printer apparatus contains at least one algorithm used to generate a barcode symbol based upon a barcode type specified in the stylesheet.
+23. The system according to claim 1 wherein the barcode rendering subsystem provides the bitmap to the print head driver to facilitate printing of the bar code label.
+24. The system according to claim 1 wherein an external source transmits a request to the printer system to generate a barcode label bitmap.
+25. The system according to claim 24 wherein the external source transmits the request over the network.
+26. The system according to claim 24 wherein the external source transmits the XML input data stream to the printer system.
+27. The system according to claim 1 wherein an external source transmits a request to the printer system to generate a barcode label bitmap, and in response to the request, the XML printer system processes the request in accordance with claim 1 and transmits the bitmap to the external source.
+28. The system according to claim 1 wherein the computer system receives a request from an external source to render a barcode label, the external source transmitting the XML input data stream, and wherein the bitmap generated by the barcode rendering subsystem is transmitted to the external source.
+29. For use in a barcode printer apparatus, an XML processing system comprising:
+a computer system operatively coupled to the barcode printer apparatus;
+the computer system further including
+an XML processor configured to receive and process an XML input data stream, and obtain schema identified in the XML data stream from a schema repository, the XML processor validating the XML data stream based upon the schema obtained;
+an extensible stylesheet language transformation (XSLT) processor configured to obtain a stylesheet identified in the XML data stream from a stylesheet repository, the XSLT processor transforming data in the XML input data stream into transformed XML data based upon the stylesheet obtained;
+an extensible stylesheet language formatting object (XSLFO) processor configured to format the transformed XML data into formatted XML data based upon XSLFO instructions contained in the stylesheet; and
+a barcode rendering subsystem configured to receive the formatted XML data and generate a bit map representative of the bar code label.
+30. A method for generating a bar code label in an XML printer system adapted to print bar code labels based upon an extensible markup language (XML) input data stream, the XML printer system including a printer apparatus having a media control system, a print head assembly, and a print head driver, the method comprising:
+obtaining schema identified in the XML data stream from a schema repository;
+processing the XML input data stream using an XML processor;
+validating the XML data stream based upon the schema obtained;
+obtaining a stylesheet identified in the XML data stream from a stylesheet repository;
+transforming data in the XML input data stream into transformed XML data using an extensible stylesheet language transformation (XSLT) processor based upon the stylesheet obtained;
+formatting the transformed XML data into formatted XML data using an extensible stylesheet language formatting object (XSLFO) processor based upon XSLFO instructions contained in the stylesheet;
+generating a bitmap representative of the bar code label using a barcode rendering subsystem based on the formatted XML data, the barcode rendering subsystem processing a barcode-type instream foreign object defined in the stylesheet; and
+transmitting the bitmap to the print head driver to facilitate printing of the bar code label.
+31. For use in a barcode printer apparatus, an XML processing system comprising:
+a computer system operatively coupled to the barcode printer apparatus;
+the computer system further including
+an XML processor configured to receive and process an XML input data stream and obtain schema identified in the XML data stream, the XML processor validating the XML data stream based upon the schema obtained;
+an extensible stylesheet language transformation (XSLT) processor configured to obtain a stylesheet identified in the XML data stream, the XSLT processor transforming data in the XML input data stream into transformed XML data based upon the stylesheet obtained;
+an extensible stylesheet language formatting object (XSLFO) processor configured to format the transformed XML data into formatted XML data based upon XSLFO instructions contained in the stylesheet; and
+a barcode rendering subsystem configured to receive the formatted XML data and generate a bit map representative of the bar code label.

@@ -1,0 +1,177 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+CLAIMS
+
+16
+
+A data processing system comprising a target data structure (100) and a data
+
+processing engine (200) for processing the target data structure (100),
+
+the target data structure (100) comprising a plurality of data fields (102) with
+corresponding indices (104), and a predetermined set of field names (106)
+having a predetermined prioritised subset of data field names including at
+
+least one prioritised field name and a corresponding index identifier,
+
+the data processing engine (200) comprising a plurality of different processing
+components (38, 40), each processing component (38, 40) being arranged to
+perform a different processing operation on the target data structure and
+comprising:
+
+a receiver arranged to receive the predetermined set of field names (106);
+
+a key generator arranged to establish, for each prioritised field name in
+the predetermined set of field names (106), an access key for directly
+accessing one of the data fields (102) using the index identifier corresponding
+to the prioritised field name to determine the corresponding one of the indices
+(104), where the data field (102) corresponds to the prioritised field name;
+and,
+
+a component-specific processor (48, 50) arranged to read a data value
+(108) of one of the data fields (102) directly using the access key when the
+data field (102) to be read corresponds to one of the predetermined prioritised
+subset of field names, and arranged to generate an output based on the data
+value (108) of the data field (102) to be read,
+
+the data processing engine (200) further comprising:
+
+an internal topic bus (46) connected to the plurality of processing
+components (38, 40);
+
+a marshalling component (34) arranged to generate a_ serial
+representation of the target data structure (100) obtained from an external
+message bus (32) to marshal the target data structure (100) into a marshalled
+format from an unmarshalled format, the marshalling component (34) being
+arranged to place the marshalled format of the target data structure (100)
+
+onto the internal topic bus (46) such that the target data structure (100) can
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+17
+
+be conveyed to each of the plurality of processing components (38, 40) and
+processed by the same; and,
+
+an unmarshalling component (36) arranged to perform a converse
+transformation back from the serial representation to unmarshal the
+processed target data structure (100) from the marshalled format on the
+internal topic bus (46) to the unmarshalled format, and the unmarshalling
+component (36) being arranged to output the processed target data structure
+
+(100) onto the external message bus (32),
+
+wherein the predetermined prioritised subset of data field names is a subset
+including the data fields that are determined to be the most commonly
+accessed data fields in the processing carried out across all of the processing
+
+components (38, 40) of the data processing engine (200), and
+
+wherein each processing component (38, 40) is configured to:
+
+receive (400) configuration data comprising configuration tasks which
+each define the predetermined prioritised subset of data field names;
+
+interpret each of the received configuration tasks into each of the access
+keys that provide direct access to a specific location of the target data
+structure without requiring any search of the target data structure;
+
+obtain data from the internal data bus (46) and read the obtained data into
+the target data structure (100) using the access keys to determine what index
+position to place the data in;
+
+run (602, 702) the access keys to obtain the data values from the
+predetermined prioritised subset that are used by the respective processor
+(48, 50) to perform the respective processing operation;
+
+if additional data fields are required to perform the respective processing
+operation then iterate (606, 706) through the target data structure to find the
+additional data fields; and,
+
+execute (610, 710) the respective processing operation by carrying out
+
+calculations on the obtained data values to generate the output.
+
+A data processing system according to Claim 1, the data processing engine (200)
+being arranged to:
+
+obtain the target data structure (100) from the internal data bus (46); and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+18
+
+for each data field in the target data structure which corresponds to a prioritised
+field name, map that data field to a location corresponding to the index identifier for that
+
+prioritised field name.
+
+3. A data processing system according to Claim 2, wherein the data processing
+engine (200) is arranged to:
+
+create an indexed weighted data structure (100);
+
+read the target data structure into the indexed weighted data structure (100); and,
+
+for each data field of the target data structure that corresponds to a prioritised
+data field, map that data field to an index of the indexed weighted data structure
+
+corresponding to the index identifier for that prioritised field name.
+
+4. A data processing system according to Claim 3, wherein the indexed weighted
+data structure (100) is defined to include a set of prioritised data fields corresponding to
+
+the predetermined set of field names.
+
+5. A data processing system according to Claim 4, wherein the data processing
+engine (200) is arranged to place null values into any of the prioritised data fields which
+
+do not have any corresponding data available from the target data structure.
+
+6. A data processing system according to any of Claims 3 to 5, wherein the indexed
+
+weighted data structure (100) is a Java Collection data structure.
+
+7. A data processing system according to Claim 6, wherein the marshalled format is
+
+an XML format and the memory representation format is a Java format.
+
+8. A data processing system according to any preceding claim, wherein for each of
+the plurality of different processing components the respective receiver is arranged to
+receive a predetermined target type value and the data processing engine (200) is
+arranged to determine whether a value of a data structure type field of the target data
+structure (100) matches the predetermined target type value to enable the respective
+
+component-specific processor (48, 50) to process the target data structure (100).

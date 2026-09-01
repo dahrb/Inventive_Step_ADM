@@ -1,0 +1,51 @@
+TITLE:
+Image processing device, image processing method, image processing program, and computer-readable recording medium storing the same therein
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An image processing device of the present invention includes a management section for storing an authentication level set in accordance with the volume of image processing which is predicted in accordance with at least one of day and time. When a request for image processing to image data is made, an authentication section changes the authentication level for user authentication in accordance with at least one of day and time. Then, in accordance with this authentication result, requested image processing is performed.
+
+CLAIMS:
+1. An image processing device comprising:
+a management section for storing an authentication level set in accordance with at least one of day and time;
+an authentication section for changing the authentication level to perform user authentication in accordance with at least one of day and time; and
+an image processing section for performing requested image processing to image data in accordance with a result of authentication by the authentication section.
+2. The image processing device according to claim 1, further comprising:
+a time management section for managing at least one of the day and the time.
+3. The image processing device according to claim 2, wherein:
+the management section stores a table which is set so that the authentication level can be selected in accordance with at least one of day and time.
+4. The image processing device according to claim 2, wherein:
+the authentication section includes an authentication level selection section for checking as day/time information at least one of day and time which are managed in the time management section and selecting an authentication level in accordance with the day/time information and the table.
+5. The image processing device according to claim 2, wherein:
+the authentication level is set in accordance with a volume of image processing which is predicted in accordance with at least one of day and time.
+6. The image processing device according to claim 5, wherein:
+the authentication level is set so that user authentication is performed in a relatively lenient condition in the case where the volume of image processing is relatively large and in a relatively strict condition in the case where the volume of image processing is relatively small.
+7. The image processing device according to claim 1, wherein:
+the authentication section includes at least one of a biometric information comparison section for authenticating biometric information of a user, a card comparison section for authenticating information recorded in a card possessed by a user, and a personal identification code comparison section for authenticating an inputted personal identification code.
+8. The image processing device according to claim 7, wherein:
+the biometric information comparison section is a finger print comparison section for performing authentication in accordance with a fingerprint of a user.
+9. The image processing device according to claim 7, wherein:
+the personal identification code comparison section is a password comparison section for performing authentication in accordance with a password inputted by a user.
+10. The image processing device according to claim 7, wherein:
+the authentication level includes three levels, high level, middle level, and low level, which are set in accordance with a relative reliance upon authentication for protection against unauthorized use of image data.
+11. The image processing device according to claim 10, wherein:
+in the case where the authentication level is high level, the authentication section performs user authentication in the biometric information comparison section and the card comparison section.
+12. The image processing device according to claim 10, wherein:
+in the case where the authentication level is middle level, the authentication section performs user authentication in the card comparison section.
+13. The image processing device according to claim 10, wherein:
+in the case where the authentication level is low level, the authentication section performs user authentication in the personal identification code comparison section.
+14. An image processing method comprising:
+authentication step of changing an authentication level set previously in accordance with at least one of day and time to perform authentication of a user; and
+image processing step of performing requested image processing to image data in accordance with a result of the authentication.
+15. The image processing method according to claim 14, wherein:
+the authentication step includes authentication level selection step of reading out as day/time information at least one of day and time and selecting an authentication level in accordance with the day/time information.
+16. The image processing method according to claim 14, wherein:
+the authentication step includes at least one of biometric information comparison step of authenticating biometric information of a user, card comparison step of authenticating information recorded in a card possessed by a user, and personal identification code comparison step of authenticating an inputted personal identification code.
+17. The image processing method according to claim 14, wherein:
+the authentication step is performed at an authentication level set in accordance with a volume of image processing which is predicted in accordance with at least one of day and time.
+18. The image processing method according to claim 14, wherein:
+the authentication step is performed at any one authentication level of three levels, high level, middle level, and low level, which are set in accordance with a relative reliance upon authentication for protection against unauthorized use of image data.
+19. An image processing program for operating an image processing device, causing a computer to function as a management section for storing an authentication level set in accordance with at least one of day and time, an authentication section for changing the authentication level to perform user authentication in accordance with at least one of day and time, and an image processing section for performing requested image processing to image data in accordance with a result of authentication by the authentication section.
+20. A computer-readable recording medium storing an image processing program for operating an image processing device, causing a computer to function as a management section for storing an authentication level set in accordance with at least one of day and time, an authentication section for changing the authentication level to perform user authentication in accordance with at least one of day and time, and an image processing section for performing requested image processing to image data in accordance with a result of authentication by the authentication section.

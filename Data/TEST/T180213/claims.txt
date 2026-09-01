@@ -1,0 +1,322 @@
+--- PAGE 1 ---
+MARKS & CLERK Fax: 020-836-3339 Tf May 2013 18:06 P051/085
+
+MAIN REQUEST
+CLAIMS:
+
+1. A computerized system (400) comprising:
+
+an imaging data storage circuit (404) adapted to store imaging data corresponding to an
+image of an anatomic volume of a patient (401);
+
+a processor circuit (412), coupled to the imaging data storage circuit (404), the processor
+circuit (412) configured to:
+
+generate a model of brain tissue that represents a non-uniform spatial distribution of
+tissue conductivity including inhomogeneous and anisotropic tissue conductivity, wherein the
+model includes a representation of an implanted electrode leadwire;
+
+and
+
+for each of at least one set of stimulation parameters and prior to use of an electrode
+leadwire (428) in accordance with the respective set of stimulation parameters, calculate a
+predicted volume of activation (420) by calculating a second difference of the electric potential
+distribution produced by the electrode leadwire using the model of brain tissue which represents
+the non-uniform spatial distribution of tissue conductivity;
+
+the processor being further configured to register the image of the anatomic volume of
+the patient to an atlas of the brain to create a patient-specific atlas of the brain tissue; and
+
+the system further comprises a computer display (424), coupled to the processor circuit
+(412), wherein the processor circuit (412) is adapted to display on the computer display a map in
+which the electrode leadwire (428) and the predicted volume of activation (420) are
+
+superimposed on the patient-specific atlas of the brain tissue.
+
+2. The system (400) of claim 1, in which the computer display (424) is operable to further
+display an indication of an anatomic entry location, and an indication of a trajectory between the
+
+anatomic entry location and a location of the electrode leadwire (428).
+
+3. The system (400) of claim 1, further including means for specifying the at least one set of
+
+stimulation parameters.
+
+4113053-1-rgranlee :
+125: i 05.2013 19:20:3
+Duration: 17.05.2013 19:13:09 - 17.05.2013 19:25:36. This page 51 of 85 was completed at 17.
+Received at the EPO on May 17, 2013 19:25:36. Page 51 of 85
+
+--- PAGE 2 ---
+MARKS & CLERK Fax :020-7836-3339 1f May 2013 18:06 P052/085
+
+4. The system (400) of claim 1, comprising:
+
+an electrode position interface circuit (430) adapted to receive information about a
+location of the electrode leadwire in the anatomic volume, wherein the map displayed in the
+computer display (424) includes a model of the electrode leadwire (428) on which the predicted
+
+volume of activation (420) is superimposed.
+
+5. The system (400) of claim 4, in which the display (424) is also operable to display a
+
+trajectory between an anatomic entry location and the location of the electrode leadwire (428),
+
+6, The system (400) of claim 4, in which the processor circuit (412) is operable to
+recalculate the volume of activation (420) if the electrode leadwire (428) is moved to a second
+electrode location, and in which the display (424) is operable to display the recalculated volume
+of activation (420).
+
+7. The system (400) of claim 1, in which the processor (412) is adapted to determine a
+correlation between the predicted volume of activation (420) and a target volume of activation,
+and in which the processor (412) is also operable to adjustably output information about a
+desirable one of the at least one set of stimulation parameters using the correlation, and in which
+
+the system displays an indication of the desirable set of stimulation parameters.
+
+8. The system (400) of claim 1,
+
+wherein the brain tissue model has at least one neuron of axon model (410) that specifies
+a position of neurons within the anatomic volume according to at least one patient-specific neural
+pathway; and wherein the system further comprises:
+
+4 correlation or optimization module that is configured to assist in the selection of at least
+
+one desired stimulation parameter setting using the predicted volume of activation (420).
+
+9. The system (400) of claim 8, in which the processor circuit (412) is adapted to:
+create a finite element model (FEM) (414) mesh that is particular to an electrode
+
+morphology and that permits a non-uniform tissue conductivity in the region;
+
+4113053-1-rgrantee a
+125: i t 17.05.2013 19:20:
+Duration: 17.05.2013 19:13:09 - 17.05.2013 19:25:36. This page 52 of 85 was completed a
+Received at the EPO on May 17, 2013 19:25:36. Page 52 of 85
+
+--- PAGE 3 ---
+MARKS & CLERK Fax :020-1836-3339 1f May 2013 18:07 P053/085
+
+solve the FEM (414) to obtain a second difference in an electric potential distribution in
+the anatomic volume; and
+
+using the at least one neuron or axon model (410), define at least one threshold
+requirement on the second difference in the electric potential distribution;
+
+wherein the predicted volume of activation (420) is defined by a surface about the
+electrode leadwire (428) and including an area at which the second difference in the electric
+
+potential distribution meets the threshold requirement.
+
+10. The system (400) of claim 8, in which the at least one neuron or axon model (410)
+
+includes a multi-compartment electrical model.
+
+11. A compuier-readable medium having stored therein a computer program that is
+executable by a processor (412), the program, when executed by the processor (412), causing the
+processor (412) to perform a method, the method comprising:
+
+obtaining electronically stored imaging data (300) corresponding to af image of an
+anatomic volume of a patient (401);
+
+generating a model of brain tissue that represents a non-uniform spatial distribution of
+tissue conductivity including inhomogeneous and anisotropic tissue conductivity, wherein the
+model includes a representation of an implanted electrode leadwire; and
+
+for each of at least one set of stimulation parameters and prior to use of an electrode
+leadwire (428) in accordance with the respective set of stimulation parameters, calculating, by
+the processor (412), a predicted volume of activation (420) by calculating a second difference of
+the electric potential distribution produced by the electrode leadwire using the model of brain
+tissue which represents the non-uniform spatial distribution of tissue conductivity;
+
+wherein the method further comprises:
+
+registering the image of the anatomic volume of the patient to an atlas of the brain to
+create a patient-specific atlas of the brain tissue: and
+
+displaying, on an output device (424) a map in which the electrode leadwire (428) and
+predicted volume of activation (420) are superimposed on the patient-specific atlas of the brain
+
+tissue.
+
+4113053-1-rgranlee
+125: i 3 19:20:49
+Duration: 17.05.2013 19:13:09 - 17.05.2013 19:25:36. This page 53 of 85 was completed at 17.05.201
+Received at the EPO on May 17, 2013 19:25:36. Page 53 of 85
+
+--- PAGE 4 ---
+MARKS & CLERK Fax: 020-7836-3339 1? May 2013 18:07 P054/085
+
+12. The computer-readable medium of claim 11, wherein the method further comprises
+displaying an indication of a trajectory between an anatomic entry target location and at least one
+
+candidate electrode target location for the implantation of the electrode leadwire (428).
+
+13. The computer-readable medium of claim 11, wherein the method further comprises
+displaying an indication of an anatomic entry location and a trajectory between a location of the
+
+first electrode leadwire (428) and the anatomic entry location.
+
+14. The computer-readable medium of claim 11, wherein the set of stixqulation parameters
+
+includes at least one parameter of an electrical circuit for delivering an electrical stimulation.
+
+15. The computer-readable medium of claim 11, wherein the method further comprises:
+recalculating the predicted volume of activation (420) at a different second location of the
+electrode leadwire (428); and
+displaying the recalculated volume of activation (420).
+
+16. The computer-readable medium of claim 11, wherein the method further comprises:
+determining a correlation between the predicted volume of activation (420) and a target
+volume of activation; and
+providing information associated with the correlation between the predicted volume of
+
+activation (420) and the target volume of activation.
+
+17. The computer-readable medium of claim 16, wherein the method further comprises
+displaying a trajectory between an anatomic entry location and a location of the electrode
+leadwire (428).
+
+18. The computer-readable medium of claim 11, wherein the method further comprises:
+creating a finite element model (FEM) (306) of a tissue volume near a location of the
+
+electrode leadwire (428), in which the FEM (306) is tailored to a particular electrode
+
+morphology, and in which the FEM (306) incorporates nonuniform tissue conductivity data of
+
+the tissue conductivity model;
+
+4113052-1-rgranlee
+Duration: 17.05.2013 19:13:09 - 17.05.2013 19:25:36. This page 54 of 85 was completed at 17.05.2013 19:20:57
+Received at the EPO on May 17, 2013 19:25:36. Page 54 of 85
+
+--- PAGE 5 ---
+MARKS & CLERK Fax: 020-7836-3339 1? May 2073 18:07 © P055/085
+
+solving the FEM (306), using a computer (412), to obtain a second difference in an
+electric potential distribution in the anatomic volume; and
+
+defining at least one threshold requirement on the second difference in the electric
+potential distribution, including using at least one neuron or axon model (410) to define the at
+least one threshold requirement; and
+
+the predicted volume of activation (420) is defined by a surface about the electrode
+leadwire (428) and including an area at which the second difference in the electric potential
+
+distribution meets the threshold requirement.
+
+19, The computer-readable medium of anyone of claims 1] and 18, wherein the method
+further comprises selecting a desired one of the at least one set of stimulation parameters by
+
+comparing the predicted volume of activation (420) to a desired volume of activation.
+
+20. The computer-readable medium of claim 19, wherein the method further comprises
+including programming an electrical circuit using the selected desired set of stimulation
+
+parameters.
+
+21. The computer-readable medium of claim 11, wherein the method further comprises using
+
+the electrode leadwite (428) for deep brain stimulation,
+
+22. The computer-readable medium of claim (1, wherein the method further comprises:
+
+receiving, by the processor (412) and via an input device (426), a plurality of user-
+selected sets of stimulation parameters for the electrode leadwire (428), wherein the processor
+(412) calculates and displays a respective predicted volume of activation (420) for each of the
+plurality of stimulation parameters;
+
+receiving, by the processor (412) and via the input device (426), a selection of one the
+displayed predicted volumes of activation (420); and
+
+responsive to the selection, activating, by the processor (412), the electrode leadwire
+(428) in accordance with the respective set of parameters associated with the selected predicted
+volume of activation (420).
+
+4113053-1 -rqraniee
+
+0 i 21:06
+Duration: 17.05.2013 19:13:09 - 17.05.2013 19:25:36. This page 55 of 85 ee or Bs at 17.05.2013 19
+Received at the EPO on May 17, 2013 19:25:36. Page 55 o
+
+--- PAGE 6 ---
+MARKS & CLERK Fax :020-7836-3339 1f May 2013 18:07 P056/085
+
+23. The computer-readable medium of claim 11, wherein the processor (412) calculates a
+respective predicted volume of activation (420) for each of a plurality of sets of stimulation
+parameters according to which the electrode leadwire (428) is operable, and the method further
+comprises:
+
+comparing, by the processor (412), each of the calculated predicted volumes of activation
+(420) with at least one of (a) one or more desired regions of activation and (b) one or more
+regions in which activation is to be avoided:
+
+calculating, by the processor (412) and for each of the calculated predicted volumes
+(420), at least one score based on the Tespective at least one comparison; and
+
+outputting, by the processor (412), the at least one score.
+
+24, The computer-readable medium of claim 23, wherein the calculation of the at least one
+score includes at least one of (a) counting a number of voxels that map to the one or more
+desired regions of activation and (b) counting a number of voxels that map to the one or more
+
+regions in which activation is to be avoided.
+
+25. The computer-readable medium of claim 23, wherein, for the calculation of the at least
+one score, different weights are assigned to different ones of the regions to which the predicted
+
+volumes of activation (420) are compared.
+
+26. The computer-readable medium of claim 11, wherein the processor (412) calculates a
+respective predicted volume of activation (420) for each of a plurality of sets of stimulation
+parameters according to which the electrode leadwire (428) is operable, and the method further
+comprises:
+
+comparing, by the processor (412), each of the calculated predicted volumes of activation
+(420) with at least one of (a) one or more desired regions of activation and (b) one or more
+regions in which activation is to be avoided:
+
+calculating, by the processor (412) and for each of the calculated predicted volumes
+
+(420), at least one score based on the respective at least one comparison;
+
+4113053-1-rgraniea
+Duration: 17.05.2013 19:13:09 - 17.05.2013 19:25:36. This page 56 of 85 was completed at 17.05.2013 19:21:14
+Received at the EPO on May 17, 2013 19:25:36. Page 56 of 85
+
+--- PAGE 7 ---
+MARKS & CLERK Fax :020-7836-3339 1f May 2013 18:07 PO05//085
+
+automatically selecting, by the processor (412), the set of parameters corresponding to the
+predicted volume of activation (420) for which a highest one of the scores has been calculated;
+and
+
+activating, by the processor (412), the electrode leadwire (428) in accordance with the
+
+automatically selected set of parameters.
+
+27. The computer-readable medium of claim 26, wherein the calculation includes at least one
+of (a) counting a number of voxels that map to the one or more desired regions of activation and
+(b) counting a number of voxels that map to the one or more regions in which activation is to be
+
+avoided.
+
+28. The computer-readable medium of claim 26, wherein, for the calculation of the at least
+one score, different weights are assigned to different ones of the regions to which the predicted
+
+volumes of activation (420) are compared.
+
+29. The computer-readable medium of anyone of claims 1] and 22 to 28, wherein the set of
+stimulation parameters includes at least one of (a) one or more selected electrodes of the
+electrode leadwire, (b) a stimulation pulse amplitude, (c) a stimulation pulse width, (d) electrode
+
+polarity, (¢) electrode pulse polarity, and (f) a stumulation frequency.
+
+30. The computer-readable medium of anyone of claims 1] and 22 to 29, wherein the
+
+implanted electrode leadwire (428) is a Deep Brain Stimulation (DBS) electrode leadwire.
+
+ae t 17.05.2013 19:21:21
+125: i leted at 17.05. 121:
+Duration: 17.05.2013 19:13:09 - 17.05.2013 19:25:36. This page 57 of 85 was comp
+Received at the EPO on May 17, 2013 19:25:36. Page 57 of 85

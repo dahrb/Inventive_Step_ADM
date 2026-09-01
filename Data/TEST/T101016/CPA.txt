@@ -1,0 +1,44 @@
+TITLE:
+Method and apparatus for transmitting reference signals
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Disclosed herein is a method which may include determining whether to include a sounding reference signal or a demodulation reference signal within a variable block of a subframe, and transmitting the subframe from a wireless node to an infrastructure node. The subframe may include a plurality of blocks, each block including a plurality of subcarriers.
+
+CLAIMS:
+ A method comprising:
+determining whether to include a sounding reference signal or a demodulation reference signal within a variable block of a subframe, the subframe including a plurality of blocks; and
+transmitting the subframe from a wireless node to an infrastructure node, the subframe including either the sounding reference signal or the demodulation reference signal within the variable block based on the determining.
+2. The method of claim 1, wherein the determining comprises determining whether to include the sounding reference signal or the demodulation reference signal within the variable block of the subframe, the subframe including the plurality of blocks, each block including a plurality of subcarriers.
+3. The method of claim 1 wherein the transmitting comprises transmitting the subframe from the wireless node to the infrastructure node, the subframe including either the sounding reference signal or the demodulation reference signal within the variable block based on the determining, the subframe also including a demodulation reference signal within a dedicated demodulation reference signal block.
+4. The method of claim 1 wherein the transmitting comprises transmitting the subframe from the wireless node to the infrastructure node, the subframe including either the sounding reference signal or the demodulation reference signal within the variable block based on the determining, a demodulation reference signal within a dedicated demodulation reference signal block, and data within one or more additional blocks of the subframe.
+5. The method of claim 1 wherein the subcarriers have approximately equal bandwidths.
+6. The method of claim 1, wherein the determining is performed based upon an instruction received from the infrastructure node.
+7. The method of claim 1 wherein the transmitting the subframe includes transmitting a plurality of subframes, the plurality of subframes including either the sounding reference signal or the demodulation reference signal in an alternating sequence.
+8. The method of claim 1, wherein the transmitting the subframe includes transmitting a signal indicating whether the subframe includes the sounding reference signal or the demodulation reference signal within the variable block.
+9. A method comprising:
+determining, at an infrastructure node, a signal to be included within a variable block of a subframe, the signal within the variable block including either a sounding reference signal or a demodulation reference signal, the subframe including a plurality of blocks, each block including a plurality of subcarriers;
+transmitting an instruction from the infrastructure node to a wireless node in a wireless network indicating the determined signal; and
+receiving, at the infrastructure node from the wireless node based on the transmitting, a subframe including a plurality of blocks, each block including a plurality of subcarriers, the subframe including the determined signal in the variable block and one or more additional blocks.
+10. The method of claim 9 wherein the transmitting comprises receiving the subframe at the infrastructure node from the wireless node, the subframe including the determined signal in the variable block, a demodulation reference signal within a dedicated demodulation reference signal block, and data signals within one or more blocks of the subframe.
+11. An infrastructure node comprising:
+a controller configured to determine a signal to be included within a variable block of a subframe, the signal within the variable block including either a sounding reference signal or a demodulation reference signal, the subframe including a plurality of blocks, each block including a plurality of subcarriers; and
+a transceiver configured to:
+transmit an instruction from the infrastructure node to a wireless node in a wireless network indicating the determined signal; and
+receive, at the infrastructure node from the wireless node based on the transmitting, a subframe including a plurality of blocks, each block including a plurality of subcarriers, the subframe including the determined signal in the variable block and one or more additional blocks.
+12. The method of claim 1 wherein the transmitting comprises receiving the subframe at the infrastructure node from the wireless node, the subframe including the determined signal in the variable block, a demodulation reference signal within a dedicated demodulation reference signal block, and data signals within one or more blocks of the subframe.
+13. An apparatus comprising:
+a controller configured to determine whether to include a sounding reference signal or a demodulation reference signal within a variable block of a subframe, the subframe including a plurality of blocks, each block including a plurality of subcarriers; and
+a transceiver configured to transmit the subframe to an infrastructure node, the subframe including either the sounding reference signal or the demodulation reference signal within the variable block based on the determination.
+14. The apparatus of claim 13 wherein the controller is configured to determine whether to include the sounding reference signal or the demodulation reference signal within the variable block of the subframe, the subframe including the plurality of blocks, each block including a plurality of subcarriers.
+15. The apparatus of claim 13 wherein the transceiver is configured to transmit the subframe from the wireless node to the infrastructure node, the subframe including either the sounding reference signal or the demodulation reference signal within the variable block based on the determining, the subframe also including a demodulation reference signal within a dedicated demodulation reference signal block.
+16. The apparatus of claim 13 wherein the transceiver is configured to transmit the subframe from the wireless node to the infrastructure node, the subframe including either the sounding reference signal or the demodulation reference signal within the variable block based on the determining, a demodulation reference signal within a dedicated demodulation reference signal block, and data within one or more additional blocks of the subframe.
+17. The apparatus of claim 13 wherein the subcarriers have approximately equal bandwidths.
+18. The apparatus of claim 13 wherein the controller is configured to determine whether to include the sounding reference signal or the demodulation reference signal within the variable block of the subframe based upon an instruction received from the infrastructure node.
+19. The apparatus of claim 13 wherein the transmitting the subframe includes transmitting a plurality of subframes, the plurality of subframes including either the sounding reference signal or the demodulation reference signal in an alternating sequence.
+20. The apparatus of claim 13 wherein the transmitting the subframe includes transmitting a signal indicating whether the subframe includes the sounding reference signal or the demodulation reference signal within the variable block.
+21. A computer program tangibly embodied in an information carrier, the computer program being configured to cause a wireless node to:
+determine whether to include a sounding reference signal or a demodulation reference signal within a variable block of a subframe, the subframe including a plurality of blocks; and
+transmit the subframe from the wireless node to an infrastructure node, the subframe including either the sounding reference signal or the demodulation reference signal within the variable block based on the determining.

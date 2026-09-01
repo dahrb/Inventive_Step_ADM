@@ -1,0 +1,49 @@
+TITLE:
+Methods for capturing and reporting metrics regarding ad placement
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+Systems and methods for recording impression events of Ad content on a webpage. An example method renders on a display of a computer device a webpage accessible over a network. The webpage includes at least one Ad unit. Then Ad tag information associated with the at least one Ad unit and browser viewport information (display location and size information) is retrieved. The occurrence of an Ad Placement event is determined if based on the comparison a predefined percentage of the Ad unit is within the browser viewport. An Ad Placement event timer is begun upon the determination of occurrence of the Ad Placement event. The Ad Placement event timer is stopped if an out-of-view event has occurred based on the Ad tag information and the browser viewport information. An Ad Placement event is then recorded. The recorded Ad Placement event is transmitted to a previously designated server over the network.
+
+CLAIMS:
+The embodiments of the invention in which an exclusive property or privilege is claimed are defined as follows:
+1. A method for recording impression events of Ad content on a webpage, the method comprising:
+at a user computer device coupled to at least one of a public or private data network,
+retrieving and rendering on a display of the user computer device a webpage accessible over the network, wherein the webpage comprises at least one Ad unit and wherein the webpage is rendered within a browser having a viewport;
+retrieving Ad tag information associated with the at least one Ad unit and browser viewport information;
+determining the occurrence of an Ad Placement event based on the
+Ad tag information and the browser viewport information; beginning an Ad Placement event timer upon the determination of occurrence of the Ad Placement event;
+stopping the Ad Placement event timer if an out-of-view event has occurred based on the Ad tag information and the browser viewport information;
+recording the Ad Placement event, wherein the recorded Ad
+Placement event includes the time of the stopped event timer; and transmitting the recorded Ad Placement event to a previously designated server over the network.
+2. The method of Claim 1, wherein the Ad tag information and the browser viewport information comprise display location and size information, wherein determining comprises comparing the display location and size information of the Ad tag information and the browser viewport and determining the occurrence of an Ad Placement event if, based on the comparison, a predefined percentage of the Ad unit is within the browser viewport.
+3. The method of Claim 2, wherein transmitting occurs if at least one of the webpage rendered in the browser is navigated away from or the browser is closed.
+4. The method of Claim 1, wherein the out-of-view event occurs when at least one of the following occurs: the webpage is moved relative to the browser viewport such that the percentage of the Ad unit within the browser viewport falls below a predefined percentage; or the browser presenting the webpage is no longer the active browser on the display.
+5. The method of Claim 4, wherein movement of the webpage comprises scrolling.
+6. A user computer device comprising:
+a display; and
+a processor coupled to the display and to at least one of a public or private data network; the processor configured to: retrieve and render on the display a webpage accessible over the network, wherein the webpage comprises at least one Ad unit and wherein the webpage is rendered within a browser having a viewport;
+retrieve Ad tag information associated with the at least one Ad unit and browser viewport information;
+determine the occurrence of an Ad Placement event based on the
+Ad tag information and the browser viewport information; begin an Ad Placement event timer upon the determination of occurrence of the Ad Placement event;
+stop the Ad Placement event timer if an out-of-view event has occurred based on the Ad tag information and the browser viewport information;
+record the Ad Placement event, wherein the recorded Ad
+Placement event includes the time of the stopped event timer; and
+transmit the recorded Ad Placement event to a previously designated server over the network.
+7. The device of Claim 6, wherein the Ad tag information and the browser viewport information comprise display location and size information, wherein the processor determines the occurrence of the Ad Placement event by comparing the display location and size information of the Ad tag information and the browser viewport and determining the occurrence of the Ad Placement event if based on the comparison a predefined percentage of the Ad unit is within the browser viewport.
+8. The device of Claim 7, wherein the processor transmits if at least one of the webpage rendered in the browser is navigated away from or the browser is closed.
+9. The device of Claim 6, wherein the out-of-view event occurs when at least one of the following occurs: the webpage is moved relative to the browser viewport such that the percentage of the Ad unit within the browser viewport falls below a predefined percentage; or the browser presenting the webpage is no longer the active browser on the display.
+10. The device of Claim 9, wherein movement of the webpage comprises a scroll action.
+11. A system for recording impression events of Ad content on a webpage, the system comprising:
+a means for retrieving and rendering on a display of a user computer device a webpage accessible over a network, wherein the webpage comprises at least one Ad unit and wherein the webpage is rendered within a browser having a viewport;
+a means for retrieving Ad tag information associated with the at least one Ad unit and browser viewport information;
+a means for determining the occurrence of an Ad Placement event based on the Ad tag information and the browser viewport information; a means for beginning an Ad Placement event timer based upon the determination of occurrence of the Ad Placement event; a means for stopping the Ad Placement event timer if an out-of-view event has occurred based on the Ad tag information and the browser viewport information;
+a means for recording an Ad Placement event, wherein the recorded Ad
+Placement event includes the time of the stopped event timer; and a means for transmitting the recorded Ad Placement event to a previously designated server over the network.
+12. The system of Claim 11, wherein the Ad tag information and the browser viewport information comprise display location and size information, wherein the means for determining comprises:
+a means for comparing the display location and size information of the Ad tag information and the browser viewport and determining the occurrence of an Ad Placement event if based on the comparison a predefined percentage of the Ad unit is within the browser viewport.
+13. The system of Claim 12, wherein the means for transmitting transmits if at least one of the webpage rendered in the browser is navigated away from or the browser is closed.
+14. The system of Claim 11, wherein the out-of-view event occurs when at least one of the following occurs: the webpage is moved relative to the browser viewport such that the percentage of the Ad unit within the browser viewport falls below a predefined percentage; or the browser presenting the webpage is no longer the active browser on the display.
+15. The system of Claim 14, wherein movement of the webpage comprises scrolling.

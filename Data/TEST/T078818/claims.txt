@@ -1,0 +1,144 @@
+--- PAGE 1 ---
+P12.496EP / TP-01985 16.6.2021
+Bombardier Transportation GmbH Main Request
+
+Patent Claims
+
+1.
+
+A method of validating a correct operation of a HMI (71), i.e. a human machine
+
+interface, comprising the following steps:
+
+a) receiving input data comprising information to be indicated by the HMI (71) and
+supplying the input data to a first processor (69) of the HMI (71), and
+
+b) processing (73) the input data using the first processor (69) according to a first
+predetermined procedure for producing indication data which define the way an
+indication device of the HMI (71) has to indicate the information,
+
+c) modifying (84) the indication data and obtaining — in a validation mode while a
+corresponding modification function is enabled - modified indication data to allow
+for validation of the correct operation of the HMI (71),
+
+d) outputting the modified indication data in the validation mode to a second
+processor (70),
+
+e) inputting the input data to the second processor (70) and inputting - in the
+validation mode - the modified indication data to the second processor (70),
+
+f) processing (76) in the validation mode the modified indication data according to a
+second predetermined procedure for checking if the modified indication data are
+equivalent to the information to be indicated by the HMI (71) and outputting a
+corresponding check result,
+
+g) deciding (77) in the validation mode that the validation was successful if the check
+result of step f) means that the modified indication data is not equivalent to the
+information to be indicated,
+
+wherein the first predetermined procedure and the second predetermined procedure
+
+are exactly the same predetermined procedures in the validation mode as being
+
+performed during normal operation of the HMI (71), when the indication data are not
+
+modified.
+
+The method of claim 1, wherein, during normal operation, a further validation
+procedure is performed by performing steps a), b), wherein non-modified indication
+data obtained in step b) are input to the second processor (70) and the non-modified
+indication data are checked instead of the modified indication data, and by deciding
+that the validation was successful if the check result means that the indication data is
+
+equivalent to the information to be indicated.
+
+--- PAGE 2 ---
+P12.496EP / TP-01985 16.6.2021
+Bombardier Transportation GmbH Main Request
+
+3. The method of claim 1 or 2, wherein steps a) to g) of claim 1 are repeated and wherein
+
+the indication data are modified in step c) in a different manner.
+
+4. The method of one of claims 1 to 3, wherein step c) is performed using the first
+
+processor (69).
+
+5. A HMI (71), i.e. a human machine interface, comprising the following:
+
+a data input (68) for receiving input data comprising information to be indicated by
+the HMI,
+
+an indication device (9) adapted to indicate the information to a human,
+
+a first processor (69) which is connected to the data input (68) for receiving the
+input data,
+
+a first program (73) implementing a first predetermined procedure for producing
+indication data which define the way an indication device of the HMI (71) has to
+indicate the information, wherein the first processor (69) is adapted to perform the
+first program (73),
+
+a modification device (84) adapted to modify the indication data for obtaining
+modified indication data, thereby implementing a modification function, to allow for
+validation of the correct operation of the HMI (71), wherein the modification
+function is disabled during normal operation, but is enabled in a validation mode of
+the HMI (71),
+
+a second processor (70), which is also connected to the data input (68) for
+receiving the input data and which is connected to an output of the first processor
+(69), for receiving the modified indication data in the validation mode, or to an
+output of the modification device (84), for receiving the modified indication data in
+the validation mode,
+
+a second program (76) implementing a second predetermined procedure for
+checking in the validation mode if the modified indication data is equivalent to the
+information to be indicated by the HMI (71) according to the input data received at
+the data input and for outputting a corresponding check result, wherein the second
+processor (70) is adapted to perform the second program (76),
+
+a decision device (77) adapted to decide in the validation mode that the validation
+was successful if the check result means that the modified indication data is not
+
+equivalent to the information to be indicated,
+
+wherein the first predetermined procedure and the second predetermined procedure
+
+are exactly the same predetermined procedures in the validation mode as being
+
+--- PAGE 3 ---
+P12.496EP / TP-01985 16.6.2021
+Bombardier Transportation GmbH Main Request
+
+10.
+
+performed during normal operation of the HMI (71), when the indication data are not
+
+modified.
+
+The HMI of claim 5, wherein the HMI (71) — during normal operation — is adapted to
+perform a further validation procedure by performing the second program (76) using
+the second processor (70) in a manner in which the non-modified indication data
+produced by the first program (73) and optionally by a third predetermined procedure
+are checked - instead of the modified indication data - for being equivalent to the
+information to be indicated by the HMI (71) and in which the decision device (77)
+decides that the validation was successful if the check result means that the indication
+
+data is equivalent to the information to be indicated.
+
+The HMI of claim 5 or 6, wherein the modification device (84) is adapted to modify the
+
+indication data in a different manner during repeated validation of the HMI (71).
+
+The HMI of one of claims 5 to 7, wherein the modification device (84) is part of or
+
+implemented by the first processor (69).
+
+. Arail vehicle comprising the HMI (71) of one of claims 5 to 8, wherein the HMI (71) is
+
+located in a driver control arrangement for controlling the operation of the rail vehicle.
+
+The rail vehicle of claim 9, wherein the HMI (71) comprises a display (9) as the
+indication device and wherein the first program (73) is adapted to produce indication
+
+data comprising information about the velocity of the rail vehicle.

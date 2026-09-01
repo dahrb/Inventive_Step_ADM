@@ -1,0 +1,24 @@
+Title: Asynchronous video event and transaction data multiplexing technique for surveillance systems
+
+Abstract: A surveillance system which can store and replay information which is not generated contemporaneously. In some point-of-sale systems, the behavioral events occur before the transaction data is generated. The present system uses an independently generated synchronizing signal which is recorded with the video signals corresponding to the behavioral events and the transaction signal corresponding to the transaction events. Upon playback, the transaction data is matched up with the behavioral event being replayed from the video tape by utilizing the synchronizing signals stored with each signal.
+
+Type: WIPO
+
+Claims: 
+1. A surveillance system which asynchronously records digital data with respect to the video data, comprising: a) light sensing means for generating video signals of behavioral events corresponding to a transaction at an operation station; b) sensor means at the operation station for generating digital signals representing transaction events; c) means for generating synchronizing signals; d) first recording means for storing the video signals and the synchronizing signals; e) second recording means for storing the digital signals and the synchronizing signals; f) first playback means for retrieving the video signals and synchronizing signals stored on the first recording means; g) second playback means for retrieving the digital signals and synchronizing signals stored on the second recording means; using the synchronizing signals to synchronize the video signal with the digital signals; h) control means, responsive to an input signal, for generating a composite video signal, the composite video signal including signals representing alphanumeric displays corresponding to desired transaction events, and alpha-numeric display is overlaid on the video signal of the desired behavioral events; wherein the control means utilizes the synchronizing signals to retrieve the desired behavioral events and transaction events; and i) a monitor for displaying the composite video signal.
+2. The surveillance system of claim 1 wherein the sensor means is a cash register.
+3. The surveillance system of claim 1 wherein the means for generating synchronizing signals is a clock which can receive signals from an independent source.
+4. The surveillance system of claim 1 wherein the first recording means is a video cassette recorder.
+5. The surveillance system of claim 4 wherein the playback means is a video cassette recorder.
+6. The surveillance system of claim 1 wherein the second recording means is a first computer and the information is stored on a magnetic medium.
+7. The surveillance system of claim 6 wherein the second recording means is a second computer.
+8. The surveillance system of claim 1 wherein the control means is a second computer.
+9. The surveillance system of claim 1 wherein the first recording means is a video disc.
+10. The surveillance system of claim 1 wherein the second recording means is a computer and the information is stored on a compact disc.
+11. The surveillance system of claim 1 further comprising computer means associated with the control means for manipulating, calculating, sorting and filtering the stored digital transaction data for generating statistics and pSompting for events that will be viewed on the replay behavioral record.
+12. The surveillance system of claim 11 wherein the synchronizing signals are signals corresponding to the time elapsing when the recordings were made.
+13. The surveillance system of claim 11 wherein the light sensing means is a television camera.
+14. The surveillance system of claim 13 wherein the first recording means is a video cassette recorder.
+15. The surveillance system of claim 11 wherein the synchronizing signals are sequence signals.
+16. A method of asynchronously recording events including a video record and a transactional record, comprising the steps: a) generating frames of video signals corresponding to the behavioral events at an operation station; 5 b) generating digital signals at the operation station for representing transaction events; c) generating synchronizing signals; d) storing the video signals and synchronizing signals on a first medium;
+10 e) sorting the digital signals and the synchronizing signals or a second medium; f) retrieving the stored video signals, the stored digital signals an the corresponding stored synchronizing signals; 15 g) synchronizing the video signals with the digital signals using the retrieved synchronizing signals; h) generating a composite video signal, the composite video signal including signals representing alphanumeric displays corresponding to desired 20 transaction events, said alphanumeric display is overlaid on the video signal of the desired behavioral events; and i) displaying the composite video signal.

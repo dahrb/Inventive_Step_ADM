@@ -1,0 +1,213 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P165315.EP.01 1 CONFIDENTIAL
+
+CLAIMS - MAIN REQUEST
+
+1. A system for provisioning and utilizing an aggregated soft card on a
+mobile device, the system comprising:
+
+a plurality of soft card issuing system servers configured to store
+component soft card data; and
+
+a trusted service manager (TSM) server configured to receive a request
+for an aggregated soft card from a mobile device, to access a mapping database
+to identify a primary component soft card and at least one secondary component
+soft card that constitutes the aggregated soft card using an aggregated soft card
+identifier contained in the request from the mobile device and to identify
+addresses of the soft card issuing system servers hosting the component soft
+card data associated with each of the primary component soft card and at least
+one secondary component soft card, to request the component soft card data
+associated with each of the primary component soft card and the at least one
+secondary component soft card from the plurality of soft card issuing system
+servers, to generate aggregated soft card data by establishing a link among the
+component soft card data received from the plurality of issuing system servers,
+and to send the aggregated soft card data to the mobile device, wherein the link
+includes an application identifier list that contains application identifiers that
+identify the primary component soft card and the at least one secondary
+component soft card and are loaded into a proximity payment system
+environment (PPSE) application of the mobile device in accordance with a
+predefined preference order in which the primary component soft card and the at
+least one secondary component soft card are attempted to be used in a wireless
+transaction between the mobile device and a wireless device reader upon
+selection of the aggregated soft card to conduct the wireless transaction with the
+wireless device reader, wherein each of the application identifiers for the primary
+component soft card and the at least one secondary soft card includes a field that
+includes an indicator that respectively designates each of the primary component
+soft card and the at least one secondary soft card as a component of the
+
+aggregated soft card.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P165315.EP.01 2 CONFIDENTIAL
+
+2. The system of claim 1 comprising:
+
+a wireless device reader configured to receive a request from the mobile
+device to conduct a wireless transaction using the aggregated soft card
+provisioned on the mobile device, to select at least one of the primary component
+soft card and the at least one secondary component soft card to conduct the
+wireless transaction based on one or more determination factors, and to conduct
+the wireless transaction over a communications link using the selected at least
+
+one component soft card.
+
+3. The system of claim 2 wherein the mobile device is used to select the
+
+aggregated soft card.
+
+4. The system of claim 2 wherein the one or more determination factors
+includes at least one of: a priority order listing maintained in a preferred
+application list maintained at the wireless device reader, a soft card selection
+made by a merchant at a point of sale associated with the wireless device
+reader, a selection made by a user of the wireless mobile device, a user
+preference stored in the mobile device, a real-time determination based on
+evaluation of an available offer or promotion, and a user preference stored on a
+
+back-end server.
+
+5. The system of claim 2 wherein the wireless transaction is conducted by
+the mobile device and the wireless device reader either via a card emulation
+
+mode or a peer to peer (P2P) mode.
+
+6. The system of claim 1 wherein the mobile device includes an NFC
+enabled mobile device, a Bluetooth enabled mobile device, or a WiFi enabled
+
+mobile device.
+
+7. The system of claim 6 wherein the NFC enabled mobile device includes at
+least one of: an NFC enabled smart phone device, an NFC enabled tablet, and
+
+an NFC enabled personal data assistant (PDA).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P165315.EP.01 3 CONFIDENTIAL
+
+8. The system of claim 1 wherein the primary component soft card and the at
+least one secondary component soft card each includes a virtual gift card, a
+virtual loyalty card, a virtual prepaid card, a virtual coupon, a virtual ticket, a
+virtual boarding pass, a virtual transit card, a virtual credit card, a virtual debit
+card, a virtual payment card, a virtual charge card, a virtual voucher, a virtual
+membership card, a virtual health insurance card, a virtual reward card, a virtual
+business card, a virtual access pass, a virtual automotive insurance card, a
+
+virtual pharmacy card, a virtual library card, a virtual passport.
+
+9. The system of claim 1 wherein the TSM server is configured to generate
+an application identifier list that indicates a priority order of application identifiers
+associated with each of the primary component soft card and the at least one
+
+secondary component soft card.
+
+10. |The system of claim 9 wherein the TSM server is configured to send the
+application identifier list along with soft card data associated with each of the first
+
+component soft card and at least one secondary component soft card.
+
+11. The system of claim 1 wherein the mobile device receives the aggregated
+soft card data from the TSM server via a secure element-trusted service
+manager (SE-TSM) server, wherein the TSM server includes a service provider
+
+trusted service manager (SP-TSM) server.
+
+12. |The system of claim 1 wherein the mobile device receives the aggregated
+soft card data directly from the TSM server, wherein the TSM server includes a
+
+service provider trusted service manager (SP-TSM) server.
+
+13. The system of claim 1 wherein the aggregated soft card is visually
+displayed on the mobile device as a single soft card representation that includes
+
+at least one of: an icon, a symbol, a graphic, an image, and a displayed name.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+P165315.EP.01 4 CONFIDENTIAL
+
+14. A method for provisioning and utilizing an aggregated soft card on a
+
+mobile device using the system of any one of claims 1-13.
+
+15. A non-transitory computer readable medium having stored thereon
+computer executable instructions that when executed by a processor of a
+computer controls the computer to perform steps comprising:
+
+receiving a request for an aggregated soft card from a mobile device;
+
+accessing a mapping database to identify a primary component soft card
+and at least one secondary component soft card that constitutes the aggregated
+soft card using an aggregated soft card identifier contained in the request from
+the mobile device;
+
+identifying addresses of the soft card issuing system servers hosting the
+component soft card data associated with each of the primary component soft
+card and at least one secondary component soft card,
+
+requesting component soft card data associated with each of the primary
+component soft card and the at least one secondary component soft card from a
+plurality of issuing system servers;
+
+generating aggregated soft card data by establishing a link among the
+component soft card data received from the plurality of issuing system servers,
+wherein the link includes an application identifier list that contains application
+identifiers that identify the primary component soft card and the at least one
+secondary component soft card and are loaded into a proximity payment system
+environment (PPSE) application of the mobile device in accordance with a
+predefined preference order in which the primary component soft card and the at
+least one secondary component soft card are attempted to be used in a wireless
+transaction between the mobile device and a wireless device reader upon
+selection of the aggregated soft card to conduct the wireless transaction with the
+wireless device reader; and
+
+sending the aggregated soft card data to the mobile device;
+
+wherein each of the application identifiers for the primary component soft
+card and the at least one secondary soft card includes a field that includes an
+
+indicator that respectively designates each of the primary component soft card
+
+--- PAGE 5 ---
+P165315.EP.01 5 CONFIDENTIAL
+
+and the at least one secondary soft card as a component of the aggregated soft
+
+card.

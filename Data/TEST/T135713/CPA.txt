@@ -1,0 +1,52 @@
+TITLE:
+Method of snmp printing device/user communication for detecting imaging device proximity
+
+TYPE:
+US Patent
+
+ABSTRACT:
+This invention relates to a method for determining a unique identifier of an imaging device. Such structures of this type, generally, detect the closest imaging device to the user by having the user's mobile device query the online/off-line status of all the imaging devices in the current network list. The user then presses a key on the imaging device. The user's mobile device then polls all the imaging devices in the list to see which imaging devices have made online/off-line transition. A message is posted on the control panel of the imaging device as a means of providing confirmation to the user that this is the imaging device the user desires to print from. Finally, the imaging device returns a unique identifier, such as a network address, to the user's mobile device so that the user can download the print job information from the mobile device to the imaging device and the document can be printed.
+
+CLAIMS:
+1. A method for detecting an imaging device proximity, comprising the steps of:
+using a mobile device to interact with a network list of imaging devices;
+changing a variable operating condition of a desired imaging device;
+using said mobile device to determine which imaging device on said list changed said variable operating condition;
+uploading, by said imaging device, of a unique identifier of said imaging device to said mobile device; and
+printing a document on said imaging device.
+2. The method, as in claim 1, wherein said step of using said mobile device to interact with a network list of imaging devices is further comprised of the step of:
+using said mobile device to query said variable in said network list.
+3. The method, as in claim 2, wherein said variable is further comprised of:
+an on-state/off-state of said desired imaging device.
+4. The method, as in claim 1, wherein said step of changing said variable operating condition of said desired imaging device is further comprised of the step of:
+activating an on/off button on said desired imaging device.
+5. The method, as in claim 1, wherein said step of using said mobile device to determine which imaging device on the list has changed the variable operating condition is further comprised of the step of:
+utilizing a common communications protocol between said imaging device and said mobile device.
+6. The method, as in claim 5, wherein said common communications protocol is further comprised of:
+a Simple Network Management Protocol (SNMP).
+7. The method, as in claim 1, wherein said unique identifier is further comprised of:
+a network address of said imaging device.
+8. The method, as in claim 1, wherein said mobile device is further comprised of:
+a laptop computer.
+9. The method, as in claim 1, wherein said mobile device is further comprised of:
+a personal digital assistant.
+10. The method, as in claim 1, wherein said imaging device is further comprised of:
+a printing device.
+11. A program storage medium readable by a computer, tangibly embodying a program of instructions executable by said computer to perform method steps for detecting imaging device proximity, comprising of the steps of:
+using a mobile device to interact with a network list of imaging devices;
+changing a variable operating condition of a desired imaging device;
+using said mobile device to determine which imaging device on said list changed said variable operating condition;
+uploading, by said imaging device, of a unique identifier of said imaging device to said mobile device; and
+printing a document on said imaging device.
+12. The method, as in claim 11, wherein said step of using said mobile device to interact with a network list of imaging devices is further comprised of the step of:
+using said mobile device to query said variable in said network list.
+13. The method, as in claim 12, wherein said variable is further comprised of:
+an on-state/off-state of said desired imaging device.
+14. The method, as in claim 11, wherein said step of changing said variable operating condition of said desired imaging device is further comprised of the step of:
+activating an on/off button on said desired imaging device.
+15. The method, as in claim 11, wherein said step of using said mobile device to determine which imaging device on the list has changed the variable operating condition is further comprised of the step of:
+utilizing a common communications protocol between said imaging device and said mobile device.
+16. The method, as in claim 15, wherein said common communications protocol is further comprised of:
+a simple network management protocol (SNMP).
+17. The method, as in claim 11, wherein said unique identifier is further comprised of:
+a network address of said imaging device.

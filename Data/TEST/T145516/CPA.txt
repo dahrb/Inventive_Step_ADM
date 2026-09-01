@@ -1,0 +1,67 @@
+TITLE:
+Image query system and method
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Images in an image database are searched in response to queries which include the visual characteristics of the images such as colors, textures, shapes, and sizes, as well as by textual tags appended to the images. Queries are constructed in an image query construction area in response to values of representations of the visual characteristics and to locations of the representations in the image query construction area.
+
+CLAIMS:
+1. A computerized method of retrieving images from an image data base, comprising the steps of:
+receiving a depictive specification of one or more image characteristics of a search image, the specification including a type, a location, and a weight of the one or more image characteristics;
+executing a query for images in the image data base that are similar to the search image by:
+determining whether an image in the image data base has an image characteristic of the type and near the location of the one or more image characteristics of the search image; and
+determining similarity between the image and the search image according to the weight of the one or more image characteristics of the search image;
+accumulating a set of images determined to be similar to the search image; and
+providing the set of images ranked in an order according to a degree of similarity to the search image.
+2. The method of claim 1, wherein the one or more image characteristics include color.
+3. The method of claim 2, wherein the one or more image characteristics include texture.
+4. The method of claim 2, wherein the step of receiving the specification includes:
+displaying an image query window and receiving a representation of the one or more image characteristics in the image query window;
+the location of the representation into the window defining the location of the one or more image characteristics.
+5. The method of claim 4, wherein the representation is an icon.
+6. The method of claim 2, wherein the step of receiving the specification includes partitioning the search image into a plurality of partitions, each partition being a specification of the one or more image characteristics according to location.
+7. The method of claim 6, wherein the step of partitioning includes outlining areas of the search image, each outlined area being a specification of the one or more image characteristics according to location of the outlined area.
+8. The method of claim 7, wherein the areas are polygonal areas.
+9. The method of claim 2, wherein the type of the one or more image characteristics is a color.
+10. The method of claim 9, wherein the color is defined by a group of color components.
+11. The method of claim 10, wherein the group of color components is a group of (RGB) components.
+12. The method of claim 1, wherein the step of receiving the specification includes receiving specifications of a plurality of image characteristics and the step of determining similarity includes, for each specified image characteristic, calculating a composite distance between the specified image characteristic and an image characteristic located near a location specified for the specified image characteristic, and combining composite distances for the plurality of specified image characteristics according to weights specified in the specifying step.
+13. The method of claim 12, wherein the plurality of specified image characteristics includes color.
+14. The method of claim 13, wherein the plurality of specified image characteristics includes texture.
+15. The method of claim 1, wherein the one or more image characteristics include color and the step of determining similarity includes, for the type of color (color1), determination of color similarity according to a color similarity function sc (color1, color2), where color2 is any color and so is near a value of 1 when color1 is similar to color2, and sc is near a value of 0 when color1 is different than color2.
+16. The method of claim 15, wherein the step of determining similarity includes determination of color similarity according to: ##EQU6## where dc is a color distance function in which dc is near zero and sc is near 1 when color1 and color2 are similar, while dc is large and sc is near zero when color1 and color2 are dissimilar.
+17. The method of claim 1, wherein the weight is the weight of the one or more image characteristics with respect to other image characteristics.
+18. The method of claim 17, wherein the step of determining similarity includes determining a composite distance between the image and the search image by combining a plurality of image characteristic distances according to a plurality of weights.
+19. A computerized method of managing an image database, comprising the steps of:
+constructing an image database by:
+storing a plurality of images in an image store; and
+storing a plurality of image data representations of the plurality of images;
+receiving a specification of one or more image characteristics in a search image, specification of the one or more image characteristics including a type and a location;
+querying the image database for images that are similar to the search image by:
+identifying from the image data representations one or more images that include the type specified in the search image near the location specified in the search image; and
+determining similarity between each image of the one or more images and the search image;
+accumulating a set of images determined to be similar to the search image;
+ranking the images of the set of images according to a degree of similarity to the search image; and
+providing the set of images, in ranked order, from the image store.
+20. The method of claim 19 wherein the step of receiving the one or more image characteristic includes receiving a plurality of specifications for a plurality of image characteristics in the search image, each specification including a weight of an image characteristic, and the step of determining similarity includes, for each image characteristic, calculating a composite distance between the image characteristic and a corresponding image characteristic located in an image of the one or more images near a location corresponding to a location specified for the image characteristic, and, for the specified image characteristics, combining composite distances according to weights specified in the search image.
+21. The method of claim 20, wherein each image data representation represents a single image.
+22. The method of claim 19, wherein the step of receiving a specification includes:
+displaying an image query window and moving a representation of the one or more image characteristics into the image query window;
+the location of a representation in the window being a specified location.
+23. The method of claim 22, wherein the representation is an icon.
+24. The method of claim 19, wherein the step of receiving a specification includes outlining areas of the search image, each outlined area specifying the one or more image characteristics according to location.
+25. The method of claim 24, wherein the areas are polygonal areas.
+26. The method of claim 19, wherein the step of storing a plurality of image data representations includes, for at least one image in the image data base:
+partitioning the image into a plurality of partitions; and
+storing a data structure for each partition representing a respective image characteristic contained in the partition.
+27. The method of claim 26, wherein the step of receiving a specification includes partitioning the search image into partitions and specifying one or more image characteristics in one or more partitions.
+28. The method of claim 19, wherein the one or more image characteristics include color and the step of determining similarity includes, for the type of color (color1), determination of color similarity according to a color similarity function sc (color1, color2), where color2 is any color and sc is near a value of 1 when color1 is similar to color2, and sc is near a value of 0 when color1 is different than color2.
+29. The method of claim 28, wherein the step of determining similarity includes determination of color similarity according to: ##EQU7## where dc is a color distance function in which dc is near zero oral sc is near 1 when color1 and color2 are similar, while dc is large and sc is near zero when color1 and color2 are dissimilar.
+30. The method of claim 19, wherein each weight is the weight of a respective image characteristic with respect to other image characteristics.
+31. The method of claim 19, wherein the one or more image characteristics include color.
+32. The method of claim 31, wherein the type of the one or more image characteristics is a color.
+33. The method of claim 32, wherein the color is defined by a group of color components.
+34. The method of claim 33, wherein the group of color components is a group of (RGB) components.
+35. The method of claim 31, wherein the one or more image characteristics include texture.

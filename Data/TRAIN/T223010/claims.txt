@@ -1,0 +1,545 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+1 28.05.2015
+MAIN REQUEST
+CLAIMS:
+1. A method of enabling a user to query an electronic document base, the method
+
+comprising the steps of:
+
+- allowing a user to enter query words;
+
+- generating one or more additional keywords based on a profile of the user; and
+
+- searching in an electronic document base for documents that match the combination of
+query words and additional keywords,
+
+characterized by further comprising the steps of:
+
+- generating a set of concept keywords based on the results of the search;
+
+and
+
+- storing the set of concept keywords in a dynamic part of the profile of the user.
+
+2. The method of claim 1, further comprising the steps of:
+
+- detecting a context shift when the distance between a newly entered query word and the
+concept keywords stored in the dynamic part of the profile of the user is sufficiently large;
+and
+
+- disregarding said concept keywords stored in the dynamic part of the profile of the user
+
+upon detecting said context shift.
+
+3. The method of claim 1, comprising enabling the user to specify in advance at
+
+least a static, long-term part of the user profile.
+
+4. The method of claim 3, wherein the user is enabled to specify unwanted topics
+in the static part of the user profile and the documents identified by the specified unwanted
+
+topics are excluded from being made available to the user.
+
+5. A system enabling a user to query an electronic document base (102), the
+system comprising,
+
+- means (104) for allowing a user to enter query words;
+
+--- PAGE 2 ---
+10
+
+1998P00653 WE
+
+2 28.05.2015
+- means (108) for generating one or more additional keywords based on a profile of the user;
+and
+- means for searching in an electronic document base for documents that match the
+combination of query words and additional keywords,
+characterized by further comprising:
+- means (110) for generating a set of concept keywords based on the results of the search; and
+
+- means for storing the set of concept keywords in a dynamic part of the profile of the user.
+
+6. The system of claim 5, further comprising means for detecting a context shift
+when the distance between a newly entered query word and the concept keywords stored in
+the dynamic part of the profile of the user is sufficiently large and disregarding said concept
+
+keywords stored in the dynamic part of the profile of the user upon detecting a context shift.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+3 28.05.2015
+FIRST AUXILIARY REQUEST
+CLAIMS:
+1. A method of enabling a user to query an electronic document base, the method
+
+comprising the steps of:
+
+- allowing a user to enter query words representing a first query;
+
+- generating one or more additional keywords based on the entered query words and a static
+part of a profile of the user, the static part of the profile of the user comprising data which is
+indicative of the user’s long-term interests;
+
+- searching in an electronic document base for documents that match the combination of
+query words and additional keywords;
+
+- returning results of the search to the user;
+
+characterized by further comprising the steps of:
+
+- generating a set of concept keywords based on the results of the search;
+
+- storing the set of concept keywords in a dynamic part of the profile of the user; and
+
+- when the user starts a second query by entering one or more new query words, also using
+the dynamic part of the profile when generating one or more additional keywords for the
+
+second query.
+
+2. The method of claim 1, further comprising the steps of:
+
+- detecting a context shift when the degree of overlap between i) the one or more newly
+entered query words and ii) the combination of the first query and the additional keywords
+generated for the first query, is insufficiently large; and
+
+- when generating the one or more additional keywords for the second query, disregarding
+concept keywords stored in the dynamic part of the profile of the user that are associated with
+
+the search results of the first query upon detecting said context shift.
+
+3. The method of claim 1, comprising enabling the user to specify in advance at
+
+least the static, long-term part of the user profile.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+4 28.05.2015
+4. The method of claim 3, wherein the user is enabled to specify unwanted topics
+in the static part of the user profile and the documents identified by the specified unwanted
+
+topics are excluded from being made available to the user.
+
+5. A system enabling a user to query an electronic document base (102), the
+system comprising,
+
+- means (104) for allowing a user to enter query words representing a first query;
+
+- generating means (108) for generating one or more additional keywords based on the
+entered query words and a static part of a profile of the user, the static part of the profile of
+the user comprising data which is indicative of the user’s long-term interests; and
+
+- means for searching in an electronic document base for documents that match the
+combination of query words and additional keywords;
+
+- means for returning results of the search to the user,
+
+characterized by further comprising:
+
+- means (110) for generating a set of concept keywords based on the results of the search; and
+- means for storing the set of concept keywords in a dynamic part of the profile of the user,
+and wherein the generating means (108) is arranged for, when the user starts a second query
+by entering one or more new query words, also using the dynamic part of the profile when
+
+generating one or more additional keywords for the second query.
+
+6. The system of claim 5, further comprising:
+
+- means for detecting a context shift when the degree of overlap between 1) the one or more
+newly entered query words and 11) the combination of the first query and the additional
+keywords generated for the first query, is insufficiently large and wherein the generating
+means (108) is arranged for, when generating the one or more additional keywords for the
+second query, disregarding concept keywords stored in the dynamic part of the profile of the
+user that are associated with the search results of the first query upon detecting a context
+
+shift.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+5 28.05.2015
+SECOND AUXILIARY REQUEST
+CLAIMS:
+1. A method of enabling a user to query an electronic document base, the method
+
+comprising the steps of:
+
+- allowing a user to enter query words;
+
+- generating one or more additional keywords based on a profile of the user; and
+
+- searching in an electronic document base for documents that match the combination of
+query words and additional keywords,
+
+characterized by further comprising the steps of:
+
+- generating a set of concept keywords based on the results of the search;
+
+- storing the set of concept keywords in a dynamic part of the profile of the user;
+
+- detecting a context shift when the distance between a newly entered query word and the
+concept keywords stored in the dynamic part of the profile of the user is sufficiently large;
+and
+
+- disregarding said concept keywords stored in the dynamic part of the profile of the user
+
+upon detecting said context shift.
+
+2. The method of claim 1, comprising enabling the user to specify in advance at
+
+least a static, long-term part of the user profile.
+
+3. The method of claim 2, wherein the user is enabled to specify unwanted topics
+in the static part of the user profile and the documents identified by the specified unwanted
+
+topics are excluded from being made available to the user.
+
+4. A system enabling a user to query an electronic document base (102), the
+system comprising,
+
+- means (104) for allowing a user to enter query words;
+
+- means (108) for generating one or more additional keywords based on a profile of the user;
+
+and
+
+--- PAGE 6 ---
+10
+
+1998P00653 WE
+
+6 28.05.2015
+- means for searching in an electronic document base for documents that match the
+combination of query words and additional keywords,
+characterized by further comprising:
+- means (110) for generating a set of concept keywords based on the results of the search;
+- means for storing the set of concept keywords in a dynamic part of the profile of the user;
+and
+- means for detecting a context shift when the distance between a newly entered query word
+and the concept keywords stored in the dynamic part of the profile of the user is sufficiently
+large and disregarding said concept keywords stored in the dynamic part of the profile of the
+
+user upon detecting said context shift.
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+7 28.05.2015
+THIRD AUXILIARY REQUEST
+CLAIMS:
+1. A method of enabling a user to query an electronic document base, the method
+
+comprising the steps of:
+
+- allowing a user to enter query words representing a first query;
+
+- generating one or more additional keywords based on the entered query words and a static
+part of a profile of the user, the static part of the profile of the user comprising data which is
+indicative of the user’s long-term interests;
+
+- searching in the electronic document base for documents that match the combination of
+query words and additional keywords;
+
+- returning results of the search to the user,
+
+characterized by further comprising the steps of:
+
+- generating a set of concept keywords based on the results of the search;
+
+- storing the set of concept keywords in a dynamic part of the profile of the user;
+
+- when the user starts a second query by entering one or more new query words, also using
+the dynamic part of the profile when generating one or more additional keywords for the
+second query;
+
+- detecting a context shift when the degree of overlap between i) the one or more newly
+entered query words and ii) the combination of the first query and the additional keywords
+generated for the first query, is insufficiently large; and
+
+- when generating the one or more additional keywords for the second query, disregarding
+concept keywords stored in the dynamic part of the profile of the user that are associated with
+
+the search results of the first query upon detecting said context shift.
+
+2. The method of claim 1, comprising enabling the user to specify in advance at
+
+least the static, long-term part of the user profile.
+
+3. The method of claim 2, wherein the user is enabled to specify unwanted topics
+in the static part of the user profile and the documents identified by the specified unwanted
+
+topics are excluded from being made available to the user.
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+1998P00653 WE
+
+8 28.05.2015
+
+4. A system enabling a user to query an electronic document base (102), the
+system comprising:
+
+- means (104) for allowing a user to enter query words representing a first query;
+
+- generating means (108) for generating one or more additional keywords based on the
+entered query words and a static part of a profile of the user, the static part of the profile of
+the user comprising data which is indicative of the user’s long-term interests;
+
+- means for searching in the electronic document base for documents that match the
+combination of query words and additional keywords;
+
+- means for returning results of the search to the user,
+
+characterized by further comprising:
+
+- means (110) for generating a set of concept keywords based on the results of the search;
+
+- means for storing the set of concept keywords in a dynamic part of the profile of the user;
+wherein the generating means (108) is arranged for, when the user starts a second query by
+entering one or more new query words, also using the dynamic part of the profile when
+generating one or more additional keywords for the second query;
+
+and the system further comprising:
+
+- means for detecting a context shift when the degree of overlap between 1) the one or more
+newly entered query words and 11) the combination of the first query and the additional
+keywords generated for the first query, is insufficiently large and wherein the generating
+means (108) is arranged for, when generating the one or more additional keywords for the
+second query, disregarding concept keywords stored in the dynamic part of the profile of the
+user that are associated with the search results of the first query upon detecting said context
+
+shift.
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+9 28.05.2015
+FOURTH AUXILIARY REQUEST
+CLAIMS:
+1. A method of enabling a user to query an electronic document base comprising
+
+documents spanning an information space, the method comprising the steps of:
+
+- allowing a user to enter query words representing a first query;
+
+- generating one or more additional keywords based on the entered query words and a static
+part of a profile of the user, the static part of the profile of the user comprising data which is
+indicative of the user’s long-term interests;
+
+- searching in the electronic document base for documents that match the combination of
+query words and additional keywords;
+
+- returning results of the search to the user,
+
+characterized by further comprising the steps of:
+
+- generating a set of concept keywords based on the results of the search;
+
+- storing the set of concept keywords in a dynamic part of the profile of the user;
+
+- when the user starts a second query by entering one or more new query words, also using
+the dynamic part of the profile when generating one or more additional keywords for the
+second query;
+
+- detecting a context shift when the degree of overlap between 1) the one or more newly
+entered query words and ii) the combination of the first query and the additional keywords
+generated for the first query, is insufficiently large so as to determine that the second query
+pertains to a different part of the electronic document database’s information space than the
+first query; and
+
+- when generating the one or more additional keywords for the second query, disregarding
+concept keywords stored in the dynamic part of the profile of the user that are associated with
+
+the search results of the first query upon detecting said context shift.
+
+2. The method of claim 1, comprising enabling the user to specify in advance at
+
+least the static, long-term part of the user profile.
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+10 28.05.2015
+3. The method of claim 2, wherein the user is enabled to specify unwanted topics
+in the static part of the user profile and the documents identified by the specified unwanted
+
+topics are excluded from being made available to the user.
+
+4. A system enabling a user to query an electronic document base (102)
+comprising documents spanning an information space, the system comprising:
+
+- means (104) for allowing a user to enter query words representing a first query;
+
+- generating means (108) for generating one or more additional keywords based on the
+entered query words and a static part of a profile of the user, the static part of the profile of
+the user comprising data which is indicative of the user’s long-term interests;
+
+- means for searching in the electronic document base for documents that match the
+combination of query words and additional keywords;
+
+- means for returning results of the search to the user,
+
+characterized by further comprising:
+
+- means (110) for generating a set of concept keywords based on the results of the search;
+
+- means for storing the set of concept keywords in a dynamic part of the profile of the user;
+wherein the generating means (108) is arranged for, when the user starts a second query by
+entering one or more new query words, also using the dynamic part of the profile when
+generating one or more additional keywords for the second query;
+
+and the system further comprising:
+
+- means for detecting a context shift when the degree of overlap between i) the one or more
+newly entered query words and ii) the combination of the first query and the additional
+keywords generated for the first query, is insufficiently large so as to determine that the
+second query pertains to a different part of the electronic document database’s information
+space than the first query;
+
+and wherein the generating means (108) is arranged for, when generating the one or more
+additional keywords for the second query, disregarding concept keywords stored in the
+dynamic part of the profile of the user that are associated with the search results of the first
+
+query upon detecting said context shift.
+
+--- PAGE 11 ---
+10
+
+15
+
+20
+
+25
+
+1998P00653 WE
+
+11 28.05.2015
+FIFTH AUXILIARY REQUEST:
+CLAIMS:
+1. A method of enabling a user to query an electronic document base, the method
+
+comprising the steps of:
+
+- allowing a user to enter query words;
+
+- generating one or more additional keywords based on a profile of the user; and
+
+- searching in an electronic document base for documents that match the combination of
+query words and additional keywords,
+
+characterized by further comprising the steps of:
+
+- generating a set of concept keywords based on the results of the search;
+
+- storing the set of concept keywords in a dynamic part of the profile of the user;
+
+- detecting a context shift when the distance between a newly entered query word and the
+concept keywords stored in the dynamic part of the profile of the user is sufficiently large,
+said distance being obtained by computing a degree of overlap between successive query
+terms; and
+
+- disregarding said concept keywords stored in the dynamic part of the profile of the user
+
+upon detecting said context shift.
+
+2. The method of claim 1, comprising enabling the user to specify in advance at
+
+least a static, long-term part of the user profile.
+
+3. The method of claim 2, wherein the user is enabled to specify unwanted topics
+in the static part of the user profile and the documents identified by the specified unwanted
+
+topics are excluded from being made available to the user.
+
+4. A system enabling a user to query an electronic document base (102), the
+system comprising,
+
+- means (104) for allowing a user to enter query words;
+
+- means (108) for generating one or more additional keywords based on a profile of the user;
+
+and
+
+--- PAGE 12 ---
+10
+
+1998P00653 WE
+
+12 28.05.2015
+- means for searching in an electronic document base for documents that match the
+combination of query words and additional keywords,
+characterized by further comprising:
+- means (110) for generating a set of concept keywords based on the results of the search;
+- means for storing the set of concept keywords in a dynamic part of the profile of the user;
+and
+- means for detecting a context shift when the distance between a newly entered query word
+and the concept keywords stored in the dynamic part of the profile of the user is sufficiently
+large, said distance being obtained by computing a degree of overlap between successive
+query terms, and disregarding said concept keywords stored in the dynamic part of the profile
+
+of the user upon detecting said context shift.

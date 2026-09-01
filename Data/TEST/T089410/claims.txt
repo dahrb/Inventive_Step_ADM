@@ -1,0 +1,153 @@
+--- PAGE 1 ---
+MARKS & CLERK Fax: 020-7836-3339 13 Apr 2010 12:07 P0Q05/020
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A computer system executable method for processing a work
+item (10) stored in a database (14) of work items (10), which method
+
+comprises:
+
+storing in a first memory (73) a data structure (64) defining a hierarchy
+between a first node and a second node for processing work iterns (10) in a
+
+work flow system;
+
+storing in a second memory (39) definitional data items associated with
+
+each of the first and second nodes;
+
+determining validity of definitional data items related to work items (10)
+when a workflow system comprising the first (73) and second (39) memories
+
+is set up or modified by:
+
+receiving a request to store a new definitional data item associated with
+the first node, wherein the new definitional data item controls access to a work
+item (10) and depends from one of the definitional data items associated with
+
+the second node; and
+
+determining validity of the new definitional data item associated with
+the first node based on the data structure (64) stored in the first memory (73)
+prior to storing the new definitional data item in the second memory (39) and
+storing the new definitional data item in the second memory (39) only if the
+
+first node is dependent upon the second node.
+
+2. The method of Claim 1 including the step of storing in a data
+structure (41) information relating each node with at least one of a plurality of
+
+2437304-2-tprock 22
+
+Received at the EPO on Apr 13, 2010 13:22:14. Page 5 of 20
+Duration: 04.13.2010 01:19:46 PM - 04.13.2010 01:22:14 PM. This page 5 of 20 was completed at 04.13.2010 01:20:35 PM
+
+--- PAGE 2 ---
+MARKS & CLERK Fax: 020-7836-3339 13 Apr 2010 12:07 P006/020
+
+MAIN REQUEST
+
+organisational identifier; storing in a data structure information relating each of
+a plurality of operators with at least one of the organisation identifiers; and
+providing an operator with access to, or affecting said operator by, a
+definitional data item only if the stored information associates the operator
+with the same organisation identifier associated with the node of the
+
+definitional data item.
+
+3. The method of Claim 1 or Claim 2 wherein the new definitional
+data item comprises information about a characteristic of a queue associated
+
+with the second node.
+
+4. The method of any preceding Ciaim wherein the new definitional
+data item comprises a rule specifying a transfer characteristic for the work
+item (10).
+
+5. The method of any preceding Claim wherein the new definitional
+data item comprises a rule specifying a processing characteristic for the work
+item (10).
+
+6. Computer software, residing on a computer-readable storage
+medium, comprising instructions for use in a computer system to process a
+work item (10) stored in a database (14) of work items (10), the instructions
+
+causing the system to:
+
+store ina first memory (73) a data structure (64) defining a hierarchy
+between a first node and a second node for processing work items (10) ina
+
+workflow system;
+
+store in a second memory (39) definitional data items associated with
+each of the first and second nodes;
+
+2437304-2-tprock 23
+
+Received at the EPO on Apr 13, 2010 13:22:14. Page 6 of 20
+Duration: 04.13.2010 01:19:46 PM - 04.13.2010 01:22:14 PM. This page 6 of 20 was completed at 04.13.2010 01:20:43 PM
+
+--- PAGE 3 ---
+MARKS & CLERK Fax: 020-7836-3339 13 Apr 2010 12:07 PQ07/020
+
+MAIN REQUEST
+
+determine validity of definitional data items related to work iterns (10)
+when a workflow system comprising the first (73) and second (39) memories
+
+is set up or modified by:
+
+receive a request to store a new definitional data item, associated with
+the first node, wherein the new definitional data item controls access to a work
+item (10) and depends upon one of the definitional data items associated with
+
+the second node; and
+
+determine validity of the new definitional data item associated with the
+first node based on the data structure (64) stored in the first memory (73) prior
+to storing the new definitional data item in the second memory (39) and store
+the new definitional data item in the second memory (39) only if the first node
+
+is dependent upon the second node.
+
+7. Computer software according to Claim 6 wherein the new
+definitional data item comprises information about a characteristic of a queue
+
+associated with the second node.
+
+8. Computer software according to Claim 6 or Claim 7 wherein the
+new definitional data item comprises a rule specifying a transfer characteristic
+for the work item (10).
+
+9. Computer software according to any of Claims 6 to 8 wherein
+the new definitional data item comprises a rule specifying a_ transfer
+characteristic for the work item (10).
+
+10. Computer software according to any of Claims 6 to 9 including
+instructions causing the system to store in a data structure (41) information
+relating each of a piurality of operators with at least one of the organisation
+identifiers; and provide an operator with access to, or affect said operator by,
+
+a definitional data item only if the stored information in the third memory
+
+2437304-2-tprock 24
+
+Received at the EPO on Apr 13, 2010 13:22:14. Page 7 of 20
+Duration: 04.13.2010 01:19:46 PM - 04.13.2010 01:22:14 PM. This page 7 of 20 was completed at 04.13.2010 01:20:51 PM
+
+--- PAGE 4 ---
+MARKS & CLERK Fax :020-7836-3339 13 Apr 2010 12:07 P008/020
+
+MAIN REQUEST
+
+section associates the operator with the same organisation identifier
+
+associated with the node of the definitional data items.
+
+#2437304-2-tprock D5
+
+Received at the EPO on Apr 13, 2010 13:22:14. Page 8 of 20
+Duration: 04.13.2010 01:19:46 PM - 04.13.2010 01:22:14 PM. This page 8 of 20 was completed at 04.13.2010 01:20:54 PM

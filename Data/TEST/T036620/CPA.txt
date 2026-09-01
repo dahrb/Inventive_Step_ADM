@@ -1,0 +1,19 @@
+TITLE:
+Fingerprint database updating method, client and server
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method of updating a database (211) comprising a fingerprint of and an associated set of metadata for each of a number of multimedia objects, A multimedia object and a set of metadata for the multimedia object is downloaded from a file sharing client (101-105). A fingerprint is computed from the multimedia object, and the computed fingerprint and the obtained set of metadata are included in the database (211). The database (211) can be maintained by a central server (210), or be maintained in a distributed fashion by servers (404) running on the file sharing clients (101-105). The database (211) in this way accumulates plural sets of metadata associated with one particular fingerprint. When a sufficient number of sets has been collected, a definite set can be determined using filtering techniques.
+
+CLAIMS:
+1. A method of updating a database comprising a fingerprint of and an associated set of metadata for each of a number of multimedia objects, the method comprising obtaining a multimedia object and a set of metadata for the multimedia object over a network from a file sharing client connected to the network, computing a fingerprint from the multimedia object, and including the computed fingerprint and the obtained set of metadata in the database.
+2. The method of claim 1, the step of including the fingerprint and the set of metadata comprising receiving the computed fingerprint and the obtained set of metadata in a server, determining whether the computed fingerprint is present in the database, and if so, associating the obtained set of metadata with said fingerprint, and if not, adding the computed fingerprint and the obtained set of metadata, associated with each other, to the database.
+3. The method of claim 2, in which the server further determines a definite set of metadata associated with a particular fingerprint once a sufficient number of sets of metadata are associated with said particular fingerprint in the database.
+4. The method of claim 3, further comprising supplying the definite set of metadata to at least one client from which a set of metadata associated with the particular fingerprint was previously obtained.
+5. A file sharing client arranged for updating a database comprising a fingerprint of and an associated set of metadata for each of a number of multimedia objects, comprising means for obtaining a multimedia object and a set of metadata for the multimedia object over a network from a further file sharing client connected to the network, computing a fingerprint from the multimedia object, and means for including the computed fingerprint and the obtained set of metadata in the database.
+6. A server arranged for updating a database comprising a fingerprint of and an associated set of metadata for each of a number of multimedia objects, comprising networking means for receiving a computed fingerprint and a set of metadata, verifying means for determining whether the computed fingerprint is present in the database, and if so, associating the obtained set of metadata with said fingerprint, and if not, adding the computed fingerprint and the obtained set of metadata, associated with each other, to the database.
+7. The server of claim 6, further comprising filtering means for determining a definite set of metadata associated with a particular fingerprint once a sufficient number of sets of metadata are associated with said particular fingerprint in the database.
+8. The server of claim 7, further being arranged for supplying the definite set of metadata to at least one client from which a set of metadata associated with the particular fingerprint was previously obtained.
+9. A file sharing network comprising at least one file sharing client according to claim 6 and at least one server according to laim 6.

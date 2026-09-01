@@ -1,0 +1,47 @@
+TITLE:
+Redundant boot memory
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A plurality of selectable memory devices is available for booting a computer processor. The devices may be selected prior to booting, or may be changed upon recognition that the booting process is not proceeding properly. In another use, one device may be reprogrammed with an updated version while keeping the older version present. Once the updated version is functioning properly, the older version may be overwritten so that two known working copies are available.
+
+CLAIMS:
+1. A method for booting a computer processor comprising:
+starting said computer processor;
+selecting a first non-volatile memory location for reading a first set of boot commands;
+reading said first set of boot commands from said first non-volatile memory location;
+attempting to execute said first set of boot commands;
+determining that said execution of said first set of boot commands is improper;
+selecting a second non-volatile memory location for reading a second set of boot commands;
+restarting said computer processor;
+reading said second set of boot commands from said second non-volatile memory location; and
+executing said second set of boot commands to boot said computer processor.
+2. The method of claim 1 wherein said first non-volatile memory location is a first discrete component and said second non-volatile memory is a second discrete component.
+3. The method of claim 1 wherein said first non-volatile memory location is a first portion of memory from a discrete memory component and said second non-volatile memory is a second portion of memory of said discrete component.
+4. The method of claim 1 wherein said step of selecting a first non-volatile memory location comprises storing at least one bit in a third non-volatile memory location.
+5. A method of updating non-volatile memory containing boot commands for a computer processor comprising:
+starting said computer processor using a first set of boot commands stored in a first non-volatile memory location;
+selecting a second non-volatile memory location for receiving a second set of boot commands, said second set of boot commands being an updated set of boot commands;
+writing said second set of boot commands to said second non-volatile memory location;
+changing a selecting indicator to cause said second non-volatile memory location to be read when said computer processor is restarted;
+restarting said computer processor;
+reading said second set of boot commands from said second non-volatile memory location;
+determining that said second set of boot commands functions properly;
+selecting said first non-volatile memory location for receiving said second set of boot commands; and
+writing said second set of boot commands to said first non-volatile memory location.
+6. The method of claim 5 wherein said first non-volatile memory location is a first discrete component and said second non-volatile memory is a second discrete component.
+7. The method of claim 5 wherein said first non-volatile memory location is a first portion of memory from a discrete memory component and said second non-volatile memory is a second portion of memory of said discrete component.
+8. The method of claim 5 wherein said step of selecting a first non-volatile memory location comprises storing at least one bit in a third non-volatile memory location.
+9. A computer processor with redundant boot memory locations comprising:
+a first non-volatile memory location for storing a first set of boot commands;
+a second non-volatile memory location for storing a second set of boot commands;
+a selection mechanism capable of indicating at least a said first non-volatile memory location and said second non-volatile memory location; and
+a boot sequencer capable of reading said selection mechanism and retrieving one of said first set and second set of boot commands as located in the specific non-volatile memory location as indicated by said selection mechanism and executing said specific set of boot commands to boot said computer processor.
+10. The computer processor of claim 9 wherein said first non-volatile memory location is a first discrete component and said second non-volatile memory is a second discrete component.
+11. The computer processor of claim 9 wherein said first non-volatile memory location is a first portion of memory from a discrete memory component and said second non-volatile memory is a second portion of memory of said discrete component.
+12. The computer processor of claim 9 wherein said selection mechanism comprises storing at least one bit in a third non-volatile memory location.
+13. The computer processor of claim 9 further comprising:
+a processor capable of starting said computer processor using said first set of boot commands stored in said first non-volatile memory location;
+selecting said second non-volatile memory location for receiving an updated set of boot commands, writing said updated set of boot commands to said second non-volatile memory location, changing said selection mechanism to cause said second non-volatile memory location to be read when said computer processor is restarted, restarting said computer processor, reading said updated set of boot commands from said second non-volatile memory location, determining that said updated set of boot commands functions properly, selecting said first non-volatile memory location for receiving said updated set of boot commands, and writing said updated set of boot commands to said first non-volatile memory location.

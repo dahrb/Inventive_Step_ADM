@@ -1,0 +1,143 @@
+--- PAGE 1 ---
+Main request
+
+1. Asystem a system for component condition monitoring and fault diagnosis
+in a machine, characterized in that the system includes:
+
+- acomponent controller configured to operate a data collection function that
+acquires time histories of selected variables for one or more of the
+components;
+
+- a mechatronic device controller configured to operate a pre-processing
+function that calculates, using predetermined mathematical operations,
+specified characteristics of the time histories;
+
+- a group controller for a group of mechatronic devices, the group controller
+configured to operate an analysis function for evaluating the characteristics
+to produce one or more hypotheses of a condition of the one or more
+components;
+
+- a system controller configured to operate a reasoning function for
+determining the condition of the one or more components from the one or
+more hypotheses; and
+
+- said system controller being further configured to operate a manager
+function that determines the selected variables acquired by the data
+collection function, triggers data processing in the pre-processing function
+for calculating the specified characteristics, initiates evaluation of the
+characteristics by the analysis function to yield the hypotheses, and triggers
+derivation of the component conditions by the reasoning function,
+
+wherein said machine being implemented in a hierarchical distributed manner
+and having different level controllers, each one of the subsequent functions is
+associated with progressively higher level controllers within said machine, each
+controller receiving data from a lower level, processing the data according to the
+function associated and passing the processed data to the next level controller or
+ultimately to a user or higher level system.
+
+2. The system of claim 1, further comprising a function for utilizing the
+determined condition of the one or more components to effect preventative
+maintenance for the components.
+
+3. The system of claim 1, wherein the reasoning function determines a
+
+condition of a system in which the one or more components operate from the one
+or more hypotheses.
+
+141
+
+--- PAGE 2 ---
+4. The system of claim 1, wherein the data collection function sets a
+sampling period, trigger mode, and number of samples to be recorded for the
+selected variables.
+
+5. The system of claim 1, wherein each of the data collection, pre-
+processing, analysis, and reasoning facilities resides in a controller of the one or
+more components.
+
+6. The system of claim 1, wherein the pre-processing function calculates
+specified characteristics of the time histories by performing mathematical
+operations on the time histories.
+
+7. The system of claim 1, wherein the analysis function produces the one or
+more hypotheses by applying one or more algorithms and analysis techniques to
+the calculated specified characteristics of the time histories.
+
+8. The system of claim 1, wherein the reasoning function includes an expert
+diagnostic system for determining a condition of the one or more components
+from the one or more hypotheses.
+
+9. The system of claim 1, wherein the manager function utilizes the
+determined condition of the one or more components to effect preventative
+maintenance for the components.
+
+10. A method method of component condition monitoring and fault diagnosis
+in a machine characterized in that the method includes:
+- acquiring time histories of selected variables for one or more of the
+components using a component controller configured to operate a data
+collection function;
+- calculating specified characteristics of the time histories using a
+mechatronic device controller configured to operate a pre-processing function
+that calculates, using predetermined mathematical operations, specified
+characteristics of the time histories;
+- evaluating the characteristics to produce one or more hypotheses of a
+condition of the one or more components; using a group controller for a group
+of mechatronic devices, the group controller configured to operate an analysis
+function for evaluating the characteristics to produce one or more hypotheses
+of a condition of the one or more components; and
+
+142
+
+--- PAGE 3 ---
+- determining the condition of the one or more components from the one or
+more hypotheses using a system controller configured to operate a reasoning
+function for determining the condition of the one or more components from
+the one or more hypotheses;
+- said system controller being further configured to operate a manager
+function that determines the selected variables acquired by the data collection
+function, triggers data processing in the pre-processing function for
+calculating the specified characteristics, initiates evaluation of the
+characteristics by the analysis function to yield the hypotheses, and triggers
+derivation of the component conditions by the reasoning function,
+wherein said machine being implemented in a hierarchical distributed manner
+and having different level controllers, each one of the subsequent functions is
+associated with progressively higher level controllers within said machine, each
+controller receiving data from a lower level, processing the data according to the
+function associated and passing the processed data to the next level controller or
+ultimately to a user or higher level system.
+
+11. The method of claim 10 including utilizing the determined condition of the
+one or more components to effect preventative maintenance for the components.
+
+12. The method of claim 10 including determining a condition of a system in
+which the one or more components operate from the one or more hypotheses.
+
+13. |The method of claim 10, wherein acquiring time histories includes setting
+a sampling period, trigger mode, and number of samples to be recorded for the
+selected variables.
+
+14. The method of claim 10, wherein acquiring time histories is performed by
+a controller of the one or more components.
+
+15. The method of claim 10, wherein calculating specified characteristics of
+the time histories includes performing mathematical operations on the time
+histories.
+
+16. The method of claim 10, wherein evaluating the characteristics to produce
+one or more hypotheses of a condition of the one or more components includes
+applying one or more algorithms and analysis techniques to the calculated
+specified characteristics of the time histories.
+
+143
+
+--- PAGE 4 ---
+17. | The method of claim 10, wherein determining the condition of the one or
+more components from the one or more hypotheses includes utilizing an expert
+
+diagnostic system.
+
+18. A computer program product comprising a computer usable medium
+having computer usable program code for component condition monitoring and
+fault diagnosis, that when run on a computer executes the method of claim 10.
+
+144

@@ -1,0 +1,54 @@
+TITLE:
+Automated self-service cafeteria system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A free-access vending system for use in a cafeteria or similar dining facility, which permits patrons to freely take food items from cafeteria self-service units and to pay for what they take at the time of taking with a payment card or similar instrument, via an automated payment handler. The automated payment handler not only receives payment from patrons, but also has item sensing devices to detect food items as they are removed, thereby eliminating the need for staff personnel to account for food items taken and receive payment from patrons or charge their accounts for meals. Food items removed from the cafeteria self-service units may be replenished directly and conveniently from the kitchen as patrons take them. Packaged food items, such as beverages, may be stored within the cafeteria self-service unit and reloaded independently of freshly-prepared food items, and the stocks thereof optionally maintained by outside personnel. The free-access item sensing devices of the cafeteria self-service unit can be used to detect and identify not only food items taken by patrons, but also the replenished food items. A central information and control system thereby maintains complete tracking and time flow of food items to provide not only accounting and inventory information and reporting to management, but also flow analysis and food item purchasing patterns for patron assistance, scheduling, menu preparation, and the like, and to aid in increasing the real-time operation of the cafeteria while further reducing staff personnel requirements.
+
+CLAIMS:
+1. A cafeteria self-service system for displaying and selling a plurality of food items supplied from a kitchen to a plurality of patrons, each patron having a payment card; the cafeteria self-service system comprising:
+(a) at least one cafeteria self-service unit for the storage and display of said food items, said at least one cafeteria self-service unit being accessible via a first direction from the kitchen and being accessible via a second direction by the patrons, said cafeteria self-service unit including:
+(i) physical access control means for selectively barring or allowing physical access by the patrons to the food items in said cafeteria self-service unit via said second direction;
+(ii) at least one item sensing device for determining food items placed in said cafeteria self-service unit via said first direction and for determining food items removed from said cafeteria self-service unit via said second direction;
+(iii) a payment card accepting device for accepting payment cards presented by patrons;
+(b) an access controller for determining when to allow access and when to bar access, and for activating said physical access control means;
+(c) an automated payment handler for activating said payment card accepting device, validating the payment card, and charging the payment card a selectable amount;
+(d) a data storage facility storing therein:
+(i) a pricing schedule for said food items; and
+(ii) food item replenishment criteria to determine a required amount of food items to be supplied to said cafeteria self-service unit via said first direction;
+(e) a kitchen interface for directing food item preparation operations;
+(f) a central information and control system interfacing with said access controller, said automated payment handler, said item sensing device, said data storage facility and said kitchen interface; for:
+(i) receiving notification from said automated payment handler that a valid payment card has been presented;
+(ii) activating said access controller to allow patron access to said at least one cafeteria self-service unit via said second direction;
+(iii) receiving from said item sensing device the identity of each food item removed from said cafeteria self-service unit via said second direction;
+(iv) calculating said required amount of food items to be supplied to said cafeteria self-service unit via said first direction in accordance with said food item replenishment criteria, and activating said kitchen interface to exhibit said required amount; and
+(v) selectively activating said automated payment handler to charge said valid payment card.
+2. The cafeteria self-service system as in claim 1, wherein said at least one cafeteria self-service unit is a plurality of cafeteria self-service units, and wherein said central information and control system is linked to each cafeteria self-service unit.
+3. The cafeteria self-service system as in claim 1, wherein said replenishment criteria are governed by a static mode, wherein food items are selected for placement in said cafeteria self-service unit according to a fixed predetermined list.
+4. The cafeteria self-service system as in claim 1 wherein said replenishment criteria are governed by a pull mode, wherein food items are selected for placement in said cafeteria self-service unit according to the purchases of the patrons.
+5. The cafeteria self-service system as in claim 1, wherein said cafeteria self-service unit includes a plurality of divisions for placing food items, the food items selectable from a plurality of food item types, the cafeteria self-service system furthermore comprising a staff personnel console device for indicating the food item type placed in a division.
+6. The cafeteria self-service system as in claim 1, wherein said kitchen interface comprises a staff personnel display means to exhibit said required amount of food items.
+7. The cafeteria self-service system as in claim 5 wherein said data storage facility furthermore stores an expiration time for each of said food item type and a shelf time of the food item in each of said divisions.
+8. The cafeteria self-service system as in claim 1, wherein said item sensing device furthermore determines the directional motion of a food item, to distinguish between a food item removed via said first direction from a food item removed via said second direction, and between a food item placed via said first direction from a food item placed via said second direction.
+9. The cafeteria self-service system as in claim 1, furthermore comprising a patron display, to inform patrons of the available food items and prices.
+10. The cafeteria self-service system as in claim 1 wherein said physical access control means comprises obstructionary access control, wherein patrons are obstructed from the food items in said cafeteria self-service unit.
+11. The cafeteria self-service system as in claim 1 wherein said physical access control means comprises compliant access control, wherein patrons are notified when access to the food items is permitted and when access to the food items is not permitted.
+12. The cafeteria self-service system as in claim 1, wherein the food items are of a plurality of food item types, and wherein said cafeteria self-service unit has space which is dynamically reallocatable from a first food item type to a second food item type.
+13. The cafeteria self-service system of claim 1 wherein said cafeteria self-service unit furthermore comprises a plurality of service access points for independent replenishment of food items.
+14. The cafeteria self-service system of claim 13, wherein said cafeteria self-service unit furthermore comprises a compartment accessible via said second direction under said access controller and has a service access point selected from the group consisting of said first direction and said second direction.
+15. A method for operating an automated cafeteria, the automated cafeteria serving a plurality of patrons, each patron having a payment card for making purchases, the automated cafeteria including:
+a cafeteria self-service unit for displaying and selling a plurality of food items supplied from a kitchen via a first direction;
+physical access control means for selectively baring access by the patrons to the food items in the cafeteria self-service unit via a second direction;
+at least one item sensing device for determining food items removed via the second direction; and
+a payment card accepting device for accepting payment cards presented by patrons;
+the method comprising the steps of:
+(a) accepting a presented payment card from a patron to begin a purchase;
+(b) validating said presented payment card;
+(c) activating, if said presented payment card is valid, the physical access control means to allow the patron access to the food items;
+(d) receiving a notification from the item sensing device that a purchased food item has been taken from the cafeteria self-service unit via the second direction;
+(e) charging said presented payment card according to said purchased food item; and
+(f) activating, upon completion of said purchase, the physical access control means to bar access to the food items by patrons via the second direction.
+16. The method of claim 15, the automated cafeteria further including a kitchen interface for directing food item supply operations, the method further comprising the step of:
+(a) activating, upon receiving said notification, the kitchen interface to direct replenishment of said purchased food item.

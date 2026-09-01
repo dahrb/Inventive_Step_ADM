@@ -1,0 +1,52 @@
+TITLE:
+Diverse goods arbitration system and method for allocating resources in a distributed computer system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A diverse goods arbitration system and method allocates computer resources among bidding requesters. Bid slates are transmitted to an arbiter by users (requesters) requesting use of specified portions of the available computer resources. Each bid slate may contain a plurality of bids, each bid representing a requested set of resources and a bid price. The arbiter selects combinations of bids from the bid slates, where each bid combination consists of no more than one bid from each of the received bid slates. The arbiter rejects all bid combinations whose constituent bids exceed an established maximum allocation level for any computer resource. It then selects as a winning bid combination the bid combination having the highest total bid price. Computer resources are then allocated for a next time period based on the winning bid. Costs are allocating to each successful requester in accordance with a predefined opportunity cost function. In particular, for each successful requester, the arbitration process is repeated while excluding that successful requester's bid slate from the set of bid slates considered, resulting in the selection of a second winning bid that excludes the successful requester. The successful requester is then assessed a cost corresponding to the difference between the winning bid's total bid prices, excluding the price in the successful requester's granted bid, and the total bid prices associated with the second winning bid.
+
+CLAIMS:
+1. A method of allocating a plurality of computer resources among a plurality of users, comprising the steps of:
+(A) transmitting to an arbiter bid slates from ones of said users (requesters) requesting use of specified portions of said computer resources, at least a plurality of said bid slates including a plurality of bids, each bid in each bid slate representing a requested set of resources, composing a specified subset of said plurality of computer resources, and a bid price;
+(B) at said arbiter:
+(B1) storing data representing a maximum allocation level for each of said plurality of computer resources,
+(B2) receiving said bid slates;
+(B3) selecting for analysis combinations of bids from said bid slates, where each bid combination consists of no more than one bid from each of said received bid slates, rejecting all those of said bid combinations whose constituent bids include requests for one or more of said computers resources in excess of the corresponding maximum allocation levels for those computer resources, and selecting as a winning bid combination one non-rejected bid combination that includes bids which place highest value on use of said plurality of computer resources;
+(B4) allocating to each successful requester having a non-zero bid included in said winning bid combination a cost in accordance with a predefined opportunity cost function; and
+(C) allocating said computer resources among said successful requesters in accordance with said winning bid.
+2. The method of claim 1 including,
+at said arbiter:
+(B5) defining a winning bid value as the total bid price of the bids in said winning bid combination; and
+(B6) for each successful requester:
+(B6A) performing said selecting step an additional time while excluding said each successful requester's bid slate from the set of bid slates used to form a test set of bid combinations to select a second winning bid that excludes said each successful requester; and
+(B6B) allocated to said each successful requester a cost corresponding to the difference between said winning bid value and the total bid prices associated with said second winning bid.
+3. The method of claim 1, wherein said plurality of computer resources includes transmission bandwidth on a multiplicity of network links interconnecting said users.
+4. The method of claim 1, wherein
+said plurality of computer resources includes transmission bandwidth on a multiplicity of network links interconnecting said users and at least one video server;
+said transmitted bid slates include a first and second bids in a first bid slate where said requested set of resources are first and second bandwidth allocation requests on a plurality of said network links, both sufficient for real time transmission of a motion picture video program, and having a first and second bid price, respectively, a third bid in another bid slate where said requested set of resources is a third bandwidth allocation request on a plurality of said network links that is insufficient for real time transmission of a motion picture video program, having a third bid price;
+said first, second and third bandwidth allocation requests overlap on at least one network link;
+said first bandwidth allocation is greater than said second bandwidth allocation and said second bandwidth allocation is greater than said third bandwidth allocation;
+said bid prices each represent a value for use of the requested bandwidth allocation for a period of time of less than 5 seconds duration, and wherein said third bid price is greater than said second bid price; and
+said winning bid combination selected at said arbiter includes said third bid in said winning combination whenever said first bid is included in said winning combination.
+5. An arbiter for allocating a plurality of computer resources among a plurality of users, comprising:
+a receiver for receiving bid slates from ones of said users (requesters) requesting use of specified portions of said computer resources, at least a plurality of said bid slates including a plurality of bids, each bid in each bid slate representing a requested set of resources, composing a specified subset of said plurality of computer resources, and a bid price;
+arbitration apparatus, including:
+memory for storing data representing a maximum allocation level for each of said plurality of computer resources and for storing said received bid slates;
+bid selection means for selecting combinations of bids from said bid slates, where each bid combination consists of no more than one bid from each of said received bid slates, rejecting all those of said bid combinations whose constituent bids include requests for one or more of said computers resources in excess of the corresponding maximum allocation levels for those computer resources, and selecting as a winning bid combination one non-rejected bid combination that includes bids which place highest value on use of said plurality of computer resources; and
+cost allocation means for allocating to each successful requester having a non-zero bid included in said winning bid combination a cost in accordance with a predefined opportunity cost function; and
+a transmitter for transmitting one or messages that allocate said computer resources among said successful requesters in accordance with said winning bid.
+6. The arbiter of claim 5,
+said bid selection means defining a winning bid value as the total bid price of the bids in said winning bid combination; and
+said cost allocation means including means for allocating a cost to each successful requester by:
+performing said selecting step an additional time while excluding said each successful requester's bid slate from the set of bid slates used to form a test set of bid combinations to select a second winning bid that excludes said each successful requester; and
+allocated to said each successful requester a cost corresponding to the difference between said winning bid value and the total bid prices associated with said second winning bid.
+7. The arbiter of claim 5, wherein said plurality of computer resources includes transmission bandwidth on a multiplicity of network links interconnecting said users.
+8. The arbiter of claim 5, wherein
+said plurality of computer resources includes transmission bandwidth on a multiplicity of network links interconnecting said users and at least one video server;
+said transmitted bid slates include a first and second bids in a first bid slate where said requested set of resources are first and second bandwidth allocation requests on a plurality of said network links, both sufficient for real time transmission of a motion picture video program, and having a first and second bid price, respectively, a third bid in another bid slate where said requested set of resources is a third bandwidth allocation request on a plurality of said network links that is insufficient for real time transmission of a motion picture video program, having a third bid price;
+said first, second and third bandwidth allocation requests overlap on at least one network link;
+said first bandwidth allocation is greater than said second bandwidth allocation and said second bandwidth allocation is greater than said third bandwidth allocation;
+said bid prices each represent a value for use of the requested bandwidth allocation for a period of time of less than 5 seconds duration, and wherein said third bid price is greater than said second bid price; and
+said winning bid combination selected by said bid selection means includes said third bid in said winning combination whenever said first bid is included in said winning combination.

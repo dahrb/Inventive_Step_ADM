@@ -1,0 +1,304 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+P205073EP
+
+CLAIMS
+1. A computerised method of computer gaming operating in a gaming network
+comprising a gaming system connectable via a communications network to a plurality of
+player access elements that provide communication services to a player, comprising:
+providing a first virtual table of a first group of players grouped together to
+play a first hand;
+providing to each of the first group of players one or more cards for the first
+hand;
+receiving from a first player of the first group of players a request to fold the
+one or more cards of the first hand, wherein the request to fold the one or more
+cards of the first player is made out of turn;
+without waiting for the first player’s turn in the first hand, automatically
+moving the first player to a second virtual table of a second group of players
+grouped together to play a second hand;
+maintaining the first virtual table such that the first player appears to the
+other players of the first group to remain active at that virtual table, waiting his turn;
+and
+
+at the first player’s turn in the first hand, automatically folding his hand.
+
+2. The method of claim 1, further comprising, after receiving the request to fold out of
+turn from the first player, moving the first player to a queue comprising additional players to
+
+be moved to the second table.
+
+3. The method of claim 2, further comprising, after moving the first player to the
+queue, determining that the queue comprises enough players to be moved to the second
+table.
+
+4. The method of claim 3, further comprising, upon completion of the first hand at the
+first table, automatically moving each player of the first group of players that are remaining
+at the first table when the first hand is completed to the queue; preferably further
+comprising:
+determining that the queue comprises enough players to be moved to a third table
+to play an additional hand; and moving a third group of players from the queue to
+the third table.
+
+5. The method of claim 3, wherein determining that the queue comprises enough
+
+players to be moved to the second table comprises determining that the queue comprises
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+P205073EP
+
+2
+
+enough players of a first category to be moved to the second table, wherein the second
+table is associated with the first category; preferably
+
+wherein the first category comprises a game type.
+
+6. The method of claim 3, further comprising, after determining that the queue
+comprises enough players to be moved to the second table, determining an order
+according to which current players in the queue will be pulled to be moved to the second
+table; preferably
+
+wherein the order comprises a first-in, first-out order, or the order is based on a
+
+priority associated with each player.
+
+7. The method of claim 3 or 4, further comprising adjusting the number of players
+
+moved to a virtual table depending on the number of players in the queue.
+
+8. The method of claim 2, further comprising determining a seat location of the first
+player for the second table based on the seat location of the first player at the first table or
+
+based on seat locations of the first player in previous hands played by the first player.
+
+9. The method of claim 1, further comprising, after completion of the first hand,
+presenting to the first player:
+an identification of each card provided in the first hand to a winning player of the
+
+first hand; and each action taken during the first hand by the winning player.
+
+10. The method of claim 1, further comprising, after completion of the first hand,
+presenting to the first player:
+an identification of each card provided in the first hand to each player of the first
+group of players; and
+
+each action taken during the first hand by each player of the first group of players.
+
+11. The method of claim 10, further comprising, receiving from the first player an
+
+indication that a player in the first group of players was cheating.
+
+12. The method of claim 1, further comprising, when moving the first player to the
+second virtual table of a second group of players grouped together to play a second hand,
+rotating the seating at the virtual table such that the first player appears to remain at the
+
+same location at the virtual table on the first player’s player access element.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+P205073EP
+
+3
+
+13. A computerised method of computer gaming, the method operating in a gaming
+network comprising a gaming system connectable via a communications network to a
+plurality of player access elements that provide communication services to a player,
+comprising:
+a first player receiving a first virtual table comprising a first group of players
+grouped together to play a first hand;
+the first player receiving one or more cards for the first hand;
+the first player making a request to fold the one or more cards of the first
+hand, wherein the request to fold the one or more cards of the first player is made
+out of turn; and
+without waiting for the first player’s turn in the first hand, the first player
+automatically being moved to a second virtual table comprising a second group of
+players grouped together to play a second hand;
+wherein the first virtual table is maintained such that the first player appears
+to the other players of the first group to remain active at that virtual table, waiting
+his turn; and
+the method further comprising, at the first player’s turn in the first hand,
+
+automatically folding his hand.
+
+14. The method of claim 13, further comprising, upon completion of the first hand at the
+first table, each player of the first group of players that remain at the first table when the
+first hand is completed automatically receiving a further virtual table comprising a further
+
+group of players grouped together to play a further hand.
+
+15. The method of claim 13, further comprising, when the first player moves to a
+second virtual table comprising a second group of players grouped together to play a
+second hand; displaying the virtual table such that the first player appears to remain at the
+
+same location at the virtual table.
+
+16. The method of claim 13, further comprising, after completion of the first hand,
+displaying:
+an identification of each card provided in the first hand to a winning player of the
+
+first hand; and each action taken during the first hand by the winning player.
+
+17. The method of claim 13, further comprising, after completion of the first hand,
+
+displaying:
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+P205073EP
+
+4
+
+an identification of each card provided in the first hand to each player of the first
+group of players; and
+
+each action taken during the first hand by each player of the first group of players.
+
+18. The method of claim 17, further comprising the first player transmitting an indication
+
+that a player in the first group of players was cheating.
+
+19. A gaming system configured to operate in a gaming network and connectable via a
+communications network to a plurality of player access elements that provide
+communication services to a player, the gaming system being further configured to:
+provide a first virtual table of a first group of players grouped together to
+play a first hand;
+provide to each of the first group of players one or more cards for the first
+hand;
+receive from a first player of the first group of players a request to fold the
+one or more cards of the first hand, wherein the request to fold the one or more
+cards of the first player is received out of turn;
+automatically move the first player to second virtual table of a second group
+of players grouped together to play a second hand without waiting for the first
+player’s turn in the first hand;
+maintain the first virtual table such that the first player appears to the other
+
+players of the first group to remain active at that virtual table, waiting his turn.
+
+20. A gaming system as claimed in claim 19 further configured, at the first player’s turn
+in the first hand, to fold his hand.
+
+21. An access element configured to operate in a gaming network comprising a gaming
+system, the access element being connectable via a communications network to the
+gaming system and being configured to provide communication services to a player; the
+access element being further configured to:
+
+receive a first virtual table comprising a first group of players grouped together to
+
+play a first hand;
+receive one or more cards for the first hand;
+
+transmit to the gaming system a request to fold the one or more cards of the first
+hand, wherein the request to fold the one or more cards of the first player is made out of
+
+turn; and
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+P205073EP
+
+5
+
+without waiting for the first player’s turn in the first hand, automatically move to a
+second virtual table comprising a second group of players grouped together to play a
+
+second hand;
+
+wherein the first virtual table is maintained such that the first player appears to the
+other players of the first group to remain active at that virtual table, waiting his turn; andthe
+access element is further configured, at the first player's turn in the first hand, to
+
+automatically fold his hand
+
+22. A gaming network comprising a gaming system connectable via a communications
+network to a plurality of player access elements that provide communication services to a
+player, the gaming network being configured to:
+provide a first virtual table of a first group of players grouped together to
+play a first hand;
+provide to each of the first group of players one or more cards for the first
+hand;
+receive from a first player of the first group of players a request to fold the
+one or more cards of the first hand, wherein the request to fold the one or more
+cards of the first player is made out of turn;
+without waiting for the first player’s turn in the first hand, automatically move
+the first player to a second virtual table of a second group of players grouped
+together to play a second hand;
+maintain the first virtual table such that the first player appears to the other
+players of the first group to remain active at that virtual table, waiting his turn; and
+
+at the first player’s turn in the first hand, automatically fold his hand.
+
+23. Computer code which, when executed by a processor, causes the processor to
+
+perform a method as set out in any one of claims 1 to 18.
+
+24. Computer code which, when executed by a processor, causes the processor to
+
+operate as a gaming system according to claim 19 or 20.
+
+25. Computer code which, when executed by a processor, causes the processor to
+
+operate as an access element according to claim 21.
+
+26. A computer readable medium comprising computer code according to any of
+claims 23 to 25.
+
+--- PAGE 6 ---
+P205073EP
+
+27. Computer code according to any of claims 23 to 25 transmitted on a carrier.

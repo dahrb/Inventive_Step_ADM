@@ -1,0 +1,222 @@
+--- PAGE 1 ---
+5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+Claims
+
+1. An mobile device (102), comprising:
+
+-
+
+a high-definition multimedia interface, HDMI, connector
+
+(106) configured to be coupled to a peripheral (104), the
+
+HDMI connector (106) for transferring audio data in an audio
+channel and video data in a video channel between the mobile
+device (102) and the peripheral (104);
+
+a processor configured to execute a power manager
+
+application (152), the power manager application (152) being
+
+-
+
+configured to timeout the HDMI connector after a period of
+time is exceeded without detecting user interaction with the
+mobile device (102) such that transfer of data via the HDMI
+connector is interrupted; and
+
+a media data monitor (150) configured to detect whether
+audio data (144) is in an audio channel (156) of the HDMI
+connector (106), and responsive to the audio data being
+detected in the audio channel of the HDMI connector (106),
+to communicate a reset signal to the power manager
+application (152),
+
+wherein the power manager application (152) in response
+to the reset signal is configured to reset the system
+timeout such that the period of time is not exceeded while
+
+audio data is detected.
+
+2. The mobile device as recited in claim 1, wherein the
+period of time is a screensaver setting controlled by the
+power manager application (152) that is executed on the
+
+mobile device (102).
+
+3. The mobile device as recited in claim 1, wherein the
+
+mobile device (102) is configured to communicate audio data
+
+7305147 ist Auxiliary Request
+10 April 2017
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+- ?1 -
+
+and video data to the peripheral (104) via the respective
+
+audio channel and video channel of the HDMI connector (106).
+
+4, The mobile device (102) as recited in claim 1,
+comprising:
+
+a media connector configured to be coupled to the
+peripheral (104) via the HDMI connector (106);
+
+a memory, wherein at least the memory and the processor
+are configured to execute the power manager application
+
+(152) and the media data monitor (150).
+
+5. A system (100) comprising a peripheral (104) and an
+mobile device as recited in any preceding claim, the mobile
+device being coupled to the peripheral via the HDMI
+
+connector (106).
+
+6. The system (100) as recited in claim 5, wherein the
+peripheral (104) comprises an audio speaker, wherein the
+mobile device (102) is configured to communicate the audio
+data (144) to the peripheral (104) via the HDMI connector
+(106), and wherein the audio speaker (110) of the peripheral
+(104) is configured to render audio from the audio data and
+the audio continues to be rendered if the audio data is
+
+detected to initiate the reset of the system timeout.
+
+7. The system (100) as recited in claim 5, wherein the
+peripheral (104) comprises a display monitor (108), wherein
+the mobile device (102) is configured to communicate video
+
+data (142) to the peripheral (104) via the HDMI connector
+
+(106), and wherein the display monitor (108) is configured
+
+to display a video from the video data and the video
+
+7305147 ist Auxiliary Request
+10 April 2017
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+—- 22 -
+
+continues to be rendered if the audio data is detected to
+
+initiate the reset of the system timeout.
+
+8. A method, comprising:
+
+coupling (302, 402) an mobile device (102) toa
+
+peripheral (104) via a high definition media interface,
+HDMI, connector (106) configured to transfer media data
+between the mobile device (102) and the peripheral (104),
+
+the media data comprising audio data and video data, the
+
+HDMI connector (106) for transferring audio data in an audio
+
+channel and video data in a video channel between the mobile
+device (102) and the peripheral (104);
+
+timing (318, 418) out the HDMI connector after a period
+of time is exceeded without detecting user interaction with
+the mobile device (102) such that transfer of media data via
+the HDMI connector (106) is interrupted;
+
+detecting (312, 412) whether audio data is in an audio
+channel of the HDMI connector (106); and
+
+initiating (314, 414) a reset of the system timeout
+when the audio data is detected in the audio channel of the
+HDMI connector (106) such that the period of time is not
+
+exceeded while audio data is detected.
+
+9. The method as recited in claim 8, wherein coupling the
+mobile device includes:
+
+the peripheral (104) rendering audio from audio data
+received as the media data from the mobile device (102) via
+the HDMI connector (106), and wherein rendering the audio
+
+continues when the system timeout is reset based on
+
+detecting the audio data.
+
+7305147 ist Auxiliary Request
+10 April 2017
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+—- 23 -
+
+10. The method as recited in claim 8, wherein coupling the
+mobile device includes:
+
+the peripheral (104) rendering video data when audio
+
+data and the video data are received as the media data from
+the mobile device (102) via the HDMI connector (106), and
+wherein the video data continues to be displayed when the
+
+system timeout is reset based on detecting the audio data.
+
+11. The method as recited in claim 8, further comprising:
+
+executing a media data monitor (150) on the mobile
+device (102), the media data monitor (150) detecting the
+audio data and communicating a reset command to a power
+manager application (152) that is executing on the mobile
+
+device (102) to reset the system timeout.
+
+12. The method as recited in claim 8, wherein the HDMI
+connector (106) is configured as an audio/video media
+connector, and wherein coupling the mobile device (102)
+includes the peripheral (104) receiving the media data as
+audio data and video data from the mobile device (102) via
+the respective audio channel and video channel of the HDMI
+
+connector (106).
+
+7305147 ist Auxiliary Request
+
+10 April 2017

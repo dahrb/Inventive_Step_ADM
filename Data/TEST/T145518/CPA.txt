@@ -1,0 +1,44 @@
+TITLE:
+Information processing apparatus, control method therefor, program for implementing the method, and storage medium storing the program
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An information processing apparatus which is in enhanced in operability. A printing apparatus (information processing apparatus) operates in a normal operation mode in which normal operation is enabled, or in an energy-saving mode in which power consumption is reduced. A USB host interface communicates with a USB device. When the printing apparatus is operating in the energy-saving mode, electric power is inhibited from being supplied to the USB host interface and an energy-saving block, and a microprocessor of a system LSI causes the printing apparatus to shift from the energy-saving state to the normal operation state when the USB device is connected to the USB host interface.
+
+CLAIMS:
+1. An information processing apparatus that operates in a normal operation state in which normal operation is enabled, or in an energy-saving state in which power consumption is reduced, comprising:
+a communication unit adapted to communicate with an external device and supply electric power to the external device;
+a detection unit adapted to detect connection of the external device to said communication unit;
+a control unit adapted to control the information processing apparatus; and
+a power control unit adapted to control electric power to be consumed by the information processing apparatus,
+wherein said power control unit inhibits electric power from being supplied to said communication unit and said control unit when the information processing apparatus is operating in the energy-saving state, and causes the information processing apparatus to shift from the energy-saving state to the normal operation state when the external device is connected to said communication unit.
+2. An information processing apparatus as claimed in claim 1, wherein said power control unit causes electric power to be supplied to said communication unit when the information processing apparatus is in the normal operation state.
+3. An information processing apparatus as claimed in claim 1, wherein said power control unit causes electric power to be supplied to said control unit when the information processing apparatus is in the normal operation state.
+4. An information processing apparatus as claimed in claim 1, further comprising a power supply line for supplying electric power to said communication unit, and
+wherein said detection unit detects connection of the external device to said communication unit by detecting a voltage drop in the power supply line.
+5. An information processing apparatus as claimed in claim 4, further comprising a switch and a resistor provided in the power supply line in parallel with each other, and
+wherein said switch interrupts power supply when the information processing apparatus is operating in the energy-saving state.
+6. An information processing apparatus as claimed in claim 1, comprising a printing unit adapted to print out data stored in the external device when the external device is connected to said communication unit.
+7. An information processing apparatus as claimed in claim 1, comprising a storage unit adapted to store data stored in the external device when the external device is connected to said communication unit.
+8. An information processing apparatus as claimed in claim 1, comprising a transmission unit adapted to transmit data stored in the external device to another apparatus when the external device is connected to said communication unit.
+9. An information processing apparatus as claimed in claim 1, wherein said control unit and a communication control unit adapted to control said communication unit are provided on an identical chip.
+10. An information processing apparatus as claimed in claim 1, wherein said communication unit is a host interface of a universal serial bus (USB).
+11. An information processing apparatus as claimed in claim 10, wherein the external device is a USB memory.
+12. An information processing apparatus as claimed in claim 1, wherein said communication unit is an IEEE 1394 interface.
+13. An information processing apparatus as claimed in claim 1, comprising a display unit adapted to display information on data stored in the external device when the external device is connected to said communication unit.
+14. An information processing apparatus as claimed in claim 13, wherein the information on data stored in the external device is for selecting a process to be performed on the data.
+15. An information processing apparatus as claimed in claim 14, wherein the process to be performed includes printing of the data by a printing unit, storage of the data by a storage unit, and transmission of the data to another apparatus by a transmission unit.
+16. A method of controlling an information processing apparatus that operates in a normal operation state in which normal operation is enabled, or in an energy-saving state in which power consumption is reduced, and comprises a communication unit adapted to communicate with an external device and supply electric power to the external device, and a control unit, comprising:
+a detection step of detecting connection of the external device to the communication unit, and
+a power control step of controlling electric power to be consumed by the information processing apparatus,
+wherein said power control step includes inhibiting electric power from being supplied to the communication unit and the control unit when the information processing apparatus is operating in the energy-saving state, and causing the information processing apparatus to shift from the energy-saving state to the normal operation state when the external device is connected to the communication unit.
+17. A program for causing a computer to execute a method of controlling an information processing apparatus that operates in a normal operation state in which normal operation is enabled, or in an energy-saving state in which power consumption is reduced, and comprises a communication unit adapted to communicate with an external device and supply electric power to the external device, and a control unit, the program comprising:
+a detection module for detecting connection of the external device to the communication unit, and
+a power control module for controlling electric power to be consumed by the information processing apparatus,
+wherein said power control module inhibits electric power from being supplied to the communication unit and the control unit when the information processing apparatus is operating in the energy-saving state, and causes the information processing apparatus to shift from the energy-saving state to the normal operation state when the external device is connected to the communication unit.
+18. A storage medium storing a computer-executable program for causing a computer to execute a method of controlling an information processing apparatus that operates in a normal operation state in which normal operation is enabled, or in an energy-saving state in which power consumption is reduced, and comprises a communication unit adapted to communicate with an external device and supply electric power to the external device, and a control unit, the program comprising:
+a detection module for detecting connection of the external device to the communication unit, and
+a power control module for controlling electric power to be consumed by the information processing apparatus,
+wherein said power control module inhibits electric power from being supplied to the communication unit and the control unit when the information processing apparatus is operating in the energy-saving state, and causes the information processing apparatus to shift from the energy-saving state to the normal operation state when the external device is connected to the communication unit.

@@ -1,0 +1,66 @@
+TITLE:
+Method and apparatus for operating control channels for beamforming-based wireless communication
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Provided is a method and apparatus for operating a control channel in a beamforming-based wireless communication system. The provided method includes acquiring information indicating a best Base Station (BS) receive beam for Uplink (UL) communication; determining a control channel region for UL control channels in a UL interval considering the best BS receive beam, the control channel region being a predetermined region that is mapped to the best BS receive beam; and exchanging information about the control channel between a BS and a Mobile Station (MS) through the control channel region.
+
+CLAIMS:
+1. A method for operating a control channel in a beamforming-based wireless communication system, comprising:
+acquiring information indicating a best Base Station (BS) receive beam for Uplink (UL) communication;
+determining a control channel region for UL control channels in a UL interval considering the best BS receive beam, the control channel region comprising a predetermined region that is mapped to the best BS receive beam; and
+exchanging information about the control channel between a BS and a Mobile Station (MS) through the control channel region.
+2. The method of claim 1, wherein the UL interval includes a control channel resource area for transmitting a UL control channel, and the control channel resource area is divided, in a time domain, into multiple control channel regions corresponding to multiple BS receive beams.
+3. The method of claim 2, wherein the control channel regions are allocated to multiple MSs having the same BS receive beam as a best BS receive beam.
+4. The method of claim 1, wherein in the UL interval, the control channel regions are multiplexed with a resource area for other channels in a time or frequency domain.
+5. The method of claim 1, further comprising:
+transmitting a Downlink (DL) data burst from the BS to the MS;
+determining, by the MS, a UL feedback resource area corresponding to the DL data burst and a UL feedback channel in the UL feedback resource area, using the best BS receive beam; and
+receiving, by the BS, feedback information corresponding to the DL data burst from the MS over the UL feedback channel in the determined UL feedback resource area.
+6. A method for operating a control channel in a beamforming-based wireless communication system, comprising:
+determining information about a best Base Station (BS) transmit beam for Downlink (DL) communication;
+determining a control channel region for DL control channels in a DL interval considering the best BS transmit beam, the control channel region comprising a predetermined region that is mapped to the best BS transmit beam; and
+exchanging information about the control channel between a BS and a Mobile Station (MS) through the control channel region.
+7. The method of claim 6, wherein the DL interval includes a control channel resource area for transmitting a DL control channel, and the control channel resource area is divided, in a time domain, into multiple control channel regions corresponding to multiple BS transmit beams.
+8. The method of claim 7, wherein the control channel regions are allocated to multiple MSs having the same BS transmit beam as a best BS transmit beam.
+9. The method of claim 6, wherein in the DL interval, the control channel regions are multiplexed with a resource area for other channels in a time or frequency domain.
+10. The method of claim 6, further comprising:
+transmitting a Uplink (UL) data burst from the MS to the BS;
+determining, by the BS, a DL feedback resource area corresponding to the UL data burst and a DL feedback channel in the DL feedback resource area, using the best BS transmit beam; and
+receiving, by the MS, feedback information corresponding to the UL data burst from the BS over the DL feedback channel in the determined DL feedback resource area.
+11. A communication apparatus for operating a control channel in a beamforming-based wireless communication system, comprising:
+a transmitter;
+a receiver; and
+a controller configured to control the transmitter and the receiver;
+wherein the controller configured to acquire information indicating a best Base Station (BS) receive beam for Uplink (UL) communication, and determine a control channel region for UL control channels in a UL interval considering the best BS receive beam, the control channel region comprising a predetermined region that is mapped to the best BS receive beam; and
+wherein the transmitter and the receiver configured to transmit or receive information about the control channel through the control channel region.
+12. The communication apparatus of claim 11, wherein the UL interval includes a control channel resource area for transmitting a UL control channel, and the control channel resource area is divided, in a time domain, into multiple control channel regions corresponding to multiple BS receive beams.
+13. The communication apparatus of claim 12, wherein the control channel regions are allocated to multiple Mobile Stations (MSs) having the same BS receive beam as a best BS receive beam.
+14. The communication apparatus of claim 11, wherein in the UL interval, the control channel regions are multiplexed with a resource area for other channels in a time or frequency domain.
+15. The communication apparatus of claim 11, wherein after a Downlink (DL) data burst is transmitted from the BS to the MS, the controller is configured to determine a UL feedback resource area corresponding to the DL data burst and a UL feedback channel in the UL feedback resource area, using the best BS receive beam, and control the receiver to receive feedback information corresponding to the DL data burst over the UL feedback channel in the determined UL feedback resource area.
+16. The communication apparatus of claim 11, wherein the transmitter comprises:
+a plurality of encoders configured to encode input information;
+a plurality of modulators configured to map the information encoded by the encoders to modulation symbols;
+a Multiple Input Multiple Output (MIMO) encoder configured to convert modulation symbol sequences comprised of the multiple modulation symbols into multiple MIMO streams;
+a precoder configured to convert the MIMO streams into precoded streams corresponding to multiple antenna arrays comprised of multiple antenna elements for beamforming, using a predetermined precoding matrix;
+Radio Frequency (RF) paths configured to convert the precoded streams into analog RF signals; and
+beamforming units configured to control phase and amplitude of the analog RF signals according to the antenna arrays and the antenna elements and transmit the controlled RF signals through the antenna elements of the antenna arrays.
+17. A communication apparatus for operating a control channel in a beamforming-based wireless communication system, comprising:
+a transmitter;
+a receiver; and
+a controller configured to control the transmitter and the receiver;
+wherein the controller is configured to determine information about a best Base Station (BS) transmit beam for Downlink (DL) communication, determine a control channel region for DL control channels in a DL interval considering the best BS transmit beam, and control the transmitter and the receiver to transmit or receive information about the control channel through the control channel region; and
+wherein the control channel region is a predetermined region that is mapped to the best BS transmit beam.
+18. The communication apparatus of claim 17, wherein the DL interval includes a control channel resource area for transmitting a DL control channel, and the control channel resource area is divided, in a time domain, into multiple control channel regions corresponding to multiple BS transmit beams.
+19. The communication apparatus of claim 18, wherein the control channel regions are allocated to multiple Mobile Stations (MSs) having the same BS transmit beam as a best BS transmit beam.
+20. The communication apparatus of claim 17, wherein in the DL interval, the control channel regions are multiplexed with a resource area for other channels in a time or frequency domain.
+21. The communication apparatus of claim 17, wherein if a Uplink (UL) data burst is transmitted from the MS to the BS, the controller is configured to determine a DL feedback resource area corresponding to the UL data burst and a DL feedback channel in the DL feedback resource area, using the best BS transmit beam, and control the receiver to receive feedback information corresponding to the UL data burst from the BS over the DL feedback channel in the determined DL feedback resource area.
+22. The communication apparatus of claim 17, wherein the transmitter comprises:
+a plurality of encoders configured to encode input information;
+a plurality of modulators configured to map the information encoded by the encoders to modulation symbols;
+a Multiple Input Multiple Output (MIMO) encoder configured to convert modulation symbol sequences comprised of the multiple modulation symbols into multiple MIMO streams;
+a precoder configured to convert the MIMO streams into precoded streams corresponding to multiple antenna arrays comprised of multiple antenna elements for beamforming, using a predetermined precoding matrix;
+Radio Frequency (RF) paths configured to convert the precoded streams into analog RF signals; and
+beamforming units configured to control phase and amplitude of the analog RF signals according to the antenna arrays and the antenna elements and transmit the controlled RF signals through the antenna elements of the antenna arrays.

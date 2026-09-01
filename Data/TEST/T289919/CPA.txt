@@ -1,0 +1,125 @@
+Title: Inventory transaction common object
+
+Abstract: Stored inventory transaction information in a first format for use by a first computerized system is transformed to readily make the stored inventory transaction information available for use in a second computerized system that utilizes a second format in a cost-efficient and time-efficient manner.
+
+Type: US Patent
+
+Claims: 
+1. A method in a computing system for managing inventory, the method comprising:
+extracting inventory transaction information in a first form that is associated with a first source computerized inventory management system;
+converting the inventory transaction information in the first form into inventory transaction information that is in a second intermediate form; and
+converting the inventory transaction information in the second intermediate form into inventory transaction information in a target form that corresponds to a target computerized inventory management system.
+2. The method of claim 1, further comprising:
+using the inventory transaction information in the target form to perform at least one computer-implemented act from a set of computer-implemented acts comprising:
+creating a new inventory transaction record in the target computerized inventory management system; and
+updating an existing inventory transaction record in the target computerized inventory management system.
+3. The method of claim 1, further comprising:
+extracting inventory transaction information in a third form that is associated with a second source computerized inventory management system that is distinct from the first source computerized inventory management system;
+converting the inventory transaction information in the third form into inventory transaction information that is in the second intermediate form;
+converting the inventory transaction information in the second intermediate form into inventory transaction information in the target form; and
+using the inventory transaction information in the target form to perform at least one computer-implemented act from a set of computer-implemented acts comprising:
+creating a new inventory transaction record in the target computerized inventory management system; and
+updating an existing inventory transaction record in the target computerized inventory management system.
+4. The method of claim 1, wherein the second intermediate form includes a list of inventory transactions class with a hierarchy of data elements, wherein the hierarchy of data elements includes a plurality of inventory transaction elements which include other elements.
+5. The method of claim 4, wherein each of the plurality of inventory transaction elements includes:
+an inventory transaction identifier;
+a base data element for defining:
+a transaction comments element;
+a transaction date;
+a transaction quantity of items;
+a transaction time,
+a transaction type code; and
+a transaction unit of measure code;
+a list of identifier data element for defining identifier data that is specific to a product or item;
+a location data element for defining a destination location data element and a source location data element;
+a related product element for defining a product or item identifier,
+a related document data element for defining a related purchase order element; and
+a custom data element for defining customized attributes for the inventory transaction information.
+6. The method of claim 5, wherein:
+the identifier data element includes a product serial number or an item serial number;
+the destination location data element includes a destination bucket code element and a destination inventory location identifier element;
+the source location data element includes a source bucket code element and a source inventory location identifier; and
+the related purchase order element includes a purchase order element for defining purchase-order-type elements that include:
+a common object row identifier element;
+a purchase order base data element wherein the purchase order base data element includes a purchase order number;
+a list of purchase order line item element, wherein the list of purchase order line item element includes a plurality of purchase order line items; and
+a purchase order custom data element.
+7. The method of claim 6, wherein each of the plurality of purchase order line items includes:
+a purchase order line item number identifier element;
+a purchase order line item base data element; and
+a purchase order line item custom data element.
+8. The method of claim 7, wherein the purchase order line item base data element includes a purchase order line item number.
+9. A computer-readable medium carrying one or more sequences of instructions for managing inventory, wherein execution of the one or more sequences of instructions by one or more processors causes the one or more processors to perform:
+extracting inventory transaction information in a first form that is associated with a first source computerized inventory management system;
+converting the inventory transaction information in the first form into inventory transaction information that is in a second intermediate form; and
+converting the inventory transaction information in the second intermediate form into inventory transaction information in a target form that corresponds to a target computerized inventory management system.
+10. The computer-readable medium of claim 9, further comprising:
+using the inventory transaction information in the target form to perform at least one computer-implemented act from a set of computer-implemented acts comprising:
+creating a new inventory transaction record in the target computerized inventory management system; and
+updating an existing inventory transaction record in the target computerized inventory management system.
+11. The computer-readable medium of claim 9, further comprising:
+extracting inventory transaction information in a third form that is associated with a second source computerized inventory management system that is distinct from the first source computerized inventory management system;
+converting the inventory transaction information in the third form into inventory transaction information that is in the second intermediate form;
+converting the inventory transaction information in the second intermediate form into inventory transaction information in the target form; and
+using the inventory transaction information in the target form to perform at least one computer-implemented act from a set of computer-implemented acts comprising:
+creating a new inventory transaction record in the target computerized inventory management system; and
+updating an existing inventory transaction record in the target computerized inventory management system.
+12. The computer-readable medium of claim 9, wherein the second intermediate form includes a list of inventory transactions class with a hierarchy of data elements.
+13. The computer-readable medium of claim 12, wherein the hierarchy of data elements includes a plurality of inventory transaction elements which include other elements.
+14. The computer-readable medium of claim 13, wherein each of the plurality of inventory transaction elements includes an inventory transaction identifier.
+15. The computer-readable medium of claim 13, wherein each of the plurality of inventory transaction elements includes a base data element for defining:
+a transaction comments element;
+a transaction date,
+a transaction quantity of items;
+a transaction time,
+a transaction type code; and
+a transaction unit of measure code.
+16. The computer-readable medium of claim 13, wherein each of the plurality of inventory transaction elements includes a list of identifier data element for defining identifier data that is specific to a product or item.
+17. The computer-readable medium of claim 13, wherein each of the plurality of inventory transaction elements includes a location data element for defining a destination location data element and a source location data element.
+18. The computer-readable medium of claim 13, wherein each of the plurality of inventory transaction elements includes a related product element for defining a product or item identifier.
+19. The computer-readable medium of claim 13, wherein each of the plurality of inventory transaction elements includes a related document data element for defining a related purchase order element.
+20. The computer-readable medium of claim 13, wherein each of the plurality of inventory transaction elements includes a custom data element for defining customized attributes for the inventory transaction information.
+21. The computer-readable medium of claim 16, wherein the identifier data element includes a product serial number or an item serial number.
+22. The computer-readable medium of claim 17, wherein the destination location data element includes a destination bucket code element, which in turn includes a destination inventory location identifier.
+23. The computer-readable medium of claim 17, wherein the source location data element includes a source bucket code element, which in turn includes a source inventory location identifier.
+24. The computer-readable medium of claim 19, wherein the related purchase order element includes a purchase order element for defining purchase order elements that include:
+a common object row identifier element;
+a purchase order base data type element;
+a list of purchase order line item element; and
+a purchase order custom data element.
+25. The computer-readable medium of claim 24, wherein the purchase order base data type element includes a purchase order number.
+26. The computer-readable medium of claim 24, wherein the list of purchase order line item element includes a plurality of purchase order line items.
+27. The computer-readable medium of claim 26, wherein each of the plurality of purchase order line items includes:
+a purchase order line item number identifier element;
+a purchase order line item base data element; and
+a purchase order line item custom data element.
+28. The computer-readable medium of claim 27, wherein the purchase order line item base data element includes a purchase order line item number.
+29. A data structure for managing inventory, the data structure comprising a list of inventory transactions class with a hierarchy of data elements, wherein the hierarchy of data elements includes a plurality of inventory transaction elements which include other elements.
+30. The data structure of claim 29, wherein each of the plurality of inventory transaction elements includes:
+an inventory transaction identifier;
+a base data element for defining:
+a transaction comments element;
+a transaction date;
+a transaction quantity of items;
+a transaction time;
+a transaction type code; and
+a transaction unit of measure code;
+a list of identifier data element for defining identifier data that is specific to a product or item;
+a location data element for defining a destination location data element and a source location data element;
+a related product element for defining a product or item identifier;
+a related document data element for defining a related purchase order element; and
+a custom data element for defining customized attributes for the inventory transaction information.
+31. The data structure of claim 30, wherein:
+the identifier data element includes a product serial number or an item serial number;
+the destination location data element includes a destination bucket code element and a destination inventory location identifier element;
+the source location data element includes a source bucket code element and a source inventory location identifier; and
+the related purchase order element includes a purchase order element for defining purchase-order-type elements that include:
+a common object row identifier element;
+a purchase order base data element wherein the purchase order base data element includes a purchase order number;
+a list of purchase order line item element, wherein the list of purchase order line item element includes a plurality of purchase order line items; and
+a purchase order custom data element.
+32. The data structure of claim 31, wherein each of the plurality of purchase order line items includes:
+a purchase order line item number identifier element;
+a purchase order line item base data element; and
+a purchase order line item custom data element.
+33. The data structure of claim 32, wherein the purchase order line item base data element includes a purchase order line item number.

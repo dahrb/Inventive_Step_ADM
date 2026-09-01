@@ -1,0 +1,139 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+1. Aclient node, comprising:
+a database comprising a plurality of media content data files;
+a database comprising local identification data and metadata associated with
+
+the plurality of media content data files; and
+processing logic for performing media content identity management
+operations, the processing logic used by the client node to reconcile the
+identity of individual media content data files of the plurality of media content
+data files, the processing logic configured to perform
+
+selecting a content media data file stored in a media content data
+source;
+
+receiving a first set of metadata associated with the selected media
+content data file from the media content data source;
+
+providing the first set of metadata to a server node;
+
+receiving from a server node a first master identifier based on the first
+set of metadata;
+
+processing the first master identifier to identify a second master
+identifier stored in the database of local identification data and metadata and
+
+acquiring the selected media content data file in response to the first
+
+and second master identifiers being different.
+
+2. The client node of claim 1, wherein the client node processes the first
+master identifier to identify a second master identifier stored in the database of
+local identification data and metadata by examining location information for
+
+storage of metadata associated with the plurality of media content data files.
+
+3. Theclient node of claim 1, wherein the client node processes the first
+master identifier to identify a second master identifier stored in the database of
+local identification data and metadata by identifying any media track
+
+information in the plurality of media content data files.
+
+4. The client node of claim 1, wherein the client node processes the first
+
+23
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+master identifier to identify a second master identifier stored in the database of
+local identification data and metadata by identifying any date information in
+
+the plurality of media content data files.
+
+5. The client node of claim 1, wherein the client node processes the first
+master identifier to identify a second master identifier stored in the database of
+local identification data and metadata by identifying information in the
+plurality of media content data files that correspond with a media content file
+
+stored in a format that is different than the selected media content file.
+
+6. A method for managing the identity of media content data, comprising:
+using a database comprising a plurality of media content data files;
+
+using a database comprising local identification data and metadata
+associated with the plurality of media content data files; and
+using processing logic to perform media content identity management
+operations, the processing logic used by [[the]] a client node to reconcile the
+identity of individual media content data files of the plurality of media content
+data files, the processing logic configured to perform
+
+selecting a content media data file stored in a media content data
+source;
+
+receiving a first set of metadata associated with the selected media
+content data file from the media content data source;
+
+providing the first set of metadata to a server node;
+
+receiving from a server node a first master identifier based on the first
+set of metadata;
+
+processing the first master identifier to identify a second master
+identifier stored in the database of local identification data and metadata; and
+acquiring the selected media content data file in response to the first and
+
+second master identifiers being different.
+
+7. The method of claim 7, wherein the client node processes the first
+master identifier to identify a second master identifier stored in the database of
+local identification data and metadata by examining location information for
+
+storage of metadata associated with the plurality of media content data files.
+24
+
+--- PAGE 3 ---
+10
+
+15
+
+8. The method of claim 6, wherein the client node processes the first master
+identifier to identify a second master identifier stored in the database of local
+identification data and metadata by identifying any media track information in
+
+the plurality of media content data files.
+
+9. The method of claim 6, wherein the client node processes the first master
+identifier to identify a second master identifier stored in the database of local
+identification data and metadata by identifying any date information in the
+
+plurality of media content data files.
+
+10. The method of claim 6, wherein the client node processes the first
+master identifier to identify a second master identifier stored in the database of
+local identification data and metadata by identifying information in the
+plurality of media content data files that correspond with a media content file
+
+stored in a format that is different than the selected media content file.
+
+25

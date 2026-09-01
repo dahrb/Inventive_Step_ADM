@@ -1,0 +1,162 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+35
+
+20
+
+CLAIMS
+(Main request)
+
+1. Method for playback of motion video, said method comprising:
+requesting, via a communication network (16), streaming of a specific
+motion video sequence from a motion video storage device (12) to a motion
+video playback device (14),
+streaming motion video data of the requested motion video sequence
+from the motion video data storage device (12) to the motion video playback
+device (14),
+displaying the streamed motion video data on a display connected to
+the playback device (14) as the streamed motion video data is received at the
+playback device (14),
+sending a request of change of playback speed to the motion video
+data storage device (12),
+in response to receiving the request of change of playback speed at
+the motion video data storage device (12) the following acts are performed:
+decoding, in a decoder (62) of the motion video data storage
+device (12), motion video data from a temporal position in the specific
+motion video sequence that has not yet been streamed to the motion
+video playback device (14),
+compressing, in respect of time, the decoded motion video data,
+encoding, in an encoder (58) of the motion video data storage
+device (12), the compressed motion video data using an encoding
+scheme corresponding to an encoding scheme used to encode the
+specific motion video sequence, and
+continue streaming said motion video sequence to the motion
+video playback device (14) using said compressed and encoded
+motion video data
+wherein said compressing of the decoded motion video data is
+performed in the decoder (62) before the motion video data is sent on
+an internal data bus (69) of the motion video data storage device (12)
+to the encoder (58).
+
+2. Method according to claim 1 wherein the compressing, in respect of
+time, of the decoded motion video data comprises selecting every n:th frame
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+21
+
+of the decoded motion video data for compressing, in respect of time, the
+motion video data, wherein n is a value relating to the requested playback
+speed.
+
+3. Method according to any one of claims 1-2, wherein motion video
+data of the specific motion video sequence is set to be played back at a
+predetermined frame rate and wherein the playback frame rate is not
+changed when the change of playback speed is executed.
+
+4. Method according to any one of claims 2-3, wherein the motion
+video data of said specific motion video sequence stored at the motion video
+data storage device (12) includes subsets of motion video data, each motion
+video data subset representing an image frame in the motion video sequence,
+wherein at least some of the motion video data subsets does not include
+enough motion video data for recreating the image frame it represents without
+relying on motion video data from other motion video data subsets of the
+motion video sequence, wherein said decoding of motion video data includes
+generating motion video data subsets each including enough information to
+recreate at least each of the image frames selected in the act of compressing
+without using motion video data from another subset.
+
+5. Method according to any one of claims 1-4, wherein the motion
+video data of said specific motion video sequence stored at the motion video
+data storage device (12) includes subsets of motion video data, each motion
+video data subset representing an image frame in the motion video sequence
+and the image frames being sequentially related in chronological order, and
+wherein the receipt of the request of change of playback speed initiates said
+decoding of motion video data subsets arranged later in the chronological
+sequence than the motion video data subset presently being processed for
+streaming.
+
+6. Method according to claim 5, wherein the first motion video data
+subset being decoded is the motion video data subset representing the image
+frame being the next frame in the chronological sequence in relation to the
+motion video data subset presently being processed for streaming.
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+35
+
+22
+
+7. Method according to any one of claim 2-6 wherein n is a value
+greater than or equal to two.
+
+8. Method according to any one of claims 1-7, wherein the motion
+video data storage device (12) is a networked enabled camera including an
+image sensor and the motion video sequence is a motion video sequence
+captured by said image sensor.
+
+9. Method according to any one of claims 1-7, further comprising
+receiving motion video to be stored at the motion video data storage
+device (12) from an image capturing device (20) via a direct connection
+between the image capturing device (20) and the motion video data storage
+device (12).
+
+10. Method according to any one of claims 1-9, wherein a motion video
+data subset corresponding to an image frame received at the motion video
+playback device (14) is discarded from the motion video playback device (14)
+when the image frame has been displayed.
+
+11. Motion video data storage device (12) arranged to store motion
+video data and to perform streaming of requested fast forwarded motion video
+data via a network (16), the motion video data storage device (12)
+comprising:
+
+a storage device (18) arranged to store encoded motion video data;
+
+a decoder (62) arranged to decode motion video data stored in the
+storage device (18);
+
+an encoder (58) arranged to encode motion video data;
+
+a network interface (60) arranged to send motion video data over the
+network (16):
+
+an internal data bus (69) arranged to transport motion video data
+between the decoder (62), the encoder (58), the storage device (18) and/or
+the network interface (60);
+
+characterized in that the decoder (62) is further arranged to
+temporally compress the motion video data before it is transmitted over the
+internal data bus (69) to the encoder (58).
+
+--- PAGE 4 ---
+23
+
+12. Motion video data storage device according to claim 11, wherein
+the storage device (18) comprises an integral storage device or a physical
+interface directly connected to a detachable storage device.
+
+13. Motion video data storage device according to claim 11 or 12,
+wherein the decoder (62) is arranged to temporally compress the motion
+video data by removing motion video data.

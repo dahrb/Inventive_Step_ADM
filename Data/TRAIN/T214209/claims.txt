@@ -1,0 +1,299 @@
+--- PAGE 1 ---
+SET OF CLAIMS (APPEAL PROCEDURE)
+
+1. Process for automatically identifying, analysing
+and estimating deformations particularly in = motor
+vehicles, said process comprising the following steps:
+
+- loading image data relevant to at least a three-
+dimensional image of a damaged vehicle in a vehicle image
+memory;
+
+- in the image memory of damaged vehicles, calling
+up image data of at least a three-dimensional image of a
+sample vehicle from a database of sample vehicle images,
+said sample vehicle image being the image of a vehicle
+type corresponding to the damaged vehicle type;
+
+- displaying image data relevant to damaged vehicle
+image and to the corresponding not damaged vehicle type;
+
+- automatically comparing the three-dimensional
+image of the damaged vehicle with the corresponding
+three-dimensional image of the sample vehicle
+identifying, through an automatic comparison between said
+two images: damage location or deformation and detecting
+deformed regions;
+
+- selecting by means of delimitation or highligthing
+graphic tools damaged or deformed regions identified by
+the automatic comparison on at least one of the two
+
+images;
+
+--- PAGE 2 ---
+~ storing image pixel and respective image data,
+selected as corresponding to damaged or deformed regions
+as result of said comparison and selection steps, in a
+memory of a work program;
+
+- computing perimeter, area and/or volume of damaged
+or deformed region or regions and/or further morphologic
+parameters by means of algorithms implemented by the work
+program, and/or identifying the location in space of the
+damage on the vehicle using the computation algorithm
+implemented by the work program on damaged or deformed
+regions and/or on results of said comparison stored in
+the work program memory;
+
+- computing a deformation gravity degree and
+assigning said deformation gravity degree to each damaged
+or deformed region;
+
+- computing labour times and costs for repairing the
+damaged or deformed regions, starting from such computed
+perimeter, area and/or volume and/or morphologic
+parameters, using a database of repair times and costs
+available for every vehicle type; and
+
+- producing a virtual image of the sample vehicle
+which is constituted by the virtual image set of
+individual structural parts of the vehicle forming
+indipendent structural units, that is individual vehicle
+
+parts, which virtual image can be displayed as image of
+
+--- PAGE 3 ---
+assembled vehicle or as exploded vehicle image, each
+structural part of the vehicle being univocally
+identified by an identification code, and corresponding
+to the same structural part of the damaged vehicle.
+
+2. Process according to claim 1, characterized in that a
+comparison is made between image data relevant to image
+of damaged vehicle and image data relevant to sample
+vehicle image, damaged and/or deformed regions being
+identified by image data difference between image data
+relevant to damaged vehicle and image data relevant to
+sample vehicle.
+
+3. Process according to claim 1 or 2, characterized in
+that image data are composed of a three-dimensional array
+of image data, each element of said array being
+univocally correlated to an image pixel of a two-
+dimensional image according to a plane passing through
+said pixel and the comparison between image data of
+damaged vehicle and image data of sample vehicle being
+constituted by a comparison of image data that in the two
+image data arrays have the same location.
+
+4. Process according to one or more of the preceding
+claims 1 to 3, characterized in that area and/or volume
+of image region relevant to vehicle image pixel
+coinciding with damaged region is computed, which region
+
+is determined by selection means and/or by automatically
+
+--- PAGE 4 ---
+comparing image data of damaged vehicle with image data
+of sample vehicle.
+
+5. Process according to claim 1, characterized in that at
+least an external view of vehicle is defined, preferably
+various external views of vehicle taken from different
+sides thereof and/or in perspective, and at least an
+inner view of vehicle is defined, preferably various
+inner views of vehicle similarly to external views, one
+or more structural parts of a vehicle being identified as
+damaged parts by an automatic comparison between virtual
+images of the sample vehicle and virtual images of the
+damaged vehicle.
+
+6. Process according to one or more of the preceding
+claims 1 to 5, characterized in that one or more images
+of a damaged vehicle are acquired from inside the
+vehicle, namely one or more images of the damaged vehicle
+inside.
+
+7. Process according to claim 1, characterized in that
+said step of selecting is performed by drawing a close
+boundary line surrounding the vehicle image region
+coinciding with the damaged region, and by identifying
+image data of the pixel subset being inside said boundary
+line as pixel and image data corresponding to damaged or
+deformed regions of the vehicle.
+
+8. Process according to claim 1, characterized in that
+
+--- PAGE 5 ---
+the automatic selection of a sample vehicle and/or the
+automatic selection of damaged or deformed region or
+regions is confirmed or not confirmed by an operator by
+inputting an agreement or denial command for said sample
+vehicle.
+
+9, Process according to claim 1, characterized in that
+said step of computing labour times and costs is divided
+into three steps: computing labour times and costs for
+the reparation operation of sheet metal or the working
+operation of sheet metal; computing labour times and
+costs for painting; and computing labour times and costs
+for part assembling/disassembling.
+
+10. Process according to claim 9, characterized in that
+it further comprises the step of providing a minimum
+estimation and a maximum estimation of times and/or costs
+needed for the repairing operation of sheet metal or the
+working operation of sheet metal, and/or for painting
+and/or for part assembling/disassembling.
+
+11. Process according to claim 1, characterized in that,
+for each damaged region, the process further comprises
+the step of comparing said costs/times needed for the
+reparation with costs/times needed for completely
+replacing said damaged part with a new part.
+
+12. Process according to claim 11, characterized in that
+
+the process further comprises the step of choosing
+
+--- PAGE 6 ---
+whether replacing said damaged or deformed region or
+whether repairing the same region by choosing the lowest
+cost/time.
+13. Process according to claim 1, characterized in that
+the process further comprises the step of comparing parts
+to be replaced with parts in a warehouse, producing a
+report with available parts/not available parts.
+14. Process according to claim 13, characterized in that
+the process further comprises the step of producing an
+order, by paper or electronically, for supplying the
+warehouse with parts taken for replacement and not
+available parts.
+15. System for identifying, analysing and estimating
+deformations particularly in motor vehicles, according to
+the process of any one of the previous claims,
+characterized in that it comprises at least a central
+processing unit (CPU) or a central logical unit to which
+the following are associated:
+
+- at least a program for performing the steps of a
+process according to any one of the previous claims,
+
+- at least a memory for storing said program,
+
+~ at least a memory for storing image data of at
+least a vehicle,
+
+- at least a database of three-dimensional images
+
+of sample vehicles,
+
+--- PAGE 7 ---
+- alphanumeric and/or graphic data or command input
+means,
+
+- selection means for selecting damaged or deformed
+regions in said vehicle,
+
+- at least a unit for printing and/or displaying
+results; and
+
+- at least a scanning unit for acquiring the three-
+dimensional image of a damaged vehicle, which unit is
+adapted to provide a two-dimensional or three-dimensional
+set of image data stored as image data of the damaged
+vehicle.
+16. System according to claim 15, characterized in that
+the alphanumeric and/or graphic data or command input
+means are means for inputting a qualitative-type
+estimation parameter of a damage, namely said deformation
+gravity degree, whose values are low, medium, or high.
+17. System according to claim 15 or 169, characterized in
+that the alphanumeric and/or graphic data or command
+input means are means for inputting at least a
+quantitative-type estimation parameter, namely a
+measurement.
+18. System according to claim 16 or 17, characterized in
+that said estimation parameter is proportional to a
+deformation depth and/or to a deformation surface in one
+
+or more points of the deformed or damaged region.
+
+--- PAGE 8 ---
+19. System according to one or more of the preceding
+claims 15 to 18, characterized in that the program
+comprises a subroutine for comparing at least two three-
+dimensional or two-dimensional arrays of image data,
+which subroutine gains access to the image data memory of
+damaged vehicles and to the image data memory of sample
+vehicles, and executes a comparison action of image data
+relevant to pixels having the same position in the pixel
+set composing the image.
+
+20. System according to claim 19, characterized in that
+the program has a routine for computing the area of the
+deformed region and/or the deformation volume and/or the
+deformation depth.
+
+21. System according to one or more of the preceding
+claims 15 to 20, characterized in that the system has a
+memory wherein image data of at least a portion of
+structural parts of a sample vehicle are stored, the
+structural parts being autonomous units, namely units
+adapted to be disassembled and assembled to. other
+structural parts of the vehicle, and the system further
+has a program for displaying said structural parts in
+their assembling state in a finished sample vehicle or in
+their exploded state or in their trasparency state.
+
+22. System according to claim 21, characterized in that a
+
+structural part of a vehicle is the part wherein pixels
+
+--- PAGE 9 ---
+fall that coincide with image regions identified as
+damaged and/or deformed regions, said structural parts
+being identified as damaged and/or deformed parts stored
+in a memory.
+
+23. System according to one or more of the preceding
+claims 15 to 22, characterized in that a database of
+parts constituting vehicles is provided, each part being
+identified by a code.
+
+24. System according to one or more of the preceding
+claims 15 to 23, characterized in that the CPU, by means
+of the work program, is adapted to produce and combine,
+with each vehicle part affected by the deformation or
+damage, a gravity degree of the deformation proportional
+to the deformation itself, namely to size and/or area
+and/or volume of the damaged part.
+
+25. System according to one or more of the preceding
+claims 15 to 24, characterized in that the system further
+has a time and/or cost database for repairing and
+replacing motor vehicle parts.
+
+26. System according to claims 23, characterized in that,
+for each different part identified as deformed or damaged
+part, the system, by means of the CPU and the work
+program, is adapted to estimate cost and operations
+needed to rebuild the part itself, by comparison with the
+
+times and costs database of motor vehicle parts.
+
+--- PAGE 10 ---
+27. System according to claim 23, characterized in that
+said motor vehicle part database for each motor vehicle
+part has also a list of parts to be disassembled /
+reassembled for dissassembling / reassembling each single
+part.
+
+28. System according to one or more of the preceding
+claims 15 to 27, characterized in that the system is
+connected with a database of motor vehicle parts in a
+
+warehouse.
+
+10

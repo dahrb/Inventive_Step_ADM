@@ -1,0 +1,86 @@
+TITLE:
+Methods and systems for recommending an action to a patient for managing epilepsy and other neurological disorders
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+The present invention provides methods and system for managing neurological disorders, such as epilepsy. In one embodiment, the method comprises measuring one or more signals from a patient and processing the one or more signals to characterize a patient's propensity for a future seizure. The characterized propensity for the seizure is thereafter used to determine an appropriate action for managing or treating the predicted seizure; and a recommendation is communicated to the patient that is indicative of the appropriate action.
+
+CLAIMS:
+1. A system for communicating with a patient regarding an appropriate action to manage or treat a neurological disorder, the system comprising: a device assembly that is configured to process one or more patient parameters to characterize the patient's propensity for the onset of a future neurological event and when the one or more signals are indicative of an increased propensity for the future neurological event, the device assembly is configured to provide an output that is indicative of an appropriate action for managing or treating the neurological event, parameters of the output being based on the propensity for the onset of the future neurological event; and a patient communication assembly in communication with the device assembly, wherein the patient communication assembly communicates a signal to the patient that is indicative of the appropriate action for managing or treating the neurological event.
+2. The system of claim 1 wherein the neurological disorder comprises epilepsy and the neurological event comprises a seizure.
+3 The system of claim 2 wherein the device assembly characterizes the propensity for the onset of a seizure by calculating a patient's neural state and processing the neural state to generate the output that is indicative of the appropriate action.
+4. The system of claim 3 wherein the device assembly generates the output when the calculated neural state is indicative of an increased propensity of having the future seizure within a prediction time horizon of at least one of 30 seconds, 1 minute, 5 minutes, 10 minutes, 30 minutes, and 60 minutes.
+5. The system of claim 1 wherein the one or more patient parameters comprise one or more physiological signals from the patient, a patient history, and patient feedback.
+6. The system of claim 5 wherein the device assembly characterizes the patient's propensity for the onset of the future neurological event by extracting one or more features from the one or more signals and classifying the extracted features.
+7. The system of claim 1 wherein the signal to the patient that is indicative of an appropriate action for managing or treating the patient's neurological disorder recommends that the patient take at least one type of pharmacological agent.
+8. The system of claim 7 wherein the signal to the patient that is indicative of an appropriate action for managing or treating the patient's neurological disorder recommends that the patient take a specified dosage of the at least one pharmacological agent, wherein the specified dosage is based on the propensity for the onset of the neurological event.
+9. The system of claim 8 wherein the signal to the patient that is indicative of an appropriate action for managing or treating the patient's neurological disorder recommends that the patient take a reduction of a normal dosage of the at least one pharmacological agent.
+10. The system of claim 8 wherein the signal to the patient that is indicative of an appropriate action for managing or treating the patient's neurological disorder recommends that the patient take an increase of a normal dosage of the at least one pharmacological agent.
+11. The system of claim 1 wherein the signal to the patient that is indicative of an appropriate action for managing or treating the patient's neurological disorder comprises a recommendation to the patient to make a behavioral modification.
+12. The system of 11 wherein the behavioral modification comprises at least one of lying down, turning off lights, interrupting working, touching the face, hyperventilating, hypoventilating, holding breath, performing a valsalva maneuver, applying external stimulator, applying transcutaneous electrical neural stimulation, and other action or cessation of activity.
+13. The system of claim 3 wherein the signal to the patient is selected from a plurality of clinician defined signals that correspond to the patient's different neural states.
+14. The system of claim 1 further comprising a patient interface assembly for delivering a therapy to the patient when the patient's propensity for the onset of the future neurological event reaches a threshold.
+15. The system of claim 14 wherein the patient interface assembly comprises one or more electrodes and the therapy comprises electrical stimulation, wherein the electrical stimulation is delivered to the patient through the one or more electrodes and parameters of the electrical stimulation are dependent on the patient's propensity for the onset of the future neurological event.
+16. The system of claim 15 wherein the one or more electrodes are configured to deliver the electrical stimulation to a vagus nerve.
+17. The system of claim 14 wherein the patient interface assembly comprises a medication dispenser implanted within the patient's body.
+18. The system of claim 1 wherein at least a portion of the device assembly is adapted to be implanted within the patient's body and the patient communication assembly is adapted to be disposed external to the patient's body.
+19. The system of 1 wherein the patient communication assembly comprises at least one of a visual device, a tactile device, and an audio device.
+20. The system of claim 3 wherein the device assembly is configured to transmit the calculated neural state to the patient communication assembly and the patient communication assembly is adapted to communicate the neural state to the patient.
+21. The system of claim 20 wherein the device assembly is configured to transmit the calculated neural state to the patient substantially in real-time.
+22. The system of claim 1 comprising a clinician communication assembly that is in communication with at least one of the patient communication assembly and the device assembly.
+23. A system for managing epileptic seizures for a patient, the system comprising: one or more patient interface assemblies that are configured to measure one or more patient parameters that are indicative of a patient's propensity for a future epileptic seizure; and a device assembly that is configured to process the one or more parameters and when the parameters indicate an elevated propensity for the future epileptic seizure, the assembly facilitates selection of and communication of a clinician defined recommendation to the patient that is indicative of an appropriate action.
+24. The system of claim 23 wherein parameters of the clinician defined recommendation arc a function of the patient's propensity for the future epileptic seizure.
+25. A method for managing or treating a predicted seizure, the method comprising: receiving one or more patient dependent parameters; processing the one or more patient dependent parameters to characterize a patient's propensity of a future seizure; using the characterized propensity of the future seizure to determine an appropriate action for managing or treating the future seizure; and communicating a recommendation to the patient and/or a health care provider that is indicative of the appropriate action.
+26. The method of claim 25 wherein processing the one or more parameters to characterize the patient' s propensity for the future seizure comprises characterizing a patient's neural state.
+27. The method of claim 25 wherein the one or more parameters comprises neural signals and processing the one or more parameters comprises extracting one or more features from the neural signals and classifying the extracted features.
+28. The method of claim 26 wherein extracting is performed in a device implanted in a patient's body and classifying the extracted features is performed in a device that is external to the patient's body, wherein the method further comprises percutaneously transmitting extracted features from the device implanted in the patient's body to the device that is external to the patient's body.
+29. The method of claim 25 wherein using the characterized propensity of the future seizure to determine the appropriate action for managing or treating the future seizure is performed by a state machine.
+30. The method of claim 25 wherein the appropriate action comprises taking one or more pharmacological agents.
+31. The method of claim 30 wherein the recommendation comprises dosage information for the one or more pharmacological agents, wherein the dosage is selected based on the patient's propensity of the future seizure.
+32. The method of claim 30 wherein the recommendation specifies a form of the pharmacological agent, wherein the form is selected based on the patient's propensity of the future seizure.
+33. The method of claim 25 wherein the appropriate action comprises making a behavioral modification, wherein the behavioral modification is selected based on the patient's propensity of the future seizure.
+34. The method of claim 33 wherein the behavioral modification comprises at least one of lying down, turning off lights, interrupting working, touching the face, hyperventilating, hypo ventilating, holding breath, performing a valsalva maneuver, applying external stimulator, applying transcutaneous electrical neural stimulation, and other action or cessation of activity.
+35. The method of claim 34 comprising automatically delivering a therapy to the patient when the patient's propensity of the future seizure reaches a threshold.
+36. The method of claim 35 wherein the therapy comprises electrical stimulation of a- nervous system component.
+37. The method of claim 36 wherein the nervous system component comprises a vagus nerve.
+38. The method of claim 35 wherein the therapy comprises automatic delivery of a pharmacological agent to a nervous system component.
+39. A method of preventing an epileptic seizure comprising: characterizing a patient's propensity for an onset of a future epileptic seizure; and communicating to the patient and/or a health care provider a therapy recommendation, wherein parameters of the therapy recommendation are a function of the patient's propensity for the onset of the epileptic seizure.
+40. The method of claim 39 wherein the characterizing the patient's propensity for the epileptic seizure is performed by characterizing a neural state of a patient
+41. The method of claim 40 wherein characterizing the neural state of the patient comprises measuring one or more patient dependent parameters.
+42. The method of claim 41 wherein the patient dependent parameters comprise EEG signals.
+43. The method of claim 42 wherein the measured EEG signals are measured using an intracranial electrode array.
+44. The method of claim 39 wherein the therapy recommendation comprises an instruction to administer an acute dosage of an anti-epileptic agent.
+45. The method of claim 44 wherein the therapy recommendation comprises dosage information for the anti-epileptic agent, wherein the dosage is selected based on the patient's characterized propensity for the onset of the future epileptic seizure.
+46. The method of claim 45 wherein the patient's characterized propensity for the onset of the future epileptic seizure is indicative of a seizure onset time parameter, the dosage information comprising a dose inversely related to the time parameter.
+47. The method of claim 45 wherein the patient's characterized propensity for the onset of the future epileptic seizure is indicative of a probability parameter, the dosage information comprising a dose directly related to the probability parameter.
+48. The method of claim 45 wherein the dosage information is a dose lower than an FDA- approved dose for the anti-epileptic agent.
+49. The method of claim 45 wherein the dosage information is a dose higher than an FDA- approved dose for the and -epileptic agent.
+50. The method of claim 45 wherein the dosage information is a dose equivalent to an FDA- approved dose for the anti-epileptic agent.
+51. The method of claim 44 wherein the therapy recommendation specifies a form ofthe anti- epileptic agent, a formulation ofthe anti-epileptic agent, and/or a route of administration ofthe anti- epileptic agent.
+52. The method of claim 39 wherein the therapy recommendation comprises electrical stimulation of a vagus nerve.
+53. A method of managing an epileptic seizure comprising: characterizing a neural state of a patient; characterizing a patient's propensity for an epileptic seizure based on the neural state; and facilitating administration of a pharmacological therapy to the patient, the pharmacological therapy being a function of the patient's propensity for the epileptic seizure.
+54. The method of claim 53 wherein facilitating administration comprises recommending an administration of an acute dose of a pharmacological agent prior to the epileptic seizure.
+55. The method of claim 54 wherein the anti-epileptic agent modulates a neuronal calcium channel, a neuronal potassium channel, a neuronal GABA channels, a neuronal NMDA channel, a neuronal AMPA channel, a neuronal metabotropic type channel, a neuronal sodium channel, and/or a neuronal kainite channel.
+56. The method of claim 53 wherein the pharmacological therapy comprises automatic administration of an anti-epileptic agent to the patient.
+57. The method of claim 56 wherein the anti-epileptic agent is administered with a medication dispenser implanted within the patient's body.
+58. The method as in claim 53 wherein the neural state is characterized by analyzing signals from the patient's brain.
+59. The method of claim 58 wherein the signals from the patient's brain comprise at least one of EEG, brain temperature, chemical concentrations in the brain, pH in the brain, and blood flow in the brain.
+60. The method as in claim 53 wherein facilitating administration is configured to maintain the neural state within a desired range.
+61. The method as in claim 53 wherein facilitating administration is configured to prevent the neural state from progressing outside a desired range.
+62. The method as in claim 53 wherein facilitating administration is configured to prevent the neural state from entering an undesirable range.
+63. The method of claim 53 further comprising administering an electrical stimulation.
+64. The method of claim 63 wherein the electrical stimulation comprises electrical stimulation of a vagus nerve.
+65. A method of preventing a predicted epileptic seizure comprising: administering an effective amount of an anti -epileptic drug to a patient in need thereof; the administration being at a time prior to a predicted occurrence of a seizure and the time being at least 30 seconds, the effective amount being less than about 50% of a dose of the drug that is effective after a seizure has occurred and the effective amount being a function of the time prior to the predicted occurrence of the seizure.
+66. The method of claim 65 wherein the time is between about 30 seconds and about 30 minutes
+67. The method of claim 65 wherein the anti-epileptic drug is midazolam.
+68. The method of claim 67 wherein the midazolam is administered in a buccal, intranasal, or intramuscular formulation.
+69. The method of claim 65 wherein the anti-epileptic drug is diazepam.
+70. The method of claim 69 wherein the diazepam is administered in a rectal or intravenous formulation.
+71. The method of claim 65 wherein the anti-epileptic drug is lorazepam.
+72. The method of claim 71 wherein the lorazepam is administered in an intravenous formulation.
+73. The method of claim 65 wherein the effective amount is less than about 25% of the drug that is effective after the seizure has occurred.
+74. The method of claim 65 wherein the effective amount is less than about 10% of the drug that is effective after the seizure has occurred.
+75. The method of claim 65 wherein the effective amount is less than about 5% of the drug that is effective after the seizure has occurred.
+76. The method of claim 65 wherein the anti-epileptic drug comprises a benzodiazepine.

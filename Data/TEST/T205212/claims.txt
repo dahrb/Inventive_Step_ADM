@@ -1,0 +1,179 @@
+--- PAGE 1 ---
+10
+
+. 15
+
+20
+
+25
+
+03 715 275.8-2221 16 February 2012
+
+CLAIMS ACCORDING TO MAIN REQUEST
+
+1. A payment method (BV) executed by a communication facility (1, 2, N) and at least
+one data carrier (11,12, K) for debiting a payment value unit (BW) from the data carrier
+(11, 12, K), in order to pay for a performed service, wherein the following steps are
+executed: . |
+
+debit from a memory value unit (SW) stored in the data carrier (11, 12, K), ofa
+debit value unit (AW) sufficient for payment for the maximum service to be performed,
+wherein a repayment limit (RL) stored in the data carrier (11, 12, K) is set, by the data
+carrier, to the amount of the debited debit value unit (AW);
+
+calculation of a credit value unit (AWE) to be credited back, wherein the payment
+value unit (BW) to be paid for the actually performed service is subtracted from the
+debited debit value unit (AWE);
+
+check, by the data carrier (11,12, K), whether the credit value unit (AWE) to be
+credited does not exceed the stored repayment limit (RL), wherein only when it is detected
+that the credit value unit (AWE) to be credited does not exceed the stored repayment limit
+(RL), the credit value unit (AWE) is credited by adding the credit value unit (AWE) to the
+
+memory value unit (SW) stored in the data carrier (11, 12, K).
+
+2. A payment method (BV) as claimed in claim 1, wherein after the crediting of the
+credit value unit (AWE) to the data carrier (11,12, K) the repayment limit (RL) stored in
+the data carrier (11, 12, K) is reduced by at least the credited credit value unit (AWE).
+
+3. A payment method (BV) as claimed in claim 2, wherein after the crediting the
+repayment limit (RL) is set to zero.
+
+4, A payment method (BV) as claimed in claim 1, wherein before the crediting of the
+credit value unit (AWE) to the data carrier (11, 12, K), key information (SI1, SI2) output
+
+by the communication facility (1,2, N) and identifying the communication facility's credit
+
+- authorization is checked by the data carrier (11, 12, K), and wherein the communication
+
+facility (1, 2,8, N) is authorized to credit the credit value unit (AWE) up to at most the
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+value of a maximum credit limit (ML) if the communication facility (8) has a first credit
+authorization, and wherein the communication facility (1,2, N) is authorized to credit the
+credit value unit (AWE) up to at most the value of the repayment limit (RL) stored in the
+data carrier (11, 12, K) if the communication facility (1,2, N) has a second credit
+
+authorization.
+
+5. A payment method (BV) as claimed in claim 1, wherein the debit value unit (AWE)
+is only debited from the memory value unit (SW) stored in the data carrier (11, 12, K) if
+the memory value unit (SW) stored in the data carrier (11,12, K) after the debiting does not
+
+fall below a minimum memory value unit.
+
+6. A data carrier (11, 12, K) for payment of a performed service by debiting of a
+payment value unit (BV) from a memory value unit (SW) stored in the data carrier with:
+
+storage means (15) for storing the memory value unit (SW) and a repayment limit
+(RL);
+
+communication means (13) for communicating with a communication facility (1,
+2,8, N) for crediting a credit value unit (AWE) to be added to the stored memory value unit
+(SW) and for debiting a debit value unit (AW) to be subtracted from the stored memory
+value unit (SW) ; a
+
+limit setting means (14) for setting the repayment limit (RL) to the amount of the
+last debited debit value unit (AW); |
+
+limit checking means (14) to check whether the credit value unit (AWE) to be
+credited does not exceed the stored repayment limit (RL), wherein only when it is detected
+that the credit value unit (AWE) to be credited does not exceed the stored repayment limit
+(RL), the credit value unit (AWE) is credited by adding the credit value unit (AWE) to the
+memory value unit (SW) stored in the data carrier (11,12, K).
+
+7. A data carrier (11, 12, K) as claimed in claim 6, wherein the limit setting means
+(14) are developed to reduce the repayment limit (RL) stored in the data carrier (11, 12, K)
+at least by the credited credit value unit (AWE), after the crediting of the credit value unit
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+(AWE) to the data carrier (11,12, K).
+
+8. A data carrier (11, 12, K) as claimed in claim 6, wherein the limit setting means
+(14) are developed to set the repayment limit (RL) stored in the data carrier (11, 12, K) to
+zero, after the crediting of the credit value unit (AWE) to the data carrier (11,12, K).
+
+9. A data carrier (11, 12, K) as claimed in claim 6, wherein key information checking
+means (16) are provided, which are developed to check key information (SI1, SI2)
+identifying a credit authorization of the communication facility (1, 2,8, N) and received
+from the communication facility (1,2, 8, N) via the communication means (13), wherein
+the communication facility (8) is authorized to credit the credit value unit (AWE) up to at
+most the value of a maximum credit limit (ML) if the communication facility (8) has a first
+credit authorization, and wherein the communication facility (1,2, N) is authorized to credit —
+the credit value unit (AWE) up to at most the value of the repayment limit (RL) stored in
+the data carrier (11,12, K) if the communication facility (1,2, N) has a second credit
+
+authorization.
+
+10. A data carrier (11,12, K) as claimed in claim 6, wherein memory value checking
+means (14) are provided, which are developed to check before the debiting of the debit
+value unit (AWE) whether the memory value unit (SW) stored in the data carrier (11, 12, |
+
+K) would fall below a minimum memory value unit as a result of the debiting.
+
+11. Payment system, comprising:
+
+a data carrier according to one of claims 6 to 10; and
+
+a communication facility (1, 2, N), which enables the payment for a performed
+service by debiting of a payment value unit (BW) from a memory value unit (SW) stored
+in the data carrier (11, 12, K), with:
+
+communication means (3) for communication with the data carrier (11,12, K) for
+debiting the debit value unit (AW) sufficient for payment for the maximum service to be
+
+performed from the memory value unit (SW) stored in the data carrier (11,12, K) and for
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+crediting the credit value unit (AWE), wherein the payment value unit (BW) to be paid for
+the actually performed service is subtracted from the debited debit value unit (AWE);
+
+key information storage means (5) for storing key information (SI1, S12), which
+identifies a credit authorization of the communication facility (1,2, 8, N), wherein the
+communication facility (8) is authorized to credit the credit value unit (AWE) up to at most
+the value of a maximum credit limit (ML) if the stored key information (SI1) identifies a
+first credit authorization, and wherein the communication facility (1, 2, N) is authorized to
+credit the credit value unit (AWE) up to at most the value of a repayment limit (RL) stored
+in the data carrier (11,12, K) if the stored key information (SI2) identifies a second credit
+authorization, wherein the repayment limit (RL) does not exceed the last debit value unit
+
+(AW) debited from the data carrier (11, 12, K).
+
+12. Payment system according to claim 11, wherein
+for the communication facility a 1, 12, K) limit storage means (5) are provided,
+which are developed for storing characteristic information (KJ) identifying the data carrier
+
+(11, 12, K) together with the repayment limit (RL) set for the data carrier (11, 12, K).
+
+13. Payment system according to claim 11, wherein
+
+for the communication facility (11,12, K) interface means (3) for communication
+with other communication facilities (11, 12, K) are provided, in order to communicate the
+characteristic information (KI) of the data carrier (11,12, N) and if applicable the current
+repayment limit (RL) for the data carrier (11,12, N).

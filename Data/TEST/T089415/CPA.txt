@@ -1,0 +1,8 @@
+TITLE:
+Implementation and performance of a turbo/MAP decoder
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+The implementation and performance of a turbo/MAP decoder are described. A serial block MAP decoder operating in the logarithm domain is used to obtain a very-high-performance turbo decoder. Programmable gate arrays and EPROMs allow the decoder to be programmed for almost any code from four to 512 states, rate 1/3 to rate 1/7 (higher rates are achieved with puncturing) and interleaver block sizes to 65,536 bits. Seven decoding stages were implemented in parallel. For rate 1/3 and 1/7 16-state codes with an interleaver size of 65,536 bits and operating at up to 356 kbit/s the codec achieved an Eb/N0 of 0⋅32 and −0⋅30 dB respectively for a BER of 10−5. BERs down to 10−7 were also achieved for a small increase in Eb/N0. An efficient implementation of a continuous MAP decoder is also presented, along with a synchronization technique for turbo decoders. © 1998 John Wiley & Sons, Ltd.

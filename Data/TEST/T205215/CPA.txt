@@ -1,0 +1,54 @@
+Title: System and method for dynamically detecting computer viruses through associative behavioral analysis of runtime state
+
+Abstract: A system and a method for dynamically detecting computer viruses through associative behavioral analysis of runtime state are described. A group of monitored events is defined. Each monitored event includes a set of one or more actions defined within an object. Each action is performed by one or more applications executing within a defined computing environment. The runtime state within the defined computing environment is continuously monitored for an occurrence of any one of the monitored events in the group. The sequence of the execution of the monitored events is tracked for each of the applications. Each occurrence of a specific event sequence characteristic of computer virus behavior and the application that performed the specific event sequence, are identified. A histogram describing the specific event sequence occurrence for each of the applications is created. Repetitions of the histogram associated with at least one object are identified.
+
+Type: 
+US Patent
+
+Claims: 
+
+1. A system for dynamically detecting computer viruses through associative behavioral analysis of runtime state, comprising:
+a parameter set stored on a client system defining a group of monitored events, each monitored event comprising a set of one or more actions defined within an object, each action being performed by one or more applications executing within a defined computing environment;
+a monitor executing on the client system, comprising:
+a collector continuously monitoring runtime state within the defined computing environment for an occurrence of any one of the monitored events in the group and tracking a sequence of execution of the monitored events for each of the applications;
+an analyzer identifying each occurrence of a specific event sequence characteristic of behavior of a computer virus and the application which performed the specific event sequence, creating a histogram describing the specific event sequence occurrence for each of the applications, and identifying repetitions of the histogram associated with at least one object;
+a storage manager organizing the histograms into plurality of records ordered by object, application, and monitored event; and
+a structured database in which the plurality of records is stored;
+wherein the storage manager stores each histogram for each such specific event sequence occurrence in one such database record identified by the application by which the specific event sequence was performed;
+wherein the storage manager configures the structured database as an event log organized by each event in the group of monitored events and updates the database record storing each specific event sequence occurrence with a revised histogram as each such occurrence is identified.
+2. A system according to claim 1, further comprising:
+the analyzer detecting suspect activities within each histogram, each suspect activity comprising a set of known actions comprising a computer virus signature.
+3. A system according to claim 2, wherein each such suspect activity is selected from a class of actions comprising file accesses, program executions, message transmissions, configuration area accesses, security setting accesses, and impersonations.
+4. A system according to claim 2, wherein each such suspect activity is selected from a group comprising files accesses, program executions, direct disk accesses, media formatting operations, sending of electronic mail, system configuration area accesses, changes to security settings, impersonations, and system calls having the ability to monitor system input/output activities.
+5. A system according to claim 1, wherein the computer virus comprises at least one form of unauthorized content selected from a group comprising a computer virus application, a Trojan horse application, and a hoax application.
+6. A method for dynamically detecting computer viruses through associative behavioral analysis of runtime state, comprising:
+defining a group of monitored events, each monitored event comprising a set of one or more actions defined within an object, each action being performed by one or more applications executing within a defined computing environment;
+continuously monitoring runtime state within the defined computing environment for an occurrence of any one of the monitored events in the group;
+tracking a sequence of execution of the monitored events for each of the applications;
+identifying each occurrence of a specific event sequence characteristic of behavior of a computer virus and the application which performed the specific event sequence;
+creating a histogram describing the specific event sequence occurrence for each of the applications;
+identifying repetitions of the histogram associated with at least one object;
+organizing the histograms into plurality of records ordered by object, application, and monitored event;
+maintaining a structured database in which the plurality of records is stored;
+storing each histogram for each such specific event sequence occurrence in one such database record identified by the application by which the specific event sequence was performed;
+configuring the structured database as an event log organized by each event in the group of monitored events; and
+updating the database record storing each specific event sequence occurrence with a revised histogram as each such occurrence is identified.
+7. A method according to claim 6, further comprising:
+detecting suspect activities within each histogram, each suspect activity comprising a set of known actions comprising a computer virus signature.
+8. A method according to claim 7, wherein each such suspect activity is selected from a class of actions comprising file accesses, program executions, message transmissions, configuration area accesses, security setting accesses, and impersonations.
+9. A method according to claim 7, wherein each such suspect activity is selected from a group comprising files accesses, program executions, direct disk accesses, media formatting operations, sending of electronic mail, system configuration area accesses, changes to security settings, impersonations, and system calls having the ability to monitor system input/output activities.
+10. A method according to claim 6, wherein the computer virus comprises at least one form of unauthorized content selected from a group comprising a computer virus application, a Trojan horse application, and a hoax application.
+11. A computer-readable storage medium holding code for dynamically detecting computer viruses through associative behavioral analysis of runtime state, comprising:
+defining a group of monitored events, each monitored event comprising a set of one or more actions defined within an object, each action being performed by one or more applications executing within a defined computing environment;
+continuously monitoring runtime state within the defined computing environment for an occurrence of any one of the monitored events in the group;
+tracking a sequence of execution of the monitored events for each of the applications;
+identifying each occurrence of a specific event sequence characteristic of behavior of a computer virus and the application which performed the specific event sequence;
+creating a histogram describing the specific event sequence occurrence for each of the applications;
+identifying repetitions of the histogram associated with at least one object;
+organizing the histograms into plurality of records ordered by object, application, and monitored event;
+maintaining a structured database in which the plurality of records is stored;
+storing each histogram for each such specific event sequence occurrence in one such database record identified by the application by which the specific event sequence was performed;
+configuring the structured database as an event log organized by each event in the group of monitored events; and
+updating the database record storing each specific event sequence occurrence with a revised histogram as each such occurrence is identified.
+12. A storage medium according to claim 11, further comprising:
+detecting suspect activities within each histogram, each suspect activity comprising a set of known actions comprising a computer virus signatu

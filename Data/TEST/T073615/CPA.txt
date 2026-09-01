@@ -1,0 +1,46 @@
+TITLE:
+Biochip deposition system and method
+
+TYPE:
+European patent 
+
+ABSTRACT:
+A biochip deposition system and method. The system comprises a deposit mechanism (2) for depositing organic material in spots on a substrate (8A-8D); and a viewing system (1,7) for detecting the spots on the substrate (8A-8D) during a deposit operation and before the spots have dried, for determining if the spots have been correctly deposited, and if not, for generating a suitable output signal. The viewing system includes an illumination device (7) for illuminating deposited spots at a relatively low angle relative to the substrate.
+
+CLAIMS:
+A biochip deposition system comprising a deposit mechanism for depositing organic material in spots on a substrate; and a viewing system for detecting the spots on the substrate during a deposit operation and before the spots have dried, for determining if the spots have been correctly deposited, and if not, for generating a suitable output signal, wherein the viewing system includes an illumination device for illuminating deposited spots at a relatively low angle relative to the substrate.
+A system according to claim 1, wherein the viewing system determines that a spot has not been correctly deposited if its location is spaced by more than a predetermined amount from an expected location.
+A system according to claim 1 or claim 2, wherein the viewing system determines that a spot has not been correctly deposited if no spot is detected at an expected location.
+A system according to any of the preceding claims, wherein the viewing system includes means for recording the identity of the substrate and the locations of deposited spots on the identified substrate.
+A system according to any of the preceding claims, further comprising a marking system responsive to the output signal from the viewing system to mark the or part of the substrate where the viewing system has determined that at least one spot has not been correctly deposited.
+A system according to any of the preceding claims, wherein the viewing system includes a camera mounted for movement with the deposit mechanism.
+A system according to claim 6, wherein the viewing system is adapted to capture an image from the camera when the camera is stationary.
+A system according to any of the preceding claims, wherein the illumination angle is in the range 0° to 2°.
+A system according to claim 8, wherein the illumination angle is in the range 0° to 1°.
+A system according to any of the preceding claims, wherein the viewing system further includes a processor adapted to determine the position of spots relative to an edge or edges, preferably two substantially orthogonal edges, of the substrate using a template matching algorithm to locate the edge(s).
+A method of monitoring a biochip deposit process, the method comprising:
+a) detecting spots of organic material as they are deposited on a substrate and before the spots have dried, the detecting step including illuminating the substrate at a relatively low angle;
+b) determining if the spots have been correctly deposited; and,
+c) if not, generating a suitable output signal.
+A method according to claim 11, wherein the illumination angle is in the range 0-2°.
+A method according to claim 12, wherein the illumination angle is the range 0-1°.
+A method according to any of claims 11 to 13, wherein steps b) and c) are carried out after completion of the deposit process.
+A method according to any of claims 11 to 14, wherein step (a) includes obtaining an image of the spots using a camera while there is no relative movement between the camera and the substrate.
+A method according to any of claims 11 to 15, wherein the output signal is generated if a spot volume lies outside a predetermined value or range.
+A method according to any of claims 11 to 16, wherein the output signal is generated if the ratio between orthogonal axes of a spot lies outside a predetermined value or range.
+A method according to any of claims 11 to 17, wherein the output signal is generated if a spot is not detected at an expected location.
+A method according to any of claims 11 to 18, wherein the output signal is generated if a spot is offset by more than a predetermined amount from an expected location.
+A method according to claim 18 or claim 19, wherein the expected location is defined with respect to other spots on the substrate.
+A method according to any of claims 11 to 20, further comprising marking the or part of the substrate in response to the generation of the output signal.
+A method according to claim 21, wherein the substrate is marked with a material which shows a detectable colour, light level or densitometric change such as a coloured dye, ink or wax.
+A method according to any of claims 11 to 22, further comprising detecting an identifier on the substrate.
+A method according to claim 23, wherein the detecting method is performed using an optical character or bar code reader.
+A method according to any of claims 11 to 24, further comprising storing details of the detected spot locations.
+A method according to claim 25, when dependent on claim 23 or claim 24, wherein the spot location details are stored in conjunction with the substrate identifier.
+A method according to any of claims 11 to 26, wherein the detecting step comprises locating the spots; detecting a first pair of edges of the substrate; detecting the position of the located spots relative to the substrate edges; and determining if each spot is located at an expected position relative to the substrate edges.
+A method according to claim 27, wherein the two first edges are substantially orthogonal.
+A method according to claim 27 or claim 28, further comprising detecting the position of the spots relative to a second pair of substantially parallel substrate edges.
+A method according to claim 29, wherein one of the first and second edges is common.
+A method according to any of claims 11 to 30, wherein the organic material includes a fluorescent dye.
+A method according to claim 31, further comprising detecting the spots of organic material on the substrate utilising the fluorescent dye.
+A method according to any of claims 11 to 32, wherein the substrate is opaque or translucent.

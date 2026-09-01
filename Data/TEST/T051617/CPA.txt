@@ -1,0 +1,8 @@
+TITLE:
+Constrained inter-layer prediction for single-loop decoding in spatial scalability
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+The scalability extension of H.264/AVC uses an oversampled pyramid representation for spatial scalability, where for each spatial resolution a separate motion compensation or MCTF loop is deployed. When the reconstructed signal at a lower resolution is used to predict the next higher resolution, the motion compensation or MCTF loops including the deblocking filter operations of both resolutions have to be executed. This imposes a large complexity burden on the decoding of the higher resolution signals, especially when multiple spatial layers are utilized. In this paper, we investigate the approach to only allow prediction between spatial layers for parts of the lower resolution pictures that are intra-coded in order to avoid decoding that requires multiple motion compensation or MCTF loops. Experimental results evaluate the effectiveness of the proposed approach.

@@ -1,0 +1,126 @@
+--- PAGE 1 ---
+29, DEZ. 2009 15:28 MERH-IP MUENCHEN 089/189314910 NR. 632 8. 8
+
+EP 03 029 004.3-1527 December 28, 2009
+Applicant: Hitachi, Ltd_
+
+WHAT IS CLAIMED IS:
+
+1 An electrical contro! unit for an automobile comprising:
+
+a microcomputer (30) which controls equipment installed in
+automobile, an input circuit which passes an electric signal from the
+outside to said microcomputer (30),
+
+a driver circuit which outputs the electric signal output from
+said microcomputer (30) outside, and
+
+a power supply circuit (10) which supplies power supply to
+said microcomputer (30),
+wherein
+
+said power supply circuit (10) is a semiconductor IC integrated
+the following components;
+
+a first regulator (12) which generates the voltage to operate said
+microcomputer (30) by inputting said ignition switch signal or said wake-
+up signal,
+
+a second regulator which operates even when said ignition
+switch is cut off,
+
+an OR circuit (14) activating said first regulator (12) by using
+either the ignition switch signal or one of said plural wake-up signals,
+
+a start factor determining means to distinguish whether said
+first regulator (12) is activated by which start factor of the ignition switch signal
+and one of plural wake-up signals, wherein
+
+said start factor determining means includes a register which stores said
+start factor, and said start factor is transmitted from the register to said
+microcomputer (30) after it is waked up, .
+
+a communication driver (18) which transmits and receives the
+communication signal with an outside electrical control unit through a
+communications line (25),
+
+a latch circuit (66) to latch the wake-up signals transmitted from the
+outside electrical control unit through said communications line (25),
+
+a reset circuit (13) which generates a reset signal to said
+
+Received at the EPO on Dec 29, 2009 15:42:29. Page 8 of 22
+
+--- PAGE 2 ---
+29, DEZ. 2009 15:29 MERH-IP MUENCHEN 089/189314910 NR. 6352 8. 9
+
+EP 03 029 004.3-1527 December 28, 2009
+Applicant: Hitachi, Ltd.
+
+microcomputer (30),
+
+a watchdog timer (21) to prevent the runaway of the active program in
+said microcomputer (30), and
+
+a serial communications module (20) which communicates serially with
+
+said microcomputer (30).
+
+2. An electrical control unit for an automobile according to claim 1,
+wherein
+
+said start factor distinguished by the start factor determining means (19)
+in said semiconductor IC is transmitted to said microcomputer (30) through said
+
+serial communications module (20).
+
+3. An electrical control unit for an automobile according to claim 1,
+wherein
+
+said semiconductor IC includes a counter (63), a wake-up timing setting
+register (64), and a comparator (65), and
+
+said timer module (17) which outputs the wake-up signal when the
+value of said counter (63) reaches the value set in said wake-up timing setting
+register (64) beforehand is integrated therewith.
+
+4. An electrical control unit for an automobile according to claim 3,
+
+wherein
+said microcomputer (30) sets the value of said wake-up timing setting
+
+register (64) of said timer module through the serial communications module
+(20) of said semiconductor IC, or said timer module transmits the counter (63)
+value at that time to said microcomputer (30).
+
+5 An electrical contro! unit for an automobile according to claim 3,
+
+wherein
+said electrical control unit for the automobile provides inside with the
+
+power supply to operate at least said timer module (17) for the period when the
+power supply is not supplied frorn the outside,
+said semiconductor IC has the power supply switch means, and
+
+Received at the EPO on Dec 29, 2009 15:42:29. Page 9 of 22
+
+--- PAGE 3 ---
+29. DEZ. 2009 15:29 MERH-IP MUENCHEN 089/189314910 ~ NR.632 §. 10
+
+EP 03 029 004,3-1527 December 28, 2009
+Applicant: Hitachi, Ltd.
+
+said switch means supplies a current to said timer module either from
+said outside power supply for the period when the power supply is supplied from
+the outside to said electrical control unit for the automobile, or from the power
+supply provided in said electrical control unit for the automobile for the period
+when the power supply is not supplied from the outside.
+
+6. An electrical contro! unit for an automobile according to claim 5,
+
+wherein
+said power supply to operate said timer module (17) is a lithium electric
+
+cell battery.
+
+Received at the EPO on Dec 29, 2009 15:42:29. Page 10 of 22

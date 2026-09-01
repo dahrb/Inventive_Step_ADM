@@ -1,0 +1,57 @@
+--- PAGE 1 ---
+We claim:
+1. A method of managing inventory, the method comprising:
+
+storing a plurality of job records in a memory, each job record comprising a different one
+of a plurality of job identifiers, one of a plurality of production line identifiers, and at least one of
+a plurality of subcomponent identifiers;
+
+receiving, at a processor, a transaction record comprising a first subcomponent identifier
+and a first production line identifier;
+
+determining, at the processor, whether the transaction record includes one of the job
+identifiers;
+
+when the determination is negative, locating in the memory one of the job records
+including one or both of a subcomponent identifier matching the first subcomponent identifier,
+and a production line identifier matching the first production line identifier, and selecting the job
+identifier of the located job record;
+
+storing the transaction record in the memory in association with the selected job
+identifier;
+
+receiving a reconciliation request comprising the selected job identifier and a count of at
+least one subcomponent;
+
+retrieving at least one transaction record stored in association with the selected job
+identifier;
+
+determining whether a discrepancy exists between the count and the at least one
+transaction record;
+
+when the determination of whether a discrepancy exists is affirmative, determining if the
+discrepancy falls within a predetermined configurable tolerance, defined as one of a fraction of a
+quantity of subcomponent and an absolute quantity of subcomponent; and
+
+when the discrepancy falls within the predetermined configurable tolerance,
+
+automatically generating at least one correcting entry.
+
+2. The method of claim 1, further comprising:
+when the determination of whether a discrepancy exists is affirmative, transmitting a
+
+summary of the at least one transaction record via a communications interface; and
+
+--- PAGE 2 ---
+receiving at least one correcting entry.
+
+3. A server, comprising:
+a memory;
+a communications interface; and
+a processor interconnected with the memory and the communications interface, the
+
+processor configured to perform the method of claim 1| or claim 2.
+
+4. A non-transitory computer-readable medium storing computer-readable instructions
+
+executable by a processor for implementing the method of claim | or claim 2.

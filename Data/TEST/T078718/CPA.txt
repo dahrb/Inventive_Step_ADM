@@ -1,0 +1,64 @@
+TITLE:
+Method and system for centrally organizing transactional information in a network environment
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A computer-aided transaction processing method and system for documenting transactions conducted in a network environment. The system includes a first database for storing a user identifier and identity information for at least two users. An information processing system manages a transaction between the at least two users, wherein a transaction identifier is associated with the transaction. A second database stores a database record. The database record contains the transaction identifier, user identifiers of the at least two users involved in the transaction, and corresponding transactional data.
+
+CLAIMS:
+1. A computer-aided method for tracking and storing network-based transactional data, the method comprising:
+(a) identifying each user by a user identifier;
+(b) storing the user identifiers in a first database;
+(c) associating a transaction identifier with a transaction between at least two users having user identifiers;
+(d) storing the transaction identifier, the user identifiers of the at least two users involved in the transaction, and transactional data in a second database;
+(e) providing at least some of the transactional data to the at least two users of the transaction; and
+(f) updating the transactional data.
+2. The method of claim 1, wherein each user identifier is unique.
+3. The method of claim 1, wherein the user includes a primary user having one or more sub-users.
+4. The method of claim 1, wherein storing the user identifiers in the first database further comprises storing one or more user identity information in the first database.
+5. The method of claim 4, wherein the user identifiers and the one or more identity information are stored in the same database record.
+6. The method of claim 1, wherein each transaction identifier is unique.
+7. The method of claim 1, further comprising providing the transaction identifier to the users involved in the transaction.
+8. The method of claim 1, further comprising associating at least one surrogate identifier with the transaction identifier and providing the at least one surrogate identifier to the at least two users involved in the transaction.
+9. The method of claim 1, wherein the transaction between the at least two users is distinct.
+10. The method of claim 1, wherein the transaction between the at least two users includes transactions having one or more stages.
+11. The method of claim 1, wherein the transaction between the at least two users is conducted in a network environment.
+12. The method of claim 1, wherein the transactional data includes data from one or more stages of the transaction.
+13. The method of claim 1, wherein the transactional data includes information about the status of the transaction.
+14. The method of claim 1, wherein storing the transaction identifier, the user identifiers of the users involved in the transaction, and transactional data in the second database includes creating a transaction record in the second database and formatting the transaction record according to the characteristics of the transaction.
+15. The method of claim 14, wherein the characteristics of the transaction include anticipated stages of the transaction.
+16. The method of claim 1, wherein providing at least some of the transactional data to the at least two users involved in the transaction includes providing the users access to the transactional data in a network environment.
+17. The method of claim 16, wherein providing the transactional data in the network environment includes enabling the users to access the transactional data at a Web site.
+18. The method of claim 1, wherein providing at least some of the transactional data to the at least two users involved in the transaction includes providing the transaction identifier to the users and enabling the users to access at least some of the transactional data using the transaction identifier.
+19. The method of claim 18, wherein enabling the users to access at least some of the transactional data using the transaction identifier includes enabling the users to access the transactional data in a network environment.
+20. The method of claim 1, wherein providing at least some of the transactional data to the at least two users involved in the transaction includes associating at least one surrogate identifier with the transaction identifier and providing the at least one surrogate identifier to the users, and enabling the users to access at least some of the transactional data using the at least one surrogate transaction identifier.
+21. The method of claim 20, wherein enabling the at least two users involved in the transaction to access at least some of the transactional data using the at least one surrogate transaction identifier includes enabling the users to access the transactional data in a network environment.
+22. The method of claim 1, wherein updating the transactional data includes updating the transactional data during the course of the transaction.
+23. The method of claim 1, wherein updating the transactional data includes storing additional transactional data and changing current transactional data, whereby previously written data is retained.
+24. A computer-aided transaction processing system for documenting transactions conducted in a network environment, the system comprising:
+a first database for storing a user identifier and identity information for at least two users;
+an information processing system for managing a transaction between the at least two users, wherein a transaction identifier is associated with the transaction; and
+a second database for storing a database record, wherein the database record contains the transaction identifier, user identifiers of the at least two users involved in the transaction, and corresponding transactional data.
+25. The system of claim 24, wherein each user identifier is unique.
+26. The system of claim 24, wherein the user includes a primary user having one or more sub-users.
+27. The system of claim 24, wherein the transaction identifier is unique.
+28. The system of claim 24, wherein the transactional data includes data from one or more stages of the transaction.
+29. The system of claim 24, wherein the database record in the second database is formatted according to the characteristics of the transaction.
+30. The system of claim 29, wherein the characteristics of the transaction include anticipated stages of the transaction.
+31. The system of claim 24, wherein the database record is updated during the course of the transaction.
+32. The system of claim 31, wherein the database record is updated by storing additional transactional data, changing transactional data, and voiding transactional data.
+33. The system of claim 24, wherein the at least two users are provided access to at least some of the transactional data stored in the database record.
+34. A computer-aided transaction processing system for documenting transactions conducted in a network environment, the system comprising:
+means for storing a user identifier and identity information for at least two users;
+means for managing transactional data associated with a transaction between the at least two users, wherein the transaction is identified by a unique transaction identifier;
+means for storing the transaction identifier, user identifiers of at least two users involved in the transaction, and corresponding transactional data; and
+means for enabling users involved in the transaction to access at least some of the transactional data.
+35. The system of claim 34, wherein the means for managing transactional data associated with the transaction between the at least two users includes means for updating the transactional data.
+36. A computer program product comprising computer readable program code for documenting transactions conducted in a network environment, comprising:
+computer readable program code means for storing a user identifier and identity information for at least two users;
+computer readable program code means for managing transactional data associated with a transaction between the at least two users, wherein the transaction is identified by a unique transaction identifier;
+computer readable program code means for storing the transaction identifier, user identifiers of the at least two users involved in the transaction, and corresponding transactional data; and
+computer readable program code means for enabling users involved in the transaction to access at least some of the transactional data.
+37. The system of claim 36, wherein the computer readable program code means for managing transactional data associated with the transaction between the at least two users includes computer readable program code means for updating the transactional data.

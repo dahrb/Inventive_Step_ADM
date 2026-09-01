@@ -1,0 +1,90 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+Main Request
+
+WE CLAIM:
+
+1. A method to control the use of applications which are loaded on a mobile device
+based on a network to which the mobile device is connected to, the method
+comprising the steps, at the mobile device, of:
+
+connecting (210) to network and receiving (212) a network identifier from the
+network;
+
+using a processor to correlate (214) the received network identifier with
+application and/or feature limitations stored on the mobile device, wherein the
+correlating is performed in a look up table which includes a correlation between a
+network identifier and allowed applications and/ or a correlation between a network
+identifier and restricted applications; and
+
+in response to a user trying to start an application, using an application
+launcher to limit (216) application usage based on the results of the correlating step
+by having the application launcher check whether an application is allowed to be run
+prior to launching the application.
+
+2. The method of claim 1, wherein said network is a wireless local area network.
+3. The method of claim 1, wherein the network is a cellular network.
+
+4. The method of claim 1, wherein said look up table is preconfigured on the mobile
+device.
+
+5. The method of claim 1, wherein said look up table is loaded onto said mobile
+device upon connection to the network.
+
+6. The method of claim 1, wherein said look up table includes a correlation between
+network identifier and both allowed applications and restricted applications.
+
+7. A mobile device (410) adapted to control the use of applications loaded on that
+mobile device based on a network to which the mobile device is connected to, the
+mobile device comprising:
+
+a communications subsystem (420) adapted to communicate with a network
+and to receive a network identifier;
+
+memory (440) to store application limitations for at least one network
+identifier, wherein the application limitations are stored in a look up table in said
+memory which includes a correlation between a network identifier and allowed
+applications and/ or a correlation between a network identifier and restricted
+applications;
+
+a processor (430) adapted to correlate the received network identifier with
+application and/or feature limitations; and
+
+--- PAGE 2 ---
+10
+
+15
+
+Main Request
+
+a limiting module (450) adapted to limit application usage based on said
+correlation at said processor, wherein the limiting module is an application launcher
+which is configured, in response to a user trying to start an application, to check
+whether an application is allowed to be run prior to launching the application.
+
+8. The mobile device of claim 7, wherein said network is a wireless local area
+network.
+
+9. The mobile device of claim 7, wherein the network is a cellular network.
+
+10. The mobile device of claim 7, wherein said look up table is preconfigured on the
+mobile device.
+
+11. The mobile device of claim 7, wherein said look up table is loaded onto said
+mobile device upon connection to the network.
+
+12. The mobile device of claim 7, wherein said look up table includes a correlation
+between network identifier and both allowed applications and restricted applications.

@@ -1,0 +1,222 @@
+--- PAGE 1 ---
+WO 2008/104788 13 PCT/GB2008/000688
+
+CLAIMS:
+
+1. An authorisation system comprising:
+
+an authorisation server (140);
+
+an account server (120) for storing account data relating to a plurality of
+
+accounts;
+
+an access terminal (100), including:
+
+a token reader (106) for inputting token data from a selected one of a
+plurality of tokens, the token data identifying one of the plurality of accounts; and
+input means (108) for inputting transaction data;
+
+wherein the access terminal (100) is operable: to receive token data from the
+token reader (106) and to receive transaction data from the input means (108); to
+transmit to the account server (120) a first transaction request containing the token data
+and the transaction data; and to transmit to the authorisation (140) server a second
+transaction request including access terminal identification data identifying the access
+terminal:
+
+the account server (120) is operable to receive the first transaction request; to
+process the token data to generate account identification data, the account identification
+data being associated with a portion of the account data; and to transmit a third
+transaction request to the authorisation server, the third transaction request including the
+transaction data;
+
+the authorisation server (140) is operable to receive the second transaction
+request and to receive the third transaction request; to process the transaction data and
+the access terminal identification data to determine whether the access terminal (100) is
+authorised to enable the transaction; and, if applicable, to transmit to the account server
+(120) an authorisation request to indicate that the access terminal is authorised; and
+
+in response to receipt of the authorisation request from the authorisation server,
+the account server (120) is operable to process the transaction data and to modify the
+account data associated with the account identification data in dependence on the
+processing.
+
+2. An authorisation system according to Claim 1, in which the authorisation server is
+one of a plurality of service provider servers, and the token data includes originator data
+identifying a one of said service provider servers with which the token is associated, and
+wherein the account server is operable to process the originator data to identify the
+service provider server associated with the selected token, and to communicate with the
+
+identified service provider server in relation to the selected token.
+
+--- PAGE 2 ---
+WO 2008/104788 14 PCT/GB2008/000688
+
+3. An authorisation system according to Claim 1 or 2, wherein the account server
+comprises: an account management server, including storage means for storing the
+account data; and an account processing server, including communication means for
+
+communicating with the authorisation server.
+
+4. An authorisation system according to any preceding claim, wherein the access
+terminal is operable to transmit the first transaction request to the account server via a
+first network and to transmit the second transaction request to the authorisation server
+
+via a second network.
+
+5. An authorisation system according to any preceding claim, wherein the account
+server is operable to transmit to at least one of the access terminal and authorization
+
+server confirmation data confirming that the transaction has been processed.
+
+6. An authorisation system according to any preceding claim, wherein the access
+
+terminal is operable to include the transaction data in the second transaction request.
+
+7. An access terminal (100) for use in an authorisation system including an
+authorization server (140) and an account server (120) for storing account data relating to
+a plurality of accounts, the access terminal (100) including:
+
+a token reader (106) for inputting token data from a selected one of a plurality of
+tokens, the token data identifying one of the plurality of accounts;
+
+and input means (108) for inputting transaction data;
+
+wherein the access terminal (100) is operable to receive token data from the
+token reader (106) and to receive transaction data from the input means (108); to
+transmit to the account server (120) a first transaction request containing the token data
+and the transaction data; and to transmit to the authorisation server (140) a second
+transaction request including access terminal identification data identifying the access
+terminal (100).
+
+--- PAGE 3 ---
+WO 2008/104788 15 PCT/GB2008/000688
+
+10.
+
+11,
+
+12.
+
+An access terminal according to Claim 7, operable to transmit the first
+transaction request to the account server via a first network and to transmit the second
+
+transaction request to the authorisation server via a second network.
+
+An access terminal according to Claim 7 or 8, operable to include the transaction
+
+data in the second transaction request.
+
+An authorisation server (140) for use in an authorisation system including:
+
+an account server (120) for storing account data relating to a plurality of accounts
+and for processing the token data to generate account identification data associated with
+a portion of the account data, and
+
+an access terminal (100) operable to transmit to the account server (120) a first
+transaction request containing token data received from a token reader and transaction
+data received from input means, and the authorisation server (120) comprising:
+
+means for receiving from the access terminal (100) a second transaction request
+including access terminal identification data identifying the access terminal (100);
+
+means for receiving from the account server (120) a third transaction request
+including the transaction data;
+
+means for processing the transaction data and the access terminal identification
+data to determine whether the access terminal (100) is authorised to enable the
+transaction;
+and
+
+means for transmitting to the account server (120) an authorisation request to
+indicate that the access terminal (100) is authorised, whereby in response to receipt of
+the authorization request from the authorisation server (140), the account server (120)
+can process the transaction data and modify the account data associated with the
+
+account identification data in dependence on the processing.
+
+An authorisation server according to Claim 10, operable to receive the second
+transaction request from the access terminal via a first network and to receive the third
+
+transaction request from the account server via a second network.
+
+An authorisation server according to Claim 10 or 11, operable to receive
+confirmation data from the account server confirming that the transaction has been
+processed.
+
+--- PAGE 4 ---
+WO 2008/104788 16 PCT/GB2008/000688
+
+13.
+
+15.
+
+An authorisation server according to any one of Claims 10 to 12, operable to
+extract transaction data from the second transaction request and to process the
+
+transaction data.
+
+A method of authorising a transaction in a system including: an authorization
+server (140), an account server for storing account data relating to a plurality of accounts,
+and
+
+an access terminal (100), the method comprising:
+inputting token data from a selected one of a plurality of tokens at the access
+terminal, the token data identifying one of the plurality of accounts;
+
+inputting transaction data at the access terminal (100);
+transmitting from the access terminal (100) to the account server a first transaction
+request containing the token data and the transaction data;
+
+transmitting from the account server (120) to the authorisation server (140) a
+second transaction request including access terminal identification data identifying the
+access terminal:
+
+processing the token data at the account server (120) to generate account
+identification data, the account identification data being associated with a portion of the
+account data;
+
+transmitting a third transaction request from the account server (120) to the
+authorisation server (140), the third transaction request including the transaction data;
+
+processing the transaction data and the access terminal identification data at the
+authorisation server (140) to determine whether the access terminal (100) is authorised
+to enable the transaction;
+
+if applicable, transmitting from the authorisation server (140) to the account
+server (120) an authorisation request to indicate that the access terminal (100) is
+authorised; and in response to receipt of the authorisation request from the authorisation
+server,
+
+processing the transaction data at the account server (120) and modifying the
+account data associated with the account identification data in dependence on the
+processing.
+
+A method according to Claim 14, in which the authorisation server is one of a
+plurality of service provider servers, and the token data includes originator data
+identifying a one of said service provider servers with which the token is associated, and
+
+further comprising processing the originator data to identify the service provider server
+
+--- PAGE 5 ---
+WO 2008/104788 17 PCT/GB2008/000688
+
+associated with the selected token, and communicating with the identified service
+provider server in relation to the selected token.
+
+16. A method according to Claim 14 or 15, further comprising storing the account
+data and communicating with the authorisation server.
+
+17. A method according to any one of Claims 14 to 16, further comprising
+transmitting the first tansaction request from the access terminal to the account server
+via a first network and transmitting the second transaction request from the access
+
+terminal to the authorisation server via a second network.
+
+18. A method according to any one of Claims 14 to 17, further comprising
+transmitting from the account server to at least one of the access terminal and
+authorisation server confirmation data confirming that the transaction has been
+processed.
+
+19. A method according to any one of Claims 14 to 18, further comprising including
+the transaction data in the second transaction request.

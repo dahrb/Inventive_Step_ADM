@@ -1,0 +1,241 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+WHAT IS CLAIMED IS:
+
+1. A method for establishing a communication link
+between a mobile platform and a remote computer system, said method
+
+comprising:
+
+storing fault data in a mobile platform onboard computer
+
+system database;
+
+placing a transmittable data file containing the fault data into
+an outgoing queue of a second portion of a communications management
+function (62B), hereafter referred to as CMF2, of the mobile platform
+onboard computer system (14), hereafter referred to as OCS;
+
+automatically selecting at least one desired communication
+channel type between the OCS (14) and a remote central computer
+system (20), hereafter referred to as CCS, from a plurality of available
+communication channel types included in a configuration file of the CMF2
+(62B); and
+
+sending the transmittable data file from the CMF2 (62B) to
+the a first portion of a communications management function (62A),
+hereafter referred to as CMF1, of the CCS (20), via a secure established
+
+link over the automatically selected channel.
+
+storing the fault data in a remote central computer system
+database so that the fault data in the mobile platform onboard computer
+system database and the fault data in the remote central computer system
+
+database are synchronized.
+
+2. The method of Claim 1 wherein placing the
+transmittable data file into the outgoing queue comprises:
+
+sending a message containing data to be downloaded
+
+from the OCS (14) to the CCS (20), from a first portion of an
+
+335138 - 15 -
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+electronic log book function (28A), hereafter referred to as ELB1, of
+the OCS (14) to the CMF2 (62B); and
+
+configuring the data message into a transmittable
+data file.
+
+3. The method of Claim 1 further comprising storing the
+transmittable data file in the OCS (14) if a desire communication channel
+
+is not available.
+
+4, The method of Claim 1 further comprising sending an
+acknowledgement message from the CMF1 (62A) to the CMF2 (62B)
+acknowledging receipt of the message.
+
+5. The method of Claim 1 further comprising:
+
+extracting the metric and fault data from the transmittable
+data file, utilizing an electronic log book function (28B), hereafter referred
+to as ELB2.
+
+6. The method of Claim 1, wherein configuring the
+
+message into the transmittable data file comprises:
+parsing the message,
+generating a unique message identification for the
+message, and
+converting the message into an encoded data string.
+7. The method of Claim 1 further comprising placing a
+
+plurality messages on the CMF2 (62B) outgoing queue and sending the
+messages based on priority rules included in the CMF2 (62B).
+
+335138 - 16 -
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+8. The method of Claim 7 further comprising establishing
+a second secure link using a second available channel to send at least
+One of the messages based on the priority.
+
+9. A system (10) for establishing a communication link
+between a mobile platform and a remote computer system, said system
+
+comprising:
+
+an onboard computer (14), hereafter referred to as OCS, of
+the mobile platform, the OCS (14) comprising at least one processor (22),
+a first database for storing fault data and an OCS electronic storage
+device (26), hereafter referred to as ESD, having stored thereon a first
+portion of an electronic log book application (28A), hereafter referred to as
+ELB1, and a second portion of a communications management function
+(62B), hereafter referred to as CMF2, and
+
+a remote central computer system (20), hereafter referred to
+as CCS, comprising at least one processor (38), a second database for a
+CCS ESD (50) having stored thereon a second portion of the electronic
+log book application (28B), hereafter referred to as ELB2, and a first
+portion of the communications management function (62A), hereafter
+referred to as CMF 1, wherein
+
+the OCS processor (22) is adapted to execute the
+ELB1 (28A) and the CMF2 (628B) to:
+
+send a message containing fault data stored in
+the first database to be downloaded from the OCS (14) to
+
+the CCS (20) from ELB1 (28A) to CMF2 (62B);
+
+configure the message into a transmittable
+data file;
+
+335138 -17-
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+place the transmittable data file into an
+outgoing queue of the CMF2 (62B);
+
+automatically select at least one desired
+communication channel type from a plurality of available
+communication channel types utilizing a configuration file of
+the CMF2 (62B) that includes a plurality of desired
+communication channels that the OCS (14) can utilize to
+communicate with the CCS (20);
+
+establish a secure link between the OCS (14)
+and the CCS (20) utilizing the automatically selected
+communication channel; and
+
+send the transmittable data file containing the
+data message from the CMF2 (62B) to the CMF1 (62A), via
+the secure established link over the automatically selected
+channel; and the CCS processor (38) is arranged to store
+the fault data in the second database so that the fault data in
+the first database and the second database are
+
+synchronized.
+
+10. The system (10) of Claim 9, wherein the OCS
+processor (22) is further adapted to execute the ELB1 (28A) and the
+CMF2 (628B) to place a plurality messages on the CMF2 (62B) outgoing
+queue and send the messages to the CMF1 (62A) based on priority rules
+included in the CMF2 (62B).
+
+11. The system (10) of Claim 10, wherein the OCS
+processor (22) is further adapted to execute the ELB1 (28A) and the
+CMF2 (62B) to establish a second secure link using a second available
+
+channel to send at least one of the messages based on the priority.
+
+12. The system (10) of Claim 9, wherein the OCS
+processor (22) is further adapted to execute the CMF2 (62B) to store the
+
+335138 - 18 -
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+message in the OCS (14) if a desire communication channel is not
+
+available.
+
+13. The system (10) of Claim 9, wherein the CCM
+processor (38) is adapted to execute the ELB2 (28B) and the CMF1 (62A)
+to send an acknowledgement message to the CMF2 (62B) acknowledging
+
+receipt of the message.
+
+14. The system (10) of Claim 9 the CCM processor (38) is
+adapted to execute the ELB2 (28B) and the CMF1 (62A) to extract the
+
+date from the transmittable data file.
+
+15. The system (10) of Claim 9, wherein to configure the
+message into the transmittable data file comprises the OCS processor
+(22) is adapted to execute the ELB1 (28A) and the CMF2 (628B) to:
+
+parse the message,
+
+generate a unique message identification for the
+message, and
+
+convert the message into an encoded data string.
+
+16. The system (10) of Claim 9, wherein to automatically
+select the communication channel the OCS processor (22) is adapted to
+execute the ELB1 (28A) and the CMF2 (62B) to determine and track at
+least one communication channel! available for communication between
+the OCS (14) and the CCS (20).
+
+335138 - 19 -

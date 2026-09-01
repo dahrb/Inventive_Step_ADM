@@ -1,0 +1,440 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+20
+
+EP 12 196 250.0
+
+WHAT IS CLAIMED IS:
+
+A liguid crystal display device comprising:
+memory (160) in which gamma setting data is stored;
+
+data driver (130) including a gamma voltage generator (150,
+
+250);
+
+timing controller (110) configured to download the gamma
+
+setting data from the memory (160) and apply a select signal
+
+(Sel) to the gamma voltage generator (150, 250); and
+
+power supplier (140, 240) configured to apply reference
+
+voltages (Vrefl - Vref4) to the gamma voltage generator (150,
+
+250), the power supplier (140, 240) including a plurality of
+
+power resistors (Rs) serially connected to one another, and
+
+configured to generate the reference voltages (Vrefl - Vref4)
+
+by voltage-dividing a power voltage (VDD),
+
+wherein the gamma voltage generator (150, 250) is configured to
+
+generate gamma reference voltages (Vgma) from the reference
+
+voltages (Vrefl - Vref4), and further configured to generate
+
+gamma voltages (GMA) fromthe gamma reference voltages (Vgma),
+
+and
+
+wherein, in response to the select signal (Sel) received by the
+
+gamma voltage generator (150, 250), the gamma voltage
+
+generator (150, 250) is configured to vary a gamma curve formed
+
+of the gamma voltages (GMA) of the gamma voltage generator
+
+(150, 250) by adjusting the gamma reference voltages (Vgma)
+
+generated fromthe reference voltages (Vrefl - Vref4) in their
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+20
+
+EP 12 196 250.0
+
+levels based on a value of the select signal (Sel),
+
+wherein the gamma voltages (GMA) comprise
+
+voltages and negative gamma voltages,
+
+positive gamma
+
+wherein the gamma voltage generator (150, 250) comprises a
+
+plurality of inpu
+
+the rei
+
+ference vol
+
+supplier (140, 2
+
+wherein the pluralityo
+
+a first serial circ
+wherein the
+
+resistors (r) is connected inparallel
+
+and second rejf
+
+first serial circuit of
+
+t resistors (r) configured to voltage-divide
+
+40),
+
+tages (Vrefl - Vref4) received from the power
+
+f input resistors (r) are arranged into
+
+uit and a second serial circuit,
+
+the plurality of input
+
+to one power resistor
+
+of the plurality of power resistors (Rs) to receive first
+
+ference voltages (Vrefl, Vref2) at opposite
+
+ends of the first serial circuit, wherein the first serial
+
+circuit is configured to voltage-divide a voltage
+
+diff
+
+rence between the first and second rei
+
+(Vrefl, Vref2)
+
+and
+
+wherein the second serial circuit of
+
+resistors (r)
+
+for generating the positive
+
+ference voltages
+
+gamma voltages,
+
+fF the plurality of input
+
+is connected in parallel to another power
+
+resistor of the plurality of power resistor
+
+third and
+opposite ends ot:
+
+second serial circuit is cont
+
+Vo
+
+vol
+
+ltage difference between the third and
+
+s (Rs) to receive
+
+fourth reference voltages (Vref3, Vref4) at
+
+fF the second serial circuit, wherein the
+
+figured to voltage-divide a
+
+ourth reference
+
+tages (Vret
+
+F3, Vref4) for generating the negative gamma
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+20
+
+wherein
+
+plurality ot
+
+Sse
+
+271
+
+voltages,
+
+lect signal (
+
+(Vgma), and
+
+the gamma voltage generator
+
+EP 12 196 250.0
+
+(150, 250) includes a
+
+fF decoders (171, 271) configured to receive the
+
+Sel), wherein the plurality of decoders (171,
+
+) are configured to output the gamma
+
+wherein the gamma voltage generator (150,
+
+in response to the select signal
+plurality of
+gamma ref
+
+voltages (Vrefl
+
+- Vref4),
+
+reference voltages
+
+250) is configured,
+
+(Sel) received by the
+
+fF decoders (171, 271), to adjust the levels of the
+
+ference voltages (Vgma) generated from the reference
+
+wherein the plurality of input resistors (r) are configured to
+
+apply the divided vol
+wherein the gamma
+
+a plurality of
+
+a
+
+voltage generator (150,
+
+ltages to the decoders (171, 271), and
+
+250) includes:
+
+buffers (173, 275) configured to transfer the
+
+gamma reference voltages (Vgma) output from the decoders
+
+(171, 271);
+
+plurality
+
+voltage-divide the gamma rej
+
+and
+
+from the buf
+
+(GMA) ,
+
+of gamma resistors (R) configured to
+ference voltages (Vgma) applied
+
+fers (173, 275) and generate the gamma voltages
+
+wherein the plurality of decoders (171, 271) each receives two
+
+oO
+
+(xr), and, in response to the select signal
+of
+
+by
+
+f the divided voltages from the pluralit
+
+y of input resistors
+
+the gamma ret
+
+the two of the divided voltages to a corresponding one of
+
+ference voltages (Vgma) wi
+
+(Sel), outputs one
+
+thin a range defined
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+20
+
+the buffers (173,
+
+275).
+
+2. The liquid crystal
+
+decoder (171, 271) is a
+
+3-to-8 decoder.
+
+EP 12 196 250.0
+
+display device of claim 1, wherein
+
+3. The liquid crystal display device of claim 1, wherein
+
+decoder (171, 271) selec
+
+different levels from one another and are applied {
+
+resistors (r), in response to the select signal
+
+the selected voltage as
+
+4. The liguid crystal
+
+timing controller (110)
+
+the
+
+the
+
+ts one of the divided voltages, which have
+
+(Sel) and output
+
+a gamma reference voltage (Vgma).
+
+transmits and receives the data to and
+
+the memory (160) in an int
+
+mode.
+
+ter integrated circuit (I
+
+display device of claim 1, wherein
+
+From the input
+
+the
+
+from
+
+2C) communicat
+
+5. The liquid crystal display device of claim 1, wherein
+
+tion
+
+the
+
+memory (160) includes an electrically erasable and programmable
+
+read-only-memory (EEPRO
+
+M).
+
+6. The liquid crystal display device of claim 1, wherein
+
+gamma voltage generator
+
+configured to transfer
+
+applied from the power
+
+resistors (r) and provide the ref
+
+as gamma voltages (GMAO, GMA127) with most and least signiit
+
+(250) further includes input bu
+
+the reference voltages
+
+supplier (240) to the plurality ot
+
+the
+
+ffers (273)
+
+(Vrefl - Vref4)
+
+F input
+
+ference voltages (Vrefl - Vref4)
+
+fFicant
+
+--- PAGE 5 ---
+10
+
+15
+
+gray levels.
+
+EP 12 196 250.0
+
+7, The liquid crystal display device of claimi1, wherein the data
+driver (130) is formed in a chip-on-glass (COG) mode.
+8. The liquid crystal display device of claim 1,
+
+wherein for the positive
+
+voltage generator (150, 250),
+
+gamma voltages generated by the gamma
+
+a voltage level of a positive gamma
+
+voltage (GMA0) associated with a least significant gray level is
+
+lower than a voltage level of
+
+a positive gamma voltage (GMA127)
+
+associated with a most signiit
+
+wherein for the negative
+
+voltage generator (150, 250),
+
+fFicant gray level, and
+
+gamma voltages generated by the gamma
+
+a voltage level of a negative gamma
+
+voltage (GMA0) associated with a least significant gray level is
+
+higher than a voltage level o
+
+f a negative gamma voltage (GMA127)
+
+associated with a most signiit
+
+ficant gray level.

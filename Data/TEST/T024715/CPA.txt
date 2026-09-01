@@ -1,0 +1,99 @@
+TITLE:
+Method and system for scheduling online targeted content delivery
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A method and system are provided for scheduling the delivery of multiple items of content selectively to online users. Expected values relating to each user being online during a given time period are determined. An ordered list of the items of content to be selectively delivered to the users is generated based on the expected values. The list is prioritized to meet delivery requirements associated with the items of content.
+
+CLAIMS:
+1. A method of scheduling delivery of multiple items of content selectively to a plurality of online users, comprising:
+determining expected values relating to each user being online during a given time period; and
+generating an ordered list of the items of content to be selectively delivered to the users based on the expected values, said list being prioritized to meet delivery requirements associated with said items of content.
+2. The method of Claim 1 wherein said expected values are determined from known behavior of individual users.
+3. The method of Claim 1 wherein said expected values include the probability of each user being online during the given time period.
+4. The method of Claim 1 wherein said expected values include the length of time each user is expected to be online during the given time period.
+5. The method of Claim 1 wherein each said user has known profile or preference data, and said items of content are selectively delivered to users based on their profile or preference data.
+6. The method of Claim 1 wherein said list is periodically generated based further on prior content deliveries made.
+7. The method of Claim 6 wherein said list is generated daily.
+8. The method of Claim 1 further comprising generating an individual list of items of content to be delivered to each user based on the ordered list.
+9. The method of Claim 8 wherein said individual list is dynamically generated for each user on user login.
+10. The method of Claim 8 wherein each individual list specifies items of content for which a user is qualified to receive based on user profile or preference data.
+11. The method of Claim 10 wherein said individual list excludes certain items of content based on one or more constraints.
+12. The method of Claim 11 wherein said one or more constraints includes the maximum number of times an item of content can be delivered to the user.
+13. The method of Claim 11 wherein said one or more constraints includes the time elapsed since a given item of content was delivered to the user.
+14. The method of Claim 8 wherein generating said individual list comprises determining the position of each of said items of content in said list in accordance with the following equation:
+E[Qj ] ≤ -τQnMj - In Pj - In p) I A
+where, E[Qj] is the position of a given item of content, τis the mean expected time period of a user online session, M. is the desired number of impressions of the item of content to be delivered per day, P. is the number of online users who are eligible to receive the item of content, p is the probability that a given eligible user is online on a given day, and Δ is time period between deliveries of items of content to a user.
+15. The method of Claim 1 wherein said items of content comprise advertisements to be displayed on a display device operated by each user.
+16. The method of Claim 15 wherein said advertisements comprise banner advertisements.
+17. The method of Claim 15 wherein said advertisements comprise pop-up advertisements.
+18. The method of Claim 1 further comprising tracking which items of content have been delivered to each user.
+19. The method of Claim 1 wherein said users comprise World Wide Web users accessing Web sites over the Internet, and wherein said items of content comprise advertisements displayed on display devices operated by the users.
+20. The method of Claim 1 wherein said delivery requirements specify the number of times an item of content is to be delivered to the users.
+21. The method of Claim 1 wherein said delivery requirements specify a time period during which a given number of deliveries of an item of content is to be made.
+22. The method of Claim 1 wherein the ordered list is optimized by minimizing differences in performance between each item of content.
+23. The method of Claim 22 wherein the performance of an item of content is defined by a ratio of the number of times an item of content is delivered to the desired number of times the item of content is to be delivered.
+24. A method for scheduling delivery of multiple advertisements selectively to a plurality of Web users, each advertisement being associated with a delivery contract, comprising:
+determining probability data relating to each user being online during a given time period;
+based on the probability data and known prior advertisement deliveries to users, generating an ordered master list of advertisements to be selectively delivered to the users, said list being prioritized to generally fulfill said contracts; and generating an individual list of advertisements to be delivered to each user on user login, said individual list specifying advertisements that said user is eligible to receive based on user profile data and in an order in accordance with said master list.
+25. The method of Claim 24 wherein said probability data is based on known behavior of individual users.
+26. The method of Claim 24 wherein said probability data includes the probability of each user being online during the given time period.
+27. The method of Claim 24 wherein said probability data includes the length of time each user is expected to be online during the given time period.
+28. The method of Claim 24 wherein said master list is periodically generated based further on prior content deliveries made.
+29. The method of Claim 28 wherein said master list is generated daily.
+30. The method of Claim 24 wherein said individual list excludes certain advertisements based on one or more constraints.
+31. The method of Claim 30 wherein said one or more constraints includes the number of times an advertisement has been delivered to the user.
+32. The method of Claim 30 wherein said one or more constraints includes the time elapsed since a given advertisement was delivered to the user.
+33. The method of Claim 24 wherein said advertisements comprise banner advertisements.
+34. The method of Claim 24 wherein said advertisements comprise pop-up advertisements.
+35. The method of Claim 24 further comprising tracking which items of content have been delivered to each user.
+36. The method of Claim 24 wherein said users comprise Web surfers accessing Web sites over the Internet.
+37. The method of Claim 24 wherein said contracts specify the number of times an advertisement is to be delivered to the users.
+38. A computer system for scheduling delivery of multiple items of content selectively to a plurality of online users, comprising:
+a memory for storing a program; and
+a processor operative with the program to:
+(a) determine expected values relating to each user being online during a given time period; and
+(b) generate an ordered list of the items of content to be selectively delivered to the users based on the expected values, said list being prioritized to meet delivery requirements associated with said items of content.
+39. A system for scheduling and delivering multiple items of content selectively to a plurality of online users, each item of content being associated with a delivery contract, comprising:
+a central computer for determining data relating to the probability of a given user being online during a given time period, and generating an ordered master list of items of content to be delivered based on the probability data and known prior deliveries of items of content to users, said list being prioritized to enhance fulfillment of said contracts; and
+a plurality of local computers linked to said central computer, each local computer generating an individual schedule for each of a set of users logging on to said computer on user login, said schedule comprising an individual list of selected items of content to be delivered to said user in accordance with said ordered master list, said selected items of content comprising content for which the user is eligible to receive based on user profile or preference data.
+40. The system of Claim 39 wherein said central computer comprises a Web server.
+41. The system of Claim 39 wherein each of said local computers comprises an Internet service provider point-of-presence server.
+42. A method of scheduling and delivering multiple items of content selectively to a plurality of online users, comprising:
+determining expected values relating to each user being online during a given time period;
+generating an ordered master list of the items of content to be selectively delivered to the users based on the expected values, said list being prioritized to meet delivery requirements associated with said items of content;
+dynamically generating an individual list of items of content to be delivered to each user on user login, said individual list specifying items of content that said user is eligible to receive based on user profile data and in an order in accordance with said master list; and
+delivering to each logged on user items of content specified in the user's individual list.
+43. The method of Claim 42 wherein said expected values are determined from known behavior of individual users.
+44. The method of Claim 42 wherein said expected values include the probability of each user being online during the given time period.
+45. The method of Claim 42 wherein said expected values include the length of time each user is expected to be online during the given time period.
+46. The method of Claim 42 wherein said master list is periodically generated based further on prior content deliveries made.
+47. The method of Claim 46 wherein said list is generated daily.
+48. The method of Claim 42 wherein said individual list excludes certain items of content based on one or more constraints.
+49. The method of Claim 48 wherein said one or more constraints includes the number of times an item of content has been delivered to the user.
+50. The method of Claim 48 wherein said one or more constraints includes the time elapsed since a given item of content was delivered to the user.
+51. The method of Claim 42 wherein said items of content comprise advertisements to be displayed on a display device operated by each user.
+52. The method of Claim 51 wherein said advertisements comprise banner advertisements .
+53. The method of Claim 51' wherein said advertisements comprise pop-up advertisements.
+54. The method of Claim 42 further comprising tracking which items of content have been delivered to each user.
+55. The method of Claim 42 wherein said delivery requirements specify the number of times an item of content is to be delivered to the users.
+56. A method of scheduling delivery of multiple items of content selectively to a plurality of online users, comprising:
+receiving an ordered master list of the items of content to be selectively delivered to the users based on the expected values, said list being prioritized to meet delivery requirements associated with said items of content; and
+for each user on user login dynamically generating an individual list of items of content to be delivered to the user, said individual list specifying items of content that the user is eligible to receive based on user profile data and in an order in accordance with said master list.
+57. The method of Claim 51 further comprising excluding from said individual list certain items of content based on a constraint.
+58. The method of Claim 57 wherein said constraint comprises a limit on the number of times an item of content can be delivered to a user.
+59. The method of Claim 57 wherein said constraint comprises a minimum time elapsed since a given item of content was delivered to the user.
+60. A method of determining the viability of a proposed plan to deliver an item of content to online users having specified characteristics a specified number of times during a specified time period, said item of content to be delivered to said online users as one of a series of items of content delivered sequentially to the users, comprising:
+determining an expected position of the item of content in the series based on the number of online users having the specified characteristics, the probability that a random user having the specified characteristics will be online during the specified time period, a predicted session length for the random user, and the time period between deliveries of said items of content;
+determining the expected number of deliveries of said items of content based on the expected position; and
+comparing the expected number of deliveries to the specified number of deliveries.
+61. The method of Claim 60 further comprising suggesting an alternative constraint if the plan is determined not to be viable.
+62. The method of Claim 61 wherein said constraint comprises the specified number of times said item of content is to be delivered.
+63. The method of Claim 61 wherein said constraint comprises the specified time period.
+64. The method of Claim 61 wherein said constraint comprises the specified characteristics.
+65. The method of Claim 60 wherein the probability that a random user having the specified characteristics will be online during the specified time period is based on known behavior of individual users.
+66. The method of Claim 60 wherein a predicted session length for the random user is based on known behavior of individual users.
+67. The method of Claim 60 wherein said characteristics comprise user profile or preference data.
+68. The method of Claim 60 wherein said item of content comprises an advertisement.

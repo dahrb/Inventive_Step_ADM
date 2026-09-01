@@ -1,0 +1,239 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+16
+
+CLAIMS (Main request)
+
+A method in a base station for dynamically triggering a mobile terminal to transmit
+sounding reference signals, SRS, wherein a predefined uplink symbol of an uplink
+subframe is configured to be used by the mobile terminal for SRS, the method being
+characterized in the steps of:
+
+-determining (301) whether the mobile terminal shall use the predefined uplink symbol
+for data transmission or not during uplink transmission,
+
+-signaling (302) to the mobile terminal, at least partially in an uplink grant, an instruction
+whether the mobile terminal shall use the predefined uplink symbol for data transmission
+or not during uplink transmission, wherein the signaled instruction further comprises
+information whether the mobile terminal shall use the predefined uplink symbol for SRS
+or leave the predefined uplink symbol blank if the predefined uplink symbol shall not be
+
+used for data transmission.
+
+The method according to claim 1, wherein the signaled instruction is valid for the
+
+predefined uplink symbol of one subsequent uplink subframe.
+
+The method according to claim 1, wherein the signaled instruction is valid for the
+
+predefined uplink symbol of multiple subsequent uplink subframes.
+
+The method according to any of claims 1-3, wherein the signaling (302) to the mobile
+terminal is performed if the predefined uplink symbol should not be used for data
+
+transmission.
+
+The method according to any of claims 1-3, wherein the signaling (302) to the mobile
+terminal is performed if the predefined uplink symbol should be used for data
+
+transmission.
+
+The method according to any of claims 1-5, wherein the signaling to the mobile terminal
+
+is sent as downlink control information carried by the physical downlink control channel.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+10.
+
+11,
+
+12.
+
+13.
+
+17
+
+The method according to any of claims 1-6, wherein the signaled instruction comprises
+SRS parameters which are semi-statically configured, or a function of the uplink
+
+subframe.
+
+The method according to any of claims 1-6, wherein the signaled instruction is at least
+
+partially dynamically signaled in an uplink grant.
+
+A method in a mobile terminal for dynamically transmitting sounding reference signals,
+SRS, wherein a predefined uplink symbol of an uplink subframe is configured to be used
+by the mobile terminal for SRS, the method being characterized in the steps of:
+-receiving (310), at least partially in an uplink grant, an instruction whether the mobile
+terminal shall use the predefined uplink symbol for data transmission or not during uplink
+transmission, wherein the received instruction further comprises information whether the
+mobile terminal shall use the predefined uplink symbol for SRS or leave the predefined
+uplink symbol blank if the predefined uplink symbol shall not be used for data
+transmission,
+
+-determining (311) whether to send data or not in the predefined uplink symbol based on
+the received instruction, and
+
+- transmitting (312) in the uplink according to said determination.
+
+The method according to claim 9, wherein the received instruction is valid for the
+
+predefined uplink symbol of one subsequent uplink subframe.
+
+The method according to claim 9, wherein the received instruction is valid for the
+
+predefined uplink symbol of multiple subsequent uplink subframes.
+
+The method according to any of claims 9-11, wherein the instruction to the mobile
+terminal is received if the predefined uplink symbol should not be used for data
+
+transmission.
+
+The method according to any of claims 9-11, wherein the instruction to the mobile
+
+terminal is received if the predefined uplink symbol should be used for data transmission.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+14.
+
+15.
+
+16.
+
+17,
+
+18,
+
+19,
+
+20.
+
+18
+
+The method according to any of claims 9-13, wherein the instruction is received as
+
+downlink control information carried by the physical downlink control channel.
+
+The method according to any of claims 9-14, wherein the received instruction comprises
+SRS parameters which are semi-statically configured, or a function of the uplink
+
+subframe.
+
+The method according to any of claims 9-14, wherein the received instruction is at least
+
+partially dynamically signaled in an uplink grant.
+
+A base station (401) for dynamically triggering a mobile terminal (402) to transmit
+sounding reference signals, SRS, wherein a predefined uplink symbol of an uplink
+subframe is configured to be used by the mobile terminal for SRS, the base station (401)
+being characterized in a processor (410) configured to determine whether the mobile
+terminal (402) shall use the predefined uplink symbol for data transmission or not during
+uplink transmission, and a transmitter (412) configured to signal to the mobile terminal
+(402), at least partially in an uplink grant, an instruction (415) whether the mobile
+terminal (402) shall use the predefined uplink symbol for data transmission or not during
+uplink transmission, wherein the signaled instruction (415) further comprises information
+whether the mobile terminal shall use the predefined uplink symbol for SRS or leave the
+predefined uplink symbol blank if the predefined uplink symbol shall not be used for data
+
+transmission.
+
+The base station (401) according to claim 17, wherein the signaled instruction (415) is
+
+valid for the predefined uplink symbol of one subsequent uplink subframe.
+
+The base station (401) according to claim 17, wherein the signaled instruction (415) is
+
+valid for the predefined uplink symbol of multiple subsequent uplink subframes.
+
+The base station according to any of claims 17-19, wherein the transmitter (412) is
+configured to signal to the mobile terminal the instruction (415) as downlink control
+
+information carried by the physical downlink control channel.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+21,
+
+22.
+
+23,
+
+24.
+
+25.
+
+26.
+
+19
+
+A mobile terminal (402) for dynamically transmitting sounding reference signals, SRS,
+wherein a predefined uplink symbol of an uplink subframe is configured to be used by the
+mobile terminal for SRS, the mobile terminal being characterized in a receiver (420)
+configured to receive, at least partially in an uplink grant, an instruction (415) whether
+the mobile terminal (402) shall use the predefined uplink symbol for data transmission or
+not during uplink transmission, wherein the received instruction further comprises
+information whether the mobile terminal (402) shall use the predefined uplink symbol for
+SRS or leave the predefined uplink symbol blank if the predefined uplink symbol shall
+not be used for data transmission, a processor (440) configured to determine whether to
+send data or not in the predefined uplink symbol based on the received instruction, and a
+
+transmitter (430) configured to transmit in the uplink according to said determination.
+
+The mobile terminal (402) according to claim 21, wherein the recetved instruction is
+
+valid for the predefined uplink symbol of one subsequent uplink subframe.
+
+The mobile terminal (402) according to claim 21, wherein the received instruction is
+
+valid for the predefined uplink symbol of multiple subsequent uplink subframes.
+
+The mobile terminal (402) according to any of claims 21-23, wherein the receiver (420) is
+configured to receive the instruction as downlink control information carried by the
+
+physical downlink control channel.
+
+The mobile terminal (402) according to any of claims 21-23, wherein the received
+instruction comprises SRS parameters which are semi-statically configured, or a function
+
+of the uplink subframe.
+
+The mobile terminal (402) according to any of claims 21-25, wherein the received
+
+instruction is at least partially dynamically signaled in an uplink grant.

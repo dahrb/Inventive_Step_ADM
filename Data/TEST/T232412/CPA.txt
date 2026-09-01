@@ -1,0 +1,39 @@
+Title: Method and apparatus to monitor and locate an electronic device using a secured intelligent agent via a global network
+
+Abstract: A system for locating and monitoring electronic devices utilizing a security system that is secretly and transparently embedded within the software, firmware, or hardware of a computer. This security system initiates the client computer to periodically and conditionally call a host system to provide unique identifying indicia and location information. In one embodiment, the security system calls the host through a public switched telephone network (PSTN) and transmits the indicia in encoded form. In an alternative embodiment, which may be incorporated concurrently with the PSTN application, the security system calls the host system through the Internet and provides the host with indicia encoded within the DNS query sent. The host system is able to identify the calling computer from the indicia and is able to physically locate the computer through either caller identification or by referencing the Internet links which were used to connect the calling computer with the host system.
+
+Type: WIPO
+
+Claims: We Claim :
+1. A method for tracing an electronic device characterized by:
+providing an Agent (416) within the electronic device (400), the Agent configured to transmit identifying indicia (428) for the electronic device and/or its device components (402, 404, 406, 408, 410, 412, 414) to a host system (472) at a predetermined time without further intervention by the electronic device or user upon activation;
+activating the Agent;
+at the predetermined time, the Agent establishing a communication link (B) between the electronic device and the host system and transmitting the identifying indicia to the host system without intervention by the electronic device or user;
+enabling the host system to determine the location of the electronic device based on tracing of the communication link.
+
+Title: Method and system for executing BIOS code in secure multitasking operating environment
+
+Abstract: A computer system for executing BIOS code on a secure operating system, the computer system including a processor, memory coupled to the processor, at least one nonvolatile storage device, such as a hard disk drive, a BIOS file stored on the nonvolatile storage device, and a computer program executable by the processor wherein the computer program is capable of locating BIOS code within the BIOS file and copying the BIOS code to an executable program file stored on the nonvolatile storage device which is executed by the processor. Also, a method of executing BIOS code on a secure operating system that locates the BIOS code within at least one BIOS file, copies the BIOS code to an executable file, and executes the resulting executable file on a processor.
+
+Type: Patent
+
+Claims: 
+
+1. In a secure operating system, a method of executing BIOS functions, said method comprising: recognizing an identifier of BIOS code to provide an identified BIOS code; locating the identified BIOS code within at least one BIOS file; reading the identified BIOS code; writing the identified BIOS code to an executable file, the executable file operable to be stored on a nonvolatile storage device; and executing the executable file.
+2. The method, as recited in claim 1, further comprising: placing an executable header in the executable file before the executing.
+3. The method, as recited in claim 1, further comprising: erasing the executable file after the executing.
+4. The method, as recited in claim 1, further comprising: reading an offset in the at least one BIOS file, wherein the offset indicates the beginning of the BIOS code.
+5. The method, as recited in claim 1, further comprising: reading a size parameter in the at least one BIOS file, wherein the size parameter indicates the size of the BIOS code.
+6. The method, as recited in claim 5, further comprising: reading an amount of code from the at least one BIOS file, wherein the amount of code is equal to the size parameter; and writing the amount of code to the executable file.
+7. The method, as recited in claim 1, wherein the identifier is a fixed address.
+8. The method, as recited in claim 1, wherein the identifier is an alpha-numeric field.
+9. The method, as recited in claim 1, wherein the at least one BIOS file includes a plurality of identifiers and a plurality of offset pointers, wherein each of the plurality of identifiers correspond to each of the plurality of offset pointers.
+10. The method, as recited in claim 1, wherein the at least one BIOS file is a DOS based BIOS file, wherein the DOS based BIOS file is capable of executing in a DOS environment, and wherein the DOS based BIOS file is incapable of executing on the secure operating system.
+11. A computer system for executing BIOS code on a secure operating system, said computer system comprising: a processor; memory operatively coupled to the processor; at least one nonvolatile storage device, a BIOS file stored on the at least one nonvolatile storage device; a first program stored on a computer-readable medium and executable by the processor, wherein the first program is capable of locating BIOS code within the BIOS file and copying the BIOS code to a second program; and the second program stored on the at least one nonvolatile storage device, wherein the second program is capable of being executed by the processor.
+12. The computer system, as recited in claim 11, wherein the BIOS file is a DOS based BIOS file, wherein the DOS based BIOS file is capable of executing in a DOS environment, and wherein the DOS based BIOS file is incapable of executing on the secure operating system.
+13. The computer system, as recited in claim 11, wherein the second program includes an executable header preceding the BIOS code.
+14. The computer system, as recited in claim 11, wherein the first program determines a size of the BIOS code, and wherein the first program copies an amount of the BIOS code to the executable based upon the size.
+15. The computer system, as recited in claim 11, wherein the first program erases the second program after the second program has been executed by the processor.
+16. The computer system, as recited in claim 11, wherein the BIOS file includes a plurality of identifiers and a plurality of offset pointers, wherein each of the plurality of identifiers correspond to each of the plurality of offset pointers.
+17. A computer usable medium for executing BIOS functions in a secure operating system, the computer usable medium comprising: means for recognizing an identifier of BIOS code; means for locating the identified BIOS code within at least one BIOS file; means for reading the identified BIOS code; means for writing the identified BIOS code to an executable file, the executable file operable to be stored on a nonvolatile storage device; and means for executing the executable file.
+18. A computer system for executing BIOS functions in a secure operating system, the computer system comprising: means for recognizing an identifier of BIOS code; means for locating the identified BIOS code within at least one BIOS file; means for reading the identified BIOS code; means for writing the identified BIOS code to an executable file, the executable file operable to be stored on a nonvolatile storage device; and means for executing the executable file.

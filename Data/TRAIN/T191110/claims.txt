@@ -1,0 +1,265 @@
+--- PAGE 1 ---
+15
+
+20
+
+25
+
+30
+
+35
+
+Northrop Grumman Systems Corporation -1- EPA-112 282
+07 252 717.9-2218 06.05.2015
+
+Main Request
+
+Claims
+
+1. A gesture recognition simulation system (10) comprising:
+
+a three-dimensional display system (16) that is configured to display a three-
+dimensional image of at least one simulated object (360, 410) having at least one
+functional component (412), wherein the at least one functional component (412) is
+a portion of the at least one simulated object (360, 410) in which simulated
+interaction can be performed such that a gesture performed at or near a location of
+the at least one functional component (412) causes an automatic rendering of a
+simulated action on at least the portion of the at least one simulated object (360,
+410);
+
+a gesture recognition interface system (12) configured to receive an input
+gesture associated with one of a simulated tool (414) that is displayed by the three-
+dimensional display system and is reactive to a user's bare hand (416) and a
+sensorless tool (364) held by the user's bare hand (416), respectively, the input
+gesture being determined by at least one motion of the one of the simulated tool
+(414) and the sensorless tool (364), respectively, or changes in a physical location of
+the one of the simulated tool (414) and the sensorless tool (364), respectively,
+relative to the at least one functional component (412); and
+
+a simulation application controller (14) configured to match a given input
+gesture with a predefined action associated with the at least one functional
+component (412) upon contact of the one of the simulated tool (414) and the
+sensorless tool (364), respectively, with the at least one functional component (412)
+based on correlating a physical location in three-dimensional space associated with
+one of an image of the simulated tool (414) and the sensorless tool (364),
+respectively, with a physical location in three-dimensional space associated with an
+image of the at least one functional component (412), and to invoke the three
+dimensional display system (16) to display the simulated action associated with the
+predefined action on at least the portion of the at least one simulated object (360,
+410) associated with the at least one functional component (412).
+
+2. The system (10) of claim 1, wherein the gesture recognition interface system
+(12) comprises:
+
+a plurality of light sources (206, 208, 354, 404) positioned to illuminate a
+retroreflective background surface (210, 356,406); and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Northrop Grumman Systems Corporation -2- EPA-112 282
+07 252 717.9-2218 06.05.2015
+
+Main Request
+
+at least one camera (204, 206, 352) configured to receive a first plurality of
+images based on a first reflected light contrast difference between the retroreflective
+background surface (210, 356, 406) and one of the user's bare hand (416) and the
+sensorless tool (364) caused by a first of the plurality of light sources (206, 208, 354,
+404) and a second plurality of images based on a second reflected light contrast
+difference between the retroreflective background surface (210, 356, 406) and the
+one of the user's bare hand (416) and the sensorless tool (364) caused by a second
+of the plurality of light sources (206, 208, 354, 404), such that the three-dimensional
+shape and the physical location of the one of the user's bare hand (416) and the
+sensorless tool (364) are determined based on a comparison of shape and location of
+corresponding images of the first plurality of images and the second plurality of
+images.
+
+3. The system (10) of claim 2, wherein the plurality of light sources (206, 208,
+354, 404) are infrared (IR) light sources, such that the at least one camera (204,
+206, 352) comprises an IR filter.
+
+4. The system (10) of any of the preceding claims, further comprising a gesture
+library (20) that stores a plurality of predefined gestures, the simulation application
+controller (14) employs the gesture library (20) to determine if a given input gesture
+matches a predefined action.
+
+5. The system (10) of any of the preceding claims, further comprising an object
+library (20), accessible by the simulation application controller (14), that stores data
+associated with a plurality of simulated objects (360, 410) including three-
+dimensional image information, information associated with at least one functional
+component (412) of the respective simulated object (360, 410), and at least one
+predefined action associated with the at least one functional component (412).
+
+6. The system (10) of claim 5, wherein the object library (20) is further
+configured to store at least one predefined gesture for a given predefined action.
+
+7. The system (10) of any of the preceding claims, wherein the user's bare hand
+(416) comprises one of both bare hands of a user and at least one bare hand from
+multiple users.
+
+--- PAGE 3 ---
+20
+
+25
+
+30
+
+35
+
+Northrop Grumman Systems Corporation -3- EPA-112 282
+07 252 717.9-2218 06.05.2015
+
+Main Request
+
+8. The system (10) of any of the preceding claims, wherein the three-
+dimensional display system (16) is a holograph projector, such that the three-
+dimensional image of the at least one simulated device is a holographic image.
+
+9. The system (10) of any of the preceding claims, wherein the input gesture
+comprises concurrent gestures associated with a plurality of users.
+
+10. The system (10) of any of the preceding claims, wherein the simulated action
+comprises one of removing, moving and assembling at least a portion of the at least
+one simulated object (360, 410) associated with the at least one functional
+component (412).
+
+11. The system (10) of any of the preceding claims, further comprising an output
+system configured to provide an additional output in response to the simulated
+action, the output being at least one of an audio signal, a video signal, and a control
+signal.
+
+12. The system (10) of any of the preceding claims, wherein the input gesture
+comprises pointing with a finger to define a one-dimensional ray in three-dimensional
+space, such that multiple pointed fingers define a plurality of one-dimensional rays in
+three-dimensional space that further define a geometric shape in three-dimensional
+space.
+
+13. A method of interacting with a simulated device, the method comprising:
+
+generating a three-dimensional image of at least one simulated object (360,
+410) having at least one functional component (412), wherein the at least one
+functional component (412) is a portion of the at least one simulated object (360,
+410) in which simulated interaction can be performed such that a gesture performed
+at or near a location of the at least one functional component (412) causes an
+automatic rendering of a simulated action on at least the portion of the at least one
+simulated object (360, 410);
+
+illuminating a retroreflective background surface (210, 356, 406) with a
+plurality of light sources (206, 208, 354, 404);
+
+generating a first plurality of images associated with a sensorless input object
+(212, 364) based on a reflected light contrast between the sensorless input object
+(212, 364) and the illuminated retroreflective background surface (210, 356, 406)
+caused by one of the plurality of light sources (206, 208, 354, 404),
+
+--- PAGE 4 ---
+10
+
+20
+
+25
+
+35
+
+Northrop Grumman Systems Corporation -4- EPA-112 282
+07 252 717.9-2218 06.05.2015
+
+Main Request
+
+generating a second plurality of images associated with the sensorless input
+
+| object (212) based on a reflected light contrast between the sensorless input object
+
+(212, 364) and the illuminated retroreflective background surface (210, 356, 406)
+caused by another one of the plurality of light sources (206, 208, 354, 404);
+
+determining changes in at least one of a three-dimensional shape and a
+physical location of the sensorless input object (212, 364) based on a comparison of
+images of the first and second plurality of images;
+
+determining an input gesture associated with the sensorless input object (212,
+364) based on the changes in at least one of a three-dimensional shape and a
+physical location of the sensorless input object (212, 364) relative to the at least one
+functional component (412);
+
+determining if the input gesture matches a predefined action associated with
+the at least one functional component (412); and
+
+displaying the simulated action associated with a matched predefined action
+on at least the portion of the at least one simulated object (360, 410) associated with
+the at least one functional component (412).
+
+14. The method of claim 13, wherein illuminating the background surface (210,
+356, 406) comprises illuminating the background surface (210, 356, 406) with a
+plurality of infrared (IR) light sources (206, 208, 354, 404).
+
+15. |The method of claim 13 or claim 14, further comprising comparing the
+determined input gesture with a plurality of predefined gestures stored in a
+predefined gesture library (22), each predefined action of the at least one functional
+
+component (412) having at least one associated gesture of the plurality of predefined
+
+gestures that initiates a simulated action on at least a portion of the at least one
+simulated object (360, 410).
+
+16. The method of any of claims 13 to 15, further comprising accessing an object
+library (20) configured to store data associated with a plurality of simulated objects
+(360, 410), the data for each of the plurality of simulated objects (360, 410)
+including three-dimensional image information, information associated with at least
+one functional component (412) of the respective simulated object (360, 410), and at
+least one predefined action associated the at least one functional component (412).
+
+17. The method of any of claims 13 to 16, further comprising generating a three-
+dimensional image of at least one simulated tool (414), the three-dimensional image
+of the at least one simulated tool (414) being reactive to a user's hand (416), such
+
+--- PAGE 5 ---
+is
+
+20
+
+25
+
+Northrop Grumman Systems Corporation -~5- EPA-112 282
+07 252 717.9-2218 06.05.2015
+
+Main Request
+
+that the simulated action is further associated with the at least one simulated tool
+(414).
+
+18. |The method of any of claims 13 to 17, wherein determining the input gesture
+associated with the sensorless input object (212, 364) comprises determining an
+input gesture associated with at least one of both hands of a user, at least one hand
+from multiple users, and at least one tool (364) heid by one or more users.
+
+19. The method of any of claims 13 to 18, wherein generating the three-
+dimensional image of the at least one simulated object (360, 410) comprises
+projecting a three-dimensional holographic image of the at least one simulated object
+(360, 410).
+
+20. The method of any of claims 13 to 19, wherein determining the input gesture
+associated with the sensorless input object (212, 364) comprises determining
+concurrent input gestures associated with a plurality of users.
+
+21. The method of any of claims 13 to 20, further comprising activating at least
+one additional output in response to the simulated action, the at least one additional
+output being at least one of an audio signal, a video signal, and a control signal.
+
+22. The method of any of claims 13 to 21, wherein the simulated action comprises
+one of removing, moving and assembling at least a portion of the at least one
+
+simulated object (360, 410).
+
+349

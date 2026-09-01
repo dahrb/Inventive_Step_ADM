@@ -1,0 +1,84 @@
+TITLE:
+Lowering the consumption of ink in computer printing
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method of printing an image comprises sending a data stream representing the image to a printer driver, generating a stream of print instructions at the printer driver, forwarding the stream of print instructions to a printer, and printing the image in accordance with the print instructions. The data stream or stream of print instructions is intercepted and processed so that the printer uses less ink to print the image than it would if the processing was not performed.
+
+CLAIMS:
+1. A method of printing an image, comprising:
+sending a data stream representing the image to a printer driver;
+generating a stream of print instructions at the printer driver;
+forwarding the stream of print instructions to a printer; and
+printing the image in accordance with the print instructions;
+wherein the data stream or stream of print instructions is intercepted before it reaches the printer driver or between the printer driver and the printer and processed so that the printer uses less ink to print the image than it would if the processing was not performed.
+2. A method as claimed in claim 1, wherein the data stream is intercepted and processed before it reaches the printer driver.
+3. A method as claimed in claim 2, wherein the processing of the data stream does not depend on the printer driver to which the data stream is to be forwarded.
+4. A method as claimed in claim 2, wherein the processing of the data stream is performed using information about the printer driver to which the data stream is to be forwarded.
+5. A method as claimed in claim 2, wherein the processing of the data stream is performed by a shell driver.
+6. A method as claimed in claim 1, wherein the stream of print instructions is intercepted and processed by an output filter before it reaches the printer.
+7. A method as claimed in claim 5 or 6, wherein the shell driver, printer driver or output filter has settings which can be varied by the user, the method further comprising varying these settings so as to vary the amount of ink saved.
+8. A method as claimed in claim 7, wherein the step of varying the settings of the shell driver is performed by accessing the shell driver, printer driver or output filter via the system tray.
+9. A method as claimed in claim 1, wherein the reduction of the amount of ink used by the printer is achieved by processing the data stream or stream of print instructions so as to result in a reduction of the number of dots printed by the printer.
+10. A method as claimed in claim 9, wherein the data stream or stream of print instructions is processed so that the dot reduction is performed in such a way that the visible quality of the document printed by the printer as perceived by a human viewer is not reduced.
+11. A method as claimed in claim 9, wherein dot reduction is performed by removing dots at random.
+12. A method as claimed in claim 1, wherein the step of processing the data stream or stream of print instructions comprises modifying black regions in the image to half-tone grey regions.
+13. A method as claimed in claim 12, wherein the half-tone grey regions have a grey level of about 60%.
+14. A method as claimed in claim 12, wherein the level of half-toning may be set by the user.
+15. A method as claimed in claim 12, wherein the step of processing the data stream or stream of print instructions includes modifying pixels in filled objects within the image to half-tone grey, but ensuring that pixels at the edge of filled objects remain highly saturated.
+16. A method as claimed in claim 12, wherein the step of processing the data stream or stream of print instructions comprises:
+mapping the pixels in the image from the work space of the data stream or stream of print instructions to the Hue, Luminance and Saturation (HLS) colour model;
+modifying the saturation or luminance of some or all of the pixels; and
+mapping the pixels in the image back to the work space of the data stream or stream of print instructions.
+17. A method as claimed in claim 16, comprising decreasing the saturation of at least some of the pixels.
+18. A method as claimed in claim 16, comprising increasing the luminance of at least some of the pixels.
+19. A method as claimed in claim 16, wherein the step of processing the data stream or stream of print instructions comprises modifying pixels so that the amount of black ink used to print those pixels is increased at the expense of coloured ink.
+20. A method as claimed in claim 16, wherein the step of processing the data stream or stream of print instructions comprises:
+identifying grey pixels in the image which will be printed using a combination of coloured inks; and
+modifying these pixels so that they will be printed using only black ink.
+21. A method as claimed in claim 16, further comprising predicting how much ink will be used by the printer and displaying this information or the cost of the predicted ink.
+22. A method as claimed in claim 21, further comprising keeping a record of the predicted amount of ink used by the printer each time a document is printed, and determining when the printer is likely to run out of one or more colours of ink.
+23. A method as claimed in claim 22, wherein the step of processing the data stream or stream of print instructions comprises modifying the colour balance of pixels so that the printer uses less of the ink it is likely to run out of.
+24. A method as claimed in claim 21, wherein the step of processing the data stream or stream of print instructions includes modifying the colour balance of pixels so that the printer uses different colour inks at approximately the same rate.
+25. A method as claimed in claim 23, wherein the step of modifying the colour balance of pixels includes modifying the colour balance towards the colour white.
+26. A method of reducing the ink used by a printer to print an image, the method comprising:
+intercepting a data stream, representing the image, sent to a printer driver for printing;
+processing the data stream so as to produce a modified data stream still representing the image;
+forwarding the processed data stream to the printer driver;
+generating a stream of print instructions;
+forwarding the stream of print instructions to the printer; and
+printing the image in accordance with the print instructions;
+wherein the step of processing the data stream results in a reduction of the amount of ink used by the printer as compared to the amount which would be used by the printer if the processing was not performed.
+27. A method of reducing the ink used by a printer to print an image, the method comprising:
+intercepting a stream of print instructions, representing the image, sent from a printer driver to a printer;
+processing the stream of print instructions so as to produce a modified stream of print instructions still representing the image; and
+printing the image in accordance with the modified print instructions;
+wherein the step of processing the stream of print instructions results in a reduction of the amount of ink used by the printer as compared to the amount which would be used by the printer if the processing was not performed.
+28. A computer storage medium having stored thereon a program arranged to cause a computer to perform a method as claimed in claim 27.
+29. A system for printing documents from an application, comprising:
+a printer driver arranged to receive a data stream corresponding to a document to be printed and forward a stream of print instructions to a printer to print said document in response to the data stream; and
+a shell driver arranged either to intercept a data stream intended for the printer driver, process the data stream and pass the processed data stream to the printer driver, or to intercept a stream of print instructions intended for the printer, process the print instructions and pass the processed print instructions to the printer;
+wherein the shell driver is arranged to process the data stream or print instructions in such a way that the printer uses less ink than it would if the data stream or print instructions was not processed.
+30. A system as claimed in claim 29, wherein the shell driver is arranged to process the data stream or print instructions in such a way that the reduction in ink used by the printer is caused by a reduction in the number of dots printed by the printer.
+31. A system as claimed in claim 29, wherein the shell driver is arranged to process the data stream or print instructions in such a way that the visible quality of the printed document as perceived by a human viewer is not reduced.
+32. A system as claimed in claim 29, wherein the shell driver has settings which can be varied by a user so as to vary the degree of reduction of ink used by the printer.
+33. A system as claimed in claim 32, wherein the settings of the shell driver are accessible to the user via the system tray.
+34. A system as claimed in claim 29, wherein the operation of the shell driver is invisible to the user of the system during printing.
+35. A method of reducing the ink used when printing an image from an application on a computer, the computer having installed thereon a printer driver for processing a data stream corresponding to the image and issuing print instructions to a printer,
+the method comprising:
+installing a shell driver onto the computer, the shell driver being arranged to intercept a data stream intended for the printer driver and process said data stream so as to reduce the amount of ink used by the printer.
+36. A method of reducing the ink used when printing an image from an application on a computer, the computer having installed thereon a printer driver for processing a data stream corresponding to the image and issuing print instructions to a printer,
+the method comprising:
+installing a shell driver onto the computer, the shell driver being arranged to intercept print instructions intended for the printer and process said print instructions so as to reduce the amount of ink used by the printer.
+37. A method as claimed in claim 36, wherein the step of installing the shell driver includes causing an icon to be displayed in the system tray so that the user can select the icon to vary settings of the shell driver including the ink usage
+38. A method of controlling the amount of ink used by a printer attached to a computer, the method comprising:
+providing an ink reduction driver arranged to process data streams corresponding to documents to be printed by the printer, to thereby change the amount of ink used by the printer in printing the documents;
+providing a driver control icon in the operating system window system tray of the computer;
+linking the driver control icon to the ink reduction driver;
+allowing a user to select the driver control icon to cause a driver control panel to be displayed such that the user can then vary the settings of the ink reduction driver.
+39. A method as claimed in claim 38, wherein the driver control panel contains an ink use selector for allowing the user to select one of a multiplicity of ink use settings.
+40. A method as claimed in claim 39, wherein the ink use selector includes a sliding scale or button bar.
+41. A method of reducing the amount of ink used by a printer attached to a computer to print an image, the computer having installed thereon a printer driver for converting a data stream representing the image into a stream of print instructions, the method comprising:
+installing an ink reduction driver for modifying the printer driver so that it uses less ink to print the image than it would if the ink reduction driver was not installed.

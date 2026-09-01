@@ -1,0 +1,292 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28764
+
+CLAIMS
+
+1. A method of encoding data from input data that is electronically stored into
+encoded data that is encoded according to a chain reaction code having systematic output
+symbols and non-systematic output symbols and that can be stored in machine-readable form
+and/or transmitted electronically, the method comprising:
+
+generating, from the input data, a set of input symbols comprising systematic output
+symbols;
+
+computing systematic keys for the input symbols in the set of input symbols;
+
+generating, from the plurality of input symbols and corresponding systematic keys, a
+plurality of intermediate input symbols; and
+
+encoding the plurality of intermediate input symbols into one or more non-systematic
+output symbols, wherein one or more intermediate input symbols are selected from an
+alphabet of non-systematic output symbols and encoded into one non-systematic output
+symbol, with each non-systematic output symbol generated being a function of one or more
+of the plurality of intermediate input symbols and being such that any subset of the set of
+input symbols is recoverable from (i) a predetermined number of non-systematic output
+symbols or (ii) a combination of (a) input symbols that are not included in the subset of input
+
+symbols that are to be recovered and (b) one or more of the non-systematic output symbols.
+
+2. The method of claim 1, further comprising transmitting the systematic output
+
+symbols and the non-systematic output symbols over a communication channel.
+
+3. The method of claim 2, further comprising:
+
+receiving one or more systematic output symbols comprising a first subset of the set
+of input symbols;
+
+receiving one or more non-systematic output symbols, wherein each non-systematic
+output symbol is selected from an alphabet of non-systematic output symbols, and wherein
+each non-systematic output symbol is generated as a function of one or more of the plurality
+of intermediate input symbols; and
+
+recovering a remaining subset of the set of input symbols comprising one or more
+input symbols not included in the first set of input symbols, the remaining subset of input
+symbols recovered from:
+
+(i) a predetermined number of non-systematic output symbols; or
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28764
+
+(11) a combination of (a) one or more input symbols from the first subset, and
+
+(b) one or more non-systematic output symbols.
+
+4. The method of claim 3, wherein recovering the remaining subset comprises:
+
+decoding a combination of the one or more received non-systematic output symbols
+and the one or more received systematic input symbols into a plurality of intermediate input
+symbols; and
+
+decoding the plurality of intermediate input symbols into a plurality of input symbols
+comprising a remaining subset of input symbols comprising one or more input symbols not
+
+included in the first set of input symbols.
+
+5. The method of claim 4, wherein decoding the combination comprises:
+
+computing systematic keys corresponding to the received systematic output symbols;
+
+computing non-systematic keys corresponding to the received non-systematic output
+symbols; and
+
+generating the plurality of intermediate input symbols from (i) the systematic keys,
+(ii) the non-systematic keys, (iii) the received non-systematic output symbols, and (iv) the
+
+received systematic output symbols.
+
+6. The method of claim 4, wherein decoding the plurality of intermediate input
+symbols comprises:
+
+computing systematic keys for the systematic output symbols not received; and
+
+generating the remaining subset of input symbols from (i) the systematic keys
+corresponding to the systematic output symbols not received and (ii) the intermediate input
+
+symbols.
+
+7. The method of claim 1, wherein computing systematic keys for the input
+symbols in the set of input symbols includes constructing a matrix having a dimension K and
+
+a dimension J, wherein K corresponds to the number of input symbols.
+
+8. The method of claim 7, wherein the matrix is a matrix having K columns and J
+rows, the method further comprising:
+
+(i) initializing J to 0;
+
+(ii) computing a key, D(J), as a function of J;
+
+(iii) computing row entries of the J-th row of the matrix as a function of the key D(J);
+
+(iv) determining if the rows in the matrix are linearly independent;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+28764
+
+(v) if the matrix rows are not linearly independent, incrementing J by one and
+repeating steps (ii)-(iv);
+
+(vi) if the matrix rows are linearly independent and fewer than K columns have been
+generated, incrementing J by one and repeating steps (ii)-(iv); and
+
+(vii) if the matrix rows are linearly independent and K columns have been generated,
+
+computing the systematic keys as a function of the linearly independent matrix rows.
+
+9. The method of claim 8, wherein computing a key D(J) comprises using a
+
+random number generator to compute key D(J) as a function of J.
+
+10. The method of claim 8, wherein each of the row entries has a value from an
+
+alphabet of size larger than two, or an alphabet of size two and the value is 0 or 1.
+
+11. | The method of claim 7, wherein the matrix is a matrix having K rows and J
+columns, the method further comprising:
+
+(i) initializing J to 0;
+
+(ii) computing a key, D(J), as a function of J;
+
+(iii) computing column entries of the J-th column of the matrix as a function of the
+key DQ);
+
+(iv) determining if the columns in the matrix are linearly independent;
+
+(v) if the matrix columns are not linearly independent, incrementing J by one and
+repeating steps (1ii)-(iv);
+
+(vi) if the matrix rows are linearly independent and fewer than K columns have been
+generated, incrementing J by one and repeating steps (ii)-(iv); and
+
+(vii) if the matrix columns are linearly independent and K columns have been
+generated, computing the systematic keys as a function of the linearly independent matrix
+
+columns.
+
+12. The method of claim 11, wherein computing a key D(J) comprises using a
+
+random number generator to compute key D(J) as a function of J.
+
+13. The method of claim 11, wherein each of the row entries has a value from an
+
+alphabet of size larger than two, or an alphabet of size two and the value is 0 or 1.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+PATENT
+
+Our Reference: 091839EPD1
+
+Application No.: 10013222.4
+14. The method of claim 1, wherein computing systematic keys for the input
+symbols in the set of input symbols includes computing L unique keys, D(0) to D(L-1),
+
+wherein L is a predefined number.
+
+15. | The method of claim 14, wherein the step of computing systematic keys
+further comprises:
+
+(1) constructing a modified decoding matrix having K columns and L rows, wherein K
+corresponds to the number of input symbols, and wherein for any value of j between 0 and L-
+1, the row entries along the j-th row are a function of the key D(j);
+
+(ii) solving a set of linear equations described by the modified decoding matrix; and
+
+(iii) determining the systematic keys using the solutions of the set of linear equations.
+
+16. The method of claim 14, wherein the step of computing systematic keys
+further comprises:
+
+(i) constructing a modified decoding matrix having K rows and L columns, wherein K
+corresponds to the number of input symbols, and wherein for any value of j between 0 and L-
+1, the column entries along the j-th column are a function of the key D(j);
+
+(ii) solving a set of linear equations described by the modified decoding matrix; and
+
+(iii) determining the systematic keys using the solutions of the set of linear equations.
+
+17. | The method of claim 14, wherein computing systematic keys further
+comprises:
+
+(i) determining whether decoding is possible from the set of L unique keys;
+
+(ii) identifying critical keys in the set of L unique keys, wherein a critical key is one
+which is such that its removal makes decoding impossible; and
+
+(iii) discarding keys that are in the set of L unique keys but not in the set of critical
+
+keys.
+
+18. The method of claim 14, wherein computing the L unique keys comprises
+
+using a random number generator to compute each key, D(J), as a function of J.
+
+19. | The method of claim 1, wherein computing systematic keys for the input
+
+symbols in the set of input symbols includes:
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+28764
+
+(i) computing a modified decoding graph for L output symbols, where L is a
+predetermined number;
+
+(11) decoding the modified decoding graph;
+
+(iii) saving indices of output nodes in the modified decoding graph that trigger
+recovery of an input node; and
+
+(iv) computing the systematic keys from the saved indices using a predetermined
+
+function.
+
+20. An encoder for encoding input data that is electronically stored into encoded
+data that is encoded according to a chain reaction code having systematic output symbols and
+non-systematic output symbols and that can be stored in machine-readable form and/or
+transmitted electronically, the encoder comprising:
+
+an input symbol generator for generating a set of input symbols comprising systematic
+output symbols, generated from the input data;
+
+a systematic key module for computing systematic keys for the input symbols in the
+set of input symbols;
+
+an intermediate input symbol generator; for generating a plurality of intermediate
+input symbols from the plurality of input symbols and corresponding systematic keys; and
+
+a non-systematic output symbol generator for encoding the plurality of intermediate
+input symbols into one or more non-systematic output symbols, wherein one or more
+intermediate input symbols are selected from an alphabet of non-systematic output symbols
+and encoded into one non-systematic output symbol, with each non-systematic output symbol
+generated being a function of one or more of the plurality of intermediate input symbols and
+being such that any subset of the set of input symbols is recoverable from (i) a predetermined
+number of non-systematic output symbols or (ii) a combination of (a) input symbols that are
+not included in the subset of input symbols that are to be recovered and (b) one or more of the
+
+non-systematic output symbols.

@@ -1,0 +1,100 @@
+TITLE:
+Multi-access terminal with capability for simultaneous connectivity to multiple communication channels
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An apparatus is disclosed for permitting a mobile terminal having multiple, heterogeneous network connections (e.g., multiple wired or wireless transceivers of various types) to set up and maintain virtual connections over multiple networks to either the same or to multiple destinations. The mobile terminal can “load-share” traffic, i.e., it can distribute segments of traffic over a full set of heterogeneous networks, significantly improving the reliability and availability of communications. In a first embodiment, a mobile terminal is configured with multiple radio frequency (RF) transceivers. Operating system software is provided for dynamically establishing and maintaining traffic flow for user applications over multiple communications paths, and for automatically adapting to variations in the networking environment, application traffic flow requirements, end user preferences, or mobility. In a second embodiment, a software-defined radio is used to implement the physical layer protocols for each desired network, eliminating the need for multiple transceivers.
+
+CLAIMS:
+1. A multi-access terminal comprising:
+a processor having a memory and at least one user application executing on said processor, said at least one user application requesting communications with a remote computing system;
+a plurality of wireless network transceivers connected to said processor, said plurality of wireless network transceivers operating a plurality of communications protocols; and
+means for establishing one or more communications paths to said remote computing system using one or more of said plurality of wireless network transceivers, said at least one user application communicating with said remote computer system using said one or more communications paths.
+2. The terminal of claim 1, wherein said plurality of wireless network transceivers further includes a wireless Ethernet transceiver.
+3. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a Code Division Multiple Access (CDMA) transceiver.
+4. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a Global System for Mobile Communications (GSM) transceiver.
+5. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a 1XRTT transceiver.
+6. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a General Packet Radio Service (GPRS) transceiver.
+7. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a Universal Mobile Telecommunications System (UTMS) transceiver.
+8. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a Worldwide Interoperability for Microwave Access (WiMAX) transceiver.
+9. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a High-Speed Downlink Packet Access (HSPDA) transceiver.
+10. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a satellite transceiver.
+11. The terminal of claim 1, wherein said plurality of wireless transceivers further includes an Integrated Digital Enhanced Network (iDEN) transceiver.
+12. The terminal of claim 1, wherein said plurality of wireless transceivers further includes a cellular telephone transceiver.
+13. The terminal of claim 1, further comprising a wired network connection connected to said processor for allowing communications between said user application and said remote computer system.
+14. The terminal of claim 1, further comprising an application flow detection and profiling module for detecting and profiling traffic flow requirements for said at least one user application.
+15. The terminal of claim 14, further comprising an application awareness layer module for extracting traffic flow requirements from said at least one user application using an Application Programming Interface (API).
+16. The terminal of claim 15, further comprising a profile and policy manager module for storing theoretical and real-time application profiles.
+17. The terminal of claim 16, wherein said profile and policy manager module stores theoretical and real-time information about networks connected to said multi-access terminal.
+18. The terminal of claim 17, wherein said profile and policy manager module stores mobility triggering events.
+19. The terminal of claim 16, further comprising a decision engine for distributing traffic across said one or more connection paths.
+20. The terminal of claim 19, wherein said decision engine aggregates and prioritizes said one or more connection paths.
+21. The terminal of claim 19, wherein said decision engine monitors communications performance across said one or more connection paths.
+22. The terminal of claim 19, wherein said decision engine adjusts traffic across said one or more communications paths in response to a mobility trigger event.
+23. The terminal of claim 19, wherein said decision engine performs multi-path routing of traffic across said one or more communications paths.
+24. The terminal of claim 19, wherein said decision engine implements an optimal path graph for selecting an optimal communications path from said one or more communications paths for said at least one user application.
+25. The terminal of claim 19, further comprising a connection management module for establishing and maintaining said one or more communications paths across said plurality of wireless network transceivers.
+26. The terminal of claim 25, wherein said connection management module establishes a new communications path to said remote computing system when one or more of said plurality of wireless network transceivers is suitable for communications.
+27. The terminal of claim 25, wherein said connection management module generates a trigger event in response to a status change in said one or more communications paths.
+28. The terminal of claim 27, wherein said status change further includes an onset of congestion.
+29. The terminal of claim 27, wherein said status change further includes a link failure.
+30. The terminal of claim 27, wherein said status change further includes channel interference.
+31. The terminal of claim 27, wherein said status change further includes degradation in quality of service (QoS).
+32. The terminal of claim 27, further comprising a virtual routing support subsystem for routing application traffic flows across said one or more communications paths.
+33. The terminal of claim 32, further comprising a multi-homing protocol for communicating across said one or more communications paths to said remote computing system.
+34. The terminal of claim 33, wherein said multi-homing protocol further includes Stream Control Transmission Protocol (SCTP).
+35. The terminal of claim 34, further comprising a TCP-to-SCTP proxy module for translating TCP application traffic into SCTP traffic for transmission across said one or more communications paths.
+36. The multi-access terminal of claim 1, further comprising an analog radio connected to said multi-access terminal for communicating voice information to a second analog radio at a remote location.
+37. A multi-access terminal comprising:
+a processor having a memory and at least one user application executing on said processor, said at least one user application requesting communications with a remote computing system;
+a software defined radio connected to said processor, said software defined radio capable of communicating using a plurality of communications protocols; and
+means for establishing one or more communications paths to said remote computing system using said software defined radio, said at least one user application communicating with said remote computer system using said one or more communications paths.
+38. The terminal of claim 37, further comprising a wired network connection connected to said processor for allowing communications between said user application and said remote computer system.
+39. The terminal of claim 37, further comprising an application flow detection and profiling module for detecting and profiling traffic flow requirements for said at least one user application.
+40. The terminal of claim 39, further comprising an application awareness layer module for extracting traffic flow requirements from said at least one user application using an Application Programming Interface (API).
+41. The terminal of claim 40, further comprising a profile and policy manager module for storing theoretical and real-time application profiles.
+42. The terminal of claim 41, wherein said profile and policy manager module stores theoretical and real-time information about networks connected to said multi-access terminal.
+43. The terminal of claim 42, wherein said profile and policy manager module stores mobility triggering events.
+44. The terminal of claim 41, further comprising a decision engine for distributing traffic across said one or more connection paths.
+45. The terminal of claim 44, wherein said decision engine aggregates and prioritizes said one or more connection paths.
+46. The terminal of claim 44, wherein said decision engine monitors communications performance across said one or more connection paths.
+47. The terminal of claim 44, wherein said decision engine adjusts traffic across said one or more communications paths in response to a mobility trigger event.
+48. The terminal of claim 44, wherein said decision engine performs multi-path routing of traffic across said one or more communications paths.
+49. The terminal of claim 44, wherein said decision engine implements an optimal path graph for selecting an optimal communications path from said one or more communications paths for said at least one user application.
+50. The terminal of claim 44, further comprising a connection management module for establishing and maintaining said one or more communications paths across said plurality of wireless network transceivers.
+51. The terminal of claim 50, wherein said connection management module establishes a new communications path to said remote computing system when one or more of said plurality of wireless network transceivers is suitable for communications.
+52. The terminal of claim 50, wherein said connection management module generates a trigger event in response to a status change in said one or more communications paths.
+53. The terminal of claim 52, wherein said status change further includes an onset of congestion.
+54. The terminal of claim 52, wherein said status change further includes a link failure.
+55. The terminal of claim 52, wherein said status change further includes channel interference.
+56. The terminal of claim 52, wherein said status change further includes degradation in quality of service (QoS).
+57. The terminal of claim 52, further comprising a virtual routing support subsystem for routing application traffic flows across said one or more communications paths.
+58. The terminal of claim 57, further comprising a multi-homing protocol for communicating across said one or more communications paths to said remote computing system.
+59. The terminal of claim 58, wherein said multi-homing protocol further includes Stream Control Transmission Protocol (SCTP).
+60. The terminal of claim 59, further comprising a TCP-to-SCTP proxy module for translating TCP application traffic into SCTP traffic for transmission across said one or more communications paths.
+61. The multi-access terminal of claim 37, further comprising an analog radio connected to said multi-access terminal for communicating voice information to a second analog radio at a remote location.
+62. A method for providing communications for a user application executing on a mobile terminal having a plurality of wireless network transceivers connected to said terminal, comprising the steps of:
+receiving a request for communications from said user application;
+determining attributes of said user application;
+establishing at least one network connection between said user application and a remote computing system across said plurality of wireless network transceivers based upon said attributes of said user application; and
+allowing said user application to communicate with said remote computing system over said at least one network connection.
+63. The method of claim 62, wherein said step of establishing said at least one network connection further includes the step of establishing a virtual link to said remote computing system using a multi-homing protocol across said plurality of wireless network transceivers.
+64. The method of claim 63, wherein said multi-homing protocol further includes a Stream Control Transmission Protocol (SCTP).
+65. The method of claim 64, further comprising the step of encapsulating TCP/IP packets produced by said user application into SCTP packets for transmission across said at least one network connection.
+66. The method of claim 63, wherein said multi-homing protocol further includes a multi-streaming protocol.
+67. The method of claim 62, further comprising the step of detecting and profiling traffic flow requirements for said user application.
+68. The method of claim 62, further comprising extracting traffic flow requirements from said user application using an Application Programming Interface (API).
+69. The method of claim 62, further comprising the step of storing theoretical and real-time application profiles in a database.
+70. The method of claim 62, further comprising the step of storing theoretical and real-time information about networks connected to said mobile terminal.
+71. The method of claim 62, further comprising the step of distributing traffic across said at least one network connection.
+72. The method of claim 71, further comprising the step of aggregating and prioritizing said at least one network connection.
+73. The method of claim 71, further comprising the step of monitoring communications performance across said at least one network connection.
+74. The method of claim 73, further comprising the step of adjusting traffic across said at least one network connection in response to a trigger event.
+75. The method of claim 74, wherein said trigger event further includes a decision to switch traffic from one network connection to another.
+76. The method of claim 74, wherein said trigger event further includes an onset of congestion.
+77. The method of claim 74, wherein said trigger event further includes a link failure.
+78. The method of claim 74, wherein said trigger event further includes channel interference.
+79. The method of claim 74, wherein said trigger event further includes degradation in quality of service (QoS).
+80. The method of claim 62, further comprising the step of establishing a new communications path to said remote computing system when one or more of said plurality of wireless network transceivers is suitable for communications.

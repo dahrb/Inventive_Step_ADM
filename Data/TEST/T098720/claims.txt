@@ -1,0 +1,445 @@
+--- PAGE 1 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+CLAIMS
+
+1. Adiata retrieval apparatus that retrieves data from two or more databases (1) that
+return retrieved data in response to a retrieval instruction, the data retrieval apparatus
+comprising:
+
+a data dictionary (10) including presentation structure definition information for
+assisting input of a user terminal (2) to issue a retrieval request compliant with a
+retrieval requirement, virtual data structure definition information for analyzing the
+retrieval request and converting the retrieval request into a retrieval instruction
+processable by the database (1), and retrieval request definition information for
+managing relevance between different retrieval requests;
+
+a business intelligence unit (30) for assisting input of the user terminal (2)
+according to the presentation structure defined in the data dictionary (10) to issue a
+retrieval request described according to the presentation structure, and outputting a
+retrieval result based on the virtual data structure, the retrieval result being obtained by
+executing the retrieval request by a virtual database unit (20), to the user terminal (2);
+and
+
+a virtual database unit (20) for analyzing the retrieval request according to the
+virtual data structure defined in the data dictionary (10) to generate a retrieval
+instruction, executing the generated retrieval instruction in the database (1) to acquire
+two or more retrieved data, and integrating the acquired two or more retrieved data to
+prepare a retrieval result responding to the retrieval request,
+
+wherein the data retrieval apparatus associates a plurality of retrieval results
+prepared in response to different retrieval requests with each other by the retrieval
+
+request definition information, the plurality of retrieved results being obtained in
+
+--- PAGE 2 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+response to retrieval requests, retrieval request definition information managing the
+
+relevance between different retrieval requests.
+
+2. The data retrieval apparatus according to claim 1, wherein
+
+when the virtual database unit (20) has prepared a plurality of retrieval results in
+response to different retrieval requests associated by the retrieval request definition
+information, the virtual database unit (20) automatically associates the prepared
+retrieval results with each other, and
+
+the business intelligence unit (30) prepares a plurality of reports respectively from
+the retrieval results associated by the virtual database unit (20), and automatically
+
+associates the prepared reports with each other.
+
+3. The data retrieval apparatus according to claim 1, wherein the business
+intelligence unit (30) includes:
+
+a retrieval request issuing unit (31) that assists the user terminal (2) according to
+the presentation structure in the data dictionary (10) to issue a retrieval request based on
+the presentation structure to the virtual database unit (20); and
+
+a report output unit (32) that prepares a report from the retrieval result acquired
+
+from the virtual database unit (20), and sends the report to the user terminal (2).
+
+4. The data retrieval apparatus according to claim 3, wherein the business
+intelligence unit (30) is configured to:
+
+display a plurality of reports prepared from a plurality of retrieval results acquired
+by executing a plurality of retrieval requests sequentially or simultaneously; and
+
+associate and manipulate a plurality of reports with each other by the retrieval
+
+--- PAGE 3 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+request definition information that manages relevance between different retrieval
+
+requests contained in the data dictionary (10).
+
+5. The data retrieval apparatus according to claim 4, wherein the business
+intelligence unit (30) is configured to:
+
+associate a first retrieval request with a second retrieval request as relevant
+retrieval; and
+
+execute the first retrieval request to display a first retrieval result in the user
+terminal (2), and thereafter select data contained in the first retrieval result and instruct a
+link to the second retrieval request, so as to:
+
+inherit an item and a condition value of an extraction condition contained in the
+first retrieval request and an item and a display value associated with data selected from
+the first retrieval result to the second retrieval request; and
+
+when an associated item associated with the item inherited from the first retrieval
+request is present in an extraction condition of the second retrieval request, replace a
+condition value of the associated item with the condition value inherited from the first
+retrieval request, execute the second retrieval request, and display a second retrieval
+
+result.
+
+6. The data retrieval apparatus according to claim 4, wherein the business
+intelligence unit (30) is configured to:
+
+prepare a dashboard including a plurality of reports output from a plurality of
+retrieval results, the reports being arranged on one screen;
+
+when data contained in a retrieval result of one of the reports within the dashboard,
+
+inherit an index item and a display value associated with the selected data to another
+
+--- PAGE 4 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+report within the dashboard; and
+
+when an item associated with the index item inherited to an extraction condition
+of a retrieval request of the another report is present, replace a condition value of the
+extraction condition with a display value to which the condition value is inherited,
+execute a retrieval request to display a new retrieval result, so as to manipulate a
+
+plurality of reports within the dashboard in conjunction with each other.
+
+7. The data retrieval apparatus according to claim 3, wherein the report output unit
+(32) of the business intelligence unit (30) is configured to:
+
+perform aggregation operation on a combination of index items with same
+aggregation level all together when a retrieval request contains a plurality of classifiable
+index items (dimensions) and one or more aggregable value items (measures),
+
+when two or more aggregation levels are set,
+
+in displaying a retrieval result at a certain aggregation level on the user terminal
+(2), display only values of index items at a level higher than the certain aggregation
+level, and display an aggregation value obtained by aggregation of only index items at a
+level higher than the certain aggregation level in the value items; and
+
+when the user terminal (2) has selected specific data in the retrieval result at the
+certain aggregation level, display detailed records at an aggregation level lower by one
+level having an index item equal to the displayed index item of the selected specific data
+
+on the user terminal (2).
+
+8. The data retrieval apparatus according to claim 3, wherein
+the business intelligence unit (30) has a library management unit (33) capable of
+
+saving a retrieval request once prepared by the user terminal (2) and reading the
+
+--- PAGE 5 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+retrieval request for reuse, and
+the business intelligence unit (30) sets a user terminal (2) capable of using the
+library management unit (33) according to user authority to allow the retrieval request
+
+to be shared depending on a purpose of use.
+
+9. The data retrieval apparatus according to claim 3, wherein
+
+the business intelligence unit (30) includes a retrieval history management unit
+(34) capable of saving a retrieval result responding to a retrieval request for a
+predetermined period or for a predetermined number of history records specified by the
+user terminal (2), and
+
+when the user terminal (2) has specified a retrieval request from a library, a list of
+retrieval results responding to the retrieval request is displayed, and a retrieval result is
+
+specified from the list, so that the retrieval result can be directly referred to.
+
+10. The data retrieval apparatus according to claim 3, wherein
+
+the retrieval request issuing unit (31) is capable of handling a set item expressing
+a plurality of associated items by one concept,
+
+when the set item is specified in an extraction condition of a retrieval request, the
+retrieval request issuing unit (31) is capable of setting a condition value while referring
+to values of the associated items included in the set item, and
+
+the associated items included in the set item are automatically added to a display
+item of a retrieval result by an input operation of the user terminal (2) to add the set item
+
+to the display item of the retrieval result.
+
+11. The data retrieval apparatus according to claim 10, wherein the set item of the
+
+--- PAGE 6 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+retrieval request issuing unit (31) is constituted by one or more items in hierarchical
+relation with each other,
+
+when a value is selected from a list of items at an upper level on a screen of the
+user terminal (2), a list of values of items at a lower level associated with the selected
+value is displayed, and
+
+the user terminal (2) is capable of specifying a value to be an extraction condition
+
+for retrieval from the values displayed on the list of any level.
+
+12. The data retrieval apparatus according to claim 1, wherein the virtual database
+unit (20) includes
+
+a retrieval request translation unit (21) that analyzes the retrieval request
+according to the virtual data structure in the data dictionary (10) and generates a
+retrieval instruction for retrieval from the two or more databases (1);
+
+a retrieval instruction execution unit (22) that executes the retrieval instruction
+generated by the retrieval request translation unit (21) on any one or more of the two or
+more databases (1) to acquire two or more retrieved data; and
+
+a data integration processing unit (23) that integrates and processes the two or
+more retrieved data acquired by the retrieval instruction execution unit (22) to prepare a
+
+retrieval result responding to a data retrieval request.
+
+13. The data retrieval apparatus according to claim 12, wherein the retrieval request
+translation unit (21) is configured to:
+
+analyze the retrieval request according to the virtual data structure in the data
+dictionary (10);
+
+generate a retrieval instruction executable on a database to retrieve data from and
+
+--- PAGE 7 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+a retrieval instruction executable by the data integration processing unit (23); and
+input an output of a retrieval instruction from a data integration processing unit
+(23) as a retrieval instruction to another data integration processing unit (23), so as to
+
+generate retrieval instruction to perform data integration processing in multiple stages.
+
+14. The data retrieval apparatus according to claim 12, wherein the retrieval request
+translation unit (21) is configured to:
+
+convert and apply an extraction condition for the virtual database unit (20)
+indicated in a retrieval request into a retrieval instruction to the database (1);
+
+execute classification and totaling requested in a retrieval request in advance in
+the database (1); and
+
+performing processing of referring to a master managing a subject static attribute
+at a stage after data are aggregated without performing the processing during retrieval of
+detailed data, so as to optimize the retrieval instruction to minimize a data amount
+
+transmitted from the database (1).
+
+15. The data retrieval apparatus according to claim 12, wherein
+
+when the database supports an SQL language as a retrieval interface, the retrieval
+instruction execution unit (22) includes at least one of:
+
+a retrieval instruction execution unit for retrieval using the SQL from a physical
+table of the database;
+
+a retrieval instruction execution unit for retrieval using a stored procedure stored
+in the database; and
+
+a retrieval instruction execution unit that performs retrieval again from a retrieval
+
+result of retrieval defined directly by the SQL language of the database,
+
+--- PAGE 8 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+when the database does not support the SQL language as a retrieval interface, the
+retrieval instruction execution unit (22) includes a retrieval instruction execution unit
+corresponding to a retrieval interface of the database, and
+
+when the database is a data file on a file system, the retrieval instruction execution
+
+unit (22) includes a retrieval instruction execution unit supporting for the data file.
+
+16. The data retrieval apparatus according to claim 12, wherein the data integration
+processing unit (23) is capable of receiving as input one or more of intermediate
+retrieved data acquired by the retrieval instruction execution unit (22) and result data
+output by another data integration processing unit (23), performing data integration and
+data processing, and outputting result data in a form of one table, and further passing the
+result data as input to another data integration processing unit (23), so as to perform
+
+data integration processing in multiple stages.
+
+17. The data retrieval apparatus according to claim 12, wherein the data integration
+processing unit (23) includes any one or more data integration schemes including:
+
+a merge scheme of merging intermediate data obtained by extracting and totaling
+data from the respective databases and aggregating the merged data with a key;
+
+a selection scheme of automatically selecting, extracting, and totaling data to be
+retrieved from retrieval candidates in a plurality of databases according to a content of a
+retrieval request; and
+
+a reference scheme of acquiring reference data from one database according to a
+reference condition predefined for each of records of intermediate data acquired from
+another database, and complimenting an item missing from the intermediate data with
+
+an item from the reference data, and
+
+--- PAGE 9 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+the data integration processing unit (23) is capable of selecting an optimum
+
+scheme from the data integration schemes.
+
+18. The data retrieval apparatus according to claim 17, wherein the reference scheme
+of the data integration schemes of the data integration processing unit (23) includes one
+or more reference processing schemes including:
+
+a successive reference scheme of performing sequential retrieval from a database
+for respective records of intermediate data obtained by extraction and totaling from
+another database according to a join condition, and integrating retrieved data;
+
+a batch join scheme of transferring intermediate data extracted and totaled from
+one database to one database management system, and integrating the transferred
+intermediate data together or integrating the intermediate data and data in the database
+management system by a join function of the database management system; and
+
+a sequential merge scheme of acquiring data to be retrieved from a reference
+source and data to be retrieved from a referenced database, rearranging the acquired
+data in an order of condition values of reference conditions, and thereafter, while
+sequentially reading reference source records and referenced database records one by
+one, comparing the condition values of the reference conditions, and integrate records
+where the reference conditions are satisfied, and
+
+the data integration processing unit (23) is capable of selecting an optimum
+
+scheme from the reference processing schemes.
+
+19. The data retrieval apparatus according to claim 12, wherein
+the data integration processing unit (23) has functions of a classification and
+
+aggregation process of grouping data by a key item and aggregating values of attribute
+
+--- PAGE 10 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+items for each group, a data editing process on values of items, a data extraction process
+according to a determination condition, and a sorting process according to specification
+of an outputting order, and
+
+the data integration processing unit (23) is capable of dealing with computation
+
+dependent on relation between records and an order of records.
+
+20. The data retrieval apparatus according to claim 12, wherein the data integration
+processing unit (23) is capable of outputting result data resulting from data integration
+and data processing to any of external output destinations including:
+
+the business intelligence unit (30);
+
+another data integration processing unit (23);
+
+a table in a database;
+
+a data filed stored in a file system; and
+
+a data stream transmitted via a network.
+
+21. The data retrieval apparatus according to claim 12, wherein the data integration
+processing unit (23) includes a retrieved data cache that prepares in advance table data
+resulting from a data integration process or intermediate retrieved data prepared by
+division resulting from execution of a retrieval instruction, storing the prepared data in
+an external storage area, and referring to data stored in the external storage area instead
+
+of a database during execution of retrieval.
+
+22. The data retrieval apparatus according to claim 1, wherein the database (1)
+includes at least one of a relational database, an object-oriented database, an XML
+
+database, a file system, a URL directory management system, a data warehouse, and a
+
+10
+
+--- PAGE 11 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+data mart.
+
+23. Aprogram causing a computer to function as a data retrieval apparatus that
+retrieves data from two or more databases (1) that return retrieved data in response to a
+retrieval instruction, the program causing the computer to function as:
+
+a data dictionary (10) including presentation structure definition information for
+assisting input of a user terminal (2) to issue a retrieval request compliant with a
+retrieval requirement, virtual data structure definition information for analyzing the
+retrieval request and converting the retrieval request into a retrieval instruction
+processable by the database (1), and retrieval request definition information for
+managing relevance between different retrieval requests;
+
+a business intelligence unit (30) for assisting input of the user terminal (2)
+according to the presentation structure defined in the data dictionary (10) to issue a
+retrieval request described according to the presentation structure, and outputting a
+retrieval result based on the virtual data structure, the retrieval result being obtained by
+executing the retrieval request by a virtual database unit (20), to the user terminal (2);
+and
+
+a virtual database unit (20) for analyzing the retrieval request according to the
+virtual data structure defined in the data dictionary (10) to generate a retrieval
+instruction, executing the generated retrieval instruction in the database (1) to acquire
+two or more retrieved data, and integrating the acquired two or more retrieved data to
+prepare a retrieval result responding to the retrieval request,
+
+wherein the data retrieval apparatus associates a plurality of retrieval results
+prepared in response to different retrieval requests with each other by the retrieval
+
+request definition information, the plurality of retrieved results being obtained in
+
+11
+
+--- PAGE 12 ---
+W02016/080413 PCT/JP2015/082316
+EP 15 862 061.7
+
+response to retrieval requests, retrieval request definition information managing the
+
+relevance between different retrieval requests.
+
+24. The program according to claim 23, wherein
+
+when the virtual database unit (20) has prepared a plurality of retrieval results in
+response to different retrieval requests associated by the retrieval request definition
+information, the virtual database unit (20) automatically associates the prepared
+retrieval results with each other, and
+
+the business intelligence unit (30) prepares a plurality of reports respectively from
+the retrieval results associated by the virtual database unit (20), and automatically
+
+associates the prepared reports with each other.
+
+25. Acomputer-readable recording medium having the program according to claim 23
+
+stored thereon.
+
+12

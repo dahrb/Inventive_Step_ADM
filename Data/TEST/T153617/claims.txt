@@ -1,0 +1,152 @@
+--- PAGE 1 ---
+EP 10 759 248.7
+Microsoft Technology Licensing, LLC
+FB25510
+
+CLAIMS
+
+1. A system (100) for performing a differential restore of one or more files, comprising:
+a processor (1104) that executes machine-executable components stored ona
+computer-readable medium (1106, 1114, 1118, 1122), the components comprising:
+
+a differential component (110, 420) that identifies a locally available
+version of information to be restored, a desired version of the information to
+be restored, and respective segments corresponding thereto and
+
+identifies one or more segments that are different between the locally
+available version and the desired version at least in part by comparing respec-
+tive signatures associated with the segments corresponding to the locally
+available version and signatures associated with the segments corresponding
+to the desired version, the signatures being stored at network locations within
+a network and identifying segments present in a given version of information;
+
+a segment location component (120, 620) that determines one or more
+network locations (610, 640, 650, 660) from which respective segments found
+to be different between the locally available version and the desired version are
+to be retrieved, wherein the segment location component (120, 620) comprises
+an index lookup component (622) that looks up the one or more network loca-
+tions from which the respective segments are to be retrieved using an index
+(654) stored at a predetermined network location (610, 640, 650, 660), where-
+in the segment location component (120, 620) selects (1004) the one or more
+network locations on the network including a set of peers and/or cloud storage
+locations on the network to obtain the segments that are identified as a func-
+tion of network loading, location availability, network latency, and/or band-
+width usage; and
+
+a restore component (130, 630) that retrieves the respective segments
+found to be different between the locally available version and the desired ver-
+sion from the determined one or more network locations based on the one or
+more network locations obtained by the index lookup component (622) and
+restores the desired version using the retrieved segments, wherein
+
+based on the identified difference a transmission is conducted for only
+segments determined to be unique between the locally available version and
+
+the desired version by the signatures without requiring a reversal of multiple
+
+--- PAGE 2 ---
+incremental backup processes of the segments between the locally available
+version and the desired version, and
+
+the unique segments obtained from the one or more network locations
+are merged with non-unique segments present in the locally available version
+already located at a backup client of the system to obtain the fully restored ver-
+
+sion.
+
+The system of claim 1, wherein the network locations (610, 640, 650, 660) determined
+by the segment location component (120, 620) comprise one or more of peers (610,
+
+640), super peers (650), or cloud storage locations (660).
+
+The system of claim 2, wherein the segment location component (120, 620) deter-
+mines network locations (610, 640, 650, 660) at which respective segments are to be
+retrieved at least in part by applying a higher level of preference to network locations
+corresponding to peers (610, 640, 650) than to network locations corresponding to
+
+cloud storage locations (660).
+
+The system of claim 1, wherein the segment location component (120, 620) comprises
+a network analysis component (624) that determines network locations (610, 640,
+650, 660) at which respective segments are to be retrieved based on at least one of
+network loading, network location uptime, proximity of respective network locations
+to the segment location component, or bandwidth consumption associated with re-
+
+trieving information at respective network locations.
+
+The system of claim 1, wherein the network locations (610, 640, 650, 660) determined
+by the segment location component (120, 620) store one or more files or one or more
+
+incremental delta updates to one or more files.
+
+The system of claim 1, wherein the restore component (130, 630) restores the desired
+version of the information to be restored by merging the retrieved segments with one
+or more segments corresponding to the current version of the information to be re-
+
+stored.
+
+The system of claim 6, wherein the restore component (130, 630) merges the re-
+
+trieved segments with one or more segments corresponding to the current version of
+the information to be restored at least in part by subtracting one or more differences
+in the retrieved segments from corresponding segments in the current version of the
+
+information to be restored.
+
+--- PAGE 3 ---
+10.
+
+A method of performing a differential restore of one or more files, comprising:
+identifying (802) a locally available version of one or more files stored on at
+least one memory and a desired version to which the one or more files are to be re-
+stored;
+identifying (804) respective segments of the desired version of the one or more
+files that differ from the locally available version thereof at least in part by comparing
+respective signatures associated with respective segments of the desired version of the
+one or more files to signatures associated with corresponding segments of the locally
+available version of the one or more files, the signatures being stored at network loca-
+tions within a network and identifying segments present in a given version of a file;
+selecting one or more network data stores at the network locations
+from which respective identified segments of the desired version of the one or
+more files are to be retrieved using a listing of segments stored at network lo-
+cations within the network in corresponding network data stores at which the
+respective segments reside, wherein the one or more network data stores in-
+clude peers and/or cloud storage locations on the network to obtain the seg-
+ments that are identified as a function of network loading, location availability,
+network latency, and/or bandwidth usage;
+obtaining (804) the identified respective segments of the desired ver-
+sion of the one or more files from the one or more network data stores; and
+restoring the desired version of the one or more files using the obtained
+respective segments, wherein
+based on the identified difference only those segments are transmitted
+that are determined to be unique between the locally available version and the
+desired version by the signatures without requiring a reversal of multiple in-
+cremental backup processes of the segments between the locally available ver-
+sion and the desired version, and unique segments obtained from the one or
+more network data stores are merged with non-unique segments present in
+the locally available version already located on the at least one memory to ob-
+
+tain the fully restored version.
+
+The method of claim 8, wherein the network data stores comprise at least one of peer
+
+storage locations, super peer storage locations, or cloud storage locations.
+
+The method of claim 8, wherein the selecting network data stores comprises selecting
+network data stores from which respective identified segments of the desired version
+
+of the one or more files are to be retrieved based on at least one of network loading,
+
+--- PAGE 4 ---
+11.
+
+-4-
+
+network data store availability, or bandwidth consumption associated with retrieving
+
+information at respective network stores.
+
+A machine-readable medium (1106, 1114, 1118, 1122) having stored thereon instruc-
+tions which, when executed by a machine (1102), cause the machine (1102) to perform
+
+the method of any of claims 8 to 10.

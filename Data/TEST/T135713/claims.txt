@@ -1,0 +1,374 @@
+--- PAGE 1 ---
+MAIN REQUEST 34 M&C PM311670EP
+
+CLAIMS
+
+1. A method for controlling a printer (11, 12, 13) to carry out a printing operation,
+the method comprising, at a controller device (10):
+
+reading an identifier (14, 15, 16) associated with said printer (11, 12, 13), the
+identifier comprising machine readable information being a barcode, magnetically
+readable information, a radio frequency identifier or machine readable text;
+
+generating first input data in response to said read identifier (14, 15, 16), said
+first input data comprising data for identifying said printer (11, 12, 13);
+
+generating data identifying any printers (11, 12, 13) within a wireless
+communications range of said controller device (10);
+
+determining whether one of said identified printers (11, 12, 13) is said printer
+identified by said first input data; and
+if said determining indicates that one of said identified printers (11, 12, 13) is said
+printer identified by said first input data, establishing a wireless connection between
+said controller device (10) and said printer (11, 12, 13) in response to said first input
+data; and
+
+using said established wireless connection to control said printer.
+
+2. A method according to claim 1, wherein controlling said printer comprises
+causing data for use in said printing operation to be provided to said printer (11, 12,
+13).
+
+3. A method according to claim 2, wherein said data is provided to said printer
+
+from said controller device (10).
+
+4. A method according to claim 2 or 3, wherein causing data for use in said
+printing operation to be provided to said printer comprises:
+
+assembling data for use in said printing operation; and
+
+providing said assembled data to said printer (11, 12, 13) via said established
+
+wireless connection.
+
+5. A method according to claim 4, wherein assembling data for use in said printing
+operation comprises:
+generating at least one command commanding said printer (11, 12, 13) to carry
+
+out said printing operation.
+
+67347566-1-JTAYLOR
+
+--- PAGE 2 ---
+MAIN REQUEST 35 M&C PM311670EP
+
+6. A method according to claim 5, wherein generating said at least one command
+comprises:
+
+generating at least one command specifying image data to be printed.
+
+7. A method according to claim 4, 5 or 6, further comprising:
+disconnecting said connection after said assembled data has been provided to
+
+said printer (11, 12, 13) via said connection.
+
+8. A method according to claim 2, wherein said data is provided to said printer
+
+from a data store remote from said controller device.
+
+9. A method according to any preceding claim, wherein controlling said printer (11,
+12, 13) comprises issuing a command to said printer to transfer data from a first data
+
+storage location to a second data storage location.
+
+10. A method according to claim 9, wherein said first and second data storage
+
+locations are provided by said printer (11, 12, 13).
+
+11. A method according to any preceding claim, further comprising:
+
+obtaining an address associated with said printer (11, 12, 13) based upon said
+first input data; and
+
+using said address to establish said connection between said controller device
+(10) and said printer (11, 12, 13).
+
+12. A method according to any preceding claim, wherein establishing said
+connection comprises establishing a connection between said controller device (10)
+and a communications interface (22, 23, 24), said communications interface being
+
+connected to said printer (11, 12, 13).
+
+13. A method according to any preceding claim, further comprising:
+
+obtaining an address for said printer (11, 12, 13) identified by said first input
+data; and
+
+obtaining an address for the or each printer (11, 12, 13) detectable by said
+controller (10) device;
+
+wherein said determining is based upon said obtained addresses.
+
+67347566-1-JTAYLOR
+
+--- PAGE 3 ---
+MAIN REQUEST 36 M&C PM311670EP
+
+14. A method according any preceding claim, wherein said wireless connection is
+one of a bluetooth connection, an infrared connection, a wireless telephony connection
+
+or a local area network connection.
+
+15. A method according to claim 4 or any claim dependent thereon, wherein
+assembling data comprises:
+
+assembling data from a data store (95) stored on said controller device.
+
+16. A method according to any preceding claim, further comprising:
+
+receiving second input data comprising data identifying said printing operation.
+
+17. A method according to any preceding claim, further comprising:
+reading an identifier associated with said printing operation; and
+
+generating said second input data in response to said read data.
+
+18. A method according to claim 17, wherein said read identifier is machine
+
+readable information.
+
+19. A method according to claim 18, wherein said machine readable information is
+a barcode, magnetically readable information, machine readable text or a radio
+
+frequency identifier.
+
+20. A method according to claim 17, 18 or 19, wherein receiving said second input
+data comprises:
+
+displaying a menu (60, 64, 67) to a user;
+
+receiving data indicating user selection of an item from said menu; and
+
+generating said second input data based upon said menu selection.
+
+21. A method according to any one of claims 17, 18, 19 or 20 as dependent upon
+claim 4, wherein assembling data comprises:
+
+retrieving data from a data store in response to said second input data, said
+retrieved data indicating data required for use in said printing operation, and further
+
+indicating a form in which said data for use in said printer operation is to be assembled.
+
+22. A method according to claim 21, wherein said data store is stored in a memory
+
+of said controller device (10).
+
+67347566-1-JTAYLOR
+
+--- PAGE 4 ---
+MAIN REQUEST 37 M&C PM311670EP
+
+23. A method according to claim 22, further comprising:
+
+establishing a connection between said controller device (10) and a host
+machine (94); and
+
+downloading data from said host machine (94) to said controller (10) device to
+
+form said data store.
+
+24. A method according to claim 23, wherein said host machine (94) provides
+access to a master data store (93) comprising a plurality of records; and
+said downloading downloads a subset of said plurality of records to said
+
+controller device (10).
+
+25. A method according to claim 24, wherein said subset of said plurality of records
+
+are selected by a user.
+
+26. A method according to claim 25, wherein said subset or records is selected
+
+based upon data stored within said subset of records.
+
+27. A method according to claim 26, wherein each of said plurality of records has
+associated time data, and said subset of said plurality of records are selected using
+
+said time data.
+
+28. A method according to any one of claims 21 to 27, further comprising:
+processing said retrieved data to identify data required for use in said printing
+operation; and
+
+obtaining at least some of said identified data from a further data store.
+
+29. A method according to claim 28, wherein said further data store (95) is stored
+
+on said controller device (10).
+
+30. A method according to any one of claims 21 to 29, further comprising:
+processing said retrieved data to identify data required for use in said printing
+operation; and
+prompting a user to enter data (79, 80) corresponding to at least some of said
+identified data .
+
+31. A method according to claim 30, wherein prompting a user to enter data
+
+comprises:
+
+67347566-1-JTAYLOR
+
+--- PAGE 5 ---
+MAIN REQUEST 38 M&C PM311670EP
+
+displaying a plurality of data values (79, 80) to the user; and
+
+receiving data indicating user selection of one of said values.
+
+32 A method according to claim 31 wherein prompting a user to enter data
+comprises:
+
+computing said plurality of data values.
+
+33 A method according to claim 32, wherein computing said plurality of data values
+comprisies:
+applying at least one rule to predetermined data to generate a plurality of date
+
+values.
+
+34. A method according to any preceding claim, further comprising:
+displaying to a user an image (87) corresponding to data to be printed in said
+
+printing operation using said assembled data.
+
+35. A method according to any preceding claim, wherein said assembled data is
+
+generated from data in a printer independent format.
+
+36. A method according to claim 35, wherein said assembling data comprises
+converting said data in said printer independent format into a format suitable for said
+
+printer.
+
+37. A method according to claim 36, wherein said converting comprises:
+processing said first input data to determine a printer command protocol; and
+converting said data in said printer independent format, into corresponding data
+
+in said printer command protocol.
+
+38. A carrier medium carrying computer readable program code configured to
+
+control a computer to carry out a method according to any one of claims 1 to 37.
+
+39. A device (10) for controlling a printer to carry out a printing operation, the device
+comprising:
+
+a reader (17) configured to read an identifier (14, 15, 16) associated with said
+printer (11, 12, 13), the identifier comprising machine readable information being a
+barcode, magnetically readable information, a radio frequency identifier or machine
+
+readable text;
+
+67347566-1-JTAYLOR
+
+--- PAGE 6 ---
+MAIN REQUEST 39 M&C PM311670EP
+
+means for generating first input data in response to said read identifier (14, 15,
+16), the first input data comprising data for identifying said printer;
+
+wireless communication means (18) arranged to generate data identifying any
+printers (11, 12, 13) within a wireless communications range of said controller device
+(10); determine whether one of said identified printers (11, 12, 13) is said printer
+identified by said first input data; and if said determining indicates that one of said
+identified printers (11, 12, 13) is said printer identified by said first input data, to
+establish a wireless connection between the device (10) and said printer (14, 15, 16) in
+response to said first input data; and
+
+a processor (25) configured to control said printer (11, 12, 13) using said
+
+established wireless connection.
+
+40. A device according to claim 39, wherein said processor (25) is configured to
+generate at least one command commanding said printer (11, 12, 13) to carry out said
+
+printing operation.
+
+41. A device according to claim 40, wherein said processor (25) is configured to
+
+generate at least one command specifying image data to be printed.
+42. A device according to claim 39, 40 or 41 wherein said processor (25) is
+configured to cause data for use in said printer operation to be provided to said printer
+
+(11, 12, 13).
+
+43. A device according to claim 42 wherein said data is provided to said printer (11,
+12, 13) from said device (10).
+
+44. A device according to claim 42 or 43, wherein said processor (25) is configured
+
+to:
+
+assemble data for used in said printing operation;
+
+provide said assembled data to said printer via said established wireless
+connection.
+
+45. A device according to claim 44, wherein said processor (25) is configured to
+cause data for use in said printing operation to be provided from a data store (93)
+
+remote from said device.
+
+67347566-1-JTAYLOR
+
+--- PAGE 7 ---
+MAIN REQUEST 40 M&C PM311670EP
+
+46. A device according to any one of claims 39 to 45, wherein said processor (25)
+is configured to control said printer by causing said printer to transfer data from a first
+
+data storage location to a second data storage location.
+
+47. A device according to anyone of claims 39 to 46 wherein said reader (17) is a
+barcode scanner, a magnetically readable information reader, a radio frequency
+
+identifier reader or a machine readable text reader.
+
+48. A device according to any preceding claim, wherein said wireless
+communications means (18) is one of a bluetooth communications interface, an
+infrared communications interface, a wireless telephony interface or a local area
+
+network interface.
+
+49. A device according to any one of claims 39 to 48, further comprising:
+means for receiving second input data comprising data for identifying said
+
+printing operation.
+
+50. A device according to claim 49, wherein said processor is configured to
+
+generate said second input data from an identifier read by said reader.
+
+51. A device according to any one of claims 39 to 50, wherein said device
+comprises:
+a storage device storing data; and
+
+said processor (25) is configured to assemble data from said stored data.
+
+52. A device according to claim 51, further comprising:
+
+means for establishing a connection between said controller device (10) and a
+host machine (94); and
+
+means for downloading data from said host machine (94) to said controller
+
+device (10) to form said data store.
+
+53. A device according to any one of claims 39 to 52, in communication with a
+communications interface (22, 23, 24) said communications interface being connected
+to said printer (11, 12, 13).
+
+54. A device according to any one of claims 39 to 53, wherein said device (10) is a
+
+handheld device.
+
+67347566-1-JTAYLOR
+
+--- PAGE 8 ---
+MAIN REQUEST 41 M&C PM311670EP
+
+55. A device according to claim 54, wherein said handheld device (10) is a personal
+digital assistant (PDA).
+
+67347566-1-JTAYLOR

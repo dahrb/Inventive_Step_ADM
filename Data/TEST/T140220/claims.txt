@@ -1,0 +1,783 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-1-
+
+WHAT IS CLAIMED IS:
+
+1. A key exchange method, wherein
+
+Gi, G2, and Gr are assumed to be cyclic groups whose order is a prime
+number q with « bit length, gi, g2, and gr are assumed to be generators of the
+groups Gi, G2, and Gr, respectively, e: Gi x G2 > Gris assumed to be pairing that
+satisfies gr = e(81, 82), H: {O, 1}* — {0, 1}*, Hi: {0, 1}* > Gi, and Ha: {0, 1}* > Go
+are assumed to be cryptographic hash functions, m is assumed to be a natural
+number which is greater than or equal to 2, an assumption is made that i = 1, ...,
+m holds, Cio, Ci,o,1, Ci1,0, aNd Ci1,1 are assumed to be constants, pi € Zq[Uo, U1, Vo,
+
+Vi] is assumed to be m polynomials which are defined by a formula below:
+
+Pj Uo-15V05¥1) = i,0,040%0 + 1,0, MOM + Ci,1,0¢1%0 + C11, M1Y1
+z € Z,is assumed to be a master secret key, Z1 = 817 € Gi and Zo = go? € Go are
+assumed to be master public keys, IDa is assumed to be an identifier of a
+terminal device (11), Qa1 = Hi(IDa) € Gi and Qa2 = Ha(IDa) € Go are assumed to
+be public keys, IDp is assumed to be an identifier of other terminal device (12),
+Qp.1 = Hi(IDp) € Gi and Qp2 = H2(IDp) € G2 are assumed to be public keys, Dai =
+Qa1? and Daz = Qaz? are assumed to be secret keys of the terminal device (11),
+Dp,i = Qp17 and Dp2 = Qp2? are assumed to be secret keys of the other terminal
+device (12), Xa € Z, is assumed to be a short-term secret key of the terminal
+device (1:1), Xai = g1*4 and Xa2 = go*A are assumed to be short-term public keys of
+the terminal device (11), Xs € Z, is assumed to be a short-term secret key of the
+other terminal device (12), Xp1 = g1%® and Xp.2 = g2*® are assumed to be short-
+term public keys of the other terminal device (12), Pig is assumed to be a value
+which is defined by a formula below:
+
+— p%,0,0 vy <,0,1
+FB 7 On) X 39
+
+ria and ri2 are assumed to be arbitrary numbers, sii and si2 are assumed to be
+
+random numbers which are mutually prime, and s'i1 and s'i2 are assumed to be
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+
+CORPORATION
+-2-
+
+random numbers which satisfy a predetermined relationship with the random
+
+numbers Si1 and Sia,
+
+in a storage (20) of a key device (2), the secret keys Da1 and Da2 of the
+terminal device (1:1) are stored, and
+
+the key exchange method includes:
+
+a random number generating step in which the terminal device (11)
+generates the random numbers Siz, Siz, $'i1, aNd S'i2;
+
+a proxy calculation step in which the key device (2) calculates a first
+
+commission result Cis for i = 1, ..., m by a formula below:
+
+Gj, =e(Da 1.82 ")e(Da 1.82" Ps
+
+and calculates a second commission result Gi2 for i = 1, ..., m by a formula below:
+
+Gi2 = e(Da 1: go Je(Da 1: go Pe )
+
+a verification step in which the terminal device (11) verifies whether or not a
+
+d
+
+first verification value and a second verification value coincide with each other
+
+fori = 1, ...,m by a formula below:
+
+C Si2 C Si]
+il 12
+characterized in that the key exchange method further includes:
+
+a public keys randomizing step in which the terminal device (11) calculates
+
+first randomized public keys information for i = 1, ..., m by a formula below:
+
+“hy Ti pil
+(82 ".80 "Piz
+and calculates second randomized public keys information for i = 1, ..., m bya
+
+formula below:
+
+2 72 pri2
+($2 °.82° Fig)
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-3-
+
+a common key calculation step in which, if the first verification value and the
+second verification value coincide with each other, the terminal device (11)
+generates a common key by using values 61, ..., Om, wherein the value oj for i =
+
+1, ..., mis obtained by a formula below:
+
+_ Xq 7 Sil.0 vy “i.L1
+07 = Gjie(Z, Ons X B95 ) and
+after calculating the commission result G for i = 1, ..., m is obtained by a formula
+
+below:
+Sy oS:
+_ il i2
+Si = Si Si2
+
+2. A key exchange method, wherein
+
+G is assumed to be a cyclic group whose order is a prime number q with «
+bit length, g is assumed to be a generator of the group G, g1 and go are assumed
+to be elements which are not unit elements of the group G, mis assumed to be a
+natural number which is greater than or equal to 2, an assumption is made that i
+= 1,...,m holds, Ci,0.0, Ci,o,1, Ci,1,0, ANd Ci.1.1 are assumed to be constants, pi €
+Z,[Uo, U1, Vo, V1] is assumed to be m polynomials which are defined by a formula
+below:
+Pi(U9-%4-V02Y1) = Ci,0,040V0 + Ci,0, 140M + Ci.1,041%0 + 11MM
+Sa € Z, iS assumed to be a Secret key of a terminal device (11), Sa = g4’ € Gis
+assumed to be a public key of the terminal device (11), Sa € Zq is assumed to be
+a secret key of the other terminal device (12), Sp = gs® < Gis assumed to be a
+public key of the other terminal device (12), Xx, € Z, is assumed to be a short-term
+secret key of the terminal device (11), X, = g*4 € G is assumed to be a Short-term
+public key of the terminal device (11), x8 € Z, is assumed to be a Short-term
+secret key of the other terminal device (12), Xp = gx*®8 € G is assumed to be a
+
+short-term public key of the other terminal device (12), Fa is assumed to be a
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-4-
+
+homomorphism which is Fa: G > G, h > h®4, api is assumed to be a value which
+is defined by a formula below:
+
+—_ y &,0,0 o,0,1
+
+Sit ANd Si2 are aSSuMed to be random numbers which are mutually prime, and s‘i1
+and s'i2 are assumed to be random numbers which satisfy a predetermined
+relationship with the random numbers Si1 and Siz,
+
+in a storage (20) of a key device (2), the secret key Sa of the terminal device
+(11) is stored, and
+
+the key exchange method includes:
+
+a random number generating step in which the terminal device (11)
+generates the random numbers Siz, Si2, $'i1, aNd S'i2;
+
+a proxy calculation step in which the key device (2) calculates a first
+
+commission result Ci: for i = 1, ..., m by a formula below:
+
+-| .
+Si = Fale) )F4(91@g'))
+
+and calculates a second commission result Cia for i = 1, ..., m by a formula below:
+
+-] |
+Sin =Fal8o )F4(gr0rg7 _
+
+a verification step in which the terminal device (11) verifies whether or not a
+first verification value and a second verification value coincide with each other
+
+fori = 1, ..., m by a formula below:
+
+C S72 C Si]
+il 12
+characterized in that the key exchange method further includes:
+
+a public keys randomizing step in which the terminal device (1:1) calculates
+
+first randomized public keys information for i = 1, ..., m by a formula below:
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-5-
+
+—] Si
+($1 -81@R;
+and calculates second randomized public keys information for i = 1, ..., m bya
+
+formula below:
+
+—| S;
+(29 ’ 82a
+
+a common key calculation step in which, if the first verification value and the
+
+,and
+
+second verification value coincide with each other, the terminal device (11)
+generates a common key by using values 61, ..., Om, wherein the value oj for i =
+1, ..., mis obtained by a formula below:
+C; Xx C;14X
+_ i,10“A i,11*A
+07 = CiX Rp SR and
+after calculating the commission result G for i = 1, ..., mis obtained by a formula
+
+below:
+Sy St
+_ il i2
+Si = Si] Si2
+
+3. The key exchange method according to Claim 1 or 2, wherein
+
+in the storage (20) of the key device (2), intrinsic information of the terminal
+device (1) is stored, and
+
+the proxy calculation step calculates the first commission result and the
+second commission result if intrinsic information which is received along with the
+first randomized public keys information and the second randomized public keys
+
+information coincides with the intrinsic information of the terminal device (1).
+
+4. A key exchange system including a plurality of terminal devices (1) and at
+least one key device (2), wherein
+
+Gi, G2, and Gr are assumed to be cyclic groups whose order is a prime
+number q with « bit length, gi, g2, and gr are assumed to be generators of the
+
+groups Gi, G2, and Gr, respectively, e: Gi x G2 > Gr is assumed to be pairing that
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-6-
+
+satisfies gr = e(81, 82), H: {O, 1}* — {0, 1}*, Hi: {0, 1}* > Gi, and Ha: {0, 1}* > Go
+are assumed to be cryptographic hash functions, m is assumed to be a natural
+number which is greater than or equal to 2, an assumption is made that i = 1, ...,
+m holds, Cio,0, Ci,o,1, Ci1,0, aNd Ci1,1 are assumed to be constants, pi € Zq[Uo, U1, Vo,
+
+Vi] is assumed to be m polynomials which are defined by a formula below:
+
+Pj (Uo -1.V0.¥1) = i,0,040%0 + ,0,1MoMI + Ci,1,0¢1%0 + Ci 11MM
+z € Z, iS assumed to be a master secret key, Z1 = 817 € Gi and Zo = go? € Go are
+assumed to be master public keys, ID, is assumed to be an identifier of the
+terminal device (1), Qa1 = Hi(IDa) € G1 and Qa2 = Ho(IDa) € Go are assumed to be
+public keys, IDg is assumed to be an identifier of another terminal device, Qs, =
+H.(IDg) € Gi and Qg2 = Ho2(IDs) € Go are assumed to be public keys, Daz = Qa 22
+and Daz = Qa? are assumed to be secret keys of the terminal device (1), Dai =
+Qp,17 and Dp,2 = Qp.27 are assumed to be secret keys of another terminal device,
+Xa € Z, is assumed to be a short-term secret key of the terminal device (1), Xai =
+£14 and Xa2 = go"4 are assumed to be short-term public keys of the terminal
+device (1), xs € Z, iS assumed to be a Short-term secret key of another terminal
+device, Xp,1 = £1%® and Xp.2 = go%® are assumed to be short-term public keys of
+another terminal device, Pip is assumed to be a value which is defined by a
+formula below:
+
+Pp = Op'5° Xp"
+
+ria and ri2 are assumed to be arbitrary numbers, Si1 and Si2 are assumed to be
+random numbers which are mutually prime, and s'i1 and s'j2 are assumed to be
+random numbers which satisfy a predetermined relationship with the random
+numbers Si1 and Si2, and
+
+the terminal device (1) includes:
+
+a random number generating unit (12) that generates the random numbers
+
+Si1, Si2, S'i1, aNd S'i2; and
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-7-
+
+a verification unit (14) that verifies whether or not a first verification value
+and a second verification value coincide with each other fori = 1, ..., m bya
+
+formula below:
+
+Si2, Sil
+Si] = Sj2-
+the key device (2) includes:
+a storage (20) that stores the secret keys Da. and Da2 of the terminal
+device (1); and
+a proxy calculation unit (21) that calculates the first commission result Gi1
+
+fori = 1, ...,m by a formula below:
+
+_ Ti Ti pil
+Gil =C(Da1-82 ")e(Da1-82 "Fi B)
+and calculates the second commission result Giz for i = 1, ..., m by a formula
+
+below:
+
+6:2 =e(Day,82 | Je(Day. 82" PB)
+
+’
+
+characterized in that the terminal device (1) further includes:
+a public keys randomizing unit (13) that calculates first randomized public
+
+keys information for i = 1, ..., m by a formula below:
+
+“Til Ti pil
+(25 §2 PiB )
+and calculates second randomized public keys information for i = 1, ..., m bya
+
+formula below:
+
+~F2 "2 p%i2
+(go 7,82 °P 2)
+2 7 O2 1,B ,and
+a common key calculation unit (15) that, if the first verification value and the
+
+second verification value coincide with each other, generates a common key by
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+25
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-8-
+
+using values 01, ..., Gm, wherein the value oj fori = 1, ..., mis obtained by a
+
+formula below:
+_ XA Ci1.0 yw G11
+0; =Sje(Z;".On5 XB )
+
+commission results the commission result Gi for i = 1, ..., mis obtained by a
+
+d
+
+formula below:
+! !
+_— Sil ~5i2
+Si = Si] Si2
+
+5. A key exchange system including a plurality of terminal devices (1) and at
+least one key device (2), wherein
+
+G is assumed to be a cyclic group whose order is a prime number q with «
+bit length, g is assumed to be a generator of the group G, g1 and go are assumed
+to be elements which are not unit elements of the group G, mis assumed to be a
+natural number which is greater than or equal to 2, an assumption is made that i
+= 1, ...,m holds, Ci,o,0, Cio,1, Ci,1,0, ANd Ci,1,1 are assumed to be constants, pi €
+Z,[Uo, U1, Vo, V1] is assumed to be m polynomials which are defined by a formula
+below:
+PiU9-%45V02%1) = Ci,0,0%0V0 + Ci,.0, 140M + Ci.1,041%0 + 11MM
+Sa € Z, iS assumed to be a Secret key of the terminal device (1), Sa = g& € Gis
+assumed to be a public key of the terminal device (1), Sa € Z, is assumed to be a
+secret key of another terminal device, Sp = gs® € G is assumed to be a public key
+of another terminal device, Xa € Z, is assumed to be a short-term secret key of
+the terminal device (1), Xa = g* € Gis assumed to be a short-term public key of
+the terminal device (1), x8 € Z, is assumed to be a short-term secret key of
+another terminal device, Xs = g® € G is assumed to be a short-term public key of
+another terminal device, Fa is assumed to be a homomorphism which is Fa: G >
+
+G, h > h*4, api is assumed to be a value which is defined by a formula below:
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-9-
+
+— vy %,0,0 o&,0,1
+
+Sit ANd Si2 are aSSuMed to be random numbers which are mutually prime, and s‘i1
+and s'i2 are assumed to be random numbers which satisfy a predetermined
+relationship with the random numbers Si1 and Si2, and
+
+the terminal device (1) includes:
+
+a random number generating unit (12) that generates the random numbers
+Si1, Si2, S'i1, AN S'i2; and
+
+a verification unit (14) that verifies whether or not a first verification value
+and a second verification value coincide with each other fori = 1, ..., m bya
+
+formula below:
+
+Si2, 91
+Si] = 952
+the key device (2) includes:
+a storage (20) that stores that the secret key Sa of the terminal device (1) is
+stored; and
+a proxy calculation unit (21) that calculates the first commission result Ci1
+
+fori = 1, ...,m by a formula below:
+
+—| Si]
+Gi = Fa(sy )F4(81@gi))
+and calculates the second commission result Ci2 for i = 1, ..., m by a formula
+
+below:
+
+-] |
+Ci2 = F482 )F4(go0rg”
+
+characterized in that the terminal device (1) further includes:
+a public keys randomizing unit (13) that calculates first randomized public
+
+keys information for i = 1, ..., m by a formula below:
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-10-
+
+—] Si
+($1 -81@R;
+and calculates second randomized public keys information for i = 1, ..., m bya
+
+formula below:
+
+—| S;
+(29 ’ 82a
+
+a common key calculation unit (15) that, if the first verification value
+
+,and
+
+and the second verification value coincide with each other, generates a common
+key by using values 01, ..., Gm, wherein the value oj fori = 1, ..., mis obtained by
+
+a formula below:
+
+Ci1OxA gS Cita
+B and
+
+_ i
+O;7 = CiX p
+commission results the commission result G for i = 4, ..., mis obtained by a
+
+formula below:
+/ /
+_ Sj] ~5i2
+Si = Si] Si2-
+
+6. A terminal device (1), wherein
+
+Gi, Go, and Gr are assumed to be cyclic groups whose order is a prime
+number q with « bit length, g1, go, and gr are assumed to be generators of the
+groups Gi, Go, and Gr, respectively, e: Gi x G2 > Gris assumed to be pairing that
+satisfies gr = e(81, 82), H: {O, 1}* — {0, 1}*, Hi: {0, 1}* > Gi, and Ha: {0, 1}* > Go
+are assumed to be cryptographic hash functions, m is assumed to be a natural
+number which is greater than or equal to 2, an assumption is made that i = 1, ...,
+m holds, Cio,0, Ci,o,1, Ci1,0, aNd Ci1,1 are assumed to be constants, pi € Zg[Uo, U1, Vo,
+
+Vi] is assumed to be m polynomials which are defined by a formula below:
+
+Pj (Ug.41,Vo.4) = Ci.0,040V0 + C0 140Y1 + 10410 + Ci YI
+
+--- PAGE 11 ---
+10
+
+15
+
+20
+
+25
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-11-
+
+z € Z,iS assumed to be a master secret key, Z1 = 817 € G1 and Zo = go? € Go are
+assumed to be master public keys, IDs is assumed to be an identifier of the
+terminal device (1), Qa1 = Hi(IDa) € G1 and Qa2 = Ha(IDa) € Go are assumed to be
+public keys, IDg is assumed to be an identifier of another terminal device, Qp.1 =
+Hi(IDp) € G1 and Qp2 = Ha(IDe) € G2 are assumed to be public keys, Dai = Qa 22
+and Daz = Qao? are assumed to be secret keys of the terminal device (1), Dp. =
+Qp.17 and Dg2 = Qe 27 are assumed to be secret keys of another terminal device,
+Xa € Z, iS assumed to be a Short-term secret key of the terminal device (1), Xa1 =
+£14 and Xa2 = SoA are assumed to be short-term public keys of the terminal
+device (1), xg € Z, is assumed to be a Short-term secret key of another terminal
+device, Xp.1 = 21*8 and Xg2 = go*® are assumed to be short-term public keys of
+another terminal device, Pip is assumed to be a value which is defined by a
+formula below:
+
+— 7 %i,0,0 y <,0,1
+Pip =Qp’y XB
+
+Si1 and Si2 are asSuMed to be random numbers which are mutually prime, and s'i1
+and s'i2 are assumed to be random numbers which satisfy a predetermined
+relationship with the random numbers Si1 and Si2, and
+
+the terminal device (1) includes:
+
+a random number generating unit (12) that generates the random numbers
+Si1, Si2, S'i1, AN S'i2; and
+
+a verification unit (14) that verifies whether or not a first verification value
+and a second verification value coincide with each other fori = 1, ..., m bya
+
+formula below:
+
+Si2 _ -%i1
+Gil — $i2
+
+the first commission result Cis for i = 1, ..., m are calculated by a formula
+
+, wherein
+
+below:
+
+--- PAGE 12 ---
+10
+
+15
+
+20
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+
+CORPORATION
+-12-
+
+Si = (D418 "" Je(Day. 82'" P's
+
+the second commission result Ci2 for i = 1, ..., m are calculated by a formula
+
+and
+
+below:
+
+62 = (Da 1.82” Je(Day,. 82" Pe )
+
+characterized in that the terminal device (1) further includes:
+a public keys randomizing unit (13) that calculates first randomized public
+
+keys information for i = 1, ..., m by a formula below:
+
+(go “1, go’ PP
+and calculates second randomized public keys information for i = 1, ..., m by a
+formula below:
+
+—Ti2 "2 p%i2
+(82 °.82° Fig)
+
+a common key calculation unit (15) that, if the first verification value and the
+second verification value coincide with each other, generates a common key by
+
+using values 01, ..., Gm, wherein the value oj fori = 1, ..., mis obtained by a
+
+formula below:
+
+_ XA C10 vy Gl
+0; =¢je(Z; Ops X 33 ) and
+commission results the commission result Gi for i = 1, ..., mis obtained by a
+
+formula below:
+’ /
+_— Sil ~5i2
+Si = Si] Si2-
+
+7. Aterminal device (1), wherein
+
+--- PAGE 13 ---
+10
+
+15
+
+20
+
+25
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-13-
+
+Gis assumed to be a cyclic group whose order is a prime number q with «
+bit length, gis assumed to be a generator of the group G, g1 and g2 are assumed
+to be elements which are not unit elements of the group G, m is assumed to be a
+natural number which is greater than or equal to 2, an assumption is made that i
+= 1, ..., m holds, Cio, Ci,o,1, Ci,1,0, aNd Ci1,1 are assumed to be constants, pi €
+Z,[Uo, U1, Vo, V1] is assumed to be m polynomials which are defined by a formula
+
+below:
+
+Pi Uo -M1V0-V1) = Ci0,0%0V0 + ¢.0,1¢0Y1 + Ci1,041Y%0 + C1 M1
+Sa € Z, iS assumed to be a Secret key of the terminal device (1), Sa = g&4 € Gis
+assumed to be a public key of the terminal device (1), Sg < Z, is assumed to be a
+secret key of another terminal device, Sp = gs® € G is assumed to be a public key
+
+of another terminal device, xa € Zq is assumed to be a short-term secret key of
+
+the terminal device (1), Xa = g“ € Gis assumed to be a short-term public key of
+
+the terminal device (1), xB € Z, is assumed to be a short-term secret key of
+
+another terminal device, Xs = g*® € G is assumed to be a short-term public key of
+another terminal device, Fa is assumed to be a homomorphism which is Fa: G >
+
+G, h > h4, api is assumed to be a value which is defined by a formula below:
+
+_ Ci.0,0 o &,0,1
+
+’
+
+Si1 and Si2 are assumed to be random numbers which are mutually prime, and s‘i1
+and s'i2 are assumed to be random numbers which satisfy a predetermined
+relationship with the random numbers §$i1 and Si2, and
+
+the terminal device (1) includes:
+
+a random number generating unit (12) that generates the random numbers
+Sit, Si2, S'i1, ANd S'i2; and
+
+a verification unit (14) that verifies whether or not a first verification value
+and a second verification value coincide with each other fori = 1, ..., m bya
+
+formula below:
+
+--- PAGE 14 ---
+10
+
+15
+
+20
+
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-14-
+
+Si2 _ Si
+Sil —$i2
+
+the first commission result Cis for i = 1, ..., m are calculated by a formula
+
+, wherein
+
+below:
+
+_] .
+Si = Flay )Fa(giag
+
+the second commission result Ci2 for i = 1, ..., m are calculated by a formula
+
+below:
+
+_| .
+Si2 =F a(g2 )Fa( goa"
+
+characterized in that the terminal device (1) further includes:
+a public keys randomizing unit (13) that calculates first randomized public
+
+keys information for i = 1, ..., m by a formula below:
+
+—| Si]
+($1 81%;
+and calculates second randomized public keys information for i = 1, ..., m bya
+
+formula below:
+
+(9. gra
+
+ro2 Bi ; and
+
+a common key calculation unit (15) that, if the first verification value and the
+second verification value coincide with each other, generates a common key by
+using values 01, ..., Gm, wherein the value oj fori = 1, ..., mis obtained by a
+
+formula below:
+
+Ci 10*xA SG CiLItA
+B and
+
+_ i
+07 = CiX B
+commission results the commission result Gi for i = 1, ..., mis obtained by a
+
+formula below:
+
+--- PAGE 15 ---
+16737330.7 June 4, 2020
+NIPPON TELEGRAPH AND TELEPHONE 209338PCEP TE/BD
+CORPORATION
+
+-15-
+
+si st
+Si = Sil Sid
+
+8. A program for making a computer function as the terminal device (1)
+
+according to Claim 6 or 7.

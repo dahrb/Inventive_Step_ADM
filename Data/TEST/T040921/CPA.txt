@@ -1,0 +1,47 @@
+TITLE:
+Forced idle cache
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An interface controller of an electronic device manages power consumption of the electronic device by caching data associated with write commands received while the electronic device is in an idle mode. In one implementation, an interface controller directs write commands to a write cache until disc access is required. Additionally, the interface controller may direct write commands to the write cache until the write cache becomes full or a non-cached read command is received. Once, disc access is required, the data associated with the cached commands are flushed to the hard disc. In one implementation, the interface controller transitions the electronic device to a lower power state and maintains the electronic device in the lower power state until disc access is required. When disc access is required, the interface controller transitions the electronic device to a higher power state.
+
+CLAIMS:
+1. A method for reducing power consumption of an electronic device, comprising:
+caching data associated with write commands received while the electronic device is in an idle mode.
+2. A method according to claim 1, further comprising:
+flushing the data associated with the write commands from a write cache to a storage medium when the write cache is full.
+3. A method according to claim 1, further comprising:
+flushing the data associated with the write commands from a write cache to a storage medium when an idle transition occurs.
+4. A method according to claim 1, further comprising:
+flushing the data associated with the write commands from a write cache to a storage medium when a non-cached read request is received.
+5. A method according to claim 1, further comprising:
+transitioning the electronic device to a lower power mode when disc access is not required.
+6. A method according to claim 1, further comprising:
+receiving a command; and
+transitioning the electronic device to a higher power mode when the received command results in disc access.
+7. A method according to claim 1, further comprising:
+transitioning the electronic device to a lower power mode when at least one of (1) a write cache is empty and (2) an idle timer is expired.
+8. A method according to claim 7, further comprising:
+disabling one or more components of the electronic device when the electronic device transitions to the lower power mode.
+9. A method according to claim 1, further comprising:
+reordering at least a portion of the received write commands before the data associated with the write commands are written to a electronic device.
+10. An electronic device comprising an interface controller configured to cache data associated with received write commands to a write cache while the electronic device is in an idle mode and the write cache is not full.
+11. The electronic device of claim 10, wherein the interface controller is further configured to write data associated with received write commands to a storage medium when the write cache is full.
+12. The electronic device of claim 10, wherein the interface controller is further configured to write data associated with received write commands to a storage medium when a non-cached read command is received.
+13. The electronic device of claim 10, wherein the interface controller is further configured to transition the electronic device to a lower power mode when at least one of (1) an idle timer is expired and (2) disc access is not required.
+14. The electronic device of claim 10, wherein the interface controller is further configured to transition the electronic device to a higher power mode when disc access is required.
+15. The electronic device of claim 13, wherein the interface controller is further configured to disable one or more components of the electronic device when the electronic device transitions to the lower power mode.
+16. A method of reducing power consumption of an electronic device, comprising:
+transitioning the electronic device to a performance idle mode if a received command requires disc access;
+transitioning the electronic device to a first idle mode if at least one of (1) a first idle timer is expired and (2) disc access is not required, wherein the first idle mode has a lower power consumption than the performance idle mode; and
+transitioning the electronic device to a second idle mode if at least one of (1) a second idle timer is expired and (2) no disc access is required, wherein the second idle mode has a lower power consumption than the first idle mode.
+17. The method of claim 16, further comprising:
+caching data associated with received write commands to a write cache if the electronic device is not in the performance idle mode and the write cache is not full.
+18. The method of claim 16, wherein transitioning the electronic device to the performance idle mode further comprises:
+flushing data associated with received write commands from a write cache to a storage medium.
+19. The method of claim 16, further comprising:
+transitioning the electronic device to the performance idle mode if a non-cached read command is received.
+20. The method of claim 16, further comprising:
+transitioning the electronic device to the performance idle mode if a write command is received and a write cache is full.

@@ -1,0 +1,154 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+12313-PT-EP 16.02.2018
+
+1/3
+
+Main Request
+
+New claims 1 — 13
+
+A method for presenting a multimedia object embedded into a web page at a
+user device, the multimedia object having a predetermined format and being
+embedded into a document, wherein based upon a feature of the user device
+a detection function is executed in the user device, the detection function
+determining that the document includes the multimedia object of the
+predetermined format, and based upon the determination a multimedia player
+function is invoked in the user device, the multimedia player function being
+adapted to render the multimedia object by converting the multimedia object
+into a second format, the second format being a standard format that can be
+rendered by a web browser of the user device, wherein enabling the user
+device (101) connected to a second network (102) to render the multimedia
+object involves functions of a proxy server (106) located in the second
+network (104), where a request for the web page is evaluated by the proxy
+server to determine the device type, whereby the request includes an
+identification uniquely assigned to the user device (101), the proxy server
+reads the identification and looks up the device type in a look-up table
+comprising an allocation between the device type and the unique
+identification of user devices registered in the proxy server, and modifies the
+web page if the user device is of a predetermined type to include a command
+to invoke a program including the detection function, when the web page is
+
+received and processed in the a web browser of the user device.
+
+A method according to claim 1, wherein the program is declared as being
+cachable to be stored in the cache of the web browser when received once
+
+due to the command included in the web page.
+
+A method according to claim 1 or 2, wherein every web page provided to the
+user device of the predetermined type is evaluated by the detection function.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+12313-PT-EP 16.02.2018
+
+10.
+
+11.
+
+2/3
+
+A method according to one of the preceding claims, wherein the feature
+
+comprises an identification and/or a type of the user device.
+
+A method according to claim 1, wherein a server determines the feature of
+the user device and based upon the determined feature the server modifies
+the document to include into the document a command to execute the
+
+detection function.
+
+A method according to claim 5, wherein the server is a proxy server via which
+the user device retrieves the document from a content server providing the
+
+document.
+
+A method according to claim 5 or 6, wherein based upon the feature of the
+user device the server provides the detection function to the user device
+together with the document.
+
+A method according to one of the preceding claims, wherein the server
+
+provides the multimedia player function to the user device.
+
+A method according to one of the preceding claims, wherein upon detecting
+the multimedia object, a reference to a further multimedia player is replaced
+by a reference to the multimedia player function such that the multimedia
+
+content is rendered by the multimedia player function.
+
+A method according to one of the preceding claims, wherein the user device
+is mobile communication device and the proxy server is included in mobile
+communication network to which the mobile communication device can be
+
+connected.
+
+A computer program including software code for executing a method
+according to one of the preceding claims, when the computer program is run
+
+on at least one processor.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+12313-PT-EP 16.02.2018
+
+12.
+
+13.
+
+3/3
+
+A system for presenting a multimedia object embedded into a web page ata
+user device comprising a user device connected to a second network and a
+proxy server located in the second network, the multimedia object having a
+predetermined format and being embedded into a document, wherein based
+upon a feature of the user device a detection function is executed in the user
+device, the detection function being adapted to determine that the document
+includes the multimedia object of the predetermined format, and the system
+being adapted to provide in the user device a multimedia player function
+based upon the determination, the multimedia player function being adapted
+to render the multimedia object by converting the multimedia object into a
+second format, the second format being a standard format that can be
+rendered by a web browser of the user device, wherein enabling the user
+device (101) to render the multimedia object involves functions of a proxy
+server (106), where a request for the web page is evaluated by the proxy
+server to determine the device type, whereby the request includes an
+identification uniquely assigned to the user device (101), the proxy server
+reads the identification and looks up the device type in a look-up table
+comprising an allocation between the device type and the unique
+identification of user devices registered in the proxy server, and modifies the
+web page if the user device is of a predetermined type to include a command
+to invoke a program including the detection function, when the web page is
+
+received and processed in the a web browser of the user device.
+
+A system according to claim 12, wherein the unit providing the detection
+function is the user device or a server to which the user device can be
+
+connected.

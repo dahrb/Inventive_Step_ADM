@@ -1,0 +1,100 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+WHAT IS CLAIMED IS:
+
+1. A method comprising:
+
+providing a universal generative model of local descriptors;
+
+adapting the universal generative model to a first camera to obtain a
+first camera-dependent generative model;
+
+adapting the universal generative model to a second camera to obtain
+a second camera-dependent generative model or using the universal generative
+model as the second camera-dependent generative model;
+
+from a first image captured by the first camera, extracting a first image-
+level descriptor using the first camera-dependent generative model;
+
+from a second image captured by the second camera, extracting a
+second image-level descriptor using the second camera-dependent generative
+model;
+
+computing a similarity between the first image-level descriptor and the
+second image-level descriptor; and
+
+outputting information based on the computed similarity, wherein at
+least one of the adapting the universal generative model to the first and second
+cameras, extracting the first and second image-level descriptors and the computing
+of the similarity is performed with a computer processor;
+
+wherein the adapting of the universal generative model to the first and
+second cameras comprises extracting local descriptors from images captured by the
+first and second cameras, the local descriptors from the images captured by the first
+camera being used to adapt the universal generative model to the first camera, the
+local descriptors from the images captured by the second camera being used to
+adapt the universal generative model to the second camera.
+
+2. The method of claim 1, wherein the universal generative model
+
+is a Gaussian Mixture Model.
+
+- 34 -
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+3. The method of claim 2, wherein the first and second camera-
+dependent generative models are Gaussian Mixture Models, each comprising a
+
+same number of Gaussian functions as the universal generative model.
+
+4. The method of claim 1, wherein the adapting of the universal
+generative model to the first and second cameras is performed with an unsupervised
+adaptation method.
+
+5. The method of claim 4, wherein the adapting of the universal
+generative model to the first and second cameras comprises maximum a posteriori
+
+(MAP) adaptation of parameters of the universal generative model.
+
+6. A system comprising:
+
+memory which stores a universal generative model of local descriptors;
+
+an adaptation component which adapts the universal generative model
+to a first camera to obtain a first camera-dependent generative model and adapts
+the universal generative model to a second camera to obtain a second camera-
+dependent generative model; and
+
+a matching component which computes a similarity between a first
+image-level descriptor and a second image-level descriptor, the first image-level
+descriptor having been extracted from a first image captured by the first camera,
+using the first camera—dependent generative model, the second image-level
+descriptor having been extracted from a second image captured by the second
+camera, using the second camera—dependent generative model; and
+
+a processor which implements the adaptation component;
+
+wherein the adapting of the universal generative model to the first and
+second cameras comprises extracting local descriptors from images captured by the
+first and second cameras, the local descriptors from the images captured by the first
+camera being used to adapt the universal generative model to the first camera, the
+local descriptors from the images captured by the second camera being used to
+
+adapt the universal generative model to the second camera.
+
+- 35 -

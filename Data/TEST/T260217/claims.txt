@@ -1,0 +1,184 @@
+--- PAGE 1 ---
+54
+
+MAIN REQUEST
+
+1. A method for determining metadata associated with a graph elements of
+an executable graph-based computation including:
+
+generating a worklist of graph elements for which metadata is to be
+determined with each graph element in an executable graph ordered in the
+worklist, the worklist comprising a partial ordering that is determined at least in
+part by links interconnecting the graph elements, the links representing data
+flows of data elements; and
+
+determining metadata for the graph elements of the executable graph
+according to the worklist, including propagating metadata internally within
+individual graph elements, and propagating metadata externally between
+different graph elements;
+
+wherein propagating metadata internally includes propagating metadata
+within a graph element by functionally transforming metadata associated with a
+first portion (2310) of the graph element to generate transformed metadata
+associated with a second portion (2316) of the graph element that differs from
+the first portion; and
+
+propagating metadata externally includes propagating metadata from the
+second portion of the graph element that has defined metadata to a further
+graph element of the graph that does not have defined metadata by:
+
+determining a further element (2317) of the graph related to the second
+portion of the graph by a link representing a data flow of data elements output
+from the second portion of the graph element and received at the further graph
+element; and
+
+propagating the transformed metadata from the second portion of the
+graph element to the further graph element according to the link representing
+the data flow of data elements, and after propagating the transformed metadata
+
+moving the further graph element to the end of the worklist.
+
+2. The method of claim 1, wherein the data flow includes a data flow
+
+between ports of two interconnected graph elements.
+
+--- PAGE 2 ---
+55
+
+3. The method of claim 1, wherein the data flow includes an internal data
+
+flow between two ports of a graph element.
+
+4. The method of claim 1, wherein
+the first portion includes a first port of a first graph element; and
+
+the second portion includes a second port of the first graph element.
+5. The method of claim 4, wherein the functional transformation includes a
+metadata definition that includes at least one reference to the metadata
+
+associated with the first port.
+
+6. The method of claim 5, wherein the metadata definition defines metadata
+
+for the second port as a function of the referenced metadata.
+
+7. The method of claim 4, wherein the first port is an input port and the
+second port is an output port.
+
+8. The method of claim 1, wherein the metadata being functionally
+
+transformed supplied by a user.
+
+9. The method of claim 1, wherein the metadata being functionally
+
+transformed is propagated from a fourth portion of the graph.
+
+10. The method of claim 1, further including propagating the transformed
+metadata in response to a change in connectivity of the graph.
+
+11. The method of claim 1, further including propagating the transformed
+
+metadata in response to a user action.
+
+12. |The method of claim 1, further including:
+
+--- PAGE 3 ---
+56
+
+receiving a request from a user; and
+displaying metadata associated with a graph element to the user in
+
+response to the request.
+
+13. | The method of claim 12, wherein the request from the user includes input
+
+from the user selecting a graph element for which metadata is to be displayed.
+
+14. | The method of claim 13, wherein the input from the user includes
+positioning an on-screen pointer near a graphical representation of the selected
+
+graph element for a predetermined amount of time.
+
+15. |The method of claim 12, wherein the displayed metadata includes
+
+metadata propagated from another graph element.
+
+16. |The method of claim 12, wherein the displayed metadata is displayed
+
+before the graph is run.
+
+17. |The method of claim 1, further including:
+
+outputting data elements processed according to the transformed
+metadata from the second portion of the graph; and
+
+processing data elements received at the third portion of the graph
+according to the transformed metadata.
+
+18. |The method of claim 1, wherein the data elements output from the
+second portion of the graph and received at the third portion of the graph
+include records and the transformed metadata describes at least one of: a
+sequence of fields of the records, and data types corresponding to values in the
+
+record.
+
+--- PAGE 4 ---
+57
+
+19. Software stored on a computer-readable medium, for determining
+metadata associated with a graph-based computation, the software including
+instructions for causing a computer system to perform the method of any of
+
+claims 1 to 18.
+
+20. Asystem for determining metadata associated with graph elements of an
+executable graph-based computation, the system including:
+
+means for generating a worklist of graph elements for which metadata is
+to be determined with each graph element in an executable graph ordered in the
+worklist, the worklist comprising to a partial ordering that is determined at least
+in part by links interconnecting the graph elements, the links representing data
+flows of data elements; and
+
+means for determining metadata for the graph elements of the
+executable graph according to the worklist, including means for propagating
+metadata internally within individual graph elements, and means for propagating
+metadata externally between different graph elements;
+
+wherein propagating metadata internally includes: functionally
+transforming metadata associated with a first portion (2310) of the graph
+element to generate transformed metadata associated with a second portion
+(2316) of the graph element that differs from the first portion; and
+
+propagating metadata externally includes:
+
+determining a further element (2317) of the graph related to the second
+portion of the graph element by a link representing a data flow of data elements
+output from the second portion of the graph element and received at the further
+graph element; and
+
+propagating the transformed metadata from the second portion of the
+graph element to the further graph element according to the link representing
+the data flow of data elements, and after propagating the transformed metadata
+moving the further graph element to the end of the worklist.
+
+--- PAGE 5 ---
+58
+
+21. Asystem according to claim 20, wherein the first portion includes a first
+port of a first graph element; and the second portion includes a second port of
+
+the first graph element.
+
+22. Asystem according to claim 21, wherein the functional transformation
+includes a metadata definition that includes at least one reference to the
+
+metadata associated with the first port.
+
+23. Asystem according to claim 22, wherein the metadata definition defines
+
+metadata for the second port as a function of the referenced metadata.
+
+24. Asystem according to claim 21, wherein the first port is an input portion
+
+and the second port is an output port.

@@ -1,0 +1,171 @@
+TITLE:
+Method, system and computer readable medium for an intelligent search workstation for computer assisted interpretation of medical images
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method, system and computer readable medium for an intelligent search display into which an automated computerized image analysis has been incorporated. Upon viewing an unknown mammographic case, the display shows both the computer classification output as well as images of lesions with known diagnoses (e.g., malignant vs. benign) and similar computer-extracted features. The similarity index used in the search can be chosen by the radiologist to be based on a single feature, multiple features, or on the computer estimate of the likelihood of malignancy. Specifically the system includes the calculation of features of images in a known database, calculation of features of an unknown case, calculation of a similarity index, display of the known cases along the probability distribution curves at which the unknown case exists. Techniques include novel developments and implementations of computer-extracted features for similarity calculation and novel methods for the display of the unknown case amongst known cases with and without the computer-determined diagnoses.
+
+CLAIMS:
+What is claimed as new and desired to be secured by Letters Patent of the United States is:
+1. A method for computer assisted interpretation of a medical image, comprising:
+obtaining image data representative of a medical image;
+computing at least one feature characteristic of the image data;
+comparing the computed feature characteristic to corresponding computed feature characteristics derived from images in a known image data set;
+selecting image data from images of the known image data set having corresponding computed feature characteristics similar to the feature characteristics computed in the computing step; and
+displaying at least one of the selected image data and the obtained image data.
+2. The method of
+claim 1
+, further comprising:
+using a graphical user interface to display the image data.
+3. The method of
+claim 1
+, further comprising:
+displaying a first indicator identifying which of the selected image data correspond to malignant lesions and a second indicator identifying which of the selected image data correspond to benign lesions.
+4. The method of
+claim 3
+, further comprising:
+displaying as the first indicator a first colored border around the selected image data corresponding to malignant lesions and as the second indicator a second colored border around the selected image data corresponding to benign lesions.
+5. The method of
+claim 1
+, further comprising:
+displaying the selected image data with or without an ASCII or numerical indicator corresponding to the computed feature characteristics derived from the images in the known image data set.
+6. The method of
+claim 2
+, further comprising:
+displaying multiple views of the same obtained image data in the graphical user interface.
+7. The method of
+claim 2
+, further comprising:
+using a selection mechanism in the graphical user interface to select at least one feature characteristic for use in the computing step.
+8. The method of
+claim 2
+, further comprising:
+using a region in the graphical user interface to display an enlarged view of the obtained image data relative to the displayed multiple views.
+9. The method of
+claim 8
+, further comprising:
+using an adjustment mechanism in the graphical user interface to adjust sharpness and brightness of the enlarged view of the obtained image data.
+10. The method of
+claim 5
+, further comprising:
+using a selection mechanism in the graphical user to selectively display the ASCII or numerical indicator.
+11. The method of
+claim 1
+, wherein the computing step comprises:
+computing a margin characteristic feature including at least one of a spiculation measure and margin-sharpness measure.
+12. The method of
+claim 11
+, wherein the computing step comprises:
+computing the spiculation measure by analysis of radial edge gradients, including evaluating an average angle by which a direction of a maximum gradient at each point along a margin of a mass within the image data deviates from a radial direction from a geometric center of the mass to a point on the margin to determine the spiculation measure.
+13. The method of
+claim 12
+, wherein the computing step further comprises:
+calculating a normalized edge-gradient distribution for a neighborhood of a grown region of the mass with respect to the radial direction as the spiculation measure; and
+representing the computed spiculation measure by a full width at half-maximum (FWHM) of the calculated normalized edge-gradient distribution.
+14. The method of
+claim 11
+, wherein the computing step comprises:
+calculating a magnitude of an average gradient along a margin of a mass within the image data to determine the margin sharpness measure.
+15. The method of
+claim 1
+, wherein the computing step comprises:
+computing a density characteristic feature including at least one of average grey level, contrast and texture.
+16. The method of
+claim 15
+, wherein the computing step comprises:
+averaging gray level values of each point within a grown region of a mass within the image data to determine the average grey level.
+17. The method of
+claim 15
+, wherein the computing step comprises:
+determining a difference between an average gray level of a grown mass within the image data and an average gray level of surrounding areas within the image data to determine the contrast.
+18. The method of
+claim 15
+, wherein the computing step comprises:
+determining a standard deviation of an average gradient within a mass within the image data to determine the texture.
+19. The method of
+claim 1
+, wherein:
+the comparing step comprises identifying plural retrieved known images defining a distribution of known malignant and benign abnormalities with respect to the computed feature characteristic; and
+the displaying step comprises displaying symbols representing a continuum of the known images ranging from malignant to benign abnormalities as a function of a value of the computed feature characteristic, and displaying a symbol representative of a position of candidate abnormalities in relation to the symbols of the continuum based on similarity of the computed feature characteristic and the corresponding feature characteristic existing in the known images.
+20. The method of
+claim 1
+, wherein the computing step comprises:
+computing at least one feature characteristic from a group of feature characteristics consisting of spiculation, radial gradient, margin sharpness, average grey level, and texture.
+21. The method of
+claim 20
+, further comprising:
+applying the computed at least one feature characteristic to an artificial neural network; and
+determining a likelihood of malignancy based on an output unit of the artificial neural network.
+22. The method of
+claim 21
+, wherein the applying step comprises:
+applying the computed at least one feature characteristic to the artificial neural network configured as a three-layered, feed-forward, backpropagation artificial neural network.
+23. The method of
+claim 22
+, further comprising:
+providing the three layers of the artificial neural network as plural input units, plural hidden units and one output unit, respectively.
+24. The method of
+claim 23
+, wherein the applying step comprises:
+applying plural computed feature characteristics selected from the group consisting of the computed spiculation feature characteristic, the computed radial gradient feature characteristic, the computed margin sharpness feature characteristic, the computed average grey level feature characteristic, and the computed texture feature characteristic to the plural input units.
+25. The method of
+claim 20
+, further comprising:
+applying the computed at least one feature characteristic to a rule-based classifier; and
+using the rule-based classifier to determine a likelihood of malignancy.
+26. The method of
+claim 25
+, wherein the applying step comprises:
+applying the computed spiculation feature characteristic to the rule-based classifier.
+27. The method of
+claim 26
+, wherein the applying step comprises:
+applying at least one computed feature characteristic selected from the group consisting of the computed radial gradient feature characteristic, the computed margin sharpness feature characteristic, the computed average grey level feature characteristic, and the computed texture feature characteristic to the rule-based classifier.
+28. The method of
+claim 20
+, further comprising:
+applying the computed at least one feature characteristic to a rule-based classifier and an artificial neural network; and
+determining a likelihood of malignancy based on an output unit of the artificial neural network and using the rule-based classifier.
+29. The method of
+claim 28
+, wherein the applying step comprises:
+applying the computed spiculation feature characteristic to the rule-based classifier.
+30. The method of
+claim 29
+, wherein the applying step comprises:
+applying the computed at least one feature characteristic to the artificial neural network configured as a three-layered, feed-forward, backpropagation artificial neural network.
+31. The method of
+claim 30
+, further comprising:
+providing the three layers of the artificial neural network as plural input units, plural hidden units and one output unit, respectively.
+32. The method of
+claim 31
+, wherein the applying step comprises:
+applying plural computed feature characteristics selected from the group consisting of the computed radial gradient feature characteristic, the computed margin sharpness feature characteristic, the computed average grey level feature characteristic, and the computed texture feature characteristic to the plural input units.
+33. A method for intelligent search of a known database for interpretation of medical images, comprising:
+generating image data from images derived from patients;
+computing feature characteristics of said image data;
+comparing said feature characteristics to computer-extracted feature characteristics of images in a known image data set; and
+displaying similar lesions with or without computer analysis output based on said comparison results.
+34. A method for computer-assisted interpretation of a medical image, comprising:
+obtaining digital image data representative of the medical image;
+processing the image data to extract at least one feature characterizing a candidate abnormality;
+searching a database of known image data corresponding to known images having said at least one feature and retrieving known image data having said at least one feature;
+comparing said extracted at least one feature with the at least one feature existing in the retrieved known image data to identify known retrieved images having said at least one feature similar to the extracted at least one feature; and
+displaying image data of a location of the medical image from which said extracted feature was extracted and known image data of a location in a retrieved known image having a similar feature.
+35. The method of
+claim 34
+, wherein:
+said comparing step comprises identifying plural retrieved known images defining a distribution of known malignant and benign abnormalities with respect to said extracted feature; and
+said displaying step comprises displaying symbols representing a continuum of said known images ranging from malignant to benign abnormalities as a function of a value of said at least one extracted feature, and displaying a symbol representative of a position of said candidate abnormality in relation to the symbols of said continuum based on similarity of the at least one extracted feature and the corresponding at least one feature existing in said known images.
+36. An image processing system configured to perform the steps recited in anyone of
+claims 1
+to
+35
+.
+37. A storage medium storing a program for performing the steps recited in anyone of
+claims 1
+to
+35

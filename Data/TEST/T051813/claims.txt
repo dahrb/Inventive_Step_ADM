@@ -1,0 +1,210 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+CLAIMS
+
+1. A method for providing search results to client web browsers, comprising:
+
+generating, in a search engine, search results in response to a received search
+query from a client device, each search result being associated with a corresponding
+search result document link to a corresponding search result document, and each search
+result including a snippet related to the query and that is extracted from the corresponding
+search result document and displayed on a client device as part of the search result in
+response to receipt by the client device;
+
+for at least one search result, generating, in the search engine, an instruction
+corresponding to the search result, the instruction being to a document browser to
+display, when the search result is selected by the user, the search result document on the
+client device and to navigate directly to an intra-document portion that is related to the
+search query and that includes at least a portion of the snippet within the search result
+document, wherein the instruction is an intra-document link containing an artificial
+anchor undefined in the search result document, the anchor containing text to be
+searched by the client device for the purpose of navigating directly to the intra-
+document portion within the search result document, and including the instruction in the
+search result; and
+
+providing, from the search engine, the search results including the instruction to
+
+the client device.
+
+2. The method of claim 1, wherein at least one search result includes a plurality of
+snippets extracted from the search result document, and wherein the instruction is to
+generate a plurality of frames each displaying at least a portion of at least one of the
+
+snippets within the search result document.
+
+3, The method of claim 1, wherein the artificial anchor includes a preassigned
+
+artificial anchor designator designating the anchor as artificial.
+
+16
+
+--- PAGE 2 ---
+4. The method of claim 3, wherein the artificial anchor includes the preassigned
+artificial anchor designator as one of a prefix and a suffix, and wherein the preassigned
+
+artificial anchor designator includes a preassigned set of text characters.
+
+5. The method of claim 1, further comprising:
+determining whether the search result document link references an anchor defined
+in the search result document; and stripping the reference to the anchor from the search
+
+result document link if the search result link references the anchor.
+
+6. The method of claim 1, wherein the intra-document portion is at least one of text
+
+within the search result document and an image within the search result document.
+
+7. The method of claim 1, wherein the intra-document portion is referenced by at
+least one of a tag identification, a tag name, a tag location in the document object model,
+an HTML byte offset defined in the search result document and a general offset or
+
+location definition within the search result document.
+
+8. A computer program product embodied on a computer-readable medium, the
+computer program product including instructions, which when executed by a computer
+system, are operable to cause the computer system to perform the method of any one of
+
+claims | to 7.
+
+17
+
+--- PAGE 3 ---
+FIRST AUXILIARY REOUEST
+
+CLAIMS
+
+1. A method for providing search results to client web browsers, comprising:
+generating, in a search engine, search results in response to a received search
+
+query from a client device, each search result being associated with a corresponding
+search result document link to a corresponding search result document, and each search
+result including a snippet related to the query and that is extracted from the corresponding
+search result document and displayed on a client device as part of the search result in
+response to receipt by the client device;
+
+for at least one search result, generating, in the search engine, an instruction
+corresponding to the search result wherein the instruction is an intra-document link
+corresponding to an intra-document portion within the search result document, the intra-
+document portion being related to the search query, and including the instruction in the
+search result, the instruction comprising an artificial anchor undefined in the search result
+document arranged to cause a client web browser having an artificial anchor module for
+parsing and interpreting artificial anchors to navigate directly to the intra-document
+portion that includes at least a portion of the snippet within the search result document
+when the search result is selected by the user;
+
+providing, from the search engine, the search results including the instruction to
+the client device; and
+
+ignoring, at a client web browser, the instruction comprising the artificial anchor if
+
+the client web browser does not have the artificial anchor module.
+
+2. The method of claim 1, wherein at least one search result includes a plurality of
+snippets extracted from the search result document, and wherein the instruction is to
+generate a plurality of frames each displaying at least a portion of at least one of the
+
+snippets within the search result document.
+
+16
+
+--- PAGE 4 ---
+3, The method of claim 1, wherein the artificial anchor includes a preassigned
+
+artificial anchor designator designating the anchor as artificial.
+
+4. The method of claim 3, wherein the artificial anchor includes the preassigned
+artificial anchor designator as one of a prefix and a suffix, and wherein the preassigned
+
+artificial anchor designator includes a preassigned set of text characters.
+
+5. The method of claim 1, further comprising:
+determining whether the search result document link references an anchor defined
+in the search result document; and stripping the reference to the anchor from the search
+
+result document link if the search result link references the anchor.
+
+6. The method of claim 1, wherein the intra-document portion is at least one of text
+
+within the search result document and an image within the search result document.
+
+7. The method of claim 1, wherein the intra-document portion is referenced by at
+least one of a tag identification, a tag name, a tag location in the document object model,
+an HTML byte offset defined in the search result document and a general offset or
+
+location definition within the search result document.
+
+8. A computer program product embodied on a computer-readable medium, the
+computer program product including instructions, which when executed by a computer
+system, are operable to cause the computer system to perform the method of any one of
+
+claims | to 7.
+
+17
+
+--- PAGE 5 ---
+SECOND AUXILIARY REQUEST
+
+CLAIMS
+
+1. A method for providing search results to client web browsers, comprising:
+generating, in a search engine, search results in response to a received search
+query from a client device, each search result being associated with a corresponding
+search result document link to a corresponding search result document, and each search
+result including a snippet related to the query and that is extracted from the corresponding
+search result document and displayed on a client device as part of the search result in
+response to receipt by the client device;
+for at least one search result,
+generating, in the search engine, an instruction corresponding to the
+search result, the instruction being to a document browser to display, when the search
+result is selected by the user, the search result document on the client device and to
+navigate directly to an intra-document portion that is related to the search query and that
+includes at least a portion of the snippet within the search result document, wherein the
+instruction is an intra-document link containing an artificial anchor undefined in the
+search result document, the anchor containing:
+a preassigned artificial anchor designator designating the anchor
+as artificial; and
+text to be searched by the client device for the purpose of
+navigating directly to the intra- document portion within the search result document, and
+including the instruction in the search result; and
+providing, from the search engine, the search results including the instruction to
+
+the client device.
+
+2. The method of claim 1, wherein at least one search result includes a plurality of
+snippets extracted from the search result document, and wherein the instruction is to
+generate a plurality of frames each displaying at least a portion of at least one of the
+
+snippets within the search result document.
+
+16
+
+--- PAGE 6 ---
+3, The method of claim 1, wherein the artificial anchor includes the preassigned
+artificial anchor designator as one of a prefix and a suffix, and wherein the preassigned
+
+artificial anchor designator includes a preassigned set of text characters.
+
+4. The method of claim 1, further comprising:
+determining whether the search result document link references an anchor defined
+in the search result document; and stripping the reference to the anchor from the search
+
+result document link if the search result link references the anchor.
+
+5. The method of claim 1, wherein the intra-document portion is at least one of text
+
+within the search result document and an image within the search result document.
+
+6. The method of claim 1, wherein the intra-document portion is referenced by at
+least one of a tag identification, a tag name, a tag location in the document object model,
+an HTML byte offset defined in the search result document and a general offset or
+
+location definition within the search result document.
+
+7. A computer program product embodied on a computer-readable medium, the
+computer program product including instructions, which when executed by a computer
+system, are operable to cause the computer system to perform the method of any one of
+
+claims | to 6.
+
+17

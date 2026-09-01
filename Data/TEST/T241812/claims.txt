@@ -1,0 +1,663 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+Application No.: 05 102 959.3 - 2201
+
+Applicant: Microsoft Corporation
+Our Ref.: EP34754PM152
+Date: May 22, 2012
+
+MAIN REQUEST (Clean Copy)
+
+1.
+
+A computer-implemented method for related term suggestion
+characterized by
+
+using a configurable threshold value to assign a historical query term (108) to have a
+high frequency of occurrence, so-called FOO, when this historical query term (108)
+occurs at least a threshold number of times, and to assign a historical query term (108) to
+have a low FOO, when this historical query term (108) occurs less than a threshold
+number of times;
+
+generating term clusters (138) as a function of calculated similarity of term vectors (136),
+each term vector (136) being generated from search results associated with the term
+(108) which is a term of a set of high FOO historical query terms (116) previously
+
+submitted to a search engine (126), wherein the calculated similarity, sim(q,,q,), is
+
+determined as follows:
+
+d
+sim ;>9x) =) w, "Was
+
+i=]
+wherein weight w for the /" vector’s /" term is calculated as follows:
+
+w, =TF,xlog(N/DF,),
+
+wherein TF represents term frequency, N is a total number of query terms, and DF;is a
+number of extracted feature records that contain term j;
+
+responsive to receiving a term from an entity, evaluating the term in view of matches of
+the term (108) with terms in the term clusters (138) to identify one or more related term
+
+suggestions, wherein a multi-sense query comprises the term (108); and
+
+returning at least one suggested term list (110), wherein the terms within each list are
+
+ordered by a combination of FOO and confidence value, wherein multiple suggested term
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+lists are generated when the term matches terms in more than one term cluster, the lists
+
+are ordered by term cluster sizes, and wherein the confidence value is defined as:
+dist(q,.4,)= 1- simlq,.9.).
+
+A method as recited in claim 1, and wherein the entity is a computer-program application
+
+and/or an end-user.
+
+A method as recited in claim 1, further comprising:
+
+collecting historic query terms (116) from a query log (118); and
+
+determining ones of the historic query terms (116) with a high FOO.
+
+A method as recited in claim 1, further comprising before creating the term clusters:
+reducing dimensionality of the term vectors (136); and
+
+normalizing the term vectors (136).
+
+A method as recited in claim 1, wherein evaluating further comprises:
+
+identifying a match between the term (108) and term(s) from one or more term clusters
+(138); and
+
+responsive to identifying, generating related term suggestion(s) comprising the term(s).
+
+A method as recited in claim 5, wherein the related term suggestion(s) further comprise
+for each term (108) of the term(s), a FOO value indicating a number of times the term
+
+(108) occurs in a set of mined historical query terms (116).
+
+A method as recited in claim 1, wherein generating the term clusters (138) further
+
+comprises:
+
+sending respective ones of the high FOO historical query terms (116) to the search
+
+engine (126) to obtain the search results;
+
+extracting features from at least a subset of search results corresponding to the
+
+respective ones; and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+10.
+
+11.
+
+12.
+
+producing term vectors from the features as a function of term and inverted term
+
+frequencies.
+
+A method as recited in claim 7, and wherein the features comprise a title, description,
+and/or context for the respective ones of the high FOO historical query terms.
+
+A method as recited in claim 7, and wherein the respective ones comprise top ranked
+ones of the search results.
+
+A method as recited in claim 1, wherein the term clusters are a first set of term clusters
+(138), and wherein the method further comprises:
+
+determining that there is no match between the term and the terms; and
+responsive to the determining:
+
+making a second set of term clusters from calculated similarity of term vectors (136),
+each term vector (136) being generated from search results associated with a set of low
+FOO historical query terms (122) previously submitted to the search engine (126); and
+
+evaluating the term (108) in view of terms of the second set of term clusters (138) to
+
+identify one or more related term suggestions.
+A method as recited in claim 10, wherein making further comprises:
+
+identifying the low FOO historical query terms (116) from historical query terms (116)
+mined from a query log (118);
+
+sending respective ones of at least a subset of the low FOO historical query terms (116)
+
+to the search engine (126) to obtain search results;
+extracting features from at least a subset of search results; and
+
+producing the term vectors (136) from the features as a function of term (108) and
+
+inverted term frequencies.
+
+A method as recited in claim 11, and further comprising after clustering:
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+13.
+
+determining that there is no match between the term (108) and term(s) from the first set
+of term clusters (138), the first set being based on high FOO historical query terms (116);
+and
+
+responsive to the determining, identifying a match between the term (108) and term(s)
+from one or more of the second set of term clusters (138), the second set being based on
+low FOO historical query terms (116); and
+
+responsive to identifying, generating related term suggestion(s) comprising the term(s).
+A computer-readable medium
+
+characterized by
+
+computer-executable instructions for:
+
+using a configurable threshold value to assign a historical query term (108) to have a
+high frequency of occurrence, so-called FOO, when this historical query term (108)
+occurs at least a threshold number of times, and to assign a historical query term (108) to
+have a low FOO, when this historical query term (108) occurs less than a threshold
+
+number of times;
+
+generating term clusters (138) as a function of calculated similarity of term vectors (136),
+each term vector (136) being generated from search results associated with the term
+(108) which is a term of a set of high FOO historical query terms previously submitted to
+
+a search engine (126), wherein the calculated similarity, sim(q,,q,), is determined as
+
+follows:
+d
+sim(d ;>94) = yw, "Wy s
+i=)
+
+wherein weight w for the /” vector’s ;" term is calculated as follows:
+w, =TF,xlog(N/DF;),
+
+wherein TF, represents term frequency, N is a total number of query terms, and DF;is a
+
+number of extracted feature records that contain term j;
+
+--- PAGE 5 ---
+5
+14,
+
+10
+15.
+15 = 16.
+17.
+
+20
+18.
+
+25
+
+responsive to receiving a term from an entity, evaluating the term in view of matches of
+the term (108) with terms in the term clusters (138) to identify one or more related term
+
+suggestions, wherein a multi-sense query comprises the term (108); and
+
+returning at least one suggested term list (110), wherein the terms within each list are
+ordered by a combination of FOO and confidence value, wherein multiple suggested term
+lists are generated when the term matches terms in more than one term cluster, the lists
+are ordered by term cluster sizes, and wherein the confidence value is defined as:
+
+dist(q,,q,)=1—simlq,.q,).
+
+A computer-readable medium as recited in claim 13, and wherein the entity is a
+
+computer-program application and/or an end-user.
+
+A computer-readable medium as recited in claim 13, further comprising computer-
+executable instructions for:
+
+collecting historic query terms (116) from a query log (118); and
+determining ones of the historic query terms (116) with a high FOO.
+
+A computer-readable medium as recited in claim 13, before creating the term clusters
+
+(138), further comprising computer-executable instructions for:
+reducing dimensionality of the term vectors (136); and
+normalizing the term vectors (136).
+
+A computer-readable medium as recited in claim 13, wherein evaluating further
+
+comprises computer-executable instructions for:
+
+identifying a match between the term (108) and term(s) from one or more term clusters
+(138); and
+
+responsive to identifying, generating related term suggestion(s) comprising the term(s).
+
+A computer-readable medium as recited in claim 17, wherein the related term
+suggestion(s) further comprise for each term (108) of the term(s), a FOO value indicating
+
+a number of times the term (108) occurs in a set of mined historical query terms (116).
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+19.
+
+20.
+
+21.
+
+22.
+
+23.
+
+A computer-readable medium as recited in claim 13, wherein generating the term
+
+clusters (138) further comprises computer-executable instructions for:
+
+sending respective ones of the high FOO historical query terms (116) to the search
+
+engine (126) to obtain the search results;
+
+extracting features from at least a subset of search results corresponding to the
+respective ones; and
+
+producing term vectors (136) from the features as a function of term (108) and inverted
+
+term frequencies.
+
+A computer-readable medium as recited in claim 19, and wherein the features comprise
+a title, description, and/or context for the respective ones of the high FOO historical query
+
+terms.
+
+A computer-readable medium as recited in claim 19, and wherein the respective ones
+comprise top ranked ones of the search results.
+
+A computer-readable medium as recited in claim 13, wherein the term clusters are a first
+set of term clusters (138), and wherein the computer-executable instructions further
+comprise instructions for:
+
+determining that there is no match between the term (108) and the terms; and
+responsive to the determining:
+
+making a second set of term clusters (138) from calculated similarity of term vectors
+(136), each term vector (136) being generated from search results associated with a set
+of low FOO historical query terms (116) previously submitted to the search engine (126);
+and
+
+evaluating the term (108) in view of terms of the second set of term clusters (138) to
+
+identify one or more related term suggestions.
+
+A computer-readable medium as recited in claim 22, wherein making further comprises
+
+computer-executable instructions for:
+
+identifying the low FOO historical query terms (116) from historical query terms (116)
+mined from a query log (118);
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+24.
+
+25.
+
+sending respective ones of at least a subset of the low FOO historical query terms (116)
+
+to the search engine (126) to obtain search results;
+extracting features from at least a subset of search results; and
+
+producing the term vectors (136) from the features as a function of term (108) and
+
+inverted term frequencies.
+
+A computer-readable medium as recited in claim 23, and further comprising computer-
+
+executable instructions, after clustering, for:
+
+determining that there is no match between the term (108) and term(s) from the first set
+of term clusters (138), the first set being based on high FOO historical query terms (116);
+and
+
+responsive to the determining, identifying a match between the term (108) and term(s)
+from one or more of the second set of term clusters (138), the second set being based on
+low FOO historical query terms (116); and
+
+responsive to identifying, generating related term suggestion(s) comprising the term(s).
+A computing device comprising:
+
+a processor; and
+
+a memory coupled to the processor, the memory
+
+characterized by
+
+computer-program instructions executable by the processor for:
+
+using a configurable threshold value to assign a historical query term (108) to have a
+high frequency of occurrence, so-called FOO, when this historical query term (108)
+occurs at least a threshold number of times, and to assign a historical query term (108) to
+have a low FOO, when this historical query term (108) occurs less than a threshold
+number of times;
+
+generating term clusters (138) as a function of calculated similarity of term vectors (136),
+each term vector (136) being generated from search results associated with the term
+(108) which is a term of a set of high FOO historical query terms (116) previously
+
+--- PAGE 8 ---
+10
+
+15
+
+20
+
+26.
+
+27.
+
+submitted to a search engine (126), wherein the calculated similarity, sim(q,,q,), is
+
+determined as follows:
+
+d
+sim ;59;) => w, ‘Wi i
+
+i=l
+wherein weight w for the /" vector’s /" term is calculated as follows:
+w, =TF,xlog(N/DF,),
+
+wherein TF; represents term frequency, N is a total number of query terms, and DF; is a
+number of extracted feature records that contain term j;
+
+responsive to receiving a term from an entity, evaluating the term in view of matches of
+the term (108) with terms in the term clusters (138) to identify one or more related term
+suggestions, wherein a multi-sense query comprises the term (108); and
+
+returning at least one suggested term list (110), wherein the terms within each list are
+ordered by a combination of FOO and confidence value, wherein multiple suggested term
+lists are generated when the term matches terms in more than one term cluster, the lists
+are ordered by term cluster sizes, and wherein the confidence value is defined as:
+
+dist(q,.9,)=1-simg,.9, ).
+
+A computing device as recited in claim 25, further comprising computer-executable
+instructions for:
+
+collecting historic query terms (116) from a query log (118); and
+determining ones of the historic query terms (116) with a high FOO.
+
+A computing device as recited in claim 25, before creating the term clusters, further
+comprising computer-executable instructions for:
+
+reducing dimensionality of the term vectors (136); and
+
+normalizing the term vectors (136).
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+28.
+
+29.
+
+30.
+
+31.
+
+32.
+
+33.
+
+A computing device as recited in claim 25, wherein evaluating further comprises
+computer-executable instructions for:
+
+identifying a match between the term (108) and term(s) from one or more term clusters
+(138); and
+
+responsive to identifying, generating related term suggestion(s) comprising the term(s).
+
+A computing device as recited in claim 28, wherein the related term suggestion(s) further
+comprise for each term (108) of the term(s), a FOO value indicating a number of times
+
+the term (108) occurs in a set of mined historical query terms (116).
+
+A computing device as recited in claim 25, wherein generating the term clusters further
+
+comprises computer-executable instructions for:
+
+sending respective ones of the high FOO historical query terms (116) to the search
+
+engine (126) to obtain the search results;
+
+extracting features from at least a subset of search results corresponding to the
+
+respective ones; and
+
+producing term vectors from the features as a function of term and inverted term
+
+frequencies.
+
+A computing device as recited in claim 30, and wherein the features comprise a title,
+description, and/or context for the respective ones of the high FOO historical query
+
+terms.
+
+A computing device as recited in claim 30, and wherein the respective ones comprise top
+
+ranked ones of the search results.
+
+A computing device as recited in claim 25, wherein the term clusters are a first set of term
+clusters (138), and wherein the computer-executable instructions further comprise
+instructions for:
+
+determining that there is no match between the term and the terms; and
+
+responsive to the determining:
+
+--- PAGE 10 ---
+10
+
+15
+
+20
+
+25
+
+34.
+
+35.
+
+36.
+
+10
+
+making a second set of term clusters from calculated similarity of term vectors (136),
+each term vector (136) being generated from search results associated with a set of low
+FOO historical query terms (122) previously submitted to the search engine (126); and
+
+evaluating the term (108) in view of terms of the second set of term clusters (138) to
+
+identify one or more related term suggestions.
+
+A computing device as recited in claim 33, wherein making further comprises computer-
+
+executable instructions for:
+
+identifying the low FOO historical query terms (116) from historical query terms (116)
+mined from a query log (118);
+
+sending respective ones of at least a subset of the low FOO historical query terms (116)
+to the search engine (126) to obtain search results;
+
+extracting features from at least a subset of search results; and
+
+producing the term vectors (136) from the features as a function of term (108) and
+
+inverted term frequencies.
+
+A computing device as recited in claim 34, and further comprising computer-executable
+
+instructions, after clustering, for:
+
+determining that there is no match between the term (108) and term(s) from the first set
+of term clusters (138), the first set being based on high FOO historical query terms (116);
+and
+
+responsive to the determining, identifying a match between the term (108) and term(s)
+from one or more of the second set of term clusters (138), the second set being based on
+
+low FOO historical query terms (116); and
+responsive to identifying, generating related term suggestion(s) comprising the term(s).
+A computing device as recited in claim 25, and further comprising:
+
+generating means to generate term clusters (138) as a function of calculated similarity of
+term vectors (136), each term vector (136) being generated from search results
+associated with a set of high FOO historical query terms (116) previously submitted to a
+
+search engine (126); and
+
+--- PAGE 11 ---
+10
+
+15
+
+20
+
+25
+
+37.
+
+38.
+
+39.
+
+40.
+
+41.
+
+11
+
+responsive to receiving a term (108) from an entity, evaluating means to evaluate the
+term (108) in view of terms in the term clusters to identify one or more related term
+
+suggestions.
+
+A computing device as recited in claim 25 or 36, and wherein the entity is a computer-
+
+program application and/or an end-user.
+
+A computing device as recited in claim 36, and further comprising:
+
+collecting means to collect historic query terms (116) from a query log (118); and
+determining means to determine ones of the historic query terms (116) with a high FOO.
+
+A computing device as recited in claim 36, wherein the evaluating means further
+
+comprise:
+
+identifying means to identify a match between the term (108) and term(s) from one or
+
+more term clusters (138); and
+
+responsive to identifying, generating means to generate related term suggestion(s)
+
+comprising the term(s).
+
+A computing device as recited in claim 36, wherein the generating means to generate the
+
+term clusters (138) further comprise:
+
+sending means to send respective ones of the high FOO historical query terms (116) to
+
+the search engine (126) to obtain the search results;
+
+extracting means to extract features from at least a subset of search results
+
+corresponding to the respective ones; and
+producing means to produce term vectors (136) from the features.
+
+A computing device as recited in claim 36, wherein the term clusters are a first set of term
+
+clusters (138), and wherein the computing device further comprises:
+
+determining means to determine that there is no match between the term (108) and the
+
+terms; and
+
+responsive to the determining:
+
+--- PAGE 12 ---
+10
+
+15
+
+42.
+
+12
+
+making means to make a second set of term clusters (138) from calculated similarity of
+term vectors (136), each term vector (136) being generated from search results
+associated with a set of low FOO historical query terms (116) previously submitted to the
+search engine (126); and
+
+evaluating means to evaluate the term (108) in view of terms of the second set of term
+
+clusters (138) to identify one or more related term suggestions.
+A computing device as recited in claim 41, and further comprising:
+
+calculating means to calculate that there is no match between the term (108) and term(s)
+from the first set of term clusters (138), the first set being based on high FOO historical
+query terms (116); and
+
+responsive to the calculating, identifying means to identify a match between the term
+(108) and term(s) from one or more of the second set of term clusters (138), the second
+set being based on low FOO historical query terms (116); and
+
+responsive to identifying, generating means to generate related term suggestion(s)
+comprising the term(s).

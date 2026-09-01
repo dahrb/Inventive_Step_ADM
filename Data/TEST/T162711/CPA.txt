@@ -1,0 +1,49 @@
+TITLE:
+System and method for merging remote and local data in a single user interface
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+The system comprises a local database; a user interface (160); a remote access engine, communicatively coupled to a network (140), the user interface, and the local database; and a rendering engine, communicatively coupled to the remote access engine. The user interface receives a data search request. The remote access engine searches for and retrieves, from a remote database (120) communicatively coupled to the network (140) and the local database, data corresponding to the received search request. The rendering engine displays the received data from the remote database and the local database.
+
+CLAIMS:
+1. A method, comprising: receiving a data search request; searching in a local database for data corresponding to the data search request; querying a remote database manager to search, in a remote database, for data corresponding to the data search request; retrieving, from the local database, data corresponding to the data search request; receiving, from the remote database, data corresponding to the data search request; and presenting the retrieved and received data in a single user interface.
+2. The method of claim 1, wherein the remote database stores voluminous data.
+3. The method of claim 1, wherein the remote database stores confidential data.
+4. The method of claim 1, wherein the remote database stores data that quickly goes stale.
+5. The method of claim 1, wherein the local database stores personal data.
+6. The method of claim 1, wherein the local and remote databases store sales force automation data.
+7. The method of claim 1, wherein the local and remote databases store customer relations management data.
+8. The method of claim 1, wherein the local and remote databases store corporate directory data.
+9. The method of claim 1, wherein the local and remote databases store calendar data.
+10. The method of claim 1, wherein the local and remote databases store tasks data.
+11. The method of claim 1 , wherein the local and remote databases store files.
+12. The method of claim 1, further comprising: determining if receiving data corresponding to the data search request would result in receiving a voluminous amount of data from the remote database; and refining the data search request if it is determined that receiving data corresponding to the data search request would result in receiving a voluminous amount of data.
+13. The method of claim 1, further comprising saving, to the local database, data received from the remote database.
+14. A machine-readable medium having stored thereon machine- readable code to permit a machine to effect a method, comprising: receiving a data search request; searching in a local database for data corresponding to the data search request; querying a remote database manager to search, in a remote database, for data corresponding to the data search request; retrieving, from the local database, data corresponding to the data search request; receiving, from the remote database, data corresponding to the data search request; and presenting the retrieved and received data in a single user interface.
+15. The machine-readable medium of claim 14, wherein the remote database stores voluminous data.
+16. The machine-readable medium of claim 14, wherein the remote database stores confidential data.
+17. The machine-readable medium of claim 14, wherein the remote database stores data that quickly goes stale.
+18. The machine-readable medium of claim 14, wherein the local database stores personal data.
+19. The machine-readable medium of claim 14, wherein the local and remote databases store sales force automation data.
+20. The machine-readable medium of claim 14, wherein the local and remote databases store customer relations management data.
+21. The machine-readable medium of claim 14, wherein the local and remote databases store corporate directory data.
+22. The machine-readable medium of claim 14, wherein the local and remote databases store calendar data.
+23. The machine-readable medium of claim 14, wherein the local and remote databases store tasks data.
+24. The machine-readable medium of claim 14, wherein the local and remote databases store files.
+25. The machine-readable medium of claim 14, wherein the method further comprises: determining if receiving data corresponding to the data search request would result in receiving a voluminous amount of data from the remote database; and refining the data search request if it is determined that receiving data corresponding to the data search request would result in receiving a voluminous amount of data.
+26. The machine-readable medium of claim 14, wherein the method further comprises saving, to the local database, data received from the remote database.
+27. A system, comprising: means for receiving a data search request; means for searching in a local database for data corresponding to the data search request; means for querying a remote database manager to search, in a remote database, for data corresponding to the data search request; means for retrieving, from the local database, data corresponding to the data search request; means for receiving, from the remote database, data corresponding to the data search request; and means for presenting the retrieved and received data in a single user interface.
+28. An apparatus, comprising: a local database; a user interface, communicatively coupled to the local database, capable to receive a search request and to search for and retrieve, from the local database, data corresponding to the data search request; a remote access engine, communicatively coupled to a network and the user interface, capable to query and receive, from a remote database communicatively coupled to the network, data corresponding to the received search request; and a rendering engine, communicatively coupled to the remote access engine and the user interface, capable to present the received data from the remote database and retrieved data from the
+local database.
+29. The apparatus of claim 28, wherein the local database stores personal data.
+30. The apparatus of claim 28, wherein the local database stores
+sales force automation data.
+31. The apparatus of claim 28, wherein the local database stores customer relations management data.
+32. The apparatus of claim 28, wherein the local database stores corporate directory data.
+33. The apparatus of claim 28, wherein the local database stores calendar data.
+34. The apparatus of claim 28, wherein the local database stores tasks data.
+35. The apparatus of claim 28, wherein the local database stores files.
+36. The apparatus of claim 28, wherein the user interface is further capable to: determine if receiving data corresponding to the data search request would result in retrieving a voluminous amount of data from the remote database; and refine the data search request if it is determined that receiving data corresponding to the data search request would result in receiving a voluminous amount of data.
+37. The apparatus of claim 28, wherein the user interface is further capable to save, to the local database, data received from the remote database.

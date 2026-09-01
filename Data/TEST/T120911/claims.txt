@@ -1,0 +1,155 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+J049166EP EP 05749520.2
+
+MAIN REQUEST
+CLAIMS
+
+1. A method for suppressing the generation of a file access event by a kernel (204)
+characterised by:
+
+checking (S104, S106, S108) an in-kernel cache (206) to determine if data relating to
+a file is within the in-kernel cache (206);
+
+using the data relating to the file within the in-kernel cache (206) to determine (S109)
+whether the file has been modified since a last time a file access event was generated for the
+file; and
+
+only the generating a file access event for a user-space component for the file where it
+is determined that the file has been modified since the last time a file access event was
+
+generated for the file.
+
+2. The method of claim 1, wherein the step of checking an in-kernel cache (206) to
+determine if data relating to the file is within the in-kernel cache (206) comprises determining
+
+(S104) whether a vnode device for the file is within the in-kernel cache (206).
+
+3. The method of claim | or claim 2, wherein the step of checking an in-kernel cache
+(206) to determine if data relating to the file is within the in-kernel cache comprises
+
+determining (S106) whether an inode for the file is within the in-kernel cache (206).
+
+4, The method of any one of claims 1 to 3, wherein the step of checking an in-kernel
+cache to determine if data relating to the file is within the in-kernel cache (206) comprises
+
+determining (S108) whether an inode version for the file is within the in-kernel cache (206).
+
+5. A method for initiating an antivirus application (208) employing the method of claim
+1, wherein the antivirus application (208) is initiated for the file when a file access event is
+
+generated (S110) for the file.
+
+6. A method for invoking an antivirus daemon (208), comprising:
+intercepting a request to access a file;
+using an in-kernel cache (206) to determine whether to generate a file access event by
+checking (S104, S106, S108) an in-kernel cache (206) to determine if data
+
+relating to the file is within the in-kernel cache (206),
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+J049166EP EP 05749520.2
+
+MAIN REQUEST
+using the data relating to the file within the in-kernel cache (206) to determine
+(S109) whether the file has been modified since a last time a file access event was generated
+for the file, and
+generating (S110) a file access event for a user-space component for the file
+where it is determined that the file has been modified since the last time a file access event
+was generated for the file; and
+
+invoking the antivirus daemon (208) when a file access event is generated.
+
+7, The method of claim 6, further comprising:
+
+intercepting a further request to access the file;
+
+checking (S104, $106, S108) an in-kernel cache (206) to determine if data relating to
+a file is within the in-kernel cache (206);
+
+using the data relating to the file within the in-kernel cache (206) to determine (S109)
+whether the file has been modified since a last time a file access event was generated for the
+file ; and
+
+suppressing the generation of a further file access event for the file where it is
+determined that the file has not been modified since the last time a file access event was
+
+generated for the file.
+
+8. The method of claim 6 or claim 7, wherein checking an in-kernel cache (206) to
+determine if data relating to the file is within the in-kernel cache (206) comprises determining
+
+(S104) whether a vnode device for the file is within the in-kerel cache.
+
+9. The method of any one of claims 6 to 8, wherein checking an in-kernel cache (206) to
+determine if data relating to the file is within the in-kernel cache (206) comprises determining
+
+(S106) whether an inode for the file is within the in-kernel cache (206).
+
+10. The method of any one of claims 6 to 9, wherein checking an in-kernel cache to
+determine if data relating to the file is within the in-kernel cache (206) comprises determining
+
+(S108) whether an inode version for the file is within the in-kernel cache (206).
+
+11. A kernel module (204) for use in a virus checking system, the kernel module
+
+comprising:
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+J049166EP EP 05749520.2
+
+MAIN REQUEST
+
+means for checking an in-kernel cache (206) to determine if data relating to a file is
+within the in-kernel cache (206);
+
+means for using data relating to the file within the in-kernel cache (206) to determine
+whether the file has been modified since a last time a file access event was generated for the
+file by the kernel module (204);
+
+means for generating a file access event for the file; and
+
+means for only generating a file access event for a user-space component for the file
+where it is determined that the file has been modified since the last time a file access event
+
+was generated for the file.
+
+12. The kernel module of claim 11, further comprising means for intercepting a request to
+
+access the file.
+
+13. A system for checking a file for a virus, comprising:
+a kernel module (204) in accordance with claim 12;
+an in-kernel cache (206); and
+
+a daemon (208) for checking the file for a virus.
+
+14. A computer readable medium comprising instructions which, when executed by a
+suitable computer, cause the computer to perform a method in accordance with any one of
+
+claims | to 10.

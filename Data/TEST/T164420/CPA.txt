@@ -1,0 +1,78 @@
+TITLE:
+Method for manipulating graphic objects
+
+TYPE:
+US patent
+
+ABSTRACT:
+The present invention provides the capability to use customized procedures to manipulate and control objects in graphic implementations. It provides externalizes much of the underlying object manipulation functionality. A customized procedure is executed at various "trigger" points including: the expiration of a specified period of time; the opening or closing of a window; or, when input from a mouse input device is received. There are several different types of mouse events: mouse button down; mouse move with button down; mouse move with no button down; and mouse button up. A graphic object associated with a customized procedure that is triggered by a mouse event is called a "button object." The customized procedure associated with a button object has four parameters: buttonobj, hitobj, win, and eventinfo. The buttonobj parameter refers to the graphic object having a button procedure that is currently being executed. The hitobj parameter refers to the graphic object that was selected triggering the mouse event. The present invention provides a tree-like organization for grouping its graphic objects. If the selected object does not have an associated button procedure, the tree-like structure is traversed upward to find an object that does have an associated button procedure. The win parameter identifies the window that the mouse event occurred in. The eventinfo parameter points to a record containing information pertaining to the mouse event that triggered the procedure execution. A customized procedure driven by a mouse event transforms a graphic object into a "button" object.
+
+CLAIMS:
+1. A method for manipulating database and graphic objects in a database system, comprising the steps of:
+providing a plurality of graphic objects, said plurality of graphic objects stored in a tree;
+displaying said plurality of graphic objects;
+generating a mouse event by pointing a mouse at one of said plurality of graphic objects and clicking a mouse button;
+traversing said tree to locate an active object having a first button procedure that is responsive to a mouse event, said traversing beginning with said one of said plurality of graphic objects;
+executing said first button procedure of said active object when said active object is found; and,
+wherein said first button procedure includes one or more PL/SQL statements.
+2. A method for manipulating database and graphic objects in a database system, comprising the steps of:
+providing a plurality of graphic objects, said plurality of graphic objects stored in a tree;
+displaying said plurality of graphic objects;
+generating a mouse event by pointing a mouse at one of said plurality of graphic objects and clicking a mouse button;
+traversing said tree to locate an active object having a first button procedure that is responsive to a mouse event, said traversing beginning with said one of said plurality of graphic objects;
+executing said first button procedure of said active object when said active object is found;
+obtaining a layer object when said mouse points at said layer object and said mouse button is clicked; and,
+executing a second button procedure of said layer object when said layer object has a second button procedure, wherein said second button procedure includes one or more PL/SQL statements and said second button procedure is interested in a mouse down event.
+3. A method for manipulating database and graphic objects in a database system, comprising the steps of:
+providing a plurality of graphic objects, said plurality of graphic objects stored in a tree;
+displaying said plurality of graphic objects;
+generating a mouse event by pointing a mouse at one of said plurality of graphic objects and clicking a mouse button;
+traversing said tree to locate an active object having a first button procedure that is responsive to a mouse event, said traversing beginning with said one of said plurality of graphic objects;
+executing said first button procedure of said active object when said active object is found; and,
+putting said active object in a button execution history.
+4. A method for manipulating database and graphic objects in a database system, comprising the steps of:
+providing plurality of graphic objects, said plurality of graphic objects stored in a tree:
+displaying said plurality of graphic objects;
+generating a mouse event by moving a mouse;
+checking said mouse event to determine if a button of said mouse is depressed; and,
+when said mouse button is depressed, extracting an active object from a button execution history and executing a first button procedure of said active object when said first button procedure is responsive to a mouse move event, wherein said first button procedure includes one or more PL/SQL statements.
+5. A method for manipulating database and graphic objects in a database system, comprising the steps of:
+providing a plurality of graphic objects, said plurality of graphic objects stored in a tree;
+displaying said plurality of graphic objects;
+generating a mouse event by moving a mouse;
+checking said mouse event to determine if a button of said mouse is depressed;
+when said mouse button is depressed, extracting an active object from a button execution history and executing a first button procedure of said active object when said first button procedure is responsive to a mouse move event;
+checking a layer object when said mouse button is not down;
+executing a second button procedure of said layer object when said layer object has a second button procedure and said second button procedure is interested in a mouse move event; and,
+wherein said second button procedure includes one or more PL/SQL statements.
+6. A method for manipulating database and graphic objects in a database system, comprising the steps of:
+generating a mouse up event by releasing a mouse button;
+checking a button execution history to determine if said button execution history contains at least one graphic object; and,
+when said button execution history contains at lease one graphic object, extracting an active button from said execution history and executing a button procedure of said active button when said button procedure is responsive to a mouse up event.
+7. The method of claim 6 wherein said first button procedure includes one or more PL/SQL statements.
+8. A method for manipulating a plurality of graphic objects, comprising the steps of:
+selecting a first graphic object in the plurality of graphic objects;
+providing a first button procedure associated with the first graphic object;
+entering the first button procedure;
+executing a computer program statement;
+executing a PL/SQL computer program statement causing a database to be accessed; and
+exiting the first button procedure.
+9. The method of claim 8, wherein the selecting step includes the step of generating a mouse event.
+10. A method for manipulating a database and graphic objects in a database system, comprising the steps of:
+providing a plurality of graphic objects, said plurality of graphic objects stored in a tree;
+displaying said plurality of graphic objects;
+generating a mouse event by pointing a mouse at one of said plurality of graphic objects and clicking a mouse button;
+traversing said tree to locate an active object having a first button procedure that is responsive to a mouse event, said traversing beginning with said one of said plurality of graphic objects; and,
+executing said first button procedure of said active object when said active object is found, wherein the executing step includes executing 1) a computer program statement and 2) a PL/SQL statement for accessing the database.
+11. A method for manipulating graphic objects on a display, comprising the steps of:
+executing a first button procedure for providing a plurality of graphic objects;
+selecting a first graphic object in the plurality of graphic objects by pointing a mouse at a first graphic object;
+attaching a second button procedure to the first button procedure responsive to the selection step;
+executing the second button procedure; and,
+wherein the steps are completed during run-time.
+12. A method for manipulating graphic objects on a display, comprising the steps of:
+executing a first button procedure for providing a plurality of graphic objects;
+selecting a first graphic object in the plurality of graphic objects by pointing a mouse at a first graphic object;
+attaching a second button procedure to the first button procedure responsive to the selection step;
+executing the second button procedure; and,
+wherein the executing a first button procedure step includes the step of providing a first graphic object which is not responsive to a mouse event and wherein the executing of the second button procedure step enables the first graphic object to be responsive to a mouse event.

@@ -1,0 +1,143 @@
+--- PAGE 1 ---
+1.
+
+CLAIMS
+
+MAIN REQUEST
+
+Method for selecting a foundation intended for a person, comprising the steps of:
+
+acquiring (100) an image of a complete view of a person’s face in a controlled
+
+lighting environment, and measuring and recording the colorimetric coordinates
+
+of part or all of the face of that person;
+
+processing said image by standardized means in order to determine (200) an
+absolute value of the skin tone of said person,
+the determination (200) of the absolute value comprising the analysis (210) of
+colorimetric parameters of lightness Li and and hue hi, by means of digital
+processing, of each of some or all of the pixels I of the face, and using the
+
+average of each of the Li and hj to determine the absolute value of the color of
+
+said face designated by Lm, hn;
+
+correlating said absolute value of the skin tone of said person with a usage color
+map established for each of a plurality of foundations of a database by
+
+measuring the color of each foundation under its conditions of use, to determine
+
+(300) a personalized color matrix (MTP);
+
+extracting (410), from said database, the foundation(s) whose color
+
+measurement is part of the personalized color matrix;
+
+using an information medium selected among a paper document and a digital
+
+interface, presenting (420) to the person the foundation(s) comprised in the
+
+personalized color matrix,
+
+wherein the usage color map is obtained for each foundation, by
+
+spreading (910) a homogeneous film of constant thickness of the foundation on
+
+a reference medium,
+
+drying (920) each resulting film at a temperature between 20°C and 45°C, and
+measuring (930) the colorimetric parameters Lf and hf of each film obtained in
+the preceding step, by means of a spectrophotometer and under standardized
+
+lighting conditions identical or almost identical to those used in the step of
+
+acquiring an image of the person.
+
+--- PAGE 2 ---
+2. Selection method according to claim 1, wherein the analysis of the colorimetric
+
+parameters further comprises obtaining the distribution diagram (Di) of the pixels of
+
+the image along the L axis between 0 and 100 and the distribution diagram (Dh) of the
+
+pixels of the image along the h axis between -15° and 105°.
+
+3. Selection method according to claim 2, wherein the lighting environment is controlled
+
+by the use of means (1) comprising:
+
+a standardized light source (10) able to provide a uniform lighting environment
+around the person who is the subject of the image acquisition, said light source
+being positioned wholly or partly facing the person;
+
+an image capture device (20), comprising a lens, placed at a distance of between
+20 cm and 50 cm, or at a distance of between 25 cm and 35 cm, from the
+person's face; and
+
+an image calibration device (30) such as a test pattern, said pattern being
+captured in an image in the same controlled lighting environment and at the
+
+same distance from the lens as that of the person's face.
+
+4. Selection method according to claim 3, wherein the lighting environment is further
+
+controlled by the use of a gaze tracking device (40) adapted to control, during image
+
+capture, the actual distance of the person’s face from the image capture device.
+
+5. Selection method according to claim 1, wherein the step of correlating (300) the
+
+absolute value of the person's skin tone with the usage color map comprises the following
+
+steps:
+
+positioning (310) the values Lm and hm; of the absolute value of the person's
+skin tone within the color space of the usage color map defined by the set of
+L¢/h¢ pairs measured for each foundation;
+
+selecting (320) the Li/h¢ pairs for which the AL absolute difference between Ln
+and each L¢ is equal to +10, and preferably +5, and the Ah absolute difference
+between hm and each hg is between 0° and 90°, and preferably between 0° and
+
+50°, and more preferably between 0° and 20°,
+
+--- PAGE 3 ---
+determining (330) the person's personalized color matrix that is within the color
+
+space in the L and h coordinates resulting from the previous selection step.
+
+6. Selection method according to claim 1, wherein the correlation step (300) further
+
+comprises:
+
+a step (340) of integrating at least one of the person's personal preference
+
+criteria, among a group consisting of:
+
+oO
+
+oO
+
+oO
+
+a desired makeup effect,
+
+more or less coverage,
+
+a dewy or matte effect,
+
+a natural or layered effect,
+
+a choice of facial area not to be taken into account in the measurement
+of facial colorimetric data,
+
+a color rendering; and/or
+
+a step (350) of taking distribution diagrams (Di) or (Dn) into account in order to
+
+eliminate areas if dispersion in the variations of L and h of the different pixels,
+
+particularly in the case where the person's face has imperfections or
+
+irregularities in the color of the face.

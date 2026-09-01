@@ -1,0 +1,107 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST
+
+1. A method of generating an object descriptor, comprising:
+
+extracting, by a computer, gabor features from an input object image by applying a
+plurality of curvature gabor filters, consisting of a combination of a plurality of filters of
+the same curvature and mutually different Gaussian magnitudes and a plurality of filters of
+mutually different curvatures and the same Gaussian magnitude, to the object image; and
+
+generating, by a computer, an object descriptor for object recognition by projecting
+the extracted features onto a base vector generated through linear discriminant analysis
+learning,
+
+wherein the filters consist of:
+
+three pluralities of filters having the Gaussian magnitude o={0.5 1, 1, 2 1} based
+on the curvature c={0.0}; and
+
+three pluralities of filters having the Gaussian magnitude o={z} based on the
+
+curvature c={0.05, 0.1, 0.2}.
+
+2. The method according to claim 1, further comprising:
+
+extracting gabor features from a training object image by applying the curvature
+gabor filters to the training object image; and
+
+selecting gabor features by performing boosting learning for object image
+classification with respect to the extracted gabor features, and establishing a gabor feature
+set including the selected gabor features,
+
+wherein the extraction of the gabor features includes extracting gabor features by
+applying curvature gabor filters having the established gabor feature set to the input object
+
+image.
+
+3. The method according to claim 2, further comprising generating a base
+vector by performing linear discriminant analysis of the established gabor feature set,
+
+wherein the generation of the object descriptor includes generating an object
+descriptor for object recognition by projecting the extracted gabor features onto the
+
+generated base vector.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+4. An apparatus of generating an object descriptor, comprising:
+
+a first feature extractor to extract gabor features from an input object image by
+applying a plurality of curvature gabor filters, consisting of a combination of a plurality of
+filters of the same curvature and mutually different Gaussian magnitudes and a plurality of
+filters of mutually different curvatures and the same Gaussian magnitude, to the object
+image; and
+
+an object descriptor generator to generate an object descriptor for object
+recognition by projecting the extracted features onto a base vector generated through linear
+discriminant analysis learning,
+
+wherein the filters consist of:
+
+three pluralities of filters having the Gaussian magnitude o={0.5 1, 1, 2 a} based
+on the curvature c={0.0}; and
+
+three pluralities of filters having the Gaussian magnitude o={z} based on the
+
+curvature c={0.05, 0.1, 0.2}.
+
+5. The apparatus according to claim 4, further comprising:
+
+a second feature extractor to extract gabor features from a training object image by
+applying the curvature gabor filters to the training object image; and
+
+a selector to select gabor features by performing boosting learning for object image
+classification with respect to the gabor features extracted from the second feature extractor
+and to establish a gabor feature set including the selected gabor features,
+
+wherein the first feature extractor extracts gabor features by applying curvature
+
+gabor filters having the established gabor feature set to the input object image.
+
+6. The apparatus according to claim 5, further comprising generating a base
+vector generator to generate a base vector by performing linear discriminant analysis of the
+established gabor feature set,
+wherein the object descriptor generator generates an object descriptor for object
+recognition by projecting the gabor features, extracted from the first feature extractor, onto
+
+the generated base vector.

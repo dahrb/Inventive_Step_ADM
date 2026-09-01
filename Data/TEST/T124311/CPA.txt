@@ -1,0 +1,56 @@
+TITLE:
+System and method for assessing the security posture of a network using goal oriented fuzzy logic decision rules
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method and data processing system assesses the security vulnerability of a network. A system object model database is created and supports the information data requirements of disparate network vulnerability analysis programs. Only the required data from the system object model database representing the network is imported to the programs, which then analyze the network to produce data results from each program. These data results are stored in a common system model database and within the data fact base. Goal oriented fuzzy logic decision rules are applied to determine the vulnerability posture of the network.
+
+CLAIMS:
+1. A method for assessing the security posture of a network comprising the steps of:
+creating a system object model database representing a network, wherein the system object model database supports the information data requirements of separate, non-integrated network vulnerability analysis programs;
+exporting only the required data from the system object model database representing the network to each respective network vulnerability analysis program;
+analyzing the network with each network vulnerability analysis program to produce data results from each program;
+storing the data results from respective network vulnerability analysis programs and the common system model database within a data fact base; and
+applying goal oriented fuzzy logic decision rules to the data fact base to determine the security posture of the network.
+2. A method according to claim 1, and further comprising the step of exporting only the required data from the system object model database via filters associated with respective network vulnerability programs.
+3. A method according to claim 1, and further comprising the step of exporting the system object model database to the network vulnerability analysis programs via an integrated application programming interface.
+4. A method according to claim 1, and further comprising the step of modeling the network as a map on a graphical user interface.
+5. A method according to claim 1, and further comprising the step of establishing a class hierarchy to define components of the network vulnerability analysis programs that share common data and programming traits.
+6. A method according to claim 1, and further comprising the step of running the network vulnerability analysis programs to obtain data results pertaining to network system details, network topologies, node level vulnerabilities and network level vulnerabilities.
+7. A method for assessing the security posture of a network comprising the steps of:
+creating a system object model database representing a network, wherein the system object model database supports the information data requirements of separate, non-integrated network vulnerability analysis programs; and
+exporting only the required data from the system object model database to respective network vulnerability analysis programs to produce data results from each program;
+storing the data results from respective network vulnerability analysis programs and the common system model database within a data fact base; and
+applying goal oriented fuzzy logic decision rules to the data fact base by the use of a plurality of fuzzy expert rules to merge results from the network vulnerability analysis programs so as to determine the security posture of the network.
+8. A method according to claim 7, and further comprising the step of applying the fuzzy logic decision rules based on evidential reasoning.
+9. A method according to claim 7, and further comprising the step of exporting only the required data via filters associated with respective network vulnerability programs.
+10. A method according to claim 7, and further comprising the step of exporting the system object model database to the network vulnerability analysis programs via an integrated application programming interface.
+11. A method according to claim 7, and further comprising the step of modeling the network as a map on a graphical user interface.
+12. A method according to claim 7, and further comprising the step of establishing a class hierarchy to define components of the disparate network vulnerability analysis programs that share common data and programming traits.
+13. A method according to claim 7, and further comprising the step of running the network vulnerability analysis programs to obtain data results pertaining to network system details, network topologies, node level vulnerabilities and network level vulnerabilities.
+14. A computer program that resides on a medium that can be read by a program, wherein the computer program comprises instructions to cause a computer to create a system object model database representing a network, wherein the system object model database supports the information data requirements of separate, non-integrated network vulnerability analysis programs;
+export only the required data from the system object model database representing the network to each respective network vulnerability analysis program;
+analyze the network with each network vulnerability analysis program to produce data results from each program;
+store the results from respective network vulnerability analysis programs and the common system model database within a data fact base; and
+apply goal oriented fuzzy logic decision rules to the data fact base to determine the security posture of the network.
+15. A computer program according to claim 14, and further comprising instructions for applying the fuzzy logic decision rules by the use of a plurality of fuzzy expert rules to merge results from the network vulnerability analysis programs.
+16. A computer program according to claim 14, and further comprising instructions for applying the fuzzy logic decision rules based on evidential reasoning.
+17. A computer program according to claim 14, and further comprising instructions for exporting only the required data via filters associated with respective network vulnerability programs.
+18. A computer program according to claim 14, and further comprising instructions for importing the system object model database to the network vulnerability analysis programs via an integrated application programming interface.
+19. A computer program according to claim 14, and further comprising instructions for modeling the network as a map on a graphical user interface.
+20. A computer program according to claim 14, and further comprising instructions for establishing a class hierarchy to define components of the network vulnerability analysis programs that share common data and programming traits.
+21. A computer program according to claim 14, and further comprising instructions for running the network vulnerability analysis programs to obtain data results pertaining to network system details, network topologies, node level vulnerabilities and network level vulnerabilities.
+22. A data processing system for assessing the security posture of a network comprising:
+a plurality of separate, non-integrated network vulnerability analysis programs used for analyzing a network;
+a system object model database that represents the network to be analyzed, wherein the system object model database supports the information data requirements of the network vulnerability analysis programs;
+an applications programming interface for importing the system object model database of the network to the network vulnerability analysis programs;
+a filter associated with the applications programming interface and each respective network vulnerability analysis program for filtering data from the system object model database and importing only the required data;
+a data fact base for storing the results obtained from respective network vulnerability analysis programs after analyzing the network and the common system model database; and
+a fuzzy logic processor for applying goal oriented fuzzy logic decision rules to the fact database by the use of a plurality of fuzzy expert rules for merging results from the network vulnerability analysis programs and determining the security posture of the network.
+23. A data processing system according to claim 22, wherein the fuzzy logic decision rules are based on evidential reasoning.
+24. A data processing system according to claim 22, wherein the applications programming interface for exporting the system object model database comprises a graphical user interface.
+25. A data processing system according to claim 22, and further comprising a graphical user interface that models the network as a map.
+26. A data processing system according to claim 22, and further comprising a graphical user interface for displaying the security posture of the network.
+27. A data processing system according to claim 22, wherein the database further comprises an object oriented class hierarchy to define components of the network vulnerability analysis programs that share common data and programming traits.

@@ -1,0 +1,161 @@
+Title: Methods for driving bistable electro-optic displays, and apparatus for use therein
+
+Abstract: A gray scale bistable electro-optic display is driven by storing a look-up table containing data representing the impulses necessary for transitions, storing data representing at least an initial state of each pixel of the display, storing data representing temporal and gray level prior states of each pixel, receiving an input signal representing a desired final state of at least one pixel of the display; and generating an output signal representing the impulse necessary for a transition, as determined from the look-up table, dependent upon the temporal and gray level prior states. Other similar methods for driving such displays are also disclosed.
+
+Type: US Patent
+
+Claims: 
+
+1. A method of driving a bistable electro-optic display having a plurality of pixels, each of which is capable of displaying at least three gray levels, the method comprising:
+storing a look-up table containing data representing the impulses necessary to convert an initial gray level to a final gray level;
+storing data representing at least an initial state of each pixel of the display;
+storing data representing at least one temporal prior state of each pixel of the display at a predetermined time prior to the initial state;
+storing data representing at least one gray level prior state of each pixel prior to a change in gray scale level to produce the initial state;
+receiving an input signal representing a desired final state of at least one pixel of the display; and
+generating an output signal representing the impulse necessary to convert the initial state of said one pixel to the desired final state thereof, as determined from the look-up table, the output signal being generated dependent upon said at least one temporal prior state, said at least one gray level prior state and said initial state of said one pixel.
+2. A method according to claim 1 comprising storing data representing at least two gray level prior states of each pixel, and generating the output signal dependent upon said at least one temporal prior state, said at least two gray level prior states and said initial state of said one pixel.
+3. A method according to claim 1 comprising storing data representing at least two temporal prior states of each pixel, and generating the output signal dependent upon said at least two temporal prior states, said at least one gray level prior state and said initial state of said one pixel.
+4. A method according to claim 1 further comprising receiving a temperature signal representing the temperature of at least one pixel of the display and generating said output signal dependent upon said temperature signal.
+5. A method according to claim 1 further comprising generating a lifetime signal representing the operating time of said pixel and generating said output signal dependent upon said lifetime signal.
+6. A method according to claim 1 wherein at least one entry in the look-up table comprises a pointer to an entry in a second table specifying one of a plurality of types of waveform to be used for the relevant transition, and at least one parameter specifying how the waveform is to be varied for the relevant transition.
+7. A device controller comprising:
+storage means arranged to store a look-up table containing data representing the impulses necessary to convert an initial gray level to a final gray level, data representing at least an initial state of each pixel of the display, data representing at least one temporal prior state of each pixel of the display at a predetermined time prior to the initial state, and data representing at least one gray level prior state of each pixel prior to a change in gray scale level to produce the initial state;
+input means for receiving an input signal representing a desired final state of at least one pixel of the display;
+calculation means for determining, from the input signal, the stored data representing the initial state, the at least one temporal prior state and the at least one gray level prior state of said pixel, and the look-up table, the impulse required to change the initial state of said one pixel to the desired final state; and
+output means for generating an output signal representative of said impulse.
+8. A controller according to claim 7 wherein the storage means is arranged to store data representing at least two gray level prior states of each pixel, and the calculation means is arranged to determine the impulse dependent upon the at least one temporal prior state, the at least two gray level prior states and the initial state of the one pixel.
+9. A controller according to claim 7 wherein the storage means is arranged to store data representing at least two temporal prior states of each pixel, and the calculation means is arranged to determine the impulse dependent upon the at least two temporal prior state, the at least one gray level prior state and the initial state of the one pixel.
+10. A controller according to claim 7 wherein the input means is arranged to receive a temperature signal representing the temperature of at least one pixel of the display, and the calculation means is arranged to determine the impulse dependent upon the temperature signal.
+11. A controller according to claim 7 wherein the input means is arranged to receive a lifetime signal representing the operating time temperature of the pixel, and the calculation means is arranged to determine the impulse dependent upon the lifetime signal.
+12. A method of driving a bistable electro-optic display having a plurality of pixels, each of which is capable of displaying at least three gray levels, the method comprising:
+storing a look-up table containing data representing the impulses necessary to convert an initial gray level to a final gray level;
+storing data representing at least an initial state of each pixel of the display;
+storing compensation voltage data representing a compensation voltage for each pixel of the display, the compensation voltage for any pixel being calculated dependent upon at least one impulse previously applied to that pixel;
+receiving an input signal representing a desired final state of at least one pixel of the display; and
+generating an output signal representing a pixel voltage to be applied to said one pixel, said pixel voltage being the sum of a drive voltage determined from the initial and final states of the pixel and the look-up table, and a compensation voltage determined from the compensation voltage data for the pixel.
+13. A method according to claim 1 wherein the compensation voltage for each pixel is calculated dependent upon at least one of a temporal prior state of the pixel and a gray level prior state of the pixel.
+14. A method according to claim 12 wherein the compensation voltage for each pixel is applied to that pixel both during a period when a drive voltage is being applied to the pixel and during a hold period when no drive voltage is being applied to the pixel.
+15. A method according to claim 12 wherein the compensation voltage for each pixel is updated during each superframe required for a complete addressing of the display.
+16. A method according to claim 15 wherein the compensation voltage for each pixel is updated by (1) modifying the previous value of the compensation voltage using a fixed algorithm independent of the pulse applied during the relevant superframe; and (2) increasing the value from step (1) by an amount determined by the pulse applied during the relevant superframe.
+17. A method according to claim 16 wherein the compensation voltage for each pixel is updated by (1) dividing the previous value of the compensation voltage by a fixed constant; and (2) increasing the value from step (1) by an amount substantially proportional to the total area under the voltage/time curve applied to the electro-optic medium during the relevant superframe.
+18. A method according to claim 12 wherein the compensation voltage is applied in the form of an exponentially decaying voltage applied at the end of at least one drive pulse.
+19. A device controller comprising:
+storage means arranged to store both a look-up table containing data representing the impulses necessary to convert an initial gray level to a final gray level, data representing at least an initial state of each pixel of the display; and compensation voltage data for each pixel of the display;
+input means for receiving an input signal representing a desired final state of at least one pixel of the display;
+calculation means for determining, from the input signal, the stored data representing the initial state of said pixel, and the look-up table, a drive voltage required to change the initial state of said one pixel to the desired final state, the calculation means also determining, from the compensation voltage data for said pixel, a compensation voltage for said pixel, and summing the drive voltage and the compensation voltage to determine a pixel voltage; and
+output means for generating an output signal representative of said pixel voltage.
+20. A device controller according to claim 19 wherein the calculation means is arranged to determine the compensation voltage dependent upon at least one of a temporal prior state of the pixel and a gray level prior state of the pixel.
+21. A device controller according to claim 19 wherein the output means is arranged to apply the compensation voltage to the pixel both during a period when a drive voltage is being applied to the pixel and during a hold period when no drive voltage is being applied to the pixel.
+22. A device controller according to claim 19 wherein the calculation means is arranged to update the compensation voltage for each pixel during each superframe required for a complete addressing of the display.
+23. A device controller according to claim 22 wherein the calculation means is arranged to update the compensation voltage for each pixel by (1) modifying the previous value of the compensation voltage using a fixed algorithm independent of the pulse applied during the relevant superframe; and (2) increasing the value from step (1) by an amount determined by the pulse applied during the relevant superframe.
+24. A device controller according to claim 23 wherein the calculation means is arranged to update the compensation voltage for each pixel by (1) dividing the previous value of the compensation voltage by a fixed constant; and (2) increasing the value from step (1) by an amount substantially proportional to the total area under the voltage/time curve applied to the electro-optic medium during the relevant superframe.
+25. A device controller according to claim 19 wherein the output means is arranged to apply the compensation voltage in the form of an exponentially decaying voltage applied at the end of at least one drive pulse.
+26. A method for updating a bistable electro-optic display having a plurality of pixels arranged in a plurality of rows and columns such that each pixel is uniquely defined by the intersection of a specified row and a specified column, and drive means for applying electric fields independently to each of the pixels to vary the display state of the pixel, each pixel having at least three different display states, the method comprising:
+storing region data representing a defined region comprising a part but less than all of said display;
+determining for each pixel whether the pixel is within or outside the defined region;
+applying a first drive scheme to pixels within the defined region and a second drive scheme, different from the first drive scheme, to pixels outside the defined region.
+27. A method according to claim 26 wherein the first and second drive scheme differ in bit depth.
+28. A method according to claim 27 wherein one of the first and second drive schemes is monochrome and the other is gray scale having at least four different gray levels.
+29. A method according to claim 26 wherein the defined region comprises a text box used for entry of text on to the display.
+30. A method of driving a bistable electro-optic display having a plurality of pixels, each of which is capable of displaying at least three gray levels, the method comprising:
+storing a look-up table containing data representing the impulses necessary to convert an initial gray level to a final gray level;
+storing data representing at least an initial state of each pixel of the display;
+receiving an input signal representing a desired final state of at least one pixel of the display; and
+generating an output signal representing the impulse necessary to convert the initial state of said one pixel to the desired final state thereof, as determined from the look-up table,
+wherein for at least one transition from an initial state to a final state, the output signal comprises a DC imbalanced fine tuning sequence which:
+(a) has a non-zero net impulse;
+(b) is non-contiguous;
+(c) results in a change in gray level of the pixel that is substantially different from the change in optical state of its DC reference pulse, where the DC reference pulse is a pulse of voltage V0, where V0 is the maximum voltage applied during the fine tuning sequence but with the same sign as the net impulse G of the fine tuning sequence, and the duration of the reference pulse is G/V0; and
+(d) results in a change in gray level of the pixel smaller in magnitude than the change in gray level caused by its time-reference pulse, where the time-reference pulse is defined as a monopolar voltage pulse of the same duration as the fine tuning sequence, but where the sign of the reference pulse is that which gives the larger change in gray level.
+31. A method according to claim 30 wherein the fine tuning sequence results in a change in gray level of the pixel less than one half of the change in gray level caused by its time-reference pulse.
+32. A method according to claim 30 wherein for said at least one transition, the output signal comprises at least one monopolar drive pulse in addition to the fine tuning sequence.
+33. A method according to claim 30 wherein, for said at least one transition, the output signal is non-periodic.
+34. A method according to claim 30 wherein, for a majority of transitions in the lookup table, the output signal has a non-zero net impulse and is non-contiguous.
+35. A method according to claim 30 wherein, for said at least one transition, the output signal consists only of pulses having voltage levels of +V, 0 and −V.
+36. A method according to claim 34 wherein, for said at least one transition, the output signal consists only of pulses having voltage levels of 0 and one of +V and −V.
+37. A method according to claim 36 wherein, for said at least one transition, the output signal consists of a pulse having a voltage level of 0 preceded and followed by at least two pulses having voltage levels of the same one of +V and −V.
+38. A method according to claim 37 wherein, for a majority of transitions in the lookup table for which the initial and final states of the pixel are different, the output signal consists of a pulse having a voltage level of 0 preceded and followed by at least two pulses having voltage levels of the same one of +V and −V.
+39. A method according to claim 30 wherein the transition table is DC balanced.
+40. A method according to claim 30 wherein, for said at least one transition, the output signal consists of a series of pulses which are integer multiples of a single interval.
+41. A method according to claim 30 further comprising storing data representing at least one temporal prior state of said one pixel and/or at least one gray level prior state of said one pixel, and wherein the output signal is generated dependent upon said at least one temporal prior state and/or at least one gray level prior state of said one pixel.
+42. A method of driving a bistable electro-optic display having a plurality of pixels, each of which is capable of displaying at least three gray levels, the method comprising applying to each pixel of the display an output signal effective to change the pixel from an initial state to a final state, wherein, for at least one transition for which the initial and final states of the pixel are different, the output signal consists of a pulse having a voltage level of 0 preceded and followed at by least two pulses having voltage levels of the same one of +V and −V.
+43. A method of driving a bistable electro-optic display having a plurality of pixels, each of which is capable of displaying at least three gray levels, the method comprising:
+storing a look-up table containing data representing the impulses necessary to convert an initial gray level to a final gray level;
+storing data representing at least an initial state of each pixel of the display;
+receiving an input signal representing a desired final state of at least one pixel of the display; and
+generating an output signal representing the impulse necessary to convert the initial state of said one pixel to the desired final state thereof, as determined from the look-up table,
+wherein for at least one transition from an initial state to a final state, the output signal comprises a DC balanced fine tuning sequence which:
+(a) has substantially zero net impulse; and
+(b) at no point in the fine tuning sequence, causes the gray level of the pixel to vary from its gray level at the beginning of the fine tuning sequence by more than about one third of the difference in gray level between the two extreme optical states of the pixel.
+44. A method according to claim 43 wherein for said at least one transition, the output signal comprises at least one monopolar drive pulse in addition to the fine tuning sequence.
+45. A method of driving a bistable electro-optic display having a plurality of pixels, each of which is capable of displaying at least three gray levels, the method comprising applying to each pixel of the display an output signal effective to change the pixel from an initial state to a final state, wherein, for at least one transition, the output signal is non-zero but DC balanced.
+46. A method according to claim 45 wherein, for said at least one transition, the output signal comprises a first pair of pulses comprising a voltage pulse preceded by a pulse of equal length but opposite sign.
+47. A method according to claim 46 wherein the output signal further comprises a period of zero voltage between the two pulses.
+48. A method according to claim 46 wherein at least one of the pulses is interrupted by a period of zero voltage.
+49. A method according to claim 46 wherein, for said at least one transition, the output signal further comprises a second pair of pulses of equal length but opposite sign.
+50. A method according to claim 49 wherein the second pair of pulses having a length different from that of the first pair of pulses.
+51. A method according to claim 49 wherein the first of the second pair of pulses has a polarity opposite to that of the first of the first pair of pulses.
+52. A method according to claim 49 wherein the first pair of pulses occur between the first and the second of the second pair of pulses.
+53. A method according to claim 45 wherein, for said at least one transition, the output signal comprises at least one pulse element effective to drive the pixel substantially into one optical rail.
+54. A method according to claim 45 wherein, for each transition for which the initial and final states of the pixel are the same, the output signal is non-zero but DC balanced, and for each transition in which the initial and final states of the pixel are not the same, the output signal is not DC balanced.
+55. A method according to claim 54 wherein, for each transition in which the initial and final states of the pixel are not the same, the output signal has the form −x/ΔIP/x, where ΔIP is the difference in impulse potential between the initial and final states of the pixel and −x and x are a pair of pulses of equal length but opposite sign.
+56. A method according to claim 45 further comprising:
+storing a look-up table containing data representing the impulses necessary to convert the initial gray level of a pixel to a final gray level;
+storing data representing at least an initial state of each pixel of the display;
+receiving an input signal representing a desired final state of at least one pixel of the display; and
+generating an output signal representing the impulse necessary to convert the initial state of said one pixel to the desired final state thereof, as determined from the look-up table.
+57. A method of driving a bistable electro-optic display having at least one pixel which comprises applying to the pixel a waveform V(t) such that:
+J
+=
+∫
+0
+T
+⁢
+V
+⁡
+(
+t
+)
+⁢
+M
+⁡
+(
+T
+-
+t
+)
+⁢
+ⅆ
+t
+(where T is the length of the waveform, the integral is over the duration of the waveform, V(t) is the waveform voltage as a function of time t, and M(t) is a memory function that characterizes the reduction in efficacy of the remnant voltage to induce dwell-time-dependence arising from a short pulse at time zero) is less than about 1 volt sec.
+58. A method according to claim 57 wherein J is less than about 0.5 volt sec.
+59. A method according to claim 57 wherein J is less than about 0.1 volt sec.
+60. A method according to claim 57 wherein J is calculated by:
+J
+=
+∫
+0
+T
+⁢
+V
+⁡
+(
+t
+)
+⁢
+ 
+⁢
+exp
+⁡
+(
+-
+T
+-
+t
+τ
+)
+⁢
+ⅆ
+t
+where τ is a decay (relaxation) time.
+61. A process according to claim 60 wherein τ has a value of from about 0.7 to about 1.3 seconds.

@@ -1,0 +1,271 @@
+--- PAGE 1 ---
+EP Application No.: 05 759 549.8
+
+Applicant: Expedia, Inc.
+Our Ref.: EP46839RK148cre
+Date: January 31, 2011
+
+CLAIMS — MAIN REQUEST
+
+A method for presenting rates for travel services, the method comprising:
+
+receiving at a travel server (106) a consumer's selection of a travel service relayed from a
+client device (102),
+
+upon the travel server (106) receiving the consumer's selection of a travel service,
+determining a proposed date of travel from the received consumer selection, and
+obtaining a dynamic range of available rates for a travel service from a least expensive
+rate to a most expensive rate from rate plan data, including calling (630) a cache of an
+inventory database (108) to obtain rate plan data associated with the travel service and
+
+retrieving (640) the rate plan data from the cache,
+
+subdividing the dynamic range of available rates into a limited number of pricing bands,
+wherein each pricing band represents a portion of the dynamic range of available rates,
+
+determining an approximate rate for the travel service based on the pricing band
+corresponding to the portion of the dynamic range of available rates within which an
+exact rate for the travel service falls, and
+
+presenting to the client device (102) the approximate rate for the travel service in an
+interactive interface using a characteristic keyed to the corresponding pricing band, the
+characteristic including at least one of a graphical and audio characteristic that conveys a
+relative expense of the approximate rate for the travel service compared to other
+approximate rates for the travel service presented in the same interface,
+
+wherein obtaining the dynamic range of available rates for the travel service from the
+least expensive rate to the most expensive rate from the rate plan data includes obtaining
+rates available during or close to the proposed date of travel, and presenting the
+approximate rate for the travel service is presenting the approximate rate for the travel
+service for a particular date during or close to the proposed date of travel.
+
+--- PAGE 2 ---
+The method of Claim 1, wherein determining the proposed date of travel from the
+received consumer selection comprises determining whether the consumer's selection is
+dated or undated and, if undated the proposed date of travel defaults to the current date.
+
+The method of Claim 1, wherein determining the proposed date of travel from the
+received consumer selection comprises determining whether the consumer's selection is
+dated or undated and, if dated, the proposed date of travel is the consumer's selected
+date.
+
+The method of Claim 1, wherein the interactive interface is an interactive calendar in
+which the characteristic keyed to the corresponding pricing band is displayed in a
+particular cell of the interactive calendar that represents the particular date during or
+close to the proposed date of travel.
+
+The method of Claim 4, wherein the cells of the interactive calendar represent a month in
+which the particular date during or close to the proposed date of travel occurs and a
+month proximate to the month in which the particular date during or close to the
+
+proposed date of travel occurs.
+
+The method of Claim 5, wherein obtaining rates available during or close to a proposed
+date of travel includes obtaining rates available during a period of time, the period of time
+including a month during or close to which the proposed date of travel occurs plus an
+additional number of months proximate to the month during or close to which the
+
+proposed date of travel occurs.
+
+The method of Claim 6, wherein the period of time is based on a type of the travel service
+for which rates are obtained to reflect reasonable variations in the rates occurring over
+
+the period of time.
+
+The method of Claim 6; wherein the period of time is at least a portion of one of an hour,
+
+a day, a week, a month, and a year.
+
+The method of Claim 6, wherein the cells of the interactive calendar represent a month
+beyond the period of time for which rates for the travel service can be obtained and the
+cells are displayed with a different graphical characteristic conveying that rates were not
+obtainable.
+
+--- PAGE 3 ---
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+
+17.
+
+The method of Claim 1, wherein the travel service is one of a lodging service and a
+
+transportation service.
+
+The method of Claim 10, wherein the travel service is the lodging service and the input
+indicating the proposed date of travel includes an input indicating at least one of a
+
+proposed check-in date and a proposed check-out date.
+
+The method of Claim 1, wherein obtaining the dynamic range of available rates for the
+travel service from the least expensive rate to the most expensive rate includes obtaining
+available rates for travel providers located at or near a proposed destination of travel on a
+proposed date of travel, and presenting the approximate rate for the travel service
+includes presenting the approximate rate for a particular travel provider located at or near
+the proposed destination on the proposed date.
+
+The method of Claim 12, wherein the interactive interface is an interactive map in which
+the characteristic keyed to the corresponding pricing band is displayed in an icon
+superimposed in a location on the interactive map, wherein the icon represents the
+particular travel provider located at or near the proposed destination.
+
+The method of Claim 12, wherein obtaining the dynamic range of available rates for the
+travel service from the least expensive rate to the most expensive rate includes obtaining
+available rates for travel providers located at or near the proposed destination during a
+period of time, the period of time including a month during or close to which the proposed
+date of travel occurs plus an additional number of months proximate to the month during
+or close to which the proposed date of travel occurs.
+
+The method of Claim 14, wherein obtaining the dynamic range of rates for travel
+providers located at or near the proposed destination includes obtaining average lowest
+daily rates from the least expensive average lowest daily rate to the most expensive
+average lowest daily rate available during the period of time.
+
+The method of Claim 14, wherein obtaining the dynamic range of rates for the travel
+providers located at or near the proposed destination includes obtaining median daily
+rates from the least expensive median rate to the most expensive median rate available
+during the period of time.
+
+The method of Claim 14, wherein obtaining the dynamic range of rates for the travel
+providers located at or near the proposed destination includes obtaining rates based on a
+
+--- PAGE 4 ---
+18.
+
+19.
+
+20.
+
+21.
+
+22
+
+23.
+
+24.
+
+25.
+
+length of stay from the least expensive rate for the length of stay to the most expensive
+rate for the length of stay available during the period of time.
+
+The method of Claim 14, wherein the period of time is based on a type of the travel
+provider for which rates are obtained to reflect reasonable variations in the rates
+
+occurring over the period of time.
+The method of Claim 14, wherein the period of time is at least six months.
+
+The method of Claim 1, wherein the graphical characteristic that conveys a relative
+expense of the approximate rate for the travel service compared to other approximate
+rates for the travel service presented in the same interface is one of a color, an intensity,
+
+a shade, and a pattern.
+
+The method of Claim 1, wherein the audio characteristic that conveys a relative expense
+of the approximate rate for the travel service compared to other approximate rates for the
+travel service presented in the same interface is a distinctive sound emitted when
+
+interacting with a display of the characteristic on the interactive interface.
+
+The method of Claim 1, wherein the characteristic that conveys a relative expense of the
+approximate rate for the travel service compared to other approximate rates for the travel
+service presented in the same interface is animated when interacting with a display of the
+
+characteristic on the interactive interface.
+
+The method of Claim 1, wherein the pricing band that represents the portion of the
+dynamic range of available rates that includes the least expensive rate is defined by a
+single value equal to the least expensive rate that was obtained in the dynamic range of
+available rates.
+
+The method of Claim 1, wherein the pricing bands that represent each portion of the
+dynamic range of available rates that do not include the least expensive rate are defined
+by a from value representing the lowest rate in the portion, and a to value representing
+the highest rate in the portion.
+
+The method of Claim 24, wherein the from value is computed using a first algorithm, L +
+((x-1)*(R/N-1)) + 1, and the to value is computed using a second algorithm, L + (x*(R/N-
+1)) wherein L represents the least expensive rate that was obtained in the dynamic range
+of available rates, R represents the range of rates that were obtained as determined by
+
+--- PAGE 5 ---
+26.
+
+27.
+
+28.
+
+29.
+
+subtracting the least expensive from the most expensive rate, N represents the limited
+number of pricing bands, and x represents an integer value incremented from 1 to N-1 for
+computing each successive one of the limited number of pricing bands.
+
+The method of Claim 1, wherein each pricing band represents a substantially equal
+
+portion of the dynamic range of available rates.
+The method of Claim 1, wherein the limited number of pricing bands is five.
+
+A system for presenting rates for travel services, the system comprising a travel server
+(106):
+
+wherein the travel server (106) is adapted for receiving a consumer's selection of a travel
+service, determining a proposed date of travel from the received consumer selection, and
+obtaining a dynamic range of available rates for the travel service from a least expensive
+rate to a most expensive rate from rate plan data associated with the travel service, the
+
+travel server (106) including:
+
+a rate generator (460) for generating an approximate rate for the travel service based on
+a pricing band correlated to the portion of the dynamic range of available rates within
+
+which an exact rate for the travel service falls; the system further comprising
+
+an interactive rate interface (365), communicatively coupled to the rate generator (460),
+in which to present the approximate rate for the travel service using a characteristic
+keyed to the associated pricing band, the characteristic including at least one of a
+graphical and audio characteristic that conveys a relative expense of the approximate
+rate for the travel service compared to other approximate rates for the travel service
+presented in the same interface,
+
+wherein obtaining the dynamic range of available rates for the travel service from the
+least expensive rate to the most expensive rate from the rate plan data includes
+obtaining rates available during or close to the proposed date of travel, and presenting
+the approximate rate for the travel service is presenting the approximate rate for the
+travel service for a particular date during or close to the proposed date of travel.
+
+The system of Claim 28, wherein determining the proposed date of travel from the
+received consumer selection comprises determining whether the consumer's selection is
+dated or undated and, if undated the proposed date of travel defaults to the current date.
+
+--- PAGE 6 ---
+30.
+
+31.
+
+32.
+
+The system of Claim 28, wherein determining the proposed date of travel from the
+received consumer selection comprises determining whether the consumer’s selection is
+dated or undated and, if dated, the proposed date of travel is the consumer’s selected
+date.
+
+The system of Claim 28, wherein the dynamic range of available rates for the travel
+service spans a least expensive rate to a most expensive rate, and further wherein the
+dynamic range is subdivided into a limited number of portions based on the least
+expensive rate and the most expensive rate, including the portion within which the exact
+rate for the travel service falls.
+
+A computer-accessible medium having encoded thereon instructions to present rates for
+travel services, wherein the instructions, when executed by a computing apparatus,
+cause the computing apparatus to: perform the method of one of Claims 1 to 27.

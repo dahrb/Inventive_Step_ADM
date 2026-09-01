@@ -1,0 +1,206 @@
+--- PAGE 1 ---
+Bi G2 NM fe
+
+Oo OO -~+ GH WM
+
+10
+Il
+12
+13
+14
+La
+16
+L7
+18
+
+mW oN iF
+
+WM NM fe
+
+11I353HTCPT HTCO99191-0-EP 13.09.2011
+
+What is claimed is:
+
+1. An electronic device (100) with improved flash memory compatibility,
+
+comprising:
+a NAND flash (102), including a plurality of physical blocks, wherein each of
+the physical blocks (B1,B2 ...Bn) is further divided into a plurality of
+physical pages;
+a processing unit (104); and
+a program memory (106), storing application software (110) and codes of an
+operating system (112), wherein:
+the application software executed by the processing unit requests for
+NAND flash access in accordance with a specific page size;
+and
+
+the operating system run by the processing unit acts as an intermediary
+between the application software and the NAND flash and
+provides a device driver (208) which allocates a number of the
+physical pages of the NAND flash to each virtual page of the
+specific page size for responding to NAND flash access
+requests from the application software by referring to these
+
+virtual pages.
+
+2. The electronic device as claimed in claim 1, wherein the device driver
+provided by the operating system and run by the processing unit further stores virtual
+page information of cach virtual page into info bytes of the physical pages
+
+corresponding thereto.
+
+3. The electronic device as claimed in claim 1 or 2, wherein the device driver
+provided by the operating system and run by the processing unit further transforms
+one virtual page read/write instruction requested by the application software into
+
+separate physical page read/write instructions to separately read/write the physical
+
+--- PAGE 2 ---
+GW BN
+
+na
+
+GW NM fe
+
+Wo No
+
+fa
+
+1L353HTCPT HTCOS9191-O-EP 13.09.2011
+
+pages allocated to form the virtual page that the virtual page read/write instruction
+
+wants to access.
+
+4. The electronic device as claimed in one or more of the claims | to 3,
+wherein the device driver provided by the operating system and run by the processing
+unit further allocates a number of physical blocks of the NAND flash as one virtual
+
+block accessible to the application software.
+
+5. The electronic device as claimed in claim 4, wherein the device driver
+provided. by the operating system and run by the processing unit further stores virtual
+block statuses of each virtual block into status bytes of the physical blocks
+
+corresponding thereto.
+
+6. The electronic device as claimed in claim 4 or 5, wherein the device driver
+provided by the operating system and run by the processing unit further transforms
+one virtual block read/write instruction into separate physical block read/write
+instructions to separately read/write the physical blocks that are allocated to form the
+
+virtual block that the virtual block read/write instruction wants to access.
+
+7. The electronic device as claimed in one or more of the claims 4 to 6,
+wherein the device driver provided by the operating system and run by the processing
+unit further transforms one virtual block erase instruction into separate physical block
+erase instructions to separately erase the physical blocks that are allocated to form the
+
+virtual block that the virtual block erase instruction wants to erase.
+
+8. The electronic device as claimed in one or more of the claims 4 to 7,
+wherein the device driver provided by the operating system and run by the processing
+unit further transforms one virtual block GET STATUS instruction into separate
+physical block GET STATUS instructions to separately obtain statuses of the physical
+blocks that are allocated to form the virtual block to which the virtual block GET
+
+STATUS instruction refers ta.
+
+10
+
+--- PAGE 3 ---
+Ww bo
+
+10
+11
+12
+13
+
+Gad
+
+ND
+
+11353HTCPT HTCO99191-0~-EP 13.09.2011
+
+9. The electronic device as claimed in one or more of the claims 4 to 8,
+wherein the device driver provided by the operating system and rum by the processing
+umt further transforms one virtual block SET STATUS instruction into one physical
+block SET STATUS instruction, to record statuses of one virtual block into status
+
+bytes of any of the physical blocks that are allocated to form the virtual block.
+
+10. A method of improving flash memory compatibility of an electronic
+device, comprising:
+
+obtaining a physical page size of a NAND flash equipped on the electronic
+device, wherein the NAND flash includes a plurality of physical
+blocks and each of the physical blocks is further divided into a
+plurality of physical pages;
+
+determining a size ratio, 1: N, between the physical page size and a specific
+page size, where N represents a number, and the specific page size
+defines NAND flash access requests of application software of the
+electronic device;
+
+allocating N physical pages of the NAND flash to each virtual page; and
+
+responding to the NAND flash access requests from the application software
+
+by referring to the virtual pages.
+
+11. The method as claimed in claim 10, further storing virtual page
+information of each virtual page into info bytes of the physical pages corresponding
+
+thereto.
+
+12. The method as claimed in claim 10 or 11, further transforming one virtual
+page read/write instruction requested by the application software into separate
+physical page read/write instructions to separately read/write the physical pages
+allocated to form the virtual page to which the virtual page read/write instruction
+
+refers to.
+
+il
+
+--- PAGE 4 ---
+Bm WwW Nh
+
+iw BD bE
+
+Li3S53HTCPET HTCO99191~0-EP 13.09.2011
+
+13. The method as claimed in one or more of the claims 10 to 12, further
+allocating N physical blocks of the NAND flash as one virtual block accessible to the
+
+application software.
+
+14. The method as claimed in claim 13, further storing virtual block statuses of
+
+each virtual block into status bytes of the physical blocks corresponding thereto.
+
+15. The method as claimed in one or more of the claims 13 to 14, further
+transforming one virtual block read/write instruction into separate physical block
+read/write instructions to separately read/write the physical blocks that are allocated to
+
+form the virtual block to which the virtual block read/write instruction refers.
+
+16. The method as claimed in one or more of the claims 13 to 15, further
+transforming one virtual block erase instruction into separate physical block erase
+instructions to separately erase the physical blocks that are allocated to form the
+
+virtual block to which the virtual block erase instruction refers to.
+
+17, The method as claimed in one or more of the claims 13 to 16, further
+transforming one virtual block GET STATUS instruction into separate physical block
+GET STATUS instructions to separately obtain statuses of the physical blocks that are
+allocated to form the virtual block to which the virtual block GET STATUS
+
+instruction refers.
+
+18. The method as claimed in one or more of the claims 13 to 17, further
+transforming one virtual block SET STATUS instruction into one physical block SET
+STATUS instruction, to record statuses of one virtual block into status bytes of any of
+
+the physical blocks that are allocated to form the virtual block.
+
+12

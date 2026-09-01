@@ -1,0 +1,43 @@
+TITLE:
+Programming and Bolus Monitoring Device for an Implantable Drug Pump
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A programming device for an implantable drug pump includes a display device, a communication device, and a controller. The communication device is adapted to facilitate a communication link between the programming device and an implantable drug pump. The controller adapted to receive bolus data stored on the implantable drug pump when the communications link has been established, to process the bolus data, and to control the display device to generate a visual representation of numbers of bolus attempts for multiple periodic time intervals.
+
+CLAIMS:
+1. A programming device for an implantable drug pump, the programming device comprising:
+a display device;
+a communication device adapted to facilitate a communication link between the programming device and an implantable drug pump; and
+a controller adapted to receive bolus data stored on the implantable drug pump when the communications link has been established, to process the bolus data, and to control the display device to generate a visual representation of numbers of bolus attempts for multiple periodic time intervals.
+2. The programming device for an implantable drug pump of claim 1, wherein the numbers of bolus attempts are average numbers of bolus attempts made within the multiple periodic time intervals.
+3. The programming device for an implantable drug pump of claim 1, wherein the visual representation includes a bar chart.
+4. The programming device for an implantable drug pump of claim 1, wherein the visual representation includes visually distinct representations for successful and unsuccessful bolus attempts.
+5. The programming device for an implantable drug pump of claim 1, wherein the time intervals are contiguous.
+6. The programming device for an implantable drug pump of claim 1, wherein the time intervals span the length of a day.
+7. The programming device for an implantable drug pump of claim 1, wherein the time intervals partition a length of time into adjacent bins.
+8. The programming device for an implantable drug pump of claim 1, wherein the bolus data is received for bolus attempts made between a beginning time and an end time.
+9. The programming device for an implantable drug pump of claim 8, wherein one or more of the beginning time and the end time is selected by a user of the programming device.
+10. The programming device for an implantable drug pump of claim 8, wherein the beginning time is the time of the patient's last refill of the implantable drug pump.
+11. The programming device for an implantable drug pump of claim 8, wherein the end time is the time when the bolus data is received by the controller.
+12. The programming device for an implantable drug pump of claim 1, wherein the multiple periodic time intervals form a sequence of time intervals, and the controller is adapted to temporally sort the bolus data and associate the bolus data with time intervals within the sequence depending upon when the bolus attempts were made.
+13. The programming device for an implantable drug pump of claim 12, wherein the controller is adapted to calculate bolus attempts made within each of the time intervals, and wherein the visual representation shows the number of bolus attempts made within each of the time intervals.
+14. The programming device for an implantable drug pump of claim 13, wherein the visual representation includes visually distinct representations for successful and unsuccessful bolus attempts.
+15. The programming device for an implantable drug pump of claim 1, wherein the controller is adapted to generate an alert if a ratio of unsuccessful bolus attempts to successful bolus attempts made within one of the time intervals exceeds a threshold value.
+16. The programming device for an implantable drug pump of claim 15, wherein the controller is adapted to facilitate adjustment of the threshold value by a user of the programming device.
+17. The programming device for an implantable drug pump of claim 1, wherein the controller is adapted to generate a prompt inquiring whether a medication rate should be adjusted if a ratio of unsuccessful bolus attempts to successful bolus attempts made within one of the time intervals exceeds a threshold value.
+18. The programming device for an implantable drug pump of claim 17, wherein the controller is adapted to facilitate adjustment of the threshold value by a user of the programming device.
+19. A programming device for an implantable drug pump, the programming device comprising:
+a display device;
+a communication device adapted to facilitate a communication link between the programming device and an implantable drug pump; and
+a controller adapted to receive bolus data stored on the implantable drug pump when the communications link has been established, to process the bolus data, and to control the display device to generate a visual representation of a daily drug delivery profile and an average patient-controlled analgesia (PCA) dose profile determined from the bolus data.
+20. The programming device for an implantable drug pump of claim 19, wherein the daily drug delivery profile is an average daily drug delivery profile for multiple days.
+21. The programming device for an implantable drug pump of claim 19, wherein the display device is controlled to also generate a visual representation of denied boluses.
+22. The programming device for an implantable drug pump of claim 19, wherein the controller is adapted to generate the daily drug delivery profile and the average PCA dose profile over a time interval of use of the implantable drug pump.
+23. The programming device for an implantable drug pump of claim 19, wherein the controller is adapted to generate the visual representation such that the average PCA dose profile overlays the daily drug delivery profile.
+24. The programming device for an implantable drug pump of claim 19, wherein the bolus data is received for bolus attempts made between a beginning time and an end time.
+25. The programming device for an implantable drug pump of claim 24, wherein one or more of the beginning time and the end time is selected by a user of the programming device.
+26. The programming device for an implantable drug pump of claim 24, wherein the beginning time is the time of the patient's last refill of the implantable drug pump.
+27. The programming device for an implantable drug pump of claim 24, wherein the end time is the time when the bolus data is received by the controller.

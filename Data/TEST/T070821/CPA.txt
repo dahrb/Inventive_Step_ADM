@@ -1,0 +1,69 @@
+TITLE:
+Capture and systematic use of expert color analysis
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Embodiments of the present invention recite a method of compiling color analysis parameters. In one embodiment of the present invention, a corrected color description of at least one test subject is constructed. The corrected color description of at least one test subject is then accessed. The at least one test subject is assigned to a classification color according the accessed corrected color description. The classification color is then correlated with a prescriptive recommendation.
+
+CLAIMS:
+1. A method of compiling color analysis parameters, said method comprising:
+using an image analysis system for constructing a corrected color description of at least one test subject from an imaging source;
+using an accessor for accessing said color description of said at least one test subject;
+using an assigner for assigning said at least one test subject to a classification color according to said corrected color description; and
+using a correlator for correlating said classification color with a prescriptive recommendation.
+2. The method as recited in claim 1 wherein said accessing comprises accessing a color description representative of a human skin color.
+3. The method as recited in claim 2 further comprising:
+accessing an image of said at least one test subject; and
+automatically generating a skin color estimate of said at least one test subject.
+4. The method as recited in claim 3 further comprising:
+using a plurality of image capture devices to generate a corresponding plurality of images of said at least one test subject;
+automatically generating a plurality of test color estimates of said at least one test subject wherein each of said plurality of test color estimates corresponds to one of said plurality of images;
+comparing said plurality of test color estimates with said skin color estimate.
+5. The method as recited in claim 1 wherein said assigning further comprises:
+deriving a classification color description based upon an analysis of a plurality of corrected color descriptions of a corresponding plurality of test subjects.
+6. The method as recited in claim 1 further comprising:
+comparing said corrected color description with a classification color description.
+7. The method as recited in claim 6 further comprising:
+accessing a variation value;
+determining that a subsequently received corrected color description is within said variation value of said classification color description.
+8. The method as recited in claim 1 wherein said assigning further comprises:
+accessing demographic data when assigning said at least one test subject to said classification color.
+9. A system for compiling color analysis parameters, said system comprising:
+an image analysis system for automatically constructing a corrected color description of at least one test subject from an imaging source;
+an accessor for accessing said corrected color description of said at least one test subject;
+an assigner for assigning said at least one test subject to a classification color according to said corrected color description; and
+a correlator for correlating said classification color with a prescriptive recommendation.
+10. The system of claim 9 wherein said accessor is for accessing a corrected color description representative of a human skin color.
+11. The system of claim 10 further comprising:
+an input for accessing an image of said at least one test subject; and
+a skin color estimator for automatically generating a skin color estimate of said at least one test subject.
+12. The system of claim 11 wherein said accessor accesses a plurality of images of said at least one test subject captured by a corresponding plurality of image capture devices and wherein said comparator is further for said plurality of test color estimates with said skin color estimate.
+13. The system of claim 9 wherein said assigner is further for deriving a classification color description based upon an analysis of a plurality of corrected color descriptions of a corresponding plurality of test subjects.
+14. The system of claim 9 further comprising:
+a comparator for comparing said color corrected description with a classification color description.
+15. The system of claim 14 wherein said accessor is further for accessing a variation value and wherein said comparator is further for determining that a subsequently received corrected color description is within said variation value of said classification color description.
+16. The system of claim 9 wherein said accessor is further for accessing demographic data and wherein said assigner is further for using said demographic data when assigning said at least one test subject to said classification color.
+17. A computer-usable medium having computer-readable program code embodied therein for causing a computer system to perform a method of compiling color analysis parameters, said method comprising:
+using an image analysis system for constructing a corrected color description of at least one test subject from an imaging source;
+using an accessor for accessing said color description of said at least one test subject;
+using an assigner for assigning said at least one test subject to a classification color according to said corrected color description; and
+using a correlator for correlating said classification color with a prescriptive recommendation.
+18. The computer-usable medium of claim 17 wherein said accessing comprises accessing a color description representative of a human skin color.
+19. The computer-usable medium of claim 18 wherein said method further comprises:
+accessing an image of said at least one test subject; and
+automatically generating a skin color estimate of said at least one test subject.
+20. The computer-usable medium of claim 19 wherein said method further comprises:
+using a plurality of image capture devices to generate a corresponding plurality of images of said at least one test subject;
+automatically generating a plurality of test color estimates of said at least one test subject wherein each of said plurality of test color estimates corresponds to one of said plurality of images;
+comparing said plurality of test color estimates with said skin color estimate.
+21. The computer-usable medium of claim 17 wherein said assigning further comprises:
+deriving a classification color description based upon an analysis of a plurality of corrected color descriptions of a corresponding plurality of test subjects.
+22. The computer-usable medium of claim 17 wherein said method further comprises:
+comparing said corrected color description with a classification color description.
+23. The computer-usable medium of claim 22 wherein said method further comprises:
+accessing a variation value;
+determining that a subsequently received corrected color description is within said variation value of said classification color description.
+24. The computer-usable medium of claim 17 wherein said assigning further comprises:
+accessing demographic data when assigning said at least one test subject to said classification color.

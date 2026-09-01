@@ -1,0 +1,59 @@
+TITLE:
+System and method for controlling a self-injector device
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A cartridge-based computer controlled self-injection device automatically regulates time and dosage administered to a patient. Cartridges can be electronically tagged so the injection device can determine the content, volume, expiration date, and physician prescribed dosage timetable. Authentication verifies the device and ensures the proper patient is using the device with the appropriate therapeutic injectant. Authentication further provides information controlling device operation including expiration dates and clock synchronization. Therapeutic injectant administration statistics, such as date and time of administration of a therapeutic injectant are stored and provide to a health care provider for monitoring. Patients can be notified of nearing or missed administrations.
+
+CLAIMS:
+What is claimed is:
+1. An injection device to perform an injection of a therapeutic injectant to a patient, comprising:
+a plunger to cause the therapeutic injectant to be injected into a patient;
+a receiver to receive information from a health care provider, wherein the received information includes dosage information;
+a cartridge in which the therapeutic injectant is stored;
+a dosage control;
+a spring coupled to the dosage control;
+an actuator that causes the dosage control to be set in accordance with the received dosage information to cause the spring to recoil by an amount such that when the spring is released the therapeutic injectant is injected into the patient in accordance with the dosage information; and
+a microprocessor to control the injection using the information.
+2. The injection device of claim 1, wherein the received information is encrypted.
+3. The injection device of claim 1, wherein the cartridge has an electronically readable marking, which includes validation information, and wherein the received information includes received validation information, and wherein the microprocessor is configured to confirm whether the validation information on the electronically readable marking matches the received validation information.
+4. The injection device of claim 1, wherein information about the injection is sent to the health care provider for monitoring.
+5. The injection device of claim 1, wherein the microprocessor is configured to confirm that the injection device is a valid injection device for the healthcare provider.
+6. The injection device of claim 1, further comprising a clock that is synchronized with a health care provider clock.
+7. The injection device of claim 1, wherein the received information includes a dosage amount, and the microprocessor confirms that the injection device is configured to administer an injection in accordance with the dosage amount.
+8. The injection device of claim 1, wherein the received information includes a dosage amount, and wherein the injection device is automatically configured to administer an injection in accordance with the dosage amount.
+9. The injection device of claim 1, further comprising a spring to cause the plunger to inject the therapeutic injectant into the patient.
+10. An injection device to perform an injection of an injectant to a patient, comprising:
+a plunger to cause the injectant to be injected into a patient;
+a receiver to receive injector device validation information and dosage information from a health care provider;
+a display to display a dosage to a patient in accordance with the received dosage information;
+a dosage control that is set by the patient in response to the displayed dosage;
+a spring coupled to the dosage control that is recoiled in response to the patient setting the dosage control; and
+a microprocessor to control the injection using the information, wherein the microprocessor validates the injection device in accordance with the received injector device validation information and validates the dosage control setting by comparing the dosage control setting with the received dosage control information, and, when the dosage control setting is incorrect, wherein the microprocessor prevents the spring from being released and causes an alert to be provided to the patient.
+11. An injection device to perform an injection of a therapeutic injectant to a patient, comprising:
+a cartridge containing the therapeutic injectant, the cartridge containing an RFID tag having stored therein therapeutic injectant information concerning the therapeutic injectant contained therein;
+a plunger to cause the therapeutic injectant to be injected into a patient;
+a receiver to receive information from a health care provider;
+a memory to store at least one acceptable therapeutic injectant for the patient; and
+a microprocessor to control the injection using the received information, wherein the microprocessor is configured to validate the injection device with the health care provider in accordance with the received information, to obtain the therapeutic injectant information from the RFID tag, to determine whether the obtained therapeutic information matches an acceptable therapeutic injectant for the patient stored in the memory, and to disable the injection device when at least one of the validation and matching is unsuccessful.
+12. The injection device of claim 11, wherein the validation is based on one of the identity of the injectant and the name of the patient.
+13. A method for controlling an injection device, comprising:
+receiving information from a health care provider concerning the injection, wherein the information includes dosage information to deliver an injectant to a patient;
+setting a dosage control in accordance with the received dosage information using an actuator to cause a spring to recoil by an amount such that when the spring is released the therapeutic injectant is injected into the patient in accordance with the dosage information; and
+releasing the spring to cause a plunger to inject the injectant into the patient.
+14. The method of claim 13, wherein the received information includes validation information, further comprising:
+reading an electronically readable marking on a cartridge containing the injectant to be injected into the patient;
+comparing the received validation information to the validation information contained in the electronically readable marking; and
+disabling the injection device when the received validation information does not match the validation information contained in the electronically readable marking.
+15. The method of claim 13, further comprising sending information about the injection is sent to the health care provider for monitoring.
+16. The method of claim 13, further comprising notifying a patient that an injection time is nearing.
+17. The method of claim 13, further comprising validating the injection device prior to use.
+18. The method of claim 13, wherein the received information includes an injectant identity, a patient identity, and a dosage amount, further comprising:
+verifying the injectant to be administered using the received injectant identity;
+verifying the patient to whom to administer the injectant based on the received patient identity;
+verifying the amount of injectant to be administered in accordance with the dosage amount; and
+automatically administering an injection in accordance with the dosage amount after the injectant, patient, and dosage amount are verified.
+19. The method of claim 18, further comprising disabling the injection device if the injection device is determined to be not properly configured for an injection.
+20. The method of claim 13, further comprising automatically configuring the injection device for an injection.

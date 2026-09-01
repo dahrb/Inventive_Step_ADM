@@ -1,0 +1,87 @@
+TITLE:
+Power and data transfer in hearing prostheses
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Embodiments presented herein are generally directed to techniques for separately transferring power and data from an external device to an implantable component of a partially or fully implantable medical device. The separated power and data transfer techniques use a single external coil and a single implantable coil. The external coil is part of an external resonant circuit, while the implantable coil is part of an implantable resonant circuit. The external coil is configured to transcutaneously transfer power and data to the implantable coil using separate (different) power and data time slots. At least one of the external or internal resonant circuit is substantially more damped during the data time slot than during the power time slot.
+
+CLAIMS:
+1. An implantable medical device, comprising:
+an implantable resonant circuit comprising an implantable coil; and
+an external resonant circuit comprising an external coil configured to transcutaneously transfer power and data to the implantable coil using separate power and data time slots, wherein at least one of the external or implantable resonant circuit is substantially more damped during the data time slots than during the power time slots.
+2. The implantable medical device of claim 1, wherein the external and implantable resonant circuits are resonant tank circuits.
+3. The implantable medical device of claim 1, wherein a resonance frequency of the external resonant circuit is adjusted during the data time slot so as to be lower or higher than the resonant frequency of the external circuit during the power time slots.
+4. The implantable medical device of claim 1, wherein a peak amplitude of current used to drive the external coil during the data time slots is lower than a peak amplitude of current used to drive the external coil during the power time slots.
+5. The implantable medical device of claim 4, wherein the implantable coil is connected to an energy rectifier, and wherein the peak amplitude of current used to drive the external coil during the data time slot is such that the energy rectifier does not allow current to pass there through during the data time slots.
+6. The implantable medical device of claim 1, wherein the external resonantcircuit is connected to one driver bridge that is used to drive the external coil during both the power and data time slots.
+7. The implantable medical device of claim 6, further comprising:
+a first series circuit comprising a first resistor and a first inductor connected between a first output of the driver bridge and the external resonant circuit;
+a second series circuit comprising a second resistor and a second inductor connected between a second output of the driver bridge and the external resonant circuit; and
+a switch connected in parallel to the first and second series circuits between the first and second outputs of the driver bridge and the external resonant circuit,
+wherein during the data time slots the switch is open so that signals from the first and second outputs of the driver bridge pass through the first and second series circuits, respectively, and wherein during the power time slots the switch is closed so that signals from the first and second outputs of the driver bridge bypass the first and second series circuits.
+8. The implantable medical device of claim 1, wherein the resonant circuit is connected to two or more driver bridges, wherein different driver bridges are used to drive the coil during the power and data time slots, respectively.
+9. The implantable medical device of claim 8, wherein a first driver bridge is a half H-bridge and the at least one additional driver bridge is a full H-bridge.
+10. The implantable medical device of claim 8, wherein outputs of a driver bridge that is not used during one of the power or data time slots are placed in a high impedance state.
+11. The implantable medical device of claim 8, wherein a first dedicated driver bridge is enabled during the data time slot and a second dedicated driver bridge is enabled during the power time slot.
+12. The implantable medical device of claim 8, further comprising:
+a data driver bridge;
+a first series circuit comprising a first resistor and a first inductor connected between a first output of the data driver bridge and the external resonant circuit;
+a second series circuit comprising a second resistor and a second inductor connected between a second output of the data driver bridge and the external resonant circuit; and
+at least one power driver bridge directly connected to the external resonant circuit so as to bypass the first and second series circuits,
+wherein during the data time slots the data driver bridge is enabled and outputs of the at least one power driver bridge are placed in a high impedance state and wherein during the power time slots the at least one power driver bridge is enabled and the first and second outputs of the data driver bridge are placed in a high impedance state.
+13. The implantable medical device of claim 12, wherein the at least one power driver bridge comprises first and second power driver bridges configured to be simultaneously enabled.
+14. The implantable medical device of claim 1, further comprising:
+a capacitor connected to the implantable coil and forming part of the implantable resonant circuit; and
+a resistor connectable in parallel to the capacitor via an implantable switch,
+wherein during the data time slots the implantable switch is closed so as to connect the resistor to the implantable resonant circuit to dampen the implantable resonant circuit, and wherein during the power time slots the implantable switch is opened so as to disconnect the resistor from the implantable resonant circuit.
+15. An external transmitter circuit, comprising:
+an external resonant circuit comprising an external coil;
+one or more driver bridges configured to cause the external coil to transfer power and data to an implantable receiver circuit using separate power and data time slots,
+wherein the quality factor of the external resonant circuit is lower during the data slots than during the power time slots.
+16. The external transmitter circuit of claim 15, wherein the external resonant circuit is a resonant tank circuit.
+17. The external transmitter circuit of claim 15, wherein a resonance frequency of the external resonant circuit is adjusted during the data time slot so as to be lower or higher than the resonant frequency of the external circuit during the power time slots.
+18. The external transmitter circuit of claim 15, wherein a peak amplitude of current used to drive the external coil during the data time slots is lower than a peak amplitude of current used to drive the external coil during the power time slots.
+19. The external transmitter circuit of claim 18, wherein the implantable receiver circuit comprises an energy rectifier, and wherein the peak amplitude of current used to drive the external during the data time slot is such that the energy rectifier does not allow current to pass there through during the data time slots.
+20. The external transmitter circuit of claim 15, wherein the one or more driver bridges comprises a single driver bridge that is used to drive the external coil during both the power and data time slots.
+21. The external transmitter circuit of claim 20, further comprising:
+a first series circuit comprising a first resistor and a first inductor connected between a first output of the driver bridge and the external resonant circuit;
+a second series circuit comprising a second resistor and a second inductor connected between a second output of the driver bridge and the external resonant circuit; and
+a switch connected in parallel to the first and second series circuits between the first and second outputs of the driver bridge and the external resonant circuit,
+wherein during the data time slots the switch is open so that signals from the first and second outputs of the driver bridge pass through the first and second series circuits, respectively, and wherein during the power time slots the switch is closed so that signals from the first and second outputs of the driver bridge bypass the first and second series circuits.
+22. The external transmitter circuit of claim 15, further comprising:
+a data driver bridge;
+a first series circuit comprising a first resistor and a first inductor connected between a first output of the data driver bridge and the external resonant circuit;
+a second series circuit comprising a second resistor and a second inductor connected between a second output of the data driver bridge and the external resonant circuit; and
+at least one power driver bridge directly connected to the external resonant circuit so as to bypass the first and second series circuits,
+wherein during the data time slots the data driver bridge is enabled and outputs of the at least one power driver bridge are placed in a high impedance state and wherein during the power time slots the at least one power driver bridge is enabled and the first and second outputs of the data driver bridge are placed in a high impedance state.
+23. The external transmitter circuit of claim 22, wherein the at least one power driver bridge comprises first and second power driver bridges configured to be simultaneously enabled.
+24. An apparatus, comprising:
+an implantable resonant circuit comprising an implantable coil; and
+an external resonant circuit comprising an external coil forming a transcutaneous power and data link with the implantable coil; and
+at least one driver bridge configured to drive the external coil so as to separately transfer power and data to the implantable coil,
+wherein operational characteristics of at least one of the implantable resonant circuit or the external resonant circuit are dynamically adjusted during transfer of data to the implantable coil.
+25. The apparatus of claim 24, wherein the external and implantable resonant circuits are resonant tank circuits.
+26. The apparatus of claim 24, wherein the quality factor of the external resonant circuit is lower during the transfer of data than during the transfer of power.
+27. The apparatus of claim 24, wherein a resonance frequency of the external resonant circuit is adjusted during the transfer of data so as to be lower or higher than the resonant frequency of the external circuit during the transfer of power.
+28. The apparatus of claim 24, wherein a peak amplitude of current used to drive the external coil during the transfer of data is lower than a peak amplitude of current used to drive the external coil during the transfer of power.
+29. The apparatus of claim 28, wherein the implantable coil is connected to an energy rectifier, and wherein the peak amplitude of current used to drive the external during the transfer of data is such that the energy rectifier does not allow current to pass there through during the transfer of data.
+30. The apparatus of claim 24, wherein the external resonant circuit is connected to one driver bridge that is used to drive the external coil during the transfer of both power and data.
+31. The apparatus of claim 30, further comprising:
+a first series circuit comprising a first resistor and a first inductor connected between a first output of the driver bridge and the external resonant circuit;
+a second series circuit comprising a second resistor and a second inductor connected between a second output of the driver bridge and the external resonant circuit; and
+a switch connected in parallel to the first and second series circuits between the first and second outputs of the driver bridge and the external resonant circuit,
+wherein during the data time slots the switch is open so that signals from the first and second outputs of the driver bridge pass through the first and second series circuits, respectively, and wherein during the power time slots the switch is closed so that signals from the first and second outputs of the driver bridge bypass the first and second series circuits.
+32. The apparatus of claim 24, wherein the external resonant circuit is connected to two or more driver bridges, wherein different driver bridges are used to drive the coil during each of the transfer of power and data.
+33. The apparatus of claim 24, further comprising:
+a data driver bridge;
+a first series circuit comprising a first resistor and a first inductor connected between a first output of the data driver bridge and the external resonant circuit;
+a second series circuit comprising a second resistor and a second inductor connected between a second output of the data driver bridge and the external resonant circuit; and
+at least one power driver bridge directly connected to the external resonant circuit so as to bypass the first and second series circuits,
+wherein during the transfer of data the data driver bridge is enabled and outputs of the at least one power driver bridge are placed in a high impedance state and wherein during the transfer of power the at least one power driver bridge is enabled and the first and second outputs of the data driver bridge are placed in a high impedance state.
+34. The apparatus of claim 33, wherein the at least one power driver bridge comprises first and second power driver bridges configured to be simultaneously enabled.
+35. The apparatus of claim 24, further comprising:
+a capacitor connected to the implantable coil and forming part of the implantable resonant circuit; and
+a resistor connectable in parallel to the capacitor via an implantable switch,
+wherein during the transfer of data the implantable switch is closed so as to connect the resistor to the implantable resonant circuit to reduce the quality factor of the implantable resonant circuit, and wherein during the transfer of power the implantable switch is opened so as to disconnect the resistor from the implantable resonant circuit.

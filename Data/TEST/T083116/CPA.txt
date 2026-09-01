@@ -1,0 +1,8 @@
+TITLE:
+A three-layer model for schema management in federated databases
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+The paper describes our use of object technology to provide a framework for interoperability between databases. We are particularly interested in controlling the effects on the federation of schema modification in local databases. We describe two informal models for federated database design. The abstract model describes the different metadata objects in the federation and how they relate to each other. The service model is used as a framework architecture for federated database design. The architecture is designed to ensure that the integration of local databases allows the federation to control its view of local schema changes. We have used CORBA's distributed object technology to implement a prototype based on the service model described in the paper.

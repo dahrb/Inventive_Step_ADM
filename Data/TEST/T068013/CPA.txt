@@ -1,0 +1,90 @@
+TITLE:
+Mobility middleware architecture for multiple radio access technology apparatus
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A multiple radio access technology (RAT) apparatus with mobility middleware provides a user with access to various RAT networks, such as a frequency division duplex (FDD) network and a wireless local area network (WLAN). In one embodiment, the apparatus is a dual mode FDD/WLAN converged wireless communication handset which includes a terminal equipment (TE) module having mobility middleware, an applications and protocols processor and a terminal interface (TI). The dual mode FDD/WLAN converged wireless communication handset further includes a user services identity module (USIM), a mobile termination (MT) module and a protocol stack which interface with the mobility middleware via a plurality of links. In another embodiment, the multi-RAT apparatus is terminal equipment which includes a mobility middleware core module, a mobility middleware communication module, a driver and an insertably removable wireless communication device for providing a multiple radio transport medium to applications running in the terminal equipment.
+
+CLAIMS:
+1. A wireless communication handset comprising:
+(a) a terminal equipment (TE) module including mobility middleware, an applications and protocols processor and a terminal interface (TI);
+(b) a user services identity module (USIM);
+(c) a mobile termination (MT) module; and
+(d) a protocol stack, wherein the mobility middleware interfaces with the USIM, the applications and protocols processor, the protocol stack and the MT module via a plurality of links.
+2. The wireless communication handset of claim 1 wherein the protocol stack (d) is an IEEE 802.11 protocol stack comprising:
+(d1) a logical link control (LLC) layer;
+(d2) an IEEE 802.11 medium access control (MAC) layer;
+(d3) an IEEE 802.11 physical (PHY) layer;
+(d4) a session management entity (SME); and
+(d5) at least IEEE 802.21 interface via which the mobility middleware establishes at least one link to interface with the protocol stack.
+3. The wireless communication handset of claim 1 wherein the MT module (c) comprises:
+(c1) a third generation partnership project (3GPP) frequency division duplex (FDD) non-access stratum (NAS) including at least one IEEE 802.21 interface; and
+(c2) a 3GPP FDD access stratum (AS) including at least one IEEE 802.21 interface, wherein the mobility middleware interfaces with the 3GPP FDD NAS and the 3GPP FDD AS via a plurality of links.
+4. The wireless communication handset of claim 3 wherein the 3GPP FDD NAS further comprises:
+(i) a 3GPP functions mobile network (MN);
+(ii) a call control (CC) unit;
+(iii) a session manager (SM);
+(iv) a general packet radio service (GPRS) mobility manager (GMM);
+(v) a radio access bearer manager (RABM);
+(vi) an attention command set interpreter (ATC);
+(vii) an ATC advanced technology attachment (ATA);
+(viii) an Internet protocol (IP) relay; and
+(ix) a bit stream relay.
+5. The wireless communication handset of claim 3 wherein ATC commands are exchanged between the TE module and the MT module via the TI and the ATC ATA.
+6. The wireless communication handset of claim 3 wherein the 3GPP FDD AS comprises:
+(i) an FDD physical layer (PHY);
+(ii) an FDD medium access control layer (MAC);
+(iii) an FDD radio link control (RLC);
+(iv) a packet data compression protocol (PDCP) unit;
+(v) a broadcast and multicast control (BMC) unit; and
+(vi) a radio resource control (RRC) unit.
+7. The wireless communication handset of claim 1 wherein the mobility middleware comprises a mobility entity and a service entity.
+8. The wireless communication handset of claim 1 wherein the mobility entity includes at least one mobility policy and at least one mobility enabler.
+9. The wireless communication handset of claim 8 wherein the mobility policy performs a network detection function.
+10. The wireless communication handset of claim 8 wherein the mobility policy performs a network selection function.
+11. The wireless communication handset of claim 8 wherein the mobility policy performs an inter-access handover function.
+12. The wireless communication handset of claim 8 wherein the mobility policy performs a parallel attach function.
+13. The wireless communication handset of claim 8 wherein the mobility policy performs a measurement function.
+14. The wireless communication handset of claim 8 wherein the mobility policy performs a quality of service (QoS) function.
+15. The wireless communication handset of claim 8 wherein the mobility policy performs a security function.
+16. The wireless communication handset of claim 8 wherein the mobility policy performs a power control function.
+17. The wireless communication handset of claim 1 wherein the service entity includes at least one service policy and at least one service enabler.
+18. The wireless communication handset of claim 8 wherein the mobility enabler interfaces with different radio access technologies (RATs) via an open application program interface (API) to collect, consolidate and normalize statistics or other information received from RAT networks, transmit commands to the RAT networks and provide a control/information trigger interface to the mobility policy for controlling the RAT networks.
+19. The wireless communication handset of claim 1 wherein the mobility middleware interfaces with third party applications and transport stacks via at least one open application program interface.
+20. Terminal equipment comprising:
+a mobility middleware core module;
+a mobility middleware communication module in communication with the mobility middleware core module;
+a first driver in communication with the mobility middleware core module; and
+an insertably removable wireless communication device in communication with the first driver for providing a multiple radio transport medium to applications running in the terminal equipment.
+21. The terminal equipment of claim 20 wherein the first driver is a network driver interface specification (NDIS) wide area network (NDISWAN) miniport driver.
+22. The terminal equipment of claim 20 wherein the insertably removable wireless communication device further comprises:
+a second driver in communication with the first driver;
+a universal mobile telecommunications system (UMTS) electrically coupled to the second driver; and
+a protocol stack electrically coupled to the second driver.
+23. The terminal equipment of claim 22 wherein the protocol stack is an IEEE 802.16 protocol stack comprising:
+(i) an IEEE 802.16 medium access control (MAC) layer;
+(ii) an IEEE 802.16 physical (PHY) layer; and
+(iii) a session management entity (SME).
+24. The terminal equipment of claim 22 wherein the UMTS comprises:
+(i) a third generation partnership project (3GPP) frequency division duplex (FDD) non-access stratum (NAS); and
+(ii) a 3GPP FDD access stratum (AS).
+25. The terminal equipment of claim 20 wherein the insertably removable wireless communication device is a frequency division duplex (FDD) wireless broadband personal computer (PC) card.
+26. Terminal equipment comprising:
+a mobility middleware communication module;
+a first driver in communication with the mobility middleware communication module; and
+an insertably removable wireless communication device in communication with the first driver for providing a multiple radio transport medium to applications running in the terminal equipment, the insertably removable wireless communication device including (i) a second driver and (ii) a mobility middleware core module which communicates with the mobility middleware communication module via the second driver and the first driver.
+27. The terminal equipment of claim 26 wherein the first driver is a network driver interface specification (NDIS) wide area network (NDISWAN) miniport driver.
+28. The terminal equipment of claim 26 wherein the insertably removable wireless communication device further comprises:
+a universal mobile telecommunications system (UMTS) electrically coupled to the mobility middleware core module; and
+a protocol stack electrically coupled to the mobility middleware core module.
+29. The terminal equipment of claim 28 wherein the insertably removable wireless communication device further comprises a user services identity module (USIM) in communication with the a mobility middleware core module and the UMTS.
+30. The terminal equipment of claim 26 wherein the insertably removable wireless communication device is a frequency division duplex (FDD) wireless broadband personal computer (PC) card.
+31. The terminal equipment of claim 28 wherein the UMTS comprises:
+(i) a third generation partnership project (3GPP) frequency division duplex (FDD) non-access stratum (NAS); and
+(ii) a 3GPP FDD access stratum (AS).
+32. The terminal equipment of claim 28 wherein the protocol stack is an IEEE 802.16 protocol stack comprising:
+(i) an IEEE 802.16 medium access control (MAC) layer;
+(ii) an IEEE 802.16 physical (PHY) layer; and
+(iii) a session management entity (SME).

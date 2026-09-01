@@ -1,0 +1,184 @@
+--- PAGE 1 ---
+2016P01178EP
+
+Claims
+
+1. A computer system (100) configured to process alarm activations received from one or
+
+more technical systems (200) wherein a particular alarm activation represents a deviation
+
+of the technical status of a particular technical system from its normal technical status, the
+
+computer system (100) comprising:
+
+a data storage interface (111) configured to record a plurality of received alarm
+
+activations in a data storage unit (110) wherein the recorded alarm activations
+
+correspond to one or more alarms (A11 to A6&);
+
+a data processing component (120) configured
+
+to determine, from the recorded alarm activations, a plurality of time intervals
+
+(11” to 15”, 11’ to 110’) for alarm analysis;
+
+to compute similarity measures for pairs of the determined time intervals
+wherein the similarity measures depend on the occurrence of the recorded
+alarm activations in respective pairs of the determined time intervals, and
+wherein the contribution of a particular alarm activation to the similarity of two
+time intervals is reduced with an increasing occurrence of the alarm in the
+determined time intervals so that, the more often an alarm occurs in
+determined time intervals other than the two compared intervals, the lower is
+
+its significance for the similarity measure of the two compared intervals;
+
+to identify a first set of time intervals with alarm floods of a received alarm
+flood type, the first set including time intervals with a collection of alarms
+corresponding to the collection of alarms characterizing the received alarm
+
+flood type;
+
+to identify a second set of time intervals where the received alarm flood type
+
+does not apply;
+
+to determine a weight for each alarm occurring in all time intervals of the first
+set wherein the weight decreases with a growing number of occurrences of the
+
+respective alarm in time intervals of the second set; and
+
+to select one or more characterizing alarms for the received alarm flood type
+wherein the alarm with the highest weight is the most characterizing alarm for
+the received alarm flood type, wherein for two alarms with the same highest
+
+weight the alarm which occurs in a lower number of time intervals is weighted
+
+20
+
+3 auxiliary request — replacement sheets September 2020
+
+--- PAGE 2 ---
+2016P01178EP
+
+higher, and further, for a plurality of selected characterizing alarms for the
+received alarm flood type, to primarily sort the alarms of the first set by weight
+in descending order, and secondarily sort alarms with equal weight in
+descending order of their number of occurrences in the first and second sets;
+
+and
+
+a user interface component (130) configured to provide one or more pairs (131, 132)
+of time intervals to an operator of the one or more technical systems (200) wherein
+the one or more pairs (131, 132) of time intervals include time intervals with similarity
+measures indicating similar alarm floods in the respective time intervals, and further
+configured to prompt the operator only with the characterizing alarm of the alarm
+flood.
+
+2. The computer system of claim 1, wherein the similarity measure between a first and a
+second determined time interval corresponds to a rank which is computed as the sum of
+coefficients related to alarms occurring in both time intervals wherein the coefficients
+
+decrease with the frequency at which an alarm occurs in the determined time intervals.
+
+3. A computer-implemented method (1000) for processing alarm activations received from
+one or more technical systems wherein a particular alarm activation represents a deviation
+of the technical status of a particular technical system from its normal technical status,
+
+comprising:
+
+recording (1100) a plurality of received alarm activations in a data storage component
+
+wherein the recorded alarm activations correspond to one or more alarms (A1 to A6);
+
+determining (1200) a plurality of time intervals for alarm analysis from the recorded
+
+alarm activations;
+characterized in that
+
+computing (1300) similarity measures for pairs of the determined time intervals
+wherein the similarity measures depend on the occurrence of the recorded alarm
+activations in respective pairs of the determined time intervals, and wherein the
+contribution of a particular alarm activation to the similarity of two time intervals is
+reduced with an increasing occurrence of the alarm in the determined time intervals
+so that, the more often an alarm occurs in determined time intervals other than the
+two compared intervals, the lower is its significance for the similarity measure of the
+
+two compared intervals:
+
+21
+3 auxiliary request — replacement sheets September 2020
+
+--- PAGE 3 ---
+2016P01178EP
+
+providing (1400) pairs of time intervals to an operator of the one or more technical
+systems wherein the pairs of time intervals include time intervals with similarity
+
+measures indicating similar alarm floods in the respective time intervals;
+
+receiving (1500) an alarm flood type, the alarm flood type characterizing a particular
+technical status of the technical system and the technical reason for a corresponding
+
+alarm flood based on the collection of alarms in the particular alarm flood;
+
+identifying (1600) a first set of time intervals with alarm floods of the received alarm
+flood type, the first set including time intervals with a collection of alarms
+
+corresponding to the collection of alarms characterizing the received alarm flood type;
+
+identifying a second set of time intervals where the received alarm flood type does not
+
+apply;
+
+determining a weight for each alarm occurring in all time intervals of the first set
+wherein the weight decreases with a growing number of occurrences of the
+
+respective alarm in time intervals of the second set:
+
+selecting one or more characterizing alarms for the received alarm flood type wherein
+the alarm with the highest weight is the most characterizing alarm for the received
+alarm flood type, wherein for two alarms with the same highest weight the alarm
+which occurs in a lower number of time intervals is weighted higher, and further, for a
+plurality of selected characterizing alarms for the received alarm flood type, primarily
+sorting the alarms of the first set by weight in descending order, and secondarily
+sorting alarms with equal weight in descending order of their number of occurrences
+
+in the first and second sets;
+
+suppressing (1700) a visualization of an alarm flood having the received alarm flood
+
+type and providing to the operator the one or more characterizing alarms instead.
+
+4. The method of claim 3, wherein a particular time interval of the plurality of time intervals is
+determined if the alarm activation rate exceeds a predefined alarm threshold value per
+
+predefined time unit.
+
+5. The method of claim 3, wherein a particular time interval of the plurality of time intervals is
+
+determined by a fixed starting time and a fixed time length.
+
+6. The method of any of the claims 3 to 5, wherein the similarity measure between a first and
+a second determined time interval corresponds to a rank which is computed as the sum of
+
+coefficients related to alarms occurring in both time intervals wherein the coefficients
+
+22
+3 auxiliary request — replacement sheets September 2020
+
+--- PAGE 4 ---
+2016P01178EP
+
+decrease with the frequency at which an alarm occurs in the plurality of determined time
+
+intervals.
+
+7. A computer program product comprising instructions that when loaded into a memory of a
+computing device and executed by at least one processor of the computing device cause
+the computing device to execute the steps of the computer-implemented method according
+
+to any one of the claims 3 to 6.
+
+23
+3 auxiliary request — replacement sheets September 2020

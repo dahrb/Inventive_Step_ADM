@@ -1,0 +1,59 @@
+TITLE:
+Circuit for storing trace information
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system for performing non-intrusive trace is provided which receives trace information from one or more processors. The trace system may be configured by a user to operate in various modes for flexibly storing or transmitting the trace information. The trace system includes a FIFO which is memory-mapped and is capable of being accessed without affecting processor performance. In one aspect, the trace system includes a trace buffer which receives trace information at an internal clock speed of the processor. In another embodiment, a compression protocol is provided for compressing trace messages on-chip prior to transmitting the messages to an external system or storing the messages in memory.
+
+CLAIMS:
+1. An integrated circuit comprising:
+at least one processor; and
+a debug module operatively connected to the processor, the debug module including a first-in-first-out (FIFO) buffer wherein the debug module is configurable to store trace information produced by the processor, and wherein the FIFO includes a plurality of memory-mapped registers configured to hold the trace information to enable reading of the trace information using the processor.
+2. The integrated circuit according to claim 1, wherein the FIFO operates in a mode wherein trace information is discarded when the FIFO buffer is full.
+3. The integrated circuit according to claim 1, wherein the debug module provides an indication to the processor that the FIFO is approaching a full level.
+4. The integrated circuit according to claim 1, wherein the debug module provides an indication to an external system that the FIFO is approaching a full level.
+5. The integrated circuit according to claim 2, wherein the debug module provides the indication within a finite number of storage locations from the full level of the FIFO.
+6. The integrated circuit according to claim 1, wherein the memory-mapped registers are read by a read circuit independent from the processor.
+7. The integrated circuit according to claim 1, the integrated circuit further comprising a system bus and wherein trace information is transmitted over a communication link separate from the system bus.
+8. The integrated circuit according to claim 1, wherein the trace information comprises at least one of:
+program counter information;
+process identification information;
+address information;
+information stored in memory; and
+information related to a system bus transaction.
+9. The integrated circuit according to claim 1, wherein the trace information is store in a RAM-based storage unit.
+10. The integrated circuit according to claim 1, wherein the trace information is stored in both a RAM-based FIFO and the FIFO buffer.
+11. An integrated circuit comprising:
+at least one processor; and
+a debug module operatively connected to the processor, the debug module including means for storing trace information produced by the processor, and wherein the means for storing includes a plurality of memory-mapped registers configured to hold the trace information to enable reading of the trace information using the processor.
+12. The integrated circuit according to claim 11, wherein the means for storing operates in a mode wherein trace information is discarded when the means for storing is full.
+13. The integrated circuit according to claim 11, wherein the debug module includes means for providing an indication to the processor that the means for storing is approaching a full level.
+14. The integrated circuit according to claim 11, wherein the debug module includes means for providing an indication to an external system that the means for storing is approaching a full level.
+15. The integrated circuit according to claim 12, wherein the debug module includes means for providing the indication within a finite number of storage locations from the full level of the means for storing.
+16. The integrated circuit according to claim 11, wherein the memory-mapped registers are read by a read circuit independent from the processor.
+17. The integrated circuit according to claim 11, the integrated circuit further comprising a system bus and wherein trace information is transmitted over a communication link separate from the system bus.
+18. The integrated circuit according to claim 11, wherein the trace information comprises at least one of:
+program counter information;
+process identification information;
+address information;
+information stored in memory; and
+information related to a system bus transaction.
+19. The integrated circuit according to claim 11, wherein the means for storing comprises a RAM-based storage unit.
+20. The integrated circuit according to claim 11, wherein the means for storing comprises both a RAM-based FIFO and a FIFO buffer.
+21. The integrated circuit according to claim 11 wherein the means for storing comprises a FIFO buffer.
+22. An integrated circuit, comprising:
+a first processor;
+a debug circuit coupled to the first processor, the debug circuit including
+a trace processor to receive trace data from the first processor and process the trace data;
+a storage coupled to the trace processor and configured to store the processed trace data;
+a capture buffer to receive the trace data from the first processor and transmit the trace data to the trace processor; and
+a reference counter coupled to the trace processor and provide timing information to the trace processor to enable the trace processor to generate timestamp information.
+23. The integrated circuit of claim 22, wherein the trace data is compressed by the trace processor prior to storing in the storage.
+24. The integrated circuit of claim 23, wherein the storage is a first-in-first-out (FIFO) buffer including memory mapped registers configured to enable reading of the processed trace data using the first processor.
+25. The integrated circuit of claim 24, wherein the debug circuit further comprises:
+a transmission circuit coupled to an external system and configured to transmit the processed trace data to the external system;
+a memory circuit to store the processed trace data; and
+a destination selector coupled to the FIFO buffer, the transmission circuit, and the memory circuit, the destination selector being programmable to send the processed trace data to the transmission circuit or the memory circuit.
+26. The integrated circuit of claim 22, wherein the debug circuit further comprises a state processor to control the debug circuit.

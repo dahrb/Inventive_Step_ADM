@@ -1,0 +1,278 @@
+--- PAGE 1 ---
+ABBO03228/EP
+
+NEW SET OF CLAIMS
+(Main Request)
+
+A computerized system (100) for managing the operation of an electric power
+
+distribution grid (250) characterised in that it comprises:
+
+- at least an accessory device (1) operatively coupled with or comprised in an
+electronic protection relay (2) of said electric power distribution grid (250),
+wherein said at least an accessory device is configured to gather and transmit
+through the Internet grid data (D), which are related to the operation of said
+electric power distribution grid (250) or one or more electronic devices (21, 22,
+23, 24, 2A, 2B, 2C, 2D) of said electronic protection relay or operatively
+connected with said electronic protection relay, which are in communication with
+said at least an accessory device;
+
+- acomputerised platform (340) capable of communicating and interact with said at
+least an accessory device (1) through the Internet;
+
+characterised in that said accessory device is configured to carry out data-gathering
+
+tasks basing on information included a data-gathering file (DGF) stored in said
+
+accessory device and including information to allow said accessory device to interact
+
+correctly with said electronic devices and to acquire and store correctly grid data (D)
+
+from said electronic devices, said data-gathering tasks including polling one or more
+
+electronic devices (21, 22, 23, 24, 2A, 2B, 2C, 2D) in communication with said
+accessory device and receiving said grid data (D) from said electronic devices in
+response to said polling activity;
+
+wherein said accessory device is configured to carry out data-publishing tasks basing
+
+on information included in said data-gathering file (DGF) and in a data-publishing file
+
+(DPF) stored in said accessory device and including information to allow said
+
+accessory device to interact correctly with said computerised platform (340), said data-
+
+publishing tasks including transmitting said grid data (D) to said computerised
+
+platform (340);
+
+wherein said computerised system comprises a configuration computerized unit (50)
+
+capable of communicating with said at least an accessory device (1) and said
+
+managing platform (340) through the Internet, said configuration computerized unit
+being adapted to execute a configuration method (CFP) of said at least an accessory
+device (1), said configuration method comprising the following steps:
+
+- providing a graphic user interface (500) on a computer display (52), said graphic
+
+--- PAGE 2 ---
+ABBO03228/EP
+
+user interface including graphic resources (190, 11, 12, 13, 14, 15, 16, 17, 18)
+activatable by a user;
+
+providing first graphic resources (11) on said graphic user interface (500) to assist
+a user in checking whether there are given operating conditions required for
+carrying out the configuration of one or more configurable accessory devices (1);
+providing second graphic resources (12) on said graphic user interface (500) to
+assist a user in launching a search to establish a communication link with said
+configurable accessory devices (1);
+
+performing a search through the Internet of said configurable accessory devices
+(1) in response to the activation of said second graphic resources;
+
+providing third graphic resources (13) on said graphic user interface (500) to
+assist a user in selecting an accessory device (1) among said one or more
+configurable accessory devices and in providing a security access code to access
+to a selected accessory device, said security access code being obtainable by
+physically accessing to said selected accessory device;
+
+activating a communication channel with said selected accessory device (1) in
+response to the input of said security access code;
+
+providing fourth graphic resources (14) on said graphic user interface (500) to
+assist a user in providing first configuration information (CF1) to configure said
+selected accessory device, said first configuration information including one or
+more sets of configuration values directed to set-up operation parameters of said
+accessory device;
+
+providing fifth graphic resources (15) on said graphic user interface (500) to assist
+a user in providing second configuration information (CF2) to associate said
+selected accessory device to an electric plant, said second configuration
+information including linking information on how to associate said accessory
+device to a corresponding electric plant;
+
+providing sixth graphic resources (16) on said graphic user interface (500) to
+assist a user in launching a configuration process of said selected accessory
+device;
+
+executing said configuration process in response to the activation of said sixth
+graphic resources, said configuration process comprising the following steps:
+
+- generating a data-gathering file (DGF) and a data-publishing file (DPF) for
+
+said selected accessory device (1) based on said first and second
+
+--- PAGE 3 ---
+10.
+
+ABBO03228/EP
+
+configuration information (CF1, CF2);
+- transmitting said data-gathering file (DGF) and said data-publishing file
+(DPF) to said selected accessory device;
+- transmitting said first and second configuration information (CF1, CF2) to
+said computerised platform (340).
+Computerised system, according to claim 1, characterised in that said first graphic
+resources (11) comprise one or more graphic objects (111) to assist a user in providing
+preliminary configuration data for one or more configurable accessory devices (1).
+Computerised system, according to one or more of the previous claims, characterised
+in that said first graphic resources (11) comprises one or more graphic objects (112) to
+guide a user to check the connectivity conditions of one or more configurable
+accessory devices (1).
+Computerised system, according to one or more of the previous claims, characterised
+in that said second graphic resources (12) comprise one or more graphic objects (121)
+to launch an automatic search to establish a communication link with one or more
+configurable accessory devices (1).
+Computerised system, according to one or more of the previous claims, characterised
+in that said second graphic resources (12) comprise one or more graphic objects (122)
+to launch a manual search to establish a communication link with one or more
+configurable accessory devices (1).
+Computerised system, according to one or more of the previous claims, characterised
+in that said third graphic resources (13) comprise one or more graphic objects (131) to
+list one or more configurable accessory devices (1) in communication with said
+configuration computerized unit.
+Computerised system, according to one or more of the previous claims, characterised
+in that said third graphic resources (13) comprise one or more graphic objects (132) to
+input said security access code.
+Computerised system, according to one or more of the previous claims, characterised
+in that said fifth graphic resources (15) comprise one or more graphic objects (151) to
+associate the selected accessory device (1) to an existing electric plant.
+Computerised system, according to one or more of the previous claims, characterised
+in that said fifth graphic resources (15) comprise one or more graphic objects (152,
+153) to associate the selected accessory device (1) to a new electric plant.
+
+Computerised system, according to one or more of the previous claims, characterised
+
+--- PAGE 4 ---
+11.
+
+12.
+
+ABBO03228/EP
+
+in that said configuration method (CFP) comprises the step of providing a login
+configuration page (190) on said graphic user interface (500) to assist a user in
+providing login information to execute said configuration method.
+Computerised system, according to one or more of the previous claims, characterised
+in that said configuration method (CFP) comprises the step of providing seventh
+graphic resources (17) on said graphic user interface (500) to assist a user in signing
+an EULA.
+A configuration method (CFP) of at least an accessory device (1), said at least an
+accessory device being operatively coupled with or comprised in an electronic
+protection relay (2) of an electric power distribution grid (250),
+wherein said at least an accessory device is configured to gather and transmit through
+the Internet grid data (D), which are related to the operation of said electric power
+distribution grid (250) or of one or more electronic devices (21, 22, 23, 24, 2A, 2B,
+2C, 2D) of said electronic protection relay or operatively connected with said
+electronic protection relay, which are in communication with said at least an
+accessory device,
+characterised in that said accessory device is configured to carry out data-gathering
+tasks basing on information included a data-gathering file (DGF) stored in said
+accessory device and including information to allow said accessory device to interact
+correctly with said electronic devices and to acquire and store correctly grid data (D)
+from said electronic devices, said data-gathering tasks including polling one or more
+electronic devices (21, 22, 23, 24, 2A, 2B, 2C, 2D) in communication with said
+accessory device and receiving said grid data (D) from said electronic devices in
+response to said polling activity,
+wherein said accessory device is configured to carry out data-publishing tasks basing
+on information included in said data-gathering file (DGF) and in a data-publishing
+file (DPF) stored in said accessory device and including information to allow said
+accessory device to interact correctly with a computerised platform (340), said data-
+publishing tasks including transmitting said grid data (D) to said computerised
+platform (340) capable of communicating and interact with said at least an accessory
+device through the Internet;
+wherein said method comprises the following steps,
+- providing a graphic user interface (500) on a computer display (52), said graphic
+user interface including graphic resources (190, 11, 12, 13, 14, 15, 16, 17, 18)
+
+--- PAGE 5 ---
+ABBO03228/EP
+
+activatable by a user;
+
+providing first graphic resources (11) on said graphic user interface (500) to assist
+
+a user in checking whether there are given operating conditions required for
+
+carrying out the configuration of one or more configurable accessory devices;
+
+providing second graphic resources (12) on said graphic user interface (500) to
+
+assist a user in launching a search to establish a communication link with said
+
+configurable accessory devices (1);
+
+performing a search through the Internet of said configurable accessory devices
+
+(1) in response to the activation of said second graphic resources;
+
+providing third graphic resources (13) on said graphic user interface (500) to
+
+assist a user in selecting an accessory device (1) among said one or more
+
+configurable accessory devices and in providing a security access code to access
+
+to a selected accessory device, said security access code being manually
+
+obtainable from said selected accessory device;
+
+activating a communication link with said selected accessory device (1) in
+
+response to the input of said security access code;
+
+providing fourth graphic resources (14) on said graphic user interface (500) to
+
+assist a user in providing first configuration information (CF1) to configure said
+
+selected accessory device, said first configuration information including one or
+
+more sets of configuration values directed to set-up operation parameters of said
+
+accessory device;
+
+providing fifth graphic resources (15) on said graphic user interface (500) to assist
+
+a user in providing second configuration information (CF2) to associate said
+
+selected accessory device to an electric plant, said second configuration
+
+information including linking information on how to associate said accessory
+
+device to a corresponding electric plant;
+
+providing sixth graphic resources (16) on said graphic user interface (500) to
+
+assist a user in launching a configuration process of said selected accessory
+
+device;
+
+executing said configuration process in response to the activation of said sixth
+
+graphic resources, said configuration process comprising the following steps:
+
+- generating a data-gathering file (DGF) and a data-publishing file (DPF) for
+said selected accessory device (1) based on said first and second
+
+configuration information (CF1, CF2);
+
+--- PAGE 6 ---
+13.
+
+14.
+
+ABBO03228/EP
+
+- transmitting said data-gathering file (DGF) and said data-publishing file
+(DPF) to said selected accessory device;
+- transmitting said first and second configuration information (CF1, CF2) to
+said computerised platform (340).
+A computer program, which is stored or storable in a storage medium, characterised in
+that it comprises software instructions configured to implement a configuration
+method (CFP), according to one or more of the previous claims, when said software
+instructions are executed by a configuration computerised device (50).
+A configuration computerized unit (50) characterised in that it is configured to execute
+software instructions to implement a configuration method (CFP), according to claim
+
+12.

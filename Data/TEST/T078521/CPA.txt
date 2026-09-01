@@ -1,0 +1,47 @@
+TITLE:
+System and method for filtering audio content
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method for filtering audio content are provided. An audio data filtering system may include an input interface to receive audio data. The system may also include an analysis module to compare a textual representation of the audio data to data identifying prohibited audio content. The system may also include a packet filter to prevent transmission of portions of the audio data matching prohibited audio content to a remote user device. The system may further include an output interface to transmit portions of the audio data not identified as prohibited audio content to the remote user device
+
+CLAIMS:
+1. A method of filtering audio data, the method comprising:
+comparing a textual representation of audio data received at a filter server with data to identifying prohibited audio content;
+transmitting portions of the audio data not identified as prohibited audio content to a remote user device; and
+not transmitting other portions of the audio data identified as prohibited audio content to the remote user device.
+2. The method of claim 1, further comprising receiving a multimedia data stream including the audio data and associated video data.
+3. The method of claim 1, further comprising accessing a multimedia server database including the audio data and associated video data.
+4. The method of claim 1, wherein the prohibited audio content comprises prohibited language content.
+5. The method of claim 1, further comprising dropping data packets corresponding to the prohibited audio content.
+6. The method of claim 1, further comprising replacing data packets corresponding to the prohibited audio content with data packets including audio content that is not prohibited.
+7. The method of claim 1, wherein the data identifying prohibited audio content is based at least partially on user defined settings.
+8. The method of claim 1, wherein the textual representation of the audio data comprises closed captioning data.
+9. The method of claim 1, further comprising generating the textual representation of the audio data using automated voice to text conversion.
+10. The method of claim 1, wherein the remote user device comprises a mobile communication device.
+11. The method of claim 1, wherein the remote user device comprises a television display.
+12. The method of claim 1, wherein the remote user device comprises a set-top box device.
+13. The method of claim 1, wherein the remote user device comprises a computer.
+14. The method of claim 1, wherein the content not identified as prohibited audio content is transmitted to the remote user device via an Internet Protocol television (IPTV) network.
+15. An audio data filtering system, comprising:
+an input interface to receive audio data;
+an analysis module to compare a textual representation of the audio data to data identifying prohibited audio content;
+a packet filter to prevent transmission of portions of the audio data matching prohibited audio content to a remote user device; and
+an output interface to transmit portions of the audio data not identified as prohibited audio content to the remote user device.
+16. The system of claim 15, wherein the packet filter is adapted to identify data packets associated with the prohibited audio content and to remove the identified data packets from a packet stream including the audio data before the output interface transmits the packet stream.
+17. The system of claim 16, wherein the packet filter is adapted to identify data packets associated with the prohibited audio content and to substitutes other data packets including non-prohibited content for the identified data packets before the output interface transmits the packet stream to the remote user device.
+18. The system of claim 15, further comprising a voice to text conversion module to generate the textual representation of the audio data.
+19. The system of claim 15, further comprising a blocking module to prevent transmission of substantially all content from a content source to the remote user device.
+20. The system of claim 15, further comprising a parental control settings database to store parental control settings associated with the remote user device including the list of prohibited terms.
+21. The system of claim 20, wherein the parental control settings database further comprises an identification of one or more prohibited content sources.
+22. A computer readable medium comprising computer readable instructions, wherein the computer readable instructions are executable by a processor to:
+compare a textual representation of audio data to data identifying prohibited audio content;
+send portions of the audio data not identified as prohibited audio content to a remote user device; and
+not send data packets associated with the prohibited audio content to the remote user device.
+23. The computer readable medium of claim 22, further comprising computer readable instructions executable by the processor to generate the textual representation based at least partially on the audio data.
+24. The computer readable medium of claim 22, wherein portions of the audio data not identified as prohibited audio content are transmitted to the remote user device via a streaming media protocol.
+25. The computer readable medium of claim 22, further comprising computer readable instructions executable by the processor to access a database of closed captioning data to determine the textual representation of the audio data.
+26. The computer readable medium of claim 22, further comprising the computer readable instructions executable by the processor to determine a rating associated with the audio data and to prevent transmission of substantially all of the received audio data based at least partially on the rating.
+27. The computer readable medium of claim 22, further comprising the computer readable instructions executable by the processor to receive the audio data via a streaming media protocol.

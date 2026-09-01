@@ -1,0 +1,190 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+WHAT IS CLAIMED IS:
+
+1. An aircraft component identification and maintenance tracking
+
+system comprising:
+a plurality of aircraft components (12, 14);
+
+a plurality of radio frequency identification, RFID, tags (18, 20, 40),
+wherein each of said RFID tags is associated with a respective one of said aircraft
+components, said RFID tags comprising identification and maintenance data information
+specific to said aircraft component to which it is associated, wherein for an aircraft
+component that has been removed from an aircraft the maintenance data includes the
+
+condition of the component at the time the component was removed from the aircraft; and
+
+a transceiver (30) operatively configured to transmit an activation signal to
+each of said RFID tags, and further configured to receive information transmitted by each
+of said RFID tags, each said RFID tag configurtd to transmit at least one of identification
+data, configuration data, and maintenance data regarding said aircraft component with
+which said RFID tag is associated, said transceiver being arranged to consolidate the
+maintenance data for all the RFID tagged aircraft components based on data received
+from the plurality of RFID tags, thereby defining a configuration for an aircraft.
+
+2. An aircraft component identification system according to Claim 1
+wherein said RFID tags comprise a passive réad-write chip incorporating a reader talk
+
+first protocol.
+
+3. An aircraft component identification system according to Claim 1
+wherein said RFID tags comprise at least one of a read only memory, a random access
+
+memory, and a non-volatile programmable memory.
+
+4. An aircraft component identification system according to Claim 1
+wherein said transceiver is configured to encode one or more of said RFID tags with data
+representative of an updated maintenance history for said aircraft component with which
+
+said RFID tag is associated.
+
+- 25 -
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+5. An aircraft component identification system according to Claim 1
+wherein said RFID tags comprise data related to a plurality of a manufacturer of said
+aircraft component, a serial number of said aircraft component, a part or model number of
+said aircraft component, a manufacture date of said aircraft component, an installation
+date of said aircraft component, a revision level of said aircraft component, maintenance
+activities related to said aircraft component, a block number of said aircraft component,
+serviceability information, and un-serviceability information for said aircraft component
+
+to which a respective said RFID tag is associated.
+
+6. An aircraft component identification system according to Claim 5
+wherein the serviceability information comprises at least one of an 8130 serviceability
+record, life limit hours, inspection limit hours, a previous maintenance record, a time
+since overhaul, an installation date, required maintenance data, a time before overhaul,
+data relating to special modifications, data relating to air-worthiness directives, data
+
+relating to service bulletin compliance, and a nd fault found history.
+
+7. An aircraft component identification system according to Claim 5
+wherein the un-serviceability information comprises at least one of a date and time said
+aircraft component was removed, operation conditions at time of removal, AHM data
+
+noted at time of removal, and an un-serviceable! signal.
+
+8. An aircraft component identification system according to Claim 1
+wherein said transceiver is configured to generate data setting forth a configuration for an
+aircraft based on data received from a plurality of said RFID tags.
+
+9. An aircraft component identification system according to Claim 1
+wherein said transceiver is configured to generate data setting forth consolidated
+maintenance data for said plurality of aircraft components based on data received from
+
+said RFID tags associated with said plurality oflaircraft components.
+
+10. _— An aircraft component identification system according to Claim 1
+wherein said transceiver is configured to generate data setting forth which of said aircraft
+components are due for at least one of periodic inspection and periodic replacement based
+
+on data received from the plurality of said RF ID tags.
+
+- 26 -
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+11. An aircraft component identification system according to Claim 1
+
+wherein a first portion of said RFID tags comprises at least one working address therein
+
+that is utilized for accessing said RFID tags for reading of data stored therein and writing
+of data to be stored therein and . wherein said at least one working address comprises at
+
+least one of:
+
+an aircraft serial number to which said aircraft component is attached or a
+
+pseudo-code assigned for inventory and status tracking:
+
+an International Civil Aviation Organization, ICAO assigned function
+code that defines a component type, a superior component type and a sequence number
+
+for said aircraft component; and
+
+a customer key field which configures said RFID tag to respond to an
+
+authorized query from said transceiver.
+
+12. An aircraft component identification system according to Claim 1
+wherein at least one of said RFID tags comprises a processor and non-volatile storage
+sufficient to store codes and information uséd to respond to inquiries and requests
+wherein said non-volatile storage comprises embedded software therein enabling said
+
+RFID tag to recognize and respond only to authorized inquiry and update requests.
+
+13. An aircraft component identification system according to Claim 12
+wherein said embedded software enables said RFID tag to only respond to received
+messages that include a specific authorization code, and wherein the authorization code is
+
+user selectable utilizing said transceiver.
+
+14. An aircraft component identification system according to Claim 12
+wherein said embedded software enables said RFID tag to only respond to received
+messages that are in a specific data format including one or more defined data fields,
+wherein one or more of the defined data fields are read-only fields.
+
+15. An aircraft component identification system according to Claim 14
+wherein one or more of the defined data fields comprise command codes that specify
+
+what type of message is being received by said RF ID tag.
+
+- 27 -
+
+--- PAGE 4 ---
+10
+
+15
+
+16. An aircraft component identification system according to Claim 12
+wherein said non-volatile storage comprises embedded software therein enabling said
+
+RFID tag to format and process information for storage and retrieval.
+
+17.‘ An aircraft component identification system according to Claim 1
+wherein at least one of said RFID tags is configured for use on an aircraft and attached
+thereto, said at least one RFID tags comprising data relating to a manufacturer name, a
+
+model number, a serial number, and a date of manufacture of said aircraft.
+
+18. An aircraft component identification system according to Claim 1
+wherein at least a portion of said RFID tags comprise a URL pointer stored therein, said
+URL pointer pointing to a database process that contains a maintenance history for the
+
+component to which said RFID tag is attached. :
+
+19. An aircraft component identification system according to Claim 1
+wherein at least a portion of said RFID tags| comprise a unique network addressable
+
+media access control address.
+
+20. An aircraft component identification system according to Claim 1
+wherein said transceiver is configured to create authorized query and update requests to
+
+satisfy authorization codes embedded within oné or more of said RFID tags.
+
+- 28 -

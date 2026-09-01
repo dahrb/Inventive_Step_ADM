@@ -1,0 +1,91 @@
+TITLE:
+Organic electro luminescence display (OELD), OELD motherboard and testing method
+
+TYPE:
+European Patent
+
+ABSTRACT:
+An Organic Electro Luminescence Display (OELD) includes a pixel unit including: a plurality of pixels adapted to receive a first power supply voltage (ELVDD), a second power supply voltage (ELVSS) and scanning signals to emit light; a scan driving unit adapted to supply the scanning signals to the pixel unit; and a test unit adapted to test whether or not a defect in the pixel unit is present. The OELD further includes a first wire group arranged in a first direction and having a floating end; and a second wire group arranged in a second direction and having a floating end. This structure allows a sheet unit test to be conducted without previously scribing each OELD, by supplying the power supply voltages and the signals for their tests to a plurality of the OELDs formed on a motherboard simultaneously.
+
+CLAIMS:
+An Organic Electro Luminescence Display (OELD) comprising:
+a pixel unit including a plurality of pixels adapted to receive a first power supply voltage, a second power supply voltage and scanning signals and to emit light;
+a scan driving unit adapted to supply the scanning signals to the pixel unit;
+a test unit adapted to test whether or not a defect in the pixel unit is present;
+a first wire group arranged in a first direction and having a floating end; and
+a second wire group arranged in a second direction and having a floating end.
+An OELD according to claim 1, wherein the first wire group and the second wire group are respectively electrically isolated from the pixel unit, the scan driving unit and the test unit.
+An OELD according to claim 1 or 2, further comprising a data driving unit adapted to supply data signals corresponding to externally supplied data to the pixel unit.
+An OELD according to claim 3, further comprising a data distribution unit adapted to supply the data signals supplied from the data driving unit to at least two pixels of the pixel unit, the data signals supplied from the data driving unit corresponding to at least two of the selected signals.
+An OELD according to claim 4, wherein the data distribution unit is electrically isolated from the first wire group and the second wire group.
+A method of testing at least one of a plurality of OELDs arranged on a motherboard, to determine whether or not there are any defects in any of the plurality of OELDs, the method comprising:
+commonly connecting each of a first wire group and a second wire group to OELDs aligned in a first direction and a second direction with respect to the plurality of OELDs on the motherboard:
+connecting at least one wire included in either the first wire group or the second wire group to each of the plurality of OELDs to supply a first power supply voltage and a second power supply voltage;
+supplying a first driving signal to at least one of the plurality of OELDs by wires of the first wire group, and supplying a second driving signal to at least one of the plurality of OELDs by wires of the second wire group; and
+testing at least one of the plurality of OELDs in response to at least one of the first and the second power supply voltages, the first driving signal and the second driving signal.
+A method according to claim 6,
+wherein at least one of the first wire group and the second wire group further supplies a third power supply voltage and a fourth power supply voltage to drive scan driving units arranged in each of the plurality of OELDs; and
+wherein at least one of the first driving signal and the second driving signal comprises either a scan control signal or a test control signal, and a test signal to control the scan driving unit.
+A method according to claim 7, wherein the scan control signal comprises at least one of clock signals, output enable signals and start pulses of the scan driving units arranged in each of the plurality of OELDs.
+A method according to claim 7 or 8, wherein the test signal initiates at least one of a lighting test, an aging test and a leakage current test.
+A method according to claim 7, wherein conducting a test on at least one of the plurality of OELDs further comprises:
+generating scanning signals to correspond to the third power supply voltage, the fourth power supply voltage and the scan control signal;
+supplying the scanning signals to a pixel unit arranged in at least one of the plurality of OELDs;
+supplying the test signals to the pixel unit in response to the test control signals; and
+displaying images on the pixel unit with correspond to the scanning signal and the test signal.
+A method according to claim 10, further comprising supplying the test signals to a plurality of pixels provided in the pixel unit to correspond to a plurality of the selected signals included in at least one of the first driving signals and the second driving signals.
+A method according to claim 7, wherein the second driving signal further comprises control signals to control whether or not at least one of the first power supply voltage, the second power supply voltage, the third power supply voltage, the fourth power supply voltage and the first driving signals, are supplied to the plurality of OELDs from the first wire group.
+A method according to claim 12, wherein the test is conducted in at least one of the plurality of OELDs receiving the first power supply voltage, the second power supply voltage, the third power supply voltage, the fourth power supply voltage, the first driving signals and the second driving signals to correspond to the control signals.
+An Organic Electro Luminescence Display (OELD), motherboard comprising:
+a plurality of OELDs each of which includes a pixel unit having a plurality of pixels adapted to receive a first power supply voltage, a second power supply voltage, scanning signals and test signals and to emit light; a scan driving unit adapted to supply the scanning signals to the pixel unit; a test unit adapted to supply the test signals to the pixel unit by data lines; and a data distribution unit adapted to supply the test signals connected between the test unit and the data lines to a plurality of the data lines, the test signals connected between the test unit and the data lines being supplied to output lines of separate test units;
+a first wire group connected to OELDs of the plurality of the OELDs aligned in a first direction; and
+a second wire group connected to the OELDs of the plurality of the OELDs aligned in a second direction;
+wherein at least one of the first and the second wire groups supplies predetermined test signals and predetermined power supply voltages to self-connected separate OELDs.
+A motherboard according to claim 14, wherein at least one of the wires included in the second wire group is electrically connected to at least one of the wires included in the first wire group.
+A motherboard according to claim 14 or 15, wherein the first wire group comprises:
+a first wire adapted to receive the first power supply voltage;
+a seventh wire adapted to receive the second power supply voltage;
+a fourth wire adapted to receive a third power supply voltage to drive the scan driving unit; and
+a fifth wire adapted to receive a fourth power supply voltage to drive the scan driving unit, and
+wherein the second wire group comprises:
+an eleventh wire adapted to receive the first power supply voltage;
+a seventeenth wire adapted to receive the second power supply voltage;
+a fourteenth wire adapted to receive the third power supply voltage to drive the scan driving unit; and
+a fifteenth wire adapted to receive the fourth power supply voltage to drive the scan driving unit.
+A motherboard according to claim 16, wherein the first wire and the eleventh wire; the seventh wire and the seventeenth wire; the fourth wire and the fourteenth wire; and the fifth wire and the fifteenth wire are connected to each other.
+A motherboard according to claim 17, wherein the scan driving unit is adapted to receive the third power supply voltage from the fourteenth wire, and to receive the fourth power supply voltage from the fifteenth wire.
+A motherboard according to claim 18, wherein the fourteenth wire and the fifteenth wire, and an electrical node of the scan driving unit are arranged outside of a scribing line of an OELD so that they are electrically isolated therefrom after the motherboard is scribed.
+A motherboard according to claim 17, 18 or 19 wherein the pixel unit is adapted to receive the first power supply voltage from the eleventh wire, and to receive the second power supply voltage from the seventeenth wire.
+A motherboard according to claim 20, wherein the eleventh wire, the seventeenth wire and an electrical node of the pixel unit are arranged outside of a scribing line of an OELD, so that they are electrically isolated therefrom after the motherboard is scribed.
+A motherboard according to claim 16, wherein the eleventh wire and the seventeenth wire are arranged in alternate rows.
+A motherboard according to claim 22, wherein the pixel unit is adapted to receive the first power supply voltage from the eleventh wire, and to receive the second power supply voltage from the seventh wire included in the first wire group.
+A motherboard according to claim 23, wherein the eleventh wire, and the seventh wire and an electrical node of the pixel unit are arranged outside of a scribing line of an OELD, so that they are electrically isolated therefrom after the motherboard is scribed.
+A motherboard according to one of Claims 16 to 24, wherein the fourteenth wire and the fifteenth wire arranged in alternate rows.
+A motherboard according to claim 25, wherein the scan driving unit is adapted to receive the third power supply voltage from the fourteenth wire, and to receive the fourth power supply voltage from the fifth wire included in the first wire group.
+A motherboard according to claim 26, wherein the fourteenth wire, the fifth wire and an electrical node of the scan driving unit are arranged outside of a scribing line of the OELD, so that they are electrically isolated therefrom after the motherboard is scribed.
+A motherboard according to claim 14, wherein either the first wire group further comprises:
+second wires adapted to receive at least two selected signals supplied to the data distribution unit;
+third wires adapted to receive the test control signals and the test signals supplied to the test unit; and
+sixth wires adapted to receive the scan control signals supplied to the scan driving unit; or
+wherein the second wire group further comprises:
+twelfth wires adapted to receive the at least two selected signals supplied to the data distribution unit;
+thirteenth wires adapted to receive the test signals supplied to the test unit; and
+sixteenth wires adapted to receive the scan control signals supplied to the scan driving unit.
+A motherboard according to claim 28, wherein:
+each second wire is connected to one of the twelfth wires;
+each third wire is connected to one of the thirteenth wires; and
+each sixth wire is connected to one of the sixteenth wires.
+A motherboard according to claim 28, wherein:
+the data distribution unit is connected to one of the second wires and the twelfth wires by the first electrical node;
+the test unit is connected to one of the third wires and the thirteenth wires by the second electrical node; and
+the scan driving unit is connected to one of the sixth wires and the sixteenth wires by the third electrical node.
+A motherboard according to claim 30, wherein the first electrical node, the second electrical node and the third electrical node are arranged outside of a scribing line of an OELD so that they are electrically isolated therefrom after the motherboard is scribed.
+A motherboard according to claim 28, 29, 30 or 31 further comprising a transmission gate adapted to connect at least one of the wires included in the first wire group to each OELD to control supplies of at least one of the signals and the power supply voltages supplied to the OELD from the connected wires.
+A motherboard according to claim 32, further comprising an eighteenth wire and a nineteenth wire included in the second wire group, the eighteenth wire and the nineteenth wire connected to gate terminals of the transmission gate to supply the control signals to control turn-on/off of the transmission gate.
+A motherboard according to claim 14, wherein the first wire group comprises second wires adapted to receive at least two selected signals supplied to the data distribution unit, and sixth wires adapted to receive the scan control signals supplied to the scan driving unit, and wherein the second wire group comprises thirteenth wires adapted to receive the test signals supplied to the test unit.
+A motherboard according to claim 34, wherein:
+the data distribution unit is connected to the second wires by the first electrical node;
+the scan driving unit is connected to the sixth wires by the second electrical node; and
+the test unit is connected to the thirteenth wires by the third electrical node.
+A motherboard according to claim 35, wherein the first electrical node, the second electrical node and the third electrical node are arranged outside of a scribing line of the OELD so that they are electrically isolated therefrom after the motherboard is scribed.
+A motherboard according to one of Claims 14 to 36, wherein the test signal is adapted to initiate at least one of a lighting test, an aging test and a leakage current test.

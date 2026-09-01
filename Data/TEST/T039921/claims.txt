@@ -1,0 +1,443 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+EP 10 860 419.0 165 526 g4/rko
+
+FUJITSU LIMITED February 19, 2021
+
+CLAIMS
+
+(Main Request)
+
+[Claim 1] An information processing apparatus
+comprising:
+
+location information obtaining means (1b) for
+obtaining first location information (5) indicating an
+
+identifier of a data storage server (300) that the user
+
+specifies as a unified location of personal data of the
+
+user, the first location information (5) further indicating
+
+a location of a user-specified directory within the data
+
+storage server (300);
+
+location information producing means (1c) for
+sending the data storage server (300) a location
+information request including an identifier of an
+application and the first location information and
+receiving second location information (6) indicating a
+location of an application-specific directory that is
+
+placed below the user-specified directory and uniquely
+
+assigned to the application as a response from the data
+
+storage server (300);
+
+storage means (ld) for storing the second location
+
+information (6);
+
+data processing means (la) for executing the
+
+application, determining if there is a need to access the
+
+personal data of the user and producing, when it is
+
+determined there is the need to access the personal data of
+
+--- PAGE 2 ---
+the user, first access target information (4) that is
+
+subordinated to the second location information (6) in the
+
+storage means (ld) and indicates a relative path and name
+
+of a target data file including the personal data of the
+
+user;
+
+second access target information producing means
+
+(le) for producing, based on the first access target
+
+information (4) and the second location information (6) in
+
+the storage means (ld), second access target information
+
+(7) indicating a storage location and name of the target
+
+data file; and
+
+access means (1f) for making access to the target
+
+data file in the data storage server (300), based on the
+
+second access target information (7).
+
+[Claim 2] The information processing apparatus (1)
+according to claim 1, wherein:
+
+the data processing means (la) is provided in
+
+plurality, configured to execute respective applications in
+
+the information processing apparatus (1); and
+
+the location information producing means (1c)
+
+obtains an application-specific URL list describing
+
+locations of a plurality of directories that are placed
+
+below the user-specified directory and uniquely assigned to
+
+the data processing means (la) executing the respective
+
+applications requested by the user, and extracting from the
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+application-specific URL l
+
+ist the location of the directory
+
+assigned to one of the plurality of information processing
+
+means (la).
+
+[Claim 3] The information processing apparatus (1)
+
+according to claim 2, w
+
+herein the
+
+location information
+
+producing means (lc) obtains the application-specific URL
+
+list from the data storage
+
+server (300).
+
+[Claim 4] The information processing apparatus (1)
+
+according to claim 1, w
+
+producing means obtains th
+
+indicating the location of
+
+herein the location information
+
+e second location information (6)
+
+to the data processing means (la) by
+
+predetermined set of rules.
+
+the directory uniquely assigned
+
+following a
+
+[Claim 5] The information processing apparatus (1)
+
+according to any of claims
+
+1 to 4, wherein:
+
+the applications executed by the data processing
+
+means (la) are coded in a program stored in an apparatus;
+
+and
+
+the location in
+
+formation obtaining
+
+means (1b)
+
+sends the apparatus a request for the program of the
+
+applications, together with an identifier of
+
+receives the first locati
+
+on information (5)
+
+the program as a response
+
+from the apparatus.
+
+the user, and
+
+together with
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+[Claim 6] The ini
+
+according to any of clai
+
+in
+
+in
+
+ms 1 to 4, wherein the
+
+forma
+
+forma
+
+apparat
+
+[Claim 7] The int
+
+us comprising means
+
+tion obtaining means (1b)
+
+according to any of clai
+
+in
+
+in
+
+according to claim 7,
+
+forma
+
+forma
+
+[Claim 8] The ini
+
+storing the first locati
+
+loca
+
+obtains the
+
+tion (5) upon authentication of the
+
+first
+
+formation processing apparatus (1)
+
+location
+
+location
+
+user,
+
+ms 1 to 4, wherein the
+
+tion obtaining means (1b)
+
+on information
+
+obtains the
+
+tion (5) specified by the user.
+
+locat
+
+ion information (5
+
+receipt thereof from th
+
+location information (5)
+
+according to clain
+
+[Claim 9] The ini
+
+into
+
+e user,
+
+obtaining means (lb) obtains the
+
+(5)
+
+from a terminal device
+
+location information (5
+
+} having been
+
+terminal device by the user.
+
+the storage
+
+and obtains
+
+first
+
+from an
+
+for authenticating the user.
+
+formation processing apparatus (1)
+
+location
+
+location
+
+(5),
+
+formation processing apparatus (1)
+
+further comprising storage means for
+
+wherein the
+
+from the storage means.
+
+n 7 or 8, wherein the location in
+
+tion information obtaining means (1b) enters the first
+means upon
+
+the first
+
+formation processing apparatus (1)
+
+Formation
+
+first location in
+
+Formation
+
+via a network,
+
+entered
+
+the first
+
+to the
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+[Claim 10] The information processing apparatus
+
+(1) according to any of claims 1 to 9, wherein the data
+
+storage server (300) is linked to the information
+
+processing apparatus (1) via a network.
+
+[Claim 11] A program that causes a computer (1) to
+
+perform a process comprising:
+
+obtaining first location information (5)
+
+indicating an identifier of a data storage server (300)
+
+that a user specifies as a unified location of personal
+
+data of the user, the first location information (5) in
+
+further indicating a location of a user-specified directory
+
+within the data storage server (300);
+
+in
+
+sending the data storage server (300) a location
+
+formation request including an identifier of an
+
+application and the first location information;
+
+receiving second location information (6)
+
+indicating a location of a directory that is placed below
+
+the user-specified directory and uniquely assigned to the
+
+application, as a response from the data storage server
+
+(300);
+
+in
+
+storage means(ld) for storing the second location
+
+formation (6);
+
+executing the applications requested by the user;
+
+determining if there is a need to access the personal data
+
+--- PAGE 6 ---
+10
+
+15
+
+of the user;
+
+producing, when it is determined there is the need
+
+target information (4)
+
+to access the personal data of the user, first access
+
+that is subordinated to the second
+
+location information (6) in the storage means and indicates
+
+a relative path and name of a target data file including
+
+the personal data of the user;
+
+producing, based on the first access target
+
+information (4) and the second location information (6) in
+
+the storage means, second access target information (7)
+
+indicating a storage location and name of the target data
+
+file; and
+making access
+
+storage server (300),
+
+information (7).
+
+to the target data file in the data
+
+based on the second access target

@@ -1,0 +1,97 @@
+TITLE:
+Control system optimization via independent parameter adjustment
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method for optimizing operation of a feedback system may include generating a control signal according to a control parameter, regulating an output of the feedback system via the control signal, and monitoring the control parameter. In response to the monitoring indicating that the present value of the control parameter is outside a specific range of values, a first parameter that impacts an operating characteristic of the feedback system may be adjusted until the present value of the control parameter is within the specific range of values. The specific range of values of the control parameter may correspond to a target level of the operating characteristic of the feedback system with respect to the first parameter. One or more additional independent parameters also impacting the operating characteristic of the system may be similarly adjusted to obtain a minimum present value of the control parameter at which the output of the feedback system would be regulated, with the minimum value of the control parameter corresponding to the target level of the operating characteristic of the feedback system with respect to, collectively, the first parameter and the one or more additional independent parameters.
+
+CLAIMS:
+1. A method for regulating an output of a system, the method comprising:
+adjusting a control parameter based on the output of the system;
+adjusting a first parameter that impacts an operating characteristic of the system, wherein said adjusting the first parameter is performed in response to said adjusting the control parameter yielding a value of the control parameter that is outside a specific range of values of the control parameter; and
+adjusting the output of the system based on the control parameter;
+wherein the specific range of values of the control parameter corresponds to a target level of the operating characteristic of the system with respect to the first parameter.
+2. The method of claim 1, wherein the system is a voltage regulator, and the operating characteristic is power efficiency.
+3. The method of claim 1, further comprising monitoring the value of the control parameter, wherein said adjusting the first parameter is performed further in response to said monitoring.
+4. The method of claim 1, wherein the specific range of values of the control parameter comprises a minimum value, wherein said adjusting the first parameter is performed in response to the value of the control parameter deviating from the minimum value.
+5. The method of claim 1, further comprising adjusting one or more additional parameters that impact the operating characteristic of the system, wherein in response to said adjusting the one or more additional parameters, said adjusting the control parameter results in the value of the control parameter residing within a sub-range of values of the control parameter within the specific range of values of the control parameter.
+6. The method of claim 5, wherein the sub-range of values of the control parameter corresponds to a target level of the operating characteristic with respect to the first parameter and to the additional parameters.
+7. The method of claim 1, wherein said adjusting the output of the system based on the control parameter comprises:
+generating a control signal having a characteristic determined by the control parameter; and
+controlling the output of the system via the control signal.
+8. A method for optimizing operation of a feedback system, the method comprising:
+generating a control signal according to a control parameter;
+regulating an output of the feedback system via the control signal;
+monitoring the control parameter; and
+adjusting a present value of a first parameter that affects an operating characteristic of the feedback system, in response to said monitoring indicating that a present value of the control parameter is outside a specific range of values of the control parameter;
+wherein the specific range of values of the control parameter corresponds to a target level of the operating characteristic of the feedback system with respect to the first parameter.
+9. The method of claim 8, further comprising adjusting the control parameter based on the output of the feedback system.
+10. The method of claim 8, wherein the specific range of values of the control parameter comprises a minimum value of the control parameter at which the control signal is operable to maintain regulation of the output of the feedback system.
+11. The method of claim 10, wherein said adjusting is performed until the present value of the control parameter is the minimum value of the control parameter at which the control signal is operable to maintain regulation of the output of the feedback system.
+12. The method of claim 8, wherein said adjusting is performed until the present value of the control parameter is within the specific range of values of the control parameter.
+13. The method of claim 8, wherein the operating characteristic is power loss of the feedback system.
+14. The method of claim 8, further comprising:
+adjusting respective present values of one or more additional parameters that impact the operating characteristic of the feedback system, in response to said monitoring indicating that the present value of the control parameter is outside the specific range of values of the control parameter;
+wherein the specific range of values of the control parameter further corresponds to a target level of the operating characteristic of the feedback system with respect to the one or more additional parameters.
+15. The method of claim 14, wherein said adjusting the respective present values of the one or more additional parameters is performed until the present value of the control parameter is within the specific range of values of the control parameter.
+16. The method of claim 8, wherein feedback system is a pulse-modulated control system of a voltage regulator, wherein the output of the feedback system is a voltage output of the voltage regulator, wherein the control signal is a pulse-modulated periodic signal, wherein the control parameter is a duty-cycle of the pulse-modulated periodic signal, and wherein the first parameter is one of:
+dead-time;
+gate duration;
+gate voltage;
+switching frequency;
+operating temperature;
+input voltage;
+the output voltage of the voltage regulator;
+output current of the voltage regulator; and
+gate drive current.
+17. A system comprising:
+an output stage configured to generate an output of the system; and
+a control stage configured to:
+adjust a control parameter based on the output of the system;
+adjust a first parameter that impacts an operating characteristic of the system, in response to the adjusted control parameter having a value outside a specific range of values of the control parameter, until the adjusted control parameter has a value within the specific range of values;
+generate a control signal based on the control parameter; and
+control the output of the system via the control signal;
+wherein the specific range of values of the control parameter corresponds to a target level of the operating characteristic of the system with respect to the first parameter.
+18. The system of claim 17, wherein the control stage comprises:
+a comparator stage configured to generate a difference signal based on the output of the system and a reference value; and
+a parameter control stage configured to adjust the control parameter based on the difference signal.
+19. The system of claim 18, wherein the control stage further comprises:
+an adjustment stage coupled between the parameter control stage and the output stage, and configured to adjust the first parameter based on the adjusted control parameter.
+20. The system of claim 17;
+wherein the output stage is an output stage of a voltage regulator;
+wherein the output of the system is an output of the voltage regulator;
+wherein the control signal is a pulse-width-modulated (PWM) signal;
+wherein the control parameter is a duty-cycle of the PWM signal;
+wherein the operating characteristic is a power efficiency of the system; and
+wherein the first parameter is one of:
+dead-time;
+gate duration;
+gate voltage;
+switching frequency;
+operating temperature;
+input voltage;
+the output voltage of the voltage regulator;
+output current of the voltage regulator; and
+gate drive current.
+21. A method to optimize efficiency for low power operation of a voltage regulator, the method comprising:
+setting respective present values of one or more parameters to respective initial values, wherein the one or more parameters correspond to one or more respective operating characteristics that impact an efficiency of the voltage regulator;
+obtaining a present duty cycle value of a control signal configured to control an output voltage of the voltage regulator;
+changing the respective present value of at least one of the one or more parameters by a specified amount in response to the present duty cycle value being different than a most recent previous duty cycle value; and
+performing said obtaining and said changing a plurality of times, wherein each time of the plurality of times said changing is performed in a direction that results in decreasing the present duty cycle value.
+22. The method of claim 21, further comprising successively changing the respective present value of each of the one or more parameters in response to the present duty cycle value being different than the most recent previous duty cycle value.
+23. The method of claim 21, further comprising simultaneously changing the respective present value of each of the one or more parameters in response to the present duty cycle value being different than the most recent previous duty cycle value.
+24. A method to optimize efficiency for low power operation of a voltage regulator, the method comprising:
+setting a present value of a parameter corresponding to an operating characteristic of the voltage regulator to an initial value;
+obtaining a present duty cycle value of a control signal configured to control an output voltage of the voltage regulator;
+changing the present value of the parameter by a specified amount in response to the present duty cycle value being different than a most recent previous duty cycle value; and
+performing said obtaining and said changing a plurality of times, wherein each time of the plurality of times said changing is performed, said changing is performed in a direction that results in decreasing the present duty cycle value.
+25. The method of claim 24, wherein said changing comprises:
+in response to the present duty cycle value being higher than the most recent previous duty cycle value:
+increasing the present value of the parameter if the present value of the parameter was obtained by decreasing a most recent previous value of the parameter; and
+decreasing the present value of the parameter if the present value of the parameter was obtained by increasing the most recent previous value of the parameter; and
+in response to the present duty cycle value being lower than a most recent previous duty cycle value:
+decreasing the present value of the parameter if the present value of the parameter was obtained by decreasing the most recent previous value of the parameter; and
+increasing the present value of the parameter if the present value of the parameter was obtained by increasing the most recent previous value of the parameter.
+26. The method of claim 24, further comprising adding constraints to limit a scope of said changing to be within specified bounds.

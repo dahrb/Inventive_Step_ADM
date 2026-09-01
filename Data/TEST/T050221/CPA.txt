@@ -1,0 +1,73 @@
+TITLE:
+Control server, service providing system, and method of providing a virtual infrastructure
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A service providing system includes a control server and a physical resource(s) controlled by the control server. The control server has a virtual device providing unit(s) that provides at least one virtual object for controlling a physical resource(s), and a virtual infrastructure providing unit(s) that can provide, as a virtual object(s), a virtual infrastructure(s) configured using at least one virtual object provided by the virtual device providing unit(s), wherein the virtual infrastructure providing unit(s) can configure a virtual infrastructure(s) using the virtual object(s) provided by the virtual infrastructure providing unit(s), and can provide the virtual infrastructure(s) as a virtual object(s).
+
+CLAIMS:
+ A control server, comprising:
+a virtual device providing unit(s) that provides at least one virtual object for controlling a physical resource(s); and
+a virtual infrastructure providing unit(s) that can provide, as a virtual object(s), a virtual infrastructure(s) configured by using at least one virtual object provided by said virtual device providing unit(s); wherein
+said virtual infrastructure providing unit(s) can configure a virtual infrastructure(s) using a virtual object(s) provided by said virtual infrastructure providing unit(s), and can provide said virtual infrastructure(s) as a virtual object(s).
+2. The control server according to claim 1, wherein said virtual infrastructure providing unit(s) provides, as a virtual object(s), said virtual infrastructure(s), by creating a new virtual object(s) that controls a virtual object(s) used for configuring said virtual infrastructure(s).
+3. The control server according to claim 1, comprising:
+a virtual infrastructure configuration storage unit(s) that stores a virtual object(s) assigned to each of said virtual infrastructure(s); and
+a virtual object configuration storage unit that stores information of the virtual infrastructure providing unit(s) or the virtual device providing unit(s) and that comprises a source of each of said virtual object(s); wherein
+reference is made to information stored in said virtual infrastructure configuration storage unit and said virtual object configuration storage unit, to cause to transmit control information to said virtual infrastructure(s) and a virtual object(s) forming said virtual infrastructure(s).
+4. The control server according to claim 1, wherein each of said virtual device providing unit(s) and each of said virtual infrastructure providing unit(s) respectively comprise a configuration information storage unit that stores partition configuration information of a virtual object(s), in order to provide the virtual object(s) to plural virtual infrastructure providing devices.
+5. The control server according to claim 1, wherein said virtual device providing unit comprises:
+a virtual object identification unit that identifies a virtual object called from among a plurality of virtual objects being provided, based on inputted control information;
+a control unit that performs processing in accordance with control information given to said identified virtual object; and
+a control channel communication unit that performs transmitting and receiving of information with respect to specified one of said physical resource(s) connected via a control channel.
+6. The control server according to claim 1, wherein said virtual infrastructure providing unit comprises:
+a virtual object identification unit that identifies a virtual object called from among a plurality of virtual objects being provided, based on inputted control information;
+a control unit that performs processing in accordance with control information given to said identified virtual object; and
+a virtual object calling unit that calls a virtual object assigned to said virtual infrastructure providing unit, in accordance with a result of said processing.
+7. The control server according to claim 1, wherein said physical resource(s) comprises a data plane device(s), and functions as a control plane device(s).
+8. A service providing system, comprising:
+a virtual device providing unit(s) that provides at least one virtual object for controlling a physical resource(s); and
+a virtual infrastructure providing unit(s) that can provide, as a virtual object(s), a virtual infrastructure(s) configured by using at least one virtual object provided by said virtual device providing unit(s); and
+a physical resource(s) controlled by said control server.
+9. The service providing system according to claim 8, wherein said virtual infrastructure providing unit(s) of said control server provides, as a virtual object(s), said virtual infrastructure(s), by creating a new virtual object(s) that controls a virtual object(s) used for configuring said virtual infrastructure(s).
+10. The service providing system according to claim 8, wherein said control server further comprises:
+a virtual infrastructure configuration storage unit that stores a virtual object(s) assigned to each of said virtual infrastructure(s); and
+a virtual object configuration storage unit that stores information of the virtual infrastructure providing unit(s) or the virtual device providing unit(s) and that comprises a source of each of said virtual object(s); wherein
+reference is made to information stored in said virtual infrastructure configuration storage unit and said virtual object configuration storage unit, to cause to transmit control information to said virtual infrastructure(s) and a virtual object(s) forming said virtual infrastructure(s).
+11. A method of creating a virtual infrastructure(s), comprising:
+building a virtual infrastructure(s) by using a control server comprising a virtual device providing unit(s) that provides at least one virtual object for controlling a physical resource(s), and a virtual infrastructure providing unit(s) that can provide, as a virtual object(s), a virtual infrastructure(s) configured by using at least one virtual object provided by said virtual device providing unit(s), wherein
+said virtual infrastructure providing unit(s) of said control server configures a virtual infrastructure(s) using a virtual object(s) provided by said virtual infrastructure providing unit(s), and provides said virtual infrastructure(s) as a virtual object(s).
+12. The method of creating a virtual infrastructure(s) according to claim 11, wherein said virtual infrastructure providing unit(s) of said control server provides, as a virtual object(s), said virtual infrastructure(s), by creating a new virtual object(s) that controls a virtual object(s) used for configuring said virtual infrastructure(s).
+13. The method of providing a virtual infrastructure according to claim 11, wherein said control server further comprises:
+a virtual infrastructure configuration storage unit that stores a virtual object(s) assigned to each of said virtual infrastructure(s); and
+a virtual object configuration storage unit that stores information of the virtual infrastructure providing unit(s) or the virtual device providing unit(s) and that comprises a source of each of said virtual object(s); and wherein
+said control server makes reference to information stored in said virtual infrastructure configuration storage unit and said virtual object configuration storage unit, to cause to transmit control information to said virtual infrastructure(s) and a virtual object(s) forming said virtual infrastructure(s).
+14. A program embodied in a non-transient computer readable storage medium and executed on a control server,
+said control server comprising a virtual device providing unit(s) that provides at least one virtual object for controlling a physical resource(s), and a virtual infrastructure providing unit(s) that can provide, as a virtual object(s), a virtual infrastructure(s) configured by using at least one virtual object provided by said virtual device providing unit(s); wherein
+said program comprises:
+controlling said virtual infrastructure providing unit(s) so that said virtual infrastructure providing unit(s) configures a virtual infrastructure(s) using a virtual object(s) provided by said virtual infrastructure providing unit(s), and provides said virtual infrastructure(s) as a virtual object(s).
+15-16. (canceled)
+17. The control server according to claim 2, further comprising
+a virtual infrastructure configuration storage unit that stores a virtual object assigned to each of said virtual infrastructure(s); and
+a virtual object configuration storage unit that stores information of the virtual infrastructure providing unit or the virtual device providing unit(s) and that comprises a source of each of said virtual object(s); wherein
+reference is made to information stored in said virtual infrastructure configuration storage unit and said virtual object configuration storage unit, to cause to transmit control information to said virtual infrastructure(s) and a virtual object(s) forming said virtual infrastructure(s).
+18. The control server according to claim 2, wherein each of said virtual device providing unit(s) and each of said virtual infrastructure providing unit(s) respectively comprise a configuration information storage unit that stores partition configuration information of a virtual object(s), in order to provide the virtual object(s) to plural virtual infrastructure providing devices.
+19. The control server according to claim 3, wherein each of said virtual device providing unit(s) and each of said virtual infrastructure providing unit(s) respectively comprise a configuration information storage unit that stores partition configuration information of a virtual object(s), in order to provide the virtual object(s) to plural virtual infrastructure providing devices.
+20. The control server according to claim 2, wherein said virtual device providing unit comprises:
+a virtual object identification unit that identifies a virtual object called from among a plurality of virtual objects being provided, based on inputted control information;
+a control unit that performs processing in accordance with control information given to said identified virtual object; and
+a control channel communication unit that performs transmitting and receiving of information with respect to specified one of said physical resource(s) connected via a control channel.
+21. The control server according to claim 3, wherein said virtual device providing unit comprises:
+a virtual object identification unit that identifies a virtual object called from among a plurality of virtual objects being provided, based on inputted control information;
+a control unit that performs processing in accordance with control information given to said identified virtual object; and
+a control channel communication unit that performs transmitting and receiving of information with respect to specified one of said physical resource(s) connected via a control channel.
+22. The control server according to claim 4, wherein said virtual device providing unit comprises:
+a virtual object identification unit that identifies a virtual object called from among a plurality of virtual objects being provided, based on inputted control information;
+a control unit that performs processing in accordance with control information given to identified virtual object; and
+a control channel communication unit that performs transmitting and receiving of information with respect to specified one of said physical resource(s) connected via a control channel.
+23. The service providing system according to claim 9, wherein said control server further comprises:
+a virtual infrastructure configuration storage unit that stores a virtual object(s) assigned to each of said virtual infrastructure(s): and
+a virtual object configuration storage unit that stores information of the virtual infrastructure providing unit(s) or the virtual device providing unit(s) and that comprises a source of each of said virtual object(s); wherein
+reference is made to information stored in said virtual infrastructure configuration storage unit and said virtual object configuration storage unit, to cause to transmit control information to said virtual infrastructure(s) and a virtual object(s) forming said virtual infrastructure(s).

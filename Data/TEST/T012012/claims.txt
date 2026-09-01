@@ -1,0 +1,131 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+-8-
+MAIN REQUEST
+
+CLAIMS
+
+1. A method of controlling a solid state power controller (18), comprising:
+
+determining whether a voltage across a solid state power control switch (42)
+is within a predetermined voltage threshold wherein the predetermined voltage
+threshold is a range of voltage values;
+
+characterised in that the method further comprises:
+
+limiting, by a current limit module (46), an electric current through the solid
+state power control switch to a non-zero amount of the electric current when the
+voltage is outside of the predetermined voltage threshold; and
+
+selectively disabling the current limit module (46) that limits the electric
+current through the solid state power control switch (42) in response to an in-rush
+electric current coming from a load to permit the in-rush electric current through the
+
+solid state power control switch (42).
+
+2. The method as recited in claim 1, including establishing the non-zero
+amount as a predetermined percentage of a rated maximum current of the solid
+
+state power control switch (42).
+
+3. The method as recited in claim 1 or 2, including establishing the non-zero
+amount as 200% of a rated maximum current of the solid state power control switch
+(42).
+
+4. The method as recited in claim 1, including establishing the non-zero
+amount based upon an amount of heat expected to be produced by the solid state
+
+power conirol switch (42) at the non-zero amount.
+
+5. The method as recited in claim 1, 2, 3 or 4 including switching the solid state
+power control switch (42) from an ON state to an OFF state to block the electric
+
+current when the electric current is above a threshold electric current.
+
+6. The method as recited in any preceding claim, including maintaining the
+solid state power control switch (42) in an ON state to permit current through the
+
+solid state power control switch in response to limiting the electric current.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-9-
+MAIN REQUEST
+7. The method as recited in any preceding claim, including limiting the electric
+current in a first direction relative to a load, and permitting the electric current
+through the solid state power control switch (42) in a second direction relative to the
+
+load for a DC waveform of the electric current.
+
+8. The method as recited in any of claims 1 to 6, including limiting the electric
+current in a first direction relative to a load and a second, different direction relative
+
+to the load for an AC waveform of the electric current.
+
+9. A solid state power controller system (18) comprising:
+
+a solid state power control switch (42) that normally operates within a
+predetermined voltage threshold, wherein the predetermined voltage threshold is a
+range of voltage values;
+
+a microcontroller (38) that controls the solid state power control switch; and
+
+a current limit module (46) that controls the solid state power control switch;
+
+characterised in that the current limit module is operative to selectively limit
+an electric current through the solid state power control switch to a non-zero
+amount when a voltage across the solid state power control switch is outside of the
+predetermined voltage threshold, wherein the current limit module is selectively
+disabled in response to an in-rush electric current coming from a load to permit the
+
+in-rush electric current through the solid state power control switch.
+
+10. The system as recited in claim 9, further comprising a gate drive (40) that
+interfaces with each of the microcontroller (38) and the current limit module (46) to
+
+selectively control the electric current through the switch.
+
+11, The system as recited in claim 9 or 10, wherein the solid state power control
+
+switch (42) comprises a FET.
+
+12. The system as recited in claim 9, 10 or 11, wherein the current limit module
+
+comprises an operational amplifier (52).
+
+13. The system as recited in claim 9, further comprising a gate drive (40) having
+a MOSFET connected to the solid state power control switch (42), the
+
+--- PAGE 3 ---
+-10-
+MAIN REQUEST
+microcontroller, and the current limit module for controlling the electric current
+
+through the solid state power control switch.
+
+14. The system as recited in claim 13, further comprising a trip module (44)
+connected with the controller (38) and the gate drive (40) for selectively switching
+the solid state power control switch (42) between an ON state and an OFF state to
+selectively block the electric current when the electric current is above a threshold
+
+electric current.

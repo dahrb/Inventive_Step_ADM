@@ -1,0 +1,80 @@
+TITLE:
+Integrated digital signal processor/general purpose CPU with shared internal memory
+
+TYPE:
+European Patent
+
+ABSTRACT:
+An integrated data processing platform for processing a digital signal that includes a general purpose processor and a digital signal processor (DSP) module. The DSP module recovers digital data from a digital signal utilizing a sequence of DSP operations selected by the general purpose processor. The general purpose processor processes the digital data recovered by the DSP module, but is also available to perform general purpose tasks. A shared internal memory array selectively provides information to the DSP module and to the general purpose processor. The information stored in the internal memory array includes operands utilized in the execution of the DSP algorithm and selected instructions and data utilized by the general purpose CPU either for controlling the execution of the DSP algorithm or for executing its own general purpose tasks. While in many applications the data processing system will include an analog front end that converts a modulated input signal received on an analog transmission channel to a corresponding digital signal for processing by the data processing system, the data processing system may also receive the digital signal directly from a digital source.
+
+CLAIMS:
+An integrated data processing platform for processing a digital signal, the data processing platform comprising:
+a) digital signal processor (DSP) for processing the digital signal by executing a DSP algorithm;
+b) a general purpose processor for controlling the digital signal processor; and
+c) a shared internal memory array that is accessible by both the digital signal processor and the general purpose processor.
+An integrated data processing platform for processing a digital signal, the data processing platform comprising:
+a) an internal bus;
+b) a digital signal processor (DSP) module, connected to the internal bus, for recovering digital data from the digital signal by executing a DSP algorithm;
+c) a general purpose processor, connected to the internal bus, for controlling the DSP module and for processing the digital data recovered by the DSP module; and
+d) an internal memory array connected to the internal bus such that the internal memory array is accessible by both the DSP module and the general purpose processor for selectively providing operands stored in the internal memory array to the DSP module and instructions and data stored in the internal memory array to the general purpose processor.
+An integrated data processing platform as in Claim 2 and further including an analog front end that converts a modulated input signal received by the analog front end from an analog channel to the digital signal for processing by the data processing platform.
+An integrated data processing platform as in Claim 2 wherein the digital signal is received by the data processing platform directly from a digital source.
+A data processing system for processing a digital signal, the data processing system comprising:
+a) a digital signal processor (DSP) that recovers digital data from the digital signal by executing a selected sequence of DSP operations;
+b) a general purpose processor that selects the sequence of DSP operations for execution by the digital signal processor from a set of basic DSP operations and that performs general purpose processing tasks utilizing selected instructions and data;
+c) an internal bus to which both the digital signal processor and the general purpose central processing unit are connected; and
+d) an internal memory array connected to the internal bus such that the internal memory array is accessible by the digital signal processor for retrieving operands utilized by the digital signal processor in executing the selected sequence of DSP operations and by the general purpose processor for retrieving the selected instructions and data.
+A data processing system as in Claim 5 and further including a bus interface unit connected between the internal bus and an external system memory for implementing the transfer of operands, instructions and data between the internal bus and the external system memory.
+A data processing system as in Claim 6 wherein the digital signal processor includes an internal address generator connected to the internal memory array for retrieving operands from the internal memory array for use by the digital signal processor in executing the selected sequence of DSP operations.
+A data processing system as in Claim 5 and further including an analog front end that converts a modulated input signal received by the analog front end from an analog channel to the digital signal.
+A data processing system as in Claim 5 wherein the digital signal is received by the data processing system directly from a digital source.
+An improved data processing system that includes a general purpose processor connected to a bus interface unit via an internal bus for retrieving instructions and data from an external memory via the bus interface unit and an internal memory array connected to the internal bus for providing internal storage for instructions and data retrieved by the general purpose processor from the external memory, the improvement comprising a digital signal processor (DSP) module connected to the internal bus such that the internal memory array is accessible to both the general purpose processor and the DSP module, the DSP module comprising:
+(a) a control register for storing a DSP command issued to the DSP module by the general purpose processor via the internal bus;
+(b) multiplier/accumulator means responsive to storage of the DSP command in the control register for initiating execution of a DSP operation corresponding to the DSP command; and
+(c) address generator means for referencing operands for utilization by the multiplier/accumulator means in executing the DSP operation.
+A data processing system as in claim 10 wherein the multiplier/accumulator means includes first and second input ports for receiving first and second operands, respectively, for utilization by the multiplier/accumulator means in executing the DSP operation.
+A data processing system as in claim 11 wherein the address generator means includes means for retrieving the first and second operands.
+A data processing system as in claim 10 wherein the address generator means includes means for retrieving the first and second operands from the internal memory array.
+A data processing system as in claim 11 wherein the address generator means includes means for retrieving the first operand from the internal memory array and means for retrieving a second operand from the external memory via the bus interface unit.
+A method for processing a digital signal, the method comprising:
+(a) selecting from a set of digital signal processor (DSP) operations to define a specific sequence of DSP operations for processing the digital signal;
+(b) retrieving operands required for execution of the specific sequence of DSP operations by a DSP module and instructions and data required by a general purpose processor for executing a general purpose processor task;
+(c) loading the operands, instructions and data into a memory array that is accessible by both the general purpose processor and the DSP module; and
+(d) implementing execution of the specific sequence of basic DSP operations by the DSP module under the control of the CPU by retrieving operands from the memory array for use by the DSP module.
+
+TITLE:
+Distributed execution of mode mismatched commands in multiprocessor computer systems
+
+TYPE:
+European Patent
+
+ABSTRACT:
+A technique for handling processor mode mismatched instructions or commands encountered by a CPU within a multiprocessor computer system. During thread execution, if a multimode processor encounters a command or instruction that it cannot execute without shifting modes or mode emulation, it will look for an alternate processor present in the computer system to instead handle the mode mismatched command. If a suitable alternate is found, necessary input parameters including mode reconfiguration information are downloaded to a common memory area accessible to all processors in the system, and the alternate processor is loaded with the starting address of the code that will handle the mismatched command/instruction. The originating processor may suspend thread execution until the alternate processor completes execution. When complete, the alternate processor downloads the results to common memory, and signals its status to the originating processor. Thereafter, the originating processor uploads the results and resumes thread execution if previously suspended.
+
+CLAIMS:
+A method for operating a muliprocessor system, the multiprocessor computer system including a multimode first processor capable configured for operations in a first processing mode, a second processor capable of being configured for operations in a second processing mode incompatible with said first processing mode, means for storing a code vector, and means for storing data and command parameters accessible to both said first and second processors, a method for processing said command encountered by said first processor which cannot be executed while said first microprocessor is in said first processing mode, the method comprising the steps of:
+said first processor determining whether said second processor is available for processing said command; and
+if said second processor is available for processing said command, said first processor offloading said command to said second processor, said offloading steps comprising:
+said first processor downloading data and command parameters required for successful processing of said command to said storing means;
+said first processor placing a code vector pointing to source code necessary to complete processing of said command in said code vector storing means;
+said first processor activating said second processor;
+said second processor utilizing said stored data and command parameters and said stored code vector to commence processing of said command;
+said second processor storing results obtained from processing said command to said data and command parameters storage means;
+said second processor notifying said first processor when said command processing is complete; and
+said first processor uploading said stored results for use in a subsequent task when said second processor notification is received.
+The method of claim 1, further comprising the steps of:
+said second processor entering an active state upon completion of said activating step; and
+said second processor entering a sleep state upon completion of said notifying step.
+The method of claim 2, wherein said second processor availability determining step comprises:
+said first processor testing whether said second processor is in said sleep state; and
+said first processor determining that said second processor is available for processing said command if said second processor is in said sleep state.
+The method of claim 2, further comprising the step of:
+said first processing setting a semaphore stored in said data and command parameter storage means prior to activating said second processor; and
+wherein said second processor resets said semaphore stored in said data and command parameter storage means when said second processor notifies said first processor when said command processing is complete.
+The method of claim 4, wherein said second processor availability determining step comprises the steps of:
+said first processor testing whether said second processor is in said sleep state by interrogating said semaphore; and
+said first processor determining that said second processor is available for processing said command if said second processor is in said sleep state.
+The method of claim 1, wherein said command is encountered by said first processor while said first processor is executing a thread.
+The method of claim 6, further comprising the steps of:
+said first processor suspending execution of said thread after said activating step; and
+said first processor resuming execution of said thread after said first processor result uploading step.

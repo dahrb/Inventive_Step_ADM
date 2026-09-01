@@ -1,0 +1,449 @@
+--- PAGE 1 ---
+97
+
+MAIN CLAIM REQUEST
+
+1. Logic for scheduling in a high-performance computing (HPC) system,
+the logic encoded in a computer-readable medium and when executed operable to:
+receive a call from a management engine (130, 515) operable to manage a
+cluster (220) of nodes (115) in the HPC system (100), the call specifying a request
+comprising a job (150) for scheduling comprising one or more processes for execution
+at one or more nodes (115) in the cluster (220), the call further specifying a number of
+nodes (115) for executing the job (150);
+determine whether the request is spatial, compact, or nonspatial and
+noncompact, according to a request type in the request, the request being spatial if the
+job (150) assumes spatial relationships between nodes (115) executing the job (150),
+the request being compact if the job (150) assumes proximity between nodes (115)
+executing the job (150), the request being nonspatial and noncompact if the job (150)
+assumes no spatial relationships or proximity between nodes (115) executing the job;
+if the request is spatial:
+generate spatial combinations of nodes (115) in the cluster (220)
+accommodating the number of nodes (115) specified in the call and further
+accommodating the assumed spatial relationships between nodes (115)
+executing the job (150); and
+select one of the spatial combinations that is schedulable according to a
+list of nodes (115) in the cluster (220) available for scheduling;
+if the request is compact:
+generate compact combinations of nodes (115) in the cluster (220)
+accommodating the number of nodes (115) specified in the call which
+comprise combinations of nodes that minimize the maximum communication
+distance or hop count between each pair of nodes; and
+select one of the compact combinations that is schedulable according
+to the list of nodes (115) in the cluster (220) available for scheduling and that
+minimizes a maximum communication distance, or hop count, between each
+pair of nodes (115);
+
+if the request is nonspatial and noncompact:
+
+--- PAGE 2 ---
+98
+
+identify one or more nodes (115) schedulable according to the list of
+nodes (115) in the cluster (220) available for scheduling;
+generate a nonspatial and noncompact combination of nodes (115) in
+the cluster (220) accommodating the number of nodes (115) specified in the
+call, the nonspatial and noncompact combination comprising one or more of
+the one or more identified nodes (115) that are schedulable according to the
+list of nodes (115) in the cluster (220) available for scheduling; and
+communicate a return to the management engine (130, 515) identifying one or
+more nodes (115) in the selected spatial, compact, or nonspatial and noncompact
+
+combination of nodes (115) in the cluster (220) for executing the job (150).
+
+2. The logic of Claim 1, wherein the call further specifies:
+
+whether the request is spatial, compact, or nonspatial and noncompact;
+
+if the request is spatial, a size of the job (150);
+
+an aggressive flag indicating a degree of leeway for scheduling the job (150);
+a size of the cluster (220) in terms of a number of switches in the cluster (220);
+a number of nodes (115) coupled to each switch in the cluster (220);
+
+a number of nodes (115) available for scheduling: and
+
+the list of nodes (115) in the cluster available for scheduling.
+
+3. The logic of Claim 1, wherein the return to the management engine
+(130, 515) further identifies a Message Passing Interface (MPI) rank of each node in
+the selected spatial, compact, or nonspatial and noncompact combination of nodes
+
+(115).
+
+4. The logic of Claim 1, operable, if the request is spatial and three
+dimensional, to rotate a mesh accommodating the number of nodes (115) specified in
+the call and further accommodating the assumed spatial relationships between nodes
+(115) executing processes in the job (150) to one of six orientations to generate one of
+
+the spatial combinations.
+
+5. The logic of Claim 1, operable, if the request is spatial and two
+
+dimensional, to fold an unused dimension of the job (150) to generate a mesh
+
+--- PAGE 3 ---
+99
+
+accommodating the number of nodes (115) specified in the call from the management
+engine (130, 515) and rotate the mesh to one of six orientations to generate one of the
+
+spatial combinations.
+
+6. The logic of Claim 1, operable, if the request is spatial and one
+dimensional, to fold two unused dimensions of the job (150) to generate a mesh
+accommodating the number of nodes (115) specified in the call from the management
+engine (130, 515) and rotate the mesh to one of six orientations to generate one of the
+
+spatial combinations.
+
+7. The logic of Claim 1, operable to use a scan algorithm that searches for
+a start point for the job (150) in the cluster (220) of nodes (115) to select one of the
+spatial combinations that is schedulable according to a list of nodes (115) in the
+
+cluster (220) available for scheduling.
+
+8. The logic of Claim 1, operable, to generate one or more compact
+combinations of nodes (115) in the cluster (220) accommodating the number of nodes
+(115) specified in the call from the management engine (130, 515), to:
+
+generate a first compact combination of nodes (115) in the cluster (220)
+accommodating the number of nodes (115) specified in the call from the management
+engine (130, 515);
+
+generate one or more second compact combinations of nodes (115) in the
+cluster (220) accommodating the number of nodes (115) specified in the call from the
+management engine (130, 515), each second compact combination being less compact
+than the first compact combination; and
+
+sort the first and second compact combinations according to compactness for
+
+selection of one of the first and second compact combinations.
+
+9. The logic of Claim 1, operable, to generate a nonspatial and
+noncompact combination of nodes (115) in the cluster (220) accommodating the
+number of nodes (115) specified in the call from the management engine, (130. 515)
+
+to:
+
+--- PAGE 4 ---
+100
+
+make a first loop through the cluster (220) with respect to a first dimension of
+the cluster (220) until a first node unavailable for scheduling according to the list of
+nodes (115) in the cluster (220) available for scheduling is reached;
+
+make a second loop through the cluster (220) with respect to a second
+dimension of the cluster (220) until a second node unavailable for scheduling
+according to the list of nodes (115) in the cluster (220) available for scheduling is
+reached; and
+
+make a third loop through the cluster (220) with respect to a third dimension
+of the cluster (220) until a third node unavailable for scheduling according to the list
+
+of nodes (115) in the cluster (220) available for scheduling is reached.
+
+10. =‘ The logic of Claim 9, further operable to repeat the first loop, the
+second loop, and the third loop to cover all the nodes (115) in the cluster (220).
+
+11. — The logic of Claim 1, further operable to:
+
+determine whether the cluster (220) comprises enough nodes (115) to
+accommodate the number of nodes (115) for executing the one or more processes in
+the job (150) specified in the call from the management engine (130, 515); and
+
+if the cluster (220) comprises less than enough nodes (115) to accommodate
+the number of nodes (115) for executing the one or more processes in the job (150)
+specified in the call from the management engine (130, 515), indicate to the
+
+management engine (130, 515) that the job (150) is unschedulable.
+
+12. _—_ The logic of Claim 1, wherein the logic is stateless.
+
+13. The logic of Claim 1, wherein a node is a central processing unit
+
+(CPU) coupled to two switches.
+
+14.‘ The logic of Claim 1, wherein the logic is a plug in of the management
+
+engine (130, 515).
+
+15. The logic of Claim 1, wherein the cluster (220) of nodes (115) is a
+
+three dimensional torus.
+
+--- PAGE 5 ---
+101
+
+16. — The logic of Claim 1, wherein processes of the job (150) communicate
+
+with each other using Message Passing Interface (MPI) when executed.
+
+17. The logic of Claim 1:
+
+wherein the call from the management engine (130, 515) further specifies an
+aggressive flag indicating a degree of leeway allotted for selecting a spatial
+combination, a compact combination, or a nonspatial and noncompact combination of
+nodes (115) in the cluster (220) for executing the one or more processes in the job
+(150);
+
+the logic being operable to select a spatial combination, a compact
+combination, or a nonspatial and noncompact combination of nodes in the cluster
+(220) for executing the one or more processes in the job (150) according to the
+
+aggressive flag specified in the call from the management engine (130, 515).
+
+18. A method for scheduling in a high-performance computing (HPC)
+system (100), the method comprising:
+
+receiving a call from a management engine (130, 515) operable to manage a
+cluster (220) of nodes (115) in the HPC system (100), the call specifying a request
+comprising a job (150) for scheduling comprising one or more processes for execution
+at one or more nodes (115) in the cluster (220), the call further specifying a number of
+nodes (115) for executing the job (150);
+
+determining whether the request is spatial, compact, or nonspatial and
+noncompact according to a request type in with the request, the request being spatial
+if the job (150) assumes spatial relationships between nodes (115) executing the job
+(150), the request being compact if the job (150) assumes proximity between nodes
+(115) executing the job (150), the request being nonspatial and noncompact if the job
+(150) assumes no spatial relationships or proximity between nodes (115) executing
+the job (150);
+
+if the request is spatial:
+
+generating spatial combinations of nodes (115) in the cluster (220)
+
+accommodating the number of nodes (115) specified in the call and further
+
+--- PAGE 6 ---
+102
+
+accommodating the assumed spatial relationships between nodes (115)
+executing the job; and
+
+selecting one of the spatial combinations that is schedulable according
+to a list of nodes (115) in the cluster (220) available for scheduling;
+if the request is compact:
+
+generating compact combinations of nodes (115) in the cluster (220)
+accommodating the number of nodes (115) specified in the call which
+comprise combinations of nodes that minimize the maximum communication
+distance or hop count between each pair of nodes; and
+
+selecting one of the compact combinations that is schedulable
+according to the list of nodes (115) in the cluster (220) available for
+scheduling and that minimizes a maximum communication distance, or hop
+count, between each pair of nodes;
+
+if the request is nonspatial and noncompact:
+
+identifying one or more nodes (115) schedulable according to the list
+of nodes (115) in the cluster (220) available for scheduling;
+
+generating a nonspatial and noncompact combination of nodes (115) in
+the cluster (220) accommodating the number of nodes (115) specified in the
+call, the nonspatial and noncompact combination comprising one or more of
+the one or more identified nodes (115) that are schedulable according to the
+list of nodes (115) in the cluster (220) available for scheduling; and
+communicating a return to the management engine (130, 515) identifying one
+
+or more nodes (115) in the selected spatial, compact, or nonspatial and noncompact
+
+combination of nodes (115) in the cluster (220) for executing the job (150).
+
+19. The method of claim 18, wherein the call further specifies:
+
+whether the request is spatial, compact, or nonspatial and noncompact;
+
+if the request is spatial, a size of the job (150);
+
+an aggressive flag indicating a degree of leeway for scheduling the job (150);
+a size of the cluster (220) in terms of a number of switches in the cluster (220);
+a number of nodes (115) coupled to each switch in the cluster (220);
+
+a number of nodes (115) available for scheduling: and
+
+the list of nodes (115) in the cluster (220) available for scheduling.
+
+--- PAGE 7 ---
+103
+
+20. | The method of claim 18, wherein the return to the management engine
+(130, 515) further identifies a Message Passing Interface (MPI) rank of each node in
+the selected spatial, compact, or nonspatial and noncompact combination of nodes
+
+(115).
+
+21. | The method of claim 18, wherein, if the request is spatial and three
+dimensional, generating one of the spatial combinations comprises rotating a mesh
+accommodating the number of nodes (115) specified in the call and further
+accommodating the assumed spatial relationships between nodes (115) executing
+
+processes in the job (150) to one of six orientations
+
+22. The method of claim 18, wherein, if the request is spatial and two
+dimensional, generating one of the spatial combinations comprises folding an unused
+dimension of the job (150) to generate a mesh accommodating the number of nodes
+(115) specified in the call from the management engine (130, 515) and rotating the
+
+mesh to one of six orientations.
+
+23. The method of claim 18, wherein, if the request is spatial and one
+dimensional, generating one of the spatial combinations comprises folding two
+unused dimensions of the job (150) to generate a mesh accommodating the number of
+nodes (115) specified in the call from the management engine (130, 515) and rotating
+
+the mesh to one of six orientations.
+
+24. The method of claim 18, comprising using a scan algorithm that
+searches for a start point for the job (150) in the cluster (220) of nodes (115) to select
+one of the spatial combinations that is schedulable according to a list of nodes (115)
+
+in the cluster (220) available for scheduling.
+
+25. The method of claim 18, wherein generating one or more compact
+combinations of nodes (115) in the cluster (220) accommodating the number of nodes
+
+(115) specified in the call from the management engine (130, 515) comprises:
+
+--- PAGE 8 ---
+104
+
+generating a first compact combination of nodes (115) in the cluster (220)
+accommodating the number of nodes (115) specified in the call from the management
+engine (130, 515);
+
+generating one or more second compact combinations of nodes (115) in the
+cluster (220) accommodating the number of nodes (115) specified in the call from the
+management engine (130, 515), each second compact combination being less compact
+than the first compact combination; and
+
+sorting the first and second compact combinations according to compactness
+
+for selection of one of the first and second compact combinations.
+
+26. The method of claim 18, wherein generating a nonspatial and
+noncompact combination of nodes (115) in the cluster (220) accommodating the
+number of nodes (115) specified in the call from the management engine (130, 515)
+comprises:
+
+making a first loop through the cluster (220) with respect to a first dimension
+of the cluster (220) until a first node unavailable for scheduling according to the list of
+nodes (115) in the cluster (220) available for scheduling is reached;
+
+making a second loop through the cluster (220) with respect to a second
+dimension of the cluster (220) until a second node unavailable for scheduling
+according to the list of nodes (115) in the cluster (220) available for scheduling is
+reached; and
+
+making a third loop through the cluster (220) with respect to a third dimension
+of the cluster (220) until a third node unavailable for scheduling according to the list
+
+of nodes (115) in the cluster (220) available for scheduling is reached.
+
+27. The logic of Claim 9, further comprising repeating the first loop, the
+second loop, and the third loop to cover all the nodes (115) in the cluster (220).
+
+28. The method of claim 18, further comprising:
+determining whether the cluster (220) comprises enough nodes (115) to
+accommodate the number of nodes (115) for executing the one or more processes in
+
+the job (150) specified in the call from the management engine (130, 515); and
+
+--- PAGE 9 ---
+105
+
+if the cluster (220) comprises less than enough nodes (115) to accommodate
+the number of nodes (115) for executing the one or more processes in the job (150)
+specified in the call from the management engine (130, 515), indicating to the
+
+management engine that the job(150) is unschedulable.
+
+29. | The method of claim 18, executed according to stateless logic.
+
+30. | The method of claim 18, wherein a node is a central processing unit
+
+(CPU) coupled to two switches.
+
+31. The method of claim 18, executed at a plug in of the management
+
+engine.
+
+32. The method of claim 18, wherein the cluster (220) of nodes (115) is a
+
+three dimensional torus.
+
+33. The method of claim 18, wherein processes of the job (150)
+
+communicate with each other using Message Passing Interface (MPI) when executed.
+
+34. The method of claim 18:
+
+wherein the call from the management engine (130, 515) further specifies an
+aggressive flag indicating a degree of leeway allotted for selecting a spatial
+combination, a compact combination, or a nonspatial and noncompact combination of
+nodes (115) in the cluster (220) for executing the one or more processes in the job
+(150);
+
+the method comprising selecting a spatial combination, a compact
+combination, or a nonspatial and noncompact combination of nodes (115) in the
+cluster (220) for executing the one or more processes in the job (150) according to the
+
+aggressive flag specified in the call from the management engine (130, 515).
+
+35. A system for scheduling in a high-performance computing (HPC)
+system (100), the system for scheduling in the HPC system (100) comprising:
+
+--- PAGE 10 ---
+106
+
+means for receiving a call from a management engine (130, 515) operable to
+manage a cluster (220) of nodes (115) in the HPC system (100), the call specifying a
+request comprising a job (150) for scheduling, the job (150) comprising one or more
+processes for execution at one or more nodes (115) in the cluster (220), the call
+further specifying a number of nodes (115) for executing the job (150;
+means for determining whether the request is spatial, compact, or nonspatial
+and noncompact according to a request type in the request, the request being spatial if
+the job (150) assumes spatial relationships between nodes (115) executing the job
+(150), the request being compact if the job (150) assumes proximity between nodes
+(115) executing the job (150), the request being nonspatial and noncompact if the job
+(150) assumes no spatial relationships or proximity between nodes (115) executing
+the job (150);
+means for, if the request is spatial:
+generating one or more spatial combinations of nodes (115) in the
+cluster (220) accommodating the number of nodes (115) specified in the call
+and further accommodating the assumed spatial relationships between nodes
+(115) executing processes in the job (150); and
+selecting one of the spatial combinations that is schedulable according
+to a list of nodes (115) in the cluster (220) available for scheduling;
+means for, if the request is compact:
+generating one or more compact combinations of nodes (115) in the
+cluster (220) accommodating the number of nodes (115) specified in the call
+which comprise combinations of nodes that minimize the maximum
+communication distance or hop count between each pair of nodes; and
+selecting one of the compact combinations that is schedulable
+according to the list of nodes (115) in the cluster (220) available for
+scheduling and that maximizes a maximum communication distance, or hop
+count, between each pair of nodes;
+means for, if the request is nonspatial and noncompact:
+identifying one or more nodes (115) schedulable according to the list
+of nodes (115) in the cluster (220) available for scheduling; and
+generating a nonspatial and noncompact combination of nodes (115) in
+
+the cluster (220) accommodating the number of nodes (115) specified in the
+
+--- PAGE 11 ---
+107
+
+call, the nonspatial and noncompact combination comprising one or more of
+
+the one or more identified nodes (115) that are schedulable according to the
+
+list of nodes (115) in the cluster (220) available for scheduling; and
+
+means for communicating a return to the management engine (130, 515)
+identifying one or more nodes (115) in the selected spatial, compact, or nonspatial and
+
+noncompact combination of nodes (115) in the cluster (220) for executing the job
+
+(150)

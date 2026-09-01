@@ -1,0 +1,48 @@
+TITLE:
+Video overlay system for surgical apparatus
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An improved computer based surgical video overlay system that allows relevant surgical data from a surgical apparatus to be combined as a graphic image with the video image of a surgical procedure in which the data from the surgical apparatus is sent wireless to the video overlay console. Elimination of the data cable between the surgical apparatus and the video overlay console is advantageous in an operating room environment. The same computer based surgical video overlay system runs computer program that occupies a user interface to allows definition of operation modes, input of relevant data, selection of data overlay graphic screen templates and various methods for customization. A time coded-data file is created and stored including all the relevant parameters of a surgical procedure. This file contains the same time-code included in the graphic image overlaid in the surgical video signal. An precise match can be performed between the recorded data on file and the surgical video recording. An audio pre-amplifier section is provided to include surgical apparatus meaningful sounds produced during surgery. The alternative embodiment considers the use of an embedded computer within the video overlay console making the system capable of standalone operation providing a user interface and data input/output capabilities.
+
+CLAIMS:
+1.- A wireless video overlay system for a surgical apparatus comprising:
+(a) a wireless data transmitter for periodically transmitting a data signal from said surgical apparatus to a video overlay console,
+(b) said video overlay console having a matching wireless data receiver for receiving said surgical apparatus data signal transmitted by said wireless data transmitter
+(c) a computer for processing said surgical apparatus data signal received by said video overlay console into a digital video signal
+(d) a video input within said video overlay console for receiving a surgical field video signal captured with a video-camera
+(e) a digital video input within said video overlay console for receiving said computer generated digital video signal
+(f) a video overlay circuit within said video overlay console for creating an output video signal composed by a combination of said surgical field video signal and said digital video signal in a distribution pattern determined by a key extracted from said digital video signal
+whereby the data used to create said digital video signal by said computer is transmitted from said surgical apparatus to said video overlay console by wireless means.
+2.- The video overlay system of claim 1 wherein said surgical apparatus is used for ophthalmic surgery
+3.- The video overlay system of claim 1 wherein said computer is a personal computer
+4.- The video overlay system of claim 1 wherein said computer is an embedded computer enclosed within said video overlay console
+5.- The video overlay system of claim 1 further including a signal detector circuit that informs a user about the correct status of the required input signals
+6.- The video overlay system of claim 1 further including an audio pre-amplifier to produce a recordable audio output signal from the sounds captured by a microphone
+7.- The video overlay system of claim 1 further including an audio synthetizer to produce an audio signal determined by the analysis of said surgical apparatus data signal
+8.- The video overlay system of claim 1 further including a control panel for user selection of video overlay console operation mode
+9.- The video overlay system of claim 1 further including a control panel for user selection of video overlay graphic templates
+10.- The video overlay system of claim 1 further including data storing means to accumulate said input data signals together with a time code
+11.- The video overlay system of claim 1 further including data input/output means to export data stored during operation and to load graphic overlay templates
+12.- The output video signal of claim 1 further including a graphic representation of a time code
+13.- The output video signal of claim 1 further including a graphic representation of predetermined information selected by a user
+14.- A method for obtaining a user configurable surgical video overlay output signal by overlaying a graphic representation of output data signals produced by a surgical apparatus onto a surgical field video signal comprising:
+(a) receiving said data signal from said surgical apparatus
+(b) receiving said surgical field video signal from a video-camera to be used as a background image to obtain said video overlay output signal
+(c) providing computer means to convert said data signal into a graphic representation digital video signal of the data contained in said data signal
+(d) providing data storage means for said computer means to store said data signal
+(e) providing a computer program for said computer means which
+(1) detects and decodes each parameter contained in said data signal
+(2) produces a video graphic representation based on said data signal parameters and on a predetermined graphic template selected by a human operator.
+(3) changes between predetermined graphic templates according to a predetermined operation mode selected by a human operator
+(4) stores in said non-volatile data storage means the parameters decoded from said data signal together with a time code
+(f) providing user interface means for a human operator to select from a plurality of options regarding different operation modes that change the graphic representation pattern used to produce said overlay output signal as determined by said computer program according to predetermined conditions
+(g) providing user interface means for a human operator to select from a plurality of options regarding different graphic representation video signal templates as determined by said computer program
+(h) providing a video overlay circuit to produce said surgical video overlay output signal by overlaying said digital video signal onto said surgical field video signal
+whereby said video overlay circuit produces a video overlay output signal containing a graphic representation of the surgical parameters in a predetermined pattern selected by a human operator through said user interface
+whereby said computer program changes the graphic representation pattern used to produce said overlay output signal according to preferred operation modes as selected by a human operator through said user interface
+15.- The method of claim 14 wherein said surgical apparatus is used for ophthalmic surgery
+16.- The method of claim 14 further providing a signal detector circuit to inform a user about the correct status of the required input signals
+17.- The method of claim 14 further providing an audio pre-amplifier to produce a recordable audio output signal from the sounds captured by a microphone

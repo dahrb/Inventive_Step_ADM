@@ -1,0 +1,6 @@
+Title: Digital background calibration for memory effects in pipelined analog-to-digital converters
+
+Abstract: 
+Memory errors can occur in the stages of a pipelined analog-to-digital converter (ADC) due to several effects. These include capacitor dielectric absorption/relaxation, incomplete stage reset at high clock rates, and parasitic capacitance effects when opamps are shared between subsequent pipeline stages. This paper describes these sources of memory errors and the effect they have on overall ADC linearity. It is shown how these errors relate to and differ from interstage gain errors. Two new calibration algorithms are proposed that correct for memory errors by digital post-processing of the ADC output. Both algorithms operate in the background and so do not require conversion to be interrupted in order to track changes due to temperature and supply variations. The two algorithms are compared in terms of their system costs and their dependence on input signal statistics
+
+Type: Academic Paper

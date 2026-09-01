@@ -1,0 +1,173 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Amended claims (clean) — 20.04.2021
+
+Claims
+
+1. A method of receiving code symbols corresponding to an interleaved
+encoder packet, EP, storing the systematic code symbols, first parity code symbols and
+second parity code symbols in first, second and third memories respectively in an
+interleaved order, and inputting the stored code symbols to a turbo decoder in a mobile
+communication system, the method comprising the steps of:
+
+receiving (S200), by a receiver of the mobile communication system, the size
+of the EP;
+
+generating (S400), by the receiver, read addresses so that the code symbols at
+the read addresses are in a deinterleaved order corresponding to the interleaving; and
+
+reading (S500), by the receiver, the code symbols at the read addresses from
+the memories and outputting the read code symbols to the turbo decoder,
+
+wherein in the mobile communication system a transmitter encodes the
+encoder packet EP including information bits and tail bits at a predetermined code rate
+and subblock-interleaves code symbols of a plurality of encoded subblocks prior to
+transmission, and the turbo decoder has two sequentially operating constituent
+decoders, the method further comprises the step of:
+
+generating (S460), by the receiver, chip select signals for the memories in
+synchronization to a decoder clock signal; and
+
+wherein the code symbols are provided to the two constituent decoders
+according to the read addresses and the chip select signals;
+
+wherein the step of generating the read addresses and the chip select signals
+comprises the steps of:
+
+setting (420) symbol type signal DT_IDC to 0 when a data symbol
+corresponding to an information bit is output to the turbo decoder and setting (S415)
+DT_IDC to 1 when a tail symbol corresponding to a tail bit is output to the turbo
+decoder, each time the decoder clock signal is triggered;
+
+generating (S445) a temporary address, TMP_ADDR indicating the
+interleaved position of a code symbol to be output to the turbo decoder in a subblock
+that the code symbol belongs to;
+
+generating (S450) the read addresses using TMP ADDR, the EP size, and a
+memory select signal RAM_SEL, wherein the RAM_SEL is 0 only when data symbols
+are read for the first constituent decoder, wherein the RAM_SEL is produced by OR-
+
+1/4
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Amended claims (clean) — 20.04.2021
+
+operating DT_IDC and DEC_IDX, wherein the DEC_IDX set to 0 identifies the first
+constituent decoder; and
+
+generating (S460) the chip select signals for the first, second and third
+memories, wherein the chip select signals are generated using RAM_SEL,
+TMP_ADDR, the EP size, and temporary chip select signal TMP_CS, wherein the
+TMP CS is produced by OR-operating DT_IDC and the inverse of DEC_IDX.
+
+2. | The method of claim 1, wherein when the EP size is one of 408, 792 and
+1560, the read addresses RAMO ADDR, RAM1 ADDR and RAM2 ADDR for the
+first, second and third memories are determined by
+if RAM SEL=0
+RAMO ADDR=TMP_ ADDR
+RAM1 ADDR=2xTMP_ADDR
+RAM2_ ADDR=2xTMP_ADDR
+else
+RAMO ADDR=TMP_ ADDR
+RAM1 ADDR=2xTMP_ADDR+1
+RAM2 ADDR=2xTMP_ADDR-+
+
+T
+—
+
+3. The method of claim 2, wherein the chip select signal RAMO_CS for the
+first memory is TMP_CS and the chip select signals RAM1_CS and RAM2 CS for the
+
+second and third memories are 1.
+
+4. An apparatus for receiving code symbols corresponding to an interleaved
+encoder packet EP, storing the systematic code symbols, first parity code symbols and
+second parity code symbols in first, second and third memories respectively in an
+interleaved order, and inputting the stored code symbols to a turbo decoder having two
+sequentially operating constituent decoders in a mobile communication system, the
+apparatus comprising:
+
+a memory unit (200) having the first, second and third memories
+(210,220,230), for storing the received code symbols separately as information symbols
+
+and parity symbols; and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Amended claims (clean) — 20.04.2021
+
+a read address generator (100) for generating read addresses to read the code
+symbols from the first, second and third memories so that the code symbols at the read
+addresses are in a deinterleaved order corresponding to the interleaving,
+
+wherein the read address generator comprises:
+
+means for generating the memory select signal RAM_SEL based on a decoder
+index DEC_IDX identifying a first constituent decoder of the turbo decoder in the
+current operation and a symbol type signal DT_IDC indicating whether the type of the
+code symbol is a data symbol or a tail symbol according to the EP size, wherein the
+memory select signal RAM_SEL indicates whether data symbols are read for the first
+constituent decoder;
+
+means for generating a temporary read address TMP ADDR indicating the
+interleaved position of the code symbol to be read in a subblock to which the code
+symbol belongs;
+
+means for generating a temporary chip select signal TMP_CS using DT_IDC
+and DEC_IDX;
+
+an input address generator (125) for generating the read addresses using
+RAM_ SEL, TMP ADDR, and the EP size; and
+
+a chip select signal generator (150) for generating chip select signals for the
+
+memories using RAM SEL, TMP_CS, TMP ADDR, and the EP size.
+
+5. The apparatus of claim 4, wherein when the EP size is one of 408, 792
+and 1560, the read addresses RAMO ADDR, RAM1 ADDR and RAM2_ ADDR for
+the first, second and third memories are determined by
+
+if RAM SEL=0
+RAMO ADDR=TMP ADDR
+RAMI ADDR=2xTMP_ ADDR
+RAM2_ ADDR=2xTMP_ ADDR
+else
+RAMO ADDR=TMP ADDR
+RAMI ADDR=2xTMP_ADDR+1
+RAM2_ ADDR=2xTMP_ADDR+1.
+
+--- PAGE 4 ---
+Amended claims (clean) — 20.04.2021
+
+6. The apparatus of claim 5, wherein the chip select signal RAMO_ CS for
+the first memory is TMP_CS and the chip select signals RAM1_ CS and RAM2 CS for
+
+the second and third memories are 1.

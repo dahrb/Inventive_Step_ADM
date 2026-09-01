@@ -1,0 +1,251 @@
+--- PAGE 1 ---
+20
+
+25
+
+30
+
+MAIN REQUEST 03 293 181.8
+
+MU03EP1016
+
+Claims
+
+A system for caching information retrieved from at least one hardware
+
+security token (5) wherein:
+
+said at least one hardware security token (5) is in processing
+communications with a security token interface API (35), said at least one
+hardware security token (5) including information retrievable by said
+
+security token interface API (35),
+
+said security token interface API (35) is functionally associated with a cache
+API (40), said security token interface API (35) including means for
+retrieving said information from said at least one hardware security token
+(5), means for sending said information to said cache API (40) and means
+
+for requesting said information from said cache API (40), and
+
+said cache API (40) is functionally associated with at least one memory
+cache (45), said cache API (40) including means for storing said retrieved
+information in said at least one memory cache (45), means responsive to
+said request from said security token interface (35) for locating and
+returning said information from said at least one memory cache (45) to said
+security token interface API (35) if the requested information is available
+from the at least one memory cache (45), wherein said information in said
+at least one memory cache (45) is refreshed if it is not current, and wherein
+said security token interface API (35) is notified to retrieve said information
+from the hardware security token (5) if said information is not available from
+
+the at least one memory cache (45).
+
+The system according to claim 1 wherein said security token interface API
+
+(35) further includes logic means for first requesting retrieval of said
+
+--- PAGE 2 ---
+20
+
+25
+
+30
+
+MAIN REQUEST 03 293 181.8
+
+10.
+
+MU03EP1016
+-2-
+
+information from said cache API (40) before attempting to retrieve said
+
+information from said at least one hardware security token (5).
+
+The system according to claim 2 wherein said logic means further includes
+means to determine if said information stored in said at least one memory
+
+cache (45) is current.
+
+The system according to claim 1 wherein said request includes a unique
+
+hardware security token identifier or a semantic.
+
+The system according to claim 1 wherein said request includes a unique
+
+hardware security token identifier and a semantic.
+
+The system according to claim 5 wherein said security token interface API
+(35) further includes means for associating said unique hardware security
+token identifier with said semantic for generating a unique reference
+
+identifier.
+
+The system according to claim 6 wherein said cache API (40) further
+includes means for associating said unique reference identifier with a
+
+unique cache identifier.
+
+The system according to claim 7 wherein said unique cache identifier is
+further associated with said retrieved information in the form of a retrievable
+
+data record.
+
+The system according to claim 8 wherein said data record is retrievably
+
+stored in said at least one memory cache (45).
+
+The system according to claim 1 wherein said cache API (40) further
+includes means for generating and storing a pseudo-entry if said requested
+
+information is not present in said at least one hardware security token (5).
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+MAIN REQUEST 03 293 181.8
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+
+17.
+
+18.
+
+MU03EP1016
+
+The system according to claim 10 wherein said pseudo-entry is stored in
+said at least one memory cache (45) by said cache API (40) to prevent
+future requests for the same type of information from attempting to be
+
+retrieved from said at least one hardware security token (5).
+
+The system according to claim 1 further including means to limit the
+residence time in which at least a portion of said information is stored in
+
+said at least one memory cache (45).
+
+The system according to claim 1 further including means for maintaining
+synchronicity with said information in the memory cache (45) retrieved from
+said at least one hardware security token (5) and the latest version of
+
+information contained in the hardware security token (5).
+
+The system according to claim 1 wherein said information includes digital
+certificates, public keys, passwords, active session counters, security token
+properties and configurations, security token management information,
+security state information and a listing of applications installed inside said at
+
+least one hardware security token (5).
+
+The system according to claim 1 wherein said at least one memory cache
+
+(45) is maintained in a remote server.
+
+The system according to claim 1 wherein said at least one memory cache
+
+(45) is maintained in a local client
+
+The system according to claim 1 wherein said at least one memory cache
+
+(45) is maintained in both a local client and remote server.
+
+The system according to claim 1 wherein said at least one memory cache
+
+(45) is maintained in a plurality of local clients and remote servers.
+
+--- PAGE 4 ---
+20
+
+25
+
+30
+
+MAIN REQUEST 03 293 181.8
+
+19.
+
+20.
+
+21.
+
+MU03EP1016
+-4-
+
+A method for caching information retrieved from at least one hardware
+
+security token (5) comprising the steps of:
+
+a. receiving (405) a request for at least a portion of said information by
+
+a security token API,
+
+b. the security token API referring (420) said request for said at least a
+
+portion of said information to a cache API (40),
+
+C. responsive to request, the cache API determining (425) if said at
+least a portion of said information exists in at least one memory
+cache (45) associated with said cache API (40),
+
+d. the cache API retrieving (435) said at least a portion of said
+information from said at least one memory cache (45) if available,
+wherein it is verified if said information stored in said at least one
+memory cache (45) is current and the at least one memory cache
+
+(45) is refreshed if said information is not current,
+
+e. the security token API retrieving (430) said at least a portion of said
+information from said hardware security token (5) if not available in
+
+said at least one memory cache (45), and
+
+f. storing (450) said retrieved information in said at least one memory
+
+cache (45).
+
+The method according to claim 19 wherein said request includes a unique
+
+identifier associated with said hardware security token (5) and a semantic.
+
+The method according to claim 20 wherein said at least a portion of said
+
+information is retrieved from said at least one memory cache (45) using a
+
+--- PAGE 5 ---
+MAIN REQUEST 03 293 181.8
+MU03EP1016
+
+-5-
+
+unique cache identifier associated with both said unique hardware security
+
+token identifier and said semantic.
+
+22. |The method according to claim 19 further including the steps of:
+
+retrieving current information from said hardware security token (5),
+and
+
+periodically purging said cache if no requests for said at least a
+portion of said information are received within a predetermined time
+
+10 frame.

@@ -1,0 +1,90 @@
+--- PAGE 1 ---
+EP appIn 12 157 590.6 Main request
+
+CLAIMS
+
+1. A method of distributing a personal identification number, or PIN, for a
+card to a user of the card associated with said personal identification number,
+characterized in that it comprises, after a preliminary step of generating said card and
+the associated PIN, and generating for this card a record containing said PIN and a
+request code which is specific to this card and a step of sending this card to the user:
+
+- a step of sending to the user, via a first channel, a request code (260)
+associated with said personal identification number (210),
+
+- a step (835) of receiving from the user said request code (260) via a
+second channel, which is an electronic channel,
+
+- a step of searching for a record (200) matching the received request
+code (260),
+
+- a step of retrieving, from the matching record, the personal identification
+number (210) associated with said received request code (260) and
+
+- a step (345) of sending to the user the retrieved personal identification
+number (210) via a third channel which is an electronic channel.
+
+2. A method according to claim 1, wherein, during the step of sending the
+request code, the card is sent to a user via the first channel together with the request
+code associated with said card.
+
+3. A method according to either one of claims 1 or 2, wherein the third
+channel is a mobile phone network (170) and the step of retrieving the personal
+identification number includes a step of checking the user mobile phone number
+(205).
+
+4. A method according to either one of claims 1 to 3, including a step of
+decrypting the personal identification number using the request code as a decryption
+key.
+
+5. A method according to either one of claims 1 to 4, wherein both the
+second and third channels are secured channels.
+
+6. A method according to either one of claims 1 to 5, wherein the first
+channel is a mail delivery channel and both the second and third channels are a
+mobile telephone network (170).
+
+7. A method according to either one of claims 1 to 6, wherein both the
+
+second and third channels are a network for transmitting short messages.
+
+--- PAGE 2 ---
+EP appIn 12 157 590.6 Main request
+
+8. A device for distributing a personal identification number for a card to a
+user of the card associated with said personal identification number or PIN,
+characterized in that it comprises:
+
+- a memory for storing a record specific to this card containing this PIN
+and a request code specific to this card, and means for sending the card to the user,
+
+- means for receiving from the user, via a second channel which is an
+electronic channel, the request code (260) associated with said personal
+identification number or PIN (210) and previously sent to the user via a first channel,
+
+- means for searching for a record (200) matching the received request
+code (260) and for retrieving, from the matching record, the personal identification
+number (210) associated with said received request code, and
+
+- means for sending the retrieved personal identification number (210) via
+a third channel which an electronic channel to said user.
+
+9. A method of receiving, by a user who has received a card, a personal
+identification number or PIN for this card which is associated with this PIN, after a
+step of generating for this card a record specific to this card containing said PIN and
+a request code which is specific to this card , characterized in that it comprises, after
+a step of receiving, via a first channel, the request code associated with said personal
+identification number,
+
+- a step of sending said request code (260) via a second channel which is
+an electronic channel and
+
+- a step of receiving the personal identification number (210) associated
+with said request code as retrieved from the record, via a third channel which is an
+electronic channel.
+
+10. A telecommunications system comprising a plurality of terminals
+devices connected via a telecommunications network, characterized in that it
+comprises at least one terminal device comprising a device for distributing personal
+
+identification numbers according to claim 8.

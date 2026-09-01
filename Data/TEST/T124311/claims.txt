@@ -1,0 +1,483 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+85
+
+1. An apparatus comprising:
+
+a risk analyzer (76) configured to identify one or
+
+LL
+
+more assets of an information system that have respective
+
+Lf
+
+relationships with a service provided by the information
+
+system, and to determine one or more security risks to the
+
+service by analyzing security vulnerabilities associated
+
+with the identified assets; and
+
+an interface (52) operatively coupled to the risk
+
+LL
+
+analyzer and configured to provide a consolidated
+
+representation (154, 184) of the service, the consolidated
+representation comprising an indication (174, 206) of the
+one or more determined security risks and an indication
+(175, 177, 202, 224, 226) of at least one of the respective
+relationships between the service and the one or more
+identified assets, the indication (174, 206) of the one or
+more determined security risks comprising respective
+indications (232, 233, 234, 235, 236, 237, 238, 239) of a
+plurality of security parameters of the one or more
+
+determined security risks.
+
+2. The apparatus of claim 1, wherein at least one of
+the risk analyzer (76) and the interface (52) is implemented
+
+in software for execution by a processing element.
+
+3. The apparatus of claim 1, wherein the one or more
+
+identified assets comprise one or more other services that
+
+have respective relationships with the service.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+86
+
+4. The apparatus of claim 1, wherein the one or more
+
+identified assets comprise an asset that has a relationship
+with the service only through a relationship with an asset
+
+that has a relationship with the service.
+
+5. The apparatus of any one of claims 1 to 4, wherein
+
+the risk analyzer (76) is configured to determine the one or
+
+more security risks to the service by aggregating security
+risks to multiple contributing assets of the one or more
+
+identified assets.
+
+6. The apparatus of claim 5, wherein the risk
+analyzer (76) is configured to determine an aggregated
+security risk of the one or more security risks by
+
+performing one of:
+
+selecting as the aggregated security risk a
+maximum of the security risks to the multiple contributing
+
+assets;
+
+selecting as the aggregated security risk a
+minimum of the security risks to the multiple contributing
+
+assets; and
+
+determining the aggregated security risk based on
+a combination of maximum and minimum security risks to the
+
+multiple contributing assets.
+
+7. The apparatus of any one of claims 1 to 4, wherein
+
+the risk analyzer (76) is configured to determine an
+
+aggregated asset security risk to an asset of the one or
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+87
+
+more assets by aggregating security risks arising from
+
+multiple security vulnerabilities associated with the asset,
+
+and wherein aggregating comprises performing one of:
+
+determining the aggregated asset security risk
+
+based on a maximum of the security risks arising from the
+
+multiple security vulnerabilities;
+
+determining the aggregated asset security risk
+
+based on a minimum of the security risks arising from the
+
+multiple security vulnerabilities; and
+
+determining the aggregated asset security risk
+based on a combination of maximum and minimum security risks
+
+arising from the multiple security vulnerabilities.
+
+8. The apparatus of any one of claims 1 to 4, wherein
+the consolidated representation (154, 184) of the service
+further comprises respective icons (172, 204, 222)
+representing the service and at least one of the one or more
+identified assets, the indication (175, 177, 202, 224, 226)
+of the at least one of the respective relationships between
+the service and the one or more identified assets comprising
+respective links (175, 177, 202, 224, 226) between the
+respective icons (172, 204, 222) representing the service
+
+and the at least one of the one or more identified assets.
+
+9. The apparatus of claim 4, wherein the indication
+
+(174, 206) of the one or more determined security risks
+
+comprises different representations (232/234/236/238,
+
+233/235/237/239) of a security risk arising from a security
+
+vulnerability associated with an asset that has a
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+88
+
+relationship with the service and a security risk arising
+
+from a security vulnerability associated with an asset that
+has a relationship with the service only through a
+relationship with an asset that has a relationship with the
+
+service.
+
+10. The apparatus of claim 5, wherein the risk
+
+analyzer (76) is further configured to maintain a record of
+
+at least one of the multiple contributing assets.
+
+11. A method comprising:
+
+a risk analyzer identifying one or more assets of
+an information system that have respective relationships
+
+with a service provided by the information system;
+
+the risk analyzer analyzing (96) security
+vulnerabilities associated with the identified assets to
+
+determine one or more security risks to the service; and
+
+the risk analyzer providing (98) through an
+interface, in a consolidated representation (154, 184) of
+the service, an indication (174, 206) of the one or more
+determined security risks and an indication (175, 177, 202,
+
+224, 226) of at least one of the respective relationships
+
+between the service and the one or more identified assets,
+the indication (174, 206) of the one or more determined
+security risks comprising respective indications (232, 233,
+
+234, 235, 236, 237, 238, 239) of a plurality of security
+
+parameters of the one or more determined security risks.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+89
+
+12. The method of claim 11, wherein identifying
+
+comprises identifying an asset that has a relationship with
+
+the service only through a relationship with an asset that
+
+has a relationship with the service.
+
+13. The method of claim 12, wherein the indication
+
+(174, 206) of the one or more determined security risks
+
+comprises different representations (232/234/236/238,
+233/235/237/239) of a security risk arising from a security
+vulnerability associated with an asset that has a
+relationship with the service and a security risk arising
+from a security vulnerability associated with an asset that
+has a relationship with the service only through a
+relationship with an asset that has a relationship with the
+
+service.
+
+14. The method of claim 11 or claim 12, wherein
+determining the one or more security risks comprises
+determining one or more aggregated security risks by
+aggregating security risks to multiple contributing assets
+of the identified assets, and maintaining a record of at
+least one of the contributing assets for each of the one or
+more aggregated security risks, and wherein aggregating
+security risks to multiple contributing assets to determine
+an aggregated security risk of the one or more security
+
+risks comprises performing one of:
+
+selecting as the aggregated security risk a
+
+maximum of the security risks to the multiple contributing
+
+assets;
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+25
+
+90
+
+selecting as the aggregated security risk a
+
+minimum of the security risks to the multiple contributing
+
+assets; and
+
+determining the aggregated security risk based on
+
+a combination of maximum and minimum security risks to the
+
+multiple contributing assets.
+
+15. The method of claim 11 or claim 12, wherein
+determining the one or more security risks comprises
+determining an aggregated asset security risk to an asset of
+the one or more assets by aggregating security risks arising
+from multiple security vulnerabilities associated with the
+
+asset, and wherein aggregating comprises performing one of:
+
+determining the aggregated asset security risk
+based on a maximum of the security risks arising from the
+
+multiple security vulnerabilities;
+
+determining the aggregated asset security risk
+based on a minimum of the security risks arising from the
+
+multiple security vulnerabilities; and
+
+determining the aggregated asset security risk
+based on a combination of maximum and minimum security risks
+
+arising from the multiple security vulnerabilities.
+
+16. A machine-readable medium storing instructions
+
+which when executed perform the method of any one of claims
+
+11 to 15.
+
+--- PAGE 7 ---
+10
+
+15
+
+20
+
+25
+
+91
+
+17. A Graphical User Interface (GUI) comprising a
+
+vas
+
+consolidated representation (154, 184) of a service provided
+
+by an information system, the consolidated representation
+
+(154, 184) comprising:
+
+an indication (174, 206) of one or more security
+risks to the service, the indication (174, 206) of the one
+or more determined security risks comprising respective
+indications (232, 233, 234, 235, 236, 237, 238, 239) of a
+plurality of security parameters of the one or more
+
+determined security risks; and
+
+an indication (175, 177, 202, 224, 226) of at
+least one of one or more respective relationships between
+the service and one or more assets of the information system
+that contribute to the one or more security risks to the
+
+service.
+
+18. The GUI of claim 17, wherein the respective
+relationships comprise an asset relationship between an
+asset, which has a relationship with the service, and
+another asset of the information system that has a
+relationship with the service only through the asset
+
+relationship.
+
+19. The GUI of claim 17 or claim 18, wherein the
+
+consolidated representation (154, 184) of the service
+
+further comprises:
+
+respective icons (172, 204, 222) representing the
+
+service and at least one of the one or more identified
+
+assets,
+
+--- PAGE 8 ---
+15
+
+20
+
+25
+
+30
+
+92
+
+the indication (175, 177, 202, 224, 226) of the at
+
+least one of the respective relationships between the
+service and the one or more identified assets comprising
+
+respective links (175, 177, 202, 224, 226) between the
+
+respective icons (172, 204, 222) representing the service
+
+and the at least one of the one or more identified assets.
+
+20. The GUI of claim 17, wherein the indication (174,
+
+206) of the one or more determined security risks comprises
+
+different representations (232/234/236/238, 233/235/237/239)
+
+of a security risk arising from a security vulnerability
+associated with an asset that has a relationship with the
+service and a security risk arising from a security
+vulnerability associated with an asset that has a
+relationship with the service only through a relationship
+
+with an asset that has a relationship with the service.
+
+21. The GUI of any one of claims 17 to 20, wherein the
+one or more security risks comprise one or more aggregated
+security risks determined by aggregating security risks to
+multiple contributing assets, and wherein the indication
+
+(174, 206) of the one or more security risks comprises a
+
+functional graphical element representing an aggregated
+
+security risk of the one or more aggregated security risks,
+
+the functional graphical element providing access to a
+
+record of at least one of the multiple contributing assets
+
+for the aggregated security risk.
+
+22. An icon for display in a Graphical User Interface
+
+(GUI) comprising:
+
+--- PAGE 9 ---
+10
+
+15
+
+20
+
+25
+
+93
+
+a representation (172, 204, 222) of an asset of an
+
+information system; and
+
+respective indications (174, 206, 232, 233, 234,
+235, 236, 237, 238, 239) of a plurality of security
+
+parameters for a security risk to the asset.
+
+23. The icon of claim 22, wherein the asset comprises
+
+a service provided in the information system, the service
+
+having respective relationships with one or more assets of
+the information system, and wherein the respective
+indications (174, 206, 232, 233, 234, 235, 236, 237, 238,
+239) comprise respective sets of indications
+(232/234/236/238, 233/235/237/239) of the plurality of
+security parameters for security risks to the service, the
+respective sets of indications (232/234/236/238,
+233/235/237/239) comprising:
+
+a first set of indications of the plurality of
+security parameters for a security risk to the service
+arising from one or more security vulnerabilities associated
+
+with the one or more assets; and
+
+a second set of indications of the plurality of
+security parameters for a security risk arising from one or
+more security vulnerabilities associated with one or more
+other assets that have respective relationships with the
+
+service only through respective relationships with an asset
+
+of the one or more assets.

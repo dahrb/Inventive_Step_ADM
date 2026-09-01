@@ -1,0 +1,238 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Amended claims - clean P59037
+EP 14 195 097.2
+
+MAIN REQUEST
+
+CLAIMS:
+
+1. An organic light emitting diode (OLED) display device comprising:
+- a system (60) configured to:
+
+split a display panel (10) into a first region (WIN1) and a second region
+(WIN2) and operate in separate modes including a split window mode for transmitting
+split image data corresponding to respective regions to display different images
+(IMAGE1, IMAGE2) on the respective regions and a normal mode for transmitting
+normal image data to display one image on the entire display panel (10); and
+- a panel driving circuit (100) configured to:
+
+drive the display panel (10) according to the split image data or the normal
+image data provided from the system (60),
+
+separately control luminance or color characteristics of each of the first and
+second regions (WIN1, WIN2) according to a result obtained by analyzing the split
+image data in the split window mode to reduce unnecessary power consumption, and
+
+control a specific region in a lowest luminance state until a user input signal is
+generated when the user input signal is not present during a predetermined period of
+time or more in the specific region of the first and second regions (WIN1, WIN2),;
+
+wherein the panel driving circuit (100) includes:
+
+a gate driver (30) configured to sequentially supply scan pulses to gate
+lines of the display panel (10) and sequentially scan the first and second
+regions (WIN1, WIN2);
+
+a data driver (20) configured to apply data voltages to data lines of the
+display panel (10);
+
+a timing controller (40) configured to:
+
+align the split image data or the normal image data provided
+from the system (60) and supply the split image data or the normal
+
+image data to the data driver (20),
+
+generate a gate control signal for control of the gate driver (30)
+and a data control signal for control of the data driver (20) using an
+
+external input synchronization signal, and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Amended claims - clean P59037
+EP 14 195 097.2
+
+output a luminance control signal according to a result obtained
+by analyzing the split image data or the normal image data; and
+a gamma voltage generating circuit (50) configured to:
+generate a reference gamma voltage, the reference gamma
+voltage having first and second maximum reference gamma voltage
+levels to separately control luminance of the first and second regions
+(WINI, WIN2), respectively,
+vary the first maximum reference gamma voltage level to the
+second maximum reference gamma voltage level during a blank period
+between a period for scanning the first region (WIN 1) and a period for
+scanning the second region (WIN2) in response to the luminance
+control signal, and
+supply the reference gamma voltage having a varied level to the
+data driver (20);
+wherein, in the split window mode, the timing controller (40) is configured to
+vary the luminance control signal according to the result obtained by analyzing each
+split image data and vary the luminance control signal in synchronization with
+respective periods in which the gate driver (30) scans the first and second regions
+(WINI, WIN2), and
+wherein the data driver (20) is further configured to generate and output blank
+data during the blank period to prevent reduction in image quality when the first
+maximum reference gamma voltage level is varied to the second maximum reference
+
+gamma voltage level.
+
+2. The OLED display device according to claim 1, wherein, in the split window mode,
+the data driver (20) is configured to set image data corresponding to a last horizontal line of
+the first region as blank data, to set a specific horizontal period after scanning of the first
+region is terminated, as the blank period, to convert the blank data into the data voltages and
+to output the data voltages during the blank period and to simultaneously store split image
+data of the second region, provided from the timing controller (40), in a line memory (28) in
+an order in which the split data is input, and to convert and output the split image data of the
+second region into the data voltages in an order in which the split image data is stored in the
+
+line memory (28) after the blank period is terminated.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Amended claims - clean P59037
+EP 14 195 097.2
+
+3. The OLED display device according to claim 2, wherein:
+
+in the split window mode, the timing controller (40) is configured to vary the
+luminance control signal to a value corresponding to the second region during the blank
+period between the period for scanning of the first region and the period for scanning of the
+second region, and
+
+in the split window mode, the gamma voltage generating circuit (50) is configured to
+convert the reference gamma voltage to a value corresponding to the second region in
+response to the luminance control signal corresponding to the second region during the blank
+
+period.
+
+4. The OLED display device according to any one of claims | to 3, wherein:
+
+in the split window mode, the timing controller (40) is configured to calculate an
+average picture level for each of the first and second regions (WIN1, WIN2) and to generate
+the luminance control signal for each of the first and second regions (WIN1, WIN2)
+according to the average picture level, and
+
+the gamma voltage generating circuit (50) is configured to generate the luminance
+control signal for reducing the reference gamma voltage when an average picture level of
+each of the first and second regions (WIN1, WIN2) is relatively low, and to generate the
+luminance control signal for increasing the reference gamma voltage when the average picture
+
+level of each of the first and second regions (WIN1, WIN2) is relatively high.
+
+5. A method of driving an organic light emitting diode (OLED) display device
+according to claim 1, the method comprising:
+
+separately controlling luminance or color characteristics of each of the first and second
+regions (WIN1, WIN2) according to a result obtained by analyzing the split image data by the
+panel driving circuit (100) to reduce unnecessary power consumption; and
+
+controlling a specific region in a lowest luminance state by the panel driving circuit
+(100) until a user input signal is generated when the user input signal is not present during a
+predetermined period of time or more in the specific region of the first and second regions
+(WINI1, WIN2),
+
+generating and outputting blank data during a blank period between a period for
+
+scanning the first region (WIN1) and a period for scanning the second region (WIN2);
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Amended claims - clean P59037
+EP 14 195 097.2
+
+generating a reference gamma voltage, the reference gamma voltage having first and
+second maximum reference gamma voltage levels to separately control luminance of the first
+and second regions (WIN1, WIN2),
+
+varying the first maximum reference gamma voltage level to the second maximum
+reference gamma voltage level during the blank period in response to the luminance control
+signal; and
+
+supplying the reference gamma voltage having a varied level to the data driver (20),
+
+wherein the blank data is output from the data driver (20) during the blank period to
+prevent reduction in image quality when the first maximum reference gamma voltage level is
+
+varied to the second maximum reference gamma voltage level.
+
+6. The method according to claim 5, wherein, in the split window mode, the data
+driver (20) sets image data corresponding to a last horizontal line of the first region as blank
+data, sets a specific horizontal period after scanning of the first region is terminated, as the
+blank period, converts the blank data into the data voltages and outputs the data voltages
+during the blank period and simultaneously stores split image data of the second region,
+provided from the timing controller (40), in a line memory (28) in an order in which the split
+image data is input, and converts and outputs the split image data of the second region into the
+data voltage in an order in which the split image data is stored in the line memory (28) after
+
+the blank period is terminated.
+
+7. The method according to claim 6, wherein:
+
+in the split window mode, the timing controller (40) varies the luminance control
+signal to a value corresponding to the second region during the blank period between the
+period for scanning of the first region and the period for scanning of the second region; and
+
+in the split window mode, the gamma voltage generating circuit (50) converts the
+reference gamma voltage to a value corresponding to the second region in response to the
+
+luminance control signal corresponding to the second region during the blank period.
+
+8. The method according to any one of claims 5 to 7, wherein:
+
+in the split window mode, the timing controller (40) calculates an average picture level
+for each of the first and second regions (WIN1, WIN2) and generates the luminance control
+signal for each of the first and second regions (WIN1, WIN2) according to the average picture
+
+level; and
+
+--- PAGE 5 ---
+Amended claims - clean P59037
+EP 14 195 097.2
+
+the timing controller (40) generates the luminance control signal for reducing the
+reference gamma voltage when an average picture level of each of the first and second regions
+(WIN1, WIN2) is relatively low, and generates the luminance control signal for increasing the
+reference gamma voltage when the average picture level of each of the first and second
+
+regions (WIN1, WIN2) is relatively high.

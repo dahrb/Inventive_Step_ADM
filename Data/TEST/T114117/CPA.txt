@@ -1,0 +1,27 @@
+TITLE:
+Method and apparatus for determining and using multiple object states in an intelligent internet protocol telephony network
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An Internet Protocol-capable call center system has a managing computer connected to a plurality of PCs at agent stations on a local area network. The managing computer is adapted to receive and route Internet Protocol Network Telephony calls to the agent stations according to predetermined routing rules. A statistics server (stat-server) in the call center provides status of call center objects, among multiple status possibilities, to requesting applications in the processes of routing calls. Requesting applications, in addition to requests for object states, provide priority indications of object states desired. The stat-server provides the highest priority state to a requesting application. In the absence of a priority indication the stat-server provides status of objects according to a default indication.
+
+CLAIMS:
+1. In an Internet Protocol-capable call center system wherein status of call center objects are monitored and statistics are utilized between multiple software applications in managing call center activity, a method for reporting status of objects, comprising steps of:
+(a) requesting an active state, among multiple possible simultaneous active states, of a call center object by a requesting application;
+(b) providing a status priority indication by the requesting application; and
+(c) providing an indication of the active state of the call center object by the reporting application according to the status priority provided by the requesting application.
+2. The method of claim 1, wherein, in step (b) the requesting application provides a status priority table with all defined states listed in one of ascending or descending order by priority.
+3. The method of claim 1 further comprising a step wherein the requesting application indicates a one-time response is required or a repeated response is required.
+4. The method of claim 1 wherein the requesting application may report more than one status priority to the reporting application at different times, and the reporting application provides status when requested according to the latest reported status priority by the requesting application.
+5. The method of claim 1 wherein the reporting application responds to requests from multiple requesting applications, and each requesting application provides a unique status priority to the reporting application.
+6. The method of claim 1, wherein the reporting application stores a default priority for each requesting application, and in the event of no current status priority from a requesting application, responds to a request for status according to the default priority.
+7. An Internet Protocol-capable call center comprising:
+a managing computer adapted to receive Internet Protocol Network Telephony (IPNT) calls and to distribute the calls to PCs at agent stations connected on a local area network (LAN);
+a statistics server (stat-server) on the LAN adapted to report current state, among multiple possible states, of call center objects; and
+one or more requesting applications communicating on the LAN with the stat-server;
+wherein a requesting application provides a state priority indication to the stat-server and requests a state for an object, and the stat-server in response provides a state for the object according to the priority indication.
+8. The call center of claim 7 wherein two requesting applications provide unique state priority indications, and as a result are returned different states for the same entity.
+9. The call center of claim 7 wherein requesting applications provided different state priority indications at different times, and the stat-server responds to requests according to the latest state priority indication.
+10. The call center of claim 7 wherein the stat-server stores a default state priority indication for each requesting application, and, in the absence of a current state priority indication responds to requests according to the priority indication.

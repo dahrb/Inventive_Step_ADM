@@ -1,0 +1,206 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+12845-PT-EP 14.03.2017
+P101209 1
+
+New claims 1 — 13 according to the main request:
+
+(replacing previously submitted claims 1 — 13)
+
+1.
+
+A method of direct debiting a user by means of a mobile communication
+
+device (110) comprising a secure element (115), the method comprising the steps of:
+
+2.
+
+receiving at least a part of an identifier provided by means of a backend
+system (105) by means of the mobile communication device (110);
+
+storing the transmitted identifier in the secure element (115);
+
+initiating a data connection between the mobile communication device (110)
+and/or the secure element (115) and a reader device (120) for preparing a
+transaction;
+
+transferring at least a part of the transmitted identifier to the reader device
+(120);
+
+verifying the identifier to be transferred to the reader device (120) or
+transferred to the reader device (120) in order to release a payment by means
+of a bank system (130), wherein the step of verifying comprises the steps of:
+receiving a request for confirming the transaction and/or the payment by
+means of the backend system (105) by providing at least the part of the
+identifier transferred to the reader device (120) and first information about the
+transaction;
+
+submitting second information about the transaction from the mobile
+communication device (110) to the backend system (105);
+
+comparing the first and second information about the transaction by means of
+the backend system (105);
+
+authenticating the request by means of the backend system (105) and
+transferring the confirmation from the backend system (105) to the bank
+system (130) of the user.
+
+The method according to claim 1, wherein the request comprises a one-
+
+time authentication information.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+12845-PT-EP 14.03.2017
+P101209 2
+
+3. The method according to claim 2, wherein the one-time authentication
+information is the part of the transmitted identifier transferred to the reader device
+(120).
+
+4. The method according to claim 3, wherein the part of the transmitted
+identifier transferred to the reader device (120) is transferred in accordance to a
+
+sequence defined by the backend system (105).
+
+5. The method according to claim 4, wherein the method comprises the
+step of:
+
+- submitting information about the part of the transmitted identifier transferred to
+the reader device (120) from the mobile communication device (110) to the
+backend system (105).
+
+6. The method according claim 1, wherein the method comprises the
+steps of:
+
+- submitting plausibility information about the transaction to the backend system
+(105) by means of the mobile communication device (110);
+
+- checking the plausibility information by means of the backend system (105);
+and
+
+- stopping the transaction and/or payment depending on the result of the check.
+
+7. The method according to claim 6, wherein the method comprises the
+further steps of;
+
+- contacting the user after stopping the transaction and/or payment;
+
+- requesting authentication of the user; and
+
+- releasing the transaction and/or payment after authentication by means of the
+
+user.
+
+8. The method according to claim 1 or 6, wherein the complete identifier is
+transmitted to the mobile communication device (110) and the step of verifying
+comprises the steps of:
+- sending authentication information from the mobile communication device
+(110) to the reader device (120); and
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+12845-PT-EP 14.03.2017
+P101209 3
+
+- receiving authentication information from the reader device (120) by means of
+
+the mobile communication device (110).
+
+9. The method according to any of the preceding claims, wherein the
+method comprises the step of:
+- requesting a confirmation of the user prior to transferring at least a part of the
+identifier received by the mobile communication device (110) to the reader
+device (120).
+
+10. The method according to any of the preceding claims, wherein the
+method comprises the step of:
+- encrypting the transmitted identifier by means of the secure element (115).
+
+11. The method according to claim 10, wherein the method comprises the
+step of:
+- confirming the correctness of the identifier or the correctness of the part of the
+
+identifier by means of the backend system (105).
+
+12. A mobile communication device (110) being adapted for direct debiting
+a user, the mobile communication device (110) comprising:
+
+a radio interface (112) for receiving at least a part of an identifier provided by
+means of a backend system (105);
+
+a secure element (115) being adapted to store the transmitted identifier;
+
+a processor for preparing a transaction to a reader device (120) by means of
+at least a part of the transmitted identifier and first information about the transaction;
+
+a transaction interface (116) for transferring at least the part of the transmitted
+identifier and the first information about the transaction to a reader device (120) for
+starting the transaction; and
+
+wherein the processor is adapted to prepare second information about the
+transaction and the radio interface (112) is adapted to transmit the second
+information about the transaction to the backend system (105) after starting the
+
+transaction.
+
+--- PAGE 4 ---
+10
+
+15
+
+12845-PT-EP 14.03.2017
+P101209 4
+
+13. A system comprising a mobile communication device (110) according to
+claim 12 and the backend system (105), wherein
+
+the backend system comprises a backend processor (102) for generating the
+identifier, the backend system further comprises a backend memory (101) for storing
+the identifier and a backend interface (103) for transmitting at least a part of the
+identifier to the mobile communication device (110);
+
+the backend interface (103) being further adapted to receive a request of
+confirmation comprising at least the part of the identifier transferred to the reader
+device (120) and first information about the transaction;
+
+the backend interface (103) being further adapted to receive the second
+information about the transaction from the mobile communication device (110);
+
+the backend processor (102) being adapted to compare the first and second
+information about the transaction;
+
+the backend processor (102) being further adapted to authenticate the request
+and to prepare a confirmation to verify the identifier transferred to the reader device
+(120); and
+
+the backend interface (103) being further adapted to transfer the confirmation
+
+for initiating a payment by means of a bank system (130).

@@ -1,0 +1,44 @@
+Title: Concurrent memory control for turbo decoders
+
+Abstract: The concurrent memory control turbo decoder solution of this invention uses an interleaved forward-reverse addressing with a single port memory and a simplified scratch memory. This invention computes beta state metrics for a sliding window and stores them in a scratch memory in a first addressing order (1000). For each sliding window, this invention computes alpha state metrics for the sliding window, reads beta state metrics from the scratch memory in the addressing order of the current repetition (1005) and combines alpha state metrics and beta state metrics in an extrinsic block. This invention then computes beta state metrics for a next sliding window and stores the data scratch memory in the addressing order of the current repetition. The addressing order is toggled (1001) for the next repetition (1004) until a frame of data is decoded.
+
+Type: EPO Patent
+
+Claims: 
+
+A method of turbo decoding comprising the steps of:
+computing beta state metrics for a sliding window of data,
+storing said beta state metrics for the sliding window of data in a scratch memory in a first addressing order; then repetitively for each sliding window
+toggling a current addressing order for a current repetition between the first addressing order and a second addressing order, said second addressing order being opposite to said first addressing order,
+computing alpha state metrics for the sliding window of data,
+reading beta state metrics from the scratch memory in the addressing order for the current repetition,
+combining the computed alpha state metrics and the recalled beta state metrics in an extrinsic block thereby producing extrinsic outputs,
+computing beta state metrics for a next sliding window of data,
+storing said beta state metrics for the next sliding window of data in a scratch memory in the addressing order of the current repetition;
+until a frame of data including a plurality of sliding windows is decoded.
+The method of turbo decoding of claim 1, wherein:
+the step of toggling an addressing order for a current repetition includes toggling a digital state of an address flip bit controlling an order of mapping of a virtual address to a physical address, wherein storing said beta state metrics always occurs in a third addressing order in virtual memory addressing and reading said beta state metrics always occurs in a fourth addressing order in virtual memory addressing, the fourth addressing order opposite to said third addressing order.
+A method of turbo decoding comprising the steps of:
+providing a plurality of scratch memories, each of said scratch memories having a reliability portion and a prolog portion, the plurality of scratch memories employed in a predetermined circular order;
+computing beta state metrics for an initial sliding window of data,
+simultaneously storing said beta state metrics for the sliding window of data in the reliability portion of a current scratch memory in a first addressing order and in the prolog portion of a next succeeding scratch memory in a second addressing order;
+then repetitively for each sliding window
+   toggling a current addressing order for a current repetition between the first addressing order and a third addressing order, said third addressing order being opposite to said first addressing order,
+   computing alpha state metrics for a current sliding window of data,
+   reading beta state metrics from the prolog portion of the current scratch memory in a fourth addressing order, the fourth addressing order opposite to the second addressing order,
+   reading beta state metrics from the reliability portion of the current scratch memory in the current addressing order,
+   combining the computed alpha state metrics and the recalled beta state metrics in an extrinsic block thereby producing extrinsic outputs,
+   computing beta state metrics for a next sliding window of data,
+   simultaneously storing said beta state metrics for the next sliding window of data in the reliability portion of a next succeeding scratch memory in an addressing order opposite to the current addressing order and in the prolog portion of a second succeeding scratch memory in the second addressing order;
+until a frame of data including a plurality of sliding windows is decoded.
+The method of turbo decoding of claim 1, wherein:
+the step of toggling an addressing order for a current repetition includes toggling a digital state of an address flip bit controlling an order of mapping of a virtual address to a physical address, wherein storing said beta state metrics in a reliability portion of a scratch memory always occurs in a fifth addressing order in virtual memory addressing and reading said beta state metrics from the reliability portion of a scratch memory always occurs in a sixth addressing order in virtual memory addressing, the sixth addressing order opposite to said fifth addressing order.
+A turbo decode apparatus comprising:
+a main memory storing data to be turbo decoded;
+a beta metrics block connected to said main memory for forming beta metrics from data recalled from said main memory;
+a set of a plurality of scratch memories connected to said beta metrics block for storing said beta metrics, each scratch memory having a prolog section and a reliability section;
+an alpha metrics block connected to said set of scratch memories for forming alpha metrics from data recalled from the scratch memories;
+a beta metrics memory connected to said beta metrics block storing beta metrics formed by said beta metrics block, said beta metrics memory having a plurality of sections;
+a multiplexer having a plurality of inputs each connected to a corresponding one said beta metrics memory and an output outputting data recalled from a selected one of said sections of said beta metrics memory;
+an extrinsic block connected to said alpha metrics block and said multiplexer for forming extrinsic outputs; and
+a concurrent memory interface controller connected to said main memory, said set of a plurality of scratch memories and said beta metrics memory, said concurrent memory interface controller generating addresses whereby said beta metrics block writes to said prolog section of a first scratch memory in a first addressing order, said beta metrics block writes to said reliability section of a next following scratch memory is a second alternating addressing order, said alpha metrics reads from a second following scratch memory in a third addressing order opposite to said first addressing order, and said alpha metrics reads from a third following scratch memory in a fourth alternating order opposite to said second alternating order.

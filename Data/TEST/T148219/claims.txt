@@ -1,0 +1,136 @@
+--- PAGE 1 ---
+MAIN REQUEST
+CLAIMS (Clean
+
+1. A method for identifying keypoints in a digital image (/) comprising a set of
+pixels, each pixel having associated thereto a respective value of an image representative
+parameter, said method comprising:
+
+- approximating (108), without explicitly computing, a filtered image (Z(o), /02) of
+said digital image (/), said filtered image being obtained from said digital image (/) by
+means of a filtering function, said filtering function being a Laplacian of Gaussian or a
+Difference of Gaussians and having a filtering parameter (o) being the standard deviation
+(oc) of the Gaussian function, said approximating comprising:
+
+a) generating (102) a set of base filtered images (Z(o;)) of said digital image (/), each
+base filtered image (L(o;)) being the digital image (/) filtered by means of said filtering
+function with a respective value (0;) of the filtering parameter;
+
+b) for each pixel (x,y) of at least a subset of said set of pixels of the digital image
+(J), approximating (106) the filtered image (L(x1,0)) obtained from said digital image (J)
+by means of said filtering function having a filtering parameter value by means of a
+respective approximation function based on the base filtered images, said approximation
+function being a function of the filtering parameter (o) within a predefined range (104) of
+values of the filtering parameter (0), wherein:
+
+- said approximating the filtered image, obtained from said digital
+image (/) by means of said filtering function having a filtering parameter
+by means of a respective approximation function based on the base
+filtered images, comprises calculating said approximation function based
+on a linear combination of said base filtered images, such linear
+combination providing for having each base filtered image multiplied by
+a corresponding weight; and
+
+- said approximation function being a polynomial having the
+filtering parameter as a variable, wherein the coefficients of said
+polynomial are calculated based on the base filtered images and based on
+an approximation of the weights of said linear combination;
+
+- for each pixel of said at least a subset, identifying (120) such pixel as a candidate
+
+keypoint if, in such pixel, the approximation function has a local extreme (110) which is
+1
+
+--- PAGE 2 ---
+also a global extreme (116) with respect to the filtering parameter (¢) in a respective sub-
+range of values of the filtering parameter internal to said predefined range;
+
+- for each pixel identified as a candidate keypoint:
+
+c) comparing (130) the value assumed by the approximation function at the value
+of the filtering parameter corresponding to the global extreme of the pixel with the values
+assumed by the approximation functions of the pixels adjacent to said pixel in the image at
+the values of the filtering parameters of the respective global extremes of such adjacent
+pixels, and
+
+d) selecting (136) such pixel based on this comparison.
+
+2. The method of claim 1, wherein said approximation function is based on a further
+
+approximation of said linear combination of said base filtered images.
+
+3. The method of any one among the preceding claims, further comprising
+discarding from the selected pixels the pixels wherein the value assumed by the
+approximation function at the filtering parameter corresponding to the global extreme of
+
+the pixel has an absolute value smaller than a first threshold.
+
+4. The method of any one among the preceding claims, further comprising:
+
+- for each selected pixel, calculating the main curvature and the secondary curvature
+of the surface formed by the filtering functions in the pixels of the image contained in a
+patch centered at such selected pixel;
+
+- discarding / maintaining such pixel from / in the selected pixels based on the ratio
+
+between the main curvature and the secondary curvature.
+
+5. The method of any one among the preceding claims, further comprising:
+
+- for each selected pixel, calculating the value assumed by the second derivative of
+the approximation function with respect to the filtering parameter at the corresponding
+global extreme, and
+
+- discarding / maintaining such pixel from / in the selected pixels based on such
+
+value assumed by the second derivative.
+
+--- PAGE 3 ---
+6. The method of any one among the preceding claims, wherein said identifying
+keypoints is further repeated on at least a scaled version of the image, using the same
+
+predefined range of the filtering parameter.
+
+7. The method of claim 6, wherein:
+
+- at least one of the values of the filtering parameter of the base filtered images is
+equal to twice the lowest among the values of the filtering parameter of the other base
+filtered images;
+
+- said scaled version of the image is obtained by approximating the base filtered
+images starting from an approximate version of the base filtered image having the lowest
+value of the filtering parameter, said approximate version of the base filtered image being
+approximated by undersampling the base filtered image with such value of the filtering
+
+parameter that is twice the lowest value of the filtering parameter.
+
+8. The method in accordance with any one of the preceding claims, wherein said
+
+polynomial is a third degree polynomial with respect to the filtering parameter.
+
+9. The method in accordance with any one among the preceding claims, wherein
+each pixel of the image has at least one corresponding coordinate (x, y) that identifies the
+location of the pixels in the image, said method further comprising for each selected pixel
+modifying (148) said at least one coordinate of such pixel by calculating a corresponding
+change of coordinates based on a further approximation function that approximates the
+filtered image in the pixel with respect to such a change of coordinates, said further
+approximation function being based:
+
+1) on the filtering function of such selected pixel at the value of the filtering
+parameter corresponding to the global extreme of the selected pixel, and
+
+2) on the filtering functions of the pixels adjacent to the selected pixel in the image
+at the value of the filtering parameter corresponding to the global extreme of the selected
+
+pixel.
+
+10. The method of claim 9, wherein said calculating the change of coordinates
+
+comprises identifying maximum or minimum points in the further approximation function
+
+3
+
+--- PAGE 4 ---
+with respect to the change of coordinates and setting such change of coordinates based on
+
+the identified maximum or minimum points.

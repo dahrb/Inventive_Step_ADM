@@ -1,0 +1,59 @@
+TITLE:
+Geographic database organization that facilitates location-based advertising
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method of facilitating delivery of advertising to users of mobile computing platforms is disclosed. A geographic database contains data entities that represent geographic features, such as roads, located in a geographic region. Advertising zones are defined within the geographic region. Associated with at least some of the data entities that represent geographic features are data that indicate in which of the advertising zones the represented geographic feature is located. Advertisers are allowed to associate advertising messages with the advertising zones. Users of mobile computing platforms are provided with geographically-related services that use the geographic database. As a user of a mobile computing platform travels in the geographic region, the location of the mobile computing platform is determined. The user of the mobile computing platform is provided with the advertising message associated with the advertising zone in which the mobile computing platform is determined to be located.
+
+CLAIMS:
+1. A method of delivering advertising to users of mobile computing platforms:
+defining a plurality of advertising zones in a geographic region, wherein said plurality of advertising zones includes at least a first zone and a second zone, wherein a portion of said first zone overlaps a portion of said second zone;
+providing a geographic database that contains road segment data, said road segment data represents a road segment located in the geographic region, said road segment data comprising data that indicates in which of said advertising zones the road segment is located;
+associating advertising messages with at least some of said advertising zones;
+storing said advertising messages in an advertising database;
+determining a position of a mobile computing platform as the mobile computing platform travels in the geographic region;
+identifying in which of a plurality of advertising zones the mobile computing platform is located; and
+providing the mobile computing platform with said advertising message associated with said identified advertising zone in which the mobile computing platform is located.
+2. The method of claim 1 wherein said advertising messages are provided over a wireless communications link to the mobile computing platform from a server.
+3. The method of claim 1 further comprising:
+providing the advertising message via a user interface of the mobile computing platform.
+4. The method of claim 3 further comprising:
+providing the advertising message audibly via the user interface.
+5. The method of claim 3 further comprising:
+providing the advertising message visually via the user interface.
+6. The method of claim 1 further comprising:
+associating warning messages with at least some of said advertising zones.
+7. The method of claim 6 wherein said warning message relates to an adverse weather condition.
+8. The method of claim 6 wherein said warning message relates to traffic conditions.
+9. The method of claim 1 wherein said advertising zones are formed dynamically.
+10. A method of providing advertising to users of mobile computing platforms that are moving in a geographic region comprising:
+defining a plurality of advertising areas in the geographic region, wherein at least some of said advertising areas in a first layer overlap some of said advertising areas in a second layer;
+associating advertising messages with said advertising areas;
+providing a geographic database that contains road segment data that represent road segments located in the geographic region, and advertising area data that indicate which of said road segments are located in said advertising areas;
+with respect to each of said mobile computing platforms, determining a current position of the mobile computing platform as said mobile computing platform;
+determining in which of said advertising areas the mobile computing platform is located; and
+delivering to the mobile computing platform an advertising message associated with the advertising area in which the mobile computing platform is located.
+11. The method of claim 10 further comprising:
+providing the advertising message via a user interface of the mobile computing platform.
+12. The method of claim 10 further comprising:
+providing the advertising message audibly via the mobile computing platform.
+13. The method of claim 10 further comprising:
+providing the advertising message visually via the mobile computing platform.
+14. The method of claim 10 further comprising:
+associating warning messages with at least some of said advertising areas.
+15. The method of claim 10 wherein said advertising areas are formed dynamically.
+16. The method of claim 10 wherein said advertising messages are provided over a wireless communications link to the mobile computing platform from a server.
+17. The method of claim 10 wherein said advertising messages are provided by a standalone navigation system.
+18. A method of providing advertising to users of mobile computing platforms comprising:
+defining a plurality of advertising locations along roads in the geographic region;
+providing a geographic database that contains road segment data, said road segment data representing roads located in the geographic region, said road segment data comprising data that represent positions of the advertising locations along the roads at which advertising messages are to be provided;
+associating advertising messages with at least some of said advertising locations;
+determining a position of a mobile computing platform as the mobile computing platform travels in the geographic region;
+matching said position of the mobile computing platform to said road segment data representing roads in the geographic region; and
+if said position of the mobile computing platform passes said position of one of said advertising locations, providing the user with said advertising message associated with said advertising location.
+19. The method of claim 18 further comprising:
+associating warning messages with at least some of said advertising locations.
+20. The method of claim 18 further comprising:
+storing said advertising messages in an advertising database.

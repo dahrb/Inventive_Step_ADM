@@ -1,0 +1,51 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+Appl.No.: 05 028 557.6 P37690
+Main request
+
+CLAIMS (New Main Request)
+
+1. A driver for driving a plurality of pixels formed by data lines (DL1, ...,
+DLm) and scan lines (SL1, ..., SLn), comprising:
+
+a controller (140) configured to transmit a plurality of display data;
+
+a scan driving circuit (120) configured to provide the scan lines (SL1, ..., SLn)
+with scan signals under control of the controller (140);
+
+a data driving circuit (130) configured to receive the plurality of display data
+from the controller (140) and to provide a data current corresponding to the display
+data to the data lines (DL1, ..., DLm), wherein the data current is synchronized with
+the scan signals under control of the controller (140); and
+
+a power supply providing circuit (150) configured to supply a scan driving
+voltage to the scan driving circuit (120) and to control the magnitude and the duty
+ratio of the scan driving voltage,
+
+characterized in that
+
+the controller (140) is configured to detect whether or not a first image is
+continuously displayed on a panel (102) during a predetermined period,
+
+the scan driving circuit (120) is configured to drive the scan lines (SL1, ...,
+SLn) by units of two or more scan lines under control of the controller (140) when the
+first image is continuously displayed on the panel (102) during the predetermined
+period, wherein the scan lines within each unit are driven simultaneously,
+
+the power supply providing circuit (150) is configured to change the duty ratio
+of the scan driving voltage, and
+
+an on-off time between the scan lines (SL1 to SLn) and the scan driving circuit
+
+(120) is changed depending on the duty ratio.
+
+2. The driver of claim 1, wherein the controller is configured to store the
+
+plurality of display data.

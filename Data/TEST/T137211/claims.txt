@@ -1,0 +1,143 @@
+--- PAGE 1 ---
+-5-
+
+Main Request
+
+New patent claims
+
+(as fair copy)
+
+1. A method of transacting a security or a fixed rate financing instrument, wherein
+the security or fixed rate financing instrument is transacted as a hardcopy certificate
+(107) by means of an issuing system including a securities issuing institution (101) and
+at least one issuing machine (105) for transacting the hardcopy certificate (107) con-
+nected to the securities issuing institution (101), the issuing system comprising receiving
+means of the issuing machine (105), information retrieving means of the issuing ma-
+chine (105), input means (105a) of the issuing machine (105), transaction processing
+means of the issuing machine (105), computing means in the securities issuing institu-
+tion (101), printing means of the issuing machine (105), scanning means of the issuing
+machine (105), conveying means of the issuing machine (105) and determining means in
+the securities issuing institution (101), wherein
+
+the receiving means receives a recording medium (106) provided by a potential
+purchaser;
+
+the information retrieving means retrieves identification recoded in the received
+recording medium (106);
+
+in the input means (105a) the potential purchaser input request for a transaction
+of the security or the fixed rate financing instrument;
+
+the transaction processing means processes the requested transaction by retriev-
+ing information via a network from a server of the issuing institution (101);
+
+the computing means computes a cryptographic checksum by applying a crypto-
+graphic algorithm to information to be printed on the hardcopy certificate (107), the in-
+formation including at least one of a face value, a serial number, an issuer identification,
+an issue date, an expiry date, and an owner name;
+
+the printing means prints out said hardcopy certificate (107) as purchased by the
+potential purchaser and the computed cryptographic checksum thereon;
+
+the scanning means scans the cryptographic checksum printed on the hardcopy
+
+certificate (107) inserted by a holder;
+
+--- PAGE 2 ---
+-6-
+
+the conveying means conveys the result of the scan of the scanning means to the
+securities issuing institution (101); and
+
+the determining means determines whether the hardcopy certificate (107) was
+issued by an issuing machine (105) linked with the securities issuing institution (101) by
+checking whether the scanned cryptographic checksum scanned by the issuing machine
+(105) matches the computed cryptographic checksum in the securities issuing institution
+(101).
+
+2. The method according to claim 1, wherein said hardcopy certificate (107) further
+includes a random pattern, said scanning means scans said hardcopy certificate (107)
+with the random pattern prior to providing said hardcopy certificate (107) to the pur-
+
+chaser.
+
+3. The method according to claim 2, wherein said scanning means scans the hard-
+copy certificate (107) inserted by a holder, and said determining means determines the
+hardcopy certificate (107) as not issued by an issuing machine linked with the issuing
+
+machine if the hardcopy certificate (107) does not contain the random pattern.
+
+4. The method according to claims 2 or 3, wherein said printing means prints said
+random pattern on said hardcopy certificate (107) or said random pattern is a pattern
+
+embedded in said hardcopy certificate (107).
+
+5. The method according to any on of the claims 1 to 4, wherein if said determining
+means determines the hardcopy certificate (107) as issued by an issuing machine (105)
+linked with the issuing institution (101), said transaction processing purchases back the
+hardcopy certificate (107) at a market price, or converts the hardcopy certificate (107)
+
+into an electronic certificate for the holder.
+
+6. The method according to claim 5, wherein said electronic certificate is sent to
+
+any e-mail account of a person or an institute as directed by the holder.
+
+--- PAGE 3 ---
+-7-
+
+7. The method according to claim 6, wherein said institute is a securities depository
+
+or breakage.
+
+8. The method according to claim 7, wherein the holder sets a limit or stop order to
+
+sell the electronic certificate via the securities breakage.
+
+9. The method according to any on of the claims 1 to 8, wherein if said determining
+means determines the hardcopy certificate (107) as not issued by an issuing machine
+(105) linked with the issuing institution (101), said transaction processing means either
+returns the hardcopy certificate (107) to the holder, or instructs said printing means to
+
+print "VOID" on the hardcopy certificate and stores it locally.
+
+10. The method according to any one of the claims 1 to 9, wherein said printing
+
+means further prints out said hardcopy certificate (107) with a watermark or a hologram.
+
+11. |The method according to any one of claims 1 to 10, wherein said printing means
+prints out said hardcopy certificate (107) on a heavy paper, a colored paper, a forensic
+
+fiber paper, or a paper embedded with metallic or UV sensitive threads.
+
+12. | The method according to any one of claims 1 to 11, wherein said printing means
+prints the cryptographic checksum on said hardcopy certificate (107) in a microprinting
+
+font.
+
+13. | The method according to any one of claims 1 to 12, wherein said cryptographic
+checksum is generated by using a cryptographic algorithm and information other than
+
+said cryptographic checksum to be printed on said hardcopy certificate (107).
+
+14. The method according to claim 13, wherein the cryptographic algorithm is a
+keyed-hash function H.
+
+15. |The method according to claim 14, wherein the cryptographic checksum is ob-
+
+tained by applying the keyed-hash function H to the key Kg and the information Y as
+
+--- PAGE 4 ---
+-8-
+
+H(Kg, Y), where Kg denotes a certificate key held by the server, Y denotes the informa-
+tion other than said cryptographic checksum to be printed on said hardcopy certificate
+(107).
+
+16. The method according to claim 15, wherein said transaction processing means
+
+uses a different certificate key Ka to communicate with the server.
+
+17. | The method according to claim 15 or 16, wherein the server uses different certifi-
+
+cate keys Kg for different classes of hardcopy certificate (107).

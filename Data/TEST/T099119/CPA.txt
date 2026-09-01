@@ -1,0 +1,67 @@
+TITLE:
+System and method for identifying and accessing network services
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A system and method for facilitating mobile terminal access to a particular network application available via multiple application servers on a network. An application identifier corresponding to the network application, and associated application access parameters including an application server address of one of the multiple applications servers, is embedded into provisioning information. The provisioning information is transmitted to at least one mobile terminal in connection with a provisioning procedure. The mobile terminal is provisioned to facilitate access to the network application via the application server identified by the application server address provided with the provisioning information.
+
+CLAIMS:
+1. A method for facilitating mobile terminal access to a network application that is hosted by a plurality of application servers on a network, comprising:
+embedding an application identifier corresponding to the network application, and associated application access parameters including an application server address of one of the plurality of applications servers, into provisioning information;
+transferring the provisioning information to at least one mobile terminal in connection with a provisioning procedure; and
+provisioning the mobile terminal to facilitate access to the network application via the application server identified by the application server address provided with the provisioning information.
+2. The method as in claim 1, further comprising pre-configuring a software module at the mobile terminal to recognize the application identifier, and accessing the network application via the application server corresponding to the application server address using the software module.
+3. The method as in claim 1, further comprising providing one or more user agents at the mobile terminal, and accessing the network application using at least one of the user agents that is pre-configured to recognize the application identifier and to utilize one or more of the associated application access parameters in accessing the network application.
+4. The method as in claim 1, further comprising accessing the network application at the addressed application server by the mobile terminal.
+5. The method as in claim 1, wherein transferring the provisioning information comprises transmitting the provisioning information from a provisioning source to the mobile terminal via the network.
+6. The method as in claim 5, wherein transmitting the provisioning information from a provisioning source comprises transmitting the provisioning information via a push provisioning process over the network.
+7. The method as in claim 6, wherein transmitting the provisioning information via a push provisioning process comprises transmitting the provisioning information via a Wireless Application Protocol (WAP) push provisioning procedure.
+8. The method as in claim 1, wherein transferring the provisioning information comprises equipping the mobile terminal with a component that stores the provisioning information.
+9. The method as in claim 8, wherein equipping the mobile terminal with a component comprises electrically coupling one of a Subscriber Identity Module (SIM), WAP identify module (WIM), and a smart card to the mobile terminal.
+10. The method as in claim 1, further comprising associating network connectivity settings with the network application to be accessed via the application server identified by the application server address.
+11. The method as in claim 10, wherein associating network connectivity settings with the network application comprises associating with the network application one or more of a quality of service, network access point parameter settings, and proxy parameter settings.
+12. The method as in claim 1, wherein provisioning the mobile terminal to facilitate access to the network application further comprises identifying access characteristics of the connection between the mobile terminal and the application server identified by the application server address using one or more of the associated application access parameters.
+13. The method as in claim 12, wherein the associated application access parameters comprise one or more of authentication credentials, content types preferred by the application server, and content types required by the application server.
+14. The method as in claim 12, wherein the associated application access parameters comprise information used to download at least one application access user agent which enables use of the network application.
+15. The method as in claim 14, further comprising invoking a resident user agent within the mobile terminal using the information, wherein the resident user agent effects the download of the application access user agent in response thereto.
+16. The method as in claim 14, further comprising:
+downloading the application access user agent to the mobile terminal; and
+accessing the network application via the application server corresponding to the application server address using the application access user agent.
+17. The method as in claim 16, further comprising configuring the downloaded application access user agent to recognize the application identifier if the downloaded application access user agent is not pre-configured to recognize the application identifier in order to identify the application server address.
+18. The method as in claim 16, wherein the downloaded application access user agent is pre-configured to recognize the application identifier in order to identify the application server address.
+19. The method as in claim 12, wherein the associated application access parameters comprise one or more of an identification of an access protocol to communicate with the network application and a version of the access protocol.
+20. The method as in claim 12, wherein the associated application access parameters comprise a specification of application resources available on the network application hosted by the application server identified by the application server address.
+21. The method as in claim 20, wherein the associated application access parameters further comprise a human-readable label for the application resources available on the network application.
+22. The method as in claim 1, wherein embedding the application identifier and associated application access parameters into provisioning information comprises embedding the application identifier and associated application access parameters into one or more of eXtensible Markup Language (XML) provisioning documents and encoded forms of the XML provisioning documents.
+23. The method as in claim 1, wherein embedding the application identifier and associated application access parameters into provisioning information comprises embedding the application identifier and associated application access parameters into a provisioning information payload of one or more provisioning information packets.
+24. The method as in claim 1, wherein the application identifier comprises an Application Identifier (ID) defined by WAP Push specifications.
+25. The method as in claim 1, wherein the application identifier comprises an Internet registered port number.
+26. The method as in claim 1, wherein the application identifier comprises a Uniform Resource Identifier (URI) pre-configured at the mobile terminal and the plurality of application servers to identify the network application.
+27. The method as in claim 1, wherein the network application comprises a standardized application available on each of the plurality of the application servers.
+28. The method as in claim 1, wherein the provisioning procedure comprises a bootstrap provisioning process which provides the application identifier and the associated application access parameters upon initial configuration of the mobile terminal.
+29. The method as in claim 1, wherein the provisioning procedure comprises a re-provisioning process which provides the application identifier and the associated application access parameters subsequent to a bootstrap provisioning process.
+30. The method as in claim 1, wherein the provisioning procedure is effected in connection with provisioning the mobile terminal for one or more of a new service and an upgraded service.
+31. The method as in claim 1, wherein the application server address comprises one of a network address and a hostname of the application server to be accessed by the mobile terminal.
+32. The method as in claim 1, wherein the application server address comprises a Uniform Resource Locator (URL) hosted on of the application server to be accessed by the mobile terminal.
+33. The method as in claim 32, wherein the URL comprises a path in addition to the application server address.
+34. A system for facilitating mobile terminal access to a target application available via a plurality of application servers on a network, comprising:
+a provisioning element to provide one or more provisioning files, wherein at least one of the provisioning files includes an application identifier corresponding to the target application and application access parameters associated with the application identifier, wherein at least one of the application access parameters comprises an application server address of one of the plurality of application servers; and
+a mobile terminal pre-configured to recognize the embedded application identifier upon receipt of the provisioning files, and to access the target application at the application server address as prescribed by one or more of the application access parameters associated with the application identifier.
+35. The system as in claim 34, wherein the provisioning network element comprises a provisioning server coupled to the network and implementing pull technology to transfer the provisioning files to the mobile terminal initiating the transfer via the network.
+36. The system as in claim 34, wherein the provisioning network element comprises a provisioning server coupled to the network and implementing push technology to push the provisioning files to the mobile terminal via the network.
+37. The system as in claim 36, wherein the mobile terminal comprises a Wireless Application Protocol (WAP)-compliant device.
+38. The system as in claim 37, further comprising a push proxy gateway (PPG) coupled between a first network domain in which the provisioning server operates and a WAP network domain in which the WAP-compliant device operates.
+39. The system as in claim 37, wherein the application identifier comprises an Application Identifier (ID) defined by WAP Push specifications.
+40. The system as in claim 34, wherein the application identifier comprises an Internet registered port number.
+41. The system as in claim 34, wherein the application identifier comprises a Uniform Resource Identifier (URI) pre-configured at the mobile terminal and the plurality of application servers to identify the target application.
+42. The system as in claim 34, wherein the provisioning network element comprises a component that stores the provisioning files.
+43. The system as in claim 42, wherein the component comprises one of a Subscriber Identity Module (SIM), WAP identify module (WIM), and a smart card.
+44. The system as in claim 34, wherein the mobile terminal comprises one of a wireless telephone, a personal digital assistant (PDA), and a mobile computer.
+45. The system as in claim 34, wherein the mobile terminal comprises at least one user agent pre-configured to recognize the embedded application identifier and to access the target application and to utilize one or more of the application access parameters in accessing the target application.
+46. A network element comprising a provisioning server to transmit a data signal embodied in a carrier wave readable by a mobile terminal and encoding provisioning information, wherein the provisioning information comprises an application identifier corresponding to a standardized network application hosted by a plurality of application servers, and wherein the provisioning information comprises application access parameters associated with the application identifier wherein at least one of the application access parameters is an application server address of one of the plurality of application servers in which a mobile terminal recipient of the data signal can access the standardized network application.
+47. A computer-readable medium having computer-executable instructions for facilitating mobile terminal access to a network application that is hosted by a plurality of application servers on a network, the computer-executable instructions performing steps comprising:
+embedding an application identifier corresponding to the network application, and associated application access parameters including an application server address of one of the plurality of applications servers, into provisioning information;
+transferring the provisioning information to at least one mobile terminal in connection with a provisioning procedure; and
+provisioning the mobile terminal to facilitate access to the network application via the application server identified by the application server address provided with the provisioning information.

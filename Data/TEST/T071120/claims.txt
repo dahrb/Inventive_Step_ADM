@@ -1,0 +1,129 @@
+--- PAGE 1 ---
+P61543 September 9, 2019
+
+(new) Claims
+
+1. A robot system (1), comprising:
+a conveyor (10) configured to convey at least one workpiece (W, W1, W2, W3);
+a robot (20) comprising a plurality of holders (23a, 23b) configured to hold the at least
+one workpiece (W, W1, W2, W3); and
+a controller (40) configured to control the robot (20) to hold the at
+least one workpiece (W, W1, W2, W3) conveyed on the conveyor (10) and
+transfer the at least one workpiece (W, W1, W2, W3) to a predetermined place
+using at least one holder (23a, 23b) among the plurality of holders (23a, 23b),
+the controller (40) comprising a control unit (41) and a storage (42), with the
+control unit (41) including a conveyor controller (41a), a divided area setter
+(41b), an allocator (41c), a situation acquirer (41d), and an instructor (41e),
+wherein the divided area setter (41b) is configured to set a plurality of
+divided areas (CA1, CA2) on the conveyor (10) in a width direction of the
+conveyor (10), and is configured to store the plurality of divided areas (CA1,
+CA2) in a storage (42); and
+wherein the allocator (41c) is configured to allocate the plurality of
+holders (23a, 23b) respectively to the plurality of divided areas (CA1, CA2) so
+as to hold the at least one workpiece (W, W1, W2, W3) when the at least one
+workpiece (W, W1, W2, W3) is conveyed in the plurality of divided areas
+(CA1, CA2),
+characterized in that the divided area setter (41b) is configured to set the plurality of divided
+areas (CA1, CA2) based on stored divided area setting information (42a) including the
+position and dimensions of a movable area (WA) of the robot (20), the width of the conveyor
+
+(10), and the number of holders (23a, 23b), wherein the robot system is configured such that
+
+--- PAGE 2 ---
+P61543 September 9, 2019
+
+(a) when a first holder (23a) of the plurality of holders (23a, 23b) is in use, the instructor
+(41e) determines whether the other holder, namely a second holder (23b), is not being used
+(S107),
+
+(b) when the second holder (23b) of the plurality of holders (23a, 23b) is not being used,
+the instructor (41e) operates the robot (20) to hold the workpiece (W) using the second holder
+(23b) (step $108), and
+
+(c) when the second holder (23b) is in use, so that both the holders (23a and 23b) are in
+use, the instructor (41e) operates the robot (20) to transfer the workpieces (W) held by the
+holders (23a and 23b) to the conveyor (50), and then to hold the workpiece (W) using the first
+holder (23a) (step S109).
+
+2. The robot system (1) according to claim 1, further comprising a detector (30)
+configured to detect a conveyance situation in which the at least one workpiece (W, W1, W2,
+W3) is conveyed on the conveyor (10),
+
+wherein the first holder (23a) among the plurality of holders (23a, 23b) is allocated to a
+first divided area (CA1) among the plurality of divided areas (CA1, CA2) to hold the at least
+one workpiece (W1) when the at least one workpiece (W1) is conveyed in the first divided
+area (CA1), and
+
+wherein when the detector (30) detects another workpiece (W2) being conveyed to the
+first divided area (CA1) while the first holder (23a) is holding the at least one workpiece (W1)
+in the first divided area (CA1), and when the second holder (23b) that is among the plurality
+of holders (23b, 23a) and that is not allocated to the first divided area (CA1) is not being used,
+the controller (40) is configured to control the robot (20) to hold the another workpiece (W2)
+
+in the first divided area (CA1) using the second holder (23b).
+
+3. The robot system (1) according to claim 1 or 2,
+
+wherein the plurality of holders (23a, 23b) are parallel to each other relative to a robot
+
+--- PAGE 3 ---
+P61543 September 9, 2019
+
+hand of the robot (20), and
+
+wherein when the robot (20) holds the at least one workpiece (W, W1, W2, W3), the
+controller (40) is configured to control the robot (20) to take a basic posture in which the
+robot hand is positioned above the conveyor (10) with the plurality of holders (23a, 23b)
+
+aligned in a direction parallel to the width direction of the conveyor (10).
+
+4. The robot system (1) according to claim 3, wherein when the robot (20) is in the
+basic posture, the allocator (41c) is configured to allocate one holder (23a, 23b) among the
+plurality of holders (23a, 23b) to one divided area (CA1, CA2) among the plurality of divided
+
+areas (CA1, CA2) that is closest to the one holder (23a, 23b).
+
+5. A method for picking a workpiece, comprising the steps of:
+
+conveying (S101) at least one workpiece (W, W1, W2, W3) using a conveyor (10)
+through a movable area (WA) of a robot (20) comprising a plurality of holders (23a, 23b);
+
+detecting (S102) a conveyance situation in which the at least one workpiece (W, W1, W2,
+W3) is conveyed on the conveyor (10);
+
+setting a plurality of divided areas (CA1, CA2) on the conveyor (10) in a width direction
+of the conveyor (10) based on stored divided area setting information (42a) including the
+position and dimensions of the movable area (WA) of the robot (20), the width of the
+conveyor (10), and the number of holders (23a, 23b);
+
+identifying (S103), based on the conveyance situation, a divided area (CA1, CA2) to
+which the at least one workpiece (W, W1, W2, W3) corresponds from among the plurality of
+divided areas (CA1, CA2) of the conveyor (10) that are divided in a width direction of the
+conveyor (10); and
+
+operating (S106, S108) the robot (20) to hold the at least one workpiece (W, W1, W2,
+W3) using one holder (23a, 23b) among the plurality of holders (23a, 23b) that is allocated to
+
+the divided area (CA1, CA2), wherein
+
+--- PAGE 4 ---
+P61543 September 9, 2019
+
+(a) when a first holder (23a) of the plurality of holders (23a, 23b) is in use, an instructor
+(41e) determines whether the other holder, namely a second holder (23b) of the plurality of
+holders (23a, 23b) is not being used (step $107),
+
+(b) when the second holder (23b) is not being used, the instructor (41e) operates the
+robot (20) to hold the workpiece (W) using the second holder (23b) (step $108), and
+
+(c) when the second holder (23b) is in use, so that both the holders (23a and 23b) are in
+use, the instructor (41e) operates the robot (20) to transfer the workpieces (W) held by the
+holders (23a and 23b) to the conveyor (50), and then to hold the workpiece (W) using the first
+holder (23a) (step S109).
+
+6. The method according to claim 5, wherein when the detecting step (S102) detects
+another workpiece (W2) being conveyed to the divided area (CA1) while the first holder (23a)
+is holding the workpiece (W1) in the divided area (CA1), and when the second holder (23b)
+that is among the plurality of holders (23b, 23a) and that is not allocated to the divided area
+(CA1) is not being used, the operating step comprises operating (S108) the robot (20) to hold
+the another workpiece (W2) in the divided area (CA1) using the second holder (23b).

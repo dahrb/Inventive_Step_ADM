@@ -1,0 +1,207 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+17
+REVISED MAIN REQUEST
+
+CLAIMS:
+
+1. A method for a heterogenous network where base stations operable in a flexible time division
+duplex mode can adjust their time frames without assumption of a same frame structure being used
+by all base stations in an area, comprising:
+
+receiving (502), by a first base station, an indication for a second base station to use the
+flexible time division duplex mode;
+
+assessing, by the first base station, an amount of interference that will be caused by the
+second base station in dependence on the receiving;
+
+deciding, by the first base station, (509) how to adjust a transmission power of subframes of
+the second base station which are not following the same uplink/downlink configuration as the first
+base station in dependence on said assessing; and
+
+sending, by the first base station, (510) the second base station instructions to adjust the
+
+transmission power in dependence on said deciding.
+
+2. The method according to claim 1, wherein the sending comprises sending, by the first base
+station, instructions to the second base station to set the transmission power of the second base
+station so that the second base station does not disturb uplink operations of the first base station
+
+beyond acceptable levels.
+
+3. The method according to claim 1 or 2, wherein the assessing comprises initiating and
+
+coordinating measurements, by the first base station, to determine the amount of interference.
+
+4. The method according to any of claims 1 to 3, wherein the deciding comprises comparing the
+amount of interference that will be caused by the second base station with an amount of
+
+interference due to neighboring cells.
+
+5. The method according to any of claims 1 to 4, the method further comprising:
+receiving (502), by the first base station, an indication for a third base station to use flexible
+
+time division duplex mode;
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+18
+
+assessing an amount of interference that will be caused by the third base station;
+
+deciding (509) how to adjust a transmission power of the third base station; and
+
+sending (510) the third base station instructions to adjust the transmission power, wherein
+the first base station is a macro base station, the second base station is a femto base station, and the
+
+third base station is a femto base station.
+
+6. The method according to claim 5, wherein the second base station and the third base station
+
+each use different frame structures.
+
+7. The method according to any of claims | to 6, wherein the assessing comprises at least one of
+
+ordering (504), by the first base station, a user equipment to conduct measurement of
+long-term channel conditions from a downlink transmission;
+
+ordering (504), by the first base station, the second base station to conduct measurement
+of long-term channel conditions from a downlink transmission;
+
+ordering (504), by the first base station, the second base station to transmit a reference
+signal so that the first base station can measure channel conditions; and
+
+ordering (504), by the first base station, the second base station to use at least one user
+equipment associated with the second base station to transmit a reference signal, and the first
+
+base station determines the amount of interference based on the reference signal.
+
+8. A method for a heterogenous network where base stations operable in a flexible time division
+duplex mode can adjust their time frames without assumption of a same frame structure being used
+by all base stations in an area, comprising:
+
+sending (501), to a first base station by a second base station, an indication for the second
+base station to use the flexible time division duplex mode;
+
+receiving (511) by the second base station instructions from the first base station for
+adjusting a transmission power of subframes of the second base station which are not following the
+same uplink/downlink configuration as the first base station in response to said sending; and
+
+adjusting the transmission power of the second base station in accordance with the
+
+instructions.
+
+9. The method according to claim 8, wherein the receiving comprises receiving, by the second base
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+19
+
+station, instructions to set the transmission power of the second base station so that the second base
+
+station does not disturb uplink operations of the first base station beyond acceptable levels.
+
+10. The method according to claim 8 or 9, further comprising conducting measurement of long-
+
+term channel conditions from a downlink transmission.
+
+11. The method according to any of claims 8 to 10, further comprising transmitting a reference
+
+signal, by the second base station, so that the first base station can measure channel conditions.
+
+12. The method according to any of claims 8 to 11, further comprising
+
+receiving, from the first base station, an order for the second base station to use at least one
+user equipment associated with the second base station to transmit a reference signal; and
+
+using the at least one user equipment associated with the second base station to transmit the
+
+reference signal.
+
+13. An apparatus comprising means for performing method according to any of claims | to 7.
+
+14. A non-transitory computer readable medium encoded with instructions that, when executed in
+hardware, perform a process, the process comprising the method of any of claims 1 to 7 or the
+
+method of any of claims 8 to 12.
+
+15. A system for a heterogenous network where base stations operable in a flexible time division
+duplex mode can adjust their time frames without assumption of a same frame structure being used
+by all base stations in an area, comprising:
+a first apparatus, comprising
+
+at least one first processor; and
+
+at least one first memory including first computer program code, the at least one first
+memory and the first computer program code are configured, with the at least one first processor, to
+cause the first apparatus at least to
+
+receive (502), by a first base station, an indication for a second base station to use
+the flexible time division duplex mode;
+
+assess an amount of interference that will be caused by the second base station;
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+20
+
+decide (509) how to adjust a transmission power of subframes of the second base
+station which are not following the same uplink/downlink configuration as the first base station in
+response to the assessing; and
+
+send (510) the second base station instructions to adjust the transmission power in
+response to the deciding; and
+
+a second apparatus, comprising
+
+at least one second processor; and
+
+at least one second memory including second computer program code, the at least
+one second memory and the second computer program code are configured, with the at least one
+second processor, to cause the second apparatus at least to
+
+send (501), to the first base station, the indication for the second base station to use
+flexible time division duplex mode;
+
+receive (511) the instructions from the first base station for adjusting the
+transmission power of the subframes of the second base station which are not following the same
+uplink/downlink configuration as the first base station in response to the sending of the indication;
+and
+
+adjust the transmission power of the second base station in accordance with the
+
+instructions.
+
+16. An apparatus comprising means for performing method according to any of claims 8 to 12.

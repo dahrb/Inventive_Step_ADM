@@ -1,0 +1,49 @@
+Title: Distributed Payment System and Method
+
+Abstract: The present invention provides a payment system that allows a mobile communications device (MCD) to interact with a merchant processing device (MPD) and a payment engine. A communications component associated with the payment engine can send requested barcodes to the MPD, receive barcodes or alphanumeric Universal Product Codes from customer MCDs, and handle payment authorizations and settlements. A barcode management component can generate and interpret barcodes based upon merchant offerings and client requests. A security algorithms component can employ an offset pair algorithm to convert each digit from a payment card information into an offset pair of digits to facilitate security in accordance with one embodiment of the present invention.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for conducting electronic transactions between a merchant and a customer, comprising:
+providing a payment system having a messaging server and an account server, with the messaging server including a barcode management component that receive barcodes or alphanumeric Universal Product Codes from a customer's mobile communications device (MCD), with the account server including a payment processing component and a security algorithm component;
+electronically delivering the barcode to a merchant processing device (MPD);
+electronically collecting the barcode from the MPD by the customer MCD;
+transmitting the barcode by the customer MCD to the payment system;
+upon determining, by the payment system, that the customer is a current account holder, receiving, from the customer MCD by the payment system, a personal identification number (PIN) authorizing the release of customer funds as payment for one or more merchant offerings; and
+processing the PIN by the security algorithm component to decipher a payment card number according to offset pairs previously established and corresponding to the payment card number.
+2. The method of claim 1 including the step of processing the payment card information by the payment processing component on behalf of the merchant.
+3. The method of claim 1 wherein the step of transmitting the barcode from the customer's MCD takes place over an unsecure network.
+4. The method of claim 1 wherein the MCD is an off-the-shelf device with no additional software installed.
+5. The method of claim 1 wherein the step of creating the barcode by the barcode management component is performed according to a customer request received by the merchant.
+6. The method of claim 1 wherein the step of creating the barcode by the barcode management component is performed according to a merchant request.
+7. A method for conducting electronic transactions between a merchant and a customer, comprising:
+providing a payment system having a payment processing component and a security algorithms component;
+requesting, by the payment processing component to a customer MCD, a payment card number and a PIN to be used for customer purchases;
+receiving, by the payment processing component from the customer MCD, a payment card number and a PIN, with the card number and the PIN each having a plurality of digits, and with each digit having an associated numerical value;
+creating, by the security algorithm component, an offset pair of digits corresponding to each digit in the credit card number, such that there is a respective individual offset pair associated with a respective credit card digit, with the offset pair of digits comprising a first offset pair digit value representative of a sequence number of one of the PIN digits, and a second offset pair digit representative of a mathematical function from which a credit card number digit value can be derived using the first offset pair digit;
+storing, by the payment system, the offset pairs corresponding to all of the digit values in the customer's payment card;
+receiving, by the payment system from the customer, a PIN associated with a merchant offering;
+deriving, from the PIN and the offset pairs, the payment card number; and
+processing, by the payment processing component, a transaction for the merchant offering using the payment card number.
+8. The method of claim 7 wherein the offset pair digit values are whole numbers.
+9. The method of claim 7 including the step of encrypting the offset pairs before the storing step.
+10. The method of claim 7 including the step of creating a nonreversible hash of the PIN and the offset pairs before storing the offset pairs, and farther wherein the step of storing the offset pairs includes storing the non-reversible hash of the PIN.
+11. The method of claim 7 wherein the payment card number includes a CVM number.
+12. The method of claim 7 wherein the step of receiving a PIN associated with a merchant offering includes receiving a CVM number.
+13. The method of claim 7 including the step of receiving, by the payment system from a merchant, a request for a barcode representative of a customer desired transaction for a merchant offering, before the step of receiving a PIN associated with a merchant offering.
+14. The method of claim 7 wherein the step of receiving a PIN associated with a merchant offering includes receiving a barcode representative of a merchant offering.
+15. A payment system for conducting electronic transactions between a merchant and a customer, wherein the merchant receives no payment directly from the customer, comprising:
+a messaging server having a barcode management component for receiving barcodes and a PIN from a customer MCD; and
+an account server having a payment processing component and a security algorithm component, the account server enabling determination of whether a customer is a current account holder and determination of whether the customer is authorized to make a purchase transaction for a merchant offering by decoding a personal identification number (PIN) according to a previously established offset pair code.
+16. A computer-assisted method for operating a merchant vending device, comprising:
+providing a merchant vending device capable of ordering and receiving a barcode from a payment system, with the barcode representing a merchant offering;
+presenting, by the merchant vending device, the barcode to a customer having a mobile communications device;
+receiving, by the merchant vending device, an authorization from the payment system that the merchant has been paid for the offering by the customer, wherein the payment system has obtained the authorization by processing offset pair information corresponding to a payment card number of the customer; and
+delivering, by the merchant vending device, the offering to the customer.
+17. The method of claim 16 wherein the merchant offering is communicated by the merchant vending device to the payment system during the ordering step.
+18. A computer-assisted method for using a mobile communications device for conducting an electronic transaction for a merchant offering, comprising:
+receiving, by a mobile communications device, a barcode representative of a merchant offering;
+electronically transmitting the code to a payment system by the mobile communications device, wherein the payment system has previously received and stored offset pair information corresponding to credit card information of a user of the mobile communications device, the offset pair information not including credit card digits, sufficient to enable the payment system to process credit transactions for approval on behalf of the user;
+transmitting a PIN by the mobile communications device to the payment system so as to trigger the payment system to execute a security algorithm to determine credit card digits of the user's credit card and electronically obtain transaction approval by communicating the credit card digits to a financial entity authorized to approve a credit transaction for the user such that the user's payment for the merchant offering can be executed and the user can receive the merchant offering.

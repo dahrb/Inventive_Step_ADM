@@ -1,0 +1,31 @@
+TITLE:
+Transaction authorisation system
+
+TYPE: WIPO
+
+ABSTRACT:A transaction authorization system is provided for authorizing a transaction between a first and a second party. In this system, details identifying a means of payment are provided to the first part of a transaction; details of this transaction as well as details identifying a second part of said transaction are provided to a third party equipped with a server hosting an authorization website; the second part of this transaction indicates to the third party if the transaction is authorized, then the third party provides this authorization information to the first part of this transaction.
+
+CLAIMS:
+
+1. A transaction authorisation system for authorising a transaction between first and second parties, in which details which identify a payment means are provided to a first party of a transaction, details of the transaction are passed to a third party having a server hosting an authorisation web site together with details identifying a second party of the transaction, the second party of the transaction indicates to the third party whether the transaction is authorised, and the third party passes this authorisation information to the first party of the transaction.
+2. A transaction authorisation system according to claim 1, wherein when the authorisation information comprises confirmation that the transaction is authorised, the first party then completes the transaction.
+3. A transaction authorisation system according to claim 1 or claim 2, wherein when the authorisation information comprises an indication that the second party has decided to cancel the transaction, the first party then cancels the transaction.
+4. A transaction authorisation system according to any of claims 1, 2 or 3, wherein when the authorisation information comprises an indication that the transaction is fraudulent, the first party cancels the transaction and the administrator of the payment means is notified that a fraudulent transaction has been attempted.
+5. A transaction authorisation system according to claim 4, wherein the administrator of the payment means is notified directly by the third party.
+6. A transaction authorisation system according to any preceding claim, wherein the authorisation information is recorded by the third party at the server hosting the authorisation web site, and cannot subsequently be altered by the first or second parties.
+7. A transaction authorisation system according to claim 6, wherein the recorded authorisation information may be subsequently viewed at the authorisation web site by the first or second parties.
+8. A transaction authorisation system according to claim 6 or claim 7, wherein other details relevant to the transaction are also recorded by the third party at the server hosting the authorisation web site and cannot subsequently be altered by the first or second parties.
+9. A transaction authorisation system according to any preceding claim, wherein the details identifying the second party are passed by the first party to the third party.
+10. A transaction authorisation system according to any preceding claim, wherein the details which identify the payment means are passed to the administrator of the payment means, and the administrator of the payment means then passes to the third party details identifying the second party.
+11. A transaction authorisation system according to any preceding claim, wherein the system includes a database which cross-references payment means details with second party identity details.
+12. A transaction authorisation system according to any preceding claim, wherein the details identifying the second party comprise an authorisation reference number which identifies the second party at the server hosting the authorisation web site.
+13. A transaction authorisation system according to claim 12, wherein the authorisation reference number is used to identify the payment means to be used for the transaction, the payment means administrator holding a database which cross- references the authorisation reference number and the payment means.
+14. A transaction authorisation system according to any preceding claim, wherein the second party logs on to the authorisation web site via the Internet, the logging on process including a security check, and authorises the transaction at the web site.
+15. A transaction authorisation system according to claim 13, wherein the second party is already logged on to the authorisation web site before the transaction is initiated, and authorises the transaction at the web site.
+16. A transaction authorisation system according to claim 15, wherein the second party is required to pass a security check in order to authorise the transaction.
+17. A transaction authorisation system according to claim 14, wherein the second party logs on to the authorisation web site using a Wireless Application Protocol (WAP) telephone.
+18. A transaction authorisation system according to any of claims 1 to 13, wherein the authorisation web site sends a text message including details of the transaction to a telephone operated by the second party, and the second party authorises the transaction by entering security information into the telephone as a text message, and sending the text message to the web site.
+19. A transaction authorisation system according to any of claims 1 to 13, wherein the authorisation web site rings a telephone operated by the second party and provides orally details of the transaction, the second party authorising the transaction by entering an authorisation code using the keypad of the telephone.
+20. A transaction authorisation system according to any preceding claim, wherein the administrator of the payment means determines whether the payment means is valid and has not exceeded its payment limit.
+21. A transaction authorisation system according to any preceding claim, wherein the first party is a vendor of an item or service, the second party is a purchaser of the item or service, and the third party is an authorisation regulator.
+22. A transaction authorisation system substantially as hereinbefore described with reference to the accompanying figures.

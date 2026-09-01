@@ -1,0 +1,182 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+27
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A computer readable medium for cluster management of computing
+nodes, comprising:
+
+code for executing a plurality of cluster agents, each cluster agent associated
+
+with one of a plurality of nodes, each node comprising a switching fabric integrated
+to a card and at least two processors integrated to the card, the cluster agent operable to
+determine a status of the associated node; and
+
+code for executing a cluster management engine communicably coupled to the
+plurality of nodes and operable to allocate nodes in a cubic volume to minimize inter-node
+communication distances, the cluster management engine operable to dynamically allocate
+a particular subset of the plurality of nodes to a particular job based on the determined
+status of each of one or more of the plurality of nodes and execute the job using the
+particular subset, the cluster management engine operable to receive a job placement
+strategy comprising a requested allocation of nodes, the cluster management engine
+operable to allocate nodes for the particular subset using a placement weight, the placement
+weight indicating how the cluster management engine is to allocate nodes to the particular
+subset between allocating nodes only if the requested job placement strategy is possible and
+
+allocating nodes immediately provided there are enough available nodes to handle the job.
+
+2. The computer readable medium of Claim 1, wherein, to execute the job using the
+particular subset, the cluster management engine is operable to: receive a job request
+comprising one or more job parameters;
+
+determine dimensions of the job based, at least in part, on the one or more job
+parameters;
+
+dynamically allocate the particular subset based, at least in part, on the determined
+dimensions; and
+
+execute the job using the particular subset.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28
+
+3. The computer readable medium of Claim 2, wherein the cluster management engine
+is further operable to: select a policy based on the job request; and dynamically determine
+
+the dimensions of the job further based on the selected policy
+
+4. A method for managing clusters of computing nodes comprising:
+
+determining a status of each of at least a subset of a plurality of nodes, each node
+comprising a switching fabric integrated to a card and at least two processors integrated to
+the card;
+
+determine job parameters for a particular job;
+
+allocating nodes in a cubic volume to minimize inter-node communication
+distances;
+
+dynamically allocating a particular subset of the plurality of nodes to a particular
+job based on the determined status of each of one or more of the plurality of nodes;
+receiving a job placement strategy comprising a requested allocation of nodes, wherein a
+placement weight is used to allocate nodes for the particular subset, the placement weight
+indicating how the cluster management engine is to allocate nodes to the particular subset
+between allocating nodes only if the requested placement strategy is possible and allocating
+nodes immediately provided there are enough available nodes to handle the job, and
+
+executing the job using the particular subset.
+
+5. The method of Claim 4, wherein executing the job using the particular subset
+comprises:
+
+receiving a job request comprising one or more job parameters;
+
+determining dimensions of the job based, at least in part, on the one or more job
+parameters;
+
+dynamically allocating the particular subset based, at least in part, on the determined
+dimensions; and
+
+executing the job using the particular subset.
+
+6. The method of Claim 5, further comprising:
+selecting a policy based on the job request; and
+dynamically determining the dimensions of the job further based on the selected
+
+policy.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+29
+
+7. A cluster management system comprising:
+
+a plurality of computing nodes, each computing node comprising a switching fabric
+integrated to a card and at least two processors integrated to the card, the computing node
+further comprising an agent operable to determine a status of the computing node and
+communicate the status to a management node;
+
+the management node, communicably coupled to the plurality of computing nodes
+and operable to allocate nodes in a cubic volume to minimize inter-node communication
+distances, the management node operable to dynamically allocate a particular subset of the
+plurality of nodes to a particular job based on the determined status of each of one or more
+of the plurality of nodes and execute the job using the particular subset, the management
+node operable to receive a job placement strategy comprising a requested allocation of
+nodes, the management node operable to allocate nodes for the particular subset using a
+placement weight, the placement weight indicating how the management node is to allocate
+nodes to the particular subset between allocating nodes only if the requested job placement
+strategy is possible and allocating nodes immediately provided there are enough available
+
+nodes to handle the job.
+
+8. The system of Claim 7, wherein, to execute the job using the particular subset, the
+management node is operable to:
+
+receive a Job request comprising one or more job parameters;
+
+determine dimensions of the job based, at least in part, on the one or more job
+parameters;
+
+dynamically allocate the particular subset based, at least in part, on the determined
+dimensions; and
+
+execute the job using the particular subset.
+
+9. The system of Claim 8, wherein the management node is further operable to:
+select a policy based on the job request; and
+
+dynamically determine the dimensions of the job further based on the selected policy.
+
+10. The computer readable medium of claim 1, comprising code for executing a cluster
+
+management engine operable to add the job to a job queue until the subset of the plurality of
+
+--- PAGE 4 ---
+10
+
+30
+
+nodes is available, if the allocation of nodes cannot be performed immediately as determined by
+
+the placement weight.
+
+11. The method of claim 4, comprising the step of adding the job to a job queue until the
+subset of the plurality of nodes is available, if the allocation of nodes cannot be performed
+
+immediately as determined by the placement weight.
+
+12. The system of claim 7, wherein the management node is arranged to add the job to ajob
+queue until the subset of the plurality of nodes is available, if the allocation of nodes cannot be
+
+performed immediately as determined by the placement weight.

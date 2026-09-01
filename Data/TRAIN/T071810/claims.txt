@@ -1,0 +1,76 @@
+--- PAGE 1 ---
+EP Application No.: 06 014 255.1
+
+Applicant: Harman Becker Automotive Systems GmbH
+Our Ref.: EP41088UW004
+Date: January 23, 2015
+
+CLAIMS — Main Request
+
+Method for organizing and managing data in a navigation database (1) comprising at
+
+least one data file (2), comprising
+storing data in the at least one data file (2);
+
+implementing at least one format description for the at least one data file (2) of the
+navigation database (1), wherein the format description declares types of records
+consisting of different data types and declares a sequence of elements of the
+
+records;
+
+implementing a parser (4) for interpreting data stored in the at least one data file (2)
+and for parsing the data to an application software controlled by the at least one
+
+format description.
+
+Method according to claim 1, wherein the implementation of the format description is
+performed by generating a format description table in a header of the at least one
+data file (2) that defines record types used in the at least one data file (2) and
+
+declares the sequence of elements constituting the records.
+
+Method according to claim 2, wherein the format description table comprises rows
+each of which comprises the same number of data entities and at least one
+instruction for the parser (4) on the basis of which the parser (4) interprets data
+
+stored in the at least one data file (2).
+
+Method according to claim 2 or 3, wherein the parser (4) comprises at least one
+register and the format description table comprises information on the format of the
+data to be read and/or the transfer of read data to the at least one register and/or the
+
+semantics of the read data.
+
+--- PAGE 2 ---
+10.
+
+Method according to claim 4, wherein the format description table comprises a
+
+parser (4) instruction, a syntax ID and a semantic ID in each row.
+
+Method according to one of the claims 3 - 5, wherein the parser (4) comprises at
+least one register and performs arithmetic operations and/or conditional execution of
+an instruction comprised in a row of the format description table and/or executes
+loop commands for reading arrays or lists of data entities with respect to data stored
+
+in the at least one data file (2) of the navigation database (1).
+
+Method according to one of the claims 3 - 6, wherein the parser (4) ignores data
+
+entities in the rows that follow a predetermined number of data entries.
+
+Method according to one of the preceding claims, wherein the format description is
+installed in the at least one data file (2) of the navigation database (1) or provided on
+a data volume different from each of the data volumes of the navigation database (1)
+or a data set different from each of the data files (2) of the navigation database (1).
+
+Method according to one of the preceding claims, wherein the data is at least partly
+packed and wherein the parser (4) is enabled to interpret packed data.
+
+Navigation database (1) comprising at least one data file (2) and a format description
+for the at least one data file (2) configured to control a parser (4) that is configured to
+interpret data stored in the at least one data file (2) and to parse the data to a
+navigation software, wherein the format description declares types of records
+consisting of different data types and declares a sequence of elements of the
+
+records.

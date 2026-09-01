@@ -1,0 +1,194 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28766
+
+CLAIMS
+
+1, A method of encoding data, wherein the data to be encoded is represented as a
+set of K input symbols stored in a non-transitory form in an electronically-readable medium,
+K being an integer greater than one, wherein each of the K input symbols has a value that is
+from an input symbol alphabet, and wherein the encoded data is representable as a plurality
+of output symbols, each of which has a value that is from an output symbol alphabet, the
+method comprising:
+
+obtaining at least some of the K input symbols in an electronically-readable form,
+such that each of the K input symbols has an associated position within the K input symbols;
+
+generating, from the plurality of input symbols, a plurality of intermediate symbols,
+each intermediate symbol having an associated position within the plurality of intermediate
+symbols, wherein the generation of the plurality of intermediate symbols from the plurality of
+input symbols is performed according to a rateless decoding process, wherein a rateless
+decoding process is rateless in that it is an inverse of a rateless encoding process that can
+generate a number of output symbols where the number is independent of the number of
+input symbols; and
+
+generating output symbols of the plurality of output symbols, using the rateless
+encoding process and having the plurality of intermediate symbols as an input, wherein the
+rateless encoding process and the rateless decoding process have the property that the
+plurality of output symbols is, in part, systematic, so that K of the plurality of output symbols
+are equal to the K input symbols, and further wherein additional output symbols beyond K
+systematic output symbols are generated using the same rateless encoding process as would
+
+generate the K systematic output symbols.
+
+2. The method of claim 1, wherein generating output symbols of the plurality of
+output symbols comprises generating K systematic output symbols and a number of non-
+systematic output symbols, wherein generating the K systematic output symbols comprises
+
+copying the K input symbols.
+
+3. The method of claim 1, wherein generating the plurality of intermediate
+symbols comprises:
+
+determining K systematic keys, each corresponding to one of the K input symbols;
+
+determining, for each of K systematic keys, a set of neighboring intermediate
+
+symbols, wherein a given intermediate symbol is a neighbor for a given systematic key and
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+28766
+
+its corresponding input symbol if and when the given intermediate symbol has a value
+dependent on the value of the input symbol corresponding to the given systematic key; and
+calculating a value of an intermediate symbol according to a function of the input
+
+symbols that have that intermediate symbol as a neighbor.
+
+4. The method of claim 3, further comprising:
+
+determining whether the K sets of neighbors, for the K input symbols associated with
+the K systematic keys, are linearly independent; and
+
+if the K sets of neighbors are not linearly independent, modifying the set of K
+
+systematic keys until the K sets of neighbors are linearly independent.
+
+5. The method of claim 3, wherein determining K systematic keys comprises
+reading K systematic keys from a pre-computed table of systematic keys for some or all
+
+relevant values of K.
+
+6. The method of claim 3, wherein determining K systematic keys comprises
+calculating the K systematic keys from a value of K and a value of a seed, wherein the seed is
+
+an initial value available to the encoder and a decoder.
+
+7. The method of claim 3, further comprising:
+storing the K systematic keys; and
+transmitting the K systematic keys, or representations thereof, to a receiver for a
+
+decoding process.
+
+8. The method of claim 1, wherein obtaining at least some of the K input
+
+symbols comprises receiving all K input symbols prior to generating any output symbols.
+
+9. An encoder, having an input to electronically receive data to be encoded and
+an output to output encoded data that can represent the received data as the encoded data is
+conveyed over a communications channel, wherein the encoded data is representable as a
+plurality of output symbols, each of which has a value that is from an output symbol alphabet,
+the encoder comprising:
+
+an input for receiving K input symbols in an electronically-readable form, the K input
+symbols representing the data to be encoded, K being an integer greater than one, wherein
+
+each of the K input symbols has a value that is from an input symbol alphabet;
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+28766
+
+storage for at least some of the K input symbols, such that values of stored input
+symbols can be read by a module of the encoder and wherein each of the stored input
+symbols has an associated position within the K input symbols;
+
+a key generator for generating K systematic key values;
+
+a decoder module for generating a plurality of L intermediate symbols from the K
+input symbols according to the K systematic key values;
+
+a rateless encoder module for generating non-systematic output symbols that form
+part of the encoded data, generated from intermediate symbols and non-systematic key
+values, wherein the rateless encoder is such that, given the plurality of L intermediate
+symbols based on the K systematic key values and the K input symbols, the rateless
+encoder’s output would match the K input symbols, wherein the rateless encoding process is
+rateless in that it can generate an output symbol! for each of a plurality of keys and the number
+of keys available is independent of K; and
+
+an output for outputting K systematic output symbols and outputting additional output
+
+symbols that are non-systematic output symbols.
+
+10. The encoder of claim 9, wherein the output for outputting the outputting K
+systematic output symbols is configured to copy the K input symbols as the K systematic
+
+output symbols.
+
+11. | The encoder of claim 9, wherein the rateless decoder module includes logic to
+generate values of the L intermediate symbols based on a set of neighbors of input symbols,
+wherein the set of neighbors is determined from the K systematic key values and wherein a
+value of a given intermediate symbol depends, at least in part, on values of from one to K of
+
+the K input symbols that have that given intermediate symbol as a neighbor.
+
+12. The encoder of claim 11, further comprising logic for determining whether the
+K sets of neighbors, for the K input symbols associated with the K systematic keys, are
+linearly independent, and if the K sets of neighbors are not linearly independent, modifying
+
+the set of K systematic keys until the K sets of neighbors are linearly independent.
+
+13. The encoder of claim 9, wherein the key generator for generating K systematic
+key values is configured to read K systematic keys from a pre-computed table of systematic
+
+keys for some or all relevant values of K.
+
+--- PAGE 4 ---
+PATENT
+
+Our Reference: 091839EPD3
+
+Application No.: 10013220.8
+
+14. The encoder of claim 9, wherein the key generator for generating K systematic
+
+key values is configured to generate the K systematic keys from a value of K and a value of a
+
+seed, wherein the seed is an initial value available to the encoder and a decoder.
+
+15. The encoder of claim 9, wherein the key generator for generating K systematic
+5 _ key values is configured to store values of the K systematic keys so that they, or
+
+representations thereof, can be transmitted to a receiver for a decoding process.
+
+16. | A computer program product that comprises a non-transitory tangible media
+storing computer-executable code for execution upon a computer system including a
+processor, the computer program product comprising:
+
+10 program code for carrying out the method of any of claims | to 8.

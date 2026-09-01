@@ -1,0 +1,19 @@
+TITLE:
+Binary XML Transfer using Direct Compilation Techniques
+
+TYPE:
+Academic paper
+
+ABSTRACT:
+This paper describes a technique for compiling XML documents into a Virtual
+Machine code that constructs at execution time an optimised tree representation for
+the original XML document. The technique reduces the amount of data to be transferred, eliminates parsing time on the client side completely, and creates an optimised tree representation.
+The technique is currently used in two publishing scenarios:
+• precompilation of medium sized documents (ca. 1 MByte XML) for use in multiple clients (one-to-many-transmission) and
+• the on-the-fly processing of small size documents (ca. 100 KByte) in one-to-one
+transmission
+The elimination in parsing time reduces the client side document loading time by a
+factor between 2 and 10 (depending of the platform) and the bandwidth requirements by a factor of 6, while the client side memory requirements are reduced by a
+factor of 3 to 4.
+This paper describes the technique as it has been in commercial usage for the last
+two years as well a proposal for a generalized and improved technique based on the experience gathered so far

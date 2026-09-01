@@ -1,0 +1,86 @@
+Title: Data sharing infrastructure
+
+Abstract: The present invention relates to systems and methods for constructing a regional medical data exchange infrastructure that can provide the aggregation and presentation of personal health data that previously exists in different health care organizations in a segmented fashion. More particularly, the present invention relates to systems and methods for establishing a regional medical data exchange infrastructure, identifying patients across multiple different organizations, creating patient medical data pointers and routing tables, and generating comprehensive medical data sets for an enrolled population. One feature of this present invention permits the regional medical data exchange infrastructure to be built without any protected health information (PHI) being stored in any centralized databases. Another feature of the present invention permits the continuous operation of the regional medical data exchange infrastructure even when the centralized facility experiences downtime. Exemplary embodiments of the present invention permit both local and global logging and tracking of data flows and user activities to satisfy HIPAA compliances. Alternative embodiments of the present invention permit the preservation of the data ownership for the participating organizations.
+
+Type: US PAtent
+
+Claims: 
+
+1. A data sharing infrastructure comprising:
+a core residing at a first site having
+at least one portal server;
+at least one integration server; and
+at least one backend server, said backend server comprising at least one data base; wherein said integration server routes data to and from said backend server and said portal server, and wherein said portal server provides data to at least one user; and
+at least one satellite server, wherein said satellite server resides at a second site, wherein said satellite server communicates with said core, conducts patient matching and routes data.
+2. The data sharing infrastructure of claim 1, further comprising a plurality of sites, each said site comprising at least one said satellite server, wherein said satellite server stores a local data flow audit trail comprising:
+requests and responses to and from said site; and
+data flows to and from said site; and wherein said backend server stores a global audit trail comprising:
+requests and responses to and from said plurality of sites; and
+data flows to and from said plurality of sites.
+3. The data sharing infrastructure of claim 1, wherein said satellite server communicates with said core via a virtual private network.
+4. The data sharing infrastructure of claim 1, wherein said backend server does not comprise medical data and wherein said backend server does not comprise protected health information.
+5. The data sharing infrastructure of claim 1, said satellite server comprising at least one database system selected from the group of database systems consisting of electronic health record, hospital information system, practice management system, and claim system.
+6. The data sharing infrastructure of claim 1, said satellite server further comprising
+a master patient index.
+7. The data sharing infrastructure of claim 6 wherein said patient matching comprises;
+generating a global identification number specific to at least one patient;
+distributing said global identification number into said master person index;
+cross identifying said at least one patient using demographic data; and
+where said cross identifying provides a match, creating a linkage pointer to such location, generating an inventory of existing medical data; and storing said inventory in said satellite server.
+8. The data sharing infrastructure of claim 1 wherein said satellite server further comprises at least one of:
+web portal for electronic health records;
+database;
+clinical data repository;
+decision support software application or
+medical references software application.
+9. The data sharing infrastructure of claim 1 further comprising:
+a back end information technology system;
+an enterprise integration engine; and
+a health data exchange environment; wherein said back end information technology system, enterprise integration engine, and health data exchange environment each reside at said second site; wherein said health data exchange environment comprises said at least one satellite server, and wherein said at least one satellite server communicates with said back end information technology system by way of said enterprise integration engine.
+10. The data sharing infrastructure of claim 9, said back end information technology system further comprising at least one of:
+electronic health record;
+hospital information system;
+practice management system; or
+claim system.
+11. The data sharing infrastructure of claim 1, further comprising a legacy server, said legacy server residing at said second site, wherein said satellite server communicates with said legacy server and stores patient data from said legacy server and wherein said legacy server comprises at least one database system selected from the group of database systems consisting of electronic health record, hospital information system, practice management system, and claim system.
+12. The data sharing infrastructure of claim 2, said satellite server further comprising
+a master patient index, wherein said patient matching comprises;
+generating a global identification number specific to said at least one patient;
+distributing said global identification number into said master person index;
+cross identifying said at least one patient using demographic data; and
+where said cross identifying provides a match, creating a linkage pointer to such location, generating an inventory of existing medical data, and storing said inventory in said satellite server; and wherein said portal server provides data to at least one user step further comprises:
+aggregating related health data for said at least one patient from said plurality of sites;
+routing related health data for said at least one patient based on said linkage pointer(s);
+presenting related health data for said at least one patient in a visual form to said at least one user.
+13. A method of regional medical data exchange comprising:
+identifying at least one patient across multiple sites, said multiple sites comprising a user site and at least one source site, said identifying at least one patient comprising:
+generating a global identification number specific to said at least one patient;
+distributing said global identification number into at least one master person index; and
+cross identifying said at least one patient using demographic data to yield at least one identification location;
+creating a patient linkage pointer to said identification location;
+generating an inventory of existing medical data for said at least one patient; and
+storing said inventory in at least one database, wherein said at least one database resides in either said backend sever or said satellite server.
+14. The method of regional medical data exchange of claim 13, wherein said generating of said global identification number is mediated by distributed probabilistic matching with organization level internal patient indices.
+15. The method of regional medical data exchange of claim 13, further comprising:
+de-identifying all clinical data.
+16. The method of regional medical data exchange of claim 13, further comprising:
+confining all medical data and protected health information in said at least one source site;
+forwarding patient medical data upon authorization receipt;
+preserving data ownership to said at least one source site.
+17. The method of regional medical data exchange of claim 13, further comprising:
+registering said at least one patient, said registering comprising:
+sending patient demographic data to said user site;
+relaying the demographic data from said user site to said at least one source site, at least one source site comprising legacy data, said legacy data comprising legacy demographic data;
+determining whether a match exists between demographic data received by said at least one source site and legacy demographic data rising in said at least one source site;
+if said match does exist, and if a global identification number for said match does not exist, creating a new global identification number;
+registering said new global identification number in said at least one source site.
+18. A method for acquiring patient information comprising:
+submitting demographic data and medical data pointers specific to a patient, from a first site to a satellite server, wherein said satellite server resides at a second site;
+forwarding data related to said patient from said satellite server a core, wherein said core resides at said first site, and wherein said data is encrypted and de-identified;
+distributing demographic data to additional site(s), said additional sites comprising legacy demographic data;
+determining whether a match exists between distributed demographic data received by additional site(s) and legacy demographic data;
+if said match exists, determining whether data related to the said match exists within said additional site(s);
+if data exist, forwarding said medical data pointers said first site;
+if said match and/or said data do not exist, creating new global medical data pointers and registering said global medical data pointers into said satellite server.
+19. The method for acquiring patient information of claim 18, wherein private health information is not stored in said core.
+20. The method for acquiring patient information of claim 18, wherein legacy demographic data comprises legacy demographic data corresponding to a plurality of patients, each said patient having local patient identification, and wherein if said match exists and if said data exist, said method further comprising: forwarding said local patient identification to said core.

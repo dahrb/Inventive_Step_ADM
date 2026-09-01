@@ -1,0 +1,70 @@
+TITLE:
+Automatic playback overshoot correction system
+
+TYPE:
+US Patent
+
+ABSTRACT:
+An automatic playback overshoot correction system predicts the position in the program material where the user expects to be when the user stops the fast forward progression of the program material. The system determines the position where the program material was stopped and transitions to the new mode that the user selected, starting at the stopped position with an overshoot correction factor subtracted from it. The system uses a prediction method to correctly place the user within the program upon transition out of fast forward mode and determines if the speed of the fast forward mode and then automatically subtracts a time multiple to the frame where the transition was detected and positions the user at the correct frame. The time multiple is fine tuned if the user is consistently correcting after the fast forward mode stops.
+
+CLAIMS:
+1. A method, comprising:
+receiving a first user command;
+playing audio or video program material to a user based on the first user command;
+fast forwarding through the program material based on a second user command;
+terminating fast forward progression through the program material based on a third user command;
+detecting current position in the program material where the termination occurred;
+calculating a new position in the program material to compensate for a difference between the current position and the user's expected termination point in the program material by subtracting a positional offset from the current position when fast forward progression has been terminated; and
+playing the program material starting at the new position based on the third user command.
+2. The method of claim 1, wherein the calculating step adapts to the user's prior positional corrections to calculate the new position.
+3. The method of claim 1, wherein the calculating step calculates the new position based on a user-selected speed of the fast forward progression.
+4. The method of claim 1, wherein the calculating step calculates the new position based on a measurement of the user's reaction time.
+5. A process for automatically correcting playback position within an audio or video program's material after a user terminates a fast forward progression through the program material, comprising:
+receiving a user command;
+terminating fast forward progression through the program material based on the user's command;
+detecting current position in the program material where the termination occurred;
+calculating a new position in the program material to compensate for a difference between the current position and the user's expected termination point in the program material by subtracting a positional offset from the current position when fast forward progression has been terminated; and
+playing the program material starting at the new position.
+6. The process of claim 5, wherein the calculating step adapts to the user's prior positional corrections to calculate the new position.
+7. The process of claim 5, wherein the calculating step calculates the new position based on a user-selected speed of the fast forward progression.
+8. The process of claim 5, wherein the calculating step calculates the new position based on a measurement of the user's reaction time.
+9. An apparatus, comprising:
+a module for receiving a first user command;
+a module for playing audio or video program material to a user based on the first user command;
+a module for fast forwarding through the program material based on a second user command;
+a module for terminating fast forward progression through the program material based on a third user command;
+a module for detecting current position in the program material where the termination occurred;
+a module for calculating a new position in the program material to compensate for a difference between the current position and the user's expected termination point in the program material by subtracting a positional offset from the current position when fast forward progression has been terminated; and
+a module for playing the program material starting at the new position based on the third user command.
+10. The apparatus of claim 9, wherein the calculating module adapts to the user's prior positional corrections to calculate the new position.
+11. The apparatus of claim 9, wherein the calculating module calculates the new position based on a user-selected speed of the fast forward progression.
+12. The apparatus of claim 9, wherein the calculating module calculates the new position based on a measurement of the user's reaction time.
+13. An apparatus for automatically correcting the playback position within an audio or video program's material after a user terminates a fast forward progression through the program material, comprising:
+a module for receiving a user command;
+a module for terminating fast forward progression through the program material based on the user's command;
+a module for detecting current position in the program material where the termination occurred;
+an overshoot correction module for calculating a new position in the program material to compensate for a difference between the current position and the user's expected termination point in the program material by subtracting a positional offset from the current position when fast forward progression has been terminated; and
+a module for playing the program material starting at the new position.
+14. The apparatus of claim 13, wherein the overshoot correction module adapts to the user's prior positional corrections to calculate the new position.
+15. The apparatus of claim 13, wherein the overshoot correction module calculates the new position based on a user-selected speed of the fast forward progression.
+16. The apparatus of claim 13, wherein the overshoot correction module calculates the new position based on a measurement of the user's reaction time.
+17. A computer-readable medium carrying one or more sequences of instructions, which instructions, when executed by one or more processors, cause the one or more processors to perform a method comprising:
+receiving a first user command;
+playing audio or video program material to a user based on the first user command;
+fast forwarding through the program material based on a second user command;
+terminating fast forward progression through the program material based on a third user command;
+detecting current position in the program material where the termination occurred;
+calculating a new position in the program material to compensate for a difference between the current position and the user's expected termination point in the program material by subtracting a positional offset from the current position when fast forward progression has been terminated; and
+playing the program material starting at the new position based on the third user command.
+18. The method of claim 17, wherein the calculating step adapts to the user's prior positional corrections to calculate the new position.
+19. The method of claim 17, wherein the calculating step calculates the new position based on a user-selected speed of the fast forward progression.
+20. The method of claim 17, wherein the calculating step calculates the new position based on a measurement of the user's reaction time.
+21. A computer-readable medium carrying one or more sequences of instructions for automatically correcting the playback position within an audio or video program's material after a user terminates a fast forward progression through the program material, which instructions, when executed by one or more processors, cause the one or more processors to perform a method comprising:
+receiving a user command;
+terminating fast forward progression through the program material based on the user's command;
+detecting current position in the program material where the termination occurred;
+calculating a new position in the program material to compensate for a difference between the current position and the user's expected termination point in the program material by subtracting a positional offset from the current position when fast forward progression has been terminated; and
+playing the program material starting at the new position.
+22. The method of claim 21, wherein the calculating step adapts to the user's prior positional corrections to calculate the new position.
+23. The method of claim 21, wherein the calculating step calculates the new position based on a user-selected speed of the fast forward progression.
+24. The method of claim 21, wherein the calculating step calculates the new position based on a measurement of the user's reaction time.

@@ -1,0 +1,119 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+1. A non-transitory machine-readable storage medium that provides instructions
+that, if executed by a processor, will cause the processor to generate an application
+programming interface (API) (120) that allows an API-implementing component (110) to
+perform operations, the operations comprising:
+
+launching an application indexer (330) to run in a process having privileges
+identical to privileges of a third party application (310) executable on the processor,
+wherein the process is separate from other processes involving other third party
+applications executable on the processor;
+
+instantiating, by the application indexer (330), an instance of an application
+search bundle (340) specific to the third party application (310) that executes with
+privileges identical to the privileges of the third party application (310), the third party
+application (310) providing the application search bundle (340) specific to the third party
+application (310) to access records of application data stored in a search database;
+
+passing, by the application indexer (330) from the instance of the application
+search bundle (340), identifiers of changed records to the instance of the application
+search bundle (340) by the application indexer (330), wherein the instance of the
+application search bundle (340) retrieves the identified record from the search database
+without launching the third party application (310); and
+
+the application indexer (330) indexing the identified records received from the
+
+instance of the application search bundle (340) in the search database (380).
+
+2. The non-transitory machine-readable storage medium of claim 1, wherein the
+
+other processes include search and index processes of the other third party applications.
+
+3. The non-transitory machine-readable storage medium of claim 1, wherein the
+passing further comprises:
+passing updated identifications associated with records in an update list to the
+
+application search bundle (340) to request the records, wherein the updated
+
+--- PAGE 2 ---
+identifications have been added into the update list when the third party application (310)
+
+changes the records.
+
+4. A computer-implemented method, comprising:
+
+installing a third party application (310) on a computing device, the third party
+application (310) providing a search plugin specific to the third party application (310) to
+access records of application data stored in a search database;
+
+checking metadata of the third party application (310) to determine existence of
+metadata indicating the third party application (310) wants to index content associated
+with the third party application (310);
+
+registering the third party application (310) in response to determining the
+metadata indicating the third party application (310) wants to index content associated
+with the third party application (310) exists; and
+
+invoking, by a search daemon (320) specific to the third party and running on the
+computing device, an instance of the search plugin to execute in a separate process that
+executes with privileges identical to the privileges of the third party application (310), the
+search daemon (320) to request a record associated with the third party application (310)
+from the instance of the search plugin by passing an identification for the record to the
+search plugin, and to receive the identified record from the instance of the search plugin
+in response to the instance of the search plugin receiving the identifier, wherein the
+search plugin retrieves the identified record from the search database without launching
+the third party application (310) and the identified record is indexed in the search
+database.
+
+5. The method of claim 4, further comprising:
+
+launching the third party application (310) in response to a user request, wherein
+the third party application (310) changes a record and sends an updated identification of
+the changed record to the search daemon (320) to be stored in an update list, the update
+list usable by the search daemon (320) to index the changed record according to the
+
+attributes specified by the third party application (310).
+
+--- PAGE 3 ---
+6. The method of claim 4, wherein the search plugin is invoked after the third party
+
+application (310) has been terminated.
+
+7. The method of claim 4, further comprising:
+providing to the separate process privileges identical to privileges entitled to by
+
+the third party application (310).
+
+8. The computer-implemented method of claim 4 wherein a search indexer is
+
+instantiated by the instance of the search daemon (320) to index the identified records.
+
+9. The method of claim 8, further comprising:
+
+the third party application (310) changing records of content associated with the
+third party application (310);
+
+storing updated identifiers of the records changed in a list accessible by the
+
+search indexer.
+
+10. The method of claim 9, wherein the search indexer retrieves the identifiers from
+the list after the third party application (310) has terminated and uses the identifiers to
+obtain the records changed from the application search bundle (340).
+
+11. An apparatus comprising:
+
+an application indexer (330), executable on a data processing device, to run ina
+process having privileges identical to privileges of a third party application executable on
+the data processing device, wherein the process is separate from other processes
+involving other third party applications executable on the data processing device; and
+
+a search database (380) stored on a data storage device coupled to the data
+processing device, wherein the application indexer (330) is operable to instantiate an
+instance of an application search bundle (340) specific to the third party application (310)
+to execute with privileges identical to the privileges of the third party application (310) to
+access records associated with the third party application (310), and to index records in
+
+the search database (380) according to attributes received from the instance of the

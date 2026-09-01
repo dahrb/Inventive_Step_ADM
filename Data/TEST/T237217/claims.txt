@@ -1,0 +1,96 @@
+--- PAGE 1 ---
+CLAIMS—MAIN REQUEST
+
+1. A computer-implemented method, comprising:
+
+receiving (100) a first set of one or more touch points on a touch-sensitive
+keyboard;
+
+inserting (102) a first typed word into an input string, including, for each touch
+point of the first set, inserting a corresponding typed character of the touch-sensitive
+keyboard into the input string;
+
+selecting (104) an initial corrected word;
+
+replacing (106) the first typed word in the input string with the initial corrected
+word;
+
+maintaining a correspondence between one or more characters of the input string
+and each of the first set of touch points;
+
+receiving (108) a second set of one or more touch points on the touch-sensitive
+keyboard;
+
+inserting (110) a second typed word into the input string, including, for each touch
+point of the second set, inserting a corresponding typed character of the touch-sensitive
+keyboard into the input string;
+
+retrieving the first set of touch points based on the maintained correspondence;
+
+selecting (112) one or more additional corrected words based on the retrieved first
+set of touch points; and
+
+replacing (114) the initial corrected word and the second typed word in the input
+string with the one or more additional corrected words.
+
+2. The method of claim 1, wherein a typed character corresponding to each
+touch point of the first set is determined based on location data of that touch point.
+
+3. The method of claim 1, wherein a typed character corresponding to each
+touch point of the first set is determined based on a probability distribution over keys of
+the touch-sensitive keyboard proximate to a location of that touch point.
+
+4. The method of claim 1, further comprising:
+
+creating a set of one or more candidate corrected words; and
+
+scoring each of the one or more candidate corrected words;
+
+wherein selecting (112) the one or more additional corrected words includes
+selecting the one or more additional corrected words from the set of one or more
+candidate corrected words.
+
+5. The method of claim 4, wherein scoring each of the one or more candidate
+corrected words is based on a grammar rule.
+
+--- PAGE 2 ---
+6. The method of claim 4, wherein scoring each of the one or more candidate
+corrected words is based on one or both of the first and second sets of touch points.
+
+7. The method of claim 1, wherein selecting (112) the one or more additional
+corrected words includes selecting a first additional corrected word and a second
+additional corrected word.
+
+8. The method of claim 7, wherein the first additional corrected word is
+selected based on both the first and second sets of touch points, and wherein replacing
+(114) the initial corrected word includes replacing the initial corrected word with the first
+additional corrected word.
+
+9. The method of claim 1, wherein selecting (112) the one or more additional
+corrected words consists of selecting an additional corrected word.
+
+10. The method of claim 9, wherein the additional corrected word is selected
+based on both the first and second sets of touch points.
+
+11. A non-transitory computer readable storage medium having stored therein
+instructions, which when executed by a device with a touch-sensitive keyboard, cause the
+device to perform the method of any of claims 1-10.
+
+12. A portable electronic device, comprising:
+
+one or more processors (2018);
+
+a touch-sensitive panel;
+
+a memory; and
+
+one or more programs stored in the memory, wherein the one or more programs
+are configured to be executed by the one or more processors, the one or more programs
+including instructions for performing a method according to any one of claims 1 to 10.
+
+13. The portable electronic device of claim 12, further comprising a display,
+
+wherein the one or more programs further include instructions for displaying the touch-
+sensitive keyboard on the display.
+
+-2-

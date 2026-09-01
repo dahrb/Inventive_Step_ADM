@@ -1,0 +1,253 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+-19-
+
+Claims (Main request)
+
+1. System for performing a transaction electronically, comprising:
+- a transaction server able and configured to offer and perform a transaction for a
+user,
+- a personal user device of an authorized user,
+- capturing means able and configured to capture selected biometric data of the user
+in electronic form,
+- verification means able and configured to compare captured biometric data of the
+user to stored biometric data of the authorized user and, in the case of sufficient
+correspondence therebetween, to generate a verification confirmation, and
+- telecommunication means which enable the user to exchange data comprising a
+verification confirmation with the transaction server over a telecommunication connection
+in order to authorize the transaction,
+
+wherein the transaction server is able and configured to receive the verification
+confirmation and, subject to a successful user verification apparent therefrom, to perform
+the transaction,
+characterized in that
+
+the user device comprises primary processing means with at least one primary
+processor unit, primary memory means and a primary control system, which primary
+processing means are coupled to the capturing means by means of the primary control
+system,
+
+that the user device comprises an exchangeable module with secondary processing
+means, comprising at least one secondary processor unit, secondary memory means and a
+secondary control system,
+
+that the stored biometric data of the authorized user are stored in the secondary
+
+memory means of the exchangeable module,
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+-20-
+
+that the secondary processing means of the exchangeable module are able and
+configured to make a request to the capturing means in order to obtain the captured
+biometric data,
+
+that the exchangeable module comprises the verification means, wherein the
+secondary processor unit is able and configured on the basis of program code loaded
+therein to compare the captured biometric data of the user to biometric data of the
+authorized user stored in the secondary memory means and, in the case of sufficient
+correspondence, to generate the verification confirmation, and
+
+that the program code for the secondary processor unit has been loaded therein
+
+without action on the part of the user.
+
+2. System as claimed in claim 1, characterized in that the module with the program
+
+code for the secondary processor unit has been issued by a trusted body.
+
+3. System as claimed in claim 1 or 2, characterized in that the user device comprises a
+personal telecommunication device of a subscriber to a telecommunication network, and
+that the module comprises a plug-in module which is placeable in the device and which
+enables the user device to perform a subscriber verification in the telecommunication
+
+network and to establish and maintain the telecommunication connection therein.
+
+4. System as claimed in claim 1, 2 or 3, characterized in that the processing means are
+able and configured to encrypt the verification confirmation and exchange it in encrypted
+form with the transaction server, wherein the transaction server is provided with decoding
+
+means able and configured to decipher the verification confirmation.
+
+5. System as claimed in one or more of the foregoing claims, characterized in that the
+user device comprises input means which are coupled to the processing means and which
+enable the user to enter a personal access code and provide this in electronic form to the
+
+processing means.
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+-21-
+
+6. System as claimed in claim 5, characterized in that the processing means are able
+and configured to compare the access code obtained from the input means to an access
+
+code stored in the memory means.
+
+7. System as claimed in claim 5 or 6, characterized in that the processing means are
+able and configured to exchange the access code obtained from the input means with the
+transaction server and that the transaction server is able and configured to compare the
+obtained access code to an access code of the authorized user stored in or at the transaction
+
+server.
+
+8. System as claimed in one or more of the foregoing claims, characterized in that the
+capturing means comprise at least one sensor from a group comprising an image sensor, a
+
+microphone and a fingerprint sensor.
+
+9. System as claimed in one or more of the foregoing claims, characterized in that the
+processing means are able and configured to process raw biometric data recorded by the
+capturing means and to derive therefrom one or more characterizing biometric parameters
+of the user which identify the captured biometric data in at least substantially unique
+manner, that the stored biometric data of the authorized user comprise at least one
+corresponding characterizing biometric parameter and that the processing means are able
+and configured to compare the at least one characterizing biometric parameter of the user
+obtained from the raw biometric data to the stored at least one characterizing biometric
+
+parameter of the authorized user.
+
+10. System as claimed in claim 9, characterized in that the at least one characterizing
+biometric parameter comprises at least one entity from a group comprising numeric values,
+
+vectors and matrices.
+
+--- PAGE 4 ---
+10
+
+15
+
+20
+
+25
+
+-22-
+
+11. | User device for use in the system as claimed in one or more of the foregoing claims,
+comprising at least a primary processing means with a primary control system, which
+comprise at least a primary processor unit and primary memory means, wherein the
+primary processing means are coupled to capturing means able and configured to
+electronically record at least one physical feature of a user, comprising an exchangeable
+module in the device and provided with secondary processing means with a secondary
+control system, which secondary processing means comprise at least a secondary processor
+unit and secondary memory means, wherein the primary processing means and the
+secondary processing means are coupled to each other and are able and configured for
+mutual co-action, and comprising telecommunication means which are able and configured
+to maintain a telecommunication connection, characterized in that biometric data of an
+authorized user are stored in the secondary memory means, that the primary processing
+means are able and configured to generate the electronic registration of the at least one
+physical feature of the user in optionally processed form to the secondary processing
+means, that the secondary processing means are able and configured on the basis of a
+program code loaded therein to compare the electronic registration of the at least one
+physical feature of the user obtained from the primary processing means to the biometric
+data of the authorized user stored in the secondary memory means and, when sufficient
+correspondence is determined, to generate a verification confirmation, and that the
+secondary processing means are able and configured to exchange the verification
+confirmation with a transaction server by means of the telecommunication means and a
+
+telecommunication connection maintained thereby.
+
+12. Device as claimed in claim 11, characterized in that the stored biometric data of the
+authorized user comprise at least one characterizing biometric parameter which has been
+calculated from a biometric capture of the authorized user on the basis of a tailored
+algorithm and which identifies the biometric capture in at least substantially unique
+
+manner.
+
+--- PAGE 5 ---
+10
+
+15
+
+20
+
+25
+
+-23-
+
+13. Device as claimed in claim 12, characterized in that the secondary processing
+means are able and configured to calculate at least one characterizing biometric parameter
+from the electronic registration of a physical feature of the user and to compare it to a
+
+stored corresponding biometric parameter of the authorized user.
+
+14. Device as claimed in one or more of the claims 11 to 13, characterized in that the
+capturing means comprise at least one sensor from a group comprising an image sensor, a
+
+microphone and a fingerprint sensor.
+
+15. Device as claimed in claim 14, characterized in that the user device comprises a
+personal telecommunication device, in particular a smart phone, tablet computer, notebook
+
+computer or laptop computer.
+
+16. Device as claimed in claim 15, characterized in that the module comprises a plug-in
+module which enables the user device to perform a subscriber verification in a
+telecommunication network and to at least partially establish and maintain a
+telecommunication connection therein, in particular a module which gives the device
+access to a public telecommunication network, more particularly a public telephone
+
+network.
+
+17. Device as claimed in one or more of the claims 11 to 16, characterized in that the
+secondary processing means are able and configured to encrypt the verification
+
+confirmation and send it in encrypted form.
+
+18. Device as claimed in one or more of the claims 11 to 17, characterized in that the
+telecommunication connection comprises at least one data communication connection from
+a group of a telecommunication connection in a public telecommunication network, a
+
+network connection in a wired and/or wireless private computer network, and an isolated
+
+--- PAGE 6 ---
+10
+
+15
+
+20
+
+-24-
+
+data connection on the basis of radiographic or optical data transfer, such as Infrared,
+
+Bluetooth and Near Field communication.
+
+19. | Method for performing an electronic transaction with a transaction server able and
+configured to offer and perform a transaction in electronic form, wherein a user makes use
+of a user device with communication means in order to exchange transaction data with the
+transaction server, wherein the user device is provided with capturing means with which
+the user records biometric data of the user in electronic form, wherein the user device is
+provided with memory means in which biometric data of an authorized user are stored in
+electronic form, wherein the user device is provided with processing means able and
+configured to compare the biometric data captured from the user to stored biometric data of
+the authorized user and, in the case they correspond sufficiently, to exchange a verification
+confirmation with the transaction server for the purpose of authorizing the transaction,
+characterized in that the memory means and processing means form part of a unit
+exchangeable in the user device, that biometric data of the authorized user have been
+captured from the authorized user by or at least on behalf of a trusted body and have been
+stored in the memory means of the unit, and that the unit has been issued to the user by or
+
+at least on behalf of the trusted body in order to received in the user device.

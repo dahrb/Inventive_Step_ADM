@@ -1,0 +1,33 @@
+TITLE:
+Method, apparatus and system for creating efficient UPnP control points
+
+TYPE:
+US Patent
+
+ABSTRACT:
+Enhanced Universal Plug and Play (“UPnP”) control points may be generated. According to one embodiment, a variety of device-specific information (e.g., device and service descriptions) and platform information may be used to generate custom source code for an UPnP control point. The source code may be enhanced for the control point. The source code may then be compiled to generate the enhanced UPnP control point.
+
+CLAIMS:
+1. A method, comprising:
+accessing at least one of device-specific and/or platform information for a device that will implement a Universal Plug and Play (UPnP) control point; and
+generating custom source code, tailored to the device, to efficiently implement the control point on the device based on at least one of the device-specific information and the platform information.
+2. The method according to claim 1 further comprising compiling the source code to generate the UPnP control point.
+3. The method according to claim 1 wherein accessing the device-specific information further comprises accessing at least one of a device description and a service description for the device.
+4. The method according to claim 1 wherein accessing the device-specific information further comprises receiving device-specific information from a programmer.
+5. The method according to claim 1 wherein generating the source code further comprises enhancing the source code for the control point.
+6. The method according to claim 5 wherein enhancing the source code further comprises creating a custom eXtensible Markup Language (XML) parser.
+7. A storage medium comprising content which, when executed by an accessing machine, causes the accessing machine to:
+access at least one of device-specific information and/or platform information for a device that will implement a Universal Plug and Play (UPnP) control point; and
+generate custom source code, tailored to the device, to efficiently implement the control point on the device based on at least one of the device-specific information and the platform information.
+8. The storage medium according to claim 7 further comprising content which, when executed by the accessing machine, causes the accessing machine to compile the source code to generate the UPNP control point.
+9. The storage medium according to claim 7 wherein the content to access the device-specific information comprises content which, when executed by the accessing machine, causes the accessing machine to access at least one of a device description and a service description for the device.
+10. The storage medium according to claim 7 wherein the content to access the device-specific information comprises content which, when executed by the accessing machine, causes the accessing machine to receive device-specific information from a programmer.
+11. The storage medium according to claim 7 wherein the content to generate the source code further comprises content which, when executed by the accessing machine, causes the accessing machine to enhance the source code for the control point.
+12. The storage medium according to claim 11 wherein the content to enhance the source code further comprises content which, when executed by the accessing machine, causes the accessing machine to create a custom eXtensible Markup Language (XML) parser.
+13. An apparatus, comprising:
+a generator engine to access at least one of device-specific information and/or platform information for a device that will implement a Universal Plug and Play (UPNP) control point, and the generator engine to generate custom source code, tailored to the device, to efficiently implement the control point on the device based on at least one of the device-specific information and the platform information.
+14. The apparatus according to claim 13 further comprising the generator engine to compile the source code to generate the UPnP control point.
+15. The apparatus according to claim 13 further comprising the generator to generate source code based on at least one of a device description and a service description for the device.
+16. The apparatus according to claim 14 further comprising the generator engine to generate source code to create a custom eXtensible Markup Language (XML) parser.
+17. The apparatus according to claim 13 further comprising an interface coupled to the generator engine, the interface to receive device-specific information and platform information.
+18. The apparatus according to claim 13 further comprising a memory coupled to the generator engine, the memory to store the source code.

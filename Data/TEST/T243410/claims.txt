@@ -1,0 +1,378 @@
+--- PAGE 1 ---
+30. Nov. 2010 22:48 Fleuchaus & Gallo Partnerschaft Nr. 4941 § 10
+
+Official ref.: 04 812 723.7
+Our ref.: P1O690EPPC
+-l-
+
+Main Request - Claims
+
+1, Acomputer-implemented method for use in creating an electronic design of a two-sided
+product (210, 220, 230, 240, 250, 260) intended for sybsequent printing, the method
+comprising
+providing an image of a first side of the product for displaying to the user of a client com-
+
+puter (100) and for customization by the user,
+
+providing a tool (304) allowing the user to supply at least text to be printed on the first
+
+side,
+
+providing an image of a second side of the product for displaying to the user and for cus-
+tomization by the user, the second side of the product having a map area where a map will
+
+be printed when the product is printed,
+
+providing a tool (702, 704, 706) allowing the user to identify a location to be included
+
+within the map that will be printed in the map area,
+
+making electronic map information available to a server computer system (110), the map
+information containing information covering a relatively large geographical area and being
+
+adapted to produce relatively high resolution maps,
+
+in response to information received from the client computer system (100) identifying a lo-
+cation within the relatively large geographical area, obtaining a relatively high resolution
+user map from the map information, the user map covering a relatively small geographical
+
+area that includes at least the identified location,
+
+generating a lower resolution display map version of the user map, the display map being
+
+suitable for displaying at the client computer system (100),
+
+transmitting only the display map to the client computer system (100) for displaying to the
+user,
+
+receiving a description of the product design from the client computer system (100), the
+description identifying at least a portion of the display map, and
+
+associating the identified portion of the display map with corresponding higher resolution
+map information such that when the product is printed the map area on the second side of
+
+the product design will be printed using the higher resolution map information,
+
+Duration: 30.11.2010 22:50:47 - 30.11.2010 22:59:05. This page 10 of 76 was completed at 30.11.2010 22:52:01
+Received at the EPO on Nov 30, 2010 22:59:05. Page 10 of 76
+
+--- PAGE 2 ---
+30. Nov. 2010 22:49 F euchaus & Gallo Partnerschaft Nr 494) oS 1
+
+Official ref.: 04 812 723.7
+Our ref.: P10690EPPC
+_Q-
+2. The method of claim 1 further comprising storing the obtained user map at the server
+(110).
+
+3. The method of claim 1 further comprising providing a user-controllable crop box (804)
+allowing the user to identify a desired portion of the display map.
+
+4, The method of claim 1 further comprising generating a thumbnail version of the display
+
+map and storing the thumbnail version at the server (110).
+
+5. The method of claim 4 further comprising retrieving the stored thumbnail version in re-
+sponse to a request from the user and transmitting the thumbnail version to the client
+
+computer system (100) for viewing by the user.
+
+6, The method of claim 1 wherein the user map is based on address information supplied by
+the user for printing on the first side of the product (210, 220, 230, 240, 250, 260).
+
+7, The method of claim 1 wherein the information received includes a zoom level to be used
+
+to obtain the user map.
+
+8. The method of claim 1 wherein the user map is obtained from the map information at a
+
+height and width ratio that corresponds to the height to width ratio of the map area.
+
+9. The method of claim 1 wherein the display map is generated to have a height and width
+
+ratio that corresponds to the height to width ratio of the e map area.
+
+10. A computer-implemented method for use in creating an electronic design of a product
+(210, 220, 230, 240, 250, 260) intended for subsequent printing on two sides, the method
+comprising
+displaying an image of one side of the product to the user of a client computer (100), the
+side of the product having a map area where a map will be printed when the product is
+
+printed,
+
+Duration: 30.11.2010 22:50:47 - 30.11.2010 22:59:05. This page 11 of 76 was completed at 30.11.2010 22:52:07
+Received at the EPO on Nov 30, 2010 22:59:05. Page 11 of 76
+
+--- PAGE 3 ---
+30. Nov.
+
+2010 22:49 Fleuchaus & Gallo Partnerschaft Nr. 4941 $12
+
+Official ref.: 04 812 723.7
+Our ref.: PLOGIOEPPC
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+3.
+
+displaying a tool (702, 704, 706) allowing the user to identify a location to be included
+
+within the map that will be printed in the map area,
+
+supplying information to a server computer system (110) having access to map information
+covering a relatively large geographical area and adapted to produce relatively high resolu-
+tion maps, the supplied information identifying at least a location within the relatively large
+geographical area,
+
+receiving a display map from the server (110), the display map covering a relatively small
+geographical area that includes at least the identified location and being at a relatively low
+
+resolution suitable for displaying at the user computer (100),
+
+displaying at least a portion of the display map such that the displayed portion of the dis-
+play map is displayed to the user in the map area, and
+
+transmitting a description of the electronic product design to the server (110) for subse-
+quent printing of the product, the description identifying the incorporated portion of the
+display map such that the server (110) can associate the received product design with a cor-
+
+responding higher resolution map at the server.
+
+The method of claim 10 further comprising allowing the user to supply different infor-
+mation to the server (110) such that a different display map will be received.
+
+The method of claim 11 wherein the different information is a different location,
+
+The method of claim 11 wherein the different information is a different zoom level.
+
+The method of claim 10 further comprising displaying the display map with a user-
+controllable crop box (804) such that the user can vary the portion of the display map dis-
+played in the map area.
+
+The method of claim 10 further comprising
+requesting a display of one or more thumbnail map images stored on the server (110),
+
+selecting one of the displayed thumbnail images, and
+
+Duration: 30.11.2010 22:50:47 - 30.11.2010 22:59:05. This page 12 of 76 was completed at 30.11.2010 22:52:13
+Received at the EPO on Nov 30, 2010 22:59:05. Page 12 of 76
+
+--- PAGE 4 ---
+30. Nov. 2010 22:49 Fleuchaus & Gallo Partnerschaft Nr. 4941 3 § 13
+
+Official ref; 04 812 723.7
+Our ref; P10690EPPC
+4.
+receiving a display map associated with the selected thumbnail images from the server
+(110).
+
+16. The method of claim 15 further comprising replacing the at portion of the received display
+map currently displayed in the map area with at least a portion of the received display map
+
+associated with a selected thumbnail image.
+
+17. A computerized system for use in creating an electronic design of a two-sided product (210,
+
+220, 230, 240, 250, 260) intended for subsequent printing, the system comprising
+
+means for providing an image of a first side of the product for displaying to the user of a
+
+client computer (100) and for customization by the user,
+
+means for providing a tool (304) allowing the user to supply ar least text to be printed on
+the first side,
+
+means for providing an image of a second side of the product for displaying to the user and
+for customization by the user, the second side of the product having a map area where a
+
+map wil] be printed when the product is printed,
+
+means for providing a tool (702, 704, 706) allowing the user to identify a location to be in-
+
+cluded. within the map that will be printed in the map area,
+
+means for making electronic map information available to a server computer system (110),
+the map information containing information covering a relatively large geographical area
+
+and being adapted to produce relatively high resolution maps,
+
+means, responsive to information received from the client computer system (100) identify-
+ing a location within the relatively large geographical area, for obtaining a relatively high
+resolution user map from the map information, the user map covering a relatively small ge-
+
+ographical area that includes at least the identified location,
+
+means for generating a lower resolution display map version of the user map, the display
+map being suitable for displaying at the client computer system (100),
+
+means for transmitting only the display map to the client computer system (100) for dis-
+playing to the user,
+
+means for receiving a description of the product design from the client computer system
+(100), the description identifying at least a portion of the display map, and
+
+Duration: 30.11.2010 22:50:47 - 30.11.2010 22:59:05. This page 13 of 76 was completed at 30.11.2010 22:52:20
+Received at the EPO on Nov 30, 2010 22:59:05. Page 13 of 76
+
+--- PAGE 5 ---
+30. Nov.
+
+2010 22:49 Fleuchaus & Gallo Partnerschaft Nr. 494) § 14
+
+Official ref.: 04 812 723.7
+Our ref.: P10690EPPC
+
+18.
+
+19.
+
+20.
+
+21,
+
+22.
+
+23,
+
+24,
+
+25,
+
+_5-
+
+means for associating the identified portion of the display map with corresponding higher
+resolution map information such that the product design will be printed using the higher
+
+resolution map information.
+
+The system of claim 17 further comprising means for storing the obtained user map at the
+
+server (110).
+
+The system of claim 17 further comprising means for providing a user-controllable crop
+
+box (804) allowing the user to identify a desired portion of the display map.
+
+The system of claim 17 further comprising means for generating a thumbnail version of the
+
+display map and means for storing the thumbnail version at the server (110).
+
+The system of claim 20 further comprising means for retrieving the stored thumbnail ver-
+sion in response to a request from the user and means for transmitting the thumbnail ver-
+
+sion to the client computer system (100) for viewing by the user.
+
+The system of claim 17 wherein the user map is based on address information supplied by
+the user for printing on a different side of the product (210, 220, 230, 240, 250, 260).
+
+The system of claim 17 wherein the information received includes a zoom level to be used
+
+to obtain the user map.
+
+The system of claim 17 wherein the user map is obtained from the map information at a
+
+height and width ratio that corresponds to the height to width ratio of the map area.
+
+The system of claim 17 wherein the display map is generated to have a height and width
+
+ratio that corresponds to the height to width ratio of the map area.
+
+Duration: 30.11.2010 22:50:47 - 30.11.2010 22:59:05. This page 14 of 76 was completed at 30.11.2010 22:52:26
+Received at the EPO on Nov 30, 2010 22:59:05. Page 14 of 76
+
+--- PAGE 6 ---
+30. Nov.
+
+2010 22:49 Fleuchaus & Gallo Partnerschaft Nr. 4941 $15
+
+Official ref.: 04 812 723.7
+Our ref.: PIO6IOEPPC
+
+26,
+
+27.
+
+28.
+
+29.
+
+30.
+
+-6-
+
+A computer-implemented system for use in creating an electronic design of a product
+
+(210, 220, 230, 240, 250, 260) intended for subsequent printing, the system comprising
+
+means for displaying an image of one side of the product to the user of a client computer
+(100), the side of the product having a map area where a map will be printed when the
+
+product is printed,
+
+means for displaying a tool (702, 704, 706) allowing the user to identify a location to be
+included within the map that will be printed in the map area,
+
+means for supplying information to a server computer system (110) having access to map
+information covering a relatively large geographical area and adapted to produce relatively
+high resolution maps, the supplied information identifying at least a location within the
+relatively large geographical area,
+
+means for receiving a display map from the server (110), the display map covering a rela-
+tively small geographical area that includes at least the identified location and being ar a rel-
+
+atively low resolution suitable for displaying at the user computer (100),
+means for displaying at least a portion of che display map such thar the displayed portion of
+the display map is displayed to the user in the map area, and
+
+means for transmitting a description of the electronic product design to the server (110) for
+subsequent printing of the product, the description identifying the incorporated portion of
+the display map such that the server (110) can associate the received product design with a
+
+corresponding higher resolution map at the server.
+
+The system of claim 26 further comprising allowing the user to supply different infor-
+
+mation to the server (110) such that a different display map will be received.
+
+The system of claim 27 wherein the different information is a different location.
+
+The system of claim 27 wherein the different information is a different zoom level.
+
+The system of claim 26 further comprising means for displaying the display map with a
+user-controllable crop box (804) such that the user can vary the portion of the display map
+displayed in the map area.
+
+Duration: 30.11.2010 22:50:47 - 30.11.2010 22:59:05. This page 15 of 76 was completed at 30.11.2010 22:52:33
+Received at the EPO on Nov 30, 2010 22:59:05. Page 15 of 76
+
+--- PAGE 7 ---
+30. Nov. 2010 22:49 Fo eushaus & Gel o 2artnerschaft Nr, 4941 3. 16
+
+Official ref: 04 812 723.7
+Our ref.: P10690EPPC
+
+31. The system of claim 26 further comprising
+
+means for requesting a display of one or more thumbnail map images stored on the server
+
+(110),
+means for selecting one of the displayed thumbnail images, and
+
+means for receiving a display map associated with the selected thumbnail images from the
+server (110).
+
+32, The system of claim 31 further comprising means for replacing the at least a portion of the
+received display map currently displayed in the map area with at least a portion of the re-
+
+cecived display map associated with a selected thumbnail image.
+
+Duration: 30.11.2010 22:50:47 - 30.11.2010 22:59:05. This page 16 of 76 was completed at 30.11.2010 22:52:36
+Received at the EPO on Nov 30, 2010 22:59:05. Page 16 of 76

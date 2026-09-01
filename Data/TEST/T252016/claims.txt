@@ -1,0 +1,198 @@
+--- PAGE 1 ---
+MAIN REQUEST
+
+WHAT IS CLAIMED IS:
+
+1. A procedure for pre-operating assessment of one or more anatomical
+structures generated from medical images and provided in a rendered 3D space,
+comprising:
+
+providing one or more safety margin indicators in the rendered 3D space
+on a user-perceptible output interface, each safety margin indicator defining a 3D
+closed volume shape and having a shape and size that are deformable and adjustable in
+order to conform to shape and size of anatomical structures within an organ;
+
+receiving, from a user, an input for deforming one of the one or more
+safety margin indicators with respect to the anatomical structures;
+
+converting the input from the user to parameters to be used for
+deforming the safety margin indicator;
+
+generating a deformed version of the safety margin indicator based on
+the parameters; and
+
+immediately rendering, on the user-perceptible output interface,
+
+the deformed version of the safety margin indicator.
+
+2. A procedure according to Claim 1, wherein the safety margin indicator is
+provided in a 2D view on the medical images, rendered in its original form or
+
+processed form, and in a 3D view.
+
+3. A procedure according to Claim 1, wherein the input includes instructions to
+
+adjust at least one of the shape and location of the at least one safety margin indicator.
+
+4. A procedure according to Claim 1, further comprising providing at least one
+
+numerical dimension of the safety margin indicator.
+5. A procedure according to Claim 1, further comprising changing at least one of
+a color and an appearance of a 3D rendering of at least one of the anatomical
+
+structures.
+
+6. A procedure according to Claim 1, further comprising masking from the organ
+
+--- PAGE 2 ---
+at least one of the anatomical structures and other intra-organ anatomical structures
+
+using an associated one or more of the safety margin indicators.
+
+7. A procedure according to Claim 6, further comprising providing an indicator of
+
+a quantified measurement of at least one of the organ and a remnant organ.
+
+8. A procedure according to Claim 1, further comprising providing an indicator of
+at least one of a distance between at least two of the safety margin indicators and a
+distance between at least one of the safety margin indicators and at least one of the
+
+anatomical structures within the organ.
+
+9. A procedure for defining at least one cutting surface to resect one or more
+medical anatomical structures using an imaging system, the procedure comprising:
+forming at least one cutting surface in one of a 2D view and a 3D
+view of a rendered 3D space in the imaging system, the at least one cutting
+surface being a resection plane in the one of the 2D view and the 3D view;
+automatically providing a 3D rendering or a 2D rendering,
+respectively, of the at least one cutting surface;
+interactively manipulating the at least one cutting surface to adjust
+at least one of its orientation, size, shape, and location, using an input
+received via a user input interface attached to the at least one cutting surface
+in the rendered 3D space, the resection plane being deformable by operation
+of the user input interface;
+converting the input received via the user input interface to parameters to be
+used for deforming the at least one cutting surface;
+generating a deformed version of the at least one cutting surface based on the
+parameters;
+immediately rendering, in a user-perceptible output interface of the imaging
+
+system, the deformed version of the at least one cutting surface.
+
+10. A procedure according to Claim 9, further comprising identifying
+
+corresponding parts of the anatomical structures between the 2D and 3D views.
+
+11. A procedure according to Claim 9, wherein the forming is performed using at
+
+least one of a plane and a template with graphical handlers.
+
+--- PAGE 3 ---
+12. A procedure according to Claim 11, wherein the interactively manipulating
+includes interactively manipulating at least one of the plane and template via the
+
+graphical handlers.
+
+13. A procedure according to Claim 9, wherein the forming forms the at least
+
+one cutting surface in at least one of the anatomical structures.
+
+14. A procedure according to Claim 13, further comprising varying an orientation
+of the at least one anatomical structure, wherein the forming forms the at least one
+
+cutting surface in the at least one anatomical structure, for each orientation.
+
+15. A procedure according to Claim 9, wherein the at least one cutting surface
+
+is defined by a safety margin indicator.
+
+16. An imaging system for performing pre-operative assessment of one or more
+anatomical structures generated from medical images and provided in a rendered
+3D space, comprising:
+
+an output user interface arranged to provide one or more safety margin
+indicators in the rendered 3D on a user-perceptible output interface, each safety margin
+indicator defining a 3D closed volume shape and having a shape and size that are
+deformable and adjustable in order to conform to a shape and size of anatomical
+structures within an organ; and
+
+at least one computer processor, operable to receive, from a user, an input for
+deforming one of the one or more safety margin indicators with respect to the
+anatomical structures; convert the input from the user to parameters to be used for
+deforming the safety margin indicator; generate a deformed version of the safety
+margin indicator based on the parameters, and immediately render, on the user-
+
+perceptible output interface, the deformed version of the safety margin indicator.
+
+17. An imaging system according to Claim 16, wherein the output user
+interface provides the safety margin indicator in a 2D view on the medical
+
+images, rendered in its original or processed form, and in a 3D view.
+
+18. An imaging system according to Claim 16, wherein the at least one computer
+processor is operable to adjust at least one of the shape and location of the at least one
+
+safety margin indicator.
+
+--- PAGE 4 ---
+19. An imaging system according to Claim 16, wherein the at least one computer
+processor also is operable to change at least one of a color and an appearance of a 3D
+
+rendering of the at least one of the safety margin indicators.
+
+20. Animaging system for defining at least one cutting surface to resect one or more
+anatomical structures, comprising:
+
+an output user interface arranged to present at least one of a 2D view and a 3D
+view of a rendered 3D space in the imaging system; and
+
+at least one computer processor, operable to 1) form at least one cutting surface
+in at least one of the 2D view and the 3D view, the at least one cutting surface being a
+resection plane in the one of the 2D view and the 3D view; 2) automatically provide a
+3D rendering or a 2D rendering, respectively, of the at least one cutting surface by way
+of the output user interface, 3) interactively manipulate the at least one cutting surface
+to adjust at least one of its orientation, size, shape, and location, using an input received
+via a user input interface attached to the cutting surface in the rendered 3D space, the
+resection plane being deformable by operation of the user input interface; 4) convert the
+input received via the user input interface to parameters to be used for deforming the at
+least one cutting surface; 5) generate a deformed version of the at least one cutting
+surface based on the parameters; and 6) immediately provide, by way of the output user
+interface, a rendering in the 3D space of a manipulated version of the at least one
+
+cutting surface.
+
+21. An imaging system according to Claim 20, further comprising an input
+interface operable to control the at least one computer processor to form the at least
+
+one cutting surface.
+
+22. Animaging system according to Claim 20, wherein the input user interface
+also is operable to identify corresponding parts of the anatomical structures
+
+between the 2D and 3D views.
+
+23. An imaging system according to Claim 20, further comprising at least one of a
+plane and a template, presented by the output user interface and defining the at least
+
+one cutting surface.
+
+24. Animaging system according to Claim 23, wherein the input user interface is
+
+also operable to control the computer processor to manipulate the at least one of the
+
+--- PAGE 5 ---
+plane and template via graphical handlers.
+
+25. Animaging system according to Claim 20, wherein the at least one cutting
+
+surface is formed in an anatomical structure.
+
+26. Animaging system according to Claim 25, wherein the computer processor also
+is operable to vary an orientation of the at least one anatomical structure, and to form the
+
+at least one cutting surface in the at least one anatomical structure, for each orientation.
+
+27. An imaging system according to Claim 25, wherein the computer processor
+also is operable to separate the at least one anatomical structure into at least two parts,
+
+along the at least one cutting surface.

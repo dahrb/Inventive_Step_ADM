@@ -1,0 +1,174 @@
+Title: System for distributing electronic information to a targeted group of users
+
+Abstract: 
+A communications system having a first server and a first client connected to the first server through a first network, wherein the first server selectively sends a set of InfoBites to the first client based on a filter. A method for distributing information for the above communications system, including the steps of deriving a set of InfoBites, filtering the set of InfoBites based on the filter into a filtered set of InfoBites, and, transmitting the filtered set of InfoBites to the first client.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A server comprising:
+an information interface for creating an InfoBite from received information including summary information and a resource identifier wherein said resource identifier is a bit pattern associated with a Uniform Resource Locator (URL) stored within a resource database;
+a message interface for coupling said server to a set of clients through a network; and
+a first receiver which receives and stores real-time location information of said set of clients, said receiver coupled to said information interface;
+wherein said server supports mobility of said set of clients through said receiver.
+2. The server of claim 1, wherein said network is configured to pass cellular data.
+3. The server of claim 1, further comprising a filter coupled to said messaging interface wherein said InfoBite pass said filter to said set of clients through said messaging interface.
+4. The server of claim 3, wherein said filter is modified by said set of clients.
+5. The server of claim 3, wherein said filter is automatically modified by an action of said set of clients.
+6. The server of claim 3, wherein said filter further comprises:
+a temporal filter for filtering said InfoBite based on a set of time constraints;
+a positional filter for filtering said InfoBite based on a set of positional constraints; and
+a subscriber profile filter for filtering said InfoBite based on a set of constraints contained in a subscriber profile.
+7. The server of claim 3, wherein said filter is a schedule/resource controller.
+8. The server of claim 1, wherein said information interface further comprises:
+a mechanism which provides for self contacting at least one content provider without initiation by said content provider through a network interface and searching for new content based upon a predetermined criteria.
+9. The server of claim 1, wherein said information interface is an InfoFeed interface.
+10. The server of claim 1, further comprising:
+a data management system coupled to said information interface; and
+a server database unit coupled to said data management system.
+11. The server of claim 10, wherein said data management system is an ODBC API.
+12. The server of claim 10, wherein said server database unit comprises:
+a server InfoBite database;
+a server content database;
+a subscriber database; and
+said server resource database.
+13. The server of claim 1, wherein said receiver includes:
+a mechanism for receiving a cell ID from said client; and
+a mechanism for translating said cell ID to a physical location and a domain location.
+14. The server of claim 1, further comprising:
+a second receiver for receiving resource identifier;
+wherein said messaging interface transmitting a resource identified by said resource identifier is said resource identifier is available in said server and said resource transmittable by said messaging interface;
+said messaging interface transmitting said uniform resource locator (URL) if said resource is not in said server;
+said messaging interface transmitting said URL if said resource is not transmittable by said messaging interface.
+15. A client comprising:
+a messaging interface for coupling said client to a server through a network;
+a transmitter coupled to said messaging interface for transmitting real-time location information to said server;
+an information interface coupled to said message interface for receiving an InfoBite including summary information and a resource identifier wherein said resource identifier is a bit pattern associated with a Uniform Resource Locator (URL) stored within a resource database; and
+a browser coupled to said information interface;
+wherein said browser displays said InfoBite.
+16. The client of claim 15, wherein said browser is an InfoCast browser.
+17. The client of claim 15, wherein said browser is adapted to transmit said resource identifier to said server for receiving a resource identified by said resource identifier.
+18. The client of claim 15, further comprising:
+a data management system coupled to said Information interface; and
+a client database unit coupled to said data management system.
+19. The client of claim 18, wherein said data management system is an ODBC API.
+20. The client of claim 18, wherein said client database unit comprises:
+a client resource database;
+a client content database; and
+a client InfoBite database.
+21. The client of claim 15 further comprising:
+a back channel interface coupled to said browser.
+22. A method comprising the steps of:
+receiving an information from a content provider;
+generating at least one InfoBite from said information, said InfoBite including summary information and a resource identifier wherein said resource identifier is a bit pattern associated with a Uniform Resource Locator (URL) stored within a resource database;
+filtering said InfoBite with a predetermined criteria of a set of clients;
+sending said InfoBite to each of said set of clients with a filtered value over said predetermined criteria of each of said set of clients;
+if at least one of said set of clients requests further information based on said InfoBite, providing said set of clients with said further information.
+23. The method of claim 22, wherein said filtering step further comprises:
+generating a random number for said set of clients who were not sent said InfoBite and sending said InfoBite to said set of clients with a qualifying random number;
+receiving a vote from each of said set of clients for said InfoBite;
+updating a profile of each of said set of clients based upon said vote.
+24. The method of claim 22 wherein said step of sending said InfoBite further comprises the steps of:
+receiving a request from a client for a configuration message;
+requesting a physical location of said client;
+receiving a current physical location of said client;
+if a server is not a home server of said client, then issuing said configuration message with a list of updated resources;
+requesting a copy of said client's profile from said home server;
+updating said home server for changes in said client's profile; and
+if said server is a home server of said client, then issuing said configuration message with said list of updated resources.
+25. The method of claim 22 wherein providing said set of clients with said information further comprises the steps of:
+receiving an action to request a download of a resource identified by said resource identifier in said InfoBite;
+looking up said resource identified by said resource identifier; and
+transmitting said resource to said set of clients.
+26. A method comprising the steps of:
+transmitting a real-time location of a client;
+receiving an InfoBite through a messaging interface, wherein said InfoBite includes summary information and a resource identifier wherein said resource identifier is a bit pattern associated with a Uniform Resource Locator (URL) stored within a resource database;
+causing an information interface to update a database;
+causing a browser to display said InfoBite and perform updates of a display from said database; and
+if further information is requested, causing said browser to notify said server of said request.
+
+
+Title: System for delivering data content over a low bit rate transmission channel
+
+Abstract: 
+The present invention provides a system by which information content data is delivered to a mobile device. The web content is divided into data and script information. The script information is used to operate on the data to render the data in a predetermined format.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A system for providing information content from a content provider to a mobile device, comprising:
+a provider component including:
+a first store storing the content as a data file and a corresponding independent script file, the data file including data indicative of the content to be rendered and the script file including a script indicative of a desired appearance which the substantive data is to take upon being rendered, wherein the script file and the data file are transmittable independently of one another;
+a transmitter coupleable to the first data store and configured to transmit the content to the mobile device; and
+a mobile device component, disposed on the mobile device, including:
+a receiver configured to receive the content from the transmitter;
+a second store;
+a router coupled to the receiver and the second store and configured to provide the script file and the data file to the second store; and
+a transport coupled to the second store and configured to selectively retrieve the data file and execute the script to place the data in the desired rendering form.
+2. The system of claim 1 wherein the provider component comprises:
+a first translator layer coupled to the first store and configured to retrieve the data file and the script file and translate the data and script form an untranslated form to a translated form.
+3. The system of claim 2 wherein the mobile device component comprises:
+a second translator layer coupled to the receiver and configured to translate the data and script from the translated form to the untranslated form.
+4. The system of claim 3 wherein the first translator layer comprises a compressor configured to compress the data and script from an uncompressed form to a compressed form and wherein the second translator layer comprises a decompressor coupled to the receiver and configured to decompress the data and script from the compressed form the the decompressed form.
+5. The system of claim 3 wherein the first translator layer comprises an encryptor configured to encrypt the script and data and wherein the second translator layer comprises a decryptor configured to decrypt the data and the script.
+6. The system of claim 3 wherein the first translator layer comprises an encoder configured to encode the script and data and wherein the second translator layer comprises a decoder configured to decode the script and data.
+7. The system of claim 3 wherein the first translation layer comprises a packager configured to divide the script and data into portions and translate the portions into packets suitable for transmission and wherein the second translation layer comprises an unpackager configured to untranslate and assemble the packets.
+8. The system of claim 3 wherein the first translator layer is configured to provide tag information indicative of translation operations performed on the script and data and to provide the tag information along with the script and data in the translated form and wherein the second translator layer is configured to perform translation operations on the script and data based on the tag information.
+9. The system of claim 1 wherein the transmitter comprises:
+a wireless transmitter for transmitting the content over a wireless transmission link and wherein the receiver comprises a wireless receiver configured to receive the content over the wireless transmission link.
+10. The system of claim 1 and further comprising:
+a desktop computer selectively coupleable to the provider component and including a retrieval component configured to retrieve the data file and the script file, the transmitter comprising a synchronization component on the desktop computer configured to be selectively coupleable to the mobile device.
+11. The system of claim 10 wherein the receiver comprises:
+a synchronization component on the mobile device selectively coupleable to the synchronization component on the desktop computer, wherein the synchronization component on the desktop computer and the synchronization component on the mobile device are configured to selectively synchronize the script file and the data file to the mobile device.
+12. The system of claim 11 wherein the first store includes a definition file describing characteristics of the information content including a logging characteristic and wherein the transport logs rendering information indicative of rendering of the information content on the mobile device.
+13. The system of claim 12 wherein the synchronization component on the mobile device is configured to synchronize the rendering information to the desktop computer and wherein the retrieval component is configured to provide the rendering information to the provider component.
+14. The system of claim 13 wherein the rendering information includes a rendering count indicative of a number of times the information content is rendered on the mobile device and a rendering duration indicative of a duration for which the information content is rendered on the mobile device.
+15. The system of claim 10 wherein the provider component further comprises:
+a wireless transmitter for transmitting the content over a wireless transmission link and wherein the receiver further comprises a wireless receiver configured to receive the content over the wireless transmission link.
+16. The system of claim 1 wherein the information content comprises information rendered using a processor-independent language.
+17. The system of claim 16 wherein the information content comprises information rendered using hypertext mark-up language (HTML).
+18. The system of claim 3 wherein the first translation layer provides the script and data, in the translated form, with a plurality of separate filtering segments, the receiver on the mobile device selectively receiving and discarding the script and data based on a first of the plurality of filtering segments, and the second translation layer selectively receiving and discarding the script and data based on a second of the plurality of filtering segments.
+19. The system of claim 18 wherein the information content comprises group information and topic information on a subscribable channel, wherein the second of the plurality of filtering segments includes a first filtering portion corresponding to the group information and a second filtering portion corresponding to the topic information and wherein the second translation layer filters based on the group and topic filtering portions independently of one another.
+20. A computer readable medium including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+intermittently receiving a data file and a corresponding script file, the data file including data indicative of substantive information and the script file including script information indicative of a desired appearance which the substantive data is to take upon being rendered, the data file and corresponding script file being independently receivable by the mobile device;
+storing the script file and data file; and
+retrieving the data from the data file and executing the script in the corresponding script file to render the data.
+21. The computer readable medium of claim 20 including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+intermittently receiving an updated data file including updated data; and
+executing the script in the corresponding script file, already stored on the mobile device, to render the updated data.
+22. The computer readable medium of claim 21 wherein the step of executing the script in the corresponding script file, already on the mobile device, is performed in response to receiving the updated data.
+23. The computer readable medium of claim 22 wherein executing the script comprises:
+rendering the data in a processor independent form.
+24. The computer readable medium of claim 23 wherein executing the script comprises:
+rendering the data in hypertext mark-up language (HTML) form.
+25. The computer readable medium of claim 20 further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by perform steps comprising:
+intermittently receiving an updated script file including updated script; and
+executing the updated script on data in the corresponding data file, already stored on the mobile device, to render the data according to the updated script.
+26. The computer readable medium of claim 21 wherein the data file and corresponding script file are received in a translated form and further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+untranslating the data file and script file into an untranslated form.
+27. The computer readable medium of claim 20 further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+intermittently receiving additional script files including additional script; and
+intermittently receiving additional data files, corresponding to the additional script files and including additional data.
+28. The computer readable medium of claim 27 further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+executing the additional script in the additional script files on data in the corresponding additional data files to render the additional data according to the additional script.
+29. The computer readable medium of claim 20 further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+logging rendering data based on rendering of the information.
+30. The computer readable medium of claim 29 further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+synchronizing the rendering data to a desktop computer.
+31. The computer readable medium of claim 20 further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+receiving the script file and data file with a plurality of separate filtering segments; and
+selectively receiving and discarding the script and data based on the plurality of filtering segments.
+32. The computer readable medium of claim 31 wherein the information content comprises group information and topic information on a subscribable channel, and further including instructions readable by a mobile device which, when implemented, cause the mobile device to handle information by performing steps comprising:
+selectively receiving and discarding the script and data based on a first filtering portion corresponding to the group information and a second filtering portion corresponding to the topic information, wherein the filtering is based on the group and topic filtering portions independently of one another.
+33. A mobile device, comprising:
+a receiver configured to intermittently receive a data file and a corresponding script file, the data file including data indicative of substantive information and the script file including script information indicative of a desired appearance which the substantive data is to take upon being rendered, the data file and corresponding script file being independently receivable by the mobile device;
+a memory rendering component storing the script file and data file; and
+retrieving the data from the data file and executing the script in the corresponding script file to render the data.
+34. A method of rendering information on a mobile device, comprising:
+intermittently receiving a data file and a corresponding script file, the data file including data indicative of substantive information to be rendered and the script file including script information indicative of a desired appearance which the substantive data is to take upon being rendered, the data file and corresponding script file being independently receivable by the mobile device;
+storing the script file and data file; and
+retrieving the data from the data file and executing the script in the corresponding script file to render the data.

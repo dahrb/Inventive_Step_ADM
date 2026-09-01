@@ -1,0 +1,42 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+Claims
+
+1. Method for remotely delivering a full subscription profile to a UICC over IP, said
+UICC being installed in a terminal able to provide an IP connectivity to a remote server and give
+access to said UICC, said UICC being pre-personalised with a unique serial number and with a
+bootstrap application and bootstrap credentials allowing to establish a secure transport channel
+with said remote server, said remote server hosting a stock of subscription profiles and acting
+as a web server, said method consisting in:
+
+- opening (101), at the request of said UICC, a data channel between said terminal and
+said server;
+
+- performing (102) a mutual authentication between said UICC and said server by using
+said bootstrap credentials;
+
+- requesting (103), from said UICC to said server, the delivery of a subscription profile
+by using said unique serial number;
+
+- if a subscription profile exists for said UICC, downloading (106, 107) said subscription
+profile to said UICC.
+
+2. Method according to claim 1, wherein http communication protocol is used between
+said UICC and said remote server.
+
+3. Method according to any of the claims 1 or 2, wherein said UICC and said terminal
+
+communicate over a BIP channel.
+
+4. Method according to any of the claims 1 to 3, wherein said UICC is a removable
+UICC.
+
+5. Method according to any of the claims 1 to 3, wherein said UICC is an embedded
+UICC.

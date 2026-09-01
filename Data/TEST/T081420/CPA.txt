@@ -1,0 +1,41 @@
+TITLE:
+Object comparison, retrieval, and categorization methods and apparatuses
+
+TYPE:
+European Patent
+
+ABSTRACT:
+Object comparison is disclosed, including: adapting N universal mixture model components to a first object to generate N corresponding first object mixture model components, where N is an integer greater than or equal to two; and generating a similarity measure based on component-by-component comparison of the N first object mixture model components with corresponding N second object mixture model components obtained by adaptation of the N universal mixture model components to a second object.
+
+CLAIMS:
+An object processing method comprising:
+adapting a universal mixture model including a plurality of universal mixture model components to a first object to generate a first object mixture model including a plurality of first object mixture model components having one-to-one correspondence with the plurality of universal mixture model components;
+performing component-by-component comparison of the plurality of first object mixture model components and a plurality of second object mixture model components obtained by adaptation of the universal mixture model to a second object and having one-to-one correspondence with the plurality of first object mixture model components; and
+generating a similarity measure for the first and second objects based on the component-by-component comparison.
+The method as set forth in claim 1, further comprising:
+adapting the universal mixture model including the plurality of universal mixture model components to the second object to generate a second object mixture model including the plurality of second object mixture model components.
+The method as set forth in claim 1, further comprising:
+displaying the second object as a similar object conditional upon the similarity measure satisfying a similarity criterion.
+The method as set forth in claim 1, further comprising:
+repeating the performing of component-by-component comparison and the generating for objects of a database of second objects; and
+retrieving objects of the database of second objects to generate a set of objects similar to the first object, each retrieving operation being conditional upon the similarity measure corresponding to the reference object satisfying a similarity criterion.
+The method as set forth in claim 1, further comprising:
+repeating the performing of component-by-component comparison and the generating of the similarity measure for objects of a database of second objects each of which have at least one class annotation;
+combining the similarity measures computed for the objects of the database of second objects to compute a score; and
+classifying the first object based on the computed score.
+The method as set forth in claim 1, wherein the universal mixture model is a Gaussian mixture model and the universal, first object, and second object mixture model components are Gaussian distributions.
+The method as set forth in claim 1, wherein the universal, first object, and second object mixture model components are probabilistic or statistical distributions.
+The method as set forth in claim 1, wherein the universal mixture model is a non-probabilistic mixture model and the universal, first object, and second object mixture model components are vectors obtained using K-means clustering.
+The method as set forth in claim 8, wherein the adapting comprises:
+clustering feature vectors representative of the first object using K-means, wherein the universal mixture model components are used as initial values for the corresponding first object mixture model components.
+The method as set forth in claim 1, further comprising:
+determining the plurality of universal mixture model components by training the universal mixture model respective to a training set of representative objects using a maximum likelihood training process.
+The method as set forth in claim 1, wherein the adapting employs an adaptation process selected from the group consisting of (i) a maximum a posteriori (MAP) adaptation process, (ii) a maximum likelihood linear regression (MLLR) adaptation process, and (iii) a cluster adaptive training (CAT) adaptation process.
+The method as set forth in claim 1, wherein the adapting employs an iterative adaptation process using the plurality of universal mixture model components as initial values for the corresponding plurality of first object mixture model components.
+The method as set forth in claim 1, wherein the performing of component-by-component comparison and the generating of a similarity measure yields a similarity measure that at least approximates a probability product kernel.
+A digital storage medium storing digital instructions executable to perform a method comprising:
+adapting N universal mixture model components to a first object to generate N corresponding first object mixture model components, where N is an integer greater than or equal to two; and
+generating a similarity measure based on component-by-component comparison of the N first object mixture model components with corresponding N second object mixture model components obtained by adaptation of the N universal mixture model components to a second object.
+An object processing apparatus comprising:
+a model adaptation engine configured to adapt a plurality of universal mixture model components to a first object to generate a corresponding plurality of first object mixture model components; and
+a component-by-component similarity estimator configured to generate a similarity measure quantifying similarity of the first object and a second object based on component-by-component comparison of the plurality of first object mixture model components and a plurality of second object mixture model components obtained by adaptation of the universal mixture model components to the second object.

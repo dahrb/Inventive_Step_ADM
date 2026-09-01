@@ -1,0 +1,79 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+41 Miller-Boré
+Main Request
+
+Application No.: 10 183 825.8
+
+Applicant: CARDINALCOMMERCE CORPORATION
+"Universal Merchant Platform for Payment Authentication"
+Our Ref.. C 4478EU - ro/ad
+
+Claims
+
+1. Asystem for processing authentication of a consumer (50) via a computer at a
+centralized merchant authentication processing system, MAPS, (200) using one of a
+plurality of different types of payment instruments to conduct a commercial
+transaction over a communications network with a server (100) operated by an online
+merchant, wherein the payment instrument being used is either enrolled in or not
+enrolled in an authentication program conforming to one of a plurality of
+authentication protocols prescribed for the respective plurality of different types of
+payment instruments by payment networks (70, 72, 74, 76, 78) supporting the same,
+the system comprising:
+the server (100) including one of a plurality of available integration
+approaches, the available integration approaches including a thin-client (106), a
+direct connection and an easy connection,
+wherein the thin client (106) is operable to format name/value pairs in
+XML according to a required MAPS message format and securely
+communicate the message to the MAPS (200) via HTTPS, wherein the thin
+client (106) is a COM object or a Java component,
+wherein with the direct connection, the merchant can use direct Java
+calls to interface with the MAPS (200) and communicate XML messages, and
+wherein with the easy connection, the merchant can redirect the
+consumer (50) using HTTPS posts via the consumer's browser to an easy
+connect web server of the MAPS (200) and can receive responses at a
+specific response URL, wherein the web server acts on behalf of the merchant
+and communicates with the MAPS (200) to provide appropriate processing for
+an appropriate authentication initiative,
+the server (100) being operable to obtain payment information for the
+transaction from the consumer (50) and forward the payment information to the
+MAPS (200) using the included integration approach; and
+the MAPS (200) including an HTTPS server (212), a direct connector (214)
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+2 Miller-Boré
+Main Request
+
+providing a Java interface, an easy connector (216) providing the easy connect web
+server, and a message distribution layer (220) configured to route XML messages to
+specific plug-in components in a plug-in layer (230), wherein the plug-in layer (230)
+includes a plurality of individual authentication initiative plug-in components, the
+MAPS (200) being operable to: .
+obtain the payment information for the transaction from the server
+(100), said payment information including a number identifying the particular
+payment instrument being used;
+determine the type of payment instrument being used from the payment
+information, wherein a specific plug-in component (232) is activated by the
+message distribution layer (220) that sends messages to the specified plug-in
+component (232) based upon the type of payment instrument being used for
+the transaction, wherein the specific plug-in component (232) formats and
+routes messages in accordance with authentication protocols prescribed for
+the particular payment instrument being used;
+obtain an authentication determination from one of the payment
+networks (70, 72, 74, 76, 78) for the transaction in accordance with the
+authentication protocols prescribed for the determined type of payment
+instrument being used; and to
+return the obtained authentication determination to the server (100).

@@ -1,0 +1,125 @@
+Title: Method and System for Self-Scaling Generic Policy Tracking
+
+Abstract: A system (100) and method (600) is provided for self-scaling generic policy tracking. The system can include a policy key (210) on a client (132) for scanning the client for at least one configuration, assessing a policy compliance based on the configuration, and reporting at least one policy state to a policy server. The system can also include a policy server (110) for receiving the at least one policy state from the policy key, and configuring network access to the client based on the at least one policy state. The policy key can report at least one policy state (232) on a periodic communication cycle that can be scaled according to system load for increasing system capacity.
+
+Type: US Patent
+
+Claims: 
+
+1. A method for self-scaling generic policy tracking, comprising:
+at a policy key on a client,
+scanning the client for at least one configuration;
+assessing a policy compliance based on the configuration; and
+reporting at least one policy state to a policy server, and
+at the policy server,
+receiving the at least one policy state from the policy key; and
+configuring network access to the client based on the at least one policy state, wherein the configuring a network access includes opening or closing network access to the client.
+2. The method of claim 1, wherein the policy server requests the policy key to perform a Layer 2 blocking at the client if the client is not compliant with a policy.
+3. The method of claim 2, wherein the Layer 2 blocking comprises:
+preventing the client from communicating to other nodes on a subnet of the client by poisoning an access table to route back all communication attempts to the client;
+preventing the client from communicating to other nodes outside the subnet by removing a default gateway and at least on route from a route table for providing no paths out of the client to a network available to the client;
+opening communication to a remediation service by providing a route in the route table that corresponds to a predetermined remediation server; a redirecting Domain Name Server (DNS) requests to remediation services by changing a DNS of the at least one client to a remediation server.
+4. The method of claim 2, wherein if the policy key cannot perform the Layer 2 blocking, the policy key responds to the policy server, and the policy server performs a Layer 3 blocking.
+5. The method of claim 1, wherein the policy key reports the at least one policy state on a periodic communication cycle.
+6. The method of claim 5, wherein the policy key initiates communication to the policy server, and if the policy server needs to provide information to the client, the policy server does so at a time corresponding to the periodic communication cycle of the policy key.
+7. The method of claim 5, wherein the policy key receives at least one of a command, an update, or a directive from the policy server to perform an action at a time corresponding to the periodic communication cycle of the policy key.
+8. The method of claim 7, wherein the action is a change of a policy for which the policy key is scanning on the client.
+9. The method of claim 5, wherein the policy key receives a command to change the periodic communication cycle at a time corresponding to the periodic communication cycle of the policy key.
+10. The method of claim 1, wherein the policy key has complete information for evaluating a policy on a client.
+11. The method of claim 1, wherein the policy key sends the at least one policy state to the policy server if the policy key detects a change in policy, as part of a periodic communication cycle, or at system start-up.
+12. The method of claim 1, wherein the policy key scans the client for at least one file, at least one executing process, or at least one registry key and registry key value.
+13. The method of claim 12, wherein scanning the client includes:
+determining whether the client has at least one of an antivirus program, am antispyware program, a security patch, or a peer-to-peer program that is on the client.
+14. The method of claim 12, wherein scanning the client includes:
+identifying a version number for the at least one program for ensuring an up-to-date compliance, and the policy state identifies whether the at least one program complies with the policy.
+15. The method of claim 1, wherein the policy state is a Pass/Fail, and the policy key sends only a Pass or Fail result of the policy evaluation to the policy server.
+16. The method of claim 1, wherein a policy is a set of instructions specifying a configuration of the client.
+17. The method of claim 1, wherein the policy key communicates with the policy server over an HTTP connection.
+18. The method of claim 1, further comprising presenting a web page to the client for informing the client of non-compliance.
+19. The method of claim 1, further comprising:
+determining a total number of clients sending policy states;
+determining a support rate for the policy states that can be handled by the policy server;
+determining a contact period based on a variable algorithm that uses the total number of active clients and the support rate; and
+informing the policy key of the contact period on a periodic communication cycle.
+20. The method of claim 5, wherein the policy server requests the policy key to delay the sending of the at least one policy state in response to at least one overload condition.
+21. The method of claim 20, wherein the at least one overload condition is a result of multiple users accessing a network.
+22. The method of claim 1, wherein the policy server includes a policy profile that reports a component that is scanned on the client and a corresponding policy state that describes whether the component is installed, absent, corrupt, failed, or accepted.
+23. The method of claim 22, wherein the policy server maintains decision logic for enforcing the at least one policy, and the client is policy compliant if the configuration of the client matches the at least one policy.
+24. The method of claim 22, wherein the policy server determines whether network access is granted based on the policy profile.
+25. The method of claim 1, wherein the configuring a network access includes preventing unauthorized access to wired, wireless, and virtual private networks.
+26. The method of claim 1, wherein the policy server prioritizes a plurality of policy states and responds to the client in order of priority.
+27. The method of claim 3, wherein the Layer 2 blocking restricts an end point solution on the client from communicating with at least one node on a network of the client.
+28. The method of claim 3, wherein the Layer 2 blocking prevents the endpoint solution on the client from discovering an endpoint solution on at least one node in a sub-network of the client.
+29. A system for self-scaling generic policy tracking, comprising:
+a policy key on a client, for
+scanning the client for at least one configuration;
+assessing a policy compliance based on the configuration; and
+reporting at least one policy state to a policy server,
+the policy server, for
+receiving the at least one policy state from the policy key; and
+configuring network access to the client based on the at least one policy state, wherein the configuring a network access includes opening or closing network access to the client.
+30. The system of claim 29, wherein the policy server requests the policy key to perform a Layer 2 blocking at the client if at least one policy state is not compliant, and if the policy key cannot perform the Layer 2 blocking, the policy key responds to the policy server, and the policy server performs a Layer 3 blocking.
+31. The system of claim 30, wherein the policy key performs the Layer 2 blocking by:
+preventing the client from communicating to other nodes on a subnet of the client by poisoning an Address Resolution Protocol (ARP) table to route back all communication attempts to the client; and
+preventing the client from communicating to other nodes outside the subnet by removing a default gateway and at least one route from a route table for providing no paths out of the client to a network available to the client;
+opening communication to a remediation service by entering a route in the route table that corresponds to a predetermined remediation server; and
+redirecting Domain Name Server (DNS) requests to remediation services by changing a DNS of the at least one client to a remediation server.
+32. The system of claim 30, further comprising:
+a Layer 3 device connected to the server and the client for managing network communications,
+wherein the policy server blocks the client at the Layer 3 device if the policy key cannot perform the Layer 2 blocking.
+33. The method of claim 32, wherein the policy server:
+listens for network activity from the Layer 3 device at an IP address of the client;
+evaluates a policy management for the client based on the IP address; and
+performs a Layer 3 blocking of the client based on the IP address at the Layer 3 device.
+34. The system of claim 32, wherein the Layer 3 device is a router, a switch, a hub, or a port-based switch.
+35. The system of claim 32, wherein the client is a computer, a phone, or mobile communication device, an internet protocol based device, or any device that is communicatively connected to a network.
+36. The system of claim 22, wherein the policy server enforces policy, and does not evaluate policy.
+37. The system of claim 29, further comprising:
+a load balancer for offloading the policy server and redirecting the at least one policy profile to one or more application clusters.
+38. The system of claim 29, further comprising:
+at least one application cluster for increasing a scalability of the system.
+39. A method for network administration control, comprising:
+preventing at least one client from communicating to nodes on a subnet of the at least one client by poisoning an Address Resolution Protocol (ARP) table to route back all communication attempts to the at least one client;
+preventing the at least one client from communicating to nodes outside the subnet by removing a default gateway and at least one route from a route table for providing no paths out of the at least one client to an outside network;
+allowing communication to a remediation service by providing a route in the route table that corresponds to a predetermined remediation server; and
+redirecting Domain Name Server (DNS) requests to remediation services by changing a DNS of the at least one client to a remediation server.
+40. The method of claim 39, wherein the poisoning an ARP table comprises:
+removing an IP addresses of a dynamic type having an associated Media Access Control (MAC), and
+inserting the IP addresses with a static type and a MAC address of the client.
+41. The method of claim 39, wherein the removing a default gateway and all routes from the route table that allow the client to connect to machines on the subnet.
+42. The method of claim 39, wherein the remediation service is a messaging service that presents a web page to the at least one client for informing the at least one client of at least one policy that needs to be installed for meeting compliance and restoring network access.
+43. The method of claim 39, further comprising a degrading blocking scheme that includes:
+determining whether the at least one client is Dynamic Host Control Protocol (DHCP) enabled, and, if the at least one client is not DHCP enabled,
+informing a policy server through a policy key that a Layer 2 blocking can not be performed at the at least one client, and, in response, at the policy server,
+blocking the at least one client at Layer 3.
+44. The method of claim 39, further comprising:
+determining whether the client has privelages to alter the ARP table, the route table, and the DNS, and if privileges are not available,
+informing a policy server through a policy key that a Layer 2 blocking can not be performed at the at least one client, and, in response, at the policy server,
+blocking the at least one client at Layer 3.
+45. A system for network administration control, comprising:
+a policy key on at least one client, for
+scanning the at least one client for at least one configuration;
+assessing at least one policy compliance based on the configuration; and
+reporting a policy profile that identifies a policy state of the at least one policy compliance to a policy server, and
+a policy server, for
+receiving the policy profile from the policy key regarding the policy state of the at least one policy compliance of the at least one client;
+evaluating at least one policy applying to the at least one client;
+determining whether network access should be granted to the at least one client based on the policy state in view of the at least one policy; and
+configuring network access to at least one endpoint solution of the at least one client if at least one policy state is not compliant.
+46. The system of claim 45, further comprising:
+an Address Resolution Protocol (ARP), wherein the policy key poisons the ARP table for routing back all communication attempts to the at least one client for preventing the client from communicating to other nodes on a subnet of the client
+47. The system of claim 45, further comprising:
+a route table, wherein the policy key removes a default gateway and at least one route from the route table for providing no path out of the client to a network available to the client for preventing a client from communicating to other nodes outside the subnet
+48. The system of claim 47, wherein the policy key
+opens communication to a remediation service by providing a route in the route table that corresponds to a predetermined remediation server.
+49. The system of claim 45, wherein the policy key
+redirects Domain Name Server (DNS) requests to the remediation server such that the at least one client is redirected to the remediation server.
+50. The method of claim 39, wherein the policy key:
+removes an IP addresses of a dynamic type having an associated Media Access Control (MAC), and
+inserts the IP addresses with a static type and a MAC address of the client.
+51. The system of claim 45, further comprising:
+a Layer 3 device connected to the server for reporting an activity of an IP address corresponding to the at least one client, wherein the Layer 3 device is at least one of a router, switch, hub, or port-switch.
+52. The system of claim 45, further comprising:
+at least one remediation server connected to the server for providing remediation services to the at least one client.
+53. The system of claim 46, further comprising:
+a meter for cycling multiple clients in and out of the access table to schedule the configuring of the network access.

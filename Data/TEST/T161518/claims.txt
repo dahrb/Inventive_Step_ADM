@@ -1,0 +1,98 @@
+--- PAGE 1 ---
+Main Request
+
+Claims
+
+1. A method comprising:
+
+a) generating a first light signal adjacent a pathway of an automated banking machine
+with a light source, wherein the light signal includes an intensity that changes over time in a
+first pattern, wherein the automated banking machine includes a cash dispenser;
+
+b) detecting light with a light detector positioned adjacent the pathway;
+
+c) determining with the machine, whether an intensity of the detected light varies in
+time with a pattern that corresponds to the first pattern;
+
+d1) responsive to (c), moving at least one item through the pathway if the machine
+determines that the intensity of the detected light varies in time with a pattern that
+corresponds to the first pattern;
+
+d2) responsive to (c), placing the automated banking machine in an out of service
+state if the machine determines that the intensity of the detected light does not vary in time
+
+with a pattern that corresponds to the first pattern.
+
+2. The method according to claim 1, wherein the at least one item includes a sheet of
+currency.
+3. The method according to claim 1, further comprising:
+
+e) generating a message if the machine determines that the intensity of the detected
+light does not vary in time with a pattern that corresponds to the first pattern;
+
+f) sending with the machine the message to a remote server.
+
+4. The method according to claim 1, wherein a sensor circuit includes the light source
+and the light detector, further comprising:
+
+g) periodically calibrating the sensor circuit.
+
+5. The method according to claim 4, wherein step (g) includes:
+gi) turning the light source off;
+g2) detecting a second light signal with the light detector;
+g3) determining with the sensor circuit a baseline voltage value associated with the
+
+detected second light signal;
+
+--- PAGE 2 ---
+Main Request
+
+g4) operating the light source to produce a third light signal with a range of light
+intensities;
+
+gs) detecting the third light signal with the light detector;
+
+go) determining with the sensor circuit a maximum voltage level value associated with
+the detected third light signal;
+
+g7) determining with the sensor circuit a lower threshold value responsive to at least
+
+one of the baseline voltage value and the maximum voltage value.
+
+6. The method according to claim 5, wherein (c) includes:
+
+c1) generating a voltage value associated with the first light signal using the sensor
+circuit;
+
+c2) determining that the voltage value associated with the second light signal is at least
+
+one of equal to or greater than the lower threshold value.
+
+7. The method according to claim 5, further comprising:
+
+1) detecting a second light signal with the light detector;
+
+Jj) generating a voltage value associated with the second light signal using the sensor
+circuit;
+
+k) determining that the voltage value associated with the second light signal is at least
+one of equal to or less than the lower threshold value; and
+
+1) generating a message with the machine representative of the passageway being
+
+blocked.
+
+8. The method according to claim 5, further comprising:
+
+1) determining a re-calibration threshold value between the lower threshold value and
+the maximum voltage value;
+
+Jj) detecting a second light signal with the light detector;
+
+k) generating a voltage value associated with the second light signal using the sensor
+circuit;
+
+1) determining that the voltage value associated with the second light signal is at least
+one of equal to or less than the threshold value;
+
+m) re-performing (e).

@@ -1,0 +1,112 @@
+--- PAGE 1 ---
+PatXML 8/10 Steinbeis IAS
+Claims
+
+Claim 1. Computer-implemented method of augmenting a simulation model of
+a physical environment of a vehicle,
+comprising
+establishing, by means of a simulation encompassing modules such as
+
+“environment-geography”, “environment-weather’, “traffic”, “surrounding
+objects”, “sensors”, or “vehicle”, a deficiency of the simulation model, the
+deficiency pertaining to a certain setting within the physical environment, the
+setting being defined in terms of weather conditions,
+issuing instructions for capturing a scan of the setting, the instructions calling
+for certain sensor hardware to be employed in the capturing,
+receiving the scan, and
+remedying the deficiency by complementing the simulation model with the
+scan,
+characterized in that
+the setting is further defined in terms of a certain location, terrain, and physical
+object present within the setting and
+the instructions further call for certain boundary conditions to be met by the
+scan, such as relative height, speed, angle, or distance between the hardware
+and the object.
+
+Claim 2. Method as per Claim 1
+wherein
+the deficiency is established by a client and communicated to a server,
+by issuing the instructions, preferably through a Web portal, to a community of
+participants, the server mounts a field campaign among said community to
+capture the scan, and
+upon following the instructions, at least one of the participants uploads the
+scan to the server.
+
+Claim 3. Method as per Claim 2
+wherein
+prior to mounting the campaign, the server verifies the deficiency by
+transposing a simulated sensor having an input/output interface comparable to
+
+those of the defective model into the described setting containing the
+
+--- PAGE 2 ---
+PatXML 9/10 Steinbeis IAS
+
+described object, thus re-simulating the setting in an equally defective
+reference model and
+upon receipt, the server verifies the scan by complementing the defective
+reference model therewith, checking for adherence to the capturing
+instructions and plausibility criteria, and, if successful, awards a stipulated
+premium, such as gratuity, credits maintained by the server, or an incentive
+event, to the uploading participant.
+
+Claim 4. Method as per Claim 3
+wherein
+throughout the campaign, the server visualizes the deficiency based on the
+deficient reference model and,
+when verifying the scan, the server presents a re-visualization based on the
+complemented reference model.
+
+Claim 5. Method as per Claim 3 or Claim 4
+
+wherein
+the server quotes a price for the field campaign to the client based on the
+defective reference model, such as depending on severity of the deficiency,
+minimum number of the participants, certain aspects of the setting, or the
+called-for hardware.
+
+Claim 6. Method as per any of Claim 3 through Ciaim 5
+wherein,
+when mounting the campaign, the server identifies members of the community
+having access to the called-for hardware and location.
+
+Claim 7. Method as per any of Claim 3 through Claim 6
+wherein,
+when mounting the campaign, the premium is stipulated by means of bidding
+competition, auction, or at a fixed level.
+
+Claim 8. Method as per any of Claim 2 through Claim 7
+wherein
+the hardware comprises at least one primary sensor, such as a radar, lidar,
+optical, stereo-optical, or ultrasonic sensing system, and auxiliaries, such as a
+
+camera, GPS, distance, distance to ground, orientation, temperature, or
+
+--- PAGE 3 ---
+PatXML 10/10 Steinbeis IAS
+
+humidity sensor, preferably integrated in a mobile device such as a
+smartphone, tablet PC, or optical head-mounted display.
+
+Claim 9. Method as per Claim 8
+wherein
+the scan is validated by means of the auxiliaries or comparison to further scans
+uploaded by the community or versus commercially available information such
+as weather forecasts.
+
+Claim 10. Method as per any of Claim 2 through Claim 9
+wherein,
+when mounting the campaign, based on availability of prior scans, the server
+optionally substitutes the setting for a similar setting relevant to the pertinent
+deficiency.
+
+Claim 11. Data processing apparatus having means for carrying out a method
+as per any of the preceding claims.
+
+Claim 12. | Computer program comprising instructions which, when the program
+is executed by a computer, cause the computer to carry out the steps of a
+method as per any of Claim 1 through Claim 10.
+
+Claim 13. | Computer-readable data carrier having stored thereon the computer
+
+program of Claim 11.

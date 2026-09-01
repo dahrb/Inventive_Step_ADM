@@ -1,0 +1,133 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+1 Main Request
+
+Clean copy
+
+Amended Set of Claims 1 to 13
+
+1. - A universal flash storage, UFS, system comprising:
+a doorbell register (30) having a number of bits equal to a number of transfer request
+slots handled by the UFS system;
+a completion notification register (32) having a same number of bits; and
+a control system (16, 20) operatively coupled to the doorbell register (30) and the
+completion notification register (32) and configured to:
+set a doorbell bit in the doorbell register (30) for a send request start;
+issue a transfer request to a device (12), wherein the send request start is
+associated with the transfer request;
+set a completion bit in the completion notification register (32) on transfer
+_ request completion; and
+
+clear the doorbell bit on the transfer request completion.
+
+2. An embedded Multi-Media Controller, eMMC, memory system comprising:
+a doorbell register (30) having a number of bits equal to a number of transfer request
+slots handled by the eMMC memory system;
+a completion notification register (32) having a same number of bits; and
+a control system (16, 20) operatively coupled to the doorbell register (30) and the
+completion notification register (32) and configured to:
+set a doorbell bit in the doorbell register (30) for a send request start; .
+issue a transfer request to a device (12), wherein the send request start is
+associated with the transfer request; .
+set a completion bit in the completion notification register (32) on transfer
+request completion; and .
+
+clear the doorbell bit on the transfer request completion.
+
+3. The system of claim 1 or 2, further comprising a communication interface (18)
+
+configured to couple a host (10° ) to the device (12).
+
+4. The system of claim 1 or 2, wherein the control system (16, 20) is further
+
+-configured to clear the completion bit after processing completion of the transfer request.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+2 Main’Request
+
+Clean copy |
+
+5. The system of claim 4, wherein the control system (16, 20) is further
+
+configured to reuse a slot associated with the completion bit after clearing the completion bit.
+
+6. The system of claim’ 1 or 2, wherein the transfer request includes a write
+
+command to write data to the device.
+
+7. The system of claim 1 or 2, wherein the transfer request includes a read
+
+command to read data from the device (12).
+
+8. The system of claim 1 or 2 integrated into the device (12), the device (12)
+
+selected from the group consisting of a set top box, an entertainment unit, a navigation device,
+
+a communications device, a fixed location data unit, a mobile location data unit, a mobile
+phone, a cellular phone, a computer, a portable computer, a desktop computer, a personal
+digital assistant, PDA, a monitor, a computer monitor, a television, a tuner, a radio, a satellite
+radio, a music player, a digital music player, a portable music player, a digital video player, a
+
+video player, a digital video disc, DVD, player, and a portable digital video player.
+
+9. A method of controlling a memory system, the memory system being an
+universal flash storage, UFS, system or an embedded Multi-Media Controller, eMMC,
+memory system, the UFS system comprising a doorbell register (30) having a number of bits
+equal to a number of transfer request slots handled by the UFS system , the eMMC memory
+system comprising a doorbell register (30) having a number of bits equal to a number of
+transfer request slots handled by the eMMC memory system, the method comprising:
+
+generating (112) a transfer request ina host;
+
+setting (116) a bit in the doorbell register (30) in the host identifying the
+transfer request;
+
+passing the transfer request to a device through a communication interface
+(18); | | |
+
+completing a transfer associated with the transfer request;
+
+clearing (122) the bit in the doorbell register (30) ; and
+
+_ setting (122) a completion bit in a completion register (32),
+10. The method of claim 9, wherein generating the transfer request comprises
+
+generating a read command to read data from the device. “
+
+--- PAGE 3 ---
+10
+
+3 | Main Request
+Clean copy
+
+11. The method of claim 9, wherein generating the transfer request comprises
+
+generating a write command to write data to the device.
+
+12. The method of claim 9, further comprising handling interrupts to the transfer
+
+request without need for a software lock.
+
+13. The method of claim 9, further comprising clearing the completion bit after
+processing completion of the transfer request; and reusing a slot associated with the
+
+completion bit after clearing the completion bit.

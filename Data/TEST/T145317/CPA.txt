@@ -1,0 +1,57 @@
+TITLE:
+Interactive data stream recording system
+
+TYPE:
+World International Patent Organisation
+
+ABSTRACT:
+A data recording system is disclosed that allows for selective recording of elements of a data stream. The data recording system can include a data stream processing system. The data stream processing system can further include a data capture and storage system, and a control system. The recording system can be controlled either by a user interface or by a separate automated system. The recording system can also operate in a single computing device, or it can operate over a data network. The control system generates control signals that cause the selected data from the data stream along with associated metadata to be recorded in a storage system. The metadata can include information about the external context of the overall data processing system that includes the data recording system. The metadata can also include such things as the time and date, the serial number of the media, or a file number. Also disclosed is a method for selectively recording data from a data stream, and storing the selected data and associated metadata in a verified data object (VDO). The VDO can be used for verifying various types of compliance.
+
+CLAIMS:
+1. A method of selectively recording data from a data stream, the method comprising the steps of: capturing raw data from said data stream; performing one or more analyses on said raw data; producing metadata associated with said raw data; based on said one or more analyses, generating one or more control signals for selecting data to be stored from said raw data; and storing said selected data and said metadata.
+2. A method as in claim 1 , wherein said raw data further comprises encrypted data.
+3. A method as in claim 2, wherein said step of performing one or more analyses further comprises the step of decrypting said encrypted data.
+4. A method as in claim 2, wherein: said step of performing one or more analyses further comprises the step of identifying one or more cryptographic keys corresponding to said encrypted data; and said storing step further comprises the step of storing said one or more cryptographic keys.
+5. A method of generating control signals for selectively recording data from a data stream over a data network, the method comprising the steps of: capturing raw data from said data stream; performing one or more analyses on said raw data; generating one or more control signals for selecting data to be stored from said raw data; and transmitting said one or more control signals over said data network.
+6. A method as in claim 5, wherein said transmitting step further comprises sending said control signals through a proxy.
+7. A method of using control signals to selectively record data from a data stream over a data network, the method comprising the steps of: receiving said one or more control signals over said data network; selecting data to be stored from said data stream based on said control signals; producing metadata associated with said raw data; and storing said selected data and said metadata.
+8. A method of selectively recording data from a data stream within a data processing and transmission system, the method comprising the steps of: capturing raw data being transmitted between an application server and a presentation server; creating a copy of said raw data in memory; collecting metadata associated with said raw data; delivering said raw data and said metadata to an intermediary server; queuing said raw data and said metadata for processing; processing said raw data and said metadata; creating a verified data object; and storing said verified data object.
+9. A method of using a data recording system to create one or more verified data objects to capture proof of creation and existence of a data stream, comprising the steps of: receiving a start recording signal; opening a session identifier; capturing data, further comprising the steps of: marking one or more segments; capturing data from a data stream; receiving an end segment marker; and repeating said capturing of data until a pause or stop signal occurs; generating a close session data packet; and combining said segments and associated metadata into a verified data object.
+10. A method as in claim 9, wherein said combining step further comprises the step of using metadata that includes external context data.
+11. A method as in claim 9, wherein said combining step further comprises the step of using metadata that includes system data.
+12. A method as in claim 1 1, wherein said combining step further comprises the step of using system data that includes a machine identification number.
+13. A method as in claim 1 1, wherein said combining step further comprises the step of using system data that includes a media identification number.
+14. A method as in claim 9, wherein said combining step further comprises the step of using metadata that includes records management data.
+15. A method as in claim 9, wherein said combining step further comprises the step of using metadata that includes access control data.
+16. A method as in claim 9, wherein said combining step further comprises the step of using metadata that includes digital auditing data.
+17. A method of selectively recording data from a data stream for use in a legacy system environment, the method comprising the steps of: capturing raw data from said data stream; performing one or more analyses on said raw data; producing metadata associated with said raw data; generating a control signal for selecting data to be stored from said raw data; converting said metadata and said selected data into an alternative data format; and storing said converted selected data and said converted metadata.
+18. A data recording system, comprising: a data stream processing system that includes, an input that receives a data stream from a data network; an output; and a control system coupled to said input for selectively passing a subset of data from said data stream to said output; and a long term data storage device coupled to said output.
+19. A data recording system as in claim 18, wherein said data stream processing system further comprises: a data capture system; and a data storage system.
+20. A data recording system as in claim 19, wherein said data capture system allows said data to be queued for subsequent processing by said control system.
+21. A data recording system as in claim 18, wherein said data recording system includes an external system that allows a user to control the data capture process by sending user control signals to said control system.
+22. A data recording system as in claim 21, wherein said external system further comprises a user interface.
+23. A data recording system as in claim 21, wherein said user control signals further comprise one or more of the signals stop, start, pause, or end.
+24. A data recording system as in claim 21, wherein said user control signals further comprise signals permitting processing of data previously stored in said data storage device.
+25. A data recording system as in claim 18, wherein said control system further comprises an integrity mechanism.
+26. A data recording systems as in claim 25 wherein said integrity mechanism further produces a checksum.
+27. A data recording systems as in claim 25 wherein said integrity mechanism further produces a digital signature.
+28. A data recording systems as in claim 25 wherein said integrity mechanism limits the ability of a user to alter the recorded data.
+29. A data recording system that enables a user to select data for recording by viewing a data stream, comprising: a user interface that displays said data stream to the user and generates control signals in response to input from said user for selecting data to be recorded; a control system for receiving said control signals; a data capture system for temporarily storing selected data from said data stream; and a data storage system for storing said data.
+30. A data recording system as in claim 29 wherein said user interface further comprises a computer display.
+31. A data recording system that automatically records selected data from a data stream, comprising: a data stream analyzer that generates control signals in response to one or more selection criteria for selecting data to be recorded; a control system for receiving said control signals; a data capture system for temporarily storing selected data from said data stream; and a data storage system for storing said data.
+32. A data recording system as in claim 31, wherein said data stream analyzer further comprises an automated means for analyzing the content of said data stream.
+33. A data recording system for operation over a data network, comprising: a control system, further comprising: a local proxy; and a control signal generator; one or more intermediary proxies; and a data capture and storage system, further comprising: a remote proxy; a control signal processor; a metadata generator; a temporary storage system; and a long term data storage system; whereby said control signal generator transmits control messages through said local proxy, said one or more said intermediary proxies, and said remote proxy causing said data capture and storage system to selectively capture data and store said data in said long term data storage system.
+34. An object generating system for generating one or more verified data objects that combine selected data from a data stream with associated metadata, comprising: a control system; and a data capture and storage system, further comprising: a control signal processor; a means for generating metadata; a temporary storage system; and a long term data storage system; whereby said control system transmits control messages causing said data capture and storage system to generate said verified data object and store said verified data object in said long term data storage system.
+35. A system as in claim 34, wherein said object generating system further comprises a means for verifying compliance.
+36. A system as in claim 35, wherein said means for verifying compliance further comprises a case law compliance verification system.
+37. A system as in claim 35, wherein said means for verifying compliance further comprises a regulation compliance verification system.
+38. A system as in claim 35, wherein said means for verifying compliance further comprises an audit trail compliance verification system.
+39. A system as in claim 34, wherein said means for generating metadata further comprises a system for storing all information necessary to recreate a complete event.
+40. A system as in claim 39, wherein said information is further combined into segments.
+41. A system as in claim 40, wherein said segments contain HTML information.
+42. A system as in claim 40, wherein said segments further comprise dynamic content information.
+43. A system as in claim 42, wherein said dynamic content information further comprises executable computer code embedded in the recorded data stream.
+44. A system as in claim 43, wherein said executable computer code further comprises one or more JavaScript objects.
+45. A system as in claim 40, wherein said segments further comprise encryption keys.
+46. A system as in claim 40, wherein said segments further comprise indices for searching previously recorded data.
+47. A system as in claim 40, wherein said segments further comprise XML data tags.

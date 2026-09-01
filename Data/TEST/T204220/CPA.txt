@@ -1,0 +1,72 @@
+Title: Method for writing data into flash memory apparatus, flash memory apparatus, and storage system
+
+Abstract: A flash memory apparatus for controlling storage of data comprises a plurality of blocks for storing data and a controller. Each block includes a plurality of pages. The controller receives first target data and identifies a first block to store the first target data. Then, the controller divides the first target data into two parts. A size of a first part is equal to the available capacity of the first block. And a size of a second part is equal to the size of the first target data minus the size of the first part. The controller further determines a second block that has stored data but is not full. At last, the controller writes the first part into the first block and write the second part into the second block.
+
+Type: US Patent
+
+Claims: 
+
+1. A flash memory apparatus for controlling storage of data, comprising:
+a plurality of blocks configured to store data, wherein each block includes a plurality of pages; and
+a controller configured to receive first target data;
+identify a first block to store the first target data, wherein an available capacity of the first block is less than a size of the first target data, wherein the available capacity of the first block is determined by subtracting a reduced capacity of the first block from a total capacity of the first block, wherein the reduced capacity of the first block is caused by one or more unavailable pages in the first block;
+divide the first target data into two parts, wherein a size of a first part of the first target data is equal to the available capacity of the first block, and wherein a size of a second part of the first target data is equal to the size of the first target data minus the size of the first part of the first target data;
+determine a second block that has stored data but is not full;
+write the first part of the first target data into the first block; and
+write the second part of the first target data into the second block.
+2. The flash memory apparatus according to claim 1, wherein the second block is a preset block.
+3. The flash memory apparatus according to claim 1, wherein the second block has been attached to a data flag, which is used to indicate the second block has stored data but is not full; and wherein
+the controller is configured to determine the second block according to the data flag.
+4. The flash memory apparatus according to claim 3, wherein the controller is further configured to receive second target data;
+identify a third block to store the second target data, wherein an available capacity of the third block is less than a size of the second target data, wherein the available capacity of the third block is determined by subtracting a reduced capacity of the third block from a total capacity of the third block, wherein the reduced capacity of the third block is caused by one or more unavailable pages in the third block;
+divide the second target data into two parts, wherein a size of a first part of the second target data is equal to the available capacity of the third block, and wherein a size of a second part is equal to the size of the second target data minus the size of the first part of the third block;
+write the first part of the second target data into the third block;
+write the second part of the second target data into the second block; and
+attach the data flag to the second block.
+5. A flash memory apparatus for controlling storage of data, comprising:
+a plurality of blocks configured to store data, wherein each block includes a plurality of pages; and
+a controller configured to receive first target data;
+identify a first block to store the first target data, wherein an available capacity of the first block is less than a size of the first target data, wherein the available capacity of the first block is determined by subtracting a reduced capacity of the first block from a total capacity of the first block, wherein the reduced capacity of the first block is caused by one or more unavailable pages in the first block;
+obtain a overflow part of the first target data by writing the first target data into the first block;
+determine a second block that has stored data but is not full; and
+write the overflow part of the first target data into the second block.
+6. The flash memory apparatus according to claim 5, wherein the second block is a preset block.
+7. The flash memory apparatus according to claim 5, wherein the second block has been attached to a data flag, which is used to indicate the second block has stored data but is not full; and wherein
+the controller is configured to determine the second block according to the data flag.
+8. The flash memory apparatus according to claim 5, wherein a size of the overflow part of the first target data is equal to the size of the first target data minus the available capacity of the first block.
+9. The flash memory apparatus according to claim 8, wherein the controller is further configured to receive second target data;
+identify a third block to store the second target data, wherein an available capacity of the third block is less than a size of the second target data, wherein the available capacity of the third block is determined by subtracting a reduced capacity of the third block from a total capacity of the third block, wherein the reduced capacity of the third block is caused by one or more unavailable pages in the third block;
+obtain a overflow part of the second target data by writing the second target data into the third block;
+write the overflow part of the second target data into the second block; and
+attach the data flag to the second block.
+10. A method for a flash memory apparatus controlling storage of data, wherein the flash memory apparatus includes a controller and a plurality of blocks, and wherein each block includes a plurality of pages, the method performed by the controller comprising:
+receiving first target data;
+identifying a first block to store the first target data, wherein an available capacity of the first block is less than a size of the first target data, wherein the available capacity of the first block is determined by subtracting a reduced capacity of the first block from a total capacity of the first block, wherein the reduced capacity of the first block is caused by one or more unavailable pages in the first block;
+dividing the first target data into two parts, wherein a size of a first part of the first target data is equal to the available capacity of the first block, and wherein a size of a second part of the first target data is equal to the size of the first target data minus the size of the first part of the first target data;
+determining a second block that has stored data but is not full;
+writing the first part of the first target data into the first block; and
+writing the second part of the first target data into the second block.
+11. The method according to claim 10, wherein the second block is a preset block.
+12. The method according to claim 10, wherein the second block has been attached to a data flag, which is used to indicate the second block has stored data but is not full; and the step of determining a second block comprises determining the second block according to the data flag.
+13. The method according to claim 12, wherein the method further comprises:
+receiving second target data;
+identifying a third block to store the second target data, wherein an available capacity of the third block is less than a size of the second target data, wherein the available capacity of the third block is determined by subtracting a reduced capacity of the third block from a total capacity of the third block, wherein the reduced capacity of the third block is caused by one or more unavailable pages in the third block;
+dividing the second target data into two parts, wherein a size of a first part of the second target data is equal to the available capacity of the third block, and wherein a size of a second part is equal to the size of the second target data minus the size of the first part of the third block;
+writing the first part of the second target data into the third block;
+writing the second part of the second target data into the second block; and
+attaching the data flag to the second block.
+14. A method for a flash memory apparatus controlling storage of data, wherein the flash memory apparatus includes a controller and a plurality of blocks, and wherein each block includes a plurality of pages, the method performed by the controller comprising:
+receiving first target data;
+identifying a first block to store the first target data, wherein an available capacity of the first block is less than a size of the first target data, wherein the available capacity of the first block is determined by subtracting a reduced capacity of the first block from a total capacity of the first block, wherein the reduced capacity of the first block is caused by one or more unavailable pages in the first block;
+obtaining a overflow part of the first target data by writing the first target data into the first block;
+determining a second block that has stored data but is not full; and
+writing the overflow part of the first target data into the second block.
+15. The method according to claim 14, wherein the second block is a preset block.
+16. The method according to claim 14, wherein the second block has been attached to a data flag, which is used to indicate the second block has stored data but is not full; and
+wherein the step of determining a second block comprises determining the second block according to the data flag.
+17. The method according to claim 16, wherein the method further comprises:
+receiving second target data;
+identifying a third block to store the second target data, wherein an available capacity of the third block is less than a size of the second target data, wherein the available capacity of the third block is determined by subtracting a reduced capacity of the third block from a total capacity of the third block, wherein the reduced capacity of the third block is caused by one or more unavailable pages in the third block;
+obtaining a overflow part of the second target data by writing the second target data into the third block;
+writing the overflow part of the second target data into the second block; and
+attaching the data flag to the second block.

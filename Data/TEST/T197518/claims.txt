@@ -1,0 +1,157 @@
+--- PAGE 1 ---
+MAIN REQUEST
+Amended Claims 14705805.1
+FRK141EP / FKA11110CNO1 March 2021
+
+1.
+
+2.
+
+1
+
+A system for providing drug library to a medical device (31, 32) located in a hospital facility,
+
+the system comprising:
+
+- alocal network (33) of the hospital facility, and
+
+- atleast one medical device (31, 32) for administering a drug to a patient, the at least
+one medical device (31, 32) being located in the hospital facility and connected to the
+
+local network (33),
+
+characterized by
+
+a drug library server (1) connected to the local network (33) of the hospital facility via a
+public communication network (2) and constituted to provide drug library data to the at
+least one medical device (31, 32) via the public communication network (2), wherein the
+system comprises at least one communication device (40, 41) connected to the local
+network (33) and comprising a web client (400, 410) for communicating with the drug
+library server (1) via the public communication network (2), wherein the public
+communication network (2) is the internet and the drug library server (1) hosts a web server
+(10) configured to provide for a data communication with the web client (400, 410) of the
+at least one communication device (40, 41), wherein the drug library server (1) is
+constituted to provide a device discovery tool (411) to the at least one communication
+device (40, 41), the device discovery tool (411) being operative to gather information about
+the at least one medical device (31, 32) installed within the hospital facility, wherein the at
+least one communication device (40, 41) is operative to operate the device discovery tool
+(411) in the hospital facility to gather information about medical devices (31, 32) being
+installed in the hospital facility by scanning the local network (33) for medical devices (371,
+32) connected to the local network (33) to identify network addresses of the medical
+devices (31, 32) in the local network (33), wherein the at least one communication device
+
+(40, 41) is operative to upload said information to the drug library server (1).
+
+The system according to one claim 1, characterized in that the system is constituted to
+
+allow a user, by means of the at least one communication device (40, 41), to access the
+
+drug library server (1) via the public communication network (2) in order to
+
+- create and share a drug library (123), the drug library (123) containing data relating to
+drugs to be administered to a patient by means of the at least one medical device (31,
+32), and/or
+
+--- PAGE 2 ---
+MAIN REQUEST
+Amended Claims 14705805.1
+FRK141EP / FKA11110CNO1 March 2021
+
+2
+
+- create and share a configuration (122), the configuration (122) defining operational
+rules of the at least one medical device (31, 32), and/or
+
+- create and share a care area (124), wherein the care area (124) corresponds to a
+combination of a configuration (122) and a drug library (123) and is assigned to a
+subarea in the hospital facility, and/or
+
+- create and share a data set (125), the data set (125) representing a group of care areas
+(124).
+
+3. The system according to one of the preceding claims, characterized in that the device
+discovery tool (411) is configured to extract information of a log file of a rack (31) about
+infusion pumps (32) being installed on the rack (31) and indicating when a particular
+infusion pump (32) has been connected to or disconnected from the rack (31), wherein the
+device discovery tool (411) is operative to upload said information to the drug library server
+(1), the drug library server (1) being operative to analyse the information and associate it
+
+with localization data of the rack (31) stored on the drug library server (1).
+
+4. The system according to one of the preceding claims, characterized in that a
+communication device (41) located in the hospital facility is operative to scan a barcode
+(8) attached to the at least one medical device (31, 32) and identifying the at least one
+medical device (31, 32) in order to access a communication interface (310) of the at least
+one medical device (31, 32).
+
+5. The system according to one of the preceding claims, characterized in that the at least
+one communication device (40, 41) is operative, for installing drug library data on the at
+least one medical device (31, 32), to download the drug library data from the drug library
+server (1) to the at least one communication device (40, 41) and to transfer the drug library
+data from the at least one communication device (40, 41) to the at least one medical device
+(31, 32).
+
+6. The system according to claim 5, characterized in that the at least one communication
+
+device (40, 41) is operative, for transferring the drug library data from the at least one
+
+--- PAGE 3 ---
+MAIN REQUEST
+Amended Claims 14705805.1
+FRK141EP / FKA11110CNO1 March 2021
+
+3
+
+communication device (40, 41) to the at least one medical device (31, 32), to scan a
+barcode (8) of the at least one medical device (31, 32), wherein the at least one medical
+device (31, 32) is further operative, upon scanning said barcode (8), to access a
+communication interface (310) of the at least one medical device (31, 32) and transfer the
+
+drug library data to the at least one medical device (31, 32).
+
+7. The system according to one of claims 1 to 4, comprising an internal distribution server
+located within the local network (33) of the hospital facility, the internal distribution server
+being operative, for installing drug library data on the at least one medical device (31, 32),
+to download the drug library data from the drug library server (1) to the internal distribution
+server and to transfer the drug library data from the internal distribution server to the at
+
+least one medical device (31, 32).
+
+8. A method for providing drug library data to a medical device (31, 32) located in a hospital
+facility, the method comprising:
+
+- _ installing drug library data on at least one medical device (31, 32) for administering a
+
+drug to a patient, the at least one medical device (31, 32) being located in a hospital
+
+facility and connected to a local network (33) of the hospital facility,
+
+characterized in
+
+that the drug library data is provided to the at least one medical device (31, 32) by a drug
+library server (1) connected to the local network (3) of the hospital facility via a public
+communication network (2), wherein at least one communication device (40, 41)
+connected to the local network (33) and comprising a web client (400, 410) communicates
+with the drug library server (1) via the public communication network (2), wherein the public
+communication network (2) is the internet and the drug library server (1) hosts a web server
+(10) configured to provide for a data communication with the web client (400, 410) of the
+at least one communication device (40, 41), wherein the drug library server (1) provides a
+device discovery tool (411) to the at least one communication device (40, 41), the device
+discovery tool (411) being operative to gather information about the at least one medical
+device (31, 32) installed within the hospital facility, wherein the device discovery tool (411)
+
+is operated on the at least one communication device (40, 41) within the hospital facility to
+
+--- PAGE 4 ---
+MAIN REQUEST
+Amended Claims 14705805.1
+FRK141EP / FKA11110CNO1 March 2021
+
+4
+
+gather information about medical devices (31, 32) being installed within the hospital facility
+by scanning the local network (33) for medical devices (31, 32) connected to the local
+network (33) to identify network addresses of the medical devices (31, 32) in the local
+network (33), wherein the at least one communication device (40, 41) uploads said
+
+information to the drug library server (1).

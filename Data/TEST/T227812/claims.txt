@@ -1,0 +1,143 @@
+--- PAGE 1 ---
+Main Request
+
+Claims
+
+1. A computer-implemented method, comprising:
+at a portable electronic device with a touch screen display,
+displaying at least a portion of a web page on the touch screen display,
+wherein the web page comprises a plurality of boxes of content (6006);
+detecting a first gesture at a location on the displayed portion of the web page (6010);
+determining a first box in the plurality of boxes at the location of the gesture (6012);
+enlarging and translating the first box so as to substantially center the first box on the
+touch screen display (6020);
+while the first box is enlarged, detecting a second gesture on a second enlarged box
+other than the first box (6040); and,
+in response to detecting the second gesture, substantially centering the second enlarged
+
+box on the touch screen display (6042).
+
+2. The method of claim 1, including:
+prior to displaying at least a portion of a web page, determining borders, margins,
+and/or paddings for the plurality of boxes that are specified in the web page (6002); and
+adjusting the borders, margins, and/or paddings for the plurality of boxes for display on
+
+the touch screen display (6004).
+
+3. The method of claim | or 2, wherein:
+the web page has a document width and a document length;
+the touch screen display has a display width; and
+displaying at least a portion of the web page comprises scaling the document width to
+
+fit within the display width independent of the document length (6008).
+
+4. The method of claim 3 wherein:
+the touch screen display is rectangular with a short axis and a long axis;
+the display width corresponds to the short axis when the web page is seen in portrait
+
+view; and
+
+- 38 -
+
+--- PAGE 2 ---
+10.
+
+11.
+
+the display width corresponds to the long axis when the web page is seen in landscape
+
+view.
+
+The method of any one of the preceding claims, wherein the plurality of boxes are
+
+defined by a style sheet language.
+
+The method of any one of the preceding claims, wherein: the web page has an
+associated render tree with a plurality of nodes; and
+
+determining the first box at the location of the first gesture comprises:
+
+traversing down the render tree to determine a first node in the plurality of nodes that
+corresponds to the detected location of the first gesture (6014);
+
+traversing up the render tree from the first node to a closest parent node that contains a
+logical grouping of content (6016); and
+
+identifying content corresponding to the closest parent node as the first box (6018).
+
+The method of claim 6, wherein the logical grouping of content comprises a
+
+paragraph, an image, a plugin object, or a table.
+
+The method of claim 6 or 7, wherein the closest parent node is a replaced inline, a
+
+block, an inline block, or an inline table.
+
+The method of any one of the preceding claims, wherein enlarging comprises
+expanding the first box so that the width of the first box is substantially the same as the
+width of the touch screen display (6024).
+
+The method of any one of the preceding claims, including resizing text in the enlarged
+first box to meet or exceed a predetermined minimum text size on the touch screen
+
+display (6026).
+
+The method of any one of the preceding claims, including: detecting a third gesture on
+enlarged first box (6034), and in response to detecting the third gesture, reducing in
+
+size the displayed portion of the web page (6036).
+
+The method of any one of the preceding claims, including:
+
+- 39 -
+
+--- PAGE 3 ---
+13.
+
+14.
+
+detecting a change in orientation of the device (6054) , and in response to detecting the
+change in orientation of the device, rotating the displayed portion of the web page on
+
+the touch screen display by 90 degrees (6056).
+
+A portable electronic device (100), comprising:
+
+a touch screen display (112);
+
+one or more processors (120);
+
+memory (102); and
+
+one or more programs, wherein the one or more programs are stored in the memory
+(102) and configured to be executed by the one or more processors (120), the one or
+more programs including:
+
+instructions for displaying at least a portion of a web page (3912) on the touch screen
+display (112), wherein the web page (3912) comprises a plurality of boxes of content
+(3914);
+
+instructions for detecting a first gesture at a location on the displayed portion of the web
+page (3912);
+
+instructions for determining a first box (3914-5) in the plurality of boxes (3914) at the
+location of the first gesture (3923);
+
+instructions for enlarging and translating the first box (3914-5) so as to substantially
+center the first box (3914-5) on the touch screen display (112);
+
+instructions for, while the first box is enlarged, detecting a second gesture (3927, 3935)
+on a second enlarged box (3914-4, 3914-6); other than the first enlarged box (3914-5)
+on the touch screen display (112); and
+
+instructions for in response to detecting the second gesture (3927, 3935), substantially
+
+centering the second enlarged box (3914-4, 3914-6) on the touch screen display (6042).
+
+A computer-program product with instructions configured for execution by one or more
+processors (120), which when executed by a portable electronic device (100) with a
+touch screen display (112), cause the device (100) to: perform the method of any one of
+
+claims 1 to 12.
+
+- 40 -

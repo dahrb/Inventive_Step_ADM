@@ -1,0 +1,260 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-12-—
+MAIN REQUEST
+
+CLAIMS
+
+1. A computer hardware-implemented cryptographic
+method comprising a modular polynomial reduction
+operation in a binary finite field, the modular
+
+polynomial reduction operation comprising:
+
+precomputing and storing in memory a polynomial
+
+constant u(x) representing a bit-scaled reciprocal of a
+
+multi-word polynomial modulus m(x) having a length
+
+defined by a number of words;
+
+estimating an approximate polynomial quotient
+
+q(x) for a polynomial p(x) to be reduced modulo m(x),
+wherein said estimating is executed upon p(x) in a
+
+computation unit by a polynomial multiplication over the
+
+binary finite field by said constant u(x);
+
+characterized by:
+
+generating in a random number generator a
+
+random polynomial error value E(x) having a degree that
+
+falls within a predetermined range and applying said
+
+polynomial error value to said approximate polynomial
+
+quotient to obtain a randomized polynomial quotient q' (x)
+
+= q(x) + E(x); and
+
+calculating a polynomial remainder r'(x) = p(x)
+
++ q' (x) -m(x) in Said computation unit by performing word-
+
+Size shifts, said remainder r'(x) being of higher degree
+
+than said modulus m(x) but congruent to p(x) modulo m(x)
+
+and where the degree of p(x) is less than or equal to
+
+2k+w, w being a word size in bits of the computer
+
+hardware and k being the length in bit number of the
+
+words representing the modulus m(x).
+
+2. The method of claim 1 wherein precomputing said
+
+polynomial constant u(x) is performed according to the
+
+equation u(x) = x***/m(x).
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+-13-
+
+MAIN REQUEST
+3. The method of claim 2 wherein the quotient is
+estimated as q(x) = ((p(x)/x**”) -u(x))/x*™*,
+4. The method of one of claims 1 to 3 wherein the
+random number generator has a specified error limit of
+one-half word, whereby 0 < deg(E(x)) < w/2.
+5. A computational hardware for executing a
+cryptographic program comprising a polynomial modular
+reduction operation over a binary finite field, the
+
+hardware comprising:
+
+fini
+
+a computation unit adapted
+
+te-field multiply and accumulate
+
+operands
+
+retrieved from a
+
+coef
+
+registers;
+
+random polynomial
+
+circuitry
+
+number generator in accord with pr
+
+as to carry out the method of
+
+6. The
+
+comprising operation parameter registers
+
+Said operations sequencer,
+
+one or
+
+Coe
+
+working registers,
+
+polynomial
+
+Ficient
+
+more of
+
+Fficients of
+
+intermediate results
+
+memory
+
+from a set of
+
+to perform word-wide
+
+steps on polynomial
+
+and
+
+polynomial
+
+working
+
+a random number
+
+E(x)
+
+error value
+
+falls within a predetermined range;
+
+an operations sequencer
+
+one of
+
+computation hardware of
+
+for
+
+(a)
+
+pointers
+
+(b)
+
+operands, (c)
+
+and
+
+information
+
+for intermediate results
+
+generator
+
+ogram
+
+information about word lengths of
+
+destination
+
+for generating a
+
+having a degree that
+
+comprising logic
+
+for controlling the computation unit and random
+
+instructions so
+
+claims 1 to 4.
+
+claim 5 further
+
+accessible by
+
+said registers containing any
+
+locating word-size
+
+polynomial operands within said memory or
+
+address
+
+of operation steps.
+
+7. The computation hardware of
+
+wherein the pre-stored polynomial constant u(x)
+
+one of
+
+claims 5 and 6
+
+in said
+
+--- PAGE 3 ---
+-14-
+MAIN REQUEST
+
+memory is obtained from a precomputation according to the
+
+equation u(x) = x***/m(x).
+
+8. The computation hardware of claim 7 wherein the
+
+estimation of said approximate polynomial quotient q(x)
+
+performed by said computation unit under control of said
+
+operations sequencer carrying out program instructions is
+
+done according to the equation
+q(x) = ((p(x) -x**) -u(x))/x™,
+
+9. The computation hardware of one of claims 5 to 8
+
+wherein the random number generator has a specified error
+
+4
+
+limit of one-half word, whereby 0 < deg(E(x)) < w/2.

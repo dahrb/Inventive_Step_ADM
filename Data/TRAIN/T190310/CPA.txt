@@ -1,0 +1,35 @@
+Title: 
+Composite IC card
+
+Abstract: 
+A composite IC card for controlling information of a plurality of different enterprises using an IC card in which a memory is divided into a plurality of storage areas and which has a code store section for storing a plurality of codes necessary to access the storage areas, a first code specify section for specifying a first code corresponding to each enterprise, a second code specify section for specifying a second code set according to the security level of each storage area, a code read section responsive to an instruction to access a desired storage areas from an external device for reading the first and second codes from the code store means, a code collate section for collating the externally inputted code with the code read by the code read section, and a section for allowing the access to the desired storage area thus instructed when all collations in the collate section result in a match.
+
+Type: US Patent
+
+Claims: 
+
+What is claimed is:
+1. A composite IC card for a plurality of different kinds of information systems, including:
+a control unit for receiving commands, designation codes from outside the IC card, said designation codes including first and second index codes, and for processing said commands and said designation codes from outside the IC card;
+a user storage area having a plurality of storage areas for storing information, said storage areas being classifiable into groups corresponding to different information systems and each storage area within one of said groups having a security level;
+means for storing enough of said designation codes to designate each of said storage areas as designated storage areas;
+first means for accessing one of said groups of said storage areas based on said first index code;
+second means for accessing at least one of said storage area within one of said groups of storage areas base on said second index code;
+first means for internally verifying said first code for said first accessing means;
+second means for internally verifying said second code for said second accessing means; and means for accessing said designated storage areas when said first accessing means verifies said first code and said second accessing means verifies said second code.
+2. A composite IC card according to claim 1 further including:
+means for counting errors when a verification of said first and second verifying means results in an error; and
+means for inhibiting access to any given one of said designated storage areas when said error count means counts a predetermined number of errors and stores an error count value for said given designated storage area.
+3. A composite IC card according to claim 2 wherein said error count means counts errors for each of said given designated storage areas so that when a plurality of said first and second codes are verified by said first and second verifying means and any one thereof results in error said error count means accumulates the count value of the error count means in each of said given designated storage area.
+4. A composite IC card according to claim 2 wherein said first and second verifying means includes means for storing the error count from said designated storage areas and said accessing means reads the error count from said designated storage areas.
+5. A composite IC card according to claim 2 further comprising reset means responsive to at least a particular input signal for resetting the count value of said error count means to zero.
+6. A composite IC card according to claim 5 wherein said particular input signal is a predetermined code selected from said first and second index codes.
+7. A composite IC card according to claim 5 wherein said particular input signal is a predetermined third signal.
+8. A composite IC card according to claim 5 wherein said reset means further includes means for effecting a judgment, when the particular input signal is inputted thereto, to determine whether the input signal is said first or second index code or a third predetermined code and means for resetting the count value of said error count means to zero only when said input signal is said first or second index code or the third code.
+9. A composite IC card according to claim 5, wherein said IC card further includes means for counting a number of resetting operations and means for inhibiting said reset means when said number reaches a predetermined value.
+10. A composite IC card according to claim 9, wherein said permanent lock means independently counts the number of resetting operations in each attempted access for each of said designated storage areas.
+11. A composite IC card according to claim 2 further including means for granting access to each of said storage areas in response to a particular input signal from an external device by resetting said inhibiting means.
+12. A composite IC card according to claim 11 wherein said particular input signal is a predetermined third code.
+13. A composite IC card according to claim 1 wherein said second accessing means comprises means for arbitrarily setting a specific second code necessary to access each of said designated storage areas according to said security level of each of said storage areas.
+14. A composite IC card according to claim 1 wherein said first and second accessing means are separately provided to be used in a case where information is read from said designated storage area and in a case where information is written in said designated storage area.
+15. A composite IC card according to claim 1 wherein said first accessing means comprises means for accessing a plurality of said groups based on a plurality of said first index codes.

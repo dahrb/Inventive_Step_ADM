@@ -1,0 +1,94 @@
+TITLE:
+Method and system for midstream transcoding of secure scalable packets in response to downstream requirements
+
+TYPE:
+US Patent
+
+ABSTRACT:
+A method and system for transcoding a stream of data packets are disclosed. The data packets are received from a source node and include data that are encrypted. The stream of data packets is operated on by a function that configures the stream according to downstream attributes, such as the attributes of a receiving node or of the communication channel. Significantly, the function is performed without decrypting the encrypted media data. The steam of data packets configured for the downstream attributes is sent to the receiving node. Because the encrypted data do not need to be decrypted and then encrypted again, the computational resources needed for transcoding the stream of data packets is significantly reduced, and the security of the data is not compromised.
+
+CLAIMS:
+1. In an intermediate node disposed between a source node and a plurality of receiving nodes in a network, a method for transcoding a stream of data packets, said method comprising the steps of:
+a) receiving said stream of data packets from said source node, wherein said stream of data packets comprises media data that are encrypted;
+b) performing a function on said stream of data packets, wherein said function is for configuring said stream of data packets according to attributes downstream of said intermediate node and wherein said function is performed without decrypting said media data; and
+c) sending to a receiving node a stream of encrypted data packets compatible with said attributes downstream of said intermediate node.
+2. The method for transcoding a stream of data packets as recited in claim 1 wherein said stream of data packets comprises media data that are encoded, wherein said function of said step b) is performed without decoding said media data.
+3. The method for transcoding a stream of data packets as recited in claim 1 wherein said step b) comprises the step of:
+truncating data packets in said stream of data packets at a point in each data packet selected according to said attributes downstream of said intermediate node.
+4. The method for transcoding a stream of data packets as recited in claim 1 wherein a data packet in said stream of data packets comprises a payload portion and a header portion, wherein said payload portion comprises said media data and wherein said header portion comprises information identifying points for truncating said payload portion according to said attributes downstream of said intermediate node.
+5. The method for transcoding a stream of data packets as recited in claim 4 wherein said points for truncating said payload portion are specified in said header portion.
+6. The method for transcoding a stream of data packets as recited in claim 4 wherein said points for truncating said payload portion are derived from said information identifying points for truncating said payload portion.
+7. The method for transcoding a stream of data packets as recited in claim 4 wherein said payload portion is encrypted and said header portion is unencrypted.
+8. The method for transcoding a stream of data packets as recited in claim 4 wherein said payload portion and said header portion are encrypted.
+9. The method for transcoding a stream of data packets as recited in claim 8 comprising the step of:
+decrypting only said header portion.
+10. The method for transcoding a stream of data packets as recited in claim 4 wherein said step b) comprises the steps of:
+selecting a truncation point according to said attributes downstream of said intermediate node; and
+truncating payload portions of data packets in said stream of data packets at said truncation point selected.
+11. The method for transcoding a stream of data packets as recited in claim 4 wherein said points for truncating said payload portion are specified according to an analysis.
+12. The method for transcoding a stream of data packets as recited in claim 11 wherein said analysis is a rate-distortion analysis.
+13. The method for transcoding a stream of data packets as recited in claim 4 wherein said step b) further comprises the steps of:
+accumulating in memory a subset of data packets in said data stream; and
+configuring said subset of data packets such that said subset satisfies said attributes downstream of said intermediate node.
+14. The method for transcoding a stream of data packets as recited in claim 1 wherein said step b) comprises the step of:
+eliminating data packets from said stream of data packets.
+15. The method for transcoding a stream of data packets as recited in claim 1 wherein said attributes downstream of said intermediate node comprise attributes of said receiving node.
+16. The method for transcoding a stream of data packets as recited in claim 15 comprising the steps of:
+receiving information from said receiving node; and
+determining said attributes of said receiving node using said information from said receiving node.
+17. The method for transcoding a stream of data packets as recited in claim 1 wherein said attributes downstream of said intermediate node comprise attributes of a communication channel linking said intermediate node and said receiving node.
+18. The method for transcoding a stream of data packets as recited in claim 1 wherein said media data are selected from the group comprising: video data, audio data, image data, graphic data, and web page data.
+19. A device for transcoding a stream of data packets, wherein said device is an intermediate node disposed between a source node and a plurality of receiving nodes in a network, said device comprising:
+a receiver adapted to receive said stream of data packets from a source node, wherein said stream of data packets comprises media data that are encrypted ;
+a transcoder coupled to said receiver and adapted to configure said stream of data packets according to attributes downstream of said device without decrypting said media data; and
+a transmitter coupled to said transcoder and adapted to send to a receiving node a stream of encrypted data packets compatible with said attributes downstream of said device.
+20. The device of claim 19 wherein said stream of data packets comprises media data that are encoded, wherein said transcoder is adapted to configure said stream of data packets according to said attributes of said receiving node without decoding said media data.
+21. The device of claim 19 wherein said transcoder is adapted to truncate data packets in said stream of data packets at a point in each data packet selected according to said attributes downstream of said device.
+22. The device of claim 19 wherein a data packet comprises a payload portion and a header portion, wherein said payload portion comprises said media data and wherein said header portion comprises information identifying points for truncating said payload portion according to said attributes downstream of said device.
+23. The device of claim 22 wherein said points for truncating said payload portion are specified in said header portion.
+24. The device of claim 22 wherein said points for truncating said payload portion are derived from said information identifying points for truncating said payload portion.
+25. The device of claim 22 wherein said payload portion is encrypted and said header portion is unencrypted.
+26. The device of claim 22 wherein said payload portion and said header portion are encrypted.
+27. The device of claim 26 comprising:
+a decrypter coupled to said transcoder, said decrypter adapted to decrypt said header portion.
+28. The device of claim 26 wherein said transcoder is further adapted to select a truncation point according to said attributes downstream of said device and to truncate payload portions of data packets in said stream of data packets at said truncation point selected.
+29. The device of claim 26 wherein said points for truncating said payload portion are specified according to an analysis.
+30. The device of claim 29 wherein said analysis is a rate-distortion analysis.
+31. The device of claim 26 comprising:
+a memory unit coupled to said transcoder, said memory unit adapted to accumulate a subset of data packets in said data stream;
+wherein said transcoder is further adapted to configure said subset of data packets such that said subset satisfies said attributes downstream of said device.
+32. The device of claim 19 wherein said transcoder is further adapted to eliminate data packets from said stream of data packets.
+33. The device of claim 19 wherein said attributes downstream of said device comprise attributes of said receiving node.
+34. The device of claim 33 wherein said transcoder is further adapted to receive information from said receiving node and to determine said attributes of said receiving node using said information from said receiving node.
+35. The device of claim 19 wherein said attributes downstream of said device comprise attributes of a communication channel linking said intermediate node and said receiving node.
+36. The device of claim 19 wherein said media data are selected from the group comprising: video data, audio data, image data, graphic data, and web page data.
+37. A computer-usable medium having computer-readable program code embodied therein for causing a transcoder to perform the steps of:
+a) receiving a stream of data packets from a source node, wherein said transcoder is disposed between said source node and a plurality of receiving nodes in a network, and wherein said stream of data packets comprises media data that are encrypted;
+b) performing a function on said stream of data packets, wherein said function is for configuring said stream of data packets according to attributes downstream of said transcoder and wherein said function is performed without decrypting said media data; and
+c) sending to a receiving node a stream of encrypted data packets compatible with said attributes downstream of said transcoder.
+38. The computer-usable medium of claim 37 wherein said stream of data packets comprises media data that are encoded, wherein said function of said step b) is performed without decoding said media data.
+39. The computer-usable medium of claim 37 wherein said computer-readable program code embodied therein causes a computer system to perform the step of:
+truncating data packets in said stream of data packets at a point in each data packet selected according to said attributes downstream of said transcoder.
+40. The computer-usable medium of claim 37 wherein a data packet in said stream of data packets comprises a payload portion and a header portion, wherein said payload portion comprises said media data and wherein said header portion comprises information identifying points for truncating said payload portion according to said attributes downstream of said transcoder.
+41. The computer-usable medium of claim 39 wherein said points for truncating said payload portion are specified in said header portion.
+42. The computer-usable medium of claim 40 wherein said points for truncating said payload portion are derived from said information identifying points for truncating said payload portion.
+43. The computer-usable medium of claim 40 wherein said payload portion is encrypted and said header portion is unencrypted.
+44. The computer-usable medium of claim 40 wherein said payload portion and said header portion are encrypted.
+45. The computer-usable medium of claim 44 wherein said computer-readable program code embodied therein causes a computer system to perform the step of:
+decrypting only said header portion.
+46. The computer-usable medium of claim 40 wherein said computer-readable program code embodied therein causes a computer system to perform the steps of:
+selecting a truncation point according to said attributes downstream of said transcoder; and
+truncating payload portions of data packets in said stream of data packets at said truncation point selected.
+47. The computer-usable medium of claim 40 wherein said points for truncating said payload portion are specified according to an analysis.
+48. The computer-usable medium of claim 47 wherein said analysis is a rate-distortion analysis.
+49. The computer-usable medium of claim 40 wherein said computer-readable program code embodied therein causes a computer system to perform the steps of:
+accumulating in memory a subset of data packets in said data stream; and
+configuring said subset of data packets such that said subset satisfies said attributes downstream of said transcoder.
+50. The computer-usable medium of claim 37 wherein said computer-readable program code embodied therein causes a computer system to perform the step of:
+eliminating data packets from said stream of data packets.
+51. The computer-usable medium of claim 37 wherein said attributes downstream of said transcoder comprise attributes of said receiving node.
+52. The computer-usable medium of claim 51 wherein said computer-readable program code embodied therein causes a computer system to perform the steps of:
+receiving information from said receiving node; and
+determining said attributes of said receiving node using said information from said receiving node.
+53. The computer-usable medium of claim 37 wherein said attributes downstream of said transcoder comprise attributes of a communication channel linking said transcoder and said receiving node.
+54. The computer-usable medium of claim 37 wherein said media data are selected from the group comprising: video data, audio data, image data, graphic data, and web page data.

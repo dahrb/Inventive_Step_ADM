@@ -1,0 +1,131 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+Enclosure of November 5, 2015
+
+European Patent Application No.: 08 172 768.7-1902
+Applicant: CANON KABUSHIKI KAISHA
+Our Ref.: EP 58060
+
+New Claims 1 to 3
+
+1. An image processing apparatus (1001, 1002) having a plurality of
+different functions, comprising:
+
+an authentication unit (S601-S603) adapted to execute a user
+authentication for a user who uses the image processing apparatus;
+
+a first registration unit (S801-S809) adapted to register a plurality of
+processes as a sequential processing flow which cooperates the plurality of
+different functions; and
+
+an execution unit (S1111) adapted to execute the sequential
+processing flow for image data,
+
+characterized by further comprising:
+
+an obtaining unit (S603, S605) adapted to obtain setting data
+representing a personalized processing which is personalized for the user
+authenticated by said authentication unit;
+
+a determination unit (S1105) adapted to determine whether or not a
+predetermined keyword to be replaced is included in the sequential
+processing flow registered by said first registration unit; and
+
+a replacing unit (S1107) adapted to replace, based on the obtained
+setting data representing the personalized processing which is personalized
+for the authenticated user, the predetermined keyword included in the
+sequential processing flow with the personalized processing if said
+determination unit (S1105) determines that the predetermined keyword to
+be replaced is included in the sequential processing flow,
+
+wherein said execution unit (S1111) is adapted to execute the
+sequential processing flow for which the predetermined keyword is replaced
+with the personalized processing by said replacing unit if said determination
+
+(/EPC2000 R116 EPC written submissions 10.11.2015-EN_00 Anlage ohne Briefkopf.dot-TA)
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+2/3
+
+unit (S1105) determines that the predetermined keyword to be replaced is
+included in the sequential processing flow, and
+
+wherein said execution unit (S1111) is adapted to execute the
+sequential processing flow for which the predetermined keyword is not
+replaced with the personalized processing if said determination unit (S1105)
+determines that the predetermined keyword to be replaced is not included
+in the sequential processing flow.
+
+2. A processing flow control method for an image processing apparatus
+(1001, 1002) having a plurality of different function, comprising:
+
+an authentication step (S601-S603) of executing user authentication
+for a user who uses the image processing apparatus;
+
+a first registration step (S801-S809) of registering a plurality of
+processes as a sequential processing flow which cooperates the plurality of
+different functions; and
+an execution step (S1111) of executing the sequential processing flow for
+image data,
+
+characterized by further comprising:
+
+an obtaining step (S603, S605) of obtaining setting data representing
+a personalized processing which is personalized for the user authenticated
+in said authentication step;
+
+a determination step (S1105) of determining whether or not a
+predetermined keyword to be replaced is included in the sequential
+processing flow registered in said first registration step; and
+
+a replacing step (S1107) of replacing, based on the obtained setting
+data representing the personalized processing which is personalized for the
+authenticated user, the predetermined keyword included in the sequential
+processing flow with the personalized processing if said determination step
+(S1105) determines that the predetermined keyword to be replaced is
+included in the sequential processing flow,
+
+wherein said execution step (S1111) executes the sequential
+processing flow for which the predetermined keyword is replaced with the
+personalized processing in said replacing step if said determination step
+(S1105) determines that the predetermined keyword to be replaced is
+included in the sequential processing flow, and
+
+--- PAGE 3 ---
+10
+
+3/3
+
+wherein said execution step (Si111) executes the sequential
+processing flow for which the predetermined keyword is not replaced with
+the personalized processing if said determination step (S1105) determines
+that the predetermined keyword to be replaced is not included in the
+sequential processing flow.
+
+3. A computer-readable storage medium storing a program for causing a
+computer to implement all the steps of the processing flow control method
+
+according to claim 2.

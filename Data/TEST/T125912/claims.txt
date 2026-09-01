@@ -1,0 +1,187 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request 8
+CLAIMS
+
+1. A project management system comprising a database for storing objects
+relating to a project together with data defining interdependencies of the objects;
+and a control system responsive to entities connected to it to provide access to
+selected objects stored on the database and to store on the database updated
+versions of selected objects received from the entities characterised in that the
+control system is adapted to produce copies of an object that has been
+accessed by a first entity and all objects that are interdependent on that object if
+that object or an object that is interdependent on that object is modified by a
+second entity between the object being accessed by the first entity and an
+
+updated version being received by the database.
+
+2. A project management system according to claim 1, wherein the entities
+
+are workstations, users or services.
+
+3. A project management system according to any of the preceding claims,
+wherein the data defining interdependencies of the objects are stored within the
+
+objects themselves.
+
+4. A project management system according to any of the preceding claims,
+wherein the control system maintains a register linking the objects with the
+
+entities that have selected them.
+
+5. A project management system according to any of the preceding claims,
+
+wherein the control system can prevent access to certain objects.
+
+6. A project management system according to claim 5, wherein the control
+system prevents access to objects that have been accessed and for which
+
+updated versions have not yet been stored on the database.
+
+7. A project management system according to any of the preceding claims,
+
+wherein the control system is an application server.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request 9
+
+8. A project management system according to any of the preceding claims,
+
+wherein the entities are connected to the control system via a network.
+
+9. A project management system according to claim 8, wherein the network
+
+is the Internet.
+
+10. A project management system according to claim 8 or claim 9, wherein
+
+the entity communicates with the control system using browser software.
+
+11. A project management system according to claim 10, wherein the
+browser software is configured to transfer several objects consecutively between
+
+the database and the entity.
+
+12. A project management system according to claim 11, wherein the
+browser software is configured to transfer several objects consecutively between
+
+the database and the entity using an applet downloaded from the control system.
+
+13. Aproject management system according to claim 11 or claim 12, wherein
+the objects are transferred using the File Transfer Protocol (FTP) or the
+Hypertext Transfer Protocol (HTTP).
+
+14. A project management system according to any of claims 11 to 13,
+wherein the objects have a size attribute indicating their size in bytes, a date
+attribute indicating the date that they were last modified, a time attribute
+indicating the time of day that they were last modified and a user or service
+
+attribute indicating the user or service who last accessed them.
+
+15. A project management system according to claim 14, wherein an object
+previously transferred from the database to the entity is only transferred back to
+the database if one or more of the size, date or time attributes of the object differ
+
+from those of a copy of the object stored in the database.
+
+16. A project management system according to any of claims 11 to 15,
+
+wherein the browser software is further configured, upon transfer of an object
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+Main Request 10
+
+from the entity to the database, to extract from the object the data defining
+interdependencies of the objects and display a message on the entity requesting
+
+missing objects if there are any.
+
+17. A project management system according to claim 16 when dependent on
+at least claim 12, wherein the browser software is configured, upon transfer of an
+object from the entity to the database, to extract the data defining
+interdependencies of the objects from the object and display a message on the
+entity requesting missing objects if there are any by the applet downloaded from
+
+the control system.
+
+18. A project management method comprising storing, on a database,
+objects relating to a project together with data defining interdependencies of the
+objects; responding to entities connected to a control system to provide access
+to selected objects stored on the database and to store on the database updated
+versions of selected objects received from the entities characterised by
+producing copies of an object that has been accessed by a first entity and all
+objects that are interdependent on that object if that object or an object that is
+interdependent on that object is modified by a second entity between the object
+being accessed by the first entity and an updated version being received by the
+
+database.
+
+19. A method according to claim 18, further comprising extracting the data
+
+defining the interdependencies of the objects from the objects themselves.
+
+20. A method according to either of the preceding claims, wherein access is
+prevented to objects that have been accessed and for which updated versions
+
+have not yet been stored on the database.
+
+21. A method according to any of claims 18 to 20, wherein several objects
+
+are transferred consecutively between the database and the entity.
+
+22. | Amethod according to claim 21, wherein an object previously transferred
+
+from the database to the entity is only transferred back to the database if one or
+
+--- PAGE 4 ---
+10
+
+Main Request 11
+
+more of the size, date of modification or time of modification differ from those of
+
+a copy of the object stored in the database.
+
+23. A method according to claim 22, wherein the size, date of modification
+and time of modification of the object are determined by reading size, date and
+
+time attributes of the object.
+
+24. | Acomputer program comprising computer program code means adapted
+to perform all the steps of any of the claims 18 to 23 when said program is run
+
+on a computer.
+
+25. A computer program product comprising program code means stored on
+a computer readable medium for performing the method of any of claims 18 to
+
+23 when said program product is run on a computer.

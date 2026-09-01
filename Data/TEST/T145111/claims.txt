@@ -1,0 +1,96 @@
+--- PAGE 1 ---
+CLAIMS
+
+I.
+
+A system for automatically providing a plurality of additional database
+
+query terms to a user, the system comprising:
+
+a user interface; and
+a processing system coupled to the user interface;
+wherein the user interface is configured to:
+
+receive a query term from the user and transfer the query term to the
+processing system;
+characterised in that the user interface is configured to:
+after receiving the query term, receive a plurality of characters from the
+user and transfer the plurality of characters to the processing system; and
+the processing system is configured to:
+perform a search of a database using the query term, resulting in a set of
+records from the database, wherein the database comprises records, and the
+records comprise text translated from audio;
+determine a plurality of additional query terms using the plurality of
+characters;
+process at least a portion of the set of records resulting from the search of
+the database to determine a relevance of each of the additional query terms
+to the query term; and
+transfer the plurality of additional query terms to the user interface for
+display to the user, in an order corresponding to the relevance of each of
+
+the plurality of additional query terms.
+
+The system of claim 1, wherein the user interface is configured to display
+
+the relevance of each of the plurality of additional query terms.
+The system of claim 1, wherein at least one of the plurality of additional
+
+query terms is determined at least in part based on a semantic relationship
+
+with the query term.
+
+20
+
+--- PAGE 2 ---
+The system of claim 1, wherein at least one of the plurality of additional
+
+query terms is selected from an existing list of query terms.
+
+The system of claim 1, wherein at least one of the plurality of additional
+
+query terms is selected from records within the database.
+
+The system of claim 1, wherein the processing system is also configured to
+reduce the relevance of at least one of the plurality of additional query
+
+terms if the one of the additional query terms is on a stop list.
+
+A method for automatically providing a plurality of additional database
+query terms to a user, the method comprising:
+receiving a query term from the user;
+and being characterised by:
+receiving a plurality of characters from the user after receiving the
+query term;
+performing a search of a database using a query term, resulting in a set
+of records from the database, wherein the database comprises records,
+and the records comprise text translated from audio;
+determining a plurality of additional query terms using the plurality of
+characters;
+processing at least a portion of the set of records resulting from the
+search of the database to determine a relevance of each of the
+additional query terms to the query term; and
+displaying the plurality of additional query terms to the user for
+selection, in an order corresponding to the relevance of each of the
+
+plurality of additional query terms.
+The method of claim 7 further comprising:
+
+displaying the relevance of the at least one of the plurality of additional
+
+query terms to the user.
+
+21
+
+--- PAGE 3 ---
+10.
+
+The method of claim 7, wherein the relevance is determined at least in part
+based on a confidence level of a translation from audio to text of at least
+
+one word in the set of records.
+
+The method of claim 7, wherein at least one of the plurality of additional
+
+query terms includes a stemming variation.
+
+22

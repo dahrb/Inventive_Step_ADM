@@ -1,0 +1,333 @@
+--- PAGE 1 ---
+P24060
+
+EP 07150164.7
+
+New Claims
+(Main Request)
+Filed on April 14, 2017
+
+A system for supporting a plurality of instances of the same application on a
+
+wireless smart device, the system comprising:
+
+a wireless smart device for communicating with a wireless reader, the wireless
+
+smart device including:
+
+a plurality of instances of a same application for performing wireless
+transactions with an external device, the application having a first
+application identifier, each instance having a respective second
+application identifier that is unique to the instance and different from the
+first application identifier, wherein at least some of the instances are of
+the same type; and
+
+an application manager for identifying one of the instances associated
+with the second application identifier as active, for detecting a request
+identifying the application by the first application identifier from a
+wireless reader for performing a wireless transaction with an application
+identified by the second application identifier, and for communicating
+the request to the identified active instance associated with the second
+application identifier using the second application identifier for the
+identified active instance.
+
+The system of claim 1 wherein the wireless smart device comprises one of a
+
+mobile telephone, a key fob, a physical card, a personal digital assistant, and
+
+a device provisioned with a soft card.
+
+The system of claim 1 wherein the wireless smart device is adapted to
+
+communicate using a close-proximity wireless technology.
+
+1.
+a)
+b)
+
+2.
+
+3.
+
+4.
+
+The system of claim 1 wherein the wireless smart device is adapted to
+
+communicate using a near field communications technology.
+
+--- PAGE 2 ---
+P24060 EP 07150164.7
+
+10.
+
+The system of claim 1 wherein the instances or applications are adapted for
+performing at least one of identity transactions, security transactions,
+authentication transactions, membership transactions, loyalty transactions,
+
+and electronic payment transactions.
+
+The system of claim 1 wherein the application manager, by communicating
+with the active instance or application, makes the wireless smart device
+comply with a specification that limits the number of instances of the same
+application on the wireless smart device to one, [[or]] limits the number of
+applications on the wireless smart device to one, or that limits the number of
+instance or applications that can respond to requests addressed to the second
+application identifier to one.
+
+The system of claim 1 comprising an application selection function for
+selecting one of the plurality of instances or applications to be active.
+
+The system of claim 7 wherein the application selection function is adapted to
+present to a user a list of available instances or applications, to receive an
+instance or application selection from the user, and in response to the
+selection, to activate the selected instance or application.
+
+The system of claim 7 wherein the application selection function, in response
+to selecting one of the plurality of instances or applications to be active,
+deactivates any instance or application that is not the instance or application
+selected to be active.
+
+The system of claim 7 comprising an application listing function for detecting a
+request from the wireless reader for a list of applications available within the
+wireless smart device, and responsive to detecting that request,
+communicating a list of available instances or applications to the wireless
+reader, and wherein the application selection function is adapted to modify, in
+response to selecting one of the plurality of instances or applications to be
+active, the list of available instances or applications such that the selected
+
+--- PAGE 3 ---
+P24060 EP 07150164.7
+
+11.
+
+12.
+
+13.
+
+instance or application is included in the list of available instances or
+
+applications.
+
+The system of claim 10 wherein the application selection function is adapted
+to modify, in response to selecting one of the plurality of instances or
+applications to be active, the list of available instances or applications such
+that instances or applications that are not the selected instance or application
+
+are removed from the list of available instances or applications.
+
+The system of claim 10 wherein the application listing function is performed by
+
+a payment system environment (PSE) application.
+
+A method for supporting a plurality of instances of the same application on a
+
+wireless smart device, the method comprising:
+
+a) using an application manager residing within a wireless smart device
+having a plurality of instances of an application for effecting wireless
+transactions with an external device, the application having a first
+application identifier, each of the instances having a respective second
+application identifier different from the first application identifier, wherein
+at least some of the instances are of the same type, which has a
+second application identifier that is different from the first application
+identifier:
+
+i) receiving a request identifying the application by the first
+application identifier from a wireless reader for effecting a
+transaction with an application associated with the second
+application identifier; and
+
+il) responsive to the request from the wireless reader, identifying
+one of the instances residing within the wireless smart device
+and associated with the second application identifier as active,
+and sending a request for effecting the transaction to the
+identified active instance using the second application identifier
+for the identified active instance; and
+
+b) using the active instance:
+
+--- PAGE 4 ---
+P24060 EP 07150164.7
+
+14.
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+i) receiving the request from the application manager for effecting
+the transaction; and
+
+il) responsive to the request from the application manager, effecting
+the transaction.
+
+The method of claim 13 wherein using the wireless smart device comprises
+using one of a mobile telephone, a key fob, a physical card, a personal digital
+assistant, and a device provisioned as a soft card.
+
+The method of claim 13 wherein receiving a request from and sending a
+response to the wireless reader includes communicating using a close-
+
+proximity wireless technology.
+
+The method of claim 13 wherein receiving a request from and sending a
+response to the wireless reader includes communicating using a near field
+
+communications technology.
+
+The method of claim 13 wherein the applications or instances are adapted for
+performing at least one of identity transactions, security transactions,
+authentication transactions, membership transactions, loyalty transactions,
+
+and electronic payment transactions.
+
+The method of claim 13 wherein receiving the request from a wireless reader
+
+includes receiving a request for effecting a wireless payment transaction.
+
+The method of claim 13 wherein effecting the transaction includes sending a
+response to the wireless reader using the active instance or application.
+
+The method of claim 13 wherein effecting the transaction includes sending a
+response to the application manager using the active instance or application
+and, in response to receiving, by the application manager, a response from
+the active instance or application, sending a response to the wireless reader
+using the application manager.
+
+--- PAGE 5 ---
+P24060 EP 07150164.7
+
+21.
+
+22.
+
+23.
+
+24.
+
+25.
+
+26.
+
+The method of claim 13 wherein, by using the application manager for
+communicating with the active instance or application, the wireless smart
+device complies with a specification that limits the number of instances of the
+application or the number of applications on the wireless smart device to one.
+
+The method of claim 13 comprising selecting, using an application selection
+function, one of the plurality of instances or applications and activating the
+selected instance or application.
+
+The method of claim 22 wherein using the application selection function
+includes presenting to a user a list of available instances or applications from
+which the user may select an instance or application to be activated,
+determining which instance or application is selected by the user, and
+responsive to the determination, activating the selected instance or
+
+application.
+
+The method of claim 22 wherein using the application selection function
+includes deactivating any instance or application that is not the selected
+instance or application.
+
+The method of claim 22 comprising detecting a request from the wireless
+reader for a list of instances or applications available within the wireless smart
+device, and responsive to detecting that request, communicating a list of
+available instances or applications to the wireless reader, and wherein using
+the application selection function includes modifying, in response to selecting
+one of the plurality of instances or applications, the list of available instances
+or applications to include in the list of available instances or applications the
+selected instance or application.
+
+The method of claim 25 comprising modifying, in response to selecting one of
+the plurality of instances or applications, the list of available instances or
+applications to remove from the list of available applications any instance that
+is not the selected instance or application.
+
+--- PAGE 6 ---
+P24060
+
+27.
+
+28.
+
+EP 07150164.7
+
+The method of claim 25 including using a payment system environment (PSE)
+
+application for communicating the list of available instances or applications to
+
+the wireless reader.
+
+A computer program product comprising computer-executable instructions
+
+embodied in a computer-readable medium for performing steps comprising:
+
+a)
+
+using an application manager residing within a wireless smart device
+having a plurality of instances of an application for effecting wireless
+transactions with an external device, the application having a first
+application identifier, each of the instances having a respective second
+application identifier different from the first application identifier that is
+unique to the instance, wherein at least some of the instances are of the
+same type, which has a second application identifier that is different
+from the first application identifier:
+
+i) receiving a request identifying the application by the first
+application identifier from a wireless reader for effecting a
+transaction with an application associated with the second
+application identifier; and
+
+ii) responsive to the request from the wireless reader, identifying
+one of the instances residing within the wireless smart device
+and associated with the second application identifier as active,
+and sending a request for effecting the transaction to the
+identified active instance using the second application identifier
+for the identified active instance; and
+
+using the active instance:
+
+i) receiving the request from the application manager for effecting
+the transaction; and
+
+il) responsive to the request from the application manager, effecting
+
+the transaction.
+
+29.A system according to claim 1, wherein the application (108) is operable to
+
+distinguish between a request from the reader (100) as an external request and a
+request from the application manager (104) as an internal request and to only
+
+6
+
+--- PAGE 7 ---
+P24060 EP 07150164.7
+
+respond to internal requests.
+
+30.A method according to claim 13, wherein the application (108) is operable to
+distinguish between a request from the reader (100) as an external request and a
+request from the application manager (104) as an internal request and to only
+respond to internal requests.
+
+31.A computer program product according to claim 28, wherein the application (108)
+is operable to distinguish between a request from the reader (100) as an external
+request and a request from the application manager (104) as an internal request
+and to only respond to internal requests.
+
+32.A system according to claim 29, wherein the application (108) is operable to carry
+out said distinguishing by using a different protocol for an internal request, using a
+different communications path for the internal request, using a different command,
+command argument or command option for an internal request, setting a flag to
+
+enable a transaction command just prior to issuing the transaction.

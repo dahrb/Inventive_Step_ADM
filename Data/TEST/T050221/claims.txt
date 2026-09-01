@@ -1,0 +1,148 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+MAIN REQUEST
+
+CLAIMS
+
+1. A method for generating a presentation of detailed information (1112) for an item (1041)
+within overview information (1111) for display on a display screen (340) of a data processing system
+(300) in real-time, comprising:
+displaying a first presentation (1000) of the overview information (1111) on the display
+screen (340), the overview information (1111) being presented over one or more lines (1011)
+of a grid (1010);
+using a graphical user interface (380) of the data processing system (300), receiving a signal
+selecting the item (1041) from the first presentation (1000);
+using a processor (320) of the data processing system (300), generating a second presentation
+(1100) by:
+displacing the overview information (1111) at least partially away from a region
+(1110) in the first presentation (1000), the overview information (1111) remaining at
+least partially visible in the second presentation (1100) to provide context for the
+detailed information (1112) in the region (1110), and the one or more lines (1011) of
+the grid (1010) being displaced away from the region (1110) without distorting the
+lines (1011); and,
+inserting the detailed information (1112) for the item (1041) into the region (1110)
+by inserting one or more additional lines (1011) into the grid (1010) in the region
+(1110) and presenting the detailed information (1112) there over; and,
+
+displaying the second presentation (1100) on the display screen (340).
+2. The method of claim | wherein the overview information (1111) is presented as one or more
+
+symbols (1020) corresponding to respective ones of one or more first (1080) and second (1040)
+
+categories of data.
+
+29
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+3. The method of claim 2 wherein the grid (1010) lists the one or more first categories of data
+(1080) along a first axis (1060) and the one or more second categories of data (1040) along a second
+
+axis (1070).
+
+4. The method of claim 2 or claim 3 wherein the one or more first categories of data (1080) are
+one or more transactions (1080) and wherein the one or more second categories of data (1040) are
+
+one or more statistics (1040) relating to the one or more transactions (1080).
+
+5. The method of claim 4 wherein the item (1041) is one of the one or more transactions (1080)
+
+or one or more statistics (1040).
+
+6. The method of claim 5 wherein the item (1041) is a count (1050) for one of the one or more
+
+transactions (1080) or one or more statistics (1040).
+
+7. The method of any one of claims | to 6 wherein the region (1110) is a region (1110) of the
+grid (1010) proximate to the item (1041).
+
+8. The method of any one of claims | to 7 wherein the displacing includes displacing one or
+
+more symbols (1020) away from the region (1110).
+
+9. The method of any one of claims 4 to 8 wherein the detailed information (1112) is presented
+as one or more symbols (1120) corresponding to respective sub-categories (1141) of the one or more
+
+transactions (1080) or one or more statistics (1040).
+
+10. The method of claim 9 wherein at least one of: the inserting includes inserting the one or
+more symbols (1120) corresponding to respective sub-categories (1141) of the one or more
+transactions (1080) or one or more statistics (1040) into the region (1110); the one or more symbols
+(1020, 1120) are one or more circles or one or more bubbles; sizes, colours, or positions within the
+grid (1010) of the one or more symbols (1020, 1120) for a transaction (1083) or sub-categories of a
+
+transaction correspond to values (1050, 1150) of the one or more statistics (1041, 1141) for the
+
+30
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+transaction (1083) or the sub-categories of the transaction; and, the detailed information (1112) is
+
+presented as one or more line graphs (1810).
+
+11. The method of claim 10 wherein at least one of: the value (1050, 1150) and hence the sizes,
+colours, or positions within the grid (1010) are updated in real-time; and, the values and (1050,
+1150) hence the sizes, colours, or positions within the grid (1010) are updated by way of animation
+
+to smooth visual transitions.
+
+12. The method of claim 10 or claim 11 wherein at least one (1882) of the one or more symbols
+for a transaction (1082) or sub-categories of a transaction provides an indication (1810) of present
+and past values of the one or more statistics (1041) for the transaction (1082) or the sub-categories of
+
+the transaction.
+
+13. The method of claim 12 wherein the values and hence the indication (1810) are updated in
+real-time.
+14. The method of any one of claims | to 13 wherein at least one of: the overview information
+
+(1111) in the second presentation (1100) is presented in a colour, shade, or transparency level
+different from that used in the first presentation (1000); the overview information (1111) in the
+second presentation (1100) is presented at a reduced scale with respect to that used in the first
+presentation (1000); the detailed information (1112) partially overlaps the overview information
+(1111) in the second presentation (1100); the overview information (1111) and detailed information
+(1112) is hierarchical time series data ; and, the overview information and the detailed information is
+presented with their centers lying on the one or more lines and the one or more additional lines,
+
+respectively.
+
+31
+
+--- PAGE 4 ---
+15. A system (300) for presenting detailed information (1112) for an item (1041) within
+overview information (1111) on a display screen (340), comprising:
+a processor (320) coupled to memory (330) and the display screen (340); and,
+at least one of hardware and software modules (321, 331) within the memory (330), the
+5 modules (321, 331) including computer readable instructions executable by the processor
+
+(320) for causing the system (300) to implement the method of any one of claims | to 14.
+
+10
+
+32

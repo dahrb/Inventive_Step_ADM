@@ -1,0 +1,109 @@
+TITLE:
+URL mapping methods and systems
+
+TYPE:
+US Patent
+
+ABSTRACT:
+The invention provides for flexible, convenient, and dynamic URL mapping methods and systems by providing generalized approaches which specify patterns in term of recognizable syntax. The recognizable syntax can be defined by one or more rules. The rules are used and applied to an input URL string which is provided by a client to map the input URL string to an output URL string which is used by a rendering engine to provide a requested resource. Embodiments of the invention provide for a rule cache or internal store in which rules are kept. The rule cache allows for rules to be added, deleted, or modified as desired, without the need to stop and re-start the web service. The rule cache can be populated dynamically at run time. In addition, embodiments of the invention conveniently group rules into rule groups. Individual rule groups can be selectively applied to an input URL string. Furthermore, reverse mapping is supported by embodiments of the invention simply through the use of suitable rule additions or rule group additions in the rule cache, as may be appropriate.
+
+CLAIMS:
+1. A method of mapping a URL string comprising:
+searching for a particular pattern in an input URL string, the pattern being defined in a manner which permits variability among its constituent parts; and
+replacing the input URL string with an output URL string if the pattern is found in the input URL string;
+wherein the particular pattern is specified as a regular expression comprising a character string that includes literal characters and special characters, wherein the literal characters indicate exact characters in the input URL string and the special characters indicate variable characters in the input URL string.
+2. A method of mapping a URL string comprising:
+searching for a plurality of patterns in an input URL string using a plurality of regular expressions, wherein the regular expressions comprise literal characters and special characters, wherein the literal characters indicate exact characters in the input URL string and the special characters indicate variable characters in the input URL string; and
+replacing the input URL string with an output URL string if the patterns are found in the input URL string.
+3. A method of mapping a URL string comprising:
+accessing a plurality of input expressions, each of which describing a different pattern, wherein the input expressions are each associated with an output expression;
+checking an input URL string against the input expressions to determine a matching input expression; and
+generating an output URL string from the output expression associated with the matching input expression, the output expression containing an identifier which represents a portion of the input URL string.
+4. The method of claim 3 further comprising generating an output URL string by replacing the identifier with said portion that was represented by said identifier.
+5. A method of mapping a URL string comprising:
+accessing a plurality of input expressions, each of which describing a different pattern, wherein the input expressions are arranged in a particular order, and wherein the input expressions are each associated with an output expression;
+checking an input URL string against the input expressions to determine a matching input expression, wherein the checking of the input URL string comprises starting with a first of the input expressions and proceeding in a stepwise fashion through the input expressions; and
+generating an output URL string from the output expression associated with the matching input expression.
+6. A method of mapping a URL string comprising:
+accessing a plurality of input expressions, each of which describing a different pattern, wherein the input expressions are each associated with an output expression;
+checking an input URL string against the input expressions to determine a matching input expression; and
+generating an output URL string from the output expression associated with the matching input expression using at least a portion of the output expression to invoke a lookup procedure which produces a result, and using the result to generate the output URL string.
+7. The method of claim 6, wherein a plurality of different lookup procedures can be invoked by output expressions.
+8. The method of claim 6, wherein the lookup procedure is specified in the output expression.
+9. A method of mapping a URL string comprising:
+defining a plurality of rules, wherein each rule specifies:
+a text pattern; and
+a corresponding output expression;
+wherein at least some of the text patterns correspond to more than one combination of text characters;
+evaluating the rules against a first URL string to identify a rule specifying a text pattern corresponding to the first URL string; and
+replacing the first URL string with an output URL string specified by the output expression of the identified rule.
+10. The method of claim 9 further comprising:
+establishing a plurality of rule groups, each rule group having one or more rules; and
+wherein said evaluating comprises selecting a rule group and evaluating rules of the selected rule group against the first URL string.
+11. The method of claim 9 further comprising:
+establishing a plurality of rule groups, each rule group having one or more rules; and
+wherein said evaluating comprises selecting at least one rule group and evaluating rules in the selected group against the first URL string.
+12. The method of claim 9 further comprising:
+establishing a plurality of rule groups, each rule group having one or more rules;
+assigning a group identifier to each group;
+using the group identifier to identify a group in which a rule change is to take place; and
+implementing a rule change based upon the group identifier.
+13. The method of claim 12 wherein the rule change which is to take place comprises at least one of a rule addition, a rule deletion, and a rule modification.
+14. The method of claim 9 further comprising:
+establishing a plurality of rule groups in which individual rules can be placed;
+assigning a group tag to each rule group, the group tag specifying a particular protocol for imposing the rules; and
+wherein the evaluating comprises recognizing a group tag and responsive thereto, implementing the protocol specified by the group tag.
+15. The method of claim 14, wherein said particular protocol comprises one of the following protocols:
+a match-all protocol in which if a rule is satisfied within a group, the output of the rule becomes the input for its successor rule in the group; and
+a match-one protocol in which if a rule is satisfied, the output of the rule is passed outside of the group.
+16. The method of claim 9 further comprising:
+establishing a plurality of rule groups in which individual rules can be placed;
+assigning each rule group a group mask;
+receiving a group mask key which can select one or more rule groups; and
+using the group mask key to select one or more rule groups, wherein the evaluating comprises evaluating rules from each of the rule groups selected with the group mask key.
+17. The method of claim 16, wherein the group mask comprises a bit mask having a plurality of bits, and the group mask key comprises a bit mask key, and wherein one or more of the rule groups is selected by logically combining the bit mask and the bit mask key.
+18. The method of claim 9, wherein the rules are bi-directional in a manner in which the output URL string can be replaced with the first URL string.
+19. A computer-readable medium having stored thereon a program for mapping a URL string, the program comprising the following steps:
+establishing a rule cache having individual rules that define corresponding patterns in terms of input expressions, wherein the input expressions comprise literal characters and special characters, wherein the literal characters indicate exact characters in an input URL string and the special characters indicate variable characters in the input URL string;
+evaluating at least one of the rules from the rule cache against an input URL string to determine whether the input URL string satisfies said at least one rule by matching its pattern; and
+transforming the input URL string into an output URL string which is different from the input URL string in the event that the input URL string satisfies said at least one rule.
+20. A computer-readable medium as recited in claim 19, wherein:
+individual rules define output expressions corresponding to the input expressions; and
+the transforming of the input URL string comprises evaluating the output expression defined by said at least one rule, wherein the output expression contains an identifier which represents a portion of the input URL string, and further comprising replacing the identifier in the output expression with said portion of the input URL string to generate the output URL string.
+21. A computer-readable medium as recited in claim 19, wherein the establishing of the rule cache comprises:
+arranging individual rules into a plurality of rule groups; and
+prior to said evaluating, selecting at least one of the rule groups, wherein said evaluating comprises evaluating at least one rule from the selected rule group.
+22. A computer-readable medium as recited in claim 21, wherein each rule group is assigned a group mask, and wherein said selecting comprises logically combining a group mask key with the group mask for each group, and selecting one or more groups if the logical combination of the group mask and the group mask key yields a particular result.
+23. A URL-mapping system comprising:
+a server configured to receive a first URL string from a client; and
+a mapping engine that receives the first URL string and transforms the first URL string into a second URL string by evaluating a plurality of rules against the first URL string, wherein the rules are defined as regular expressions comprising literal characters and special characters, wherein the literal characters indicate exact characters in an input URL string and the special characters indicate variable characters in the input URL string.
+24. The URL-mapping system of claim 23 further comprising a web-site rendering engine executing on the server, and wherein the first URL string is not in a form in which it can be understood by the web-site rendering engine, and the second URL string is in a form in which it can be understood by the web-site rendering engine.
+25. The URL-mapping system of claim 23, wherein the mapping engine is configured to perform at least one lookup procedure in order to provide the second URL string.
+26. The URL-mapping system of claim 25, wherein the at least one lookup procedure is specified in a rule.
+27. The URL-mapping system of claim 25, wherein a plurality of different lookup procedures are specified in the rules.
+28. The URL-mapping system of claim 23, wherein the mapping engine is a COM server having an interface through which its services can be accessed.
+29. The URL-mapping system of claim 23, wherein the mapping engine is configured to enable rules to be added, deleted, or modified.
+30. A URL mapping system comprising:
+a mapping engine having an interface through which its services can be accessed, the mapping engine being configured to transform URL strings from a first format which is not useable by a web-site rendering engine into a second format which is useable by a web-site rendering engine; and
+a rule cache useable by the mapping engine, the rule cache being configured to hold plurality of rules which are defined as regular expressions, wherein regular expressions comprise literal characters and special characters, wherein the literal characters indicate exact characters in an input URL string and the special characters indicate variable characters in the input URL string.
+31. The system of claim 30 further comprising a plurality of rules in the rule cache that are defined as regular expressions.
+32. The system of claim 31, wherein the rules are arranged into rule groups within the rule cache, and each rule group includes a group identifier which permits individual groups to be accessed to enable rules to be changed.
+33. The system of claim 31, wherein the rules are arranged into rule groups within the rule cache, and each rule group includes a group tag which specifies a protocol for applying the rules within a particular group.
+34. The system of claim 31, wherein the rules are arranged into rule groups within the rule cache, and each rule group includes a group mask which permits one or more groups to be selected for imposition of at least some of the rules contained therein on the first URL.
+35. The system of claim 31, wherein the interface comprises methods to modify rules.
+36. The system of claim 31, wherein the interface comprises methods to arrange rules into rule groups.
+37. A method of mapping a URL string comprising: receiving an input URL string;
+mapping the input URL string to an output expression having a tagged expression;
+using the tagged expression to invoke a lookup method which produces a result; and
+replacing the tagged expression in the output expression with the lookup method result to provide an output URL string.
+38. The method of claim 37, wherein the tagged expression indicates a lookup method, and wherein the using of the tagged expression comprises invoking the lookup method.
+39. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein the rules are defined by regular expressions.
+40. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein the rules are defined by input expressions and output expressions.
+41. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein the methods comprise a method that permits rules to be added.
+42. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein the methods comprise a method that permits new groups of rules to be added.
+43. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein the methods comprise a method that permits rules to be removed.
+44. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein the methods comprise a method that permits groups of rules to be removed.
+45. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein the rules that are governed are rules that are defined by a syntax that permits variations in text characters in individual rules.
+46. A URL mapping engine comprising an interface that exposes a plurality of methods that are associated with managing rules that govern mapping capabilities of the URL mapping engine, wherein:
+the rules are defined by regular expressions; and
+the methods comprise a method that permits rules to be added, and another method that permits a group of rules to be added.

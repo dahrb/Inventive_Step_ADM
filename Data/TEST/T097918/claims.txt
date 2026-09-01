@@ -1,0 +1,153 @@
+--- PAGE 1 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-51-
+
+MAIN REQUEST
+CLAIMS:
+1. A method for improving the availability of session history data for a
+
+patient using an implantable fluid therapy delivery device, the
+method comprising:
+storing, in a memory of the implantable fluid delivery device, therapy
+session information for a plurality of therapy sessions that have been administered
+by the implantable device to a patient, each therapy session of the plurality of
+therapy sessions corresponding to a period of time between respective successive
+programming sessions for the implantable fluid delivery device;
+retrieving from the memory of the implantable fluid delivery device, with a
+programming device for programming the implantable fluid delivery device, during
+each programming session, therapy session information for a plurality of the therapy
+sessions that have been administered by the implantable fluid delivery device to the
+patient;
+inviting a user to input to the programming device a selection of a portion of
+all of the available, retrieved, therapy session information;
+displaying, with the programming device, a graphical representation of the
+selected portion of the therapy session information stored in the memory of the
+
+implantable fluid delivery device for each of the plurality of therapy sessions.
+
+2. The method of claim 1, further comprising deriving a plurality of nodes, each
+of the nodes corresponding to one of the plurality of therapy sessions, the plurality
+
+of nodes being displayed in the graphical representation.
+
+3. The method of claim 2, wherein horizontal positions of the nodes on the
+graphical representation indicate relative dates on which the corresponding therapy
+
+sessions ended.
+
+--- PAGE 2 ---
+10
+
+15
+
+20
+
+25
+
+30
+
+-52-
+
+4. The method of claim 2, wherein vertical positions of the nodes on the
+graphical representation indicate average daily doses of a therapeutic agent
+administered by the implantable fluid delivery device during the corresponding
+
+therapy sessions.
+
+5. The method of claim 2, wherein shapes of the nodes are derived to indicate
+infusion patterns according to which the implantable fluid delivery device
+
+administered fluid during the corresponding therapy sessions.
+
+6. The method of claim 1, further comprising determining an indication that a
+one-time event occurred for at least one of the plurality of therapy sessions, wherein
+the one-time event comprises one of a prime, a bridge, a therapeutic bolus, and a
+catheter length change, said indication being displayed in the graphical
+
+representation.
+
+7. The method of claim 1, further comprising determining a sensed diagnostic
+event comprising at least one of a malfunction of a component of the implantable
+fluid delivery device, a catheter replacement, a catheter length revision, a revision to
+a dosing program downloaded to the implantable fluid delivery device, a reservoir
+refill, a reservoir flush, and an accesses to a catheter port, and displaying this in the
+
+graphical representation.
+
+8. The method of claim 1, further comprising deriving an indication that
+information for at least one therapy session is missing, said indication being
+displayed in the graphical representation inviting a user to input to the programming
+
+device, a selection of a portion of the available therapy session information.
+
+9. The method of claim 1, wherein the representation comprises textual
+
+representations for each of the displayed therapy sessions.
+
+10. The method of claim 1, further comprising deriving an indication of a
+
+percentage of therapeutic agent administered as a result of patient requests inviting a
+
+--- PAGE 3 ---
+10
+
+15
+
+20
+
+25
+
+- 53 -
+
+user to input to the programming device, a selection of a portion of the available
+
+therapy session information.
+
+11. The method of claim 10, further comprising retrieving from the implantable
+
+fluid delivery device data related to the percentage of therapeutic agent.
+
+12. A programmer device comprising:
+a user interface (50) comprising a display to present a graphical
+representation of a selected portion of therapy session information stored in
+memory of an implantable fluid delivery device for each of a plurality of
+therapy sessions administered by the implantable fluid delivery device to a
+patient and retrieved by the programmer device from memory of the
+implantable fluid delivery device, each therapy session of the plurality of
+therapy sessions corresponding to a period of time between respective
+successive programming sessions for the implantable fluid delivery device;
+and
+a processor (52) that controls the user interface to present on the display the
+
+representation of the selected portions of the plurality of therapy sessions.
+
+13. A-system comprising:
+
+an implantable fluid delivery pump (46) that delivers fluid to a patient
+according to a selected dosing program over a plurality of therapy sessions, said
+pump comprising a telemetry module and also comprising a memory storing therapy
+session information for the plurality of therapy sessions; and
+
+a programmer device as claimed in claim 12, and further comprising:
+
+a telemetry module (42) to send signals to the implantable
+fluid delivery pump to program the implantable fluid delivery pump.
+
+--- PAGE 4 ---
+-54-
+
+14. A computer-readable medium encoded with instructions for causing a
+programmable processor of a programmer device as claimed in claim 12 for
+
+programming an implantable fluid delivery device to perform the method of any of
+
+claims 1 to 11.
