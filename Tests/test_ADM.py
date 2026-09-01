@@ -1115,31 +1115,19 @@ class TestSubADM2(unittest.TestCase):
         self.assertIn("ObjectiveTechnicalProblemFormulation", self.sub_adm.case)
         self.assertIn("WouldHaveArrived", self.sub_adm.case)
 
-    def test_would_have_arrived_adaptation(self):
-        """
-        Scenario: Skilled person 'WouldAdapt' the prior art.
-        Expected: WouldHaveArrived -> True (Obvious)
-        """
-        inputs = ["Encompassed", "Embodied", "ScopeOfClaim", "WrittenFormulation", "WouldAdapt"]
-
-        self.evaluate_case(inputs)
-
-        self.assertIn("ObjectiveTechnicalProblemFormulation", self.sub_adm.case)
-        self.assertIn("WouldHaveArrived", self.sub_adm.case)
-
     def test_not_obvious_conclusion(self):
         """
         Scenario: Valid OTP, but skilled person would NOT modify/adapt (Neither selected).
         Expected: WouldHaveArrived -> False (Not Obvious)
         """
         inputs = ["Encompassed", "Embodied", "ScopeOfClaim", "WrittenFormulation"]
-        # Note: 'WouldModify' and 'WouldAdapt' are absent
+        # Note: 'WouldModify' is absent
 
         self.evaluate_case(inputs)
 
         self.assertIn("ObjectiveTechnicalProblemFormulation", self.sub_adm.case)
 
-        # Logic: WouldHaveArrived requires (WouldModify AND OTP) OR (WouldAdapt AND OTP)
+        # Logic: WouldHaveArrived requires WouldModify AND ObjectiveTechnicalProblemFormulation
         self.assertNotIn("WouldHaveArrived", self.sub_adm.case)
 
 
@@ -1878,11 +1866,6 @@ class TestMainADMAblation_NoSub2(unittest.TestCase):
         self.assertIn("ValidOTP", self.adm.case)
         self.assertIn("WouldHaveArrived", self.adm.case)
 
-    def test_flat_otp_would_have_arrived_adaptation(self):
-        """WouldHaveArrived accepted when WouldAdapt and ValidOTP both present."""
-        self.evaluate_case(["Encompassed", "ScopeOfClaim", "WouldAdapt"])
-        self.assertIn("WouldHaveArrived", self.adm.case)
-
     def test_flat_otp_not_obvious_when_not_arrived(self):
         """OTPNotObvious accepted (not obvious) when WouldHaveArrived is absent."""
         self.evaluate_case(["Encompassed", "ScopeOfClaim"])
@@ -1958,9 +1941,9 @@ class TestMainADMAblation_NoBoth(unittest.TestCase):
         self.assertNotIsInstance(self.adm.nodes["OTPNotObvious"], SubADMNode)
 
     def test_flat_question_instantiators_present(self):
-        """Both flat question instantiators must exist."""
+        """Both flat question instantiators must exist; WouldModify is a plain node."""
         self.assertIn("technical_contribution", self.adm.question_instantiators)
-        self.assertIn("modify_adapt", self.adm.question_instantiators)
+        self.assertIn("WouldModify", self.adm.nodes)
 
     def test_question_order_has_both_flat_paths(self):
         """Question order must include keys from both flat paths."""
